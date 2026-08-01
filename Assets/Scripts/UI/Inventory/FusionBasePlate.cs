@@ -20,6 +20,15 @@ public class FusionBasePlate : MonoBehaviour
             return;
         }
 
+        if(FusionMenu.totalZelCost > PlayerData.zel)
+        {
+            zelCostText.color = Color.red;
+        }
+        else
+        {
+            zelCostText.color = Color.white;
+        }
+
         UnitInventoryData unit = PlayerUnitInventoryDatabase.GetUnitByKey(FusionMenu.baseUnit);
         if (unit == null || unit.unit == null)
         {

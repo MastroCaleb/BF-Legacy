@@ -8,7 +8,7 @@ This repository contains a Unity project that recreates key mechanics, assets, a
 
 ## Project Goals
 
-- Recreate Brave Frontier-style gameplay using Unity.
+- Recreate Brave Frontier using Unity.
 - Provide a clean, walkable codebase for modders and developers.
 - Support an open-source workflow so anyone can fork and build on top of this project.
 - Make assets, scene setups, and game systems easy to inspect and modify.
@@ -43,11 +43,10 @@ Brave Frontier: Legacy is meant as a community-friendly remake rather than an ex
 Anyone can contribute to Brave Frontier: Legacy. Suggested contribution paths include:
 
 - Fixing bugs or improving existing systems.
-- Adding new units, abilities, or scenes.
 - Improving documentation and developer guides.
 - Refactoring code for clarity and maintainability.
 
-Feel free to fork the repository, create a new branch, and submit a pull request with your changes.
+Feel free to fork the repository or submit a pull request with your changes.
 
 ## Notes
 

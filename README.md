@@ -8,7 +8,7 @@ This repository contains a Unity project that recreates key mechanics, assets, a
 
 ## Project Goals
 
-- Recreate Brave Frontier using Unity.
+- Recreate Brave Frontier as fast as possible.
 - Provide a clean, walkable codebase for modders and developers.
 - Support an open-source workflow so anyone can fork and build on top of this project.
 - Make assets, scene setups, and game systems easy to inspect and modify.

@@ -302,10 +302,8 @@ public static class PlayerUnitInventoryDatabase
 
         while (baseUnit.currentLevel < baseUnit.unit.maxLevel)
         {
-            long cumulativeToNext = ExperienceTable.GetCumulativeExp(baseUnit.currentLevel, baseUnit.unit.baseExp);
-            
+            long cumulativeToNext = ExperienceTable.GetCumulativeExp(baseUnit.currentLevel + 1, baseUnit.unit.baseExp);
             if (baseUnit.currentExperience < cumulativeToNext) break;
-            
             baseUnit.currentLevel++;
             ModifyStats(baseUnit);
         }

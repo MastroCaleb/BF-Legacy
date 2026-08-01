@@ -15,7 +15,7 @@ public class DropMoveManager : MonoBehaviour
 
     public float moveSpeed = 6f;
     
-    readonly List<DropMoveData> activeDrops = new List<DropMoveData>(256);
+    public static readonly List<DropMoveData> activeDrops = new List<DropMoveData>(256);
 
     void Awake() => Instance = this;
 

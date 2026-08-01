@@ -76,6 +76,7 @@ public class BattleManager : MonoBehaviour
         obtainedGemsForMission = false;
         unitDrops.Clear();
         newUnits.Clear();
+        chests.Clear();
         playerTeam = new TeamBehaviour();
         enemyTeam  = new TeamBehaviour();
         selectedEnemyUnit = null;
@@ -292,13 +293,16 @@ public class BattleManager : MonoBehaviour
 
                 DropMoveManager.canMove = true;
 
-                yield return new WaitForSeconds(3f);
-
                 while (enemyTeam.units.Exists(u => u.currentState == UnitState.Dead && !u.deathSequenceComplete))
                     yield return null;
 
                 BattleUI.enemySelect.SetActive(false);
                 enemyTeam.DestroyDeadUnits();
+
+                while (DropMoveManager.activeDrops.Count > 0)
+                    yield return null;
+
+                yield return new WaitForSeconds(2f);
 
                 DropMoveManager.canMove = false;
 
@@ -327,7 +331,10 @@ public class BattleManager : MonoBehaviour
                     TreasureChestDropBehaviour.interactable = false;
 
                     DropMoveManager.canMove = true;
-                    yield return new WaitForSeconds(2.5f);
+                    while (DropMoveManager.activeDrops.Count > 0)
+                        yield return null;
+
+                    yield return new WaitForSeconds(2f);
                     DropMoveManager.canMove = false;
 
                     break;

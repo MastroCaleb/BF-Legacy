@@ -273,7 +273,35 @@ public class UnitSlotUI : MonoBehaviour, IPointerDownHandler, IPointerUpHandler,
                 SoundManager.Instance.PlaySound(bbSound);
                 actionCompleted = true; // prevent normal click from happening after this
                 canBeClicked = false;
-                battleManager.PlayerSlideCommand(unit, direction);
+                battleManager.PlayerSlideCommand(unit, direction, unit.unitData.bbAbility);
+            }
+        }
+        else if (direction == Vector2.right)
+        {
+            // Double-check BC and state before executing special
+            if (unit.bcCount >= unit.unitData.sbbAbility.levels[unit.inventoryData.currentSBBLevel-1].bcCost && unit.currentState == UnitState.Idle && canBeClicked)
+            {
+                SoundManager.Instance.PlaySound(bbSound);
+                actionCompleted = true; // prevent normal click from happening after this
+                canBeClicked = false;
+                battleManager.PlayerSlideCommand(unit, direction, unit.unitData.sbbAbility);
+            }
+        }
+        else if (direction == Vector2.left)
+        {
+            if(!unit.isInOverdrive && BattleManager.ubbCount == BattleManager.ubbCurrentMaxGauge && unit.currentState == UnitState.Idle && canBeClicked)
+            {
+                SoundManager.Instance.PlaySound(bbSound);
+                actionCompleted = true; // prevent normal click from happening after this
+                canBeClicked = false;
+                unit.Overdrive();
+            }
+            else if (unit.bcCount >= unit.unitData.ubbAbility.levels[0].bcCost && unit.isInOverdrive && unit.currentState == UnitState.Idle && canBeClicked)
+            {
+                SoundManager.Instance.PlaySound(bbSound);
+                actionCompleted = true; // prevent normal click from happening after this
+                canBeClicked = false;
+                battleManager.PlayerSlideCommand(unit, direction, unit.unitData.ubbAbility);
             }
         }
         else if(direction == Vector2.down)

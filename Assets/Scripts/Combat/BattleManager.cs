@@ -43,6 +43,10 @@ public class BattleManager : MonoBehaviour
     public AudioClip bossWarning;
     public AudioClip mimicWarning;
 
+    //UBB
+    public static int ubbCurrentMaxGauge;
+    public static int ubbCount;
+
     //Rewards
     public static bool isVortex;
     public static int totalZelReward;
@@ -73,6 +77,8 @@ public class BattleManager : MonoBehaviour
         totalCriticalHits = 0;
         totalBcDropCount = 0;
         totalHcDropCount = 0;
+        ubbCurrentMaxGauge = 10000;
+        ubbCount = 0;
         obtainedGemsForMission = false;
         unitDrops.Clear();
         newUnits.Clear();
@@ -240,7 +246,12 @@ public class BattleManager : MonoBehaviour
                     PlayerTurn();
                     while (playerTurnWaitingForInput)
                     {
-                        if (isCombatAutomatic) { EndManualPlayerTurn(); PlayerTurn(); break; }
+                        if (isCombatAutomatic)
+                        {
+                            EndManualPlayerTurn();
+                            autoAttackCoroutine = StartCoroutine(DelayedAutoAttack());
+                            break;
+                        }
                         yield return null;
                     }
                     while (!playerTeam.GetEndTurn()) yield return null;
@@ -546,12 +557,12 @@ public class BattleManager : MonoBehaviour
         if (unitsThatActed.Count == unitsThatMustAct.Count) EndManualPlayerTurn();
     }
 
-    public void PlayerSlideCommand(UnitBehaviour unit, Vector2 slideDirection)
+    public void PlayerSlideCommand(UnitBehaviour unit, Vector2 slideDirection, Ability abilityToUse)
     {
         if (unitsThatActed.Contains(unit) || unit.currentState == UnitState.Attacking) return;
         if (slideDirection.y >= 0f)
         {
-            Ability ability = unit.GetBBAbilityToUse();
+            Ability ability = abilityToUse ?? unit.GetBBAbilityToUse();
             var pool = selectedEnemyUnit != null && selectedEnemyUnit.currentState != UnitState.Dead
                 ? new List<UnitBehaviour> { selectedEnemyUnit }
                 : enemyTeam.units.FindAll(u => u.currentState != UnitState.Dead);
@@ -968,6 +979,19 @@ public class BattleManager : MonoBehaviour
         units.Sort((a, b) => b.transform.position.y.CompareTo(a.transform.position.y));
         for (int i = 0; i < units.Count; i++)
             units[i].transform.SetSiblingIndex(i);
+    }
+
+    //UBB
+
+    public static void AddUbbCount(int amount)
+    {
+        ubbCount += amount;
+        if (ubbCount > ubbCurrentMaxGauge) ubbCount = ubbCurrentMaxGauge;
+    }
+
+    public static void MaxUBBGaugeUpdate()
+    {
+        ubbCurrentMaxGauge = ubbCurrentMaxGauge + 5000;
     }
 
     private class HealthPrediction

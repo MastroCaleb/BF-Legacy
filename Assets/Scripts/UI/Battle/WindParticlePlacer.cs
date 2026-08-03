@@ -28,7 +28,7 @@ public class WindParticlePlacer : MonoBehaviour
 
     public void CreateWind()
     {
-        placedParticles.Clear();
+        ClearWind();
 
         if (windParticleSprite == null)
         {
@@ -58,5 +58,17 @@ public class WindParticlePlacer : MonoBehaviour
             rt.localScale = new Vector3(baseScale * xStretch, baseScale, 1f);
             placedParticles.Add(go);
         }
+    }
+
+    void ClearWind()
+    {
+        foreach (var go in placedParticles)
+        {
+            if (go != null)
+            {
+                Destroy(go);
+            }
+        }
+        placedParticles.Clear();
     }
 }

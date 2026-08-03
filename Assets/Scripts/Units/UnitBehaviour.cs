@@ -13,6 +13,9 @@ public class UnitBehaviour : MonoBehaviour
     public Unit unitData;
     public UnitInventoryData inventoryData;
 
+    //UBB
+    public bool isInOverdrive = false;
+
     //Sounds
     public AudioClip action;
     public AudioClip skillAction;
@@ -2143,6 +2146,24 @@ public class UnitBehaviour : MonoBehaviour
         Debug.Log($"{unitData.unitName} has been defeated!");
         currentState = UnitState.Dead;
         StartCoroutine(DisappearIfNoHit());
+    }
+
+    public void Overdrive()
+    {
+        if(currentState == UnitState.Dead) return;
+        
+        isInOverdrive = true;
+        //Play sound or some shit
+        //Play overdrive animation
+    }
+
+    public void StopOverdrive()
+    {
+        if(currentState == UnitState.Dead) return;
+        
+        isInOverdrive = false;
+        //Play sound or some shit
+        //Play overdrive animation
     }
 
     void DropsOnLastHit()

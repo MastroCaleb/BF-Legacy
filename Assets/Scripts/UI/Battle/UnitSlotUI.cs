@@ -48,9 +48,12 @@ public class UnitSlotUI : MonoBehaviour, IPointerDownHandler, IPointerUpHandler,
     public Image elementIcon;
     public ImageToFont healthText;
     public BarUI healthBar;
-    public BarUI bcBar;
+    public BarUI bcBbBar;
+    public BarUI bcSbbBar;
     public GameObject bbSlotAnimation;
     public GameObject bbBarAnimation;
+    public GameObject sbbSlotAnimation;
+    public GameObject sbbBarAnimation;
 
     public BattleManager battleManager;
 
@@ -98,31 +101,43 @@ public class UnitSlotUI : MonoBehaviour, IPointerDownHandler, IPointerUpHandler,
         healthBar.maxValue = unit.unitData.maxHealth + unit.inventoryData.hpLevelUpBonus + unit.inventoryData.hpImpBonus;
         healthBar.currentValue = unit.currentHealth;
         BarColor();
-        bcBar.maxValue = unit.unitData.bbAbility != null ? unit.unitData.bbAbility.levels[unit.inventoryData.currentBBLevel-1].bcCost : 1;
-        bcBar.currentValue = unit.bcCount;
+        bcBbBar.maxValue = unit.unitData.bbAbility != null ? unit.unitData.bbAbility.levels[unit.inventoryData.currentBBLevel-1].bcCost : 1;
+        bcBbBar.currentValue = unit.bcCount;
+        bcSbbBar.maxValue = unit.unitData.sbbAbility != null ? unit.unitData.sbbAbility.levels[unit.inventoryData.currentSBBLevel-1].bcCost - (unit.unitData.bbAbility != null ? unit.unitData.bbAbility.levels[unit.inventoryData.currentBBLevel-1].bcCost : 0) : 1;
+        bcSbbBar.currentValue = unit.bcCount - (unit.unitData.bbAbility != null ? unit.unitData.bbAbility.levels[unit.inventoryData.currentBBLevel-1].bcCost : 0);
+
         healthText.SetText($"{unit.currentHealth}/{unit.unitData.maxHealth + unit.inventoryData.hpLevelUpBonus + unit.inventoryData.hpImpBonus}");
 
         if(healthBar.currentValue != healthBar.maxValue)
             healthBar.UpdateUI();
 
-        if(bcBar.currentValue != bcBar.maxValue)
+        if(bcBbBar.currentValue != bcBbBar.maxValue)
         {
-            bcBar.UpdateUI();
+            bcBbBar.UpdateUI();
         }
         else
         {
             SoundManager.Instance.PlaySound(skillFullSound);
         }
             
-        if (bcBar.currentValue >= bcBar.maxValue)
+        if (bcBbBar.currentValue >= bcBbBar.maxValue)
         {
             bbBarAnimation.SetActive(true);
             bbSlotAnimation.SetActive(true);
+        }
+        else if (bcSbbBar.currentValue >= bcSbbBar.maxValue)
+        {
+            bbBarAnimation.SetActive(false);
+            bbSlotAnimation.SetActive(false);
+            sbbBarAnimation.SetActive(true);
+            sbbSlotAnimation.SetActive(true);
         }
         else
         {
             bbBarAnimation.SetActive(false);
             bbSlotAnimation.SetActive(false);
+            sbbBarAnimation.SetActive(false);
+            sbbSlotAnimation.SetActive(false);
         }
     }
 
@@ -150,7 +165,7 @@ public class UnitSlotUI : MonoBehaviour, IPointerDownHandler, IPointerUpHandler,
             overlay.sprite = deadOverlay;
             elementIcon.gameObject.SetActive(false);
             healthBar.gameObject.SetActive(false);
-            bcBar.gameObject.SetActive(false);
+            bcBbBar.gameObject.SetActive(false);
             healthText.gameObject.SetActive(false);
             unitNameText.gameObject.SetActive(false);
             unitIcon.gameObject.SetActive(false);
@@ -215,6 +230,12 @@ public class UnitSlotUI : MonoBehaviour, IPointerDownHandler, IPointerUpHandler,
         if(unit.bcCount >= unit.unitData.bbAbility.levels[unit.inventoryData.currentBBLevel-1].bcCost)
         {
             BattleUI.bbSlider.SetActive(true);
+            BattleUI.guardSlider.SetActive(false);
+        }
+        else if(unit.bcCount >= unit.unitData.sbbAbility.levels[unit.inventoryData.currentSBBLevel-1].bcCost)
+        {
+            BattleUI.bbSlider.SetActive(false);
+            BattleUI.sbbSlider.SetActive(true);
             BattleUI.guardSlider.SetActive(false);
         }
         else

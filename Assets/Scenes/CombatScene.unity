@@ -712,9 +712,12 @@ MonoBehaviour:
   elementIcon: {fileID: 1382612088}
   healthText: {fileID: 1023258036}
   healthBar: {fileID: 1898735434}
-  bcBar: {fileID: 1139354314}
+  bcBbBar: {fileID: 1139354314}
+  bcSbbBar: {fileID: 0}
   bbSlotAnimation: {fileID: 1214369651}
   bbBarAnimation: {fileID: 1816650878}
+  sbbSlotAnimation: {fileID: 0}
+  sbbBarAnimation: {fileID: 0}
   battleManager: {fileID: 0}
 --- !u!114 &67844988
 MonoBehaviour:
@@ -1281,7 +1284,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &116351020
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2780,6 +2783,114 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -137}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &243488288
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 243488289}
+  m_Layer: 5
+  m_Name: SBBSlider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &243488289
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243488288}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 257922183}
+  - {fileID: 1991534811}
+  m_Father: {fileID: 2084495277}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 33, y: 140}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &257922182
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 257922183}
+  - component: {fileID: 257922185}
+  - component: {fileID: 257922184}
+  m_Layer: 5
+  m_Name: SBBSliderAdd
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &257922183
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 257922182}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 243488289}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &257922184
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 257922182}
+  m_CullTransparentMesh: 1
+--- !u!114 &257922185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 257922182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 835a325ec04619e4bbaf23c5aeb22a10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jsonFile: {fileID: 4900000, guid: e0ca3de2197727941a8616aafa7a17fb, type: 3}
+  isEffect: 1
+  mainPath: Sams
+  effectPath: Effect_SAMS/sam
+  unitPath: Unit_SAMS/unit_sam
+  pivotOffset: {x: 0.5, y: 0.5}
+  defaultAnimation: loop
+  playOnStart: 1
+  loop: 1
+  playWhenTimeScaleIsZero: 1
+  isCachedInDatabase: 0
+  blendMaterial: {fileID: 0}
+  timeOffset: 0
+  graphicPool: []
 --- !u!1 &260891280
 GameObject:
   m_ObjectHideFlags: 0
@@ -7612,9 +7723,12 @@ MonoBehaviour:
   elementIcon: {fileID: 1439340152}
   healthText: {fileID: 575106132}
   healthBar: {fileID: 1915491580}
-  bcBar: {fileID: 1650872386}
+  bcBbBar: {fileID: 1650872386}
+  bcSbbBar: {fileID: 0}
   bbSlotAnimation: {fileID: 326635220}
   bbBarAnimation: {fileID: 649235643}
+  sbbSlotAnimation: {fileID: 0}
+  sbbBarAnimation: {fileID: 0}
   battleManager: {fileID: 0}
 --- !u!114 &702507296
 MonoBehaviour:
@@ -7781,7 +7895,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &723763057
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11776,7 +11890,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1060299459
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13032,9 +13146,12 @@ MonoBehaviour:
   elementIcon: {fileID: 1664457709}
   healthText: {fileID: 1554587142}
   healthBar: {fileID: 1711299695}
-  bcBar: {fileID: 1327326707}
+  bcBbBar: {fileID: 1327326707}
+  bcSbbBar: {fileID: 0}
   bbSlotAnimation: {fileID: 984738256}
   bbBarAnimation: {fileID: 1765863347}
+  sbbSlotAnimation: {fileID: 0}
+  sbbBarAnimation: {fileID: 0}
   battleManager: {fileID: 0}
 --- !u!114 &1185256348
 MonoBehaviour:
@@ -14662,6 +14779,7 @@ RectTransform:
   - {fileID: 401897106}
   - {fileID: 933332781}
   - {fileID: 723763057}
+  - {fileID: 2052844400}
   - {fileID: 222687290}
   - {fileID: 324090651}
   - {fileID: 956008194}
@@ -14720,9 +14838,12 @@ MonoBehaviour:
   elementIcon: {fileID: 1059097562}
   healthText: {fileID: 324090652}
   healthBar: {fileID: 2129784169}
-  bcBar: {fileID: 946431431}
+  bcBbBar: {fileID: 946431431}
+  bcSbbBar: {fileID: 0}
   bbSlotAnimation: {fileID: 723763056}
   bbBarAnimation: {fileID: 1670959393}
+  sbbSlotAnimation: {fileID: 0}
+  sbbBarAnimation: {fileID: 0}
   battleManager: {fileID: 0}
 --- !u!114 &1417970634
 MonoBehaviour:
@@ -17485,6 +17606,7 @@ MonoBehaviour:
   titleTextLayerHelper: {fileID: 2066669110}
   sliderHelper: {fileID: 2084495277}
   bbSliderHelper: {fileID: 1060299458}
+  sbbSliderHelper: {fileID: 0}
   guardSliderHelper: {fileID: 116351019}
   zelPointHelper: {fileID: 1125623766}
   karmaPointHelper: {fileID: 872253664}
@@ -19074,9 +19196,12 @@ MonoBehaviour:
   elementIcon: {fileID: 811840908}
   healthText: {fileID: 918410244}
   healthBar: {fileID: 388023421}
-  bcBar: {fileID: 864756175}
+  bcBbBar: {fileID: 864756175}
+  bcSbbBar: {fileID: 0}
   bbSlotAnimation: {fileID: 1087335633}
   bbBarAnimation: {fileID: 110307820}
+  sbbSlotAnimation: {fileID: 0}
+  sbbBarAnimation: {fileID: 0}
   battleManager: {fileID: 0}
 --- !u!224 &1810067601
 RectTransform:
@@ -19641,9 +19766,12 @@ MonoBehaviour:
   elementIcon: {fileID: 1313337544}
   healthText: {fileID: 30538333}
   healthBar: {fileID: 1747957404}
-  bcBar: {fileID: 1502901546}
+  bcBbBar: {fileID: 1502901546}
+  bcSbbBar: {fileID: 0}
   bbSlotAnimation: {fileID: 1029913649}
   bbBarAnimation: {fileID: 1139976770}
+  sbbSlotAnimation: {fileID: 0}
+  sbbBarAnimation: {fileID: 0}
   battleManager: {fileID: 0}
 --- !u!114 &1840822057
 MonoBehaviour:
@@ -21107,6 +21235,77 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1984362231}
   m_CullTransparentMesh: 1
+--- !u!1 &1991534810
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1991534811}
+  - component: {fileID: 1991534813}
+  - component: {fileID: 1991534812}
+  m_Layer: 5
+  m_Name: SBBSlider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1991534811
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1991534810}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 243488289}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &1991534812
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1991534810}
+  m_CullTransparentMesh: 1
+--- !u!114 &1991534813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1991534810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 835a325ec04619e4bbaf23c5aeb22a10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jsonFile: {fileID: 4900000, guid: c14eca6081d0a1443a609e23d6273413, type: 3}
+  isEffect: 1
+  mainPath: Sams
+  effectPath: Effect_SAMS/sam
+  unitPath: Unit_SAMS/unit_sam
+  pivotOffset: {x: 0.5, y: 0.5}
+  defaultAnimation: loop
+  playOnStart: 1
+  loop: 1
+  playWhenTimeScaleIsZero: 1
+  isCachedInDatabase: 0
+  blendMaterial: {fileID: 0}
+  timeOffset: 0
+  graphicPool: []
 --- !u!1 &1992407127
 GameObject:
   m_ObjectHideFlags: 0
@@ -21789,6 +21988,108 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2048611364}
   m_CullTransparentMesh: 1
+--- !u!1 &2052844399
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2052844400}
+  - component: {fileID: 2052844402}
+  - component: {fileID: 2052844401}
+  - component: {fileID: 2052844404}
+  m_Layer: 5
+  m_Name: SBBAnim
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2052844400
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052844399}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1417970631}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &2052844401
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052844399}
+  m_CullTransparentMesh: 1
+--- !u!114 &2052844402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052844399}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 835a325ec04619e4bbaf23c5aeb22a10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jsonFile: {fileID: 0}
+  isEffect: 1
+  mainPath: Sams
+  effectPath: Effect_SAMS/sam
+  unitPath: Unit_SAMS/unit_sam
+  pivotOffset: {x: 0.5, y: 0.5}
+  defaultAnimation: loop
+  playOnStart: 1
+  loop: 1
+  playWhenTimeScaleIsZero: 1
+  isCachedInDatabase: 0
+  blendMaterial: {fileID: 0}
+  timeOffset: 0
+  graphicPool: []
+--- !u!114 &2052844404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052844399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &2053042319
 GameObject:
   m_ObjectHideFlags: 0
@@ -22254,7 +22555,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2084495277
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22268,6 +22569,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1060299459}
+  - {fileID: 243488289}
   - {fileID: 116351020}
   m_Father: {fileID: 434761702}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

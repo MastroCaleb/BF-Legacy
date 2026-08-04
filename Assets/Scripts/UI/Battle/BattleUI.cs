@@ -30,6 +30,8 @@ public class BattleUI : MonoBehaviour
     public static RectTransform slider;
     public GameObject bbSliderHelper;
     public static GameObject bbSlider;
+    public GameObject sbbSliderHelper;
+    public static GameObject sbbSlider;
     public GameObject guardSliderHelper;
     public static GameObject guardSlider;
 
@@ -74,6 +76,7 @@ public class BattleUI : MonoBehaviour
 
         slider = sliderHelper;
         bbSlider = bbSliderHelper;
+        sbbSlider = sbbSliderHelper;
         guardSlider = guardSliderHelper;
 
         zelPoint = zelPointHelper;

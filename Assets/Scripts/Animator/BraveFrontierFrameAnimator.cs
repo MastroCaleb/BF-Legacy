@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class BraveFrontierFrameAnimator : MonoBehaviour
 {
     [Header("Rendering Settings")]
-    public bool isDebug = false;
+    public bool initOnStart = false;
     public Vector2 pivot = new Vector2(0.5f, 0.5f);
     public int scale = 1;
     public int pixelsPerUnit = 32;
@@ -101,7 +101,7 @@ public class BraveFrontierFrameAnimator : MonoBehaviour
 
     void Start()
     {
-        if (isDebug)
+        if (initOnStart)
         {
             InitializeAnimator();
         }

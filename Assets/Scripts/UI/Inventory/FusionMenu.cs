@@ -50,6 +50,7 @@ public class FusionMenu : MonoBehaviour
     {
         MainUI.unitFusion.SetActive(false);
         MainUI.unitList.SetActive(true);
+        
         InventoryRenderer.selectionMode = InventorySelectionMode.UnitFusionSelectBase;
     }
 

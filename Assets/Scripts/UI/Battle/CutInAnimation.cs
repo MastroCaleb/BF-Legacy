@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -54,21 +55,35 @@ public class CutInAnimation : MonoBehaviour
         //PlayCutIn();
     }
 
+    private Queue<(Sprite sprite, string skillName)> cutInQueue = new Queue<(Sprite, string)>();
+    private bool isProcessingQueue = false;
+
     public void PlayCutIn(Sprite illustrationSprite, string skillNameText)
     {
-        isPlaying = true;
-        cutInCharacter.sprite = illustrationSprite;
-        skillNameDisplay.GetComponentInChildren<TextMeshProUGUI>().text = skillNameText;
+        cutInQueue.Enqueue((illustrationSprite, skillNameText));
+        if (!isProcessingQueue)
+            StartCoroutine(ProcessCutInQueue());
+    }
 
-        Time.timeScale = 0f;
+    private IEnumerator ProcessCutInQueue()
+    {
+        isProcessingQueue = true;
 
-        if (cutInCoroutine != null)
+        while (cutInQueue.Count > 0)
         {
-            StopCoroutine(cutInCoroutine);
-            ResetCutInState();
+            var (sprite, skillName) = cutInQueue.Dequeue();
+
+            isPlaying = true;
+            cutInCharacter.sprite = sprite;
+            skillNameDisplay.GetComponentInChildren<TextMeshProUGUI>().text = skillName;
+
+            Time.timeScale = 0f;
+            cutInCoroutine = StartCoroutine(FullCutInRoutine());
+
+            yield return new WaitForSeconds(0.25f);
         }
 
-        cutInCoroutine = StartCoroutine(FullCutInRoutine());
+        isProcessingQueue = false;
     }
 
     void BackgroundAnimation()

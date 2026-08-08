@@ -25,6 +25,8 @@ public class AbilityDetailsUI : MonoBehaviour
     public TextMeshProUGUI exName;
     public TextMeshProUGUI exDesc;
 
+    public bool isBattle;
+
     //Not implemented
     public GameObject ex2Label;
     public TextMeshProUGUI ex2Name;
@@ -36,13 +38,13 @@ public class AbilityDetailsUI : MonoBehaviour
 
         if(unit.leaderAbility != null)
         {
-            lsLabel.SetActive(true);
+            lsLabel.SetActive(isBattle ? false : true);
             lsName.text = unit.leaderAbility.abilityName;
             lsDesc.text = unit.leaderAbility.abilityDesc;
         }
         else
         {
-            lsLabel.SetActive(true);
+            lsLabel.SetActive(isBattle ? false : true);
             lsName.text = "None";
             lsDesc.text = "";
         }
@@ -84,7 +86,7 @@ public class AbilityDetailsUI : MonoBehaviour
 
         if(unit.extraAbility != null)
         {
-            exLabel.SetActive(true);
+            exLabel.SetActive(isBattle ? false : true);
             exName.text = unit.extraAbility.abilityName;
             exDesc.text = unit.extraAbility.abilityDesc;
         }

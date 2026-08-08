@@ -14,6 +14,10 @@ public class CutInAnimation : MonoBehaviour
     public GameObject windEffect;
     public GameObject samEffect;
     public GameObject samEffectAdd;
+    //SBB
+    public GameObject samEffectSBB;
+    public GameObject samEffectAddSBB;
+
 
     [Header("Animation Settings")]
     //Background Animation Settings
@@ -47,6 +51,7 @@ public class CutInAnimation : MonoBehaviour
     public bool deactivateWindAfterFinish = true; // whether to deactivate after finish
     private Coroutine windCoroutine;
     public static bool isPlaying;
+    CutInType currentCutInType = CutInType.Normal;
 
 
     void Start()
@@ -55,12 +60,12 @@ public class CutInAnimation : MonoBehaviour
         //PlayCutIn();
     }
 
-    private Queue<(Sprite sprite, string skillName)> cutInQueue = new Queue<(Sprite, string)>();
+    private Queue<(Sprite sprite, string skillName, CutInType cutInType)> cutInQueue = new Queue<(Sprite, string, CutInType)>();
     private bool isProcessingQueue = false;
 
-    public void PlayCutIn(Sprite illustrationSprite, string skillNameText)
+    public void PlayCutIn(Sprite illustrationSprite, string skillNameText, CutInType cutInType)
     {
-        cutInQueue.Enqueue((illustrationSprite, skillNameText));
+        cutInQueue.Enqueue((illustrationSprite, skillNameText, cutInType));
         if (!isProcessingQueue)
             StartCoroutine(ProcessCutInQueue());
     }
@@ -71,10 +76,11 @@ public class CutInAnimation : MonoBehaviour
 
         while (cutInQueue.Count > 0)
         {
-            var (sprite, skillName) = cutInQueue.Dequeue();
+            var (sprite, skillName, cutInType) = cutInQueue.Dequeue();
 
             isPlaying = true;
             cutInCharacter.sprite = sprite;
+            currentCutInType = cutInType;
             skillNameDisplay.GetComponentInChildren<TextMeshProUGUI>().text = skillName;
 
             Time.timeScale = 0f;
@@ -440,6 +446,12 @@ public class CutInAnimation : MonoBehaviour
         if (samEffectAdd != null)
             samEffectAdd.SetActive(false);
 
+        if (samEffectSBB != null)
+            samEffectSBB.SetActive(false);
+
+        if (samEffectAddSBB != null)
+            samEffectAddSBB.SetActive(false);
+
         if (windCoroutine != null)
         {
             StopCoroutine(windCoroutine);
@@ -465,16 +477,32 @@ public class CutInAnimation : MonoBehaviour
         if (cutInBackground != null) cutInBackground.gameObject.SetActive(true);
         if (cutInCharacter != null) cutInCharacter.gameObject.SetActive(true);
         if (skillNameDisplay != null) skillNameDisplay.gameObject.SetActive(true);
-        if (samEffect != null) samEffect.SetActive(true);
-        if (samEffectAdd != null) samEffectAdd.SetActive(true);
 
-        samEffect.GetComponent<SamAnimator>()?.InitializeAnimator();
-        samEffectAdd.GetComponent<SamAnimator>()?.InitializeAnimator();
+        if(currentCutInType == CutInType.Normal)
+        {
+            if (samEffect != null) samEffect.SetActive(true);
+            if (samEffectAdd != null) samEffectAdd.SetActive(true);
+            
+            samEffect.GetComponent<SamAnimator>()?.InitializeAnimator();
+            samEffectAdd.GetComponent<SamAnimator>()?.InitializeAnimator();
 
-        samEffect.GetComponent<SamAnimator>()?.SetAnimation("start", false);
-        samEffectAdd.GetComponent<SamAnimator>()?.SetAnimation("start", false);
+            samEffect.GetComponent<SamAnimator>()?.SetAnimation("start", false);
+            samEffectAdd.GetComponent<SamAnimator>()?.SetAnimation("start", false);
+        }
+        else if(currentCutInType == CutInType.SBB)
+        {
+            if (samEffectSBB != null) samEffectSBB.SetActive(true);
+            if (samEffectAddSBB != null) samEffectAddSBB.SetActive(true);
+
+            samEffectSBB.GetComponent<SamAnimator>()?.InitializeAnimator();
+            samEffectAddSBB.GetComponent<SamAnimator>()?.InitializeAnimator();
+
+            samEffectSBB.GetComponent<SamAnimator>()?.SetAnimation("start", false);
+            samEffectAddSBB.GetComponent<SamAnimator>()?.SetAnimation("start", false);
+        }
 
         windEffect.GetComponent<WindParticlePlacer>()?.CreateWind();
+
         // Reset states
         SetBackgroundAlpha(0f);
         if (cutInCharacter != null)
@@ -512,4 +540,9 @@ public class CutInAnimation : MonoBehaviour
         isPlaying = false;
     }
     
+}
+public enum CutInType
+{
+    Normal,
+    SBB
 }

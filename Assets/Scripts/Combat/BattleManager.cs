@@ -557,30 +557,28 @@ public class BattleManager : MonoBehaviour
         if (unitsThatActed.Count == unitsThatMustAct.Count) EndManualPlayerTurn();
     }
 
-    public void PlayerSlideCommand(UnitBehaviour unit, Vector2 slideDirection, Ability abilityToUse)
+    public void PlayerSlideCommand(UnitBehaviour unit, Vector2 slideDirection, Ability abilityToUse, CutInType cutInType)
     {
         if (unitsThatActed.Contains(unit) || unit.currentState == UnitState.Attacking) return;
         if (slideDirection.y >= 0f)
         {
-            Ability ability = abilityToUse ?? unit.GetBBAbilityToUse();
             var pool = selectedEnemyUnit != null && selectedEnemyUnit.currentState != UnitState.Dead
                 ? new List<UnitBehaviour> { selectedEnemyUnit }
                 : enemyTeam.units.FindAll(u => u.currentState != UnitState.Dead);
 
-            var targets = GetTargets(pool, unit, ability);
+            var targets = GetTargets(pool, unit, abilityToUse);
 
-            if (!unit.isEnemyUnit) cutInAnimator.PlayCutIn(unit.unitData.unitFullArt, ability.abilityName);
+            if (!unit.isEnemyUnit) cutInAnimator.PlayCutIn(unit.unitData.unitFullArt, abilityToUse.abilityName, cutInType);
 
-            if (IsAttackAbility(ability)) StartCoroutine(UnitAttackAndCheckCoroutine(unit, ability, targets));
-            else unit.UseAbility(ability, targets);
+            if (IsAttackAbility(abilityToUse)) StartCoroutine(UnitAttackAndCheckCoroutine(unit, abilityToUse, targets));
+            else unit.UseAbility(abilityToUse, targets);
 
             unitsThatActed.Add(unit);
             unit.unitSlotUI.canBeClicked = false;
             if (unitsThatActed.Count == unitsThatMustAct.Count) EndManualPlayerTurn();
         }
     }
-
-    // Wrapper che chiama UnitAttackCoroutine e poi controlla se i nemici sono tutti morti
+    
     private IEnumerator UnitAttackAndCheckCoroutine(UnitBehaviour unit, Ability ability, List<UnitBehaviour> targets)
     {
         yield return StartCoroutine(UnitAttackCoroutine(unit, ability, targets));

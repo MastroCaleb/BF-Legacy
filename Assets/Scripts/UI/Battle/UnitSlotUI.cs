@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System.Collections;
+using System;
 
 public class UnitSlotUI : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDragHandler
 {
@@ -103,8 +104,9 @@ public class UnitSlotUI : MonoBehaviour, IPointerDownHandler, IPointerUpHandler,
         BarColor();
         bcBbBar.maxValue = unit.unitData.bbAbility != null ? unit.unitData.bbAbility.levels[unit.inventoryData.currentBBLevel-1].bcCost : 1;
         bcBbBar.currentValue = unit.bcCount;
-        bcSbbBar.maxValue = unit.unitData.sbbAbility != null ? unit.unitData.sbbAbility.levels[unit.inventoryData.currentSBBLevel-1].bcCost - (unit.unitData.bbAbility != null ? unit.unitData.bbAbility.levels[unit.inventoryData.currentBBLevel-1].bcCost : 0) : 1;
-        bcSbbBar.currentValue = unit.bcCount - (unit.unitData.bbAbility != null ? unit.unitData.bbAbility.levels[unit.inventoryData.currentBBLevel-1].bcCost : 0);
+        
+        bcSbbBar.maxValue = unit.unitData.sbbAbility != null ? unit.unitData.sbbAbility.levels[unit.inventoryData.currentSBBLevel-1].bcCost : 1;
+        bcSbbBar.currentValue = Math.Max(0, unit.bcCount - (unit.unitData.bbAbility != null ? unit.unitData.bbAbility.levels[unit.inventoryData.currentBBLevel-1].bcCost : 0));
 
         healthText.SetText($"{unit.currentHealth}/{unit.unitData.maxHealth + unit.inventoryData.hpLevelUpBonus + unit.inventoryData.hpImpBonus}");
 
@@ -119,23 +121,49 @@ public class UnitSlotUI : MonoBehaviour, IPointerDownHandler, IPointerUpHandler,
         {
             SoundManager.Instance.PlaySound(skillFullSound);
         }
-            
-        if (bcBbBar.currentValue >= bcBbBar.maxValue)
+
+        if(bcSbbBar.currentValue != bcSbbBar.maxValue)
+        {
+            bcSbbBar.UpdateUI();
+        }
+        else
+        {
+            SoundManager.Instance.PlaySound(skillFullSound);
+        }
+                
+        bool hasBB = unit.unitData.bbAbility != null;
+        bool hasSBB = unit.unitData.sbbAbility != null;
+        int bbCost = hasBB ? unit.unitData.bbAbility.levels[unit.inventoryData.currentBBLevel - 1].bcCost : 0;
+
+        bool bbReady  = hasBB && unit.bcCount >= bbCost;          // BC passed the BB threshold
+        bool sbbReady = hasSBB && bcSbbBar.currentValue >= bcSbbBar.maxValue; // BC passed the SBB threshold
+
+        // Swap to the SBB bar as soon as BB is charged, if the unit even has an SBB
+        bool showSbbBar = bbReady && hasSBB;
+        bcSbbBar.gameObject.SetActive(showSbbBar);
+
+    
+        if (bbReady)
         {
             bbBarAnimation.SetActive(true);
             bbSlotAnimation.SetActive(true);
-        }
-        else if (bcSbbBar.currentValue >= bcSbbBar.maxValue)
-        {
-            bbBarAnimation.SetActive(false);
-            bbSlotAnimation.SetActive(false);
-            sbbBarAnimation.SetActive(true);
-            sbbSlotAnimation.SetActive(true);
         }
         else
         {
             bbBarAnimation.SetActive(false);
             bbSlotAnimation.SetActive(false);
+        }
+
+        // SBB glow: only once the SBB bar itself is actually full
+        if (sbbReady)
+        {
+            sbbBarAnimation.SetActive(true);
+            sbbSlotAnimation.SetActive(true);
+            bbBarAnimation.SetActive(false);
+            bbSlotAnimation.SetActive(false);
+        }
+        else
+        {
             sbbBarAnimation.SetActive(false);
             sbbSlotAnimation.SetActive(false);
         }
@@ -166,6 +194,7 @@ public class UnitSlotUI : MonoBehaviour, IPointerDownHandler, IPointerUpHandler,
             elementIcon.gameObject.SetActive(false);
             healthBar.gameObject.SetActive(false);
             bcBbBar.gameObject.SetActive(false);
+            bcSbbBar.gameObject.SetActive(false);
             healthText.gameObject.SetActive(false);
             unitNameText.gameObject.SetActive(false);
             unitIcon.gameObject.SetActive(false);
@@ -227,12 +256,21 @@ public class UnitSlotUI : MonoBehaviour, IPointerDownHandler, IPointerUpHandler,
 
         // set anchoredPosition (local UI coordinates)
         BattleUI.slider.anchoredPosition = localPoint;
-        if(unit.bcCount >= unit.unitData.bbAbility.levels[unit.inventoryData.currentBBLevel-1].bcCost)
+
+        bool hasBB = unit.unitData.bbAbility != null;
+        bool hasSBB = unit.unitData.sbbAbility != null;
+        int bbCost = hasBB ? unit.unitData.bbAbility.levels[unit.inventoryData.currentBBLevel - 1].bcCost : 0;
+
+        bool bbReady  = hasBB && unit.bcCount >= bbCost;          // BC passed the BB threshold
+        bool sbbReady = hasSBB && bcSbbBar.currentValue >= bcSbbBar.maxValue; // BC passed the SBB threshold
+
+        if(bbReady && !sbbReady)
         {
             BattleUI.bbSlider.SetActive(true);
+            BattleUI.sbbSlider.SetActive(false);
             BattleUI.guardSlider.SetActive(false);
         }
-        else if(unit.bcCount >= unit.unitData.sbbAbility.levels[unit.inventoryData.currentSBBLevel-1].bcCost)
+        else if(sbbReady)
         {
             BattleUI.bbSlider.SetActive(false);
             BattleUI.sbbSlider.SetActive(true);
@@ -241,6 +279,7 @@ public class UnitSlotUI : MonoBehaviour, IPointerDownHandler, IPointerUpHandler,
         else
         {
             BattleUI.bbSlider.SetActive(false);
+            BattleUI.sbbSlider.SetActive(false);
             BattleUI.guardSlider.SetActive(true);
         }
         BattleUI.slider.gameObject.SetActive(true);
@@ -294,10 +333,10 @@ public class UnitSlotUI : MonoBehaviour, IPointerDownHandler, IPointerUpHandler,
                 SoundManager.Instance.PlaySound(bbSound);
                 actionCompleted = true; // prevent normal click from happening after this
                 canBeClicked = false;
-                battleManager.PlayerSlideCommand(unit, direction, unit.unitData.bbAbility);
+                battleManager.PlayerSlideCommand(unit, direction, unit.unitData.bbAbility, CutInType.Normal);
             }
         }
-        else if (direction == Vector2.right)
+        else if (direction == Vector2.right && unit.unitData.sbbAbility != null)
         {
             // Double-check BC and state before executing special
             if (unit.bcCount >= unit.unitData.sbbAbility.levels[unit.inventoryData.currentSBBLevel-1].bcCost && unit.currentState == UnitState.Idle && canBeClicked)
@@ -305,10 +344,10 @@ public class UnitSlotUI : MonoBehaviour, IPointerDownHandler, IPointerUpHandler,
                 SoundManager.Instance.PlaySound(bbSound);
                 actionCompleted = true; // prevent normal click from happening after this
                 canBeClicked = false;
-                battleManager.PlayerSlideCommand(unit, direction, unit.unitData.sbbAbility);
+                battleManager.PlayerSlideCommand(unit, direction, unit.unitData.sbbAbility, CutInType.SBB);
             }
         }
-        else if (direction == Vector2.left)
+        else if (direction == Vector2.left && unit.unitData.ubbAbility != null)
         {
             if(!unit.isInOverdrive && BattleManager.ubbCount == BattleManager.ubbCurrentMaxGauge && unit.currentState == UnitState.Idle && canBeClicked)
             {
@@ -322,7 +361,7 @@ public class UnitSlotUI : MonoBehaviour, IPointerDownHandler, IPointerUpHandler,
                 SoundManager.Instance.PlaySound(bbSound);
                 actionCompleted = true; // prevent normal click from happening after this
                 canBeClicked = false;
-                battleManager.PlayerSlideCommand(unit, direction, unit.unitData.ubbAbility);
+                battleManager.PlayerSlideCommand(unit, direction, unit.unitData.ubbAbility, CutInType.Normal);
             }
         }
         else if(direction == Vector2.down)
@@ -381,8 +420,8 @@ public class UnitSlotUI : MonoBehaviour, IPointerDownHandler, IPointerUpHandler,
         while (elapsed < duration)
         {
             elapsed += Time.deltaTime;
-            float x = originalIconPosition.x + Random.Range(-strength, strength);
-            float y = originalIconPosition.y + Random.Range(-strength, strength);
+            float x = originalIconPosition.x + UnityEngine.Random.Range(-strength, strength);
+            float y = originalIconPosition.y + UnityEngine.Random.Range(-strength, strength);
             unitIcon.rectTransform.anchoredPosition = new Vector2(x, y);
             yield return null;
         }

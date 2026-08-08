@@ -215,27 +215,23 @@ public class UnitBehaviour : MonoBehaviour
 
     public Ability GetAbilityToUse(CutInAnimation cutInAnimator)
     {
-
         int level = inventoryData.currentBBLevel-1;
 
         if (unitData.bbAbility != null && unitData.bbAbility.abilityName != "Unnamed" && bcCount >= unitData.bbAbility.levels[level].bcCost)
         {
-            if (!isEnemyUnit) cutInAnimator.PlayCutIn(unitData.unitFullArt, unitData.bbAbility.abilityName);
-            bcCount = 0;
+            if (!isEnemyUnit) cutInAnimator.PlayCutIn(unitData.unitFullArt, unitData.bbAbility.abilityName, CutInType.Normal);
             SoundManager.Instance.PlaySound(skillAction);
             return unitData.bbAbility;
         }
-        if (unitData.sbbAbility != null && unitData.sbbAbility.abilityName != "Unnamed" && bcCount >= unitData.sbbAbility.levels[level].bcCost)
+        if (unitData.sbbAbility != null && unitData.sbbAbility.abilityName != "Unnamed" && bcCount >= (unitData.bbAbility != null ? unitData.bbAbility.levels[inventoryData.currentBBLevel - 1].bcCost : 0) + unitData.sbbAbility.levels[inventoryData.currentSBBLevel - 1].bcCost)
         {
-            if (!isEnemyUnit) cutInAnimator.PlayCutIn(unitData.unitFullArt, unitData.sbbAbility.abilityName);
-            bcCount = 0;
+            if (!isEnemyUnit) cutInAnimator.PlayCutIn(unitData.unitFullArt, unitData.sbbAbility.abilityName, CutInType.SBB);
             SoundManager.Instance.PlaySound(skillAction);
             return unitData.sbbAbility;
         }
-        if (unitData.ubbAbility != null && unitData.ubbAbility.abilityName != "Unnamed" && bcCount >= unitData.ubbAbility.levels[0].bcCost)
+        if (unitData.ubbAbility != null && isInOverdrive && unitData.ubbAbility.abilityName != "Unnamed" && bcCount >= unitData.ubbAbility.levels[0].bcCost)
         {
-            if (!isEnemyUnit) cutInAnimator.PlayCutIn(unitData.unitFullArt, unitData.ubbAbility.abilityName);
-            bcCount = 0;
+            if (!isEnemyUnit) cutInAnimator.PlayCutIn(unitData.unitFullArt, unitData.ubbAbility.abilityName, CutInType.Normal);
             SoundManager.Instance.PlaySound(skillAction);
             return unitData.ubbAbility;
         }
@@ -245,12 +241,12 @@ public class UnitBehaviour : MonoBehaviour
 
     public Ability GetBaseAbility() => unitData.basicAbility;
 
-    public Ability GetBBAbilityToUse()
+    public (Ability, CutInType) GetBBAbilityToUse()
     {
-        if (unitData.bbAbility  != null && unitData.bbAbility.abilityName != "Unnamed" && bcCount >= unitData.bbAbility.levels[0].bcCost)  { bcCount = 0; return unitData.bbAbility; }
-        if (unitData.sbbAbility != null && unitData.sbbAbility.abilityName != "Unnamed" && bcCount >= unitData.sbbAbility.levels[0].bcCost) { bcCount = 0; return unitData.sbbAbility; }
-        if (unitData.ubbAbility != null && unitData.ubbAbility.abilityName != "Unnamed" && bcCount >= unitData.ubbAbility.levels[0].bcCost) { bcCount = 0; return unitData.ubbAbility; }
-        return unitData.basicAbility;
+        if (unitData.bbAbility  != null && unitData.bbAbility.abilityName != "Unnamed" && bcCount >= unitData.bbAbility.levels[inventoryData.currentBBLevel - 1].bcCost)return (unitData.bbAbility, CutInType.Normal); 
+        if (unitData.sbbAbility != null && unitData.sbbAbility.abilityName != "Unnamed" && bcCount >= unitData.sbbAbility.levels[inventoryData.currentSBBLevel - 1].bcCost)return (unitData.sbbAbility, CutInType.SBB);
+        if (unitData.ubbAbility != null && unitData.ubbAbility.abilityName != "Unnamed" && bcCount >= unitData.ubbAbility.levels[0].bcCost) return (unitData.ubbAbility, CutInType.Normal);
+        return (unitData.basicAbility, CutInType.Normal);
     }
 
     public List<Action> GetEnemyActions()
@@ -290,7 +286,10 @@ public class UnitBehaviour : MonoBehaviour
         if(ability.abilityName.Contains("Normal Attack"))
         {
             foreach (var t in targets) StartCoroutine(AttackAtHitFrames(ability, t));
+            return;
         }
+
+        if (ability == unitData.bbAbility || ability == unitData.sbbAbility || ability == unitData.ubbAbility) bcCount = 0;
 
         if (ability?.levels[0]?.effects == null)
         {
@@ -1943,7 +1942,7 @@ public class UnitBehaviour : MonoBehaviour
 
     public void TakeDamage(int damage, bool isCritical, int hitNum, UnitBehaviour attacker)
     {
-        if(!isEnemyUnit) StartCoroutine(unitSlotUI.ShakeIcon(0.5f, 2f));
+        if(!isEnemyUnit) StartCoroutine(unitSlotUI.ShakeIcon(0.5f, 3f));
 
         int effectiveDamage = Mathf.Max(damage, 1);
 

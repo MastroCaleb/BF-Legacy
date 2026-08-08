@@ -89,7 +89,7 @@ public class DropMoveManager : MonoBehaviour
             UnitBehaviour targetUnit = d.unit;
             if(targetUnit.unitData.bbAbility != null) targetUnit.bcCount += 1;
             SoundManager.Instance.PlaySound(bcSound);
-            if (!targetUnit.isEnemyUnit || !(targetUnit.bcCount >= (targetUnit.unitData.bbAbility != null ? targetUnit.unitData.bbAbility.levels[targetUnit.inventoryData.currentBBLevel].bcCost : 0)))
+            if (!targetUnit.isEnemyUnit)
                 targetUnit.unitSlotUI.UpdateUI();
         }
         else if (d.type == DropType.HC && d.target != null)

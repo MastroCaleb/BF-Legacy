@@ -417,7 +417,7 @@ public class RewardsMenuUI : MonoBehaviour
             MainUI.header.SetActive(false);
             MainUI.extensionLow.SetActive(false);
             MainUI.newSummonUnitUI.gameObject.SetActive(true);
-            MainUI.newSummonUnitUI.Play(PlayerUnitInventoryDatabase.GetUnitByKey(PlayerUnitInventoryDatabase._nextKey-(BattleManager.unitDrops.Count - index)), new List<GameObject>() { MainUI.rewardsScreen}, new List<GameObject>() { MainUI.header, MainUI.extensionLow }, null);
+            MainUI.newSummonUnitUI.Play(PlayerUnitInventoryDatabase.GetUnitByKey(PlayerUnitInventoryDatabase._nextKey-(BattleManager.unitDrops.Count - index)), new List<GameObject>() { MainUI.rewardsScreen}, new List<GameObject>() { MainUI.header, MainUI.extensionLow, MainUI.extensionUp}, null);
 
             yield return new WaitUntil(() => MainUI.rewardsScreen.activeInHierarchy);
         }

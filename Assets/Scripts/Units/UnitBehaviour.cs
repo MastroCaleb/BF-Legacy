@@ -108,7 +108,7 @@ public class UnitBehaviour : MonoBehaviour
     {
         if (unitData != null)
         {
-            currentHealth = isEnemyUnit ? enemyData.health : unitData.maxHealth + inventoryData.hpLevelUpBonus + inventoryData.hpImpBonus;
+            currentHealth = isEnemyUnit ? enemyData.health == 0 ? unitData.maxHealth : enemyData.health : unitData.maxHealth + inventoryData.hpLevelUpBonus + inventoryData.hpImpBonus;
             ComposeUnit();
         }
         else
@@ -122,7 +122,7 @@ public class UnitBehaviour : MonoBehaviour
     {
         if (unitSlotUI != null && !isEnemyUnit && checkSlotUI)
         {
-            currentHealth = isEnemyUnit ? enemyData.health : unitData.maxHealth + inventoryData.hpLevelUpBonus + inventoryData.hpImpBonus;
+            currentHealth = unitData.maxHealth + inventoryData.hpLevelUpBonus + inventoryData.hpImpBonus;
             unitSlotUI.UpdateUI();
             checkSlotUI = false;
         }
@@ -170,7 +170,7 @@ public class UnitBehaviour : MonoBehaviour
             animatorSAM.InitializeAnimator();
         }
 
-        currentHealth = isEnemyUnit ? enemyData.health : unitData.maxHealth + inventoryData.hpLevelUpBonus + inventoryData.hpImpBonus;
+        currentHealth = isEnemyUnit ? enemyData.health == 0 ? unitData.maxHealth : enemyData.health : unitData.maxHealth + inventoryData.hpLevelUpBonus + inventoryData.hpImpBonus;
 
         SetupClickZone();
 

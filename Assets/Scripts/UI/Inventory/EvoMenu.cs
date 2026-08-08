@@ -89,10 +89,26 @@ public class EvoMenu : MonoBehaviour
         Unit baseUnitData = PlayerUnitInventoryDatabase.GetUnitByKey(baseUnitKey).unit;
         List<Unit> materialUnitsData = new List<Unit>();
 
-        foreach(string unitId in baseUnitData.evoMats)
+        // Track how many copies of each ID we've already claimed in this loop,
+        // so duplicate-ID mats (e.g. 2x of the same fodder) each get a distinct owned copy.
+        Dictionary<string, int> usedIndex = new Dictionary<string, int>();
+
+        foreach (string unitId in baseUnitData.evoMats)
         {
-           int key = PlayerUnitInventoryDatabase.GetUnitKeyWithId(unitId);
-           materialUnitsData.Add(PlayerUnitInventoryDatabase.GetUnitByKey(key).unit);
+            List<int> keys = PlayerUnitInventoryDatabase.GetAllUnitKeysWithId(unitId);
+
+            if (!usedIndex.ContainsKey(unitId))
+                usedIndex[unitId] = 0;
+
+            int idx = usedIndex[unitId]++;
+
+            if (keys == null || idx >= keys.Count)
+            {
+                Debug.LogWarning($"[EvoAnimation] No available copy #{idx} of material unit {unitId}.");
+                continue;
+            }
+
+            materialUnitsData.Add(PlayerUnitInventoryDatabase.GetUnitByKey(keys[idx]).unit);
         }
 
         StartCoroutine(MainUI.evoCircleSam.GetComponent<CircleAnimation>().Play(baseUnitKey, materialUnitsData, true, isNew));
@@ -101,17 +117,26 @@ public class EvoMenu : MonoBehaviour
     public static void UnitRenderersUpdate()
     {
         Unit baseUnit = PlayerUnitInventoryDatabase.GetUnitByKey(baseUnitKey).unit;
-        Unit evoUnit = UnitRegistry.GetUnitById(PlayerUnitInventoryDatabase.GetUnitByKey(baseUnitKey).unit.evoInto);
+        string evoIntoId = baseUnit.evoInto;
+        Unit evoUnit = string.IsNullOrEmpty(evoIntoId) ? null : UnitRegistry.GetUnitById(evoIntoId);
 
         baseUnitRenderer.SetUnit(baseUnit, false);
-        evoUnitRenderer.SetUnit(evoUnit, false);
 
-        ObscureUnknownEvolution(evoUnit);
+        if (evoUnit != null)
+        {
+            evoUnitRenderer.SetUnit(evoUnit, false);
+            ObscureUnknownEvolution(evoUnit);
+        }
+        else
+        {
+            evoUnitRenderer.ClearUnit();
+        }
     }
 
     public static void ObscureUnknownEvolution(Unit unit)
     {
-        if(PlayerData.unitDex.Contains(unit.unitId)) return;
+        if (unit == null) return; 
+        if (PlayerData.unitDex.Contains(unit.unitId)) return;
 
         if (unit.animationType == AnimationType.CGG)
             evoUnitRenderer.GetComponent<Image>().color = Color.black;

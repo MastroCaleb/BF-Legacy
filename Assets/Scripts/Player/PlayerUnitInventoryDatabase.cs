@@ -171,6 +171,17 @@ public static class PlayerUnitInventoryDatabase
         return units;
     }
 
+    public static List<int> GetAllUnitKeysWithId(string unitId)
+    {
+        List<int> units = new List<int>();
+        foreach (var kvp in playerUnits)
+        {
+            if (kvp.Value.unit.unitId == unitId)
+                units.Add(kvp.Key);
+        }
+        return units;
+    }
+
     public static int GetUnitCountWithId(string unitId)
     {
         int count = 0;

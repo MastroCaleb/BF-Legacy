@@ -115,9 +115,16 @@ public static class MissionParser
     /// <summary>
     /// Parses all battle JSON files in jsonFolder and saves Mission assets to outputFolder.
     /// If missions.json exists in jsonFolder, its metadata is merged in automatically.
-    /// Also creates DungeonLevel assets grouped by the "dungeon" field in missions.json.
+    /// Also creates/updates DungeonLevel assets grouped by the "dungeon" field in missions.json.
     /// </summary>
-    public static void ParseAndSaveAll(string jsonFolder, string outputFolder)
+    /// <param name="onlyOverwriteZeroBattleExisting">
+    /// When true: if a Mission asset already exists on disk at the target path AND it already
+    /// has 1+ battle rounds (meaning it was properly imported before, and may since have been
+    /// hand-modified in the inspector), it is left completely untouched. Assets that don't
+    /// exist yet, or exist but still have 0 rounds (never properly imported), are written/overwritten
+    /// as normal. When false, every asset is always overwritten (the old, unprotected behavior).
+    /// </param>
+    public static void ParseAndSaveAll(string jsonFolder, string outputFolder, bool onlyOverwriteZeroBattleExisting = false)
     {
         if (!Directory.Exists(jsonFolder))
         {
@@ -133,7 +140,9 @@ public static class MissionParser
             Directory.CreateDirectory(outputFolder);
 
         string[] files = Directory.GetFiles(jsonFolder, "*.json");
-        int saved = 0;
+        int created = 0;
+        int updated = 0;
+        int skipped = 0;
 
         foreach (string filePath in files)
         {
@@ -149,15 +158,19 @@ public static class MissionParser
                 string safeName  = SanitizeFileName(mission.missionName);
                 string assetPath = $"{outputFolder}/{safeName}.asset";
 
-                AssetDatabase.CreateAsset(mission, assetPath);
-                saved++;
-                Debug.Log($"[MissionParser] Saved: {assetPath}");
+                SaveOrUpdateResult result = SaveOrUpdateMissionAsset(mission, assetPath, onlyOverwriteZeroBattleExisting);
+                switch (result)
+                {
+                    case SaveOrUpdateResult.Created: created++; break;
+                    case SaveOrUpdateResult.Updated: updated++; break;
+                    case SaveOrUpdateResult.Skipped: skipped++; break;
+                }
             }
         }
 
         AssetDatabase.SaveAssets();
         AssetDatabase.Refresh();
-        Debug.Log($"[MissionParser] Done — {saved} Mission asset(s) created.");
+        Debug.Log($"[MissionParser] Done — {created} created, {updated} updated, {skipped} skipped (already had battle data).");
 
         BuildAndSaveDungeonLevels(outputFolder);
     }
@@ -165,38 +178,82 @@ public static class MissionParser
     /// <summary>
     /// Saves one Mission asset per entry in missions.json, with no battle/round data.
     /// Useful when battle JSON files are not yet available.
-    /// Also creates DungeonLevel assets grouped by the "dungeon" field in missions.json.
+    /// Also creates/updates DungeonLevel assets grouped by the "dungeon" field in missions.json.
     /// </summary>
-    public static void ParseAndSaveAllMetadataOnly(string metadataJsonPath, string outputFolder)
+    /// <param name="onlyOverwriteZeroBattleExisting">See ParseAndSaveAll for behavior.</param>
+    public static void ParseAndSaveAllMetadataOnly(string metadataJsonPath, string outputFolder, bool onlyOverwriteZeroBattleExisting = false)
     {
         List<Mission> missions = ParseMetadataOnly(metadataJsonPath);
 
         if (!Directory.Exists(outputFolder))
             Directory.CreateDirectory(outputFolder);
 
-        int saved = 0;
+        int created = 0;
+        int updated = 0;
+        int skipped = 0;
 
         foreach (Mission mission in missions)
         {
             string safeName  = SanitizeFileName(mission.missionName);
             string assetPath = $"{outputFolder}/{safeName}.asset";
 
-            AssetDatabase.CreateAsset(mission, assetPath);
-            saved++;
-            Debug.Log($"[MissionParser] Saved: {assetPath}");
+            SaveOrUpdateResult result = SaveOrUpdateMissionAsset(mission, assetPath, onlyOverwriteZeroBattleExisting);
+            switch (result)
+            {
+                case SaveOrUpdateResult.Created: created++; break;
+                case SaveOrUpdateResult.Updated: updated++; break;
+                case SaveOrUpdateResult.Skipped: skipped++; break;
+            }
         }
 
         AssetDatabase.SaveAssets();
         AssetDatabase.Refresh();
-        Debug.Log($"[MissionParser] Done — {saved} metadata-only Mission asset(s) created.");
+        Debug.Log($"[MissionParser] Done — {created} created, {updated} updated, {skipped} skipped (already had battle data).");
 
         BuildAndSaveDungeonLevels(outputFolder);
+    }
+
+    private enum SaveOrUpdateResult { Created, Updated, Skipped }
+
+    /// <summary>
+    /// Writes a freshly-parsed Mission into the asset at assetPath.
+    /// - No asset there yet -> creates it.
+    /// - Asset exists but has 0 battle rounds (never properly imported) -> overwrites it in place.
+    /// - Asset exists and already has 1+ battle rounds -> left untouched if onlyOverwriteZeroBattleExisting is true.
+    /// </summary>
+    private static SaveOrUpdateResult SaveOrUpdateMissionAsset(Mission mission, string assetPath, bool onlyOverwriteZeroBattleExisting)
+    {
+        Mission existing = AssetDatabase.LoadAssetAtPath<Mission>(assetPath);
+
+        if (existing == null)
+        {
+            AssetDatabase.CreateAsset(mission, assetPath);
+            Debug.Log($"[MissionParser] Created: {assetPath}");
+            return SaveOrUpdateResult.Created;
+        }
+
+        bool existingHasBattles = existing.rounds != null && existing.rounds.Count > 0;
+        if (onlyOverwriteZeroBattleExisting && existingHasBattles)
+        {
+            Debug.Log($"[MissionParser] Skipped '{mission.missionName}' — existing asset already has {existing.rounds.Count} battle round(s).");
+            return SaveOrUpdateResult.Skipped;
+        }
+
+        // Overwrite the existing asset's data in place (keeps the same file/GUID, so references stay intact).
+        EditorUtility.CopySerialized(mission, existing);
+        EditorUtility.SetDirty(existing);
+        Debug.Log($"[MissionParser] Updated: {assetPath}");
+        return SaveOrUpdateResult.Updated;
     }
 
     /// <summary>
     /// Reads _metadataById to group missions by dungeon name, then creates one
     /// DungeonLevel asset per dungeon with missions sorted by numeric id (ascending).
     /// Must be called after Mission assets are already saved to outputFolder.
+    ///
+    /// If a DungeonLevel asset already exists at the target path, it is loaded and only its
+    /// levelName/missions are updated — bg, backGroundSams, foreGroundSams, and bgm are left
+    /// exactly as they were (never reset to null/empty).
     /// </summary>
     private static void BuildAndSaveDungeonLevels(string outputFolder)
     {
@@ -226,19 +283,33 @@ public static class MissionParser
         if (!Directory.Exists(dungeonFolder))
             Directory.CreateDirectory(dungeonFolder);
 
-        int saved = 0;
+        int created = 0;
+        int updated = 0;
 
         foreach (var kvp in dungeonToIds)
         {
             string dungeonName = kvp.Key;
             kvp.Value.Sort(); // ascending numeric id order
 
-            DungeonLevel level       = ScriptableObject.CreateInstance<DungeonLevel>();
-            level.name               = dungeonName;
-            level.levelName          = dungeonName;
-            level.missions           = new List<Mission>();
-            level.backGroundSams     = new List<TextAsset>();
-            level.foreGroundSams     = new List<TextAsset>();
+            string levelPath = $"{dungeonFolder}/{SanitizeFileName(dungeonName)}.asset";
+
+            // Try to reuse an existing asset so bg/backGroundSams/foreGroundSams/bgm survive re-imports.
+            DungeonLevel level  = AssetDatabase.LoadAssetAtPath<DungeonLevel>(levelPath);
+            bool isNewAsset     = level == null;
+
+            if (isNewAsset)
+            {
+                level = ScriptableObject.CreateInstance<DungeonLevel>();
+                level.bg             = null;
+                level.backGroundSams = new List<TextAsset>();
+                level.foreGroundSams = new List<TextAsset>();
+                level.bgm            = null;
+            }
+
+            level.name      = dungeonName;
+            level.levelName = dungeonName;
+            level.missions  = new List<Mission>();
+            // NOTE: bg, backGroundSams, foreGroundSams, bgm intentionally left untouched here.
 
             foreach (int id in kvp.Value)
             {
@@ -255,15 +326,23 @@ public static class MissionParser
                     Debug.LogWarning($"[MissionParser] DungeonLevel '{dungeonName}': Mission asset not found at {assetPath}");
             }
 
-            string levelPath = $"{dungeonFolder}/{SanitizeFileName(dungeonName)}.asset";
-            AssetDatabase.CreateAsset(level, levelPath);
-            saved++;
-            Debug.Log($"[MissionParser] Saved DungeonLevel: {levelPath}");
+            if (isNewAsset)
+            {
+                AssetDatabase.CreateAsset(level, levelPath);
+                created++;
+                Debug.Log($"[MissionParser] Created DungeonLevel: {levelPath}");
+            }
+            else
+            {
+                EditorUtility.SetDirty(level);
+                updated++;
+                Debug.Log($"[MissionParser] Updated DungeonLevel (missions only): {levelPath}");
+            }
         }
 
         AssetDatabase.SaveAssets();
         AssetDatabase.Refresh();
-        Debug.Log($"[MissionParser] Done — {saved} DungeonLevel asset(s) created.");
+        Debug.Log($"[MissionParser] Done — {created} DungeonLevel asset(s) created, {updated} updated in place.");
     }
 #endif
 
@@ -543,7 +622,7 @@ public static class MissionParser
 }
 
 // =============================================================================
-// EDITOR MENU
+// EDITOR MENU / WINDOW
 // =============================================================================
 #if UNITY_EDITOR
 public static class MissionParserMenu
@@ -564,6 +643,55 @@ public static class MissionParserMenu
             metadataJsonPath: "Assets/Data/MissionJsons/missions.json",
             outputFolder:     "Assets/Data/Missions"
         );
+    }
+
+    [MenuItem("Tools/Mission Parser Window")]
+    private static void OpenWindow()
+    {
+        MissionParserWindow.ShowWindow();
+    }
+}
+
+/// <summary>
+/// Simple editor window exposing the mission import options as UI controls,
+/// including the "protect existing missions that already have battle data" checkbox.
+/// </summary>
+public class MissionParserWindow : EditorWindow
+{
+    private string _jsonFolder   = "Assets/Data/MissionJsons";
+    private string _outputFolder = "Assets/Data/Missions";
+    private bool   _onlyOverwriteZeroBattleExisting = false;
+
+    public static void ShowWindow()
+    {
+        var window = GetWindow<MissionParserWindow>("Mission Parser");
+        window.minSize = new Vector2(420, 160);
+    }
+
+    private void OnGUI()
+    {
+        EditorGUILayout.LabelField("Mission JSON Import", EditorStyles.boldLabel);
+        EditorGUILayout.Space();
+
+        _jsonFolder = EditorGUILayout.TextField("JSON Folder", _jsonFolder);
+        _outputFolder = EditorGUILayout.TextField("Output Folder", _outputFolder);
+
+        EditorGUILayout.Space();
+        _onlyOverwriteZeroBattleExisting = EditorGUILayout.ToggleLeft(
+            "Only overwrite existing Mission SOs with 0 battles (protects hand-modified missions that were already properly imported)",
+            _onlyOverwriteZeroBattleExisting);
+
+        EditorGUILayout.Space();
+        if (GUILayout.Button("Parse Mission JSONs"))
+        {
+            MissionParser.ParseAndSaveAll(_jsonFolder, _outputFolder, _onlyOverwriteZeroBattleExisting);
+        }
+
+        EditorGUILayout.Space();
+        EditorGUILayout.HelpBox(
+            "DungeonLevel assets are always updated in place when they already exist — " +
+            "bg, backGroundSams, foreGroundSams, and bgm are never reset by this importer.",
+            MessageType.Info);
     }
 }
 #endif

@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class DungeonMissionSelectUI : MonoBehaviour
 {
     public DungeonLevel dungeon;
-    public GameObject missionElement;
     public RectTransform container;
     public TextMeshProUGUI dungeonName;
     public Button button;
@@ -70,23 +69,23 @@ public class DungeonMissionSelectUI : MonoBehaviour
 
     public void UpdateMissionSelect()
     {
-        if(dungeonName != null)
-        {
-            dungeonName.text = dungeon.levelName;    
-        }
-
         ClearSlots();
 
         for (int i = dungeon.missions.Count - 1; i >= 0; i--)
         {
             CreateMissionSlot(dungeon.missions[i]);
         }
+
+        if(dungeonName != null)
+        {
+            dungeonName.text = dungeon.levelName;    
+        }
     }
 
     void CreateMissionSlot(Mission mission)
     {
         if(PlayerData.completedMissionDex.Contains(mission.requiresMissionId)){
-            GameObject slot = Instantiate(missionElement);
+            GameObject slot = Instantiate(Resources.Load("MissionSlot") as GameObject);
             slot.GetComponent<SetMissionButton>().mission = mission;
             RectTransform slotRect = slot.GetComponent<RectTransform>();
             slotRect.SetParent(container);

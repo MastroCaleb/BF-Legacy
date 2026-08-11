@@ -192,6 +192,7 @@ public class RewardsMenuUI : MonoBehaviour
                 MainUI.mapDungeons.SetActive(false);
                 MainUI.mapMenu.SetActive(true);
                 MainUI.missionSelection.SetActive(true);
+                MainUI.missionSelectionText.text = BattleManager.dungeonLevelData.levelName;
             }
 
             if (coroutineHostGO != null)

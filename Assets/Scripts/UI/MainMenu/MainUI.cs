@@ -20,6 +20,8 @@ public class MainUI : MonoBehaviour
     public static GameObject mapMenu;
     public GameObject missionSelectionHelper;
     public static GameObject missionSelection;
+    public TextMeshProUGUI missionSelectionTextHelper;
+    public static TextMeshProUGUI missionSelectionText;
     public GameObject mapNameHelper;
     public static GameObject mapName;
     public GameObject mapDungeonsHelper;
@@ -99,6 +101,7 @@ public class MainUI : MonoBehaviour
         rewardsScreen = rewardsScreenHelper;
         mapMenu = mapMenuHelper;
         missionSelection = missionSelectionHelper;
+        missionSelectionText = missionSelectionTextHelper;
         mapName = mapNameHelper;
         mapDungeons = mapDungeonsHelper;
         vortexMenu = vortexMenuHelper;

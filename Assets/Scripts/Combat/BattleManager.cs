@@ -249,6 +249,7 @@ public class BattleManager : MonoBehaviour
                         if (isCombatAutomatic)
                         {
                             EndManualPlayerTurn();
+                            RefreshFocusFireState();
                             autoAttackCoroutine = StartCoroutine(DelayedAutoAttack());
                             break;
                         }
@@ -467,6 +468,7 @@ public class BattleManager : MonoBehaviour
 
         unitsThatMustAct.Clear();
         unitsThatActed.Clear();
+        RefreshFocusFireState();
 
         if (isCombatAutomatic)
         {
@@ -489,16 +491,6 @@ public class BattleManager : MonoBehaviour
 
     IEnumerator DelayedAutoAttack()
     {
-        
-        bool hasLockedTarget = selectedEnemyUnit != null && selectedEnemyUnit.currentState != UnitState.Dead;
-
-        var availableEnemies = hasLockedTarget
-            ? new List<UnitBehaviour> { selectedEnemyUnit }
-            : enemyTeam.units.FindAll(u => u.currentState != UnitState.Dead);
-
-        var predictions = new List<HealthPrediction>();
-        foreach (var e in availableEnemies) predictions.Add(new HealthPrediction(e, e.currentHealth));
-
         foreach (var player in playerTeam.units.ToList())
         {
             if (player.currentState == UnitState.Dead || player.currentState == UnitState.Attacking) continue;
@@ -507,30 +499,12 @@ public class BattleManager : MonoBehaviour
             unitsThatActed.Add(player);
             Ability ability = player.GetAbilityToUse(cutInAnimator);
 
-            var targetPool = ability.targetType == TargetType.SingleEnemy && hasLockedTarget
-                ? new List<UnitBehaviour> { selectedEnemyUnit } : availableEnemies.Count > 0
-                ? availableEnemies
-                : enemyTeam.units.FindAll(u => u.currentState != UnitState.Dead);
-
-            var targets = GetTargets(targetPool, player, ability);
-            targets.RemoveAll(t => t == null);
+            var targets = ResolveAttackTargets(player, ability);
 
             if (targets.Count > 0)
             {
                 if (IsAttackAbility(ability)) StartCoroutine(UnitAttackCoroutine(player, ability, targets));
                 else player.UseAbility(ability, targets);
-
-                if (!hasLockedTarget)
-                {
-                    foreach (var target in targets)
-                    {
-                        if (target == null) continue;
-                        var pred = predictions.Find(p => p.unit == target);
-                        if (pred == null) continue;
-                        pred.predictedHealth -= Mathf.CeilToInt(player.GetDamage(ability, target));
-                        if (pred.predictedHealth <= 0) availableEnemies.Remove(target);
-                    }
-                }
             }
 
             yield return null;
@@ -543,11 +517,7 @@ public class BattleManager : MonoBehaviour
         if (unitsThatActed.Contains(unit) || unit.currentState == UnitState.Attacking) return;
 
         Ability ability = unit.GetBaseAbility();
-        var pool = selectedEnemyUnit != null && selectedEnemyUnit.currentState != UnitState.Dead
-            ? new List<UnitBehaviour> { selectedEnemyUnit }
-            : enemyTeam.units.FindAll(u => u.currentState != UnitState.Dead);
-
-        var targets = GetTargets(pool, unit, ability);
+        var targets = ResolveAttackTargets(unit, ability);
 
         if (IsAttackAbility(ability)) StartCoroutine(UnitAttackAndCheckCoroutine(unit, ability, targets));
         else unit.UseAbility(ability, targets);
@@ -562,11 +532,7 @@ public class BattleManager : MonoBehaviour
         if (unitsThatActed.Contains(unit) || unit.currentState == UnitState.Attacking) return;
         if (slideDirection.y >= 0f)
         {
-            var pool = selectedEnemyUnit != null && selectedEnemyUnit.currentState != UnitState.Dead
-                ? new List<UnitBehaviour> { selectedEnemyUnit }
-                : enemyTeam.units.FindAll(u => u.currentState != UnitState.Dead);
-
-            var targets = GetTargets(pool, unit, abilityToUse);
+            var targets = ResolveAttackTargets(unit, abilityToUse);
 
             if (!unit.isEnemyUnit) cutInAnimator.PlayCutIn(unit.unitData.unitFullArt, abilityToUse.abilityName, cutInType);
 
@@ -619,6 +585,49 @@ public class BattleManager : MonoBehaviour
     // ─────────────────────────────────────────────────────────────
     //  Target selection
     // ─────────────────────────────────────────────────────────────
+
+    // New instance fields (replace the local vars that used to live inside DelayedAutoAttack)
+    private List<UnitBehaviour> availableEnemies = new List<UnitBehaviour>();
+    private List<HealthPrediction> predictions = new List<HealthPrediction>();
+
+    // Call this once whenever a player phase (re)starts targeting from scratch
+    private void RefreshFocusFireState()
+    {
+        availableEnemies = enemyTeam.units.FindAll(u => u.currentState != UnitState.Dead);
+        predictions = availableEnemies.Select(e => new HealthPrediction(e, e.currentHealth)).ToList();
+    }
+
+    // Shared by auto AND manual — this is the single source of truth for "who gets hit"
+    private List<UnitBehaviour> ResolveAttackTargets(UnitBehaviour actor, Ability ability)
+    {
+        bool hasLockedTarget = selectedEnemyUnit != null;
+
+        if (hasLockedTarget && ability.targetType == TargetType.SingleEnemy)
+        {
+            // Locked: every single-target attack goes here, full stop.
+            // No liveness check — if it's already dying from earlier hits
+            // this turn, later attackers still commit to it instead of
+            // hopping to a fresh enemy.
+            return new List<UnitBehaviour> { selectedEnemyUnit };
+        }
+
+        var pool = availableEnemies.Count > 0
+            ? availableEnemies
+            : enemyTeam.units.FindAll(u => u.currentState != UnitState.Dead);
+
+        var targets = GetTargets(pool, actor, ability);
+        targets.RemoveAll(t => t == null);
+
+        foreach (var target in targets)
+        {
+            var pred = predictions.Find(p => p.unit == target);
+            if (pred == null) continue;
+            pred.predictedHealth -= Mathf.CeilToInt(actor.GetDamage(ability, target));
+            if (pred.predictedHealth <= 0) availableEnemies.Remove(target);
+        }
+
+        return targets;
+    }
 
     List<UnitBehaviour> GetTargets(List<UnitBehaviour> availableUnits, UnitBehaviour unit, Ability ability)
     {

@@ -88,4 +88,18 @@ public class FusionBasePlate : MonoBehaviour
         gainedXpBar.currentValue = Mathf.Min(xpIntoNow + FusionMenu.totalXpGain, xpNeededNow);
         gainedXpBar.UpdateUI();
     }
+
+    public void Clear()
+    {
+        zelCostText.text = "0";
+        xpGainText.text = "0";
+        remainingXpText.text = "";
+        nextLevelText.text = "";
+        currentXpBar.maxValue = 1;
+        currentXpBar.currentValue = 0;
+        currentXpBar.UpdateUI();
+        gainedXpBar.maxValue = 1;
+        gainedXpBar.currentValue = 0;
+        gainedXpBar.UpdateUI();
+    }
 }

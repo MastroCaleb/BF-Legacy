@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -42,6 +43,9 @@ public class InventoryRenderer : MonoBehaviour
         if (slotToRemove != null)
         {
             Debug.Log("Destroying slot for unitKey: " + unitKey);
+
+            slotToRemove.transform.SetParent(null);
+
             Destroy(slotToRemove.gameObject);
             renderedSlots.Remove(unitKey);
         }
@@ -53,8 +57,9 @@ public class InventoryRenderer : MonoBehaviour
         {
             Destroy(unitSlot.gameObject);
         }
+        renderedSlots.Clear();
 
-        foreach (var kvp in PlayerUnitInventoryDatabase.playerUnits)
+        foreach (var kvp in PlayerUnitInventoryDatabase.playerUnits.OrderBy(kvp => kvp.Key))
         {
             GameObject slot = CreateUnitSlot(kvp.Key);
             slot.transform.SetParent(sliderContent.transform, false);

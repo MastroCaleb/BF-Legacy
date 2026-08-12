@@ -79,6 +79,7 @@ public class UnitSlot : MonoBehaviour
             FusionMenu.baseUnit = unitKey;
             FusionMenu.baseUnitRenderer.SetUnit(PlayerUnitInventoryDatabase.GetUnitByKey(unitKey), true);
             FusionMenu.baseUnitDetails.UpdateDetails();
+            FusionMenu.fusionBasePlateFM.Clear();
         }
         else if(InventoryRenderer.selectionMode == InventorySelectionMode.UnitFusionSelectMaterial)
         {

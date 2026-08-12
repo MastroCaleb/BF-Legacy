@@ -133,8 +133,8 @@ public class PartyViewUI : MonoBehaviour
                 float jsonW = unit.unitDisplayHomePosition.width;
                 float jsonH = unit.unitDisplayHomePosition.height;
 
-                float unityX = 0.2178f * jsonX - 2.435f  * jsonW - 0.1643f * imageW + 420f;
-                float unityY = 0.2178f * jsonY + 0.4860f  * jsonH - 0.1643f * imageH - 181f;
+                float unityX = (imageW / 2f - jsonX - jsonW / 2f) * (128f / jsonW);
+                float unityY = (jsonY + jsonH / 2f - imageH / 2f) * (350f / jsonH);
                 float unityW = imageW * (128f / jsonW);
                 float unityH = imageH * (350f / jsonH);
 

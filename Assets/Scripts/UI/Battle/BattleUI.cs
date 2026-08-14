@@ -20,6 +20,8 @@ public class BattleUI : MonoBehaviour
     public static RectTransform enemyUnitsLayer;
     public RectTransform dropsLayerHelper;
     public static RectTransform dropsLayer;
+    public RectTransform uiEffectLayerHelper;
+    public static RectTransform uiEffectLayer;
     public RectTransform popupLayerHelper;
     public static RectTransform popupLayer;
 
@@ -88,6 +90,7 @@ public class BattleUI : MonoBehaviour
         unitText = unitTextHelper;
 
         uiDropLayer = uiDropLayerHelper;
+        uiEffectLayer = uiEffectLayerHelper;
 
         enemySelect = enemySelectHelper;
 

@@ -40,6 +40,25 @@ public class JsonToSOUnit : EditorWindow
     private readonly Dictionary<string, Texture2D> textureCache = new();
     private readonly Dictionary<string, Sprite>    spriteCache  = new();
 
+    [Header("Particle Effects")]
+    public string particleEffectFolder = "Resources/Particles";
+    private readonly Dictionary<string, ParticleEffect> _particleEffectsById = new();
+
+    private struct GroupParticleEntry
+    {
+        public int subFrame;
+        public List<string> particleIds;   // was: string particleId — split on '@' for layered effects
+        public int placementType;
+        public int xAnchor;
+        public int yAnchor;
+        public float offsetX;
+        public float offsetY;
+    }
+    private struct GroupSoundEntry { public int subFrame; public string clipName; }
+
+    private readonly Dictionary<string, List<GroupParticleEntry>> _effectGroupParticles   = new();
+    private readonly Dictionary<string, List<GroupSoundEntry>>    _effectGroupSoundFrames = new();
+
     private const string MISSING_ANIMATION_FILE = "Assets/Temp/MissingUnitAnimations.txt";
 
     private void LogMissingAnimation(string unitId, string unitName)
@@ -76,6 +95,7 @@ public class JsonToSOUnit : EditorWindow
         _skillMstById.Clear();
         audioCache.Clear();
 
+        LoadParticleEffectDatabase();
         LoadEffectGroupMst(effectGroupMst1);
         LoadEffectGroupMst(effectGroupMst2);
         LoadSkillMstFolder(skillMstFolder);
@@ -137,6 +157,21 @@ public class JsonToSOUnit : EditorWindow
     {
         EditorUtility.UnloadUnusedAssetsImmediate();
         GC.Collect();
+    }
+
+    private void LoadParticleEffectDatabase()
+    {
+        _particleEffectsById.Clear();
+        string[] guids = AssetDatabase.FindAssets("t:ParticleEffect", new[] { $"Assets/{particleEffectFolder}" });
+        foreach (string guid in guids)
+        {
+            string path = AssetDatabase.GUIDToAssetPath(guid);
+            ParticleEffect pe = AssetDatabase.LoadAssetAtPath<ParticleEffect>(path);
+            if (pe == null || string.IsNullOrEmpty(pe.effectId)) continue;
+            if (!_particleEffectsById.ContainsKey(pe.effectId))
+                _particleEffectsById[pe.effectId] = pe;
+        }
+        Debug.Log($"[ParticleEffect] Indexed {_particleEffectsById.Count} particle effect SOs from {particleEffectFolder}");
     }
 
     // ─────────────────────────────────────────────────────────────
@@ -439,18 +474,50 @@ public class JsonToSOUnit : EditorWindow
             string groupId = obj["battleEffectGroupId"]?.ToString();
             if (string.IsNullOrEmpty(groupId)) continue;
 
-            // Sound key is "xW6TKu9G" — parse "1:bf206_se_fire1.mp3,1:bf205_se_critical.mp3"
+            // "xW6TKu9G": "subFrame:clip.mp3,subFrame:clip.mp3,..."
             string soundRaw = obj["xW6TKu9G"]?.ToString() ?? "";
-            List<string> clips = new();
-            foreach (string entry in soundRaw.Split(','))
+            var soundList = new List<GroupSoundEntry>();
+            foreach (string entry in soundRaw.Split(',', StringSplitOptions.RemoveEmptyEntries))
             {
                 string[] parts = entry.Split(':');
-                if (parts.Length >= 2) clips.Add(parts[1].Trim());
+                if (parts.Length < 2) continue;
+                if (!int.TryParse(parts[0].Trim(), out int sf)) continue;
+                soundList.Add(new GroupSoundEntry { subFrame = sf, clipName = parts[1].Trim() });
             }
-            if (!_effectGroupSounds.ContainsKey(groupId))
-                _effectGroupSounds[groupId] = clips;
+            if (!_effectGroupSoundFrames.ContainsKey(groupId))
+                _effectGroupSoundFrames[groupId] = soundList;
+
+            // "effectFrames": "subFrame:particleId:placement:xAnchor:yAnchor:offX:offY,..."
+            string framesRaw = obj["effectFrames"]?.ToString() ?? "";
+            var particleList = new List<GroupParticleEntry>();
+            foreach (string entry in framesRaw.Split(',', StringSplitOptions.RemoveEmptyEntries))
+            {
+                string[] p = entry.Split(':');
+                if (p.Length < 7) continue; // malformed — skip rather than guess
+
+                if (!int.TryParse(p[0].Trim(), out int sf)) continue;
+
+                // Some entries stack multiple particles at the same frame/position,
+                // joined with '@' (e.g. "907@906" — seen on barrier-effect groups,
+                // likely a base shape + an overlaid glow layer). Split unconditionally;
+                // a normal single-id entry just becomes a one-element list.
+                List<string> ids = p[1].Trim().Split('@').Select(s => s.Trim()).ToList();
+
+                particleList.Add(new GroupParticleEntry
+                {
+                    subFrame      = sf,
+                    particleIds   = ids,
+                    placementType = int.TryParse(p[2], out int pt) ? pt : 1,
+                    xAnchor       = int.TryParse(p[3], out int xa) ? xa : 2,
+                    yAnchor       = int.TryParse(p[4], out int ya) ? ya : 2,
+                    offsetX       = float.TryParse(p[5], System.Globalization.NumberStyles.Float, System.Globalization.CultureInfo.InvariantCulture, out float ox) ? ox : 0f,
+                    offsetY       = float.TryParse(p[6], System.Globalization.NumberStyles.Float, System.Globalization.CultureInfo.InvariantCulture, out float oy) ? oy : 0f
+                });
+            }
+            if (!_effectGroupParticles.ContainsKey(groupId))
+                _effectGroupParticles[groupId] = particleList;
         }
-        Debug.Log($"[EffectGroup] Loaded {_effectGroupSounds.Count} entries from {relativePath}");
+        Debug.Log($"[EffectGroup] Loaded {_effectGroupParticles.Count} groups with particle data from {relativePath}");
     }
 
     private void LoadSkillMstFolder(string relativeFolderPath)
@@ -477,27 +544,87 @@ public class JsonToSOUnit : EditorWindow
         List<EffectFrame> list = new();
         if (string.IsNullOrEmpty(raw)) return list;
 
+        // raw = SKILL_MST's effectFrames: "skillFrame:groupId,skillFrame:groupId,..."
         foreach (string entry in raw.Split(','))
         {
             string[] parts = entry.Split(':');
             if (parts.Length < 2) continue;
-            if (!int.TryParse(parts[0].Trim(), out int frame)) continue;
+            if (!int.TryParse(parts[0].Trim(), out int skillFrame)) continue;
             string groupId = parts[1].Trim();
 
-            AudioClip clip = null;
-            if (_effectGroupSounds.TryGetValue(groupId, out List<string> sounds) && sounds.Count > 0)
+            bool hasParticles = _effectGroupParticles.TryGetValue(groupId, out var particleEntries);
+            bool hasSounds    = _effectGroupSoundFrames.TryGetValue(groupId, out var soundEntries);
+
+            if (hasParticles && particleEntries.Count > 0)
             {
-                // Take first mp3, strip extension, load from sound folder
-                string clipName = Path.GetFileNameWithoutExtension(sounds[0]);
-                clip = LoadAudioCached($"Assets/{soundFolderPath}/{clipName}.mp3");
-                if (clip == null)
-                    clip = LoadAudioCached($"Assets/{soundFolderPath}/{clipName}.wav");
-                if (clip == null)
-                    clip = LoadAudioCached($"Assets/{soundFolderPath}/{clipName}.ogg");
+                foreach (var pe in particleEntries)
+                {
+                    AudioClip clip = null;
+                    if (hasSounds)
+                    {
+                        var match = soundEntries.Find(s => s.subFrame == pe.subFrame);
+                        if (match.clipName != null)
+                        {
+                            string clipName = Path.GetFileNameWithoutExtension(match.clipName);
+                            clip = LoadAudioCached($"Assets/{soundFolderPath}/{clipName}.mp3")
+                                ?? LoadAudioCached($"Assets/{soundFolderPath}/{clipName}.wav")
+                                ?? LoadAudioCached($"Assets/{soundFolderPath}/{clipName}.ogg");
+                        }
+                    }
+
+                    for (int i = 0; i < pe.particleIds.Count; i++)
+                    {
+                        string particleId = pe.particleIds[i];
+                        _particleEffectsById.TryGetValue(particleId, out ParticleEffect resolved);
+                        if (resolved == null)
+                            Debug.LogWarning($"[EffectGroup {groupId}] No ParticleEffect SO found for id '{particleId}' — check {particleEffectFolder}.");
+
+                        list.Add(new EffectFrame
+                        {
+                            frame               = skillFrame + pe.subFrame,
+                            battleEffectGroupId = groupId,
+                            particleEffectId    = particleId,
+                            particleEffect      = resolved,
+                            placementType       = pe.placementType,
+                            xAnchor             = pe.xAnchor,
+                            yAnchor             = pe.yAnchor,
+                            offsetX             = pe.offsetX,
+                            offsetY             = pe.offsetY,
+                            // only the first stacked particle carries the sound —
+                            // avoids the same clip firing twice for one visual moment
+                            audioClip           = i == 0 ? clip : null
+                        });
+                    }
+                }
             }
 
-            list.Add(new EffectFrame { frame = frame, battleEffectGroupId = groupId, audioClip = clip });
+            // Sound sub-frames that didn't line up with any particle entry still need to fire
+            // (groups can have more/fewer sounds than particles — e.g. "OD発動").
+            if (hasSounds)
+            {
+                foreach (var se in soundEntries)
+                {
+                    bool alreadyCovered = hasParticles && particleEntries.Exists(p => p.subFrame == se.subFrame);
+                    if (alreadyCovered) continue;
+
+                    string clipName = Path.GetFileNameWithoutExtension(se.clipName);
+                    AudioClip clip = LoadAudioCached($"Assets/{soundFolderPath}/{clipName}.mp3")
+                        ?? LoadAudioCached($"Assets/{soundFolderPath}/{clipName}.wav")
+                        ?? LoadAudioCached($"Assets/{soundFolderPath}/{clipName}.ogg");
+
+                    list.Add(new EffectFrame
+                    {
+                        frame               = skillFrame + se.subFrame,
+                        battleEffectGroupId = groupId,
+                        audioClip           = clip
+                    });
+                }
+            }
+
+            if (!hasParticles && !hasSounds)
+                Debug.LogWarning($"[EffectGroup] '{groupId}' referenced by SKILL_MST but not found in loaded EFFECT_GROUP_MST files.");
         }
+
         return list;
     }
 

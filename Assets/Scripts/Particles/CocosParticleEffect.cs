@@ -407,11 +407,24 @@ public class CocosParticleEffect : MaskableGraphic
         vh.Clear();
         if (data == null) return;
 
+        // sourcePosition is the artist's authoring-canvas placement (e.g. ~160,240
+        // on a 320x480 canvas) — meaningless once this effect is reused elsewhere.
+        // Mode A bakes it into p.pos every frame (physics reads p.pos absolutely,
+        // matching upstream), so it must be subtracted back out HERE, at render
+        // time only — subtracting it from p.pos itself during simulation would
+        // change the radial/tangential direction math and diverge from cocos.
+        // Mode B already discards sourcePosition every frame (p.pos is fully
+        // recomputed from angle/radius), so no correction is needed there —
+        // subtracting again would shift it the WRONG way.
+        Vector2 sourceBase = data.emitterType < 0.5f
+            ? new Vector2(data.sourcePositionx, data.sourcePositiony)
+            : Vector2.zero;
+
         for (int i = 0; i < _particles.Count; i++)
         {
             var p = _particles[i];
             float half = p.size * 0.5f;
-            Vector2 center = p.pos + originOffset;
+            Vector2 center = (p.pos - sourceBase) + originOffset;
 
             // cocos rotation is clockwise-positive; negate for Unity's CCW math below.
             float rad = -p.rotation * Mathf.Deg2Rad;

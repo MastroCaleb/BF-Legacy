@@ -52,9 +52,23 @@ public class HitFrame
 [System.Serializable]
 public class EffectFrame
 {
-    public int        frame;
-    public string     battleEffectGroupId;
-    public AudioClip  audioClip; // loaded by importer
+    public int    frame;               // absolute frame within the ability (skillFrame + group sub-frame)
+    public string battleEffectGroupId; // kept for debugging/re-export
+
+    public string        particleEffectId; // raw particle id from the group data (e.g. "600540")
+    public ParticleEffect particleEffect;  // resolved SO — may be null if not found in the index
+
+    // Best-effort guesses — unverified against real footage, tune ComputeEffectPosition to match.
+    // placementType: 1 = per-target, 2 = center/screen, 3 = ground/formation ("陣地")
+    public int   placementType;
+    // xAnchor/yAnchor: 1/2/3 = left-center-right / top-center-bottom nudge around the base point.
+    // 5/5 together = "xy固定" (fixed xy) — ignore anchor, offsetX/offsetY IS the absolute position.
+    public int   xAnchor;
+    public int   yAnchor;
+    public float offsetX;
+    public float offsetY;
+
+    public AudioClip audioClip; // loaded by importer, if a sound shares this frame
 }
 
 // ─────────────────────────────────────────

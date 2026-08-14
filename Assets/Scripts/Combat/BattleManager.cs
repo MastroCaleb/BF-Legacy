@@ -24,6 +24,7 @@ public class BattleManager : MonoBehaviour
     public List<RectTransform> playerUnitPositions;
     public List<RectTransform> enemyUnitPositions;
     public RectTransform centerArenaPos;
+    
     // Combat flags
     public static bool isCombatAutomatic = true;
 

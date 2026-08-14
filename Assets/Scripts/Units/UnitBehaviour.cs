@@ -48,6 +48,10 @@ public class UnitBehaviour : MonoBehaviour
     // activeEffects is kept for external readers (buff rate methods).
     public List<Effect> activeEffects = new List<Effect>();
     private List<Effect> renderedEffects = new List<Effect>();
+    
+    [Header("Particle Effects")]
+    [Tooltip("Parent for spawned battle particle effects. Falls back to BattleUI.dropsLayer if unassigned.")]
+    public Transform effectsLayer;
 
     // Ailments — tracked separately from timedEffects because procs 11/40 can
     // inflict several distinct ailments from the SAME procId, which would
@@ -1501,10 +1505,11 @@ public class UnitBehaviour : MonoBehaviour
                             ability.hitFrames.IndexOf(hf));
 
             // Fire effect sounds
+            // Fire effects (particles + any sound sharing this frame)
             if (ability.effectFrames != null)
                 foreach (var ef in ability.effectFrames)
-                    if (ef.frame == frame && ef.audioClip != null)
-                        SoundManager.Instance.PlaySound(ef.audioClip);
+                    if (ef.frame == frame)
+                        PlayEffectFrame(ef, target);
         }
     }
 
@@ -1598,10 +1603,112 @@ public class UnitBehaviour : MonoBehaviour
     public float GetDefense()
         => ((isEnemyUnit ? enemyData.def : unitData.def + inventoryData.defImpBonus + inventoryData.defLevelUpBonus) / 2f) * PercentageToNumber(GetDefenseBuffRate());
 
+        /// <summary>
+    /// Spawns and plays whatever particle an EffectFrame references, at a
+    /// computed position. See ComputeEffectPosition for the placement logic —
+    /// it's a best-effort read of the group data, not verified against footage.
+    /// </summary>
+    private void PlayEffectFrame(EffectFrame ef, UnitBehaviour target)
+    {
+        if (ef.audioClip != null)
+            SoundManager.Instance.PlaySound(ef.audioClip);
+
+        if (ef.particleEffect == null) return;
+
+        RectTransform layer = BattleUI.uiEffectLayer != null ? BattleUI.uiEffectLayer.GetComponent<RectTransform>() : BattleUI.dropsLayer;
+        GameObject go = new GameObject($"FX_{ef.particleEffect.effectId}", typeof(RectTransform));
+        go.transform.SetParent(layer, false);
+
+        RectTransform rt = go.GetComponent<RectTransform>();
+        rt.anchoredPosition = ComputeEffectPosition(ef, target);
+
+        float lifetime = 2f;
+
+        switch (ef.particleEffect.particleType)
+        {
+            case ParticleType.PLIST:
+            {
+                var fx = go.AddComponent<CocosParticleEffect>();
+                if (ef.particleEffect.plistJson != null)
+                    fx.LoadFromJson(ef.particleEffect.plistJson.text);
+                lifetime = 2f; // give fading particles a couple seconds of buffer
+                break;
+            }
+            case ParticleType.CGG:
+            {
+                var img = go.AddComponent<Image>();
+                img.raycastTarget = false;
+                var fx = go.AddComponent<BraveFrontierFrameAnimator>();
+                fx.cggFile       = ef.particleEffect.cggJson;
+                fx.idleCgsFile   = ef.particleEffect.cgsJson;
+                fx.attackCgsFile = ef.particleEffect.cgsJson;
+                fx.spriteSheets  = ef.particleEffect.spriteSheet != null
+                    ? new[] { ef.particleEffect.spriteSheet.texture }
+                    : new Texture2D[0];
+                fx.animationName = "Attack";
+                fx.loop          = false;
+                fx.playOnStart   = true;
+                fx.initOnStart   = false;
+                fx.InitializeAnimator();
+                lifetime = Mathf.Max(fx.GetTotalDurationFrames("Attack"), 1f);
+                break;
+            }
+            case ParticleType.SAM:
+            {
+                var fx = go.AddComponent<SamAnimator>();
+                fx.jsonFile    = ef.particleEffect.samJson;
+                fx.isEffect    = true;
+                fx.loop        = false;
+                fx.playOnStart = false;
+                fx.SetAnimation("start", false);
+                fx.InitializeAnimator();
+                lifetime = Mathf.Max(fx.GetTotalDurationFrames("start"), 1f);
+                break;
+            }
+        }
+
+        Destroy(go, lifetime);
+    }
+
+    /// <summary>
+    /// Best-effort placement from the group data — UNVERIFIED against real
+    /// footage. placementType: 1 = at target, 2 = shared "center" point,
+    /// 3 = anchored near the ground under the target ("陣地" formation effects).
+    /// xAnchor/yAnchor 1/2/3 nudge left-center-right / top-center-bottom around
+    /// that base point; 5/5 together means offsetX/offsetY IS the absolute
+    /// position (matches the "xy固定" groups). Tune anchorNudge and the ground
+    /// offset once you can compare against actual gameplay video.
+    /// </summary>
+    private Vector2 ComputeEffectPosition(EffectFrame ef, UnitBehaviour target)
+    {
+        if (ef.xAnchor == 5 && ef.yAnchor == 5)
+            return new Vector2(ef.offsetX, ef.offsetY);
+
+        Vector2 basePos;
+        switch (ef.placementType)
+        {
+            case 2: // center / screen
+                basePos = new Vector2(0, 261); // assumes effectsLayer's origin sits at battle-center
+                break;
+            case 3: // ground / formation
+                basePos = (Vector2)target.transform.localPosition;
+                break;
+            default: // 1: per-target
+                basePos = target.transform.localPosition;
+                break;
+        }
+
+        const float anchorNudge = 20f; // px per anchor step away from center — tune to taste
+        basePos.x += (ef.xAnchor - 2) * anchorNudge;
+        basePos.y += (ef.yAnchor - 2) * anchorNudge;
+
+        return basePos + new Vector2(ef.offsetX, ef.offsetY);
+    }
+
     // ─────────────────────────────────────────────────────────────
     //  Buff rate calculators — field names match Ability.cs structs
     // ─────────────────────────────────────────────────────────────
-
+    
     /// Returns ATK modifier as a percentage (100 = no buff).
     public int GetAttackBuffRate()
     {

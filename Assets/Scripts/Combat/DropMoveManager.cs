@@ -56,6 +56,12 @@ public class DropMoveManager : MonoBehaviour
             }
             else if ((d.type == DropType.Zel || d.type == DropType.Karma || d.type == DropType.Unit || d.type == DropType.Gem) && canMove)
             {
+                if (d.rect == null || d.target == null)
+                {
+                    // If either the rect or target is null, remove the drop from the list
+                    activeDrops.RemoveAt(i);
+                    continue; // skip the rest of this loop iteration
+                }
                 d.rect.SetParent(BattleUI.uiDropLayer.transform);
                 Vector3 pos = d.rect.position;
                 Vector3 targetPos = d.target.transform.position;

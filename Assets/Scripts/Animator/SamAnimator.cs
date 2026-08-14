@@ -561,6 +561,23 @@ public class SamAnimator : MonoBehaviour
         }
     }
 
+    public float GetTotalDurationFrames(string animName)
+    {
+        if (!animationLabels.TryGetValue(animName, out var label))
+        {
+            // Same fallback behavior as SetAnimation
+            if (!animationLabels.TryGetValue("Idle", out label))
+            {
+                Debug.LogWarning($"Animation '{animName}' not found, and Idle animation is also missing.");
+                return 0;
+            }
+        }
+
+        int totalFrames = label.mEndFrameNum - label.mStartFrameNum + 1;
+
+        return totalFrames / (float)Mathf.Max(1, animData.mAnimRate);
+    }
+
     public bool IsPlaying() => isPlaying;
     public string GetCurrentAnimation() => currentAnimation;
     public void Play() => isPlaying = true;

@@ -100,6 +100,12 @@ public class BattleManager : MonoBehaviour
         if (EnemyHealthUI.enemyUnit == null && !enemyTeam.IsDefeated())
             EnemyHealthUI.enemyUnit = enemyTeam.units.Find(u => u.currentState != UnitState.Dead);
 
+        if (selectedEnemyUnit != null && selectedEnemyUnit.currentState == UnitState.Dead)
+        {
+            selectedEnemyUnit = null;
+            BattleUI.enemySelect.SetActive(false);
+        }
+
         SortUnitsByY(playerTeam.units);
         SortUnitsByY(enemyTeam.units);
 

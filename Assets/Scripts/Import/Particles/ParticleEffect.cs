@@ -6,8 +6,24 @@ public class ParticleEffect : ScriptableObject
     public string effectId;
     public string effectType;
     public string battleEffectGroupId;
+
+    public ParticleType particleType;
     
-    public TextAsset plistJson;   // JSON extracted from the plist
-    public Sprite sprite;         // PNG extracted from the plist
+    //PLIST
+    public TextAsset plistJson;
+
+    //CGG
+    public TextAsset cggJson;
+    public TextAsset cgsJson;
+    public Sprite spriteSheet;
+
+    //SAM
+    public TextAsset samJson;
+}
+public enum ParticleType
+{
+    PLIST,
+    CGG,
+    SAM
 }
 

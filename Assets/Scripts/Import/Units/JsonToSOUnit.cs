@@ -338,16 +338,13 @@ public class JsonToSOUnit : EditorWindow
             data["normal_frames"]?.ToString(),
             data["normal_distribute"]?.ToString());
 
-        // Effect frames from SKILL_MST
-        if (_skillMstById.TryGetValue(GetAnimationId(data["id"]?.ToString()) ?? "", out JObject skillMstEntry))
-        {
-            string efRaw = skillMstEntry["effectFrames"]?.ToString();
-            a.effectFrames = ParseEffectFrames(efRaw);
-        }
-        else
-        {
-            a.effectFrames = new List<EffectFrame>();
-        }
+        // Normal attacks have no real ability id, so they can't go through the
+        // SKILL_MST → EFFECT_GROUP_MST chain that BB/SBB/UBB use. Their
+        // effectFrames live directly on the unit's own F_UNIT_MST entry as a
+        // flat "frame:particleId:placement,..." list. (Previously this reused
+        // the unit's id as a stand-in skill id, which only worked by
+        // coincidence when bbId == unitId.)
+        a.effectFrames = ParseNormalEffectFrames(data["effectFrames"]?.ToString());
 
         a.levels = new List<AbilityLevel>
         {
@@ -537,6 +534,99 @@ public class JsonToSOUnit : EditorWindow
             }
         }
         Debug.Log($"[SkillMST] Loaded {_skillMstById.Count} skill entries");
+    }
+
+    /// <summary>
+    /// Parses normal-attack effectFrames straight off the unit's own F_UNIT_MST
+    /// entry: "frame:particleId:placement,frame:particleId:placement,...".
+    /// This is a flat per-unit list — unlike BB/SBB/UBB it does NOT go through
+    /// SKILL_MST/EFFECT_GROUP_MST, so there's no groupId, anchor, offset, or
+    /// sound data available; those default to centered/no-offset/no-clip.
+    /// Multiple particles at the same frame can be stacked with '@', same
+    /// convention as the EFFECT_GROUP_MST format.
+    /// </summary>
+    private List<EffectFrame> ParseNormalEffectFrames(string raw)
+    {
+        List<EffectFrame> list = new();
+        if (string.IsNullOrEmpty(raw)) return list;
+
+        foreach (string entry in raw.Split(',', StringSplitOptions.RemoveEmptyEntries))
+        {
+            string[] p = entry.Split(':');
+            if (p.Length < 2) continue; // need at least frame + particleId
+
+            if (!int.TryParse(p[0].Trim(), out int frame)) continue;
+
+            List<string> ids = p[1].Trim().Split('@').Select(s => s.Trim()).ToList();
+            int placementType = p.Length > 2 && int.TryParse(p[2].Trim(), out int pt) ? pt : 1;
+
+            // Normal attacks have no distinct groupId — the particleId itself is
+            // the only key we have, so we reuse it as a lookup into the same
+            // EFFECT_GROUP_MST-derived sound dictionary the BB/SBB/UBB path uses.
+            // Since there's no separate skillFrame+subFrame split here, match by
+            // the absolute frame directly.
+            bool hasSounds = _effectGroupSoundFrames.TryGetValue(ids[0], out var soundEntries);
+            AudioClip clip = null;
+            if (hasSounds)
+            {
+                var match = soundEntries.Find(s => s.subFrame == frame);
+                if (match.clipName != null)
+                {
+                    string clipName = Path.GetFileNameWithoutExtension(match.clipName);
+                    clip = LoadAudioCached($"Assets/{soundFolderPath}/{clipName}.mp3")
+                        ?? LoadAudioCached($"Assets/{soundFolderPath}/{clipName}.wav")
+                        ?? LoadAudioCached($"Assets/{soundFolderPath}/{clipName}.ogg");
+                }
+            }
+
+            for (int i = 0; i < ids.Count; i++)
+            {
+                string particleId = ids[i];
+                _particleEffectsById.TryGetValue(particleId, out ParticleEffect resolved);
+                if (resolved == null)
+                    Debug.LogWarning($"[NormalAttack] No ParticleEffect SO found for id '{particleId}' — check {particleEffectFolder}.");
+
+                list.Add(new EffectFrame
+                {
+                    frame               = frame,
+                    battleEffectGroupId = "",
+                    particleEffectId    = particleId,
+                    particleEffect      = resolved,
+                    placementType       = placementType,
+                    xAnchor             = 2,
+                    yAnchor             = 2,
+                    offsetX             = 0f,
+                    offsetY             = 0f,
+                    // only the first stacked particle carries the sound —
+                    // avoids the same clip firing twice for one visual moment
+                    audioClip           = i == 0 ? clip : null
+                });
+            }
+
+            // Sound sub-frames under this particleId-as-group that didn't line up
+            // with this exact frame still need to fire on their own.
+            if (hasSounds)
+            {
+                foreach (var se in soundEntries)
+                {
+                    if (se.subFrame == frame) continue; // already covered above
+
+                    string clipName = Path.GetFileNameWithoutExtension(se.clipName);
+                    AudioClip standaloneClip = LoadAudioCached($"Assets/{soundFolderPath}/{clipName}.mp3")
+                        ?? LoadAudioCached($"Assets/{soundFolderPath}/{clipName}.wav")
+                        ?? LoadAudioCached($"Assets/{soundFolderPath}/{clipName}.ogg");
+
+                    list.Add(new EffectFrame
+                    {
+                        frame               = se.subFrame,
+                        battleEffectGroupId = "",
+                        audioClip           = standaloneClip
+                    });
+                }
+            }
+        }
+
+        return list;
     }
 
     private List<EffectFrame> ParseEffectFrames(string raw)

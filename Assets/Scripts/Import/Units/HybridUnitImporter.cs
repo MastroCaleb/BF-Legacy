@@ -87,6 +87,7 @@ public class HybridUnitLoader : MonoBehaviour
         "unitDisplayCursorPosition",
         "sellPrice",
         "sellCaution",
+        "effectFrames",
     };
 
     private readonly HashSet<string> _neverTranslatable = new HashSet<string>();
@@ -620,6 +621,7 @@ public class HybridUnitLoader : MonoBehaviour
         obj["unitDisplayCursorPosition"] = null;
         obj["sellPrice"] = "";
         obj["sellCaution"] = false;
+        obj["effectFrames"] = "";
 
         if (masterEntry != null)
         {

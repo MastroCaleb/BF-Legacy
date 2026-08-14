@@ -1,68 +1,112 @@
 {
   "id": "10886",
   "unitName": "Garnet Sorceress Shelly",
-  "no": "1371",
-  "element": "Fire",
-  "rarity": "★★★★★★★",
-  "cost": "43",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "111",
-  "animation_idle": "64",
-  "animation_move": "64",
-  "movespeed_attack": "4",
-  "movespeed_skill": "4",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "45, 52, 59, 66, 73, 80, 87, 94, 101, 108",
-  "normal_distribute": "16, 12, 12, 12, 9, 9, 9, 7, 7, 7",
-  "normal_totaldistr": "100",
-  "bb_frames": "45, 49, 53, 57, 61, 65, 69, 73, 77, 81, 85, 89, 93, 97, 101, 105",
-  "bb_distribute": "10, 8, 8, 8, 7, 7, 7, 6, 6, 6, 5, 5, 5, 4, 4, 4",
-  "bb_totaldistr": "100",
-  "sbb_frames": "45, 49, 53, 57, 61, 65, 69, 73, 77, 81, 85, 89, 93, 97, 101, 105, 109, 112, 115",
-  "sbb_distribute": "10, 7, 7, 7, 6, 6, 6, 6, 5, 5, 5, 5, 4, 4, 4, 4, 3, 3, 3",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "45, 49, 53, 57, 61, 65, 69, 73, 77, 81, 85, 89, 93, 97, 101, 105, 109, 112, 115, 118, 121, 124",
-  "ubb_distribute": "10, 7, 7, 6, 6, 5, 5, 5, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "3",
-  "sbb_effectdelay": "3",
-  "ubb_effectdelay": "3",
-  "description": "When she heard the bad news about the goddess, her first thing on her mind was the woman warrior she admired. She implored the warrior to leave fighting monsters and pursue the girl who assassinated the goddess. As it turned out, the warrior wholeheartedly agreed, and they set out together. Records state that she was last seen at the port of Sama Kingdom, but that she was alone.",
-  "summon": "If she can save everyone,<br>then I must help her...<br>She doesn't let it show,<br>but it must be difficult...",
-  "fusion": "Please...give me strength.<br>So that she doesn't break,<br>I need strength to support her!",
-  "evolution": "If I can help that person shine,<br>I'll do anything...<br>Even if it's not the right thing...",
-  "hp_base": "5091",
-  "atk_base": "2165",
-  "def_base": "2131",
-  "rec_base": "2048",
-  "hp_lord": "6678",
-  "atk_lord": "2678",
-  "def_lord": "2664",
-  "rec_lord": "2498",
-  "hp_anima": "7570",
-  "rec_anima": "2260",
-  "atk_breaker": "2916",
-  "def_breaker": "2426",
-  "def_guardian": "2902",
-  "rec_guardian": "2366",
-  "def_oracle": "2513",
-  "rec_oracle": "2855",
-  "hp_bonus": "1100",
-  "atk_bonus": "440",
-  "def_bonus": "440",
-  "rec_bonus": "440",
-  "lordonly": "",
-  "combo_hits": "10",
-  "normaldc": "40",
-  "ls": "Malicious God's Plague",
-  "lsdescription": "40% boost to Rec, max HP, probable random status ailment infliction & hugely boosts damage against status afflicted foes",
-  "lsnote": "15% chance to inflict Injury, Sick, Weak, 10% chance to inflict Poison, Curse, Paralysis, 100% damage boost against status afflicted foes",
+  "stats": {
+    "_base": {
+      "atk": 2165,
+      "def": 2131,
+      "hp": 5091,
+      "rec": 2048
+    },
+    "_lord": {
+      "atk": 2678,
+      "def": 2664,
+      "hp": 6678,
+      "rec": 2498
+    },
+    "anima": {
+      "atk": 2678,
+      "def": 2664,
+      "hp max": 7868,
+      "hp min": 7273,
+      "rec max": 2379,
+      "rec min": 2141
+    },
+    "breaker": {
+      "atk max": 3035,
+      "atk min": 2797,
+      "def max": 2545,
+      "def min": 2307,
+      "hp": 6678,
+      "rec": 2498
+    },
+    "guardian": {
+      "atk": 2678,
+      "def max": 3021,
+      "def min": 2783,
+      "hp": 6678,
+      "rec max": 2498,
+      "rec min": 2260
+    },
+    "oracle": {
+      "atk": 2678,
+      "def max": 2664,
+      "def min": 2426,
+      "hp": 6678,
+      "rec max": 2974,
+      "rec min": 2736
+    }
+  },
+  "leader_skill": {
+    "desc": "40% boost to Rec, max HP, probable random status ailment infliction & hugely boosts damage against status afflicted foes",
+    "effects": [
+      {
+        "hp% buff": 40,
+        "passive id": "1",
+        "rec% buff": 40
+      },
+      {
+        "injury%": 15,
+        "passive id": "20",
+        "poison%": 10,
+        "sick%": 15,
+        "weaken%": 15
+      },
+      {
+        "curse%": 10,
+        "paralysis%": 10,
+        "passive id": "20"
+      },
+      {
+        "atk% buff when enemy has ailment": 100,
+        "atk% buff when enemy has curse": true,
+        "atk% buff when enemy has injury": true,
+        "atk% buff when enemy has paralysis": true,
+        "atk% buff when enemy has poison": true,
+        "atk% buff when enemy has sick": true,
+        "atk% buff when enemy has weaken": true,
+        "passive id": "74"
+      }
+    ],
+    "id": "9104",
+    "name": "Malicious God's Plague"
+  },
+  "extra_skill": {
+    "desc": "Adds huge damage boost against status afflicted foes for 3 turns effect to BB/SBB",
+    "effects": [
+      {
+        "conditions": [],
+        "passive id": "66",
+        "passive target": "self",
+        "trigger on bb": true,
+        "trigger on sbb": true,
+        "triggered effect": [
+          {
+            "atk% buff turns (110)": 3,
+            "atk% buff when enemy has ailment": 160,
+            "effect delay time(ms)/frame": "0.0/0",
+            "proc id": "65",
+            "target area": "aoe",
+            "target type": "party"
+          }
+        ]
+      }
+    ],
+    "id": "16400",
+    "name": "Cherished Flame's Will",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -753,14 +797,6 @@
     ],
     "name": "Brimstone Sacrifice"
   },
-  "bbdescription": "16 combo Fire attack on all foes, probable random status ailment infliction, probable considerable 1 turn Atk, Def reduction & adds probable 1 turn Atk, Def reduction effect to attack for 3 turns",
-  "bbnote": "10% chance to reduce 20% of enemies' Atk added to attack, 30% chance to reduce 40% of enemies' Atk and/or Def, 75% chance to inflict status ailments",
-  "bbtype": "Offense",
-  "bbhits": "16",
-  "bbaoe": "A",
-  "bbgauge": "22",
-  "bbdc": "16",
-  "bbmultiplier": "350",
   "sbb": {
     "damage frames": [
       {
@@ -1599,14 +1635,6 @@
     ],
     "name": "Ashen Fever"
   },
-  "sbbdescription": "19 combo powerful Fire attack on all foes, probable random status ailment infliction, probable huge 1 turn Atk, Def reduction, adds probable 1 turn Atk, Def reduction effect to attack for 3 turns & adds probable random status ailment counter for 3 turns",
-  "sbbnote": "20% chance to reduce 20% of enemies' Atk added to attack, 30% chance to reduce 50% of enemies' Atk and/or Def, 75% chance to inflict status ailments, 15% chance to inflict Injury, Weak, Sick when attacked, 10% chance to inflict Poison, Curse, Paralysis when attacked",
-  "sbbtype": "Offense",
-  "sbbhits": "19",
-  "sbbaoe": "A",
-  "sbbgauge": "26",
-  "sbbdc": "19",
-  "sbbmultiplier": "560",
   "ubb": {
     "damage frames": [
       {
@@ -1776,133 +1804,6 @@
     ],
     "name": "Shining Shadow: Krater"
   },
-  "ubbdescription": "22 combo massive Fire attack on all foes, enormously reduces Atk for 2 turns, adds probable random status ailment infliction effect to attack for 3 turns & enormously boosts damage against status afflicted foes for 3 turns",
-  "ubbnote": "80% reduction to enemies' Atk, 300% boost to damage against status afflicted foes",
-  "ubbtype": "Offense",
-  "ubbhits": "22",
-  "ubbaoe": "A",
-  "ubbgauge": "30",
-  "ubbdc": "22",
-  "ubbmultiplier": "1300",
-  "es": "Cherished Flame's Will",
-  "esitem": "",
-  "esdescription": "Adds huge damage boost against status afflicted foes for 3 turns effect to BB/SBB",
-  "esnote": "160% boost to damage against status afflicted foes",
-  "evofrom": "10885",
-  "evointo": "",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 2165,
-      "def": 2131,
-      "hp": 5091,
-      "rec": 2048
-    },
-    "_lord": {
-      "atk": 2678,
-      "def": 2664,
-      "hp": 6678,
-      "rec": 2498
-    },
-    "anima": {
-      "atk": 2678,
-      "def": 2664,
-      "hp max": 7868,
-      "hp min": 7273,
-      "rec max": 2379,
-      "rec min": 2141
-    },
-    "breaker": {
-      "atk max": 3035,
-      "atk min": 2797,
-      "def max": 2545,
-      "def min": 2307,
-      "hp": 6678,
-      "rec": 2498
-    },
-    "guardian": {
-      "atk": 2678,
-      "def max": 3021,
-      "def min": 2783,
-      "hp": 6678,
-      "rec max": 2498,
-      "rec min": 2260
-    },
-    "oracle": {
-      "atk": 2678,
-      "def max": 2664,
-      "def min": 2426,
-      "hp": 6678,
-      "rec max": 2974,
-      "rec min": 2736
-    }
-  },
-  "leader_skill": {
-    "desc": "40% boost to Rec, max HP, probable random status ailment infliction & hugely boosts damage against status afflicted foes",
-    "effects": [
-      {
-        "hp% buff": 40,
-        "passive id": "1",
-        "rec% buff": 40
-      },
-      {
-        "injury%": 15,
-        "passive id": "20",
-        "poison%": 10,
-        "sick%": 15,
-        "weaken%": 15
-      },
-      {
-        "curse%": 10,
-        "paralysis%": 10,
-        "passive id": "20"
-      },
-      {
-        "atk% buff when enemy has ailment": 100,
-        "atk% buff when enemy has curse": true,
-        "atk% buff when enemy has injury": true,
-        "atk% buff when enemy has paralysis": true,
-        "atk% buff when enemy has poison": true,
-        "atk% buff when enemy has sick": true,
-        "atk% buff when enemy has weaken": true,
-        "passive id": "74"
-      }
-    ],
-    "id": "9104",
-    "name": "Malicious God's Plague"
-  },
-  "extra_skill": {
-    "desc": "Adds huge damage boost against status afflicted foes for 3 turns effect to BB/SBB",
-    "effects": [
-      {
-        "conditions": [],
-        "passive id": "66",
-        "passive target": "self",
-        "trigger on bb": true,
-        "trigger on sbb": true,
-        "triggered effect": [
-          {
-            "atk% buff turns (110)": 3,
-            "atk% buff when enemy has ailment": 160,
-            "effect delay time(ms)/frame": "0.0/0",
-            "proc id": "65",
-            "target area": "aoe",
-            "target type": "party"
-          }
-        ]
-      }
-    ],
-    "id": "16400",
-    "name": "Cherished Flame's Will",
-    "rarity": "1",
-    "target": "self"
-  },
   "unitDisplayHomePosition_1W9CxaFK": "513,346,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-231,-117,1290,1060",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "-9,121,680,559,0",
@@ -1911,5 +1812,6 @@
   "unitDisplayHpPosition_3BpHN6VD": "-2,40",
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "15000",
-  "sellCaution": false
+  "sellCaution": false,
+  "effectFrames": "46:158:1,70:150:1,65:1127:1,60:100018:1,95:100018:1,60:1130:1,62:1113:1,64:600782:1,65:1141:1,45:601320:1"
 }

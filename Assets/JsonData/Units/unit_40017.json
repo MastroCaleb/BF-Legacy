@@ -1,69 +1,130 @@
 {
   "id": "40017",
   "unitName": "Fulgur Halcyon Eze",
-  "no": "1305",
-  "element": "Thunder",
-  "rarity": "Omni",
-  "cost": "45",
-  "maxlv": "150",
-  "basexp": "10",
-  "gender": "M",
-  "ai": "4",
-  "animation_attack": "156",
-  "animation_idle": "64",
-  "animation_move": "4",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "12, 67",
-  "normal_distribute": "10, 90",
-  "normal_totaldistr": "100",
-  "bb_frames": "12, 67",
-  "bb_distribute": "10, 90",
-  "bb_totaldistr": "100",
-  "sbb_frames": "12, 15, 18, 21, 24, 27, 30, 33, 67, 70, 73, 76, 79, 82, 84, 87, 90, 93, 96, 99",
-  "sbb_distribute": "8, 3, 2, 3, 2, 3, 46, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "12, 67",
-  "ubb_distribute": "10, 90",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "2",
-  "sbb_effectdelay": "4",
-  "ubb_effectdelay": "3",
-  "description": "There are countless records of Eze's prowess in battle, but few touch on the subject of his suitability as a leader. Of these scant materials, the overwhelming majority are skeptical, to say the least. Only Weiss is quoted as vouching for Eze, \"A leader doesn't need to think, if they can sense danger and quickly take action that will inspire their followers.\" If the Six HeroesSix Heroes had succeeded in repelling the gods, perhaps we would have witnessed the unlikely sight of Eze parading alongside respected generals and tacticians.",
-  "summon": "I'm not good at getting ordered around. The only thing I do worse is losing! So why waste time listening?",
-  "fusion": "I wonder what my friends would say if they could see what I've become! Imagine the looks on their faces...!",
-  "evolution": "I couldn't care less about your plan! Leave everything to me, and no matter what happens, I'll make sure it goes your way!",
-  "hp_base": "5780",
-  "atk_base": "2125",
-  "def_base": "1700",
-  "rec_base": "1530",
-  "hp_lord": "7602",
-  "atk_lord": "3000",
-  "def_lord": "2354",
-  "rec_lord": "2050",
-  "hp_anima": "8719",
-  "rec_anima": "1752",
-  "atk_breaker": "3298",
-  "def_breaker": "2056",
-  "def_guardian": "2652",
-  "rec_guardian": "1901",
-  "def_oracle": "2205",
-  "rec_oracle": "2497",
-  "hp_bonus": "1300",
-  "atk_bonus": "1100",
-  "def_bonus": "520",
-  "rec_bonus": "1100",
-  "lordonly": "",
-  "combo_hits": "2",
-  "normaldc": "44",
-  "ls": "Eidolon Fulgur Resolve",
-  "lsdescription": "50% boost to Atk and 30% boost to max HP of Thunder types, 100% boost to Atk, 30% boost to max HP, 120% boost to Spark damage & Spark damage boosts BB gauge",
-  "lsnote": "Fills 1-2 BC",
-  "lstype": "Attack/Hit Points/Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 2125,
+      "def": 1700,
+      "hp": 5780,
+      "rec": 1530
+    },
+    "_lord": {
+      "atk": 3000,
+      "def": 2354,
+      "hp": 7602,
+      "rec": 2050
+    },
+    "anima": {
+      "atk": 3000,
+      "def": 2354,
+      "hp max": 9092,
+      "hp min": 8347,
+      "rec max": 1901,
+      "rec min": 1603
+    },
+    "breaker": {
+      "atk max": 3447,
+      "atk min": 3149,
+      "def max": 2205,
+      "def min": 1907,
+      "hp": 7602,
+      "rec": 2050
+    },
+    "guardian": {
+      "atk": 3000,
+      "def max": 2801,
+      "def min": 2503,
+      "hp": 7602,
+      "rec max": 2050,
+      "rec min": 1752
+    },
+    "oracle": {
+      "atk": 3000,
+      "def max": 2354,
+      "def min": 2056,
+      "hp": 7602,
+      "rec max": 2646,
+      "rec min": 2348
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to Atk and 30% boost to max HP for Thunder types, 100% boost to Atk, 30% boost to max HP, 120% boost to Spark damage & Spark damage boosts BB gauge",
+    "effects": [
+      {
+        "atk% buff": 100,
+        "hp% buff": 30,
+        "passive id": "1"
+      },
+      {
+        "atk% buff": 50,
+        "elements buffed": [
+          "thunder"
+        ],
+        "hp% buff": 30,
+        "passive id": "2"
+      },
+      {
+        "damage% for spark": 120,
+        "passive id": "31"
+      },
+      {
+        "bc fill on spark high": 3,
+        "bc fill on spark low": 2,
+        "bc fill on spark%": 100,
+        "passive id": "47"
+      }
+    ],
+    "id": "163",
+    "name": "Eidolon Fulgur Resolve"
+  },
+  "extra_skill": {
+    "desc": "30% boost to all parameters, boosts critical damage & 50% boost to Spark damage when Batootha is equipped ",
+    "effects": [
+      {
+        "atk% buff": 30,
+        "conditions": [
+          {
+            "item required": [
+              "37620"
+            ]
+          }
+        ],
+        "def% buff": 30,
+        "hp% buff": 30,
+        "passive id": "1",
+        "passive target": "self",
+        "rec% buff": 30
+      },
+      {
+        "conditions": [
+          {
+            "item required": [
+              "37620"
+            ]
+          }
+        ],
+        "crit multiplier%": 50.0,
+        "passive id": "34",
+        "passive target": "self"
+      },
+      {
+        "conditions": [
+          {
+            "item required": [
+              "37620"
+            ]
+          }
+        ],
+        "damage% for spark": 50,
+        "passive id": "31",
+        "passive target": "self"
+      }
+    ],
+    "id": "410",
+    "name": "Natural Leader",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -412,14 +473,6 @@
     ],
     "name": "Fulgur Caelestis"
   },
-  "bbdescription": "2 combo Thunder attack on all foes, hugely boosts Atk for 3 turns & hugely boosts Spark damage for 3 turns",
-  "bbnote": "150% Atk and 90% Spark damage",
-  "bbtype": "Support/Offense",
-  "bbhits": "2",
-  "bbaoe": "A",
-  "bbgauge": "25",
-  "bbdc": "30",
-  "bbmultiplier": "350",
   "sbb": {
     "damage frames": [
       {
@@ -1008,14 +1061,6 @@
     ],
     "name": "Varze Superbia"
   },
-  "sbbdescription": "20 combo powerful Thunder attack on all foes, hugely boosts Atk and Spark damage for 3 turns, adds Spark critical for 3 turns & considerably boosts Thunder elemental damage for 3 turns",
-  "sbbnote": "150% Atk, 90% Spark damage, 20% chance Sparks deal 50% extra damage & 75% boost",
-  "sbbtype": "Support/Offense",
-  "sbbhits": "20",
-  "sbbaoe": "A",
-  "sbbgauge": "20",
-  "sbbdc": "20",
-  "sbbmultiplier": "560",
   "ubb": {
     "damage frames": [
       {
@@ -1115,215 +1160,6 @@
     ],
     "name": "Supreme Bolt"
   },
-  "ubbdescription": "2 combo massive Thunder attack on all foes, inflicts enormous Spark vulnerability for 1 turn, enormously boosts Spark damage for 3 turns & probable Spark critical for 3 turns",
-  "ubbnote": "100% Spark vulnerability, 250% Spark & 50% chance Sparks deal 50% extra damage",
-  "ubbtype": "Support/Offense",
-  "ubbhits": "2",
-  "ubbaoe": "A",
-  "ubbgauge": "30",
-  "ubbdc": "60",
-  "ubbmultiplier": "1500",
-  "es": "Natural Leader",
-  "esitem": "Batootha",
-  "esdescription": "30% boost to all parameters & boosts critical damage & 50% boost to Spark damage when Batootha is equipped",
-  "esnote": "50% boost",
-  "evofrom": "40016",
-  "omniskill1_cat": "Parameter Boost",
-  "omniskill1_1_sp": "20",
-  "omniskill1_1_desc": "20% boost to all parameters",
-  "omniskill2_cat": "Spark",
-  "omniskill2_1_sp": "10",
-  "omniskill2_1_desc": "50% boost to Spark damage",
-  "omniskill2_2_sp": "10",
-  "omniskill2_2_desc": "Boosts 50% Spark damage to 70% Spark damage",
-  "omniskill2_2_note": "(Prerequisite: Unlock \"50% boost to Spark damage\")",
-  "omniskill2_3_sp": "10",
-  "omniskill2_3_desc": "Boosts 70% Spark damage to 100% Spark damage",
-  "omniskill2_3_note": "(Prerequisite: Unlock \"Boosts 50% Spark damage to 70% Spark damage\")",
-  "omniskill3_cat": "Critical Hits",
-  "omniskill3_1_sp": "10",
-  "omniskill3_1_desc": "Slightly boosts critical hit damage",
-  "omniskill3_1_note": "30% boost",
-  "omniskill3_2_sp": "10",
-  "omniskill3_2_desc": "Boosts critical hit damage",
-  "omniskill3_2_note": "+20% boost, 50% boost total (Prerequisite: Unlock \"Slightly boosts critical hit damage\")",
-  "omniskill4_cat": "Special",
-  "omniskill4_1_sp": "50",
-  "omniskill4_1_desc": "Enhances BB/SBB's BB gauge boost during Spark effect",
-  "omniskill4_1_note": "+30% boost, 120% boost total '''(to Spark damage, not BB gauge boost during Spark)'''",
-  "omniskill4_2_sp": "60",
-  "omniskill4_2_desc": "Allows UBB buff effects to last for 4 turns",
-  "omniskill4_3_sp": "",
-  "omniskill4_3_desc": "",
-  "omniskill4_3_note": "",
-  "omniskill4_4_sp": "",
-  "omniskill4_4_desc": "",
-  "omniskill4_4_note": "",
-  "omniskill4_5_sp": "",
-  "omniskill4_5_desc": "",
-  "omniskill4_5_note": "",
-  "omniskill5_cat": "",
-  "omniskill5_1_sp": "",
-  "omniskill5_1_desc": "",
-  "omniskill5_1_note": "",
-  "omniskill5_2_sp": "",
-  "omniskill5_2_desc": "",
-  "omniskill5_2_note": "",
-  "omniskill5_3_sp": "",
-  "omniskill5_3_desc": "",
-  "omniskill5_3_note": "",
-  "omniskill5_4_sp": "",
-  "omniskill5_4_desc": "",
-  "omniskill5_4_note": "",
-  "omniskill5_5_sp": "",
-  "omniskill5_5_desc": "",
-  "omniskill5_5_note": "",
-  "omniskill6_cat": "",
-  "omniskill6_1_sp": "",
-  "omniskill6_1_desc": "",
-  "omniskill6_1_note": "",
-  "omniskill6_2_sp": "",
-  "omniskill6_2_desc": "",
-  "omniskill6_2_note": "",
-  "omniskill6_3_sp": "",
-  "omniskill6_3_desc": "",
-  "omniskill6_3_note": "",
-  "omniskill6_4_sp": "",
-  "omniskill6_4_desc": "",
-  "omniskill6_4_note": "",
-  "omniskill6_5_sp": "",
-  "omniskill6_5_desc": "",
-  "omniskill6_5_note": "",
-  "altartget": "",
-  "notes": "One of Eze's SP Enhancements \"Enhances BB/SBB's BB gauge boost during Spark effect\" enhances Spark boost, not BB gauge.",
-  "incorrectinfo": "true",
-  "addcat": "Six Heroes",
-  "addcatname": "Eze7",
-  "bottomtext": "",
-  "stats": {
-    "_base": {
-      "atk": 2125,
-      "def": 1700,
-      "hp": 5780,
-      "rec": 1530
-    },
-    "_lord": {
-      "atk": 3000,
-      "def": 2354,
-      "hp": 7602,
-      "rec": 2050
-    },
-    "anima": {
-      "atk": 3000,
-      "def": 2354,
-      "hp max": 9092,
-      "hp min": 8347,
-      "rec max": 1901,
-      "rec min": 1603
-    },
-    "breaker": {
-      "atk max": 3447,
-      "atk min": 3149,
-      "def max": 2205,
-      "def min": 1907,
-      "hp": 7602,
-      "rec": 2050
-    },
-    "guardian": {
-      "atk": 3000,
-      "def max": 2801,
-      "def min": 2503,
-      "hp": 7602,
-      "rec max": 2050,
-      "rec min": 1752
-    },
-    "oracle": {
-      "atk": 3000,
-      "def max": 2354,
-      "def min": 2056,
-      "hp": 7602,
-      "rec max": 2646,
-      "rec min": 2348
-    }
-  },
-  "leader_skill": {
-    "desc": "50% boost to Atk and 30% boost to max HP for Thunder types, 100% boost to Atk, 30% boost to max HP, 120% boost to Spark damage & Spark damage boosts BB gauge",
-    "effects": [
-      {
-        "atk% buff": 100,
-        "hp% buff": 30,
-        "passive id": "1"
-      },
-      {
-        "atk% buff": 50,
-        "elements buffed": [
-          "thunder"
-        ],
-        "hp% buff": 30,
-        "passive id": "2"
-      },
-      {
-        "damage% for spark": 120,
-        "passive id": "31"
-      },
-      {
-        "bc fill on spark high": 3,
-        "bc fill on spark low": 2,
-        "bc fill on spark%": 100,
-        "passive id": "47"
-      }
-    ],
-    "id": "163",
-    "name": "Eidolon Fulgur Resolve"
-  },
-  "extra_skill": {
-    "desc": "30% boost to all parameters, boosts critical damage & 50% boost to Spark damage when Batootha is equipped ",
-    "effects": [
-      {
-        "atk% buff": 30,
-        "conditions": [
-          {
-            "item required": [
-              "37620"
-            ]
-          }
-        ],
-        "def% buff": 30,
-        "hp% buff": 30,
-        "passive id": "1",
-        "passive target": "self",
-        "rec% buff": 30
-      },
-      {
-        "conditions": [
-          {
-            "item required": [
-              "37620"
-            ]
-          }
-        ],
-        "crit multiplier%": 50.0,
-        "passive id": "34",
-        "passive target": "self"
-      },
-      {
-        "conditions": [
-          {
-            "item required": [
-              "37620"
-            ]
-          }
-        ],
-        "damage% for spark": 50,
-        "passive id": "31",
-        "passive target": "self"
-      }
-    ],
-    "id": "410",
-    "name": "Natural Leader",
-    "rarity": "1",
-    "target": "self"
-  },
   "unitDisplayHomePosition_1W9CxaFK": "581,340,160,437",
   "unitDisplayDetailPosition_6z54rgb3": "-252,-113,1386,994",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "-11,128,693,497,0",
@@ -1332,5 +1168,6 @@
   "unitDisplayHpPosition_3BpHN6VD": "-2,77",
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "20000",
-  "sellCaution": false
+  "sellCaution": false,
+  "effectFrames": "12:400157:1,13:400480:1,65:300:1,61:127:1,65:400142:1,53:200407:1,68:400520:1"
 }

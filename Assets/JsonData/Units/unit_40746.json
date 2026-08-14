@@ -1,73 +1,101 @@
 {
   "id": "40746",
   "unitName": "Steel Automaton Voldoga",
-  "no": "1318",
-  "element": "Thunder",
-  "rarity": "★★★★★★★",
-  "cost": "43",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "N",
-  "ai": "2",
-  "animation_attack": "150",
-  "animation_idle": "52",
-  "animation_move": "8",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "52, 55, 58, 61, 64",
-  "normal_distribute": "32, 24, 19, 15, 10",
-  "normal_totaldistr": "100",
-  "bb_frames": "52",
-  "bb_distribute": "100",
-  "bb_totaldistr": "100",
-  "sbb_frames": "65",
-  "sbb_distribute": "100",
-  "sbb_totaldistr": "100",
-  "sbb2_frames": "52",
-  "sbb2_distribute": "100",
-  "sbb2_totaldistr": "100",
-  "ubb_frames": "52, 57, 62, 67, 72, 77, 82, 87, 92, 97, 102, 107, 112, 117, 122, 127, 132, 137, 142, 147, 152, 157, 162",
-  "ubb_distribute": "6, 6, 6, 6, 6, 5, 5, 5, 5, 5, 4, 4, 3, 3, 4, 4, 4, 4, 3, 3, 3, 3, 3",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "2",
-  "sbb_effectdelay": "2",
-  "sbb2_effectdelay": "1",
-  "ubb_effectdelay": "2",
-  "description": "After Voldoga's pursuit of the disciple who had been acting as its mentor, it found that she was being attacked by Creator Maxwell. The automaton then attempted to intercept Maxwell's attacks in order to drive her away from the disciple, but only ended up being blown to bits by her overwhelming power. It is unclear what became of Voldoga following these events, but rumors have it that Maxwell, who was curious about otherworldly technology, collected its scraps to use as material for the creation of a new weapon.",
-  "summon": "I was unable to protect those who saved me. My existence holds no value...",
-  "fusion": "Functional upgrade confirmed!<br>Auto target search mode installed!<br>Awaiting instructions to eliminate targets!",
-  "evolution": "Increasing output to maximum levels to guarantee highest security...<br>I shall protect you...",
-  "hp_base": "5180",
-  "atk_base": "2183",
-  "def_base": "2019",
-  "rec_base": "1787",
-  "hp_lord": "6920",
-  "atk_lord": "2788",
-  "def_lord": "2564",
-  "rec_lord": "2243",
-  "hp_anima": "7812",
-  "rec_anima": "2005",
-  "atk_breaker": "3026",
-  "def_breaker": "2326",
-  "def_guardian": "2802",
-  "rec_guardian": "2124",
-  "def_oracle": "2445",
-  "rec_oracle": "2600",
-  "hp_bonus": "1100",
-  "atk_bonus": "440",
-  "def_bonus": "440",
-  "rec_bonus": "440",
-  "lordonly": "",
-  "combo_hits": "5",
-  "normaldc": "40",
-  "ls": "Mechanical Steel Drill",
-  "lsdescription": "40% boost Atk, max HP, 75% boost to Spark damage & Spark damage boosts BB gauge",
-  "lsnote": "Fills 2-3 BC",
-  "lstype": "Attack/Hit Points/Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 2183,
+      "def": 2019,
+      "hp": 5180,
+      "rec": 1787
+    },
+    "_lord": {
+      "atk": 2788,
+      "def": 2564,
+      "hp": 6920,
+      "rec": 2243
+    },
+    "anima": {
+      "atk": 2788,
+      "def": 2564,
+      "hp max": 8110,
+      "hp min": 7515,
+      "rec max": 2124,
+      "rec min": 1886
+    },
+    "breaker": {
+      "atk max": 3145,
+      "atk min": 2907,
+      "def max": 2445,
+      "def min": 2207,
+      "hp": 6920,
+      "rec": 2243
+    },
+    "guardian": {
+      "atk": 2788,
+      "def max": 2921,
+      "def min": 2683,
+      "hp": 6920,
+      "rec max": 2243,
+      "rec min": 2005
+    },
+    "oracle": {
+      "atk": 2788,
+      "def max": 2564,
+      "def min": 2326,
+      "hp": 6920,
+      "rec max": 2719,
+      "rec min": 2481
+    }
+  },
+  "leader_skill": {
+    "desc": "40% boost Atk, max HP, 75% boost to Spark damage & Spark damage boosts BB gauge",
+    "effects": [
+      {
+        "atk% buff": 40,
+        "hp% buff": 40,
+        "passive id": "1"
+      },
+      {
+        "damage% for spark": 75,
+        "passive id": "31"
+      },
+      {
+        "bc fill on spark high": 3,
+        "bc fill on spark low": 2,
+        "bc fill on spark%": 100,
+        "passive id": "47"
+      }
+    ],
+    "id": "7426",
+    "name": "Mechanical Steel Drill"
+  },
+  "extra_skill": {
+    "desc": "50% boost to Spark damage & considerably boosts BB Atk when Spark damage has exceeded certain amount for next turn",
+    "effects": [
+      {
+        "conditions": [],
+        "damage% for spark": 50,
+        "passive id": "31",
+        "passive target": "self"
+      },
+      {
+        "buff": {
+          "bb atk% buff": 100,
+          "buff turns (72)": "2",
+          "sbb atk% buff": 100,
+          "ubb atk% buff": 100
+        },
+        "conditions": [],
+        "passive id": "86",
+        "passive target": "self",
+        "spark count buff activation": 2
+      }
+    ],
+    "id": "14600",
+    "name": "Abandoned Wreckage",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -656,13 +684,6 @@
     ],
     "name": "Echoing Thunder Demolition"
   },
-  "bbdescription": "Thunder attack on all foes, removes all status ailments, negates them for 3 turns & negates Atk, Def, Rec reductions for 1 turn",
-  "bbtype": "Support/Offense",
-  "bbhits": "1",
-  "bbaoe": "A",
-  "bbgauge": "24",
-  "bbdc": "17",
-  "bbmultiplier": "350",
   "sbb": {
     "damage frames": [
       {
@@ -1071,18 +1092,6 @@
     ],
     "name": "Crack Down Voltage"
   },
-  "sbbdescription": "Powerful Thunder attack on all foes, powerful Thunder attack on single foe, considerably boosts own Spark damage for 3 turns & fills BB gauge to max",
-  "sbbnote": "150% boost",
-  "sbbtype": "Support/Offense",
-  "sbbhits": "1",
-  "sbbaoe": "A",
-  "sbbgauge": "32",
-  "sbbdc": "25",
-  "sbbmultiplier": "560",
-  "sbbhits2": "1",
-  "sbbaoe2": "1",
-  "sbbdc2": "25",
-  "sbbmultiplier2": "640",
   "ubb": {
     "damage frames": [
       {
@@ -1226,118 +1235,6 @@
     ],
     "name": "Dark Aeon Vajra"
   },
-  "ubbdescription": "23 combo massive Thunder attack on all foes, enormously boosts BB Atk and Spark damage for 3 turns & activates Thunder barrier",
-  "ubbnote": "500% BB Atk, 150% Spark & 20,000 HP barrier",
-  "ubbtype": "Support/Offense",
-  "ubbhits": "23",
-  "ubbaoe": "A",
-  "ubbgauge": "25",
-  "ubbdc": "23",
-  "ubbmultiplier": "1500",
-  "es": "Abandoned Wreckage",
-  "esitem": "",
-  "esdescription": "50% boost to Spark damage & considerably boosts BB Atk when Spark damage has exceeded certain amount for next turn",
-  "esnote": "100% boost after 2 Sparks",
-  "evofrom": "40745",
-  "notes": "",
-  "addcat": "The Loyal Followers",
-  "addcatname": "Reddrag3",
-  "bottomtext": "",
-  "stats": {
-    "_base": {
-      "atk": 2183,
-      "def": 2019,
-      "hp": 5180,
-      "rec": 1787
-    },
-    "_lord": {
-      "atk": 2788,
-      "def": 2564,
-      "hp": 6920,
-      "rec": 2243
-    },
-    "anima": {
-      "atk": 2788,
-      "def": 2564,
-      "hp max": 8110,
-      "hp min": 7515,
-      "rec max": 2124,
-      "rec min": 1886
-    },
-    "breaker": {
-      "atk max": 3145,
-      "atk min": 2907,
-      "def max": 2445,
-      "def min": 2207,
-      "hp": 6920,
-      "rec": 2243
-    },
-    "guardian": {
-      "atk": 2788,
-      "def max": 2921,
-      "def min": 2683,
-      "hp": 6920,
-      "rec max": 2243,
-      "rec min": 2005
-    },
-    "oracle": {
-      "atk": 2788,
-      "def max": 2564,
-      "def min": 2326,
-      "hp": 6920,
-      "rec max": 2719,
-      "rec min": 2481
-    }
-  },
-  "leader_skill": {
-    "desc": "40% boost Atk, max HP, 75% boost to Spark damage & Spark damage boosts BB gauge",
-    "effects": [
-      {
-        "atk% buff": 40,
-        "hp% buff": 40,
-        "passive id": "1"
-      },
-      {
-        "damage% for spark": 75,
-        "passive id": "31"
-      },
-      {
-        "bc fill on spark high": 3,
-        "bc fill on spark low": 2,
-        "bc fill on spark%": 100,
-        "passive id": "47"
-      }
-    ],
-    "id": "7426",
-    "name": "Mechanical Steel Drill"
-  },
-  "extra_skill": {
-    "desc": "50% boost to Spark damage & considerably boosts BB Atk when Spark damage has exceeded certain amount for next turn",
-    "effects": [
-      {
-        "conditions": [],
-        "damage% for spark": 50,
-        "passive id": "31",
-        "passive target": "self"
-      },
-      {
-        "buff": {
-          "bb atk% buff": 100,
-          "buff turns (72)": "2",
-          "sbb atk% buff": 100,
-          "ubb atk% buff": 100
-        },
-        "conditions": [],
-        "passive id": "86",
-        "passive target": "self",
-        "spark count buff activation": 2
-      }
-    ],
-    "id": "14600",
-    "name": "Abandoned Wreckage",
-    "rarity": "1",
-    "target": "self"
-  },
   "unitDisplayHomePosition_1W9CxaFK": "380,164,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-57,42,976,896",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "89,175,488,448,1",
@@ -1346,5 +1243,6 @@
   "unitDisplayHpPosition_3BpHN6VD": "1,62",
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "15000",
-  "sellCaution": false
+  "sellCaution": false,
+  "effectFrames": "52:137:1,55:137:1,58:137:1,61:137:1,64:137:1,53:400762:1,54:400762:1,55:400762:1,62:600751:1,56:330368:1,54:600323:1,50:200754:2,51:200754:2"
 }

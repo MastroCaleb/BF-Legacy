@@ -1,68 +1,88 @@
 {
   "id": "50986",
   "unitName": "Sacred Dragonchild Lara",
-  "idalt": "",
-  "no": "1380",
-  "element": "Light",
-  "rarity": "★★★★★★★",
-  "cost": "43",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "115",
-  "animation_idle": "78",
-  "animation_move": "3",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "38, 43, 48, 70, 78",
-  "normal_distribute": "30, 15, 12, 32, 11",
-  "normal_totaldistr": "100",
-  "bb_frames": "38, 41, 44, 47, 50, 53, 70, 74, 78, 82",
-  "bb_distribute": "20, 14, 10, 6, 5, 4, 22, 8, 6, 5",
-  "bb_totaldistr": "100",
-  "sbb_frames": "38, 41, 44, 47, 50, 53, 56, 59, 70, 73, 76, 79, 82, 85, 88, 91",
-  "sbb_distribute": "15, 10, 8, 5, 4, 3, 3, 3, 17, 8, 6, 5, 4, 3, 3, 3",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "38, 41, 44, 47, 50, 53, 56, 59, 62, 70, 73, 76, 79, 82, 85, 88, 91, 94, 97, 100",
-  "ubb_distribute": "12, 8, 6, 5, 4, 3, 3, 3, 3, 14, 7, 5, 4, 4, 4, 3, 3, 3, 3, 3",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "1",
-  "description": "A girl who followed the goddess Felice, a member of the Divine Ten. She was raised with dragons, and was exceptionally clever from a young age. The goddess hoped that she would take a place between gods and humans in the future. But one day it is said she suddenly killed the goddess and disappeared. At the same time, the dragons she kept with her also vanished. Just what happened between her and the goddess is still not known to this day.",
-  "summon": "You're the one who summoned me?<br>You won't try to take me away from this little one, right?",
-  "fusion": "Huh, you're giving me strength?<br>He he, thanks!<br>Maybe now she will praise me?",
-  "evolution": "",
-  "hp_base": "4854",
-  "atk_base": "1789",
-  "def_base": "1966",
-  "rec_base": "1777",
-  "hp_lord": "6977",
-  "atk_lord": "2457",
-  "def_lord": "2713",
-  "rec_lord": "2459",
-  "hp_anima": "7869",
-  "rec_anima": "2221",
-  "atk_breaker": "2695",
-  "def_breaker": "2475",
-  "def_guardian": "2951",
-  "rec_guardian": "2329",
-  "def_oracle": "2556",
-  "rec_oracle": "2816",
-  "hp_bonus": "1100",
-  "atk_bonus": "440",
-  "def_bonus": "440",
-  "rec_bonus": "440",
-  "lordonly": "",
-  "combo_hits": "5",
-  "normaldc": "35",
-  "ls": "Pure God's Protection",
-  "lsdescription": "30% boost to Atk, max HP & probable 15% damage reduction",
-  "lsnote": "20% chance to reduce damage taken",
+  "stats": {
+    "_base": {
+      "atk": 1789,
+      "def": 1966,
+      "hp": 4854,
+      "rec": 1777
+    },
+    "_lord": {
+      "atk": 2457,
+      "def": 2713,
+      "hp": 6977,
+      "rec": 2459
+    },
+    "anima": {
+      "atk": 2457,
+      "def": 2713,
+      "hp max": 8167,
+      "hp min": 7572,
+      "rec max": 2340,
+      "rec min": 2102
+    },
+    "breaker": {
+      "atk max": 2814,
+      "atk min": 2576,
+      "def max": 2594,
+      "def min": 2356,
+      "hp": 6977,
+      "rec": 2459
+    },
+    "guardian": {
+      "atk": 2457,
+      "def max": 3070,
+      "def min": 2832,
+      "hp": 6977,
+      "rec max": 2459,
+      "rec min": 2221
+    },
+    "oracle": {
+      "atk": 2457,
+      "def max": 2713,
+      "def min": 2475,
+      "hp": 6977,
+      "rec max": 2935,
+      "rec min": 2697
+    }
+  },
+  "leader_skill": {
+    "desc": "30% boost to Atk, max HP & probable 15% damage reduction",
+    "effects": [
+      {
+        "atk% buff": 30,
+        "hp% buff": 30,
+        "passive id": "1"
+      },
+      {
+        "dmg reduction chance%": 20,
+        "dmg reduction%": 15,
+        "passive id": "14"
+      }
+    ],
+    "id": "7436",
+    "name": "Pure God's Protection"
+  },
+  "extra_skill": {
+    "desc": "Reduces damage taken for 2 turns when HP is below 50%",
+    "effects": [
+      {
+        "buff": {
+          "buff turns (36)": "1",
+          "dmg reduction% buff": 25
+        },
+        "conditions": [],
+        "hp below % buff activation": 50,
+        "passive id": "55",
+        "passive target": "self"
+      }
+    ],
+    "id": "16900",
+    "name": "Pure Endowment",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -661,18 +681,6 @@
     ],
     "name": "Panacea"
   },
-  "bbdescription": "10 combo Light attack on all foes, greatly restores HP, greatly restores HP for 3 turns, considerably boosts BB Atk for 3 turns & negates critical damage for 1 turn",
-  "bbnote": "200% boost to BB Atk, heals (3000~3500 + 32.4% of healer's Rec), gradually heals (2500~3000 + 15% of target's Rec)",
-  "bbtype": "Offense",
-  "bbhits": "10",
-  "bbaoe": "A",
-  "bbgauge": "26",
-  "bbdc": "10",
-  "bbmultiplier": "350",
-  "bbhits2": "",
-  "bbaoe2": "",
-  "bbdc2": "",
-  "bbmultiplier2": "",
   "sbb": {
     "damage frames": [
       {
@@ -1293,18 +1301,6 @@
     ],
     "name": "Ain Soph"
   },
-  "sbbdescription": "16 combo powerful Light attack on all foes, boosts Atk and Def relative to Rec for 3 turns, greatly restores HP for 3 turns, damage taken may slightly restore HP for 3 turns & negates critical damage for 1 turn",
-  "sbbnote": "20% chance to heal 15~20% of HP from damage taken, 40% boost to Atk and Def relative to Rec, heals (2500~3000 + 15% of target's Rec)",
-  "sbbtype": "Offense",
-  "sbbhits": "16",
-  "sbbaoe": "A",
-  "sbbgauge": "30",
-  "sbbdc": "16",
-  "sbbmultiplier": "560",
-  "sbbhits2": "",
-  "sbbaoe2": "",
-  "sbbdc2": "",
-  "sbbmultiplier2": "",
   "ubb": {
     "damage frames": [
       {
@@ -1441,118 +1437,6 @@
     ],
     "name": "Fantome"
   },
-  "ubbdescription": "20 combo massive Light attack on all foes, negates critical and elemental based damage for 3 turns, 75% damage reduction for 3 turns & hugely boosts probable damage reduction when guarding for 5 turns",
-  "ubbnote": "20% damage reduction on guard",
-  "ubbtype": "Offense",
-  "ubbhits": "20",
-  "ubbaoe": "A",
-  "ubbgauge": "30",
-  "ubbdc": "20",
-  "ubbmultiplier": "1300",
-  "ubbhits2": "",
-  "ubbaoe2": "",
-  "ubbdc2": "",
-  "ubbmultiplier2": "",
-  "es": "Pure Endowment",
-  "esitem": "",
-  "esdescription": "Reduces damage taken for 2 turns when HP is below 50%",
-  "esnote": "25% damage reduction",
-  "evofrom": "",
-  "evointo": "50987",
-  "evomats1": "Light Mecha God",
-  "evomats2": "Light Mecha God",
-  "evomats3": "Miracle Totem",
-  "evomats4": "Light Totem",
-  "evomats5": "Light Pot",
-  "evomats6": "Light Pot",
-  "evomats7": "Metal Mimic",
-  "evomats8": "Metal Mimic",
-  "evomats9": "",
-  "evoitem": "",
-  "evoitem2": "",
-  "evozelcost": "3000000",
-  "stats": {
-    "_base": {
-      "atk": 1789,
-      "def": 1966,
-      "hp": 4854,
-      "rec": 1777
-    },
-    "_lord": {
-      "atk": 2457,
-      "def": 2713,
-      "hp": 6977,
-      "rec": 2459
-    },
-    "anima": {
-      "atk": 2457,
-      "def": 2713,
-      "hp max": 8167,
-      "hp min": 7572,
-      "rec max": 2340,
-      "rec min": 2102
-    },
-    "breaker": {
-      "atk max": 2814,
-      "atk min": 2576,
-      "def max": 2594,
-      "def min": 2356,
-      "hp": 6977,
-      "rec": 2459
-    },
-    "guardian": {
-      "atk": 2457,
-      "def max": 3070,
-      "def min": 2832,
-      "hp": 6977,
-      "rec max": 2459,
-      "rec min": 2221
-    },
-    "oracle": {
-      "atk": 2457,
-      "def max": 2713,
-      "def min": 2475,
-      "hp": 6977,
-      "rec max": 2935,
-      "rec min": 2697
-    }
-  },
-  "leader_skill": {
-    "desc": "30% boost to Atk, max HP & probable 15% damage reduction",
-    "effects": [
-      {
-        "atk% buff": 30,
-        "hp% buff": 30,
-        "passive id": "1"
-      },
-      {
-        "dmg reduction chance%": 20,
-        "dmg reduction%": 15,
-        "passive id": "14"
-      }
-    ],
-    "id": "7436",
-    "name": "Pure God's Protection"
-  },
-  "extra_skill": {
-    "desc": "Reduces damage taken for 2 turns when HP is below 50%",
-    "effects": [
-      {
-        "buff": {
-          "buff turns (36)": "1",
-          "dmg reduction% buff": 25
-        },
-        "conditions": [],
-        "hp below % buff activation": 50,
-        "passive id": "55",
-        "passive target": "self"
-      }
-    ],
-    "id": "16900",
-    "name": "Pure Endowment",
-    "rarity": "1",
-    "target": "self"
-  },
   "unitDisplayHomePosition_1W9CxaFK": "370,499,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-28,-219,1118,1034",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "86,105,559,517,0",
@@ -1561,5 +1445,6 @@
   "unitDisplayHpPosition_3BpHN6VD": "-1,56",
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "15000",
-  "sellCaution": false
+  "sellCaution": false,
+  "effectFrames": "32:120:1,37:120:1,42:120:1,70:130:1,78:130:1,38:500078:1,37:500710:1,70:500092:1,60:200284:1"
 }

@@ -1,67 +1,133 @@
 {
   "id": "60017",
   "unitName": "Umbra Halcyon Magress",
-  "no": "1307",
-  "element": "Dark",
-  "rarity": "Omni",
-  "cost": "45",
-  "maxlv": "150",
-  "basexp": "10",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "184",
-  "animation_idle": "88",
-  "animation_move": "6",
-  "movespeed_attack": "0.005",
-  "movespeed_skill": "0.005",
-  "speedtype_attack": "1",
-  "speedtype_skill": "1",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "14, 18, 35, 39, 84, 88, 92, 96, 100, 104, 108, 112",
-  "normal_distribute": "9, 5, 9, 5, 30, 6, 6, 6, 6, 6, 6, 6",
-  "normal_totaldistr": "100",
-  "bb_frames": "14, 18, 35, 39, 84, 88, 92, 96, 100, 104, 108, 112, 116",
-  "bb_distribute": "9, 4, 9, 4, 30, 6, 5, 6, 5, 6, 5, 6, 5",
-  "bb_totaldistr": "100",
-  "sbb_frames": "14, 18, 35, 39, 84, 88, 92, 96, 100, 104, 108, 112, 116, 120, 124",
-  "sbb_distribute": "8, 4, 8, 4, 29, 5, 5, 4, 5, 5, 4, 5, 5, 4, 5",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "14, 17, 20, 23, 26, 29, 32, 35, 38, 41, 44, 47, 50, 53, 84, 88, 92, 96, 100, 104, 108, 112, 116, 120, 124, 128, 132, 136",
-  "ubb_distribute": "5, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 14, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3",
-  "ubb_totaldistr": "100",
-  "sbb_effectdelay": "2",
-  "description": "Magress lived only for revenge, but ultimately died a knight's valiant death in battle. His own revenge was left unfulfilled. Although, historians wonder, had he achieved his ultimate revenge, would the spell of vengeance actually have been broken? Even if the Six Heroes had rallied to repel the gods, could he have ever stopped fighting? According to a friend of Magress, \"He was a man best described as one with madness lurking within the shadow of mercy.\" We can only wonder what his fate awaited when he freed his true self and manifested as a god of destruction.",
-  "summon": "Vengeance leads only to greater vengeance... To break this chain, I and I alone shall bear all of the vengeful rage...",
-  "fusion": "Mercy shall corrupt me...<br>As it did to them...<br>This dark lance does not want your impure light!",
-  "evolution": "Humans never change<br>even after having defeated the gods.<br>But my lance can set things right...",
-  "hp_base": "5950",
-  "atk_base": "1700",
-  "def_base": "2040",
-  "rec_base": "1445",
-  "hp_lord": "7725",
-  "atk_lord": "2540",
-  "def_lord": "2740",
-  "rec_lord": "2000",
-  "hp_anima": "8842",
-  "rec_anima": "1702",
-  "atk_breaker": "2838",
-  "def_breaker": "2442",
-  "def_guardian": "3038",
-  "rec_guardian": "1851",
-  "def_oracle": "2591",
-  "rec_oracle": "2447",
-  "hp_bonus": "1300",
-  "atk_bonus": "1100",
-  "def_bonus": "1100",
-  "rec_bonus": "520",
-  "lordonly": "",
-  "combo_hits": "12",
-  "normaldc": "48",
-  "ls": "Eidolon Umbra Resolve",
-  "lsdescription": "50% boost to Atk and 30% boost to max HP of Dark types, 100% boost to Atk, 30% boost to max HP, negates elemental damage & hugely boosts BB gauge when damage dealt has exceeded certain amount",
-  "lsnote": "Fills 8 BC when 5,000 damage is dealt",
-  "lstype": "Attack/Hit Points/Defense/Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 1700,
+      "def": 2040,
+      "hp": 5950,
+      "rec": 1445
+    },
+    "_lord": {
+      "atk": 2540,
+      "def": 2740,
+      "hp": 7725,
+      "rec": 2000
+    },
+    "anima": {
+      "atk": 2540,
+      "def": 2740,
+      "hp max": 9215,
+      "hp min": 8470,
+      "rec max": 1851,
+      "rec min": 1553
+    },
+    "breaker": {
+      "atk max": 2987,
+      "atk min": 2689,
+      "def max": 2591,
+      "def min": 2293,
+      "hp": 7725,
+      "rec": 2000
+    },
+    "guardian": {
+      "atk": 2540,
+      "def max": 3187,
+      "def min": 2889,
+      "hp": 7725,
+      "rec max": 2000,
+      "rec min": 1702
+    },
+    "oracle": {
+      "atk": 2540,
+      "def max": 2740,
+      "def min": 2442,
+      "hp": 7725,
+      "rec max": 2596,
+      "rec min": 2298
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to Atk and 30% boost to max HP for Dark types, 100% boost to Atk, 30% boost to max HP, negates elemental damage & hugely boosts BB gauge when damage dealt has exceeded certain amount",
+    "effects": [
+      {
+        "atk% buff": 100,
+        "hp% buff": 30,
+        "passive id": "1"
+      },
+      {
+        "atk% buff": 50,
+        "elements buffed": [
+          "dark"
+        ],
+        "hp% buff": 30,
+        "passive id": "2"
+      },
+      {
+        "passive id": "53",
+        "strong base element damage resist%": 100,
+        "strong buffed element damage resist%": 100
+      },
+      {
+        "damage dealt threshold activation": 50000,
+        "increase bb gauge": 8,
+        "passive id": "81"
+      }
+    ],
+    "id": "165",
+    "name": "Eidolon Umbra Resolve"
+  },
+  "extra_skill": {
+    "desc": "30% boost to all parameters, adds probable Def ignoring effect & negates critical damage when Leomurg is equipped",
+    "effects": [
+      {
+        "atk% buff": 30,
+        "conditions": [
+          {
+            "item required": [
+              "37640"
+            ]
+          }
+        ],
+        "def% buff": 30,
+        "hp% buff": 30,
+        "passive id": "1",
+        "passive target": "self",
+        "rec% buff": 30
+      },
+      {
+        "conditions": [
+          {
+            "item required": [
+              "37640"
+            ]
+          }
+        ],
+        "ignore def%": 80,
+        "passive id": "29",
+        "passive target": "self"
+      },
+      {
+        "conditions": [
+          {
+            "item required": [
+              "37640"
+            ]
+          }
+        ],
+        "crit chance base resist%": 100,
+        "crit chance buffed resist%": 100,
+        "crit dmg base damage resist%": 100,
+        "crit dmg buffed damage resist%": 100,
+        "passive id": "53",
+        "passive target": "self"
+      }
+    ],
+    "id": "610",
+    "name": "Lurking Madness",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -432,14 +498,6 @@
     ],
     "name": "Sidereal Blackness"
   },
-  "bbdescription": "13 combo Dark attack on all foes, hugely boosts Def for 3 turns & probable damage reduction when guarding for 3 turns",
-  "bbnote": "150% boost & 10% damage reduction",
-  "bbtype": "Support/Offense",
-  "bbhits": "13",
-  "bbaoe": "A",
-  "bbgauge": "25",
-  "bbdc": "13",
-  "bbmultiplier": "350",
   "sbb": {
     "damage frames": [
       {
@@ -1028,14 +1086,6 @@
     ],
     "name": "Dark Demise"
   },
-  "sbbdescription": "15 combo powerful Dark attack on all foes, hugely boosts Def for 3 turns & probable damage reduction when guarding for 3 turns, slightly absorbs HP when attacking for 3 turns & considerably boosts Dark elemental damage for 3 turns",
-  "sbbnote": "150% boost, 10% reduction, 50% chance to absorb 3-6% of damage dealt & 75% boost to elemental damage",
-  "sbbtype": "Support/Offense",
-  "sbbhits": "15",
-  "sbbaoe": "A",
-  "sbbgauge": "20",
-  "sbbdc": "15",
-  "sbbmultiplier": "560",
   "ubb": {
     "damage frames": [
       {
@@ -1186,228 +1236,6 @@
     ],
     "name": "Judecca"
   },
-  "ubbdescription": "28 combo massive Dark attack on all foes, enormously boosts Def for 3 turns, enormously boosts probable damage reduction when guarding for 3 turns & enormously reduces damage taken for 1 turn",
-  "ubbnote": "300% boost, 30% reduction & reduces all damage taken to 1",
-  "ubbtype": "Support/Offense",
-  "ubbhits": "28",
-  "ubbaoe": "A",
-  "ubbgauge": "20",
-  "ubbdc": "28",
-  "ubbmultiplier": "1500",
-  "es": "Lurking Madness",
-  "esitem": "Leomurg",
-  "esdescription": "30% boost to all parameters, adds probable Def ignoring effect & negates critical damage when Leomurg is equipped",
-  "esnote": "80% chance",
-  "evofrom": "60016",
-  "omniskill1_cat": "HP Recovery",
-  "omniskill1_1_sp": "10",
-  "omniskill1_1_desc": "Damage taken may slightly restore HP",
-  "omniskill1_1_note": "25% chance to restore 5% of HP back",
-  "omniskill1_2_sp": "10",
-  "omniskill1_2_desc": "Damage taken may restore HP",
-  "omniskill1_2_note": "25% chance to restore 10% of HP back (Prerequisite: Unlock \"Damage taken may slightly restore HP\")",
-  "omniskill2_cat": "Damage Reduction",
-  "omniskill2_1_sp": "10",
-  "omniskill2_1_desc": "5% damage reduction from Light types",
-  "omniskill2_2_sp": "30",
-  "omniskill2_2_desc": "Negates elemental damage",
-  "omniskill2_3_sp": "30",
-  "omniskill2_3_desc": "50% Spark damage reduction",
-  "omniskill3_cat": "Special",
-  "omniskill3_1_sp": "60",
-  "omniskill3_1_desc": "Adds 50% damage reduction for 1 turn effect to BB/SBB",
-  "omniskill3_2_sp": "20",
-  "omniskill3_2_desc": "Allows 50% damage reduction for 1 turn effects to last for 2 turns",
-  "omniskill3_2_note": "(Prerequisite: Unlock \"Adds 50% damage reduction for 1 turn effect to BB/SBB\")",
-  "omniskill3_3_sp": "80",
-  "omniskill3_3_desc": "Allows UBB enormous damage reduction effects to last for 2 turns",
-  "omniskill3_3_note": "",
-  "omniskill3_4_sp": "",
-  "omniskill3_4_desc": "",
-  "omniskill3_4_note": "",
-  "omniskill3_5_sp": "",
-  "omniskill3_5_desc": "",
-  "omniskill3_5_note": "",
-  "omniskill4_cat": "",
-  "omniskill4_1_sp": "",
-  "omniskill4_1_desc": "",
-  "omniskill4_1_note": "",
-  "omniskill4_2_sp": "",
-  "omniskill4_2_desc": "",
-  "omniskill4_2_note": "",
-  "omniskill4_3_sp": "",
-  "omniskill4_3_desc": "",
-  "omniskill4_3_note": "",
-  "omniskill4_4_sp": "",
-  "omniskill4_4_desc": "",
-  "omniskill4_4_note": "",
-  "omniskill4_5_sp": "",
-  "omniskill4_5_desc": "",
-  "omniskill4_5_note": "",
-  "omniskill5_cat": "",
-  "omniskill5_1_sp": "",
-  "omniskill5_1_desc": "",
-  "omniskill5_1_note": "",
-  "omniskill5_2_sp": "",
-  "omniskill5_2_desc": "",
-  "omniskill5_2_note": "",
-  "omniskill5_3_sp": "",
-  "omniskill5_3_desc": "",
-  "omniskill5_3_note": "",
-  "omniskill5_4_sp": "",
-  "omniskill5_4_desc": "",
-  "omniskill5_4_note": "",
-  "omniskill5_5_sp": "",
-  "omniskill5_5_desc": "",
-  "omniskill5_5_note": "",
-  "omniskill6_cat": "",
-  "omniskill6_1_sp": "",
-  "omniskill6_1_desc": "",
-  "omniskill6_1_note": "",
-  "omniskill6_2_sp": "",
-  "omniskill6_2_desc": "",
-  "omniskill6_2_note": "",
-  "omniskill6_3_sp": "",
-  "omniskill6_3_desc": "",
-  "omniskill6_3_note": "",
-  "omniskill6_4_sp": "",
-  "omniskill6_4_desc": "",
-  "omniskill6_4_note": "",
-  "omniskill6_5_sp": "",
-  "omniskill6_5_desc": "",
-  "omniskill6_5_note": "",
-  "notes": "",
-  "altartget": "",
-  "addcat": "Six Heroes",
-  "addcatname": "Magress7",
-  "bottomtext": "",
-  "stats": {
-    "_base": {
-      "atk": 1700,
-      "def": 2040,
-      "hp": 5950,
-      "rec": 1445
-    },
-    "_lord": {
-      "atk": 2540,
-      "def": 2740,
-      "hp": 7725,
-      "rec": 2000
-    },
-    "anima": {
-      "atk": 2540,
-      "def": 2740,
-      "hp max": 9215,
-      "hp min": 8470,
-      "rec max": 1851,
-      "rec min": 1553
-    },
-    "breaker": {
-      "atk max": 2987,
-      "atk min": 2689,
-      "def max": 2591,
-      "def min": 2293,
-      "hp": 7725,
-      "rec": 2000
-    },
-    "guardian": {
-      "atk": 2540,
-      "def max": 3187,
-      "def min": 2889,
-      "hp": 7725,
-      "rec max": 2000,
-      "rec min": 1702
-    },
-    "oracle": {
-      "atk": 2540,
-      "def max": 2740,
-      "def min": 2442,
-      "hp": 7725,
-      "rec max": 2596,
-      "rec min": 2298
-    }
-  },
-  "leader_skill": {
-    "desc": "50% boost to Atk and 30% boost to max HP for Dark types, 100% boost to Atk, 30% boost to max HP, negates elemental damage & hugely boosts BB gauge when damage dealt has exceeded certain amount",
-    "effects": [
-      {
-        "atk% buff": 100,
-        "hp% buff": 30,
-        "passive id": "1"
-      },
-      {
-        "atk% buff": 50,
-        "elements buffed": [
-          "dark"
-        ],
-        "hp% buff": 30,
-        "passive id": "2"
-      },
-      {
-        "passive id": "53",
-        "strong base element damage resist%": 100,
-        "strong buffed element damage resist%": 100
-      },
-      {
-        "damage dealt threshold activation": 50000,
-        "increase bb gauge": 8,
-        "passive id": "81"
-      }
-    ],
-    "id": "165",
-    "name": "Eidolon Umbra Resolve"
-  },
-  "extra_skill": {
-    "desc": "30% boost to all parameters, adds probable Def ignoring effect & negates critical damage when Leomurg is equipped",
-    "effects": [
-      {
-        "atk% buff": 30,
-        "conditions": [
-          {
-            "item required": [
-              "37640"
-            ]
-          }
-        ],
-        "def% buff": 30,
-        "hp% buff": 30,
-        "passive id": "1",
-        "passive target": "self",
-        "rec% buff": 30
-      },
-      {
-        "conditions": [
-          {
-            "item required": [
-              "37640"
-            ]
-          }
-        ],
-        "ignore def%": 80,
-        "passive id": "29",
-        "passive target": "self"
-      },
-      {
-        "conditions": [
-          {
-            "item required": [
-              "37640"
-            ]
-          }
-        ],
-        "crit chance base resist%": 100,
-        "crit chance buffed resist%": 100,
-        "crit dmg base damage resist%": 100,
-        "crit dmg buffed damage resist%": 100,
-        "passive id": "53",
-        "passive target": "self"
-      }
-    ],
-    "id": "610",
-    "name": "Lurking Madness",
-    "rarity": "1",
-    "target": "self"
-  },
   "unitDisplayHomePosition_1W9CxaFK": "588,341,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-159,-110,1200,1098",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "-14,23,685,627,0",
@@ -1416,5 +1244,6 @@
   "unitDisplayHpPosition_3BpHN6VD": "0,48",
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "20000",
-  "sellCaution": false
+  "sellCaution": false,
+  "effectFrames": "8:126:1,29:126:1,78:126:1,82:120:1,86:120:1,90:120:1,94:120:1,98:120:1,102:120:1,106:120:1,14:600170:1,16:600040:1,35:600170:1,37:600040:1,55:600061:1,85:601082:1,95:400368:1,110:601082:1,120:400368:1"
 }

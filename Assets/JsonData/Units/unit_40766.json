@@ -1,69 +1,91 @@
 {
   "id": "40766",
   "unitName": "Thunder Punisher Silas",
-  "no": "1355",
-  "element": "Thunder",
-  "rarity": "★★★★★★★",
-  "cost": "43",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "84",
-  "animation_idle": "64",
-  "animation_move": "4",
-  "movespeed_attack": "0.0024",
-  "movespeed_skill": "0.0024",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "8, 12, 16, 20, 35, 41, 47, 53, 59",
-  "normal_distribute": "5, 5, 5, 5, 16, 16, 16, 16, 16",
-  "normal_totaldistr": "100",
-  "bb_frames": "8, 11, 14, 17, 20, 23, 26, 35, 40, 45, 50, 55, 60",
-  "bb_distribute": "4, 4, 4, 4, 4, 4, 4, 12, 12, 12, 12, 12, 12",
-  "bb_totaldistr": "100",
-  "sbb_frames": "8, 11, 14, 17, 20, 23, 26, 35, 38, 41, 44, 47, 50, 53, 56, 59, 62",
-  "sbb_distribute": "4, 4, 4, 4, 4, 4, 4, 8, 6, 8, 6, 8, 6, 8, 6, 8, 8",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "8, 11, 14, 17, 20, 23, 26, 35, 38, 41, 44, 47, 50, 53, 56, 59, 62, 65, 68, 71, 74",
-  "ubb_distribute": "3, 3, 3, 3, 3, 3, 3, 6, 5, 6, 5, 6, 5, 6, 5, 6, 5, 6, 6, 6, 6",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "2",
-  "sbb_effectdelay": "3",
-  "ubb_effectdelay": "3",
-  "description": "One of the founding members of the Guardians of Meirith. Possessing a certain gem from a young age, he eventually met a swordswoman with a similar gem and learned it was one of the Four Divine Gems which proved he had been chosen by the Holy Emperor. Afterwards, he went on a journey with the swordswoman to find their comrades with the remaining gems, and eventually founded the Guardians of Meirith. As a Guardian, he battled demons who defied the gods, and tales of his brilliant skills with a spear are still told today.",
-  "summon": "Will you show me the way this time?<br>Show me your power, and we'll see if you can move me like they did..",
-  "fusion": "Give me more power...<br>I've finally found a mission worth risking my life over.",
-  "evolution": "",
-  "hp_base": "5010",
-  "atk_base": "1848",
-  "def_base": "2052",
-  "rec_base": "1670",
-  "hp_lord": "7235",
-  "atk_lord": "2573",
-  "def_lord": "2561",
-  "rec_lord": "2347",
-  "hp_anima": "8127",
-  "rec_anima": "2109",
-  "atk_breaker": "2811",
-  "def_breaker": "2323",
-  "def_guardian": "2799",
-  "rec_guardian": "2228",
-  "def_oracle": "2442",
-  "rec_oracle": "2704",
-  "hp_bonus": "1100",
-  "atk_bonus": "440",
-  "def_bonus": "440",
-  "rec_bonus": "440",
-  "lordonly": "",
-  "combo_hits": "9",
-  "normaldc": "36",
-  "ls": "Thunder Blade",
-  "lsdescription": "30% boost to Atk, max HP, considerably boosts critical damage & critical damage considerably boosts BB gauge",
-  "lsnote": "100% boost & fills 4-6 BC",
-  "lstype": "Hit Points/Attack/Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 1848,
+      "def": 2052,
+      "hp": 5010,
+      "rec": 1670
+    },
+    "_lord": {
+      "atk": 2573,
+      "def": 2561,
+      "hp": 7235,
+      "rec": 2347
+    },
+    "anima": {
+      "atk": 2573,
+      "def": 2561,
+      "hp max": 8425,
+      "hp min": 7830,
+      "rec max": 2228,
+      "rec min": 1990
+    },
+    "breaker": {
+      "atk max": 2930,
+      "atk min": 2692,
+      "def max": 2442,
+      "def min": 2204,
+      "hp": 7235,
+      "rec": 2347
+    },
+    "guardian": {
+      "atk": 2573,
+      "def max": 2918,
+      "def min": 2680,
+      "hp": 7235,
+      "rec max": 2347,
+      "rec min": 2109
+    },
+    "oracle": {
+      "atk": 2573,
+      "def max": 2561,
+      "def min": 2323,
+      "hp": 7235,
+      "rec max": 2823,
+      "rec min": 2585
+    }
+  },
+  "leader_skill": {
+    "desc": "30% boost to Atk, max HP, considerably boosts critical damage & critical damage considerably boosts BB gauge",
+    "effects": [
+      {
+        "atk% buff": 30,
+        "hp% buff": 30,
+        "passive id": "1"
+      },
+      {
+        "crit multiplier%": 100.0,
+        "passive id": "34"
+      },
+      {
+        "bc fill on crit max": 6,
+        "bc fill on crit min": 4,
+        "bc fill on crit%": 100.0,
+        "passive id": "65"
+      }
+    ],
+    "id": "7433",
+    "name": "Thunder Blade"
+  },
+  "extra_skill": {
+    "desc": "Considerably boosts BB Atk",
+    "effects": [
+      {
+        "bb atk% buff": 100,
+        "conditions": [],
+        "passive id": "64",
+        "passive target": "self",
+        "sbb atk% buff": 100,
+        "ubb atk% buff": 100
+      }
+    ],
+    "id": "15600",
+    "name": "Sacred Lightning",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -556,14 +578,6 @@
     ],
     "name": "Thunderlash"
   },
-  "bbdescription": "13 combo Thunder attack on all foes, boosts critical damage for 3 turns, adds Fire, Thunder elements to attack for 3 turns & hugely boosts critical hit rate for 3 turns",
-  "bbnote": "40% crit rate & 50% crit damage",
-  "bbtype": "Support/Offense",
-  "bbhits": "13",
-  "bbaoe": "A",
-  "bbgauge": "26",
-  "bbdc": "13",
-  "bbmultiplier": "350",
   "sbb": {
     "damage frames": [
       {
@@ -1176,14 +1190,6 @@
     ],
     "name": "Spearstrike: Brick Dust"
   },
-  "sbbdescription": "17 combo powerful Thunder attack on all foes, boosts critical damage for 3 turns, adds Fire, Thunder elements to attack for 3 turns & enormously boosts critical hit rate and considerably boosts BB Atk for 3 turns",
-  "sbbnote": "60% Crit rate, 50% crit damage & 250% BB Atk",
-  "sbbtype": "Support/Offense",
-  "sbbhits": "17",
-  "sbbaoe": "A",
-  "sbbgauge": "30",
-  "sbbdc": "17",
-  "sbbmultiplier": "560",
   "ubb": {
     "damage frames": [
       {
@@ -1343,115 +1349,6 @@
     ],
     "name": "Audux"
   },
-  "ubbdescription": "21 combo massive Thunder attack on all foes, enormously boosts critical damage and critical hit rate for 3 turns, probable powerful Spark critical for 3 turns & hugely boosts BB Atk for 3 turns",
-  "ubbnote": "300% Crit damage, 60% Crit, 50% chance Sparks deal 100% extra damage & 400% BB Atk",
-  "ubbtype": "Support/Offense",
-  "ubbhits": "21",
-  "ubbaoe": "A",
-  "ubbgauge": "30",
-  "ubbdc": "21",
-  "ubbmultiplier": "1300",
-  "es": "Sacred Lightning",
-  "esitem": "",
-  "esdescription": "Considerably boosts BB Atk",
-  "esnote": "100% boost",
-  "evofrom": "",
-  "evointo": "40767",
-  "evomats1": "Thunder Mecha God",
-  "evomats2": "Thunder Mecha God",
-  "evomats3": "Miracle Totem",
-  "evomats4": "Thunder Totem",
-  "evomats5": "Thunder Pot",
-  "evomats6": "Dragon Mimic",
-  "evomats7": "Metal Mimic",
-  "evomats8": "Metal Mimic",
-  "evoitem": "",
-  "evozelcost": "3000000",
-  "stats": {
-    "_base": {
-      "atk": 1848,
-      "def": 2052,
-      "hp": 5010,
-      "rec": 1670
-    },
-    "_lord": {
-      "atk": 2573,
-      "def": 2561,
-      "hp": 7235,
-      "rec": 2347
-    },
-    "anima": {
-      "atk": 2573,
-      "def": 2561,
-      "hp max": 8425,
-      "hp min": 7830,
-      "rec max": 2228,
-      "rec min": 1990
-    },
-    "breaker": {
-      "atk max": 2930,
-      "atk min": 2692,
-      "def max": 2442,
-      "def min": 2204,
-      "hp": 7235,
-      "rec": 2347
-    },
-    "guardian": {
-      "atk": 2573,
-      "def max": 2918,
-      "def min": 2680,
-      "hp": 7235,
-      "rec max": 2347,
-      "rec min": 2109
-    },
-    "oracle": {
-      "atk": 2573,
-      "def max": 2561,
-      "def min": 2323,
-      "hp": 7235,
-      "rec max": 2823,
-      "rec min": 2585
-    }
-  },
-  "leader_skill": {
-    "desc": "30% boost to Atk, max HP, considerably boosts critical damage & critical damage considerably boosts BB gauge",
-    "effects": [
-      {
-        "atk% buff": 30,
-        "hp% buff": 30,
-        "passive id": "1"
-      },
-      {
-        "crit multiplier%": 100.0,
-        "passive id": "34"
-      },
-      {
-        "bc fill on crit max": 6,
-        "bc fill on crit min": 4,
-        "bc fill on crit%": 100.0,
-        "passive id": "65"
-      }
-    ],
-    "id": "7433",
-    "name": "Thunder Blade"
-  },
-  "extra_skill": {
-    "desc": "Considerably boosts BB Atk",
-    "effects": [
-      {
-        "bb atk% buff": 100,
-        "conditions": [],
-        "passive id": "64",
-        "passive target": "self",
-        "sbb atk% buff": 100,
-        "ubb atk% buff": 100
-      }
-    ],
-    "id": "15600",
-    "name": "Sacred Lightning",
-    "rarity": "1",
-    "target": "self"
-  },
   "unitDisplayHomePosition_1W9CxaFK": "519,286,190,519",
   "unitDisplayDetailPosition_6z54rgb3": "-118,-65,1250,845",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "34,174,650,439,0",
@@ -1460,5 +1357,6 @@
   "unitDisplayHpPosition_3BpHN6VD": "0,45",
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "15000",
-  "sellCaution": false
+  "sellCaution": false,
+  "effectFrames": "2:120:1,6:120:1,10:400407:1,14:400407:1,29:124:1,35:120:1,41:124:1,47:120:1,53:124:1,8:500092:1,30:304:1,40:304:1,35:500092:1,45:500646:1"
 }

@@ -1,69 +1,113 @@
 {
   "id": "60117",
   "unitName": "Lovely Princess Alice",
-  "idalt": "",
-  "no": "1399",
-  "element": "Dark",
-  "rarity": "Omni",
-  "cost": "47",
-  "maxlv": "150",
-  "basexp": "21",
-  "ai": "2",
-  "gender": "F",
-  "animation_attack": "192",
-  "animation_idle": "60",
-  "animation_move": "7",
-  "movespeed_attack": "0.0024",
-  "movespeed_skill": "0.0024",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "42, 54, 64, 74, 82, 88, 92, 96, 100, 104, 108, 112",
-  "normal_distribute": "26, 14, 7, 7, 6, 6, 6, 6, 6, 5, 6, 5",
-  "normal_totaldistr": "100",
-  "bb_frames": "42, 54, 64, 74, 82, 88, 92, 96, 100, 104, 108, 112, 116, 120, 124",
-  "bb_distribute": "23, 11, 6, 5, 6, 5, 6, 5, 6, 5, 4, 5, 4, 5, 4",
-  "bb_totaldistr": "100",
-  "sbb_frames": "42, 54, 59, 64, 69, 74, 79, 84, 88, 92, 96, 100, 103, 106, 109, 112, 115, 118, 121, 124, 127",
-  "sbb_distribute": "18, 10, 3, 5, 3, 5, 3, 5, 4, 5, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "42, 54, 59, 64, 69, 74, 79, 84, 87, 90, 93, 96, 99, 102, 105, 108, 111, 114, 117, 120, 123, 126, 129, 132, 135, 138, 141",
-  "ubb_distribute": "10, 6, 3, 4, 3, 5, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "2",
-  "sbb_effectdelay": "2",
-  "ubb_effectdelay": "3",
-  "description": "While Alice was well-known as a mad scythe-wielder, there was a time when she displayed a slight human expression during combat. Assuming she reclaimed her human heart afterwards, she likely went on to dispel the curse of her father, the emperor, and then leave the Bariura Empire. Holding the memories of those who had watched over her close to her heart, she may have reclaimed her original self and her ability to smile as she traveled Grand Gaia.",
-  "summon": "It was definitely thanks to that<br>certain someone that I was able to<br>escape my father's shackles...<br>[[Graceful Princess Elza|Elza]]...",
-  "fusion": "I feel satisfied.<br>He he. This technique...<br>it's really very pleasant.",
-  "evolution": "Until now, my world  consisted of<br>my father and Bariura alone...<br>But the real world is so big!",
-  "hp_base": "5536",
-  "atk_base": "2270",
-  "def_base": "1800",
-  "rec_base": "2159",
-  "hp_lord": "7881",
-  "atk_lord": "3197",
-  "def_lord": "2385",
-  "rec_lord": "2863",
-  "hp_anima": "8998",
-  "rec_anima": "2565",
-  "atk_breaker": "3495",
-  "def_breaker": "2087",
-  "def_guardian": "2683",
-  "rec_guardian": "2714",
-  "def_oracle": "2236",
-  "rec_oracle": "3310",
-  "hp_bonus": "2000",
-  "atk_bonus": "400",
-  "def_bonus": "400",
-  "rec_bonus": "400",
-  "lordonly": "",
-  "combo_hits": "12",
-  "normaldc": "48",
-  "ls": "Purifier's Declaration",
-  "lsdescription": "50% boost to Atk, Rec, max HP, restores HP and hugely boosts BB gauge each turn & damage taken may restore HP",
-  "lsnote": "6 BC fill, heals (600~800 + 10% of target's Rec) HP, 30% chance to heal 25% of HP from damage taken",
+  "stats": {
+    "_base": {
+      "atk": 2270,
+      "def": 1800,
+      "hp": 5536,
+      "rec": 2159
+    },
+    "_lord": {
+      "atk": 3197,
+      "def": 2385,
+      "hp": 7881,
+      "rec": 2863
+    },
+    "anima": {
+      "atk": 3197,
+      "def": 2385,
+      "hp max": 9371,
+      "hp min": 8626,
+      "rec max": 2714,
+      "rec min": 2416
+    },
+    "breaker": {
+      "atk max": 3644,
+      "atk min": 3346,
+      "def max": 2236,
+      "def min": 1938,
+      "hp": 7881,
+      "rec": 2863
+    },
+    "guardian": {
+      "atk": 3197,
+      "def max": 2832,
+      "def min": 2534,
+      "hp": 7881,
+      "rec max": 2863,
+      "rec min": 2565
+    },
+    "oracle": {
+      "atk": 3197,
+      "def max": 2385,
+      "def min": 2087,
+      "hp": 7881,
+      "rec max": 3459,
+      "rec min": 3161
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to Atk, Rec, max HP, restores HP and hugely boosts BB gauge each turn & damage taken may restore HP",
+    "effects": [
+      {
+        "atk% buff": 50,
+        "hp% buff": 50,
+        "passive id": "1",
+        "rec% buff": 50
+      },
+      {
+        "bc fill per turn": 6,
+        "passive id": "9"
+      },
+      {
+        "passive id": "33",
+        "rec% added (turn heal)": 10.0,
+        "turn heal high": 800,
+        "turn heal low": 600
+      },
+      {
+        "dmg% to hp% when attacked chance%": 30,
+        "dmg% to hp% when attacked high": 25,
+        "dmg% to hp% when attacked low": 25,
+        "passive id": "24"
+      }
+    ],
+    "id": "11400",
+    "name": "Purifier's Declaration"
+  },
+  "extra_skill": {
+    "desc": "Slight HP absorption, damage dealt boosts BB gauge & damage taken may slightly restore HP",
+    "effects": [
+      {
+        "conditions": [],
+        "hp drain chance%": 100,
+        "hp drain% high": 10,
+        "hp drain% low": 5,
+        "passive id": "17",
+        "passive target": "self"
+      },
+      {
+        "conditions": [],
+        "damage dealt threshold activation": 1,
+        "increase bb gauge": 5,
+        "passive id": "81",
+        "passive target": "self"
+      },
+      {
+        "conditions": [],
+        "dmg% to hp% when attacked chance%": 25,
+        "dmg% to hp% when attacked high": 25,
+        "dmg% to hp% when attacked low": 20,
+        "passive id": "24",
+        "passive target": "self"
+      }
+    ],
+    "id": "18600",
+    "name": "Unleashed Soul",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -486,18 +530,6 @@
     ],
     "name": "Apolion Divahd"
   },
-  "bbdescription": "15 combo Dark attack on all foes, greatly restores HP & considerably boosts Def, Rec for 3 turns",
-  "bbnote": "Heals (3500~4000 + 40% of healer's Rec) HP, 140% boost to Def and Rec",
-  "bbtype": "Offense",
-  "bbhits": "15",
-  "bbaoe": "A",
-  "bbgauge": "25",
-  "bbdc": "15",
-  "bbmultiplier": "370",
-  "bbhits2": "",
-  "bbaoe2": "",
-  "bbdc2": "",
-  "bbmultiplier2": "",
   "sbb": {
     "damage frames": [
       {
@@ -1016,18 +1048,6 @@
     ],
     "name": "Spell Vestige"
   },
-  "sbbdescription": "21 combo powerful Dark attack on all foes, hugely boosts Atk relative to Rec for 3 turns, hugely boosts BC efficacy for 3 turns & adds probable 1 turn Atk, Def reduction effect to attack for 3 turns",
-  "sbbnote": "50% boost in BC efficacy, 80% boost to Atk relative to Rec, 20% chance to reduce 20% Atk/Def",
-  "sbbtype": "Offense",
-  "sbbhits": "21",
-  "sbbaoe": "A",
-  "sbbgauge": "30",
-  "sbbdc": "21",
-  "sbbmultiplier": "580",
-  "sbbhits2": "",
-  "sbbaoe2": "",
-  "sbbdc2": "",
-  "sbbmultiplier2": "",
   "ubb": {
     "damage frames": [
       {
@@ -1205,143 +1225,6 @@
     ],
     "name": "Missing Note"
   },
-  "ubbdescription": "27 combo massive Dark attack on all foes, enormous 2 turn Atk reduction, enormously boosts Atk and Def relative to Rec for 3 turns, enormously boosts BB Atk for 3 turns & fully restores HP for 3 turns",
-  "ubbnote": "600% boost to BB Atk, 150% boost to Atk, Def, 80% Atk reduction",
-  "ubbtype": "Offense",
-  "ubbhits": "27",
-  "ubbaoe": "A",
-  "ubbgauge": "30",
-  "ubbdc": "27",
-  "ubbmultiplier": "1500",
-  "ubbhits2": "",
-  "ubbaoe2": "",
-  "ubbdc2": "",
-  "ubbmultiplier2": "",
-  "es": "Unleashed Soul",
-  "esitem": "",
-  "esdescription": "Slight HP absorption, damage dealt boosts BB gauge & damage taken may slightly restore HP",
-  "esnote": "5~10% HP drain, 5 BC fill when 1 damage is dealt, 25% chance to recover 20~25% HP from damage taken",
-  "evofrom": "60116",
-  "evointo": "",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evomats6": "",
-  "evomats7": "",
-  "evomats8": "",
-  "evomats9": "",
-  "evoitem": "",
-  "evoitem2": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 2270,
-      "def": 1800,
-      "hp": 5536,
-      "rec": 2159
-    },
-    "_lord": {
-      "atk": 3197,
-      "def": 2385,
-      "hp": 7881,
-      "rec": 2863
-    },
-    "anima": {
-      "atk": 3197,
-      "def": 2385,
-      "hp max": 9371,
-      "hp min": 8626,
-      "rec max": 2714,
-      "rec min": 2416
-    },
-    "breaker": {
-      "atk max": 3644,
-      "atk min": 3346,
-      "def max": 2236,
-      "def min": 1938,
-      "hp": 7881,
-      "rec": 2863
-    },
-    "guardian": {
-      "atk": 3197,
-      "def max": 2832,
-      "def min": 2534,
-      "hp": 7881,
-      "rec max": 2863,
-      "rec min": 2565
-    },
-    "oracle": {
-      "atk": 3197,
-      "def max": 2385,
-      "def min": 2087,
-      "hp": 7881,
-      "rec max": 3459,
-      "rec min": 3161
-    }
-  },
-  "leader_skill": {
-    "desc": "50% boost to Atk, Rec, max HP, restores HP and hugely boosts BB gauge each turn & damage taken may restore HP",
-    "effects": [
-      {
-        "atk% buff": 50,
-        "hp% buff": 50,
-        "passive id": "1",
-        "rec% buff": 50
-      },
-      {
-        "bc fill per turn": 6,
-        "passive id": "9"
-      },
-      {
-        "passive id": "33",
-        "rec% added (turn heal)": 10.0,
-        "turn heal high": 800,
-        "turn heal low": 600
-      },
-      {
-        "dmg% to hp% when attacked chance%": 30,
-        "dmg% to hp% when attacked high": 25,
-        "dmg% to hp% when attacked low": 25,
-        "passive id": "24"
-      }
-    ],
-    "id": "11400",
-    "name": "Purifier's Declaration"
-  },
-  "extra_skill": {
-    "desc": "Slight HP absorption, damage dealt boosts BB gauge & damage taken may slightly restore HP",
-    "effects": [
-      {
-        "conditions": [],
-        "hp drain chance%": 100,
-        "hp drain% high": 10,
-        "hp drain% low": 5,
-        "passive id": "17",
-        "passive target": "self"
-      },
-      {
-        "conditions": [],
-        "damage dealt threshold activation": 1,
-        "increase bb gauge": 5,
-        "passive id": "81",
-        "passive target": "self"
-      },
-      {
-        "conditions": [],
-        "dmg% to hp% when attacked chance%": 25,
-        "dmg% to hp% when attacked high": 25,
-        "dmg% to hp% when attacked low": 20,
-        "passive id": "24",
-        "passive target": "self"
-      }
-    ],
-    "id": "18600",
-    "name": "Unleashed Soul",
-    "rarity": "1",
-    "target": "self"
-  },
   "unitDisplayHomePosition_1W9CxaFK": "723,459,160,437",
   "unitDisplayDetailPosition_6z54rgb3": "-371,-239,1350,1218",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "-66,71,697,629,1",
@@ -1350,5 +1233,6 @@
   "unitDisplayHpPosition_3BpHN6VD": "-1,78",
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "50000",
-  "sellCaution": false
+  "sellCaution": false,
+  "effectFrames": "36:120:1,48:120:1,58:120:1,68:120:1,76:120:1,82:120:1,86:120:1,90:120:1,94:120:1,98:120:1,102:120:1,106:120:1,41:600171:1,43:201140:1,50:601410:1,53:601400:1,10:200670:1,115:200670:1,130:374:1,135:200032:1"
 }

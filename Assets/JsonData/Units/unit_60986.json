@@ -1,68 +1,107 @@
 {
   "id": "60986",
   "unitName": "Shadow Ocean Mizerka",
-  "no": "1384",
-  "element": "Dark",
-  "rarity": "★★★★★★★",
-  "cost": "43",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "153",
-  "animation_idle": "52",
-  "animation_move": "8",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "47, 50, 53, 64, 67, 70, 86, 89, 92, 95",
-  "normal_distribute": "13, 10, 8, 13, 10, 8, 13, 10, 9, 6",
-  "normal_totaldistr": "100",
-  "bb_frames": "47, 50, 53, 56, 64, 67, 70, 73, 86, 89, 92, 95, 98",
-  "bb_distribute": "11, 8, 7, 5, 11, 8, 7, 5, 11, 9, 8, 6, 4",
-  "bb_totaldistr": "100",
-  "sbb_frames": "47, 50, 53, 56, 59, 64, 67, 70, 73, 76, 86, 89, 92, 95, 98, 101, 104",
-  "sbb_distribute": "9, 7, 6, 5, 4, 9, 7, 6, 5, 4, 9, 7, 6, 4, 5, 4, 3",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "47, 50, 53, 56, 59, 62, 65, 68, 71, 74, 77, 80, 83, 86, 89, 92, 95, 98, 101, 104, 107, 110",
-  "ubb_distribute": "6, 4, 5, 4, 5, 4, 5, 4, 5, 4, 5, 4, 5, 4, 5, 4, 5, 4, 5, 4, 5, 4",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "3",
-  "sbb_effectdelay": "2",
-  "ubb_effectdelay": "2",
-  "description": "When the news of the goddess's death reached them, her sisters tried to ascertain the facts and where the girl who supposedly killed her went, but she herself didn't participate. When asked if she knew of the girl's whereabouts, she would simply answer that she was in a place they could not go, and would speak no more. Later, it is said she parted ways with her sisters and left for places unknown.",
-  "summon": "Searching is useless.<br>Following is useless.<br>All lies in the depths of darkness,<br>where even I cannot see...",
-  "fusion": "I could never make anyone happy<br>with my research...<br>Could fusion do that?",
-  "evolution": "Everything eventually sinks<br>into the abyss...<br>Was this also the hand of fate?<br>Even I...don't know the answer...",
-  "hp_base": "5064",
-  "atk_base": "2089",
-  "def_base": "2265",
-  "rec_base": "1940",
-  "hp_lord": "6667",
-  "atk_lord": "2611",
-  "def_lord": "2824",
-  "rec_lord": "2417",
-  "hp_anima": "7559",
-  "rec_anima": "2179",
-  "atk_breaker": "2849",
-  "def_breaker": "2586",
-  "def_guardian": "3062",
-  "rec_guardian": "2289",
-  "def_oracle": "2652",
-  "rec_oracle": "2774",
-  "hp_bonus": "1000",
-  "atk_bonus": "300",
-  "def_bonus": "600",
-  "rec_bonus": "400",
-  "lordonly": "",
-  "combo_hits": "10",
-  "normaldc": "40",
-  "ls": "Drowned God's Temple",
-  "lsdescription": "40% boost to Def, max HP, raises normal hit amount & probable normal attack on all foes",
-  "lsnote": "+1 to each normal hit (-50% extra damage, 50% total), 25% chance for normal attack to hit all foes, at 50% damage penalty",
+  "stats": {
+    "_base": {
+      "atk": 2089,
+      "def": 2265,
+      "hp": 5064,
+      "rec": 1940
+    },
+    "_lord": {
+      "atk": 2611,
+      "def": 2824,
+      "hp": 6667,
+      "rec": 2417
+    },
+    "anima": {
+      "atk": 2611,
+      "def": 2824,
+      "hp max": 7857,
+      "hp min": 7262,
+      "rec max": 2298,
+      "rec min": 2060
+    },
+    "breaker": {
+      "atk max": 2968,
+      "atk min": 2730,
+      "def max": 2705,
+      "def min": 2467,
+      "hp": 6667,
+      "rec": 2417
+    },
+    "guardian": {
+      "atk": 2611,
+      "def max": 3181,
+      "def min": 2943,
+      "hp": 6667,
+      "rec max": 2417,
+      "rec min": 2179
+    },
+    "oracle": {
+      "atk": 2611,
+      "def max": 2824,
+      "def min": 2586,
+      "hp": 6667,
+      "rec max": 2893,
+      "rec min": 2655
+    }
+  },
+  "leader_skill": {
+    "desc": "40% boost to Def, max HP, raises normal hit amount & probable normal attack on all foes",
+    "effects": [
+      {
+        "def% buff": 40,
+        "hp% buff": 40,
+        "passive id": "1"
+      },
+      {
+        "extra hits dmg%": -50,
+        "hit increase/hit": 1,
+        "passive id": "37"
+      },
+      {
+        "aoe atk inc%": -50,
+        "chance to aoe": 25,
+        "passive id": "96"
+      }
+    ],
+    "id": "4337",
+    "name": "Drowned God's Temple"
+  },
+  "extra_skill": {
+    "desc": "Probable addition of Def ignoring effect to attack, negates critical damage & probable resistance against 2 KO attacks max",
+    "effects": [
+      {
+        "conditions": [],
+        "ignore def%": 50,
+        "passive id": "29",
+        "passive target": "self"
+      },
+      {
+        "conditions": [],
+        "crit chance base resist%": 100,
+        "crit chance buffed resist%": 100,
+        "crit dmg base damage resist%": 100,
+        "crit dmg buffed damage resist%": 100,
+        "passive id": "53",
+        "passive target": "self"
+      },
+      {
+        "angel idol chance% condition": 0,
+        "angel idol recover chance% high": 40,
+        "angel idol recover chance% low": 40,
+        "angel idol recover counts": 2,
+        "conditions": [],
+        "passive id": "69",
+        "passive target": "self"
+      }
+    ],
+    "id": "17100",
+    "name": "Abyssal Banishment",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -605,18 +644,6 @@
     ],
     "name": "Spirit Knight: Godfrey"
   },
-  "bbdescription": "13 combo Dark attack on all foes, probable huge 1 turn Atk, Def reduction, hugely boosts BB gauge & damage taken considerably boosts BB gauge for 3 turns",
-  "bbnote": "8 BC fill, 5~7 BC fill when damage taken, 30% chance to reduce 50% of enemies' Atk and/or Def",
-  "bbtype": "Offense",
-  "bbhits": "13",
-  "bbaoe": "A",
-  "bbgauge": "22",
-  "bbdc": "13",
-  "bbmultiplier": "350",
-  "bbhits2": "",
-  "bbaoe2": "",
-  "bbdc2": "",
-  "bbmultiplier2": "",
   "sbb": {
     "damage frames": [
       {
@@ -1279,18 +1306,6 @@
     ],
     "name": "Versaledge Animus"
   },
-  "sbbdescription": "17 combo powerful Dark attack on all foes, high probability of Curse effect, probable huge 1 turn Atk, Def reduction & damage taken considerably boosts BB gauge and may slightly restore HP for 3 turns",
-  "sbbnote": "5~7 BC fill when damage taken, 20% chance to heal 20~25% of HP from damage taken, 30% chance to reduce 50% of enemies' Atk and/or Def, 80% chance to inflict Curse",
-  "sbbtype": "Offense",
-  "sbbhits": "17",
-  "sbbaoe": "A",
-  "sbbgauge": "25",
-  "sbbdc": "17",
-  "sbbmultiplier": "560",
-  "sbbhits2": "",
-  "sbbaoe2": "",
-  "sbbdc2": "",
-  "sbbmultiplier2": "",
   "ubb": {
     "damage frames": [
       {
@@ -1459,131 +1474,6 @@
     ],
     "name": "Circumfusion"
   },
-  "ubbdescription": "22 combo massive Dark attack on all foes, enormous 1 turn Atk, Def reduction for 3 turns, hugely boosts max HP & damage taken enormously boosts BB gauge and enormously restores HP for 3 turns",
-  "ubbnote": "50 BC fill when damage taken, 35% boost to max HP, 80% reduction on enemies' Atk and Def",
-  "ubbtype": "Offense",
-  "ubbhits": "22",
-  "ubbaoe": "A",
-  "ubbgauge": "30",
-  "ubbdc": "22",
-  "ubbmultiplier": "1300",
-  "ubbhits2": "",
-  "ubbaoe2": "",
-  "ubbdc2": "",
-  "ubbmultiplier2": "",
-  "es": "Abyssal Banishment",
-  "esitem": "",
-  "esdescription": "Probable addition of Def ignoring effect to attack, negates critical damage & probable resistance against 2 KO attacks max",
-  "esnote": "50% chance to ignore Def, 40% chance to resist 2 KO attacks",
-  "evofrom": "60985",
-  "evointo": "",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 2089,
-      "def": 2265,
-      "hp": 5064,
-      "rec": 1940
-    },
-    "_lord": {
-      "atk": 2611,
-      "def": 2824,
-      "hp": 6667,
-      "rec": 2417
-    },
-    "anima": {
-      "atk": 2611,
-      "def": 2824,
-      "hp max": 7857,
-      "hp min": 7262,
-      "rec max": 2298,
-      "rec min": 2060
-    },
-    "breaker": {
-      "atk max": 2968,
-      "atk min": 2730,
-      "def max": 2705,
-      "def min": 2467,
-      "hp": 6667,
-      "rec": 2417
-    },
-    "guardian": {
-      "atk": 2611,
-      "def max": 3181,
-      "def min": 2943,
-      "hp": 6667,
-      "rec max": 2417,
-      "rec min": 2179
-    },
-    "oracle": {
-      "atk": 2611,
-      "def max": 2824,
-      "def min": 2586,
-      "hp": 6667,
-      "rec max": 2893,
-      "rec min": 2655
-    }
-  },
-  "leader_skill": {
-    "desc": "40% boost to Def, max HP, raises normal hit amount & probable normal attack on all foes",
-    "effects": [
-      {
-        "def% buff": 40,
-        "hp% buff": 40,
-        "passive id": "1"
-      },
-      {
-        "extra hits dmg%": -50,
-        "hit increase/hit": 1,
-        "passive id": "37"
-      },
-      {
-        "aoe atk inc%": -50,
-        "chance to aoe": 25,
-        "passive id": "96"
-      }
-    ],
-    "id": "4337",
-    "name": "Drowned God's Temple"
-  },
-  "extra_skill": {
-    "desc": "Probable addition of Def ignoring effect to attack, negates critical damage & probable resistance against 2 KO attacks max",
-    "effects": [
-      {
-        "conditions": [],
-        "ignore def%": 50,
-        "passive id": "29",
-        "passive target": "self"
-      },
-      {
-        "conditions": [],
-        "crit chance base resist%": 100,
-        "crit chance buffed resist%": 100,
-        "crit dmg base damage resist%": 100,
-        "crit dmg buffed damage resist%": 100,
-        "passive id": "53",
-        "passive target": "self"
-      },
-      {
-        "angel idol chance% condition": 0,
-        "angel idol recover chance% high": 40,
-        "angel idol recover chance% low": 40,
-        "angel idol recover counts": 2,
-        "conditions": [],
-        "passive id": "69",
-        "passive target": "self"
-      }
-    ],
-    "id": "17100",
-    "name": "Abyssal Banishment",
-    "rarity": "1",
-    "target": "self"
-  },
   "unitDisplayHomePosition_1W9CxaFK": "526,372,180,491",
   "unitDisplayDetailPosition_6z54rgb3": "-187,-100,1250,945",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "0,114,673,509,0",
@@ -1592,5 +1482,6 @@
   "unitDisplayHpPosition_3BpHN6VD": "-5,61",
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "15000",
-  "sellCaution": false
+  "sellCaution": false,
+  "effectFrames": "41:96:1,44:120:1,47:120:1,58:96:1,61:120:1,64:120:1,80:96:1,83:120:1,86:120:1,31:600886:1,48:600886:1,47:600819:1,49:601221:1,74:600819:1,76:601221:1,47:600321:1,64:600321:1,86:600321:1"
 }

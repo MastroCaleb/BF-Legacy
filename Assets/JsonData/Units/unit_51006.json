@@ -1,68 +1,103 @@
 {
   "id": "51006",
   "unitName": "Roaring Beast Zekt",
-  "idalt": "",
-  "no": "1397",
-  "element": "Light",
-  "rarity": "★★★★★★★",
-  "cost": "43",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "N",
-  "ai": "2",
-  "animation_attack": "108",
-  "animation_idle": "72",
-  "animation_move": "6",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "38, 41, 45, 48, 52, 55",
-  "normal_distribute": "23, 11, 22, 11, 22, 11",
-  "normal_totaldistr": "100",
-  "bb_frames": "38, 41, 44, 48, 51, 54, 58, 61, 64",
-  "bb_distribute": "18, 10, 6, 18, 9, 6, 18, 9, 6",
-  "bb_totaldistr": "100",
-  "sbb_frames": "38, 41, 44, 47, 50, 53, 56, 59, 62, 65, 68, 71, 74, 77, 80",
-  "sbb_distribute": "14, 8, 5, 4, 3, 14, 7, 5, 4, 3, 14, 7, 5, 4, 3",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "38, 41, 44, 47, 50, 53, 56, 59, 62, 65, 68, 71, 74, 77, 80, 83, 86, 89, 92, 95, 98",
-  "ubb_distribute": "10, 3, 10, 3, 10, 3, 4, 5, 4, 3, 4, 5, 4, 3, 4, 5, 4, 3, 4, 5, 4",
-  "ubb_totaldistr": "100",
-  "sbb_effectdelay": "2",
-  "ubb_effectdelay": "2",
-  "description": "A wolf-type sacred beast that served a certain disciple. Its strength in battle was said to eclipse even the gods. It fought against the First Summoner while he was on a solitary adventure, and left a massive scar on his face. Afterwards, it encountered the same Summoner alongside his allies, and faced them beside its disciple master. The sacred beast did not yield an inch despite being outnumbered, and succeeded in defeating a female Summoner. However, it was dealt a mortal wound immediately afterward by another Summoner's spear. It is said that even facing its own death, the sacred beast continued to fight to protect its master.",
-  "summon": "Are you the one who summoned me?<br>Puny, arrogant humans.<br>You think you can use me?",
-  "fusion": "I will accept this offering.<br>But there is no guarantee that these<br>fangs of mine will target only your enemies...",
-  "evolution": "",
-  "hp_base": "4912",
-  "atk_base": "1785",
-  "def_base": "1966",
-  "rec_base": "1693",
-  "hp_lord": "7186",
-  "atk_lord": "2363",
-  "def_lord": "2463",
-  "rec_lord": "2229",
-  "hp_anima": "8078",
-  "rec_anima": "1991",
-  "atk_breaker": "2601",
-  "def_breaker": "2225",
-  "def_guardian": "2701",
-  "rec_guardian": "2110",
-  "def_oracle": "2344",
-  "rec_oracle": "2586",
-  "hp_bonus": "1100",
-  "atk_bonus": "440",
-  "def_bonus": "440",
-  "rec_bonus": "440",
-  "lordonly": "",
-  "combo_hits": "6",
-  "normaldc": "36",
-  "ls": "Fanged Rage",
-  "lsdescription": "35% boost to all parameters & damage taken boosts BB gauge and may restore HP",
-  "lsnote": "2~4 BC fill, 25% chance to heal 20% HP from damage taken",
+  "stats": {
+    "_base": {
+      "atk": 1785,
+      "def": 1966,
+      "hp": 4912,
+      "rec": 1693
+    },
+    "_lord": {
+      "atk": 2363,
+      "def": 2463,
+      "hp": 7186,
+      "rec": 2229
+    },
+    "anima": {
+      "atk": 2363,
+      "def": 2463,
+      "hp max": 8376,
+      "hp min": 7781,
+      "rec max": 2110,
+      "rec min": 1872
+    },
+    "breaker": {
+      "atk max": 2720,
+      "atk min": 2482,
+      "def max": 2344,
+      "def min": 2106,
+      "hp": 7186,
+      "rec": 2229
+    },
+    "guardian": {
+      "atk": 2363,
+      "def max": 2820,
+      "def min": 2582,
+      "hp": 7186,
+      "rec max": 2229,
+      "rec min": 1991
+    },
+    "oracle": {
+      "atk": 2363,
+      "def max": 2463,
+      "def min": 2225,
+      "hp": 7186,
+      "rec max": 2705,
+      "rec min": 2467
+    }
+  },
+  "leader_skill": {
+    "desc": "35% boost to all parameters & damage taken boosts BB gauge and may restore HP",
+    "effects": [
+      {
+        "atk% buff": 35,
+        "def% buff": 35,
+        "hp% buff": 35,
+        "passive id": "1",
+        "rec% buff": 35
+      },
+      {
+        "bc fill when attacked high": 4,
+        "bc fill when attacked low": 2,
+        "bc fill when attacked%": 100,
+        "passive id": "25"
+      },
+      {
+        "dmg% to hp% when attacked chance%": 25,
+        "dmg% to hp% when attacked high": 20,
+        "dmg% to hp% when attacked low": 20,
+        "passive id": "24"
+      }
+    ],
+    "id": "10116",
+    "name": "Fanged Rage"
+  },
+  "extra_skill": {
+    "desc": "Boosts Atk relative to remaining HP & probable HP recovery when attacked",
+    "effects": [
+      {
+        "atk% base buff": 0,
+        "atk% extra buff based on hp": 50,
+        "buff proportional to hp": "remaining",
+        "conditions": [],
+        "passive id": "46",
+        "passive target": "self"
+      },
+      {
+        "conditions": [],
+        "dmg% to hp% when attacked chance%": 20,
+        "dmg% to hp% when attacked high": 25,
+        "dmg% to hp% when attacked low": 20,
+        "passive id": "24",
+        "passive target": "self"
+      }
+    ],
+    "id": "18400",
+    "name": "Soul-Cutter Talon",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -527,18 +562,6 @@
     ],
     "name": "Sero Tetra"
   },
-  "bbdescription": "9 combo Light attack on all foes, considerably boosts BB gauge, boosts max HP & slightly reduces damage from Fire, Water, Earth, Thunder types for 1 turn",
-  "bbnote": "10% damage reduction, 6 BC fill, 10% max HP boost",
-  "bbtype": "Offense",
-  "bbhits": "9",
-  "bbaoe": "A",
-  "bbgauge": "27",
-  "bbdc": "9",
-  "bbmultiplier": "350",
-  "bbhits2": "",
-  "bbaoe2": "",
-  "bbdc2": "",
-  "bbmultiplier2": "",
   "sbb": {
     "damage frames": [
       {
@@ -1045,19 +1068,6 @@
     ],
     "name": "Repulsio"
   },
-  "sbbdescription": "15 combo Light attack on all foes (damage relative to remaining HP), enormously boosts critical hit rate and boosts critical damage for 3 turns & slightly reduces damage from Light, Dark types for 2 turns",
-  "sbbnote": "200% + 520% x current HP / base max HP, 520% additional multiplier total, 10% damage reduction, 60% boost to critical hit rate, 50% boost to critical damage",
-  "sbbtype": "Offense",
-  "sbbhits": "15",
-  "sbbaoe": "A",
-  "sbbgauge": "30",
-  "sbbdc": "15",
-  "sbbmultiplier": "200",
-  "sbb_hpscale": "true",
-  "sbbhits2": "",
-  "sbbaoe2": "",
-  "sbbdc2": "",
-  "sbbmultiplier2": "",
   "ubb": {
     "damage frames": [
       {
@@ -1219,133 +1229,6 @@
     ],
     "name": "Talon: Fir Singh"
   },
-  "ubbdescription": "21 combo massive Light attack on all foes, hugely boosts max HP, enormously boosts critical hit rate and critical damage for 3 turns & 50% elemental damage reduction for 3 turns",
-  "ubbnote": "30% boost to max HP, 60% boost to critical hit rate, 300% boost to critical damage,",
-  "ubbtype": "Offense",
-  "ubbhits": "21",
-  "ubbaoe": "A",
-  "ubbgauge": "30",
-  "ubbdc": "21",
-  "ubbmultiplier": "1300",
-  "ubbhits2": "",
-  "ubbaoe2": "",
-  "ubbdc2": "",
-  "ubbmultiplier2": "",
-  "es": "Soul-Cutter Talon",
-  "esitem": "",
-  "esdescription": "Boosts Atk relative to remaining HP & probable HP recovery when attacked",
-  "esnote": "+0.5% boost to Atk per 1% HP remaining, 50% boost total, 20% chance to heal 20~25% HP when damage taken",
-  "evofrom": "",
-  "evointo": "51007",
-  "evomats1": "Light Mecha God",
-  "evomats2": "Light Mecha God",
-  "evomats3": "Miracle Totem",
-  "evomats4": "Light Totem",
-  "evomats5": "Light Idol",
-  "evomats6": "Dragon Mimic",
-  "evomats7": "Dragon Mimic",
-  "evomats8": "Metal Mimic",
-  "evomats9": "",
-  "evoitem": "",
-  "evoitem2": "",
-  "evozelcost": "3000000",
-  "stats": {
-    "_base": {
-      "atk": 1785,
-      "def": 1966,
-      "hp": 4912,
-      "rec": 1693
-    },
-    "_lord": {
-      "atk": 2363,
-      "def": 2463,
-      "hp": 7186,
-      "rec": 2229
-    },
-    "anima": {
-      "atk": 2363,
-      "def": 2463,
-      "hp max": 8376,
-      "hp min": 7781,
-      "rec max": 2110,
-      "rec min": 1872
-    },
-    "breaker": {
-      "atk max": 2720,
-      "atk min": 2482,
-      "def max": 2344,
-      "def min": 2106,
-      "hp": 7186,
-      "rec": 2229
-    },
-    "guardian": {
-      "atk": 2363,
-      "def max": 2820,
-      "def min": 2582,
-      "hp": 7186,
-      "rec max": 2229,
-      "rec min": 1991
-    },
-    "oracle": {
-      "atk": 2363,
-      "def max": 2463,
-      "def min": 2225,
-      "hp": 7186,
-      "rec max": 2705,
-      "rec min": 2467
-    }
-  },
-  "leader_skill": {
-    "desc": "35% boost to all parameters & damage taken boosts BB gauge and may restore HP",
-    "effects": [
-      {
-        "atk% buff": 35,
-        "def% buff": 35,
-        "hp% buff": 35,
-        "passive id": "1",
-        "rec% buff": 35
-      },
-      {
-        "bc fill when attacked high": 4,
-        "bc fill when attacked low": 2,
-        "bc fill when attacked%": 100,
-        "passive id": "25"
-      },
-      {
-        "dmg% to hp% when attacked chance%": 25,
-        "dmg% to hp% when attacked high": 20,
-        "dmg% to hp% when attacked low": 20,
-        "passive id": "24"
-      }
-    ],
-    "id": "10116",
-    "name": "Fanged Rage"
-  },
-  "extra_skill": {
-    "desc": "Boosts Atk relative to remaining HP & probable HP recovery when attacked",
-    "effects": [
-      {
-        "atk% base buff": 0,
-        "atk% extra buff based on hp": 50,
-        "buff proportional to hp": "remaining",
-        "conditions": [],
-        "passive id": "46",
-        "passive target": "self"
-      },
-      {
-        "conditions": [],
-        "dmg% to hp% when attacked chance%": 20,
-        "dmg% to hp% when attacked high": 25,
-        "dmg% to hp% when attacked low": 20,
-        "passive id": "24",
-        "passive target": "self"
-      }
-    ],
-    "id": "18400",
-    "name": "Soul-Cutter Talon",
-    "rarity": "1",
-    "target": "self"
-  },
   "unitDisplayHomePosition_1W9CxaFK": "82,297,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "125,-55,1150,859",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "72,206,600,448,0",
@@ -1354,5 +1237,6 @@
   "unitDisplayHpPosition_3BpHN6VD": "-21,53",
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "15000",
-  "sellCaution": false
+  "sellCaution": false,
+  "effectFrames": "32:120:1,35:120:1,39:120:1,42:120:1,46:120:1,49:120:1,37:400075:1,40:600725:1,36:200255:1,50:200541:1"
 }

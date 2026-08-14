@@ -1,69 +1,110 @@
 {
   "id": "50987",
   "unitName": "Celestial Wings Lara",
-  "idalt": "",
-  "no": "1381",
-  "element": "Light",
-  "rarity": "Omni",
-  "cost": "47",
-  "maxlv": "150",
-  "basexp": "21",
-  "ai": "2",
-  "gender": "F",
-  "animation_attack": "125",
-  "animation_idle": "78",
-  "animation_move": "3",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "15, 19, 23, 27, 31, 39, 44, 71, 75, 79, 83",
-  "normal_distribute": "12, 10, 9, 8, 7, 12, 7, 15, 10, 6, 4",
-  "normal_totaldistr": "100",
-  "bb_frames": "15, 18, 21, 24, 27, 30, 39, 42, 45, 71, 74, 77, 80, 83",
-  "bb_distribute": "10, 8, 7, 6, 5, 4, 12, 7, 3, 15, 10, 6, 4, 3",
-  "bb_totaldistr": "100",
-  "sbb_frames": "15, 18, 21, 24, 27, 30, 33, 39, 42, 45, 48, 51, 54, 71, 74, 77, 80, 83, 86, 89",
-  "sbb_distribute": "8, 6, 5, 4, 4, 3, 3, 10, 6, 3, 3, 3, 3, 13, 7, 6, 4, 3, 3, 3",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57, 60, 71, 74, 77, 80, 83, 86, 89, 92, 95",
-  "ubb_distribute": "7, 5, 3, 3, 3, 3, 3, 3, 9, 5, 3, 3, 3, 3, 3, 3, 10, 6, 4, 3, 3, 3, 3, 3, 3",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "1",
-  "ubb_effectdelay": "1",
-  "description": "The dragons she had were an extremely rare type, said to drain the strength of their master. But recent research has come to show that when they grew enough so that their strength was equal to those who led them, they would fuse with and strengthen their master. If she was able to grow and realize her full potential, she may have received great power from her dragons. Then she certainly would have fought together with the goddess of benevolence to protect humans.",
-  "summon": "I decided to trust her<br>no matter what...<br>Just as she trusted me...",
-  "fusion": "This power, I won't waste it...<br>If I can ease her burden even just a little with this power...",
-  "evolution": "These wings are proof of a bond<br>with a good friend.<br>And they are the symbol<br>that guides me...<br>Now let's go to the ends of the sky!",
-  "hp_base": "6007",
-  "atk_base": "2212",
-  "def_base": "2242",
-  "rec_base": "2212",
-  "hp_lord": "7802",
-  "atk_lord": "2755",
-  "def_lord": "3018",
-  "rec_lord": "2746",
-  "hp_anima": "8919",
-  "rec_anima": "2448",
-  "atk_breaker": "3053",
-  "def_breaker": "2720",
-  "def_guardian": "3316",
-  "rec_guardian": "2600",
-  "def_oracle": "2872",
-  "rec_oracle": "3193",
-  "hp_bonus": "1500",
-  "atk_bonus": "600",
-  "def_bonus": "600",
-  "rec_bonus": "600",
-  "lordonly": "",
-  "combo_hits": "11",
-  "normaldc": "44",
-  "ls": "Holy Dragon's Splendor",
-  "lsdescription": "50% boost to Atk, max HP, probable 20% damage reduction & negates Def ignoring effect",
-  "lsnote": "20% chance to reduce 20% of damage taken",
+  "stats": {
+    "_base": {
+      "atk": 2212,
+      "def": 2442,
+      "hp": 6007,
+      "rec": 2212
+    },
+    "_lord": {
+      "atk": 2755,
+      "def": 3018,
+      "hp": 7802,
+      "rec": 2746
+    },
+    "anima": {
+      "atk": 2755,
+      "def": 3018,
+      "hp max": 9292,
+      "hp min": 8547,
+      "rec max": 2597,
+      "rec min": 2299
+    },
+    "breaker": {
+      "atk max": 3202,
+      "atk min": 2904,
+      "def max": 2869,
+      "def min": 2571,
+      "hp": 7802,
+      "rec": 2746
+    },
+    "guardian": {
+      "atk": 2755,
+      "def max": 3465,
+      "def min": 3167,
+      "hp": 7802,
+      "rec max": 2746,
+      "rec min": 2448
+    },
+    "oracle": {
+      "atk": 2755,
+      "def max": 3018,
+      "def min": 2720,
+      "hp": 7802,
+      "rec max": 3342,
+      "rec min": 3044
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to Atk, max HP, probable 20% damage reduction & negates Def ignoring effect",
+    "effects": [
+      {
+        "atk% buff": 50,
+        "hp% buff": 50,
+        "passive id": "1"
+      },
+      {
+        "dmg reduction chance%": 20,
+        "dmg reduction%": 20,
+        "passive id": "14"
+      },
+      {
+        "ignore def resist chance%": 100,
+        "passive id": "92"
+      }
+    ],
+    "id": "7437",
+    "name": "Holy Dragon's Splendor"
+  },
+  "extra_skill": {
+    "desc": "Reduces damage taken for 2 turns when HP is below 50% & adds considerable boost to BC, HC drop rate for 3 turns effect to BB/SBB",
+    "effects": [
+      {
+        "buff": {
+          "buff turns (36)": "1",
+          "dmg reduction% buff": 25
+        },
+        "conditions": [],
+        "hp below % buff activation": 50,
+        "passive id": "55",
+        "passive target": "self"
+      },
+      {
+        "conditions": [],
+        "passive id": "66",
+        "passive target": "self",
+        "trigger on bb": true,
+        "trigger on sbb": true,
+        "triggered effect": [
+          {
+            "bc drop rate% buff (10)": 35,
+            "drop rate buff turns": 3,
+            "effect delay time(ms)/frame": "0.0/0",
+            "hc drop rate% buff (9)": 35,
+            "proc id": "6",
+            "target area": "aoe",
+            "target type": "party"
+          }
+        ]
+      }
+    ],
+    "id": "17000",
+    "name": "Dragon God's Lumiere",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -670,18 +711,6 @@
     ],
     "name": "Clarsveila"
   },
-  "bbdescription": "14 combo Light attack on all foes, greatly restores HP, greatly restores HP for 3 turns, hugely boosts BB Atk for 3 turns & negates critical damage for 1 turn",
-  "bbnote": "300% boost to BB Atk, gradually heals (3000~3500 + 10% of target's Rec) HP, heals (3500~4000 + 40% of healer's Rec) HP",
-  "bbtype": "Offense",
-  "bbhits": "14",
-  "bbaoe": "A",
-  "bbgauge": "26",
-  "bbdc": "14",
-  "bbmultiplier": "370",
-  "bbhits2": "",
-  "bbaoe2": "",
-  "bbdc2": "",
-  "bbmultiplier2": "",
   "sbb": {
     "damage frames": [
       {
@@ -1310,18 +1339,6 @@
     ],
     "name": "Ain Soph Aur"
   },
-  "sbbdescription": "20 combo powerful Light attack on all foes, considerably boosts Atk and Def relative to Rec for 3 turns, greatly restores HP for 3 turns, damage taken may restore HP for 3 turns & negates critical damage for 1 turn",
-  "sbbnote": "20% chance to heal 20~30% of HP from damage taken, 50% boost to Atk and Def relative to Rec, heals (3000~3500 + 10% of target's Rec) HP",
-  "sbbtype": "Offense",
-  "sbbhits": "20",
-  "sbbaoe": "A",
-  "sbbgauge": "30",
-  "sbbdc": "20",
-  "sbbmultiplier": "580",
-  "sbbhits2": "",
-  "sbbaoe2": "",
-  "sbbdc2": "",
-  "sbbmultiplier2": "",
   "ubb": {
     "damage frames": [
       {
@@ -1468,140 +1485,6 @@
     ],
     "name": "Death Smoke Fantome"
   },
-  "ubbdescription": "25 combo massive Light attack on all foes, negates critical and elemental based damage for 3 turns, 75% damage reduction for 3 turns & enormously boosts probable damage reduction when guarding for 5 turns",
-  "ubbnote": "30% reduction in damage taken on Guard",
-  "ubbtype": "Offense",
-  "ubbhits": "25",
-  "ubbaoe": "A",
-  "ubbgauge": "30",
-  "ubbdc": "25",
-  "ubbmultiplier": "1500",
-  "ubbhits2": "",
-  "ubbaoe2": "",
-  "ubbdc2": "",
-  "ubbmultiplier2": "",
-  "es": "Dragon God's Lumiere",
-  "esitem": "",
-  "esdescription": "Reduces damage taken for 2 turns when HP is below 50% & adds considerable boost to BC, HC drop rate for 3 turns effect to BB/SBB",
-  "esnote": "25% damage reduction '''for 1 turn''', 35% boost to BC and HC drop rate",
-  "evofrom": "50986",
-  "evointo": "",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evomats6": "",
-  "evomats7": "",
-  "evomats8": "",
-  "evomats9": "",
-  "evoitem": "",
-  "evoitem2": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 2212,
-      "def": 2442,
-      "hp": 6007,
-      "rec": 2212
-    },
-    "_lord": {
-      "atk": 2755,
-      "def": 3018,
-      "hp": 7802,
-      "rec": 2746
-    },
-    "anima": {
-      "atk": 2755,
-      "def": 3018,
-      "hp max": 9292,
-      "hp min": 8547,
-      "rec max": 2597,
-      "rec min": 2299
-    },
-    "breaker": {
-      "atk max": 3202,
-      "atk min": 2904,
-      "def max": 2869,
-      "def min": 2571,
-      "hp": 7802,
-      "rec": 2746
-    },
-    "guardian": {
-      "atk": 2755,
-      "def max": 3465,
-      "def min": 3167,
-      "hp": 7802,
-      "rec max": 2746,
-      "rec min": 2448
-    },
-    "oracle": {
-      "atk": 2755,
-      "def max": 3018,
-      "def min": 2720,
-      "hp": 7802,
-      "rec max": 3342,
-      "rec min": 3044
-    }
-  },
-  "leader_skill": {
-    "desc": "50% boost to Atk, max HP, probable 20% damage reduction & negates Def ignoring effect",
-    "effects": [
-      {
-        "atk% buff": 50,
-        "hp% buff": 50,
-        "passive id": "1"
-      },
-      {
-        "dmg reduction chance%": 20,
-        "dmg reduction%": 20,
-        "passive id": "14"
-      },
-      {
-        "ignore def resist chance%": 100,
-        "passive id": "92"
-      }
-    ],
-    "id": "7437",
-    "name": "Holy Dragon's Splendor"
-  },
-  "extra_skill": {
-    "desc": "Reduces damage taken for 2 turns when HP is below 50% & adds considerable boost to BC, HC drop rate for 3 turns effect to BB/SBB",
-    "effects": [
-      {
-        "buff": {
-          "buff turns (36)": "1",
-          "dmg reduction% buff": 25
-        },
-        "conditions": [],
-        "hp below % buff activation": 50,
-        "passive id": "55",
-        "passive target": "self"
-      },
-      {
-        "conditions": [],
-        "passive id": "66",
-        "passive target": "self",
-        "trigger on bb": true,
-        "trigger on sbb": true,
-        "triggered effect": [
-          {
-            "bc drop rate% buff (10)": 35,
-            "drop rate buff turns": 3,
-            "effect delay time(ms)/frame": "0.0/0",
-            "hc drop rate% buff (9)": 35,
-            "proc id": "6",
-            "target area": "aoe",
-            "target type": "party"
-          }
-        ]
-      }
-    ],
-    "id": "17000",
-    "name": "Dragon God's Lumiere",
-    "rarity": "1",
-    "target": "self"
-  },
   "unitDisplayHomePosition_1W9CxaFK": "584,239,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-199,-3,1150,856",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "-11,185,621,462,0",
@@ -1610,5 +1493,6 @@
   "unitDisplayHpPosition_3BpHN6VD": "0,36",
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "50000",
-  "sellCaution": false
+  "sellCaution": false,
+  "effectFrames": "9:120:1,13:120:1,17:120:1,21:120:1,25:120:1,33:120:1,38:120:1,65:120:1,69:120:1,73:120:1,77:120:1,14:500710:1,38:500645:1,70:500873:1,15:200286:1,50:400810:1,65:200286:1,85:500151:1"
 }

@@ -1,65 +1,149 @@
 {
   "id": "830888",
   "unitName": "Hypaea, the Starfallen",
-  "disam": "",
-  "altname": "Hypaea, the Starfallen",
-  "idalt": "",
-  "has_altart": "",
-  "doenter": "true",
-  "no": "8619",
-  "element": "Earth",
-  "rarity": "Omni",
-  "cost": "60",
-  "maxlv": "150",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "214",
-  "animation_idle": "54",
-  "animation_move": "54",
-  "movespeed_attack": "4",
-  "speedtype_attack": "3",
-  "movetype_attack": "3",
-  "movespeed_skill": "4",
-  "speedtype_skill": "3",
-  "movetype_skill": "3",
-  "description": "Meteorites can laugh.That was his final thought, shortly before everything had dissolved into dust and the shadow took with her the dilapidated landscape into the vast void above.Months ago, there had been an uproar in town over a fallen star. The grazing field was scarred on impact, but thankfully no one had been injured. White shards were found strewn across the vast expanse, and no creature dared to approach them. The men soon found out why: the shards were insidiously, and hideously, shifting in color.The rancher who owned the field took his losses in stride, and left the shards well alone; perhaps it would shed its alien properties over time and become as one with their mundane brethren. But they did not; what remained of the livestock grew weak and soon died, producing tasteless meat that sported the same alien sheen as the shards outside. There was a poison in the land, an insidious devourer of body and mind.Several days later, the white shadow had come under the invitation of moonlight, stalking the blasted heath with the fervor of a starving beast. By day there was no sign of it except greyer fields than before—one step closer to becoming dust in the wind. What appeared to be its cast-off carapace, much like the shards, gave no indication where the mysterious creature had gone.But the thing had a name, and was a being: a porcelain carapace of petite humanoid proportion, cracking and splitting at whim from the colors within. A soft, coy giggle, accompanied by some otherworldly, tinkling cadence.Gazing thus into her alien eyes—those unknowable pools of vast and bottomless hunger—the rancher muttered in a fit of instinctual frenzy: \"Hypaea.\"",
-  "summon": "Are you...<br>Going to feed me?",
-  "fusion": "Still hungry...<br>Want more.",
-  "evolution": "I wonder where home is...",
-  "hp_base": "7165",
-  "atk_base": "2374",
-  "def_base": "2512",
-  "rec_base": "2499",
-  "hp_lord": "10235",
-  "atk_lord": "3391",
-  "def_lord": "3588",
-  "rec_lord": "3570",
-  "hp_anima": "11352",
-  "rec_anima": "3272",
-  "atk_breaker": "3689",
-  "def_breaker": "3290",
-  "def_guardian": "3886",
-  "rec_guardian": "3421",
-  "def_oracle": "3439",
-  "rec_oracle": "4017",
-  "hp_bonus": "1250",
-  "atk_bonus": "400",
-  "def_bonus": "800",
-  "rec_bonus": "500",
-  "lordonly": "",
-  "normal_frames": "39, 45, 51, 57, 63, 69, 75, 81, 87, 93, 105, 111, 117, 123",
-  "normal_distribute": "6, 7, 6, 7, 6, 7, 6, 7, 6, 7, 10, 9, 8, 8",
-  "normal_totaldistr": "100",
-  "combo_hits": "14",
-  "normaldc": "56",
-  "ls": "Color of Desolation",
-  "lsdescription": "100% Atk, Def, Rec, 150% max HP, 20% damage reduction for 2 turns when damage taken is over 5k, damage taken fills BB gauge, 100% critical and elemental damage reduction & negates all status ailments and Atk, Def, Rec reduction",
-  "lsnote": "Fills 6-10 BC when hit",
-  "es": "Blasted Heath",
-  "esdescription": "Probable damage reduction to 1 and 10% reduction to BB activation cost for all allies, 30% all parameters, spark damage may restores HP & probable 2 KO resistance",
-  "esitem": "",
-  "esnote": "10% chance of reducing damage to 1 (to all allies), heals 500-800 HP per spark & 50% chance of resisting 2 KO",
+  "stats": {
+    "_base": {
+      "atk": 2374,
+      "def": 2512,
+      "hp": 7165,
+      "rec": 2499
+    },
+    "_lord": {
+      "atk": 3391,
+      "def": 3588,
+      "hp": 10235,
+      "rec": 3570
+    },
+    "anima": {
+      "atk": 3391,
+      "def": 3588,
+      "hp max": 11725,
+      "hp min": 10980,
+      "rec max": 3421,
+      "rec min": 3123
+    },
+    "breaker": {
+      "atk max": 3838,
+      "atk min": 3540,
+      "def max": 3439,
+      "def min": 3141,
+      "hp": 10235,
+      "rec": 3570
+    },
+    "guardian": {
+      "atk": 3391,
+      "def max": 4035,
+      "def min": 3737,
+      "hp": 10235,
+      "rec max": 3570,
+      "rec min": 3272
+    },
+    "oracle": {
+      "atk": 3391,
+      "def max": 3588,
+      "def min": 3290,
+      "hp": 10235,
+      "rec max": 4166,
+      "rec min": 3868
+    }
+  },
+  "leader_skill": {
+    "desc": "100% Atk, Def, Rec, 150% max HP, 20% damage reduction for 2 turns when damage taken is over 5k, damage taken fills BB gauge, 100% critical and elemental damage reduction & negates all status ailments and Atk, Def, Rec reduction",
+    "effects": [
+      {
+        "atk% buff": 100,
+        "def% buff": 100,
+        "hp% buff": 150,
+        "passive id": "1",
+        "rec% buff": 100
+      },
+      {
+        "buff": {
+          "buff turns (36)": "1",
+          "dmg reduction% buff": 20
+        },
+        "damage threshold buff activation": 5000,
+        "passive id": "78"
+      },
+      {
+        "bc fill when attacked high": 10,
+        "bc fill when attacked low": 6,
+        "bc fill when attacked%": 100,
+        "passive id": "25"
+      },
+      {
+        "crit chance base resist%": 100,
+        "crit chance buffed resist%": 100,
+        "crit dmg base damage resist%": 100,
+        "crit dmg buffed damage resist%": 100,
+        "passive id": "53",
+        "strong base element damage resist%": 100,
+        "strong buffed element damage resist%": 100
+      },
+      {
+        "atk down resist%": 100,
+        "curse resist%": 100,
+        "def down resist%": 100,
+        "injury resist%": 100,
+        "paralysis resist%": 100,
+        "passive id": "73",
+        "poison resist%": 100,
+        "rec down resist%": 100,
+        "sick resist%": 100,
+        "weaken resist%": 100
+      }
+    ],
+    "id": "830888",
+    "name": "Color of Desolation"
+  },
+  "extra_skill": {
+    "desc": "Probable damage reduction to 1 and 10% reduction to BB activation cost for all allies, 30% all parameters, spark damage may restores HP & probable 2 KO resistance",
+    "effects": [
+      {
+        "conditions": [],
+        "passive id": "43",
+        "passive target": "party",
+        "take 1 dmg%": 10
+      },
+      {
+        "conditions": [],
+        "passive id": "48",
+        "passive target": "party",
+        "reduced bb bc cost%": 10
+      },
+      {
+        "atk% buff": 30,
+        "conditions": [],
+        "def% buff": 30,
+        "hp% buff": 30,
+        "passive id": "1",
+        "passive target": "self",
+        "rec% buff": 30
+      },
+      {
+        "conditions": [],
+        "heal on spark high": 800,
+        "heal on spark low": 500,
+        "heal on spark%": 100,
+        "passive id": "101",
+        "passive target": "self"
+      },
+      {
+        "angel idol chance% condition": 0,
+        "angel idol recover chance% high": 50,
+        "angel idol recover chance% low": 50,
+        "angel idol recover counts": 2,
+        "angel idol recover hp%": 1,
+        "conditions": [],
+        "passive id": "69",
+        "passive target": "self"
+      }
+    ],
+    "id": "830888",
+    "name": "Blasted Heath",
+    "rarity": "7",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -988,51 +1072,6 @@
     ],
     "name": "Unformed Realm"
   },
-  "bbdescription": "23 combo Earth attack on all foes, boosts max HP, 50% damage reduction for 3 turns, 100% critical and elemental damage reduction for 5 turns, negates all status ailments and Atk, Def, Rec reduction for 3 turns & removes all status ailments and Atk, Def, Rec reduction",
-  "bbnote": "{{UnitBuffList",
-  "buff_1_proc": "47",
-  "buff_1_potency": "1500% + 1500% * (current HP / base max HP) damage modifier",
-  "buff_1_duration": "—",
-  "buff_1_target": "All enemies",
-  "buff_2_proc": "8",
-  "buff_2_potency": "55% boost to max HP",
-  "buff_2_duration": "—",
-  "buff_2_target": "All allies",
-  "buff_3_proc": "18",
-  "buff_3_potency": "Reduces damage taken by 100%",
-  "buff_3_duration": "4 turns",
-  "buff_3_target": "All allies",
-  "buff_4_proc": "56",
-  "buff_4_potency": "80% chance of resisting 1 KO, restores 100% of unit's HP",
-  "buff_4_duration": "999 turns",
-  "buff_4_target": "All allies",
-  "buff_5_proc": "66",
-  "buff_5_potency": "80% chance of reviving with 100% HP",
-  "buff_5_duration": "—",
-  "buff_5_target": "All allies",
-  "buff_6_proc": "43",
-  "buff_6_potency": "Fills 50% of the OD gauge",
-  "buff_6_duration": "—",
-  "buff_6_target": "—",
-  "buff_7_proc": "73",
-  "buff_7_potency": "Negates Atk, Def, and Rec reduction effects",
-  "buff_7_duration": "3 turns",
-  "buff_7_target": "All allies",
-  "buff_8_proc": "38",
-  "buff_8_potency": "Removes all status ailments",
-  "buff_8_duration": "—",
-  "buff_8_target": "All allies",
-  "bbtype": "Offense",
-  "bbgauge": "32",
-  "bb_frames": "39, 42, 45, 48, 51, 54, 57, 60, 63, 66, 69, 72, 75, 78, 81, 84, 87, 90, 93, 105, 111, 117, 123",
-  "bb_distribute": "4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 7, 6, 6, 5",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "bbhits": "23",
-  "bbaoe": "A",
-  "bbdc": "23",
-  "bbmultiplier": "550",
-  "bb_hpscale": "",
   "sbb": {
     "damage frames": [
       {
@@ -1733,28 +1772,6 @@
     ],
     "name": "Cryptic Chromaticism"
   },
-  "sbbdescription": "22 combo Earth attack on all foes (damage relative to remaining HP), 9 combo Earth attack on all foes (damage relative to remaining HP), 50% damage reduction for 3 turns, boosts own spark damage for 3 turns, boosts OD gauge fill rate for 3 turns & fills OD gauge per ally (up to 18% max)",
-  "sbbnote": "{{UnitBuffList",
-  "sbbtype": "Offense",
-  "sbbgauge": "30",
-  "sbb_frames": "36, 39, 42, 45, 48, 51, 54, 57, 60, 63, 66, 69, 72, 75, 78, 81, 84, 87, 90, 93, 96, 99",
-  "sbb_distribute": "4, 5, 4, 5, 4, 5, 4, 5, 4, 5, 4, 5, 4, 5, 4, 5, 4, 5, 4, 5, 5, 5",
-  "sbb_totaldistr": "100",
-  "sbb_effectdelay": "1",
-  "sbbhits": "22",
-  "sbbaoe": "A",
-  "sbbdc": "22",
-  "sbbmultiplier": "200",
-  "sbb_hpscale": "true",
-  "sbb2_frames": "102, 105, 108, 111, 114, 117, 120, 123, 126",
-  "sbb2_distribute": "14, 12, 10, 12, 10, 12, 10, 10, 10",
-  "sbb2_totaldistr": "100",
-  "sbb2_effectdelay": "1",
-  "sbbhits2": "9",
-  "sbbaoe2": "A",
-  "sbbdc2": "9",
-  "sbbmultiplier2": "200",
-  "sbb2_hpscale": "true",
   "ubb": {
     "damage frames": [
       {
@@ -1955,221 +1972,6 @@
     ],
     "name": "Unknowable Iridescence"
   },
-  "ubbdescription": "33 combo Earth attack on all foes (damage relative to remaining HP), boosts max HP, 100% damage reduction for 4 turns, probable KO resistance, may raise allies from KO & fills OD gauge",
-  "ubbnote": "{{UnitBuffList",
-  "ubbtype": "Offense",
-  "ubbgauge": "35",
-  "ubb_frames": "36, 39, 42, 45, 48, 51, 54, 57, 60, 63, 66, 69, 72, 75, 78, 81, 84, 87, 90, 93, 96, 99, 102, 105, 108, 111, 114, 117, 120, 123, 126, 129, 132",
-  "ubb_distribute": "3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4",
-  "ubb_totaldistr": "100",
-  "ubb_effectdelay": "1",
-  "ubbhits": "33",
-  "ubbaoe": "A",
-  "ubbdc": "33",
-  "ubbmultiplier": "1500",
-  "ubb_hpscale": "true",
-  "dbb": "Trilakṣaṇa",
-  "synergy": "Eruption",
-  "bondunit": "Suizen, Stormlost Echo",
-  "dbbdescription": "68 combo grand dual attack on all foes (damage relative to remaining HP), boosts spark damage, max HP, 100% damage reduction, spark damage restores HP and boosts BB gauge, 80% KO resistance, 80% raises allies from KO & 50% OverDrive Fill",
-  "dbbnote": "",
-  "dbbtype": "Offense",
-  "dbb2": "Apóptōsis",
-  "synergy2": "Magma",
-  "bondunit2": "Ascha, the Devourer",
-  "dbbdescription2": "66 combo grand dual attack on all foes (damage relative to remaining HP), boosts max HP, Fire, Earth elemental damage, BB gauge, 100% damage reduction, OD gauge, 80% KO resistance, 80% raises allies from KO & activates BB/SBB/UBB twice",
-  "dbbnote2": "",
-  "dbbtype2": "Offense",
-  "omniskill1_cat": "Parameter Boost",
-  "omniskill1_1_sp": "10",
-  "omniskill1_1_desc": "120% Atk, Def, 100% max HP",
-  "omniskill1_1_note": "",
-  "omniskill2_cat": "Spark",
-  "omniskill2_1_sp": "10",
-  "omniskill2_1_desc": "150% spark damage",
-  "omniskill2_1_note": "",
-  "omniskill3_cat": "Attack Boost",
-  "omniskill3_1_sp": "10",
-  "omniskill3_1_desc": "200% elemental damage",
-  "omniskill3_1_note": "",
-  "omniskill4_cat": "Damage Reduction",
-  "omniskill4_1_sp": "10",
-  "omniskill4_1_desc": "10% damage reduction",
-  "omniskill4_1_note": "",
-  "omniskill5_cat": "Special",
-  "omniskill5_1_sp": "10",
-  "omniskill5_1_desc": "Raises Atk limit to 200k",
-  "omniskill5_1_note": "",
-  "omniskill5_2_sp": "20",
-  "omniskill5_2_desc": "Add to BB (Spark damage fills BB gauge for 3 turns)",
-  "omniskill5_2_note": "Fills 3-4 BC",
-  "omniskill5_3_sp": "20",
-  "omniskill5_3_desc": "Add to BB (Spark damage restores HP for 3 turns)",
-  "omniskill5_3_note": "Heals 400-500 HP",
-  "omniskill5_4_sp": "15",
-  "omniskill5_4_desc": "Add to BB (probable 1 KO resistance)",
-  "omniskill5_4_note": "20% chance",
-  "omniskill5_5_sp": "15",
-  "omniskill5_5_desc": "Add to BB/SBB (15% damage reduction from all element types for 3 turns)",
-  "omniskill5_5_note": "",
-  "omniskill5_6_sp": "10",
-  "omniskill5_6_desc": "Add to BB/SBB (Adds Earth barrier)",
-  "omniskill5_6_note": "7000 HP Earth Barrier",
-  "omniskill5_7_sp": "25",
-  "omniskill5_7_desc": "Add to SBB (Probable 3 turns critical, elemental and spark vulnerability infliction)",
-  "omniskill5_7_note": "75% chance of 35% vulnerability",
-  "omniskill5_8_sp": "25",
-  "omniskill5_8_desc": "Add to BB (May purge LS, ES Lock and DoT from random ally), UBB (Purges LS, ES Lock and DoT from all allies)",
-  "omniskill5_8_note": "80% chance of purging on BB, 100% chance of purging on UBB",
-  "howtoget": "*Destiny Summon",
-  "notes": "",
-  "incorrectinfo": "",
-  "addcat": "",
-  "addcatname": "",
-  "bottomtext": "",
-  "stats": {
-    "_base": {
-      "atk": 2374,
-      "def": 2512,
-      "hp": 7165,
-      "rec": 2499
-    },
-    "_lord": {
-      "atk": 3391,
-      "def": 3588,
-      "hp": 10235,
-      "rec": 3570
-    },
-    "anima": {
-      "atk": 3391,
-      "def": 3588,
-      "hp max": 11725,
-      "hp min": 10980,
-      "rec max": 3421,
-      "rec min": 3123
-    },
-    "breaker": {
-      "atk max": 3838,
-      "atk min": 3540,
-      "def max": 3439,
-      "def min": 3141,
-      "hp": 10235,
-      "rec": 3570
-    },
-    "guardian": {
-      "atk": 3391,
-      "def max": 4035,
-      "def min": 3737,
-      "hp": 10235,
-      "rec max": 3570,
-      "rec min": 3272
-    },
-    "oracle": {
-      "atk": 3391,
-      "def max": 3588,
-      "def min": 3290,
-      "hp": 10235,
-      "rec max": 4166,
-      "rec min": 3868
-    }
-  },
-  "leader_skill": {
-    "desc": "100% Atk, Def, Rec, 150% max HP, 20% damage reduction for 2 turns when damage taken is over 5k, damage taken fills BB gauge, 100% critical and elemental damage reduction & negates all status ailments and Atk, Def, Rec reduction",
-    "effects": [
-      {
-        "atk% buff": 100,
-        "def% buff": 100,
-        "hp% buff": 150,
-        "passive id": "1",
-        "rec% buff": 100
-      },
-      {
-        "buff": {
-          "buff turns (36)": "1",
-          "dmg reduction% buff": 20
-        },
-        "damage threshold buff activation": 5000,
-        "passive id": "78"
-      },
-      {
-        "bc fill when attacked high": 10,
-        "bc fill when attacked low": 6,
-        "bc fill when attacked%": 100,
-        "passive id": "25"
-      },
-      {
-        "crit chance base resist%": 100,
-        "crit chance buffed resist%": 100,
-        "crit dmg base damage resist%": 100,
-        "crit dmg buffed damage resist%": 100,
-        "passive id": "53",
-        "strong base element damage resist%": 100,
-        "strong buffed element damage resist%": 100
-      },
-      {
-        "atk down resist%": 100,
-        "curse resist%": 100,
-        "def down resist%": 100,
-        "injury resist%": 100,
-        "paralysis resist%": 100,
-        "passive id": "73",
-        "poison resist%": 100,
-        "rec down resist%": 100,
-        "sick resist%": 100,
-        "weaken resist%": 100
-      }
-    ],
-    "id": "830888",
-    "name": "Color of Desolation"
-  },
-  "extra_skill": {
-    "desc": "Probable damage reduction to 1 and 10% reduction to BB activation cost for all allies, 30% all parameters, spark damage may restores HP & probable 2 KO resistance",
-    "effects": [
-      {
-        "conditions": [],
-        "passive id": "43",
-        "passive target": "party",
-        "take 1 dmg%": 10
-      },
-      {
-        "conditions": [],
-        "passive id": "48",
-        "passive target": "party",
-        "reduced bb bc cost%": 10
-      },
-      {
-        "atk% buff": 30,
-        "conditions": [],
-        "def% buff": 30,
-        "hp% buff": 30,
-        "passive id": "1",
-        "passive target": "self",
-        "rec% buff": 30
-      },
-      {
-        "conditions": [],
-        "heal on spark high": 800,
-        "heal on spark low": 500,
-        "heal on spark%": 100,
-        "passive id": "101",
-        "passive target": "self"
-      },
-      {
-        "angel idol chance% condition": 0,
-        "angel idol recover chance% high": 50,
-        "angel idol recover chance% low": 50,
-        "angel idol recover counts": 2,
-        "angel idol recover hp%": 1,
-        "conditions": [],
-        "passive id": "69",
-        "passive target": "self"
-      }
-    ],
-    "id": "830888",
-    "name": "Blasted Heath",
-    "rarity": "7",
-    "target": "self"
-  },
   "unitDisplayHomePosition_1W9CxaFK": "390,186,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "86,10,904,1018",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "132,147,432,487,1",
@@ -2178,5 +1980,6 @@
   "unitDisplayHpPosition_3BpHN6VD": "-3,18",
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "50000",
-  "sellCaution": false
+  "sellCaution": false,
+  "effectFrames": "30:330591:1,50:400365:1,70:400061:1,90:400474:1,107:500637:1,105:500749:1"
 }

@@ -1,67 +1,109 @@
 {
   "id": "51007",
   "unitName": "Howling Wolf Zekt",
-  "no": "1398",
-  "element": "Light",
-  "rarity": "Omni",
-  "cost": "47",
-  "maxlv": "150",
-  "basexp": "21",
-  "gender": "N",
-  "ai": "2",
-  "animation_attack": "135",
-  "animation_idle": "54",
-  "animation_move": "6",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "44, 50, 68, 71, 75, 78, 82, 85",
-  "normal_distribute": "10, 9, 18, 9, 18, 9, 18, 9",
-  "normal_totaldistr": "100",
-  "bb_frames": "44, 50, 68, 71, 74, 78, 81, 84, 88, 91, 94",
-  "bb_distribute": "9, 7, 16, 7, 5, 16, 7, 5, 16, 7, 5",
-  "bb_totaldistr": "100",
-  "sbb_frames": "44, 50, 68, 71, 74, 77, 80, 83, 86, 89, 92, 95, 98, 101, 104, 107, 110",
-  "sbb_distribute": "8, 5, 11, 6, 5, 4, 3, 11, 6, 5, 4, 3, 11, 6, 5, 4, 3",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "44, 48, 52, 56, 60, 64, 68, 71, 74, 77, 80, 83, 86, 89, 92, 95, 98, 101, 104, 107, 110, 113, 116, 119",
-  "ubb_distribute": "6, 4, 3, 3, 3, 3, 8, 4, 8, 4, 8, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4",
-  "ubb_totaldistr": "100",
-  "sbb_effectdelay": "2",
-  "ubb_effectdelay": "2",
-  "description": "While this sacred beast scarred the First Summoner's face, it only attacked him because his fighting spirit revealed him to be a threat to its master. As such, it is said that the sacred beast was never combative by nature. Had it not encountered the First Summoner, the sacred beast would have grown even further. In order to protect its master, it might have carved out an area that even the Four Fallen Gods could not invade easily. This likely would have made the Summoners' Hall La Veda region survey even more difficult.",
-  "summon": "Protecting the tribe's chief...<br>That is my mission!<br>To that end, I will topple any enemy<br>with a single blow!",
-  "fusion": "You will increase my power further?<br>I hope that you do not<br>come to regret this one day...",
-  "evolution": "Stunted children of humanity!<br>Let me show you<br>my truly awakened form!",
-  "hp_base": "6196",
-  "atk_base": "2126",
-  "def_base": "2216",
-  "rec_base": "2006",
-  "hp_lord": "8012",
-  "atk_lord": "3093",
-  "def_lord": "2666",
-  "rec_lord": "2549",
-  "hp_anima": "9129",
-  "rec_anima": "2251",
-  "atk_breaker": "3391",
-  "def_breaker": "2388",
-  "def_guardian": "2964",
-  "rec_guardian": "2400",
-  "def_oracle": "2517",
-  "rec_oracle": "2996",
-  "hp_bonus": "1500",
-  "atk_bonus": "600",
-  "def_bonus": "600",
-  "rec_bonus": "600",
-  "lordonly": "",
-  "combo_hits": "8",
-  "normaldc": "48",
-  "ls": "Fanged Fury",
-  "lsdescription": "40% boost to all parameters, damage taken hugely boosts BB gauge and may restore HP & 15% damage reduction from Light, Dark types",
-  "lsnote": "4~7 BC fill when attacked, 25% chance to heal 25% HP from damage taken",
+  "stats": {
+    "_base": {
+      "atk": 2126,
+      "def": 2216,
+      "hp": 6196,
+      "rec": 2006
+    },
+    "_lord": {
+      "atk": 3093,
+      "def": 2666,
+      "hp": 8012,
+      "rec": 2549
+    },
+    "anima": {
+      "atk": 3093,
+      "def": 2666,
+      "hp max": 9502,
+      "hp min": 8757,
+      "rec max": 2400,
+      "rec min": 2102
+    },
+    "breaker": {
+      "atk max": 3540,
+      "atk min": 3242,
+      "def max": 2517,
+      "def min": 2219,
+      "hp": 8012,
+      "rec": 2549
+    },
+    "guardian": {
+      "atk": 3093,
+      "def max": 3113,
+      "def min": 2815,
+      "hp": 8012,
+      "rec max": 2549,
+      "rec min": 2251
+    },
+    "oracle": {
+      "atk": 3093,
+      "def max": 2666,
+      "def min": 2368,
+      "hp": 8012,
+      "rec max": 3145,
+      "rec min": 2847
+    }
+  },
+  "leader_skill": {
+    "desc": "40% boost to all parameters, damage taken hugely boosts BB gauge and may restore HP & 15% damage reduction from Light, Dark types",
+    "effects": [
+      {
+        "atk% buff": 40,
+        "def% buff": 40,
+        "hp% buff": 40,
+        "passive id": "1",
+        "rec% buff": 40
+      },
+      {
+        "bc fill when attacked high": 7,
+        "bc fill when attacked low": 4,
+        "bc fill when attacked%": 100,
+        "passive id": "25"
+      },
+      {
+        "dmg% to hp% when attacked chance%": 25,
+        "dmg% to hp% when attacked high": 25,
+        "dmg% to hp% when attacked low": 25,
+        "passive id": "24"
+      },
+      {
+        "dmg% mitigation for elemental attacks": 15.0,
+        "mitigate dark attacks": true,
+        "mitigate light attacks": true,
+        "passive id": "62"
+      }
+    ],
+    "id": "10117",
+    "name": "Fanged Fury"
+  },
+  "extra_skill": {
+    "desc": "Considerably boosts Atk relative to remaining HP & probable HP recovery when attacked",
+    "effects": [
+      {
+        "atk% base buff": 0,
+        "atk% extra buff based on hp": 80,
+        "buff proportional to hp": "remaining",
+        "conditions": [],
+        "passive id": "46",
+        "passive target": "self"
+      },
+      {
+        "conditions": [],
+        "dmg% to hp% when attacked chance%": 25,
+        "dmg% to hp% when attacked high": 25,
+        "dmg% to hp% when attacked low": 20,
+        "passive id": "24",
+        "passive target": "self"
+      }
+    ],
+    "id": "18500",
+    "name": "Divine Wolf's Domain",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -530,18 +572,6 @@
     ],
     "name": "Timia Tetra"
   },
-  "bbdescription": "11 combo Light attack on all foes, hugely boosts BB gauge, boosts max HP & slightly reduces damage from Fire, Water, Earth, Thunder types for 1 turn",
-  "bbnote": "10% boost to max HP, 10% damage reduction, 8 BC fill",
-  "bbtype": "Offense",
-  "bbhits": "11",
-  "bbaoe": "A",
-  "bbgauge": "26",
-  "bbdc": "11",
-  "bbmultiplier": "370",
-  "bbhits2": "",
-  "bbaoe2": "",
-  "bbdc2": "",
-  "bbmultiplier2": "",
   "sbb": {
     "damage frames": [
       {
@@ -1052,19 +1082,6 @@
     ],
     "name": "Buhre Repulsio"
   },
-  "sbbdescription": "17 combo Light attack on all foes (damage relative to remaining HP), enormously boosts critical hit rate and boosts critical damage for 3 turns & slightly reduces damage from Light, Dark types for 2 turns",
-  "sbbnote": "200% + 670% x current HP / base max HP, 670% additional multiplier total, 60% boost to critical hit rate, 50% boost to critical damage, 10% damage reduction",
-  "sbbtype": "Offense",
-  "sbbhits": "17",
-  "sbbaoe": "A",
-  "sbbgauge": "30",
-  "sbbdc": "17",
-  "sbbmultiplier": "200",
-  "sbb_hpscale": "true",
-  "sbbhits2": "",
-  "sbbaoe2": "",
-  "sbbdc2": "",
-  "sbbmultiplier2": "",
   "ubb": {
     "damage frames": [
       {
@@ -1232,139 +1249,6 @@
     ],
     "name": "Talon: Gwen Singh"
   },
-  "ubbdescription": "24 combo massive Light attack on all foes, hugely boosts max HP, enormously boosts critical hit rate and critical damage for 3 turns & 50% elemental damage reduction for 3 turns",
-  "ubbnote": "60% boost to critical hit rate, 300% boost to critical damage, 35% boost to max HP",
-  "ubbtype": "Offense",
-  "ubbhits": "24",
-  "ubbaoe": "A",
-  "ubbgauge": "30",
-  "ubbdc": "24",
-  "ubbmultiplier": "1500",
-  "ubbhits2": "",
-  "ubbaoe2": "",
-  "ubbdc2": "",
-  "ubbmultiplier2": "",
-  "es": "Divine Wolf's Remain",
-  "esitem": "",
-  "esdescription": "Considerably boosts Atk relative to remaining HP & probable HP recovery when attacked",
-  "esnote": "+0.8% boost to Atk per 1% HP remaining, 80% boost max, 25% chance to heal 20~25% HP from damage taken",
-  "evofrom": "51006",
-  "evointo": "",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evomats6": "",
-  "evomats7": "",
-  "evomats8": "",
-  "evomats9": "",
-  "evoitem": "",
-  "evoitem2": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 2126,
-      "def": 2216,
-      "hp": 6196,
-      "rec": 2006
-    },
-    "_lord": {
-      "atk": 3093,
-      "def": 2666,
-      "hp": 8012,
-      "rec": 2549
-    },
-    "anima": {
-      "atk": 3093,
-      "def": 2666,
-      "hp max": 9502,
-      "hp min": 8757,
-      "rec max": 2400,
-      "rec min": 2102
-    },
-    "breaker": {
-      "atk max": 3540,
-      "atk min": 3242,
-      "def max": 2517,
-      "def min": 2219,
-      "hp": 8012,
-      "rec": 2549
-    },
-    "guardian": {
-      "atk": 3093,
-      "def max": 3113,
-      "def min": 2815,
-      "hp": 8012,
-      "rec max": 2549,
-      "rec min": 2251
-    },
-    "oracle": {
-      "atk": 3093,
-      "def max": 2666,
-      "def min": 2368,
-      "hp": 8012,
-      "rec max": 3145,
-      "rec min": 2847
-    }
-  },
-  "leader_skill": {
-    "desc": "40% boost to all parameters, damage taken hugely boosts BB gauge and may restore HP & 15% damage reduction from Light, Dark types",
-    "effects": [
-      {
-        "atk% buff": 40,
-        "def% buff": 40,
-        "hp% buff": 40,
-        "passive id": "1",
-        "rec% buff": 40
-      },
-      {
-        "bc fill when attacked high": 7,
-        "bc fill when attacked low": 4,
-        "bc fill when attacked%": 100,
-        "passive id": "25"
-      },
-      {
-        "dmg% to hp% when attacked chance%": 25,
-        "dmg% to hp% when attacked high": 25,
-        "dmg% to hp% when attacked low": 25,
-        "passive id": "24"
-      },
-      {
-        "dmg% mitigation for elemental attacks": 15.0,
-        "mitigate dark attacks": true,
-        "mitigate light attacks": true,
-        "passive id": "62"
-      }
-    ],
-    "id": "10117",
-    "name": "Fanged Fury"
-  },
-  "extra_skill": {
-    "desc": "Considerably boosts Atk relative to remaining HP & probable HP recovery when attacked",
-    "effects": [
-      {
-        "atk% base buff": 0,
-        "atk% extra buff based on hp": 80,
-        "buff proportional to hp": "remaining",
-        "conditions": [],
-        "passive id": "46",
-        "passive target": "self"
-      },
-      {
-        "conditions": [],
-        "dmg% to hp% when attacked chance%": 25,
-        "dmg% to hp% when attacked high": 25,
-        "dmg% to hp% when attacked low": 20,
-        "passive id": "24",
-        "passive target": "self"
-      }
-    ],
-    "id": "18500",
-    "name": "Divine Wolf's Domain",
-    "rarity": "1",
-    "target": "self"
-  },
   "unitDisplayHomePosition_1W9CxaFK": "306,205,180,491",
   "unitDisplayDetailPosition_6z54rgb3": "-4,-7,1070,934",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "17,135,620,541,0",
@@ -1373,5 +1257,6 @@
   "unitDisplayHpPosition_3BpHN6VD": "-15,40",
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "50000",
-  "sellCaution": false
+  "sellCaution": false,
+  "effectFrames": "40:200754:1,41:600725:1,44:135:1,50:135:1,62:120:1,65:120:1,69:120:1,72:120:1,76:120:1,79:120:1,67:400078:1,70:600725:1,60:201021:1,80:200177:1"
 }

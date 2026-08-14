@@ -1,68 +1,72 @@
 {
   "id": "50975",
-  "unitName": "ロギ (6★)",
-  "freetext": ":''Not to be confused with Global counterpart Logi (7★).''",
-  "unreleased": "true",
-  "untranslated": "true",
-  "no": "1365",
-  "altname": "Logi",
-  "element": "Light",
-  "rarity": "★★★★★★",
-  "cost": "25",
-  "maxlv": "100",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "116",
-  "animation_idle": "68",
-  "animation_move": "6",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "10, 13, 16, 40, 43, 46, 49",
-  "normal_distribute": "15, 12, 10, 20, 17, 14, 12",
-  "normal_totaldistr": "100",
-  "bb_frames": "40, 43, 46, 49, 70, 73, 76, 90, 93, 96",
-  "bb_distribute": "17, 14, 10, 7, 12, 8, 6, 12, 8, 6",
-  "bb_totaldistr": "100",
-  "sbb_frames": "10, 13, 16, 40, 43, 50, 53, 80, 83, 86, 100, 103, 106, 109, 112",
-  "sbb_distribute": "5, 4, 3, 6, 5, 6, 4, 8, 7, 6, 12, 10, 9, 8, 7",
-  "sbb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "1",
-  "description": "異界の地エンヴィリアの騎士。最強と謳われる蒼炎騎士団の団長を父に持ち、周囲の期待に応えるため鍛錬に努めていた。正義感の強い好青年なのだが、正しいと信じたことをとことん追求する猪突猛進な性格から、ともに育った2人の幼馴染、ディオスとアガサには心配をかけてばかりいる。騎士になってから日は浅いものの、初陣で大きな戦果をあげるなど、若くしてすでに剣の腕は申し分ない。",
-  "summon": "これからよろしく<br>僕と同じ道を歩んでいこう<br>世界を守るために！",
-  "fusion": "戦いの合間にはこうして<br>のんびり空を見上げるのも<br>いいんじゃないかな",
-  "evolution": "",
-  "hp_base": "4270",
-  "atk_base": "1530",
-  "def_base": "1480",
-  "rec_base": "1290",
-  "hp_lord": "5910",
-  "atk_lord": "1910",
-  "def_lord": "2070",
-  "rec_lord": "1612",
-  "hp_anima": "6653",
-  "rec_anima": "1612",
-  "atk_breaker": "2108",
-  "def_breaker": "1872",
-  "def_guardian": "2268",
-  "rec_guardian": "1711",
-  "def_oracle": "1971",
-  "rec_oracle": "2107",
-  "hp_bonus": "750",
-  "atk_bonus": "200",
-  "def_bonus": "400",
-  "rec_bonus": "300",
-  "lordonly": "",
-  "combo_hits": "7",
-  "normaldc": "28",
-  "ls": "聖騎士の証",
-  "lsdescription": "全てのユニットの最大ＨＰを３０％アップ＆残りＨＰが少ないほど、防御力・回復力を少しアップ",
-  "lsnote": "30% boost to max HP & 0.3% boost to Def, Rec relative to HP lost (30% max)",
+  "unitName": "ロギ",
+  "stats": {
+    "_base": {
+      "atk": 1530,
+      "def": 1480,
+      "hp": 4270,
+      "rec": 1290
+    },
+    "_lord": {
+      "atk": 1910,
+      "def": 2070,
+      "hp": 5910,
+      "rec": 1810
+    },
+    "anima": {
+      "atk": 1910,
+      "def": 2070,
+      "hp max": 6900,
+      "hp min": 6405,
+      "rec max": 1711,
+      "rec min": 1513
+    },
+    "breaker": {
+      "atk max": 2207,
+      "atk min": 2009,
+      "def max": 1971,
+      "def min": 1773,
+      "hp": 5910,
+      "rec": 1810
+    },
+    "guardian": {
+      "atk": 1910,
+      "def max": 2367,
+      "def min": 2169,
+      "hp": 5910,
+      "rec max": 1810,
+      "rec min": 1612
+    },
+    "oracle": {
+      "atk": 1910,
+      "def max": 2070,
+      "def min": 1872,
+      "hp": 5910,
+      "rec max": 2206,
+      "rec min": 2008
+    }
+  },
+  "leader_skill": {
+    "desc": "全てのユニットの最大ＨＰを３０％アップ＆残りＨＰが少ないほど、防御力・回復力を少しアップ",
+    "effects": [
+      {
+        "hp% buff": 30,
+        "passive id": "1"
+      },
+      {
+        "buff proportional to hp": "lost",
+        "def% base buff": 0,
+        "def% extra buff based on hp": 30,
+        "passive id": "46",
+        "rec% base buff": 0,
+        "rec% extra buff based on hp": 30
+      }
+    ],
+    "id": "5526",
+    "name": "聖騎士の証"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -549,15 +553,6 @@
     ],
     "name": "魔神斬り"
   },
-  "bbdescription": "敵全体に光属性１０連ダメージ＆味方全体のＨＰをかなり回復＆３ターン、防御力をアップ＆１ターン、攻撃力・防御力・回復力を低下する効果を無効",
-  "bbnote": "10 combo Light attack on all foes, heals 1500~1800 + 10% own's Rec HP, 90% boost to Def for 3 turns & negates Atk, Def, Rec reductions for 1 turn",
-  "bbtype": "Offense",
-  "bbhits": "10",
-  "bbaoe": "A",
-  "bbgauge": "20",
-  "bbdc": "10",
-  "bbmultiplier": "220",
-  "bb_hpscale": "",
   "sbb": {
     "damage frames": [
       {
@@ -952,93 +947,6 @@
     ],
     "name": "ソードクラッシュ"
   },
-  "sbbdescription": "敵全体に強力な光属性１５連ダメージ＆味方全体に３ターン、防御力に応じて攻撃力を少しアップ・被ダメージ時、確率でＨＰを少し回復",
-  "sbbnote": "15 combo powerful Light attack on all foes, 20% boost to Atk relative of Def & 15% chance to heal 10%~15% of HP upon attacked for 3 turns",
-  "sbbtype": "Offense",
-  "sbbhits": "15",
-  "sbbaoe": "A",
-  "sbbgauge": "23",
-  "sbbdc": "15",
-  "sbbmultiplier": "450",
-  "sbb_hpscale": "",
-  "evofrom": "",
-  "evointo": "50976",
-  "evomats1": "50394",
-  "evomats2": "50354",
-  "evomats3": "50123",
-  "evomats4": "50191",
-  "evomats5": "50121",
-  "evomats6": "",
-  "evomats7": "",
-  "evomats8": "",
-  "evoitem": "",
-  "evozelcost": "1500000",
-  "stats": {
-    "_base": {
-      "atk": 1530,
-      "def": 1480,
-      "hp": 4270,
-      "rec": 1290
-    },
-    "_lord": {
-      "atk": 1910,
-      "def": 2070,
-      "hp": 5910,
-      "rec": 1810
-    },
-    "anima": {
-      "atk": 1910,
-      "def": 2070,
-      "hp max": 6900,
-      "hp min": 6405,
-      "rec max": 1711,
-      "rec min": 1513
-    },
-    "breaker": {
-      "atk max": 2207,
-      "atk min": 2009,
-      "def max": 1971,
-      "def min": 1773,
-      "hp": 5910,
-      "rec": 1810
-    },
-    "guardian": {
-      "atk": 1910,
-      "def max": 2367,
-      "def min": 2169,
-      "hp": 5910,
-      "rec max": 1810,
-      "rec min": 1612
-    },
-    "oracle": {
-      "atk": 1910,
-      "def max": 2070,
-      "def min": 1872,
-      "hp": 5910,
-      "rec max": 2206,
-      "rec min": 2008
-    }
-  },
-  "leader_skill": {
-    "desc": "全てのユニットの最大ＨＰを３０％アップ＆残りＨＰが少ないほど、防御力・回復力を少しアップ",
-    "effects": [
-      {
-        "hp% buff": 30,
-        "passive id": "1"
-      },
-      {
-        "buff proportional to hp": "lost",
-        "def% base buff": 0,
-        "def% extra buff based on hp": 30,
-        "passive id": "46",
-        "rec% base buff": 0,
-        "rec% extra buff based on hp": 30
-      }
-    ],
-    "id": "5526",
-    "name": "聖騎士の証"
-  },
-  "extra_skill": {},
   "ubb": {},
   "unitDisplayHomePosition_1W9CxaFK": "414,22,180,491",
   "unitDisplayDetailPosition_6z54rgb3": "-37,173,860,637",
@@ -1048,5 +956,6 @@
   "unitDisplayHpPosition_3BpHN6VD": "0,31",
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "8000",
-  "sellCaution": false
+  "sellCaution": false,
+  "effectFrames": "4:120:1,7:120:1,10:120:1,34:120:1,37:120:1,40:120:1,43:120:1,10:200741:1,10:200781:1,15:661:1,40:200962:1,38:200032:1,40:200032:1,42:200032:1"
 }

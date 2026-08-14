@@ -1,68 +1,100 @@
 {
   "id": "10897",
   "unitName": "Dancing Flames Rengaku",
-  "no": "1390",
-  "element": "Fire",
-  "rarity": "Omni",
-  "cost": "47",
-  "maxlv": "150",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "157",
-  "animation_idle": "54",
-  "animation_move": "6",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "17, 20, 23, 92, 97, 102, 107, 112, 117, 122, 127",
-  "normal_distribute": "12, 8, 5, 10, 9, 8, 11, 9, 8, 11, 9",
-  "normal_totaldistr": "100",
-  "bb_frames": "17, 20, 23, 26, 29, 92, 95, 98, 101, 104, 107, 110, 113, 116, 119, 122, 125, 128, 131, 134",
-  "bb_distribute": "7, 5, 6, 5, 7, 4, 5, 4, 6, 4, 5, 4, 6, 4, 5, 4, 6, 4, 5, 4",
-  "bb_totaldistr": "100",
-  "sbb_frames": "17, 92",
-  "sbb_distribute": "33, 67",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "17, 92",
-  "ubb_distribute": "33, 67",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "2",
-  "sbb_effectdelay": "2",
-  "ubb_effectdelay": "3",
-  "description": "Recently, many weapon blueprints Rengaku left behind have been discovered in the ruins of the temple. They are all of original design, and while it's hard to think of them as useful in actual battle, their magnificent power is clear at a glance. Many people surmise that if these weapons had been completed in time, the invasions from nearby countries could have been repelled. In the written accounts following his death he has been largely described as a strange monk with heroic tendencies, and is often pictured wielding the weapons he left unfinished in a fantastic display on the battlefield.",
-  "summon": "Finishing them with flair is my style! I just can't abide by fighting all neat and orderly!!",
-  "fusion": "I've gotta get stronger!<br>A man has to appear strong!<br>You've gotta work at it, too!!",
-  "evolution": "How do ya like my special weapon?!<br>With this it's glory or death!<br>Raise the curtain on my explosive stage!!",
-  "hp_base": "6316",
-  "atk_base": "2467",
-  "def_base": "2075",
-  "rec_base": "1981",
-  "hp_lord": "8204",
-  "atk_lord": "3056",
-  "def_lord": "2594",
-  "rec_lord": "2465",
-  "hp_anima": "9321",
-  "rec_anima": "2167",
-  "atk_breaker": "3354",
-  "def_breaker": "2296",
-  "def_guardian": "2892",
-  "rec_guardian": "2316",
-  "def_oracle": "2445",
-  "rec_oracle": "2912",
-  "hp_bonus": "1250",
-  "atk_bonus": "800",
-  "def_bonus": "400",
-  "rec_bonus": "500",
-  "lordonly": "",
-  "combo_hits": "11",
-  "normaldc": "44",
-  "ls": "Odd God's Thousand Souls",
-  "lsdescription": "40% boost to all parameters, slightly boosts Atk, Def, Rec when BB gauge is over 50% & hugely boosts BB gauge each turn",
-  "lsnote": "6 BC fill, 30% boost to Atk, Def and Rec when BB gauge is more than half-full",
+  "stats": {
+    "_base": {
+      "atk": 2467,
+      "def": 2075,
+      "hp": 6316,
+      "rec": 1981
+    },
+    "_lord": {
+      "atk": 3056,
+      "def": 2594,
+      "hp": 8204,
+      "rec": 2465
+    },
+    "anima": {
+      "atk": 3056,
+      "def": 2594,
+      "hp max": 9694,
+      "hp min": 8949,
+      "rec max": 2316,
+      "rec min": 2018
+    },
+    "breaker": {
+      "atk max": 3503,
+      "atk min": 3205,
+      "def max": 2445,
+      "def min": 2147,
+      "hp": 8204,
+      "rec": 2465
+    },
+    "guardian": {
+      "atk": 3056,
+      "def max": 3041,
+      "def min": 2743,
+      "hp": 8204,
+      "rec max": 2465,
+      "rec min": 2167
+    },
+    "oracle": {
+      "atk": 3056,
+      "def max": 2594,
+      "def min": 2296,
+      "hp": 8204,
+      "rec max": 3061,
+      "rec min": 2763
+    }
+  },
+  "leader_skill": {
+    "desc": "40% boost to all parameters, slightly boosts Atk, Def, Rec when BB gauge is over 50% & hugely boosts BB gauge each turn",
+    "effects": [
+      {
+        "atk% buff": 40,
+        "def% buff": 40,
+        "hp% buff": 40,
+        "passive id": "1",
+        "rec% buff": 40
+      },
+      {
+        "atk% buff": 30,
+        "bb gauge above % buff requirement": 50,
+        "def% buff": 30,
+        "passive id": "30",
+        "rec% buff": 30
+      },
+      {
+        "bc fill per turn": 6,
+        "passive id": "9"
+      }
+    ],
+    "id": "10115",
+    "name": "Odd God's Thousand Souls"
+  },
+  "extra_skill": {
+    "desc": "50% boost to Spark damage & damage taken boosts BB gauge",
+    "effects": [
+      {
+        "conditions": [],
+        "damage% for spark": 50,
+        "passive id": "31",
+        "passive target": "self"
+      },
+      {
+        "bc fill when attacked high": 3,
+        "bc fill when attacked low": 2,
+        "bc fill when attacked%": 100,
+        "conditions": [],
+        "passive id": "25",
+        "passive target": "self"
+      }
+    ],
+    "id": "17700",
+    "name": "Fireflower's Grandstand",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -621,18 +653,6 @@
     ],
     "name": "Extreme Martial Arts"
   },
-  "bbdescription": "20 combo Fire attack on all foes, enormously boosts BB gauge, considerably boosts BC, HC drop rates for 3 turns & hugely boosts BC efficacy and BB gauge for 3 turns",
-  "bbnote": "7 BC fill gradually, 50% boost to BB gauge fill rate, 35% boost to BC and HC drop rate, 10 BC fill instant",
-  "bbtype": "Offense",
-  "bbhits": "20",
-  "bbaoe": "A",
-  "bbgauge": "26",
-  "bbdc": "20",
-  "bbmultiplier": "370",
-  "bbhits2": "",
-  "bbaoe2": "",
-  "bbdc2": "",
-  "bbmultiplier2": "",
   "sbb": {
     "damage frames": [
       {
@@ -1287,18 +1307,6 @@
     ],
     "name": "Climactic War Scene"
   },
-  "sbbdescription": "2 combo powerful Fire attack on all foes, Spark damage enormously boosts own BB gauge for 1 turn, enormously boosts BB gauge, considerably boosts BC, HC drop rates for 3 turns, hugely boosts Atk relative to Def for 3 turns & adds probable Spark critical for 3 turns",
-  "sbbnote": "10 BC fill on Spark to self, 30% chance to deal 50% more Spark damage, 35% boost to BC and HC drop rate, 70% boost to Atk relative to Def, 10 BC fill instant",
-  "sbbtype": "Offense",
-  "sbbhits": "2",
-  "sbbaoe": "A",
-  "sbbgauge": "30",
-  "sbbdc": "30",
-  "sbbmultiplier": "580",
-  "sbbhits2": "",
-  "sbbaoe2": "",
-  "sbbdc2": "",
-  "sbbmultiplier2": "",
   "ubb": {
     "damage frames": [
       {
@@ -1416,130 +1424,6 @@
     ],
     "name": "Grand Finale: Muraji Aragoto"
   },
-  "ubbdescription": "2 combo Fire massive attack on all foes, inflicts enormous Spark vulnerability for 3 turns, fills BB gauge to max, enormously boosts BB gauge for 3 turns & enormously boosts critical damage for 3 turns",
-  "ubbnote": "50 BC fill gradually, 300% boost to critical damage, 150% more Spark damage received",
-  "ubbtype": "Offense",
-  "ubbhits": "2",
-  "ubbaoe": "A",
-  "ubbgauge": "30",
-  "ubbdc": "50",
-  "ubbmultiplier": "1500",
-  "ubbhits2": "",
-  "ubbaoe2": "",
-  "ubbdc2": "",
-  "ubbmultiplier2": "",
-  "es": "Fireflower's Grandstand",
-  "esitem": "",
-  "esdescription": "50% boost to Spark damage & damage taken boosts BB gauge",
-  "esnote": "2~3 BC fill",
-  "evofrom": "10896",
-  "evointo": "",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evomats6": "",
-  "evomats7": "",
-  "evomats8": "",
-  "evomats9": "",
-  "evoitem": "",
-  "evoitem2": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 2467,
-      "def": 2075,
-      "hp": 6316,
-      "rec": 1981
-    },
-    "_lord": {
-      "atk": 3056,
-      "def": 2594,
-      "hp": 8204,
-      "rec": 2465
-    },
-    "anima": {
-      "atk": 3056,
-      "def": 2594,
-      "hp max": 9694,
-      "hp min": 8949,
-      "rec max": 2316,
-      "rec min": 2018
-    },
-    "breaker": {
-      "atk max": 3503,
-      "atk min": 3205,
-      "def max": 2445,
-      "def min": 2147,
-      "hp": 8204,
-      "rec": 2465
-    },
-    "guardian": {
-      "atk": 3056,
-      "def max": 3041,
-      "def min": 2743,
-      "hp": 8204,
-      "rec max": 2465,
-      "rec min": 2167
-    },
-    "oracle": {
-      "atk": 3056,
-      "def max": 2594,
-      "def min": 2296,
-      "hp": 8204,
-      "rec max": 3061,
-      "rec min": 2763
-    }
-  },
-  "leader_skill": {
-    "desc": "40% boost to all parameters, slightly boosts Atk, Def, Rec when BB gauge is over 50% & hugely boosts BB gauge each turn",
-    "effects": [
-      {
-        "atk% buff": 40,
-        "def% buff": 40,
-        "hp% buff": 40,
-        "passive id": "1",
-        "rec% buff": 40
-      },
-      {
-        "atk% buff": 30,
-        "bb gauge above % buff requirement": 50,
-        "def% buff": 30,
-        "passive id": "30",
-        "rec% buff": 30
-      },
-      {
-        "bc fill per turn": 6,
-        "passive id": "9"
-      }
-    ],
-    "id": "10115",
-    "name": "Odd God's Thousand Souls"
-  },
-  "extra_skill": {
-    "desc": "50% boost to Spark damage & damage taken boosts BB gauge",
-    "effects": [
-      {
-        "conditions": [],
-        "damage% for spark": 50,
-        "passive id": "31",
-        "passive target": "self"
-      },
-      {
-        "bc fill when attacked high": 3,
-        "bc fill when attacked low": 2,
-        "bc fill when attacked%": 100,
-        "conditions": [],
-        "passive id": "25",
-        "passive target": "self"
-      }
-    ],
-    "id": "17700",
-    "name": "Fireflower's Grandstand",
-    "rarity": "1",
-    "target": "self"
-  },
   "unitDisplayHomePosition_1W9CxaFK": "489,275,180,491",
   "unitDisplayDetailPosition_6z54rgb3": "-143,-16,1100,925",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "-46,135,650,546,1",
@@ -1548,5 +1432,6 @@
   "unitDisplayHpPosition_3BpHN6VD": "-10,63",
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "50000",
-  "sellCaution": false
+  "sellCaution": false,
+  "effectFrames": "11:121:1,14:121:1,17:121:1,10:1111:1,11:1052:1,17:100199:1,23:100199:1,55:100011:1,92:137:1,92:1912:1,97:10070:1,102:10070:1,117:1052:1"
 }

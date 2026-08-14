@@ -1,56 +1,114 @@
 {
   "id": "20806",
   "unitName": "Arctic Virtuoso Soleil",
-  "no": "1374",
-  "element": "Water",
-  "rarity": "★★★★★★★",
-  "cost": "43",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "121",
-  "animation_idle": "120",
-  "animation_move": "120",
-  "movespeed_attack": "4",
-  "movespeed_skill": "4",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "41, 46, 51, 56, 61, 66, 71, 76, 81, 86, 91, 96, 101",
-  "normal_distribute": "9, 8, 7, 6, 9, 8, 7, 6, 9, 8, 7, 6, 10",
-  "normal_totaldistr": "100",
-  "description": "When tragedy befell her beloved goddess, she became more frenzied than one would assume from her normally dignified manner. When the words of her twin sisters somehow calmed her down, she immediately sought details of the incident, but never arrived at the truth. Once the wounds on her heart healed with time, it is said she set to wandering with the remaining faithful to spread word of the goddess's existence and her teachings.",
-  "summon": "Even if you forget,<br>I will play it again.<br>I will play her song to show everyone her light...",
-  "fusion": "The gospel she sent down from heaven... You say you want me to teach that beautiful melody to the world?",
-  "evolution": "Even if the light is extinguished,<br>I must continue singing...<br>Continue spreading her teachings...",
-  "hp_base": "5058",
-  "atk_base": "1965",
-  "def_base": "2249",
-  "rec_base": "2089",
-  "hp_lord": "6644",
-  "atk_lord": "2464",
-  "def_lord": "2798",
-  "rec_lord": "2608",
-  "hp_anima": "7536",
-  "rec_anima": "2370",
-  "atk_breaker": "2702",
-  "def_breaker": "2560",
-  "def_guardian": "3036",
-  "rec_guardian": "2470",
-  "def_oracle": "2629",
-  "rec_oracle": "2965",
-  "hp_bonus": "1000",
-  "atk_bonus": "300",
-  "def_bonus": "600",
-  "rec_bonus": "400",
-  "lordonly": "",
-  "combo_hits": "13",
-  "normaldc": "39",
-  "ls": "Silent God's Poetry",
-  "lsdescription": "40% boost to Def, max HP, damage taken may slightly restore HP, hugely boosts BC drop rate & probable resistance against 1 KO attack",
-  "lsnote": "30% chance to heal 15~20% HP from damage taken, 20% chance to resist 1 KO attack, 20% boost to BC drop rate",
+  "stats": {
+    "_base": {
+      "atk": 1965,
+      "def": 2249,
+      "hp": 5058,
+      "rec": 2089
+    },
+    "_lord": {
+      "atk": 2464,
+      "def": 2798,
+      "hp": 6644,
+      "rec": 2608
+    },
+    "anima": {
+      "atk": 2464,
+      "def": 2798,
+      "hp max": 7834,
+      "hp min": 7239,
+      "rec max": 2489,
+      "rec min": 2251
+    },
+    "breaker": {
+      "atk max": 2821,
+      "atk min": 2583,
+      "def max": 2679,
+      "def min": 2441,
+      "hp": 6644,
+      "rec": 2608
+    },
+    "guardian": {
+      "atk": 2464,
+      "def max": 3155,
+      "def min": 2917,
+      "hp": 6644,
+      "rec max": 2608,
+      "rec min": 2370
+    },
+    "oracle": {
+      "atk": 2464,
+      "def max": 2798,
+      "def min": 2560,
+      "hp": 6644,
+      "rec max": 3084,
+      "rec min": 2846
+    }
+  },
+  "leader_skill": {
+    "desc": "40% boost to Def, max HP, damage taken may slightly restore HP, hugely boosts BC drop rate & probable resistance against 1 KO attack",
+    "effects": [
+      {
+        "def% buff": 40,
+        "hp% buff": 40,
+        "passive id": "1"
+      },
+      {
+        "dmg% to hp% when attacked chance%": 30,
+        "dmg% to hp% when attacked high": 20,
+        "dmg% to hp% when attacked low": 15,
+        "passive id": "24"
+      },
+      {
+        "bc drop rate% buff": 20,
+        "passive id": "19"
+      },
+      {
+        "angel idol chance% condition": 0,
+        "angel idol recover chance% high": 20,
+        "angel idol recover chance% low": 20,
+        "angel idol recover counts": 1,
+        "passive id": "69"
+      }
+    ],
+    "id": "4335",
+    "name": "Silent God's Poetry"
+  },
+  "extra_skill": {
+    "desc": "Adds BB gauge boost effect to BB/SBB & boosts Def when HP is low",
+    "effects": [
+      {
+        "conditions": [],
+        "passive id": "66",
+        "passive target": "self",
+        "trigger on bb": true,
+        "trigger on sbb": true,
+        "triggered effect": [
+          {
+            "effect delay time(ms)/frame": "0.0/0",
+            "increase bb gauge": 5,
+            "proc id": "31",
+            "target area": "aoe",
+            "target type": "party"
+          }
+        ]
+      },
+      {
+        "buff proportional to hp": "lost",
+        "conditions": [],
+        "def% base buff": 0,
+        "def% extra buff based on hp": 50,
+        "passive id": "46",
+        "passive target": "self"
+      }
+    ],
+    "id": "16500",
+    "name": "Divine Holy Rhythm",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -619,14 +677,6 @@
     ],
     "name": "Hellenes's Renovation"
   },
-  "bbdescription": "Greatly restores HP, removes all status ailments & damage taken considerably boosts BB gauge and may slightly restore HP for 3 turns",
-  "bbnote": "4~7 BC fill when attacked, heals (3000~3500 + 40% of healer's Rec) HP, 20% chance to heal 15~20% HP from damage taken,",
-  "bbtype": "Support",
-  "bbhits": "",
-  "bbaoe": "",
-  "bbgauge": "16",
-  "bbdc": "",
-  "bbmultiplier": "",
   "sbb": {
     "damage frames": [
       {
@@ -1075,14 +1125,6 @@
     ],
     "name": "Rainbow's Echo"
   },
-  "sbbdescription": "Considerably raises normal hit amount for 3 turns, hugely boosts Atk for 3 turns, enormously boosts critical hit rate and considerably boosts critical damage for 3 turns & normal attacks hit all foes for 3 turns",
-  "sbbnote": "60% boost to critical hit rate, 100% boost to critical damage, adds +2 hits to each hit count, 150% boost to Atk",
-  "sbbtype": "Support",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "23",
-  "sbbdc": "",
-  "sbbmultiplier": "",
   "ubb": {
     "damage frames": [
       {
@@ -1180,135 +1222,6 @@
     ],
     "name": "Polaris Nabla"
   },
-  "ubbdescription": "Adds high probability of resistance against 1 KO attack, hugely raises normal hit amount for 3 turns, enormously boosts Atk for 3 turns & normal attacks hit all foes for 3 turns",
-  "ubbnote": "Adds +3 hits to each hit count, 300% boost to Atk, 80% chance to resist 1 KO attack",
-  "ubbtype": "Support",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "30",
-  "ubbdc": "",
-  "ubbmultiplier": "",
-  "es": "Divine Holy Rhythm",
-  "esitem": "",
-  "esdescription": "Adds BB gauge boost effect to BB/SBB & boosts Def when HP is low",
-  "esnote": "5 BC fill, +0.5% boost to Def per 1% HP lost, 50% boost max",
-  "evofrom": "20805",
-  "evointo": "",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 1965,
-      "def": 2249,
-      "hp": 5058,
-      "rec": 2089
-    },
-    "_lord": {
-      "atk": 2464,
-      "def": 2798,
-      "hp": 6644,
-      "rec": 2608
-    },
-    "anima": {
-      "atk": 2464,
-      "def": 2798,
-      "hp max": 7834,
-      "hp min": 7239,
-      "rec max": 2489,
-      "rec min": 2251
-    },
-    "breaker": {
-      "atk max": 2821,
-      "atk min": 2583,
-      "def max": 2679,
-      "def min": 2441,
-      "hp": 6644,
-      "rec": 2608
-    },
-    "guardian": {
-      "atk": 2464,
-      "def max": 3155,
-      "def min": 2917,
-      "hp": 6644,
-      "rec max": 2608,
-      "rec min": 2370
-    },
-    "oracle": {
-      "atk": 2464,
-      "def max": 2798,
-      "def min": 2560,
-      "hp": 6644,
-      "rec max": 3084,
-      "rec min": 2846
-    }
-  },
-  "leader_skill": {
-    "desc": "40% boost to Def, max HP, damage taken may slightly restore HP, hugely boosts BC drop rate & probable resistance against 1 KO attack",
-    "effects": [
-      {
-        "def% buff": 40,
-        "hp% buff": 40,
-        "passive id": "1"
-      },
-      {
-        "dmg% to hp% when attacked chance%": 30,
-        "dmg% to hp% when attacked high": 20,
-        "dmg% to hp% when attacked low": 15,
-        "passive id": "24"
-      },
-      {
-        "bc drop rate% buff": 20,
-        "passive id": "19"
-      },
-      {
-        "angel idol chance% condition": 0,
-        "angel idol recover chance% high": 20,
-        "angel idol recover chance% low": 20,
-        "angel idol recover counts": 1,
-        "passive id": "69"
-      }
-    ],
-    "id": "4335",
-    "name": "Silent God's Poetry"
-  },
-  "extra_skill": {
-    "desc": "Adds BB gauge boost effect to BB/SBB & boosts Def when HP is low",
-    "effects": [
-      {
-        "conditions": [],
-        "passive id": "66",
-        "passive target": "self",
-        "trigger on bb": true,
-        "trigger on sbb": true,
-        "triggered effect": [
-          {
-            "effect delay time(ms)/frame": "0.0/0",
-            "increase bb gauge": 5,
-            "proc id": "31",
-            "target area": "aoe",
-            "target type": "party"
-          }
-        ]
-      },
-      {
-        "buff proportional to hp": "lost",
-        "conditions": [],
-        "def% base buff": 0,
-        "def% extra buff based on hp": 50,
-        "passive id": "46",
-        "passive target": "self"
-      }
-    ],
-    "id": "16500",
-    "name": "Divine Holy Rhythm",
-    "rarity": "1",
-    "target": "self"
-  },
   "unitDisplayHomePosition_1W9CxaFK": "475,316,145,396",
   "unitDisplayDetailPosition_6z54rgb3": "-37,-65,980,931",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "52,135,550,523,0",
@@ -1317,5 +1230,6 @@
   "unitDisplayHpPosition_3BpHN6VD": "2,46",
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "15000",
-  "sellCaution": false
+  "sellCaution": false,
+  "effectFrames": "33:601251:1,41:200544:1,43:601330:1,80:500764:1,106:600751:1,110:600751:1"
 }

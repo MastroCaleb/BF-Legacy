@@ -1,69 +1,100 @@
 {
   "id": "50966",
   "unitName": "Pious Saint Astall",
-  "no": "1359",
-  "element": "Light",
-  "rarity": "★★★★★★★",
-  "cost": "43",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "123",
-  "animation_idle": "54",
-  "animation_move": "6",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "17, 20, 23, 40, 45, 50, 55, 60, 65",
-  "normal_distribute": "8, 9, 8, 15, 14, 13, 12, 11, 10",
-  "normal_totaldistr": "100",
-  "bb_frames": "17, 20, 23, 43, 47, 51, 55, 59, 63, 67, 71, 75, 79, 83, 87, 91, 95",
-  "bb_distribute": "5, 6, 5, 6, 5, 7, 6, 5, 7, 6, 5, 7, 6, 5, 7, 5, 7",
-  "bb_totaldistr": "100",
-  "sbb_frames": "17, 20, 23, 43, 47, 51, 55, 59, 63, 67, 71, 75, 79, 83, 87, 91, 95, 99, 103, 107",
-  "sbb_distribute": "2, 3, 2, 4, 6, 5, 4, 6, 5, 4, 6, 5, 6, 5, 7, 6, 6, 5, 7, 6",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "17, 20, 23, 26, 29, 43, 47, 51, 55, 59, 63, 67, 71, 75, 79, 83, 87, 91, 95, 99, 103, 107",
-  "ubb_distribute": "2, 3, 2, 3, 2, 4, 6, 5, 4, 6, 5, 4, 6, 5, 4, 5, 6, 5, 6, 5, 6, 6",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "3",
-  "sbb_effectdelay": "3",
-  "ubb_effectdelay": "1",
-  "description": "Stemming from his pride at having been directly chosen by the gods during the early days of Meirith, he looked down on his comrades at first. However, he came to acknowledge their abilities and character as he worked with them, and eventually came to support them devotedly. It is believed that the continued existence of the Guardians in later generations is largely due to the foundations he set. Furthermore, his descendants continued to be named to later generations of Guardians.",
-  "summon": "What I need now is the power to enforce my will. For the sake of those who need to be saved!",
-  "fusion": "Now I understand what they meant...<br>If only just a little...",
-  "evolution": "It seems the glory of the Holy Emperor has continued to spread over the land. This form of mine is surely proof of that!",
-  "hp_base": "5157",
-  "atk_base": "2025",
-  "def_base": "2205",
-  "rec_base": "2025",
-  "hp_lord": "6707",
-  "atk_lord": "2550",
-  "def_lord": "2706",
-  "rec_lord": "2554",
-  "hp_anima": "7599",
-  "rec_anima": "2316",
-  "atk_breaker": "2788",
-  "def_breaker": "2468",
-  "def_guardian": "2944",
-  "rec_guardian": "2435",
-  "def_oracle": "2587",
-  "rec_oracle": "2911",
-  "hp_bonus": "1100",
-  "atk_bonus": "440",
-  "def_bonus": "440",
-  "rec_bonus": "440",
-  "lordonly": "",
-  "combo_hits": "9",
-  "normaldc": "45",
-  "ls": "Sage's Seal",
-  "lsdescription": "40% boost to Def, max HP, enormously boosts Spark damage when BC collected has exceeded certain amount for 2 turns & considerably boosts BB Atk when HC collected has exceeded certain amount for 2 turns",
-  "lsnote": "100% Spark after 30 BC & 200% BB Atk after 30 HC",
-  "lstype": "Hit Points/Defense/Attack",
+  "stats": {
+    "_base": {
+      "atk": 2025,
+      "def": 2205,
+      "hp": 5157,
+      "rec": 2025
+    },
+    "_lord": {
+      "atk": 2550,
+      "def": 2706,
+      "hp": 6707,
+      "rec": 2554
+    },
+    "anima": {
+      "atk": 2550,
+      "def": 2706,
+      "hp max": 7897,
+      "hp min": 7302,
+      "rec max": 2435,
+      "rec min": 2197
+    },
+    "breaker": {
+      "atk max": 2907,
+      "atk min": 2669,
+      "def max": 2587,
+      "def min": 2349,
+      "hp": 6707,
+      "rec": 2554
+    },
+    "guardian": {
+      "atk": 2550,
+      "def max": 3063,
+      "def min": 2825,
+      "hp": 6707,
+      "rec max": 2554,
+      "rec min": 2316
+    },
+    "oracle": {
+      "atk": 2550,
+      "def max": 2706,
+      "def min": 2468,
+      "hp": 6707,
+      "rec max": 3030,
+      "rec min": 2792
+    }
+  },
+  "leader_skill": {
+    "desc": "40% boost to Def, max HP, enormously boosts Spark damage when BC collected has exceeded certain amount for 2 turns & considerably boosts BB Atk when HC collected has exceeded certain amount for 2 turns",
+    "effects": [
+      {
+        "def% buff": 40,
+        "hp% buff": 40,
+        "passive id": "1"
+      },
+      {
+        "bc receive count buff activation": 30,
+        "buff": {
+          "buff turns (40)": "2",
+          "spark dmg% buff": 100
+        },
+        "passive id": "82"
+      },
+      {
+        "buff": {
+          "bb atk% buff": 200,
+          "buff turns (72)": "2",
+          "sbb atk% buff": 200,
+          "ubb atk% buff": 200
+        },
+        "hc receive count buff activation": 30,
+        "passive id": "84"
+      }
+    ],
+    "id": "4333",
+    "name": "Sage's Seal"
+  },
+  "extra_skill": {
+    "desc": "10% boost to Atk, Def, Rec, max HP",
+    "effects": [
+      {
+        "atk% buff": 10,
+        "conditions": [],
+        "def% buff": 10,
+        "hp% buff": 10,
+        "passive id": "1",
+        "passive target": "party",
+        "rec% buff": 10
+      }
+    ],
+    "id": "15800",
+    "name": "Soul's Legacy",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -604,14 +635,6 @@
     ],
     "name": "Juro Lemedium"
   },
-  "bbdescription": "17 combo Light attack on all foes, adds probable 1 turn Atk, Def reduction effect to attack for 3 turns, considerably boosts BC, HC drop rate for 3 turns & adds Light, Dark elements to attack for 3 turns",
-  "bbnote": "20% chance to reduce enemy Atk, Def by 20% & 35% boost",
-  "bbtype": "Support/Offense",
-  "bbhits": "17",
-  "bbaoe": "A",
-  "bbgauge": "22",
-  "bbdc": "17",
-  "bbmultiplier": "350",
   "sbb": {
     "damage frames": [
       {
@@ -1362,14 +1385,6 @@
     ],
     "name": "Expelling Crystal"
   },
-  "sbbdescription": "20 combo powerful Light attack on all foes, activates Light barrier, adds probable 1 turn Atk, Def reduction effect to attack for 3 turns, considerably boosts BC, HC drop rate and hugely boosts BC efficacy for 3 turns & adds Light, Dark elements to attack for 3 turns",
-  "sbbnote": "20% chance to reduce enemy Atk, Def by 20%, 35% boost, 50% BC efficacy & activates 2,000 HP barrier",
-  "sbbtype": "Support/Offense",
-  "sbbhits": "20",
-  "sbbaoe": "A",
-  "sbbgauge": "25",
-  "sbbdc": "20",
-  "sbbmultiplier": "560",
   "ubb": {
     "damage frames": [
       {
@@ -1519,117 +1534,6 @@
     ],
     "name": "Atswilt Shock"
   },
-  "ubbdescription": "23 combo massive Light attack on all foes, adds probable enormous 1 turn Atk, Def reduction effect to attack for 3 turns, damage taken enormously restores HP for 3 turns & 50% damage reduction from all Unit types",
-  "ubbnote": "50% chance to reduce enemy Atk, Def by 50%, 50% elemental mitigation & heals 75% of damage taken",
-  "ubbtype": "Heal/Support/Offense",
-  "ubbhits": "22",
-  "ubbaoe": "A",
-  "ubbgauge": "30",
-  "ubbdc": "22",
-  "ubbmultiplier": "1300",
-  "es": "Soul's Legacy",
-  "esitem": "",
-  "esdescription": "10% boost to Atk, Def, Rec, max HP",
-  "esnote": "(parameter boost applies to all units in party)",
-  "evofrom": "50965",
-  "notes": "",
-  "addcat": "Founders of Meirith",
-  "addcatname": "Astall3",
-  "bottomtext": "",
-  "stats": {
-    "_base": {
-      "atk": 2025,
-      "def": 2205,
-      "hp": 5157,
-      "rec": 2025
-    },
-    "_lord": {
-      "atk": 2550,
-      "def": 2706,
-      "hp": 6707,
-      "rec": 2554
-    },
-    "anima": {
-      "atk": 2550,
-      "def": 2706,
-      "hp max": 7897,
-      "hp min": 7302,
-      "rec max": 2435,
-      "rec min": 2197
-    },
-    "breaker": {
-      "atk max": 2907,
-      "atk min": 2669,
-      "def max": 2587,
-      "def min": 2349,
-      "hp": 6707,
-      "rec": 2554
-    },
-    "guardian": {
-      "atk": 2550,
-      "def max": 3063,
-      "def min": 2825,
-      "hp": 6707,
-      "rec max": 2554,
-      "rec min": 2316
-    },
-    "oracle": {
-      "atk": 2550,
-      "def max": 2706,
-      "def min": 2468,
-      "hp": 6707,
-      "rec max": 3030,
-      "rec min": 2792
-    }
-  },
-  "leader_skill": {
-    "desc": "40% boost to Def, max HP, enormously boosts Spark damage when BC collected has exceeded certain amount for 2 turns & considerably boosts BB Atk when HC collected has exceeded certain amount for 2 turns",
-    "effects": [
-      {
-        "def% buff": 40,
-        "hp% buff": 40,
-        "passive id": "1"
-      },
-      {
-        "bc receive count buff activation": 30,
-        "buff": {
-          "buff turns (40)": "2",
-          "spark dmg% buff": 100
-        },
-        "passive id": "82"
-      },
-      {
-        "buff": {
-          "bb atk% buff": 200,
-          "buff turns (72)": "2",
-          "sbb atk% buff": 200,
-          "ubb atk% buff": 200
-        },
-        "hc receive count buff activation": 30,
-        "passive id": "84"
-      }
-    ],
-    "id": "4333",
-    "name": "Sage's Seal"
-  },
-  "extra_skill": {
-    "desc": "10% boost to Atk, Def, Rec, max HP",
-    "effects": [
-      {
-        "atk% buff": 10,
-        "conditions": [],
-        "def% buff": 10,
-        "hp% buff": 10,
-        "passive id": "1",
-        "passive target": "party",
-        "rec% buff": 10
-      }
-    ],
-    "id": "15800",
-    "name": "Soul's Legacy",
-    "rarity": "1",
-    "target": "self"
-  },
   "unitDisplayHomePosition_1W9CxaFK": "580,290,195,532",
   "unitDisplayDetailPosition_6z54rgb3": "-166,-64,1020,857",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "-2,163,550,462,0",
@@ -1638,5 +1542,6 @@
   "unitDisplayHpPosition_3BpHN6VD": "0,21",
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "15000",
-  "sellCaution": false
+  "sellCaution": false,
+  "effectFrames": "17:400628:1,20:500822:1,40:200577:1,43:500172:1,50:500796:1,53:500382:1,53:500172:1,60:200577:1,63:500172:1"
 }

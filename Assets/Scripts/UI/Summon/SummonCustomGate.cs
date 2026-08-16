@@ -5,6 +5,8 @@ using UnityEngine.UI;
 public class SummonCustomGate : MonoBehaviour
 {
     public SummonBanner summonBanner;
+
+    public SummonGate summonGate;
     public TextMeshProUGUI gateTitleText;
     public TextMeshProUGUI gateDescText;
     public TextMeshProUGUI bannerCostDescText;
@@ -17,6 +19,8 @@ public class SummonCustomGate : MonoBehaviour
     {
         if (summonBanner != null)
         {
+            summonGate.summonBanner = summonBanner;
+
             gateTitleText.text = summonBanner.gateName;
             gateDescText.text = summonBanner.gateDesc;
             BannerCostDescTextUpdate();

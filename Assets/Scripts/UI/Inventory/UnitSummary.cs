@@ -74,7 +74,7 @@ public class UnitSummary : MonoBehaviour
             : $"{expBar.maxValue - expBar.currentValue}";
         UpdateSkillDescriptions();
         UpdateElementIcon();
-        
+
         unitFullArtwork.sprite = unitInventoryData.unit.unitFullArt;
         unitFullArtwork.SetNativeSize();
     }

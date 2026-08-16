@@ -6,7 +6,7 @@ using System.Collections.Generic;
 public class CustomScrollMenu : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     [Header("Menu Items")]
-    public List<GameObject> menuItems;
+    public List<GameObject> menuItems = new List<GameObject>();
 
     [Header("Item Layout")]
     public float itemsYPosition = 0f;
@@ -46,12 +46,6 @@ public class CustomScrollMenu : MonoBehaviour, IBeginDragHandler, IDragHandler, 
     void OnDisable()
     {
         dots.Clear();
-    }
-
-    void OnEnable()
-    {
-        if (menuItems == null || menuItems.Count == 0) return;
-        ResetMenu();
     }
 
     // ── RESET ────────────────────────────────────
@@ -128,6 +122,8 @@ public class CustomScrollMenu : MonoBehaviour, IBeginDragHandler, IDragHandler, 
 
     void SnapAll()
     {
+        menuItems.RemoveAll(item => item == null);
+
         for (int i = 0; i < menuItems.Count; i++)
         {
             RectTransform rt = menuItems[i].GetComponent<RectTransform>();
@@ -145,6 +141,8 @@ public class CustomScrollMenu : MonoBehaviour, IBeginDragHandler, IDragHandler, 
 
         for (int i = 0; i < menuItems.Count; i++)
         {
+            if (menuItems[i] == null) continue;
+
             RectTransform rt = menuItems[i].GetComponent<RectTransform>();
 
             rt.localPosition = Vector3.Lerp(rt.localPosition, TargetPos(i), dt);

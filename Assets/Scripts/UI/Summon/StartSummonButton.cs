@@ -1,9 +1,15 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StartSummonButton : MonoBehaviour
 {
-    
     public SummonGate summonGate;
+    public Button button;
+
+    void Start()
+    {
+        button.onClick.AddListener(StartSummon);
+    }
 
     public void StartSummon()
     {
@@ -16,18 +22,39 @@ public class StartSummonButton : MonoBehaviour
 
     bool CanAffordSummon()
     {
-        if(summonGate.summonBanner.costType == CostType.Gems)
+        int currentValue;
+
+        switch (summonGate.summonBanner.costType)
         {
-            return PlayerData.gems >= summonGate.summonBanner.cost;
+            case CostType.Gems:
+                currentValue = PlayerData.gems;
+                break;
+            case CostType.Zel:
+                currentValue = PlayerData.zel;
+                break;
+            case CostType.Karma:
+                currentValue = PlayerData.karma;
+                break;
+            default:
+                return false;
         }
-        return false;
+        
+        return currentValue >= summonGate.summonBanner.cost;
     }
 
     void PayToSummon()
     {
-        if(summonGate.summonBanner.costType == CostType.Gems)
+        switch (summonGate.summonBanner.costType)
         {
-            PlayerData.gems -= summonGate.summonBanner.cost;
+            case CostType.Gems:
+                PlayerData.gems -= summonGate.summonBanner.cost;
+                break;
+            case CostType.Zel:
+                PlayerData.zel -= summonGate.summonBanner.cost;
+                break;
+            case CostType.Karma:
+                PlayerData.karma -= summonGate.summonBanner.cost;
+                break;
         }
 
         MainUI.header.GetComponent<HeaderPlayerData>().UpdateHeader();

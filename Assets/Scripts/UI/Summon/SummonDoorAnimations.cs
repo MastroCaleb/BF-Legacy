@@ -39,7 +39,7 @@ public class SummonDoorAnimations : MonoBehaviour
 
     public void Play(Unit pulled, Unit evo, bool isNewUnit, SummonDoorAnimations surpriseTarget = null, string surpriseDoorBreakKey = null)
     {
-        SoundManager.Instance.SetMusicVolume(0.5f);
+        SoundManager.Instance.SetMusicVolume(Options.Instance.GetMusicVolume()/2);
         SoundManager.Instance.PlaySound(startSummon);
         this.isNewUnit = isNewUnit;
         this.pulled = pulled;
@@ -213,7 +213,7 @@ public class SummonDoorAnimations : MonoBehaviour
 
     public void Deactivate()
     {
-        SoundManager.Instance.SetMusicVolume(1f);
+        SoundManager.Instance.SetMusicVolume(Options.Instance.GetMusicVolume());
         touch.SetActive(false);
         closeDoor.SetActive(false);
         if(closeDoorAdd != null)

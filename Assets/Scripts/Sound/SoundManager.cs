@@ -7,6 +7,9 @@ public class SoundManager : MonoBehaviour
     private AudioSource musicSource;
     private AudioSource loopingSource;
 
+    private static float musicVolume;
+    private static float soundVolume;
+
     [Header("SFX")]
     public int sfxPoolSize = 10;
 
@@ -24,6 +27,7 @@ public class SoundManager : MonoBehaviour
             musicSource.playOnAwake = false;
             musicSource.loop = true;
             musicSource.spatialBlend = 0f; // 2D audio
+            musicSource.volume = musicVolume;
 
             // Create the SFX pool
             sfxSources = new AudioSource[sfxPoolSize];
@@ -33,6 +37,7 @@ public class SoundManager : MonoBehaviour
                 sfxSources[i] = gameObject.AddComponent<AudioSource>();
                 sfxSources[i].playOnAwake = false;
                 sfxSources[i].spatialBlend = 0f; // 2D audio
+                sfxSources[i].volume = soundVolume;
             }
         }
         else
@@ -50,6 +55,7 @@ public class SoundManager : MonoBehaviour
             return;
 
         musicSource.clip = music;
+        musicSource.volume = Options.Instance.GetMusicVolume();
         musicSource.Play();
     }
 
@@ -63,22 +69,22 @@ public class SoundManager : MonoBehaviour
         musicSource.Stop();
     }
 
-    public void PlaySound(AudioClip clip, float volume = 1f)
+    public void PlaySound(AudioClip clip)
     {
         foreach (AudioSource source in sfxSources)
         {
             if (!source.isPlaying)
             {
-                source.PlayOneShot(clip, volume);
+                source.PlayOneShot(clip, Options.Instance.GetSoundVolume());
                 return;
             }
         }
 
         // If they're all busy, reuse the first one.
-        sfxSources[0].PlayOneShot(clip, volume);
+        sfxSources[0].PlayOneShot(clip, Options.Instance.GetSoundVolume());
     }
 
-    public void PlayLoopingSound(AudioClip clip, float volume = 1f)
+    public void PlayLoopingSound(AudioClip clip)
     {
         if (loopingSource == null)
         {
@@ -89,7 +95,7 @@ public class SoundManager : MonoBehaviour
         }
 
         loopingSource.clip = clip;
-        loopingSource.volume = volume;
+        loopingSource.volume = Options.Instance.GetSoundVolume();
         loopingSource.Play();
     }
 
@@ -97,5 +103,18 @@ public class SoundManager : MonoBehaviour
     {
         if (loopingSource != null && loopingSource.isPlaying)
             loopingSource.Stop();
+    }
+
+    public void SetSoundVolume(float volume)
+    {
+        soundVolume = volume;
+
+        foreach (AudioSource source in sfxSources)
+        {
+            source.volume = soundVolume;
+        }
+
+        if (loopingSource != null)
+            loopingSource.volume = soundVolume;
     }
 }

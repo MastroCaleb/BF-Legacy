@@ -42,6 +42,7 @@ public class BattleManager : MonoBehaviour
     public AudioClip battleWin;
     public AudioClip bossBattleMusic;
     public AudioClip bossWarning;
+    public AudioClip mimicBattleMusic;
     public AudioClip mimicWarning;
 
     //UBB
@@ -66,6 +67,11 @@ public class BattleManager : MonoBehaviour
     public static int oldExperience;
     public static bool obtainedGemsForMission;
 
+    //Mimics
+    public static bool mimicRoundQueued = false;
+    public static List<TreasureChestDropBehaviour> pendingMimicChests = new List<TreasureChestDropBehaviour>();
+    public static HashSet<UnitBehaviour> mimicDropsHandled = new HashSet<UnitBehaviour>();
+
     private Coroutine autoAttackCoroutine;
 
     // ─────────────────────────────────────────────────────────────
@@ -87,6 +93,10 @@ public class BattleManager : MonoBehaviour
         playerTeam = new TeamBehaviour();
         enemyTeam  = new TeamBehaviour();
         selectedEnemyUnit = null;
+
+        mimicRoundQueued = false;
+        pendingMimicChests.Clear();
+        mimicDropsHandled.Clear();
 
         SoundManager.Instance.PlayMusicLoop(dungeonLevelData.bgm);
 
@@ -336,17 +346,19 @@ public class BattleManager : MonoBehaviour
 
                     if (isCombatAutomatic)
                     {
-                        foreach(TreasureChestDropBehaviour chest in chests)
-                        {
-                            chest.Open();
-                        }
+                        // Only auto-open non-mimics — mimics only pop via a click or another mimic's chain-trigger.
+                        foreach (TreasureChestDropBehaviour chest in chests)
+                            if (!chest.isMimic) chest.Open();
                     }
-                    
-                    //Wait until all chests are opened and removed from the list
-                    while(chests.Count > 0)
+
+                    while (chests.Count > 0)
                     {
+                        while (mimicRoundQueued)
+                            yield return StartCoroutine(FightMimicRound());
+
                         yield return null;
                     }
+
                     TreasureChestDropBehaviour.interactable = false;
 
                     DropMoveManager.canMove = true;
@@ -993,6 +1005,194 @@ public class BattleManager : MonoBehaviour
         units.Sort((a, b) => b.transform.position.y.CompareTo(a.transform.position.y));
         for (int i = 0; i < units.Count; i++)
             units[i].transform.SetSiblingIndex(i);
+    }
+
+    //Mimics
+
+    public static void QueueMimicChest(TreasureChestDropBehaviour chest)
+    {
+        if (pendingMimicChests.Contains(chest)) return;
+        pendingMimicChests.Add(chest);
+
+        if (mimicRoundQueued) return; // swarm already popped, this one just joins the wave
+        mimicRoundQueued = true;
+
+        foreach (var c in chests.FindAll(x => x.isMimic && !x.isOpen))
+            c.Open(); // recurses into QueueMimicChest, but guarded above so it won't loop forever
+    }
+
+    private void SpawnMimicEnemies(List<TreasureChestDropBehaviour> mimicChests)
+    {
+        enemyTeam.units.Clear(); // the mimics ARE this wave
+
+        int i = 0;
+        foreach (var chest in mimicChests)
+        {
+            RectTransform spawnPoint = enemyUnitPositions[i % enemyUnitPositions.Count];
+            Unit mimicUnitData = UnitRegistry.GetUnitById(dungeonLevelData.mimicEnemyData.unitId);
+            bool isMelee = mimicUnitData.moveTypeAttack == 1;
+
+            UnitBehaviour u = Instantiate(unitPrefab, Vector3.zero, Quaternion.identity).GetComponent<UnitBehaviour>();
+            u.isEnemyUnit = true;
+
+            // Reusing the chest's original Enemy entry so combat (and, if you don't override
+            // it below, AI) matches the enemy that dropped it. If you want mimics to fight
+            // with their OWN moveset/AI instead of inheriting the host enemy's, build a
+            // dedicated Enemy from dungeonLevelData.mimicUnitId here instead — I can help
+            // wire that up once I can see your Enemy class.
+            u.enemyData = dungeonLevelData.mimicEnemyData;
+            u.mimicSourceEnemyData = chest.enemyData;
+            u.isMimicChest = true;
+
+            u.transform.SetParent(BattleUI.enemyUnitsLayer.transform, false);
+            u.unitData = mimicUnitData;
+            u.unitCanvas = unitCanvas;
+            u.originalPosition = spawnPoint;
+            u.isBoss = false;
+
+            RectTransform uRect = u.GetComponent<RectTransform>();
+            Vector2 spawnAnchoredPos = spawnPoint.anchoredPosition - (isMelee ? new Vector2(300, 0) : Vector2.zero);
+            uRect.anchoredPosition = spawnAnchoredPos;
+
+            enemyTeam.units.Add(u);
+            AppearAnimation(u, spawnPoint.anchoredPosition, 300f);
+
+            i++;
+        }
+
+        enemyTeam.SetLeader();
+        EnemyHealthUI.SetEnemyNames(enemyTeam);
+        EnemyHealthUI.enemyUnit = null; // Update() will re-pick a living mimic
+    }
+
+    private IEnumerator FightMimicRound()
+    {
+        mimicRoundQueued = false;
+        var mimicsToSpawn = new List<TreasureChestDropBehaviour>(pendingMimicChests);
+        pendingMimicChests.Clear();
+        if (mimicsToSpawn.Count == 0) yield break;
+
+        TreasureChestDropBehaviour.interactable = false; // no clicking chests mid-mimic-fight
+
+        SoundManager.Instance.StopMusic();
+        SoundManager.Instance.PlayLoopingSound(mimicWarning);
+        TitleTextInstantiate("Mimic");
+        yield return new WaitForSeconds(3f);
+        SoundManager.Instance.StopLoopingSound();
+        SoundManager.Instance.PlayMusicLoop(mimicBattleMusic);
+
+        currentTurnIndex = 1;
+        SpawnMimicEnemies(mimicsToSpawn);
+
+        bool mimicBattleOver = false;
+        while (!mimicBattleOver)
+        {
+            if (playerTeam.IsDefeated())
+            {
+                TitleTextInstantiate("Lose");
+                yield return new WaitForSeconds(3f);
+                Time.timeScale = 1f;
+                StartCoroutine(BattleUI.FadeAndLoad("MainMenuScene"));
+                yield break;
+            }
+
+            if (selectedEnemyUnit != null) BattleUI.enemySelect.SetActive(true);
+
+            if (!isCombatAutomatic)
+            {
+                PlayerTurn();
+                while (playerTurnWaitingForInput)
+                {
+                    if (isCombatAutomatic)
+                    {
+                        EndManualPlayerTurn();
+                        RefreshFocusFireState();
+                        autoAttackCoroutine = StartCoroutine(DelayedAutoAttack());
+                        break;
+                    }
+                    yield return null;
+                }
+                while (!playerTeam.GetEndTurn()) yield return null;
+                yield return new WaitForSeconds(1f);
+            }
+            else
+            {
+                PlayerTurn();
+                while (!playerTeam.GetEndTurn())
+                {
+                    if (!isCombatAutomatic)
+                    {
+                        if (autoAttackCoroutine != null)
+                        {
+                            StopCoroutine(autoAttackCoroutine);
+                            autoAttackCoroutine = null;
+                        }
+
+                        unitsThatMustAct.Clear();
+                        foreach (var unit in playerTeam.units)
+                            if (unit.currentState != UnitState.Dead && !unitsThatActed.Contains(unit))
+                                    unitsThatMustAct.Add(unit);
+
+                        if (unitsThatMustAct.Count == 0)
+                        {
+                            while (!playerTeam.GetEndTurn()) yield return null;
+                            break;
+                        }
+
+                        playerTurnWaitingForInput = true;
+                        foreach (var slot in BattleUI.unitSlots)
+                            if (slot.unit != null && slot.unit.currentState != UnitState.Dead
+                                && !unitsThatActed.Contains(slot.unit))
+                                slot.canBeClicked = true;
+
+                        while (playerTurnWaitingForInput)
+                        {
+                            if (enemyTeam.IsDefeated()) { EndManualPlayerTurn(); break; }
+                            yield return null;
+                        }
+                        break;
+                    }
+                    yield return null;
+                }
+                yield return new WaitForSeconds(1f);
+            }
+
+            TickAllEffects();
+            DropMoveManager.canMove = true;
+
+            while (enemyTeam.units.Exists(u => u.currentState == UnitState.Dead && !u.deathSequenceComplete))
+                yield return null;
+
+            BattleUI.enemySelect.SetActive(false);
+            enemyTeam.DestroyDeadUnits();
+
+            while (DropMoveManager.activeDrops.Count > 0) yield return null;
+            yield return new WaitForSeconds(2f);
+            DropMoveManager.canMove = false;
+
+            if (enemyTeam.IsDefeated())
+            {
+                mimicBattleOver = true;
+
+                yield return new WaitForSeconds(1f);
+                TitleTextInstantiate("Win");
+                yield return new WaitForSeconds(2f);
+                break;
+            }
+
+            EnemyTurn();
+            yield return new WaitForSeconds(0.5f);
+            while (!enemyTeam.GetEndTurn()) yield return null;
+            TickAllEffects();
+
+            currentTurnIndex++;
+            yield return new WaitForSeconds(0.5f);
+        }
+
+        SoundManager.Instance.PlayMusicLoop(dungeonLevelData.bgm);
+
+        yield return new WaitForSeconds(1f);
+        TreasureChestDropBehaviour.interactable = true;
     }
 
     //UBB

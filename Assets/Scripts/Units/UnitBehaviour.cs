@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -36,7 +37,9 @@ public class UnitBehaviour : MonoBehaviour
     //Enemy-specific
     public bool isEnemyUnit = false;
     public bool isBoss = false;
+    public bool isMimicChest = false;
     public Enemy enemyData;
+    public Enemy mimicSourceEnemyData;
     public bool deathSequenceComplete = false;
 
     // Spark
@@ -286,6 +289,8 @@ public class UnitBehaviour : MonoBehaviour
     public void UseAbility(Ability ability, List<UnitBehaviour> targets, bool permanent = false)
     {
         Debug.Log($"[UseAbility] {unitData.unitName} uses {ability.abilityName} on {string.Join(", ", targets.ConvertAll(t => t.unitData.unitName))}");
+
+        StartCoroutine(PlayAbilityEffectFrames(ability, targets));
 
         if(ability.abilityName.Contains("Normal Attack"))
         {
@@ -1475,41 +1480,18 @@ public class UnitBehaviour : MonoBehaviour
     {
         SetAnimation("Attack");
 
-        // Build a sorted merged timeline of hit frames + effect frames
-        int totalFrames = ability.hitFrames.Count > 0
-            ? ability.hitFrames[ability.hitFrames.Count - 1].frame
-            : 0;
+        if (ability.hitFrames == null || ability.hitFrames.Count == 0) yield break;
 
-        if (ability.effectFrames != null)
-            foreach (var ef in ability.effectFrames)
-                totalFrames = Mathf.Max(totalFrames, ef.frame);
+        var hits = ability.hitFrames.OrderBy(hf => hf.frame).ToList();
 
         int lastFrame = 0;
-        // Collect all frame numbers in order
-        List<int> allFrames = new();
-        if (ability.hitFrames  != null) foreach (var hf in ability.hitFrames)  if (!allFrames.Contains(hf.frame)) allFrames.Add(hf.frame);
-        if (ability.effectFrames != null) foreach (var ef in ability.effectFrames) if (!allFrames.Contains(ef.frame)) allFrames.Add(ef.frame);
-        allFrames.Sort();
-
-        foreach (int frame in allFrames)
+        foreach (var hf in hits)
         {
-            float seconds = (frame - lastFrame) / 60f;
+            float seconds = (hf.frame - lastFrame) / 60f;
             if (seconds > 0) yield return new WaitForSeconds(seconds);
-            lastFrame = frame;
+            lastFrame = hf.frame;
 
-            // Fire hit damage
-            if (ability.hitFrames != null)
-                foreach (var hf in ability.hitFrames)
-                    if (hf.frame == frame)
-                        Attack(ability, target, PercentageToNumber(hf.damagePercent),
-                            ability.hitFrames.IndexOf(hf));
-
-            // Fire effect sounds
-            // Fire effects (particles + any sound sharing this frame)
-            if (ability.effectFrames != null)
-                foreach (var ef in ability.effectFrames)
-                    if (ef.frame == frame)
-                        PlayEffectFrame(ef, target);
+            Attack(ability, target, PercentageToNumber(hf.damagePercent), ability.hitFrames.IndexOf(hf));
         }
     }
 
@@ -1603,7 +1585,35 @@ public class UnitBehaviour : MonoBehaviour
     public float GetDefense()
         => ((isEnemyUnit ? enemyData.def : unitData.def + inventoryData.defImpBonus + inventoryData.defLevelUpBonus) / 2f) * PercentageToNumber(GetDefenseBuffRate());
 
-        /// <summary>
+    // ─────────────────────────────────────────────────────────────
+    //  Plays an ability's effectFrames (sounds/particles) on their
+    //  own timeline, independent of hitFrames. Runs exactly once per
+    //  UseAbility() call so it fires for every proc type — including
+    //  heals/buffs/BC-fill/etc. that never touch AttackAtHitFrames —
+    //  and so AoE abilities don't refire the same cue once per target.
+    // ─────────────────────────────────────────────────────────────
+    private IEnumerator PlayAbilityEffectFrames(Ability ability, List<UnitBehaviour> targets)
+    {
+        if (ability?.effectFrames == null || ability.effectFrames.Count == 0) yield break;
+
+        UnitBehaviour primaryTarget = targets != null && targets.Count > 0 ? targets[0] : null;
+
+        // Defensive sort — imported JSON order isn't guaranteed, don't mutate the
+        // shared Ability asset itself.
+        var frames = ability.effectFrames.OrderBy(ef => ef.frame).ToList();
+
+        int lastFrame = 0;
+        foreach (var ef in frames)
+        {
+            float seconds = (ef.frame - lastFrame) / 60f; // effectFrame.frame is a 60fps tick
+            if (seconds > 0) yield return new WaitForSeconds(seconds);
+            lastFrame = ef.frame;
+
+            PlayEffectFrame(ef, primaryTarget);
+        }
+    }
+    
+    /// <summary>
     /// Spawns and plays whatever particle an EffectFrame references, at a
     /// computed position. See ComputeEffectPosition for the placement logic —
     /// it's a best-effort read of the group data, not verified against footage.
@@ -1613,7 +1623,7 @@ public class UnitBehaviour : MonoBehaviour
         if (ef.audioClip != null)
             SoundManager.Instance.PlaySound(ef.audioClip);
 
-        if (ef.particleEffect == null) return;
+        if (!Options.Instance.GetVfxEnabled()|| ef.particleEffect == null) return;
 
         RectTransform layer = BattleUI.uiEffectLayer != null ? BattleUI.uiEffectLayer.GetComponent<RectTransform>() : BattleUI.dropsLayer;
         GameObject go = new GameObject($"FX_{ef.particleEffect.effectId}", typeof(RectTransform));
@@ -2248,10 +2258,17 @@ public class UnitBehaviour : MonoBehaviour
     private void Die()
     {
         if(currentState == UnitState.Dead) return;
+        
         if(BattleManager.selectedEnemyUnit == this) BattleUI.enemySelect.SetActive(false);
         Debug.Log($"{unitData.unitName} has been defeated!");
         currentState = UnitState.Dead;
         StartCoroutine(DisappearIfNoHit());
+
+        if (currentState == UnitState.Dead && isMimicChest && !BattleManager.mimicDropsHandled.Contains(this))
+        {
+            BattleManager.mimicDropsHandled.Add(this);
+            ChestDropUtility.OpenDrops(enemyData, transform.position);
+        }
     }
 
     public void Overdrive()

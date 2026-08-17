@@ -8,6 +8,7 @@ public class Options : MonoBehaviour
     [Header("Defaults")]
     public float defaultMusicVolume = 0.75f;
     public float defaultSoundVolume = 0.75f;
+    public bool defaultVfxEnabled = true;
 
     private const string SAVE_FILE_NAME = "options.json";
 
@@ -18,6 +19,7 @@ public class Options : MonoBehaviour
     {
         public float musicVolume;
         public float soundVolume;
+        public bool vfxEnabled;
     }
 
     void Awake()
@@ -43,6 +45,7 @@ public class Options : MonoBehaviour
 
     public float GetMusicVolume() => currentOptions.musicVolume;
     public float GetSoundVolume() => currentOptions.soundVolume;
+    public bool GetVfxEnabled() => currentOptions.vfxEnabled;
 
     public void SetMusicVolume(float volume)
     {
@@ -58,6 +61,11 @@ public class Options : MonoBehaviour
 
         if (SoundManager.Instance != null)
             SoundManager.Instance.SetSoundVolume(volume);
+    }
+
+    public void SetVfxEnabled(bool enable)
+    {
+        currentOptions.vfxEnabled = enable;
     }
 
     private void ApplyOptions()
@@ -106,7 +114,8 @@ public class Options : MonoBehaviour
         currentOptions = new OptionsData
         {
             musicVolume = defaultMusicVolume,
-            soundVolume = defaultSoundVolume
+            soundVolume = defaultSoundVolume,
+            vfxEnabled = defaultVfxEnabled
         };
     }
 }

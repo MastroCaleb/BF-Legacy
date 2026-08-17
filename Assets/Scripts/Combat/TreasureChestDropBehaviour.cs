@@ -7,18 +7,24 @@ using UnityEngine.UI;
 public class TreasureChestDropBehaviour : MonoBehaviour, IPointerClickHandler
 {
     public Enemy enemyData;
+    public bool isMimic = false;
     public AudioClip openChest;
     public SamAnimator touch;
     BraveFrontierFrameAnimator animator;
     RectTransform rect;
     public static bool interactable = false;
-    bool isOpen = false;
+    public bool isOpen = false;
 
     void Awake()
     {
         BattleManager.chests.Add(this);
         rect = GetComponent<RectTransform>();
         animator = GetComponent<BraveFrontierFrameAnimator>();
+
+        isMimic = Random.Range(0f, 100f) < BattleManager.dungeonLevelData.mimicChance;
+
+        string anim = isMimic ? "Vibe" : "Idle";
+        animator.SetAnimation(anim);
 
         animator.InitializeAnimator();
     }
@@ -45,29 +51,34 @@ public class TreasureChestDropBehaviour : MonoBehaviour, IPointerClickHandler
 
     public void Open()
     {
+        if (isOpen) return;
         isOpen = true;
+
+        if (isMimic)
+        {
+            RevealMimic();
+            return;
+        }
+
         SoundManager.Instance.PlaySound(openChest);
         touch.gameObject.SetActive(false);
         animator.SetAnimation("Open");
         animator.loop = false;
 
-        // Items not implemented yet, so the roll is split between Zel, Karma, and BC/HC.
-        // BC/HC is weighted higher since it's usually guaranteed to drop at least one of each.
-        float roll = Random.Range(25f, 100f);
+        ChestDropUtility.OpenDrops(enemyData, transform.position);
 
-        if(roll > 0)
-        {
-            DropBattleCrystals();
-            DropHeartCrystals();
-        }
+        StartCoroutine(RemoveChest());
+    }
 
-        if(roll > 25f)
-            DropZelCoins();
+    void RevealMimic()
+    {
+        touch.gameObject.SetActive(false);
+        animator.SetAnimation("Open"); // swap for a dedicated "reveal/chomp" clip if you make one
+        animator.loop = false;
 
-        if(roll > 50f)
-            DropKarmaOrbs();
-
-        //Add items later
+        // NOTE: gameObject is deliberately NOT destroyed here — BattleManager
+        // destroys it once it converts this chest into a real enemy unit.
+        BattleManager.QueueMimicChest(this);
 
         StartCoroutine(RemoveChest());
     }

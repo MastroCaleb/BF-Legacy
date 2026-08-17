@@ -10,5 +10,7 @@ public class DungeonLevel : ScriptableObject
     public List<TextAsset> backGroundSams;
     public List<TextAsset> foreGroundSams;
     public AudioClip bgm;
+    public Enemy mimicEnemyData;
+    public float mimicChance;
 }
 

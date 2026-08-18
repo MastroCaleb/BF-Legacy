@@ -77,6 +77,27 @@ public class UnitSummary : MonoBehaviour
 
         unitFullArtwork.sprite = unitInventoryData.unit.unitFullArt;
         unitFullArtwork.SetNativeSize();
+
+        float imageW = unitInventoryData.unit.unitFullArt.texture.width;
+        float imageH = unitInventoryData.unit.unitFullArt.texture.height;
+        float jsonX = unitInventoryData.unit.unitDisplayDetailPosition.x;
+        float jsonY = unitInventoryData.unit.unitDisplayDetailPosition.y;
+        float jsonW = unitInventoryData.unit.unitDisplayDetailPosition.width;
+        float jsonH = unitInventoryData.unit.unitDisplayDetailPosition.height;
+
+        const float CANVAS_W = 640f;
+        const float CANVAS_H = 1136f;
+
+        float S = 1f;
+
+        float unityX = (jsonX + jsonW / 2f - CANVAS_W / 2f) * S;
+        float unityY = (CANVAS_H / 2f - jsonY - jsonH / 2f) * S;
+        float unityW = jsonW * S;
+        float unityH = jsonH * S;
+
+        RectTransform rt = unitFullArtwork.GetComponent<RectTransform>();
+        rt.anchoredPosition = new Vector2(unityX, unityY-120);
+        rt.sizeDelta = new Vector2(unityW, unityH);
     }
 
     public void UpdateSkillDescriptions()

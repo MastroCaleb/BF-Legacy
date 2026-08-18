@@ -1077,12 +1077,14 @@ public class BattleManager : MonoBehaviour
         SoundManager.Instance.StopMusic();
         SoundManager.Instance.PlayLoopingSound(mimicWarning);
         TitleTextInstantiate("Mimic");
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(3.5f);
         SoundManager.Instance.StopLoopingSound();
         SoundManager.Instance.PlayMusicLoop(mimicBattleMusic);
 
         currentTurnIndex = 1;
         SpawnMimicEnemies(mimicsToSpawn);
+
+        yield return new WaitForSeconds(2f);
 
         bool mimicBattleOver = false;
         while (!mimicBattleOver)

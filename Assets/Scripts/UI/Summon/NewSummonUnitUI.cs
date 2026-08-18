@@ -12,6 +12,13 @@ public class NewSummonUnitUI : MonoBehaviour
     public Image smallUnitArt;
     public Image largeUnitArt;
     public TextMeshProUGUI unitPhraseText;
+    public RectTransform smallUnitAnchor;
+
+    [Header("Summon Bob Animation")]
+    public float bobAmplitude = 20f;
+    public float bobSpeed = 2f;
+    private Coroutine bobCoroutine;
+    private float smallArtBaseY;
 
     public AudioClip commonPull;
     public GameObject commonGetText;
@@ -112,8 +119,58 @@ public class NewSummonUnitUI : MonoBehaviour
     public void SetUnitArt()
     {
         smallUnitArt.sprite = unit.unit.unitFullArt;
-        smallUnitArt.SetNativeSize();
         largeUnitArt.sprite = unit.unit.unitFullArt;
+
+        const float CANVAS_W = 640f;
+        const float CANVAS_H = 1136f;
+
+        float jsonX = unit.unit.unitDisplaySummonPosition.x;
+        float jsonY = unit.unit.unitDisplaySummonPosition.y;
+        float jsonW = unit.unit.unitDisplaySummonPosition.width;
+        float jsonH = unit.unit.unitDisplaySummonPosition.height;
+
+        float unityX = jsonX + jsonW / 2f - CANVAS_W / 2f;
+        float unityY = CANVAS_H / 2f - jsonY - jsonH / 2f;
+        float unityW = jsonW;
+        float unityH = jsonH;
+
+        RectTransform smallRt = smallUnitArt.GetComponent<RectTransform>();
+
+        if (bobCoroutine != null)
+        {
+            StopCoroutine(bobCoroutine);
+            bobCoroutine = null;
+        }
+
+        ApplyDisplayRect(smallRt, unityX, -208.5f, unityW, unityH);
+        ApplyDisplayRect(largeUnitArt.GetComponent<RectTransform>(), unityX, unityY, unityW, unityH);
+
+        // This is the correct resting/lowest-point Y for small art, captured after being set above.
+        smallArtBaseY = smallRt.anchoredPosition.y;
+
+        if (unit.unit.unitDisplaySummonPosition.other == 1)
+        {
+            bobCoroutine = StartCoroutine(BobSmallArt(smallRt));
+        }
+    }
+
+    private IEnumerator BobSmallArt(RectTransform rt)
+    {
+        while (true)
+        {
+            // Ranges 0 -> amplitude -> 0, never negative, so baseY is always the floor.
+            float offset = bobAmplitude * (0.5f * (1f - Mathf.Cos(Time.time * bobSpeed)));
+            Vector2 pos = rt.anchoredPosition;
+            pos.y = smallArtBaseY + offset;
+            rt.anchoredPosition = pos;
+            yield return null;
+        }
+    }
+
+    private void ApplyDisplayRect(RectTransform rt, float x, float y, float w, float h)
+    {
+        rt.anchoredPosition = new Vector2(x, y);
+        rt.sizeDelta = new Vector2(w, h);
     }
 
     IEnumerator SwitchTextAnimation(GameObject sam)
@@ -155,6 +212,12 @@ public class NewSummonUnitUI : MonoBehaviour
 
     public void Deactivate()
     {
+        if (bobCoroutine != null)
+        {
+            StopCoroutine(bobCoroutine);
+            bobCoroutine = null;
+        }
+
         smallUnitArt.sprite = null;
         largeUnitArt.sprite = null;
 

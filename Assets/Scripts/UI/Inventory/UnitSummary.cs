@@ -27,6 +27,8 @@ public class UnitSummary : MonoBehaviour
     public TextMeshProUGUI skill1Name;
     public TextMeshProUGUI skill2Name;
     public BarUI expBar;
+    public Image starFav;
+    public TextMeshProUGUI setFavText;
 
     List<GameObject> toActivateOnBackTargets;
     List<GameObject> toDeactivateOnBackTargets;
@@ -98,6 +100,9 @@ public class UnitSummary : MonoBehaviour
         RectTransform rt = unitFullArtwork.GetComponent<RectTransform>();
         rt.anchoredPosition = new Vector2(unityX, unityY-120);
         rt.sizeDelta = new Vector2(unityW, unityH);
+
+        starFav.gameObject.SetActive(unitInventoryData.isFavorite);
+        setFavText.text = unitInventoryData.isFavorite ? "Remove Favourite" : "Add Favourite";
     }
 
     public void UpdateSkillDescriptions()
@@ -174,5 +179,13 @@ public class UnitSummary : MonoBehaviour
                 obj.SetActive(false);
             }
         }
+    }
+
+    public void SetFavourite()
+    {
+        PlayerUnitInventoryDatabase.SetFavorite(PlayerUnitInventoryDatabase.GetKeyByUnit(unitInventoryData), !unitInventoryData.isFavorite);
+        starFav.gameObject.SetActive(unitInventoryData.isFavorite);
+        setFavText.text = unitInventoryData.isFavorite ? "Remove Favourite" : "Add Favourite";
+        MainUI.inventoryRenderer.UpdateSlotView(PlayerUnitInventoryDatabase.GetKeyByUnit(unitInventoryData));
     }
 }

@@ -10,6 +10,7 @@ public class UnitSlot : MonoBehaviour
     public Image newIndicator;
     public Image partyIndicator;
     public Image bbIndicator;
+    public Image favIndicator;
     public TextMeshProUGUI levelText;
 
     public Sprite bbProbabilityIcon;
@@ -134,7 +135,7 @@ public class UnitSlot : MonoBehaviour
 
     public void SellSelection()
     {
-        if(PlayerUnitInventoryDatabase.GetUnitByKey(unitKey).isInParty) return;
+        if(PlayerUnitInventoryDatabase.GetUnitByKey(unitKey).isInParty || PlayerUnitInventoryDatabase.GetUnitByKey(unitKey).isFavorite) return;
 
         if(!SellMenu.sellUnits.Contains(unitKey))
         {
@@ -226,6 +227,7 @@ public class UnitSlot : MonoBehaviour
         SetupNewIndicator();
         SetupPartyIndicator();
         SetupBBIndicator();
+        SetupFavouriteIndicator();
     }
 
     public void SetupLevelText()
@@ -261,6 +263,13 @@ public class UnitSlot : MonoBehaviour
             newIndicator.gameObject.SetActive(false);
         }
         partyIndicator.gameObject.SetActive(unitData.isInParty);
+    }
+
+    public void SetupFavouriteIndicator()
+    {
+        favIndicator = favIndicator ?? transform.Find("FavouriteIndicator").GetComponent<Image>();
+        UnitInventoryData unitData = PlayerUnitInventoryDatabase.GetUnitByKey(unitKey);
+        favIndicator.gameObject.SetActive(unitData.isFavorite);
     }
 
     public void SetupBBIndicator()

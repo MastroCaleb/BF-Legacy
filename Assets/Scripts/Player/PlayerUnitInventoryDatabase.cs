@@ -133,7 +133,7 @@ public static class PlayerUnitInventoryDatabase
         return playerUnits.TryGetValue(unitKey, out var unit) ? unit : null;
     }
 
-    public static int? GetKeyByUnit(UnitInventoryData targetUnit)
+    public static int GetKeyByUnit(UnitInventoryData targetUnit)
     {
         return playerUnits
             .FirstOrDefault(kvp => kvp.Value == targetUnit)
@@ -741,6 +741,45 @@ public static class PlayerUnitInventoryDatabase
         MainUI.header.GetComponent<HeaderPlayerData>().UpdateHeader();
     }
 
+    public static bool ToggleFavorite(int unitKey, bool saveAfterToggle = true)
+    {
+        if (!playerUnits.TryGetValue(unitKey, out var data)) return false;
+
+        data.isFavorite = !data.isFavorite;
+        if (saveAfterToggle) SaveToJson();
+        return data.isFavorite;
+    }
+
+    public static void SetFavorite(int unitKey, bool isFavorite, bool saveAfterSet = true)
+    {
+        if (!playerUnits.TryGetValue(unitKey, out var data)) return;
+
+        data.isFavorite = isFavorite;
+        if (saveAfterSet) SaveToJson();
+    }
+
+    public static List<int> GetFavoriteUnitKeys()
+    {
+        List<int> keys = new List<int>();
+        foreach (var kvp in playerUnits)
+        {
+            if (kvp.Value.isFavorite)
+                keys.Add(kvp.Key);
+        }
+        return keys;
+    }
+
+public static List<UnitInventoryData> GetFavoriteUnits()
+{
+    List<UnitInventoryData> units = new List<UnitInventoryData>();
+    foreach (var kvp in playerUnits)
+    {
+        if (kvp.Value.isFavorite)
+            units.Add(kvp.Value);
+    }
+    return units;
+}
+
     // ─── Helpers ──────────────────────────────────────────────────────────────────
 
     public static UnitType GetRandomUnitType()
@@ -791,6 +830,7 @@ public class UnitInventoryData
     public int atkImpBonus;
     public int defImpBonus;
     public int recImpBonus;
+    public bool isFavorite;
 
     [JsonIgnore] public Unit unit;   // Runtime-only, not serialized
     [JsonIgnore] public bool isNew;
@@ -813,6 +853,7 @@ public class UnitInventoryData
             defImpBonus      = this.defImpBonus,
             recImpBonus      = this.recImpBonus,
             type             = this.type,
+            isFavorite       = this.isFavorite,
         };
     }
 }

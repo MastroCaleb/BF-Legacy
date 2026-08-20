@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Newtonsoft.Json.Linq;
-using UnityEditor;
 using UnityEngine;
+
+#if UNITY_EDITOR
+using UnityEditor;
 
 public class EffectImporter : EditorWindow
 {
@@ -705,3 +707,4 @@ public class EffectImporter : EditorWindow
         return effects;
     }
 }
+#endif

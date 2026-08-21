@@ -52,10 +52,10 @@ public class HitFrame
 [System.Serializable]
 public class EffectFrame
 {
-    public int    frame;               // absolute frame within the ability (skillFrame + group sub-frame)
+    public int frame;               // absolute frame within the ability (skillFrame + group sub-frame)
     public string battleEffectGroupId; // kept for debugging/re-export
 
-    public string        particleEffectId; // raw particle id from the group data (e.g. "600540")
+    public string particleEffectId; // raw particle id from the group data (e.g. "600540")
     public ParticleEffect particleEffect;  // resolved SO — may be null if not found in the index
 
     // Best-effort guesses — unverified against real footage, tune ComputeEffectPosition to match.

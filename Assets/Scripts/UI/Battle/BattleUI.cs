@@ -123,6 +123,8 @@ public class BattleUI : MonoBehaviour
         c.a = 1f;
         fadeImage.color = c;
 
+        SamTextureProvider.UnloadAll();
+
         SceneManager.LoadScene(sceneName);
     }
 }

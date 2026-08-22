@@ -70,16 +70,16 @@ public class WikiUnitLoader_2 : MonoBehaviour
     IEnumerator LoadDatabaseThenProcess()
     {
         // ── Load skill database ───────────────────────────────────────────────
-        TextAsset dbAsset = Resources.Load<TextAsset>(Path.GetFileNameWithoutExtension(unitDatabaseFilename));
+        TextAsset dbAsset = EditorDataLoader.LoadJson(unitDatabaseFilename);
 
         if (dbAsset == null)
         {
-            Debug.LogError($"[DB] Could not load unit database from Resources: {unitDatabaseFilename}");
+            Debug.LogError($"[DB] Could not load unit database from Assets/EditorData: {unitDatabaseFilename}");
             _unitDatabase = new JObject();
         }
         else
         {
-            if (debugLogging) Debug.Log($"[DB] Loading unit database from Resources: {unitDatabaseFilename}");
+            if (debugLogging) Debug.Log($"[DB] Loading unit database: {unitDatabaseFilename}");
             try
             {
                 _unitDatabase = JObject.Parse(dbAsset.text);
@@ -103,10 +103,10 @@ public class WikiUnitLoader_2 : MonoBehaviour
     // ── NEW: helper — loads one unit-master Resource file into _unitMasterById ─
     void LoadUnitMasterFile(string resourceName)
     {
-        TextAsset asset = Resources.Load<TextAsset>(resourceName);
+        TextAsset asset = EditorDataLoader.LoadJson(resourceName);
         if (asset == null)
         {
-            Debug.LogWarning($"[UnitMaster] Could not load '{resourceName}' from Resources — skipping.");
+            Debug.LogWarning($"[UnitMaster] Could not load '{resourceName}' from Assets/EditorData — skipping.");
             return;
         }
 

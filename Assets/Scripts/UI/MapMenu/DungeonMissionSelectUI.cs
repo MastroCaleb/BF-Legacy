@@ -85,7 +85,7 @@ public class DungeonMissionSelectUI : MonoBehaviour
     void CreateMissionSlot(Mission mission)
     {
         if(PlayerData.completedMissionDex.Contains(mission.requiresMissionId)){
-            GameObject slot = Instantiate(Resources.Load("MissionSlot") as GameObject);
+            GameObject slot = Instantiate(PrefabCache.Get("MissionSlot"));
             slot.GetComponent<SetMissionButton>().mission = mission;
             RectTransform slotRect = slot.GetComponent<RectTransform>();
             slotRect.SetParent(container);

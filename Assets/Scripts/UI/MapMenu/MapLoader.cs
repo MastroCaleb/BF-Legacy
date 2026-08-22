@@ -146,7 +146,7 @@ public class MapLoader : MonoBehaviour
         {
             if (dungeonPos.dungeon != null)
             {
-                GameObject dungeonButton = Instantiate(Resources.Load("DungeonButton") as GameObject);
+                GameObject dungeonButton = Instantiate(PrefabCache.Get("DungeonButton"));
                 dungeonButton.transform.SetParent(dungeonParent.transform, false);
                 dungeonButton.transform.localPosition = new Vector3(dungeonPos.pos.x, dungeonPos.pos.y, 0);
 

@@ -26,7 +26,7 @@ public class EffectImporter : EditorWindow
     private string spriteRoot = "Assets/BF_Assets/content/effect/img";
     private string cggRoot = "Assets/BF_Assets/content/effect/cgg";
     private string cgsRoot = "Assets/BF_Assets/content/effect/cgs";
-    private string samRoot = "Assets/Resources/Sams/Effect_SAMS/sam";
+    private string samRoot = "Assets/AddressableContent/Sams/Effect_SAMS/sam";
 
     private string outputRoot;
 

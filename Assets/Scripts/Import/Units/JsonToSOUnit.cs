@@ -25,13 +25,13 @@ public class JsonToSOUnit : EditorWindow
     private string cggFolderPath     = "BF_Assets/content/unit/cgg";
     private string cgsFolderPath     = "BF_Assets/content/unit/cgs";
     private string spriteFolderPath  = "BF_Assets/content/unit/img";
-    private string samRootFolderPath = "Resources/Sams/Unit_SAMS/unit_sam/";
+    private string samRootFolderPath = "AddressableContent/Sams/Unit_SAMS/unit_sam/";
 
     [Header("Audio")]
     public string soundFolderPath  = "BF_Assets/content/sound"; // relative to Assets/
-    public string effectGroupMst1  = "Resources/F_EFFECT_GROUP_MST_1";
-    public string effectGroupMst2  = "Resources/F_EFFECT_GROUP_MST_2";
-    public string skillMstFolder   = "Resources/SkillMSTs"; // folder containing 9 SKILL_MST files
+    public string effectGroupMst1  = "EditorData/F_EFFECT_GROUP_MST_1";
+    public string effectGroupMst2  = "EditorData/F_EFFECT_GROUP_MST_2";
+    public string skillMstFolder   = "EditorData/SkillMSTs"; // folder containing 9 SKILL_MST files
 
     private readonly Dictionary<string, List<string>> _effectGroupSounds = new(); // groupId → mp3 names
     private readonly Dictionary<string, JObject>      _skillMstById      = new(); // bbId → skill entry
@@ -41,7 +41,7 @@ public class JsonToSOUnit : EditorWindow
     private readonly Dictionary<string, Sprite>    spriteCache  = new();
 
     [Header("Particle Effects")]
-    public string particleEffectFolder = "Resources/Particles";
+    public string particleEffectFolder = "Particles";
     private readonly Dictionary<string, ParticleEffect> _particleEffectsById = new();
 
     private struct GroupParticleEntry
@@ -183,7 +183,7 @@ public class JsonToSOUnit : EditorWindow
         string unitId = data["id"]?.ToString();
         if (string.IsNullOrEmpty(unitId)) { Debug.LogWarning("Skipped: missing id"); return; }
 
-        string unitFolder    = $"Assets/Resources/Units/unit_{unitId}";
+        string unitFolder    = $"Assets/AddressableContent/Units/unit_{unitId}";
         string abilityFolder = $"{unitFolder}/Abilities";
         EnsureFolder(unitFolder);
         EnsureFolder(abilityFolder);

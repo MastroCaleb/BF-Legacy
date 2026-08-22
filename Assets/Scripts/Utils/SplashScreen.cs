@@ -23,6 +23,7 @@ public class SplashScreenManager : MonoBehaviour
 
     void Start()
     {
+        PrefabCache.Preload(); // Phase 6: warm common prefabs during the splash sequence
         StartCoroutine(PlaySplashSequence());
     }
 

@@ -26,8 +26,8 @@ using UnityEngine.Networking;
 public class HybridUnitLoader : MonoBehaviour
 {
     // ── Info.json sources ────────────────────────────────────────────────────
-    [Header("Info JSON sources (TextAssets in Resources, no extension)")]
-    public string globalInfoFile = "info_global";
+    [Header("Info JSON sources (JSON files in Assets/EditorData)")]
+    public string globalInfoFile = "info";
     public string euInfoFile = "info_eu";
     public string jpInfoFile = "info_jp";
 
@@ -173,10 +173,10 @@ public class HybridUnitLoader : MonoBehaviour
     JObject LoadInfoFile(string resourceName)
     {
         if (string.IsNullOrEmpty(resourceName)) return null;
-        TextAsset asset = Resources.Load<TextAsset>(resourceName);
+        TextAsset asset = EditorDataLoader.LoadJson(resourceName);
         if (asset == null)
         {
-            Debug.LogWarning($"[HybridUnitLoader] Could not load '{resourceName}' — skipping that region.");
+            Debug.LogWarning($"[HybridUnitLoader] Could not load '{resourceName}' from Assets/EditorData — skipping that region.");
             return null;
         }
         try { return JObject.Parse(asset.text); }
@@ -190,10 +190,10 @@ public class HybridUnitLoader : MonoBehaviour
     void LoadUnitMasterFile(string resourceName)
     {
         if (string.IsNullOrEmpty(resourceName)) return;
-        TextAsset asset = Resources.Load<TextAsset>(resourceName);
+        TextAsset asset = EditorDataLoader.LoadJson(resourceName);
         if (asset == null)
         {
-            Debug.LogWarning($"[HybridUnitLoader] Could not load unit master file '{resourceName}' — skipping.");
+            Debug.LogWarning($"[HybridUnitLoader] Could not load unit master file '{resourceName}' from Assets/EditorData — skipping.");
             return;
         }
 

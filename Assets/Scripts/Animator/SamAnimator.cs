@@ -324,16 +324,9 @@ public class SamAnimator : MonoBehaviour
         return s_defaultBlendMaterial;
     }
 
-    private static Dictionary<string, Texture2D> s_textureCache = new Dictionary<string, Texture2D>();
-
     Texture2D GetCachedTexture(string path)
     {
-        if (s_textureCache.TryGetValue(path, out var cached))
-            return cached;
-
-        Texture2D tex = Resources.Load<Texture2D>(path);
-        s_textureCache[path] = tex; // cache misses too (null), avoids re-attempting Resources.Load on repeat failures
-        return tex;
+        return SamTextureProvider.Load(path);
     }
 
     void ComputeAnimationCenter()

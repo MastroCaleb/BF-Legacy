@@ -88,6 +88,7 @@ public class PauseBattleButton : MonoBehaviour
     public void OnExit()
     {
         Time.timeScale = 1;
+        SamTextureProvider.UnloadAll();
         SceneManager.LoadScene("MainMenuScene");
     }
 }

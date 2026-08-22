@@ -129,9 +129,57 @@ public class BattleManager : MonoBehaviour
     IEnumerator StartBattle()
     {
         pauseBattleButton.UpdateState(dungeonLevelData.levelName, missionData.missionName, 1, missionData.rounds.Count);
+//        yield return WarmupRoster();
         SummonPlayerUnits();
+        yield return WarmupRoster();
         yield return new WaitForSeconds(2f);
         StartCoroutine(BattleLoop());
+    }
+
+    /// <summary>
+    /// preloads every Unit asset the battle will need (party + all
+    /// rounds' enemies + mimic) via Addressables, then queues their SAM sheet
+    /// textures. Absorbed by the existing 2s battle-start delay.
+    /// </summary>
+    IEnumerator WarmupRoster()
+    {
+        var unitIds = new HashSet<string>();
+
+        PartyData party = PartyDatabase.GetParty(0);
+        for (int slot = 0; slot < PartyDatabase.MaxPartySize; slot++)
+        {
+            int unitKey = party.GetUnitAt(slot);
+            if (unitKey == -1) continue;
+            UnitInventoryData inventoryData = PlayerUnitInventoryDatabase.GetUnitByKey(unitKey);
+            if (inventoryData != null)
+                unitIds.Add(inventoryData.unitId);
+        }
+
+        if (missionData != null)
+        {
+            foreach (var round in missionData.rounds)
+            {
+                if (round?.enemies == null) continue;
+                foreach (var enemy in round.enemies)
+                    unitIds.Add(enemy.unitId);
+            }
+        }
+
+        if (dungeonLevelData?.mimicEnemyData != null)
+            unitIds.Add(dungeonLevelData.mimicEnemyData.unitId);
+
+        var handles = UnitRegistry.Warmup(unitIds);
+        foreach (var handle in handles)
+        {
+            while (!handle.IsDone)
+                yield return null;
+        }
+
+        foreach (var handle in handles)
+        {
+            if (handle.Result != null)
+                SamTextureProvider.PreloadUnitSam(handle.Result.samFile);
+        }
     }
 
     void SummonPlayerUnits()
@@ -475,7 +523,7 @@ public class BattleManager : MonoBehaviour
 
     SamAnimator[] TitleTextInstantiate(string text)
     {
-        GameObject obj = Instantiate(Resources.Load<GameObject>(text));
+        GameObject obj = Instantiate(PrefabCache.Get(text));
         obj.GetComponent<RectTransform>().SetParent(BattleUI.titleTextLayer, false);
         return obj.GetComponentsInChildren<SamAnimator>();
     }

@@ -29,10 +29,10 @@ public class GetEffectsFromDatabase : MonoBehaviour
 
     void ExtractEffectFieldsByProcId()
     {
-        TextAsset dbAsset = Resources.Load<TextAsset>("info");
+        TextAsset dbAsset = EditorDataLoader.LoadJson("info");
         if (dbAsset == null)
         {
-            Debug.LogError("Could not load info.json from Resources");
+            Debug.LogError("Could not load info.json from Assets/EditorData");
             return;
         }
 

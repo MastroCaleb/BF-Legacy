@@ -28,7 +28,7 @@ public static class ChestDropUtility
         for (int i = 0; i < count; i++)
         {
             int coinValue = baseValue + (i < remainder ? 1 : 0);
-            GameObject c = Object.Instantiate(Resources.Load<GameObject>("ZelCoin"), dropOrigin + new Vector3(0, 1f, 0), Quaternion.identity);
+            GameObject c = Object.Instantiate(PrefabCache.Get("ZelCoin"), dropOrigin + new Vector3(0, 1f, 0), Quaternion.identity);
             c.transform.SetParent(BattleUI.dropsLayer);
             c.GetComponent<DropBehaviour>().target = BattleUI.zelPoint.gameObject;
             c.GetComponent<DropBehaviour>().valueOfDrop = coinValue;
@@ -47,7 +47,7 @@ public static class ChestDropUtility
         for (int i = 0; i < count; i++)
         {
             int orbValue = baseValue + (i < remainder ? 1 : 0);
-            GameObject c = Object.Instantiate(Resources.Load<GameObject>("KarmaOrb"), dropOrigin + new Vector3(0, 1f, 0), Quaternion.identity);
+            GameObject c = Object.Instantiate(PrefabCache.Get("KarmaOrb"), dropOrigin + new Vector3(0, 1f, 0), Quaternion.identity);
             c.transform.SetParent(BattleUI.dropsLayer);
             c.GetComponent<DropBehaviour>().target = BattleUI.karmaPoint.gameObject;
             c.GetComponent<DropBehaviour>().valueOfDrop = orbValue;
@@ -58,7 +58,7 @@ public static class ChestDropUtility
     {
         for (int i = 0; i < enemyData.treasureDrop.bcOrHcAmount / 2; i++)
         {
-            GameObject c = Object.Instantiate(Resources.Load<GameObject>("BattleCrystal"), dropOrigin + new Vector3(0, 1f, 0), Quaternion.identity);
+            GameObject c = Object.Instantiate(PrefabCache.Get("BattleCrystal"), dropOrigin + new Vector3(0, 1f, 0), Quaternion.identity);
             c.transform.SetParent(BattleUI.dropsLayer);
             var target = GetBattleCrystalTarget();
             if (target != null) c.GetComponent<DropBehaviour>().target = target.gameObject;
@@ -70,7 +70,7 @@ public static class ChestDropUtility
     {
         for (int i = 0; i < enemyData.treasureDrop.bcOrHcAmount / 2; i++)
         {
-            GameObject c = Object.Instantiate(Resources.Load<GameObject>("HeartCrystal"), dropOrigin + new Vector3(0, 1f, 0), Quaternion.identity);
+            GameObject c = Object.Instantiate(PrefabCache.Get("HeartCrystal"), dropOrigin + new Vector3(0, 1f, 0), Quaternion.identity);
             c.transform.SetParent(BattleUI.dropsLayer);
             var target = GetHeartCrystalTarget();
             if (target != null) c.GetComponent<DropBehaviour>().target = target.gameObject;

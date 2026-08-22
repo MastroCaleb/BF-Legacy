@@ -30,7 +30,7 @@ public class SummonBannerManager : MonoBehaviour
         {
             if(PlayerData.completedMissionDex.Contains(banner.requiredMissionId)){
 
-                GameObject bannerUI = Instantiate(Resources.Load("SummonBanner") as GameObject, transform);
+                GameObject bannerUI = Instantiate(PrefabCache.Get("SummonBanner"), transform);
                 bannerUI.transform.SetParent(bannerParent, false);
                 SummonCustomBanner customBanner = bannerUI.GetComponent<SummonCustomBanner>();
                 customBanner.summonBanner = banner;

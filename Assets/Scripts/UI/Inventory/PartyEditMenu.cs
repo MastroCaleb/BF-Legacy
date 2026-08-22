@@ -25,7 +25,8 @@ public class PartyEditMenu : MonoBehaviour
     private static int[] lastRenderedUnitKeys = { -2, -2, -2, -2, -2 }; // -2 = never rendered, forces first refresh
 
     void Awake()
-    {   
+    {
+        lastRenderedUnitKeys = new int[]{ -2, -2, -2, -2, -2 };
         unitTableRenderers = unitTableRenderersHelper;
         tableButtons = tableButtonsHelper;
         baseUnitDetails = baseUnitDetailsHelper;

@@ -1845,7 +1845,7 @@ public class UnitBehaviour : MonoBehaviour
             float dropChance = 0.35f * PercentageToNumber(GetBattleCrystalBuffRate());
             if (Random.Range(0f, 1f) <= dropChance)
             {
-                GameObject bc = Instantiate(Resources.Load<GameObject>("BattleCrystal"), transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
+                GameObject bc = Instantiate(PrefabCache.Get("BattleCrystal"), transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
                 bc.transform.SetParent(BattleUI.dropsLayer);
                 bc.GetComponent<DropBehaviour>().target = GetBattleCrystalTarget().gameObject;
                 BattleManager.totalBcDropCount++;
@@ -1862,7 +1862,7 @@ public class UnitBehaviour : MonoBehaviour
             float dropChance = 0.1f * PercentageToNumber(GetHeartCrystalBuffRate());
             if (Random.Range(0f, 1f) <= dropChance)
             {
-                GameObject hc = Instantiate(Resources.Load<GameObject>("HeartCrystal"), transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
+                GameObject hc = Instantiate(PrefabCache.Get("HeartCrystal"), transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
                 hc.transform.SetParent(BattleUI.dropsLayer);
                 hc.GetComponent<DropBehaviour>().target = GetHeartCrystalTarget().gameObject;
                 BattleManager.totalHcDropCount++;
@@ -1924,7 +1924,7 @@ public class UnitBehaviour : MonoBehaviour
         {
             int coinValue = baseValue + (i < remainder ? 1 : 0);
 
-            GameObject c = Instantiate(Resources.Load<GameObject>("ZelCoin"), transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
+            GameObject c = Instantiate(PrefabCache.Get("ZelCoin"), transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
             c.transform.SetParent(BattleUI.dropsLayer);
             c.GetComponent<DropBehaviour>().target = BattleUI.zelPoint.gameObject;
             c.GetComponent<DropBehaviour>().valueOfDrop = coinValue;
@@ -1947,7 +1947,7 @@ public class UnitBehaviour : MonoBehaviour
         {
             int orbValue = baseValue + (i < remainder ? 1 : 0);
 
-            GameObject c = Instantiate(Resources.Load<GameObject>("KarmaOrb"), transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
+            GameObject c = Instantiate(PrefabCache.Get("KarmaOrb"), transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
             c.transform.SetParent(BattleUI.dropsLayer);
             c.GetComponent<DropBehaviour>().target = BattleUI.karmaPoint.gameObject;
             c.GetComponent<DropBehaviour>().valueOfDrop = orbValue;
@@ -1972,7 +1972,7 @@ public class UnitBehaviour : MonoBehaviour
             {
                 int gemValue = baseValue + (i < remainder ? 1 : 0);
 
-                GameObject c = Instantiate(Resources.Load<GameObject>("GemCrystal"), transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
+                GameObject c = Instantiate(PrefabCache.Get("GemCrystal"), transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
                 c.transform.SetParent(BattleUI.dropsLayer);
                 c.GetComponent<DropBehaviour>().target = BattleUI.unitPoint.gameObject;
                 c.GetComponent<DropBehaviour>().valueOfDrop = gemValue;
@@ -2037,7 +2037,7 @@ public class UnitBehaviour : MonoBehaviour
             type = unitType
         };
 
-        GameObject c = Instantiate(Resources.Load<GameObject>(dropPrefab), transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
+        GameObject c = Instantiate(PrefabCache.Get(dropPrefab), transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
         c.transform.SetParent(BattleUI.dropsLayer);
         c.GetComponent<DropBehaviour>().target = BattleUI.unitPoint.gameObject;
         c.GetComponent<DropBehaviour>().unitDropData = dropData;
@@ -2049,7 +2049,7 @@ public class UnitBehaviour : MonoBehaviour
 
         if(Random.Range(0f, 100f) > enemyData.treasureDrop.chestDropChance) return;
 
-        GameObject c = Instantiate(Resources.Load<GameObject>("ChestDrop"), transform.position, Quaternion.identity);
+        GameObject c = Instantiate(PrefabCache.Get("ChestDrop"), transform.position, Quaternion.identity);
         c.transform.SetParent(BattleUI.dropsLayer);
         c.GetComponent<TreasureChestDropBehaviour>().enemyData = enemyData;
     }
@@ -2227,7 +2227,7 @@ public class UnitBehaviour : MonoBehaviour
     {
         string popupText = "" + (value * -1);
         ImageToFont popup = Instantiate(
-            Resources.Load<GameObject>("DamagePopUp"),
+            PrefabCache.Get("DamagePopUp"),
             transform.position + new Vector3(Random.Range(-1f, 1f), Random.Range(-0.5f, 0.5f) + 0.5f + (0.6f * hitNum)),
             Quaternion.identity
         ).GetComponentInChildren<ImageToFont>();
@@ -2247,7 +2247,7 @@ public class UnitBehaviour : MonoBehaviour
         if (text == "SparkPopUp" && sparkInstances >= MAX_SPARK_SAMS) return;
         if (text == "SparkPopUp") sparkInstances++;
         GameObject popup = Instantiate(
-            Resources.Load<GameObject>(text),
+            PrefabCache.Get(text),
             transform.position + new Vector3(Random.Range(-1f, 1f), Random.Range(-0.5f, 0.5f) + 0.5f),
             Quaternion.identity
         );

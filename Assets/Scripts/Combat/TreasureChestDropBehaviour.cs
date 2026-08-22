@@ -121,7 +121,7 @@ public class TreasureChestDropBehaviour : MonoBehaviour, IPointerClickHandler
         {
             int coinValue = baseValue + (i < remainder ? 1 : 0);
 
-            GameObject c = Instantiate(Resources.Load<GameObject>("ZelCoin"), transform.position + new Vector3(0, 1f, 0), Quaternion.identity);
+            GameObject c = Instantiate(PrefabCache.Get("ZelCoin"), transform.position + new Vector3(0, 1f, 0), Quaternion.identity);
             c.transform.SetParent(BattleUI.dropsLayer);
             c.GetComponent<DropBehaviour>().target = BattleUI.zelPoint.gameObject;
             c.GetComponent<DropBehaviour>().valueOfDrop = coinValue;
@@ -142,7 +142,7 @@ public class TreasureChestDropBehaviour : MonoBehaviour, IPointerClickHandler
         {
             int orbValue = baseValue + (i < remainder ? 1 : 0);
 
-            GameObject c = Instantiate(Resources.Load<GameObject>("KarmaOrb"), transform.position + new Vector3(0, 1f, 0), Quaternion.identity);
+            GameObject c = Instantiate(PrefabCache.Get("KarmaOrb"), transform.position + new Vector3(0, 1f, 0), Quaternion.identity);
             c.transform.SetParent(BattleUI.dropsLayer);
             c.GetComponent<DropBehaviour>().target = BattleUI.karmaPoint.gameObject;
             c.GetComponent<DropBehaviour>().valueOfDrop = orbValue;
@@ -153,7 +153,7 @@ public class TreasureChestDropBehaviour : MonoBehaviour, IPointerClickHandler
     {
         for (int i = 0; i < enemyData.treasureDrop.bcOrHcAmount / 2; i++)
         {
-            GameObject c = Instantiate(Resources.Load<GameObject>("BattleCrystal"), transform.position + new Vector3(0, 1f, 0), Quaternion.identity);
+            GameObject c = Instantiate(PrefabCache.Get("BattleCrystal"), transform.position + new Vector3(0, 1f, 0), Quaternion.identity);
             c.transform.SetParent(BattleUI.dropsLayer);
             c.GetComponent<DropBehaviour>().target = GetBattleCrystalTarget().gameObject;
             BattleManager.totalBcDropCount++;
@@ -164,7 +164,7 @@ public class TreasureChestDropBehaviour : MonoBehaviour, IPointerClickHandler
     {
         for (int i = 0; i < enemyData.treasureDrop.bcOrHcAmount / 2; i++)
         {
-            GameObject c = Instantiate(Resources.Load<GameObject>("HeartCrystal"), transform.position + new Vector3(0, 1f, 0), Quaternion.identity);
+            GameObject c = Instantiate(PrefabCache.Get("HeartCrystal"), transform.position + new Vector3(0, 1f, 0), Quaternion.identity);
             c.transform.SetParent(BattleUI.dropsLayer);
             c.GetComponent<DropBehaviour>().target = GetHeartCrystalTarget().gameObject;
             BattleManager.totalHcDropCount++;

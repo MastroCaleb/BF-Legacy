@@ -732,7 +732,8 @@ public static class PlayerUnitInventoryDatabase
             atkImpBonus = old.atkImpBonus,
             defImpBonus = old.defImpBonus,
             recImpBonus = old.recImpBonus,
-            isInParty = old.isInParty
+            isInParty = old.isInParty,
+            isFavorite = old.isFavorite
         };
 
         MainUI.inventoryRenderer.renderedSlots[key].UpdateView();

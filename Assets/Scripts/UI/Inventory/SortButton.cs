@@ -41,6 +41,7 @@ public class SortButton : MonoBehaviour
         if (isSort)
         {
             MainUI.inventoryRenderer.SetSort(sort);
+            MainUI.inventoryRenderer.RefreshAllSlots();
         }
 
         MainUI.inventoryRenderer.SetSortDirection(isAscending);

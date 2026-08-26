@@ -46,7 +46,7 @@ public static class PlayerUnitInventoryDatabase
 
     // ─── Add / Remove ────────────────────────────────────────────────────────────
 
-    public static int AddUnit(Unit unit, UnitType type, bool saveAfterAdd = true)
+    public static int AddUnit(Unit unit, UnitType? type = null, int level = 1, bool saveAfterAdd = true, bool isNew = false)
     {
         if(!PlayerData.unitDex.Contains(unit.unitId)) 
             PlayerData.unitDex.Add(unit.unitId);
@@ -55,55 +55,7 @@ public static class PlayerUnitInventoryDatabase
         {
             unit = unit,
             unitId = unit?.unitId,
-            type = type,
-            currentLevel = 1,
-            currentExperience = 0,
-            currentBBLevel = 1,
-            currentSBBLevel = 1
-        };
-        playerUnits.Add(_nextKey++, newUnitData);
-        if (saveAfterAdd) SaveToJson();
-        return _nextKey - 1;
-    }
-
-    public static int AddUnit(Unit unit, UnitType type, int level, bool saveAfterAdd = true)
-    {
-        if(!PlayerData.unitDex.Contains(unit.unitId)) 
-            PlayerData.unitDex.Add(unit.unitId);
-
-        UnitInventoryData newUnitData = new UnitInventoryData
-        {
-            unit = unit,
-            unitId = unit?.unitId,
-            type = type,
-            currentLevel = 1,
-            currentExperience = 0,
-            currentBBLevel = 1,
-            currentSBBLevel = 1
-        };
-        
-        playerUnits.Add(_nextKey++, newUnitData);
-        UnitInventoryData addedUnit = GetUnitByKey(_nextKey - 1);
-        for(int i = 1; i < level; i++)
-        {
-            addedUnit.currentLevel = i + 1;
-            ModifyStats(addedUnit);
-        }
-
-        if (saveAfterAdd) SaveToJson();
-        return _nextKey - 1;
-    }
-
-    public static int AddUnit(Unit unit, bool saveAfterAdd = true)
-    {
-        if(!PlayerData.unitDex.Contains(unit.unitId)) 
-            PlayerData.unitDex.Add(unit.unitId);
-
-        UnitInventoryData newUnitData = new UnitInventoryData
-        {
-            unit = unit,
-            unitId = unit?.unitId,
-            type = GetRandomUnitType(),
+            type = type ?? GetRandomUnitType(),
             currentLevel = 1,
             currentExperience = 0,
             currentBBLevel = 1,
@@ -112,12 +64,14 @@ public static class PlayerUnitInventoryDatabase
             atkImpBonus = 0,
             defImpBonus = 0,
             recImpBonus = 0,
-            isNew = true
+            isNew = isNew
         };
         playerUnits.Add(_nextKey++, newUnitData);
+        UnitInventoryData addedUnit = GetUnitByKey(_nextKey - 1);
+        ModifyStats(addedUnit, level);
         if (saveAfterAdd) SaveToJson();
         return _nextKey - 1;
-    }
+     }
 
     public static void RemoveUnit(int unitKey)
     {
@@ -323,131 +277,88 @@ public static class PlayerUnitInventoryDatabase
         MainUI.header.GetComponent<HeaderPlayerData>().UpdateHeader();
     }
 
-    public static void ModifyStats(UnitInventoryData unit)
+    public static void ModifyStats(UnitInventoryData unit, int levels = 1)
     {
-        // t / tPrev represent the fraction of the curve reached at this level vs the previous level.
-        // We add only the DELTA between them each call, so repeated ModifyStats calls (one per level-up)
-        // accumulate correctly instead of either double-counting the full curve or wiping prior random rolls.
-        float t     = (float)unit.currentLevel / unit.unit.maxLevel;
-        float tPrev = (float)(unit.currentLevel - 1) / unit.unit.maxLevel;
+        Unit curUnit = unit.unit;
+        int countedLevel = unit.currentLevel;
+        //Reduces redundant extra typing
+        int maxLevel = curUnit.maxLevel;
+        //Total levels that gain stats
+        int gainLimit = maxLevel - 1;
+
+        UnitStats s = curUnit.statsLord;
+        int hpMax  = s.hp  - curUnit.maxHealth;
+        int atkMax = s.atk - curUnit.atk;
+        int defMax = s.def - curUnit.def;
+        int recMax = s.rec - curUnit.rec;
 
         switch (unit.type)
         {
-            case UnitType.Lord:
-            {
-                UnitStats s = unit.unit.statsLord;
-                int hpMax  = (s.hp  == 0 ? s.hpMax  : s.hp)  - unit.unit.maxHealth;
-                int atkMax = (s.atk == 0 ? s.atkMax : s.atk) - unit.unit.atk;
-                int defMax = (s.def == 0 ? s.defMax : s.def) - unit.unit.def;
-                int recMax = (s.rec == 0 ? s.recMax : s.rec) - unit.unit.rec;
-                unit.hpLevelUpBonus  += (int)Mathf.Lerp(0, hpMax,  t) - (int)Mathf.Lerp(0, hpMax,  tPrev);
-                unit.atkLevelUpBonus += (int)Mathf.Lerp(0, atkMax, t) - (int)Mathf.Lerp(0, atkMax, tPrev);
-                unit.defLevelUpBonus += (int)Mathf.Lerp(0, defMax, t) - (int)Mathf.Lerp(0, defMax, tPrev);
-                unit.recLevelUpBonus += (int)Mathf.Lerp(0, recMax, t) - (int)Mathf.Lerp(0, recMax, tPrev);
-                unit.hpLevelUpBonus  = Mathf.Min(unit.hpLevelUpBonus,  hpMax);
-                unit.atkLevelUpBonus = Mathf.Min(unit.atkLevelUpBonus, atkMax);
-                unit.defLevelUpBonus = Mathf.Min(unit.defLevelUpBonus, defMax);
-                unit.recLevelUpBonus = Mathf.Min(unit.recLevelUpBonus, recMax);
-                break;
-            }
             case UnitType.Anima:
             {
-                UnitStats s = unit.unit.statsAnima;
-                int hpMax  = (s.hp  == 0 ? s.hpMax  : s.hp)  - unit.unit.maxHealth;
-                int atkMax = (s.atk == 0 ? s.atkMax : s.atk) - unit.unit.atk;
-                int defMax = (s.def == 0 ? s.defMax : s.def) - unit.unit.def;
-                int recMax = (s.rec == 0 ? s.recMax : s.rec) - unit.unit.rec;
-                unit.hpLevelUpBonus  += (int)Mathf.Lerp(0, hpMax,  t) - (int)Mathf.Lerp(0, hpMax,  tPrev);
-                unit.atkLevelUpBonus += (int)Mathf.Lerp(0, atkMax, t) - (int)Mathf.Lerp(0, atkMax, tPrev);
-                unit.defLevelUpBonus += (int)Mathf.Lerp(0, defMax, t) - (int)Mathf.Lerp(0, defMax, tPrev);
-                unit.recLevelUpBonus += (int)Mathf.Lerp(0, recMax, t) - (int)Mathf.Lerp(0, recMax, tPrev);
+                hpMax = (s.hp + (10*gainLimit)) - curUnit.maxHealth;
+                recMax = (s.rec - (3*gainLimit)) - curUnit.rec;
                 unit.hpLevelUpBonus  += Random.Range(5, 11);
                 unit.recLevelUpBonus -= Random.Range(1, 4);
-                unit.hpLevelUpBonus  = Mathf.Min(unit.hpLevelUpBonus,  hpMax);
-                unit.atkLevelUpBonus = Mathf.Min(unit.atkLevelUpBonus, atkMax);
-                unit.defLevelUpBonus = Mathf.Min(unit.defLevelUpBonus, defMax);
-                unit.recLevelUpBonus = Mathf.Min(unit.recLevelUpBonus, recMax);
                 break;
             }
             case UnitType.Breaker:
             {
-                UnitStats s = unit.unit.statsBreaker;
-                int hpMax  = (s.hp  == 0 ? s.hpMax  : s.hp)  - unit.unit.maxHealth;
-                int atkMax = (s.atk == 0 ? s.atkMax : s.atk) - unit.unit.atk;
-                int defMax = (s.def == 0 ? s.defMax : s.def) - unit.unit.def;
-                int recMax = (s.rec == 0 ? s.recMax : s.rec) - unit.unit.rec;
-                unit.hpLevelUpBonus  += (int)Mathf.Lerp(0, hpMax,  t) - (int)Mathf.Lerp(0, hpMax,  tPrev);
-                unit.atkLevelUpBonus += (int)Mathf.Lerp(0, atkMax, t) - (int)Mathf.Lerp(0, atkMax, tPrev);
-                unit.defLevelUpBonus += (int)Mathf.Lerp(0, defMax, t) - (int)Mathf.Lerp(0, defMax, tPrev);
-                unit.recLevelUpBonus += (int)Mathf.Lerp(0, recMax, t) - (int)Mathf.Lerp(0, recMax, tPrev);
+                atkMax = (s.atk + (3*gainLimit)) - curUnit.atk;
+                defMax = (s.def - (3*gainLimit)) - curUnit.def;
                 unit.atkLevelUpBonus += Random.Range(1, 4);
                 unit.defLevelUpBonus -= Random.Range(1, 4);
-                unit.hpLevelUpBonus  = Mathf.Min(unit.hpLevelUpBonus,  hpMax);
-                unit.atkLevelUpBonus = Mathf.Min(unit.atkLevelUpBonus, atkMax);
-                unit.defLevelUpBonus = Mathf.Min(unit.defLevelUpBonus, defMax);
-                unit.recLevelUpBonus = Mathf.Min(unit.recLevelUpBonus, recMax);
                 break;
             }
             case UnitType.Guardian:
             {
-                UnitStats s = unit.unit.statsGuardian;
-                int hpMax  = (s.hp  == 0 ? s.hpMax  : s.hp)  - unit.unit.maxHealth;
-                int atkMax = (s.atk == 0 ? s.atkMax : s.atk) - unit.unit.atk;
-                int defMax = (s.def == 0 ? s.defMax : s.def) - unit.unit.def;
-                int recMax = (s.rec == 0 ? s.recMax : s.rec) - unit.unit.rec;
-                unit.hpLevelUpBonus  += (int)Mathf.Lerp(0, hpMax,  t) - (int)Mathf.Lerp(0, hpMax,  tPrev);
-                unit.atkLevelUpBonus += (int)Mathf.Lerp(0, atkMax, t) - (int)Mathf.Lerp(0, atkMax, tPrev);
-                unit.defLevelUpBonus += (int)Mathf.Lerp(0, defMax, t) - (int)Mathf.Lerp(0, defMax, tPrev);
-                unit.recLevelUpBonus += (int)Mathf.Lerp(0, recMax, t) - (int)Mathf.Lerp(0, recMax, tPrev);
+                defMax = (s.def + (3*gainLimit)) - curUnit.def;
+                recMax = (s.rec - (2*gainLimit)) - curUnit.rec;
                 unit.defLevelUpBonus += Random.Range(1, 4);
                 unit.recLevelUpBonus -= Random.Range(0, 3);
-                unit.hpLevelUpBonus  = Mathf.Min(unit.hpLevelUpBonus,  hpMax);
-                unit.atkLevelUpBonus = Mathf.Min(unit.atkLevelUpBonus, atkMax);
-                unit.defLevelUpBonus = Mathf.Min(unit.defLevelUpBonus, defMax);
-                unit.recLevelUpBonus = Mathf.Min(unit.recLevelUpBonus, recMax);
                 break;
             }
             case UnitType.Oracle:
             {
-                UnitStats s = unit.unit.statsLord;
-                int hpMax  = (s.hp  == 0 ? s.hpMax  : s.hp)  - unit.unit.maxHealth;
-                int atkMax = (s.atk == 0 ? s.atkMax : s.atk) - unit.unit.atk;
-                int defMax = (s.def == 0 ? s.defMax : s.def) - unit.unit.def;
-                int recMax = (s.rec == 0 ? s.recMax : s.rec) - unit.unit.rec;
-                unit.hpLevelUpBonus  += (int)Mathf.Lerp(0, hpMax,  t) - (int)Mathf.Lerp(0, hpMax,  tPrev);
-                unit.atkLevelUpBonus += (int)Mathf.Lerp(0, atkMax, t) - (int)Mathf.Lerp(0, atkMax, tPrev);
-                unit.defLevelUpBonus += (int)Mathf.Lerp(0, defMax, t) - (int)Mathf.Lerp(0, defMax, tPrev);
-                unit.recLevelUpBonus += (int)Mathf.Lerp(0, recMax, t) - (int)Mathf.Lerp(0, recMax, tPrev);
-                unit.defLevelUpBonus -= Random.Range(0, 3);
+                recMax = (s.rec + (4*gainLimit)) - curUnit.rec;
+                defMax = (s.def - (2*gainLimit)) - curUnit.def;
                 unit.recLevelUpBonus += Random.Range(2, 5);
-                unit.hpLevelUpBonus  = Mathf.Min(unit.hpLevelUpBonus,  hpMax);
-                unit.atkLevelUpBonus = Mathf.Min(unit.atkLevelUpBonus, atkMax);
-                unit.defLevelUpBonus = Mathf.Min(unit.defLevelUpBonus, defMax);
-                unit.recLevelUpBonus = Mathf.Min(unit.recLevelUpBonus, recMax);
+                unit.defLevelUpBonus -= Random.Range(0, 3);
                 break;
             }
             case UnitType.Rex:
             {
-                UnitStats s = unit.unit.statsLord;
-                int hpMax  = Mathf.RoundToInt((s.hp  == 0 ? s.hpMax  : s.hp)  * 1.2f) - unit.unit.maxHealth;
-                int atkMax = Mathf.RoundToInt((s.atk == 0 ? s.atkMax : s.atk) * 1.2f) - unit.unit.atk;
-                int defMax = Mathf.RoundToInt((s.def == 0 ? s.defMax : s.def) * 1.2f) - unit.unit.def;
-                int recMax = Mathf.RoundToInt((s.rec == 0 ? s.recMax : s.rec) * 1.2f) - unit.unit.rec;
-                unit.hpLevelUpBonus  += (int)Mathf.Lerp(0, hpMax,  t) - (int)Mathf.Lerp(0, hpMax,  tPrev);
-                unit.atkLevelUpBonus += (int)Mathf.Lerp(0, atkMax, t) - (int)Mathf.Lerp(0, atkMax, tPrev);
-                unit.defLevelUpBonus += (int)Mathf.Lerp(0, defMax, t) - (int)Mathf.Lerp(0, defMax, tPrev);
-                unit.recLevelUpBonus += (int)Mathf.Lerp(0, recMax, t) - (int)Mathf.Lerp(0, recMax, tPrev);
+                hpMax = (s.hp + (15*gainLimit)) - curUnit.maxHealth;
+                atkMax = (s.atk + (2*gainLimit)) - curUnit.atk;
+                defMax = (s.def + (2*gainLimit)) - curUnit.def;
+                recMax = (s.rec + (2*gainLimit)) - curUnit.rec;
                 unit.hpLevelUpBonus  += Random.Range(10, 16);
                 unit.atkLevelUpBonus += Random.Range(1, 3);
                 unit.defLevelUpBonus += Random.Range(1, 3);
                 unit.recLevelUpBonus += Random.Range(1, 3);
-                unit.hpLevelUpBonus  = Mathf.Min(unit.hpLevelUpBonus,  hpMax);
-                unit.atkLevelUpBonus = Mathf.Min(unit.atkLevelUpBonus, atkMax);
-                unit.defLevelUpBonus = Mathf.Min(unit.defLevelUpBonus, defMax);
-                unit.recLevelUpBonus = Mathf.Min(unit.recLevelUpBonus, recMax);
                 break;
             }
         }
+        
+        for (var i = unit.currentLevel+1; i <= unit.currentLevel + levels; i++) {
+            if (i > maxLevel) break;
+        
+            // t / tPrev represent the fraction of the curve reached at this level vs the previous level.
+            // We add only the DELTA between them each call, so repeated ModifyStats calls (one per level-up)
+            // accumulate correctly instead of either double-counting the full curve or wiping prior random rolls.
+            float t     = (float)i / maxLevel;
+            float tPrev = (float)(i - 1) / maxLevel;
+
+            unit.hpLevelUpBonus  += (int)Mathf.Lerp(0, hpMax,  t) - (int)Mathf.Lerp(0, hpMax,  tPrev);
+            unit.atkLevelUpBonus += (int)Mathf.Lerp(0, atkMax, t) - (int)Mathf.Lerp(0, atkMax, tPrev);
+            unit.defLevelUpBonus += (int)Mathf.Lerp(0, defMax, t) - (int)Mathf.Lerp(0, defMax, tPrev);
+            unit.recLevelUpBonus += (int)Mathf.Lerp(0, recMax, t) - (int)Mathf.Lerp(0, recMax, tPrev);
+        }
+
+        unit.hpLevelUpBonus  = Mathf.Min(unit.hpLevelUpBonus,  hpMax);
+        unit.atkLevelUpBonus = Mathf.Min(unit.atkLevelUpBonus, atkMax);
+        unit.defLevelUpBonus = Mathf.Min(unit.defLevelUpBonus, defMax);
+        unit.recLevelUpBonus = Mathf.Min(unit.recLevelUpBonus, recMax);
     }
 
     public static bool BBLevelUp(int baseUnitKey, int materialUnitKey)

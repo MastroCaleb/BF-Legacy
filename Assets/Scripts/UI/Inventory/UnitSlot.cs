@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -236,10 +237,64 @@ public class UnitSlot : MonoBehaviour
         levelText.gameObject.SetActive(true);
         levelText.color = Color.white;
         UnitInventoryData unitData = PlayerUnitInventoryDatabase.GetUnitByKey(unitKey);
-        int level = unitData.currentLevel;
+        Sort currentSort = MainUI.inventoryRenderer.currentSort;
+//      Debug.LogWarning(currentSort);
+        levelText.color = Color.white;
+        switch(currentSort) {
+        case Sort.HP:
+            int EffectiveHP = unitData.unit.maxHealth + unitData.hpLevelUpBonus  + unitData.hpImpBonus;
+            levelText.text = EffectiveHP.ToString();
+            break;
+        case Sort.Attack:
+            int EffectiveAtk = unitData.unit.atk + unitData.atkLevelUpBonus + unitData.atkImpBonus;
+            levelText.text = EffectiveAtk.ToString();
+            break;
+        case Sort.Defense:
+            int EffectiveDef = unitData.unit.def + unitData.defLevelUpBonus + unitData.defImpBonus;
+            levelText.text = EffectiveDef.ToString();
+            break;
+        case Sort.Recovery:
+            int EffectiveRec = unitData.unit.rec + unitData.recLevelUpBonus + unitData.recImpBonus;
+            levelText.text = EffectiveRec.ToString();
+            break;
+        case Sort.BBLv:
+            //TODO: Come back to this and colorize
+            // BB Should be Blue, SBB Should be Yellow
+            if (unitData.currentBBLevel < 10) {
+                levelText.text = unitData.currentBBLevel.ToString();
+            } else {
+                levelText.text = unitData.currentBBLevel + " * " + unitData.currentSBBLevel;
+            }
+            break;
+        case Sort.Rarity:
+            UnitRarity unitRarity = unitData.unit.rarity;
+            string starIcon = unitRarity == UnitRarity.OMNI ? "<sprite index=2>" : "<sprite index=0>";
 
-        levelText.text = "Lv. " + (level == unitData.unit.maxLevel ? "MAX" : level.ToString());
-        levelText.color = level == unitData.unit.maxLevel ? Color.yellow : Color.white;
+            //Seperated for readability
+            levelText.color = Color.yellow;
+
+            //Dunn how to layout the ternary cleaner
+            levelText.fontSize = unitRarity == UnitRarity.SIX
+            ? 17
+            : unitRarity == UnitRarity.SEVEN
+            ? 15 : 20;
+            
+            levelText.alignment = unitRarity < UnitRarity.SIX
+            ? TextAlignmentOptions.CenterGeoAligned
+            : TextAlignmentOptions.MidlineLeft;
+            
+            levelText.text = string.Concat(Enumerable.Repeat(starIcon, (unitRarity == UnitRarity.OMNI ? 1 : (int)unitRarity+1)));
+            break;
+        case Sort.Cost:
+            levelText.text = unitData.unit.summonCost.ToString();
+            break;
+        default:
+            int level = unitData.currentLevel;
+            
+            levelText.text = "Lv. " + (level == unitData.unit.maxLevel ? "MAX" : level.ToString());
+            levelText.color = level == unitData.unit.maxLevel ? Color.yellow : Color.white;
+            break;
+        }
     }
 
     public void SetupNewIndicator()

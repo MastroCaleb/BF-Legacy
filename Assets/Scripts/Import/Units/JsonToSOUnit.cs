@@ -245,10 +245,6 @@ public class JsonToSOUnit : EditorWindow
         {
             unit.statsBase     = ParseUnitStats(stats["_base"]    as JObject);
             unit.statsLord     = ParseUnitStats(stats["_lord"]    as JObject);
-            unit.statsAnima    = ParseUnitStats(stats["anima"]    as JObject);
-            unit.statsBreaker  = ParseUnitStats(stats["breaker"]  as JObject);
-            unit.statsGuardian = ParseUnitStats(stats["guardian"] as JObject);
-            unit.statsOracle   = ParseUnitStats(stats["oracle"]   as JObject);
         }
 
         // ── Display Positions ─────────────────────────────────────

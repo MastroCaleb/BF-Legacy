@@ -55,12 +55,7 @@ public class Unit : ScriptableObject
 
     [Header("Type Statistics")]
     public UnitStats statsBase;
-    public UnitStats statsLord;
-    public UnitStats statsAnima;
-    public UnitStats statsBreaker;
-    public UnitStats statsGuardian;
-    public UnitStats statsOracle;
-    
+    public UnitStats statsLord;    
 
     [Header("Unit Abilities")]
     //Unit Abilities

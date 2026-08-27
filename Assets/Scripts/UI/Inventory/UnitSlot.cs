@@ -85,8 +85,7 @@ public class UnitSlot : MonoBehaviour
         }
         else if(InventoryRenderer.selectionMode == InventorySelectionMode.UnitFusionSelectMaterial)
         {
-            if(FusionMenu.baseUnit == unitKey) return;
-            if(PlayerUnitInventoryDatabase.GetUnitByKey(unitKey).isInParty) return;
+            if (!CanBeFusionMaterial()) return;
 
             if(!FusionMenu.materialUnits.Contains(unitKey))
             {
@@ -136,7 +135,7 @@ public class UnitSlot : MonoBehaviour
 
     public void SellSelection()
     {
-        if(PlayerUnitInventoryDatabase.GetUnitByKey(unitKey).isInParty || PlayerUnitInventoryDatabase.GetUnitByKey(unitKey).isFavorite) return;
+        if(!CanBeSold()) return;
 
         if(!SellMenu.sellUnits.Contains(unitKey))
         {
@@ -414,7 +413,7 @@ public class UnitSlot : MonoBehaviour
 
         UnitInventoryData unitData = PlayerUnitInventoryDatabase.GetUnitByKey(unitKey);
 
-        return unitKey != FusionMenu.baseUnit && !unitData.isInParty;
+        return unitKey != FusionMenu.baseUnit && !unitData.isInParty && !unitData.isFavorite;
     }
 
     public bool CanBeSold()
@@ -426,7 +425,7 @@ public class UnitSlot : MonoBehaviour
 
         UnitInventoryData unitData = PlayerUnitInventoryDatabase.GetUnitByKey(unitKey);
 
-        return !unitData.isInParty;
+        return !unitData.isInParty && !unitData.isFavorite;
     }
 
     public bool CanBeEvolutionBase()

@@ -61,7 +61,7 @@ public class IntroDialogue : MonoBehaviour
             for(int i = 0; i < 2; i++)
             {
                 string randomUnitId = possibleSlimeUnits[Random.Range(0, possibleSlimeUnits.Count)];
-                int unitKey = PlayerUnitInventoryDatabase.AddUnit(UnitRegistry.GetUnitById(randomUnitId));
+                int unitKey = PlayerUnitInventoryDatabase.AddUnit(UnitRegistry.GetUnitById(randomUnitId), isNew: true);
                 PartyDatabase.GetParty(0).SetUnitAt(i + 1, unitKey);
             }
 
@@ -82,7 +82,7 @@ public class IntroDialogue : MonoBehaviour
 
     public void SetHero()
     {
-        int unitKey = PlayerUnitInventoryDatabase.AddUnit(heroSelection.GetComponent<SelectStartHero>().GetSelectedHero());
+        int unitKey = PlayerUnitInventoryDatabase.AddUnit(heroSelection.GetComponent<SelectStartHero>().GetSelectedHero(), isNew: true);
         PartyDatabase.CreateParty();
         PartyDatabase.GetParty(0).SetUnitAt(0, unitKey);
         dialogueInstance.SetDialogue(dialogue_3);

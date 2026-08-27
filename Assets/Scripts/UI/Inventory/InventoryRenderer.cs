@@ -22,8 +22,9 @@ public class InventoryRenderer : MonoBehaviour
 
     public void AddUnit(string unitId)
     {
-        PlayerUnitInventoryDatabase.AddUnit(UnitRegistry.GetUnitById(unitId));
+        PlayerUnitInventoryDatabase.AddUnit(UnitRegistry.GetUnitById(unitId), isNew: true);
         AddToRenderedInventory(PlayerUnitInventoryDatabase._nextKey - 1);
+        SortInventory();
     }
 
     public void UpdateVisibility()
@@ -193,41 +194,49 @@ public class InventoryRenderer : MonoBehaviour
         {
             case Sort.Element:
                 orderedKeys = units.OrderBy(kvp => ElementPriority.TryGetValue(kvp.Value.unit.element, out int o) ? o : int.MaxValue)
+                                   .ThenByDescending(kvp => kvp.Value.unit.unitNumber)
                                    .Select(kvp => kvp.Key).ToList();
                 break;
 
             case Sort.Level:
                 orderedKeys = units.OrderBy(kvp => kvp.Value.currentLevel)
+                                   .ThenByDescending(kvp => kvp.Value.unit.unitNumber)
                                    .Select(kvp => kvp.Key).ToList();
                 break;
 
             case Sort.Rarity:
                 orderedKeys = units.OrderBy(kvp => (int)kvp.Value.unit.rarity)
+                                   .ThenByDescending(kvp => kvp.Value.unit.unitNumber)
                                    .Select(kvp => kvp.Key).ToList();
                 break;
 
             case Sort.Cost:
                 orderedKeys = units.OrderBy(kvp => kvp.Value.unit.summonCost)
+                                   .ThenByDescending(kvp => kvp.Value.unit.unitNumber)
                                    .Select(kvp => kvp.Key).ToList();
                 break;
 
             case Sort.HP:
                 orderedKeys = units.OrderBy(kvp => EffectiveHP(kvp.Value))
+                                   .ThenByDescending(kvp => kvp.Value.unit.unitNumber)
                                    .Select(kvp => kvp.Key).ToList();
                 break;
 
             case Sort.Attack:
                 orderedKeys = units.OrderBy(kvp => EffectiveAtk(kvp.Value))
+                                   .ThenByDescending(kvp => kvp.Value.unit.unitNumber)
                                    .Select(kvp => kvp.Key).ToList();
                 break;
 
             case Sort.Defense:
                 orderedKeys = units.OrderBy(kvp => EffectiveDef(kvp.Value))
+                                   .ThenByDescending(kvp => kvp.Value.unit.unitNumber)
                                    .Select(kvp => kvp.Key).ToList();
                 break;
 
             case Sort.Recovery:
                 orderedKeys = units.OrderBy(kvp => EffectiveRec(kvp.Value))
+                                   .ThenByDescending(kvp => kvp.Value.unit.unitNumber)
                                    .Select(kvp => kvp.Key).ToList();
                 break;
 

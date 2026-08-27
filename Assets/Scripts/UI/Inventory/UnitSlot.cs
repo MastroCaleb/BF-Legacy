@@ -239,7 +239,10 @@ public class UnitSlot : MonoBehaviour
         UnitInventoryData unitData = PlayerUnitInventoryDatabase.GetUnitByKey(unitKey);
         Sort currentSort = MainUI.inventoryRenderer.currentSort;
 //      Debug.LogWarning(currentSort);
+        //Reset to default as text state is saved between renders
         levelText.color = Color.white;
+        levelText.alignment = TextAlignmentOptions.CenterGeoAligned;
+        levelText.fontSize = 24;
         switch(currentSort) {
         case Sort.HP:
             int EffectiveHP = unitData.unit.maxHealth + unitData.hpLevelUpBonus  + unitData.hpImpBonus;
@@ -277,11 +280,12 @@ public class UnitSlot : MonoBehaviour
             levelText.fontSize = unitRarity == UnitRarity.SIX
             ? 17
             : unitRarity == UnitRarity.SEVEN
-            ? 15 : 20;
-            
-            levelText.alignment = unitRarity < UnitRarity.SIX
-            ? TextAlignmentOptions.CenterGeoAligned
-            : TextAlignmentOptions.MidlineLeft;
+            ? 15
+            : unitRarity == UnitRarity.OMNI
+            ? 26 : 20;
+
+            if (unitRarity >= UnitRarity.SIX && unitRarity != UnitRarity.OMNI)
+                levelText.alignment = TextAlignmentOptions.MidlineLeft;
             
             levelText.text = string.Concat(Enumerable.Repeat(starIcon, (unitRarity == UnitRarity.OMNI ? 1 : (int)unitRarity+1)));
             break;

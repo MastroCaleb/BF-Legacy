@@ -1954,6 +1954,36 @@ public class UnitBehaviour : MonoBehaviour
         }
     }
 
+    public void DropItemsOnDeath()
+    {
+        if (!isEnemyUnit) return;
+
+        foreach(ItemDrop drop in enemyData.itemDrops){
+
+            if(Random.Range(0f, 100f) > drop.dropChance) return;
+            
+            int count = (int)drop.dropRest;
+
+            if(count == 0) return;
+
+            ItemDropData dropData = new ItemDropData
+            {
+                itemName = drop.itemName,
+                itemCount = 1
+            };
+
+            for (int i = 0; i < count; i++)
+            {
+                GameObject c = Instantiate(PrefabCache.Get("ItemDrop"));
+                c.transform.SetParent(BattleUI.dropsLayer);
+                c.transform.position = transform.position + new Vector3(0, 0.5f, 0);
+                c.GetComponent<Image>().sprite = ItemDatabase.GetItemByName(dropData.itemName).thumbnailSprite;
+                c.GetComponent<DropBehaviour>().itemDropData = dropData;
+                c.GetComponent<DropBehaviour>().target = BattleUI.unitPoint.gameObject;
+            }
+        }
+    }
+
     public void DropGemCrystalsOnDeath()
     {
         if (!isEnemyUnit) return;
@@ -2295,6 +2325,7 @@ public class UnitBehaviour : MonoBehaviour
         DropZelCoinsOnDeath();
         DropKarmaOrbsOnDeath();
         DropGemCrystalsOnDeath();
+        DropItemsOnDeath();
     }
 
     void DropsOnDeath()

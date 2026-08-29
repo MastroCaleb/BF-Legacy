@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public static class ChestDropUtility
 {
@@ -14,6 +15,7 @@ public static class ChestDropUtility
         }
         if (roll > 25f) DropZelCoins(enemyData, dropOrigin);
         if (roll > 50f) DropKarmaOrbs(enemyData, dropOrigin);
+        if (roll > 75f) DropItems(enemyData, dropOrigin);
     }
 
     public static void DropZelCoins(Enemy enemyData, Vector3 dropOrigin)
@@ -76,6 +78,22 @@ public static class ChestDropUtility
             if (target != null) c.GetComponent<DropBehaviour>().target = target.gameObject;
             BattleManager.totalHcDropCount++;
         }
+    }
+
+    public static void DropItems(Enemy enemyData, Vector3 dropOrigin)
+    {
+        ItemDropData dropData = new ItemDropData
+        {
+            itemName = enemyData.treasureDrop.itemName,
+            itemCount = 1
+        };
+
+        GameObject c = Object.Instantiate(PrefabCache.Get("ItemDrop"));
+        c.transform.SetParent(BattleUI.dropsLayer);
+        c.transform.position = dropOrigin + new Vector3(0, 1f, 0);
+        c.GetComponent<Image>().sprite = ItemDatabase.GetItemByName(dropData.itemName).thumbnailSprite;
+        c.GetComponent<DropBehaviour>().itemDropData = dropData;
+        c.GetComponent<DropBehaviour>().target = BattleUI.unitPoint.gameObject;
     }
 
     static UnitBehaviour GetBattleCrystalTarget()

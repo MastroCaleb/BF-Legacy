@@ -171,6 +171,22 @@ public class TreasureChestDropBehaviour : MonoBehaviour, IPointerClickHandler
         }
     }
 
+    public void DropItems()
+    {
+        ItemDropData dropData = new ItemDropData
+        {
+            itemName = enemyData.treasureDrop.itemName,
+            itemCount = 1
+        };
+
+        GameObject c = Instantiate(PrefabCache.Get("ItemDrop"));
+        c.transform.SetParent(BattleUI.dropsLayer);
+        c.transform.position = transform.position + new Vector3(0, 1f, 0);
+        c.GetComponent<Image>().sprite = ItemDatabase.GetItemByName(dropData.itemName).thumbnailSprite;
+        c.GetComponent<DropBehaviour>().itemDropData = dropData;
+        c.GetComponent<DropBehaviour>().target = BattleUI.unitPoint.gameObject;
+    }
+
     UnitBehaviour GetBattleCrystalTarget()
     {
         int GetMaxBC(UnitBehaviour u)

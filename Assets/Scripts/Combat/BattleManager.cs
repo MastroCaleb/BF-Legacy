@@ -55,6 +55,7 @@ public class BattleManager : MonoBehaviour
     public static int totalKarmaReward;
     public static int totalGemReward;
     public static List<UnitDropData> unitDrops = new List<UnitDropData>();
+    public static List<ItemDropData> itemDrops = new List<ItemDropData>();
     public static List<int> newUnits = new List<int>();
 
     //Battle Stats
@@ -88,6 +89,7 @@ public class BattleManager : MonoBehaviour
         ubbCount = 0;
         obtainedGemsForMission = false;
         unitDrops.Clear();
+        itemDrops.Clear();
         newUnits.Clear();
         chests.Clear();
         playerTeam = new TeamBehaviour();
@@ -479,6 +481,7 @@ public class BattleManager : MonoBehaviour
         HeaderPlayerData.openRewardsScreen = true;
         PlayerData.zel += totalZelReward;
         PlayerData.karma += totalKarmaReward;
+        PlayerData.gems += totalGemReward;
         oldLevel = PlayerData.level;
         oldExperience = PlayerData.experience;
         xpObtained = missionData.experienceReward;
@@ -1270,4 +1273,9 @@ public struct UnitDropData
     public string unitId;
     public int unitLevel;
     public UnitType type;
+}
+public struct ItemDropData
+{
+    public string itemName;
+    public int itemCount;
 }

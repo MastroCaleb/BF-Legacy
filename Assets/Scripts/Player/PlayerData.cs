@@ -78,6 +78,7 @@ public static class PlayerData
 
             ApplyLevelData(level);
             PlayerUnitInventoryDatabase.LoadFromJson();
+            PlayerItemInventoryDatabase.LoadFromJson();
             PartyDatabase.LoadFromJson();
         }
         else

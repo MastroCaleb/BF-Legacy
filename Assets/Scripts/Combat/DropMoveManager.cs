@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DropMoveManager : MonoBehaviour
 {
@@ -85,6 +86,34 @@ public class DropMoveManager : MonoBehaviour
 
                 activeDrops[i] = d;
             }
+            else if(d.type == DropType.Item && canMove)
+            {
+                Debug.Log("ItemDrop");
+                if (d.rect == null)
+                {
+                    // If either the rect or target is null, remove the drop from the list
+                    activeDrops.RemoveAt(i);
+                    continue; // skip the rest of this loop iteration
+                }
+
+                if(d.rect.gameObject.GetComponent<DropBehaviour>().disappearCoroutine == null)
+                    d.rect.gameObject.GetComponent<DropBehaviour>().disappearCoroutine = StartCoroutine(d.rect.gameObject.GetComponent<DropBehaviour>().WhiteToTransparent(1f));
+                
+                if (d.rect.gameObject.GetComponent<Image>().color.a == 0)
+                {
+                    ApplyDropEffect(d);
+
+                    // Destroy the RectTransform's GameObject
+                    if (d.rect != null)
+                        Destroy(d.rect.gameObject);
+
+                    // Remove from activeDrops list
+                    activeDrops.RemoveAt(i);
+                    continue; // skip the rest of this loop iteration
+                }
+
+                activeDrops[i] = d;
+            }
         }
     }
 
@@ -129,8 +158,11 @@ public class DropMoveManager : MonoBehaviour
         else if (d.type == DropType.Gem && d.target != null)
         {
             BattleManager.totalGemReward += d.value;
-            PlayerData.gems += d.value;
             SoundManager.Instance.PlaySound(hcSound);
+        }
+        else if (d.type == DropType.Item)
+        {
+            BattleManager.itemDrops.Add(d.itemDropData);
         }
     }
 
@@ -176,7 +208,8 @@ public class DropMoveManager : MonoBehaviour
         GameObject target,
         DropType type,
         int value,
-        UnitDropData dropData,
+        UnitDropData unitDropData,
+        ItemDropData itemDropData,
         UnitBehaviour unit = null
     )
     {
@@ -187,7 +220,8 @@ public class DropMoveManager : MonoBehaviour
             type = type,
             value = value,
             unit = unit,
-            unitDropData = dropData,
+            unitDropData = unitDropData,
+            itemDropData = itemDropData,
             active = true
         });
     }
@@ -199,6 +233,7 @@ public class DropMoveManager : MonoBehaviour
         public UnitBehaviour unit;
         public DropType type;
         public UnitDropData unitDropData;
+        public ItemDropData itemDropData;
         public int value;
         public bool active;
     }

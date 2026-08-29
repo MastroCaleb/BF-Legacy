@@ -16,7 +16,7 @@ public static class PrefabCache
     {
         // battle drops
         "BattleCrystal", "HeartCrystal", "ZelCoin", "KarmaOrb", "GemCrystal",
-        "ChestDrop", "UnitDropCommon", "UnitDropRare", "UnitDropSuperRare", "UnitDropUltraRare",
+        "ChestDrop", "UnitDropCommon", "UnitDropRare", "UnitDropSuperRare", "UnitDropUltraRare", "ItemDrop",
         // popups
         "DamagePopUp", "CriticalPopUp", "SparkPopUp",
         // battle title SAM banners

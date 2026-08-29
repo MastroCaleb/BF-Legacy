@@ -85,6 +85,7 @@ public class Effect
     public string procId;      // Used for active ability effects (BB/SBB/UBB)
     public string passiveId;   // Used for passive effects (leader/extra abilities)
     public bool   isPassive;   // True if this is a passive effect
+    public string procParam;   // Raw param for "unknown proc/passive id" entries the parser can't type — item data only
 
     // Shared targeting / timing
     public TargetType targetType;
@@ -433,7 +434,8 @@ public enum ConditionType
     ItemRequired,
     ElementRequired,
     GenderRequired,
-    BBGaugeAbove
+    BBGaugeAbove,
+    BBGaugeBelow
 }
 
 // ─────────────────────────────────────────

@@ -13,8 +13,12 @@ public static class ChestDropUtility
             DropBattleCrystals(enemyData, dropOrigin);
             DropHeartCrystals(enemyData, dropOrigin);
         }
+
+        roll = Random.Range(0f, 100f);
         if (roll > 25f) DropZelCoins(enemyData, dropOrigin);
+        roll = Random.Range(0f, 100f);
         if (roll > 50f) DropKarmaOrbs(enemyData, dropOrigin);
+        roll = Random.Range(0f, 100f);
         if (roll > 75f) DropItems(enemyData, dropOrigin);
     }
 

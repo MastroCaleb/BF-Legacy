@@ -501,6 +501,12 @@ public class BattleManager : MonoBehaviour
             PlayerUnitInventoryDatabase.AddUnit(UnitRegistry.GetUnitById(u.unitId), u.type, u.unitLevel);
         }
 
+        foreach (ItemDropData i in itemDrops)
+        {
+            int key = PlayerItemInventoryDatabase._nextStackKey;
+            PlayerItemInventoryDatabase.AddItem(ItemDatabase.GetItemByName(i.itemName).itemId, i.itemCount);
+        }
+
         PlayerData.SaveDataToJson();
     }
 

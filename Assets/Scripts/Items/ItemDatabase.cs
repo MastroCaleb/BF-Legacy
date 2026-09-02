@@ -87,24 +87,6 @@ public static class ItemDatabase
 
         return GetItem(ids[0]);
     }
-    
-    public static string GetItemIdByName(string name)
-    {
-        if (string.IsNullOrEmpty(name)) return null;
-
-        EnsureNameIndexBuilt();
-
-        if (!_nameToIds.TryGetValue(name.Trim().ToLowerInvariant(), out List<string> ids) || ids.Count == 0)
-        {
-            Debug.LogWarning($"[ItemDatabase] No item found with name '{name}'.");
-            return null;
-        }
-
-        if (ids.Count > 1)
-            Debug.LogWarning($"[ItemDatabase] '{name}' matches {ids.Count} items (ids: {string.Join(", ", ids)}) — returning the first. Use GetItemsByName to get all of them.");
-
-        return ids[0];
-    }
 
     /// <summary>Every item whose name matches (case-insensitive) — for the ~28 names items.json reuses across multiple ids.</summary>
     public static List<ItemData> GetItemsByName(string name)
@@ -248,6 +230,9 @@ public static class ItemDatabase
         // not deferred to a separate call.
         LoadThumbnailSync(item);
 
+        if (o["recipe"] is JObject recipe)
+            item.recipe = ParseRecipe(recipe);
+
         switch (type)
         {
             case ItemType.Sphere:
@@ -280,6 +265,25 @@ public static class ItemDatabase
         }
 
         return item;
+    }
+
+    private static ItemRecipe ParseRecipe(JObject o)
+    {
+        ItemRecipe recipe = new()
+        {
+            karma = EffectParser.ParseInt(o["karma"])
+        };
+
+        if (o["materials"] is JArray materials)
+            foreach (JToken t in materials)
+                if (t is JObject m)
+                    recipe.materials.Add(new ItemRecipeMaterial
+                    {
+                        itemId = m["id"]?.ToString(),
+                        count  = EffectParser.ParseInt(m["count"])
+                    });
+
+        return recipe;
     }
 
     private static ItemType ParseItemType(string s) => s switch

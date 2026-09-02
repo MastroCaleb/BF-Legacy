@@ -1539,6 +1539,7 @@ public class UnitBehaviour : MonoBehaviour
     {
         target.DropBattleCrystals(this, ability);
         target.DropHeartCrystals(this, ability);
+        target.DropItemsOnHit();
     }
 
     private void TryHPDrainOnHit(Ability ability, float rawDamage)
@@ -1954,7 +1955,7 @@ public class UnitBehaviour : MonoBehaviour
         }
     }
 
-    public void DropItemsOnDeath()
+    public void DropItemsOnHit()
     {
         if (!isEnemyUnit) return;
 
@@ -2194,7 +2195,6 @@ public class UnitBehaviour : MonoBehaviour
         }
     }
 
-
     /// Checks for a proc 7 (Angel Idol) entry and absorbs a fatal hit.
     private bool TryAngelIdol()
     {
@@ -2246,8 +2246,6 @@ public class UnitBehaviour : MonoBehaviour
 
         if (!isEnemyUnit) unitSlotUI.UpdateUI();
     }
-
-    
 
     // ─────────────────────────────────────────────────────────────
     //  Misc
@@ -2325,7 +2323,6 @@ public class UnitBehaviour : MonoBehaviour
         DropZelCoinsOnDeath();
         DropKarmaOrbsOnDeath();
         DropGemCrystalsOnDeath();
-        DropItemsOnDeath();
     }
 
     void DropsOnDeath()
@@ -2435,8 +2432,8 @@ public class UnitBehaviour : MonoBehaviour
 
         rt.localPosition = originalPos;
     }
-
-   public IEnumerator ScaleEffect(float duration = 1.2f, float targetScaleX = 0f, float targetScaleY = 1.5f)
+    
+    public IEnumerator ScaleEffect(float duration = 1.2f, float targetScaleX = 0f, float targetScaleY = 1.5f)
     {
         RectTransform rt = GetComponent<RectTransform>();
         Vector3 originalScale = rt.localScale;

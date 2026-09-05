@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Newtonsoft.Json;
+using UnityEngine.Rendering;
 
 // ---------- SAM JSON STRUCTURES ----------
 [System.Serializable]
@@ -164,6 +165,11 @@ public class SamAnimator : MonoBehaviour
             return;
         }
 
+        if(jsonFile.name.Contains("Add") && blendMaterial == null)
+        {
+            blendMaterial = AnimatorManager.blendMaterial;
+        }
+
         if (isCachedInDatabase)
             InitializeAnimatorFromDatabase();
         else
@@ -296,7 +302,8 @@ public class SamAnimator : MonoBehaviour
                 maxObjectsPerFrame = Mathf.Max(maxObjectsPerFrame, frame.mObjectVector.Length);
         }
 
-        Material sharedMat = blendMaterial != null ? blendMaterial : GetOrCreateDefaultMaterial();
+        Material sharedMat = blendMaterial != null ? blendMaterial
+            : (isEffect ? GetOrCreateAdditiveMaterial() : GetOrCreateAlphaMaterial());
 
         for (int i = 0; i < maxObjectsPerFrame + 20; i++)
         {
@@ -311,17 +318,32 @@ public class SamAnimator : MonoBehaviour
         }
     }
 
-    private static Material s_defaultBlendMaterial;
-    private static Material GetOrCreateDefaultMaterial()
+    private static Material s_alphaMaterial;
+    private static Material s_additiveMaterial;
+
+    private static Material GetOrCreateAlphaMaterial()
     {
-        if (s_defaultBlendMaterial == null)
+        if (s_alphaMaterial == null)
         {
-            s_defaultBlendMaterial = new Material(Shader.Find("UI/Default"));
-            s_defaultBlendMaterial.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
-            s_defaultBlendMaterial.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
-            s_defaultBlendMaterial.DisableKeyword("UNITY_UI_PREMULTIPLIED_ALPHA");
+            s_alphaMaterial = new Material(Shader.Find("UI/Default"));
+            s_alphaMaterial.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
+            s_alphaMaterial.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
+            s_alphaMaterial.DisableKeyword("UNITY_UI_PREMULTIPLIED_ALPHA");
         }
-        return s_defaultBlendMaterial;
+        return s_alphaMaterial;
+    }
+
+    private static Material s_additiveMaterialCache;
+    private static Material GetOrCreateAdditiveMaterial()
+    {
+        if (s_additiveMaterialCache == null)
+        {
+            s_additiveMaterialCache = new Material(Shader.Find("UI/Default"));
+            s_additiveMaterialCache.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.One);
+            s_additiveMaterialCache.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.One);
+            s_additiveMaterialCache.DisableKeyword("UNITY_UI_PREMULTIPLIED_ALPHA");
+        }
+        return s_additiveMaterialCache;
     }
 
     Texture2D GetCachedTexture(string path)

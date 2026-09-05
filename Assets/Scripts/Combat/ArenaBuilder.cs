@@ -7,6 +7,8 @@ public class ArenaBuilder : MonoBehaviour
     public RectTransform backSamParent;
     public RectTransform frontSamParent;
 
+    public Material blendMaterial;
+
     public void Awake()
     {
         BuildArena();
@@ -39,6 +41,7 @@ public class ArenaBuilder : MonoBehaviour
         animator.defaultAnimation = "loop";
         animator.isEffect = true;
         animator.jsonFile = json;
+        animator.blendMaterial = json.name.Contains("Add") ? blendMaterial : null;
         animator.enabled = true;
         sam.GetComponent<RectTransform>().SetParent(parent);
         animator.InitializeAnimator();

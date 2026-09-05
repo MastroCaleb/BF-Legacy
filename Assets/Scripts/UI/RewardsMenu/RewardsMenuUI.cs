@@ -559,7 +559,7 @@ public class RewardsMenuUI : MonoBehaviour
     {
         Image overlay = itemIconOverlays[index];
 
-        yield return GetOrCreateCoroutineHost().StartCoroutine(FadeImageAlpha(overlay, 0f, 1f, overlayFadeDuration));
+        yield return GetOrCreateCoroutineHost().StartCoroutine(FadeImageAlpha(overlay, 0f, 1f, overlayFadeDuration/3f));
 
         ItemData itemData = ItemDatabase.GetItemByName(BattleManager.itemDrops[index].itemName);
         if (itemData != null)

@@ -95,6 +95,7 @@ public class BattleManager : MonoBehaviour
         playerTeam = new TeamBehaviour();
         enemyTeam  = new TeamBehaviour();
         selectedEnemyUnit = null;
+        DropMoveManager.activeDrops.Clear();
 
         mimicRoundQueued = false;
         pendingMimicChests.Clear();

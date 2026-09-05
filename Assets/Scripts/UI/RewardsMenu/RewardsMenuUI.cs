@@ -21,6 +21,9 @@ public class RewardsMenuUI : MonoBehaviour
     public TextMeshProUGUI xpObtainedText;
     public TextMeshProUGUI xpToNextObtained;
     public BarUI xpBar;
+    public GameObject unitContentView;
+    public GameObject itemContentView;
+
     //Part1
     public GameObject part1;
     public TextMeshProUGUI levelUpRewardText;
@@ -31,21 +34,35 @@ public class RewardsMenuUI : MonoBehaviour
     public TextMeshProUGUI bcDrops;
     public TextMeshProUGUI hcDrops;
 
-    //Page 2
+    //Page 2 - item rewards
     public GameObject page2;
-    public GameObject contentView;
+    public Sprite itemBackgroundSprite;
+    public Sprite itemBgUnknownSprite;
+    public Sprite unknownSlotSprite;
+    public Sprite materialSlotSprite;
+    public Sprite consumableSlotSprite;
+    public Sprite sphereSlotSprite;
+    public Sprite lsSphereSlotSprite;
+    public Sprite evoMatSlotSprite;
+    public Sprite raidMatSlotSprite;
+    public Sprite boosterSlotSprite;
+
+    //Page 3 - unit rewards
+    public GameObject page3;
     public Sprite commonUnitIcon;
     public Sprite rareUnitIcon;
     public Sprite superRareUnitIcon;
     public Sprite ultraRareUnitIcon;
 
-    //Page 3
-    public GameObject page3;
+    //Page 4 - extra rewards
+    public GameObject page4;
     public Button button;
     int clicks = 0;
 
     private List<GameObject> unitIcons;
     private List<Image> unitIconOverlays;
+    private List<GameObject> itemIcons;
+    private List<Image> itemIconOverlays;
 
     private GameObject coroutineHostGO;
 
@@ -80,12 +97,115 @@ public class RewardsMenuUI : MonoBehaviour
         return host;
     }
 
-    // Page 3 is the "extra rewards" summary. It should only show for missions
-    // that are being completed for the first time right now, and never during
-    // a vortex run.
-    private bool ShouldShowPage3()
+    // Page 4 is the "extra rewards" summary. It should only show for missions
+    // that are being completed for the first time right now.
+    private bool ShouldShowPage4()
     {
         return BattleManager.obtainedGemsForMission;
+    }
+
+    private void ShowNextPage()
+    {
+        if (clicks == 2)
+        {
+            if (BattleManager.itemDrops.Count > 0)
+            {
+                page1.SetActive(false);
+                page2.SetActive(true);
+                GenerateItemIcons();
+                GetOrCreateCoroutineHost().StartCoroutine(RevealItemIcons());
+                clicks = 3;
+            }
+            else
+            {
+                ShowNextPageWithoutItems();
+            }
+        }
+        else if (clicks == 3)
+        {
+            if (BattleManager.unitDrops.Count > 0)
+            {
+                page2.SetActive(false);
+                page3.SetActive(true);
+                GenerateUnitIcons();
+                GetOrCreateCoroutineHost().StartCoroutine(RevealUnitIcons());
+                clicks = 4;
+            }
+            else
+            {
+                ShowPage4OrFinish();
+            }
+        }
+        else if (clicks == 4)
+        {
+            ShowPage4OrFinish();
+        }
+        else
+        {
+            FinishRewards();
+        }
+    }
+
+    private void ShowNextPageWithoutItems()
+    {
+        if (BattleManager.unitDrops.Count > 0)
+        {
+            page1.SetActive(false);
+            page3.SetActive(true);
+            GenerateUnitIcons();
+            GetOrCreateCoroutineHost().StartCoroutine(RevealUnitIcons());
+            clicks = 4;
+        }
+        else
+        {
+            ShowPage4OrFinish();
+        }
+    }
+
+    private void ShowPage4OrFinish()
+    {
+        if (ShouldShowPage4())
+        {
+            page1.SetActive(false);
+            page2.SetActive(false);
+            page3.SetActive(false);
+            page4.SetActive(true);
+            clicks = 5;
+        }
+        else
+        {
+            FinishRewards();
+        }
+    }
+
+    private void FinishRewards()
+    {
+        if (BattleManager.isVortex)
+        {
+            SoundManager.Instance.PlayMusicLoop(vortexMusic);
+            MainUI.rewardsScreen.SetActive(false);
+            MainUI.extensionLow.SetActive(false);
+            MainUI.header.SetActive(false);
+            MainUI.vortexMenu.SetActive(true);
+            BattleManager.isVortex = false;
+        }
+        else
+        {
+            SoundManager.Instance.PlayMusicLoop(worldMusic);
+            MainUI.rewardsScreen.SetActive(false);
+            MainUI.extensionLow.SetActive(false);
+            MainUI.mapName.SetActive(false);
+            MainUI.mapDungeons.SetActive(false);
+            MainUI.mapMenu.SetActive(true);
+            MainUI.missionSelection.SetActive(true);
+            MainUI.missionSelectionText.text = BattleManager.dungeonLevelData.levelName;
+        }
+
+        if (coroutineHostGO != null)
+        {
+            Destroy(coroutineHostGO);
+            coroutineHostGO = null;
+        }
     }
 
     void OnButtonClick()
@@ -118,7 +238,7 @@ public class RewardsMenuUI : MonoBehaviour
 
                 part1.SetActive(true);
                 levelUpRewardText.text = $"You received <color=green>{gemsAwarded} Gem(s)</color> for leveling up!";
-                clicks++;
+                clicks = 1;
             }
             else
             {
@@ -127,14 +247,7 @@ public class RewardsMenuUI : MonoBehaviour
                 criticalHits.text = BattleManager.totalCriticalHits.ToString();
                 bcDrops.text      = BattleManager.totalBcDropCount.ToString();
                 hcDrops.text      = BattleManager.totalHcDropCount.ToString();
-                if(BattleManager.unitDrops.Count == 0)
-                {
-                    clicks += ShouldShowPage3() ? 3 : 4;
-                }
-                else
-                {
-                    clicks+=2;
-                }
+                clicks = 2;
             }
         }
         else if(clicks == 1)
@@ -146,60 +259,11 @@ public class RewardsMenuUI : MonoBehaviour
             bcDrops.text      = BattleManager.totalBcDropCount.ToString();
             hcDrops.text      = BattleManager.totalHcDropCount.ToString();
 
-            if(BattleManager.unitDrops.Count == 0)
-            {
-                clicks += ShouldShowPage3() ? 3 : 2;
-            }
-            else
-            {
-                clicks++;
-            }
+            clicks = 2;
         }
-        else if(clicks == 2)
+        else if(clicks >= 2)
         {
-            page1.SetActive(false);
-            page2.SetActive(true);
-            GenerateUnitIcons();
-            GetOrCreateCoroutineHost().StartCoroutine(RevealUnitIcons());
-
-            clicks += ShouldShowPage3() ? 1 : 2;
-        }
-        else if(clicks == 3)
-        {
-            page1.SetActive(false);
-            page2.SetActive(false);
-            page3.SetActive(true);
-
-            clicks++;
-        }
-        else
-        {
-            if (BattleManager.isVortex)
-            {
-                SoundManager.Instance.PlayMusicLoop(vortexMusic);
-                MainUI.rewardsScreen.SetActive(false);
-                MainUI.extensionLow.SetActive(false);
-                MainUI.header.SetActive(false);
-                MainUI.vortexMenu.SetActive(true);
-                BattleManager.isVortex = false;
-            }
-            else
-            {
-                SoundManager.Instance.PlayMusicLoop(worldMusic);
-                MainUI.rewardsScreen.SetActive(false);
-                MainUI.extensionLow.SetActive(false);
-                MainUI.mapName.SetActive(false);
-                MainUI.mapDungeons.SetActive(false);
-                MainUI.mapMenu.SetActive(true);
-                MainUI.missionSelection.SetActive(true);
-                MainUI.missionSelectionText.text = BattleManager.dungeonLevelData.levelName;
-            }
-
-            if (coroutineHostGO != null)
-            {
-                Destroy(coroutineHostGO);
-                coroutineHostGO = null;
-            }
+            ShowNextPage();
         }
     }
 
@@ -237,7 +301,7 @@ public class RewardsMenuUI : MonoBehaviour
 
             part1.SetActive(true);
             levelUpRewardText.text = $"You received <color=green>{gemsAwarded} Gem(s)</color> for leveling up!";
-            clicks++;
+            clicks = 1;
         }
         else
         {
@@ -246,14 +310,7 @@ public class RewardsMenuUI : MonoBehaviour
             criticalHits.text = BattleManager.totalCriticalHits.ToString();
             bcDrops.text      = BattleManager.totalBcDropCount.ToString();
             hcDrops.text      = BattleManager.totalHcDropCount.ToString();
-            if(BattleManager.unitDrops.Count == 0)
-            {
-                clicks += ShouldShowPage3() ? 3 : 4;
-            }
-            else
-            {
-                clicks+=2;
-            }
+            clicks = 2;
         }
     }
 
@@ -358,7 +415,7 @@ public class RewardsMenuUI : MonoBehaviour
         foreach (var unit in BattleManager.unitDrops)
         {
             GameObject unitIcon = new GameObject("UnitIcon");
-            unitIcon.transform.SetParent(contentView.transform, false);
+            unitIcon.transform.SetParent(unitContentView.transform, false);
             unitIcon.AddComponent<RectTransform>();
             Image image = unitIcon.AddComponent<Image>();
             switch (UnitRegistry.GetUnitById(unit.unitId).rarity)
@@ -423,6 +480,101 @@ public class RewardsMenuUI : MonoBehaviour
             yield return new WaitUntil(() => MainUI.rewardsScreen.activeInHierarchy);
         }
 
+        yield return GetOrCreateCoroutineHost().StartCoroutine(FadeImageAlpha(overlay, 1f, 0f, overlayFadeDuration));
+    }
+
+     // Composited icon: background -> itemData.thumbnail -> slot frame -> reveal overlay.
+    private void GenerateItemIcons()
+    {
+        itemIcons = new List<GameObject>();
+        itemIconOverlays = new List<Image>();
+
+        foreach (var item in BattleManager.itemDrops)
+        {
+            ItemData itemData = ItemDatabase.GetItemByName(item.itemName);
+
+            GameObject itemIcon = new GameObject("ItemIcon");
+            itemIcon.transform.SetParent(itemContentView.transform, false);
+            itemIcon.AddComponent<RectTransform>();
+
+            Image background = itemIcon.AddComponent<Image>();
+            background.sprite = itemBgUnknownSprite;
+            background.preserveAspect = true;
+            itemIcons.Add(itemIcon);
+
+            Image thumbnailImage = CreateStretchedChild(itemIcon.transform, "Thumbnail");
+            thumbnailImage.sprite = null;
+            thumbnailImage.enabled = false;
+            thumbnailImage.preserveAspect = true;
+
+            Image slotImage = CreateStretchedChild(itemIcon.transform, "SlotFrame");
+            slotImage.sprite = unknownSlotSprite;
+            slotImage.preserveAspect = true;
+
+            Image overlayImage = CreateStretchedChild(itemIcon.transform, "WhiteOverlay");
+            overlayImage.color = new Color(1f, 1f, 1f, 0f);
+            itemIconOverlays.Add(overlayImage);
+        }
+    }
+
+    private Image CreateStretchedChild(Transform parent, string name)
+    {
+        GameObject obj = new GameObject(name);
+        obj.transform.SetParent(parent, false);
+        RectTransform rect = obj.AddComponent<RectTransform>();
+        rect.anchorMin = Vector2.zero;
+        rect.anchorMax = Vector2.one;
+        rect.offsetMin = Vector2.zero;
+        rect.offsetMax = Vector2.zero;
+        return obj.AddComponent<Image>();
+    }
+
+    // Mirrors ItemSlot.GetSpriteForItemType — kept in sync manually since
+    // this UI composites icons itself rather than instantiating ItemSlot prefabs.
+    private Sprite GetSlotSpriteForItem(ItemData itemData)
+    {
+        return itemData.itemType switch
+        {
+            ItemType.Material => materialSlotSprite,
+            ItemType.Consumable when itemData.raid => raidMatSlotSprite,
+            ItemType.Sphere => sphereSlotSprite,
+            ItemType.LsSphere => lsSphereSlotSprite,
+            ItemType.EvoMat => evoMatSlotSprite,
+            ItemType.Consumable => consumableSlotSprite,
+            ItemType.Unknown => boosterSlotSprite,
+            _ => unknownSlotSprite
+        };
+    }
+
+    private IEnumerator RevealItemIcons()
+    {
+        for (int i = 0; i < itemIcons.Count; i++)
+        {
+            yield return GetOrCreateCoroutineHost().StartCoroutine(RevealSingleItemIcon(i));
+            yield return new WaitForSeconds(delayBetweenReveals);
+        }
+    }
+
+    private IEnumerator RevealSingleItemIcon(int index)
+    {
+        Image overlay = itemIconOverlays[index];
+
+        yield return GetOrCreateCoroutineHost().StartCoroutine(FadeImageAlpha(overlay, 0f, 1f, overlayFadeDuration));
+
+        ItemData itemData = ItemDatabase.GetItemByName(BattleManager.itemDrops[index].itemName);
+        if (itemData != null)
+        {
+            Transform itemIcon = itemIcons[index].transform;
+            itemIcon.GetComponent<Image>().sprite = itemBackgroundSprite;
+
+            Image thumbnailImage = itemIcon.Find("Thumbnail").GetComponent<Image>();
+            thumbnailImage.sprite = itemData.thumbnailSprite;
+            thumbnailImage.enabled = true;
+
+            itemIcon.Find("SlotFrame").GetComponent<Image>().sprite = GetSlotSpriteForItem(itemData);
+        }
+
+        SoundManager.Instance.PlaySound(revealSound);
         yield return GetOrCreateCoroutineHost().StartCoroutine(FadeImageAlpha(overlay, 1f, 0f, overlayFadeDuration));
     }
 

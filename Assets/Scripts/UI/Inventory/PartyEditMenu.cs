@@ -19,7 +19,6 @@ public class PartyEditMenu : MonoBehaviour
     public ScrollingTMPText skillDescHelper;
     public static ScrollingTMPText skillDesc;
 
-    public static int currentPartyKey;
     public static int currentUnitIndex;
 
     private static int[] lastRenderedUnitKeys = { -2, -2, -2, -2, -2 }; // -2 = never rendered, forces first refresh
@@ -38,8 +37,6 @@ public class PartyEditMenu : MonoBehaviour
 
     void Start()
     {
-        currentPartyKey = 0; // For now, we only have one party. This will need to be changed when we have multiple parties.
-
         for (int i = 0; i < tableButtons.Count; i++)
         {
             int index = i; // Capture the current value of i for the lambda
@@ -68,7 +65,7 @@ public class PartyEditMenu : MonoBehaviour
 
     public static void RefreshUnitTables()
     {
-        PartyData currentParty = PartyDatabase.GetParty(currentPartyKey);
+        PartyData currentParty = PartyDatabase.GetParty(PartyDatabase.currentPartyKey);
 
         for (int i = 0; i < 5; i++)
         {
@@ -97,7 +94,7 @@ public class PartyEditMenu : MonoBehaviour
 
     public static void UpdateLeaderSkillInfo()
     {
-        PartyData currentParty = PartyDatabase.GetParty(currentPartyKey);
+        PartyData currentParty = PartyDatabase.GetParty(PartyDatabase.currentPartyKey);
         int leaderUnitKey = currentParty.GetUnitAt(currentParty.leaderUnitIndex);
 
         if (leaderUnitKey != -1)
@@ -115,7 +112,7 @@ public class PartyEditMenu : MonoBehaviour
 
     public static void SetLeaderSamActive()
     {
-        PartyData currentParty = PartyDatabase.GetParty(currentPartyKey);
+        PartyData currentParty = PartyDatabase.GetParty(PartyDatabase.currentPartyKey);
 
         for (int i = 0; i < 5; i++)
         {

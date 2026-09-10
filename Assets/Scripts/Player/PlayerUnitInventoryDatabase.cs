@@ -536,7 +536,6 @@ public static class PlayerUnitInventoryDatabase
 
             case "750006":
                 return 2005024;
-
             
             default: return material.unit.baseExp + material.currentExperience;
         }

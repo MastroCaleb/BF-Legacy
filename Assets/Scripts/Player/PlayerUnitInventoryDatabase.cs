@@ -534,6 +534,9 @@ public static class PlayerUnitInventoryDatabase
             case "60334":
                 return 151524;
 
+            case "750006":
+                return 2005024;
+
             
             default: return material.unit.baseExp + material.currentExperience;
         }
@@ -570,14 +573,16 @@ public static class PlayerUnitInventoryDatabase
                 return 51518;
 
             case "10344":
-            case "20344":
-            case "30344":
-            case "40344":
-            case "50344":
-            case "60344":
+            case "20334":
+            case "30324":
+            case "40324":
+            case "50364":
+            case "60334":
                 return 151524;
 
-            
+            case "750006":
+                return 2005024;
+
             default: return material.unit.baseExp + material.currentExperience;
         }
     }

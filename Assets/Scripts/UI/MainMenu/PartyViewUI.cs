@@ -63,7 +63,7 @@ public class PartyViewUI : MonoBehaviour
 
     public void OpenUnitSummary(int i)
     {
-        PartyData party = PartyDatabase.GetParty(0);
+        PartyData party = PartyDatabase.GetParty(PartyDatabase.currentPartyKey);
 
         if (party == null)
             return;
@@ -111,7 +111,7 @@ public class PartyViewUI : MonoBehaviour
 
         Clear();
         int i = 0;
-        foreach (int key in PartyDatabase.GetParty(0).unitKeys)
+        foreach (int key in PartyDatabase.GetParty(PartyDatabase.currentPartyKey).unitKeys)
         {
             var entry = PlayerUnitInventoryDatabase.GetUnitByKey(key);
             Unit unit = entry?.unit;
@@ -158,7 +158,7 @@ public class PartyViewUI : MonoBehaviour
 
     private void RefreshElementAnimations(bool playStartAnimation = true)
     {
-        PartyData party = PartyDatabase.GetParty(0);
+        PartyData party = PartyDatabase.GetParty(PartyDatabase.currentPartyKey);
 
         for (int i = 0; i < elementSams.Count; i++)
         {

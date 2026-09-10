@@ -13,10 +13,12 @@ public static class PartyDatabase
     {
         public int nextKey = 0;
         public Dictionary<int, PartyData> parties = new Dictionary<int, PartyData>();
+        public int currentPartyKey = 0;
     }
 
     private static int _nextKey = 0;
     public static Dictionary<int, PartyData> parties = new Dictionary<int, PartyData>();
+    public static int currentPartyKey = 0;
 
     // ─── Persistence ──────────────────────────────────────────────────────────────
 

@@ -197,19 +197,18 @@ public class UnitSlot : MonoBehaviour
         MainUI.unitParty.SetActive(true);
 
         int targetSlot = PartyEditMenu.currentUnitIndex;
-        int partyKey = PartyEditMenu.currentPartyKey;
-        PartyData currentParty = PartyDatabase.GetParty(partyKey);
+        PartyData currentParty = PartyDatabase.GetParty(PartyDatabase.currentPartyKey);
         int currentUnitKey = currentParty.GetUnitAt(targetSlot);
         // If clicking a unit already in this slot, clear it instead
         if (currentUnitKey == unitKey)
         {
-            PartyDatabase.ClearSlot(partyKey, targetSlot);
+            PartyDatabase.ClearSlot(PartyDatabase.currentPartyKey, targetSlot);
             PlayerUnitInventoryDatabase.GetUnitByKey(unitKey).isInParty = false;
         }
         else
         {
             // SetUnitAtSlot handles the swap if unitKey is already elsewhere in the party
-            PartyDatabase.SetUnitAtSlot(partyKey, targetSlot, unitKey);
+            PartyDatabase.SetUnitAtSlot(PartyDatabase.currentPartyKey, targetSlot, unitKey);
             PlayerUnitInventoryDatabase.GetUnitByKey(unitKey).isInParty = true;
         }
 

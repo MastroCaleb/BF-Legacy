@@ -62,7 +62,7 @@ public class IntroDialogue : MonoBehaviour
             {
                 string randomUnitId = possibleSlimeUnits[Random.Range(0, possibleSlimeUnits.Count)];
                 int unitKey = PlayerUnitInventoryDatabase.AddUnit(UnitRegistry.GetUnitById(randomUnitId), isNew: true);
-                PartyDatabase.GetParty(0).SetUnitAt(i + 1, unitKey);
+                PartyDatabase.GetParty(PartyDatabase.currentPartyKey).SetUnitAt(i + 1, unitKey);
             }
 
             StartCoroutine(FadeToWhiteAndLoadScene());
@@ -84,7 +84,7 @@ public class IntroDialogue : MonoBehaviour
     {
         int unitKey = PlayerUnitInventoryDatabase.AddUnit(heroSelection.GetComponent<SelectStartHero>().GetSelectedHero(), isNew: true);
         PartyDatabase.CreateParty();
-        PartyDatabase.GetParty(0).SetUnitAt(0, unitKey);
+        PartyDatabase.GetParty(PartyDatabase.currentPartyKey).SetUnitAt(0, unitKey);
         dialogueInstance.SetDialogue(dialogue_3);
         heroSelection.SetActive(false);
         lucius_2.SetActive(false);

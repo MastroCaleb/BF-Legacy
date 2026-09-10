@@ -95,6 +95,7 @@ public class BattleManager : MonoBehaviour
         playerTeam = new TeamBehaviour();
         enemyTeam  = new TeamBehaviour();
         selectedEnemyUnit = null;
+        DropMoveManager.activeDrops.Clear();
 
         mimicRoundQueued = false;
         pendingMimicChests.Clear();
@@ -147,7 +148,7 @@ public class BattleManager : MonoBehaviour
     {
         var unitIds = new HashSet<string>();
 
-        PartyData party = PartyDatabase.GetParty(0);
+        PartyData party = PartyDatabase.GetParty(PartyDatabase.currentPartyKey);
         for (int slot = 0; slot < PartyDatabase.MaxPartySize; slot++)
         {
             int unitKey = party.GetUnitAt(slot);
@@ -186,7 +187,7 @@ public class BattleManager : MonoBehaviour
 
     void SummonPlayerUnits()
     {
-        PartyData party = PartyDatabase.GetParty(0);
+        PartyData party = PartyDatabase.GetParty(PartyDatabase.currentPartyKey);
         int i = 0;
 
         for (int slot = 0; slot < PartyDatabase.MaxPartySize; slot++)

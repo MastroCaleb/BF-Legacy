@@ -1,53 +1,113 @@
+using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 public class PartyEditMenu : MonoBehaviour
 {
-    
-    public List<UnitTableRenderer> unitTableRenderersHelper;
-    public static List<UnitTableRenderer> unitTableRenderers;
-    public List<Button> tableButtonsHelper;
-    public static List<Button> tableButtons;
-    public List<BaseUnitDetails> baseUnitDetailsHelper;
-    public static List<BaseUnitDetails> baseUnitDetails;
-    public List<GameObject> leaderSamsHelper;
-    public static List<GameObject> leaderSams;
+    public List<PartyPanel> partyPanelsHelper;
+    public static List<PartyPanel> partyPanels;
+
     public TextMeshProUGUI skillNameHelper;
     public static TextMeshProUGUI skillName;
     public ScrollingTMPText skillDescHelper;
     public static ScrollingTMPText skillDesc;
 
-    public static int currentUnitIndex;
+    public CustomScrollMenu partySelectorMenuHelper;
+    public static CustomScrollMenu partySelectorMenu;
 
-    private static int[] lastRenderedUnitKeys = { -2, -2, -2, -2, -2 }; // -2 = never rendered, forces first refresh
+    public static int currentUnitIndex;
+    public static int currentEditPartyKey;
+    public static int currentFocusedPanelIndex;
+
+    private Coroutine focusChangeCoroutine;
 
     void Awake()
     {
-        lastRenderedUnitKeys = new int[]{ -2, -2, -2, -2, -2 };
-        unitTableRenderers = unitTableRenderersHelper;
-        tableButtons = tableButtonsHelper;
-        baseUnitDetails = baseUnitDetailsHelper;
-        leaderSams = leaderSamsHelper;
-
+        partyPanels = partyPanelsHelper;
         skillName = skillNameHelper;
         skillDesc = skillDescHelper;
-    }
+        partySelectorMenu = partySelectorMenuHelper;
 
-    void Start()
-    {
-        for (int i = 0; i < tableButtons.Count; i++)
+        foreach (var panel in partyPanels)
+            ResetRenderCache(panel);
+
+        for (int p = 0; p < partyPanels.Count; p++)
         {
-            int index = i; // Capture the current value of i for the lambda
-            tableButtons[i].onClick.AddListener(() => SelectTable(index));
-            currentUnitIndex = index;
+            int panelIndex = p;
+            PartyPanel panel = partyPanels[p];
+
+            for (int i = 0; i < panel.tableButtons.Count; i++)
+            {
+                int slotIndex = i;
+                panel.tableButtons[i].onClick.AddListener(() => SelectTable(panelIndex, slotIndex));
+            }
         }
     }
 
-    public void SelectTable(int index)
+    void OnEnable()
     {
-        currentUnitIndex = index;
+        if (partySelectorMenu != null)
+        {
+            partySelectorMenu.OnCenterIndexChanged += OnFocusedPanelChanged;
+            OnFocusedPanelChanged(partySelectorMenu.CenterIndex);
+        }
+    }
+
+    void OnDisable()
+    {
+        if (partySelectorMenu != null)
+            partySelectorMenu.OnCenterIndexChanged -= OnFocusedPanelChanged;
+
+        if (focusChangeCoroutine != null)
+        {
+            StopCoroutine(focusChangeCoroutine);
+            focusChangeCoroutine = null;
+        }
+    }
+
+    private void OnFocusedPanelChanged(int panelIndex)
+    {
+        Debug.Log(
+            $"[PartyEditMenu] OnFocusedPanelChanged called: " +
+            $"panelIndex={panelIndex}, " +
+            $"CenterIndex={partySelectorMenu.CenterIndex}"
+        );
+
+        currentFocusedPanelIndex = panelIndex;
+
+        if (focusChangeCoroutine != null)
+            StopCoroutine(focusChangeCoroutine);
+
+        focusChangeCoroutine = StartCoroutine(ApplyFocusChangeNextFrame(panelIndex));
+    }
+
+    private IEnumerator ApplyFocusChangeNextFrame(int panelIndex)
+    {
+        yield return null;
+
+        List<int> partyKeys = PartyDatabase.GetPartyKeysOrdered();
+        if (panelIndex < 0 || panelIndex >= partyKeys.Count) yield break;
+
+        int focusedPartyKey = partyKeys[panelIndex];
+        PartyData party = PartyDatabase.GetParty(focusedPartyKey);
+
+        if (HasAtLeastOneUnit(party))
+            PartyDatabase.currentPartyKey = focusedPartyKey;
+
+        RenderFocusedPanel();
+        UpdateLeaderSkillInfo(party);
+        PartyViewUI.instance.UpdatePartyView(false);
+    }
+
+    public void SelectTable(int panelIndex, int slotIndex)
+    {
+        List<int> partyKeys = PartyDatabase.GetPartyKeysOrdered();
+        if (panelIndex < 0 || panelIndex >= partyKeys.Count) return;
+
+        currentEditPartyKey = partyKeys[panelIndex];
+        currentUnitIndex = slotIndex;
 
         MainUI.unitParty.SetActive(false);
         MainUI.unitList.SetActive(true);
@@ -55,47 +115,79 @@ public class PartyEditMenu : MonoBehaviour
         MainUI.inventoryRenderer.DarkenUnclickableSlots();
     }
 
-    public static void UpdateView()
+    private static bool HasAtLeastOneUnit(PartyData party)
     {
-        Debug.Log("Updating Party Edit Menu View");
-        RefreshUnitTables();
-        UpdateLeaderSkillInfo();
-        SetLeaderSamActive();
+        for (int i = 0; i < 5; i++)
+            if (party.GetUnitAt(i) != -1) return true;
+        return false;
     }
 
-    public static void RefreshUnitTables()
+    public static void UpdateView()
     {
-        PartyData currentParty = PartyDatabase.GetParty(PartyDatabase.currentPartyKey);
+        RenderFocusedPanel();
+        RefreshFocusedSkillInfo();
+    }
 
+    private static void RefreshFocusedSkillInfo()
+    {
+        List<int> partyKeys = PartyDatabase.GetPartyKeysOrdered();
+        if (currentFocusedPanelIndex < 0 || currentFocusedPanelIndex >= partyKeys.Count) return;
+
+        PartyData party = PartyDatabase.GetParty(partyKeys[currentFocusedPanelIndex]);
+        UpdateLeaderSkillInfo(party);
+    }
+
+    private static void RenderFocusedPanel()
+    {
+        List<int> partyKeys = PartyDatabase.GetPartyKeysOrdered();
+        if (currentFocusedPanelIndex < 0 || currentFocusedPanelIndex >= partyKeys.Count) return;
+
+        PartyData party = PartyDatabase.GetParty(partyKeys[currentFocusedPanelIndex]);
+        PartyPanel panel = partyPanels[currentFocusedPanelIndex];
+
+        Debug.Log($"[PartyEditMenu] RenderFocusedPanel: panel {currentFocusedPanelIndex}, partyKey {partyKeys[currentFocusedPanelIndex]}");
+
+        RefreshUnitTable(panel, party);
+        SetLeaderSamActive(panel, party);
+    }
+
+    private static void RefreshUnitTable(PartyPanel panel, PartyData party)
+    {
         for (int i = 0; i < 5; i++)
         {
-            int unitKey = currentParty.GetUnitAt(i);
+            int unitKey = party.GetUnitAt(i);
+            UnitTableRenderer renderer = panel.unitTableRenderers[i];
 
-            if (unitKey == lastRenderedUnitKeys[i])
-                continue; // nothing changed in this slot, skip re-render
+            panel.lastRenderedUnitKeys[i] = unitKey;
 
-            lastRenderedUnitKeys[i] = unitKey;
-
-            if (unitKey != -1)
+            if (unitKey == -1)
             {
-                UnitInventoryData unitData = PlayerUnitInventoryDatabase.GetUnitByKey(unitKey);
-                unitTableRenderers[i].SetUnit(unitData, false);
-                baseUnitDetails[i].unitRenderer = unitTableRenderers[i];
-                baseUnitDetails[i].gameObject.SetActive(true);
-                baseUnitDetails[i].UpdateDetails();
+                renderer.ClearUnit();
+                panel.baseUnitDetails[i].gameObject.SetActive(false);
+                continue;
             }
-            else
-            {
-                unitTableRenderers[i].ClearUnit();
-                baseUnitDetails[i].gameObject.SetActive(false);
-            }
+
+            UnitInventoryData unitData =
+                PlayerUnitInventoryDatabase.GetUnitByKey(unitKey);
+
+            if (unitData == null)
+                continue;
+
+            // Il pannello/renderer potrebbe essere ancora inattivo
+            if (!renderer.gameObject.activeInHierarchy)
+                continue;
+
+            renderer.SetUnit(unitData, false);
+
+            panel.baseUnitDetails[i].unitRenderer = renderer;
+            panel.baseUnitDetails[i].gameObject.SetActive(true);
+            panel.baseUnitDetails[i].UpdateDetails();
         }
     }
 
-    public static void UpdateLeaderSkillInfo()
+    public static void UpdateLeaderSkillInfo(PartyData party)
     {
-        PartyData currentParty = PartyDatabase.GetParty(PartyDatabase.currentPartyKey);
-        int leaderUnitKey = currentParty.GetUnitAt(currentParty.leaderUnitIndex);
+        int leaderUnitKey = party.GetUnitAt(party.leaderUnitIndex);
 
         if (leaderUnitKey != -1)
         {
@@ -110,13 +202,25 @@ public class PartyEditMenu : MonoBehaviour
         }
     }
 
-    public static void SetLeaderSamActive()
+    public static void SetLeaderSamActive(PartyPanel panel, PartyData party)
     {
-        PartyData currentParty = PartyDatabase.GetParty(PartyDatabase.currentPartyKey);
-
         for (int i = 0; i < 5; i++)
-        {
-            leaderSams[i].SetActive(i == currentParty.leaderUnitIndex);
-        }
+            panel.leaderSams[i].SetActive(i == party.leaderUnitIndex);
     }
+
+    private static void ResetRenderCache(PartyPanel panel)
+    {
+        panel.lastRenderedUnitKeys = new int[] { -2, -2, -2, -2, -2 };
+    }
+}
+
+[System.Serializable]
+public class PartyPanel
+{
+    public List<UnitTableRenderer> unitTableRenderers;
+    public List<Button> tableButtons;
+    public List<BaseUnitDetails> baseUnitDetails;
+    public List<GameObject> leaderSams;
+
+    [System.NonSerialized] public int[] lastRenderedUnitKeys = { -2, -2, -2, -2, -2 };
 }

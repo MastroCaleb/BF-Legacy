@@ -37,14 +37,6 @@ public class PartyViewUI : MonoBehaviour
         return host;
     }
 
-    /* 
-    Party View Display calc
-    unityX = 0.2178*jsonX - 2.435*jsonW - 0.1643*imageW + 420
-    unityY = 0.2178*jsonY + 0.4860*jsonH - 0.1643*imageH - 181
-    unityW = imageW * (128/jsonW)
-    unityH = imageH * (350/jsonH)
-    */
-
     void Awake()
     {
         instance = this;

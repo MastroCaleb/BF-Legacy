@@ -98,7 +98,6 @@ public class PartyEditMenu : MonoBehaviour
 
         RenderFocusedPanel();
         UpdateLeaderSkillInfo(party);
-        PartyViewUI.instance.UpdatePartyView(false);
     }
 
     public void SelectTable(int panelIndex, int slotIndex)

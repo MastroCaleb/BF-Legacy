@@ -215,6 +215,8 @@ public class PartyViewUI : MonoBehaviour
         elementSamJsons = elementSamJsonsHelper;
 
         RefreshElementAnimations();
+
+        UpdatePartyView(false);
     }
 
     void OnDisable()

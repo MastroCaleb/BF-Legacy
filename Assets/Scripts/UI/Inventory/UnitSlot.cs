@@ -10,6 +10,8 @@ public class UnitSlot : MonoBehaviour
     public Button button;
     public Image newIndicator;
     public Image partyIndicator;
+    public Sprite mainPartyIconSprite;
+    public Sprite otherPartyIconSprite;
     public Image bbIndicator;
     public Image favIndicator;
     public TextMeshProUGUI levelText;
@@ -318,6 +320,17 @@ public class UnitSlot : MonoBehaviour
     {
         partyIndicator = partyIndicator ?? transform.Find("PartyIndicator").GetComponent<Image>();
         UnitInventoryData unitData = PlayerUnitInventoryDatabase.GetUnitByKey(unitKey);
+        
+        PartyData mainParty = PartyDatabase.GetParty(PartyDatabase.currentPartyKey);
+        if(mainParty.unitKeys.Contains(unitKey))
+        {
+            partyIndicator.sprite = mainPartyIconSprite;
+        }
+        else
+        {
+            partyIndicator.sprite = otherPartyIconSprite;
+        }
+
         if(unitData.isInParty)
         {
             newIndicator.gameObject.SetActive(false);

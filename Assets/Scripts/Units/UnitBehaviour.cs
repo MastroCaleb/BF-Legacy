@@ -326,6 +326,8 @@ public class UnitBehaviour : MonoBehaviour
                         foreach (var t in targets) StartCoroutine(AttackAtHitFrames(ability, t));
                     }
                     break;
+
+                case "5_A":
                 case "1_P":
                     // Passive proc 1: Stat buff (atk/crit/def/hp/rec)
                     if (effect.statBuff != null)
@@ -336,23 +338,17 @@ public class UnitBehaviour : MonoBehaviour
                     break;
 
                 // ═══════════════════════════════════════════════════════════
-                //  PROC 2: Burst Healing (Active) vs Stat buff (Passive)
+                //  PROC 2: Burst Healing (Active)
                 // ═══════════════════════════════════════════════════════════
                 case "2_A":
-                    foreach (var t in targets) t.Heal(ability, this);
-                    break;
-                case "2_P":
-                    if (effect.statBuff != null)
-                    {
-                        int turns = permanent ? -1 : Mathf.Max(effect.statBuff.buffTurns, 1);
-                        foreach (var t in targets) AddTimedEffect(t, effect, turns);
-                    }
+                    foreach (var t in targets) t.BurstHeal(ability, this);
                     break;
 
                 // ═══════════════════════════════════════════════════════════
                 //  PROC 3: Gradual heal (HoT)
                 // ═══════════════════════════════════════════════════════════
                 case "3_A":
+                case "33_P":
                     if (effect.gradualHeal != null)
                     {
                         int turns = permanent ? -1 : Mathf.Max(effect.gradualHeal.turns, 1);
@@ -382,17 +378,6 @@ public class UnitBehaviour : MonoBehaviour
                     if (effect.ailmentResist != null)
                     {
                         int turns = permanent ? -1 : Mathf.Max(effect.ailmentResist.immunityBuffTurns, 1);
-                        foreach (var t in targets) AddTimedEffect(t, effect, turns);
-                    }
-                    break;
-
-                // ═══════════════════════════════════════════════════════════
-                //  PROC 5: Parameter Boost (Active) vs Elemental resistance (Passive)
-                // ═══════════════════════════════════════════════════════════
-                case "5_A":
-                    if (effect.statBuff != null)
-                    {
-                        int turns = permanent ? -1 : Mathf.Max(effect.statBuff.buffTurns, 1);
                         foreach (var t in targets) AddTimedEffect(t, effect, turns);
                     }
                     break;
@@ -1049,7 +1034,8 @@ public class UnitBehaviour : MonoBehaviour
                             if (Random.Range(0f, 100f) <= effect.revive.reviveChance)
                             {
                                 int hp = Mathf.CeilToInt(t.unitData.maxHealth * PercentageToNumber(effect.revive.reviveHPPercent));
-                                t.currentHealth = Mathf.Max(hp, 1);
+
+                                t.Heal(Mathf.Max(hp, 1), true);
                                 t.currentState  = UnitState.Idle;
                                 Debug.Log($"[Revive] {t.unitData.unitName} revived with {hp} HP");
                             }
@@ -1395,18 +1381,6 @@ public class UnitBehaviour : MonoBehaviour
 
             string effectId = GetEffectId(entry.effect);
 
-            // ── proc 3: Gradual heal tick ─────────────────────────
-            if (effectId == "3" && entry.effect.gradualHeal != null)
-            {
-                var gh      = entry.effect.gradualHeal;
-                int baseAmt = Random.Range(gh.healLow, gh.healHigh + 1);
-                int recAmt  = Mathf.CeilToInt(unitData.rec * PercentageToNumber(gh.recAddedPercent));
-                int total   = baseAmt + recAmt;
-                currentHealth = Mathf.Min(currentHealth + total, isEnemyUnit ? enemyData.health : unitData.maxHealth + inventoryData.hpLevelUpBonus + inventoryData.hpImpBonus);
-                Debug.Log($"[HoT] {unitData.unitName} +{total} HP. HP: {currentHealth}");
-                PopUpText(total, false, 0);
-            }
-
             // ── proc 44: Damage-over-time tick ────────────────────
             if (effectId == "44" && entry.effect.dot != null)
             {
@@ -1414,6 +1388,17 @@ public class UnitBehaviour : MonoBehaviour
                 int dmg = dot.flatAtk + Mathf.CeilToInt((isEnemyUnit ? enemyData.atk : unitData.atk) * PercentageToNumber(dot.atkPercent));
                 TakeDamage(dmg, false, 0);
                 Debug.Log($"[DOT] {unitData.unitName} took {dmg} dmg from DOT");
+            }
+
+            // ── proc 3: Gradual heal tick ─────────────────────────
+            if (effectId == "3" && entry.effect.gradualHeal != null)
+            {
+                var gh      = entry.effect.gradualHeal;
+                int baseAmt = Random.Range(gh.healLow, gh.healHigh + 1);
+                int recAmt  = Mathf.CeilToInt(unitData.rec * PercentageToNumber(gh.recAddedPercent));
+                int total   = baseAmt + recAmt;
+                Debug.Log($"[HoT] {unitData.unitName} +{total} HP. HP: {currentHealth}");
+                Heal(total);
             }
 
             entry.remainingTurns--;
@@ -1552,7 +1537,7 @@ public class UnitBehaviour : MonoBehaviour
 
             float pct     = Random.Range(effect.attack.hpDrainLow, effect.attack.hpDrainHigh + 1f);
             int   drainAmt = Mathf.CeilToInt(rawDamage * PercentageToNumber(pct));
-            currentHealth  = Mathf.Min(currentHealth + drainAmt, isEnemyUnit ? enemyData.health : unitData.maxHealth + inventoryData.hpLevelUpBonus + inventoryData.hpImpBonus);
+            Heal(drainAmt);
             Debug.Log($"[Drain] {unitData.unitName} drained {drainAmt} HP");
         }
     }
@@ -2175,8 +2160,7 @@ public class UnitBehaviour : MonoBehaviour
                 int healAmt = Random.Range(e.conditionalBuff.buff.gradualHealLow, e.conditionalBuff.buff.gradualHealHigh + 1);
                 if (Random.Range(0f, 100f) <= e.conditionalBuff.activationChance)
                 {
-                    currentHealth = Mathf.Min(currentHealth + healAmt, isEnemyUnit ? enemyData.health : unitData.maxHealth + inventoryData.hpLevelUpBonus + inventoryData.hpImpBonus);
-                    PopUpText(healAmt, false, 0);
+                    Heal(healAmt);
                 }
             }
 
@@ -2184,8 +2168,7 @@ public class UnitBehaviour : MonoBehaviour
             if (id == "87" && wasSpark && e.conditionalBuff?.buff != null)
             {
                 int healAmt = Random.Range(e.conditionalBuff.buff.gradualHealLow, e.conditionalBuff.buff.gradualHealHigh + 1);
-                currentHealth = Mathf.Min(currentHealth + healAmt, isEnemyUnit ? enemyData.health : unitData.maxHealth + inventoryData.hpLevelUpBonus + inventoryData.hpImpBonus);
-                PopUpText(healAmt, false, 0);
+                Heal(healAmt);
             }
 
             // NOTE: Proc 50 (damage counter/reflect) intentionally not handled here —
@@ -2215,8 +2198,9 @@ public class UnitBehaviour : MonoBehaviour
         return false;
     }
 
-    public void Heal(Ability ability, UnitBehaviour healer)
+    public void BurstHeal(Ability ability, UnitBehaviour healer)
     {
+        if(currentState == UnitState.Dead) return;
         if (ability?.MaxLevel?.effects == null) return;
 
         float total = 0f;
@@ -2233,16 +2217,20 @@ public class UnitBehaviour : MonoBehaviour
         }
 
         int healAmount = Mathf.CeilToInt(total);
-        currentHealth  = Mathf.Min(currentHealth + healAmount, isEnemyUnit ? enemyData.health : unitData.maxHealth + inventoryData.hpLevelUpBonus + inventoryData.hpImpBonus);
         Debug.Log($"{healer.unitData.unitName} healed {unitData.unitName} for {healAmount}. HP: {currentHealth}");
+        Heal(healAmount);
+
+        if (!isEnemyUnit) unitSlotUI.UpdateUI();
+    }
+
+    void Heal(int healAmount, bool isRevive = false)
+    {
+        if(currentState == UnitState.Dead && !isRevive)
+            return;
+
+        currentHealth = Mathf.Min(currentHealth + healAmount, isEnemyUnit ? enemyData.health : unitData.maxHealth + inventoryData.hpLevelUpBonus + inventoryData.hpImpBonus);
 
         PopUpText(healAmount, false, 0);
-
-        if (currentState == UnitState.Dead && currentHealth > 0)
-        {
-            currentState = UnitState.Idle;
-            Debug.Log($"{unitData.unitName} revived via heal!");
-        }
 
         if (!isEnemyUnit) unitSlotUI.UpdateUI();
     }
@@ -2465,9 +2453,7 @@ public class UnitBehaviour : MonoBehaviour
         amountHealed = amountHealed / Random.Range(3.0f, 4.2f);
 
         int healAmount = Mathf.CeilToInt(amountHealed);
-        currentHealth  = Mathf.Min(currentHealth + healAmount, isEnemyUnit ? enemyData.health : unitData.maxHealth + inventoryData.hpLevelUpBonus + inventoryData.hpImpBonus);
-
-        PopUpText(healAmount, false, 0);
+        Heal(healAmount);
     }
 
     float PercentageToNumber(float percentage) => percentage / 100f;

@@ -90,6 +90,15 @@ public class InventoryRenderer : MonoBehaviour
         }
     }
 
+    public void RefreshAllSlotsPartyIndicator()
+    {
+        Debug.Log("[PartyIndicator] RefreshAllSlotsPartyIndicator called, slots: " + renderedSlots.Count);
+        foreach (UnitSlot slot in renderedSlots.Values)
+        {
+            slot.SetupPartyIndicator();
+        }
+    }
+
     public void RefreshAllSlots()
     {
         foreach (UnitSlot slot in renderedSlots.Values)

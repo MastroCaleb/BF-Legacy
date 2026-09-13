@@ -16,6 +16,8 @@ public class UnitSlot : MonoBehaviour
 
     public Sprite bbProbabilityIcon;
     public Sprite bbCertaintyIcon;
+    public Sprite mainPartyIndicatorSprite;
+    public Sprite subPartyIndicatorSprite;
 
     //For selection
     public Image selectionIndicator;
@@ -206,13 +208,13 @@ public class UnitSlot : MonoBehaviour
         if (currentUnitKey == unitKey && currentParty.leaderUnitIndex != targetSlot)
         {
             PartyDatabase.ClearSlot(targetPartyKey, targetSlot);
-            PlayerUnitInventoryDatabase.GetUnitByKey(unitKey).isInParty = false;
+            // isInParty is handled inside ClearSlot (checks other parties first) — don't override it here
         }
         else
         {
-            // SetUnitAtSlot handles the swap if unitKey is already elsewhere in the party
+            // SetUnitAtSlot handles the swap if unitKey is already elsewhere in the party,
+            // and preserves isInParty correctly if the unit is shared with another party
             PartyDatabase.SetUnitAtSlot(targetPartyKey, targetSlot, unitKey);
-            PlayerUnitInventoryDatabase.GetUnitByKey(unitKey).isInParty = true;
         }
 
         PartyDatabase.SaveToJson();
@@ -220,7 +222,7 @@ public class UnitSlot : MonoBehaviour
         PartyViewUI.instance?.UpdatePartyView(false);
         MainUI.inventoryRenderer.UpdateSlotView(currentUnitKey);
         MainUI.inventoryRenderer.UpdateSlotView(unitKey);
-}
+    }
 
     public void UpdateView()
     {
@@ -318,6 +320,16 @@ public class UnitSlot : MonoBehaviour
     {
         partyIndicator = partyIndicator ?? transform.Find("PartyIndicator").GetComponent<Image>();
         UnitInventoryData unitData = PlayerUnitInventoryDatabase.GetUnitByKey(unitKey);
+
+        PartyData party = PartyDatabase.GetParty(PartyDatabase.currentPartyKey);
+        if (party.slots.ContainsValue(unitKey)){
+            partyIndicator.sprite = mainPartyIndicatorSprite;
+        }
+        else
+        {
+            partyIndicator.sprite = subPartyIndicatorSprite;
+        }
+
         if(unitData.isInParty)
         {
             newIndicator.gameObject.SetActive(false);

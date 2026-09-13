@@ -18,7 +18,7 @@ public static class PartyDatabase
 
     private static int _nextKey = 0;
     public static Dictionary<int, PartyData> parties = new Dictionary<int, PartyData>();
-    public static int currentPartyKey = 0;
+    public static int currentPartyKey;
 
     public const int MaxParties = 10;
 
@@ -107,11 +107,16 @@ public static class PartyDatabase
     {
         if (!parties.ContainsKey(partyKey)) return;
 
-        // Clear isInParty for all units in this party before removing
-        foreach (int unitKey in parties[partyKey].unitKeys)
-            if (unitKey != -1) SetIsInParty(unitKey, false);
+        // Snapshot the units before removing the party
+        List<int> unitsToCheck = parties[partyKey].unitKeys.Where(k => k != -1).ToList();
 
         parties.Remove(partyKey);
+
+        // Only clear isInParty for units that aren't still present in a surviving party
+        foreach (int unitKey in unitsToCheck)
+            if (!IsUnitInAnyParty(unitKey))
+                SetIsInParty(unitKey, false);
+
         SaveToJson();
     }
 

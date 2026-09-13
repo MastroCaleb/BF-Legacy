@@ -96,6 +96,8 @@ public class PartyEditMenu : MonoBehaviour
         if (HasAtLeastOneUnit(party))
             PartyDatabase.currentPartyKey = focusedPartyKey;
 
+        PartyDatabase.SaveToJson();
+        MainUI.inventoryRenderer.RefreshAllSlotsPartyIndicator();
         RenderFocusedPanel();
         UpdateLeaderSkillInfo(party);
     }

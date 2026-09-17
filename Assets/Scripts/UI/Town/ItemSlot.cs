@@ -11,6 +11,7 @@ public class ItemSlot : MonoBehaviour
     public Image slotImage;
     public Image itemThumbnail;
     public TextMeshProUGUI countText;
+    public TextMeshProUGUI nameText;
 
     public Sprite materialSlotSprite;
     public Sprite consumableSlotSprite;
@@ -67,6 +68,9 @@ public class ItemSlot : MonoBehaviour
         // display ever needs the grand total.
         if (countText != null)
             countText.text = "x" + stack.count.ToString();
+
+        if (nameText != null)
+            nameText.text = itemData.itemName;  
     }
 
     public Sprite GetSpriteForItemType()

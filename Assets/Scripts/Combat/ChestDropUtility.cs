@@ -86,6 +86,8 @@ public static class ChestDropUtility
 
     public static void DropItems(Enemy enemyData, Vector3 dropOrigin)
     {
+        if(string.IsNullOrEmpty(enemyData.treasureDrop.itemName)) return;
+
         ItemDropData dropData = new ItemDropData
         {
             itemName = enemyData.treasureDrop.itemName,

@@ -962,7 +962,7 @@ public class BattleManager : MonoBehaviour
                 attacker.transform,
                 attackPos,
                 speed * 2f,
-                0.1f,
+                2f,
                 8f));
         }
         else if (moveType == 2) // Teleporting — brief flash delay then snap
@@ -1006,7 +1006,7 @@ public class BattleManager : MonoBehaviour
                 attacker.transform,
                 attacker.originalPosition.position,
                 returnSpeed,
-                0.1f,
+                2f,
                 8f));
         }
 

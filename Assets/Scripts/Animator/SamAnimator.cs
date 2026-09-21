@@ -366,7 +366,6 @@ public class SamAnimator : MonoBehaviour
     void Update()
     {
         float delta = playWhenTimeScaleIsZero ? Time.unscaledDeltaTime : Time.deltaTime;
-        delta = Mathf.Min(delta, 0.1f);
 
         if (waitingToStart)
         {

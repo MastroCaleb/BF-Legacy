@@ -175,6 +175,14 @@ public static class PartyDatabase
     }
 
     // ─── Queries ──────────────────────────────────────────────────────────────────
+    
+    public static UnitInventoryData GetLeaderInCurrentParty()
+    {
+        if (!parties.TryGetValue(currentPartyKey, out var party)) return null;
+
+        int leaderKey = party.GetUnitAt(party.leaderUnitIndex);
+        return PlayerUnitInventoryDatabase.GetUnitByKey(leaderKey);
+    }
 
     public static PartyData GetParty(int partyKey)
     {

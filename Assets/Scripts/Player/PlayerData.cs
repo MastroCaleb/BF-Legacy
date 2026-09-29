@@ -4,6 +4,7 @@ using UnityEngine;
 
 public static class PlayerData
 {
+    public static string playerId = "";
     public static string playerName = "Player";
     public static int level = 1;
     public static int experience = 0;
@@ -63,6 +64,16 @@ public static class PlayerData
             string json = System.IO.File.ReadAllText(path);
             PlayerDataSerializable data = JsonConvert.DeserializeObject<PlayerDataSerializable>(json);
 
+            bool needsSave = false;
+
+            // Older save files won't have playerId
+            playerId = data.playerId;
+            if (string.IsNullOrEmpty(playerId))
+            {
+                playerId = System.Guid.NewGuid().ToString();
+                needsSave = true;
+            }
+
             playerName = data.playerName;
             level = data.level;
             experience = data.experience;
@@ -70,7 +81,6 @@ public static class PlayerData
             gems = data.gems;
             karma = data.karma;
 
-            // Older save files won't have these fields
             unitDex = data.unitDex ?? new List<string>();
             completedMissionDex = data.completedMissionDex ?? new List<string>();
             presentReceivedDex = data.presentReceivedDex ?? new List<string>();
@@ -80,10 +90,15 @@ public static class PlayerData
             PlayerUnitInventoryDatabase.LoadFromJson();
             PlayerItemInventoryDatabase.LoadFromJson();
             PartyDatabase.LoadFromJson();
+
+            // Save after the databases are loaded so SaveDataToJson doesn't write empty ones
+            if (needsSave) SaveDataToJson();
         }
         else
         {
             Debug.LogWarning("Player data file not found, using defaults.");
+            if (string.IsNullOrEmpty(playerId))
+                playerId = System.Guid.NewGuid().ToString();
             ApplyLevelData(level);
         }
     }
@@ -92,6 +107,7 @@ public static class PlayerData
     {
         PlayerDataSerializable data = new PlayerDataSerializable
         {
+            playerId = playerId,
             playerName = playerName,
             level = level,
             experience = experience,
@@ -149,6 +165,23 @@ public static class PlayerData
             SaveDataToJson();
         }
     }
+
+    public static string GetShareableFriendCode()
+    {
+        FriendData friendData = new FriendData
+        {
+            playerId = playerId,
+            playerName = playerName,
+            playerLevel = level,
+            unitId = PartyDatabase.GetLeaderInCurrentParty()?.unit.unitId ?? "",
+            level = PartyDatabase.GetLeaderInCurrentParty()?.currentLevel ?? 0,
+            bbLevel = PartyDatabase.GetLeaderInCurrentParty()?.currentBBLevel ?? 0,
+            sbbLevel = PartyDatabase.GetLeaderInCurrentParty()?.currentSBBLevel ?? 0,
+            itemKey = PartyDatabase.GetLeaderInCurrentParty()?.itemKey ?? -1
+        };
+
+        return FriendCodeManager.ExportToFriendCode(friendData);
+    }
 }
 
 [System.Serializable]
@@ -172,6 +205,7 @@ public class LevelData
 
 internal class PlayerDataSerializable
 {
+    public string playerId { get; set; }
     public string playerName { get; set; }
     public int level { get; set; }
     public int experience { get; set; }

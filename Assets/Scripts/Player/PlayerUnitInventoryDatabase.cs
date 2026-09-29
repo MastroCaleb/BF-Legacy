@@ -64,7 +64,8 @@ public static class PlayerUnitInventoryDatabase
             atkImpBonus = 0,
             defImpBonus = 0,
             recImpBonus = 0,
-            isNew = isNew
+            isNew = isNew,
+            itemKey = -1, // No item equipped by default
         };
         playerUnits.Add(_nextKey++, newUnitData);
         UnitInventoryData addedUnit = GetUnitByKey(_nextKey - 1);
@@ -649,6 +650,7 @@ public static class PlayerUnitInventoryDatabase
             recImpBonus = old.recImpBonus,
             isInParty = old.isInParty,
             isFavorite = old.isFavorite
+            itemKey = old.itemKey
         };
 
         MainUI.inventoryRenderer.renderedSlots[key].UpdateView();
@@ -747,6 +749,7 @@ public class UnitInventoryData
     public int defImpBonus;
     public int recImpBonus;
     public bool isFavorite;
+    public int itemKey = -1; // Key of the item equipped to this unit, -1 if none
 
     [JsonIgnore] public Unit unit;   // Runtime-only, not serialized
     [JsonIgnore] public bool isNew;
@@ -770,6 +773,7 @@ public class UnitInventoryData
             recImpBonus      = this.recImpBonus,
             type             = this.type,
             isFavorite       = this.isFavorite,
+            itemKey         = this.itemKey,
         };
     }
 }

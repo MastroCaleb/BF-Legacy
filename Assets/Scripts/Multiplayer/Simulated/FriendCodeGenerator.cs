@@ -16,7 +16,7 @@ public class FriendData
     public int level;
     public int bbLevel;
     public int sbbLevel;
-    public int itemKey;
+    public string itemId;
 }
 
 public static class FriendCodeManager

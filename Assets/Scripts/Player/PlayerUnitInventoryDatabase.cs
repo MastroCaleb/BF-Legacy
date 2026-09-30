@@ -649,7 +649,7 @@ public static class PlayerUnitInventoryDatabase
             defImpBonus = old.defImpBonus,
             recImpBonus = old.recImpBonus,
             isInParty = old.isInParty,
-            isFavorite = old.isFavorite
+            isFavorite = old.isFavorite,
             itemKey = old.itemKey
         };
 
@@ -721,7 +721,6 @@ public enum BBLevelUpProbability
     Chance,
     Certain
 }
-
 public enum UnitType
 {
     Lord,
@@ -731,7 +730,6 @@ public enum UnitType
     Oracle,
     Rex
 }
-
 public class UnitInventoryData
 {
     public string unitId;

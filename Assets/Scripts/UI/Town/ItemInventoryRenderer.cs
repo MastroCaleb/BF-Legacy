@@ -139,5 +139,7 @@ public class ItemInventoryRenderer : MonoBehaviour
 public enum ItemInventorySelectionMode
 {
     None,
-    ItemSell
+    ItemSell,
+    ItemEquipUnit,
+    ItemEquipBattle
 }

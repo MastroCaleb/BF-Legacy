@@ -177,7 +177,8 @@ public static class PlayerData
             level = PartyDatabase.GetLeaderInCurrentParty()?.currentLevel ?? 0,
             bbLevel = PartyDatabase.GetLeaderInCurrentParty()?.currentBBLevel ?? 0,
             sbbLevel = PartyDatabase.GetLeaderInCurrentParty()?.currentSBBLevel ?? 0,
-            itemId = PlayerItemInventoryDatabase.GetStack(PartyDatabase.GetLeaderInCurrentParty()?.itemKey ?? 0)?.itemId ?? ""
+            itemId = PlayerItemInventoryDatabase.GetStack(PartyDatabase.GetLeaderInCurrentParty()?.sphereKey ?? 0)?.itemId ?? "",
+            itemId2 = PlayerItemInventoryDatabase.GetStack(PartyDatabase.GetLeaderInCurrentParty()?.sphereKey2 ?? 0)?.itemId ?? ""
         };
 
         return FriendCodeManager.ExportToFriendCode(friendData);

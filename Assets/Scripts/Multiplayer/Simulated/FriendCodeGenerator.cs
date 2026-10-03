@@ -17,8 +17,8 @@ public class FriendData
     public int bbLevel;
     public int sbbLevel;
     public string itemId;
+    public string itemId2;
 }
-
 public static class FriendCodeManager
 {
     public static string ExportToFriendCode(FriendData data)

@@ -65,7 +65,9 @@ public static class PlayerUnitInventoryDatabase
             defImpBonus = 0,
             recImpBonus = 0,
             isNew = isNew,
-            itemKey = -1, // No item equipped by default
+            sphereKey = -1, // No sphere equipped by default
+            isSphere2Unlocked = false, 
+            sphereKey2 = -1 // No sphere equipped by default
         };
         playerUnits.Add(_nextKey++, newUnitData);
         UnitInventoryData addedUnit = GetUnitByKey(_nextKey - 1);
@@ -650,7 +652,9 @@ public static class PlayerUnitInventoryDatabase
             recImpBonus = old.recImpBonus,
             isInParty = old.isInParty,
             isFavorite = old.isFavorite,
-            itemKey = old.itemKey
+            sphereKey = old.sphereKey,
+            isSphere2Unlocked = old.isSphere2Unlocked,
+            sphereKey2 = old.sphereKey2
         };
 
         MainUI.inventoryRenderer.renderedSlots[key].UpdateView();
@@ -687,16 +691,49 @@ public static class PlayerUnitInventoryDatabase
         return keys;
     }
 
-public static List<UnitInventoryData> GetFavoriteUnits()
-{
-    List<UnitInventoryData> units = new List<UnitInventoryData>();
-    foreach (var kvp in playerUnits)
+    public static List<UnitInventoryData> GetFavoriteUnits()
     {
-        if (kvp.Value.isFavorite)
-            units.Add(kvp.Value);
+        List<UnitInventoryData> units = new List<UnitInventoryData>();
+        foreach (var kvp in playerUnits)
+        {
+            if (kvp.Value.isFavorite)
+                units.Add(kvp.Value);
+        }
+        return units;
     }
-    return units;
-}
+
+    public static void EquipSphere(int unitKey, int sphereKey)
+    {
+        if (!playerUnits.TryGetValue(unitKey, out var data)) return;
+
+        ItemStack itemStack = PlayerItemInventoryDatabase.GetStack(sphereKey);
+        ItemData itemData = itemStack != null ? ItemDatabase.GetItem(itemStack.itemId) : null;
+
+        if (itemData == null || itemData.itemType != ItemType.Sphere) return;
+
+        if (data.sphereKey == sphereKey)
+        {
+            data.sphereKey = -1; // Unequip if the same sphere is clicked again
+        }
+        else if (data.isSphere2Unlocked && data.sphereKey2 == sphereKey)
+        {
+            data.sphereKey2 = -1; // Unequip second sphere if the same sphere is clicked again
+        }
+        else if (data.sphereKey == -1)
+        {
+            data.sphereKey = sphereKey;
+        }
+        else if (data.isSphere2Unlocked && data.sphereKey2 == -1)
+        {
+            data.sphereKey2 = sphereKey;
+        }
+        else
+        {
+            data.sphereKey = sphereKey;
+        }
+
+        SaveToJson();
+    }
 
     // ─── Helpers ──────────────────────────────────────────────────────────────────
 
@@ -747,7 +784,9 @@ public class UnitInventoryData
     public int defImpBonus;
     public int recImpBonus;
     public bool isFavorite;
-    public int itemKey = -1; // Key of the item equipped to this unit, -1 if none
+    public int sphereKey = -1; // Key of the sphere equipped to this unit, -1 if none
+    public bool isSphere2Unlocked = false; 
+    public int sphereKey2 = -1; // Key of the second sphere equipped to this unit, -1 if none
 
     [JsonIgnore] public Unit unit;   // Runtime-only, not serialized
     [JsonIgnore] public bool isNew;
@@ -771,7 +810,9 @@ public class UnitInventoryData
             recImpBonus      = this.recImpBonus,
             type             = this.type,
             isFavorite       = this.isFavorite,
-            itemKey         = this.itemKey,
+            sphereKey         = this.sphereKey,
+            isSphere2Unlocked  = this.isSphere2Unlocked,
+            sphereKey2         = this.sphereKey2,
         };
     }
 }

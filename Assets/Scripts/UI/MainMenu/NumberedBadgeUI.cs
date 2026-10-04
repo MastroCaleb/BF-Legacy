@@ -42,26 +42,29 @@ public class NumberedBadgeUI : MonoBehaviour
     }
 
     public int GetHighestAmountOfSummons(){
-        List<int> amounts = new List<int>();
+        List<int> gemAmounts = new List<int>();
+        List<int> zelAmounts = new List<int>();
+        List<int> karmaAmounts = new List<int>();
         foreach(var s in manager.summonBanners){
-            int amount = 0;
             switch (s.costType)
             {
                 case CostType.Gems:
-                    amount = PlayerData.gems / s.cost;
+                    gemAmounts.Add(PlayerData.gems / s.cost);
                     break;
                 case CostType.Zel:
-                    amount = PlayerData.zel / s.cost;
+                    zelAmounts.Add(PlayerData.zel / s.cost);
                     break;
                 case CostType.Karma:
-                    amount = PlayerData.karma / s.cost;
+                    karmaAmounts.Add(PlayerData.karma / s.cost);
                     break;
             }
-
-            amounts.Add(amount);
         }
 
-        return amounts.Max();
+        int maxGemAmount = gemAmounts.Count > 0 ? gemAmounts.Max() : 0;
+        int maxZelAmount = zelAmounts.Count > 0 ? zelAmounts.Max() : 0;
+        int maxKarmaAmount = karmaAmounts.Count > 0 ? karmaAmounts.Max() : 0;
+
+        return maxGemAmount + maxZelAmount + maxKarmaAmount;
     }
 }
 public enum BadgeType

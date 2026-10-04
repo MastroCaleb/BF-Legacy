@@ -37,14 +37,6 @@ public class PartyViewUI : MonoBehaviour
         return host;
     }
 
-    /* 
-    Party View Display calc
-    unityX = 0.2178*jsonX - 2.435*jsonW - 0.1643*imageW + 420
-    unityY = 0.2178*jsonY + 0.4860*jsonH - 0.1643*imageH - 181
-    unityW = imageW * (128/jsonW)
-    unityH = imageH * (350/jsonH)
-    */
-
     void Awake()
     {
         instance = this;
@@ -63,7 +55,7 @@ public class PartyViewUI : MonoBehaviour
 
     public void OpenUnitSummary(int i)
     {
-        PartyData party = PartyDatabase.GetParty(0);
+        PartyData party = PartyDatabase.GetParty(PartyDatabase.currentPartyKey);
 
         if (party == null)
             return;
@@ -111,7 +103,7 @@ public class PartyViewUI : MonoBehaviour
 
         Clear();
         int i = 0;
-        foreach (int key in PartyDatabase.GetParty(0).unitKeys)
+        foreach (int key in PartyDatabase.GetParty(PartyDatabase.currentPartyKey).unitKeys)
         {
             var entry = PlayerUnitInventoryDatabase.GetUnitByKey(key);
             Unit unit = entry?.unit;
@@ -158,7 +150,7 @@ public class PartyViewUI : MonoBehaviour
 
     private void RefreshElementAnimations(bool playStartAnimation = true)
     {
-        PartyData party = PartyDatabase.GetParty(0);
+        PartyData party = PartyDatabase.GetParty(PartyDatabase.currentPartyKey);
 
         for (int i = 0; i < elementSams.Count; i++)
         {
@@ -223,6 +215,8 @@ public class PartyViewUI : MonoBehaviour
         elementSamJsons = elementSamJsonsHelper;
 
         RefreshElementAnimations();
+
+        UpdatePartyView(false);
     }
 
     void OnDisable()

@@ -458,47 +458,49 @@ public class BraveFrontierFrameAnimator : MonoBehaviour
     {
         int[][] cggParsed = ParseCggCgsLikeJava(cggFile);
         int[][] cgsParsed = ParseCggCgsLikeJava(cgsFile);
-
+ 
         Debug.Log($"BF Builder: parsed cgg rows={cggParsed.Length}, cgs rows={cgsParsed.Length}, sheets={spriteSheets?.Length ?? 0}");
-
+ 
         int dimX, dimY, lowestPoint;
         ComputeDimensionsAndLowestPoint(cgsParsed, cggParsed, out dimX, out dimY, out lowestPoint);
-
+ 
         // Java canvas size:
         //   width  = dimX
         //   height = dimY - (dimY/2 - lowestPoint) = dimY/2 + lowestPoint
         int finalW = Mathf.Max(dimX, 32);
         int finalH = Mathf.Max(dimY, 32);
-
+ 
         if (cgsFile.name.Contains("crystal"))
             Debug.Log($"Crystal dims: dimX={dimX} dimY={dimY} lowestPoint={lowestPoint} finalW={finalW} finalH={finalH}");
-
+ 
         Debug.Log($"BF Builder: finalW={finalW} finalH={finalH} lowestPoint={lowestPoint} dimY={dimY}");
-
+ 
         var outputs = new List<TexWithDuration>();
-
+ 
         for (int i = 0; i < cgsParsed.Length; i++)
         {
             var seq = cgsParsed[i];
             if (seq.Length < 1) continue;
-
+ 
             int frameIndex = seq[0];
+            int cgsOffsetX = seq.Length > 1 ? seq[1] : 0;
+            int cgsOffsetY = seq.Length > 2 ? seq[2] : 0;
             float duration = seq.Length > 3 ? seq[3] / 60f : 1f / 60f;
-
+ 
             if (frameIndex < 0 || frameIndex >= cggParsed.Length)
                 continue;
-
+ 
             int[] frameLine = cggParsed[frameIndex];
             int numParts = frameLine.Length > 1 ? frameLine[1] : 0;
-
+ 
             Texture2D frameTex = CreateTexture(finalW, finalH);
-
+ 
             for (int p = 0; p < numParts; p++)
             {
                 int partIndex = numParts - 1 - p;
                 int baseIdx = 2 + partIndex * 11;
                 if (baseIdx + 10 >= frameLine.Length) continue;
-
+ 
                 int   frameX    = frameLine[baseIdx + 0];
                 int   frameY    = frameLine[baseIdx + 1];
                 int   flip      = frameLine[baseIdx + 2];
@@ -510,48 +512,50 @@ public class BraveFrontierFrameAnimator : MonoBehaviour
                 int   width     = frameLine[baseIdx + 8];
                 int   height    = frameLine[baseIdx + 9];
                 int   page_id   = frameLine[baseIdx + 10];
-
+ 
                 if (page_id < 0 || page_id >= spriteSheets.Length) continue;
                 Texture2D sheet = spriteSheets[page_id];
                 if (sheet == null) continue;
-
+ 
                 int actualW, actualH;
                 Color[] partPixels = GetSubTexturePixels(sheet, spriteX, spriteY, width, height, out actualW, out actualH);
                 if (actualW <= 0 || actualH <= 0) continue;
-
+ 
                 ApplyColorTransform(partPixels, opacity, blendMode);
-
+ 
                 Texture2D partTex = new Texture2D(actualW, actualH, TextureFormat.RGBA32, false);
                 partTex.SetPixels(partPixels);
                 partTex.Apply();
-
+ 
                 Texture2D transformed = ApplyRotationAndFlip(partTex, rotate, flip);
-
+ 
                 // After the crop math cancels out, Java's Y placement simplifies to:
                 //   partStartYJava = dimY/2 + frameY
                 // X is just:
                 //   partStartX = dimX/2 + frameX
-                int partStartX     = dimX / 2 + frameX;
-                int partStartYJava = dimY / 2 + frameY;
-
+                // Plus the per-CGS-entry offset (drives shake/vibe-type effects where
+                // the same CGG frame is reused with a small positional nudge).
+                int partStartX     = dimX / 2 + frameX + cgsOffsetX;
+                int partStartYJava = dimY / 2 + frameY + cgsOffsetY;
+ 
                 if (rotate % 180 != 0)
                 {
                     partStartX     += width  / 2 - height / 2;
                     partStartYJava += height / 2 - width  / 2;
                 }
-
+ 
                 // Effective height for Y-extent (rotated parts swap width/height)
                 int effectiveH = (rotate % 180 != 0) ? width : height;
-
+ 
                 // Convert Java top-left Y-down → Unity bottom-left Y-up
                 int partStartY = finalH - partStartYJava - effectiveH;
-
+ 
                 BlitOnto(frameTex, transformed, partStartX, partStartY, blendMode);
-
+ 
                 SafeDestroy(partTex);
                 if (!ReferenceEquals(transformed, partTex)) SafeDestroy(transformed);
             }
-
+ 
             Texture2D finalTex;
             if (scale > 1)
             {
@@ -564,10 +568,10 @@ public class BraveFrontierFrameAnimator : MonoBehaviour
                 finalTex = frameTex;
                 finalTex.filterMode = FilterMode.Point;
             }
-
+ 
             outputs.Add(new TexWithDuration { tex = finalTex, duration = Mathf.Max(1f / 60f, duration) });
         }
-
+ 
         Debug.Log($"BF Frame Builder: generated {outputs.Count} frames.");
         return outputs;
     }
@@ -698,53 +702,59 @@ public class BraveFrontierFrameAnimator : MonoBehaviour
         out int maxX, out int maxY, out int lowestPoint)
     {
         maxX = 65; maxY = 65; lowestPoint = -500;
-
+ 
         for (int i = 0; i < orderedFrames.Length; i++)
         {
             if (orderedFrames[i].Length == 0) continue;
-
-            int currFrame = orderedFrames[i][0];
+ 
+            var seq = orderedFrames[i];
+            int currFrame  = seq[0];
+            int cgsOffsetX = seq.Length > 1 ? seq[1] : 0;
+            int cgsOffsetY = seq.Length > 2 ? seq[2] : 0;
+ 
             if (currFrame < 0 || currFrame >= cggRows.Length) continue;
-
+ 
             var row = cggRows[currFrame];
             if (row.Length < 2) continue;
-
+ 
             int numParts = row[1];
             for (int j = 0; j < numParts; j++)
             {
                 int baseIdx = 2 + j * 11;
                 if (baseIdx + 9 >= row.Length) continue;
-
-                int currX      = row[baseIdx + 0];
-                int currY      = row[baseIdx + 1];
+ 
+                // Fold the per-CGS-entry offset in here so the canvas is padded
+                // for the shifted position, not just the base CGG part position.
+                int currX      = row[baseIdx + 0] + cgsOffsetX;
+                int currY      = row[baseIdx + 1] + cgsOffsetY;
                 int currWidth  = row[baseIdx + 8];
                 int currHeight = row[baseIdx + 9];
-
+ 
                 // Check all four corners of the part (unrotated)
                 if (Math.Abs(currX)             > maxX) maxX = Math.Abs(currX);
                 if (Math.Abs(currY)             > maxY) maxY = Math.Abs(currY);
                 if (Math.Abs(currX + currWidth)  > maxX) maxX = Math.Abs(currX + currWidth);
                 if (Math.Abs(currY + currHeight) > maxY) maxY = Math.Abs(currY + currHeight);
-
+ 
                 // Also check worst-case rotated extents (90/270 swaps width and height)
                 if (Math.Abs(currX + currHeight) > maxX) maxX = Math.Abs(currX + currHeight);
                 if (Math.Abs(currY + currWidth)  > maxY) maxY = Math.Abs(currY + currWidth);
-
+ 
                 if (currY > lowestPoint) lowestPoint = currY;
             }
         }
-
+ 
         // Round lowestPoint up to next multiple of 10
         int diff = lowestPoint % 10;
         lowestPoint += 10;
         if (diff != 0) lowestPoint += (10 - diff);
-
+ 
         // Round maxX up to next multiple of 10 then double
         diff  = maxX % 10;
         maxX += 10;
         if (diff != 0) maxX += (10 - diff);
         maxX *= 2;
-
+ 
         // Round maxY up to next multiple of 10 then double (was missing the round before doubling)
         diff  = maxY % 10;
         maxY += 10;

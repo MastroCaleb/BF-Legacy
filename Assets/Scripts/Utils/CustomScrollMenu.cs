@@ -33,6 +33,9 @@ public class CustomScrollMenu : MonoBehaviour, IBeginDragHandler, IDragHandler, 
     private Vector2 dragStartPos;
     private List<Image> dots = new List<Image>();
 
+    public event System.Action<int> OnCenterIndexChanged;
+    public int CenterIndex => centerIndex;
+
     void Start()
     {
         ResetMenu();
@@ -45,7 +48,6 @@ public class CustomScrollMenu : MonoBehaviour, IBeginDragHandler, IDragHandler, 
 
     void OnDisable()
     {
-        dots.Clear();
     }
 
     // ── RESET ────────────────────────────────────
@@ -156,16 +158,26 @@ public class CustomScrollMenu : MonoBehaviour, IBeginDragHandler, IDragHandler, 
 
     public void MoveNext()
     {
-        if (centerIndex >= menuItems.Count - 1) return;
+        if (centerIndex >= menuItems.Count - 1)
+            return;
+
         centerIndex++;
+
         UpdateDots();
+
+        OnCenterIndexChanged?.Invoke(centerIndex);
     }
 
     public void MovePrevious()
     {
-        if (centerIndex <= 0) return;
+        if (centerIndex <= 0)
+            return;
+
         centerIndex--;
+
         UpdateDots();
+
+        OnCenterIndexChanged?.Invoke(centerIndex);
     }
 
     // ── DRAG ────────────────────────────────────

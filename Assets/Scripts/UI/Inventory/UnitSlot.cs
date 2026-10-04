@@ -10,12 +10,16 @@ public class UnitSlot : MonoBehaviour
     public Button button;
     public Image newIndicator;
     public Image partyIndicator;
+    public Sprite mainPartyIconSprite;
+    public Sprite otherPartyIconSprite;
     public Image bbIndicator;
     public Image favIndicator;
     public TextMeshProUGUI levelText;
 
     public Sprite bbProbabilityIcon;
     public Sprite bbCertaintyIcon;
+    public Sprite mainPartyIndicatorSprite;
+    public Sprite subPartyIndicatorSprite;
 
     //For selection
     public Image selectionIndicator;
@@ -197,25 +201,27 @@ public class UnitSlot : MonoBehaviour
         MainUI.unitParty.SetActive(true);
 
         int targetSlot = PartyEditMenu.currentUnitIndex;
-        int partyKey = PartyEditMenu.currentPartyKey;
-        PartyData currentParty = PartyDatabase.GetParty(partyKey);
+        int targetPartyKey = PartyEditMenu.currentEditPartyKey;
+
+        PartyData currentParty = PartyDatabase.GetParty(targetPartyKey);
         int currentUnitKey = currentParty.GetUnitAt(targetSlot);
+
         // If clicking a unit already in this slot, clear it instead
-        if (currentUnitKey == unitKey)
+        if (currentUnitKey == unitKey && currentParty.leaderUnitIndex != targetSlot)
         {
-            PartyDatabase.ClearSlot(partyKey, targetSlot);
-            PlayerUnitInventoryDatabase.GetUnitByKey(unitKey).isInParty = false;
+            PartyDatabase.ClearSlot(targetPartyKey, targetSlot);
+            // isInParty is handled inside ClearSlot (checks other parties first) — don't override it here
         }
         else
         {
-            // SetUnitAtSlot handles the swap if unitKey is already elsewhere in the party
-            PartyDatabase.SetUnitAtSlot(partyKey, targetSlot, unitKey);
-            PlayerUnitInventoryDatabase.GetUnitByKey(unitKey).isInParty = true;
+            // SetUnitAtSlot handles the swap if unitKey is already elsewhere in the party,
+            // and preserves isInParty correctly if the unit is shared with another party
+            PartyDatabase.SetUnitAtSlot(targetPartyKey, targetSlot, unitKey);
         }
 
         PartyDatabase.SaveToJson();
         PartyEditMenu.UpdateView();
-        PartyViewUI.instance.UpdatePartyView(false);
+        PartyViewUI.instance?.UpdatePartyView(false);
         MainUI.inventoryRenderer.UpdateSlotView(currentUnitKey);
         MainUI.inventoryRenderer.UpdateSlotView(unitKey);
     }
@@ -316,6 +322,16 @@ public class UnitSlot : MonoBehaviour
     {
         partyIndicator = partyIndicator ?? transform.Find("PartyIndicator").GetComponent<Image>();
         UnitInventoryData unitData = PlayerUnitInventoryDatabase.GetUnitByKey(unitKey);
+
+        PartyData party = PartyDatabase.GetParty(PartyDatabase.currentPartyKey);
+        if (party.slots.ContainsValue(unitKey)){
+            partyIndicator.sprite = mainPartyIndicatorSprite;
+        }
+        else
+        {
+            partyIndicator.sprite = subPartyIndicatorSprite;
+        }
+
         if(unitData.isInParty)
         {
             newIndicator.gameObject.SetActive(false);

@@ -13,8 +13,12 @@ public static class ChestDropUtility
             DropBattleCrystals(enemyData, dropOrigin);
             DropHeartCrystals(enemyData, dropOrigin);
         }
+
+        roll = Random.Range(0f, 100f);
         if (roll > 25f) DropZelCoins(enemyData, dropOrigin);
+        roll = Random.Range(0f, 100f);
         if (roll > 50f) DropKarmaOrbs(enemyData, dropOrigin);
+        roll = Random.Range(0f, 100f);
         if (roll > 75f) DropItems(enemyData, dropOrigin);
     }
 
@@ -82,6 +86,8 @@ public static class ChestDropUtility
 
     public static void DropItems(Enemy enemyData, Vector3 dropOrigin)
     {
+        if(string.IsNullOrEmpty(enemyData.treasureDrop.itemName)) return;
+
         ItemDropData dropData = new ItemDropData
         {
             itemName = enemyData.treasureDrop.itemName,

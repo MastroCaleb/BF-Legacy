@@ -95,6 +95,7 @@ public class BattleManager : MonoBehaviour
         playerTeam = new TeamBehaviour();
         enemyTeam  = new TeamBehaviour();
         selectedEnemyUnit = null;
+        DropMoveManager.activeDrops.Clear();
 
         mimicRoundQueued = false;
         pendingMimicChests.Clear();
@@ -147,7 +148,7 @@ public class BattleManager : MonoBehaviour
     {
         var unitIds = new HashSet<string>();
 
-        PartyData party = PartyDatabase.GetParty(0);
+        PartyData party = PartyDatabase.GetParty(PartyDatabase.currentPartyKey);
         for (int slot = 0; slot < PartyDatabase.MaxPartySize; slot++)
         {
             int unitKey = party.GetUnitAt(slot);
@@ -186,7 +187,7 @@ public class BattleManager : MonoBehaviour
 
     void SummonPlayerUnits()
     {
-        PartyData party = PartyDatabase.GetParty(0);
+        PartyData party = PartyDatabase.GetParty(PartyDatabase.currentPartyKey);
         int i = 0;
 
         for (int slot = 0; slot < PartyDatabase.MaxPartySize; slot++)
@@ -499,6 +500,12 @@ public class BattleManager : MonoBehaviour
                 unitIdsAlreadyMarkedNew.Add(u.unitId);
             }
             PlayerUnitInventoryDatabase.AddUnit(UnitRegistry.GetUnitById(u.unitId), u.type, u.unitLevel);
+        }
+
+        foreach (ItemDropData i in itemDrops)
+        {
+            int key = PlayerItemInventoryDatabase._nextStackKey;
+            PlayerItemInventoryDatabase.AddItem(ItemDatabase.GetItemByName(i.itemName).itemId, i.itemCount);
         }
 
         PlayerData.SaveDataToJson();
@@ -955,7 +962,7 @@ public class BattleManager : MonoBehaviour
                 attacker.transform,
                 attackPos,
                 speed * 2f,
-                0.1f,
+                2f,
                 8f));
         }
         else if (moveType == 2) // Teleporting — brief flash delay then snap
@@ -999,7 +1006,7 @@ public class BattleManager : MonoBehaviour
                 attacker.transform,
                 attacker.originalPosition.position,
                 returnSpeed,
-                0.1f,
+                2f,
                 8f));
         }
 

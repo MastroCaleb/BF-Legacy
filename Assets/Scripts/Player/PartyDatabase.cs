@@ -13,52 +13,110 @@ public static class PartyDatabase
     {
         public int nextKey = 0;
         public Dictionary<int, PartyData> parties = new Dictionary<int, PartyData>();
+        public int currentPartyKey = 0;
     }
 
     private static int _nextKey = 0;
     public static Dictionary<int, PartyData> parties = new Dictionary<int, PartyData>();
+    public static int currentPartyKey;
+
+    public const int MaxParties = 10;
 
     // ─── Persistence ──────────────────────────────────────────────────────────────
 
     public static void SaveToJson()
     {
-        var saveData = new SaveData { nextKey = _nextKey, parties = parties };
+        var saveData = new SaveData
+        {
+            nextKey = _nextKey,
+            parties = parties,
+            currentPartyKey = currentPartyKey
+        };
         string json = JsonConvert.SerializeObject(saveData, Formatting.Indented);
         File.WriteAllText(SavePath, json);
     }
 
     public static void LoadFromJson()
     {
-        if (!File.Exists(SavePath)) return;
+        if (!File.Exists(SavePath))
+        {
+            EnsureMinimumParties();
+            return;
+        }
 
         string json = File.ReadAllText(SavePath);
         var saveData = JsonConvert.DeserializeObject<SaveData>(json);
 
-        parties = saveData.parties;
+        parties = saveData.parties ?? new Dictionary<int, PartyData>();
         _nextKey = saveData.nextKey;
+        currentPartyKey = saveData.currentPartyKey;
+
+        EnsureMinimumParties();
+
+        if (!parties.ContainsKey(currentPartyKey))
+        {
+            List<int> partyKeys = GetPartyKeysOrdered();
+            currentPartyKey = partyKeys.Count > 0 ? partyKeys[0] : 0;
+        }
 
         RefreshAllIsInParty();
+    }
+
+    private static void EnsureMinimumParties()
+    {
+        bool created = false;
+
+        while (parties.Count < MaxParties)
+        {
+            int key = _nextKey++;
+            parties.Add(key, new PartyData()
+            {
+                slots = new Dictionary<int, int>()
+                {
+                    { 0, -1 },
+                    { 1, -1 },
+                    { 2, -1 },
+                    { 3, -1 },
+                    { 4, -1 }
+                }
+            });
+            created = true;
+        }
+
+        if (created) SaveToJson();
     }
 
     // ─── Add / Remove Parties ─────────────────────────────────────────────────────
 
     public static int CreateParty()
     {
+        if (parties.Count >= MaxParties) return -1;
+
         int key = _nextKey++;
         parties.Add(key, new PartyData());
         SaveToJson();
         return key;
     }
 
+    public static List<int> GetPartyKeysOrdered()
+    {
+        return parties.Keys.OrderBy(k => k).ToList();
+    }
+
     public static void RemoveParty(int partyKey)
     {
         if (!parties.ContainsKey(partyKey)) return;
 
-        // Clear isInParty for all units in this party before removing
-        foreach (int unitKey in parties[partyKey].unitKeys)
-            if (unitKey != -1) SetIsInParty(unitKey, false);
+        // Snapshot the units before removing the party
+        List<int> unitsToCheck = parties[partyKey].unitKeys.Where(k => k != -1).ToList();
 
         parties.Remove(partyKey);
+
+        // Only clear isInParty for units that aren't still present in a surviving party
+        foreach (int unitKey in unitsToCheck)
+            if (!IsUnitInAnyParty(unitKey))
+                SetIsInParty(unitKey, false);
+
         SaveToJson();
     }
 
@@ -117,6 +175,14 @@ public static class PartyDatabase
     }
 
     // ─── Queries ──────────────────────────────────────────────────────────────────
+    
+    public static UnitInventoryData GetLeaderInCurrentParty()
+    {
+        if (!parties.TryGetValue(currentPartyKey, out var party)) return null;
+
+        int leaderKey = party.GetUnitAt(party.leaderUnitIndex);
+        return PlayerUnitInventoryDatabase.GetUnitByKey(leaderKey);
+    }
 
     public static PartyData GetParty(int partyKey)
     {

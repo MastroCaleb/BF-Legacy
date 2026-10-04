@@ -1,16 +1,19 @@
 // PlayerItemInventoryDatabase.cs
 //
-// Player-owned item counts.
+// Player-owned item stacks.
 //
-// Unlike units, an item copy carries no per-instance state — no level, no
-// exp, no individual bonuses. "5 Green Grass" is just a count, not five
-// separate records. So where PlayerUnitInventoryDatabase hands out an
-// autoincrementing key per unit instance, this only needs one integer count
-// per item id.
+// An item copy still carries no per-instance state — no level, no exp —
+// but items.json's max_stack is a real cap (999 for most materials, as low
+// as 1 for most spheres), and a maxed-out item shouldn't just stop being
+// obtainable. So this is closer to PlayerUnitInventoryDatabase's shape than
+// the old single-count-per-id version: an autoincrementing key per *stack*
+// (not per item id), each stack holding an itemId + count. Most items will
+// only ever have one stack in play; anything with a low max_stack (mostly
+// spheres) will commonly have several.
 //
 // Item definitions (name, effects, max_stack, sell price, thumbnail, etc.)
-// live in ItemDatabase/ItemData — this class only tracks how many of each
-// the player currently owns.
+// live in ItemDatabase/ItemData — this class only tracks what the player
+// owns.
 
 using System.Collections.Generic;
 using System.IO;
@@ -24,16 +27,18 @@ public static class PlayerItemInventoryDatabase
 
     private class SaveData
     {
-        public Dictionary<string, int> itemCounts = new Dictionary<string, int>();
+        public int nextStackKey = 0;
+        public Dictionary<int, ItemStack> stacks = new Dictionary<int, ItemStack>();
     }
 
-    public static Dictionary<string, int> itemCounts = new Dictionary<string, int>();
+    public static int _nextStackKey = 0;
+    public static Dictionary<int, ItemStack> stacks = new Dictionary<int, ItemStack>();
 
     // ─── Persistence ────────────────────────────────────────────────────────────
 
     public static void SaveToJson()
     {
-        var saveData = new SaveData { itemCounts = itemCounts };
+        var saveData = new SaveData { nextStackKey = _nextStackKey, stacks = stacks };
         string json = JsonConvert.SerializeObject(saveData, Formatting.Indented);
         File.WriteAllText(SavePath, json);
     }
@@ -45,70 +50,123 @@ public static class PlayerItemInventoryDatabase
         string json = File.ReadAllText(SavePath);
         var saveData = JsonConvert.DeserializeObject<SaveData>(json);
 
-        itemCounts = saveData.itemCounts ?? new Dictionary<string, int>();
+        stacks = saveData.stacks ?? new Dictionary<int, ItemStack>();
+        _nextStackKey = saveData.nextStackKey;
     }
 
     // ─── Add / Remove ────────────────────────────────────────────────────────────
 
     /// <summary>
-    /// Adds `amount` of itemId, clamped at that item's max_stack (from
-    /// items.json — 999 for most materials, 1 for most spheres, etc.).
-    /// Returns the amount actually added, which can be less than requested
-    /// if the cap was hit; check the return value if the caller needs to
-    /// react to overflow (e.g. show "inventory full") instead of it being
-    /// silently discarded.
+    /// Adds `amount` of itemId. Tops up existing non-full stacks of it
+    /// first (oldest key first), then opens new stacks for whatever's
+    /// left — items are never refused for being "maxed out", they just
+    /// spill into another stack. Returns every stack key touched (existing
+    /// stacks topped up, plus any newly created ones), so callers like the
+    /// renderer know exactly which slots to create or refresh instead of
+    /// having to re-scan everything.
     /// </summary>
-    public static int AddItem(string itemId, int amount = 1, bool saveAfterAdd = true)
+    public static List<int> AddItem(string itemId, int amount = 1, bool saveAfterAdd = true)
     {
-        if (string.IsNullOrEmpty(itemId) || amount <= 0) return 0;
+        List<int> touched = new();
+        if (string.IsNullOrEmpty(itemId) || amount <= 0) return touched;
 
         ItemData data = ItemDatabase.GetItem(itemId);
         if (data == null)
         {
             Debug.LogWarning($"[PlayerItemInventoryDatabase] Tried to add unknown item id '{itemId}'.");
-            return 0;
+            return touched;
         }
 
-        int current = itemCounts.TryGetValue(itemId, out int c) ? c : 0;
-        int newTotal = Mathf.Min(current + amount, data.maxStack);
-        int actuallyAdded = newTotal - current;
+        int remaining = amount;
 
-        if (actuallyAdded <= 0) return 0;
+        // Top up existing non-full stacks of this item before opening new ones.
+        List<int> openStacks = stacks
+            .Where(kvp => kvp.Value.itemId == itemId && kvp.Value.count < data.maxStack)
+            .OrderBy(kvp => kvp.Key)
+            .Select(kvp => kvp.Key)
+            .ToList();
 
-        itemCounts[itemId] = newTotal;
+        foreach (int key in openStacks)
+        {
+            if (remaining <= 0) break;
 
-        if (actuallyAdded < amount)
-            Debug.LogWarning($"[PlayerItemInventoryDatabase] '{itemId}' hit max stack ({data.maxStack}) — added {actuallyAdded}/{amount}.");
+            ItemStack stack = stacks[key];
+            int space = data.maxStack - stack.count;
+            int toAdd = Mathf.Min(space, remaining);
+            stack.count += toAdd;
+            remaining -= toAdd;
+            touched.Add(key);
+        }
+
+        // Whatever's left opens as many new stacks as it takes.
+        while (remaining > 0)
+        {
+            int toAdd = Mathf.Min(data.maxStack, remaining);
+            int key = _nextStackKey++;
+            stacks[key] = new ItemStack { itemId = itemId, count = toAdd };
+            remaining -= toAdd;
+            touched.Add(key);
+        }
 
         if (saveAfterAdd) SaveToJson();
-        return actuallyAdded;
+        return touched;
     }
 
-    /// <summary>Removes `amount` of itemId. Returns false (and removes nothing) if the player doesn't own at least that many.</summary>
+    /// <summary>
+    /// Removes `amount` of itemId, draining its stacks oldest-key-first and
+    /// dropping any stack that hits zero. Returns false (and removes
+    /// nothing) if the player doesn't own at least that many in total.
+    /// </summary>
     public static bool RemoveItem(string itemId, int amount = 1, bool saveAfterRemove = true)
     {
         if (string.IsNullOrEmpty(itemId) || amount <= 0) return false;
         if (!HasItem(itemId, amount)) return false;
 
-        int remaining = itemCounts[itemId] - amount;
-        if (remaining <= 0)
-            itemCounts.Remove(itemId); // keep the dictionary free of zero-count entries
-        else
-            itemCounts[itemId] = remaining;
+        int remaining = amount;
+        foreach (int key in GetStackKeysForItem(itemId))
+        {
+            if (remaining <= 0) break;
 
+            ItemStack stack = stacks[key];
+            int taken = Mathf.Min(stack.count, remaining);
+            stack.count -= taken;
+            remaining -= taken;
+
+            if (stack.count <= 0)
+                stacks.Remove(key); // keep the dictionary free of empty stacks
+        }
+
+        if (saveAfterRemove) SaveToJson();
+        return true;
+    }
+
+    /// <summary>Removes one specific stack entirely by its key, regardless of amount — for UI flows that act on "this stack" (e.g. selling one sphere copy) rather than "N of this item" in the abstract.</summary>
+    public static bool RemoveStack(int stackKey, bool saveAfterRemove = true)
+    {
+        if (!stacks.Remove(stackKey)) return false;
         if (saveAfterRemove) SaveToJson();
         return true;
     }
 
     // ─── Queries ─────────────────────────────────────────────────────────────────
 
+    public static ItemStack GetStack(int stackKey) =>
+        stacks.TryGetValue(stackKey, out ItemStack s) ? s : null;
+
+    /// <summary>Every stack key holding this item id, oldest (lowest key) first.</summary>
+    public static List<int> GetStackKeysForItem(string itemId) =>
+        stacks.Where(kvp => kvp.Value.itemId == itemId)
+              .OrderBy(kvp => kvp.Key)
+              .Select(kvp => kvp.Key)
+              .ToList();
+
     public static int GetItemCount(string itemId) =>
-        itemCounts.TryGetValue(itemId, out int c) ? c : 0;
+        stacks.Values.Where(s => s.itemId == itemId).Sum(s => s.count);
 
     public static bool HasItem(string itemId, int amount = 1) =>
         GetItemCount(itemId) >= amount;
 
-    /// <summary>True only if the player has enough of every id in `required` — for recipe/synthesis/evolution-material checks before committing to RemoveItems.</summary>
+    /// <summary>True only if the player has enough total of every id in `required` (summed across all of that item's stacks) — for recipe/synthesis/evolution-material checks before committing to RemoveItems.</summary>
     public static bool HasItems(Dictionary<string, int> required)
     {
         foreach (var kvp in required)
@@ -128,24 +186,25 @@ public static class PlayerItemInventoryDatabase
         return true;
     }
 
-    public static List<string> GetOwnedItemIds() => itemCounts.Keys.ToList();
+    public static List<string> GetOwnedItemIds() =>
+        stacks.Values.Select(s => s.itemId).Distinct().ToList();
 
-    /// <summary>Every owned item of a given type (material, sphere, consumable, ...) with its current count. Resolves ItemData lazily through ItemDatabase per id, same as everywhere else that touches item definitions.</summary>
+    /// <summary>Every distinct owned item id of a given type (material, sphere, consumable, ...) with its total count summed across stacks. Resolves ItemData lazily through ItemDatabase per id, same as everywhere else that touches item definitions.</summary>
     public static List<(ItemData data, int count)> GetItemsByType(ItemType type)
     {
         List<(ItemData, int)> results = new();
-        foreach (var kvp in itemCounts)
+        foreach (string itemId in GetOwnedItemIds())
         {
-            ItemData data = ItemDatabase.GetItem(kvp.Key);
+            ItemData data = ItemDatabase.GetItem(itemId);
             if (data != null && data.itemType == type)
-                results.Add((data, kvp.Value));
+                results.Add((data, GetItemCount(itemId)));
         }
         return results;
     }
 
     // ─── Gameplay Logic ───────────────────────────────────────────────────────────
 
-    /// <summary>Sells the given amount of each item id for zel (mirrors PlayerUnitInventoryDatabase.SellUnits). Skips ids the player doesn't own enough of rather than failing the whole batch.</summary>
+    /// <summary>Sells the given amount of each item id for zel (mirrors PlayerUnitInventoryDatabase.SellUnits), draining across that item's stacks. Skips ids the player doesn't own enough of rather than failing the whole batch.</summary>
     public static void SellItems(Dictionary<string, int> sellItems)
     {
         int totalZel = 0;
@@ -169,4 +228,10 @@ public static class PlayerItemInventoryDatabase
         PlayerData.SaveDataToJson();
         MainUI.header.GetComponent<HeaderPlayerData>().UpdateHeader();
     }
+}
+
+public class ItemStack
+{
+    public string itemId;
+    public int count;
 }

@@ -68,6 +68,9 @@ public class BattleManager : MonoBehaviour
     public static int oldExperience;
     public static bool obtainedGemsForMission;
 
+    //Ally Bot
+    public static BotData selectedAllyBot;
+
     //Mimics
     public static bool mimicRoundQueued = false;
     public static List<TreasureChestDropBehaviour> pendingMimicChests = new List<TreasureChestDropBehaviour>();
@@ -213,7 +216,37 @@ public class BattleManager : MonoBehaviour
         }
 
         playerTeam.SetLeader();
+        SummonFriendUnit();
         SummonEnemyUnitsForRound(0);
+    }
+
+    void SummonFriendUnit()
+    {
+        int i = PartyDatabase.MaxPartySize;
+        string unitId = selectedAllyBot.units[0].unitId;
+
+        UnitInventoryData inventoryData = new UnitInventoryData
+        {
+            unitId = unitId,
+            currentLevel = selectedAllyBot.units[0].unitLevel,
+            unit = UnitRegistry.GetUnitById(unitId),
+            currentBBLevel = 1,
+            currentSBBLevel = 1
+        };
+
+        UnitBehaviour u = Instantiate(unitPrefab, playerUnitPositions[i].position, Quaternion.identity)
+                                .GetComponent<UnitBehaviour>();
+        u.transform.SetParent(BattleUI.playerUnitsLayer.transform);
+        u.unitData         = inventoryData.unit;
+        u.inventoryData    = inventoryData;       // set FAKE inventory reference
+        u.unitCanvas       = unitCanvas;
+        u.originalPosition = playerUnitPositions[i];
+        BattleUI.unitSlots[i].unit          = u;
+        BattleUI.unitSlots[i].battleManager = this;
+        u.unitSlotUI = BattleUI.unitSlots[i];
+        playerTeam.units.Add(u);
+
+        playerTeam.SetFriend();
     }
 
     public void SummonEnemyUnitsForRound(int round)
@@ -225,8 +258,7 @@ public class BattleManager : MonoBehaviour
             RectTransform spawnPoint = enemyUnitPositions[i];
             bool isMelee = UnitRegistry.GetUnitById(enemy.unitId).moveTypeAttack == 1;
 
-            UnitBehaviour u = Instantiate(unitPrefab, Vector3.zero, Quaternion.identity)
-                                .GetComponent<UnitBehaviour>();
+            UnitBehaviour u = Instantiate(unitPrefab, Vector3.zero, Quaternion.identity).GetComponent<UnitBehaviour>();
 
             u.isEnemyUnit      = true;
             u.enemyData        = enemy;
@@ -284,7 +316,12 @@ public class BattleManager : MonoBehaviour
                 GetTargets(enemyTeam.units, playerTeam.leaderUnit, playerTeam.leaderUnit.unitData.leaderAbility)
             );
         }
-       
+
+        if(playerTeam.friendUnit.unitData.leaderAbility != null){
+            playerTeam.ActivateFriendAbility(
+                GetTargets(enemyTeam.units, playerTeam.friendUnit, playerTeam.friendUnit.unitData.leaderAbility)
+            );
+        }
 
         for (int round = 1; round <= missionData.rounds.Count; round++)
         {

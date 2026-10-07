@@ -54,7 +54,7 @@ public class BFLifeSystem
     }
 }
 
-public struct BotData
+public class BotData
 {
     public string botId;
     public string botName;
@@ -62,7 +62,7 @@ public struct BotData
     public List<BotUnitData> units;
 }
 
-public struct BotUnitData
+public class BotUnitData
 {
     public bool isMainUnit;
     public string unitId;

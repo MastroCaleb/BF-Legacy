@@ -8,6 +8,7 @@ public class ScrollingTMPText : MonoBehaviour
     [TextArea(3, 10)]
     public string text;
     public float padding = 20f;
+    public Color color = Color.white;
     private RectTransform textA;
     private RectTransform textB;
     private float textWidth;
@@ -31,6 +32,9 @@ public class ScrollingTMPText : MonoBehaviour
 
         tmpA.SetText(text);
         tmpB.SetText(text);
+
+        tmpA.color = color;
+        tmpB.color = color;
 
         textWidth = gameObject.GetComponent<RectTransform>().rect.width;
 

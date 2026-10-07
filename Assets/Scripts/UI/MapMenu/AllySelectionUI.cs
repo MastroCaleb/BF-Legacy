@@ -35,6 +35,9 @@ public class AllySelectionMenu : MonoBehaviour
         slotRect.Find("LvNumText").GetComponent<TextMeshProUGUI>().text = botData.botLevel + "";
         slotRect.Find("Thumbnail").GetComponent<Image>().sprite = UnitRegistry.GetUnitById(botData.units[0].unitId).unitSlotIcon;
 
+        slot.GetComponent<ActivateDeactivateButton>().objectToActivate = MainUI.beginQuestMenu;
+        slot.GetComponent<ActivateDeactivateButton>().objectToDeactivate = MainUI.allySelection;
+
         currentSlots.Add(slot);
     }
 }

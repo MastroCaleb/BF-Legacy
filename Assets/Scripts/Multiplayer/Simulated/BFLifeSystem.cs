@@ -4,24 +4,65 @@ using System.Text;
 
 public class BFLifeSystem
 {
-    //Need this to simulate bot progress.
+    static readonly Random rng = new Random();
 
-    //we need this for:
-    //Having bots as friends to use their main unit as a friend unit in battle (the 6th slot)
-    //Having bots as enemies in the Arena in pvp battles, using a system to calculate their combat power and balance the pvp aspect of the game
-    //Create bot teams that make sense, so attacker, tank, healer, support attack etc and also equipped items (lower levels doesnt need items)
-    //Having bots as helpers in the raid battle system where they help the player beat a powerful boss
-    
-    
+    // Temporary unit pool until real selection logic exists
+    static readonly string[] UnitPool = { "10011", "20011", "30011", "40011", "50011" };
+
+    public static BotData GenerateBot(int minLevel = 1, int maxLevel = 200, int unitCount = 5)
+    {
+        string id = Guid.NewGuid().ToString("N").Substring(0, 8);
+
+        BotData bot = new BotData
+        {
+            botId = id,
+            botName = BotNameSystem.GetRandomBotName(),
+            botLevel = rng.Next(minLevel, maxLevel + 1),
+            units = new List<BotUnitData>()
+        };
+
+        for (int i = 0; i < unitCount; i++)
+        {
+            bot.units.Add(GenerateBotUnit(i == 0, minLevel, bot.botLevel));
+        }
+
+        return bot;
+    }
+
+    public static BotUnitData GenerateBotUnit(bool isMainUnit, int minLevel, int maxLevel)
+    {
+        return new BotUnitData
+        {
+            isMainUnit = isMainUnit,
+            unitId = PickRandomUnitId(),
+            unitLevel = rng.Next(minLevel, maxLevel + 1),
+            itemId = ""
+        };
+    }
+
+    public static List<BotData> GenerateBots(int count, int minLevel = 1, int maxLevel = 100, int unitCount = 5)
+    {
+        List<BotData> bots = new List<BotData>(count);
+        for (int i = 0; i < count; i++)
+            bots.Add(GenerateBot(minLevel, maxLevel, unitCount));
+        return bots;
+    }
+
+    static string PickRandomUnitId()
+    {
+        return UnitPool[rng.Next(UnitPool.Length)];
+    }
 }
-struct BotData
+
+public class BotData
 {
     public string botId;
     public string botName;
     public int botLevel;
     public List<BotUnitData> units;
 }
-struct BotUnitData
+
+public class BotUnitData
 {
     public bool isMainUnit;
     public string unitId;

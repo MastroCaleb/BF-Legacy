@@ -5,6 +5,7 @@ public class TeamBehaviour : MonoBehaviour
 {
     public List<UnitBehaviour> units = new List<UnitBehaviour>();
     public UnitBehaviour leaderUnit;
+    public UnitBehaviour friendUnit;
     public float waitTime;
 
     public bool GetEndTurn()
@@ -22,11 +23,24 @@ public class TeamBehaviour : MonoBehaviour
         leaderUnit = units[0];
     }
 
+    public void SetFriend()
+    {
+        friendUnit = units[PartyDatabase.MaxPartySize];
+    }
+
     public void ActivateLeaderAbility(List<UnitBehaviour> targets)
     {
         if (leaderUnit != null)
         {
             leaderUnit.ActivateLeaderAbility(targets);
+        }
+    }
+
+    public void ActivateFriendAbility(List<UnitBehaviour> targets)
+    {
+        if (friendUnit != null)
+        {
+            friendUnit.ActivateLeaderAbility(targets);
         }
     }
 

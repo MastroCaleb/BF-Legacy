@@ -65,8 +65,6 @@ public class DungeonMissionSelectUI : MonoBehaviour
             button.onClick.AddListener(UpdateMissionSelect);
     }
 
-    
-
     public void UpdateMissionSelect()
     {
         ClearSlots();
@@ -107,6 +105,9 @@ public class DungeonMissionSelectUI : MonoBehaviour
             {
                 slotRect.Find("ClearImage").gameObject.SetActive(true);
             }
+
+            slot.GetComponent<ActivateDeactivateButton>().objectToActivate = MainUI.allySelection;
+            slot.GetComponent<ActivateDeactivateButton>().objectToDeactivate = MainUI.missionSelection;
 
             currentSlots.Add(slot);
         }

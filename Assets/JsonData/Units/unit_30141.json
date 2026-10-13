@@ -1,61 +1,63 @@
 {
   "id": "30141",
-  "unitName": "Boxer Nemia",
-  "no": "209",
-  "element": "Earth",
-  "rarity": "★★",
-  "cost": "4",
-  "maxlv": "30",
-  "basexp": "15",
-  "gender": "F",
-  "ai": "4",
-  "animation_attack": "83",
-  "animation_idle": "40",
-  "animation_move": "7",
-  "movespeed_attack": "0.0024",
-  "movespeed_skill": "0.0024",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "28, 34, 60",
-  "normal_distribute": "25, 25, 50",
-  "normal_totaldistr": "100",
-  "bb_frames": "28, 34, 60",
-  "bb_distribute": "25, 25, 50",
-  "bb_totaldistr": "100",
-  "description": "A boxer who studied martial arts at the Toltya Dojo in Sama. As a baby, the head of Toltya Dojo discovered her abandoned in front of his school’s gate. Trained in the art of fighting from an early age, the power she unleashed from her fists possessed a potency that belied her cute appearance. On her 16th birthday, the head of the school handed her a letter that claimed to be from her parents. Eager to follow up on this new lead, she set out for the Principality of Vriksha.",
-  "summon": "You must be pretty handy if you’re able to summon me!<br>Hm? Whaddya mean “am I a girl”?<br>Of course I am, you dodo!",
-  "fusion": "Whoa!<br>Is this fusion stuff amazing or what?!<br>I can feel the strength coursing through me!",
-  "evolution": "",
-  "hp_base": "1320",
-  "atk_base": "580",
-  "def_base": "290",
-  "rec_base": "250",
-  "hp_lord": "2504",
-  "atk_lord": "870",
-  "def_lord": "406",
-  "rec_lord": "375",
-  "hp_anima": "2722",
-  "rec_anima": "317",
-  "atk_breaker": "928",
-  "def_breaker": "348",
-  "atk_guardian": "812",
-  "def_guardian": "464",
-  "rec_guardian": "346",
-  "def_oracle": "377",
-  "hp_oracle": "2417",
-  "rec_oracle": "462",
-  "hp_bonus": "250",
-  "atk_bonus": "80",
-  "def_bonus": "80",
-  "rec_bonus": "140",
-  "lordonly": "",
-  "combo_hits": "3",
-  "normaldc": "9",
-  "ls": "Valiant Power",
-  "lsdescription": "10% boost to Atk Power of all types",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 580,
+      "def": 290,
+      "hp": 1320,
+      "rec": 250
+    },
+    "_lord": {
+      "atk": 870,
+      "def": 406,
+      "hp": 2504,
+      "rec": 375
+    },
+    "anima": {
+      "atk": 870,
+      "def": 406,
+      "hp max": 2794,
+      "hp min": 2649,
+      "rec max": 346,
+      "rec min": 288
+    },
+    "breaker": {
+      "atk max": 957,
+      "atk min": 899,
+      "def max": 377,
+      "def min": 319,
+      "hp": 2504,
+      "rec": 375
+    },
+    "guardian": {
+      "atk": 870,
+      "def max": 493,
+      "def min": 435,
+      "hp": 2504,
+      "rec max": 375,
+      "rec min": 317
+    },
+    "oracle": {
+      "atk": 870,
+      "def max": 406,
+      "def min": 348,
+      "hp": 2504,
+      "rec max": 491,
+      "rec min": 433
+    }
+  },
+  "leader_skill": {
+    "desc": "10% boost to Atk",
+    "effects": [
+      {
+        "atk% buff": 10,
+        "passive id": "1"
+      }
+    ],
+    "id": "1900",
+    "name": "Valiant Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -294,94 +296,99 @@
     ],
     "name": "Tierra Knuckle"
   },
-  "bbdescription": "3 Combo Earth Elemental Attack on Single Enemy & Probable Injury and Weakness Effect",
-  "bbnote": "80% chance",
-  "bbtype": "Offense",
-  "bbhits": "3",
-  "bbaoe": "1",
-  "bbgauge": "15",
-  "bbdc": "6",
-  "bbmultiplier": "250",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "30142",
-  "evomats1": "30130",
-  "evomats2": "30130",
-  "evomats3": "30130",
-  "evomats4": "30131",
-  "evomats5": "60142",
-  "evozelcost": "50000",
-  "stats": {
-    "_base": {
-      "atk": 580,
-      "def": 290,
-      "hp": 1320,
-      "rec": 250
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_under",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 870,
-      "def": 406,
-      "hp": 2504,
-      "rec": 375
+    {
+      "action": "skill",
+      "chance%": 30.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 870,
-      "def": 406,
-      "hp max": 2794,
-      "hp min": 2649,
-      "rec max": 346,
-      "rec min": 288
+    {
+      "action": "attack",
+      "chance%": 70.0,
+      "target conditions": "hp_max",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 957,
-      "atk min": 899,
-      "def max": 377,
-      "def min": 319,
-      "hp": 2504,
-      "rec": 375
+    {
+      "action": "attack",
+      "chance%": 50.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "guardian": {
-      "atk": 870,
-      "def max": 493,
-      "def min": 435,
-      "hp": 2504,
-      "rec max": 375,
-      "rec min": 317
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 83
     },
-    "oracle": {
-      "atk": 870,
-      "def max": 406,
-      "def min": 348,
-      "hp": 2504,
-      "rec max": 491,
-      "rec min": 433
+    "idle": {
+      "total number of frames": 40
+    },
+    "move": {
+      "total number of frames": 7
     }
   },
-  "leader_skill": {
-    "desc": "10% boost to Atk",
-    "effects": [
-      {
-        "atk% buff": 10,
-        "passive id": "1"
-      }
+  "category": 30140,
+  "cost": "4",
+  "damage frames": {
+    "frame times": [
+      28,
+      34,
+      60
     ],
-    "id": "1900",
-    "name": "Valiant Power"
+    "hit dmg% distribution": [
+      25,
+      25,
+      50
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 3
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "earth",
+  "exp_pattern": 15,
+  "gender": "female",
+  "getting type": "not eligible for achievement",
+  "guide_id": 209,
+  "imp": {
+    "max atk": "80",
+    "max def": "80",
+    "max hp": "250",
+    "max rec": "140"
+  },
+  "kind": "normal",
+  "lord damage range": "810~904",
+  "movement": {
+    "attack": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    }
+  },
+  "name": "Boxer Nemia",
+  "rarity": "2",
+  "sell caution": false,
+  "unitName": "Boxer Nemia",
+  "maxlv": "30",
+  "no": "209",
   "unitDisplayHomePosition_1W9CxaFK": "36,-10,182,498",
   "unitDisplayDetailPosition_6z54rgb3": "296,213,327,572",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "215,403,265,225,0",
@@ -391,5 +398,99 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "300",
   "sellCaution": false,
-  "effectFrames": "22:133:1,28:133:1,54:133:1"
+  "effectFrames": "22:133:1,28:133:1,54:133:1",
+  "evofrom": "",
+  "evointo": "30142",
+  "evozelcost": "50000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "30131",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30130",
+      "count": 3
+    },
+    {
+      "type": "1",
+      "id": "60142",
+      "count": 1
+    }
+  ],
+  "basexp": "15",
+  "animation_attack": "83",
+  "animation_idle": "40",
+  "animation_move": "7",
+  "movespeed_attack": "0.0024",
+  "movespeed_skill": "0.0024",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "28, 34, 60",
+  "normal_distribute": "25, 25, 50",
+  "normal_totaldistr": "100",
+  "bb_frames": "28, 34, 60",
+  "bb_distribute": "25, 25, 50",
+  "bb_totaldistr": "100",
+  "description": "A boxer who studied martial arts at the Toltya Dojo in Sama. As a baby, the head of Toltya Dojo discovered her abandoned in front of his school’s gate. Trained in the art of fighting from an early age, the power she unleashed from her fists possessed a potency that belied her cute appearance. On her 16th birthday, the head of the school handed her a letter that claimed to be from her parents. Eager to follow up on this new lead, she set out for the Principality of Vriksha.",
+  "summon": "You must be pretty handy if you’re able to summon me!<br>Hm? Whaddya mean “am I a girl”?<br>Of course I am, you dodo!",
+  "fusion": "Whoa!<br>Is this fusion stuff amazing or what?!<br>I can feel the strength coursing through me!",
+  "evolution": "",
+  "hp_base": "1320",
+  "atk_base": "580",
+  "def_base": "290",
+  "rec_base": "250",
+  "hp_lord": "2504",
+  "atk_lord": "870",
+  "def_lord": "406",
+  "rec_lord": "375",
+  "hp_anima": "2722",
+  "rec_anima": "317",
+  "atk_breaker": "928",
+  "def_breaker": "348",
+  "atk_guardian": "812",
+  "def_guardian": "464",
+  "rec_guardian": "346",
+  "def_oracle": "377",
+  "hp_oracle": "2417",
+  "rec_oracle": "462",
+  "hp_bonus": "250",
+  "atk_bonus": "80",
+  "def_bonus": "80",
+  "rec_bonus": "140",
+  "lordonly": "",
+  "combo_hits": "3",
+  "normaldc": "9",
+  "ls": "Valiant Power",
+  "lsdescription": "10% boost to Atk Power of all types",
+  "lstype": "Attack",
+  "bbdescription": "3 Combo Earth Elemental Attack on Single Enemy & Probable Injury and Weakness Effect",
+  "bbnote": "80% chance",
+  "bbtype": "Offense",
+  "bbhits": "3",
+  "bbaoe": "1",
+  "bbgauge": "15",
+  "bbdc": "6",
+  "bbmultiplier": "250",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "30130",
+  "evomats2": "30130",
+  "evomats3": "30130",
+  "evomats4": "30131",
+  "evomats5": "60142"
 }

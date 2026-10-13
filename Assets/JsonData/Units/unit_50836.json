@@ -1,59 +1,108 @@
 {
   "id": "50836",
-  "unitName": "Merciful Beacon Charla",
-  "no": "1152",
-  "element": "Light",
-  "rarity": "★★★★★★★",
-  "cost": "42",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "161",
-  "animation_idle": "52",
-  "animation_move": "5",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "4",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "3",
-  "normal_frames": "88, 92, 96, 100, 104, 108, 112, 116, 120, 124",
-  "normal_distribute": "10, 10, 10, 10, 10, 10, 10, 10, 10, 10",
-  "normal_totaldistr": "100",
-  "description": "As the gods continued their merciless killing of countless innocents throughout the war, Charla finally revealed her role as a priestess of La Veda, and officially revolted against the gods. Shortly afterwards, Charla recruited a group of warrior priests to protect her people as they fled to the new promised land. As their leader, she chose to fight at the vanguard to eliminate any incoming threats from the gods. Although the other priests tried to convince her to flee with them as the war drew to a close, she chose to stay and fight in order to atone for her self-proclaimed heresy.",
-  "summon": "I believed in the gods till the end,<br>but wanted to save people even more.<br>I shall pay for all my sins!",
-  "fusion": "The comfort the light brings...<br>I thought it would last forever...<br>But that's all in the past now...",
-  "evolution": "I shall be your sword!<br>I will point this blade<br>at all of your enemies!",
-  "hp_base": "5133",
-  "atk_base": "2007",
-  "def_base": "2007",
-  "rec_base": "1863",
-  "hp_lord": "6700",
-  "atk_lord": "2500",
-  "def_lord": "2500",
-  "rec_lord": "2300",
-  "hp_anima": "7595",
-  "rec_anima": "2062",
-  "atk_breaker": "2738",
-  "def_breaker": "2262",
-  "atk_guardian": "2262",
-  "def_guardian": "2738",
-  "rec_guardian": "2181",
-  "def_oracle": "2381",
-  "hp_oracle": "6343",
-  "rec_oracle": "2657",
-  "hp_bonus": "1000",
-  "atk_bonus": "340",
-  "def_bonus": "340",
-  "rec_bonus": "620",
-  "lordonly": "",
-  "combo_hits": "10",
-  "normaldc": "40",
-  "ls": "Glorious Sanctification",
-  "lsdescription": "40% boost to max HP, Def, boosts BC drop rate and BB gauge fill rate & boosts BB gauge when attacked",
-  "lsnote": "15% BC/HC, 30% BC efficacy & fills 2-4 BC",
-  "lstype": "Hit Points/Defense/Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 2007,
+      "def": 2007,
+      "hp": 5133,
+      "rec": 1863
+    },
+    "_lord": {
+      "atk": 2500,
+      "def": 2500,
+      "hp": 6700,
+      "rec": 2300
+    },
+    "anima": {
+      "atk": 2500,
+      "def": 2500,
+      "hp max": 7890,
+      "hp min": 7295,
+      "rec max": 2181,
+      "rec min": 1943
+    },
+    "breaker": {
+      "atk max": 2857,
+      "atk min": 2619,
+      "def max": 2381,
+      "def min": 2143,
+      "hp": 6700,
+      "rec": 2300
+    },
+    "guardian": {
+      "atk": 2500,
+      "def max": 2857,
+      "def min": 2619,
+      "hp": 6700,
+      "rec max": 2300,
+      "rec min": 2062
+    },
+    "oracle": {
+      "atk": 2500,
+      "def max": 2500,
+      "def min": 2262,
+      "hp": 6700,
+      "rec max": 2776,
+      "rec min": 2538
+    }
+  },
+  "leader_skill": {
+    "desc": "40% boost to max HP, Def, boosts BC drop rate and BB gauge fill rate & boosts BB gauge when attacked",
+    "effects": [
+      {
+        "def% buff": 40,
+        "hp% buff": 40,
+        "passive id": "1"
+      },
+      {
+        "bc drop rate% buff": 15,
+        "passive id": "19"
+      },
+      {
+        "bb gauge fill rate%": 30,
+        "passive id": "32"
+      },
+      {
+        "bc fill when attacked high": 4,
+        "bc fill when attacked low": 2,
+        "bc fill when attacked%": 100,
+        "passive id": "25"
+      }
+    ],
+    "id": "4319",
+    "name": "Glorious Sanctification"
+  },
+  "extra_skill": {
+    "desc": "Negates all status ailments & renders self able to withstand 1 KO attack when HP is below 20%",
+    "effects": [
+      {
+        "conditions": [],
+        "curse resist%": 100,
+        "injury resist%": 100,
+        "paralysis resist%": 100,
+        "passive id": "4",
+        "passive target": "self",
+        "poison resist%": 100,
+        "sick resist%": 100,
+        "weaken resist%": 100
+      },
+      {
+        "buff": {
+          "angel idol buff (12)": true,
+          "angel idol recover hp%": 100,
+          "buff turns (12)": "-1"
+        },
+        "conditions": [],
+        "hp below % buff activation": 20,
+        "passive id": "55",
+        "passive target": "self"
+      }
+    ],
+    "id": "9000",
+    "name": "Indisputable Reverence",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -684,14 +733,6 @@
     ],
     "name": "Esperanza Wand"
   },
-  "bbdescription": "Slightly boosts BB gauge, greatly recovers HP, removes all status ailments & gradually recovers HP, BB gauge for 3 turns",
-  "bbnote": "Fills 4 BC, heals 2700-3000 + 32.4% of own Rec, gradually recovers 2500-3000 + 15% Rec & fills 7 BC/turn",
-  "bbtype": "Support",
-  "bbhits": "",
-  "bbaoe": "",
-  "bbgauge": "22",
-  "bbdc": "",
-  "bbmultiplier": "",
   "sbb": {
     "damage frames": [
       {
@@ -1232,14 +1273,6 @@
     ],
     "name": "Crusader's Amulet"
   },
-  "sbbdescription": "Boosts BB gauge & boosts critical damage, greatly boosts Spark damage and probable BB gauge boost from Spark damage for 3 turns",
-  "sbbnote": "Fills 6 BC, 75% critical damage, 60% critical rate, 100% Spark & 80% chance to fill 1-3 BC",
-  "sbbtype": "Support",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "18",
-  "sbbdc": "",
-  "sbbmultiplier": "",
   "ubb": {
     "damage frames": [
       {
@@ -1338,6 +1371,181 @@
     ],
     "name": "Reincarnation"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 161
+    },
+    "idle": {
+      "total number of frames": 52
+    },
+    "move": {
+      "total number of frames": 5
+    }
+  },
+  "category": 50830,
+  "cost": "42",
+  "damage frames": {
+    "frame times": [
+      88,
+      92,
+      96,
+      100,
+      104,
+      108,
+      112,
+      116,
+      120,
+      124
+    ],
+    "hit dmg% distribution": [
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 10
+  },
+  "drop check count": 4,
+  "element": "light",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 1152,
+  "imp": {
+    "max atk": "340",
+    "max def": "340",
+    "max hp": "1000",
+    "max rec": "620"
+  },
+  "kind": "normal",
+  "lord damage range": "2328~2600",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    }
+  },
+  "name": "Merciful Beacon Charla",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Merciful Beacon Charla",
+  "maxlv": "120",
+  "no": "1152",
+  "unitDisplayHomePosition_1W9CxaFK": "484,384,174,475",
+  "unitDisplayDetailPosition_6z54rgb3": "-167,-154,1240,968",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "21,144,620,484,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-110,-421,1190,929",
+  "unitDisplaySummonPosition_KC3Jk8Br": "21,144,620,484,0",
+  "unitDisplayHpPosition_3BpHN6VD": "0,58",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "15000",
+  "sellCaution": false,
+  "effectFrames": "82:125:1,86:120:1,90:125:1,94:120:1,98:125:1,102:120:1,106:125:1,110:120:1,114:125:1,118:120:1,86:500547:1,104:500547:1,122:500547:1,45:1510:1,62:1510:1,79:1510:1",
+  "evofrom": "50835",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "21",
+  "animation_attack": "161",
+  "animation_idle": "52",
+  "animation_move": "5",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "4",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "3",
+  "normal_frames": "88, 92, 96, 100, 104, 108, 112, 116, 120, 124",
+  "normal_distribute": "10, 10, 10, 10, 10, 10, 10, 10, 10, 10",
+  "normal_totaldistr": "100",
+  "description": "As the gods continued their merciless killing of countless innocents throughout the war, Charla finally revealed her role as a priestess of La Veda, and officially revolted against the gods. Shortly afterwards, Charla recruited a group of warrior priests to protect her people as they fled to the new promised land. As their leader, she chose to fight at the vanguard to eliminate any incoming threats from the gods. Although the other priests tried to convince her to flee with them as the war drew to a close, she chose to stay and fight in order to atone for her self-proclaimed heresy.",
+  "summon": "I believed in the gods till the end,<br>but wanted to save people even more.<br>I shall pay for all my sins!",
+  "fusion": "The comfort the light brings...<br>I thought it would last forever...<br>But that's all in the past now...",
+  "evolution": "I shall be your sword!<br>I will point this blade<br>at all of your enemies!",
+  "hp_base": "5133",
+  "atk_base": "2007",
+  "def_base": "2007",
+  "rec_base": "1863",
+  "hp_lord": "6700",
+  "atk_lord": "2500",
+  "def_lord": "2500",
+  "rec_lord": "2300",
+  "hp_anima": "7595",
+  "rec_anima": "2062",
+  "atk_breaker": "2738",
+  "def_breaker": "2262",
+  "atk_guardian": "2262",
+  "def_guardian": "2738",
+  "rec_guardian": "2181",
+  "def_oracle": "2381",
+  "hp_oracle": "6343",
+  "rec_oracle": "2657",
+  "hp_bonus": "1000",
+  "atk_bonus": "340",
+  "def_bonus": "340",
+  "rec_bonus": "620",
+  "lordonly": "",
+  "combo_hits": "10",
+  "normaldc": "40",
+  "ls": "Glorious Sanctification",
+  "lsdescription": "40% boost to max HP, Def, boosts BC drop rate and BB gauge fill rate & boosts BB gauge when attacked",
+  "lsnote": "15% BC/HC, 30% BC efficacy & fills 2-4 BC",
+  "lstype": "Hit Points/Defense/Brave Burst",
+  "bbdescription": "Slightly boosts BB gauge, greatly recovers HP, removes all status ailments & gradually recovers HP, BB gauge for 3 turns",
+  "bbnote": "Fills 4 BC, heals 2700-3000 + 32.4% of own Rec, gradually recovers 2500-3000 + 15% Rec & fills 7 BC/turn",
+  "bbtype": "Support",
+  "bbhits": "",
+  "bbaoe": "",
+  "bbgauge": "22",
+  "bbdc": "",
+  "bbmultiplier": "",
+  "sbbdescription": "Boosts BB gauge & boosts critical damage, greatly boosts Spark damage and probable BB gauge boost from Spark damage for 3 turns",
+  "sbbnote": "Fills 6 BC, 75% critical damage, 60% critical rate, 100% Spark & 80% chance to fill 1-3 BC",
+  "sbbtype": "Support",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "18",
+  "sbbdc": "",
+  "sbbmultiplier": "",
   "ubbdescription": "50% damage reduction for 3 turns, probable resistance against 1 KO attack & fully recovers HP and enormously boosts BB gauge for 3 turns",
   "ubbnote": "50% chance to survive 1 KO attack & fills 50 BC",
   "ubbtype": "Support",
@@ -1349,126 +1557,10 @@
   "es": "Indisputable Reverence",
   "esitem": "",
   "esdescription": "Negates all status ailments & renders self able to withstand 1 KO attack when HP is below 20%",
-  "evofrom": "50835",
-  "evointo": "",
   "evomats1": "",
   "evomats2": "",
   "evomats3": "",
   "evomats4": "",
   "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 2007,
-      "def": 2007,
-      "hp": 5133,
-      "rec": 1863
-    },
-    "_lord": {
-      "atk": 2500,
-      "def": 2500,
-      "hp": 6700,
-      "rec": 2300
-    },
-    "anima": {
-      "atk": 2500,
-      "def": 2500,
-      "hp max": 7890,
-      "hp min": 7295,
-      "rec max": 2181,
-      "rec min": 1943
-    },
-    "breaker": {
-      "atk max": 2857,
-      "atk min": 2619,
-      "def max": 2381,
-      "def min": 2143,
-      "hp": 6700,
-      "rec": 2300
-    },
-    "guardian": {
-      "atk": 2500,
-      "def max": 2857,
-      "def min": 2619,
-      "hp": 6700,
-      "rec max": 2300,
-      "rec min": 2062
-    },
-    "oracle": {
-      "atk": 2500,
-      "def max": 2500,
-      "def min": 2262,
-      "hp": 6700,
-      "rec max": 2776,
-      "rec min": 2538
-    }
-  },
-  "leader_skill": {
-    "desc": "40% boost to max HP, Def, boosts BC drop rate and BB gauge fill rate & boosts BB gauge when attacked",
-    "effects": [
-      {
-        "def% buff": 40,
-        "hp% buff": 40,
-        "passive id": "1"
-      },
-      {
-        "bc drop rate% buff": 15,
-        "passive id": "19"
-      },
-      {
-        "bb gauge fill rate%": 30,
-        "passive id": "32"
-      },
-      {
-        "bc fill when attacked high": 4,
-        "bc fill when attacked low": 2,
-        "bc fill when attacked%": 100,
-        "passive id": "25"
-      }
-    ],
-    "id": "4319",
-    "name": "Glorious Sanctification"
-  },
-  "extra_skill": {
-    "desc": "Negates all status ailments & renders self able to withstand 1 KO attack when HP is below 20%",
-    "effects": [
-      {
-        "conditions": [],
-        "curse resist%": 100,
-        "injury resist%": 100,
-        "paralysis resist%": 100,
-        "passive id": "4",
-        "passive target": "self",
-        "poison resist%": 100,
-        "sick resist%": 100,
-        "weaken resist%": 100
-      },
-      {
-        "buff": {
-          "angel idol buff (12)": true,
-          "angel idol recover hp%": 100,
-          "buff turns (12)": "-1"
-        },
-        "conditions": [],
-        "hp below % buff activation": 20,
-        "passive id": "55",
-        "passive target": "self"
-      }
-    ],
-    "id": "9000",
-    "name": "Indisputable Reverence",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "484,384,174,475",
-  "unitDisplayDetailPosition_6z54rgb3": "-167,-154,1240,968",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "21,144,620,484,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-110,-421,1190,929",
-  "unitDisplaySummonPosition_KC3Jk8Br": "21,144,620,484,0",
-  "unitDisplayHpPosition_3BpHN6VD": "0,58",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "15000",
-  "sellCaution": false,
-  "effectFrames": "82:125:1,86:120:1,90:125:1,94:120:1,98:125:1,102:120:1,106:125:1,110:120:1,114:125:1,118:120:1,86:500547:1,104:500547:1,122:500547:1,45:1510:1,62:1510:1,79:1510:1"
+  "evoitem": ""
 }

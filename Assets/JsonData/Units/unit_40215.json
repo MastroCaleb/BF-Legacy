@@ -1,52 +1,64 @@
 {
   "id": "40215",
-  "unitName": "Heaven's Bolt Amy",
-  "no": "485",
-  "element": "Thunder",
-  "rarity": "★★★★★★",
-  "cost": "24",
-  "maxlv": "100",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "140",
-  "animation_idle": "64",
-  "animation_move": "31",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "description": "The eldest daughter of an aristocratic family from Palmyna. Unable to persuade the king, she was forced to watch her home get destroyed by the gods from afar, where the anger and sadness of her situation destroyed her emotionally. Risking her life as she traversed the battlefield, there was no end to her fighting spirit, which, spreading to the warriors of both countries, sparked a flood of rage toward the gods. However, she would later come to realize that this is exactly what triggered Palmyna's destruction.",
-  "summon": "This blade protects those I love.<br>However, I misused it once.<br>Can you forgive me?",
-  "fusion": "Thank you very much.<br>I promise I won't let the power you<br>have given me go to waste!",
-  "evolution": "Please use my power.<br>I don't want to feel the regret I <br>felt that time again.",
-  "hp_base": "4743",
-  "atk_base": "1350",
-  "def_base": "1462",
-  "rec_base": "1255",
-  "hp_lord": "6254",
-  "atk_lord": "1753",
-  "def_lord": "1694",
-  "rec_lord": "1582",
-  "hp_anima": "6996",
-  "rec_anima": "1384",
-  "atk_breaker": "1951",
-  "def_breaker": "1496",
-  "atk_guardian": "1555",
-  "def_guardian": "1892",
-  "hp_oracle": "5511",
-  "rec_oracle": "1780",
-  "hp_bonus": "750",
-  "atk_bonus": "400",
-  "def_bonus": "200",
-  "rec_bonus": "300",
-  "lordonly": "",
-  "combo_hits": "9",
-  "ls": "Divine Wave",
-  "lsdescription": "25% boost to Atk and Def for all types",
-  "lstype": "Attack/Defense",
+  "stats": {
+    "_base": {
+      "atk": 1350,
+      "def": 1462,
+      "hp": 4743,
+      "rec": 1255
+    },
+    "_lord": {
+      "atk": 1753,
+      "def": 1694,
+      "hp": 6254,
+      "rec": 1582
+    },
+    "anima": {
+      "atk": 1753,
+      "def": 1694,
+      "hp max": 7244,
+      "hp min": 6749,
+      "rec max": 1483,
+      "rec min": 1285
+    },
+    "breaker": {
+      "atk max": 2050,
+      "atk min": 1852,
+      "def max": 1595,
+      "def min": 1397,
+      "hp": 6254,
+      "rec": 1582
+    },
+    "guardian": {
+      "atk": 1753,
+      "def max": 1991,
+      "def min": 1793,
+      "hp": 6254,
+      "rec max": 1582,
+      "rec min": 1384
+    },
+    "oracle": {
+      "atk": 1753,
+      "def max": 1694,
+      "def min": 1496,
+      "hp": 6254,
+      "rec max": 1978,
+      "rec min": 1780
+    }
+  },
+  "leader_skill": {
+    "desc": "25% boost to Atk and Def for all types",
+    "effects": [
+      {
+        "atk% buff": 25,
+        "def% buff": 25,
+        "passive id": "1"
+      }
+    ],
+    "id": "2402",
+    "name": "Divine Wave"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -309,11 +321,6 @@
     ],
     "name": "Thunder Spear Drill"
   },
-  "bbdescription": "10 combo powerful Thunder attack on single enemy & probable Injury and Weakness effect",
-  "bbtype": "Offense",
-  "bbhits": "10",
-  "bbaoe": "1",
-  "bbgauge": "18",
   "sbb": {
     "damage frames": [
       {
@@ -582,86 +589,98 @@
     ],
     "name": "Lightning Spear"
   },
-  "sbbdescription": "13 combo powerful Thunder attack on all enemies & probable Injury and Weakness effect",
-  "sbbtype": "Offense",
-  "sbbhits": "13",
-  "sbbaoe": "A",
-  "sbbgauge": "15",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "40214",
-  "evointo": "",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 1350,
-      "def": 1462,
-      "hp": 4743,
-      "rec": 1255
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1753,
-      "def": 1694,
-      "hp": 6254,
-      "rec": 1582
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1753,
-      "def": 1694,
-      "hp max": 7244,
-      "hp min": 6749,
-      "rec max": 1483,
-      "rec min": 1285
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 140
     },
-    "breaker": {
-      "atk max": 2050,
-      "atk min": 1852,
-      "def max": 1595,
-      "def min": 1397,
-      "hp": 6254,
-      "rec": 1582
+    "idle": {
+      "total number of frames": 64
     },
-    "guardian": {
-      "atk": 1753,
-      "def max": 1991,
-      "def min": 1793,
-      "hp": 6254,
-      "rec max": 1582,
-      "rec min": 1384
-    },
-    "oracle": {
-      "atk": 1753,
-      "def max": 1694,
-      "def min": 1496,
-      "hp": 6254,
-      "rec max": 1978,
-      "rec min": 1780
+    "move": {
+      "total number of frames": 31
     }
   },
-  "leader_skill": {
-    "desc": "25% boost to Atk and Def for all types",
-    "effects": [
-      {
-        "atk% buff": 25,
-        "def% buff": 25,
-        "passive id": "1"
-      }
+  "category": 40210,
+  "cost": "24",
+  "damage frames": {
+    "frame times": [
+      32,
+      38,
+      54,
+      60,
+      76,
+      79,
+      82,
+      85,
+      88
     ],
-    "id": "2402",
-    "name": "Divine Wave"
+    "hit dmg% distribution": [
+      20,
+      8,
+      15,
+      7,
+      26,
+      6,
+      6,
+      6,
+      6
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 9
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "thunder",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 485,
+  "imp": {
+    "max atk": "400",
+    "max def": "200",
+    "max hp": "750",
+    "max rec": "300"
+  },
+  "kind": "normal",
+  "lord damage range": "1631~1823",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Heaven's Bolt Amy",
+  "rarity": "6",
+  "sell caution": false,
+  "unitName": "Heaven's Bolt Amy",
+  "maxlv": "100",
+  "no": "485",
   "unitDisplayHomePosition_1W9CxaFK": "541,246,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-206,-19,1236,838",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "96,234,495,397,0",
@@ -671,5 +690,89 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "8000",
   "sellCaution": false,
-  "effectFrames": "26:400231:1,26:400130:1,32:400231:1,48:400231:1,54:400231:1,70:124:1,70:400063:1,75:290:1"
+  "effectFrames": "26:400231:1,26:400130:1,32:400231:1,48:400231:1,54:400231:1,70:124:1,70:400063:1,75:290:1",
+  "evofrom": "40214",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "21",
+  "animation_attack": "140",
+  "animation_idle": "64",
+  "animation_move": "31",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "32, 38, 54, 60, 76, 79, 82, 85, 88",
+  "normal_distribute": "20, 8, 15, 7, 26, 6, 6, 6, 6",
+  "normal_totaldistr": "100",
+  "bb_frames": "26, 32, 48, 54, 70, 76, 82, 88, 94, 100",
+  "bb_distribute": "15, 8, 10, 7, 20, 8, 8, 8, 8, 8",
+  "bb_totaldistr": "100",
+  "sbb_frames": "26, 30, 34, 48, 52, 56, 70, 76, 82, 88, 94, 100, 106",
+  "sbb_distribute": "10, 7, 7, 10, 7, 7, 15, 7, 6, 6, 6, 6, 6",
+  "sbb_totaldistr": "100",
+  "description": "The eldest daughter of an aristocratic family from Palmyna. Unable to persuade the king, she was forced to watch her home get destroyed by the gods from afar, where the anger and sadness of her situation destroyed her emotionally. Risking her life as she traversed the battlefield, there was no end to her fighting spirit, which, spreading to the warriors of both countries, sparked a flood of rage toward the gods. However, she would later come to realize that this is exactly what triggered Palmyna's destruction.",
+  "summon": "This blade protects those I love.<br>However, I misused it once.<br>Can you forgive me?",
+  "fusion": "Thank you very much.<br>I promise I won't let the power you<br>have given me go to waste!",
+  "evolution": "Please use my power.<br>I don't want to feel the regret I <br>felt that time again.",
+  "hp_base": "4743",
+  "atk_base": "1350",
+  "def_base": "1462",
+  "rec_base": "1255",
+  "hp_lord": "6254",
+  "atk_lord": "1753",
+  "def_lord": "1694",
+  "rec_lord": "1582",
+  "hp_anima": "6997",
+  "rec_anima": "1384",
+  "atk_breaker": "1951",
+  "def_breaker": "1496",
+  "atk_guardian": "1555",
+  "def_guardian": "1892",
+  "rec_guardian": "1483",
+  "def_oracle": "1595",
+  "hp_oracle": "5957",
+  "rec_oracle": "1879",
+  "hp_bonus": "750",
+  "atk_bonus": "400",
+  "def_bonus": "200",
+  "rec_bonus": "300",
+  "lordonly": "",
+  "combo_hits": "9",
+  "normaldc": "27",
+  "ls": "Divine Wave",
+  "lsdescription": "25% boost to Atk and Def for all types",
+  "lstype": "Attack/Defense",
+  "bbdescription": "10 combo powerful Thunder attack on single enemy & probable Injury and Weakness effect",
+  "bbnote": "80% chance to inflict",
+  "bbtype": "Offense",
+  "bbhits": "10",
+  "bbaoe": "1",
+  "bbgauge": "15",
+  "bbdc": "10",
+  "bbmultiplier": "450",
+  "sbbdescription": "13 combo powerful Thunder attack on all enemies & probable Injury and Weakness effect",
+  "sbbnote": "80% chance to inflict",
+  "sbbtype": "Offense",
+  "sbbhits": "13",
+  "sbbaoe": "A",
+  "sbbgauge": "15",
+  "sbbdc": "13",
+  "sbbmultiplier": "400",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "",
+  "evomats2": "",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": ""
 }

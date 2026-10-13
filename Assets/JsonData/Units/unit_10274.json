@@ -1,52 +1,63 @@
 {
   "id": "10274",
-  "unitName": "Kagutsuchi",
-  "no": "416",
-  "element": "Fire",
-  "rarity": "★★★★★",
-  "cost": "16",
-  "maxlv": "80",
-  "basexp": "21",
-  "gender": "N",
-  "ai": "3",
-  "animation_attack": "106",
-  "animation_idle": "128",
-  "animation_move": "88",
-  "movespeed_attack": "0.0024",
-  "movespeed_skill": "0.0024",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "description": "A disastrous beast that long ago was a great threat to the Sama Kingdom. Though the source of his power was sealed away by the Ice Keep, it was once again released by Elsel, the angel who rebelled against the gods. Now free, the beast whose blazing power rivaled the sun itself used his power to burn away the order the gods had brought to the land. Having turned countless cities to ash he was eventually taken out by a half human half mage girl and a massive magical beast, though there are many theories as to how this actually happened.",
-  "summon": "So you require a demon's aid?<br>To have summoned me, you<br>must be the real dangerous one.",
-  "fusion": "What kind of fool would grant<br>more power to a beast like me?<br>Do you know something I don't?",
-  "evolution": "Ha ha ha ha!<br>I am destruction!<br>My flames end all!",
-  "hp_base": "3744",
-  "atk_base": "1234",
-  "def_base": "1022",
-  "rec_base": "972",
-  "hp_lord": "5541",
-  "atk_lord": "1666",
-  "def_lord": "1421",
-  "rec_lord": "1372",
-  "hp_anima": "6133",
-  "rec_anima": "1214",
-  "atk_breaker": "1824",
-  "def_breaker": "1263",
-  "atk_guardian": "1508",
-  "def_guardian": "1579",
-  "hp_oracle": "4948",
-  "rec_oracle": "1530",
-  "hp_bonus": "500",
-  "atk_bonus": "200",
-  "def_bonus": "200",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "8",
-  "ls": "Ares' Authority",
-  "lsdescription": "Large boost in the BB Gauge fill rate",
-  "lstype": "Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 1234,
+      "def": 1022,
+      "hp": 3744,
+      "rec": 972
+    },
+    "_lord": {
+      "atk": 1666,
+      "def": 1421,
+      "hp": 5541,
+      "rec": 1372
+    },
+    "anima": {
+      "atk": 1666,
+      "def": 1421,
+      "hp max": 6331,
+      "hp min": 5936,
+      "rec max": 1293,
+      "rec min": 1135
+    },
+    "breaker": {
+      "atk max": 1903,
+      "atk min": 1745,
+      "def max": 1342,
+      "def min": 1184,
+      "hp": 5541,
+      "rec": 1372
+    },
+    "guardian": {
+      "atk": 1666,
+      "def max": 1658,
+      "def min": 1500,
+      "hp": 5541,
+      "rec max": 1372,
+      "rec min": 1214
+    },
+    "oracle": {
+      "atk": 1666,
+      "def max": 1421,
+      "def min": 1263,
+      "hp": 5541,
+      "rec max": 1688,
+      "rec min": 1530
+    }
+  },
+  "leader_skill": {
+    "desc": "Large boost in the BB Gauge fill rate",
+    "effects": [
+      {
+        "bb gauge fill rate%": 40,
+        "passive id": "32"
+      }
+    ],
+    "id": "1801",
+    "name": "Ares' Authority"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -309,92 +320,103 @@
     ],
     "name": "Kagutsuki"
   },
-  "bbdescription": "10 combo powerful Fire attack on all enemies & boost in Spark damage for 3 turns",
-  "bbtype": "Support/Offense",
-  "bbhits": "10",
-  "bbaoe": "A",
-  "bbgauge": "34",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "10273",
-  "evointo": "10275",
-  "evomats1": "50354",
-  "evomats2": "10133",
-  "evomats3": "60224",
-  "evomats4": "10132",
-  "evomats5": "10191",
-  "evoitem": "",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 1234,
-      "def": 1022,
-      "hp": 3744,
-      "rec": 972
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1666,
-      "def": 1421,
-      "hp": 5541,
-      "rec": 1372
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1666,
-      "def": 1421,
-      "hp max": 6331,
-      "hp min": 5936,
-      "rec max": 1293,
-      "rec min": 1135
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 1903,
-      "atk min": 1745,
-      "def max": 1342,
-      "def min": 1184,
-      "hp": 5541,
-      "rec": 1372
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 106
     },
-    "guardian": {
-      "atk": 1666,
-      "def max": 1658,
-      "def min": 1500,
-      "hp": 5541,
-      "rec max": 1372,
-      "rec min": 1214
+    "idle": {
+      "total number of frames": 128
     },
-    "oracle": {
-      "atk": 1666,
-      "def max": 1421,
-      "def min": 1263,
-      "hp": 5541,
-      "rec max": 1688,
-      "rec min": 1530
+    "move": {
+      "total number of frames": 88
     }
   },
-  "leader_skill": {
-    "desc": "Large boost in the BB Gauge fill rate",
-    "effects": [
-      {
-        "bb gauge fill rate%": 40,
-        "passive id": "32"
-      }
+  "category": 10270,
+  "cost": "16",
+  "damage frames": {
+    "frame times": [
+      8,
+      23,
+      38,
+      48,
+      56,
+      66,
+      76,
+      86
     ],
-    "id": "1801",
-    "name": "Ares' Authority"
+    "hit dmg% distribution": [
+      8,
+      8,
+      8,
+      8,
+      17,
+      17,
+      17,
+      17
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 8
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "fire",
+  "exp_pattern": 20,
+  "gender": "other",
+  "getting type": "rare summon",
+  "guide_id": 416,
+  "imp": {
+    "max atk": "200",
+    "max def": "200",
+    "max hp": "500",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "1551~1732",
+  "movement": {
+    "attack": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    }
+  },
+  "name": "Kagutsuchi",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Kagutsuchi",
+  "maxlv": "80",
+  "no": "416",
   "unitDisplayHomePosition_1W9CxaFK": "443,182,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-64,41,950,780",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "142,268,380,409,0",
@@ -404,5 +426,112 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "4:100181:1,14:140:1,24:100111:1,34:140:1,50:100191:1,50:121:1,60:100081:1,60:121:1,70:100191:1,70:121:1,80:100192:1,80:121:1"
+  "effectFrames": "4:100181:1,14:140:1,24:100111:1,34:140:1,50:100191:1,50:121:1,60:100081:1,60:121:1,70:100191:1,70:121:1,80:100192:1,80:121:1",
+  "evofrom": "10273",
+  "evointo": "10275",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10191",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "106",
+  "animation_idle": "128",
+  "animation_move": "88",
+  "movespeed_attack": "0.0024",
+  "movespeed_skill": "0.0024",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "8, 23, 38, 48, 56, 66, 76, 86",
+  "normal_distribute": "8, 8, 8, 8, 17, 17, 17, 17",
+  "normal_totaldistr": "100",
+  "bb_frames": "55, 61, 67, 73, 79, 85, 93, 101, 109, 117",
+  "bb_distribute": "10, 10, 10, 10, 10, 10, 10, 10, 10, 10",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "description": "A disastrous beast that long ago was a great threat to the Sama Kingdom. Though the source of his power was sealed away by the Ice Keep, it was once again released by Elsel, the angel who rebelled against the gods. Now free, the beast whose blazing power rivaled the sun itself used his power to burn away the order the gods had brought to the land. Having turned countless cities to ash he was eventually taken out by a half human half mage girl and a massive magical beast, though there are many theories as to how this actually happened.",
+  "summon": "So you require a demon's aid?<br>To have summoned me, you<br>must be the real dangerous one.",
+  "fusion": "What kind of fool would grant<br>more power to a beast like me?<br>Do you know something I don't?",
+  "evolution": "Ha ha ha ha!<br>I am destruction!<br>My flames end all!",
+  "hp_base": "3744",
+  "atk_base": "1234",
+  "def_base": "1022",
+  "rec_base": "972",
+  "hp_lord": "5541",
+  "atk_lord": "1666",
+  "def_lord": "1421",
+  "rec_lord": "1372",
+  "hp_anima": "6134",
+  "rec_anima": "1214",
+  "atk_breaker": "1824",
+  "def_breaker": "1263",
+  "atk_guardian": "1508",
+  "def_guardian": "1579",
+  "rec_guardian": "1293",
+  "def_oracle": "1342",
+  "hp_oracle": "5304",
+  "rec_oracle": "1609",
+  "hp_bonus": "500",
+  "atk_bonus": "200",
+  "def_bonus": "200",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "8",
+  "normaldc": "16",
+  "ls": "Ares' Authority",
+  "lsdescription": "Large boost in the BB Gauge fill rate",
+  "lsnote": "40% boost",
+  "lstype": "Brave Burst",
+  "bbdescription": "10 combo powerful Fire attack on all enemies & boost in Spark damage for 3 turns",
+  "bbnote": "50% boost",
+  "bbtype": "Support/Offense",
+  "bbhits": "10",
+  "bbaoe": "A",
+  "bbgauge": "28",
+  "bbdc": "8",
+  "bbmultiplier": "220",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "10133",
+  "evomats3": "60224",
+  "evomats4": "10132",
+  "evomats5": "10191",
+  "evoitem": ""
 }

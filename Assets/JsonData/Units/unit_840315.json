@@ -1,60 +1,73 @@
 {
   "id": "840315",
-  "unitName": "Chevalier Mikael",
-  "no": "8161",
-  "element": "Thunder",
-  "rarity": "★★★★★",
-  "cost": "20",
-  "maxlv": "80",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "177",
-  "animation_idle": "52",
-  "animation_move": "11",
-  "movespeed_attack": "0.0024",
-  "movespeed_skill": "0.0024",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "30, 76, 80, 84",
-  "normal_distribute": "50, 30, 10, 10",
-  "normal_totaldistr": "100",
-  "bb_frames": "30, 35, 40, 76, 80, 84, 88",
-  "bb_distribute": "30, 10, 8, 30, 10, 7, 5",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "description": "A commander of the Deva Imperial Army. Upon his birth into the world, Mikael's life had already been laid out before him. Like every other child born to the mighty House of Ezafius, the most powerful dynasty within the Deva Warrior Caste, Mikael would be molded into the ultimate warrior. Failure, of course, would never be an option for him, as this would cause him to be stripped of his family name and title. As a child, he lived in the shadow of his elder brother, who was said to be the most gifted of warriors born into the family. But it didn't bother him, for the brothers' love and respect for each other only served to strengthen them both. Exceptionally talented himself, Mikael never took anything for granted. Through blood and sweat, Mikael clawed his way up the ranks with his own two hands. He dreamed of the day he would fight by his brother's side in battle, and of the glory they would bring to the House of Ezafius together. However, in the end it turned out to be but a mere dream, a shattered one that would never come to pass.",
-  "summon": "By the shield and the sword,<br>I swear fealty to... Huh?<br>Who the blazes are you?",
-  "fusion": "Fusion? What strange sorcery...<br>But cheap tricks don't get you far.<br>Only through effort do you grow.",
-  "evolution": "",
-  "hp_base": "3561",
-  "atk_base": "1279",
-  "def_base": "1360",
-  "rec_base": "1082",
-  "hp_lord": "5088",
-  "atk_lord": "1828",
-  "def_lord": "1943",
-  "rec_lord": "1546",
-  "hp_anima": "5680",
-  "rec_anima": "1388",
-  "atk_breaker": "1986",
-  "def_breaker": "1785",
-  "def_guardian": "2101",
-  "rec_guardian": "1467",
-  "def_oracle": "1864",
-  "rec_oracle": "1783",
-  "hp_bonus": "500",
-  "atk_bonus": "200",
-  "def_bonus": "260",
-  "rec_bonus": "140",
-  "lordonly": "",
-  "combo_hits": "4",
-  "normaldc": "20",
-  "ls": "Stalwart Aegis",
-  "lsdescription": "20% boost to max HP, Def & negates all status ailments",
-  "lstype": "Hit Points/Defense",
+  "stats": {
+    "_base": {
+      "atk": 1279,
+      "def": 1360,
+      "hp": 3561,
+      "rec": 1082
+    },
+    "_lord": {
+      "atk": 1828,
+      "def": 1943,
+      "hp": 5088,
+      "rec": 1546
+    },
+    "anima": {
+      "atk": 1828,
+      "def": 1943,
+      "hp max": 5878,
+      "hp min": 5483,
+      "rec max": 1467,
+      "rec min": 1309
+    },
+    "breaker": {
+      "atk max": 2065,
+      "atk min": 1907,
+      "def max": 1864,
+      "def min": 1706,
+      "hp": 5088,
+      "rec": 1546
+    },
+    "guardian": {
+      "atk": 1828,
+      "def max": 2180,
+      "def min": 2022,
+      "hp": 5088,
+      "rec max": 1546,
+      "rec min": 1388
+    },
+    "oracle": {
+      "atk": 1828,
+      "def max": 1943,
+      "def min": 1785,
+      "hp": 5088,
+      "rec max": 1862,
+      "rec min": 1704
+    }
+  },
+  "leader_skill": {
+    "desc": "20% boost to max HP, Def & negates all status ailments",
+    "effects": [
+      {
+        "def% buff": 20,
+        "hp% buff": 20,
+        "passive id": "1"
+      },
+      {
+        "curse resist%": 100,
+        "injury resist%": 100,
+        "paralysis resist%": 100,
+        "passive id": "4",
+        "poison resist%": 100,
+        "sick resist%": 100,
+        "weaken resist%": 100
+      }
+    ],
+    "id": "801203",
+    "name": "Stalwart Aegis"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -403,6 +416,172 @@
     ],
     "name": "Shock Claustra"
   },
+  "sbb": {},
+  "ubb": {},
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 177
+    },
+    "idle": {
+      "total number of frames": 52
+    },
+    "move": {
+      "total number of frames": 11
+    }
+  },
+  "category": 840310,
+  "cost": "20",
+  "damage frames": {
+    "frame times": [
+      30,
+      76,
+      80,
+      84
+    ],
+    "hit dmg% distribution": [
+      50,
+      30,
+      10,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 4
+  },
+  "drop check count": 5,
+  "element": "thunder",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 8161,
+  "imp": {
+    "max atk": "200",
+    "max def": "260",
+    "max hp": "500",
+    "max rec": "140"
+  },
+  "kind": "normal",
+  "lord damage range": "1702~1901",
+  "movement": {
+    "attack": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    }
+  },
+  "name": "Chevalier Mikael",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Chevalier Mikael",
+  "maxlv": "80",
+  "no": "8161",
+  "unitDisplayHomePosition_1W9CxaFK": "542,161,140,382",
+  "unitDisplayDetailPosition_6z54rgb3": "-340,-27,1428,1026",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "16,228,584,420,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-276,-212,1428,1026",
+  "unitDisplaySummonPosition_KC3Jk8Br": "16,228,584,420,0",
+  "unitDisplayHpPosition_3BpHN6VD": "0,6",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "5000",
+  "sellCaution": false,
+  "effectFrames": "29:8000469:1,30:400182:1,30:200033:1,40:200033:1,47:200033:1,76:124:1,80:124:1,84:124:1,70:200404:1,82:400182:1,82:600211:1",
+  "evofrom": "",
+  "evointo": "840316",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "840034",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "177",
+  "animation_idle": "52",
+  "animation_move": "11",
+  "movespeed_attack": "0.0024",
+  "movespeed_skill": "0.0024",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "30, 76, 80, 84",
+  "normal_distribute": "50, 30, 10, 10",
+  "normal_totaldistr": "100",
+  "bb_frames": "30, 35, 40, 76, 80, 84, 88",
+  "bb_distribute": "30, 10, 8, 30, 10, 7, 5",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "description": "A commander of the Deva Imperial Army. Upon his birth into the world, Mikael's life had already been laid out before him. Like every other child born to the mighty House of Ezafius, the most powerful dynasty within the Deva Warrior Caste, Mikael would be molded into the ultimate warrior. Failure, of course, would never be an option for him, as this would cause him to be stripped of his family name and title. As a child, he lived in the shadow of his elder brother, who was said to be the most gifted of warriors born into the family. But it didn't bother him, for the brothers' love and respect for each other only served to strengthen them both. Exceptionally talented himself, Mikael never took anything for granted. Through blood and sweat, Mikael clawed his way up the ranks with his own two hands. He dreamed of the day he would fight by his brother's side in battle, and of the glory they would bring to the House of Ezafius together. However, in the end it turned out to be but a mere dream, a shattered one that would never come to pass.",
+  "summon": "By the shield and the sword,<br>I swear fealty to... Huh?<br>Who the blazes are you?",
+  "fusion": "Fusion? What strange sorcery...<br>But cheap tricks don't get you far.<br>Only through effort do you grow.",
+  "evolution": "",
+  "hp_base": "3561",
+  "atk_base": "1279",
+  "def_base": "1360",
+  "rec_base": "1082",
+  "hp_lord": "5088",
+  "atk_lord": "1828",
+  "def_lord": "1943",
+  "rec_lord": "1546",
+  "hp_anima": "5680",
+  "rec_anima": "1388",
+  "atk_breaker": "1986",
+  "def_breaker": "1785",
+  "def_guardian": "2101",
+  "rec_guardian": "1467",
+  "def_oracle": "1864",
+  "rec_oracle": "1783",
+  "hp_bonus": "500",
+  "atk_bonus": "200",
+  "def_bonus": "260",
+  "rec_bonus": "140",
+  "lordonly": "",
+  "combo_hits": "4",
+  "normaldc": "20",
+  "ls": "Stalwart Aegis",
+  "lsdescription": "20% boost to max HP, Def & negates all status ailments",
+  "lstype": "Hit Points/Defense",
   "bbdescription": "7 combo powerful Thunder attack on all foes, 50% damage reduction for 1 turn & guarding boosts BB gauge for 3 turns",
   "bbnote": "3 BC fill",
   "bbtype": "Support/Offense",
@@ -411,7 +590,6 @@
   "bbgauge": "25",
   "bbdc": "14",
   "bbmultiplier": "250",
-  "sbb": {},
   "sbbdescription": "",
   "sbbtype": "",
   "sbbhits": "",
@@ -419,7 +597,6 @@
   "sbbgauge": "",
   "sbbdc": "",
   "sbbmultiplier": "",
-  "ubb": {},
   "ubbdescription": "",
   "ubbtype": "",
   "ubbhits": "",
@@ -430,91 +607,10 @@
   "es": "",
   "esitem": "",
   "esdescription": "",
-  "evofrom": "",
-  "evointo": "840316",
   "evomats1": "50354",
   "evomats2": "40133",
   "evomats3": "60144",
   "evomats4": "60144",
   "evomats5": "840034",
-  "evoitem": "",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 1279,
-      "def": 1360,
-      "hp": 3561,
-      "rec": 1082
-    },
-    "_lord": {
-      "atk": 1828,
-      "def": 1943,
-      "hp": 5088,
-      "rec": 1546
-    },
-    "anima": {
-      "atk": 1828,
-      "def": 1943,
-      "hp max": 5878,
-      "hp min": 5483,
-      "rec max": 1467,
-      "rec min": 1309
-    },
-    "breaker": {
-      "atk max": 2065,
-      "atk min": 1907,
-      "def max": 1864,
-      "def min": 1706,
-      "hp": 5088,
-      "rec": 1546
-    },
-    "guardian": {
-      "atk": 1828,
-      "def max": 2180,
-      "def min": 2022,
-      "hp": 5088,
-      "rec max": 1546,
-      "rec min": 1388
-    },
-    "oracle": {
-      "atk": 1828,
-      "def max": 1943,
-      "def min": 1785,
-      "hp": 5088,
-      "rec max": 1862,
-      "rec min": 1704
-    }
-  },
-  "leader_skill": {
-    "desc": "20% boost to max HP, Def & negates all status ailments",
-    "effects": [
-      {
-        "def% buff": 20,
-        "hp% buff": 20,
-        "passive id": "1"
-      },
-      {
-        "curse resist%": 100,
-        "injury resist%": 100,
-        "paralysis resist%": 100,
-        "passive id": "4",
-        "poison resist%": 100,
-        "sick resist%": 100,
-        "weaken resist%": 100
-      }
-    ],
-    "id": "801203",
-    "name": "Stalwart Aegis"
-  },
-  "extra_skill": {},
-  "unitDisplayHomePosition_1W9CxaFK": "542,161,140,382",
-  "unitDisplayDetailPosition_6z54rgb3": "-340,-27,1428,1026",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "16,228,584,420,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-276,-212,1428,1026",
-  "unitDisplaySummonPosition_KC3Jk8Br": "16,228,584,420,0",
-  "unitDisplayHpPosition_3BpHN6VD": "0,6",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "5000",
-  "sellCaution": false,
-  "effectFrames": "29:8000469:1,30:400182:1,30:200033:1,40:200033:1,47:200033:1,76:124:1,80:124:1,84:124:1,70:200404:1,82:400182:1,82:600211:1"
+  "evoitem": ""
 }

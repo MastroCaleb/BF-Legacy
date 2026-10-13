@@ -1,62 +1,66 @@
 {
   "id": "830003",
-  "unitName": "Maiden Bayley",
-  "no": "8006",
-  "element": "Earth",
-  "rarity": "★★★",
-  "cost": "6",
-  "maxlv": "40",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "99",
-  "animation_idle": "66",
-  "animation_move": "44",
-  "movespeed_attack": "0.0024",
-  "movespeed_skill": "0.0024",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "36, 41, 46",
-  "normal_distribute": "40, 30, 30",
-  "normal_totaldistr": "100",
-  "bb_frames": "36, 41, 43, 46",
-  "bb_distribute": "30, 20, 25, 25",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "description": "A practitioner of the lost \"Nyan-jutsu\" style of martial arts. Born in the jungle, she joined the Battle Maidens in a quest to find out more about her hazy past. Despite the many hardships she faced growing up she always has a cat-like smile on her face. Entrusted with the legendary rifle \"Liebe,\" she interestingly uses it more as a close quarters weapon than a firearm.",
-  "summon": "Nya! Leave it to me. <br>I'll leave no man standing! <br>...as long as there are treats.",
-  "fusion": "Many a treat! <br>That really hit the spot! <br>Nya!",
-  "evolution": "",
-  "hp_base": "2010",
-  "atk_base": "680",
-  "def_base": "740",
-  "rec_base": "677",
-  "hp_lord": "3143",
-  "atk_lord": "950",
-  "def_lord": "967",
-  "rec_lord": "1150",
-  "hp_anima": "3436",
-  "rec_anima": "1072",
-  "atk_breaker": "1028",
-  "def_breaker": "889",
-  "atk_guardian": "872",
-  "def_guardian": "1045",
-  "rec_guardian": "1150",
-  "def_oracle": "1072",
-  "hp_oracle": "3026",
-  "rec_oracle": "1267",
-  "hp_bonus": "400",
-  "atk_bonus": "160",
-  "def_bonus": "160",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "3",
-  "normaldc": "6",
-  "ls": "Earth Spirit's Power",
-  "lsdescription": "25% boost to Atk Power of Earth Types",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 680,
+      "def": 740,
+      "hp": 2010,
+      "rec": 677
+    },
+    "_lord": {
+      "atk": 950,
+      "def": 967,
+      "hp": 3143,
+      "rec": 1150
+    },
+    "anima": {
+      "atk": 950,
+      "def": 967,
+      "hp max": 3533,
+      "hp min": 3338,
+      "rec max": 1111,
+      "rec min": 1033
+    },
+    "breaker": {
+      "atk max": 1067,
+      "atk min": 989,
+      "def max": 928,
+      "def min": 850,
+      "hp": 3143,
+      "rec": 1150
+    },
+    "guardian": {
+      "atk": 950,
+      "def max": 1084,
+      "def min": 1006,
+      "hp": 3143,
+      "rec max": 1150,
+      "rec min": 1072
+    },
+    "oracle": {
+      "atk": 950,
+      "def max": 967,
+      "def min": 889,
+      "hp": 3143,
+      "rec max": 1306,
+      "rec min": 1228
+    }
+  },
+  "leader_skill": {
+    "desc": "25% boost to Atk Power of Earth Types",
+    "effects": [
+      {
+        "atk% buff": 25,
+        "elements buffed": [
+          "earth"
+        ],
+        "passive id": "2"
+      }
+    ],
+    "id": "120",
+    "name": "Earth Spirit's Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -205,96 +209,87 @@
     ],
     "name": "Scratch Strike"
   },
-  "bbdescription": "4 combo Earth elemental power attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "4",
-  "bbaoe": "A",
-  "bbgauge": "20",
-  "bbdc": "4",
-  "bbmultiplier": "180",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "830004",
-  "evomats1": "30132",
-  "evomats2": "30132",
-  "evomats3": "30131",
-  "evomats4": "30131",
-  "evomats5": "60142",
-  "evozelcost": "100000",
-  "stats": {
-    "_base": {
-      "atk": 680,
-      "def": 740,
-      "hp": 2010,
-      "rec": 677
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 950,
-      "def": 967,
-      "hp": 3143,
-      "rec": 1150
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 950,
-      "def": 967,
-      "hp max": 3533,
-      "hp min": 3338,
-      "rec max": 1111,
-      "rec min": 1033
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 99
     },
-    "breaker": {
-      "atk max": 1067,
-      "atk min": 989,
-      "def max": 928,
-      "def min": 850,
-      "hp": 3143,
-      "rec": 1150
+    "idle": {
+      "total number of frames": 66
     },
-    "guardian": {
-      "atk": 950,
-      "def max": 1084,
-      "def min": 1006,
-      "hp": 3143,
-      "rec max": 1150,
-      "rec min": 1072
-    },
-    "oracle": {
-      "atk": 950,
-      "def max": 967,
-      "def min": 889,
-      "hp": 3143,
-      "rec max": 1306,
-      "rec min": 1228
+    "move": {
+      "total number of frames": 44
     }
   },
-  "leader_skill": {
-    "desc": "25% boost to Atk Power of Earth Types",
-    "effects": [
-      {
-        "atk% buff": 25,
-        "elements buffed": [
-          "earth"
-        ],
-        "passive id": "2"
-      }
+  "category": 830000,
+  "cost": "6",
+  "damage frames": {
+    "frame times": [
+      36,
+      41,
+      46
     ],
-    "id": "120",
-    "name": "Earth Spirit's Power"
+    "hit dmg% distribution": [
+      40,
+      30,
+      30
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 3
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "earth",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "farmable",
+  "guide_id": 8006,
+  "imp": {
+    "max atk": "160",
+    "max def": "160",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "884~988",
+  "movement": {
+    "attack": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    }
+  },
+  "name": "Maiden Bayley",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "Maiden Bayley",
+  "maxlv": "40",
+  "no": "8006",
   "unitDisplayHomePosition_1W9CxaFK": "362,271,182,498",
   "unitDisplayDetailPosition_6z54rgb3": "-27,-70,940,850",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "94,220,479,434,0",
@@ -304,5 +299,99 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "1000",
   "sellCaution": false,
-  "effectFrames": "30:123:1,35:123:1,40:123:1"
+  "effectFrames": "30:123:1,35:123:1,40:123:1",
+  "evofrom": "",
+  "evointo": "830004",
+  "evozelcost": "100000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "30132",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "30131",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60142",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "99",
+  "animation_idle": "66",
+  "animation_move": "44",
+  "movespeed_attack": "0.0024",
+  "movespeed_skill": "0.0024",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "36, 41, 46",
+  "normal_distribute": "40, 30, 30",
+  "normal_totaldistr": "100",
+  "bb_frames": "36, 41, 43, 46",
+  "bb_distribute": "30, 20, 25, 25",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "description": "A practitioner of the lost \"Nyan-jutsu\" style of martial arts. Born in the jungle, she joined the Battle Maidens in a quest to find out more about her hazy past. Despite the many hardships she faced growing up she always has a cat-like smile on her face. Entrusted with the legendary rifle \"Liebe,\" she interestingly uses it more as a close quarters weapon than a firearm.",
+  "summon": "Nya! Leave it to me. <br>I'll leave no man standing! <br>...as long as there are treats.",
+  "fusion": "Many a treat! <br>That really hit the spot! <br>Nya!",
+  "evolution": "",
+  "hp_base": "2010",
+  "atk_base": "680",
+  "def_base": "740",
+  "rec_base": "677",
+  "hp_lord": "3143",
+  "atk_lord": "950",
+  "def_lord": "967",
+  "rec_lord": "1150",
+  "hp_anima": "3436",
+  "rec_anima": "1072",
+  "atk_breaker": "1028",
+  "def_breaker": "889",
+  "atk_guardian": "872",
+  "def_guardian": "1045",
+  "rec_guardian": "1150",
+  "def_oracle": "1072",
+  "hp_oracle": "3026",
+  "rec_oracle": "1267",
+  "hp_bonus": "400",
+  "atk_bonus": "160",
+  "def_bonus": "160",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "3",
+  "normaldc": "6",
+  "ls": "Earth Spirit's Power",
+  "lsdescription": "25% boost to Atk Power of Earth Types",
+  "lstype": "Attack",
+  "bbdescription": "4 combo Earth elemental power attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "4",
+  "bbaoe": "A",
+  "bbgauge": "20",
+  "bbdc": "4",
+  "bbmultiplier": "180",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "30132",
+  "evomats2": "30132",
+  "evomats3": "30131",
+  "evomats4": "30131",
+  "evomats5": "60142"
 }

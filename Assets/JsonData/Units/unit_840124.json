@@ -1,62 +1,69 @@
 {
   "id": "840124",
-  "unitName": "Grievesnare",
-  "no": "8062",
-  "element": "Thunder",
-  "rarity": "★★★★",
-  "cost": "12",
-  "maxlv": "60",
-  "basexp": "21",
-  "gender": "N",
-  "ai": "2",
-  "animation_attack": "Unsupported",
-  "animation_idle": "Unsupported",
-  "animation_move": "Unsupported",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "10, 15, 40, 45, 90, 95, 100, 105, 110",
-  "normal_distribute": "5, 10, 5, 10, 10, 10, 20, 20, 10",
-  "normal_totaldistr": "100",
-  "bb_frames": "20, 40, 95, 105, 115, 125",
-  "bb_distribute": "15, 15, 15, 15, 15, 30",
-  "bb_totaldistr": "105",
-  "bb_effectdelay": "1",
-  "description": "The Grievesnare is an augmented machine that has a hybrid of abilities from different powerful mythical creatures, making it extremely dangerous and hard to defeat. It was considered the deadliest among the machines created by Gazia that started the augmentation wars in Athensphere. Using forbidden technology, souls of mythical beasts were infused into the mechanical consciousness of the Grievesnare, giving it an edge in its hunts and raids.",
-  "summon": "Grrrstt...<br>[Awaiting Command...]",
-  "fusion": "Grrsttt...",
-  "evolution": "",
-  "hp_base": "2922",
-  "atk_base": "976",
-  "def_base": "920",
-  "rec_base": "791",
-  "hp_lord": "4175",
-  "atk_lord": "1395",
-  "def_lord": "1315",
-  "rec_lord": "1130",
-  "hp_anima": "4617",
-  "rec_anima": "1012",
-  "atk_breaker": "1513",
-  "def_breaker": "1197",
-  "atk_guardian": "1277",
-  "def_guardian": "1433",
-  "rec_guardian": "1071",
-  "def_oracle": "1256",
-  "hp_oracle": "3998",
-  "rec_oracle": "1307",
-  "hp_bonus": "400",
-  "atk_bonus": "160",
-  "def_bonus": "160",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "9",
-  "normaldc": "18",
-  "ls": "Beastal Rage",
-  "lsdescription": "10% boost to critical hit rate & 10% boost to Atk and Def for all Units",
-  "lstype": "Attack/Defense/Recovery",
+  "stats": {
+    "_base": {
+      "atk": 976,
+      "def": 920,
+      "hp": 2922,
+      "rec": 791
+    },
+    "_lord": {
+      "atk": 1395,
+      "def": 1315,
+      "hp": 4175,
+      "rec": 1130
+    },
+    "anima": {
+      "atk": 1395,
+      "def": 1315,
+      "hp max": 4765,
+      "hp min": 4470,
+      "rec max": 1071,
+      "rec min": 953
+    },
+    "breaker": {
+      "atk max": 1572,
+      "atk min": 1454,
+      "def max": 1256,
+      "def min": 1138,
+      "hp": 4175,
+      "rec": 1130
+    },
+    "guardian": {
+      "atk": 1395,
+      "def max": 1492,
+      "def min": 1374,
+      "hp": 4175,
+      "rec max": 1130,
+      "rec min": 1012
+    },
+    "oracle": {
+      "atk": 1395,
+      "def max": 1315,
+      "def min": 1197,
+      "hp": 4175,
+      "rec max": 1366,
+      "rec min": 1248
+    }
+  },
+  "leader_skill": {
+    "desc": "10% boost to critical hit rate & 10% boost to Atk and Def for all Units",
+    "effects": [
+      {
+        "atk% buff": 10,
+        "crit% buff": 10,
+        "def% buff": 10,
+        "passive id": "1"
+      },
+      {
+        "hc drop rate% buff": 20,
+        "passive id": "19"
+      }
+    ],
+    "id": "801042",
+    "name": "Bestial Rage"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -321,99 +328,91 @@
     ],
     "name": "Dire Impulse"
   },
-  "bbdescription": "6 combo powerful Thunder attack on single enemy & adds chance of decreasing Atk and Def for 1 turn",
-  "bbtype": "Support/Offense",
-  "bbhits": "6",
-  "bbaoe": "1",
-  "bbgauge": "20",
-  "bbdc": "6",
-  "bbmultiplier": "220",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "840125",
-  "evomats1": "40133",
-  "evomats2": "840034",
-  "evomats3": "870034",
-  "evomats4": "40132",
-  "evomats5": "60143",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 976,
-      "def": 920,
-      "hp": 2922,
-      "rec": 791
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1395,
-      "def": 1315,
-      "hp": 4175,
-      "rec": 1130
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1395,
-      "def": 1315,
-      "hp max": 4765,
-      "hp min": 4470,
-      "rec max": 1071,
-      "rec min": 953
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "error": "sam file not supported"
+  },
+  "category": 840120,
+  "cost": "12",
+  "damage frames": {
+    "frame times": [
+      10,
+      15,
+      40,
+      45,
+      90,
+      95,
+      100,
+      105,
+      110
+    ],
+    "hit dmg% distribution": [
+      5,
+      10,
+      5,
+      10,
+      10,
+      10,
+      20,
+      20,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 9
+  },
+  "drop check count": 2,
+  "element": "thunder",
+  "exp_pattern": 20,
+  "gender": "other",
+  "getting type": "farmable",
+  "guide_id": 8062,
+  "imp": {
+    "max atk": "160",
+    "max def": "160",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "1298~1450",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
     },
-    "breaker": {
-      "atk max": 1572,
-      "atk min": 1454,
-      "def max": 1256,
-      "def min": 1138,
-      "hp": 4175,
-      "rec": 1130
-    },
-    "guardian": {
-      "atk": 1395,
-      "def max": 1492,
-      "def min": 1374,
-      "hp": 4175,
-      "rec max": 1130,
-      "rec min": 1012
-    },
-    "oracle": {
-      "atk": 1395,
-      "def max": 1315,
-      "def min": 1197,
-      "hp": 4175,
-      "rec max": 1366,
-      "rec min": 1248
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
     }
   },
-  "leader_skill": {
-    "desc": "10% boost to critical hit rate & 10% boost to Atk and Def for all Units",
-    "effects": [
-      {
-        "atk% buff": 10,
-        "crit% buff": 10,
-        "def% buff": 10,
-        "passive id": "1"
-      },
-      {
-        "hc drop rate% buff": 20,
-        "passive id": "19"
-      }
-    ],
-    "id": "801042",
-    "name": "Bestial Rage"
-  },
-  "extra_skill": {},
+  "name": "Grievesnare",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Grievesnare",
+  "maxlv": "60",
+  "no": "8062",
   "unitDisplayHomePosition_1W9CxaFK": "171,230,182,498",
   "unitDisplayDetailPosition_6z54rgb3": "73,-53,1017,856",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "115,277,425,359,0",
@@ -423,5 +422,109 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "10:8000249:1,15:8000249:1,40:8000249:1,45:8000249:1,20:100131:1,50:100131:1,90:400201:1,95:400201:1,100:400201:1,105:400201:1,110:8000241:1"
+  "effectFrames": "10:8000249:1,15:8000249:1,40:8000249:1,45:8000249:1,20:100131:1,50:100131:1,90:400201:1,95:400201:1,100:400201:1,105:400201:1,110:8000241:1",
+  "evofrom": "",
+  "evointo": "840125",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "40133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "840034",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "870034",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "Unsupported",
+  "animation_idle": "Unsupported",
+  "animation_move": "Unsupported",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "10, 15, 40, 45, 90, 95, 100, 105, 110",
+  "normal_distribute": "5, 10, 5, 10, 10, 10, 20, 20, 10",
+  "normal_totaldistr": "100",
+  "bb_frames": "20, 40, 95, 105, 115, 125",
+  "bb_distribute": "15, 15, 15, 15, 15, 30",
+  "bb_totaldistr": "105",
+  "bb_effectdelay": "1",
+  "description": "The Grievesnare is an augmented machine that has a hybrid of abilities from different powerful mythical creatures, making it extremely dangerous and hard to defeat. It was considered the deadliest among the machines created by Gazia that started the augmentation wars in Athensphere. Using forbidden technology, souls of mythical beasts were infused into the mechanical consciousness of the Grievesnare, giving it an edge in its hunts and raids.",
+  "summon": "Grrrstt...<br>[Awaiting Command...]",
+  "fusion": "Grrsttt...",
+  "evolution": "",
+  "hp_base": "2922",
+  "atk_base": "976",
+  "def_base": "920",
+  "rec_base": "791",
+  "hp_lord": "4175",
+  "atk_lord": "1395",
+  "def_lord": "1315",
+  "rec_lord": "1130",
+  "hp_anima": "4617",
+  "rec_anima": "1012",
+  "atk_breaker": "1513",
+  "def_breaker": "1197",
+  "atk_guardian": "1277",
+  "def_guardian": "1433",
+  "rec_guardian": "1071",
+  "def_oracle": "1256",
+  "hp_oracle": "3998",
+  "rec_oracle": "1307",
+  "hp_bonus": "400",
+  "atk_bonus": "160",
+  "def_bonus": "160",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "9",
+  "normaldc": "18",
+  "ls": "Beastal Rage",
+  "lsdescription": "10% boost to critical hit rate & 10% boost to Atk and Def for all Units",
+  "lstype": "Attack/Defense/Recovery",
+  "bbdescription": "6 combo powerful Thunder attack on single enemy & adds chance of decreasing Atk and Def for 1 turn",
+  "bbtype": "Support/Offense",
+  "bbhits": "6",
+  "bbaoe": "1",
+  "bbgauge": "20",
+  "bbdc": "6",
+  "bbmultiplier": "220",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "40133",
+  "evomats2": "840034",
+  "evomats3": "870034",
+  "evomats4": "40132",
+  "evomats5": "60143"
 }

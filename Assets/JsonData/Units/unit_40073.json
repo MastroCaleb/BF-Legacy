@@ -1,62 +1,63 @@
 {
   "id": "40073",
-  "unitName": "Gigas",
-  "no": "702",
-  "element": "Thunder",
-  "rarity": "★★★★",
-  "cost": "9",
-  "maxlv": "60",
-  "basexp": "15",
-  "gender": "N",
-  "ai": "4",
-  "animation_attack": "132",
-  "animation_idle": "61",
-  "animation_move": "11",
-  "movespeed_attack": "0.005",
-  "movespeed_skill": "0.005",
-  "speedtype_attack": "1",
-  "speedtype_skill": "1",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "65, 70, 75, 80, 85",
-  "normal_distribute": "28, 18, 18, 18, 18",
-  "normal_totaldistr": "100",
-  "bb_frames": "65, 69, 73, 77, 81, 85",
-  "bb_distribute": "30, 14, 14, 14, 14, 14",
-  "bb_totaldistr": "100",
-  "description": "A monster boasting incredible power who is said to come from a species of giants. Even within the battle-hungry giant race, this particular species is completely obsessed with battle, fighting incessantly day and night from the moment they are born, until their very death. Although its body is made up of pure solid muscle, it has an intelligence that puts humans to shame. However, it holds no other interests besides battle. Only a few humans have sought aid from this gigantic and wise creature, but since it demands a fight from the person requesting help as compensation, most of those who do ask only end up beaten to death.",
-  "summon": "A day of bloodbath!<br>If you ask for my help,<br>that is how you must repay me!",
-  "fusion": "This is...yes!<br>Let's go Summoner!<br>Let's battle right away!",
-  "evolution": "Now that I have this power,<br>I want to try it right away!<br>Get ready for a fight!",
-  "hp_base": "2624",
-  "atk_base": "881",
-  "def_base": "590",
-  "rec_base": "356",
-  "hp_lord": "3621",
-  "atk_lord": "1293",
-  "def_lord": "900",
-  "rec_lord": "623",
-  "hp_anima": "4064",
-  "rec_anima": "505",
-  "atk_breaker": "1411",
-  "def_breaker": "782",
-  "atk_guardian": "1175",
-  "def_guardian": "1018",
-  "rec_guardian": "564",
-  "def_oracle": "841",
-  "hp_oracle": "3444",
-  "rec_oracle": "800",
-  "hp_bonus": "400",
-  "atk_bonus": "160",
-  "def_bonus": "160",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "5",
-  "normaldc": "10",
-  "ls": "Soul Flash",
-  "lsdescription": "Boost in Karma produced during Spark",
-  "lsnote": "50% boost",
-  "lstype": "Karma",
+  "stats": {
+    "_base": {
+      "atk": 881,
+      "def": 590,
+      "hp": 2624,
+      "rec": 356
+    },
+    "_lord": {
+      "atk": 1293,
+      "def": 900,
+      "hp": 3621,
+      "rec": 623
+    },
+    "anima": {
+      "atk": 1293,
+      "def": 900,
+      "hp max": 4211,
+      "hp min": 3916,
+      "rec max": 564,
+      "rec min": 446
+    },
+    "breaker": {
+      "atk max": 1470,
+      "atk min": 1352,
+      "def max": 841,
+      "def min": 723,
+      "hp": 3621,
+      "rec": 623
+    },
+    "guardian": {
+      "atk": 1293,
+      "def max": 1077,
+      "def min": 959,
+      "hp": 3621,
+      "rec max": 623,
+      "rec min": 505
+    },
+    "oracle": {
+      "atk": 1293,
+      "def max": 900,
+      "def min": 782,
+      "hp": 3621,
+      "rec max": 859,
+      "rec min": 741
+    }
+  },
+  "leader_skill": {
+    "desc": "Boost in Karma produced during Spark",
+    "effects": [
+      {
+        "karma drop% for spark": 50,
+        "passive id": "31"
+      }
+    ],
+    "id": "1701",
+    "name": "Soul Flash"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -301,94 +302,103 @@
     ],
     "name": "Giant Axe Swing"
   },
-  "bbdescription": "6 combo Thunder elemental attack on single enemy & probable Injury effect",
-  "bbnote": "80% chance to inflict",
-  "bbtype": "Offense",
-  "bbhits": "6",
-  "bbaoe": "1",
-  "bbgauge": "15",
-  "bbdc": "18",
-  "bbmultiplier": "290",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "40072",
-  "evointo": "",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 881,
-      "def": 590,
-      "hp": 2624,
-      "rec": 356
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_under",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1293,
-      "def": 900,
-      "hp": 3621,
-      "rec": 623
+    {
+      "action": "skill",
+      "chance%": 30.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1293,
-      "def": 900,
-      "hp max": 4211,
-      "hp min": 3916,
-      "rec max": 564,
-      "rec min": 446
+    {
+      "action": "attack",
+      "chance%": 70.0,
+      "target conditions": "hp_max",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 1470,
-      "atk min": 1352,
-      "def max": 841,
-      "def min": 723,
-      "hp": 3621,
-      "rec": 623
+    {
+      "action": "attack",
+      "chance%": 50.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "guardian": {
-      "atk": 1293,
-      "def max": 1077,
-      "def min": 959,
-      "hp": 3621,
-      "rec max": 623,
-      "rec min": 505
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 132
     },
-    "oracle": {
-      "atk": 1293,
-      "def max": 900,
-      "def min": 782,
-      "hp": 3621,
-      "rec max": 859,
-      "rec min": 741
+    "idle": {
+      "total number of frames": 61
+    },
+    "move": {
+      "total number of frames": 11
     }
   },
-  "leader_skill": {
-    "desc": "Boost in Karma produced during Spark",
-    "effects": [
-      {
-        "karma drop% for spark": 50,
-        "passive id": "31"
-      }
+  "category": 40070,
+  "cost": "9",
+  "damage frames": {
+    "frame times": [
+      65,
+      70,
+      75,
+      80,
+      85
     ],
-    "id": "1701",
-    "name": "Soul Flash"
+    "hit dmg% distribution": [
+      28,
+      18,
+      18,
+      18,
+      18
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 5
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "thunder",
+  "exp_pattern": 15,
+  "gender": "other",
+  "getting type": "farmable",
+  "guide_id": 702,
+  "imp": {
+    "max atk": "160",
+    "max def": "160",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "1203~1344",
+  "movement": {
+    "attack": {
+      "move speed": 0.005,
+      "move speed type": "1",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.005,
+      "move speed type": "1",
+      "move type": "1"
+    }
+  },
+  "name": "Gigas",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Gigas",
+  "maxlv": "60",
+  "no": "702",
   "unitDisplayHomePosition_1W9CxaFK": "249,234,200,544",
   "unitDisplayDetailPosition_6z54rgb3": "110,55,800,747",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "73,112,580,541,0",
@@ -398,5 +408,84 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "59:124:1,65:280:1,64:124:1,69:124:1,74:124:1,79:124:1"
+  "effectFrames": "59:124:1,65:280:1,64:124:1,69:124:1,74:124:1,79:124:1",
+  "evofrom": "40072",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "15",
+  "animation_attack": "132",
+  "animation_idle": "61",
+  "animation_move": "11",
+  "movespeed_attack": "0.005",
+  "movespeed_skill": "0.005",
+  "speedtype_attack": "1",
+  "speedtype_skill": "1",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "65, 70, 75, 80, 85",
+  "normal_distribute": "28, 18, 18, 18, 18",
+  "normal_totaldistr": "100",
+  "bb_frames": "65, 69, 73, 77, 81, 85",
+  "bb_distribute": "30, 14, 14, 14, 14, 14",
+  "bb_totaldistr": "100",
+  "description": "A monster boasting incredible power who is said to come from a species of giants. Even within the battle-hungry giant race, this particular species is completely obsessed with battle, fighting incessantly day and night from the moment they are born, until their very death. Although its body is made up of pure solid muscle, it has an intelligence that puts humans to shame. However, it holds no other interests besides battle. Only a few humans have sought aid from this gigantic and wise creature, but since it demands a fight from the person requesting help as compensation, most of those who do ask only end up beaten to death.",
+  "summon": "A day of bloodbath!<br>If you ask for my help,<br>that is how you must repay me!",
+  "fusion": "This is...yes!<br>Let's go Summoner!<br>Let's battle right away!",
+  "evolution": "Now that I have this power,<br>I want to try it right away!<br>Get ready for a fight!",
+  "hp_base": "2624",
+  "atk_base": "881",
+  "def_base": "590",
+  "rec_base": "356",
+  "hp_lord": "3621",
+  "atk_lord": "1293",
+  "def_lord": "900",
+  "rec_lord": "623",
+  "hp_anima": "4064",
+  "rec_anima": "505",
+  "atk_breaker": "1411",
+  "def_breaker": "782",
+  "atk_guardian": "1175",
+  "def_guardian": "1018",
+  "rec_guardian": "564",
+  "def_oracle": "841",
+  "hp_oracle": "3444",
+  "rec_oracle": "800",
+  "hp_bonus": "400",
+  "atk_bonus": "160",
+  "def_bonus": "160",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "5",
+  "normaldc": "10",
+  "ls": "Soul Flash",
+  "lsdescription": "Boost in Karma produced during Spark",
+  "lsnote": "50% boost",
+  "lstype": "Karma",
+  "bbdescription": "6 combo Thunder elemental attack on single enemy & probable Injury effect",
+  "bbnote": "80% chance to inflict",
+  "bbtype": "Offense",
+  "bbhits": "6",
+  "bbaoe": "1",
+  "bbgauge": "15",
+  "bbdc": "18",
+  "bbmultiplier": "290",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "",
+  "evomats2": "",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": ""
 }

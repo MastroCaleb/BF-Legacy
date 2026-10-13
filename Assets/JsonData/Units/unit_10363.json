@@ -1,61 +1,63 @@
 {
   "id": "10363",
-  "unitName": "Fire Step Ramna",
-  "no": "500",
-  "element": "Fire",
-  "rarity": "★★★★",
-  "cost": "12",
-  "maxlv": "60",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "139",
-  "animation_idle": "52",
-  "animation_move": "4",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "19, 33, 37, 53, 57",
-  "normal_distribute": "20, 20, 20, 20, 20",
-  "normal_totaldistr": "100",
-  "bb_frames": "19, 33, 37, 53, 57, 61",
-  "bb_distribute": "17, 16, 17, 17, 16, 17",
-  "bb_totaldistr": "100",
-  "description": "One of the 12 Guardians of the Gods, protectors of the land of the gods. Girlfriend of Farlon, another of the 12 Guardians. Loved by all, it's said she always retained hope even when confronted with hardship, reassuring her allies with her smile. Her fire blade technique known as the \"Fire Step\" which she created using a unique rhythm was hard for even advanced warriors to evade. It's said that even the hard-headed, self-important Farlon couldn't refuse her requests.",
-  "summon": "My fiery blade bear my passion!<br>I will use it to rip all to shreds!<br>Pretty powerful, don't you think?",
-  "fusion": "My flames have grown stronger.<br>I bear my soul in this fiery dance.<br>This feels so very good!",
-  "evolution": "",
-  "hp_base": "2933",
-  "atk_base": "1105",
-  "def_base": "900",
-  "rec_base": "998",
-  "hp_lord": "4211",
-  "atk_lord": "1454",
-  "def_lord": "1200",
-  "rec_lord": "1331",
-  "hp_anima": "4654",
-  "rec_anima": "1213",
-  "atk_breaker": "1572",
-  "def_breaker": "1082",
-  "atk_guardian": "1336",
-  "def_guardian": "1318",
-  "rec_guardian": "1272",
-  "def_oracle": "1141",
-  "hp_oracle": "4034",
-  "rec_oracle": "1508",
-  "hp_bonus": "400",
-  "atk_bonus": "120",
-  "def_bonus": "200",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "5",
-  "normaldc": "15",
-  "ls": "Earth's Protection",
-  "lsdescription": "10% reduction in damage from Earth Types",
-  "lstype": "Defense",
+  "stats": {
+    "_base": {
+      "atk": 1105,
+      "def": 900,
+      "hp": 2933,
+      "rec": 998
+    },
+    "_lord": {
+      "atk": 1454,
+      "def": 1200,
+      "hp": 4211,
+      "rec": 1331
+    },
+    "anima": {
+      "atk": 1454,
+      "def": 1200,
+      "hp max": 4801,
+      "hp min": 4506,
+      "rec max": 1272,
+      "rec min": 1154
+    },
+    "breaker": {
+      "atk max": 1631,
+      "atk min": 1513,
+      "def max": 1141,
+      "def min": 1023,
+      "hp": 4211,
+      "rec": 1331
+    },
+    "guardian": {
+      "atk": 1454,
+      "def max": 1377,
+      "def min": 1259,
+      "hp": 4211,
+      "rec max": 1331,
+      "rec min": 1213
+    },
+    "oracle": {
+      "atk": 1454,
+      "def max": 1200,
+      "def min": 1082,
+      "hp": 4211,
+      "rec max": 1567,
+      "rec min": 1449
+    }
+  },
+  "leader_skill": {
+    "desc": "10% reduction in damage from Earth Types",
+    "effects": [
+      {
+        "earth resist%": 10,
+        "passive id": "5"
+      }
+    ],
+    "id": "504",
+    "name": "Earth's Protection"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -320,95 +322,91 @@
     ],
     "name": "Dancing Sword"
   },
-  "bbdescription": "6 combo Fire elemental attack on all enemies & boost to Def for 3 turns",
-  "bbnote": "30% boost",
-  "bbtype": "Support/Offense",
-  "bbhits": "6",
-  "bbaoe": "A",
-  "bbgauge": "24",
-  "bbdc": "6",
-  "bbmultiplier": "200",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "10364",
-  "evomats1": "10133",
-  "evomats2": "10132",
-  "evomats3": "10132",
-  "evomats4": "10191",
-  "evomats5": "10191",
-  "evoitem": "",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 1105,
-      "def": 900,
-      "hp": 2933,
-      "rec": 998
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1454,
-      "def": 1200,
-      "hp": 4211,
-      "rec": 1331
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1454,
-      "def": 1200,
-      "hp max": 4801,
-      "hp min": 4506,
-      "rec max": 1272,
-      "rec min": 1154
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 139
     },
-    "breaker": {
-      "atk max": 1631,
-      "atk min": 1513,
-      "def max": 1141,
-      "def min": 1023,
-      "hp": 4211,
-      "rec": 1331
+    "idle": {
+      "total number of frames": 52
     },
-    "guardian": {
-      "atk": 1454,
-      "def max": 1377,
-      "def min": 1259,
-      "hp": 4211,
-      "rec max": 1331,
-      "rec min": 1213
-    },
-    "oracle": {
-      "atk": 1454,
-      "def max": 1200,
-      "def min": 1082,
-      "hp": 4211,
-      "rec max": 1567,
-      "rec min": 1449
+    "move": {
+      "total number of frames": 4
     }
   },
-  "leader_skill": {
-    "desc": "10% reduction in damage from Earth Types",
-    "effects": [
-      {
-        "earth resist%": 10,
-        "passive id": "5"
-      }
+  "category": 10360,
+  "cost": "12",
+  "damage frames": {
+    "frame times": [
+      19,
+      33,
+      37,
+      53,
+      57
     ],
-    "id": "504",
-    "name": "Earth's Protection"
+    "hit dmg% distribution": [
+      20,
+      20,
+      20,
+      20,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 5
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "fire",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 500,
+  "imp": {
+    "max atk": "120",
+    "max def": "200",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "1353~1512",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Fire Step Ramna",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Fire Step Ramna",
+  "maxlv": "60",
+  "no": "500",
   "unitDisplayHomePosition_1W9CxaFK": "480,465,184,504",
   "unitDisplayDetailPosition_6z54rgb3": "-122,-290,1101,1076",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "96,234,495,397,0",
@@ -418,5 +416,100 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "13:121:1,27:121:1,31:121:1,47:121:1,51:121:1,13:100112:1,53:150:1,57:100081:1"
+  "effectFrames": "13:121:1,27:121:1,31:121:1,47:121:1,51:121:1,13:100112:1,53:150:1,57:100081:1",
+  "evofrom": "",
+  "evointo": "10364",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "10133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10132",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "10191",
+      "count": 2
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "139",
+  "animation_idle": "52",
+  "animation_move": "4",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "19, 33, 37, 53, 57",
+  "normal_distribute": "20, 20, 20, 20, 20",
+  "normal_totaldistr": "100",
+  "bb_frames": "19, 33, 37, 53, 57, 61",
+  "bb_distribute": "17, 16, 17, 17, 16, 17",
+  "bb_totaldistr": "100",
+  "description": "One of the 12 Guardians of the Gods, protectors of the land of the gods. Girlfriend of Farlon, another of the 12 Guardians. Loved by all, it's said she always retained hope even when confronted with hardship, reassuring her allies with her smile. Her fire blade technique known as the \"Fire Step\" which she created using a unique rhythm was hard for even advanced warriors to evade. It's said that even the hard-headed, self-important Farlon couldn't refuse her requests.",
+  "summon": "My fiery blade bear my passion!<br>I will use it to rip all to shreds!<br>Pretty powerful, don't you think?",
+  "fusion": "My flames have grown stronger.<br>I bear my soul in this fiery dance.<br>This feels so very good!",
+  "evolution": "",
+  "hp_base": "2933",
+  "atk_base": "1105",
+  "def_base": "900",
+  "rec_base": "998",
+  "hp_lord": "4211",
+  "atk_lord": "1454",
+  "def_lord": "1200",
+  "rec_lord": "1331",
+  "hp_anima": "4654",
+  "rec_anima": "1213",
+  "atk_breaker": "1572",
+  "def_breaker": "1082",
+  "atk_guardian": "1336",
+  "def_guardian": "1318",
+  "rec_guardian": "1272",
+  "def_oracle": "1141",
+  "hp_oracle": "4034",
+  "rec_oracle": "1508",
+  "hp_bonus": "400",
+  "atk_bonus": "120",
+  "def_bonus": "200",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "5",
+  "normaldc": "15",
+  "ls": "Earth's Protection",
+  "lsdescription": "10% reduction in damage from Earth Types",
+  "lstype": "Defense",
+  "bbdescription": "6 combo Fire elemental attack on all enemies & boost to Def for 3 turns",
+  "bbnote": "30% boost",
+  "bbtype": "Support/Offense",
+  "bbhits": "6",
+  "bbaoe": "A",
+  "bbgauge": "24",
+  "bbdc": "6",
+  "bbmultiplier": "200",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "10133",
+  "evomats2": "10132",
+  "evomats3": "10132",
+  "evomats4": "10191",
+  "evomats5": "10191",
+  "evoitem": ""
 }

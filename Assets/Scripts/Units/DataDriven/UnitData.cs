@@ -77,6 +77,7 @@ public class UnitData
     [JsonProperty("evoMats")]    public List<string> evoMats;
     [JsonProperty("evoItem")]    public string evoItem;
     [JsonProperty("evoZelCost")] public int evoZelCost;
+    [JsonProperty("evoKarmaCost")] public int evoKarmaCost;
 
     // ── Sell ──
     [JsonProperty("sellPrice")]   public int sellPrice;

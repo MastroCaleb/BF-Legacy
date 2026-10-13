@@ -1,62 +1,66 @@
 {
   "id": "60114",
-  "unitName": "Scythe God Alice",
-  "freetext": ":''See Scythe God Alice (BFH) for her appearance in BRAVE FRONTIER HEROES.''",
-  "no": "170",
-  "element": "Dark",
-  "rarity": "★★★★★",
-  "cost": "12",
-  "maxlv": "80",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "171",
-  "animation_idle": "44",
-  "animation_move": "11",
-  "movespeed_attack": "0.0024",
-  "movespeed_skill": "0.0024",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "55, 69, 83, 85, 91",
-  "normal_distribute": "40, 20, 20, 10, 10",
-  "normal_totaldistr": "100",
-  "bb_frames": "55, 69, 83, 85, 91, 130, 140, 150",
-  "bb_distribute": "15, 15, 15, 15, 10, 10, 10, 10",
-  "bb_totaldistr": "100",
-  "description": "The insane, scythe-wielding, eighth princess of the ruined Bariura Empire. During the war she was rebuked for letting her own squad perish in order to annihilate an army of the gods. However, after this happened she calmly headed back to the front lines saying, \"They were in my way.\" From then on, none could stop her from fighting. Legend says she cut down god after god, smiling until the day she died.",
-  "summon": "You're terrible.<br>We can't hold off any longer.<br>Let us destroy the world!",
-  "fusion": "Grant me more souls...<br>I still desire more...",
-  "evolution": "It's OK. I'm not broken.<br>I perform best in this <br>rough state.",
-  "hp_base": "2678",
-  "atk_base": "1113",
-  "def_base": "734",
-  "rec_base": "1369",
-  "hp_lord": "3986",
-  "atk_lord": "1503",
-  "def_lord": "1171",
-  "rec_lord": "1898",
-  "hp_anima": "4579",
-  "rec_anima": "1740",
-  "atk_breaker": "1661",
-  "def_breaker": "1013",
-  "atk_guardian": "1345",
-  "def_guardian": "1329",
-  "rec_guardian": "1819",
-  "def_oracle": "1092",
-  "hp_oracle": "3749",
-  "rec_oracle": "2135",
-  "hp_bonus": "750",
-  "atk_bonus": "140",
-  "def_bonus": "140",
-  "rec_bonus": "140",
-  "lordonly": "",
-  "combo_hits": "5",
-  "normaldc": "15",
-  "ls": "Dark God's Power",
-  "lsdescription": "50% boost to Atk Power of Dark Types",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 1113,
+      "def": 734,
+      "hp": 2678,
+      "rec": 1369
+    },
+    "_lord": {
+      "atk": 1503,
+      "def": 1171,
+      "hp": 3986,
+      "rec": 1898
+    },
+    "anima": {
+      "atk": 1503,
+      "def": 1171,
+      "hp max": 4776,
+      "hp min": 4381,
+      "rec max": 1819,
+      "rec min": 1661
+    },
+    "breaker": {
+      "atk max": 1740,
+      "atk min": 1582,
+      "def max": 1092,
+      "def min": 934,
+      "hp": 3986,
+      "rec": 1898
+    },
+    "guardian": {
+      "atk": 1503,
+      "def max": 1408,
+      "def min": 1250,
+      "hp": 3986,
+      "rec max": 1898,
+      "rec min": 1740
+    },
+    "oracle": {
+      "atk": 1503,
+      "def max": 1171,
+      "def min": 1013,
+      "hp": 3986,
+      "rec max": 2214,
+      "rec min": 2056
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to Atk Power of Dark Types",
+    "effects": [
+      {
+        "atk% buff": 50,
+        "elements buffed": [
+          "dark"
+        ],
+        "passive id": "2"
+      }
+    ],
+    "id": "151",
+    "name": "Dark God's Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -223,96 +227,91 @@
     ],
     "name": "Abaddon Eater"
   },
-  "bbdescription": "8 combo Dark elemental power attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "8",
-  "bbaoe": "A",
-  "bbgauge": "28",
-  "bbdc": "8",
-  "bbmultiplier": "190",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "60113",
-  "evointo": "60115",
-  "evomats1": "50354",
-  "evomats2": "60123",
-  "evomats3": "60144",
-  "evomats4": "60122",
-  "evomats5": "60201",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 1113,
-      "def": 734,
-      "hp": 2678,
-      "rec": 1369
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1503,
-      "def": 1171,
-      "hp": 3986,
-      "rec": 1898
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1503,
-      "def": 1171,
-      "hp max": 4776,
-      "hp min": 4381,
-      "rec max": 1819,
-      "rec min": 1661
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 171
     },
-    "breaker": {
-      "atk max": 1740,
-      "atk min": 1582,
-      "def max": 1092,
-      "def min": 934,
-      "hp": 3986,
-      "rec": 1898
+    "idle": {
+      "total number of frames": 44
     },
-    "guardian": {
-      "atk": 1503,
-      "def max": 1408,
-      "def min": 1250,
-      "hp": 3986,
-      "rec max": 1898,
-      "rec min": 1740
-    },
-    "oracle": {
-      "atk": 1503,
-      "def max": 1171,
-      "def min": 1013,
-      "hp": 3986,
-      "rec max": 2214,
-      "rec min": 2056
+    "move": {
+      "total number of frames": 11
     }
   },
-  "leader_skill": {
-    "desc": "50% boost to Atk Power of Dark Types",
-    "effects": [
-      {
-        "atk% buff": 50,
-        "elements buffed": [
-          "dark"
-        ],
-        "passive id": "2"
-      }
+  "category": 60110,
+  "cost": "12",
+  "damage frames": {
+    "frame times": [
+      55,
+      69,
+      83,
+      85,
+      91
     ],
-    "id": "151",
-    "name": "Dark God's Power"
+    "hit dmg% distribution": [
+      40,
+      20,
+      20,
+      10,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 5
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "dark",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 170,
+  "imp": {
+    "max atk": "140",
+    "max def": "140",
+    "max hp": "750",
+    "max rec": "140"
+  },
+  "kind": "normal",
+  "lord damage range": "1398~1563",
+  "movement": {
+    "attack": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    }
+  },
+  "name": "Scythe God Alice",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Scythe God Alice",
+  "maxlv": "80",
+  "no": "170",
   "unitDisplayHomePosition_1W9CxaFK": "283,74,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "35,111,920,672",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "107,279,480,349,0",
@@ -322,5 +321,109 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "49:126:1,63:126:1,77:126:1,79:126:1,85:126:1"
+  "effectFrames": "49:126:1,63:126:1,77:126:1,79:126:1,85:126:1",
+  "evofrom": "60113",
+  "evointo": "60115",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60123",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60122",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60201",
+      "count": 1
+    }
+  ],
+  "freetext": ":''See Scythe God Alice (BFH) for her appearance in BRAVE FRONTIER HEROES.''",
+  "basexp": "21",
+  "animation_attack": "171",
+  "animation_idle": "44",
+  "animation_move": "11",
+  "movespeed_attack": "0.0024",
+  "movespeed_skill": "0.0024",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "55, 69, 83, 85, 91",
+  "normal_distribute": "40, 20, 20, 10, 10",
+  "normal_totaldistr": "100",
+  "bb_frames": "55, 69, 83, 85, 91, 130, 140, 150",
+  "bb_distribute": "15, 15, 15, 15, 10, 10, 10, 10",
+  "bb_totaldistr": "100",
+  "description": "The insane, scythe-wielding, eighth princess of the ruined Bariura Empire. During the war she was rebuked for letting her own squad perish in order to annihilate an army of the gods. However, after this happened she calmly headed back to the front lines saying, \"They were in my way.\" From then on, none could stop her from fighting. Legend says she cut down god after god, smiling until the day she died.",
+  "summon": "You're terrible.<br>We can't hold off any longer.<br>Let us destroy the world!",
+  "fusion": "Grant me more souls...<br>I still desire more...",
+  "evolution": "It's OK. I'm not broken.<br>I perform best in this <br>rough state.",
+  "hp_base": "2678",
+  "atk_base": "1113",
+  "def_base": "734",
+  "rec_base": "1369",
+  "hp_lord": "3986",
+  "atk_lord": "1503",
+  "def_lord": "1171",
+  "rec_lord": "1898",
+  "hp_anima": "4579",
+  "rec_anima": "1740",
+  "atk_breaker": "1661",
+  "def_breaker": "1013",
+  "atk_guardian": "1345",
+  "def_guardian": "1329",
+  "rec_guardian": "1819",
+  "def_oracle": "1092",
+  "hp_oracle": "3749",
+  "rec_oracle": "2135",
+  "hp_bonus": "750",
+  "atk_bonus": "140",
+  "def_bonus": "140",
+  "rec_bonus": "140",
+  "lordonly": "",
+  "combo_hits": "5",
+  "normaldc": "15",
+  "ls": "Dark God's Power",
+  "lsdescription": "50% boost to Atk Power of Dark Types",
+  "lstype": "Attack",
+  "bbdescription": "8 combo Dark elemental power attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "8",
+  "bbaoe": "A",
+  "bbgauge": "28",
+  "bbdc": "8",
+  "bbmultiplier": "190",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "60123",
+  "evomats3": "60144",
+  "evomats4": "60122",
+  "evomats5": "60201"
 }

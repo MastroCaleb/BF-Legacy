@@ -1,76 +1,94 @@
 {
   "id": "11046",
-  "unitName": "Purifying Flame Rugahr",
-  "no": "1569",
-  "element": "Fire",
-  "rarity": "★★★★★★★",
-  "cost": "46",
-  "maxlv": "150",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "189",
-  "animation_idle": "52",
-  "animation_move": "7",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "25, 49, 56, 62, 67, 71, 93",
-  "normal_distribute": "15, 13, 11, 12, 10, 12, 27",
-  "normal_totaldistr": "100",
-  "bb_frames": "25, 28, 31, 49, 53, 57, 60, 63, 66, 93",
-  "bb_distribute": "10, 8, 7, 8, 9, 8, 10, 11, 10, 19",
-  "bb_totaldistr": "100",
-  "sbb_frames": "25, 28, 31, 49, 53, 57, 60, 63, 66, 93, 98, 103",
-  "sbb_distribute": "8, 7, 6, 8, 9, 8, 9, 8, 9, 12, 9, 7",
-  "sbb_totaldistr": "100",
-  "sbb2_frames": "108, 113, 118",
-  "sbb2_distribute": "35, 35, 30",
-  "sbb2_totaldistr": "100",
-  "ubb_frames": "25, 28, 31, 34, 49, 53, 57, 60, 63, 66, 69, 72, 93, 96, 99, 102, 105, 108",
-  "ubb_distribute": "6, 5, 5, 4, 6, 5, 6, 5, 6, 5, 6, 7, 9, 7, 5, 5, 4, 4",
-  "ubb_totaldistr": "100",
-  "ubb2_frames": "111, 114, 117, 120, 123",
-  "ubb2_distribute": "20, 20, 20, 20, 20",
-  "ubb2_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "1",
-  "sbb2_effectdelay": "2",
-  "ubb_effectdelay": "1",
-  "ubb2_effectdelay": "2",
-  "description": "A warrior of lava and a member of the fearsome group known as the Ten Vile Disnomians, who were active during the dawn of the empire. A man of logic and reasoning, Rugahr rarely hesitated to use any means available to achieve his goals. However, he never left his comrades behind, and they loved him well for this. When the Imperial Guard ambushed the Disnomians, he bought time for his friends to escape by using the fire burning within him to blow himself up along with a great number of the imperial force.",
-  "summon": "You want to be my friend?<br>Fine, then I'll protect you.<br>Friends are...everything to me.",
-  "fusion": "There is no clean path to victory.<br>If you lose, you lose it all...<br>That's the reality I live in.",
-  "evolution": "",
-  "hp_base": "5290",
-  "atk_base": "2450",
-  "def_base": "1773",
-  "rec_base": "1745",
-  "hp_lord": "7543",
-  "atk_lord": "3316",
-  "def_lord": "2411",
-  "rec_lord": "2353",
-  "hp_anima": "8435",
-  "rec_anima": "2115",
-  "atk_breaker": "3554",
-  "def_breaker": "2173",
-  "def_guardian": "2649",
-  "rec_guardian": "2234",
-  "def_oracle": "2292",
-  "rec_oracle": "2710",
-  "hp_bonus": "1000",
-  "atk_bonus": "600",
-  "def_bonus": "300",
-  "rec_bonus": "400",
-  "lordonly": "",
-  "combo_hits": "7",
-  "normaldc": "35",
-  "ls": "Occult Fire",
-  "lsdescription": "80% boost to Atk, 40% boost to max HP, boosts Atk relative to remaining HP & hugely boosts critical damage",
-  "lsnote": "0.6% boost per 1% HP remaining - 60% boost at full HP & 150% Crit",
+  "stats": {
+    "_base": {
+      "atk": 2450,
+      "def": 1773,
+      "hp": 5290,
+      "rec": 1745
+    },
+    "_lord": {
+      "atk": 3316,
+      "def": 2411,
+      "hp": 7543,
+      "rec": 2353
+    },
+    "anima": {
+      "atk": 3316,
+      "def": 2411,
+      "hp max": 8733,
+      "hp min": 8138,
+      "rec max": 2234,
+      "rec min": 1996
+    },
+    "breaker": {
+      "atk max": 3673,
+      "atk min": 3435,
+      "def max": 2292,
+      "def min": 2054,
+      "hp": 7543,
+      "rec": 2353
+    },
+    "guardian": {
+      "atk": 3316,
+      "def max": 2768,
+      "def min": 2530,
+      "hp": 7543,
+      "rec max": 2353,
+      "rec min": 2115
+    },
+    "oracle": {
+      "atk": 3316,
+      "def max": 2411,
+      "def min": 2173,
+      "hp": 7543,
+      "rec max": 2829,
+      "rec min": 2591
+    }
+  },
+  "leader_skill": {
+    "desc": "80% boost to Atk, 40% boost to max HP, boosts Atk relative to remaining HP & hugely boosts critical damage",
+    "effects": [
+      {
+        "atk% buff": 80,
+        "hp% buff": 40,
+        "passive id": "1"
+      },
+      {
+        "atk% base buff": 0,
+        "atk% extra buff based on hp": 60,
+        "buff proportional to hp": "remaining",
+        "passive id": "46"
+      },
+      {
+        "crit multiplier%": 150.0,
+        "passive id": "34"
+      }
+    ],
+    "id": "1954",
+    "name": "Occult Fire"
+  },
+  "extra_skill": {
+    "desc": "30% boost to Spark damage & slightly boosts critical damage",
+    "effects": [
+      {
+        "conditions": [],
+        "damage% for spark": 30,
+        "passive id": "31",
+        "passive target": "self"
+      },
+      {
+        "conditions": [],
+        "crit multiplier%": 30.0,
+        "passive id": "34",
+        "passive target": "self"
+      }
+    ],
+    "id": "30900",
+    "name": "Menacing Firestorm",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -527,14 +545,6 @@
     ],
     "name": "Lava Fang"
   },
-  "bbdescription": "10 combo Fire attack on all foes, boosts own Atk for 3 turns & enormously boosts critical hit rate and boosts critical damage for 3 turns",
-  "bbnote": "80% Atk, 60% Crit & 50% Crit damage",
-  "bbtype": "Offense",
-  "bbhits": "10",
-  "bbaoe": "A",
-  "bbgauge": "19",
-  "bbdc": "10",
-  "bbmultiplier": "380",
   "sbb": {
     "damage frames": [
       {
@@ -1193,18 +1203,6 @@
     ],
     "name": "Guarding Hazard"
   },
-  "sbbdescription": "12 combo powerful Fire attack on all foes, 3 combo powerful Fire attack on all Earth types, slightly boosts own Spark damage and boosts own Atk for 3 turns & enormously boosts critical hit rate and boosts critical damage for 3 turns",
-  "sbbnote": "30% self Spark, 80% Atk, 60% Crit & 50% Crit damage",
-  "sbbtype": "Offense",
-  "sbbhits": "12",
-  "sbbaoe": "A",
-  "sbbgauge": "33",
-  "sbbdc": "12",
-  "sbbmultiplier": "800",
-  "sbbhits2": "3",
-  "sbbaoe2": "A",
-  "sbbdc2": "3",
-  "sbbmultiplier2": "580",
   "ubb": {
     "damage frames": [
       {
@@ -1363,6 +1361,227 @@
     ],
     "name": "Roaring Mountain"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 189
+    },
+    "idle": {
+      "total number of frames": 52
+    },
+    "move": {
+      "total number of frames": 7
+    }
+  },
+  "category": 11040,
+  "cost": "46",
+  "damage frames": {
+    "frame times": [
+      25,
+      49,
+      56,
+      62,
+      67,
+      71,
+      93
+    ],
+    "hit dmg% distribution": [
+      15,
+      13,
+      11,
+      12,
+      10,
+      12,
+      27
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 7
+  },
+  "drop check count": 5,
+  "element": "fire",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 1569,
+  "imp": {
+    "max atk": "600",
+    "max def": "300",
+    "max hp": "1000",
+    "max rec": "400"
+  },
+  "kind": "normal",
+  "lord damage range": "3087~3448",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Purifying Flame Rugahr",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Purifying Flame Rugahr",
+  "maxlv": "120",
+  "no": "1569",
+  "unitDisplayHomePosition_1W9CxaFK": "312,187,174,475",
+  "unitDisplayDetailPosition_6z54rgb3": "59,31,800,782",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "101,200,451,441,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "71,-198,750,733",
+  "unitDisplaySummonPosition_KC3Jk8Br": "101,200,451,441,0",
+  "unitDisplayHpPosition_3BpHN6VD": "1,33",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "15000",
+  "sellCaution": false,
+  "effectFrames": "22:11376:1,25:10020:1,26:11038:1,93:1911:1,83:100175:1",
+  "evofrom": "",
+  "evointo": "11047",
+  "evozelcost": "3000000",
+  "evokarmacost": "1000000",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "10354",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 2
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "189",
+  "animation_idle": "52",
+  "animation_move": "7",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "25, 49, 56, 62, 67, 71, 93",
+  "normal_distribute": "15, 13, 11, 12, 10, 12, 27",
+  "normal_totaldistr": "100",
+  "bb_frames": "25, 28, 31, 49, 53, 57, 60, 63, 66, 93",
+  "bb_distribute": "10, 8, 7, 8, 9, 8, 10, 11, 10, 19",
+  "bb_totaldistr": "100",
+  "sbb_frames": "25, 28, 31, 49, 53, 57, 60, 63, 66, 93, 98, 103",
+  "sbb_distribute": "8, 7, 6, 8, 9, 8, 9, 8, 9, 12, 9, 7",
+  "sbb_totaldistr": "100",
+  "sbb2_frames": "108, 113, 118",
+  "sbb2_distribute": "35, 35, 30",
+  "sbb2_totaldistr": "100",
+  "ubb_frames": "25, 28, 31, 34, 49, 53, 57, 60, 63, 66, 69, 72, 93, 96, 99, 102, 105, 108",
+  "ubb_distribute": "6, 5, 5, 4, 6, 5, 6, 5, 6, 5, 6, 7, 9, 7, 5, 5, 4, 4",
+  "ubb_totaldistr": "100",
+  "ubb2_frames": "111, 114, 117, 120, 123",
+  "ubb2_distribute": "20, 20, 20, 20, 20",
+  "ubb2_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "1",
+  "sbb2_effectdelay": "2",
+  "ubb_effectdelay": "1",
+  "ubb2_effectdelay": "2",
+  "description": "A warrior of lava and a member of the fearsome group known as the Ten Vile Disnomians, who were active during the dawn of the empire. A man of logic and reasoning, Rugahr rarely hesitated to use any means available to achieve his goals. However, he never left his comrades behind, and they loved him well for this. When the Imperial Guard ambushed the Disnomians, he bought time for his friends to escape by using the fire burning within him to blow himself up along with a great number of the imperial force.",
+  "summon": "You want to be my friend?<br>Fine, then I'll protect you.<br>Friends are...everything to me.",
+  "fusion": "There is no clean path to victory.<br>If you lose, you lose it all...<br>That's the reality I live in.",
+  "evolution": "",
+  "hp_base": "5290",
+  "atk_base": "2450",
+  "def_base": "1773",
+  "rec_base": "1745",
+  "hp_lord": "7543",
+  "atk_lord": "3316",
+  "def_lord": "2411",
+  "rec_lord": "2353",
+  "hp_anima": "8435",
+  "rec_anima": "2115",
+  "atk_breaker": "3554",
+  "def_breaker": "2173",
+  "def_guardian": "2649",
+  "rec_guardian": "2234",
+  "def_oracle": "2292",
+  "rec_oracle": "2710",
+  "hp_bonus": "1000",
+  "atk_bonus": "600",
+  "def_bonus": "300",
+  "rec_bonus": "400",
+  "lordonly": "",
+  "combo_hits": "7",
+  "normaldc": "35",
+  "ls": "Occult Fire",
+  "lsdescription": "80% boost to Atk, 40% boost to max HP, boosts Atk relative to remaining HP & hugely boosts critical damage",
+  "lsnote": "0.6% boost per 1% HP remaining - 60% boost at full HP & 150% Crit",
+  "bbdescription": "10 combo Fire attack on all foes, boosts own Atk for 3 turns & enormously boosts critical hit rate and boosts critical damage for 3 turns",
+  "bbnote": "80% Atk, 60% Crit & 50% Crit damage",
+  "bbtype": "Offense",
+  "bbhits": "10",
+  "bbaoe": "A",
+  "bbgauge": "19",
+  "bbdc": "10",
+  "bbmultiplier": "380",
+  "sbbdescription": "12 combo powerful Fire attack on all foes, 3 combo powerful Fire attack on all Earth types, slightly boosts own Spark damage and boosts own Atk for 3 turns & enormously boosts critical hit rate and boosts critical damage for 3 turns",
+  "sbbnote": "30% self Spark, 80% Atk, 60% Crit & 50% Crit damage",
+  "sbbtype": "Offense",
+  "sbbhits": "12",
+  "sbbaoe": "A",
+  "sbbgauge": "33",
+  "sbbdc": "12",
+  "sbbmultiplier": "800",
+  "sbbhits2": "3",
+  "sbbaoe2": "A",
+  "sbbdc2": "3",
+  "sbbmultiplier2": "580",
   "ubbdescription": "18 combo massive Fire attack on all foes, 5 combo massive Fire attack on single foe & enormously boosts Atk, Spark damage, critical hit rate and critical damage for 3 turns",
   "ubbnote": "300% Atk, Spark and Crit damage, 60% Crit",
   "ubbtype": "Offense",
@@ -1379,8 +1598,6 @@
   "esitem": "",
   "esdescription": "30% boost to Spark damage & slightly boosts critical damage",
   "esnote": "30% Crit damage",
-  "evofrom": "",
-  "evointo": "11047",
   "evomats1": "Fire Mecha God",
   "evomats2": "Fire Mecha God",
   "evomats3": "Miracle Totem",
@@ -1389,105 +1606,5 @@
   "evomats6": "Dragon Mimic",
   "evomats7": "Metal Mimic",
   "evomats8": "Metal Mimic",
-  "evoitem": "",
-  "evozelcost": "3000000",
-  "stats": {
-    "_base": {
-      "atk": 2450,
-      "def": 1773,
-      "hp": 5290,
-      "rec": 1745
-    },
-    "_lord": {
-      "atk": 3316,
-      "def": 2411,
-      "hp": 7543,
-      "rec": 2353
-    },
-    "anima": {
-      "atk": 3316,
-      "def": 2411,
-      "hp max": 8733,
-      "hp min": 8138,
-      "rec max": 2234,
-      "rec min": 1996
-    },
-    "breaker": {
-      "atk max": 3673,
-      "atk min": 3435,
-      "def max": 2292,
-      "def min": 2054,
-      "hp": 7543,
-      "rec": 2353
-    },
-    "guardian": {
-      "atk": 3316,
-      "def max": 2768,
-      "def min": 2530,
-      "hp": 7543,
-      "rec max": 2353,
-      "rec min": 2115
-    },
-    "oracle": {
-      "atk": 3316,
-      "def max": 2411,
-      "def min": 2173,
-      "hp": 7543,
-      "rec max": 2829,
-      "rec min": 2591
-    }
-  },
-  "leader_skill": {
-    "desc": "80% boost to Atk, 40% boost to max HP, boosts Atk relative to remaining HP & hugely boosts critical damage",
-    "effects": [
-      {
-        "atk% buff": 80,
-        "hp% buff": 40,
-        "passive id": "1"
-      },
-      {
-        "atk% base buff": 0,
-        "atk% extra buff based on hp": 60,
-        "buff proportional to hp": "remaining",
-        "passive id": "46"
-      },
-      {
-        "crit multiplier%": 150.0,
-        "passive id": "34"
-      }
-    ],
-    "id": "1954",
-    "name": "Occult Fire"
-  },
-  "extra_skill": {
-    "desc": "30% boost to Spark damage & slightly boosts critical damage",
-    "effects": [
-      {
-        "conditions": [],
-        "damage% for spark": 30,
-        "passive id": "31",
-        "passive target": "self"
-      },
-      {
-        "conditions": [],
-        "crit multiplier%": 30.0,
-        "passive id": "34",
-        "passive target": "self"
-      }
-    ],
-    "id": "30900",
-    "name": "Menacing Firestorm",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "312,187,174,475",
-  "unitDisplayDetailPosition_6z54rgb3": "59,31,800,782",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "101,200,451,441,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "71,-198,750,733",
-  "unitDisplaySummonPosition_KC3Jk8Br": "101,200,451,441,0",
-  "unitDisplayHpPosition_3BpHN6VD": "1,33",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "15000",
-  "sellCaution": false,
-  "effectFrames": "22:11376:1,25:10020:1,26:11038:1,93:1911:1,83:100175:1"
+  "evoitem": ""
 }

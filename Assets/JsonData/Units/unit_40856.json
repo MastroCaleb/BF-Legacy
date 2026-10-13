@@ -1,68 +1,101 @@
 {
   "id": "40856",
-  "unitName": "Flashing Knight Licht",
-  "no": "1495",
-  "element": "Thunder",
-  "rarity": "★★★★★★★",
-  "cost": "44",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "118",
-  "animation_idle": "53",
-  "animation_move": "13",
-  "movespeed_attack": "4",
-  "movespeed_skill": "4",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "2",
-  "movetype_skill": "2",
-  "normal_frames": "29, 35, 41, 64, 70, 76, 82",
-  "normal_distribute": "15, 13, 12, 18, 15, 14, 13",
-  "normal_totaldistr": "100",
-  "bb_frames": "29, 32, 35, 38, 41, 64, 67, 70, 73, 76, 79",
-  "bb_distribute": "10, 9, 8, 7, 6, 14, 12, 10, 9, 8, 7",
-  "bb_totaldistr": "100",
-  "sbb_frames": "29, 32, 35, 38, 41, 44, 47, 64, 67, 70, 73, 76, 79, 82, 85, 88",
-  "sbb_distribute": "8, 7, 6, 5, 5, 4, 4, 11, 9, 7, 7, 6, 6, 5, 5, 5",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "29, 32, 35, 38, 41, 44, 47, 50, 53, 64, 67, 70, 73, 76, 79, 82, 85, 88, 91, 94",
-  "ubb_distribute": "6, 6, 5, 5, 4, 4, 3, 3, 3, 8, 7, 7, 6, 6, 5, 5, 5, 4, 4, 4",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "1",
-  "ubb_effectdelay": "1",
-  "description": "A swordsman from the volunteer army that arose to bring order to Elgaia. Calm, collected, and skilled in covert operations, he also saved the army's leader; a woman he had known since childhood. He is said to have followed her orders quietly in most cases, but also kept her in check whenever she ran out of control if necessary. While on a mission after the founding of the empire, he later learned that a staff officer close to the emperor had issued a death warrant for that same leader on the pretense of treason. He rushed to her side immediately, and gave his life defending her.",
-  "summon": "Where am I?<br>Oh, so you called me here. Fine. I'll work with you. I'm used to being jerked around.",
-  "fusion": "I...I only want the power I need. Whatever is left, I'll give to her. Excessive power just gets in the way of the mission.",
-  "evolution": "",
-  "hp_base": "4974",
-  "atk_base": "2079",
-  "def_base": "1672",
-  "rec_base": "1819",
-  "hp_lord": "7158",
-  "atk_lord": "2858",
-  "def_lord": "2280",
-  "rec_lord": "2480",
-  "hp_anima": "8050",
-  "rec_anima": "2242",
-  "atk_breaker": "3096",
-  "def_breaker": "2042",
-  "def_guardian": "2518",
-  "rec_guardian": "2361",
-  "def_oracle": "2161",
-  "rec_oracle": "2837",
-  "hp_bonus": "1000",
-  "atk_bonus": "600",
-  "def_bonus": "300",
-  "rec_bonus": "400",
-  "lordonly": "",
-  "combo_hits": "7",
-  "normaldc": "35",
-  "ls": "Phantom Sacrifice",
-  "lsdescription": "30% boost to Atk, max HP, 100% boost to Spark damage & boosts BB Atk for 2 turns when damage taken has exceeded certain amount",
-  "lsnote": "150% BB Atk after 5,000 damage",
+  "stats": {
+    "_base": {
+      "atk": 2079,
+      "def": 1672,
+      "hp": 4974,
+      "rec": 1819
+    },
+    "_lord": {
+      "atk": 2858,
+      "def": 2280,
+      "hp": 7158,
+      "rec": 2480
+    },
+    "anima": {
+      "atk": 2858,
+      "def": 2280,
+      "hp max": 8348,
+      "hp min": 7753,
+      "rec max": 2361,
+      "rec min": 2123
+    },
+    "breaker": {
+      "atk max": 3215,
+      "atk min": 2977,
+      "def max": 2161,
+      "def min": 1923,
+      "hp": 7158,
+      "rec": 2480
+    },
+    "guardian": {
+      "atk": 2858,
+      "def max": 2637,
+      "def min": 2399,
+      "hp": 7158,
+      "rec max": 2480,
+      "rec min": 2242
+    },
+    "oracle": {
+      "atk": 2858,
+      "def max": 2280,
+      "def min": 2042,
+      "hp": 7158,
+      "rec max": 2956,
+      "rec min": 2718
+    }
+  },
+  "leader_skill": {
+    "desc": "30% boost to Atk, max HP, 100% boost to Spark damage & boosts BB Atk for 2 turns when damage taken has exceeded certain amount",
+    "effects": [
+      {
+        "atk% buff": 30,
+        "hp% buff": 30,
+        "passive id": "1"
+      },
+      {
+        "damage% for spark": 100,
+        "passive id": "31"
+      },
+      {
+        "buff": {
+          "bb atk% buff": 150,
+          "buff turns (72)": "1",
+          "sbb atk% buff": 150,
+          "ubb atk% buff": 150
+        },
+        "damage threshold buff activation": 5000,
+        "passive id": "78"
+      }
+    ],
+    "id": "7474",
+    "name": "Phantom Sacrifice"
+  },
+  "extra_skill": {
+    "desc": "Probable infliction of slight Spark vulnerability for 2 turns & boosts Spark damage when HP is full",
+    "effects": [
+      {
+        "conditions": [],
+        "damage% for spark": 50,
+        "hp above % buff requirement": 100,
+        "passive id": "104",
+        "passive target": "self"
+      },
+      {
+        "conditions": [],
+        "passive id": "75",
+        "passive target": "self",
+        "spark debuff chance%": 10,
+        "spark debuff turns": 1,
+        "spark debuff%": 20
+      }
+    ],
+    "id": "25700",
+    "name": "Lightning Guardian",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -521,14 +554,6 @@
     ],
     "name": "Skia Flament"
   },
-  "bbdescription": "11 combo Thunder attack on all foes, considerably boosts BB gauge, Spark damage restores HP for 3 turns & hugely boosts Spark damage for 3 turns",
-  "bbnote": "80% Spark, heal 300-400 per Spark & fill 6 BC",
-  "bbtype": "Heal/Offense",
-  "bbhits": "11",
-  "bbaoe": "A",
-  "bbgauge": "29",
-  "bbdc": "11",
-  "bbmultiplier": "350",
   "sbb": {
     "damage frames": [
       {
@@ -1099,14 +1124,6 @@
     ],
     "name": "Skia Ordeal"
   },
-  "sbbdescription": "16 combo powerful Thunder attack on all foes, considerably boosts BB gauge, adds probable Spark critical for 3 turns, Spark damage slightly boosts BB gauge for 3 turns & hugely boosts Spark damage for 3 turns",
-  "sbbnote": "80% Spark, 20% chance Sparks deal 50% extra damage, fills 1-2 BC & fills 6 BC",
-  "sbbtype": "Offense",
-  "sbbhits": "16",
-  "sbbaoe": "A",
-  "sbbgauge": "30",
-  "sbbdc": "16",
-  "sbbmultiplier": "560",
   "ubb": {
     "damage frames": [
       {
@@ -1265,6 +1282,215 @@
     ],
     "name": "Blue Flash"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 118
+    },
+    "idle": {
+      "total number of frames": 53
+    },
+    "move": {
+      "total number of frames": 13
+    }
+  },
+  "category": 40850,
+  "cost": "44",
+  "damage frames": {
+    "frame times": [
+      29,
+      35,
+      41,
+      64,
+      70,
+      76,
+      82
+    ],
+    "hit dmg% distribution": [
+      15,
+      13,
+      12,
+      18,
+      15,
+      14,
+      13
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 7
+  },
+  "drop check count": 5,
+  "element": "thunder",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 1495,
+  "imp": {
+    "max atk": "600",
+    "max def": "300",
+    "max hp": "1000",
+    "max rec": "400"
+  },
+  "kind": "normal",
+  "lord damage range": "2661~2972",
+  "movement": {
+    "attack": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "2"
+    },
+    "skill": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "2"
+    }
+  },
+  "name": "Flashing Knight Licht",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Flashing Knight Licht",
+  "maxlv": "120",
+  "no": "1495",
+  "unitDisplayHomePosition_1W9CxaFK": "493,232,174,475",
+  "unitDisplayDetailPosition_6z54rgb3": "-165,13,956,776",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "0,188,530,430,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-134,-255,920,747",
+  "unitDisplaySummonPosition_KC3Jk8Br": "0,188,530,430,0",
+  "unitDisplayHpPosition_3BpHN6VD": "4,49",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "15000",
+  "sellCaution": false,
+  "effectFrames": "23:120:1,29:120:1,35:120:1,58:120:1,64:120:1,70:120:1,76:120:1,29:400839:1,30:201165:1,32:201165:1,58:500876:1,62:200719:1,65:200719:1,74:400839:1,84:400833:1",
+  "evofrom": "",
+  "evointo": "40857",
+  "evozelcost": "3000000",
+  "evokarmacost": "1000000",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "40334",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40132",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "118",
+  "animation_idle": "53",
+  "animation_move": "13",
+  "movespeed_attack": "4",
+  "movespeed_skill": "4",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "2",
+  "movetype_skill": "2",
+  "normal_frames": "29, 35, 41, 64, 70, 76, 82",
+  "normal_distribute": "15, 13, 12, 18, 15, 14, 13",
+  "normal_totaldistr": "100",
+  "bb_frames": "29, 32, 35, 38, 41, 64, 67, 70, 73, 76, 79",
+  "bb_distribute": "10, 9, 8, 7, 6, 14, 12, 10, 9, 8, 7",
+  "bb_totaldistr": "100",
+  "sbb_frames": "29, 32, 35, 38, 41, 44, 47, 64, 67, 70, 73, 76, 79, 82, 85, 88",
+  "sbb_distribute": "8, 7, 6, 5, 5, 4, 4, 11, 9, 7, 7, 6, 6, 5, 5, 5",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "29, 32, 35, 38, 41, 44, 47, 50, 53, 64, 67, 70, 73, 76, 79, 82, 85, 88, 91, 94",
+  "ubb_distribute": "6, 6, 5, 5, 4, 4, 3, 3, 3, 8, 7, 7, 6, 6, 5, 5, 5, 4, 4, 4",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "1",
+  "ubb_effectdelay": "1",
+  "description": "A swordsman from the volunteer army that arose to bring order to Elgaia. Calm, collected, and skilled in covert operations, he also saved the army's leader; a woman he had known since childhood. He is said to have followed her orders quietly in most cases, but also kept her in check whenever she ran out of control if necessary. While on a mission after the founding of the empire, he later learned that a staff officer close to the emperor had issued a death warrant for that same leader on the pretense of treason. He rushed to her side immediately, and gave his life defending her.",
+  "summon": "Where am I?<br>Oh, so you called me here. Fine. I'll work with you. I'm used to being jerked around.",
+  "fusion": "I...I only want the power I need. Whatever is left, I'll give to her. Excessive power just gets in the way of the mission.",
+  "evolution": "",
+  "hp_base": "4974",
+  "atk_base": "2079",
+  "def_base": "1672",
+  "rec_base": "1819",
+  "hp_lord": "7158",
+  "atk_lord": "2858",
+  "def_lord": "2280",
+  "rec_lord": "2480",
+  "hp_anima": "8050",
+  "rec_anima": "2242",
+  "atk_breaker": "3096",
+  "def_breaker": "2042",
+  "def_guardian": "2518",
+  "rec_guardian": "2361",
+  "def_oracle": "2161",
+  "rec_oracle": "2837",
+  "hp_bonus": "1000",
+  "atk_bonus": "600",
+  "def_bonus": "300",
+  "rec_bonus": "400",
+  "lordonly": "",
+  "combo_hits": "7",
+  "normaldc": "35",
+  "ls": "Phantom Sacrifice",
+  "lsdescription": "30% boost to Atk, max HP, 100% boost to Spark damage & boosts BB Atk for 2 turns when damage taken has exceeded certain amount",
+  "lsnote": "150% BB Atk after 5,000 damage",
+  "bbdescription": "11 combo Thunder attack on all foes, considerably boosts BB gauge, Spark damage restores HP for 3 turns & hugely boosts Spark damage for 3 turns",
+  "bbnote": "80% Spark, heal 300-400 per Spark & fill 6 BC",
+  "bbtype": "Heal/Offense",
+  "bbhits": "11",
+  "bbaoe": "A",
+  "bbgauge": "29",
+  "bbdc": "11",
+  "bbmultiplier": "350",
+  "sbbdescription": "16 combo powerful Thunder attack on all foes, considerably boosts BB gauge, adds probable Spark critical for 3 turns, Spark damage slightly boosts BB gauge for 3 turns & hugely boosts Spark damage for 3 turns",
+  "sbbnote": "80% Spark, 20% chance Sparks deal 50% extra damage, fills 1-2 BC & fills 6 BC",
+  "sbbtype": "Offense",
+  "sbbhits": "16",
+  "sbbaoe": "A",
+  "sbbgauge": "30",
+  "sbbdc": "16",
+  "sbbmultiplier": "560",
   "ubbdescription": "20 combo massive Thunder attack on all foes, adds probable Spark critical for 3 turns, Spark damage hugely boosts BB gauge and greatly restores HP for 3 turns & enormously boosts Spark damage for 3 turns",
   "ubbnote": "250% Spark, 50% chance Sparks deal 50% extra damage, fills 4-6 BC & heal 600-800 per Spark",
   "ubbtype": "Heal/Offense",
@@ -1277,8 +1503,6 @@
   "esitem": "",
   "esdescription": "Probable infliction of slight Spark vulnerability for 2 turns & boosts Spark damage when HP is full",
   "esnote": "10% chance for 25% vulnerability & 50% Spark",
-  "evofrom": "",
-  "evointo": "40857",
   "evomats1": "Thunder Mecha God",
   "evomats2": "Thunder Mecha God",
   "evomats3": "Miracle Totem",
@@ -1287,112 +1511,5 @@
   "evomats6": "Thunder Idol",
   "evomats7": "Dragon Mimic",
   "evomats8": "Metal Mimic",
-  "evoitem": "",
-  "evozelcost": "3000000",
-  "stats": {
-    "_base": {
-      "atk": 2079,
-      "def": 1672,
-      "hp": 4974,
-      "rec": 1819
-    },
-    "_lord": {
-      "atk": 2858,
-      "def": 2280,
-      "hp": 7158,
-      "rec": 2480
-    },
-    "anima": {
-      "atk": 2858,
-      "def": 2280,
-      "hp max": 8348,
-      "hp min": 7753,
-      "rec max": 2361,
-      "rec min": 2123
-    },
-    "breaker": {
-      "atk max": 3215,
-      "atk min": 2977,
-      "def max": 2161,
-      "def min": 1923,
-      "hp": 7158,
-      "rec": 2480
-    },
-    "guardian": {
-      "atk": 2858,
-      "def max": 2637,
-      "def min": 2399,
-      "hp": 7158,
-      "rec max": 2480,
-      "rec min": 2242
-    },
-    "oracle": {
-      "atk": 2858,
-      "def max": 2280,
-      "def min": 2042,
-      "hp": 7158,
-      "rec max": 2956,
-      "rec min": 2718
-    }
-  },
-  "leader_skill": {
-    "desc": "30% boost to Atk, max HP, 100% boost to Spark damage & boosts BB Atk for 2 turns when damage taken has exceeded certain amount",
-    "effects": [
-      {
-        "atk% buff": 30,
-        "hp% buff": 30,
-        "passive id": "1"
-      },
-      {
-        "damage% for spark": 100,
-        "passive id": "31"
-      },
-      {
-        "buff": {
-          "bb atk% buff": 150,
-          "buff turns (72)": "1",
-          "sbb atk% buff": 150,
-          "ubb atk% buff": 150
-        },
-        "damage threshold buff activation": 5000,
-        "passive id": "78"
-      }
-    ],
-    "id": "7474",
-    "name": "Phantom Sacrifice"
-  },
-  "extra_skill": {
-    "desc": "Probable infliction of slight Spark vulnerability for 2 turns & boosts Spark damage when HP is full",
-    "effects": [
-      {
-        "conditions": [],
-        "damage% for spark": 50,
-        "hp above % buff requirement": 100,
-        "passive id": "104",
-        "passive target": "self"
-      },
-      {
-        "conditions": [],
-        "passive id": "75",
-        "passive target": "self",
-        "spark debuff chance%": 10,
-        "spark debuff turns": 1,
-        "spark debuff%": 20
-      }
-    ],
-    "id": "25700",
-    "name": "Lightning Guardian",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "493,232,174,475",
-  "unitDisplayDetailPosition_6z54rgb3": "-165,13,956,776",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "0,188,530,430,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-134,-255,920,747",
-  "unitDisplaySummonPosition_KC3Jk8Br": "0,188,530,430,0",
-  "unitDisplayHpPosition_3BpHN6VD": "4,49",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "15000",
-  "sellCaution": false,
-  "effectFrames": "23:120:1,29:120:1,35:120:1,58:120:1,64:120:1,70:120:1,76:120:1,29:400839:1,30:201165:1,32:201165:1,58:500876:1,62:200719:1,65:200719:1,74:400839:1,84:400833:1"
+  "evoitem": ""
 }

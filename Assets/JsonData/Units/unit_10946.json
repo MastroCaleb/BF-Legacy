@@ -1,68 +1,90 @@
 {
   "id": "10946",
-  "unitName": "Dragon Warrior Lyonesse",
-  "no": "1457",
-  "element": "Fire",
-  "rarity": "★★★★★★★",
-  "cost": "44",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "110",
-  "animation_idle": "60",
-  "animation_move": "5",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "11, 15, 23, 27, 64, 70, 76",
-  "normal_distribute": "12, 8, 12, 8, 25, 20, 15",
-  "normal_totaldistr": "100",
-  "bb_frames": "11, 15, 23, 27, 64, 68, 72, 76, 80, 84, 88",
-  "bb_distribute": "7, 5, 7, 5, 14, 13, 12, 11, 10, 9, 7",
-  "bb_totaldistr": "100",
-  "sbb_frames": "11, 14, 17, 23, 26, 29, 64, 67, 70, 73, 76, 79, 82, 85",
-  "sbb_distribute": "6, 5, 3, 6, 5, 3, 12, 12, 10, 10, 8, 8, 6, 6",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "11, 14, 17, 20, 23, 26, 29, 32, 64, 67, 70, 73, 76, 79, 82, 85, 88, 91, 94, 97",
-  "ubb_distribute": "3, 3, 3, 3, 3, 3, 3, 3, 11, 11, 8, 8, 6, 6, 5, 5, 4, 4, 4, 4",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "2",
-  "ubb_effectdelay": "1",
-  "description": "A warrior from the dragon demon clan of Ishgria. It is said that her younger brother was the warrior most trusted by the demon that led their tribe, and that she was almost her brother's equal. Entrusted with a child by the clan leader's wife when they were attacked by remnants of the lion demon clan, she kept her charge safe and fled to Grand Gaia. She hid the child there and fought a fierce battle against the daughter of the lion demon clan's chief. Although the outcome of the battle remains unknown, there are no records to indicate that she ever returned to Ishgria.",
-  "summon": "Answer me...<br>Do you seek to harm my clan?<br>Depending on your answer you may feel my wrath!",
-  "fusion": "I'll take it.<br>But this doesn't mean I trust you. There is only one person whom I serve...",
-  "evolution": "",
-  "hp_base": "5705",
-  "atk_base": "2222",
-  "def_base": "1984",
-  "rec_base": "1715",
-  "hp_lord": "6918",
-  "atk_lord": "2638",
-  "def_lord": "2643",
-  "rec_lord": "2403",
-  "hp_anima": "7810",
-  "rec_anima": "2165",
-  "atk_breaker": "2876",
-  "def_breaker": "2405",
-  "def_guardian": "2881",
-  "rec_guardian": "2284",
-  "def_oracle": "2524",
-  "rec_oracle": "2760",
-  "hp_bonus": "1100",
-  "atk_bonus": "440",
-  "def_bonus": "440",
-  "rec_bonus": "440",
-  "lordonly": "",
-  "combo_hits": "7",
-  "normaldc": "35",
-  "ls": "Ardent Wings",
-  "lsdescription": "40% boost to Atk and max HP, hugely boosts Fire and Water elemental damage & 15% reduction to damage taken from Fire, Earth types",
-  "lsnote": "100% elemental damage",
+  "stats": {
+    "_base": {
+      "atk": 2102,
+      "def": 2093,
+      "hp": 4993,
+      "rec": 1862
+    },
+    "_lord": {
+      "atk": 2638,
+      "def": 2643,
+      "hp": 6918,
+      "rec": 2403
+    },
+    "anima": {
+      "atk": 2638,
+      "def": 2643,
+      "hp max": 8108,
+      "hp min": 7513,
+      "rec max": 2284,
+      "rec min": 2046
+    },
+    "breaker": {
+      "atk max": 2995,
+      "atk min": 2757,
+      "def max": 2524,
+      "def min": 2286,
+      "hp": 6918,
+      "rec": 2403
+    },
+    "guardian": {
+      "atk": 2638,
+      "def max": 3000,
+      "def min": 2762,
+      "hp": 6918,
+      "rec max": 2403,
+      "rec min": 2165
+    },
+    "oracle": {
+      "atk": 2638,
+      "def max": 2643,
+      "def min": 2405,
+      "hp": 6918,
+      "rec max": 2879,
+      "rec min": 2641
+    }
+  },
+  "leader_skill": {
+    "desc": "40% boost to Atk and max HP, hugely boosts Fire and Water elemental damage & 15% reduction to damage taken from Fire, Earth types",
+    "effects": [
+      {
+        "atk% buff": 40,
+        "hp% buff": 40,
+        "passive id": "1"
+      },
+      {
+        "dmg% mitigation for elemental attacks": 15.0,
+        "mitigate earth attacks": true,
+        "mitigate fire attacks": true,
+        "passive id": "62"
+      },
+      {
+        "elemental weakness multiplier%": 100.0,
+        "fire units do extra elemental weakness dmg": true,
+        "passive id": "50",
+        "water units do extra elemental weakness dmg": true
+      }
+    ],
+    "id": "7459",
+    "name": "Ardent Wings"
+  },
+  "extra_skill": {
+    "desc": "Reduces BB gauge required for BB",
+    "effects": [
+      {
+        "conditions": [],
+        "passive id": "48",
+        "passive target": "self",
+        "reduced bb bc cost%": 20
+      }
+    ],
+    "id": "22900",
+    "name": "Dragoon's Pride",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -551,14 +573,6 @@
     ],
     "name": "Winged Dual Swords"
   },
-  "bbdescription": "11 combo Fire attack on all foes, hugely boosts Fire, Water elemental damage for 3 turns, considerably boosts BB gauge for 3 turns & slightly reduces damage from Fire, Earth types for 2 turns",
-  "bbnote": "100% elemental damage, fills 5 BC & 10% damage reduction",
-  "bbtype": "Offense",
-  "bbhits": "11",
-  "bbaoe": "A",
-  "bbgauge": "26",
-  "bbdc": "11",
-  "bbmultiplier": "350",
   "sbb": {
     "damage frames": [
       {
@@ -1063,14 +1077,6 @@
     ],
     "name": "Crimson Edge: Grenat Soar"
   },
-  "sbbdescription": "14 combo powerful Fire attack on all foes, considerably boosts Atk relative to Def for 3 turns, hugely boosts Fire, Water elemental damage for 3 turns & boosts Atk, Def of Fire types for 3 turns",
-  "sbbnote": "60% Def to Atk, 100% elemental damage & 80% Atk, Def of Fire types",
-  "sbbtype": "Offense",
-  "sbbhits": "14",
-  "sbbaoe": "A",
-  "sbbgauge": "29",
-  "sbbdc": "14",
-  "sbbmultiplier": "560",
   "ubb": {
     "damage frames": [
       {
@@ -1229,6 +1235,215 @@
     ],
     "name": "Atropos"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 110
+    },
+    "idle": {
+      "total number of frames": 60
+    },
+    "move": {
+      "total number of frames": 5
+    }
+  },
+  "category": 10940,
+  "cost": "44",
+  "damage frames": {
+    "frame times": [
+      11,
+      15,
+      23,
+      27,
+      64,
+      70,
+      76
+    ],
+    "hit dmg% distribution": [
+      12,
+      8,
+      12,
+      8,
+      25,
+      20,
+      15
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 7
+  },
+  "drop check count": 5,
+  "element": "fire",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 1457,
+  "imp": {
+    "max atk": "440",
+    "max def": "440",
+    "max hp": "1100",
+    "max rec": "440"
+  },
+  "kind": "normal",
+  "lord damage range": "2456~2743",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Dragon Warrior Lyonesse",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Dragon Warrior Lyonesse",
+  "maxlv": "120",
+  "no": "1457",
+  "unitDisplayHomePosition_1W9CxaFK": "557,204,160,437",
+  "unitDisplayDetailPosition_6z54rgb3": "-199,17,1120,839",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "3,193,589,441,1",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-173,-240,1120,839",
+  "unitDisplaySummonPosition_KC3Jk8Br": "3,193,589,441,1",
+  "unitDisplayHpPosition_3BpHN6VD": "1,30",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "15000",
+  "sellCaution": false,
+  "effectFrames": "5:120:1,9:120:1,17:120:1,21:120:1,58:120:1,64:120:1,70:120:1,11:1952:1,23:1952:1,24:1103:1,64:10096:1,69:10070:1,63:300185:1,72:300185:1",
+  "evofrom": "",
+  "evointo": "10947",
+  "evozelcost": "3000000",
+  "evokarmacost": "1000000",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "10354",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "110",
+  "animation_idle": "60",
+  "animation_move": "5",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "11, 15, 23, 27, 64, 70, 76",
+  "normal_distribute": "12, 8, 12, 8, 25, 20, 15",
+  "normal_totaldistr": "100",
+  "bb_frames": "11, 15, 23, 27, 64, 68, 72, 76, 80, 84, 88",
+  "bb_distribute": "7, 5, 7, 5, 14, 13, 12, 11, 10, 9, 7",
+  "bb_totaldistr": "100",
+  "sbb_frames": "11, 14, 17, 23, 26, 29, 64, 67, 70, 73, 76, 79, 82, 85",
+  "sbb_distribute": "6, 5, 3, 6, 5, 3, 12, 12, 10, 10, 8, 8, 6, 6",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "11, 14, 17, 20, 23, 26, 29, 32, 64, 67, 70, 73, 76, 79, 82, 85, 88, 91, 94, 97",
+  "ubb_distribute": "3, 3, 3, 3, 3, 3, 3, 3, 11, 11, 8, 8, 6, 6, 5, 5, 4, 4, 4, 4",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "2",
+  "ubb_effectdelay": "1",
+  "description": "A warrior from the dragon demon clan of Ishgria. It is said that her younger brother was the warrior most trusted by the demon that led their tribe, and that she was almost her brother's equal. Entrusted with a child by the clan leader's wife when they were attacked by remnants of the lion demon clan, she kept her charge safe and fled to Grand Gaia. She hid the child there and fought a fierce battle against the daughter of the lion demon clan's chief. Although the outcome of the battle remains unknown, there are no records to indicate that she ever returned to Ishgria.",
+  "summon": "Answer me...<br>Do you seek to harm my clan?<br>Depending on your answer you may feel my wrath!",
+  "fusion": "I'll take it.<br>But this doesn't mean I trust you. There is only one person whom I serve...",
+  "evolution": "",
+  "hp_base": "5705",
+  "atk_base": "2222",
+  "def_base": "1984",
+  "rec_base": "1715",
+  "hp_lord": "6918",
+  "atk_lord": "2638",
+  "def_lord": "2643",
+  "rec_lord": "2403",
+  "hp_anima": "7810",
+  "rec_anima": "2165",
+  "atk_breaker": "2876",
+  "def_breaker": "2405",
+  "def_guardian": "2881",
+  "rec_guardian": "2284",
+  "def_oracle": "2524",
+  "rec_oracle": "2760",
+  "hp_bonus": "1100",
+  "atk_bonus": "440",
+  "def_bonus": "440",
+  "rec_bonus": "440",
+  "lordonly": "",
+  "combo_hits": "7",
+  "normaldc": "35",
+  "ls": "Ardent Wings",
+  "lsdescription": "40% boost to Atk and max HP, hugely boosts Fire and Water elemental damage & 15% reduction to damage taken from Fire, Earth types",
+  "lsnote": "100% elemental damage",
+  "bbdescription": "11 combo Fire attack on all foes, hugely boosts Fire, Water elemental damage for 3 turns, considerably boosts BB gauge for 3 turns & slightly reduces damage from Fire, Earth types for 2 turns",
+  "bbnote": "100% elemental damage, fills 5 BC & 10% damage reduction",
+  "bbtype": "Offense",
+  "bbhits": "11",
+  "bbaoe": "A",
+  "bbgauge": "26",
+  "bbdc": "11",
+  "bbmultiplier": "350",
+  "sbbdescription": "14 combo powerful Fire attack on all foes, considerably boosts Atk relative to Def for 3 turns, hugely boosts Fire, Water elemental damage for 3 turns & boosts Atk, Def of Fire types for 3 turns",
+  "sbbnote": "60% Def to Atk, 100% elemental damage & 80% Atk, Def of Fire types",
+  "sbbtype": "Offense",
+  "sbbhits": "14",
+  "sbbaoe": "A",
+  "sbbgauge": "29",
+  "sbbdc": "14",
+  "sbbmultiplier": "560",
   "ubbdescription": "20 combo massive Fire attack on all foes, enormously boosts Atk relative to Def for 3 turns, enormously boosts Spark damage for 3 turns, enormously boosts Fire, Water elemental damage for 3 turns & hugely reduces damage from Fire, Earth types for 3 turns",
   "ubbnote": "200% Def to Atk, 250% Spark, 350% elemental damage & 80% damage reduction",
   "ubbtype": "Offense",
@@ -1241,8 +1456,6 @@
   "esitem": "",
   "esdescription": "Reduces BB gauge required for BB",
   "esnote": "20% reduction",
-  "evofrom": "",
-  "evointo": "10947",
   "evomats1": "Fire Mecha God",
   "evomats2": "Fire Mecha God",
   "evomats3": "Miracle Totem",
@@ -1251,101 +1464,5 @@
   "evomats6": "Dragon Mimic",
   "evomats7": "Dragon Mimic",
   "evomats8": "Metal Mimic",
-  "evoitem": "",
-  "evozelcost": "3000000",
-  "stats": {
-    "_base": {
-      "atk": 2102,
-      "def": 2093,
-      "hp": 4993,
-      "rec": 1862
-    },
-    "_lord": {
-      "atk": 2638,
-      "def": 2643,
-      "hp": 6918,
-      "rec": 2403
-    },
-    "anima": {
-      "atk": 2638,
-      "def": 2643,
-      "hp max": 8108,
-      "hp min": 7513,
-      "rec max": 2284,
-      "rec min": 2046
-    },
-    "breaker": {
-      "atk max": 2995,
-      "atk min": 2757,
-      "def max": 2524,
-      "def min": 2286,
-      "hp": 6918,
-      "rec": 2403
-    },
-    "guardian": {
-      "atk": 2638,
-      "def max": 3000,
-      "def min": 2762,
-      "hp": 6918,
-      "rec max": 2403,
-      "rec min": 2165
-    },
-    "oracle": {
-      "atk": 2638,
-      "def max": 2643,
-      "def min": 2405,
-      "hp": 6918,
-      "rec max": 2879,
-      "rec min": 2641
-    }
-  },
-  "leader_skill": {
-    "desc": "40% boost to Atk and max HP, hugely boosts Fire and Water elemental damage & 15% reduction to damage taken from Fire, Earth types",
-    "effects": [
-      {
-        "atk% buff": 40,
-        "hp% buff": 40,
-        "passive id": "1"
-      },
-      {
-        "dmg% mitigation for elemental attacks": 15.0,
-        "mitigate earth attacks": true,
-        "mitigate fire attacks": true,
-        "passive id": "62"
-      },
-      {
-        "elemental weakness multiplier%": 100.0,
-        "fire units do extra elemental weakness dmg": true,
-        "passive id": "50",
-        "water units do extra elemental weakness dmg": true
-      }
-    ],
-    "id": "7459",
-    "name": "Ardent Wings"
-  },
-  "extra_skill": {
-    "desc": "Reduces BB gauge required for BB",
-    "effects": [
-      {
-        "conditions": [],
-        "passive id": "48",
-        "passive target": "self",
-        "reduced bb bc cost%": 20
-      }
-    ],
-    "id": "22900",
-    "name": "Dragoon's Pride",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "557,204,160,437",
-  "unitDisplayDetailPosition_6z54rgb3": "-199,17,1120,839",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "3,193,589,441,1",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-173,-240,1120,839",
-  "unitDisplaySummonPosition_KC3Jk8Br": "3,193,589,441,1",
-  "unitDisplayHpPosition_3BpHN6VD": "1,30",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "15000",
-  "sellCaution": false,
-  "effectFrames": "5:120:1,9:120:1,17:120:1,21:120:1,58:120:1,64:120:1,70:120:1,11:1952:1,23:1952:1,24:1103:1,64:10096:1,69:10070:1,63:300185:1,72:300185:1"
+  "evoitem": ""
 }

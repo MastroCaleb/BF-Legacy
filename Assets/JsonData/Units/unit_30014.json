@@ -1,59 +1,66 @@
 {
   "id": "30014",
-  "unitName": "Nature God Lance",
-  "no": "12",
-  "element": "Earth",
-  "rarity": "★★★★★",
-  "cost": "10",
-  "maxlv": "80",
-  "basexp": "10",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "94",
-  "animation_idle": "60",
-  "animation_move": "12",
-  "movespeed_attack": "0.0041",
-  "movespeed_skill": "0.0041",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "26, 32, 38, 44",
-  "normal_distribute": "50, 20, 20, 10",
-  "normal_totaldistr": "100",
-  "bb_frames": "26, 32, 38, 44, 50, 56",
-  "bb_distribute": "15, 15, 15, 15, 20, 20",
-  "bb_totaldistr": "100",
-  "description": "A pikeman from the ruined Principality of Vriksha, and one of the Six Heroes. After releasing the World Tree he wasn't seen until the battle with the gods began. His Demon Pike Drevas had awoken, and its blade now carried the strength of the World Tree. He took on the gods with his own might, refusing to align himself with any military entity.",
-  "summon": "You've earned our trust.<br>Let us clear for you a <br>path forward",
-  "fusion": "It's OK, Drevas.<br>We'll make it in time...",
-  "evolution": "You'll never forget the <br>power of my Sacred Pike,<br>Drevas!",
-  "hp_base": "2442",
-  "atk_base": "1010",
-  "def_base": "987",
-  "rec_base": "522",
-  "hp_lord": "3894",
-  "atk_lord": "1373",
-  "def_lord": "1378",
-  "rec_lord": "805",
-  "hp_anima": "4487",
-  "rec_anima": "647",
-  "atk_breaker": "1531",
-  "def_breaker": "1220",
-  "def_guardian": "1536",
-  "rec_guardian": "647",
-  "def_oracle": "1220",
-  "rec_oracle": "1042",
-  "hp_bonus": "750",
-  "atk_bonus": "300",
-  "def_bonus": "300",
-  "rec_bonus": "300",
-  "lordonly": "",
-  "combo_hits": "4",
-  "normaldc": "16",
-  "ls": "Earth God's Power",
-  "lsdescription": "50% boost to Atk Power of Earth Types",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 1010,
+      "def": 987,
+      "hp": 2442,
+      "rec": 522
+    },
+    "_lord": {
+      "atk": 1373,
+      "def": 1378,
+      "hp": 3894,
+      "rec": 805
+    },
+    "anima": {
+      "atk": 1373,
+      "def": 1378,
+      "hp max": 4684,
+      "hp min": 4289,
+      "rec max": 726,
+      "rec min": 568
+    },
+    "breaker": {
+      "atk max": 1610,
+      "atk min": 1452,
+      "def max": 1299,
+      "def min": 1141,
+      "hp": 3894,
+      "rec": 805
+    },
+    "guardian": {
+      "atk": 1373,
+      "def max": 1615,
+      "def min": 1457,
+      "hp": 3894,
+      "rec max": 805,
+      "rec min": 647
+    },
+    "oracle": {
+      "atk": 1373,
+      "def max": 1378,
+      "def min": 1220,
+      "hp": 3894,
+      "rec max": 1121,
+      "rec min": 963
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to Atk Power of Earth Types",
+    "effects": [
+      {
+        "atk% buff": 50,
+        "elements buffed": [
+          "earth"
+        ],
+        "passive id": "2"
+      }
+    ],
+    "id": "121",
+    "name": "Earth God's Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -216,96 +223,89 @@
     ],
     "name": "Eternal Zephyr"
   },
-  "bbdescription": "6 combo Earth elemental power attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "6",
-  "bbaoe": "A",
-  "bbgauge": "25",
-  "bbdc": "6",
-  "bbmultiplier": "160",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "30013",
-  "evointo": "30015",
-  "evomats1": "50354",
-  "evomats2": "30133",
-  "evomats3": "30132",
-  "evomats4": "30131",
-  "evomats5": "30130",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 1010,
-      "def": 987,
-      "hp": 2442,
-      "rec": 522
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1373,
-      "def": 1378,
-      "hp": 3894,
-      "rec": 805
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1373,
-      "def": 1378,
-      "hp max": 4684,
-      "hp min": 4289,
-      "rec max": 726,
-      "rec min": 568
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 94
     },
-    "breaker": {
-      "atk max": 1610,
-      "atk min": 1452,
-      "def max": 1299,
-      "def min": 1141,
-      "hp": 3894,
-      "rec": 805
+    "idle": {
+      "total number of frames": 60
     },
-    "guardian": {
-      "atk": 1373,
-      "def max": 1615,
-      "def min": 1457,
-      "hp": 3894,
-      "rec max": 805,
-      "rec min": 647
-    },
-    "oracle": {
-      "atk": 1373,
-      "def max": 1378,
-      "def min": 1220,
-      "hp": 3894,
-      "rec max": 1121,
-      "rec min": 963
+    "move": {
+      "total number of frames": 12
     }
   },
-  "leader_skill": {
-    "desc": "50% boost to Atk Power of Earth Types",
-    "effects": [
-      {
-        "atk% buff": 50,
-        "elements buffed": [
-          "earth"
-        ],
-        "passive id": "2"
-      }
+  "category": 30010,
+  "cost": "10",
+  "damage frames": {
+    "frame times": [
+      26,
+      32,
+      38,
+      44
     ],
-    "id": "121",
-    "name": "Earth God's Power"
+    "hit dmg% distribution": [
+      50,
+      20,
+      20,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 4
   },
-  "extra_skill": {},
+  "drop check count": 4,
+  "element": "earth",
+  "exp_pattern": 10,
+  "gender": "male",
+  "getting type": "farmable",
+  "guide_id": 12,
+  "imp": {
+    "max atk": "300",
+    "max def": "300",
+    "max hp": "750",
+    "max rec": "300"
+  },
+  "kind": "normal",
+  "lord damage range": "1277~1427",
+  "movement": {
+    "attack": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    }
+  },
+  "name": "Nature God Lance",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Nature God Lance",
+  "maxlv": "80",
+  "no": "12",
   "unitDisplayHomePosition_1W9CxaFK": "505,217,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-161,-35,950,785",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "57,251,457,378,0",
@@ -315,5 +315,106 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "20:123:1,26:123:1,32:123:1,38:123:1"
+  "effectFrames": "20:123:1,26:123:1,32:123:1,38:123:1",
+  "evofrom": "30013",
+  "evointo": "30015",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30131",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30130",
+      "count": 1
+    }
+  ],
+  "basexp": "10",
+  "animation_attack": "94",
+  "animation_idle": "60",
+  "animation_move": "12",
+  "movespeed_attack": "0.0041",
+  "movespeed_skill": "0.0041",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "26, 32, 38, 44",
+  "normal_distribute": "50, 20, 20, 10",
+  "normal_totaldistr": "100",
+  "bb_frames": "26, 32, 38, 44, 50, 56",
+  "bb_distribute": "15, 15, 15, 15, 20, 20",
+  "bb_totaldistr": "100",
+  "description": "A pikeman from the ruined Principality of Vriksha, and one of the Six Heroes. After releasing the World Tree he wasn't seen until the battle with the gods began. His Demon Pike Drevas had awoken, and its blade now carried the strength of the World Tree. He took on the gods with his own might, refusing to align himself with any military entity.",
+  "summon": "You've earned our trust.<br>Let us clear for you a <br>path forward",
+  "fusion": "It's OK, Drevas.<br>We'll make it in time...",
+  "evolution": "You'll never forget the <br>power of my Sacred Pike,<br>Drevas!",
+  "hp_base": "2442",
+  "atk_base": "1010",
+  "def_base": "987",
+  "rec_base": "522",
+  "hp_lord": "3894",
+  "atk_lord": "1373",
+  "def_lord": "1378",
+  "rec_lord": "805",
+  "hp_anima": "4487",
+  "rec_anima": "647",
+  "atk_breaker": "1531",
+  "def_breaker": "1220",
+  "def_guardian": "1536",
+  "rec_guardian": "647",
+  "def_oracle": "1220",
+  "rec_oracle": "1042",
+  "hp_bonus": "750",
+  "atk_bonus": "300",
+  "def_bonus": "300",
+  "rec_bonus": "300",
+  "lordonly": "",
+  "combo_hits": "4",
+  "normaldc": "16",
+  "ls": "Earth God's Power",
+  "lsdescription": "50% boost to Atk Power of Earth Types",
+  "lstype": "Attack",
+  "bbdescription": "6 combo Earth elemental power attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "6",
+  "bbaoe": "A",
+  "bbgauge": "25",
+  "bbdc": "6",
+  "bbmultiplier": "160",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "30133",
+  "evomats3": "30132",
+  "evomats4": "30131",
+  "evomats5": "30130"
 }

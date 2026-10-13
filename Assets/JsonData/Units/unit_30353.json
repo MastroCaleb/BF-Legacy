@@ -1,62 +1,64 @@
 {
   "id": "30353",
-  "unitName": "Iron Shield Darvan",
-  "no": "536",
-  "element": "Earth",
-  "rarity": "★★★★",
-  "cost": "12",
-  "maxlv": "60",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "3",
-  "animation_attack": "122",
-  "animation_idle": "126",
-  "animation_move": "126",
-  "movespeed_attack": "0.005",
-  "movespeed_skill": "0.005",
-  "speedtype_attack": "1",
-  "speedtype_skill": "1",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "40, 52, 82, 94",
-  "normal_distribute": "25, 25, 25, 25",
-  "normal_totaldistr": "100",
-  "bb_frames": "39, 49, 59, 81, 91, 101",
-  "bb_distribute": "20, 15, 15, 20, 15, 15",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "description": "A mild-mannered general of the Principality of Vriksha, who spent ages protecting the throne from the calamity of war. An excellent warrior, he was trusted by royalty and vassals alike. Some say that the otherworldly gunslinger Douglas was allowed to run wild because of Darvan's protection. He forged his greenish armor out of some materials he found deep in the woods, though even he was unaware of their secret capabilities.",
-  "summon": "Summoner!<br>Say no more.<br>My powers are yours.",
-  "fusion": "Strength from others...<br>I won't say no, but<br>I'll have to think about it.",
-  "evolution": "",
-  "hp_base": "2983",
-  "atk_base": "943",
-  "def_base": "941",
-  "rec_base": "840",
-  "hp_lord": "4331",
-  "atk_lord": "1274",
-  "def_lord": "1271",
-  "rec_lord": "1105",
-  "hp_anima": "4774",
-  "rec_anima": "987",
-  "atk_breaker": "1392",
-  "def_breaker": "1153",
-  "atk_guardian": "1156",
-  "def_guardian": "1389",
-  "rec_guardian": "1046",
-  "def_oracle": "1212",
-  "hp_oracle": "4154",
-  "rec_oracle": "1282",
-  "hp_bonus": "400",
-  "atk_bonus": "140",
-  "def_bonus": "140",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "4",
-  "normaldc": "12",
-  "ls": "Five Light's Power",
-  "lsdescription": "25% boost to Atk power of all Units when 5 elements or more are present",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 943,
+      "def": 941,
+      "hp": 2983,
+      "rec": 840
+    },
+    "_lord": {
+      "atk": 1274,
+      "def": 1271,
+      "hp": 4331,
+      "rec": 1105
+    },
+    "anima": {
+      "atk": 1274,
+      "def": 1271,
+      "hp max": 4921,
+      "hp min": 4626,
+      "rec max": 1046,
+      "rec min": 928
+    },
+    "breaker": {
+      "atk max": 1451,
+      "atk min": 1333,
+      "def max": 1212,
+      "def min": 1094,
+      "hp": 4331,
+      "rec": 1105
+    },
+    "guardian": {
+      "atk": 1274,
+      "def max": 1448,
+      "def min": 1330,
+      "hp": 4331,
+      "rec max": 1105,
+      "rec min": 987
+    },
+    "oracle": {
+      "atk": 1274,
+      "def max": 1271,
+      "def min": 1153,
+      "hp": 4331,
+      "rec max": 1341,
+      "rec min": 1223
+    }
+  },
+  "leader_skill": {
+    "desc": "25% boost to Atk power of all Units when 5 elements or more are present",
+    "effects": [
+      {
+        "atk% buff": 25,
+        "passive id": "41",
+        "unique elements required": 5
+      }
+    ],
+    "id": "2200",
+    "name": "Five Light's Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -331,94 +333,95 @@
     ],
     "name": "Grand Wave"
   },
-  "bbdescription": "6 combo Earth elemental attack on all enemies & Water element added to attack for 3 turns",
-  "bbtype": "Support/Offense",
-  "bbhits": "6",
-  "bbaoe": "A",
-  "bbgauge": "25",
-  "bbdc": "6",
-  "bbmultiplier": "170",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "30354",
-  "evomats1": "30133",
-  "evomats2": "30191",
-  "evomats3": "30132",
-  "evomats4": "30132",
-  "evomats5": "60143",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 943,
-      "def": 941,
-      "hp": 2983,
-      "rec": 840
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1274,
-      "def": 1271,
-      "hp": 4331,
-      "rec": 1105
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1274,
-      "def": 1271,
-      "hp max": 4921,
-      "hp min": 4626,
-      "rec max": 1046,
-      "rec min": 928
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 1451,
-      "atk min": 1333,
-      "def max": 1212,
-      "def min": 1094,
-      "hp": 4331,
-      "rec": 1105
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 122
     },
-    "guardian": {
-      "atk": 1274,
-      "def max": 1448,
-      "def min": 1330,
-      "hp": 4331,
-      "rec max": 1105,
-      "rec min": 987
+    "idle": {
+      "total number of frames": 126
     },
-    "oracle": {
-      "atk": 1274,
-      "def max": 1271,
-      "def min": 1153,
-      "hp": 4331,
-      "rec max": 1341,
-      "rec min": 1223
+    "move": {
+      "total number of frames": 126
     }
   },
-  "leader_skill": {
-    "desc": "25% boost to Atk power of all Units when 5 elements or more are present",
-    "effects": [
-      {
-        "atk% buff": 25,
-        "passive id": "41",
-        "unique elements required": 5
-      }
+  "category": 30350,
+  "cost": "12",
+  "damage frames": {
+    "frame times": [
+      40,
+      52,
+      82,
+      94
     ],
-    "id": "2200",
-    "name": "Five Light's Power"
+    "hit dmg% distribution": [
+      25,
+      25,
+      25,
+      25
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 4
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "earth",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 536,
+  "imp": {
+    "max atk": "140",
+    "max def": "140",
+    "max hp": "400",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "1185~1324",
+  "movement": {
+    "attack": {
+      "move speed": 0.005,
+      "move speed type": "1",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.005,
+      "move speed type": "1",
+      "move type": "1"
+    }
+  },
+  "name": "Iron Shield Darvan",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Iron Shield Darvan",
+  "maxlv": "60",
+  "no": "536",
   "unitDisplayHomePosition_1W9CxaFK": "544,406,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-173,-156,1100,956",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "214,352,244,267,0",
@@ -428,5 +431,104 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "34:500133:1,34:123:1,46:123:1,46:230:1,76:500133:1,76:123:1,88:123:1,88:300261:1"
+  "effectFrames": "34:500133:1,34:123:1,46:123:1,46:230:1,76:500133:1,76:123:1,88:123:1,88:300261:1",
+  "evofrom": "",
+  "evointo": "30354",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "30133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30132",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "122",
+  "animation_idle": "126",
+  "animation_move": "126",
+  "movespeed_attack": "0.005",
+  "movespeed_skill": "0.005",
+  "speedtype_attack": "1",
+  "speedtype_skill": "1",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "40, 52, 82, 94",
+  "normal_distribute": "25, 25, 25, 25",
+  "normal_totaldistr": "100",
+  "bb_frames": "39, 49, 59, 81, 91, 101",
+  "bb_distribute": "20, 15, 15, 20, 15, 15",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "description": "A mild-mannered general of the Principality of Vriksha, who spent ages protecting the throne from the calamity of war. An excellent warrior, he was trusted by royalty and vassals alike. Some say that the otherworldly gunslinger Douglas was allowed to run wild because of Darvan's protection. He forged his greenish armor out of some materials he found deep in the woods, though even he was unaware of their secret capabilities.",
+  "summon": "Summoner!<br>Say no more.<br>My powers are yours.",
+  "fusion": "Strength from others...<br>I won't say no, but<br>I'll have to think about it.",
+  "evolution": "",
+  "hp_base": "2983",
+  "atk_base": "943",
+  "def_base": "941",
+  "rec_base": "840",
+  "hp_lord": "4331",
+  "atk_lord": "1274",
+  "def_lord": "1271",
+  "rec_lord": "1105",
+  "hp_anima": "4774",
+  "rec_anima": "987",
+  "atk_breaker": "1392",
+  "def_breaker": "1153",
+  "atk_guardian": "1156",
+  "def_guardian": "1389",
+  "rec_guardian": "1046",
+  "def_oracle": "1212",
+  "hp_oracle": "4154",
+  "rec_oracle": "1282",
+  "hp_bonus": "400",
+  "atk_bonus": "140",
+  "def_bonus": "140",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "4",
+  "normaldc": "12",
+  "ls": "Five Light's Power",
+  "lsdescription": "25% boost to Atk power of all Units when 5 elements or more are present",
+  "lstype": "Attack",
+  "bbdescription": "6 combo Earth elemental attack on all enemies & Water element added to attack for 3 turns",
+  "bbtype": "Support/Offense",
+  "bbhits": "6",
+  "bbaoe": "A",
+  "bbgauge": "25",
+  "bbdc": "6",
+  "bbmultiplier": "170",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "30133",
+  "evomats2": "30191",
+  "evomats3": "30132",
+  "evomats4": "30132",
+  "evomats5": "60143"
 }

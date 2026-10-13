@@ -1,61 +1,63 @@
 {
   "id": "40343",
-  "unitName": "Mech Arms Grybe",
-  "no": "509",
-  "element": "Thunder",
-  "rarity": "★★★★",
-  "cost": "12",
-  "maxlv": "60",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "4",
-  "animation_attack": "110",
-  "animation_idle": "68",
-  "animation_move": "68",
-  "movespeed_attack": "0",
-  "movespeed_skill": "0",
-  "speedtype_attack": "5",
-  "speedtype_skill": "5",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "46, 50, 54, 58, 62",
-  "normal_distribute": "20, 20, 20, 20, 20",
-  "normal_totaldistr": "100",
-  "bb_frames": "46, 50, 54, 58, 62, 66, 70",
-  "bb_distribute": "15, 14, 14, 15, 14, 14, 14",
-  "bb_totaldistr": "100",
-  "description": "A silent marksman selected to the 12 Guardians despite being from the otherworld. Though his appearance frightened many, Sodis admired his kindness and strength and invited him into the Guardians. Though many opposed his entry, Sodis went along and appointed him anyway. The priests also opposed allowing a foreigner into the land of the gods for a long time, though his personality and strength saw his opposers grow fewer in number.",
-  "summon": "I've no intention of shooting you.<br>Please do not fear me.<br>Thank you.",
-  "fusion": "......<br>Hmph...<br>That's it...",
-  "evolution": "",
-  "hp_base": "3105",
-  "atk_base": "1089",
-  "def_base": "887",
-  "rec_base": "929",
-  "hp_lord": "4333",
-  "atk_lord": "1513",
-  "def_lord": "1167",
-  "rec_lord": "1222",
-  "hp_anima": "4776",
-  "rec_anima": "1104",
-  "atk_breaker": "1631",
-  "def_breaker": "1049",
-  "atk_guardian": "1395",
-  "def_guardian": "1285",
-  "rec_guardian": "1163",
-  "def_oracle": "1108",
-  "hp_oracle": "4156",
-  "rec_oracle": "1399",
-  "hp_bonus": "400",
-  "atk_bonus": "200",
-  "def_bonus": "120",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "5",
-  "normaldc": "15",
-  "ls": "Water's Protection",
-  "lsdescription": "10% reduction in damage from Water Types",
-  "lstype": "Defense",
+  "stats": {
+    "_base": {
+      "atk": 1089,
+      "def": 887,
+      "hp": 3105,
+      "rec": 929
+    },
+    "_lord": {
+      "atk": 1513,
+      "def": 1167,
+      "hp": 4333,
+      "rec": 1222
+    },
+    "anima": {
+      "atk": 1513,
+      "def": 1167,
+      "hp max": 4923,
+      "hp min": 4628,
+      "rec max": 1163,
+      "rec min": 1045
+    },
+    "breaker": {
+      "atk max": 1690,
+      "atk min": 1572,
+      "def max": 1108,
+      "def min": 990,
+      "hp": 4333,
+      "rec": 1222
+    },
+    "guardian": {
+      "atk": 1513,
+      "def max": 1344,
+      "def min": 1226,
+      "hp": 4333,
+      "rec max": 1222,
+      "rec min": 1104
+    },
+    "oracle": {
+      "atk": 1513,
+      "def max": 1167,
+      "def min": 1049,
+      "hp": 4333,
+      "rec max": 1458,
+      "rec min": 1340
+    }
+  },
+  "leader_skill": {
+    "desc": "10% reduction in damage from Water Types",
+    "effects": [
+      {
+        "passive id": "5",
+        "water resist%": 10
+      }
+    ],
+    "id": "502",
+    "name": "Water's Protection"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -302,94 +304,103 @@
     ],
     "name": "Atom Ovis"
   },
-  "bbdescription": "7 combo Thunder elemental attack on all enemies & probable Weakness effect",
-  "bbnote": "45% chance",
-  "bbtype": "Offense",
-  "bbhits": "7",
-  "bbaoe": "A",
-  "bbgauge": "24",
-  "bbdc": "7",
-  "bbmultiplier": "200",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "40344",
-  "evomats1": "40133",
-  "evomats2": "40132",
-  "evomats3": "40132",
-  "evomats4": "40191",
-  "evomats5": "40191",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 1089,
-      "def": 887,
-      "hp": 3105,
-      "rec": 929
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_under",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1513,
-      "def": 1167,
-      "hp": 4333,
-      "rec": 1222
+    {
+      "action": "skill",
+      "chance%": 30.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1513,
-      "def": 1167,
-      "hp max": 4923,
-      "hp min": 4628,
-      "rec max": 1163,
-      "rec min": 1045
+    {
+      "action": "attack",
+      "chance%": 70.0,
+      "target conditions": "hp_max",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 1690,
-      "atk min": 1572,
-      "def max": 1108,
-      "def min": 990,
-      "hp": 4333,
-      "rec": 1222
+    {
+      "action": "attack",
+      "chance%": 50.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "guardian": {
-      "atk": 1513,
-      "def max": 1344,
-      "def min": 1226,
-      "hp": 4333,
-      "rec max": 1222,
-      "rec min": 1104
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 110
     },
-    "oracle": {
-      "atk": 1513,
-      "def max": 1167,
-      "def min": 1049,
-      "hp": 4333,
-      "rec max": 1458,
-      "rec min": 1340
+    "idle": {
+      "total number of frames": 68
+    },
+    "move": {
+      "total number of frames": 68
     }
   },
-  "leader_skill": {
-    "desc": "10% reduction in damage from Water Types",
-    "effects": [
-      {
-        "passive id": "5",
-        "water resist%": 10
-      }
+  "category": 40340,
+  "cost": "12",
+  "damage frames": {
+    "frame times": [
+      46,
+      50,
+      54,
+      58,
+      62
     ],
-    "id": "502",
-    "name": "Water's Protection"
+    "hit dmg% distribution": [
+      20,
+      20,
+      20,
+      20,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 5
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "thunder",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 509,
+  "imp": {
+    "max atk": "200",
+    "max def": "120",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "1408~1573",
+  "movement": {
+    "attack": {
+      "move speed": 0,
+      "move speed type": "5",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 0,
+      "move speed type": "5",
+      "move type": "3"
+    }
+  },
+  "name": "Mech Arms Grybe",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Mech Arms Grybe",
+  "maxlv": "60",
+  "no": "509",
   "unitDisplayHomePosition_1W9CxaFK": "425,-48,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-101,239,867,580",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "96,234,495,397,0",
@@ -399,5 +410,99 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "40:400152:1,50:400130:1,58:400130:1,46:400070:1"
+  "effectFrames": "40:400152:1,50:400130:1,58:400130:1,46:400070:1",
+  "evofrom": "",
+  "evointo": "40344",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "40133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40132",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "40191",
+      "count": 2
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "110",
+  "animation_idle": "68",
+  "animation_move": "68",
+  "movespeed_attack": "0",
+  "movespeed_skill": "0",
+  "speedtype_attack": "5",
+  "speedtype_skill": "5",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "46, 50, 54, 58, 62",
+  "normal_distribute": "20, 20, 20, 20, 20",
+  "normal_totaldistr": "100",
+  "bb_frames": "46, 50, 54, 58, 62, 66, 70",
+  "bb_distribute": "15, 14, 14, 15, 14, 14, 14",
+  "bb_totaldistr": "100",
+  "description": "A silent marksman selected to the 12 Guardians despite being from the otherworld. Though his appearance frightened many, Sodis admired his kindness and strength and invited him into the Guardians. Though many opposed his entry, Sodis went along and appointed him anyway. The priests also opposed allowing a foreigner into the land of the gods for a long time, though his personality and strength saw his opposers grow fewer in number.",
+  "summon": "I've no intention of shooting you.<br>Please do not fear me.<br>Thank you.",
+  "fusion": "......<br>Hmph...<br>That's it...",
+  "evolution": "",
+  "hp_base": "3105",
+  "atk_base": "1089",
+  "def_base": "887",
+  "rec_base": "929",
+  "hp_lord": "4333",
+  "atk_lord": "1513",
+  "def_lord": "1167",
+  "rec_lord": "1222",
+  "hp_anima": "4776",
+  "rec_anima": "1104",
+  "atk_breaker": "1631",
+  "def_breaker": "1049",
+  "atk_guardian": "1395",
+  "def_guardian": "1285",
+  "rec_guardian": "1163",
+  "def_oracle": "1108",
+  "hp_oracle": "4156",
+  "rec_oracle": "1399",
+  "hp_bonus": "400",
+  "atk_bonus": "200",
+  "def_bonus": "120",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "5",
+  "normaldc": "15",
+  "ls": "Water's Protection",
+  "lsdescription": "10% reduction in damage from Water Types",
+  "lstype": "Defense",
+  "bbdescription": "7 combo Thunder elemental attack on all enemies & probable Weakness effect",
+  "bbnote": "45% chance",
+  "bbtype": "Offense",
+  "bbhits": "7",
+  "bbaoe": "A",
+  "bbgauge": "24",
+  "bbdc": "7",
+  "bbmultiplier": "200",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "40133",
+  "evomats2": "40132",
+  "evomats3": "40132",
+  "evomats4": "40191",
+  "evomats5": "40191"
 }

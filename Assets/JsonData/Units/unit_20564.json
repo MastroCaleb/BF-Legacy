@@ -1,64 +1,63 @@
 {
   "id": "20564",
-  "unitName": "Piercing Tazer",
-  "freetext": ":''See Piercing Tazer (BFH) for his appearance in BRAVE FRONTIER HEROES''",
-  "no": "853",
-  "element": "Water",
-  "rarity": "★★★★★",
-  "cost": "19",
-  "maxlv": "80",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "165",
-  "animation_idle": "128",
-  "animation_move": "11",
-  "movespeed_attack": "0.0041",
-  "movespeed_skill": "0.0041",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "41, 62, 94, 98, 102, 106",
-  "normal_distribute": "10, 10, 30, 20, 20, 10",
-  "normal_totaldistr": "100",
-  "bb_frames": "41, 45, 49, 62, 66, 70, 94, 99, 104, 109, 114, 119",
-  "bb_distribute": "10, 5, 5, 10, 5, 5, 30, 10, 5, 5, 5, 5",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "description": "A wandering disciple with no real master. It is speculated that he had once sworn service to a certain god, but that god's name has been lost to history. There are also rumors which state that he inherited all of his powers from his former master, making his abilities equal to those of a high ranking god. Forever a free spirit, Tazer refused to take orders from the gods, always acting on his own accord. This caused many gods to view him as a threat to the stability of their practices. Nowadays Tazer's name can only be found in a handful of legends passed down through the ages.",
-  "summon": "A Summoner, huh...?<br>I don't like this one bit.<br>Don't tell me what to do.",
-  "fusion": "Stop telling me what to do.<br>I'll help you out,<br>but I'll do it my way.",
-  "evolution": "",
-  "hp_base": "3522",
-  "atk_base": "1350",
-  "def_base": "1285",
-  "rec_base": "1105",
-  "hp_lord": "4996",
-  "atk_lord": "1800",
-  "def_lord": "1713",
-  "rec_lord": "1473",
-  "hp_anima": "5588",
-  "rec_anima": "1315",
-  "atk_breaker": "1958",
-  "def_breaker": "1555",
-  "atk_guardian": "1642",
-  "def_guardian": "1871",
-  "rec_guardian": "1394",
-  "def_oracle": "1634",
-  "hp_oracle": "4759",
-  "rec_oracle": "1710",
-  "hp_bonus": "500",
-  "atk_bonus": "200",
-  "def_bonus": "200",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "6",
-  "normaldc": "12",
-  "ls": "Intense Strobe",
-  "lsdescription": "Large boost in damage dealt during Spark",
-  "lsnote": "50% boost",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 1350,
+      "def": 1285,
+      "hp": 3522,
+      "rec": 1105
+    },
+    "_lord": {
+      "atk": 1800,
+      "def": 1713,
+      "hp": 4996,
+      "rec": 1473
+    },
+    "anima": {
+      "atk": 1800,
+      "def": 1713,
+      "hp max": 5786,
+      "hp min": 5391,
+      "rec max": 1394,
+      "rec min": 1236
+    },
+    "breaker": {
+      "atk max": 2037,
+      "atk min": 1879,
+      "def max": 1634,
+      "def min": 1476,
+      "hp": 4996,
+      "rec": 1473
+    },
+    "guardian": {
+      "atk": 1800,
+      "def max": 1950,
+      "def min": 1792,
+      "hp": 4996,
+      "rec max": 1473,
+      "rec min": 1315
+    },
+    "oracle": {
+      "atk": 1800,
+      "def max": 1713,
+      "def min": 1555,
+      "hp": 4996,
+      "rec max": 1789,
+      "rec min": 1631
+    }
+  },
+  "leader_skill": {
+    "desc": "Large boost in damage dealt during Spark",
+    "effects": [
+      {
+        "damage% for spark": 50,
+        "passive id": "31"
+      }
+    ],
+    "id": "1302",
+    "name": "Intense Strobe"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -325,96 +324,93 @@
     ],
     "name": "Forza Roll"
   },
-  "bbdescription": "12 combo powerful Water attack on all enemies & boosts Spark damage for 3 turns",
-  "bbnote": "50% boost",
-  "bbtype": "Support/Offense",
-  "bbhits": "12",
-  "bbaoe": "A",
-  "bbgauge": "23",
-  "bbdc": "12",
-  "bbmultiplier": "240",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "es": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "20565",
-  "evomats1": "50354",
-  "evomats2": "20133",
-  "evomats3": "20133",
-  "evomats4": "60144",
-  "evomats5": "60224",
-  "evoitem": "",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 1350,
-      "def": 1285,
-      "hp": 3522,
-      "rec": 1105
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1800,
-      "def": 1713,
-      "hp": 4996,
-      "rec": 1473
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1800,
-      "def": 1713,
-      "hp max": 5786,
-      "hp min": 5391,
-      "rec max": 1394,
-      "rec min": 1236
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 165
     },
-    "breaker": {
-      "atk max": 2037,
-      "atk min": 1879,
-      "def max": 1634,
-      "def min": 1476,
-      "hp": 4996,
-      "rec": 1473
+    "idle": {
+      "total number of frames": 128
     },
-    "guardian": {
-      "atk": 1800,
-      "def max": 1950,
-      "def min": 1792,
-      "hp": 4996,
-      "rec max": 1473,
-      "rec min": 1315
-    },
-    "oracle": {
-      "atk": 1800,
-      "def max": 1713,
-      "def min": 1555,
-      "hp": 4996,
-      "rec max": 1789,
-      "rec min": 1631
+    "move": {
+      "total number of frames": 11
     }
   },
-  "leader_skill": {
-    "desc": "Large boost in damage dealt during Spark",
-    "effects": [
-      {
-        "damage% for spark": 50,
-        "passive id": "31"
-      }
+  "category": 20560,
+  "cost": "19",
+  "damage frames": {
+    "frame times": [
+      41,
+      62,
+      94,
+      98,
+      102,
+      106
     ],
-    "id": "1302",
-    "name": "Intense Strobe"
+    "hit dmg% distribution": [
+      10,
+      10,
+      30,
+      20,
+      20,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 6
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "water",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 853,
+  "imp": {
+    "max atk": "200",
+    "max def": "200",
+    "max hp": "500",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "1676~1872",
+  "movement": {
+    "attack": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    }
+  },
+  "name": "Piercing Tazer",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Piercing Tazer",
+  "maxlv": "80",
+  "no": "853",
   "unitDisplayHomePosition_1W9CxaFK": "349,146,130,355",
   "unitDisplayDetailPosition_6z54rgb3": "-85,39,950,784",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "55,209,500,413,1",
@@ -424,5 +420,109 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "35:120:1,56:120:1,88:120:1,96:120:1,100:120:1,41:200142:1,62:200142:1,94:200142:1,99:200142:1,98:200030:1,102:200032:1,94:661:1,40:200393:1,61:200393:1,95:200371:1"
+  "effectFrames": "35:120:1,56:120:1,88:120:1,96:120:1,100:120:1,41:200142:1,62:200142:1,94:200142:1,99:200142:1,98:200030:1,102:200032:1,94:661:1,40:200393:1,61:200393:1,95:200371:1",
+  "evofrom": "",
+  "evointo": "20565",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20133",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    }
+  ],
+  "freetext": ":''See Piercing Tazer (BFH) for his appearance in BRAVE FRONTIER HEROES''",
+  "basexp": "21",
+  "animation_attack": "165",
+  "animation_idle": "128",
+  "animation_move": "11",
+  "movespeed_attack": "0.0041",
+  "movespeed_skill": "0.0041",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "41, 62, 94, 98, 102, 106",
+  "normal_distribute": "10, 10, 30, 20, 20, 10",
+  "normal_totaldistr": "100",
+  "bb_frames": "41, 45, 49, 62, 66, 70, 94, 99, 104, 109, 114, 119",
+  "bb_distribute": "10, 5, 5, 10, 5, 5, 30, 10, 5, 5, 5, 5",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "description": "A wandering disciple with no real master. It is speculated that he had once sworn service to a certain god, but that god's name has been lost to history. There are also rumors which state that he inherited all of his powers from his former master, making his abilities equal to those of a high ranking god. Forever a free spirit, Tazer refused to take orders from the gods, always acting on his own accord. This caused many gods to view him as a threat to the stability of their practices. Nowadays Tazer's name can only be found in a handful of legends passed down through the ages.",
+  "summon": "A Summoner, huh...?<br>I don't like this one bit.<br>Don't tell me what to do.",
+  "fusion": "Stop telling me what to do.<br>I'll help you out,<br>but I'll do it my way.",
+  "evolution": "",
+  "hp_base": "3522",
+  "atk_base": "1350",
+  "def_base": "1285",
+  "rec_base": "1105",
+  "hp_lord": "4996",
+  "atk_lord": "1800",
+  "def_lord": "1713",
+  "rec_lord": "1473",
+  "hp_anima": "5588",
+  "rec_anima": "1315",
+  "atk_breaker": "1958",
+  "def_breaker": "1555",
+  "atk_guardian": "1642",
+  "def_guardian": "1871",
+  "rec_guardian": "1394",
+  "def_oracle": "1634",
+  "hp_oracle": "4759",
+  "rec_oracle": "1710",
+  "hp_bonus": "500",
+  "atk_bonus": "200",
+  "def_bonus": "200",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "6",
+  "normaldc": "12",
+  "ls": "Intense Strobe",
+  "lsdescription": "Large boost in damage dealt during Spark",
+  "lsnote": "50% boost",
+  "lstype": "Attack",
+  "bbdescription": "12 combo powerful Water attack on all enemies & boosts Spark damage for 3 turns",
+  "bbnote": "50% boost",
+  "bbtype": "Support/Offense",
+  "bbhits": "12",
+  "bbaoe": "A",
+  "bbgauge": "23",
+  "bbdc": "12",
+  "bbmultiplier": "240",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "es": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "20133",
+  "evomats3": "20133",
+  "evomats4": "60144",
+  "evomats5": "60224",
+  "evoitem": ""
 }

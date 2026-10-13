@@ -1,69 +1,97 @@
 {
   "id": "61016",
-  "unitName": "High Commander Rahnas",
-  "unreleased": "true",
-  "no": "1422",
-  "element": "Dark",
-  "rarity": "★★★★★★★",
-  "cost": "43",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "198",
-  "animation_idle": "52",
-  "animation_move": "13",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "16, 19, 37, 40, 60, 68, 75, 81, 86",
-  "normal_distribute": "12, 7, 12, 7, 22, 12, 11, 10, 7",
-  "normal_totaldistr": "100",
-  "bb_frames": "16, 19, 22, 37, 40, 43, 60, 68, 75, 81, 86, 90",
-  "bb_distribute": "10, 7, 3, 10, 7, 3, 18, 11, 10, 9, 7, 5",
-  "bb_totaldistr": "100",
-  "sbb_frames": "16, 19, 22, 37, 40, 43, 60, 68, 75, 81, 86, 90, 94, 97, 100",
-  "sbb_distribute": "9, 6, 3, 9, 6, 3, 16, 10, 8, 7, 6, 5, 4, 4, 4",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "16, 19, 22, 25, 37, 40, 43, 46, 60, 68, 75, 81, 86, 90, 94, 97, 100, 103, 106, 109",
-  "ubb_distribute": "8, 5, 3, 3, 8, 5, 3, 3, 13, 9, 7, 6, 5, 4, 3, 3, 3, 3, 3, 3",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "2",
-  "ubb_effectdelay": "2",
-  "description": "A Mock Unit of Rahnas, commander and founder of the \"Abel Faction.\" The Faction is an Elgaia Federation organization dedicated to secretly gathering information on other worlds, and is said to be the only group capable of opposing the Akras Summoners' Hall. Similarly, Rahnas is rumored to have strong ties to the Summoners of Old. Although this Unit's skills in command and battle are both undeniable, it is thought to fall far short of Rahnas's true power due to the scarcity of the information it was based around.",
-  "summon": "Making copies of me will not bode well. A perfect example of the Summoners' Hall's cowardly thinking and technology.",
-  "fusion": "Heh... I wondered what you were up to, but to think a gutless dog of the Summoners' Hall would try to toughen me up! Ridiculous!",
-  "evolution": "",
-  "hp_base": "5140",
-  "atk_base": "2050",
-  "def_base": "1780",
-  "rec_base": "1450",
-  "hp_lord": "7330",
-  "atk_lord": "2770",
-  "def_lord": "2410",
-  "rec_lord": "1970",
-  "hp_anima": "",
-  "rec_anima": "",
-  "atk_breaker": "",
-  "def_breaker": "",
-  "def_guardian": "",
-  "rec_guardian": "",
-  "def_oracle": "",
-  "rec_oracle": "",
-  "hp_bonus": "1000",
-  "atk_bonus": "600",
-  "def_bonus": "300",
-  "rec_bonus": "400",
-  "lordonly": "true",
-  "combo_hits": "9",
-  "normaldc": "36",
-  "ls": "Grand Conqueror",
-  "lsdescription": "80% boost to Atk, 30% boost to max HP, normal attacks enormously boost BB gauge & raises normal hit amount",
-  "lsnote": "8 BC fill when normal attacking, adds +1 hits to each hit count with -50% damage penalty",
+  "stats": {
+    "_base": {
+      "atk": 2050,
+      "def": 1780,
+      "hp": 5140,
+      "rec": 1450
+    },
+    "_lord": {
+      "atk": 2770,
+      "def": 2410,
+      "hp": 7330,
+      "rec": 1970
+    },
+    "anima": {
+      "atk": 2770,
+      "def": 2410,
+      "hp max": 8520,
+      "hp min": 7925,
+      "rec max": 1851,
+      "rec min": 1613
+    },
+    "breaker": {
+      "atk max": 3127,
+      "atk min": 2889,
+      "def max": 2291,
+      "def min": 2053,
+      "hp": 7330,
+      "rec": 1970
+    },
+    "guardian": {
+      "atk": 2770,
+      "def max": 2767,
+      "def min": 2529,
+      "hp": 7330,
+      "rec max": 1970,
+      "rec min": 1732
+    },
+    "oracle": {
+      "atk": 2770,
+      "def max": 2410,
+      "def min": 2172,
+      "hp": 7330,
+      "rec max": 2446,
+      "rec min": 2208
+    }
+  },
+  "leader_skill": {
+    "desc": "80% boost to Atk, 30% boost to max HP, normal attacks enormously boost BB gauge & raises normal hit amount",
+    "effects": [
+      {
+        "atk% buff": 80,
+        "hp% buff": 30,
+        "passive id": "1"
+      },
+      {
+        "extra hits dmg%": -50,
+        "hit increase/hit": 1,
+        "passive id": "37"
+      },
+      {
+        "bc fill when attacking high": 8,
+        "bc fill when attacking low": 8,
+        "bc fill when attacking%": 100,
+        "passive id": "35"
+      }
+    ],
+    "id": "1945",
+    "name": "Grand Conqueror"
+  },
+  "extra_skill": {
+    "desc": "20% boost to all parameters when Atk Boost type Sphere is equipped",
+    "effects": [
+      {
+        "atk% buff": 20,
+        "conditions": [
+          {
+            "sphere category required": "Atk Boosting",
+            "sphere category required (raw)": "13"
+          }
+        ],
+        "def% buff": 20,
+        "hp% buff": 20,
+        "passive id": "1",
+        "passive target": "self",
+        "rec% buff": 20
+      }
+    ],
+    "id": "20500",
+    "name": "Distant Fate",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -514,18 +542,6 @@
     ],
     "name": "Risahl Dissection"
   },
-  "bbdescription": "12 combo Dark attack on all foes, raises normal hit amount for 3 turns, hugely boosts BB gauge for 3 turns & adds Def ignoring effect to attack for 2 turns",
-  "bbnote": "Adds +1 hit to each hit count, 6 BC fill",
-  "bbtype": "Offense",
-  "bbhits": "12",
-  "bbaoe": "A",
-  "bbgauge": "26",
-  "bbdc": "12",
-  "bbmultiplier": "350",
-  "bbhits2": "",
-  "bbaoe2": "",
-  "bbdc2": "",
-  "bbmultiplier2": "",
   "sbb": {
     "damage frames": [
       {
@@ -1002,18 +1018,6 @@
     ],
     "name": "Strict Falter"
   },
-  "sbbdescription": "15 combo powerful Dark attack on all foes, considerably boosts Atk, Def, Rec for 3 turns, raises normal hit amount for 3 turns & adds Def ignoring effect to attack for 2 turns",
-  "sbbnote": "'''130% boost to own Atk, Def, Rec''',adds +1 hit to each hit count",
-  "sbbtype": "Offense",
-  "sbbhits": "15",
-  "sbbaoe": "A",
-  "sbbgauge": "30",
-  "sbbdc": "15",
-  "sbbmultiplier": "560",
-  "sbbhits2": "",
-  "sbbaoe2": "",
-  "sbbdc2": "",
-  "sbbmultiplier2": "",
   "ubb": {
     "damage frames": [
       {
@@ -1173,6 +1177,197 @@
     ],
     "name": "Kill Command"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 198
+    },
+    "idle": {
+      "total number of frames": 52
+    },
+    "move": {
+      "total number of frames": 13
+    }
+  },
+  "category": 61010,
+  "cost": "43",
+  "damage frames": {
+    "frame times": [
+      16,
+      19,
+      37,
+      40,
+      60,
+      68,
+      75,
+      81,
+      86
+    ],
+    "hit dmg% distribution": [
+      12,
+      7,
+      12,
+      7,
+      22,
+      12,
+      11,
+      10,
+      7
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 9
+  },
+  "drop check count": 4,
+  "element": "dark",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "farmable",
+  "guide_id": 1422,
+  "imp": {
+    "max atk": "600",
+    "max def": "300",
+    "max hp": "1000",
+    "max rec": "400"
+  },
+  "kind": "normal",
+  "lord damage range": "2579~2880",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "High Commander Rahnas",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "High Commander Rahnas",
+  "maxlv": "120",
+  "no": "1422",
+  "unitDisplayHomePosition_1W9CxaFK": "529,327,200,546",
+  "unitDisplayDetailPosition_6z54rgb3": "-70,-53,1000,843",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "69,181,520,438,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "16,-277,900,759",
+  "unitDisplaySummonPosition_KC3Jk8Br": "69,181,520,438,0",
+  "unitDisplayHpPosition_3BpHN6VD": "0,35",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "15000",
+  "sellCaution": false,
+  "effectFrames": "10:126:1,13:120:1,31:126:1,34:120:1,54:126:1,62:120:1,69:120:1,75:120:1,80:120:1,16:600763:1,59:600171:1,60:1860:1,62:601502:1",
+  "evofrom": "",
+  "evointo": "61017",
+  "evozelcost": "3000000",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "unreleased": "true",
+  "basexp": "21",
+  "animation_attack": "198",
+  "animation_idle": "52",
+  "animation_move": "13",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "16, 19, 37, 40, 60, 68, 75, 81, 86",
+  "normal_distribute": "12, 7, 12, 7, 22, 12, 11, 10, 7",
+  "normal_totaldistr": "100",
+  "bb_frames": "16, 19, 22, 37, 40, 43, 60, 68, 75, 81, 86, 90",
+  "bb_distribute": "10, 7, 3, 10, 7, 3, 18, 11, 10, 9, 7, 5",
+  "bb_totaldistr": "100",
+  "sbb_frames": "16, 19, 22, 37, 40, 43, 60, 68, 75, 81, 86, 90, 94, 97, 100",
+  "sbb_distribute": "9, 6, 3, 9, 6, 3, 16, 10, 8, 7, 6, 5, 4, 4, 4",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "16, 19, 22, 25, 37, 40, 43, 46, 60, 68, 75, 81, 86, 90, 94, 97, 100, 103, 106, 109",
+  "ubb_distribute": "8, 5, 3, 3, 8, 5, 3, 3, 13, 9, 7, 6, 5, 4, 3, 3, 3, 3, 3, 3",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "2",
+  "ubb_effectdelay": "2",
+  "description": "A Mock Unit of Rahnas, commander and founder of the \"Abel Faction.\" The Faction is an Elgaia Federation organization dedicated to secretly gathering information on other worlds, and is said to be the only group capable of opposing the Akras Summoners' Hall. Similarly, Rahnas is rumored to have strong ties to the Summoners of Old. Although this Unit's skills in command and battle are both undeniable, it is thought to fall far short of Rahnas's true power due to the scarcity of the information it was based around.",
+  "summon": "Making copies of me will not bode well. A perfect example of the Summoners' Hall's cowardly thinking and technology.",
+  "fusion": "Heh... I wondered what you were up to, but to think a gutless dog of the Summoners' Hall would try to toughen me up! Ridiculous!",
+  "evolution": "",
+  "hp_base": "5140",
+  "atk_base": "2050",
+  "def_base": "1780",
+  "rec_base": "1450",
+  "hp_lord": "7330",
+  "atk_lord": "2770",
+  "def_lord": "2410",
+  "rec_lord": "1970",
+  "hp_anima": "",
+  "rec_anima": "",
+  "atk_breaker": "",
+  "def_breaker": "",
+  "def_guardian": "",
+  "rec_guardian": "",
+  "def_oracle": "",
+  "rec_oracle": "",
+  "hp_bonus": "1000",
+  "atk_bonus": "600",
+  "def_bonus": "300",
+  "rec_bonus": "400",
+  "lordonly": "true",
+  "combo_hits": "9",
+  "normaldc": "36",
+  "ls": "Grand Conqueror",
+  "lsdescription": "80% boost to Atk, 30% boost to max HP, normal attacks enormously boost BB gauge & raises normal hit amount",
+  "lsnote": "8 BC fill when normal attacking, adds +1 hits to each hit count with -50% damage penalty",
+  "bbdescription": "12 combo Dark attack on all foes, raises normal hit amount for 3 turns, hugely boosts BB gauge for 3 turns & adds Def ignoring effect to attack for 2 turns",
+  "bbnote": "Adds +1 hit to each hit count, 6 BC fill",
+  "bbtype": "Offense",
+  "bbhits": "12",
+  "bbaoe": "A",
+  "bbgauge": "26",
+  "bbdc": "12",
+  "bbmultiplier": "350",
+  "bbhits2": "",
+  "bbaoe2": "",
+  "bbdc2": "",
+  "bbmultiplier2": "",
+  "sbbdescription": "15 combo powerful Dark attack on all foes, considerably boosts Atk, Def, Rec for 3 turns, raises normal hit amount for 3 turns & adds Def ignoring effect to attack for 2 turns",
+  "sbbnote": "'''130% boost to own Atk, Def, Rec''',adds +1 hit to each hit count",
+  "sbbtype": "Offense",
+  "sbbhits": "15",
+  "sbbaoe": "A",
+  "sbbgauge": "30",
+  "sbbdc": "15",
+  "sbbmultiplier": "560",
+  "sbbhits2": "",
+  "sbbaoe2": "",
+  "sbbdc2": "",
+  "sbbmultiplier2": "",
   "ubbdescription": "20 combo massive Dark attack on all foes, additional massive attack at turn's end for 3 turns, enormously boosts Atk, Def for 3 turns, considerably raises normal hit amount for 3 turns & normal attacks hit all foes for 3 turns",
   "ubbnote": "Adds +2 hits to each hit count (+50% extra damage, 150% total), 1000% multiplier on additional attack at turn's end effect, 250% boost to Atk, Def",
   "ubbtype": "Offense",
@@ -1189,8 +1384,6 @@
   "esitem": "Atk Boosting Sphere",
   "esdescription": "20% boost to all parameters when Atk Boost type Sphere is equipped",
   "esnote": "",
-  "evofrom": "",
-  "evointo": "61017",
   "evomats1": "Dark Mecha God",
   "evomats2": "Dark Mecha God",
   "evomats3": "Miracle Totem",
@@ -1201,108 +1394,5 @@
   "evomats8": "Metal Mimic",
   "evomats9": "",
   "evoitem": "",
-  "evoitem2": "",
-  "evozelcost": "3000000",
-  "stats": {
-    "_base": {
-      "atk": 2050,
-      "def": 1780,
-      "hp": 5140,
-      "rec": 1450
-    },
-    "_lord": {
-      "atk": 2770,
-      "def": 2410,
-      "hp": 7330,
-      "rec": 1970
-    },
-    "anima": {
-      "atk": 2770,
-      "def": 2410,
-      "hp max": 8520,
-      "hp min": 7925,
-      "rec max": 1851,
-      "rec min": 1613
-    },
-    "breaker": {
-      "atk max": 3127,
-      "atk min": 2889,
-      "def max": 2291,
-      "def min": 2053,
-      "hp": 7330,
-      "rec": 1970
-    },
-    "guardian": {
-      "atk": 2770,
-      "def max": 2767,
-      "def min": 2529,
-      "hp": 7330,
-      "rec max": 1970,
-      "rec min": 1732
-    },
-    "oracle": {
-      "atk": 2770,
-      "def max": 2410,
-      "def min": 2172,
-      "hp": 7330,
-      "rec max": 2446,
-      "rec min": 2208
-    }
-  },
-  "leader_skill": {
-    "desc": "80% boost to Atk, 30% boost to max HP, normal attacks enormously boost BB gauge & raises normal hit amount",
-    "effects": [
-      {
-        "atk% buff": 80,
-        "hp% buff": 30,
-        "passive id": "1"
-      },
-      {
-        "extra hits dmg%": -50,
-        "hit increase/hit": 1,
-        "passive id": "37"
-      },
-      {
-        "bc fill when attacking high": 8,
-        "bc fill when attacking low": 8,
-        "bc fill when attacking%": 100,
-        "passive id": "35"
-      }
-    ],
-    "id": "1945",
-    "name": "Grand Conqueror"
-  },
-  "extra_skill": {
-    "desc": "20% boost to all parameters when Atk Boost type Sphere is equipped",
-    "effects": [
-      {
-        "atk% buff": 20,
-        "conditions": [
-          {
-            "sphere category required": "Atk Boosting",
-            "sphere category required (raw)": "13"
-          }
-        ],
-        "def% buff": 20,
-        "hp% buff": 20,
-        "passive id": "1",
-        "passive target": "self",
-        "rec% buff": 20
-      }
-    ],
-    "id": "20500",
-    "name": "Distant Fate",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "529,327,200,546",
-  "unitDisplayDetailPosition_6z54rgb3": "-70,-53,1000,843",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "69,181,520,438,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "16,-277,900,759",
-  "unitDisplaySummonPosition_KC3Jk8Br": "69,181,520,438,0",
-  "unitDisplayHpPosition_3BpHN6VD": "0,35",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "15000",
-  "sellCaution": false,
-  "effectFrames": "10:126:1,13:120:1,31:126:1,34:120:1,54:126:1,62:120:1,69:120:1,75:120:1,80:120:1,16:600763:1,59:600171:1,60:1860:1,62:601502:1"
+  "evoitem2": ""
 }

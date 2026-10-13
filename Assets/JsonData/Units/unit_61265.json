@@ -1,61 +1,67 @@
 {
   "id": "61265",
-  "unitName": "冥聖神ラブゼ",
-  "unreleased": "true",
-  "untranslated": "true",
-  "doenter": "true",
-  "no": "1766",
-  "element": "Dark",
-  "rarity": "★★★★★★",
-  "cost": "31",
-  "maxlv": "100",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "3",
-  "animation_attack": "195",
-  "animation_idle": "90",
-  "animation_move": "18",
-  "movespeed_attack": "0.0024",
-  "speedtype_attack": "4",
-  "movetype_attack": "1",
-  "movespeed_skill": "0.0024",
-  "speedtype_skill": "4",
-  "movetype_skill": "1",
-  "description": "",
-  "summon": "",
-  "fusion": "",
-  "evolution": "",
-  "hp_base": "4738",
-  "atk_base": "2032",
-  "def_base": "1811",
-  "rec_base": "1521",
-  "hp_lord": "6238",
-  "atk_lord": "2517",
-  "def_lord": "2263",
-  "rec_lord": "1892",
-  "hp_anima": "6980",
-  "rec_anima": "1694",
-  "atk_breaker": "2715",
-  "def_breaker": "2065",
-  "def_guardian": "2461",
-  "rec_guardian": "1793",
-  "def_oracle": "2164",
-  "rec_oracle": "2189",
-  "hp_bonus": "750",
-  "atk_bonus": "400",
-  "def_bonus": "200",
-  "rec_bonus": "300",
-  "lordonly": "",
-  "evofrom": "61264",
-  "evointo": "",
-  "normal_frames": "41, 44, 47, 50, 53, 73, 110, 115, 120, 125, 130, 135",
-  "normal_distribute": "16, 12, 8, 6, 4, 11, 16, 7, 5, 7, 5, 3",
-  "normal_totaldistr": "100",
-  "combo_hits": "12",
-  "normaldc": "24",
-  "ls": "闇の昏睡",
-  "lsdescription": "確率で防御貫通効果を付与＆スパークダメージを７５％アップ",
-  "lsnote": "15% chance attacks ignore defense & 75% boost to Spark damage",
+  "stats": {
+    "_base": {
+      "atk": 2032,
+      "def": 1811,
+      "hp": 4738,
+      "rec": 1521
+    },
+    "_lord": {
+      "atk": 2517,
+      "def": 2263,
+      "hp": 6238,
+      "rec": 1892
+    },
+    "anima": {
+      "atk": 2517,
+      "def": 2263,
+      "hp max": 7228,
+      "hp min": 6733,
+      "rec max": 1793,
+      "rec min": 1595
+    },
+    "breaker": {
+      "atk max": 2814,
+      "atk min": 2616,
+      "def max": 2164,
+      "def min": 1966,
+      "hp": 6238,
+      "rec": 1892
+    },
+    "guardian": {
+      "atk": 2517,
+      "def max": 2560,
+      "def min": 2362,
+      "hp": 6238,
+      "rec max": 1892,
+      "rec min": 1694
+    },
+    "oracle": {
+      "atk": 2517,
+      "def max": 2263,
+      "def min": 2065,
+      "hp": 6238,
+      "rec max": 2288,
+      "rec min": 2090
+    }
+  },
+  "leader_skill": {
+    "desc": "確率で防御貫通効果を付与＆スパークダメージを７５％アップ",
+    "effects": [
+      {
+        "ignore def%": 15,
+        "passive id": "29"
+      },
+      {
+        "damage% for spark": 75,
+        "passive id": "31"
+      }
+    ],
+    "id": "2807",
+    "name": "闇の昏睡"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -348,31 +354,6 @@
     ],
     "name": "ダークアンピュテイション"
   },
-  "bbdescription": "敵単体に強力な闇属性１５連ダメージ＆味方全体に３ターン、攻撃力・防御力をかなりアップ",
-  "bbnote": "{{UnitBuffList",
-  "buff_1_proc": "1",
-  "buff_1_potency": "720% damage modifier",
-  "buff_1_duration": "—",
-  "buff_1_target": "Single enemy",
-  "buff_2_proc": "5_atk",
-  "buff_2_potency": "100% boost to Atk",
-  "buff_2_duration": "3 turns",
-  "buff_2_target": "All allies",
-  "buff_3_proc": "5_def",
-  "buff_3_potency": "100% boost to Def",
-  "buff_3_duration": "3 turns",
-  "buff_3_target": "All allies",
-  "bbtype": "Offense",
-  "bbgauge": "20",
-  "bb_frames": "41, 44, 47, 50, 53, 73, 110, 115, 120, 125, 130, 135, 140, 145, 150",
-  "bb_distribute": "12, 8, 6, 4, 2, 10, 12, 9, 5, 7, 5, 7, 5, 3, 5",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "bbhits": "15",
-  "bbaoe": "1",
-  "bbdc": "30",
-  "bbmultiplier": "600",
-  "bb_hpscale": "",
   "sbb": {
     "damage frames": [
       {
@@ -749,6 +730,196 @@
     ],
     "name": "ダークグレイス"
   },
+  "ubb": {},
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 195
+    },
+    "idle": {
+      "total number of frames": 90
+    },
+    "move": {
+      "total number of frames": 18
+    }
+  },
+  "category": 61260,
+  "cost": "31",
+  "damage frames": {
+    "frame times": [
+      41,
+      44,
+      47,
+      50,
+      53,
+      73,
+      110,
+      115,
+      120,
+      125,
+      130,
+      135
+    ],
+    "hit dmg% distribution": [
+      16,
+      12,
+      8,
+      6,
+      4,
+      11,
+      16,
+      7,
+      5,
+      7,
+      5,
+      3
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 12
+  },
+  "drop check count": 2,
+  "element": "dark",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 1766,
+  "imp": {
+    "max atk": "400",
+    "max def": "200",
+    "max hp": "750",
+    "max rec": "300"
+  },
+  "kind": "normal",
+  "lord damage range": "2343~2617",
+  "movement": {
+    "attack": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    }
+  },
+  "name": "冥聖神ラブゼ",
+  "rarity": "6",
+  "sell caution": false,
+  "unitName": "冥聖神ラブゼ",
+  "maxlv": "100",
+  "no": "1766",
+  "unitDisplayHomePosition_1W9CxaFK": null,
+  "unitDisplayDetailPosition_6z54rgb3": null,
+  "unitDisplayConfirmImagePosition_MYK1fq6c": null,
+  "unitDisplayCutInImagePosition_7hLR6pDN": null,
+  "unitDisplaySummonPosition_KC3Jk8Br": null,
+  "unitDisplayHpPosition_3BpHN6VD": null,
+  "unitDisplayCursorPosition": null,
+  "sellPrice": "",
+  "sellCaution": false,
+  "effectFrames": "",
+  "evofrom": "61264",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "unreleased": "true",
+  "untranslated": "true",
+  "doenter": "true",
+  "basexp": "21",
+  "animation_attack": "195",
+  "animation_idle": "90",
+  "animation_move": "18",
+  "movespeed_attack": "0.0024",
+  "speedtype_attack": "4",
+  "movetype_attack": "1",
+  "movespeed_skill": "0.0024",
+  "speedtype_skill": "4",
+  "movetype_skill": "1",
+  "description": "",
+  "summon": "",
+  "fusion": "",
+  "evolution": "",
+  "hp_base": "4738",
+  "atk_base": "2032",
+  "def_base": "1811",
+  "rec_base": "1521",
+  "hp_lord": "6238",
+  "atk_lord": "2517",
+  "def_lord": "2263",
+  "rec_lord": "1892",
+  "hp_anima": "6980",
+  "rec_anima": "1694",
+  "atk_breaker": "2715",
+  "def_breaker": "2065",
+  "def_guardian": "2461",
+  "rec_guardian": "1793",
+  "def_oracle": "2164",
+  "rec_oracle": "2189",
+  "hp_bonus": "750",
+  "atk_bonus": "400",
+  "def_bonus": "200",
+  "rec_bonus": "300",
+  "lordonly": "",
+  "normal_frames": "41, 44, 47, 50, 53, 73, 110, 115, 120, 125, 130, 135",
+  "normal_distribute": "16, 12, 8, 6, 4, 11, 16, 7, 5, 7, 5, 3",
+  "normal_totaldistr": "100",
+  "combo_hits": "12",
+  "normaldc": "24",
+  "ls": "闇の昏睡",
+  "lsdescription": "確率で防御貫通効果を付与＆スパークダメージを７５％アップ",
+  "lsnote": "15% chance attacks ignore defense & 75% boost to Spark damage",
+  "bbdescription": "敵単体に強力な闇属性１５連ダメージ＆味方全体に３ターン、攻撃力・防御力をかなりアップ",
+  "bbnote": "{{UnitBuffList",
+  "buff_1_proc": "1",
+  "buff_1_potency": "720% damage modifier",
+  "buff_1_duration": "—",
+  "buff_1_target": "Single enemy",
+  "buff_2_proc": "5_atk",
+  "buff_2_potency": "100% boost to Atk",
+  "buff_2_duration": "3 turns",
+  "buff_2_target": "All allies",
+  "buff_3_proc": "5_def",
+  "buff_3_potency": "100% boost to Def",
+  "buff_3_duration": "3 turns",
+  "buff_3_target": "All allies",
+  "bbtype": "Offense",
+  "bbgauge": "20",
+  "bb_frames": "41, 44, 47, 50, 53, 73, 110, 115, 120, 125, 130, 135, 140, 145, 150",
+  "bb_distribute": "12, 8, 6, 4, 2, 10, 12, 9, 5, 7, 5, 7, 5, 3, 5",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "bbhits": "15",
+  "bbaoe": "1",
+  "bbdc": "30",
+  "bbmultiplier": "600",
+  "bb_hpscale": "",
   "sbbdescription": "敵単体に強力な闇属性１６連ダメージ＆自分のＢＢゲージを満タンにする＆味方全体に３ターン、攻撃力・防御力をかなりアップ",
   "sbbnote": "{{UnitBuffList",
   "buff_4_proc": "4",
@@ -770,78 +941,5 @@
   "notes": "",
   "incorrectinfo": "",
   "addcat": "",
-  "addcatname": "",
-  "stats": {
-    "_base": {
-      "atk": 2032,
-      "def": 1811,
-      "hp": 4738,
-      "rec": 1521
-    },
-    "_lord": {
-      "atk": 2517,
-      "def": 2263,
-      "hp": 6238,
-      "rec": 1892
-    },
-    "anima": {
-      "atk": 2517,
-      "def": 2263,
-      "hp max": 7228,
-      "hp min": 6733,
-      "rec max": 1793,
-      "rec min": 1595
-    },
-    "breaker": {
-      "atk max": 2814,
-      "atk min": 2616,
-      "def max": 2164,
-      "def min": 1966,
-      "hp": 6238,
-      "rec": 1892
-    },
-    "guardian": {
-      "atk": 2517,
-      "def max": 2560,
-      "def min": 2362,
-      "hp": 6238,
-      "rec max": 1892,
-      "rec min": 1694
-    },
-    "oracle": {
-      "atk": 2517,
-      "def max": 2263,
-      "def min": 2065,
-      "hp": 6238,
-      "rec max": 2288,
-      "rec min": 2090
-    }
-  },
-  "leader_skill": {
-    "desc": "確率で防御貫通効果を付与＆スパークダメージを７５％アップ",
-    "effects": [
-      {
-        "ignore def%": 15,
-        "passive id": "29"
-      },
-      {
-        "damage% for spark": 75,
-        "passive id": "31"
-      }
-    ],
-    "id": "2807",
-    "name": "闇の昏睡"
-  },
-  "extra_skill": {},
-  "ubb": {},
-  "unitDisplayHomePosition_1W9CxaFK": null,
-  "unitDisplayDetailPosition_6z54rgb3": null,
-  "unitDisplayConfirmImagePosition_MYK1fq6c": null,
-  "unitDisplayCutInImagePosition_7hLR6pDN": null,
-  "unitDisplaySummonPosition_KC3Jk8Br": null,
-  "unitDisplayHpPosition_3BpHN6VD": null,
-  "unitDisplayCursorPosition": null,
-  "sellPrice": "",
-  "sellCaution": false,
-  "effectFrames": ""
+  "addcatname": ""
 }

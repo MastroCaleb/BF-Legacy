@@ -1,68 +1,112 @@
 {
   "id": "40907",
-  "unitName": "Celestial Plate Beiorg",
-  "no": "1604",
-  "element": "Thunder",
-  "rarity": "Omni",
-  "cost": "50",
-  "maxlv": "150",
-  "basexp": "21",
-  "gender": "N",
-  "ai": "4",
-  "animation_attack": "198",
-  "animation_idle": "52",
-  "animation_move": "7",
-  "movespeed_attack": "0.0024",
-  "movespeed_skill": "0.0024",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "84, 87, 90, 93, 96, 99, 102, 105",
-  "normal_distribute": "24, 16, 14, 12, 10, 9, 8, 7",
-  "normal_totaldistr": "100",
-  "bb_frames": "84, 87, 90, 93, 96, 99, 102, 105, 108, 111, 114, 117",
-  "bb_distribute": "10, 10, 10, 10, 10, 10, 8, 8, 8, 6, 6, 4",
-  "bb_totaldistr": "100",
-  "sbb_frames": "84, 87, 90, 93, 96, 99, 102, 105, 108, 111, 114, 117, 120, 123, 126, 129",
-  "sbb_distribute": "8, 8, 8, 8, 7, 7, 6, 6, 6, 6, 5, 5, 5, 5, 5, 5",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "84, 87, 90, 93, 96, 99, 102, 105, 108, 111, 114, 117, 120, 123, 126, 129, 132, 135, 138, 141",
-  "ubb_distribute": "11, 8, 8, 7, 7, 6, 5, 5, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "2",
-  "sbb_effectdelay": "2",
-  "ubb_effectdelay": "1",
-  "description": "As a land of eternally-simmering conflicts, Ishgria may well have been an ideal location for Beiorg's evolution. There is no doubt that Beiorg was fueled by those who attempted to destroy the armor, those who sought to analyze its strength, and those who merely sought strength for its own sake. Beiorg's strength would have increased without any limits had it escaped destruction and continued its battles, until it eventually surpassed all other beings in Ishgria.",
-  "summon": "UNKNOWN POWER SOURCE CONFIRMED.<br>FUNCTIONAL ENHANCEMENT PREDICTION: HIGH-LEVEL. INITIATING CONTACT.",
-  "fusion": "POWER OUTPUT LIMITER DISENGAGED.<br>RETREAT: UNNECESSARY.<br>ELIMINATING ALL TARGETS.",
-  "evolution": "FUNCTIONAL ENHANCEMENT...<br>INITIATING ENEMY SEARCH.<br>ELIMINATING HOSTILES ON CONTACT!",
-  "hp_base": "6533",
-  "atk_base": "2334",
-  "def_base": "2609",
-  "rec_base": "2278",
-  "hp_lord": "8483",
-  "atk_lord": "2927",
-  "def_lord": "3246",
-  "rec_lord": "2844",
-  "hp_anima": "9600",
-  "rec_anima": "2546",
-  "atk_breaker": "3225",
-  "def_breaker": "2948",
-  "def_guardian": "3544",
-  "rec_guardian": "2695",
-  "def_oracle": "3097",
-  "rec_oracle": "3291",
-  "hp_bonus": "1250",
-  "atk_bonus": "400",
-  "def_bonus": "800",
-  "rec_bonus": "500",
-  "lordonly": "",
-  "combo_hits": "8",
-  "normaldc": "48",
-  "ls": "Annihilation Sector",
-  "lsdescription": "50% boost to all parameters, Spark damage reduction, damage taken may restore HP & slight damage reduction when damage dealt exceeds certain amount for 1 turn",
-  "lsnote": "25% reduction, 25% chance to heal 25% damage & 20% reduction after 10,000 damage",
+  "stats": {
+    "_base": {
+      "atk": 2334,
+      "def": 2609,
+      "hp": 6533,
+      "rec": 2278
+    },
+    "_lord": {
+      "atk": 2927,
+      "def": 3246,
+      "hp": 8483,
+      "rec": 2844
+    },
+    "anima": {
+      "atk": 2927,
+      "def": 3246,
+      "hp max": 9973,
+      "hp min": 9228,
+      "rec max": 2695,
+      "rec min": 2397
+    },
+    "breaker": {
+      "atk max": 3374,
+      "atk min": 3076,
+      "def max": 3097,
+      "def min": 2799,
+      "hp": 8483,
+      "rec": 2844
+    },
+    "guardian": {
+      "atk": 2927,
+      "def max": 3693,
+      "def min": 3395,
+      "hp": 8483,
+      "rec max": 2844,
+      "rec min": 2546
+    },
+    "oracle": {
+      "atk": 2927,
+      "def max": 3246,
+      "def min": 2948,
+      "hp": 8483,
+      "rec max": 3440,
+      "rec min": 3142
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to all parameters, Spark damage reduction, damage taken may restore HP & slight damage reduction when damage dealt exceeds certain amount for 1 turn",
+    "effects": [
+      {
+        "atk% buff": 50,
+        "def% buff": 50,
+        "hp% buff": 50,
+        "passive id": "1",
+        "rec% buff": 50
+      },
+      {
+        "dmg% to hp% when attacked chance%": 25,
+        "dmg% to hp% when attacked high": 25,
+        "dmg% to hp% when attacked low": 25,
+        "passive id": "24"
+      },
+      {
+        "base spark dmg% resist": 25,
+        "buff spark dmg% resist": 25,
+        "passive id": "77"
+      },
+      {
+        "buff": {
+          "buff turns (36)": "1",
+          "dmg reduction% buff": 20
+        },
+        "damage dealt threshold buff activation": 10000,
+        "passive id": "80"
+      }
+    ],
+    "id": "10142",
+    "name": "Annihilation Sector"
+  },
+  "extra_skill": {
+    "desc": "Boosts Atk, Def, Rec each turn (for up to 5 turns) & probable resistance against 2 KO attacks",
+    "effects": [
+      {
+        "atk% max buff": 50,
+        "conditions": [],
+        "def% max buff": 50,
+        "increase from min to max": 1,
+        "passive id": "105",
+        "passive target": "self",
+        "rec% max buff": 50,
+        "turn count": 5
+      },
+      {
+        "angel idol chance% condition": 0,
+        "angel idol recover chance% high": 40,
+        "angel idol recover chance% low": 40,
+        "angel idol recover counts": 2,
+        "conditions": [],
+        "passive id": "69",
+        "passive target": "self"
+      }
+    ],
+    "id": "33400",
+    "name": "Rapid Evolution Mode",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -573,14 +617,6 @@
     ],
     "name": "Prodigious Volts"
   },
-  "bbdescription": "12 combo powerful Thunder attack on all foes, hugely boosts Atk, Def for 3 turns, hugely boosts Def, Rec relative to Atk for 3 turns & damage taken may slightly restore HP for 3 turns",
-  "bbnote": "170% Atk, Def, 70% Atk to Def, Rec & 20% chance to heal 20-25% damage",
-  "bbtype": "Heal/Offense",
-  "bbhits": "12",
-  "bbaoe": "A",
-  "bbgauge": "30",
-  "bbdc": "12",
-  "bbmultiplier": "420",
   "sbb": {
     "damage frames": [
       {
@@ -1201,14 +1237,6 @@
     ],
     "name": "Full Expansion"
   },
-  "sbbdescription": "16 combo powerful Thunder attack on all foes (consecutive uses boost damage), fills own BB gauge to max, hugely boosts Atk, Def for 3 turns, damage taken may slightly restore HP for 3 turns & considerably boosts BB gauge for 3 turns",
-  "sbbnote": "200% boost to multiplier per use up to 3x, 170% Atk, Def, 20% chance to heal 20-25% damage & fills 4-7 BC",
-  "sbbtype": "Heal/Offense",
-  "sbbhits": "16",
-  "sbbaoe": "A",
-  "sbbgauge": "32",
-  "sbbdc": "16",
-  "sbbmultiplier": "540~1140",
   "ubb": {
     "damage frames": [
       {
@@ -1368,6 +1396,198 @@
     ],
     "name": "Masterpiece"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_under",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 30.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 70.0,
+      "target conditions": "hp_max",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 50.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 198
+    },
+    "idle": {
+      "total number of frames": 52
+    },
+    "move": {
+      "total number of frames": 7
+    }
+  },
+  "category": 40900,
+  "cost": "50",
+  "damage frames": {
+    "frame times": [
+      84,
+      87,
+      90,
+      93,
+      96,
+      99,
+      102,
+      105
+    ],
+    "hit dmg% distribution": [
+      24,
+      16,
+      14,
+      12,
+      10,
+      9,
+      8,
+      7
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 8
+  },
+  "drop check count": 6,
+  "element": "thunder",
+  "exp_pattern": 20,
+  "gender": "other",
+  "getting type": "rare summon",
+  "guide_id": 1604,
+  "imp": {
+    "max atk": "400",
+    "max def": "800",
+    "max hp": "1250",
+    "max rec": "500"
+  },
+  "kind": "normal",
+  "lord damage range": "2725~3044",
+  "movement": {
+    "attack": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    }
+  },
+  "name": "Celestial Plate Beiorg",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "8",
+  "sell caution": false,
+  "unitName": "Celestial Plate Beiorg",
+  "maxlv": "150",
+  "no": "1604",
+  "unitDisplayHomePosition_1W9CxaFK": "327,423,174,475",
+  "unitDisplayDetailPosition_6z54rgb3": "-40,-231,1426,1344",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "53,19,670,631,1",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-27,-463,1426,1344",
+  "unitDisplaySummonPosition_KC3Jk8Br": "53,19,670,631,1",
+  "unitDisplayHpPosition_3BpHN6VD": "-9,75",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "50000",
+  "sellCaution": false,
+  "effectFrames": "78:120:1,81:120:1,84:120:1,87:120:1,90:120:1,93:120:1,96:120:1,99:120:1,84:330823:1,92:400480:1,77:400538:1,87:200850:1,90:601971:1,82:330396:1",
+  "evofrom": "40906",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "21",
+  "animation_attack": "198",
+  "animation_idle": "52",
+  "animation_move": "7",
+  "movespeed_attack": "0.0024",
+  "movespeed_skill": "0.0024",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "84, 87, 90, 93, 96, 99, 102, 105",
+  "normal_distribute": "24, 16, 14, 12, 10, 9, 8, 7",
+  "normal_totaldistr": "100",
+  "bb_frames": "84, 87, 90, 93, 96, 99, 102, 105, 108, 111, 114, 117",
+  "bb_distribute": "10, 10, 10, 10, 10, 10, 8, 8, 8, 6, 6, 4",
+  "bb_totaldistr": "100",
+  "sbb_frames": "84, 87, 90, 93, 96, 99, 102, 105, 108, 111, 114, 117, 120, 123, 126, 129",
+  "sbb_distribute": "8, 8, 8, 8, 7, 7, 6, 6, 6, 6, 5, 5, 5, 5, 5, 5",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "84, 87, 90, 93, 96, 99, 102, 105, 108, 111, 114, 117, 120, 123, 126, 129, 132, 135, 138, 141",
+  "ubb_distribute": "11, 8, 8, 7, 7, 6, 5, 5, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "2",
+  "sbb_effectdelay": "2",
+  "ubb_effectdelay": "1",
+  "description": "As a land of eternally-simmering conflicts, Ishgria may well have been an ideal location for Beiorg's evolution. There is no doubt that Beiorg was fueled by those who attempted to destroy the armor, those who sought to analyze its strength, and those who merely sought strength for its own sake. Beiorg's strength would have increased without any limits had it escaped destruction and continued its battles, until it eventually surpassed all other beings in Ishgria.",
+  "summon": "UNKNOWN POWER SOURCE CONFIRMED.<br>FUNCTIONAL ENHANCEMENT PREDICTION: HIGH-LEVEL. INITIATING CONTACT.",
+  "fusion": "POWER OUTPUT LIMITER DISENGAGED.<br>RETREAT: UNNECESSARY.<br>ELIMINATING ALL TARGETS.",
+  "evolution": "FUNCTIONAL ENHANCEMENT...<br>INITIATING ENEMY SEARCH.<br>ELIMINATING HOSTILES ON CONTACT!",
+  "hp_base": "6533",
+  "atk_base": "2334",
+  "def_base": "2609",
+  "rec_base": "2278",
+  "hp_lord": "8483",
+  "atk_lord": "2927",
+  "def_lord": "3246",
+  "rec_lord": "2844",
+  "hp_anima": "9600",
+  "rec_anima": "2546",
+  "atk_breaker": "3225",
+  "def_breaker": "2948",
+  "def_guardian": "3544",
+  "rec_guardian": "2695",
+  "def_oracle": "3097",
+  "rec_oracle": "3291",
+  "hp_bonus": "1250",
+  "atk_bonus": "400",
+  "def_bonus": "800",
+  "rec_bonus": "500",
+  "lordonly": "",
+  "combo_hits": "8",
+  "normaldc": "48",
+  "ls": "Annihilation Sector",
+  "lsdescription": "50% boost to all parameters, Spark damage reduction, damage taken may restore HP & slight damage reduction when damage dealt exceeds certain amount for 1 turn",
+  "lsnote": "25% reduction, 25% chance to heal 25% damage & 20% reduction after 10,000 damage",
+  "bbdescription": "12 combo powerful Thunder attack on all foes, hugely boosts Atk, Def for 3 turns, hugely boosts Def, Rec relative to Atk for 3 turns & damage taken may slightly restore HP for 3 turns",
+  "bbnote": "170% Atk, Def, 70% Atk to Def, Rec & 20% chance to heal 20-25% damage",
+  "bbtype": "Heal/Offense",
+  "bbhits": "12",
+  "bbaoe": "A",
+  "bbgauge": "30",
+  "bbdc": "12",
+  "bbmultiplier": "420",
+  "sbbdescription": "16 combo powerful Thunder attack on all foes (consecutive uses boost damage), fills own BB gauge to max, hugely boosts Atk, Def for 3 turns, damage taken may slightly restore HP for 3 turns & considerably boosts BB gauge for 3 turns",
+  "sbbnote": "200% boost to multiplier per use up to 3x, 170% Atk, Def, 20% chance to heal 20-25% damage & fills 4-7 BC",
+  "sbbtype": "Heal/Offense",
+  "sbbhits": "16",
+  "sbbaoe": "A",
+  "sbbgauge": "32",
+  "sbbdc": "16",
+  "sbbmultiplier": "540~1140",
   "ubbdescription": "20 combo massive Thunder attack on all foes, high probability of resistance against 1 KO attack, enormously boosts Atk, Def for 3 turns, probable powerful Spark critical for 3 turns & damage taken enormously restores HP for 3 turns",
   "ubbnote": "350% Atk, Def, 80% chance to survive KO attacks, 50% chance Sparks deal 120% extra damage & restores 100% damage taken",
   "ubbtype": "Heal/Offense",
@@ -1380,8 +1600,6 @@
   "esitem": "",
   "esdescription": "Boosts Atk, Def, Rec each turn (for up to 5 turns) & probable resistance against 2 KO attacks",
   "esnote": "10% boost each turn - 50% boost total & 40% chance to survive KO attacks",
-  "evofrom": "40906",
-  "evointo": "",
   "evomats1": "",
   "evomats2": "",
   "evomats3": "",
@@ -1390,123 +1608,5 @@
   "evomats6": "",
   "evomats7": "",
   "evomats8": "",
-  "evoitem": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 2334,
-      "def": 2609,
-      "hp": 6533,
-      "rec": 2278
-    },
-    "_lord": {
-      "atk": 2927,
-      "def": 3246,
-      "hp": 8483,
-      "rec": 2844
-    },
-    "anima": {
-      "atk": 2927,
-      "def": 3246,
-      "hp max": 9973,
-      "hp min": 9228,
-      "rec max": 2695,
-      "rec min": 2397
-    },
-    "breaker": {
-      "atk max": 3374,
-      "atk min": 3076,
-      "def max": 3097,
-      "def min": 2799,
-      "hp": 8483,
-      "rec": 2844
-    },
-    "guardian": {
-      "atk": 2927,
-      "def max": 3693,
-      "def min": 3395,
-      "hp": 8483,
-      "rec max": 2844,
-      "rec min": 2546
-    },
-    "oracle": {
-      "atk": 2927,
-      "def max": 3246,
-      "def min": 2948,
-      "hp": 8483,
-      "rec max": 3440,
-      "rec min": 3142
-    }
-  },
-  "leader_skill": {
-    "desc": "50% boost to all parameters, Spark damage reduction, damage taken may restore HP & slight damage reduction when damage dealt exceeds certain amount for 1 turn",
-    "effects": [
-      {
-        "atk% buff": 50,
-        "def% buff": 50,
-        "hp% buff": 50,
-        "passive id": "1",
-        "rec% buff": 50
-      },
-      {
-        "dmg% to hp% when attacked chance%": 25,
-        "dmg% to hp% when attacked high": 25,
-        "dmg% to hp% when attacked low": 25,
-        "passive id": "24"
-      },
-      {
-        "base spark dmg% resist": 25,
-        "buff spark dmg% resist": 25,
-        "passive id": "77"
-      },
-      {
-        "buff": {
-          "buff turns (36)": "1",
-          "dmg reduction% buff": 20
-        },
-        "damage dealt threshold buff activation": 10000,
-        "passive id": "80"
-      }
-    ],
-    "id": "10142",
-    "name": "Annihilation Sector"
-  },
-  "extra_skill": {
-    "desc": "Boosts Atk, Def, Rec each turn (for up to 5 turns) & probable resistance against 2 KO attacks",
-    "effects": [
-      {
-        "atk% max buff": 50,
-        "conditions": [],
-        "def% max buff": 50,
-        "increase from min to max": 1,
-        "passive id": "105",
-        "passive target": "self",
-        "rec% max buff": 50,
-        "turn count": 5
-      },
-      {
-        "angel idol chance% condition": 0,
-        "angel idol recover chance% high": 40,
-        "angel idol recover chance% low": 40,
-        "angel idol recover counts": 2,
-        "conditions": [],
-        "passive id": "69",
-        "passive target": "self"
-      }
-    ],
-    "id": "33400",
-    "name": "Rapid Evolution Mode",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "327,423,174,475",
-  "unitDisplayDetailPosition_6z54rgb3": "-40,-231,1426,1344",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "53,19,670,631,1",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-27,-463,1426,1344",
-  "unitDisplaySummonPosition_KC3Jk8Br": "53,19,670,631,1",
-  "unitDisplayHpPosition_3BpHN6VD": "-9,75",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "50000",
-  "sellCaution": false,
-  "effectFrames": "78:120:1,81:120:1,84:120:1,87:120:1,90:120:1,93:120:1,96:120:1,99:120:1,84:330823:1,92:400480:1,77:400538:1,87:200850:1,90:601971:1,82:330396:1"
+  "evoitem": ""
 }

@@ -1,59 +1,66 @@
 {
   "id": "20012",
-  "unitName": "Ice Selena",
-  "no": "6",
-  "element": "Water",
-  "rarity": "★★★",
-  "cost": "4",
-  "maxlv": "40",
-  "basexp": "10",
-  "gender": "F",
-  "ai": "3",
-  "animation_attack": "90",
-  "animation_idle": "52",
-  "animation_move": "13",
-  "movespeed_attack": "0.0024",
-  "movespeed_skill": "0.0024",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "26, 30",
-  "normal_distribute": "50, 50",
-  "normal_totaldistr": "100",
-  "bb_frames": "10, 14, 26, 30, 34",
-  "bb_distribute": "15, 15, 25, 25, 20",
-  "bb_totaldistr": "100",
-  "description": "A swordswoman from the ruined Sama Kingdom, she later became one of the Six Heroes. At 18, she folded to the pressure around her and took up the treasured sword Lexida as proof of her chiefdom. She had always rejected the sword, but it was a good fit for her quick and ice cold style. Those who faced her are said to have felt a freezing cold before battle.",
-  "summon": "You need me, huh?<br>You seem quite suitable,<br>let me show you my power!",
-  "fusion": "I can feel it growing stronger...<br>My connection with the treasured sword, Lexida.",
-  "evolution": "What is it that <br>you want from me?<br>Lexida, perhaps!?",
-  "hp_base": "1377",
-  "atk_base": "636",
-  "def_base": "422",
-  "rec_base": "624",
-  "hp_lord": "2442",
-  "atk_lord": "918",
-  "def_lord": "734",
-  "rec_lord": "825",
-  "hp_anima": "2735",
-  "rec_anima": "747",
-  "atk_breaker": "996",
-  "def_breaker": "656",
-  "def_guardian": "812",
-  "rec_guardian": "786",
-  "def_oracle": "695",
-  "rec_oracle": "942",
-  "hp_bonus": "400",
-  "atk_bonus": "160",
-  "def_bonus": "160",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "2",
-  "normaldc": "6",
-  "ls": "Water Spirit's Power",
-  "lsdescription": "25% boost to Atk Power of Water Types",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 636,
+      "def": 422,
+      "hp": 1377,
+      "rec": 624
+    },
+    "_lord": {
+      "atk": 918,
+      "def": 734,
+      "hp": 2442,
+      "rec": 825
+    },
+    "anima": {
+      "atk": 918,
+      "def": 734,
+      "hp max": 2832,
+      "hp min": 2637,
+      "rec max": 786,
+      "rec min": 708
+    },
+    "breaker": {
+      "atk max": 1035,
+      "atk min": 957,
+      "def max": 695,
+      "def min": 617,
+      "hp": 2442,
+      "rec": 825
+    },
+    "guardian": {
+      "atk": 918,
+      "def max": 851,
+      "def min": 773,
+      "hp": 2442,
+      "rec max": 825,
+      "rec min": 747
+    },
+    "oracle": {
+      "atk": 918,
+      "def max": 734,
+      "def min": 656,
+      "hp": 2442,
+      "rec max": 981,
+      "rec min": 903
+    }
+  },
+  "leader_skill": {
+    "desc": "25% boost to Atk Power of Water Types",
+    "effects": [
+      {
+        "atk% buff": 25,
+        "elements buffed": [
+          "water"
+        ],
+        "passive id": "2"
+      }
+    ],
+    "id": "110",
+    "name": "Water Spirit's Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -214,97 +221,91 @@
     ],
     "name": "Divine Hail"
   },
-  "bbdescription": "5 combo Water elemental attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "5",
-  "bbaoe": "A",
-  "bbgauge": "15",
-  "bbdc": "5",
-  "bbmultiplier": "85",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "20011",
-  "evointo": "20013",
-  "evomats1": "20132",
-  "evomats2": "20131",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "100000",
-  "stats": {
-    "_base": {
-      "atk": 636,
-      "def": 422,
-      "hp": 1377,
-      "rec": 624
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 918,
-      "def": 734,
-      "hp": 2442,
-      "rec": 825
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 918,
-      "def": 734,
-      "hp max": 2832,
-      "hp min": 2637,
-      "rec max": 786,
-      "rec min": 708
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 1035,
-      "atk min": 957,
-      "def max": 695,
-      "def min": 617,
-      "hp": 2442,
-      "rec": 825
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 90
     },
-    "guardian": {
-      "atk": 918,
-      "def max": 851,
-      "def min": 773,
-      "hp": 2442,
-      "rec max": 825,
-      "rec min": 747
+    "idle": {
+      "total number of frames": 52
     },
-    "oracle": {
-      "atk": 918,
-      "def max": 734,
-      "def min": 656,
-      "hp": 2442,
-      "rec max": 981,
-      "rec min": 903
+    "move": {
+      "total number of frames": 13
     }
   },
-  "leader_skill": {
-    "desc": "25% boost to Atk Power of Water Types",
-    "effects": [
-      {
-        "atk% buff": 25,
-        "elements buffed": [
-          "water"
-        ],
-        "passive id": "2"
-      }
+  "category": 20010,
+  "cost": "4",
+  "damage frames": {
+    "frame times": [
+      26,
+      30
     ],
-    "id": "110",
-    "name": "Water Spirit's Power"
+    "hit dmg% distribution": [
+      50,
+      50
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 2
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "water",
+  "exp_pattern": 10,
+  "gender": "female",
+  "getting type": "farmable",
+  "guide_id": 6,
+  "imp": {
+    "max atk": "160",
+    "max def": "160",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "854~954",
+  "movement": {
+    "attack": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    }
+  },
+  "name": "Ice Selena",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "Ice Selena",
+  "maxlv": "40",
+  "no": "6",
   "unitDisplayHomePosition_1W9CxaFK": "278,-14,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "53,185,720,568",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "130,347,338,267,0",
@@ -314,5 +315,92 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "1000",
   "sellCaution": false,
-  "effectFrames": "20:122:1,24:122:1"
+  "effectFrames": "20:122:1,24:122:1",
+  "evofrom": "20011",
+  "evointo": "20013",
+  "evozelcost": "100000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "20132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20131",
+      "count": 1
+    }
+  ],
+  "basexp": "10",
+  "animation_attack": "90",
+  "animation_idle": "52",
+  "animation_move": "13",
+  "movespeed_attack": "0.0024",
+  "movespeed_skill": "0.0024",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "26, 30",
+  "normal_distribute": "50, 50",
+  "normal_totaldistr": "100",
+  "bb_frames": "10, 14, 26, 30, 34",
+  "bb_distribute": "15, 15, 25, 25, 20",
+  "bb_totaldistr": "100",
+  "description": "A swordswoman from the ruined Sama Kingdom, she later became one of the Six Heroes. At 18, she folded to the pressure around her and took up the treasured sword Lexida as proof of her chiefdom. She had always rejected the sword, but it was a good fit for her quick and ice cold style. Those who faced her are said to have felt a freezing cold before battle.",
+  "summon": "You need me, huh?<br>You seem quite suitable,<br>let me show you my power!",
+  "fusion": "I can feel it growing stronger...<br>My connection with the treasured sword, Lexida.",
+  "evolution": "What is it that <br>you want from me?<br>Lexida, perhaps!?",
+  "hp_base": "1377",
+  "atk_base": "636",
+  "def_base": "422",
+  "rec_base": "624",
+  "hp_lord": "2442",
+  "atk_lord": "918",
+  "def_lord": "734",
+  "rec_lord": "825",
+  "hp_anima": "2735",
+  "rec_anima": "747",
+  "atk_breaker": "996",
+  "def_breaker": "656",
+  "def_guardian": "812",
+  "rec_guardian": "786",
+  "def_oracle": "695",
+  "rec_oracle": "942",
+  "hp_bonus": "400",
+  "atk_bonus": "160",
+  "def_bonus": "160",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "2",
+  "normaldc": "6",
+  "ls": "Water Spirit's Power",
+  "lsdescription": "25% boost to Atk Power of Water Types",
+  "lstype": "Attack",
+  "bbdescription": "5 combo Water elemental attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "5",
+  "bbaoe": "A",
+  "bbgauge": "15",
+  "bbdc": "5",
+  "bbmultiplier": "85",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "20132",
+  "evomats2": "20131",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": "",
+  "evoitem": ""
 }

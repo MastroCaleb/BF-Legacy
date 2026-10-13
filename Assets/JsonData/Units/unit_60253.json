@@ -1,60 +1,63 @@
 {
   "id": "60253",
-  "unitName": "Duel-GX",
-  "freetext": ":''For other uses, see Duel-GX (disambiguation).''",
-  "no": "356",
-  "element": "Dark",
-  "rarity": "★★★★",
-  "cost": "8",
-  "maxlv": "60",
-  "basexp": "21",
-  "gender": "N",
-  "ai": "1",
-  "animation_attack": "152",
-  "animation_idle": "56",
-  "animation_move": "36",
-  "movespeed_attack": "0.005",
-  "movespeed_skill": "8",
-  "speedtype_attack": "1",
-  "speedtype_skill": "1",
-  "movetype_attack": "1",
-  "movetype_skill": "3",
-  "normal_frames": "46, 52, 58, 64, 70, 76, 82, 88, 94, 100, 106, 112",
-  "normal_distribute": "10, 10, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8",
-  "normal_totaldistr": "100",
-  "description": "A strange mechanical figure from another world. It is not known when or even where it was made. It did, however, seem to have a purpose. Duel-GX was created to defeat that which destroyed the world in which it was created. To accomplish this it began looking for others to help as it started to strengthen itself as well. The first person it identified as its partner was a self-centered girl who held an axe in each hand. As the girl came to know him as \"Crab,\" Duel-GX's circuits began activating.",
-  "summon": "NEW MASTER DETECTED.<br>REGISTRATION COMPLETE.<br>PLEASE INPUT COMMANDS.",
-  "fusion": "ENERGY INPUT CONFIRMED.<br>OUTPUT CAPACITY INCREASED.",
-  "evolution": "",
-  "hp_base": "2943",
-  "atk_base": "766",
-  "def_base": "943",
-  "rec_base": "892",
-  "hp_lord": "4204",
-  "atk_lord": "1094",
-  "def_lord": "1347",
-  "rec_lord": "1189",
-  "hp_anima": "4647",
-  "rec_anima": "1071",
-  "atk_breaker": "1212",
-  "def_breaker": "1229",
-  "atk_guardian": "976",
-  "def_guardian": "1465",
-  "rec_guardian": "1130",
-  "def_oracle": "1288",
-  "hp_oracle": "4027",
-  "rec_oracle": "1366",
-  "hp_bonus": "400",
-  "atk_bonus": "140",
-  "def_bonus": "140",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "12",
-  "normaldc": "24",
-  "ls": "Crash Impulse",
-  "lsdescription": "Very small chance of ignoring an opponent's Def when attacking",
-  "lsnote": "5% chance",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 766,
+      "def": 943,
+      "hp": 2943,
+      "rec": 892
+    },
+    "_lord": {
+      "atk": 1094,
+      "def": 1347,
+      "hp": 4204,
+      "rec": 1189
+    },
+    "anima": {
+      "atk": 1094,
+      "def": 1347,
+      "hp max": 4794,
+      "hp min": 4499,
+      "rec max": 1130,
+      "rec min": 1012
+    },
+    "breaker": {
+      "atk max": 1271,
+      "atk min": 1153,
+      "def max": 1288,
+      "def min": 1170,
+      "hp": 4204,
+      "rec": 1189
+    },
+    "guardian": {
+      "atk": 1094,
+      "def max": 1524,
+      "def min": 1406,
+      "hp": 4204,
+      "rec max": 1189,
+      "rec min": 1071
+    },
+    "oracle": {
+      "atk": 1094,
+      "def max": 1347,
+      "def min": 1229,
+      "hp": 4204,
+      "rec max": 1425,
+      "rec min": 1307
+    }
+  },
+  "leader_skill": {
+    "desc": "Very small chance of ignoring an opponent's Def when attacking",
+    "effects": [
+      {
+        "ignore def%": 5,
+        "passive id": "29"
+      }
+    ],
+    "id": "2800",
+    "name": "Crash Impulse"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -329,92 +332,105 @@
     ],
     "name": "Destruction Mode"
   },
-  "bbdescription": "Boosts critical hit rate & adds Dark element to attack for all allies for 3 turns",
-  "bbnote": "50% boost to Critical Hit rate",
-  "bbtype": "Support",
-  "bbhits": "",
-  "bbaoe": "0",
-  "bbgauge": "20",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "60254",
-  "evomats1": "60123",
-  "evomats2": "60122",
-  "evomats3": "60122",
-  "evomats4": "60201",
-  "evomats5": "60143",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 766,
-      "def": 943,
-      "hp": 2943,
-      "rec": 892
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "party"
     },
-    "_lord": {
-      "atk": 1094,
-      "def": 1347,
-      "hp": 4204,
-      "rec": 1189
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1094,
-      "def": 1347,
-      "hp max": 4794,
-      "hp min": 4499,
-      "rec max": 1130,
-      "rec min": 1012
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 152
     },
-    "breaker": {
-      "atk max": 1271,
-      "atk min": 1153,
-      "def max": 1288,
-      "def min": 1170,
-      "hp": 4204,
-      "rec": 1189
+    "idle": {
+      "total number of frames": 56
     },
-    "guardian": {
-      "atk": 1094,
-      "def max": 1524,
-      "def min": 1406,
-      "hp": 4204,
-      "rec max": 1189,
-      "rec min": 1071
-    },
-    "oracle": {
-      "atk": 1094,
-      "def max": 1347,
-      "def min": 1229,
-      "hp": 4204,
-      "rec max": 1425,
-      "rec min": 1307
+    "move": {
+      "total number of frames": 36
     }
   },
-  "leader_skill": {
-    "desc": "Very small chance of ignoring an opponent's Def when attacking",
-    "effects": [
-      {
-        "ignore def%": 5,
-        "passive id": "29"
-      }
+  "category": 60250,
+  "cost": "8",
+  "damage frames": {
+    "frame times": [
+      46,
+      52,
+      58,
+      64,
+      70,
+      76,
+      82,
+      88,
+      94,
+      100,
+      106,
+      112
     ],
-    "id": "2800",
-    "name": "Crash Impulse"
+    "hit dmg% distribution": [
+      10,
+      10,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 12
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "dark",
+  "exp_pattern": 20,
+  "gender": "other",
+  "getting type": "rare summon",
+  "guide_id": 356,
+  "imp": {
+    "max atk": "140",
+    "max def": "140",
+    "max hp": "400",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "1018~1137",
+  "movement": {
+    "attack": {
+      "move speed": 0.005,
+      "move speed type": "1",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 8,
+      "move speed type": "1",
+      "move type": "3"
+    }
+  },
+  "name": "Duel-GX",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Duel-GX",
+  "maxlv": "60",
+  "no": "356",
   "unitDisplayHomePosition_1W9CxaFK": "407,338,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-97,-92,1024,876",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "204,311,280,310,0",
@@ -424,5 +440,101 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "46:115:1,46:600220:1,52:115:1,52:600220:1,58:115:1,58:600220:1,64:115:1,64:600220:1,70:115:1,70:600220:1,76:115:1,76:600220:1,82:115:1,82:600220:1,88:115:1,88:600220:1,94:115:1,94:600220:1,100:115:1,100:600220:1,106:115:1,106:600220:1,112:115:1,112:600220:1"
+  "effectFrames": "46:115:1,46:600220:1,52:115:1,52:600220:1,58:115:1,58:600220:1,64:115:1,64:600220:1,70:115:1,70:600220:1,76:115:1,76:600220:1,82:115:1,82:600220:1,88:115:1,88:600220:1,94:115:1,94:600220:1,100:115:1,100:600220:1,106:115:1,106:600220:1,112:115:1,112:600220:1",
+  "evofrom": "",
+  "evointo": "60254",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "60123",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60122",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60201",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 1
+    }
+  ],
+  "freetext": ":''For other uses, see Duel-GX (disambiguation).''",
+  "basexp": "21",
+  "animation_attack": "152",
+  "animation_idle": "56",
+  "animation_move": "36",
+  "movespeed_attack": "0.005",
+  "movespeed_skill": "8",
+  "speedtype_attack": "1",
+  "speedtype_skill": "1",
+  "movetype_attack": "1",
+  "movetype_skill": "3",
+  "normal_frames": "46, 52, 58, 64, 70, 76, 82, 88, 94, 100, 106, 112",
+  "normal_distribute": "10, 10, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8",
+  "normal_totaldistr": "100",
+  "description": "A strange mechanical figure from another world. It is not known when or even where it was made. It did, however, seem to have a purpose. Duel-GX was created to defeat that which destroyed the world in which it was created. To accomplish this it began looking for others to help as it started to strengthen itself as well. The first person it identified as its partner was a self-centered girl who held an axe in each hand. As the girl came to know him as \"Crab,\" Duel-GX's circuits began activating.",
+  "summon": "NEW MASTER DETECTED.<br>REGISTRATION COMPLETE.<br>PLEASE INPUT COMMANDS.",
+  "fusion": "ENERGY INPUT CONFIRMED.<br>OUTPUT CAPACITY INCREASED.",
+  "evolution": "",
+  "hp_base": "2943",
+  "atk_base": "766",
+  "def_base": "943",
+  "rec_base": "892",
+  "hp_lord": "4204",
+  "atk_lord": "1094",
+  "def_lord": "1347",
+  "rec_lord": "1189",
+  "hp_anima": "4647",
+  "rec_anima": "1071",
+  "atk_breaker": "1212",
+  "def_breaker": "1229",
+  "atk_guardian": "976",
+  "def_guardian": "1465",
+  "rec_guardian": "1130",
+  "def_oracle": "1288",
+  "hp_oracle": "4027",
+  "rec_oracle": "1366",
+  "hp_bonus": "400",
+  "atk_bonus": "140",
+  "def_bonus": "140",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "12",
+  "normaldc": "24",
+  "ls": "Crash Impulse",
+  "lsdescription": "Very small chance of ignoring an opponent's Def when attacking",
+  "lsnote": "5% chance",
+  "lstype": "Attack",
+  "bbdescription": "Boosts critical hit rate & adds Dark element to attack for all allies for 3 turns",
+  "bbnote": "50% boost to Critical Hit rate",
+  "bbtype": "Support",
+  "bbhits": "",
+  "bbaoe": "0",
+  "bbgauge": "20",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "60123",
+  "evomats2": "60122",
+  "evomats3": "60122",
+  "evomats4": "60201",
+  "evomats5": "60143"
 }

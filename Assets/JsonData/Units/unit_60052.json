@@ -1,62 +1,63 @@
 {
   "id": "60052",
-  "unitName": "Skull Lord",
-  "no": "523",
-  "element": "Dark",
-  "rarity": "★★★",
-  "cost": "6",
-  "maxlv": "40",
-  "basexp": "10",
-  "gender": "N",
-  "ai": "4",
-  "animation_attack": "101",
-  "animation_idle": "48",
-  "animation_move": "9",
-  "movespeed_attack": "0.005",
-  "movespeed_skill": "0.005",
-  "speedtype_attack": "1",
-  "speedtype_skill": "1",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "40, 46, 52, 58",
-  "normal_distribute": "22, 22, 26, 30",
-  "normal_totaldistr": "100",
-  "bb_frames": "33, 37, 44, 51, 58, 65",
-  "bb_distribute": "15, 15, 15, 15, 21, 19",
-  "bb_totaldistr": "100",
-  "description": "An undead monster born from bones infused with the power of darkness. Though normally they show little interest outside of the enemy in front of them, occasionally individuals appear that command larger groups in hopes of leading more to their deaths. Orders are in place that say should one of these especially harmful Skeletons be discovered it should be immediately destroyed. With their love for preying on villages, where the bones of the dead then become new Skeletons, ignoring their threat would only lead to their army growing stronger.",
-  "summon": "C-Command me t-to f-fight<br>for y-you s-sir!<br>Y-You are m-my Master!",
-  "fusion": "M-More! We n-need more!<br>More tr-troops! More!",
-  "evolution": "A-Awaiting command, M-Master!<br>G-Give me m-more tr-troops!<br>I'll destroy y-your enemies!",
-  "hp_base": "1796",
-  "atk_base": "815",
-  "def_base": "479",
-  "rec_base": "336",
-  "hp_lord": "3106",
-  "atk_lord": "1116",
-  "def_lord": "656",
-  "rec_lord": "460",
-  "hp_anima": "3399",
-  "rec_anima": "382",
-  "atk_breaker": "1194",
-  "def_breaker": "578",
-  "atk_guardian": "1038",
-  "def_guardian": "734",
-  "rec_guardian": "421",
-  "def_oracle": "617",
-  "hp_oracle": "2989",
-  "rec_oracle": "577",
-  "hp_bonus": "300",
-  "atk_bonus": "80",
-  "def_bonus": "160",
-  "rec_bonus": "120",
-  "lordonly": "",
-  "combo_hits": "4",
-  "normaldc": "8",
-  "ls": "Soul Light",
-  "lsdescription": "Small boost in Karma produced during Spark",
-  "lsnote": "30% boost",
-  "lstype": "Karma",
+  "stats": {
+    "_base": {
+      "atk": 815,
+      "def": 479,
+      "hp": 1796,
+      "rec": 336
+    },
+    "_lord": {
+      "atk": 1116,
+      "def": 656,
+      "hp": 3106,
+      "rec": 460
+    },
+    "anima": {
+      "atk": 1116,
+      "def": 656,
+      "hp max": 3496,
+      "hp min": 3301,
+      "rec max": 421,
+      "rec min": 343
+    },
+    "breaker": {
+      "atk max": 1233,
+      "atk min": 1155,
+      "def max": 617,
+      "def min": 539,
+      "hp": 3106,
+      "rec": 460
+    },
+    "guardian": {
+      "atk": 1116,
+      "def max": 773,
+      "def min": 695,
+      "hp": 3106,
+      "rec max": 460,
+      "rec min": 382
+    },
+    "oracle": {
+      "atk": 1116,
+      "def max": 656,
+      "def min": 578,
+      "hp": 3106,
+      "rec max": 616,
+      "rec min": 538
+    }
+  },
+  "leader_skill": {
+    "desc": "Small boost in Karma produced during Spark",
+    "effects": [
+      {
+        "karma drop% for spark": 30,
+        "passive id": "31"
+      }
+    ],
+    "id": "1700",
+    "name": "Soul Light"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -301,94 +302,101 @@
     ],
     "name": "Skull Vine"
   },
-  "bbdescription": "6 combo Dark elemental attack on single enemy & probable Sickness effect",
-  "bbnote": "80% chance",
-  "bbtype": "Offense",
-  "bbhits": "6",
-  "bbaoe": "1",
-  "bbgauge": "10",
-  "bbdc": "6",
-  "bbmultiplier": "180",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "60051",
-  "evointo": "",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 815,
-      "def": 479,
-      "hp": 1796,
-      "rec": 336
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_under",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1116,
-      "def": 656,
-      "hp": 3106,
-      "rec": 460
+    {
+      "action": "skill",
+      "chance%": 30.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1116,
-      "def": 656,
-      "hp max": 3496,
-      "hp min": 3301,
-      "rec max": 421,
-      "rec min": 343
+    {
+      "action": "attack",
+      "chance%": 70.0,
+      "target conditions": "hp_max",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 1233,
-      "atk min": 1155,
-      "def max": 617,
-      "def min": 539,
-      "hp": 3106,
-      "rec": 460
+    {
+      "action": "attack",
+      "chance%": 50.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "guardian": {
-      "atk": 1116,
-      "def max": 773,
-      "def min": 695,
-      "hp": 3106,
-      "rec max": 460,
-      "rec min": 382
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 101
     },
-    "oracle": {
-      "atk": 1116,
-      "def max": 656,
-      "def min": 578,
-      "hp": 3106,
-      "rec max": 616,
-      "rec min": 538
+    "idle": {
+      "total number of frames": 48
+    },
+    "move": {
+      "total number of frames": 9
     }
   },
-  "leader_skill": {
-    "desc": "Small boost in Karma produced during Spark",
-    "effects": [
-      {
-        "karma drop% for spark": 30,
-        "passive id": "31"
-      }
+  "category": 60050,
+  "cost": "6",
+  "damage frames": {
+    "frame times": [
+      40,
+      46,
+      52,
+      58
     ],
-    "id": "1700",
-    "name": "Soul Light"
+    "hit dmg% distribution": [
+      22,
+      22,
+      26,
+      30
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 4
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "dark",
+  "exp_pattern": 10,
+  "gender": "other",
+  "getting type": "farmable",
+  "guide_id": 523,
+  "imp": {
+    "max atk": "80",
+    "max def": "160",
+    "max hp": "300",
+    "max rec": "120"
+  },
+  "kind": "normal",
+  "lord damage range": "1038~1160",
+  "movement": {
+    "attack": {
+      "move speed": 0.005,
+      "move speed type": "1",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.005,
+      "move speed type": "1",
+      "move type": "1"
+    }
+  },
+  "name": "Skull Lord",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "Skull Lord",
+  "maxlv": "40",
+  "no": "523",
   "unitDisplayHomePosition_1W9CxaFK": "351,158,200,544",
   "unitDisplayDetailPosition_6z54rgb3": "-60,21,978,802",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "172,294,283,324,0",
@@ -398,5 +406,84 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "1000",
   "sellCaution": false,
-  "effectFrames": "34:126:1,40:126:1,46:126:1,50:600220:1,52:126:1"
+  "effectFrames": "34:126:1,40:126:1,46:126:1,50:600220:1,52:126:1",
+  "evofrom": "60051",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "10",
+  "animation_attack": "101",
+  "animation_idle": "48",
+  "animation_move": "9",
+  "movespeed_attack": "0.005",
+  "movespeed_skill": "0.005",
+  "speedtype_attack": "1",
+  "speedtype_skill": "1",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "40, 46, 52, 58",
+  "normal_distribute": "22, 22, 26, 30",
+  "normal_totaldistr": "100",
+  "bb_frames": "33, 37, 44, 51, 58, 65",
+  "bb_distribute": "15, 15, 15, 15, 21, 19",
+  "bb_totaldistr": "100",
+  "description": "An undead monster born from bones infused with the power of darkness. Though normally they show little interest outside of the enemy in front of them, occasionally individuals appear that command larger groups in hopes of leading more to their deaths. Orders are in place that say should one of these especially harmful Skeletons be discovered it should be immediately destroyed. With their love for preying on villages, where the bones of the dead then become new Skeletons, ignoring their threat would only lead to their army growing stronger.",
+  "summon": "C-Command me t-to f-fight<br>for y-you s-sir!<br>Y-You are m-my Master!",
+  "fusion": "M-More! We n-need more!<br>More tr-troops! More!",
+  "evolution": "A-Awaiting command, M-Master!<br>G-Give me m-more tr-troops!<br>I'll destroy y-your enemies!",
+  "hp_base": "1796",
+  "atk_base": "815",
+  "def_base": "479",
+  "rec_base": "336",
+  "hp_lord": "3106",
+  "atk_lord": "1116",
+  "def_lord": "656",
+  "rec_lord": "460",
+  "hp_anima": "3399",
+  "rec_anima": "382",
+  "atk_breaker": "1194",
+  "def_breaker": "578",
+  "atk_guardian": "1038",
+  "def_guardian": "734",
+  "rec_guardian": "421",
+  "def_oracle": "617",
+  "hp_oracle": "2989",
+  "rec_oracle": "577",
+  "hp_bonus": "300",
+  "atk_bonus": "80",
+  "def_bonus": "160",
+  "rec_bonus": "120",
+  "lordonly": "",
+  "combo_hits": "4",
+  "normaldc": "8",
+  "ls": "Soul Light",
+  "lsdescription": "Small boost in Karma produced during Spark",
+  "lsnote": "30% boost",
+  "lstype": "Karma",
+  "bbdescription": "6 combo Dark elemental attack on single enemy & probable Sickness effect",
+  "bbnote": "80% chance",
+  "bbtype": "Offense",
+  "bbhits": "6",
+  "bbaoe": "1",
+  "bbgauge": "10",
+  "bbdc": "6",
+  "bbmultiplier": "180",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "",
+  "evomats2": "",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": ""
 }

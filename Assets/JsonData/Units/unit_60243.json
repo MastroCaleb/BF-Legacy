@@ -1,52 +1,74 @@
 {
   "id": "60243",
-  "unitName": "Madia",
-  "no": "401",
-  "element": "Dark",
-  "rarity": "★★★★",
-  "cost": "10",
-  "maxlv": "60",
-  "basexp": "15",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "81",
-  "animation_idle": "104",
-  "animation_move": "104",
-  "movespeed_attack": "4",
-  "movespeed_skill": "4",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "description": "The second youngest of the Six Sibyl Sisters who fought against the gods in order to save the humans. It's thought that she agreed to help save the humans out of her love for her sister Sola. However Madia was an idealist, demanding that whatever her beloved sister Sola was fighting for had better be worth it. Time and time again, she witnessed the humans commit countless atrocities. As a result, she ended up resenting her sisters for helping such wicked creatures.",
-  "summon": "You wish for me to fight<br>again, don’t you Summoner?<br>You humans are so cruel.",
-  "fusion": "I will receive your power.<br>However, this does nothing to<br>lessen my hatred for mankind.",
-  "evolution": "",
-  "hp_base": "2822",
-  "atk_base": "894",
-  "def_base": "880",
-  "rec_base": "679",
-  "hp_lord": "3951",
-  "atk_lord": "1251",
-  "def_lord": "1232",
-  "rec_lord": "950",
-  "hp_anima": "4393",
-  "rec_anima": "832",
-  "atk_breaker": "1369",
-  "def_breaker": "1114",
-  "atk_guardian": "1133",
-  "def_guardian": "1350",
-  "hp_oracle": "3508",
-  "rec_oracle": "1068",
-  "hp_bonus": "400",
-  "atk_bonus": "140",
-  "def_bonus": "140",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "5",
-  "ls": "Black Hole's Power",
-  "lsdescription": "15% boost to Atk power of Dark, Water, and Earth types",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 894,
+      "def": 880,
+      "hp": 2822,
+      "rec": 679
+    },
+    "_lord": {
+      "atk": 1251,
+      "def": 1232,
+      "hp": 3951,
+      "rec": 950
+    },
+    "anima": {
+      "atk": 1251,
+      "def": 1232,
+      "hp max": 4541,
+      "hp min": 4246,
+      "rec max": 891,
+      "rec min": 773
+    },
+    "breaker": {
+      "atk max": 1428,
+      "atk min": 1310,
+      "def max": 1173,
+      "def min": 1055,
+      "hp": 3951,
+      "rec": 950
+    },
+    "guardian": {
+      "atk": 1251,
+      "def max": 1409,
+      "def min": 1291,
+      "hp": 3951,
+      "rec max": 950,
+      "rec min": 832
+    },
+    "oracle": {
+      "atk": 1251,
+      "def max": 1232,
+      "def min": 1114,
+      "hp": 3951,
+      "rec max": 1186,
+      "rec min": 1068
+    }
+  },
+  "leader_skill": {
+    "desc": "15% boost to Atk power of Dark, Water, and Earth types",
+    "effects": [
+      {
+        "atk% buff": 15,
+        "elements buffed": [
+          "dark",
+          "water"
+        ],
+        "passive id": "2"
+      },
+      {
+        "atk% buff": 15,
+        "elements buffed": [
+          "earth"
+        ],
+        "passive id": "2"
+      }
+    ],
+    "id": "3600",
+    "name": "Black Hole's Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -253,102 +275,91 @@
     ],
     "name": "Euthanasia"
   },
-  "bbdescription": "8 combo powerful Water, Earth, and Dark attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "8",
-  "bbaoe": "A",
-  "bbgauge": "18",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "60244",
-  "evomats1": "60123",
-  "evomats2": "60122",
-  "evomats3": "60121",
-  "evomats4": "20191",
-  "evomats5": "30191",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 894,
-      "def": 880,
-      "hp": 2822,
-      "rec": 679
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1251,
-      "def": 1232,
-      "hp": 3951,
-      "rec": 950
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1251,
-      "def": 1232,
-      "hp max": 4541,
-      "hp min": 4246,
-      "rec max": 891,
-      "rec min": 773
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 81
     },
-    "breaker": {
-      "atk max": 1428,
-      "atk min": 1310,
-      "def max": 1173,
-      "def min": 1055,
-      "hp": 3951,
-      "rec": 950
+    "idle": {
+      "total number of frames": 104
     },
-    "guardian": {
-      "atk": 1251,
-      "def max": 1409,
-      "def min": 1291,
-      "hp": 3951,
-      "rec max": 950,
-      "rec min": 832
-    },
-    "oracle": {
-      "atk": 1251,
-      "def max": 1232,
-      "def min": 1114,
-      "hp": 3951,
-      "rec max": 1186,
-      "rec min": 1068
+    "move": {
+      "total number of frames": 104
     }
   },
-  "leader_skill": {
-    "desc": "15% boost to Atk power of Dark, Water, and Earth types",
-    "effects": [
-      {
-        "atk% buff": 15,
-        "elements buffed": [
-          "dark",
-          "water"
-        ],
-        "passive id": "2"
-      },
-      {
-        "atk% buff": 15,
-        "elements buffed": [
-          "earth"
-        ],
-        "passive id": "2"
-      }
+  "category": 60240,
+  "cost": "10",
+  "damage frames": {
+    "frame times": [
+      40,
+      48,
+      56,
+      62,
+      70
     ],
-    "id": "3600",
-    "name": "Black Hole's Power"
+    "hit dmg% distribution": [
+      20,
+      20,
+      20,
+      20,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 5
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "dark",
+  "exp_pattern": 15,
+  "gender": "female",
+  "getting type": "farmable",
+  "guide_id": 401,
+  "imp": {
+    "max atk": "140",
+    "max def": "140",
+    "max hp": "400",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "1164~1301",
+  "movement": {
+    "attack": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    }
+  },
+  "name": "Madia",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Madia",
+  "maxlv": "60",
+  "no": "401",
   "unitDisplayHomePosition_1W9CxaFK": "310,75,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "31,108,869,835",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "146,347,343,263,0",
@@ -358,5 +369,109 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "40:600331:1,40:360:1,48:360:1,56:360:1,62:360:1,70:360:1"
+  "effectFrames": "40:600331:1,40:360:1,48:360:1,56:360:1,62:360:1,70:360:1",
+  "evofrom": "",
+  "evointo": "60244",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "60123",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60122",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60121",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30191",
+      "count": 1
+    }
+  ],
+  "freetext": ":''For other uses, see Madia (disambiguation)''",
+  "basexp": "15",
+  "animation_attack": "81",
+  "animation_idle": "104",
+  "animation_move": "104",
+  "movespeed_attack": "4",
+  "movespeed_skill": "4",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "40, 48, 56, 62, 70",
+  "normal_distribute": "20, 20, 20, 20, 20",
+  "normal_totaldistr": "100",
+  "bb_frames": "40, 50, 60, 70, 80, 90, 100, 110",
+  "bb_distribute": "10, 15, 10, 15, 10, 15, 10, 15",
+  "bb_totaldistr": "100",
+  "description": "The second youngest of the Six Sibyl Sisters who fought against the gods in order to save the humans. It's thought that she agreed to help save the humans out of her love for her sister Sola. However Madia was an idealist, demanding that whatever her beloved sister Sola was fighting for had better be worth it. Time and time again, she witnessed the humans commit countless atrocities. As a result, she ended up resenting her sisters for helping such wicked creatures.",
+  "summon": "You wish for me to fight<br>again, don’t you Summoner?<br>You humans are so cruel.",
+  "fusion": "I will receive your power.<br>However, this does nothing to<br>lessen my hatred for mankind.",
+  "evolution": "",
+  "hp_base": "2822",
+  "atk_base": "894",
+  "def_base": "880",
+  "rec_base": "679",
+  "hp_lord": "3951",
+  "atk_lord": "1251",
+  "def_lord": "1232",
+  "rec_lord": "950",
+  "hp_anima": "4394",
+  "rec_anima": "832",
+  "atk_breaker": "1369",
+  "def_breaker": "1114",
+  "atk_guardian": "1133",
+  "def_guardian": "1350",
+  "rec_guardian": "891",
+  "def_oracle": "1173",
+  "hp_oracle": "3774",
+  "rec_oracle": "1127",
+  "hp_bonus": "400",
+  "atk_bonus": "140",
+  "def_bonus": "140",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "5",
+  "normaldc": "10",
+  "ls": "Black Hole's Power",
+  "lsdescription": "15% boost to Atk power of Dark, Water, and Earth types",
+  "lstype": "Attack",
+  "bbdescription": "8 combo powerful Water, Earth, and Dark attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "8",
+  "bbaoe": "A",
+  "bbgauge": "18",
+  "bbdc": "8",
+  "bbmultiplier": "150",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "60123",
+  "evomats2": "60122",
+  "evomats3": "60121",
+  "evomats4": "20191",
+  "evomats5": "30191"
 }

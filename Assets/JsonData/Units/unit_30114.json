@@ -1,60 +1,63 @@
 {
   "id": "30114",
-  "unitName": "God Tree Eltri",
-  "freetext": ":''For other uses, Eltri (disambiguation).''",
-  "no": "143",
-  "element": "Earth",
-  "rarity": "★★★★★",
-  "cost": "12",
-  "maxlv": "80",
-  "basexp": "21",
-  "gender": "N",
-  "ai": "5",
-  "animation_attack": "197",
-  "animation_idle": "64",
-  "animation_move": "64",
-  "movespeed_attack": "6",
-  "movespeed_skill": "6",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "46, 50, 54, 58, 52, 56",
-  "normal_distribute": "17, 17, 17, 17, 16, 16",
-  "normal_totaldistr": "100",
-  "description": "Eltri is said to be the ancestor of all the trees in Grand Gaia. Immense and able to float in the air, it's so impressive that some people mistake it for a floating island. If it floats in the same place for many years, sometimes a forest will suddenly appear nearby, even in wastelands. It is worshipped as the God Tree as it has the ability to sprout life all around it.",
-  "summon": "I have shone light on the paths the world and yourself travel.<br>Now I will follow you.",
-  "fusion": "The power within me will <br>circle the world and return to <br>you again.",
-  "evolution": "Even if each individual is small, the accumulation of their power is great.",
-  "hp_base": "3378",
-  "atk_base": "829",
-  "def_base": "1173",
-  "rec_base": "700",
-  "hp_lord": "5052",
-  "atk_lord": "1110",
-  "def_lord": "1577",
-  "rec_lord": "988",
-  "hp_anima": "5645",
-  "rec_anima": "830",
-  "atk_breaker": "1268",
-  "def_breaker": "1419",
-  "atk_guardian": "952",
-  "def_guardian": "1735",
-  "rec_guardian": "909",
-  "def_oracle": "1498",
-  "hp_oracle": "4815",
-  "rec_oracle": "1225",
-  "hp_bonus": "500",
-  "atk_bonus": "140",
-  "def_bonus": "260",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "6",
-  "normaldc": "18",
-  "ls": "Loving Devotion",
-  "lsdescription": "Large boost in effectiveness of Heart Crystals",
-  "lsnote": "Heals (2000~2300 + 22.5% of healer Rec) HP",
-  "lstype": "Recovery",
+  "stats": {
+    "_base": {
+      "atk": 829,
+      "def": 1173,
+      "hp": 3378,
+      "rec": 700
+    },
+    "_lord": {
+      "atk": 1110,
+      "def": 1577,
+      "hp": 5052,
+      "rec": 988
+    },
+    "anima": {
+      "atk": 1110,
+      "def": 1577,
+      "hp max": 5842,
+      "hp min": 5447,
+      "rec max": 909,
+      "rec min": 751
+    },
+    "breaker": {
+      "atk max": 1347,
+      "atk min": 1189,
+      "def max": 1498,
+      "def min": 1340,
+      "hp": 5052,
+      "rec": 988
+    },
+    "guardian": {
+      "atk": 1110,
+      "def max": 1814,
+      "def min": 1656,
+      "hp": 5052,
+      "rec max": 988,
+      "rec min": 830
+    },
+    "oracle": {
+      "atk": 1110,
+      "def max": 1577,
+      "def min": 1419,
+      "hp": 5052,
+      "rec max": 1304,
+      "rec min": 1146
+    }
+  },
+  "leader_skill": {
+    "desc": "Large boost in effectiveness of Heart Crystals",
+    "effects": [
+      {
+        "hc effectiveness%": 50,
+        "passive id": "10"
+      }
+    ],
+    "id": "1101",
+    "name": "Loving Devotion"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -399,91 +402,93 @@
     ],
     "name": "God Purge"
   },
-  "bbdescription": "Large recovery of all allies' HP & reverses all irregular conditions",
-  "bbtype": "Heal",
-  "bbhits": "",
-  "bbaoe": "0",
-  "bbgauge": "20",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "30113",
-  "evointo": "30115",
-  "evomats1": "50354",
-  "evomats2": "30133",
-  "evomats3": "60144",
-  "evomats4": "30131",
-  "evomats5": "30130",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 829,
-      "def": 1173,
-      "hp": 3378,
-      "rec": 700
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 80.0,
+      "target conditions": "hp_50pr_under",
+      "target type": "party"
     },
-    "_lord": {
-      "atk": 1110,
-      "def": 1577,
-      "hp": 5052,
-      "rec": 988
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "hp_min",
+      "target type": "party"
     },
-    "anima": {
-      "atk": 1110,
-      "def": 1577,
-      "hp max": 5842,
-      "hp min": 5447,
-      "rec max": 909,
-      "rec min": 751
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 197
     },
-    "breaker": {
-      "atk max": 1347,
-      "atk min": 1189,
-      "def max": 1498,
-      "def min": 1340,
-      "hp": 5052,
-      "rec": 988
+    "idle": {
+      "total number of frames": 64
     },
-    "guardian": {
-      "atk": 1110,
-      "def max": 1814,
-      "def min": 1656,
-      "hp": 5052,
-      "rec max": 988,
-      "rec min": 830
-    },
-    "oracle": {
-      "atk": 1110,
-      "def max": 1577,
-      "def min": 1419,
-      "hp": 5052,
-      "rec max": 1304,
-      "rec min": 1146
+    "move": {
+      "total number of frames": 64
     }
   },
-  "leader_skill": {
-    "desc": "Large boost in effectiveness of Heart Crystals",
-    "effects": [
-      {
-        "hc effectiveness%": 50,
-        "passive id": "10"
-      }
+  "category": 30110,
+  "cost": "12",
+  "damage frames": {
+    "frame times": [
+      46,
+      50,
+      54,
+      58,
+      52,
+      56
     ],
-    "id": "1101",
-    "name": "Loving Devotion"
+    "hit dmg% distribution": [
+      17,
+      17,
+      17,
+      17,
+      16,
+      16
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 6
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "earth",
+  "exp_pattern": 20,
+  "gender": "other",
+  "getting type": "rare summon",
+  "guide_id": 143,
+  "imp": {
+    "max atk": "140",
+    "max def": "260",
+    "max hp": "500",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "1033~1154",
+  "movement": {
+    "attack": {
+      "move speed": 6,
+      "move speed type": "2",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 6,
+      "move speed type": "2",
+      "move type": "3"
+    }
+  },
+  "name": "God Tree Eltri",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "God Tree Eltri",
+  "maxlv": "80",
+  "no": "143",
   "unitDisplayHomePosition_1W9CxaFK": "362,77,240,565",
   "unitDisplayDetailPosition_6z54rgb3": "-41,25,1020,876",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "1,180,650,558,1",
@@ -493,5 +498,105 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "45:250:1"
+  "effectFrames": "45:250:1",
+  "evofrom": "30113",
+  "evointo": "30115",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30131",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30130",
+      "count": 1
+    }
+  ],
+  "freetext": ":''For other uses, Eltri (disambiguation).''",
+  "basexp": "21",
+  "animation_attack": "197",
+  "animation_idle": "64",
+  "animation_move": "64",
+  "movespeed_attack": "6",
+  "movespeed_skill": "6",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "46, 50, 54, 58, 52, 56",
+  "normal_distribute": "17, 17, 17, 17, 16, 16",
+  "normal_totaldistr": "100",
+  "description": "Eltri is said to be the ancestor of all the trees in Grand Gaia. Immense and able to float in the air, it's so impressive that some people mistake it for a floating island. If it floats in the same place for many years, sometimes a forest will suddenly appear nearby, even in wastelands. It is worshipped as the God Tree as it has the ability to sprout life all around it.",
+  "summon": "I have shone light on the paths the world and yourself travel.<br>Now I will follow you.",
+  "fusion": "The power within me will <br>circle the world and return to <br>you again.",
+  "evolution": "Even if each individual is small, the accumulation of their power is great.",
+  "hp_base": "3378",
+  "atk_base": "829",
+  "def_base": "1173",
+  "rec_base": "700",
+  "hp_lord": "5052",
+  "atk_lord": "1110",
+  "def_lord": "1577",
+  "rec_lord": "988",
+  "hp_anima": "5645",
+  "rec_anima": "830",
+  "atk_breaker": "1268",
+  "def_breaker": "1419",
+  "atk_guardian": "952",
+  "def_guardian": "1735",
+  "rec_guardian": "909",
+  "def_oracle": "1498",
+  "hp_oracle": "4815",
+  "rec_oracle": "1225",
+  "hp_bonus": "500",
+  "atk_bonus": "140",
+  "def_bonus": "260",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "6",
+  "normaldc": "18",
+  "ls": "Loving Devotion",
+  "lsdescription": "Large boost in effectiveness of Heart Crystals",
+  "lsnote": "Heals (2000~2300 + 22.5% of healer Rec) HP",
+  "lstype": "Recovery",
+  "bbdescription": "Large recovery of all allies' HP & reverses all irregular conditions",
+  "bbtype": "Heal",
+  "bbhits": "",
+  "bbaoe": "0",
+  "bbgauge": "20",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "30133",
+  "evomats3": "60144",
+  "evomats4": "30131",
+  "evomats5": "30130"
 }

@@ -1,69 +1,105 @@
 {
   "id": "40896",
-  "unitName": "Lambent Flicker Cleria",
-  "freetext": ":''See Lambent Flicker Cleria (BFH) for her appearance in BRAVE FRONTIER HEROES''",
-  "no": "1573",
-  "element": "Thunder",
-  "rarity": "★★★★★★★",
-  "cost": "46",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "111",
-  "animation_idle": "54",
-  "animation_move": "7",
-  "movespeed_attack": "0.0024",
-  "movespeed_skill": "0.0024",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "9, 34, 37, 40, 70, 74, 78, 82",
-  "normal_distribute": "11, 13, 14, 12, 15, 14, 11, 10",
-  "normal_totaldistr": "100",
-  "bb_frames": "9, 12, 15, 34, 37, 40, 43, 46, 70, 73, 76, 79, 82, 85, 88",
-  "bb_distribute": "6, 5, 4, 6, 9, 8, 6, 5, 5, 10, 9, 8, 7, 6, 6",
-  "bb_totaldistr": "100",
-  "sbb_frames": "9, 12, 15, 18, 34, 37, 40, 43, 46, 49, 52, 70, 73, 76, 79, 82, 85, 88",
-  "sbb_distribute": "5, 4, 4, 3, 4, 9, 6, 5, 4, 4, 4, 10, 9, 7, 7, 6, 5, 4",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "9, 12, 15, 18, 21, 34, 37, 40, 43, 46, 49, 52, 55, 70, 73, 76, 79, 82, 85, 88, 91, 94",
-  "ubb_distribute": "4, 3, 3, 3, 3, 4, 7, 5, 5, 4, 4, 3, 3, 8, 7, 6, 6, 6, 5, 4, 4, 3",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "1",
-  "ubb_effectdelay": "1",
-  "description": "A member of the Imperial Guard who helped to subjugate a great demonic threat against the Empire. Cleria joined the Imperial Guard along with her younger sister, and was immediately given great responsibilities to match her incredible talent. She was made the leader of a demon slaying mission, and took upon herself the task of retrieving the soul stealing sword. Once the mission was completed, she refused to speak about it, though some claim that it involved her negotiating with someone else who wanted the blade. She eventually went on to serve as logistical support for the second commander of the Imperial Guard.",
-  "summon": "You have summoned me here, and for you I shall do my best. That is my job as a knight.",
-  "fusion": "That agreement I made back then...<br>It wasn't a mistake, was it?<br>If only I had more power!",
-  "evolution": "",
-  "hp_base": "5080",
-  "atk_base": "2093",
-  "def_base": "1994",
-  "rec_base": "2030",
-  "hp_lord": "7240",
-  "atk_lord": "2832",
-  "def_lord": "2702",
-  "rec_lord": "2741",
-  "hp_anima": "8132",
-  "rec_anima": "2503",
-  "atk_breaker": "3070",
-  "def_breaker": "2464",
-  "def_guardian": "2940",
-  "rec_guardian": "2622",
-  "def_oracle": "2583",
-  "rec_oracle": "3098",
-  "hp_bonus": "1100",
-  "atk_bonus": "440",
-  "def_bonus": "440",
-  "rec_bonus": "440",
-  "lordonly": "",
-  "combo_hits": "8",
-  "normaldc": "40",
-  "ls": "Commanding Order",
-  "lsdescription": "45% boost to all parameters, damage taken boosts BB gauge & restores HP each turn",
-  "lsnote": "Heals 800-1000 + 10% Rec & fills 2-4 BC",
+  "stats": {
+    "_base": {
+      "atk": 2093,
+      "def": 1994,
+      "hp": 5080,
+      "rec": 2030
+    },
+    "_lord": {
+      "atk": 2832,
+      "def": 2702,
+      "hp": 7240,
+      "rec": 2741
+    },
+    "anima": {
+      "atk": 2832,
+      "def": 2702,
+      "hp max": 8430,
+      "hp min": 7835,
+      "rec max": 2622,
+      "rec min": 2384
+    },
+    "breaker": {
+      "atk max": 3189,
+      "atk min": 2951,
+      "def max": 2583,
+      "def min": 2345,
+      "hp": 7240,
+      "rec": 2741
+    },
+    "guardian": {
+      "atk": 2832,
+      "def max": 3059,
+      "def min": 2821,
+      "hp": 7240,
+      "rec max": 2741,
+      "rec min": 2503
+    },
+    "oracle": {
+      "atk": 2832,
+      "def max": 2702,
+      "def min": 2464,
+      "hp": 7240,
+      "rec max": 3217,
+      "rec min": 2979
+    }
+  },
+  "leader_skill": {
+    "desc": "45% boost to all parameters, damage taken boosts BB gauge & restores HP each turn",
+    "effects": [
+      {
+        "atk% buff": 45,
+        "def% buff": 45,
+        "hp% buff": 45,
+        "passive id": "1",
+        "rec% buff": 45
+      },
+      {
+        "passive id": "33",
+        "rec% added (turn heal)": 10.0,
+        "turn heal high": 1000,
+        "turn heal low": 800
+      },
+      {
+        "bc fill when attacked high": 4,
+        "bc fill when attacked low": 2,
+        "bc fill when attacked%": 100,
+        "passive id": "25"
+      }
+    ],
+    "id": "10137",
+    "name": "Commanding Order"
+  },
+  "extra_skill": {
+    "desc": "Negates all status ailments & damage taken slightly boosts BB gauge",
+    "effects": [
+      {
+        "conditions": [],
+        "curse resist%": 100,
+        "injury resist%": 100,
+        "paralysis resist%": 100,
+        "passive id": "4",
+        "passive target": "self",
+        "poison resist%": 100,
+        "sick resist%": 100,
+        "weaken resist%": 100
+      },
+      {
+        "bc fill when attacked high": 2,
+        "bc fill when attacked low": 1,
+        "bc fill when attacked%": 100,
+        "conditions": [],
+        "passive id": "25",
+        "passive target": "self"
+      }
+    ],
+    "id": "31300",
+    "name": "Demon Slayer Prodigy",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -732,14 +768,6 @@
     ],
     "name": "Tres Luminator"
   },
-  "bbdescription": "15 combo Thunder attack on all foes, greatly restores HP and removes all status ailments, considerably boosts BC efficacy for 3 turns & damage taken boosts BB gauge for 3 turns",
-  "bbnote": "Heals 3500-4000 + 40% of own Rec, fills 3-6 BC & 40% BC efficacy",
-  "bbtype": "Heal/Offense",
-  "bbhits": "15",
-  "bbaoe": "A",
-  "bbgauge": "30",
-  "bbdc": "15",
-  "bbmultiplier": "380",
   "sbb": {
     "damage frames": [
       {
@@ -1576,14 +1604,6 @@
     ],
     "name": "Imperial Guard: Tornix"
   },
-  "sbbdescription": "18 combo powerful Thunder attack on all foes, greatly restores HP and removes all status ailments, negates all status ailments for 3 turns, greatly restores HP for 3 turns & Spark damage slightly boosts BB gauge for 3 turns",
-  "sbbnote": "Heals 3500-4000 + 40% of own Rec instantly, gradually heals 3000-3500 + 15% Rec & fills 1-2 BC",
-  "sbbtype": "Heal/Offense",
-  "sbbhits": "18",
-  "sbbaoe": "A",
-  "sbbgauge": "31",
-  "sbbdc": "18",
-  "sbbmultiplier": "580",
   "ubb": {
     "damage frames": [
       {
@@ -1767,6 +1787,230 @@
     ],
     "name": "Brigandier"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_under",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 30.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 70.0,
+      "target conditions": "hp_max",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 50.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 111
+    },
+    "idle": {
+      "total number of frames": 54
+    },
+    "move": {
+      "total number of frames": 7
+    }
+  },
+  "category": 40890,
+  "cost": "46",
+  "damage frames": {
+    "frame times": [
+      9,
+      34,
+      37,
+      40,
+      70,
+      74,
+      78,
+      82
+    ],
+    "hit dmg% distribution": [
+      11,
+      13,
+      14,
+      12,
+      15,
+      14,
+      11,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 8
+  },
+  "drop check count": 5,
+  "element": "thunder",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 1573,
+  "imp": {
+    "max atk": "440",
+    "max def": "440",
+    "max hp": "1100",
+    "max rec": "440"
+  },
+  "kind": "normal",
+  "lord damage range": "2636~2945",
+  "movement": {
+    "attack": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    }
+  },
+  "name": "Lambent Flicker Cleria",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Lambent Flicker Cleria",
+  "maxlv": "120",
+  "no": "1573",
+  "unitDisplayHomePosition_1W9CxaFK": "505,148,174,475",
+  "unitDisplayDetailPosition_6z54rgb3": "-185,61,998,768",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "-52,162,630,485,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-151,-197,940,723",
+  "unitDisplaySummonPosition_KC3Jk8Br": "-52,162,630,485,0",
+  "unitDisplayHpPosition_3BpHN6VD": "2,33",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "15000",
+  "sellCaution": false,
+  "effectFrames": "4:120:1,7:120:1,28:120:1,31:120:1,34:120:1,37:120:1,64:120:1,67:120:1,70:120:1,9:400070:1,10:400896:1,34:400181:1,70:400871:1,64:400609:1",
+  "evofrom": "",
+  "evointo": "40897",
+  "evozelcost": "3000000",
+  "evokarmacost": "1000000",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "40334",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40132",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    }
+  ],
+  "freetext": ":''See Lambent Flicker Cleria (BFH) for her appearance in BRAVE FRONTIER HEROES''",
+  "basexp": "21",
+  "animation_attack": "111",
+  "animation_idle": "54",
+  "animation_move": "7",
+  "movespeed_attack": "0.0024",
+  "movespeed_skill": "0.0024",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "9, 34, 37, 40, 70, 74, 78, 82",
+  "normal_distribute": "11, 13, 14, 12, 15, 14, 11, 10",
+  "normal_totaldistr": "100",
+  "bb_frames": "9, 12, 15, 34, 37, 40, 43, 46, 70, 73, 76, 79, 82, 85, 88",
+  "bb_distribute": "6, 5, 4, 6, 9, 8, 6, 5, 5, 10, 9, 8, 7, 6, 6",
+  "bb_totaldistr": "100",
+  "sbb_frames": "9, 12, 15, 18, 34, 37, 40, 43, 46, 49, 52, 70, 73, 76, 79, 82, 85, 88",
+  "sbb_distribute": "5, 4, 4, 3, 4, 9, 6, 5, 4, 4, 4, 10, 9, 7, 7, 6, 5, 4",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "9, 12, 15, 18, 21, 34, 37, 40, 43, 46, 49, 52, 55, 70, 73, 76, 79, 82, 85, 88, 91, 94",
+  "ubb_distribute": "4, 3, 3, 3, 3, 4, 7, 5, 5, 4, 4, 3, 3, 8, 7, 6, 6, 6, 5, 4, 4, 3",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "1",
+  "ubb_effectdelay": "1",
+  "description": "A member of the Imperial Guard who helped to subjugate a great demonic threat against the Empire. Cleria joined the Imperial Guard along with her younger sister, and was immediately given great responsibilities to match her incredible talent. She was made the leader of a demon slaying mission, and took upon herself the task of retrieving the soul stealing sword. Once the mission was completed, she refused to speak about it, though some claim that it involved her negotiating with someone else who wanted the blade. She eventually went on to serve as logistical support for the second commander of the Imperial Guard.",
+  "summon": "You have summoned me here, and for you I shall do my best. That is my job as a knight.",
+  "fusion": "That agreement I made back then...<br>It wasn't a mistake, was it?<br>If only I had more power!",
+  "evolution": "",
+  "hp_base": "5080",
+  "atk_base": "2093",
+  "def_base": "1994",
+  "rec_base": "2030",
+  "hp_lord": "7240",
+  "atk_lord": "2832",
+  "def_lord": "2702",
+  "rec_lord": "2741",
+  "hp_anima": "8132",
+  "rec_anima": "2503",
+  "atk_breaker": "3070",
+  "def_breaker": "2464",
+  "def_guardian": "2940",
+  "rec_guardian": "2622",
+  "def_oracle": "2583",
+  "rec_oracle": "3098",
+  "hp_bonus": "1100",
+  "atk_bonus": "440",
+  "def_bonus": "440",
+  "rec_bonus": "440",
+  "lordonly": "",
+  "combo_hits": "8",
+  "normaldc": "40",
+  "ls": "Commanding Order",
+  "lsdescription": "45% boost to all parameters, damage taken boosts BB gauge & restores HP each turn",
+  "lsnote": "Heals 800-1000 + 10% Rec & fills 2-4 BC",
+  "bbdescription": "15 combo Thunder attack on all foes, greatly restores HP and removes all status ailments, considerably boosts BC efficacy for 3 turns & damage taken boosts BB gauge for 3 turns",
+  "bbnote": "Heals 3500-4000 + 40% of own Rec, fills 3-6 BC & 40% BC efficacy",
+  "bbtype": "Heal/Offense",
+  "bbhits": "15",
+  "bbaoe": "A",
+  "bbgauge": "30",
+  "bbdc": "15",
+  "bbmultiplier": "380",
+  "sbbdescription": "18 combo powerful Thunder attack on all foes, greatly restores HP and removes all status ailments, negates all status ailments for 3 turns, greatly restores HP for 3 turns & Spark damage slightly boosts BB gauge for 3 turns",
+  "sbbnote": "Heals 3500-4000 + 40% of own Rec instantly, gradually heals 3000-3500 + 15% Rec & fills 1-2 BC",
+  "sbbtype": "Heal/Offense",
+  "sbbhits": "18",
+  "sbbaoe": "A",
+  "sbbgauge": "31",
+  "sbbdc": "18",
+  "sbbmultiplier": "580",
   "ubbdescription": "22 combo massive Thunder attack on all foes, hugely boosts max HP, negates all status ailments for 5 turns, fully restores HP for 3 turns, enormously boosts BB gauge for 3 turns & enormous damage reduction for 2 turns",
   "ubbnote": "30% HP boost, fills 50 BC & 100% mitigation",
   "ubbtype": "Heal/Offense",
@@ -1779,8 +2023,6 @@
   "esitem": "",
   "esdescription": "Negates all status ailments & damage taken slightly boosts BB gauge",
   "esnote": "Fills 1-2 BC",
-  "evofrom": "",
-  "evointo": "40897",
   "evomats1": "Thunder Mecha God",
   "evomats2": "Thunder Mecha God",
   "evomats3": "Miracle Totem",
@@ -1789,116 +2031,5 @@
   "evomats6": "Thunder Idol",
   "evomats7": "Thunder Idol",
   "evomats8": "Metal Mimic",
-  "evoitem": "",
-  "evozelcost": "3000000",
-  "stats": {
-    "_base": {
-      "atk": 2093,
-      "def": 1994,
-      "hp": 5080,
-      "rec": 2030
-    },
-    "_lord": {
-      "atk": 2832,
-      "def": 2702,
-      "hp": 7240,
-      "rec": 2741
-    },
-    "anima": {
-      "atk": 2832,
-      "def": 2702,
-      "hp max": 8430,
-      "hp min": 7835,
-      "rec max": 2622,
-      "rec min": 2384
-    },
-    "breaker": {
-      "atk max": 3189,
-      "atk min": 2951,
-      "def max": 2583,
-      "def min": 2345,
-      "hp": 7240,
-      "rec": 2741
-    },
-    "guardian": {
-      "atk": 2832,
-      "def max": 3059,
-      "def min": 2821,
-      "hp": 7240,
-      "rec max": 2741,
-      "rec min": 2503
-    },
-    "oracle": {
-      "atk": 2832,
-      "def max": 2702,
-      "def min": 2464,
-      "hp": 7240,
-      "rec max": 3217,
-      "rec min": 2979
-    }
-  },
-  "leader_skill": {
-    "desc": "45% boost to all parameters, damage taken boosts BB gauge & restores HP each turn",
-    "effects": [
-      {
-        "atk% buff": 45,
-        "def% buff": 45,
-        "hp% buff": 45,
-        "passive id": "1",
-        "rec% buff": 45
-      },
-      {
-        "passive id": "33",
-        "rec% added (turn heal)": 10.0,
-        "turn heal high": 1000,
-        "turn heal low": 800
-      },
-      {
-        "bc fill when attacked high": 4,
-        "bc fill when attacked low": 2,
-        "bc fill when attacked%": 100,
-        "passive id": "25"
-      }
-    ],
-    "id": "10137",
-    "name": "Commanding Order"
-  },
-  "extra_skill": {
-    "desc": "Negates all status ailments & damage taken slightly boosts BB gauge",
-    "effects": [
-      {
-        "conditions": [],
-        "curse resist%": 100,
-        "injury resist%": 100,
-        "paralysis resist%": 100,
-        "passive id": "4",
-        "passive target": "self",
-        "poison resist%": 100,
-        "sick resist%": 100,
-        "weaken resist%": 100
-      },
-      {
-        "bc fill when attacked high": 2,
-        "bc fill when attacked low": 1,
-        "bc fill when attacked%": 100,
-        "conditions": [],
-        "passive id": "25",
-        "passive target": "self"
-      }
-    ],
-    "id": "31300",
-    "name": "Demon Slayer Prodigy",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "505,148,174,475",
-  "unitDisplayDetailPosition_6z54rgb3": "-185,61,998,768",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "-52,162,630,485,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-151,-197,940,723",
-  "unitDisplaySummonPosition_KC3Jk8Br": "-52,162,630,485,0",
-  "unitDisplayHpPosition_3BpHN6VD": "2,33",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "15000",
-  "sellCaution": false,
-  "effectFrames": "4:120:1,7:120:1,28:120:1,31:120:1,34:120:1,37:120:1,64:120:1,67:120:1,70:120:1,9:400070:1,10:400896:1,34:400181:1,70:400871:1,64:400609:1"
+  "evoitem": ""
 }

@@ -1,60 +1,69 @@
 {
   "id": "40234",
-  "unitName": "Royal Guard Paris",
-  "no": "390",
-  "element": "Thunder",
-  "rarity": "★★★★★",
-  "cost": "15",
-  "maxlv": "80",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "103",
-  "animation_idle": "64",
-  "animation_move": "13",
-  "movespeed_attack": "4",
-  "movespeed_skill": "4",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "2",
-  "movetype_skill": "2",
-  "normal_frames": "64, 70, 76, 82, 88",
-  "normal_distribute": "50, 30, 20, 10, 10",
-  "normal_totaldistr": "120",
-  "bb_frames": "64, 70, 76, 82, 88, 96",
-  "bb_distribute": "40, 20, 10, 10, 10, 10",
-  "bb_totaldistr": "100",
-  "description": "A mock Unit modeled after Paris, a Summoner from the Randall Empire. A promising member of the Imperial Elite Forces, she was remarked for her rapidly improving skills. Despite being born to a prominent family she refused to get involved in all the politics and instead approached the Imperial Guards on her own. She had great respect for her commanding officer, Eriole, even though he was from lower class beginnings, and under his command she executed various tasks.",
-  "summon": "Death to all the empire's foes!<br>Do your best to see I don't have<br>to say anything like that, OK?",
-  "fusion": "Hehe, hasty I see.<br>You'd like to see my true<br>power, wouldn't you?",
-  "evolution": "Ahh!<br>My power is overflowing...<br>Have I always had this inside?",
-  "hp_base": "3590",
-  "atk_base": "1320",
-  "def_base": "1120",
-  "rec_base": "920",
-  "hp_lord": "5000",
-  "atk_lord": "1720",
-  "def_lord": "1570",
-  "rec_lord": "1330",
-  "hp_anima": "5593",
-  "rec_anima": "1172",
-  "atk_breaker": "1878",
-  "def_breaker": "1412",
-  "atk_guardian": "1562",
-  "def_guardian": "1728",
-  "hp_oracle": "4763",
-  "rec_oracle": "1567",
-  "hp_bonus": "500",
-  "atk_bonus": "140",
-  "def_bonus": "260",
-  "rec_bonus": "200",
-  "lordonly": "TRUE",
-  "combo_hits": "5",
-  "normaldc": "30",
-  "ls": "High Priestess' Guard",
-  "lsdescription": "BB gauge fills and low chance of taking only 1 damage when attacked",
-  "lsnote": "1~2 BC fill when attacked & 10% chance of taking only 1 damage",
-  "lstype": "Defense/Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 1320,
+      "def": 1120,
+      "hp": 3590,
+      "rec": 920
+    },
+    "_lord": {
+      "atk": 1720,
+      "def": 1570,
+      "hp": 5000,
+      "rec": 1330
+    },
+    "anima": {
+      "atk": 1720,
+      "def": 1570,
+      "hp max": 5790,
+      "hp min": 5395,
+      "rec max": 1251,
+      "rec min": 1093
+    },
+    "breaker": {
+      "atk max": 1957,
+      "atk min": 1799,
+      "def max": 1491,
+      "def min": 1333,
+      "hp": 5000,
+      "rec": 1330
+    },
+    "guardian": {
+      "atk": 1720,
+      "def max": 1807,
+      "def min": 1649,
+      "hp": 5000,
+      "rec max": 1330,
+      "rec min": 1172
+    },
+    "oracle": {
+      "atk": 1720,
+      "def max": 1570,
+      "def min": 1412,
+      "hp": 5000,
+      "rec max": 1646,
+      "rec min": 1488
+    }
+  },
+  "leader_skill": {
+    "desc": "BB gauge fills and low chance of taking only 1 damage when attacked",
+    "effects": [
+      {
+        "bc fill when attacked high": 2,
+        "bc fill when attacked low": 1,
+        "bc fill when attacked%": 100,
+        "passive id": "25"
+      },
+      {
+        "passive id": "43",
+        "take 1 dmg%": 10
+      }
+    ],
+    "id": "2901",
+    "name": "High Priestess' Guard"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -217,101 +226,91 @@
     ],
     "name": "Lightning Volcano"
   },
-  "bbdescription": "6 combo Thunder elemental attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "6",
-  "bbaoe": "A",
-  "bbgauge": "20",
-  "bbdc": "6",
-  "bbmultiplier": "200",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "es": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "40233",
-  "evointo": "40235",
-  "evomats1": "50354",
-  "evomats2": "40133",
-  "evomats3": "40133",
-  "evomats4": "40191",
-  "evomats5": "",
-  "evoitem": "Topaz",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 1320,
-      "def": 1120,
-      "hp": 3590,
-      "rec": 920
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1720,
-      "def": 1570,
-      "hp": 5000,
-      "rec": 1330
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1720,
-      "def": 1570,
-      "hp max": 5790,
-      "hp min": 5395,
-      "rec max": 1251,
-      "rec min": 1093
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 103
     },
-    "breaker": {
-      "atk max": 1957,
-      "atk min": 1799,
-      "def max": 1491,
-      "def min": 1333,
-      "hp": 5000,
-      "rec": 1330
+    "idle": {
+      "total number of frames": 64
     },
-    "guardian": {
-      "atk": 1720,
-      "def max": 1807,
-      "def min": 1649,
-      "hp": 5000,
-      "rec max": 1330,
-      "rec min": 1172
-    },
-    "oracle": {
-      "atk": 1720,
-      "def max": 1570,
-      "def min": 1412,
-      "hp": 5000,
-      "rec max": 1646,
-      "rec min": 1488
+    "move": {
+      "total number of frames": 13
     }
   },
-  "leader_skill": {
-    "desc": "BB gauge fills and low chance of taking only 1 damage when attacked",
-    "effects": [
-      {
-        "bc fill when attacked high": 2,
-        "bc fill when attacked low": 1,
-        "bc fill when attacked%": 100,
-        "passive id": "25"
-      },
-      {
-        "passive id": "43",
-        "take 1 dmg%": 10
-      }
+  "category": 40230,
+  "cost": "15",
+  "damage frames": {
+    "frame times": [
+      64,
+      70,
+      76,
+      82,
+      88
     ],
-    "id": "2901",
-    "name": "High Priestess' Guard"
+    "hit dmg% distribution": [
+      50,
+      30,
+      20,
+      10,
+      10
+    ],
+    "hit dmg% distribution (total)": 120,
+    "hits": 5
   },
-  "extra_skill": {},
+  "drop check count": 6,
+  "element": "thunder",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "farmable",
+  "guide_id": 390,
+  "imp": {
+    "max atk": "140",
+    "max def": "260",
+    "max hp": "500",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "1601~1788",
+  "movement": {
+    "attack": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "2"
+    },
+    "skill": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "2"
+    }
+  },
+  "name": "Royal Guard Paris",
+  "rarity": "5",
+  "sell caution": true,
+  "unitName": "Royal Guard Paris",
+  "maxlv": "80",
+  "no": "390",
   "unitDisplayHomePosition_1W9CxaFK": "262,174,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "91,17,820,762",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "215,403,265,225,0",
@@ -321,5 +320,104 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": true,
-  "effectFrames": "58:124:1,58:400201:1,58:100111:1,64:124:1,64:500212:1,64:400201:1,70:124:1,70:500212:1,70:400181:1"
+  "effectFrames": "58:124:1,58:400201:1,58:100111:1,64:124:1,64:500212:1,64:400201:1,70:124:1,70:500212:1,70:400181:1",
+  "evofrom": "40233",
+  "evointo": "40235",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40133",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "40191",
+      "count": 1
+    },
+    {
+      "type": "2",
+      "id": "110030",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "103",
+  "animation_idle": "64",
+  "animation_move": "13",
+  "movespeed_attack": "4",
+  "movespeed_skill": "4",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "2",
+  "movetype_skill": "2",
+  "normal_frames": "64, 70, 76, 82, 88",
+  "normal_distribute": "50, 30, 20, 10, 10",
+  "normal_totaldistr": "120",
+  "bb_frames": "64, 70, 76, 82, 88, 96",
+  "bb_distribute": "40, 20, 10, 10, 10, 10",
+  "bb_totaldistr": "100",
+  "description": "A mock Unit modeled after Paris, a Summoner from the Randall Empire. A promising member of the Imperial Elite Forces, she was remarked for her rapidly improving skills. Despite being born to a prominent family she refused to get involved in all the politics and instead approached the Imperial Guards on her own. She had great respect for her commanding officer, Eriole, even though he was from lower class beginnings, and under his command she executed various tasks.",
+  "summon": "Death to all the empire's foes!<br>Do your best to see I don't have<br>to say anything like that, OK?",
+  "fusion": "Hehe, hasty I see.<br>You'd like to see my true<br>power, wouldn't you?",
+  "evolution": "Ahh!<br>My power is overflowing...<br>Have I always had this inside?",
+  "hp_base": "3590",
+  "atk_base": "1320",
+  "def_base": "1120",
+  "rec_base": "920",
+  "hp_lord": "5000",
+  "atk_lord": "1720",
+  "def_lord": "1570",
+  "rec_lord": "1330",
+  "hp_anima": "5593",
+  "rec_anima": "1172",
+  "atk_breaker": "1878",
+  "def_breaker": "1412",
+  "atk_guardian": "1562",
+  "def_guardian": "1728",
+  "hp_oracle": "4763",
+  "rec_oracle": "1567",
+  "hp_bonus": "500",
+  "atk_bonus": "140",
+  "def_bonus": "260",
+  "rec_bonus": "200",
+  "lordonly": "TRUE",
+  "combo_hits": "5",
+  "normaldc": "30",
+  "ls": "High Priestess' Guard",
+  "lsdescription": "BB gauge fills and low chance of taking only 1 damage when attacked",
+  "lsnote": "1~2 BC fill when attacked & 10% chance of taking only 1 damage",
+  "lstype": "Defense/Brave Burst",
+  "bbdescription": "6 combo Thunder elemental attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "6",
+  "bbaoe": "A",
+  "bbgauge": "20",
+  "bbdc": "6",
+  "bbmultiplier": "200",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "es": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "40133",
+  "evomats3": "40133",
+  "evomats4": "40191",
+  "evomats5": "",
+  "evoitem": "Topaz"
 }

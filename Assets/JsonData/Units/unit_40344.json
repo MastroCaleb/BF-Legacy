@@ -1,61 +1,63 @@
 {
   "id": "40344",
-  "unitName": "Mech Cannon Grybe",
-  "no": "510",
-  "element": "Thunder",
-  "rarity": "★★★★★",
-  "cost": "16",
-  "maxlv": "80",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "4",
-  "animation_attack": "124",
-  "animation_idle": "68",
-  "animation_move": "68",
-  "movespeed_attack": "0",
-  "movespeed_skill": "0",
-  "speedtype_attack": "5",
-  "speedtype_skill": "5",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "52, 56, 60, 64, 68, 72",
-  "normal_distribute": "17, 16, 17, 17, 16, 17",
-  "normal_totaldistr": "100",
-  "bb_frames": "52, 55, 58, 61, 64, 67, 70, 73, 76",
-  "bb_distribute": "12, 11, 11, 11, 11, 11, 11, 11, 11",
-  "bb_totaldistr": "100",
-  "description": "A former Guardian, born in the otherworld. Unable to accept that his mentor was a traitor, he left with Ramna, who was worried about Farlon, to search for Sodis. Then, together with Ramna, after hearing Sodis' reasoning they silently shook his hand in agreement. Though he would now become enemies with his former allies, in protecting Sodis it is said that he never once pointed his gun at those who opposed him.",
-  "summon": "Sorry to have scared you.<br>In apology, I offer you my power.<br>Please use it as you wish.",
-  "fusion": "Don't forget that taking care of<br>your weapons is just as important<br>as training your body.",
-  "evolution": "You shouldn't be prideful just<br>because you've attained power.<br>Ignorance is your greatest enemy.",
-  "hp_base": "3630",
-  "atk_base": "1362",
-  "def_base": "1050",
-  "rec_base": "1100",
-  "hp_lord": "5369",
-  "atk_lord": "1843",
-  "def_lord": "1312",
-  "rec_lord": "1496",
-  "hp_anima": "5962",
-  "rec_anima": "1338",
-  "atk_breaker": "2001",
-  "def_breaker": "1154",
-  "atk_guardian": "1685",
-  "def_guardian": "1470",
-  "rec_guardian": "1417",
-  "def_oracle": "1233",
-  "hp_oracle": "5132",
-  "rec_oracle": "1733",
-  "hp_bonus": "500",
-  "atk_bonus": "260",
-  "def_bonus": "140",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "6",
-  "normaldc": "18",
-  "ls": "Water Barrier",
-  "lsdescription": "15% reduction in damage from Water Types",
-  "lstype": "Defense",
+  "stats": {
+    "_base": {
+      "atk": 1362,
+      "def": 1050,
+      "hp": 3630,
+      "rec": 1100
+    },
+    "_lord": {
+      "atk": 1843,
+      "def": 1312,
+      "hp": 5369,
+      "rec": 1496
+    },
+    "anima": {
+      "atk": 1843,
+      "def": 1312,
+      "hp max": 6159,
+      "hp min": 5764,
+      "rec max": 1417,
+      "rec min": 1259
+    },
+    "breaker": {
+      "atk max": 2080,
+      "atk min": 1922,
+      "def max": 1233,
+      "def min": 1075,
+      "hp": 5369,
+      "rec": 1496
+    },
+    "guardian": {
+      "atk": 1843,
+      "def max": 1549,
+      "def min": 1391,
+      "hp": 5369,
+      "rec max": 1496,
+      "rec min": 1338
+    },
+    "oracle": {
+      "atk": 1843,
+      "def max": 1312,
+      "def min": 1154,
+      "hp": 5369,
+      "rec max": 1812,
+      "rec min": 1654
+    }
+  },
+  "leader_skill": {
+    "desc": "15% reduction in damage from Water Types",
+    "effects": [
+      {
+        "passive id": "5",
+        "water resist%": 15
+      }
+    ],
+    "id": "503",
+    "name": "Water Barrier"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -306,94 +308,105 @@
     ],
     "name": "Atom Cannon"
   },
-  "bbdescription": "9 combo powerful Thunder attack on all enemies & probable Weakness effect",
-  "bbnote": "45% chance",
-  "bbtype": "Offense",
-  "bbhits": "9",
-  "bbaoe": "A",
-  "bbgauge": "25",
-  "bbdc": "9",
-  "bbmultiplier": "220",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "40343",
-  "evointo": "40345",
-  "evomats1": "50354",
-  "evomats2": "40133",
-  "evomats3": "40191",
-  "evomats4": "40191",
-  "evomats5": "60224",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 1362,
-      "def": 1050,
-      "hp": 3630,
-      "rec": 1100
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_under",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1843,
-      "def": 1312,
-      "hp": 5369,
-      "rec": 1496
+    {
+      "action": "skill",
+      "chance%": 30.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1843,
-      "def": 1312,
-      "hp max": 6159,
-      "hp min": 5764,
-      "rec max": 1417,
-      "rec min": 1259
+    {
+      "action": "attack",
+      "chance%": 70.0,
+      "target conditions": "hp_max",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 2080,
-      "atk min": 1922,
-      "def max": 1233,
-      "def min": 1075,
-      "hp": 5369,
-      "rec": 1496
+    {
+      "action": "attack",
+      "chance%": 50.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "guardian": {
-      "atk": 1843,
-      "def max": 1549,
-      "def min": 1391,
-      "hp": 5369,
-      "rec max": 1496,
-      "rec min": 1338
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 124
     },
-    "oracle": {
-      "atk": 1843,
-      "def max": 1312,
-      "def min": 1154,
-      "hp": 5369,
-      "rec max": 1812,
-      "rec min": 1654
+    "idle": {
+      "total number of frames": 68
+    },
+    "move": {
+      "total number of frames": 68
     }
   },
-  "leader_skill": {
-    "desc": "15% reduction in damage from Water Types",
-    "effects": [
-      {
-        "passive id": "5",
-        "water resist%": 15
-      }
+  "category": 40340,
+  "cost": "16",
+  "damage frames": {
+    "frame times": [
+      52,
+      56,
+      60,
+      64,
+      68,
+      72
     ],
-    "id": "503",
-    "name": "Water Barrier"
+    "hit dmg% distribution": [
+      17,
+      16,
+      17,
+      17,
+      16,
+      17
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 6
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "thunder",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 510,
+  "imp": {
+    "max atk": "260",
+    "max def": "140",
+    "max hp": "500",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "1715~1916",
+  "movement": {
+    "attack": {
+      "move speed": 0,
+      "move speed type": "5",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 0,
+      "move speed type": "5",
+      "move type": "3"
+    }
+  },
+  "name": "Mech Cannon Grybe",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Mech Cannon Grybe",
+  "maxlv": "80",
+  "no": "510",
   "unitDisplayHomePosition_1W9CxaFK": "424,155,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-99,35,1010,790",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "96,234,495,397,0",
@@ -403,5 +416,104 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "46:400152:1,52:400070:1,60:400130:1,68:400130:1,72:200081:1,52:400061:1"
+  "effectFrames": "46:400152:1,52:400070:1,60:400130:1,68:400130:1,72:200081:1,52:400061:1",
+  "evofrom": "40343",
+  "evointo": "40345",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40191",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "124",
+  "animation_idle": "68",
+  "animation_move": "68",
+  "movespeed_attack": "0",
+  "movespeed_skill": "0",
+  "speedtype_attack": "5",
+  "speedtype_skill": "5",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "52, 56, 60, 64, 68, 72",
+  "normal_distribute": "17, 16, 17, 17, 16, 17",
+  "normal_totaldistr": "100",
+  "bb_frames": "52, 55, 58, 61, 64, 67, 70, 73, 76",
+  "bb_distribute": "12, 11, 11, 11, 11, 11, 11, 11, 11",
+  "bb_totaldistr": "100",
+  "description": "A former Guardian, born in the otherworld. Unable to accept that his mentor was a traitor, he left with Ramna, who was worried about Farlon, to search for Sodis. Then, together with Ramna, after hearing Sodis' reasoning they silently shook his hand in agreement. Though he would now become enemies with his former allies, in protecting Sodis it is said that he never once pointed his gun at those who opposed him.",
+  "summon": "Sorry to have scared you.<br>In apology, I offer you my power.<br>Please use it as you wish.",
+  "fusion": "Don't forget that taking care of<br>your weapons is just as important<br>as training your body.",
+  "evolution": "You shouldn't be prideful just<br>because you've attained power.<br>Ignorance is your greatest enemy.",
+  "hp_base": "3630",
+  "atk_base": "1362",
+  "def_base": "1050",
+  "rec_base": "1100",
+  "hp_lord": "5369",
+  "atk_lord": "1843",
+  "def_lord": "1312",
+  "rec_lord": "1496",
+  "hp_anima": "5962",
+  "rec_anima": "1338",
+  "atk_breaker": "2001",
+  "def_breaker": "1154",
+  "atk_guardian": "1685",
+  "def_guardian": "1470",
+  "rec_guardian": "1417",
+  "def_oracle": "1233",
+  "hp_oracle": "5132",
+  "rec_oracle": "1733",
+  "hp_bonus": "500",
+  "atk_bonus": "260",
+  "def_bonus": "140",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "6",
+  "normaldc": "18",
+  "ls": "Water Barrier",
+  "lsdescription": "15% reduction in damage from Water Types",
+  "lstype": "Defense",
+  "bbdescription": "9 combo powerful Thunder attack on all enemies & probable Weakness effect",
+  "bbnote": "45% chance",
+  "bbtype": "Offense",
+  "bbhits": "9",
+  "bbaoe": "A",
+  "bbgauge": "25",
+  "bbdc": "9",
+  "bbmultiplier": "220",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "40133",
+  "evomats3": "40191",
+  "evomats4": "40191",
+  "evomats5": "60224"
 }

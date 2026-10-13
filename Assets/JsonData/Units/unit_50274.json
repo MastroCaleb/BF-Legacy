@@ -1,59 +1,63 @@
 {
   "id": "50274",
-  "unitName": "Centurion Melchio",
-  "no": "355",
-  "element": "Light",
-  "rarity": "★★★★★",
-  "cost": "13",
-  "maxlv": "80",
-  "basexp": "21",
-  "gender": "N",
-  "ai": "1",
-  "animation_attack": "92",
-  "animation_idle": "44",
-  "animation_move": "12",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "4",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "3",
-  "normal_frames": "6, 12, 18, 24, 30, 36, 42, 48, 54",
-  "normal_distribute": "10, 10, 10, 10, 10, 10, 10, 10, 20",
-  "normal_totaldistr": "100",
-  "description": "A ten-winged figure that appeared in Lizeria, tormenting its people even before the war with the gods had begun. Though his true identity remains unknown, many wonder if he was in fact part of the gods' initial attack given how he shined more with every life he took. After laying waste to a handful of villages, he was overtaken by a mysterious battalion. However, neither his body let alone his armor were left behind, leaving some to doubt that maybe he was just a product of the people's imagination.",
-  "summon": "I've no need to worry about<br>what is right and what is wrong.<br>I only do as I am ordered.",
-  "fusion": "My strength is growing.<br>Summoner, what do you plan<br>to use my strength for?",
-  "evolution": "I will evolve to complete my mission<br>It is one of the few things<br>I am allowed to do at will.",
-  "hp_base": "3494",
-  "atk_base": "1046",
-  "def_base": "1088",
-  "rec_base": "1088",
-  "hp_lord": "5015",
-  "atk_lord": "1425",
-  "def_lord": "1483",
-  "rec_lord": "1477",
-  "hp_anima": "5608",
-  "rec_anima": "1319",
-  "atk_breaker": "1583",
-  "def_breaker": "1325",
-  "atk_guardian": "1267",
-  "def_guardian": "1641",
-  "rec_guardian": "1398",
-  "def_oracle": "1404",
-  "hp_oracle": "4778",
-  "rec_oracle": "1714",
-  "hp_bonus": "500",
-  "atk_bonus": "200",
-  "def_bonus": "200",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "9",
-  "normaldc": "27",
-  "ls": "Destructive Allure",
-  "lsdescription": "Small chance of ignoring an opponent's Def when attacking",
-  "lsnote": "10% chance",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 1046,
+      "def": 1088,
+      "hp": 3494,
+      "rec": 1088
+    },
+    "_lord": {
+      "atk": 1425,
+      "def": 1483,
+      "hp": 5015,
+      "rec": 1477
+    },
+    "anima": {
+      "atk": 1425,
+      "def": 1483,
+      "hp max": 5805,
+      "hp min": 5410,
+      "rec max": 1398,
+      "rec min": 1240
+    },
+    "breaker": {
+      "atk max": 1662,
+      "atk min": 1504,
+      "def max": 1404,
+      "def min": 1246,
+      "hp": 5015,
+      "rec": 1477
+    },
+    "guardian": {
+      "atk": 1425,
+      "def max": 1720,
+      "def min": 1562,
+      "hp": 5015,
+      "rec max": 1477,
+      "rec min": 1319
+    },
+    "oracle": {
+      "atk": 1425,
+      "def max": 1483,
+      "def min": 1325,
+      "hp": 5015,
+      "rec max": 1793,
+      "rec min": 1635
+    }
+  },
+  "leader_skill": {
+    "desc": "Small chance of ignoring an opponent's Def when attacking",
+    "effects": [
+      {
+        "ignore def%": 10,
+        "passive id": "29"
+      }
+    ],
+    "id": "2801",
+    "name": "Destructive Allure"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -368,91 +372,99 @@
     ],
     "name": "Shining Aura"
   },
-  "bbdescription": "Negates status ailments & adds Light element to attack for all allies for 3 turns",
-  "bbtype": "Support",
-  "bbhits": "",
-  "bbaoe": "0",
-  "bbgauge": "11",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "50273",
-  "evointo": "50275",
-  "evomats1": "50354",
-  "evomats2": "50123",
-  "evomats3": "50123",
-  "evomats4": "50191",
-  "evomats5": "60144",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 1046,
-      "def": 1088,
-      "hp": 3494,
-      "rec": 1088
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "party"
     },
-    "_lord": {
-      "atk": 1425,
-      "def": 1483,
-      "hp": 5015,
-      "rec": 1477
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1425,
-      "def": 1483,
-      "hp max": 5805,
-      "hp min": 5410,
-      "rec max": 1398,
-      "rec min": 1240
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 92
     },
-    "breaker": {
-      "atk max": 1662,
-      "atk min": 1504,
-      "def max": 1404,
-      "def min": 1246,
-      "hp": 5015,
-      "rec": 1477
+    "idle": {
+      "total number of frames": 44
     },
-    "guardian": {
-      "atk": 1425,
-      "def max": 1720,
-      "def min": 1562,
-      "hp": 5015,
-      "rec max": 1477,
-      "rec min": 1319
-    },
-    "oracle": {
-      "atk": 1425,
-      "def max": 1483,
-      "def min": 1325,
-      "hp": 5015,
-      "rec max": 1793,
-      "rec min": 1635
+    "move": {
+      "total number of frames": 12
     }
   },
-  "leader_skill": {
-    "desc": "Small chance of ignoring an opponent's Def when attacking",
-    "effects": [
-      {
-        "ignore def%": 10,
-        "passive id": "29"
-      }
+  "category": 50270,
+  "cost": "13",
+  "damage frames": {
+    "frame times": [
+      6,
+      12,
+      18,
+      24,
+      30,
+      36,
+      42,
+      48,
+      54
     ],
-    "id": "2801",
-    "name": "Destructive Allure"
+    "hit dmg% distribution": [
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 9
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "light",
+  "exp_pattern": 20,
+  "gender": "other",
+  "getting type": "rare summon",
+  "guide_id": 355,
+  "imp": {
+    "max atk": "200",
+    "max def": "200",
+    "max hp": "500",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "1326~1482",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    }
+  },
+  "name": "Centurion Melchio",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Centurion Melchio",
+  "maxlv": "80",
+  "no": "355",
   "unitDisplayHomePosition_1W9CxaFK": "606,246,148,404",
   "unitDisplayDetailPosition_6z54rgb3": "-272,-15,1490,908",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "129,353,394,260,0",
@@ -462,5 +474,99 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "6:125:1,6:100120:1,6:500170:1,12:125:1,12:100120:1,18:125:1,18:100120:1,24:125:1,24:100120:1,30:125:1,30:100120:1,36:125:1,36:100120:1,42:125:1,42:100120:1,48:125:1,48:500170:1,48:500211:1"
+  "effectFrames": "6:125:1,6:100120:1,6:500170:1,12:125:1,12:100120:1,18:125:1,18:100120:1,24:125:1,24:100120:1,30:125:1,30:100120:1,36:125:1,36:100120:1,42:125:1,42:100120:1,48:125:1,48:500170:1,48:500211:1",
+  "evofrom": "50273",
+  "evointo": "50275",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50123",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "50191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "92",
+  "animation_idle": "44",
+  "animation_move": "12",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "4",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "3",
+  "normal_frames": "6, 12, 18, 24, 30, 36, 42, 48, 54",
+  "normal_distribute": "10, 10, 10, 10, 10, 10, 10, 10, 20",
+  "normal_totaldistr": "100",
+  "description": "A ten-winged figure that appeared in Lizeria, tormenting its people even before the war with the gods had begun. Though his true identity remains unknown, many wonder if he was in fact part of the gods' initial attack given how he shined more with every life he took. After laying waste to a handful of villages, he was overtaken by a mysterious battalion. However, neither his body let alone his armor were left behind, leaving some to doubt that maybe he was just a product of the people's imagination.",
+  "summon": "I've no need to worry about<br>what is right and what is wrong.<br>I only do as I am ordered.",
+  "fusion": "My strength is growing.<br>Summoner, what do you plan<br>to use my strength for?",
+  "evolution": "I will evolve to complete my mission<br>It is one of the few things<br>I am allowed to do at will.",
+  "hp_base": "3494",
+  "atk_base": "1046",
+  "def_base": "1088",
+  "rec_base": "1088",
+  "hp_lord": "5015",
+  "atk_lord": "1425",
+  "def_lord": "1483",
+  "rec_lord": "1477",
+  "hp_anima": "5608",
+  "rec_anima": "1319",
+  "atk_breaker": "1583",
+  "def_breaker": "1325",
+  "atk_guardian": "1267",
+  "def_guardian": "1641",
+  "rec_guardian": "1398",
+  "def_oracle": "1404",
+  "hp_oracle": "4778",
+  "rec_oracle": "1714",
+  "hp_bonus": "500",
+  "atk_bonus": "200",
+  "def_bonus": "200",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "9",
+  "normaldc": "27",
+  "ls": "Destructive Allure",
+  "lsdescription": "Small chance of ignoring an opponent's Def when attacking",
+  "lsnote": "10% chance",
+  "lstype": "Attack",
+  "bbdescription": "Negates status ailments & adds Light element to attack for all allies for 3 turns",
+  "bbtype": "Support",
+  "bbhits": "",
+  "bbaoe": "0",
+  "bbgauge": "11",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "50123",
+  "evomats3": "50123",
+  "evomats4": "50191",
+  "evomats5": "60144"
 }

@@ -1,62 +1,63 @@
 {
   "id": "20051",
-  "unitName": "Sahuagin",
-  "no": "70",
-  "element": "Water",
-  "rarity": "★★",
-  "cost": "4",
-  "maxlv": "30",
-  "basexp": "10",
-  "gender": "N",
-  "ai": "4",
-  "animation_attack": "75",
-  "animation_idle": "44",
-  "animation_move": "6",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "10, 26, 42",
-  "normal_distribute": "34, 33, 33",
-  "normal_totaldistr": "100",
-  "bb_frames": "10, 13, 26, 29, 42, 45",
-  "bb_distribute": "17, 16, 17, 16, 17, 17",
-  "bb_totaldistr": "100",
-  "description": "When a merman's inherent water magic awakens, it evolves into a Sahuagin. Its shape is perfect for moving in water. Its lower half changes from two legs into a tail fin. Crueler than mermen, they often attack ships looking for human blood. Rumor is that there is treasure where Sahuagins live, but none of the adventurers that dove down to check have ever returned.",
-  "summon": "*G-Gargle*<br>You're different.<br>Take me with you.",
-  "fusion": "*Gargle* *Gargle*<br>I will skewer them with my lance!",
-  "evolution": "*Gargle* I can feel it!<br>The need for human blood!",
-  "hp_base": "1292",
-  "atk_base": "479",
-  "def_base": "416",
-  "rec_base": "281",
-  "hp_lord": "2325",
-  "atk_lord": "754",
-  "def_lord": "721",
-  "rec_lord": "680",
-  "hp_anima": "2543",
-  "rec_anima": "622",
-  "atk_breaker": "812",
-  "def_breaker": "663",
-  "atk_guardian": "696",
-  "def_guardian": "779",
-  "rec_guardian": "651",
-  "def_oracle": "692",
-  "hp_oracle": "2238",
-  "rec_oracle": "767",
-  "hp_bonus": "250",
-  "atk_bonus": "100",
-  "def_bonus": "100",
-  "rec_bonus": "100",
-  "lordonly": "",
-  "combo_hits": "3",
-  "normaldc": "6",
-  "ls": "Fighting Light",
-  "lsdescription": "Small boost in Battle Crystals produced during Spark",
-  "lsnote": "30% boost",
-  "lstype": "Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 479,
+      "def": 416,
+      "hp": 1292,
+      "rec": 281
+    },
+    "_lord": {
+      "atk": 754,
+      "def": 721,
+      "hp": 2325,
+      "rec": 680
+    },
+    "anima": {
+      "atk": 754,
+      "def": 721,
+      "hp max": 2615,
+      "hp min": 2470,
+      "rec max": 651,
+      "rec min": 593
+    },
+    "breaker": {
+      "atk max": 841,
+      "atk min": 783,
+      "def max": 692,
+      "def min": 634,
+      "hp": 2325,
+      "rec": 680
+    },
+    "guardian": {
+      "atk": 754,
+      "def max": 808,
+      "def min": 750,
+      "hp": 2325,
+      "rec max": 680,
+      "rec min": 622
+    },
+    "oracle": {
+      "atk": 754,
+      "def max": 721,
+      "def min": 663,
+      "hp": 2325,
+      "rec max": 796,
+      "rec min": 738
+    }
+  },
+  "leader_skill": {
+    "desc": "Small boost in Battle Crystals produced during Spark",
+    "effects": [
+      {
+        "bc drop% for spark": 30,
+        "passive id": "31"
+      }
+    ],
+    "id": "1400",
+    "name": "Fighting Light"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -301,95 +302,99 @@
     ],
     "name": "Dancing Charge"
   },
-  "bbdescription": "6 combo Water elemental attack on single Enemy & probable Sickness effect",
-  "bbnote": "80% chance",
-  "bbtype": "Offense",
-  "bbhits": "6",
-  "bbaoe": "1",
-  "bbgauge": "10",
-  "bbdc": "6",
-  "bbmultiplier": "150",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "20050",
-  "evointo": "20052",
-  "evomats1": "20131",
-  "evomats2": "60142",
-  "evomats3": "60142",
-  "evomats4": "",
-  "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "50000",
-  "stats": {
-    "_base": {
-      "atk": 479,
-      "def": 416,
-      "hp": 1292,
-      "rec": 281
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_under",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 754,
-      "def": 721,
-      "hp": 2325,
-      "rec": 680
+    {
+      "action": "skill",
+      "chance%": 30.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 754,
-      "def": 721,
-      "hp max": 2615,
-      "hp min": 2470,
-      "rec max": 651,
-      "rec min": 593
+    {
+      "action": "attack",
+      "chance%": 70.0,
+      "target conditions": "hp_max",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 841,
-      "atk min": 783,
-      "def max": 692,
-      "def min": 634,
-      "hp": 2325,
-      "rec": 680
+    {
+      "action": "attack",
+      "chance%": 50.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "guardian": {
-      "atk": 754,
-      "def max": 808,
-      "def min": 750,
-      "hp": 2325,
-      "rec max": 680,
-      "rec min": 622
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 75
     },
-    "oracle": {
-      "atk": 754,
-      "def max": 721,
-      "def min": 663,
-      "hp": 2325,
-      "rec max": 796,
-      "rec min": 738
+    "idle": {
+      "total number of frames": 44
+    },
+    "move": {
+      "total number of frames": 6
     }
   },
-  "leader_skill": {
-    "desc": "Small boost in Battle Crystals produced during Spark",
-    "effects": [
-      {
-        "bc drop% for spark": 30,
-        "passive id": "31"
-      }
+  "category": 20050,
+  "cost": "4",
+  "damage frames": {
+    "frame times": [
+      10,
+      26,
+      42
     ],
-    "id": "1400",
-    "name": "Fighting Light"
+    "hit dmg% distribution": [
+      34,
+      33,
+      33
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 3
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "water",
+  "exp_pattern": 10,
+  "gender": "other",
+  "getting type": "not eligible for achievement",
+  "guide_id": 70,
+  "imp": {
+    "max atk": "100",
+    "max def": "100",
+    "max hp": "250",
+    "max rec": "100"
+  },
+  "kind": "normal",
+  "lord damage range": "701~784",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Sahuagin",
+  "rarity": "2",
+  "sell caution": false,
+  "unitName": "Sahuagin",
+  "maxlv": "30",
+  "no": "70",
   "unitDisplayHomePosition_1W9CxaFK": "259,22,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "43,183,830,582",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "128,354,386,271,0",
@@ -399,5 +404,96 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "300",
   "sellCaution": false,
-  "effectFrames": "4:122:1,20:122:1,36:122:1"
+  "effectFrames": "4:122:1,20:122:1,36:122:1",
+  "evofrom": "20050",
+  "evointo": "20052",
+  "evozelcost": "50000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "20131",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60142",
+      "count": 2
+    }
+  ],
+  "basexp": "10",
+  "animation_attack": "75",
+  "animation_idle": "44",
+  "animation_move": "6",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "10, 26, 42",
+  "normal_distribute": "34, 33, 33",
+  "normal_totaldistr": "100",
+  "bb_frames": "10, 13, 26, 29, 42, 45",
+  "bb_distribute": "17, 16, 17, 16, 17, 17",
+  "bb_totaldistr": "100",
+  "description": "When a merman's inherent water magic awakens, it evolves into a Sahuagin. Its shape is perfect for moving in water. Its lower half changes from two legs into a tail fin. Crueler than mermen, they often attack ships looking for human blood. Rumor is that there is treasure where Sahuagins live, but none of the adventurers that dove down to check have ever returned.",
+  "summon": "*G-Gargle*<br>You're different.<br>Take me with you.",
+  "fusion": "*Gargle* *Gargle*<br>I will skewer them with my lance!",
+  "evolution": "*Gargle* I can feel it!<br>The need for human blood!",
+  "hp_base": "1292",
+  "atk_base": "479",
+  "def_base": "416",
+  "rec_base": "281",
+  "hp_lord": "2325",
+  "atk_lord": "754",
+  "def_lord": "721",
+  "rec_lord": "680",
+  "hp_anima": "2543",
+  "rec_anima": "622",
+  "atk_breaker": "812",
+  "def_breaker": "663",
+  "atk_guardian": "696",
+  "def_guardian": "779",
+  "rec_guardian": "651",
+  "def_oracle": "692",
+  "hp_oracle": "2238",
+  "rec_oracle": "767",
+  "hp_bonus": "250",
+  "atk_bonus": "100",
+  "def_bonus": "100",
+  "rec_bonus": "100",
+  "lordonly": "",
+  "combo_hits": "3",
+  "normaldc": "6",
+  "ls": "Fighting Light",
+  "lsdescription": "Small boost in Battle Crystals produced during Spark",
+  "lsnote": "30% boost",
+  "lstype": "Brave Burst",
+  "bbdescription": "6 combo Water elemental attack on single Enemy & probable Sickness effect",
+  "bbnote": "80% chance",
+  "bbtype": "Offense",
+  "bbhits": "6",
+  "bbaoe": "1",
+  "bbgauge": "10",
+  "bbdc": "6",
+  "bbmultiplier": "150",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "20131",
+  "evomats2": "60142",
+  "evomats3": "60142",
+  "evomats4": "",
+  "evomats5": "",
+  "evoitem": ""
 }

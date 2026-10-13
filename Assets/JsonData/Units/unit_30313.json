@@ -1,52 +1,63 @@
 {
   "id": "30313",
-  "unitName": "Havoc Girl Luly",
-  "no": "451",
-  "element": "Earth",
-  "rarity": "★★★★",
-  "cost": "12",
-  "maxlv": "60",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "3",
-  "animation_attack": "155",
-  "animation_idle": "64",
-  "animation_move": "64",
-  "movespeed_attack": "4",
-  "movespeed_skill": "4",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "description": "One of the 12 Guardians of the Gods, guardians of the land of the gods. Born with great magical powers, her parents, who wanted her to use them justly, left her to the care of a priest. Though she learned to control her powers early on, she was still mentally unstable, often acting in ways which were hard for others to understand. This didn't change even after she joined the Guardians, and it's said she was often lectured by Lunaris.",
-  "summon": "I'm Luly of the Guardians!<br>But what's a Guardian?<br>Do you know?",
-  "fusion": "Hey, what are you up to?<br>What was that just now?<br>Do it again, please!",
-  "evolution": "",
-  "hp_base": "2800",
-  "atk_base": "1000",
-  "def_base": "880",
-  "rec_base": "1050",
-  "hp_lord": "4144",
-  "atk_lord": "1360",
-  "def_lord": "1144",
-  "rec_lord": "1522",
-  "hp_anima": "4586",
-  "rec_anima": "1404",
-  "atk_breaker": "1478",
-  "def_breaker": "1026",
-  "atk_guardian": "1242",
-  "def_guardian": "1262",
-  "hp_oracle": "3701",
-  "rec_oracle": "1640",
-  "hp_bonus": "400",
-  "atk_bonus": "120",
-  "def_bonus": "200",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "5",
-  "ls": "Thunder's Protection",
-  "lsdescription": "10% reduction in damage from Thunder Types",
-  "lstype": "Defense",
+  "stats": {
+    "_base": {
+      "atk": 1000,
+      "def": 880,
+      "hp": 2800,
+      "rec": 1050
+    },
+    "_lord": {
+      "atk": 1360,
+      "def": 1144,
+      "hp": 4144,
+      "rec": 1522
+    },
+    "anima": {
+      "atk": 1360,
+      "def": 1144,
+      "hp max": 4734,
+      "hp min": 4439,
+      "rec max": 1463,
+      "rec min": 1345
+    },
+    "breaker": {
+      "atk max": 1537,
+      "atk min": 1419,
+      "def max": 1085,
+      "def min": 967,
+      "hp": 4144,
+      "rec": 1522
+    },
+    "guardian": {
+      "atk": 1360,
+      "def max": 1321,
+      "def min": 1203,
+      "hp": 4144,
+      "rec max": 1522,
+      "rec min": 1404
+    },
+    "oracle": {
+      "atk": 1360,
+      "def max": 1144,
+      "def min": 1026,
+      "hp": 4144,
+      "rec max": 1758,
+      "rec min": 1640
+    }
+  },
+  "leader_skill": {
+    "desc": "10% reduction in damage from Thunder Types",
+    "effects": [
+      {
+        "passive id": "5",
+        "thunder resist%": 10
+      }
+    ],
+    "id": "506",
+    "name": "Thunder's Protection"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -301,91 +312,97 @@
     ],
     "name": "Forest's Force"
   },
-  "bbdescription": "6 combo Earth elemental attack on all enemies & boost to HC drop rate for 3 turns",
-  "bbtype": "Support/Offense",
-  "bbhits": "6",
-  "bbaoe": "A",
-  "bbgauge": "24",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "30314",
-  "evomats1": "30133",
-  "evomats2": "30132",
-  "evomats3": "30132",
-  "evomats4": "30191",
-  "evomats5": "30191",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 1000,
-      "def": 880,
-      "hp": 2800,
-      "rec": 1050
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1360,
-      "def": 1144,
-      "hp": 4144,
-      "rec": 1522
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1360,
-      "def": 1144,
-      "hp max": 4734,
-      "hp min": 4439,
-      "rec max": 1463,
-      "rec min": 1345
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 1537,
-      "atk min": 1419,
-      "def max": 1085,
-      "def min": 967,
-      "hp": 4144,
-      "rec": 1522
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 155
     },
-    "guardian": {
-      "atk": 1360,
-      "def max": 1321,
-      "def min": 1203,
-      "hp": 4144,
-      "rec max": 1522,
-      "rec min": 1404
+    "idle": {
+      "total number of frames": 64
     },
-    "oracle": {
-      "atk": 1360,
-      "def max": 1144,
-      "def min": 1026,
-      "hp": 4144,
-      "rec max": 1758,
-      "rec min": 1640
+    "move": {
+      "total number of frames": 64
     }
   },
-  "leader_skill": {
-    "desc": "10% reduction in damage from Thunder Types",
-    "effects": [
-      {
-        "passive id": "5",
-        "thunder resist%": 10
-      }
+  "category": 30310,
+  "cost": "12",
+  "damage frames": {
+    "frame times": [
+      102,
+      117,
+      132,
+      147,
+      162
     ],
-    "id": "506",
-    "name": "Thunder's Protection"
+    "hit dmg% distribution": [
+      20,
+      20,
+      20,
+      20,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 5
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "earth",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 451,
+  "imp": {
+    "max atk": "120",
+    "max def": "200",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "1266~1414",
+  "movement": {
+    "attack": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    }
+  },
+  "name": "Havoc Girl Luly",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Havoc Girl Luly",
+  "maxlv": "60",
+  "no": "451",
   "unitDisplayHomePosition_1W9CxaFK": "249,-15,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "112,218,590,568",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "57,251,457,378,0",
@@ -395,5 +412,100 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "102:230:1,117:230:1,125:300261:1,135:251:1"
+  "effectFrames": "102:230:1,117:230:1,125:300261:1,135:251:1",
+  "evofrom": "",
+  "evointo": "30314",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "30133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30132",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "30191",
+      "count": 2
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "155",
+  "animation_idle": "64",
+  "animation_move": "64",
+  "movespeed_attack": "4",
+  "movespeed_skill": "4",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "102, 117, 132, 147, 162",
+  "normal_distribute": "20, 20, 20, 20, 20",
+  "normal_totaldistr": "100",
+  "bb_frames": "101, 116, 131, 146, 161, 176",
+  "bb_distribute": "17, 16, 17, 17, 16, 17",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "description": "One of the 12 Guardians of the Gods, guardians of the land of the gods. Born with great magical powers, her parents, who wanted her to use them justly, left her to the care of a priest. Though she learned to control her powers early on, she was still mentally unstable, often acting in ways which were hard for others to understand. This didn't change even after she joined the Guardians, and it's said she was often lectured by Lunaris.",
+  "summon": "I'm Luly of the Guardians!<br>But what's a Guardian?<br>Do you know?",
+  "fusion": "Hey, what are you up to?<br>What was that just now?<br>Do it again, please!",
+  "evolution": "",
+  "hp_base": "2800",
+  "atk_base": "1000",
+  "def_base": "880",
+  "rec_base": "1050",
+  "hp_lord": "4144",
+  "atk_lord": "1360",
+  "def_lord": "1144",
+  "rec_lord": "1522",
+  "hp_anima": "4587",
+  "rec_anima": "1404",
+  "atk_breaker": "1478",
+  "def_breaker": "1026",
+  "atk_guardian": "1242",
+  "def_guardian": "1262",
+  "rec_guardian": "1463",
+  "def_oracle": "1085",
+  "hp_oracle": "3967",
+  "rec_oracle": "1699",
+  "hp_bonus": "400",
+  "atk_bonus": "120",
+  "def_bonus": "200",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "5",
+  "normaldc": "10",
+  "ls": "Thunder's Protection",
+  "lsdescription": "10% reduction in damage from Thunder Types",
+  "lstype": "Defense",
+  "bbdescription": "6 combo Earth elemental attack on all enemies & boost to HC drop rate for 3 turns",
+  "bbnote": "20% boost",
+  "bbtype": "Support/Offense",
+  "bbhits": "6",
+  "bbaoe": "A",
+  "bbgauge": "24",
+  "bbdc": "6",
+  "bbmultiplier": "200",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "30133",
+  "evomats2": "30132",
+  "evomats3": "30132",
+  "evomats4": "30191",
+  "evomats5": "30191"
 }

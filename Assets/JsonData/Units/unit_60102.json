@@ -1,63 +1,63 @@
 {
   "id": "60102",
-  "unitName": "Memetes",
-  "freetext": ":''For other uses, Memetes (disambiguation).''",
-  "no": "150",
-  "element": "Dark",
-  "rarity": "★★★",
-  "cost": "5",
-  "maxlv": "40",
-  "basexp": "21",
-  "gender": "N",
-  "ai": "4",
-  "animation_attack": "74",
-  "animation_idle": "32",
-  "animation_move": "5",
-  "movespeed_attack": "0.0041",
-  "movespeed_skill": "0.0041",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "35, 39, 43",
-  "normal_distribute": "60, 20, 20",
-  "normal_totaldistr": "100",
-  "bb_frames": "35, 39, 43, 47",
-  "bb_distribute": "25, 25, 25, 25",
-  "bb_totaldistr": "100",
-  "description": "A devil said to be the enemy of all life. Originally from Hades, they appear in this world as commanded by Hell King Hades. As the balance keeper between this world and hell, their orders are to destroy those who disturb the balance. A swing of their scythe can only kill those who are already meant to die. No words of kindness or pity affect Memetes.",
-  "summon": "I control death.<br>I will help you as long<br>as your path is true.",
-  "fusion": "Why would you strenghten me,<br>enemy of all living things?<br>You are an unusual human.",
-  "evolution": "",
-  "hp_base": "1840",
-  "atk_base": "800",
-  "def_base": "500",
-  "rec_base": "310",
-  "hp_lord": "2876",
-  "atk_lord": "1088",
-  "def_lord": "700",
-  "rec_lord": "434",
-  "hp_anima": "3169",
-  "rec_anima": "356",
-  "atk_breaker": "1166",
-  "def_breaker": "622",
-  "atk_guardian": "1010",
-  "def_guardian": "778",
-  "rec_guardian": "395",
-  "def_oracle": "661",
-  "hp_oracle": "2759",
-  "rec_oracle": "551",
-  "hp_bonus": "300",
-  "atk_bonus": "160",
-  "def_bonus": "80",
-  "rec_bonus": "120",
-  "lordonly": "",
-  "combo_hits": "3",
-  "normaldc": "12",
-  "ls": "Intense Light",
-  "lsdescription": "Small boost in damage dealt during Spark",
-  "lsnote": "15% boost",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 800,
+      "def": 500,
+      "hp": 1840,
+      "rec": 310
+    },
+    "_lord": {
+      "atk": 1088,
+      "def": 700,
+      "hp": 2876,
+      "rec": 434
+    },
+    "anima": {
+      "atk": 1088,
+      "def": 700,
+      "hp max": 3266,
+      "hp min": 3071,
+      "rec max": 395,
+      "rec min": 317
+    },
+    "breaker": {
+      "atk max": 1205,
+      "atk min": 1127,
+      "def max": 661,
+      "def min": 583,
+      "hp": 2876,
+      "rec": 434
+    },
+    "guardian": {
+      "atk": 1088,
+      "def max": 817,
+      "def min": 739,
+      "hp": 2876,
+      "rec max": 434,
+      "rec min": 356
+    },
+    "oracle": {
+      "atk": 1088,
+      "def max": 700,
+      "def min": 622,
+      "hp": 2876,
+      "rec max": 590,
+      "rec min": 512
+    }
+  },
+  "leader_skill": {
+    "desc": "Small boost in damage dealt during Spark",
+    "effects": [
+      {
+        "damage% for spark": 15,
+        "passive id": "31"
+      }
+    ],
+    "id": "1300",
+    "name": "Intense Light"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -298,94 +298,99 @@
     ],
     "name": "Climb Pain"
   },
-  "bbdescription": "4 combo Dark elemental power attack on single Enemy & probable Curse effect",
-  "bbnote": "80% chance",
-  "bbtype": "Offense",
-  "bbhits": "4",
-  "bbaoe": "1",
-  "bbgauge": "15",
-  "bbdc": "4",
-  "bbmultiplier": "300",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "60103",
-  "evomats1": "60143",
-  "evomats2": "60122",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evozelcost": "100000",
-  "stats": {
-    "_base": {
-      "atk": 800,
-      "def": 500,
-      "hp": 1840,
-      "rec": 310
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_under",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1088,
-      "def": 700,
-      "hp": 2876,
-      "rec": 434
+    {
+      "action": "skill",
+      "chance%": 30.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1088,
-      "def": 700,
-      "hp max": 3266,
-      "hp min": 3071,
-      "rec max": 395,
-      "rec min": 317
+    {
+      "action": "attack",
+      "chance%": 70.0,
+      "target conditions": "hp_max",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 1205,
-      "atk min": 1127,
-      "def max": 661,
-      "def min": 583,
-      "hp": 2876,
-      "rec": 434
+    {
+      "action": "attack",
+      "chance%": 50.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "guardian": {
-      "atk": 1088,
-      "def max": 817,
-      "def min": 739,
-      "hp": 2876,
-      "rec max": 434,
-      "rec min": 356
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 74
     },
-    "oracle": {
-      "atk": 1088,
-      "def max": 700,
-      "def min": 622,
-      "hp": 2876,
-      "rec max": 590,
-      "rec min": 512
+    "idle": {
+      "total number of frames": 32
+    },
+    "move": {
+      "total number of frames": 5
     }
   },
-  "leader_skill": {
-    "desc": "Small boost in damage dealt during Spark",
-    "effects": [
-      {
-        "damage% for spark": 15,
-        "passive id": "31"
-      }
+  "category": 60100,
+  "cost": "5",
+  "damage frames": {
+    "frame times": [
+      35,
+      39,
+      43
     ],
-    "id": "1300",
-    "name": "Intense Light"
+    "hit dmg% distribution": [
+      60,
+      20,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 3
   },
-  "extra_skill": {},
+  "drop check count": 4,
+  "element": "dark",
+  "exp_pattern": 20,
+  "gender": "other",
+  "getting type": "rare summon",
+  "guide_id": 150,
+  "imp": {
+    "max atk": "160",
+    "max def": "80",
+    "max hp": "300",
+    "max rec": "120"
+  },
+  "kind": "normal",
+  "lord damage range": "1013~1131",
+  "movement": {
+    "attack": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    }
+  },
+  "name": "Memetes",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "Memetes",
+  "maxlv": "40",
+  "no": "150",
   "unitDisplayHomePosition_1W9CxaFK": "88,77,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "230,90,650,721",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "203,249,330,365,0",
@@ -395,5 +400,96 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "1000",
   "sellCaution": false,
-  "effectFrames": "29:126:1,33:126:1,37:126:1"
+  "effectFrames": "29:126:1,33:126:1,37:126:1",
+  "evofrom": "",
+  "evointo": "60103",
+  "evozelcost": "100000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60122",
+      "count": 1
+    }
+  ],
+  "freetext": ":''For other uses, Memetes (disambiguation).''",
+  "basexp": "21",
+  "animation_attack": "74",
+  "animation_idle": "32",
+  "animation_move": "5",
+  "movespeed_attack": "0.0041",
+  "movespeed_skill": "0.0041",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "35, 39, 43",
+  "normal_distribute": "60, 20, 20",
+  "normal_totaldistr": "100",
+  "bb_frames": "35, 39, 43, 47",
+  "bb_distribute": "25, 25, 25, 25",
+  "bb_totaldistr": "100",
+  "description": "A devil said to be the enemy of all life. Originally from Hades, they appear in this world as commanded by Hell King Hades. As the balance keeper between this world and hell, their orders are to destroy those who disturb the balance. A swing of their scythe can only kill those who are already meant to die. No words of kindness or pity affect Memetes.",
+  "summon": "I control death.<br>I will help you as long<br>as your path is true.",
+  "fusion": "Why would you strenghten me,<br>enemy of all living things?<br>You are an unusual human.",
+  "evolution": "",
+  "hp_base": "1840",
+  "atk_base": "800",
+  "def_base": "500",
+  "rec_base": "310",
+  "hp_lord": "2876",
+  "atk_lord": "1088",
+  "def_lord": "700",
+  "rec_lord": "434",
+  "hp_anima": "3169",
+  "rec_anima": "356",
+  "atk_breaker": "1166",
+  "def_breaker": "622",
+  "atk_guardian": "1010",
+  "def_guardian": "778",
+  "rec_guardian": "395",
+  "def_oracle": "661",
+  "hp_oracle": "2759",
+  "rec_oracle": "551",
+  "hp_bonus": "300",
+  "atk_bonus": "160",
+  "def_bonus": "80",
+  "rec_bonus": "120",
+  "lordonly": "",
+  "combo_hits": "3",
+  "normaldc": "12",
+  "ls": "Intense Light",
+  "lsdescription": "Small boost in damage dealt during Spark",
+  "lsnote": "15% boost",
+  "lstype": "Attack",
+  "bbdescription": "4 combo Dark elemental power attack on single Enemy & probable Curse effect",
+  "bbnote": "80% chance",
+  "bbtype": "Offense",
+  "bbhits": "4",
+  "bbaoe": "1",
+  "bbgauge": "15",
+  "bbdc": "4",
+  "bbmultiplier": "300",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "60143",
+  "evomats2": "60122",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": ""
 }

@@ -1,62 +1,71 @@
 {
   "id": "30293",
-  "unitName": "Lawful Warrior Aneil",
-  "no": "647",
-  "element": "Earth",
-  "rarity": "★★★★",
-  "cost": "12",
-  "maxlv": "60",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "106",
-  "animation_idle": "78",
-  "animation_move": "78",
-  "movespeed_attack": "2",
-  "movespeed_skill": "2",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "69, 75, 81, 87, 93",
-  "normal_distribute": "20, 20, 20, 20, 20",
-  "normal_totaldistr": "100",
-  "bb_frames": "80, 88, 96, 104, 112, 120, 128, 136",
-  "bb_distribute": "10, 10, 10, 10, 10, 10, 10, 30",
-  "bb_totaldistr": "100",
-  "description": "A good friend of Reed's, the soldier who led many civilians to El Gaia during the last stages of the war with the gods. He made plans to head for El Gaia to help his childhood friends, Reed & Lucana. It is said that while he had a genius-like ability for magic paired with an amazing intellect, he was never able to realise his true potential due to his cowardly personality. However, while protecting the refugees from the god army's attacks, he started having a change of heart, and meeting a certain person gave his powers the chance to bloom.",
-  "summon": "W-What's going on all of a sudden?!<br>D-Do you really think I'm good enough for this...?",
-  "fusion": "There's no point in using Fusion<br>on such a weakling like me...",
-  "evolution": "",
-  "hp_base": "2824",
-  "atk_base": "1000",
-  "def_base": "839",
-  "rec_base": "1141",
-  "hp_lord": "4065",
-  "atk_lord": "1333",
-  "def_lord": "1118",
-  "rec_lord": "1521",
-  "hp_anima": "4508",
-  "rec_anima": "1403",
-  "atk_breaker": "1451",
-  "def_breaker": "1000",
-  "atk_guardian": "1215",
-  "def_guardian": "1236",
-  "rec_guardian": "1462",
-  "def_oracle": "1059",
-  "hp_oracle": "3888",
-  "rec_oracle": "1698",
-  "hp_bonus": "400",
-  "atk_bonus": "200",
-  "def_bonus": "120",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "5",
-  "normaldc": "10",
-  "ls": "Phantom Awakening",
-  "lsdescription": "Probable slight boost in the BB gauge or HP recovery when attacked",
-  "lsnote": "30% chance to fill 2~4 BC & 30% chance to recover 15% HP from damage taken",
-  "lstype": "Recovery/Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 1000,
+      "def": 839,
+      "hp": 2824,
+      "rec": 1141
+    },
+    "_lord": {
+      "atk": 1333,
+      "def": 1118,
+      "hp": 4065,
+      "rec": 1521
+    },
+    "anima": {
+      "atk": 1333,
+      "def": 1118,
+      "hp max": 4655,
+      "hp min": 4360,
+      "rec max": 1462,
+      "rec min": 1344
+    },
+    "breaker": {
+      "atk max": 1510,
+      "atk min": 1392,
+      "def max": 1059,
+      "def min": 941,
+      "hp": 4065,
+      "rec": 1521
+    },
+    "guardian": {
+      "atk": 1333,
+      "def max": 1295,
+      "def min": 1177,
+      "hp": 4065,
+      "rec max": 1521,
+      "rec min": 1403
+    },
+    "oracle": {
+      "atk": 1333,
+      "def max": 1118,
+      "def min": 1000,
+      "hp": 4065,
+      "rec max": 1757,
+      "rec min": 1639
+    }
+  },
+  "leader_skill": {
+    "desc": "Probable slight boost in the BB gauge or HP recovery when attacked",
+    "effects": [
+      {
+        "bc fill when attacked high": 4,
+        "bc fill when attacked low": 2,
+        "bc fill when attacked%": 30,
+        "passive id": "25"
+      },
+      {
+        "dmg% to hp% when attacked chance%": 30,
+        "dmg% to hp% when attacked high": 15,
+        "dmg% to hp% when attacked low": 15,
+        "passive id": "24"
+      }
+    ],
+    "id": "6100",
+    "name": "Phantom Awakening"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -273,101 +282,91 @@
     ],
     "name": "Force Ignition"
   },
-  "bbdescription": "8 combo Fire, Water, Earth and Thunder elemental attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "8",
-  "bbaoe": "A",
-  "bbgauge": "26",
-  "bbdc": "8",
-  "bbmultiplier": "170",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "30294",
-  "evomats1": "30133",
-  "evomats2": "30191",
-  "evomats3": "30191",
-  "evomats4": "30132",
-  "evomats5": "60144",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 1000,
-      "def": 839,
-      "hp": 2824,
-      "rec": 1141
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1333,
-      "def": 1118,
-      "hp": 4065,
-      "rec": 1521
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1333,
-      "def": 1118,
-      "hp max": 4655,
-      "hp min": 4360,
-      "rec max": 1462,
-      "rec min": 1344
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 106
     },
-    "breaker": {
-      "atk max": 1510,
-      "atk min": 1392,
-      "def max": 1059,
-      "def min": 941,
-      "hp": 4065,
-      "rec": 1521
+    "idle": {
+      "total number of frames": 78
     },
-    "guardian": {
-      "atk": 1333,
-      "def max": 1295,
-      "def min": 1177,
-      "hp": 4065,
-      "rec max": 1521,
-      "rec min": 1403
-    },
-    "oracle": {
-      "atk": 1333,
-      "def max": 1118,
-      "def min": 1000,
-      "hp": 4065,
-      "rec max": 1757,
-      "rec min": 1639
+    "move": {
+      "total number of frames": 78
     }
   },
-  "leader_skill": {
-    "desc": "Probable slight boost in the BB gauge or HP recovery when attacked",
-    "effects": [
-      {
-        "bc fill when attacked high": 4,
-        "bc fill when attacked low": 2,
-        "bc fill when attacked%": 30,
-        "passive id": "25"
-      },
-      {
-        "dmg% to hp% when attacked chance%": 30,
-        "dmg% to hp% when attacked high": 15,
-        "dmg% to hp% when attacked low": 15,
-        "passive id": "24"
-      }
+  "category": 30290,
+  "cost": "12",
+  "damage frames": {
+    "frame times": [
+      69,
+      75,
+      81,
+      87,
+      93
     ],
-    "id": "6100",
-    "name": "Phantom Awakening"
+    "hit dmg% distribution": [
+      20,
+      20,
+      20,
+      20,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 5
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "earth",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "farmable",
+  "guide_id": 647,
+  "imp": {
+    "max atk": "200",
+    "max def": "120",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "1240~1386",
+  "movement": {
+    "attack": {
+      "move speed": 2,
+      "move speed type": "4",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 2,
+      "move speed type": "4",
+      "move type": "3"
+    }
+  },
+  "name": "Lawful Warrior Aneil",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Lawful Warrior Aneil",
+  "maxlv": "60",
+  "no": "647",
   "unitDisplayHomePosition_1W9CxaFK": "435,247,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-80,-20,1016,804",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "157,355,319,277,0",
@@ -377,5 +376,104 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "69:330391:1,70:230:1,70:242:1,76:242:1"
+  "effectFrames": "69:330391:1,70:230:1,70:242:1,76:242:1",
+  "evofrom": "",
+  "evointo": "30294",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "30133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30191",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "30132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "106",
+  "animation_idle": "78",
+  "animation_move": "78",
+  "movespeed_attack": "2",
+  "movespeed_skill": "2",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "69, 75, 81, 87, 93",
+  "normal_distribute": "20, 20, 20, 20, 20",
+  "normal_totaldistr": "100",
+  "bb_frames": "80, 88, 96, 104, 112, 120, 128, 136",
+  "bb_distribute": "10, 10, 10, 10, 10, 10, 10, 30",
+  "bb_totaldistr": "100",
+  "description": "A good friend of Reed's, the soldier who led many civilians to El Gaia during the last stages of the war with the gods. He made plans to head for El Gaia to help his childhood friends, Reed & Lucana. It is said that while he had a genius-like ability for magic paired with an amazing intellect, he was never able to realise his true potential due to his cowardly personality. However, while protecting the refugees from the god army's attacks, he started having a change of heart, and meeting a certain person gave his powers the chance to bloom.",
+  "summon": "W-What's going on all of a sudden?!<br>D-Do you really think I'm good enough for this...?",
+  "fusion": "There's no point in using Fusion<br>on such a weakling like me...",
+  "evolution": "",
+  "hp_base": "2824",
+  "atk_base": "1000",
+  "def_base": "839",
+  "rec_base": "1141",
+  "hp_lord": "4065",
+  "atk_lord": "1333",
+  "def_lord": "1118",
+  "rec_lord": "1521",
+  "hp_anima": "4508",
+  "rec_anima": "1403",
+  "atk_breaker": "1451",
+  "def_breaker": "1000",
+  "atk_guardian": "1215",
+  "def_guardian": "1236",
+  "rec_guardian": "1462",
+  "def_oracle": "1059",
+  "hp_oracle": "3888",
+  "rec_oracle": "1698",
+  "hp_bonus": "400",
+  "atk_bonus": "200",
+  "def_bonus": "120",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "5",
+  "normaldc": "10",
+  "ls": "Phantom Awakening",
+  "lsdescription": "Probable slight boost in the BB gauge or HP recovery when attacked",
+  "lsnote": "30% chance to fill 2~4 BC & 30% chance to recover 15% HP from damage taken",
+  "lstype": "Recovery/Brave Burst",
+  "bbdescription": "8 combo Fire, Water, Earth and Thunder elemental attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "8",
+  "bbaoe": "A",
+  "bbgauge": "26",
+  "bbdc": "8",
+  "bbmultiplier": "170",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "30133",
+  "evomats2": "30191",
+  "evomats3": "30191",
+  "evomats4": "30132",
+  "evomats5": "60144"
 }

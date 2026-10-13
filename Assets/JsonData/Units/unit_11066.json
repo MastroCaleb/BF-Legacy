@@ -1,68 +1,100 @@
 {
   "id": "11066",
-  "unitName": "Ardent Empress Agnia",
-  "no": "1624",
-  "element": "Fire",
-  "rarity": "★★★★★★★",
-  "cost": "46",
-  "maxlv": "150",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "137",
-  "animation_idle": "56",
-  "animation_move": "14",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "67, 71, 75, 79, 83, 87",
-  "normal_distribute": "15, 20, 17, 20, 15, 13",
-  "normal_totaldistr": "100",
-  "bb_frames": "67, 70, 73, 76, 79, 82, 85, 88, 91, 94, 97",
-  "bb_distribute": "12, 15, 12, 15, 9, 8, 8, 7, 6, 5, 3",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_frames": "67, 70, 73, 76, 79, 82, 85, 88, 91, 94, 97, 100, 103, 106",
-  "sbb_distribute": "10, 12, 10, 12, 10, 9, 8, 7, 5, 4, 4, 3, 3, 3",
-  "sbb_totaldistr": "100",
-  "sbb_effectdelay": "1",
-  "ubb_frames": "67, 70, 73, 76, 79, 82, 85, 88, 91, 94, 97, 100, 103, 106, 109, 112, 115, 118, 121",
-  "ubb_distribute": "8, 10, 8, 10, 8, 7, 6, 6, 5, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3",
-  "ubb_totaldistr": "100",
-  "ubb_effectdelay": "1",
-  "description": "Long, long ago, Agnia was one of the Six Imperial Gods who ruled before the Divine Ten. A higher deity known as the Ardent Empress, she ruled over the Agni region. A deity of wisdom and discipline, Agnia is said to have bestowed immense amounts of knowledge upon humanity. She scorned the Marine Emperor as a crude oaf, and their endless clashes eventually drew the other Imperial Gods into an all-out war. The Ardent Empress would slay the Verdant Emperor amid the chaos, only to receive a mortal wound herself from the raging Heavenly Empress. Accounts tell us that soon after, Agnia was slain in the name of the world's defense by the deity that would go on to become the Holy Emperor.",
-  "summon": "Your efforts in summoning me to be worshiped are admirable. I will require you to show your devotion often.",
-  "fusion": "Minions, follow after me! Exterminate the unclean, and cleanse this world by fire!",
-  "evolution": "",
-  "hp_base": "5198",
-  "atk_base": "2119",
-  "def_base": "2028",
-  "rec_base": "1910",
-  "hp_lord": "7419",
-  "atk_lord": "2868",
-  "def_lord": "2758",
-  "rec_lord": "2575",
-  "hp_anima": "8311",
-  "rec_anima": "2337",
-  "atk_breaker": "3106",
-  "def_breaker": "2520",
-  "def_guardian": "2996",
-  "rec_guardian": "2456",
-  "def_oracle": "2639",
-  "rec_oracle": "2932",
-  "hp_bonus": "1100",
-  "atk_bonus": "440",
-  "def_bonus": "440",
-  "rec_bonus": "440",
-  "lordonly": "",
-  "combo_hits": "6",
-  "normaldc": "36",
-  "ls": "Searing Commandment",
-  "lsdescription": "50% boost to Def, max HP, slightly boosts Atk, Def relative to remaining HP & 110% boost to Spark damage",
-  "lsnote": "0.3% boost to Atk, Def per 1% HP remaining",
+  "stats": {
+    "_base": {
+      "atk": 2119,
+      "def": 2028,
+      "hp": 5198,
+      "rec": 1910
+    },
+    "_lord": {
+      "atk": 2868,
+      "def": 2758,
+      "hp": 7419,
+      "rec": 2575
+    },
+    "anima": {
+      "atk": 2868,
+      "def": 2758,
+      "hp max": 8609,
+      "hp min": 8014,
+      "rec max": 2456,
+      "rec min": 2218
+    },
+    "breaker": {
+      "atk max": 3225,
+      "atk min": 2987,
+      "def max": 2639,
+      "def min": 2401,
+      "hp": 7419,
+      "rec": 2575
+    },
+    "guardian": {
+      "atk": 2868,
+      "def max": 3115,
+      "def min": 2877,
+      "hp": 7419,
+      "rec max": 2575,
+      "rec min": 2337
+    },
+    "oracle": {
+      "atk": 2868,
+      "def max": 2758,
+      "def min": 2520,
+      "hp": 7419,
+      "rec max": 3051,
+      "rec min": 2813
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to Def, max HP, slightly boosts Atk, Def relative to remaining HP & 110% boost to Spark damage",
+    "effects": [
+      {
+        "def% buff": 50,
+        "hp% buff": 50,
+        "passive id": "1"
+      },
+      {
+        "atk% base buff": 0,
+        "atk% extra buff based on hp": 30,
+        "buff proportional to hp": "remaining",
+        "def% base buff": 0,
+        "def% extra buff based on hp": 30,
+        "passive id": "46"
+      },
+      {
+        "damage% for spark": 110,
+        "passive id": "31"
+      }
+    ],
+    "id": "4373",
+    "name": "Searing Commandment"
+  },
+  "extra_skill": {
+    "desc": "Restores HP each turn & damage taken boosts BB gauge",
+    "effects": [
+      {
+        "conditions": [],
+        "passive id": "33",
+        "passive target": "self",
+        "rec% added (turn heal)": 10.0,
+        "turn heal high": 800,
+        "turn heal low": 600
+      },
+      {
+        "bc fill when attacked high": 3,
+        "bc fill when attacked low": 2,
+        "bc fill when attacked%": 100,
+        "conditions": [],
+        "passive id": "25",
+        "passive target": "self"
+      }
+    ],
+    "id": "35300",
+    "name": "Scarlet Cataclysm",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -753,14 +785,6 @@
     ],
     "name": "Crimson Phoenix"
   },
-  "bbdescription": "11 combo Fire attack on all foes, removes all status ailments, hugely boosts Def, Rec for 3 turns, considerably boosts Def, Rec relative to max HP for 3 turns & greatly restores HP for 3 turns",
-  "bbnote": "160% Def, Rec, 25% HP to Def, Rec & heals (3000~3500 + 15% Rec) HP",
-  "bbtype": "Offense",
-  "bbhits": "11",
-  "bbaoe": "A",
-  "bbgauge": "29",
-  "bbdc": "11",
-  "bbmultiplier": "380",
   "sbb": {
     "damage frames": [
       {
@@ -1327,14 +1351,6 @@
     ],
     "name": "Flame Glaive: Harmonia"
   },
-  "sbbdescription": "14 combo powerful Fire attack on all foes, enormously boosts Spark damage for 3 turns, hugely boosts BB gauge for 3 turns, boosts OD gauge fill rate at turn's end for 3 turns & damage taken may slightly restore HP for 3 turns",
-  "sbbnote": "100% Spark, fills 6 BC, fills 300 OD & 15% chance to heal 15-20% damage",
-  "sbbtype": "Offense",
-  "sbbhits": "14",
-  "sbbaoe": "A",
-  "sbbgauge": "29",
-  "sbbdc": "14",
-  "sbbmultiplier": "580",
   "ubb": {
     "damage frames": [
       {
@@ -1488,6 +1504,208 @@
     ],
     "name": "Saint Havette"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 137
+    },
+    "idle": {
+      "total number of frames": 56
+    },
+    "move": {
+      "total number of frames": 14
+    }
+  },
+  "category": 11060,
+  "cost": "46",
+  "damage frames": {
+    "frame times": [
+      67,
+      71,
+      75,
+      79,
+      83,
+      87
+    ],
+    "hit dmg% distribution": [
+      15,
+      20,
+      17,
+      20,
+      15,
+      13
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 6
+  },
+  "drop check count": 6,
+  "element": "fire",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 1624,
+  "imp": {
+    "max atk": "440",
+    "max def": "440",
+    "max hp": "1100",
+    "max rec": "440"
+  },
+  "kind": "normal",
+  "lord damage range": "2670~2982",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Ardent Empress Agnia",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Ardent Empress Agnia",
+  "maxlv": "120",
+  "no": "1624",
+  "unitDisplayHomePosition_1W9CxaFK": "626,347,174,475",
+  "unitDisplayDetailPosition_6z54rgb3": "-230,-125,1334,1088",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "-28,167,667,544,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-261,-383,1334,1088",
+  "unitDisplaySummonPosition_KC3Jk8Br": "-28,167,667,544,0",
+  "unitDisplayHpPosition_3BpHN6VD": "1,77",
+  "unitDisplayCursorPosition": "0,6",
+  "sellPrice": "15000",
+  "sellCaution": false,
+  "effectFrames": "61:11478:1,65:1090:1,68:500152:1,64:100199:1",
+  "evofrom": "",
+  "evointo": "11067",
+  "evozelcost": "3000000",
+  "evokarmacost": "1000000",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "10354",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10133",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "10191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 2
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "137",
+  "animation_idle": "56",
+  "animation_move": "14",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "67, 71, 75, 79, 83, 87",
+  "normal_distribute": "15, 20, 17, 20, 15, 13",
+  "normal_totaldistr": "100",
+  "bb_frames": "67, 70, 73, 76, 79, 82, 85, 88, 91, 94, 97",
+  "bb_distribute": "12, 15, 12, 15, 9, 8, 8, 7, 6, 5, 3",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_frames": "67, 70, 73, 76, 79, 82, 85, 88, 91, 94, 97, 100, 103, 106",
+  "sbb_distribute": "10, 12, 10, 12, 10, 9, 8, 7, 5, 4, 4, 3, 3, 3",
+  "sbb_totaldistr": "100",
+  "sbb_effectdelay": "1",
+  "ubb_frames": "67, 70, 73, 76, 79, 82, 85, 88, 91, 94, 97, 100, 103, 106, 109, 112, 115, 118, 121",
+  "ubb_distribute": "8, 10, 8, 10, 8, 7, 6, 6, 5, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3",
+  "ubb_totaldistr": "100",
+  "ubb_effectdelay": "1",
+  "description": "Long, long ago, Agnia was one of the Six Imperial Gods who ruled before the Divine Ten. A higher deity known as the Ardent Empress, she ruled over the Agni region. A deity of wisdom and discipline, Agnia is said to have bestowed immense amounts of knowledge upon humanity. She scorned the Marine Emperor as a crude oaf, and their endless clashes eventually drew the other Imperial Gods into an all-out war. The Ardent Empress would slay the Verdant Emperor amid the chaos, only to receive a mortal wound herself from the raging Heavenly Empress. Accounts tell us that soon after, Agnia was slain in the name of the world's defense by the deity that would go on to become the Holy Emperor.",
+  "summon": "Your efforts in summoning me to be worshiped are admirable. I will require you to show your devotion often.",
+  "fusion": "Minions, follow after me! Exterminate the unclean, and cleanse this world by fire!",
+  "evolution": "",
+  "hp_base": "5198",
+  "atk_base": "2119",
+  "def_base": "2028",
+  "rec_base": "1910",
+  "hp_lord": "7419",
+  "atk_lord": "2868",
+  "def_lord": "2758",
+  "rec_lord": "2575",
+  "hp_anima": "8311",
+  "rec_anima": "2337",
+  "atk_breaker": "3106",
+  "def_breaker": "2520",
+  "def_guardian": "2996",
+  "rec_guardian": "2456",
+  "def_oracle": "2639",
+  "rec_oracle": "2932",
+  "hp_bonus": "1100",
+  "atk_bonus": "440",
+  "def_bonus": "440",
+  "rec_bonus": "440",
+  "lordonly": "",
+  "combo_hits": "6",
+  "normaldc": "36",
+  "ls": "Searing Commandment",
+  "lsdescription": "50% boost to Def, max HP, slightly boosts Atk, Def relative to remaining HP & 110% boost to Spark damage",
+  "lsnote": "0.3% boost to Atk, Def per 1% HP remaining",
+  "bbdescription": "11 combo Fire attack on all foes, removes all status ailments, hugely boosts Def, Rec for 3 turns, considerably boosts Def, Rec relative to max HP for 3 turns & greatly restores HP for 3 turns",
+  "bbnote": "160% Def, Rec, 25% HP to Def, Rec & heals (3000~3500 + 15% Rec) HP",
+  "bbtype": "Offense",
+  "bbhits": "11",
+  "bbaoe": "A",
+  "bbgauge": "29",
+  "bbdc": "11",
+  "bbmultiplier": "380",
+  "sbbdescription": "14 combo powerful Fire attack on all foes, enormously boosts Spark damage for 3 turns, hugely boosts BB gauge for 3 turns, boosts OD gauge fill rate at turn's end for 3 turns & damage taken may slightly restore HP for 3 turns",
+  "sbbnote": "100% Spark, fills 6 BC, fills 300 OD & 15% chance to heal 15-20% damage",
+  "sbbtype": "Offense",
+  "sbbhits": "14",
+  "sbbaoe": "A",
+  "sbbgauge": "29",
+  "sbbdc": "14",
+  "sbbmultiplier": "580",
   "ubbdescription": "19 combo massive Fire attack on all foes, enormously boosts Spark damage for 3 turns, fully restores HP for 3 turns, enormously boosts BB gauge for 3 turns & hugely boosts OD gauge fill rate at turn's end for 3 turns",
   "ubbnote": "300% Spark, fills 50 BC & fills 600 OD",
   "ubbtype": "Offense",
@@ -1500,8 +1718,6 @@
   "esitem": "",
   "esdescription": "Restores HP each turn & damage taken boosts BB gauge",
   "esnote": "600-800 HP & fills 2-3 BC",
-  "evofrom": "",
-  "evointo": "11067",
   "evomats1": "Fire Mecha God",
   "evomats2": "Fire Mecha God",
   "evomats3": "Miracle Totem",
@@ -1510,111 +1726,5 @@
   "evomats6": "Fire Pot",
   "evomats7": "Metal Mimic",
   "evomats8": "Metal Mimic",
-  "evoitem": "",
-  "evozelcost": "3000000",
-  "stats": {
-    "_base": {
-      "atk": 2119,
-      "def": 2028,
-      "hp": 5198,
-      "rec": 1910
-    },
-    "_lord": {
-      "atk": 2868,
-      "def": 2758,
-      "hp": 7419,
-      "rec": 2575
-    },
-    "anima": {
-      "atk": 2868,
-      "def": 2758,
-      "hp max": 8609,
-      "hp min": 8014,
-      "rec max": 2456,
-      "rec min": 2218
-    },
-    "breaker": {
-      "atk max": 3225,
-      "atk min": 2987,
-      "def max": 2639,
-      "def min": 2401,
-      "hp": 7419,
-      "rec": 2575
-    },
-    "guardian": {
-      "atk": 2868,
-      "def max": 3115,
-      "def min": 2877,
-      "hp": 7419,
-      "rec max": 2575,
-      "rec min": 2337
-    },
-    "oracle": {
-      "atk": 2868,
-      "def max": 2758,
-      "def min": 2520,
-      "hp": 7419,
-      "rec max": 3051,
-      "rec min": 2813
-    }
-  },
-  "leader_skill": {
-    "desc": "50% boost to Def, max HP, slightly boosts Atk, Def relative to remaining HP & 110% boost to Spark damage",
-    "effects": [
-      {
-        "def% buff": 50,
-        "hp% buff": 50,
-        "passive id": "1"
-      },
-      {
-        "atk% base buff": 0,
-        "atk% extra buff based on hp": 30,
-        "buff proportional to hp": "remaining",
-        "def% base buff": 0,
-        "def% extra buff based on hp": 30,
-        "passive id": "46"
-      },
-      {
-        "damage% for spark": 110,
-        "passive id": "31"
-      }
-    ],
-    "id": "4373",
-    "name": "Searing Commandment"
-  },
-  "extra_skill": {
-    "desc": "Restores HP each turn & damage taken boosts BB gauge",
-    "effects": [
-      {
-        "conditions": [],
-        "passive id": "33",
-        "passive target": "self",
-        "rec% added (turn heal)": 10.0,
-        "turn heal high": 800,
-        "turn heal low": 600
-      },
-      {
-        "bc fill when attacked high": 3,
-        "bc fill when attacked low": 2,
-        "bc fill when attacked%": 100,
-        "conditions": [],
-        "passive id": "25",
-        "passive target": "self"
-      }
-    ],
-    "id": "35300",
-    "name": "Scarlet Cataclysm",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "626,347,174,475",
-  "unitDisplayDetailPosition_6z54rgb3": "-230,-125,1334,1088",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "-28,167,667,544,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-261,-383,1334,1088",
-  "unitDisplaySummonPosition_KC3Jk8Br": "-28,167,667,544,0",
-  "unitDisplayHpPosition_3BpHN6VD": "1,77",
-  "unitDisplayCursorPosition": "0,6",
-  "sellPrice": "15000",
-  "sellCaution": false,
-  "effectFrames": "61:11478:1,65:1090:1,68:500152:1,64:100199:1"
+  "evoitem": ""
 }

@@ -1,62 +1,63 @@
 {
   "id": "40113",
-  "unitName": "King Behemoth",
-  "no": "145",
-  "element": "Thunder",
-  "rarity": "★★★★",
-  "cost": "8",
-  "maxlv": "60",
-  "basexp": "21",
-  "gender": "N",
-  "ai": "3",
-  "animation_attack": "44",
-  "animation_idle": "68",
-  "animation_move": "44",
-  "movespeed_attack": "0.0041",
-  "movespeed_skill": "0.0041",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "29, 33, 37",
-  "normal_distribute": "60, 30, 10",
-  "normal_totaldistr": "100",
-  "bb_frames": "29, 33, 37",
-  "bb_distribute": "33, 33, 34",
-  "bb_totaldistr": "100",
-  "description": "A beast characterized by its muscular body and giant horns.Behemoths can't coexist with other behemoths. They will fight to the death if they meet. Those that survive this struggle become a King Behemoth. Their roar symbolize death, and those who hear it can do little more than sit and pray that the storm doesn't come their way.",
-  "summon": "Growl! My roar signals <br>the end of a life. <br>Endure it and become my master!",
-  "fusion": "Roar!!<br>Let my power grow!!",
-  "evolution": "Lead me to my prey!<br>I will make quick work of it!",
-  "hp_base": "2772",
-  "atk_base": "688",
-  "def_base": "925",
-  "rec_base": "426",
-  "hp_lord": "4304",
-  "atk_lord": "994",
-  "def_lord": "1297",
-  "rec_lord": "743",
-  "hp_anima": "4747",
-  "rec_anima": "625",
-  "atk_breaker": "1112",
-  "def_breaker": "1179",
-  "atk_guardian": "876",
-  "def_guardian": "1415",
-  "rec_guardian": "684",
-  "def_oracle": "1238",
-  "hp_oracle": "4127",
-  "rec_oracle": "920",
-  "hp_bonus": "400",
-  "atk_bonus": "200",
-  "def_bonus": "120",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "3",
-  "normaldc": "12",
-  "ls": "Intense Flash",
-  "lsdescription": "Boost in damage dealt during Spark",
-  "lsnote": "30% boost",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 688,
+      "def": 925,
+      "hp": 2772,
+      "rec": 426
+    },
+    "_lord": {
+      "atk": 994,
+      "def": 1297,
+      "hp": 4304,
+      "rec": 743
+    },
+    "anima": {
+      "atk": 994,
+      "def": 1297,
+      "hp max": 4894,
+      "hp min": 4599,
+      "rec max": 684,
+      "rec min": 566
+    },
+    "breaker": {
+      "atk max": 1171,
+      "atk min": 1053,
+      "def max": 1238,
+      "def min": 1120,
+      "hp": 4304,
+      "rec": 743
+    },
+    "guardian": {
+      "atk": 994,
+      "def max": 1474,
+      "def min": 1356,
+      "hp": 4304,
+      "rec max": 743,
+      "rec min": 625
+    },
+    "oracle": {
+      "atk": 994,
+      "def max": 1297,
+      "def min": 1179,
+      "hp": 4304,
+      "rec max": 979,
+      "rec min": 861
+    }
+  },
+  "leader_skill": {
+    "desc": "Boost in damage dealt during Spark",
+    "effects": [
+      {
+        "damage% for spark": 30,
+        "passive id": "31"
+      }
+    ],
+    "id": "1301",
+    "name": "Intense Flash"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -213,93 +214,93 @@
     ],
     "name": "Meteor Zapper"
   },
-  "bbdescription": "3 combo Thunder elemental power attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "3",
-  "bbaoe": "A",
-  "bbgauge": "20",
-  "bbdc": "3",
-  "bbmultiplier": "170",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "40112",
-  "evointo": "40114",
-  "evomats1": "40133",
-  "evomats2": "60143",
-  "evomats3": "60142",
-  "evomats4": "40131",
-  "evomats5": "40130",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 688,
-      "def": 925,
-      "hp": 2772,
-      "rec": 426
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 994,
-      "def": 1297,
-      "hp": 4304,
-      "rec": 743
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 994,
-      "def": 1297,
-      "hp max": 4894,
-      "hp min": 4599,
-      "rec max": 684,
-      "rec min": 566
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 1171,
-      "atk min": 1053,
-      "def max": 1238,
-      "def min": 1120,
-      "hp": 4304,
-      "rec": 743
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 44
     },
-    "guardian": {
-      "atk": 994,
-      "def max": 1474,
-      "def min": 1356,
-      "hp": 4304,
-      "rec max": 743,
-      "rec min": 625
+    "idle": {
+      "total number of frames": 68
     },
-    "oracle": {
-      "atk": 994,
-      "def max": 1297,
-      "def min": 1179,
-      "hp": 4304,
-      "rec max": 979,
-      "rec min": 861
+    "move": {
+      "total number of frames": 44
     }
   },
-  "leader_skill": {
-    "desc": "Boost in damage dealt during Spark",
-    "effects": [
-      {
-        "damage% for spark": 30,
-        "passive id": "31"
-      }
+  "category": 40110,
+  "cost": "8",
+  "damage frames": {
+    "frame times": [
+      29,
+      33,
+      37
     ],
-    "id": "1301",
-    "name": "Intense Flash"
+    "hit dmg% distribution": [
+      60,
+      30,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 3
   },
-  "extra_skill": {},
+  "drop check count": 4,
+  "element": "thunder",
+  "exp_pattern": 20,
+  "gender": "other",
+  "getting type": "rare summon",
+  "guide_id": 145,
+  "imp": {
+    "max atk": "200",
+    "max def": "120",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "925~1033",
+  "movement": {
+    "attack": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    }
+  },
+  "name": "King Behemoth",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "King Behemoth",
+  "maxlv": "60",
+  "no": "145",
   "unitDisplayHomePosition_1W9CxaFK": "122,58,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "39,186,820,609",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "46,297,480,356,0",
@@ -309,5 +310,109 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "23:134:1,27:134:1,31:134:1"
+  "effectFrames": "23:134:1,27:134:1,31:134:1",
+  "evofrom": "40112",
+  "evointo": "40114",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "40133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60142",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40131",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40130",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "44",
+  "animation_idle": "68",
+  "animation_move": "44",
+  "movespeed_attack": "0.0041",
+  "movespeed_skill": "0.0041",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "29, 33, 37",
+  "normal_distribute": "60, 30, 10",
+  "normal_totaldistr": "100",
+  "bb_frames": "29, 33, 37",
+  "bb_distribute": "33, 33, 34",
+  "bb_totaldistr": "100",
+  "description": "A beast characterized by its muscular body and giant horns.Behemoths can't coexist with other behemoths. They will fight to the death if they meet. Those that survive this struggle become a King Behemoth. Their roar symbolize death, and those who hear it can do little more than sit and pray that the storm doesn't come their way.",
+  "summon": "Growl! My roar signals <br>the end of a life. <br>Endure it and become my master!",
+  "fusion": "Roar!!<br>Let my power grow!!",
+  "evolution": "Lead me to my prey!<br>I will make quick work of it!",
+  "hp_base": "2772",
+  "atk_base": "688",
+  "def_base": "925",
+  "rec_base": "426",
+  "hp_lord": "4304",
+  "atk_lord": "994",
+  "def_lord": "1297",
+  "rec_lord": "743",
+  "hp_anima": "4747",
+  "rec_anima": "625",
+  "atk_breaker": "1112",
+  "def_breaker": "1179",
+  "atk_guardian": "876",
+  "def_guardian": "1415",
+  "rec_guardian": "684",
+  "def_oracle": "1238",
+  "hp_oracle": "4127",
+  "rec_oracle": "920",
+  "hp_bonus": "400",
+  "atk_bonus": "200",
+  "def_bonus": "120",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "3",
+  "normaldc": "12",
+  "ls": "Intense Flash",
+  "lsdescription": "Boost in damage dealt during Spark",
+  "lsnote": "30% boost",
+  "lstype": "Attack",
+  "bbdescription": "3 combo Thunder elemental power attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "3",
+  "bbaoe": "A",
+  "bbgauge": "20",
+  "bbdc": "3",
+  "bbmultiplier": "170",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "40133",
+  "evomats2": "60143",
+  "evomats3": "60142",
+  "evomats4": "40131",
+  "evomats5": "40130"
 }

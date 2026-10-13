@@ -1,62 +1,71 @@
 {
   "id": "10284",
-  "unitName": "Rakshasa Vishra",
-  "no": "378",
-  "element": "Fire",
-  "rarity": "★★★★★",
-  "cost": "15",
-  "maxlv": "80",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "3",
-  "animation_attack": "80",
-  "animation_idle": "56",
-  "animation_move": "7",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "26, 34, 42, 50, 58, 66, 74",
-  "normal_distribute": "13, 13, 13, 13, 13, 13, 22",
-  "normal_totaldistr": "100",
-  "bb_frames": "30, 38, 46, 54, 62, 70, 78, 84",
-  "bb_distribute": "13, 13, 13, 13, 13, 13, 22, 20",
-  "bb_totaldistr": "120",
-  "description": "The former knight turned into an evil demon by the armor that curses any who wear it. Though the curse took away his sorrow, his former personality remained. Despite the deep regret he felt for his own actions many appeared before him in hopes of vanquishing him only to become sacrifices to his armor. It is said that the one to finally defeat him was a twin sword wielding warrior dressed in black armor. It is said that the evil demon seemed weakened during their battle, though even now none knows why.",
-  "summon": "Do you wish to command<br>even this cursed armor of mine?<br>Then I put my trust in you!",
-  "fusion": "Stop it!<br>I'm going to lose control!<br>The demon inside is waking.",
-  "evolution": "Have a look.<br>Human blood has added to<br>my armor's brilliant shine.",
-  "hp_base": "3121",
-  "atk_base": "1149",
-  "def_base": "1050",
-  "rec_base": "799",
-  "hp_lord": "4862",
-  "atk_lord": "1716",
-  "def_lord": "1567",
-  "rec_lord": "1181",
-  "hp_anima": "5455",
-  "rec_anima": "1023",
-  "atk_breaker": "1874",
-  "def_breaker": "1409",
-  "atk_guardian": "1558",
-  "def_guardian": "1725",
-  "rec_guardian": "1102",
-  "def_oracle": "1488",
-  "hp_oracle": "4625",
-  "rec_oracle": "1418",
-  "hp_bonus": "500",
-  "atk_bonus": "200",
-  "def_bonus": "200",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "7",
-  "normaldc": "21",
-  "ls": "Pandemic Spread",
-  "lsdescription": "Chance of inflicting a random status ailment when attacking",
-  "lsnote": "5% chance to inflict Curse, Paralysis, Poison, 7% chance to inflict Injury, Sick, Weak",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 1149,
+      "def": 1050,
+      "hp": 3121,
+      "rec": 799
+    },
+    "_lord": {
+      "atk": 1716,
+      "def": 1567,
+      "hp": 4862,
+      "rec": 1181
+    },
+    "anima": {
+      "atk": 1716,
+      "def": 1567,
+      "hp max": 5652,
+      "hp min": 5257,
+      "rec max": 1102,
+      "rec min": 944
+    },
+    "breaker": {
+      "atk max": 1953,
+      "atk min": 1795,
+      "def max": 1488,
+      "def min": 1330,
+      "hp": 4862,
+      "rec": 1181
+    },
+    "guardian": {
+      "atk": 1716,
+      "def max": 1804,
+      "def min": 1646,
+      "hp": 4862,
+      "rec max": 1181,
+      "rec min": 1023
+    },
+    "oracle": {
+      "atk": 1716,
+      "def max": 1567,
+      "def min": 1409,
+      "hp": 4862,
+      "rec max": 1497,
+      "rec min": 1339
+    }
+  },
+  "leader_skill": {
+    "desc": "Chance of inflicting a random status ailment when attacking",
+    "effects": [
+      {
+        "injury%": 7,
+        "passive id": "20",
+        "poison%": 5,
+        "sick%": 7,
+        "weaken%": 7
+      },
+      {
+        "curse%": 5,
+        "paralysis%": 5,
+        "passive id": "20"
+      }
+    ],
+    "id": "3001",
+    "name": "Pandemic Spread"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -305,103 +314,101 @@
     ],
     "name": "Rakshasa Execution"
   },
-  "bbdescription": "8 combo powerful Fire attack on all enemies & probable Curse effect",
-  "bbnote": "45% chance",
-  "bbtype": "Offense",
-  "bbhits": "8",
-  "bbaoe": "A",
-  "bbgauge": "28",
-  "bbdc": "8",
-  "bbmultiplier": "200",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "10283",
-  "evointo": "10285",
-  "evomats1": "50354",
-  "evomats2": "10133",
-  "evomats3": "10132",
-  "evomats4": "10132",
-  "evomats5": "60224",
-  "evoitem": "",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 1149,
-      "def": 1050,
-      "hp": 3121,
-      "rec": 799
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1716,
-      "def": 1567,
-      "hp": 4862,
-      "rec": 1181
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1716,
-      "def": 1567,
-      "hp max": 5652,
-      "hp min": 5257,
-      "rec max": 1102,
-      "rec min": 944
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 1953,
-      "atk min": 1795,
-      "def max": 1488,
-      "def min": 1330,
-      "hp": 4862,
-      "rec": 1181
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 80
     },
-    "guardian": {
-      "atk": 1716,
-      "def max": 1804,
-      "def min": 1646,
-      "hp": 4862,
-      "rec max": 1181,
-      "rec min": 1023
+    "idle": {
+      "total number of frames": 56
     },
-    "oracle": {
-      "atk": 1716,
-      "def max": 1567,
-      "def min": 1409,
-      "hp": 4862,
-      "rec max": 1497,
-      "rec min": 1339
+    "move": {
+      "total number of frames": 7
     }
   },
-  "leader_skill": {
-    "desc": "Chance of inflicting a random status ailment when attacking",
-    "effects": [
-      {
-        "injury%": 7,
-        "passive id": "20",
-        "poison%": 5,
-        "sick%": 7,
-        "weaken%": 7
-      },
-      {
-        "curse%": 5,
-        "paralysis%": 5,
-        "passive id": "20"
-      }
+  "category": 10280,
+  "cost": "15",
+  "damage frames": {
+    "frame times": [
+      26,
+      34,
+      42,
+      50,
+      58,
+      66,
+      74
     ],
-    "id": "3001",
-    "name": "Pandemic Spread"
+    "hit dmg% distribution": [
+      13,
+      13,
+      13,
+      13,
+      13,
+      13,
+      22
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 7
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "fire",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 378,
+  "imp": {
+    "max atk": "200",
+    "max def": "200",
+    "max hp": "500",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "1597~1784",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Rakshasa Vishra",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Rakshasa Vishra",
+  "maxlv": "80",
+  "no": "378",
   "unitDisplayHomePosition_1W9CxaFK": "444,211,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-174,7,1125,810",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "81,371,429,273,0",
@@ -411,5 +418,106 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "20:127:1,28:127:1,36:127:1,44:127:1,52:127:1,60:127:1,68:127:1,20:100111:1,74:150:1,68:100010:1,74:600220:1"
+  "effectFrames": "20:127:1,28:127:1,36:127:1,44:127:1,52:127:1,60:127:1,68:127:1,20:100111:1,74:150:1,68:100010:1,74:600220:1",
+  "evofrom": "10283",
+  "evointo": "10285",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10132",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "80",
+  "animation_idle": "56",
+  "animation_move": "7",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "26, 34, 42, 50, 58, 66, 74",
+  "normal_distribute": "13, 13, 13, 13, 13, 13, 22",
+  "normal_totaldistr": "100",
+  "bb_frames": "30, 38, 46, 54, 62, 70, 78, 84",
+  "bb_distribute": "13, 13, 13, 13, 13, 13, 22, 20",
+  "bb_totaldistr": "120",
+  "description": "The former knight turned into an evil demon by the armor that curses any who wear it. Though the curse took away his sorrow, his former personality remained. Despite the deep regret he felt for his own actions many appeared before him in hopes of vanquishing him only to become sacrifices to his armor. It is said that the one to finally defeat him was a twin sword wielding warrior dressed in black armor. It is said that the evil demon seemed weakened during their battle, though even now none knows why.",
+  "summon": "Do you wish to command<br>even this cursed armor of mine?<br>Then I put my trust in you!",
+  "fusion": "Stop it!<br>I'm going to lose control!<br>The demon inside is waking.",
+  "evolution": "Have a look.<br>Human blood has added to<br>my armor's brilliant shine.",
+  "hp_base": "3121",
+  "atk_base": "1149",
+  "def_base": "1050",
+  "rec_base": "799",
+  "hp_lord": "4862",
+  "atk_lord": "1716",
+  "def_lord": "1567",
+  "rec_lord": "1181",
+  "hp_anima": "5455",
+  "rec_anima": "1023",
+  "atk_breaker": "1874",
+  "def_breaker": "1409",
+  "atk_guardian": "1558",
+  "def_guardian": "1725",
+  "rec_guardian": "1102",
+  "def_oracle": "1488",
+  "hp_oracle": "4625",
+  "rec_oracle": "1418",
+  "hp_bonus": "500",
+  "atk_bonus": "200",
+  "def_bonus": "200",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "7",
+  "normaldc": "21",
+  "ls": "Pandemic Spread",
+  "lsdescription": "Chance of inflicting a random status ailment when attacking",
+  "lsnote": "5% chance to inflict Curse, Paralysis, Poison, 7% chance to inflict Injury, Sick, Weak",
+  "lstype": "Attack",
+  "bbdescription": "8 combo powerful Fire attack on all enemies & probable Curse effect",
+  "bbnote": "45% chance",
+  "bbtype": "Offense",
+  "bbhits": "8",
+  "bbaoe": "A",
+  "bbgauge": "28",
+  "bbdc": "8",
+  "bbmultiplier": "200",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "10133",
+  "evomats3": "10132",
+  "evomats4": "10132",
+  "evomats5": "60224",
+  "evoitem": ""
 }

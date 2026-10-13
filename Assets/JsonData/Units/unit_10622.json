@@ -1,62 +1,65 @@
 {
   "id": "10622",
-  "unitName": "Anje",
-  "freetext": ":''For other uses, see Anje (disambiguation)''",
-  "no": "1023",
-  "element": "Fire",
-  "rarity": "★★★",
-  "cost": "6",
-  "maxlv": "40",
-  "basexp": "15",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "131",
-  "animation_idle": "44",
-  "animation_move": "6",
-  "movespeed_attack": "0.0041",
-  "movespeed_skill": "0.0041",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "29, 82, 85, 88",
-  "normal_distribute": "30, 20, 20, 30",
-  "normal_totaldistr": "100",
-  "bb_frames": "29, 82, 85, 88, 91",
-  "bb_distribute": "15, 40, 30, 10, 5",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "description": "A female knight from the La Veda Republic who lived before the great war against the gods took place. Extremely talented in the art of battle and a natural warrior, Anje is said to have been expected to become a great knight. Many believe that though she was the silent type, she was kind and loving to animals, and a very fervent worshipper of the gods. Anje was last seen offering a morning prayer to the gods before she vanished without a trace. Countless knights of the kingdom were sent out in search of her, but she was never found.",
-  "summon": "I've been summoned...?<br>Nice to meet you...<br>I shall be your lance and shield...",
-  "fusion": "Thank you...<br>I'm glad to know...<br>That I'm of some use...",
-  "evolution": "",
-  "hp_base": "2336",
-  "atk_base": "816",
-  "def_base": "864",
-  "rec_base": "721",
-  "hp_lord": "3415",
-  "atk_lord": "1088",
-  "def_lord": "1153",
-  "rec_lord": "961",
-  "hp_anima": "3707",
-  "rec_anima": "883",
-  "atk_breaker": "1166",
-  "def_breaker": "1075",
-  "def_guardian": "1231",
-  "rec_guardian": "922",
-  "def_oracle": "1114",
-  "rec_oracle": "1078",
-  "hp_bonus": "300",
-  "atk_bonus": "120",
-  "def_bonus": "120",
-  "rec_bonus": "120",
-  "lordonly": "",
-  "combo_hits": "4",
-  "normaldc": "8",
-  "ls": "Crimson Shield's Formation",
-  "lsdescription": "Boosts Def relative to how high remaining HP is",
-  "lsnote": "0.5% boost per 1% HP remaining",
-  "lstype": "Defense",
+  "stats": {
+    "_base": {
+      "atk": 816,
+      "def": 864,
+      "hp": 2336,
+      "rec": 721
+    },
+    "_lord": {
+      "atk": 1088,
+      "def": 1153,
+      "hp": 3415,
+      "rec": 961
+    },
+    "anima": {
+      "atk": 1088,
+      "def": 1153,
+      "hp max": 3805,
+      "hp min": 3610,
+      "rec max": 922,
+      "rec min": 844
+    },
+    "breaker": {
+      "atk max": 1205,
+      "atk min": 1127,
+      "def max": 1114,
+      "def min": 1036,
+      "hp": 3415,
+      "rec": 961
+    },
+    "guardian": {
+      "atk": 1088,
+      "def max": 1270,
+      "def min": 1192,
+      "hp": 3415,
+      "rec max": 961,
+      "rec min": 883
+    },
+    "oracle": {
+      "atk": 1088,
+      "def max": 1153,
+      "def min": 1075,
+      "hp": 3415,
+      "rec max": 1117,
+      "rec min": 1039
+    }
+  },
+  "leader_skill": {
+    "desc": "Boosts Def relative to how high remaining HP is",
+    "effects": [
+      {
+        "buff proportional to hp": "remaining",
+        "def% base buff": 0,
+        "def% extra buff based on hp": 50,
+        "passive id": "46"
+      }
+    ],
+    "id": "9310",
+    "name": "Crimson Shield's Formation"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -309,6 +312,179 @@
     ],
     "name": "Armored Flower"
   },
+  "sbb": {},
+  "ubb": {},
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 131
+    },
+    "idle": {
+      "total number of frames": 44
+    },
+    "move": {
+      "total number of frames": 6
+    }
+  },
+  "category": 10620,
+  "cost": "6",
+  "damage frames": {
+    "frame times": [
+      29,
+      82,
+      85,
+      88
+    ],
+    "hit dmg% distribution": [
+      30,
+      20,
+      20,
+      30
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 4
+  },
+  "drop check count": 2,
+  "element": "fire",
+  "exp_pattern": 15,
+  "gender": "female",
+  "getting type": "farmable",
+  "guide_id": 1023,
+  "imp": {
+    "max atk": "120",
+    "max def": "120",
+    "max hp": "300",
+    "max rec": "120"
+  },
+  "kind": "normal",
+  "lord damage range": "1013~1131",
+  "movement": {
+    "attack": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    }
+  },
+  "name": "Anje",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "Anje",
+  "maxlv": "40",
+  "no": "1023",
+  "unitDisplayHomePosition_1W9CxaFK": "420,85,190,519",
+  "unitDisplayDetailPosition_6z54rgb3": "-90,122,980,697",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "75,320,450,320,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-76,-136,980,697",
+  "unitDisplaySummonPosition_KC3Jk8Br": "67,313,460,327,0",
+  "unitDisplayHpPosition_3BpHN6VD": "-4,5",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "1000",
+  "sellCaution": false,
+  "effectFrames": "29:131:1,29:100082:1,76:121:1,79:121:1,81:121:1,81:100010:1,81:100082:1",
+  "evofrom": "",
+  "evointo": "10623",
+  "evozelcost": "100000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "10191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10131",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60142",
+      "count": 1
+    }
+  ],
+  "freetext": ":''For other uses, see Anje (disambiguation)''",
+  "basexp": "15",
+  "animation_attack": "131",
+  "animation_idle": "44",
+  "animation_move": "6",
+  "movespeed_attack": "0.0041",
+  "movespeed_skill": "0.0041",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "29, 82, 85, 88",
+  "normal_distribute": "30, 20, 20, 30",
+  "normal_totaldistr": "100",
+  "bb_frames": "29, 82, 85, 88, 91",
+  "bb_distribute": "15, 40, 30, 10, 5",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "description": "A female knight from the La Veda Republic who lived before the great war against the gods took place. Extremely talented in the art of battle and a natural warrior, Anje is said to have been expected to become a great knight. Many believe that though she was the silent type, she was kind and loving to animals, and a very fervent worshipper of the gods. Anje was last seen offering a morning prayer to the gods before she vanished without a trace. Countless knights of the kingdom were sent out in search of her, but she was never found.",
+  "summon": "I've been summoned...?<br>Nice to meet you...<br>I shall be your lance and shield...",
+  "fusion": "Thank you...<br>I'm glad to know...<br>That I'm of some use...",
+  "evolution": "",
+  "hp_base": "2336",
+  "atk_base": "816",
+  "def_base": "864",
+  "rec_base": "721",
+  "hp_lord": "3415",
+  "atk_lord": "1088",
+  "def_lord": "1153",
+  "rec_lord": "961",
+  "hp_anima": "3707",
+  "rec_anima": "883",
+  "atk_breaker": "1166",
+  "def_breaker": "1075",
+  "def_guardian": "1231",
+  "rec_guardian": "922",
+  "def_oracle": "1114",
+  "rec_oracle": "1078",
+  "hp_bonus": "300",
+  "atk_bonus": "120",
+  "def_bonus": "120",
+  "rec_bonus": "120",
+  "lordonly": "",
+  "combo_hits": "4",
+  "normaldc": "8",
+  "ls": "Crimson Shield's Formation",
+  "lsdescription": "Boosts Def relative to how high remaining HP is",
+  "lsnote": "0.5% boost per 1% HP remaining",
+  "lstype": "Defense",
   "bbdescription": "5 combo Fire attack on all foes & slight damage reduction for 1 turn",
   "bbnote": "25% reduction",
   "bbtype": "Support/Offense",
@@ -317,7 +493,6 @@
   "bbgauge": "20",
   "bbdc": "5",
   "bbmultiplier": "160",
-  "sbb": {},
   "sbbdescription": "",
   "sbbtype": "",
   "sbbhits": "",
@@ -325,7 +500,6 @@
   "sbbgauge": "",
   "sbbdc": "",
   "sbbmultiplier": "",
-  "ubb": {},
   "ubbdescription": "",
   "ubbtype": "",
   "ubbhits": "",
@@ -336,83 +510,10 @@
   "es": "",
   "esitem": "",
   "esdescription": "",
-  "evofrom": "",
-  "evointo": "10623",
   "evomats1": "10191",
   "evomats2": "10132",
   "evomats3": "10131",
   "evomats4": "60143",
   "evomats5": "60142",
-  "evoitem": "",
-  "evozelcost": "100000",
-  "stats": {
-    "_base": {
-      "atk": 816,
-      "def": 864,
-      "hp": 2336,
-      "rec": 721
-    },
-    "_lord": {
-      "atk": 1088,
-      "def": 1153,
-      "hp": 3415,
-      "rec": 961
-    },
-    "anima": {
-      "atk": 1088,
-      "def": 1153,
-      "hp max": 3805,
-      "hp min": 3610,
-      "rec max": 922,
-      "rec min": 844
-    },
-    "breaker": {
-      "atk max": 1205,
-      "atk min": 1127,
-      "def max": 1114,
-      "def min": 1036,
-      "hp": 3415,
-      "rec": 961
-    },
-    "guardian": {
-      "atk": 1088,
-      "def max": 1270,
-      "def min": 1192,
-      "hp": 3415,
-      "rec max": 961,
-      "rec min": 883
-    },
-    "oracle": {
-      "atk": 1088,
-      "def max": 1153,
-      "def min": 1075,
-      "hp": 3415,
-      "rec max": 1117,
-      "rec min": 1039
-    }
-  },
-  "leader_skill": {
-    "desc": "Boosts Def relative to how high remaining HP is",
-    "effects": [
-      {
-        "buff proportional to hp": "remaining",
-        "def% base buff": 0,
-        "def% extra buff based on hp": 50,
-        "passive id": "46"
-      }
-    ],
-    "id": "9310",
-    "name": "Crimson Shield's Formation"
-  },
-  "extra_skill": {},
-  "unitDisplayHomePosition_1W9CxaFK": "420,85,190,519",
-  "unitDisplayDetailPosition_6z54rgb3": "-90,122,980,697",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "75,320,450,320,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-76,-136,980,697",
-  "unitDisplaySummonPosition_KC3Jk8Br": "67,313,460,327,0",
-  "unitDisplayHpPosition_3BpHN6VD": "-4,5",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "1000",
-  "sellCaution": false,
-  "effectFrames": "29:131:1,29:100082:1,76:121:1,79:121:1,81:121:1,81:100010:1,81:100082:1"
+  "evoitem": ""
 }

@@ -1,61 +1,66 @@
 {
   "id": "50164",
-  "unitName": "Blade Queen Sefia",
-  "no": "301",
-  "element": "Light",
-  "rarity": "★★★★★",
-  "cost": "15",
-  "maxlv": "80",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "144",
-  "animation_idle": "60",
-  "animation_move": "52",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "44, 54, 64, 66, 74, 76, 84, 86",
-  "normal_distribute": "20, 10, 10, 10, 10, 10, 10, 20",
-  "normal_totaldistr": "100",
-  "bb_frames": "44, 54, 64, 66, 74, 76, 84, 86, 128, 132",
-  "bb_distribute": "15, 9, 9, 9, 9, 9, 9, 15, 8, 8",
-  "bb_totaldistr": "100",
-  "description": "The woman warrior who wore 8 blades on her back. After the war with the gods started, she continued on as always, obliterating targets with her 8 blades. However in records starting from the humans' decline during the war, a quote from her appeared, despite the fact she had never been mentioned herself up until that point. It read, \"My part is finished. Now that it's almost over, allow me to use your strength.\" There currently exists no one who understands what she meant by that statement.",
-  "summon": "What is it you fight for?<br>If I can help to protect you,<br>please use me as you will.",
-  "fusion": "I can feel your will...<br>It has made me stronger...<br>Is this my true power?",
-  "evolution": "This is where my will resides.<br>My powerful new form is<br>yours to command.",
-  "hp_base": "3357",
-  "atk_base": "1276",
-  "def_base": "1147",
-  "rec_base": "637",
-  "hp_lord": "5167",
-  "atk_lord": "1801",
-  "def_lord": "1615",
-  "rec_lord": "988",
-  "hp_anima": "5760",
-  "rec_anima": "830",
-  "atk_breaker": "1959",
-  "def_breaker": "1457",
-  "atk_guardian": "1643",
-  "def_guardian": "1773",
-  "rec_guardian": "909",
-  "def_oracle": "1536",
-  "hp_oracle": "4930",
-  "rec_oracle": "1225",
-  "hp_bonus": "500",
-  "atk_bonus": "160",
-  "def_bonus": "160",
-  "rec_bonus": "280",
-  "lordonly": "",
-  "combo_hits": "8",
-  "normaldc": "24",
-  "ls": "Light God's Power",
-  "lsdescription": "50% boost to Atk Power of Light Types",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 1276,
+      "def": 1147,
+      "hp": 3357,
+      "rec": 637
+    },
+    "_lord": {
+      "atk": 1801,
+      "def": 1615,
+      "hp": 5167,
+      "rec": 988
+    },
+    "anima": {
+      "atk": 1801,
+      "def": 1615,
+      "hp max": 5957,
+      "hp min": 5562,
+      "rec max": 909,
+      "rec min": 751
+    },
+    "breaker": {
+      "atk max": 2038,
+      "atk min": 1880,
+      "def max": 1536,
+      "def min": 1378,
+      "hp": 5167,
+      "rec": 988
+    },
+    "guardian": {
+      "atk": 1801,
+      "def max": 1852,
+      "def min": 1694,
+      "hp": 5167,
+      "rec max": 988,
+      "rec min": 830
+    },
+    "oracle": {
+      "atk": 1801,
+      "def max": 1615,
+      "def min": 1457,
+      "hp": 5167,
+      "rec max": 1304,
+      "rec min": 1146
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to Atk Power of Light Types",
+    "effects": [
+      {
+        "atk% buff": 50,
+        "elements buffed": [
+          "light"
+        ],
+        "passive id": "2"
+      }
+    ],
+    "id": "141",
+    "name": "Light God's Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -308,97 +313,97 @@
     ],
     "name": "Sword Storm Barrage"
   },
-  "bbdescription": "10 combo powerful Light attack on all enemies & probable Paralysis effect",
-  "bbnote": "45% chance",
-  "bbtype": "Offense",
-  "bbhits": "10",
-  "bbaoe": "A",
-  "bbgauge": "28",
-  "bbdc": "10",
-  "bbmultiplier": "200",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "50163",
-  "evointo": "50165",
-  "evomats1": "50354",
-  "evomats2": "50123",
-  "evomats3": "50123",
-  "evomats4": "50122",
-  "evomats5": "60144",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 1276,
-      "def": 1147,
-      "hp": 3357,
-      "rec": 637
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1801,
-      "def": 1615,
-      "hp": 5167,
-      "rec": 988
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1801,
-      "def": 1615,
-      "hp max": 5957,
-      "hp min": 5562,
-      "rec max": 909,
-      "rec min": 751
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 144
     },
-    "breaker": {
-      "atk max": 2038,
-      "atk min": 1880,
-      "def max": 1536,
-      "def min": 1378,
-      "hp": 5167,
-      "rec": 988
+    "idle": {
+      "total number of frames": 60
     },
-    "guardian": {
-      "atk": 1801,
-      "def max": 1852,
-      "def min": 1694,
-      "hp": 5167,
-      "rec max": 988,
-      "rec min": 830
-    },
-    "oracle": {
-      "atk": 1801,
-      "def max": 1615,
-      "def min": 1457,
-      "hp": 5167,
-      "rec max": 1304,
-      "rec min": 1146
+    "move": {
+      "total number of frames": 52
     }
   },
-  "leader_skill": {
-    "desc": "50% boost to Atk Power of Light Types",
-    "effects": [
-      {
-        "atk% buff": 50,
-        "elements buffed": [
-          "light"
-        ],
-        "passive id": "2"
-      }
+  "category": 50160,
+  "cost": "15",
+  "damage frames": {
+    "frame times": [
+      44,
+      54,
+      64,
+      66,
+      74,
+      76,
+      84,
+      86
     ],
-    "id": "141",
-    "name": "Light God's Power"
+    "hit dmg% distribution": [
+      20,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 8
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "light",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 301,
+  "imp": {
+    "max atk": "160",
+    "max def": "160",
+    "max hp": "500",
+    "max rec": "280"
+  },
+  "kind": "normal",
+  "lord damage range": "1676~1873",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Blade Queen Sefia",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Blade Queen Sefia",
+  "maxlv": "80",
+  "no": "301",
   "unitDisplayHomePosition_1W9CxaFK": "420,56,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-84,108,909,675",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "96,234,495,397,0",
@@ -408,5 +413,104 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "36:340:1,38:125:1,38:100120:1,48:125:1,58:125:1,60:125:1,68:125:1,70:125:1,78:125:1,80:125:1,80:100120:1"
+  "effectFrames": "36:340:1,38:125:1,38:100120:1,48:125:1,58:125:1,60:125:1,68:125:1,70:125:1,78:125:1,80:125:1,80:100120:1",
+  "evofrom": "50163",
+  "evointo": "50165",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50123",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "50122",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "144",
+  "animation_idle": "60",
+  "animation_move": "52",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "44, 54, 64, 66, 74, 76, 84, 86",
+  "normal_distribute": "20, 10, 10, 10, 10, 10, 10, 20",
+  "normal_totaldistr": "100",
+  "bb_frames": "44, 54, 64, 66, 74, 76, 84, 86, 128, 132",
+  "bb_distribute": "15, 9, 9, 9, 9, 9, 9, 15, 8, 8",
+  "bb_totaldistr": "100",
+  "description": "The woman warrior who wore 8 blades on her back. After the war with the gods started, she continued on as always, obliterating targets with her 8 blades. However in records starting from the humans' decline during the war, a quote from her appeared, despite the fact she had never been mentioned herself up until that point. It read, \"My part is finished. Now that it's almost over, allow me to use your strength.\" There currently exists no one who understands what she meant by that statement.",
+  "summon": "What is it you fight for?<br>If I can help to protect you,<br>please use me as you will.",
+  "fusion": "I can feel your will...<br>It has made me stronger...<br>Is this my true power?",
+  "evolution": "This is where my will resides.<br>My powerful new form is<br>yours to command.",
+  "hp_base": "3357",
+  "atk_base": "1276",
+  "def_base": "1147",
+  "rec_base": "637",
+  "hp_lord": "5167",
+  "atk_lord": "1801",
+  "def_lord": "1615",
+  "rec_lord": "988",
+  "hp_anima": "5760",
+  "rec_anima": "830",
+  "atk_breaker": "1959",
+  "def_breaker": "1457",
+  "atk_guardian": "1643",
+  "def_guardian": "1773",
+  "rec_guardian": "909",
+  "def_oracle": "1536",
+  "hp_oracle": "4930",
+  "rec_oracle": "1225",
+  "hp_bonus": "500",
+  "atk_bonus": "160",
+  "def_bonus": "160",
+  "rec_bonus": "280",
+  "lordonly": "",
+  "combo_hits": "8",
+  "normaldc": "24",
+  "ls": "Light God's Power",
+  "lsdescription": "50% boost to Atk Power of Light Types",
+  "lstype": "Attack",
+  "bbdescription": "10 combo powerful Light attack on all enemies & probable Paralysis effect",
+  "bbnote": "45% chance",
+  "bbtype": "Offense",
+  "bbhits": "10",
+  "bbaoe": "A",
+  "bbgauge": "28",
+  "bbdc": "10",
+  "bbmultiplier": "200",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "50123",
+  "evomats3": "50123",
+  "evomats4": "50122",
+  "evomats5": "60144"
 }

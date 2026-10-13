@@ -1,62 +1,63 @@
 {
   "id": "60643",
-  "unitName": "Dark Blades Zergel",
-  "no": "830",
-  "element": "Dark",
-  "rarity": "★★★★",
-  "cost": "13",
-  "maxlv": "60",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "3",
-  "animation_attack": "120",
-  "animation_idle": "52",
-  "animation_move": "31",
-  "movespeed_attack": "2",
-  "movespeed_skill": "2",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "2",
-  "movetype_skill": "2",
-  "normal_frames": "18, 22, 63, 72, 81",
-  "normal_distribute": "15, 10, 30, 25, 20",
-  "normal_totaldistr": "100",
-  "bb_frames": "18, 22, 26, 63, 67, 72, 76, 81, 85",
-  "bb_distribute": "24, 15, 10, 10, 8, 10, 8, 10, 5",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "description": "A sword blacksmith from the Agni Empire. He lived during the time when the war with the gods was at its peak, a blessed time for any blacksmith indeed. He went through any means possible to test the quality of his work. One of them was to wield the blades he had forged himself while contemplating the true meaning of the sword. Legend has it that he would slay many monsters alongside his apprentice, for he was a rare individual of amazing skill, capable of both wielding and forging a blade.",
-  "summon": "What do you have on you?<br>You have a sword? Unsheathe it.<br>What's wrong with you? Move it!",
-  "fusion": "Don't interfere with my work!<br>Or else I'll test my blades<br>on you first!",
-  "evolution": "",
-  "hp_base": "3017",
-  "atk_base": "1151",
-  "def_base": "1009",
-  "rec_base": "981",
-  "hp_lord": "4322",
-  "atk_lord": "1535",
-  "def_lord": "1345",
-  "rec_lord": "1307",
-  "hp_anima": "4765",
-  "rec_anima": "1189",
-  "atk_breaker": "1653",
-  "def_breaker": "1227",
-  "atk_guardian": "1417",
-  "def_guardian": "1463",
-  "rec_guardian": "1248",
-  "def_oracle": "1286",
-  "hp_oracle": "4145",
-  "rec_oracle": "1484",
-  "hp_bonus": "400",
-  "atk_bonus": "200",
-  "def_bonus": "120",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "5",
-  "normaldc": "10",
-  "ls": "Royal Power",
-  "lsdescription": "15% boost to Atk Power of all types",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 1151,
+      "def": 1009,
+      "hp": 3017,
+      "rec": 981
+    },
+    "_lord": {
+      "atk": 1535,
+      "def": 1345,
+      "hp": 4322,
+      "rec": 1307
+    },
+    "anima": {
+      "atk": 1535,
+      "def": 1345,
+      "hp max": 4912,
+      "hp min": 4617,
+      "rec max": 1248,
+      "rec min": 1130
+    },
+    "breaker": {
+      "atk max": 1712,
+      "atk min": 1594,
+      "def max": 1286,
+      "def min": 1168,
+      "hp": 4322,
+      "rec": 1307
+    },
+    "guardian": {
+      "atk": 1535,
+      "def max": 1522,
+      "def min": 1404,
+      "hp": 4322,
+      "rec max": 1307,
+      "rec min": 1189
+    },
+    "oracle": {
+      "atk": 1535,
+      "def max": 1345,
+      "def min": 1227,
+      "hp": 4322,
+      "rec max": 1543,
+      "rec min": 1425
+    }
+  },
+  "leader_skill": {
+    "desc": "15% boost to Atk",
+    "effects": [
+      {
+        "atk% buff": 15,
+        "passive id": "1"
+      }
+    ],
+    "id": "1901",
+    "name": "Royal Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -307,94 +308,97 @@
     ],
     "name": "Royal Blade: Hazy Moon"
   },
-  "bbdescription": "9 combo Dark elemental attack on all enemies & slightly boosts all allies' BB gauge",
-  "bbnote": "5 BC fill",
-  "bbtype": "Support/Offense",
-  "bbhits": "9",
-  "bbaoe": "A",
-  "bbgauge": "25",
-  "bbdc": "9",
-  "bbmultiplier": "200",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "60644",
-  "evomats1": "60123",
-  "evomats2": "60201",
-  "evomats3": "60201",
-  "evomats4": "60122",
-  "evomats5": "60144",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 1151,
-      "def": 1009,
-      "hp": 3017,
-      "rec": 981
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1535,
-      "def": 1345,
-      "hp": 4322,
-      "rec": 1307
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1535,
-      "def": 1345,
-      "hp max": 4912,
-      "hp min": 4617,
-      "rec max": 1248,
-      "rec min": 1130
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 1712,
-      "atk min": 1594,
-      "def max": 1286,
-      "def min": 1168,
-      "hp": 4322,
-      "rec": 1307
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 120
     },
-    "guardian": {
-      "atk": 1535,
-      "def max": 1522,
-      "def min": 1404,
-      "hp": 4322,
-      "rec max": 1307,
-      "rec min": 1189
+    "idle": {
+      "total number of frames": 52
     },
-    "oracle": {
-      "atk": 1535,
-      "def max": 1345,
-      "def min": 1227,
-      "hp": 4322,
-      "rec max": 1543,
-      "rec min": 1425
+    "move": {
+      "total number of frames": 31
     }
   },
-  "leader_skill": {
-    "desc": "15% boost to Atk",
-    "effects": [
-      {
-        "atk% buff": 15,
-        "passive id": "1"
-      }
+  "category": 60640,
+  "cost": "13",
+  "damage frames": {
+    "frame times": [
+      18,
+      22,
+      63,
+      72,
+      81
     ],
-    "id": "1901",
-    "name": "Royal Power"
+    "hit dmg% distribution": [
+      15,
+      10,
+      30,
+      25,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 5
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "dark",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 830,
+  "imp": {
+    "max atk": "200",
+    "max def": "120",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "1428~1596",
+  "movement": {
+    "attack": {
+      "move speed": 2,
+      "move speed type": "4",
+      "move type": "2"
+    },
+    "skill": {
+      "move speed": 2,
+      "move speed type": "4",
+      "move type": "2"
+    }
+  },
+  "name": "Dark Blades Zergel",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Dark Blades Zergel",
+  "maxlv": "60",
+  "no": "830",
   "unitDisplayHomePosition_1W9CxaFK": "300,130,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-55,65,924,781",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "50,-16,684,639,0",
@@ -404,5 +408,105 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "12:126:1,16:126:1,59:127:1,66:127:1,76:127:1,22:362:1,45:362:1,63:600273:1,81:600220:1"
+  "effectFrames": "12:126:1,16:126:1,59:127:1,66:127:1,76:127:1,22:362:1,45:362:1,63:600273:1,81:600220:1",
+  "evofrom": "",
+  "evointo": "60644",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "60123",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60201",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60122",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "120",
+  "animation_idle": "52",
+  "animation_move": "31",
+  "movespeed_attack": "2",
+  "movespeed_skill": "2",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "2",
+  "movetype_skill": "2",
+  "normal_frames": "18, 22, 63, 72, 81",
+  "normal_distribute": "15, 10, 30, 25, 20",
+  "normal_totaldistr": "100",
+  "bb_frames": "18, 22, 26, 63, 67, 72, 76, 81, 85",
+  "bb_distribute": "24, 15, 10, 10, 8, 10, 8, 10, 5",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "description": "A sword blacksmith from the Agni Empire. He lived during the time when the war with the gods was at its peak, a blessed time for any blacksmith indeed. He went through any means possible to test the quality of his work. One of them was to wield the blades he had forged himself while contemplating the true meaning of the sword. Legend has it that he would slay many monsters alongside his apprentice, for he was a rare individual of amazing skill, capable of both wielding and forging a blade.",
+  "summon": "What do you have on you?<br>You have a sword? Unsheathe it.<br>What's wrong with you? Move it!",
+  "fusion": "Don't interfere with my work!<br>Or else I'll test my blades<br>on you first!",
+  "evolution": "",
+  "hp_base": "3017",
+  "atk_base": "1151",
+  "def_base": "1009",
+  "rec_base": "981",
+  "hp_lord": "4322",
+  "atk_lord": "1535",
+  "def_lord": "1345",
+  "rec_lord": "1307",
+  "hp_anima": "4765",
+  "rec_anima": "1189",
+  "atk_breaker": "1653",
+  "def_breaker": "1227",
+  "atk_guardian": "1417",
+  "def_guardian": "1463",
+  "rec_guardian": "1248",
+  "def_oracle": "1286",
+  "hp_oracle": "4145",
+  "rec_oracle": "1484",
+  "hp_bonus": "400",
+  "atk_bonus": "200",
+  "def_bonus": "120",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "5",
+  "normaldc": "10",
+  "ls": "Royal Power",
+  "lsdescription": "15% boost to Atk Power of all types",
+  "lstype": "Attack",
+  "bbdescription": "9 combo Dark elemental attack on all enemies & slightly boosts all allies' BB gauge",
+  "bbnote": "5 BC fill",
+  "bbtype": "Support/Offense",
+  "bbhits": "9",
+  "bbaoe": "A",
+  "bbgauge": "25",
+  "bbdc": "9",
+  "bbmultiplier": "200",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "60123",
+  "evomats2": "60201",
+  "evomats3": "60201",
+  "evomats4": "60122",
+  "evomats5": "60144"
 }

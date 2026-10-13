@@ -1,59 +1,63 @@
 {
   "id": "30473",
-  "unitName": "Forest Guardian Tia",
-  "no": "687",
-  "element": "Earth",
-  "rarity": "★★★★",
-  "cost": "13",
-  "maxlv": "60",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "6",
-  "animation_attack": "115",
-  "animation_idle": "60",
-  "animation_move": "6",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "4",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "3",
-  "normal_frames": "43, 64, 70, 74, 95",
-  "normal_distribute": "22, 22, 17, 17, 22",
-  "normal_totaldistr": "100",
-  "description": "A girl who grew up in the forest, isolated from human contact. Having been raised in the forest, she shared the same heart with her animal friends, who continued to protect her always. One day while walking through the forest, she met a young girl who was as lovely as a flower, and opened up her heart to her. As the night drew closer, the young girl revealed that she was a goddess, promising to take care of Tia's friends from now on as well.",
-  "summon": "I will never forgive the people<br>who dared to hurt my animal friends!",
-  "fusion": "I must grow stronger to protect<br>the forest! I promised my friends<br>I would!",
-  "evolution": "",
-  "hp_base": "2999",
-  "atk_base": "955",
-  "def_base": "1054",
-  "rec_base": "1091",
-  "hp_lord": "4299",
-  "atk_lord": "1273",
-  "def_lord": "1405",
-  "rec_lord": "1454",
-  "hp_anima": "4742",
-  "rec_anima": "1336",
-  "atk_breaker": "1391",
-  "def_breaker": "1287",
-  "atk_guardian": "1155",
-  "def_guardian": "1523",
-  "rec_guardian": "1395",
-  "def_oracle": "1346",
-  "hp_oracle": "4122",
-  "rec_oracle": "1631",
-  "hp_bonus": "400",
-  "atk_bonus": "120",
-  "def_bonus": "200",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "5",
-  "normaldc": "10",
-  "ls": "Loving Spirit",
-  "lsdescription": "Boost in effectiveness of Heart Crystals",
-  "lsnote": "25% boost",
-  "lstype": "Recovery",
+  "stats": {
+    "_base": {
+      "atk": 955,
+      "def": 1054,
+      "hp": 2999,
+      "rec": 1091
+    },
+    "_lord": {
+      "atk": 1273,
+      "def": 1405,
+      "hp": 4299,
+      "rec": 1454
+    },
+    "anima": {
+      "atk": 1273,
+      "def": 1405,
+      "hp max": 4889,
+      "hp min": 4594,
+      "rec max": 1395,
+      "rec min": 1277
+    },
+    "breaker": {
+      "atk max": 1450,
+      "atk min": 1332,
+      "def max": 1346,
+      "def min": 1228,
+      "hp": 4299,
+      "rec": 1454
+    },
+    "guardian": {
+      "atk": 1273,
+      "def max": 1582,
+      "def min": 1464,
+      "hp": 4299,
+      "rec max": 1454,
+      "rec min": 1336
+    },
+    "oracle": {
+      "atk": 1273,
+      "def max": 1405,
+      "def min": 1287,
+      "hp": 4299,
+      "rec max": 1690,
+      "rec min": 1572
+    }
+  },
+  "leader_skill": {
+    "desc": "Boost in effectiveness of Heart Crystals",
+    "effects": [
+      {
+        "hc effectiveness%": 25,
+        "passive id": "10"
+      }
+    ],
+    "id": "1100",
+    "name": "Loving Spirit"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -328,92 +332,91 @@
     ],
     "name": "Sacred Bird's Song"
   },
-  "bbdescription": "Recovers HP & gradually recovers HP for 3 turns for all allies",
-  "bbnote": "Heals (1560~1860 + 22.5% of healer Rec) HP & gradually heals (1500~1600 + 10% of target Rec) HP",
-  "bbtype": "Heal",
-  "bbhits": "0",
-  "bbaoe": "0",
-  "bbgauge": "20",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "30474",
-  "evomats1": "30133",
-  "evomats2": "30191",
-  "evomats3": "30132",
-  "evomats4": "30132",
-  "evomats5": "60144",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 955,
-      "def": 1054,
-      "hp": 2999,
-      "rec": 1091
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 100.0,
+      "target conditions": "hp_25pr_under",
+      "target type": "party"
     },
-    "_lord": {
-      "atk": 1273,
-      "def": 1405,
-      "hp": 4299,
-      "rec": 1454
+    {
+      "action": "attack",
+      "chance%": 50.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1273,
-      "def": 1405,
-      "hp max": 4889,
-      "hp min": 4594,
-      "rec max": 1395,
-      "rec min": 1277
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 115
     },
-    "breaker": {
-      "atk max": 1450,
-      "atk min": 1332,
-      "def max": 1346,
-      "def min": 1228,
-      "hp": 4299,
-      "rec": 1454
+    "idle": {
+      "total number of frames": 60
     },
-    "guardian": {
-      "atk": 1273,
-      "def max": 1582,
-      "def min": 1464,
-      "hp": 4299,
-      "rec max": 1454,
-      "rec min": 1336
-    },
-    "oracle": {
-      "atk": 1273,
-      "def max": 1405,
-      "def min": 1287,
-      "hp": 4299,
-      "rec max": 1690,
-      "rec min": 1572
+    "move": {
+      "total number of frames": 6
     }
   },
-  "leader_skill": {
-    "desc": "Boost in effectiveness of Heart Crystals",
-    "effects": [
-      {
-        "hc effectiveness%": 25,
-        "passive id": "10"
-      }
+  "category": 30470,
+  "cost": "13",
+  "damage frames": {
+    "frame times": [
+      43,
+      64,
+      70,
+      74,
+      95
     ],
-    "id": "1100",
-    "name": "Loving Spirit"
+    "hit dmg% distribution": [
+      22,
+      22,
+      17,
+      17,
+      22
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 5
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "earth",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 687,
+  "imp": {
+    "max atk": "120",
+    "max def": "200",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "1184~1323",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    }
+  },
+  "name": "Forest Guardian Tia",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Forest Guardian Tia",
+  "maxlv": "60",
+  "no": "687",
   "unitDisplayHomePosition_1W9CxaFK": "365,244,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-28,-28,900,824",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "50,-16,684,639,0",
@@ -423,5 +426,100 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "43:300271:1,43:133:1,43:300264:1,64:133:1,46:300264:1,64:123:1,68:123:1,95:133:1,77:300264:1,43:500094:1,68:500094:1"
+  "effectFrames": "43:300271:1,43:133:1,43:300264:1,64:133:1,46:300264:1,64:123:1,68:123:1,95:133:1,77:300264:1,43:500094:1,68:500094:1",
+  "evofrom": "",
+  "evointo": "30474",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "30133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30132",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "115",
+  "animation_idle": "60",
+  "animation_move": "6",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "4",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "3",
+  "normal_frames": "43, 64, 70, 74, 95",
+  "normal_distribute": "22, 22, 17, 17, 22",
+  "normal_totaldistr": "100",
+  "description": "A girl who grew up in the forest, isolated from human contact. Having been raised in the forest, she shared the same heart with her animal friends, who continued to protect her always. One day while walking through the forest, she met a young girl who was as lovely as a flower, and opened up her heart to her. As the night drew closer, the young girl revealed that she was a goddess, promising to take care of Tia's friends from now on as well.",
+  "summon": "I will never forgive the people<br>who dared to hurt my animal friends!",
+  "fusion": "I must grow stronger to protect<br>the forest! I promised my friends<br>I would!",
+  "evolution": "",
+  "hp_base": "2999",
+  "atk_base": "955",
+  "def_base": "1054",
+  "rec_base": "1091",
+  "hp_lord": "4299",
+  "atk_lord": "1273",
+  "def_lord": "1405",
+  "rec_lord": "1454",
+  "hp_anima": "4742",
+  "rec_anima": "1336",
+  "atk_breaker": "1391",
+  "def_breaker": "1287",
+  "atk_guardian": "1155",
+  "def_guardian": "1523",
+  "rec_guardian": "1395",
+  "def_oracle": "1346",
+  "hp_oracle": "4122",
+  "rec_oracle": "1631",
+  "hp_bonus": "400",
+  "atk_bonus": "120",
+  "def_bonus": "200",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "5",
+  "normaldc": "10",
+  "ls": "Loving Spirit",
+  "lsdescription": "Boost in effectiveness of Heart Crystals",
+  "lsnote": "25% boost",
+  "lstype": "Recovery",
+  "bbdescription": "Recovers HP & gradually recovers HP for 3 turns for all allies",
+  "bbnote": "Heals (1560~1860 + 22.5% of healer Rec) HP & gradually heals (1500~1600 + 10% of target Rec) HP",
+  "bbtype": "Heal",
+  "bbhits": "0",
+  "bbaoe": "0",
+  "bbgauge": "20",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "30133",
+  "evomats2": "30191",
+  "evomats3": "30132",
+  "evomats4": "30132",
+  "evomats5": "60144"
 }

@@ -1,65 +1,69 @@
 {
   "id": "10735",
-  "unitName": "Ember Hellion Adel",
-  "no": "1091",
-  "element": "Fire",
-  "rarity": "★★★★★★",
-  "cost": "30",
-  "maxlv": "100",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "127",
-  "animation_idle": "68",
-  "animation_move": "6",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "15, 18, 21, 24, 52, 57, 62, 67",
-  "normal_distribute": "19, 8, 6, 5, 27, 20, 10, 5",
-  "normal_totaldistr": "100",
-  "bb_frames": "15, 18, 21, 24, 27, 52, 56, 60, 64, 68, 72",
-  "bb_distribute": "15, 8, 5, 4, 3, 24, 16, 10, 7, 5, 3",
-  "bb_totaldistr": "100",
-  "sbb_frames": "15, 18, 21, 24, 27, 30, 33, 52, 56, 60, 64, 68, 72, 76",
-  "sbb_distribute": "15, 8, 5, 4, 3, 3, 3, 24, 16, 10, 7, 5, 3, 3",
-  "sbb_totaldistr": "109",
-  "bb_effectdelay": "2",
-  "sbb_effectdelay": "2",
-  "description": "The king of Mildran. After conquering half of Ishgria with his military forces, Adel sought to take control over the remaining half by challenging the queen of a country called Estoria. Both rulers fought against each other in hand-to-hand combat, but no one knows anything more of the exchange between them. However, after their battle Adel decided that force was not the way to rule Ishgria, but cooperation between neighboring nations instead.",
-  "summon": "Come with me!<br>I shall show you a new world<br>where my ideals have become reality!",
-  "fusion": "A truly powerful being not only<br>boasts of great strength, but also of<br>the power to change others' minds.",
-  "evolution": "Can you see it?<br>The new form attached to my ideals.<br>This is but a part of it.",
-  "hp_base": "4234",
-  "atk_base": "1628",
-  "def_base": "1709",
-  "rec_base": "1353",
-  "hp_lord": "6111",
-  "atk_lord": "2203",
-  "def_lord": "2324",
-  "rec_lord": "1824",
-  "hp_anima": "6853",
-  "rec_anima": "1626",
-  "atk_breaker": "2401",
-  "def_breaker": "2126",
-  "def_guardian": "2522",
-  "rec_guardian": "1725",
-  "def_oracle": "2225",
-  "rec_oracle": "2121",
-  "hp_bonus": "750",
-  "atk_bonus": "200",
-  "def_bonus": "400",
-  "rec_bonus": "300",
-  "lordonly": "",
-  "combo_hits": "8",
-  "normaldc": "24",
-  "ls": "King's Sanctuary",
-  "lsdescription": "30% boost to max HP, Def & probable slight damage reduction",
-  "lsnote": "10% chance to reduce 20% of damage taken",
-  "lstype": "Hit Points/Defense",
+  "stats": {
+    "_base": {
+      "atk": 1628,
+      "def": 1709,
+      "hp": 4234,
+      "rec": 1353
+    },
+    "_lord": {
+      "atk": 2203,
+      "def": 2324,
+      "hp": 6111,
+      "rec": 1824
+    },
+    "anima": {
+      "atk": 2203,
+      "def": 2324,
+      "hp max": 7101,
+      "hp min": 6606,
+      "rec max": 1725,
+      "rec min": 1527
+    },
+    "breaker": {
+      "atk max": 2500,
+      "atk min": 2302,
+      "def max": 2225,
+      "def min": 2027,
+      "hp": 6111,
+      "rec": 1824
+    },
+    "guardian": {
+      "atk": 2203,
+      "def max": 2621,
+      "def min": 2423,
+      "hp": 6111,
+      "rec max": 1824,
+      "rec min": 1626
+    },
+    "oracle": {
+      "atk": 2203,
+      "def max": 2324,
+      "def min": 2126,
+      "hp": 6111,
+      "rec max": 2220,
+      "rec min": 2022
+    }
+  },
+  "leader_skill": {
+    "desc": "30% boost to max HP, Def & probable slight damage reduction",
+    "effects": [
+      {
+        "def% buff": 30,
+        "hp% buff": 30,
+        "passive id": "1"
+      },
+      {
+        "dmg reduction chance%": 10,
+        "dmg reduction%": 20,
+        "passive id": "14"
+      }
+    ],
+    "id": "4316",
+    "name": "King's Sanctuary"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -416,14 +420,6 @@
     ],
     "name": "Vatra Spicules"
   },
-  "bbdescription": "11 combo powerful Fire attack on all foes, boosts Spark damage for 3 turns & reduces damage taken by 50% for 1 turn",
-  "bbnote": "60% boost",
-  "bbtype": "Support/Offense",
-  "bbhits": "11",
-  "bbaoe": "A",
-  "bbgauge": "26",
-  "bbdc": "11",
-  "bbmultiplier": "250",
   "sbb": {
     "damage frames": [
       {
@@ -898,6 +894,197 @@
     ],
     "name": "Lord's Endurance"
   },
+  "ubb": {},
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 127
+    },
+    "idle": {
+      "total number of frames": 68
+    },
+    "move": {
+      "total number of frames": 6
+    }
+  },
+  "category": 10730,
+  "cost": "30",
+  "damage frames": {
+    "frame times": [
+      15,
+      18,
+      21,
+      24,
+      52,
+      57,
+      62,
+      67
+    ],
+    "hit dmg% distribution": [
+      19,
+      8,
+      6,
+      5,
+      27,
+      20,
+      10,
+      5
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 8
+  },
+  "drop check count": 3,
+  "element": "fire",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 1091,
+  "imp": {
+    "max atk": "200",
+    "max def": "400",
+    "max hp": "750",
+    "max rec": "300"
+  },
+  "kind": "normal",
+  "lord damage range": "2050~2291",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Ember Hellion Adel",
+  "rarity": "6",
+  "sell caution": false,
+  "unitName": "Ember Hellion Adel",
+  "maxlv": "100",
+  "no": "1091",
+  "unitDisplayHomePosition_1W9CxaFK": "495,210,190,519",
+  "unitDisplayDetailPosition_6z54rgb3": "-104,23,1000,795",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "17,196,550,437,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-86,-280,1000,795",
+  "unitDisplaySummonPosition_KC3Jk8Br": "17,196,550,437,0",
+  "unitDisplayHpPosition_3BpHN6VD": "-2,36",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "8000",
+  "sellCaution": false,
+  "effectFrames": "9:121:1,12:121:1,15:121:1,18:121:1,14:1130:1,16:150:1,60:150:1,70:150:1,54:1130:1,52:100199:1",
+  "evofrom": "10734",
+  "evointo": "10736",
+  "evozelcost": "1500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "10354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "127",
+  "animation_idle": "68",
+  "animation_move": "6",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "15, 18, 21, 24, 52, 57, 62, 67",
+  "normal_distribute": "19, 8, 6, 5, 27, 20, 10, 5",
+  "normal_totaldistr": "100",
+  "bb_frames": "15, 18, 21, 24, 27, 52, 56, 60, 64, 68, 72",
+  "bb_distribute": "15, 8, 5, 4, 3, 24, 16, 10, 7, 5, 3",
+  "bb_totaldistr": "100",
+  "sbb_frames": "15, 18, 21, 24, 27, 30, 33, 52, 56, 60, 64, 68, 72, 76",
+  "sbb_distribute": "15, 8, 5, 4, 3, 3, 3, 24, 16, 10, 7, 5, 3, 3",
+  "sbb_totaldistr": "109",
+  "bb_effectdelay": "2",
+  "sbb_effectdelay": "2",
+  "description": "The king of Mildran. After conquering half of Ishgria with his military forces, Adel sought to take control over the remaining half by challenging the queen of a country called Estoria. Both rulers fought against each other in hand-to-hand combat, but no one knows anything more of the exchange between them. However, after their battle Adel decided that force was not the way to rule Ishgria, but cooperation between neighboring nations instead.",
+  "summon": "Come with me!<br>I shall show you a new world<br>where my ideals have become reality!",
+  "fusion": "A truly powerful being not only<br>boasts of great strength, but also of<br>the power to change others' minds.",
+  "evolution": "Can you see it?<br>The new form attached to my ideals.<br>This is but a part of it.",
+  "hp_base": "4234",
+  "atk_base": "1628",
+  "def_base": "1709",
+  "rec_base": "1353",
+  "hp_lord": "6111",
+  "atk_lord": "2203",
+  "def_lord": "2324",
+  "rec_lord": "1824",
+  "hp_anima": "6853",
+  "rec_anima": "1626",
+  "atk_breaker": "2401",
+  "def_breaker": "2126",
+  "def_guardian": "2522",
+  "rec_guardian": "1725",
+  "def_oracle": "2225",
+  "rec_oracle": "2121",
+  "hp_bonus": "750",
+  "atk_bonus": "200",
+  "def_bonus": "400",
+  "rec_bonus": "300",
+  "lordonly": "",
+  "combo_hits": "8",
+  "normaldc": "24",
+  "ls": "King's Sanctuary",
+  "lsdescription": "30% boost to max HP, Def & probable slight damage reduction",
+  "lsnote": "10% chance to reduce 20% of damage taken",
+  "lstype": "Hit Points/Defense",
+  "bbdescription": "11 combo powerful Fire attack on all foes, boosts Spark damage for 3 turns & reduces damage taken by 50% for 1 turn",
+  "bbnote": "60% boost",
+  "bbtype": "Support/Offense",
+  "bbhits": "11",
+  "bbaoe": "A",
+  "bbgauge": "26",
+  "bbdc": "11",
+  "bbmultiplier": "250",
   "sbbdescription": "14 combo powerful Fire attack on all foes, boosts Spark damage and gradually recovers HP for 3 turns & reduces damage taken by 50% for 1 turn",
   "sbbnote": "60% boost & heals 1800-2300 + 12% Rec",
   "sbbtype": "Heal/Support/Offense",
@@ -906,7 +1093,6 @@
   "sbbgauge": "20",
   "sbbdc": "14",
   "sbbmultiplier": "420",
-  "ubb": {},
   "ubbdescription": "",
   "ubbtype": "",
   "ubbhits": "",
@@ -917,87 +1103,10 @@
   "es": "",
   "esitem": "",
   "esdescription": "",
-  "evofrom": "10734",
-  "evointo": "10736",
   "evomats1": "Fire Mecha God",
   "evomats2": "Miracle Totem",
   "evomats3": "Fire Totem",
   "evomats4": "Fire Pot",
   "evomats5": "Metal Mimic",
-  "evoitem": "",
-  "evozelcost": "1500000",
-  "stats": {
-    "_base": {
-      "atk": 1628,
-      "def": 1709,
-      "hp": 4234,
-      "rec": 1353
-    },
-    "_lord": {
-      "atk": 2203,
-      "def": 2324,
-      "hp": 6111,
-      "rec": 1824
-    },
-    "anima": {
-      "atk": 2203,
-      "def": 2324,
-      "hp max": 7101,
-      "hp min": 6606,
-      "rec max": 1725,
-      "rec min": 1527
-    },
-    "breaker": {
-      "atk max": 2500,
-      "atk min": 2302,
-      "def max": 2225,
-      "def min": 2027,
-      "hp": 6111,
-      "rec": 1824
-    },
-    "guardian": {
-      "atk": 2203,
-      "def max": 2621,
-      "def min": 2423,
-      "hp": 6111,
-      "rec max": 1824,
-      "rec min": 1626
-    },
-    "oracle": {
-      "atk": 2203,
-      "def max": 2324,
-      "def min": 2126,
-      "hp": 6111,
-      "rec max": 2220,
-      "rec min": 2022
-    }
-  },
-  "leader_skill": {
-    "desc": "30% boost to max HP, Def & probable slight damage reduction",
-    "effects": [
-      {
-        "def% buff": 30,
-        "hp% buff": 30,
-        "passive id": "1"
-      },
-      {
-        "dmg reduction chance%": 10,
-        "dmg reduction%": 20,
-        "passive id": "14"
-      }
-    ],
-    "id": "4316",
-    "name": "King's Sanctuary"
-  },
-  "extra_skill": {},
-  "unitDisplayHomePosition_1W9CxaFK": "495,210,190,519",
-  "unitDisplayDetailPosition_6z54rgb3": "-104,23,1000,795",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "17,196,550,437,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-86,-280,1000,795",
-  "unitDisplaySummonPosition_KC3Jk8Br": "17,196,550,437,0",
-  "unitDisplayHpPosition_3BpHN6VD": "-2,36",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "8000",
-  "sellCaution": false,
-  "effectFrames": "9:121:1,12:121:1,15:121:1,18:121:1,14:1130:1,16:150:1,60:150:1,70:150:1,54:1130:1,52:100199:1"
+  "evoitem": ""
 }

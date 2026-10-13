@@ -1,62 +1,63 @@
 {
   "id": "10092",
-  "unitName": "Firedrake",
-  "freetext": ":''For other uses, see Firedrake (disambiguation).''",
-  "no": "111",
-  "element": "Fire",
-  "rarity": "★★★",
-  "cost": "5",
-  "maxlv": "40",
-  "basexp": "15",
-  "gender": "N",
-  "ai": "3",
-  "animation_attack": "130",
-  "animation_idle": "160",
-  "animation_move": "160",
-  "movespeed_attack": "6",
-  "movespeed_skill": "6",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "56, 63, 70",
-  "normal_distribute": "33, 33, 34",
-  "normal_totaldistr": "100",
-  "bb_frames": "32, 39, 46",
-  "bb_distribute": "33, 33, 34",
-  "bb_totaldistr": "100",
-  "description": "A fire dragon that lives in the Agni volcanoes. It is the only fire dragon that can fly. A Firedrake breathes fire and scorches the land with hellfire by flapping its wings. Although it understands human speech, its high intelligence makes it look down on humans, making it difficult to ally with. It only cooperates with those who pique its strong curiosity.",
-  "summon": "You wish to ally with me?<br>Well then, let's test your<br>might!",
-  "fusion": "Give me more fire.<br>This is not enough.",
-  "evolution": "",
-  "hp_base": "2050",
-  "atk_base": "500",
-  "def_base": "720",
-  "rec_base": "310",
-  "hp_lord": "3375",
-  "atk_lord": "660",
-  "def_lord": "951",
-  "rec_lord": "465",
-  "hp_anima": "3668",
-  "rec_anima": "387",
-  "atk_breaker": "738",
-  "def_breaker": "873",
-  "atk_guardian": "582",
-  "def_guardian": "1029",
-  "rec_guardian": "426",
-  "def_oracle": "912",
-  "hp_oracle": "3258",
-  "rec_oracle": "582",
-  "hp_bonus": "300",
-  "atk_bonus": "160",
-  "def_bonus": "80",
-  "rec_bonus": "120",
-  "lordonly": "",
-  "combo_hits": "3",
-  "normaldc": "6",
-  "ls": "Fire's Protection",
-  "lsdescription": "10% reduction in damage from Fire Types",
-  "lstype": "Defense",
+  "stats": {
+    "_base": {
+      "atk": 500,
+      "def": 720,
+      "hp": 2050,
+      "rec": 310
+    },
+    "_lord": {
+      "atk": 660,
+      "def": 951,
+      "hp": 3375,
+      "rec": 465
+    },
+    "anima": {
+      "atk": 660,
+      "def": 951,
+      "hp max": 3765,
+      "hp min": 3570,
+      "rec max": 426,
+      "rec min": 348
+    },
+    "breaker": {
+      "atk max": 777,
+      "atk min": 699,
+      "def max": 912,
+      "def min": 834,
+      "hp": 3375,
+      "rec": 465
+    },
+    "guardian": {
+      "atk": 660,
+      "def max": 1068,
+      "def min": 990,
+      "hp": 3375,
+      "rec max": 465,
+      "rec min": 387
+    },
+    "oracle": {
+      "atk": 660,
+      "def max": 951,
+      "def min": 873,
+      "hp": 3375,
+      "rec max": 621,
+      "rec min": 543
+    }
+  },
+  "leader_skill": {
+    "desc": "10% reduction in damage from Fire Types",
+    "effects": [
+      {
+        "fire resist%": 10,
+        "passive id": "5"
+      }
+    ],
+    "id": "500",
+    "name": "Fire's Protection"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -213,94 +214,93 @@
     ],
     "name": "Fire Breath"
   },
-  "bbdescription": "3 combo Fire elemental attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "3",
-  "bbaoe": "A",
-  "bbgauge": "20",
-  "bbdc": "6",
-  "bbmultiplier": "90",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "10093",
-  "evomats1": "60143",
-  "evomats2": "10131",
-  "evomats3": "10131",
-  "evomats4": "10131",
-  "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "100000",
-  "stats": {
-    "_base": {
-      "atk": 500,
-      "def": 720,
-      "hp": 2050,
-      "rec": 310
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 660,
-      "def": 951,
-      "hp": 3375,
-      "rec": 465
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 660,
-      "def": 951,
-      "hp max": 3765,
-      "hp min": 3570,
-      "rec max": 426,
-      "rec min": 348
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 777,
-      "atk min": 699,
-      "def max": 912,
-      "def min": 834,
-      "hp": 3375,
-      "rec": 465
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 130
     },
-    "guardian": {
-      "atk": 660,
-      "def max": 1068,
-      "def min": 990,
-      "hp": 3375,
-      "rec max": 465,
-      "rec min": 387
+    "idle": {
+      "total number of frames": 160
     },
-    "oracle": {
-      "atk": 660,
-      "def max": 951,
-      "def min": 873,
-      "hp": 3375,
-      "rec max": 621,
-      "rec min": 543
+    "move": {
+      "total number of frames": 160
     }
   },
-  "leader_skill": {
-    "desc": "10% reduction in damage from Fire Types",
-    "effects": [
-      {
-        "fire resist%": 10,
-        "passive id": "5"
-      }
+  "category": 10090,
+  "cost": "5",
+  "damage frames": {
+    "frame times": [
+      56,
+      63,
+      70
     ],
-    "id": "500",
-    "name": "Fire's Protection"
+    "hit dmg% distribution": [
+      33,
+      33,
+      34
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 3
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "fire",
+  "exp_pattern": 15,
+  "gender": "other",
+  "getting type": "rare summon",
+  "guide_id": 111,
+  "imp": {
+    "max atk": "160",
+    "max def": "80",
+    "max hp": "300",
+    "max rec": "120"
+  },
+  "kind": "normal",
+  "lord damage range": "614~686",
+  "movement": {
+    "attack": {
+      "move speed": 6,
+      "move speed type": "2",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 6,
+      "move speed type": "2",
+      "move type": "3"
+    }
+  },
+  "name": "Firedrake",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "Firedrake",
+  "maxlv": "40",
+  "no": "111",
   "unitDisplayHomePosition_1W9CxaFK": "159,21,200,544",
   "unitDisplayDetailPosition_6z54rgb3": "20,65,900,775",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "133,314,362,312,0",
@@ -310,5 +310,95 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "1000",
   "sellCaution": false,
-  "effectFrames": "55:150:1"
+  "effectFrames": "55:150:1",
+  "evofrom": "",
+  "evointo": "10093",
+  "evozelcost": "100000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10131",
+      "count": 3
+    }
+  ],
+  "freetext": ":''For other uses, see Firedrake (disambiguation).''",
+  "basexp": "15",
+  "animation_attack": "130",
+  "animation_idle": "160",
+  "animation_move": "160",
+  "movespeed_attack": "6",
+  "movespeed_skill": "6",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "56, 63, 70",
+  "normal_distribute": "33, 33, 34",
+  "normal_totaldistr": "100",
+  "bb_frames": "32, 39, 46",
+  "bb_distribute": "33, 33, 34",
+  "bb_totaldistr": "100",
+  "description": "A fire dragon that lives in the Agni volcanoes. It is the only fire dragon that can fly. A Firedrake breathes fire and scorches the land with hellfire by flapping its wings. Although it understands human speech, its high intelligence makes it look down on humans, making it difficult to ally with. It only cooperates with those who pique its strong curiosity.",
+  "summon": "You wish to ally with me?<br>Well then, let's test your<br>might!",
+  "fusion": "Give me more fire.<br>This is not enough.",
+  "evolution": "",
+  "hp_base": "2050",
+  "atk_base": "500",
+  "def_base": "720",
+  "rec_base": "310",
+  "hp_lord": "3375",
+  "atk_lord": "660",
+  "def_lord": "951",
+  "rec_lord": "465",
+  "hp_anima": "3668",
+  "rec_anima": "387",
+  "atk_breaker": "738",
+  "def_breaker": "873",
+  "atk_guardian": "582",
+  "def_guardian": "1029",
+  "rec_guardian": "426",
+  "def_oracle": "912",
+  "hp_oracle": "3258",
+  "rec_oracle": "582",
+  "hp_bonus": "300",
+  "atk_bonus": "160",
+  "def_bonus": "80",
+  "rec_bonus": "120",
+  "lordonly": "",
+  "combo_hits": "3",
+  "normaldc": "6",
+  "ls": "Fire's Protection",
+  "lsdescription": "10% reduction in damage from Fire Types",
+  "lstype": "Defense",
+  "bbdescription": "3 combo Fire elemental attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "3",
+  "bbaoe": "A",
+  "bbgauge": "20",
+  "bbdc": "6",
+  "bbmultiplier": "90",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "60143",
+  "evomats2": "10131",
+  "evomats3": "10131",
+  "evomats4": "10131",
+  "evomats5": "",
+  "evoitem": ""
 }

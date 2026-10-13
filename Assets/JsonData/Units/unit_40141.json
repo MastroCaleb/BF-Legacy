@@ -1,62 +1,63 @@
 {
   "id": "40141",
-  "unitName": "Zeln",
-  "freetext": ":''For other uses, see Zeln (disambiguation)''",
-  "no": "212",
-  "element": "Thunder",
-  "rarity": "★★",
-  "cost": "4",
-  "maxlv": "30",
-  "basexp": "15",
-  "gender": "M",
-  "ai": "3",
-  "animation_attack": "61",
-  "animation_idle": "44",
-  "animation_move": "6",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "28, 30, 33",
-  "normal_distribute": "33, 33, 34",
-  "normal_totaldistr": "100",
-  "bb_frames": "28, 30, 33",
-  "bb_distribute": "33, 33, 34",
-  "bb_totaldistr": "100",
-  "description": "A fighter hailing from the Republic of Atalva who trained at the Toltya Dojo in the Sama Kingdom, he first knocked on its gates at the age of 12. A timid child lacking the approval of his peers, he was actually sent to the dojo by his father as a means of toughening him up. Though constantly on the verge of tears on account of his grueling training regimen, he found comfort in his friendship with Nemia, and soon developed romantic feelings for her.",
-  "summon": "Hah! Leave everything to me! W-Wait... You can’t expect me to go up against that guy!?",
-  "fusion": "Yes! The power’s swelling within me! No one can touch me now!",
-  "evolution": "",
-  "hp_base": "1360",
-  "atk_base": "560",
-  "def_base": "300",
-  "rec_base": "280",
-  "hp_lord": "2612",
-  "atk_lord": "851",
-  "def_lord": "420",
-  "rec_lord": "420",
-  "hp_anima": "2830",
-  "rec_anima": "362",
-  "atk_breaker": "909",
-  "def_breaker": "362",
-  "atk_guardian": "793",
-  "def_guardian": "478",
-  "rec_guardian": "391",
-  "def_oracle": "391",
-  "hp_oracle": "2525",
-  "rec_oracle": "507",
-  "hp_bonus": "250",
-  "atk_bonus": "80",
-  "def_bonus": "120",
-  "rec_bonus": "100",
-  "lordonly": "",
-  "combo_hits": "3",
-  "normaldc": "12",
-  "ls": "Valiant Power",
-  "lsdescription": "10% boost to Atk Power of all types",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 560,
+      "def": 300,
+      "hp": 1360,
+      "rec": 280
+    },
+    "_lord": {
+      "atk": 851,
+      "def": 420,
+      "hp": 2612,
+      "rec": 420
+    },
+    "anima": {
+      "atk": 851,
+      "def": 420,
+      "hp max": 2902,
+      "hp min": 2757,
+      "rec max": 391,
+      "rec min": 333
+    },
+    "breaker": {
+      "atk max": 938,
+      "atk min": 880,
+      "def max": 391,
+      "def min": 333,
+      "hp": 2612,
+      "rec": 420
+    },
+    "guardian": {
+      "atk": 851,
+      "def max": 507,
+      "def min": 449,
+      "hp": 2612,
+      "rec max": 420,
+      "rec min": 362
+    },
+    "oracle": {
+      "atk": 851,
+      "def max": 420,
+      "def min": 362,
+      "hp": 2612,
+      "rec max": 536,
+      "rec min": 478
+    }
+  },
+  "leader_skill": {
+    "desc": "10% boost to Atk",
+    "effects": [
+      {
+        "atk% buff": 10,
+        "passive id": "1"
+      }
+    ],
+    "id": "1900",
+    "name": "Valiant Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -285,94 +286,93 @@
     ],
     "name": "Quick Kick"
   },
-  "bbdescription": "3 Combo Thunder Elemental Attack on All enemies & Slight Probability of Injury Effect",
-  "bbnote": "45% chance",
-  "bbtype": "Offense",
-  "bbhits": "3",
-  "bbaoe": "A",
-  "bbgauge": "20",
-  "bbdc": "3",
-  "bbmultiplier": "85",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "40142",
-  "evomats1": "40131",
-  "evomats2": "40130",
-  "evomats3": "40130",
-  "evomats4": "40130",
-  "evomats5": "60142",
-  "evozelcost": "50000",
-  "stats": {
-    "_base": {
-      "atk": 560,
-      "def": 300,
-      "hp": 1360,
-      "rec": 280
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 851,
-      "def": 420,
-      "hp": 2612,
-      "rec": 420
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 851,
-      "def": 420,
-      "hp max": 2902,
-      "hp min": 2757,
-      "rec max": 391,
-      "rec min": 333
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 938,
-      "atk min": 880,
-      "def max": 391,
-      "def min": 333,
-      "hp": 2612,
-      "rec": 420
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 61
     },
-    "guardian": {
-      "atk": 851,
-      "def max": 507,
-      "def min": 449,
-      "hp": 2612,
-      "rec max": 420,
-      "rec min": 362
+    "idle": {
+      "total number of frames": 44
     },
-    "oracle": {
-      "atk": 851,
-      "def max": 420,
-      "def min": 362,
-      "hp": 2612,
-      "rec max": 536,
-      "rec min": 478
+    "move": {
+      "total number of frames": 6
     }
   },
-  "leader_skill": {
-    "desc": "10% boost to Atk",
-    "effects": [
-      {
-        "atk% buff": 10,
-        "passive id": "1"
-      }
+  "category": 40140,
+  "cost": "4",
+  "damage frames": {
+    "frame times": [
+      28,
+      30,
+      33
     ],
-    "id": "1900",
-    "name": "Valiant Power"
+    "hit dmg% distribution": [
+      33,
+      33,
+      34
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 3
   },
-  "extra_skill": {},
+  "drop check count": 4,
+  "element": "thunder",
+  "exp_pattern": 15,
+  "gender": "male",
+  "getting type": "not eligible for achievement",
+  "guide_id": 212,
+  "imp": {
+    "max atk": "80",
+    "max def": "120",
+    "max hp": "250",
+    "max rec": "100"
+  },
+  "kind": "normal",
+  "lord damage range": "791~885",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Zeln",
+  "rarity": "2",
+  "sell caution": false,
+  "unitName": "Zeln",
+  "maxlv": "30",
+  "no": "212",
   "unitDisplayHomePosition_1W9CxaFK": "256,35,208,570",
   "unitDisplayDetailPosition_6z54rgb3": "181,153,595,625",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "215,403,265,225,0",
@@ -382,5 +382,100 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "300",
   "sellCaution": false,
-  "effectFrames": "22:400130:1,24:400130:1,27:134:1"
+  "effectFrames": "22:400130:1,24:400130:1,27:134:1",
+  "evofrom": "",
+  "evointo": "40142",
+  "evozelcost": "50000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "40131",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40130",
+      "count": 3
+    },
+    {
+      "type": "1",
+      "id": "60142",
+      "count": 1
+    }
+  ],
+  "freetext": ":''For other uses, see Zeln (disambiguation)''",
+  "basexp": "15",
+  "animation_attack": "61",
+  "animation_idle": "44",
+  "animation_move": "6",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "28, 30, 33",
+  "normal_distribute": "33, 33, 34",
+  "normal_totaldistr": "100",
+  "bb_frames": "28, 30, 33",
+  "bb_distribute": "33, 33, 34",
+  "bb_totaldistr": "100",
+  "description": "A fighter hailing from the Republic of Atalva who trained at the Toltya Dojo in the Sama Kingdom, he first knocked on its gates at the age of 12. A timid child lacking the approval of his peers, he was actually sent to the dojo by his father as a means of toughening him up. Though constantly on the verge of tears on account of his grueling training regimen, he found comfort in his friendship with Nemia, and soon developed romantic feelings for her.",
+  "summon": "Hah! Leave everything to me! W-Wait... You can’t expect me to go up against that guy!?",
+  "fusion": "Yes! The power’s swelling within me! No one can touch me now!",
+  "evolution": "",
+  "hp_base": "1360",
+  "atk_base": "560",
+  "def_base": "300",
+  "rec_base": "280",
+  "hp_lord": "2612",
+  "atk_lord": "851",
+  "def_lord": "420",
+  "rec_lord": "420",
+  "hp_anima": "2830",
+  "rec_anima": "362",
+  "atk_breaker": "909",
+  "def_breaker": "362",
+  "atk_guardian": "793",
+  "def_guardian": "478",
+  "rec_guardian": "391",
+  "def_oracle": "391",
+  "hp_oracle": "2525",
+  "rec_oracle": "507",
+  "hp_bonus": "250",
+  "atk_bonus": "80",
+  "def_bonus": "120",
+  "rec_bonus": "100",
+  "lordonly": "",
+  "combo_hits": "3",
+  "normaldc": "12",
+  "ls": "Valiant Power",
+  "lsdescription": "10% boost to Atk Power of all types",
+  "lstype": "Attack",
+  "bbdescription": "3 Combo Thunder Elemental Attack on All enemies & Slight Probability of Injury Effect",
+  "bbnote": "45% chance",
+  "bbtype": "Offense",
+  "bbhits": "3",
+  "bbaoe": "A",
+  "bbgauge": "20",
+  "bbdc": "3",
+  "bbmultiplier": "85",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "40131",
+  "evomats2": "40130",
+  "evomats3": "40130",
+  "evomats4": "40130",
+  "evomats5": "60142"
 }

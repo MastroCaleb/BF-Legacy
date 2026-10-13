@@ -1,61 +1,63 @@
 {
   "id": "40094",
-  "unitName": "Zazabis",
-  "no": "367",
-  "element": "Thunder",
-  "rarity": "★★★★★",
-  "cost": "12",
-  "maxlv": "80",
-  "basexp": "15",
-  "gender": "N",
-  "ai": "2",
-  "animation_attack": "130",
-  "animation_idle": "55",
-  "animation_move": "55",
-  "movespeed_attack": "6",
-  "movespeed_skill": "6",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "42, 47, 52, 57, 62, 67",
-  "normal_distribute": "20, 20, 10, 10, 20, 20",
-  "normal_totaldistr": "100",
-  "bb_frames": "42",
-  "bb_distribute": "100",
-  "bb_totaldistr": "100",
-  "description": "The evolved form of a Ziz that absorbed the power from a dragon it consumed. It looks completely different from before, and its huge wings greatly increase its flying ability. In addition, it also has the tough scales and sharp claws of a dragon. Its thunder attack is even more powerful than Ziz's and its area of attack is much wider than before. It's said that once you're targeted by Zazabis, there's nowhere to run and hide.",
-  "summon": "I was summoned?<br>Let me test your strength<br>to see if it is real!",
-  "fusion": "Summoner!<br>Check out my thunder strike!<br>It's more powerful than ever!",
-  "evolution": "Summoner! Look!<br>My wings are so beautiful!<br>I'll show you my new power!",
-  "hp_base": "3172",
-  "atk_base": "885",
-  "def_base": "891",
-  "rec_base": "851",
-  "hp_lord": "4775",
-  "atk_lord": "1451",
-  "def_lord": "1373",
-  "rec_lord": "1358",
-  "hp_anima": "5368",
-  "rec_anima": "1200",
-  "atk_breaker": "1609",
-  "def_breaker": "1215",
-  "atk_guardian": "1293",
-  "def_guardian": "1531",
-  "rec_guardian": "1279",
-  "def_oracle": "1294",
-  "hp_oracle": "4538",
-  "rec_oracle": "1595",
-  "hp_bonus": "500",
-  "atk_bonus": "200",
-  "def_bonus": "200",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "6",
-  "normaldc": "12",
-  "ls": "Thunder Barrier",
-  "lsdescription": "15% reduction in damage from Thunder Types",
-  "lstype": "Defense",
+  "stats": {
+    "_base": {
+      "atk": 885,
+      "def": 891,
+      "hp": 3172,
+      "rec": 851
+    },
+    "_lord": {
+      "atk": 1451,
+      "def": 1373,
+      "hp": 4775,
+      "rec": 1358
+    },
+    "anima": {
+      "atk": 1451,
+      "def": 1373,
+      "hp max": 5565,
+      "hp min": 5170,
+      "rec max": 1279,
+      "rec min": 1121
+    },
+    "breaker": {
+      "atk max": 1688,
+      "atk min": 1530,
+      "def max": 1294,
+      "def min": 1136,
+      "hp": 4775,
+      "rec": 1358
+    },
+    "guardian": {
+      "atk": 1451,
+      "def max": 1610,
+      "def min": 1452,
+      "hp": 4775,
+      "rec max": 1358,
+      "rec min": 1200
+    },
+    "oracle": {
+      "atk": 1451,
+      "def max": 1373,
+      "def min": 1215,
+      "hp": 4775,
+      "rec max": 1674,
+      "rec min": 1516
+    }
+  },
+  "leader_skill": {
+    "desc": "15% reduction in damage from Thunder Types",
+    "effects": [
+      {
+        "passive id": "5",
+        "thunder resist%": 15
+      }
+    ],
+    "id": "507",
+    "name": "Thunder Barrier"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -218,93 +220,93 @@
     ],
     "name": "X Radia"
   },
-  "bbdescription": "5 combo random Thunder elemental attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "5",
-  "bbaoe": "1",
-  "bbgauge": "20",
-  "bbdc": "5",
-  "bbmultiplier": "600",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "40093",
-  "evointo": "40095",
-  "evomats1": "50354",
-  "evomats2": "40133",
-  "evomats3": "40191",
-  "evomats4": "40132",
-  "evomats5": "60224",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 885,
-      "def": 891,
-      "hp": 3172,
-      "rec": 851
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1451,
-      "def": 1373,
-      "hp": 4775,
-      "rec": 1358
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1451,
-      "def": 1373,
-      "hp max": 5565,
-      "hp min": 5170,
-      "rec max": 1279,
-      "rec min": 1121
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 130
     },
-    "breaker": {
-      "atk max": 1688,
-      "atk min": 1530,
-      "def max": 1294,
-      "def min": 1136,
-      "hp": 4775,
-      "rec": 1358
+    "idle": {
+      "total number of frames": 55
     },
-    "guardian": {
-      "atk": 1451,
-      "def max": 1610,
-      "def min": 1452,
-      "hp": 4775,
-      "rec max": 1358,
-      "rec min": 1200
-    },
-    "oracle": {
-      "atk": 1451,
-      "def max": 1373,
-      "def min": 1215,
-      "hp": 4775,
-      "rec max": 1674,
-      "rec min": 1516
+    "move": {
+      "total number of frames": 55
     }
   },
-  "leader_skill": {
-    "desc": "15% reduction in damage from Thunder Types",
-    "effects": [
-      {
-        "passive id": "5",
-        "thunder resist%": 15
-      }
+  "category": 40090,
+  "cost": "12",
+  "damage frames": {
+    "frame times": [
+      42,
+      47,
+      52,
+      57,
+      62,
+      67
     ],
-    "id": "507",
-    "name": "Thunder Barrier"
+    "hit dmg% distribution": [
+      20,
+      20,
+      10,
+      10,
+      20,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 6
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "thunder",
+  "exp_pattern": 15,
+  "gender": "other",
+  "getting type": "rare summon",
+  "guide_id": 367,
+  "imp": {
+    "max atk": "200",
+    "max def": "200",
+    "max hp": "500",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "1350~1509",
+  "movement": {
+    "attack": {
+      "move speed": 6,
+      "move speed type": "2",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 6,
+      "move speed type": "2",
+      "move type": "3"
+    }
+  },
+  "name": "Zazabis",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Zazabis",
+  "maxlv": "80",
+  "no": "367",
   "unitDisplayHomePosition_1W9CxaFK": "382,200,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-20,43,1024,846",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "58,243,650,376,1",
@@ -314,5 +316,108 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "42:290:1,40:400201:1,52:290:1,50:400201:1,77:200081:1,75:400201:1"
+  "effectFrames": "42:290:1,40:400201:1,52:290:1,50:400201:1,77:200081:1,75:400201:1",
+  "evofrom": "40093",
+  "evointo": "40095",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    }
+  ],
+  "basexp": "15",
+  "animation_attack": "130",
+  "animation_idle": "55",
+  "animation_move": "55",
+  "movespeed_attack": "6",
+  "movespeed_skill": "6",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "42, 47, 52, 57, 62, 67",
+  "normal_distribute": "20, 20, 10, 10, 20, 20",
+  "normal_totaldistr": "100",
+  "bb_frames": "42",
+  "bb_distribute": "100",
+  "bb_totaldistr": "100",
+  "description": "The evolved form of a Ziz that absorbed the power from a dragon it consumed. It looks completely different from before, and its huge wings greatly increase its flying ability. In addition, it also has the tough scales and sharp claws of a dragon. Its thunder attack is even more powerful than Ziz's and its area of attack is much wider than before. It's said that once you're targeted by Zazabis, there's nowhere to run and hide.",
+  "summon": "I was summoned?<br>Let me test your strength<br>to see if it is real!",
+  "fusion": "Summoner!<br>Check out my thunder strike!<br>It's more powerful than ever!",
+  "evolution": "Summoner! Look!<br>My wings are so beautiful!<br>I'll show you my new power!",
+  "hp_base": "3172",
+  "atk_base": "885",
+  "def_base": "891",
+  "rec_base": "851",
+  "hp_lord": "4775",
+  "atk_lord": "1451",
+  "def_lord": "1373",
+  "rec_lord": "1358",
+  "hp_anima": "5368",
+  "rec_anima": "1200",
+  "atk_breaker": "1609",
+  "def_breaker": "1215",
+  "atk_guardian": "1293",
+  "def_guardian": "1531",
+  "rec_guardian": "1279",
+  "def_oracle": "1294",
+  "hp_oracle": "4538",
+  "rec_oracle": "1595",
+  "hp_bonus": "500",
+  "atk_bonus": "200",
+  "def_bonus": "200",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "6",
+  "normaldc": "12",
+  "ls": "Thunder Barrier",
+  "lsdescription": "15% reduction in damage from Thunder Types",
+  "lstype": "Defense",
+  "bbdescription": "5 combo random Thunder elemental attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "5",
+  "bbaoe": "1",
+  "bbgauge": "20",
+  "bbdc": "5",
+  "bbmultiplier": "600",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "40133",
+  "evomats3": "40191",
+  "evomats4": "40132",
+  "evomats5": "60224"
 }

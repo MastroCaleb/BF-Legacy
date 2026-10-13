@@ -1,61 +1,68 @@
 {
   "id": "810315",
-  "unitName": "Berserker Korzan",
-  "no": "8152",
-  "element": "Fire",
-  "rarity": "★★★★★",
-  "cost": "20",
-  "maxlv": "80",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "3",
-  "animation_attack": "Unsupported",
-  "animation_idle": "Unsupported",
-  "animation_move": "Unsupported",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "58, 63, 68, 74, 81, 88, 95",
-  "normal_distribute": "10, 12, 15, 20, 17, 14, 12",
-  "normal_totaldistr": "100",
-  "bb_frames": "48, 53, 58, 63, 68, 73, 78, 93, 98",
-  "bb_distribute": "6, 8, 11, 14, 17, 15, 12, 10, 7",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "description": "A savage Morokai berserker from the world of Eneroth. Born into a lineage of legendary warriors, Korzan was the son and heir to the Overlord of the most powerful Morokai Warband in all of Baldemar, homeland of the warlike Morokai. A terrifying genius at fighting, Korzan towered above most warriors even before he could be considered a grown man. He was believed to be \"blessed\" by the Spirit of Fire, a patron of war and a symbol of power. Matched with his battle prowess was an equally volatile personality that made him an extremely difficult person to deal with. The only person that he would open his heart to was his younger sister. In her presence, it is said that Korzan became an entirely different person.",
-  "summon": "I am Korzan of the Morokai,<br>chosen by the Great Spirit of Fire!<br>They'll soon learn to fear my name!",
-  "fusion": "I am not your bootlicker!<br>With or without your help, my foes<br>are nothing but dirt beneath my feet!",
-  "evolution": "",
-  "hp_base": "3531",
-  "atk_base": "1493",
-  "def_base": "1206",
-  "rec_base": "914",
-  "hp_lord": "5045",
-  "atk_lord": "2134",
-  "def_lord": "1723",
-  "rec_lord": "1307",
-  "hp_anima": "5637",
-  "rec_anima": "1149",
-  "atk_breaker": "2292",
-  "def_breaker": "1565",
-  "def_guardian": "1881",
-  "rec_guardian": "1228",
-  "def_oracle": "1644",
-  "rec_oracle": "1544",
-  "hp_bonus": "500",
-  "atk_bonus": "260",
-  "def_bonus": "200",
-  "rec_bonus": "140",
-  "lordonly": "",
-  "combo_hits": "7",
-  "normaldc": "21",
-  "ls": "Unbridled Fury",
-  "lsdescription": "20% boost to max HP, Atk & boost to critical damage",
-  "lsnote": "75% boost",
-  "lstype": "Hit Points/Attack",
+  "stats": {
+    "_base": {
+      "atk": 1493,
+      "def": 1206,
+      "hp": 3531,
+      "rec": 914
+    },
+    "_lord": {
+      "atk": 2134,
+      "def": 1723,
+      "hp": 5045,
+      "rec": 1307
+    },
+    "anima": {
+      "atk": 2134,
+      "def": 1723,
+      "hp max": 5835,
+      "hp min": 5440,
+      "rec max": 1228,
+      "rec min": 1070
+    },
+    "breaker": {
+      "atk max": 2371,
+      "atk min": 2213,
+      "def max": 1644,
+      "def min": 1486,
+      "hp": 5045,
+      "rec": 1307
+    },
+    "guardian": {
+      "atk": 2134,
+      "def max": 1960,
+      "def min": 1802,
+      "hp": 5045,
+      "rec max": 1307,
+      "rec min": 1149
+    },
+    "oracle": {
+      "atk": 2134,
+      "def max": 1723,
+      "def min": 1565,
+      "hp": 5045,
+      "rec max": 1623,
+      "rec min": 1465
+    }
+  },
+  "leader_skill": {
+    "desc": "20% boost to max HP, Atk & boost to critical damage",
+    "effects": [
+      {
+        "atk% buff": 20,
+        "hp% buff": 20,
+        "passive id": "1"
+      },
+      {
+        "crit multiplier%": 75.0,
+        "passive id": "34"
+      }
+    ],
+    "id": "801088",
+    "name": "Unbridled Fury"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -428,6 +435,177 @@
     ],
     "name": "Velkar Cleave"
   },
+  "sbb": {},
+  "ubb": {},
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "error": "sam file not supported"
+  },
+  "category": 810310,
+  "cost": "20",
+  "damage frames": {
+    "frame times": [
+      58,
+      63,
+      68,
+      74,
+      81,
+      88,
+      95
+    ],
+    "hit dmg% distribution": [
+      10,
+      12,
+      15,
+      20,
+      17,
+      14,
+      12
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 7
+  },
+  "drop check count": 3,
+  "element": "fire",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 8152,
+  "imp": {
+    "max atk": "260",
+    "max def": "200",
+    "max hp": "500",
+    "max rec": "140"
+  },
+  "kind": "normal",
+  "lord damage range": "1986~2219",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Berserker Korzan",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Berserker Korzan",
+  "maxlv": "80",
+  "no": "8152",
+  "unitDisplayHomePosition_1W9CxaFK": "352,194,174,475",
+  "unitDisplayDetailPosition_6z54rgb3": "62,65,1017,719",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "35,240,562,397,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "141,-174,1111,785",
+  "unitDisplaySummonPosition_KC3Jk8Br": "35,240,562,397,0",
+  "unitDisplayHpPosition_3BpHN6VD": "-2,-18",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "5000",
+  "sellCaution": false,
+  "effectFrames": "58:121:1,63:121:1,68:121:1,74:121:1,81:121:1,88:121:1,95:121:1,60:1130:1,75:100111:1",
+  "evofrom": "",
+  "evointo": "810316",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "810034",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "Unsupported",
+  "animation_idle": "Unsupported",
+  "animation_move": "Unsupported",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "58, 63, 68, 74, 81, 88, 95",
+  "normal_distribute": "10, 12, 15, 20, 17, 14, 12",
+  "normal_totaldistr": "100",
+  "bb_frames": "48, 53, 58, 63, 68, 73, 78, 93, 98",
+  "bb_distribute": "6, 8, 11, 14, 17, 15, 12, 10, 7",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "description": "A savage Morokai berserker from the world of Eneroth. Born into a lineage of legendary warriors, Korzan was the son and heir to the Overlord of the most powerful Morokai Warband in all of Baldemar, homeland of the warlike Morokai. A terrifying genius at fighting, Korzan towered above most warriors even before he could be considered a grown man. He was believed to be \"blessed\" by the Spirit of Fire, a patron of war and a symbol of power. Matched with his battle prowess was an equally volatile personality that made him an extremely difficult person to deal with. The only person that he would open his heart to was his younger sister. In her presence, it is said that Korzan became an entirely different person.",
+  "summon": "I am Korzan of the Morokai,<br>chosen by the Great Spirit of Fire!<br>They'll soon learn to fear my name!",
+  "fusion": "I am not your bootlicker!<br>With or without your help, my foes<br>are nothing but dirt beneath my feet!",
+  "evolution": "",
+  "hp_base": "3531",
+  "atk_base": "1493",
+  "def_base": "1206",
+  "rec_base": "914",
+  "hp_lord": "5045",
+  "atk_lord": "2134",
+  "def_lord": "1723",
+  "rec_lord": "1307",
+  "hp_anima": "5637",
+  "rec_anima": "1149",
+  "atk_breaker": "2292",
+  "def_breaker": "1565",
+  "def_guardian": "1881",
+  "rec_guardian": "1228",
+  "def_oracle": "1644",
+  "rec_oracle": "1544",
+  "hp_bonus": "500",
+  "atk_bonus": "260",
+  "def_bonus": "200",
+  "rec_bonus": "140",
+  "lordonly": "",
+  "combo_hits": "7",
+  "normaldc": "21",
+  "ls": "Unbridled Fury",
+  "lsdescription": "20% boost to max HP, Atk & boost to critical damage",
+  "lsnote": "75% boost",
+  "lstype": "Hit Points/Attack",
   "bbdescription": "9 combo powerful Fire attack on all foes, adds Def ignoring effect to attack for 2 turns & boosts Atk and critical hit rate for 3 turns",
   "bbnote": "90% boost to Atk & 50% boost to Critical rate",
   "bbtype": "Support/Offense",
@@ -436,7 +614,6 @@
   "bbgauge": "21",
   "bbdc": "9",
   "bbmultiplier": "250",
-  "sbb": {},
   "sbbdescription": "",
   "sbbtype": "",
   "sbbhits": "",
@@ -444,7 +621,6 @@
   "sbbgauge": "",
   "sbbdc": "",
   "sbbmultiplier": "",
-  "ubb": {},
   "ubbdescription": "",
   "ubbtype": "",
   "ubbhits": "",
@@ -455,86 +631,10 @@
   "es": "",
   "esitem": "",
   "esdescription": "",
-  "evofrom": "",
-  "evointo": "810316",
   "evomats1": "50354",
   "evomats2": "10133",
   "evomats3": "60144",
   "evomats4": "60144",
   "evomats5": "810034",
-  "evoitem": "",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 1493,
-      "def": 1206,
-      "hp": 3531,
-      "rec": 914
-    },
-    "_lord": {
-      "atk": 2134,
-      "def": 1723,
-      "hp": 5045,
-      "rec": 1307
-    },
-    "anima": {
-      "atk": 2134,
-      "def": 1723,
-      "hp max": 5835,
-      "hp min": 5440,
-      "rec max": 1228,
-      "rec min": 1070
-    },
-    "breaker": {
-      "atk max": 2371,
-      "atk min": 2213,
-      "def max": 1644,
-      "def min": 1486,
-      "hp": 5045,
-      "rec": 1307
-    },
-    "guardian": {
-      "atk": 2134,
-      "def max": 1960,
-      "def min": 1802,
-      "hp": 5045,
-      "rec max": 1307,
-      "rec min": 1149
-    },
-    "oracle": {
-      "atk": 2134,
-      "def max": 1723,
-      "def min": 1565,
-      "hp": 5045,
-      "rec max": 1623,
-      "rec min": 1465
-    }
-  },
-  "leader_skill": {
-    "desc": "20% boost to max HP, Atk & boost to critical damage",
-    "effects": [
-      {
-        "atk% buff": 20,
-        "hp% buff": 20,
-        "passive id": "1"
-      },
-      {
-        "crit multiplier%": 75.0,
-        "passive id": "34"
-      }
-    ],
-    "id": "801088",
-    "name": "Unbridled Fury"
-  },
-  "extra_skill": {},
-  "unitDisplayHomePosition_1W9CxaFK": "352,194,174,475",
-  "unitDisplayDetailPosition_6z54rgb3": "62,65,1017,719",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "35,240,562,397,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "141,-174,1111,785",
-  "unitDisplaySummonPosition_KC3Jk8Br": "35,240,562,397,0",
-  "unitDisplayHpPosition_3BpHN6VD": "-2,-18",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "5000",
-  "sellCaution": false,
-  "effectFrames": "58:121:1,63:121:1,68:121:1,74:121:1,81:121:1,88:121:1,95:121:1,60:1130:1,75:100111:1"
+  "evoitem": ""
 }

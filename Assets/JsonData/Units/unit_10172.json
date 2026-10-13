@@ -1,62 +1,63 @@
 {
   "id": "10172",
-  "unitName": "Ogre",
-  "no": "270",
-  "element": "Fire",
-  "rarity": "★★★",
-  "cost": "5",
-  "maxlv": "40",
-  "basexp": "10",
-  "gender": "N",
-  "ai": "4",
-  "animation_attack": "72",
-  "animation_idle": "49",
-  "animation_move": "40",
-  "movespeed_attack": "0.005",
-  "movespeed_skill": "0.005",
-  "speedtype_attack": "1",
-  "speedtype_skill": "1",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "36",
-  "normal_distribute": "60",
-  "normal_totaldistr": "60",
-  "bb_frames": "36",
-  "bb_distribute": "100",
-  "bb_totaldistr": "100",
-  "description": "An upright-walking monster with a pig's head that inhabits areas where the fire element is strong. Those with abilities that surpass other Orcs evolve into Ogres which then take charge of the rest. Ogres carry special-made metal clubs, said to have been handed down from leader to leader. It is said that this was created by a human blacksmith long ago, though because Ogres value it more than life itself, it is exceedingly hard to study.",
-  "summon": "You, a Summoner?<br>Sure, I help.<br>From today, we friends!",
-  "fusion": "Give me power.<br>I help you.<br>You, friend.",
-  "evolution": "I know human words.<br>Only few.",
-  "hp_base": "1989",
-  "atk_base": "693",
-  "def_base": "409",
-  "rec_base": "289",
-  "hp_lord": "2771",
-  "atk_lord": "990",
-  "def_lord": "715",
-  "rec_lord": "520",
-  "hp_anima": "3064",
-  "rec_anima": "442",
-  "atk_breaker": "1068",
-  "def_breaker": "637",
-  "atk_guardian": "912",
-  "def_guardian": "793",
-  "rec_guardian": "481",
-  "def_oracle": "676",
-  "hp_oracle": "2654",
-  "rec_oracle": "637",
-  "hp_bonus": "300",
-  "atk_bonus": "120",
-  "def_bonus": "120",
-  "rec_bonus": "120",
-  "lordonly": "",
-  "combo_hits": "1",
-  "normaldc": "2",
-  "ls": "Fighting Light",
-  "lsdescription": "Small boost in Battle Crystals produced during Spark",
-  "lsnote": "30% boost",
-  "lstype": "Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 693,
+      "def": 409,
+      "hp": 1989,
+      "rec": 289
+    },
+    "_lord": {
+      "atk": 990,
+      "def": 715,
+      "hp": 2771,
+      "rec": 520
+    },
+    "anima": {
+      "atk": 990,
+      "def": 715,
+      "hp max": 3161,
+      "hp min": 2966,
+      "rec max": 481,
+      "rec min": 403
+    },
+    "breaker": {
+      "atk max": 1107,
+      "atk min": 1029,
+      "def max": 676,
+      "def min": 598,
+      "hp": 2771,
+      "rec": 520
+    },
+    "guardian": {
+      "atk": 990,
+      "def max": 832,
+      "def min": 754,
+      "hp": 2771,
+      "rec max": 520,
+      "rec min": 442
+    },
+    "oracle": {
+      "atk": 990,
+      "def max": 715,
+      "def min": 637,
+      "hp": 2771,
+      "rec max": 676,
+      "rec min": 598
+    }
+  },
+  "leader_skill": {
+    "desc": "Small boost in Battle Crystals produced during Spark",
+    "effects": [
+      {
+        "bc drop% for spark": 30,
+        "passive id": "31"
+      }
+    ],
+    "id": "1400",
+    "name": "Fighting Light"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -291,95 +292,95 @@
     ],
     "name": "Power Strike"
   },
-  "bbdescription": "Powerful Fire attack on single enemy & probable Injury effect",
-  "bbnote": "80% chance",
-  "bbtype": "Offense",
-  "bbhits": "1",
-  "bbaoe": "1",
-  "bbgauge": "12",
-  "bbdc": "3",
-  "bbmultiplier": "280",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "10171",
-  "evointo": "",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 693,
-      "def": 409,
-      "hp": 1989,
-      "rec": 289
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_under",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 990,
-      "def": 715,
-      "hp": 2771,
-      "rec": 520
+    {
+      "action": "skill",
+      "chance%": 30.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 990,
-      "def": 715,
-      "hp max": 3161,
-      "hp min": 2966,
-      "rec max": 481,
-      "rec min": 403
+    {
+      "action": "attack",
+      "chance%": 70.0,
+      "target conditions": "hp_max",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 1107,
-      "atk min": 1029,
-      "def max": 676,
-      "def min": 598,
-      "hp": 2771,
-      "rec": 520
+    {
+      "action": "attack",
+      "chance%": 50.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "guardian": {
-      "atk": 990,
-      "def max": 832,
-      "def min": 754,
-      "hp": 2771,
-      "rec max": 520,
-      "rec min": 442
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 72
     },
-    "oracle": {
-      "atk": 990,
-      "def max": 715,
-      "def min": 637,
-      "hp": 2771,
-      "rec max": 676,
-      "rec min": 598
+    "idle": {
+      "total number of frames": 49
+    },
+    "move": {
+      "total number of frames": 40
     }
   },
-  "leader_skill": {
-    "desc": "Small boost in Battle Crystals produced during Spark",
-    "effects": [
-      {
-        "bc drop% for spark": 30,
-        "passive id": "31"
-      }
+  "category": 10170,
+  "cost": "5",
+  "damage frames": {
+    "frame times": [
+      36
     ],
-    "id": "1400",
-    "name": "Fighting Light"
+    "hit dmg% distribution": [
+      60
+    ],
+    "hit dmg% distribution (total)": 60,
+    "hits": 1
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "fire",
+  "exp_pattern": 10,
+  "gender": "other",
+  "getting type": "farmable",
+  "guide_id": 270,
+  "imp": {
+    "max atk": "120",
+    "max def": "120",
+    "max hp": "300",
+    "max rec": "120"
+  },
+  "kind": "normal",
+  "lord damage range": "921~1029",
+  "movement": {
+    "attack": {
+      "move speed": 0.005,
+      "move speed type": "1",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.005,
+      "move speed type": "1",
+      "move type": "1"
+    }
+  },
+  "name": "Ogre",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "Ogre",
+  "maxlv": "40",
+  "no": "270",
   "unitDisplayHomePosition_1W9CxaFK": "255,-6,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "55,195,626,570",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "130,408,303,232,0",
@@ -389,5 +390,85 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "1000",
   "sellCaution": false,
-  "effectFrames": "30:131:1"
+  "effectFrames": "30:131:1",
+  "evofrom": "10171",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "10",
+  "animation_attack": "72",
+  "animation_idle": "49",
+  "animation_move": "40",
+  "movespeed_attack": "0.005",
+  "movespeed_skill": "0.005",
+  "speedtype_attack": "1",
+  "speedtype_skill": "1",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "36",
+  "normal_distribute": "60",
+  "normal_totaldistr": "60",
+  "bb_frames": "36",
+  "bb_distribute": "100",
+  "bb_totaldistr": "100",
+  "description": "An upright-walking monster with a pig's head that inhabits areas where the fire element is strong. Those with abilities that surpass other Orcs evolve into Ogres which then take charge of the rest. Ogres carry special-made metal clubs, said to have been handed down from leader to leader. It is said that this was created by a human blacksmith long ago, though because Ogres value it more than life itself, it is exceedingly hard to study.",
+  "summon": "You, a Summoner?<br>Sure, I help.<br>From today, we friends!",
+  "fusion": "Give me power.<br>I help you.<br>You, friend.",
+  "evolution": "I know human words.<br>Only few.",
+  "hp_base": "1989",
+  "atk_base": "693",
+  "def_base": "409",
+  "rec_base": "289",
+  "hp_lord": "2771",
+  "atk_lord": "990",
+  "def_lord": "715",
+  "rec_lord": "520",
+  "hp_anima": "3064",
+  "rec_anima": "442",
+  "atk_breaker": "1068",
+  "def_breaker": "637",
+  "atk_guardian": "912",
+  "def_guardian": "793",
+  "rec_guardian": "481",
+  "def_oracle": "676",
+  "hp_oracle": "2654",
+  "rec_oracle": "637",
+  "hp_bonus": "300",
+  "atk_bonus": "120",
+  "def_bonus": "120",
+  "rec_bonus": "120",
+  "lordonly": "",
+  "combo_hits": "1",
+  "normaldc": "2",
+  "ls": "Fighting Light",
+  "lsdescription": "Small boost in Battle Crystals produced during Spark",
+  "lsnote": "30% boost",
+  "lstype": "Brave Burst",
+  "bbdescription": "Powerful Fire attack on single enemy & probable Injury effect",
+  "bbnote": "80% chance",
+  "bbtype": "Offense",
+  "bbhits": "1",
+  "bbaoe": "1",
+  "bbgauge": "12",
+  "bbdc": "3",
+  "bbmultiplier": "280",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "",
+  "evomats2": "",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": "",
+  "evoitem": ""
 }

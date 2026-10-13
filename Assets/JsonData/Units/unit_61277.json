@@ -1,65 +1,142 @@
 {
   "id": "61277",
-  "unitName": "異竟の究界神スデルカ",
-  "unreleased": "true",
-  "untranslated": "true",
-  "doenter": "true",
-  "no": "1769",
-  "element": "Dark",
-  "rarity": "Omni",
-  "cost": "45",
-  "maxlv": "150",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "160",
-  "animation_idle": "96",
-  "animation_move": "8",
-  "movespeed_attack": "0.0033",
-  "speedtype_attack": "3",
-  "movetype_attack": "1",
-  "movespeed_skill": "0.0033",
-  "speedtype_skill": "3",
-  "movetype_skill": "1",
-  "description": "",
-  "summon": "",
-  "fusion": "",
-  "evolution": "",
-  "hp_base": "5873",
-  "atk_base": "2207",
-  "def_base": "2454",
-  "rec_base": "2047",
-  "hp_lord": "7652",
-  "atk_lord": "2734",
-  "def_lord": "3067",
-  "rec_lord": "2547",
-  "hp_anima": "8769",
-  "rec_anima": "2249",
-  "atk_breaker": "3032",
-  "def_breaker": "2769",
-  "def_guardian": "3365",
-  "rec_guardian": "2398",
-  "def_oracle": "2918",
-  "rec_oracle": "2994",
-  "hp_bonus": "1250",
-  "atk_bonus": "400",
-  "def_bonus": "800",
-  "rec_bonus": "500",
-  "lordonly": "",
-  "evofrom": "61276",
-  "evointo": "",
-  "normal_frames": "2, 5, 8, 11, 14, 17, 32, 35, 38, 41, 44, 47, 50",
-  "normal_distribute": "4, 4, 4, 13, 12, 12, 9, 9, 9, 9, 5, 5, 5",
-  "normal_totaldistr": "100",
-  "combo_hits": "13",
-  "normaldc": "52",
-  "ls": "探究者の叡智",
-  "lsdescription": "全てのユニットの防御力・最大ＨＰを５０％アップ＆ＢＢ発動時のＢＢゲージ消費量を少し軽減＆ＢＣ獲得時の増加量をかなりアップ＆光・闇属性ユニットからの被ダメージを５％軽減",
-  "lsnote": "50% boost to Def, HP, reduces BB gauge amount consumed during BB by 10-15%, 50% boost to BB gauge fill rate & 5% damage reduction from Light, Dark attacks",
-  "es": "裂け目の知識",
-  "esdescription": "攻撃・防御・回復・最大ＨＰ２０％アップ＆「ダメージ軽減系」タイプスフィア装備時、ＳＢＢに「味方全体に１ターン、光・闇属性ユニットからの被ダメージ少し軽減」追加・ＢＢ及びＳＢＢに「味方全体に３ターン、ターン毎にＢＢゲージ大幅に増加」追加",
-  "esitem": "Damage Reducing Sphere",
-  "esnote": "Adds 5% damage reduction to Light, Dark attacks for 1 turn & gradually fills 7 BC to all allies for 3 turns effect to BB/SBB when Damage Reducing sphere is equipped & 20% boost to all parameters",
+  "stats": {
+    "_base": {
+      "atk": 2207,
+      "def": 2454,
+      "hp": 5873,
+      "rec": 2047
+    },
+    "_lord": {
+      "atk": 2734,
+      "def": 3067,
+      "hp": 7652,
+      "rec": 2547
+    },
+    "anima": {
+      "atk": 2734,
+      "def": 3067,
+      "hp max": 9142,
+      "hp min": 8397,
+      "rec max": 2398,
+      "rec min": 2100
+    },
+    "breaker": {
+      "atk max": 3181,
+      "atk min": 2883,
+      "def max": 2918,
+      "def min": 2620,
+      "hp": 7652,
+      "rec": 2547
+    },
+    "guardian": {
+      "atk": 2734,
+      "def max": 3514,
+      "def min": 3216,
+      "hp": 7652,
+      "rec max": 2547,
+      "rec min": 2249
+    },
+    "oracle": {
+      "atk": 2734,
+      "def max": 3067,
+      "def min": 2769,
+      "hp": 7652,
+      "rec max": 3143,
+      "rec min": 2845
+    }
+  },
+  "leader_skill": {
+    "desc": "全てのユニットの防御力・最大ＨＰを５０％アップ＆ＢＢ発動時のＢＢゲージ消費量を少し軽減＆ＢＣ獲得時の増加量をかなりアップ＆光・闇属性ユニットからの被ダメージを５％軽減",
+    "effects": [
+      {
+        "def% buff": 50,
+        "hp% buff": 50,
+        "passive id": "1"
+      },
+      {
+        "passive id": "49",
+        "reduced bb bc use chance%": 100,
+        "reduced bb bc use% high": 15,
+        "reduced bb bc use% low": 10
+      },
+      {
+        "bb gauge fill rate%": 50,
+        "passive id": "32"
+      },
+      {
+        "dmg% mitigation for elemental attacks": 5.0,
+        "mitigate dark attacks": true,
+        "mitigate light attacks": true,
+        "passive id": "62"
+      }
+    ],
+    "id": "4395",
+    "name": "探究者の叡智"
+  },
+  "extra_skill": {
+    "desc": "攻撃・防御・回復・最大ＨＰ２０％アップ＆「ダメージ軽減系」タイプスフィア装備時、ＳＢＢに「味方全体に１ターン、光・闇属性ユニットからの被ダメージ少し軽減」追加・ＢＢ及びＳＢＢに「味方全体に３ターン、ターン毎にＢＢゲージ大幅に増加」追加",
+    "effects": [
+      {
+        "conditions": [
+          {
+            "sphere category required": "Damage Reducing",
+            "sphere category required (raw)": "10"
+          }
+        ],
+        "passive id": "66",
+        "passive target": "self",
+        "trigger on sbb": true,
+        "triggered effect": [
+          {
+            "dmg% mitigation for elemental attacks": 5,
+            "dmg% mitigation for elemental attacks buff turns": 1,
+            "effect delay time(ms)/frame": "0.0/0",
+            "mitigate dark attacks": true,
+            "mitigate light attacks": true,
+            "proc id": "39",
+            "target area": "aoe",
+            "target type": "party"
+          }
+        ]
+      },
+      {
+        "conditions": [
+          {
+            "sphere category required": "Damage Reducing",
+            "sphere category required (raw)": "10"
+          }
+        ],
+        "passive id": "66",
+        "passive target": "self",
+        "trigger on bb": true,
+        "trigger on sbb": true,
+        "triggered effect": [
+          {
+            "effect delay time(ms)/frame": "0.0/0",
+            "increase bb gauge gradual": 7,
+            "increase bb gauge gradual turns (37)": 3,
+            "proc id": "19",
+            "target area": "aoe",
+            "target type": "party"
+          }
+        ]
+      },
+      {
+        "atk% buff": 20,
+        "conditions": [],
+        "def% buff": 20,
+        "hp% buff": 20,
+        "passive id": "1",
+        "passive target": "self",
+        "rec% buff": 20
+      }
+    ],
+    "id": "46800",
+    "name": "裂け目の知識",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -522,35 +599,6 @@
     ],
     "name": "未導のディメンション"
   },
-  "bbdescription": "敵全体に闇属性１８連ダメージ＆味方全体の最大ＨＰを少しアップ＆３ターン、回復力に応じて防御力をかなりアップ＆１ターン、被ダメージを半分に軽減",
-  "bbnote": "{{UnitBuffList",
-  "buff_1_proc": "1",
-  "buff_1_potency": "1300% damage modifier",
-  "buff_1_duration": "—",
-  "buff_1_target": "All enemies",
-  "buff_2_proc": "18",
-  "buff_2_potency": "Reduces damage taken by 75%",
-  "buff_2_duration": "3 turns",
-  "buff_2_target": "All allies",
-  "buff_3_proc": "19",
-  "buff_3_potency": "Boosts BB gauge by 50 BC each turn",
-  "buff_3_duration": "3 turns",
-  "buff_3_target": "All allies",
-  "buff_4_proc": "66",
-  "buff_4_potency": "50% chance of reviving with 30% HP",
-  "buff_4_duration": "—",
-  "buff_4_target": "All allies",
-  "bbtype": "Offense",
-  "bbgauge": "26",
-  "bb_frames": "2, 5, 8, 11, 14, 17, 32, 35, 38, 41, 44, 47, 50, 53, 56, 59, 62, 65",
-  "bb_distribute": "2, 2, 2, 2, 2, 2, 12, 12, 12, 7, 7, 7, 7, 5, 5, 5, 5, 4",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "bbhits": "18",
-  "bbaoe": "A",
-  "bbdc": "18",
-  "bbmultiplier": "300",
-  "bb_hpscale": "",
   "sbb": {
     "damage frames": [
       {
@@ -1043,19 +1091,6 @@
     ],
     "name": "リフトパワード・ダークネス"
   },
-  "sbbdescription": "敵全体に強力な闇属性２８連ダメージ＆味方全体に確率で戦闘不能を回復＆３ターン、防御力を大幅にアップ＆１ターン、被ダメージを半分に軽減",
-  "sbbnote": "{{UnitBuffList",
-  "sbbtype": "Offense",
-  "sbbgauge": "28",
-  "sbb_frames": "2, 5, 8, 11, 14, 17, 32, 35, 38, 41, 44, 47, 50, 53, 56, 59, 62, 65, 68, 71, 74, 77, 80, 83, 86, 89, 92, 95",
-  "sbb_distribute": "2, 2, 2, 2, 2, 2, 10, 10, 10, 6, 6, 6, 6, 3, 3, 3, 3, 3, 3, 3, 2, 2, 2, 2, 2, 1, 1, 1",
-  "sbb_totaldistr": "100",
-  "sbb_effectdelay": "1",
-  "sbbhits": "28",
-  "sbbaoe": "A",
-  "sbbdc": "28",
-  "sbbmultiplier": "480",
-  "sbb_hpscale": "",
   "ubb": {
     "damage frames": [
       {
@@ -1238,6 +1273,217 @@
     ],
     "name": "ポータル・トゥ・アンノウン"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 160
+    },
+    "idle": {
+      "total number of frames": 96
+    },
+    "move": {
+      "total number of frames": 8
+    }
+  },
+  "category": 61270,
+  "cost": "45",
+  "damage frames": {
+    "frame times": [
+      2,
+      5,
+      8,
+      11,
+      14,
+      17,
+      32,
+      35,
+      38,
+      41,
+      44,
+      47,
+      50
+    ],
+    "hit dmg% distribution": [
+      4,
+      4,
+      4,
+      13,
+      12,
+      12,
+      9,
+      9,
+      9,
+      9,
+      5,
+      5,
+      5
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 13
+  },
+  "drop check count": 4,
+  "element": "dark",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "farmable",
+  "guide_id": 1769,
+  "imp": {
+    "max atk": "400",
+    "max def": "800",
+    "max hp": "1250",
+    "max rec": "500"
+  },
+  "kind": "normal",
+  "lord damage range": "2545~2843",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "異竟の究界神スデルカ",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "8",
+  "sell caution": true,
+  "unitName": "異竟の究界神スデルカ",
+  "maxlv": "150",
+  "no": "1769",
+  "unitDisplayHomePosition_1W9CxaFK": null,
+  "unitDisplayDetailPosition_6z54rgb3": null,
+  "unitDisplayConfirmImagePosition_MYK1fq6c": null,
+  "unitDisplayCutInImagePosition_7hLR6pDN": null,
+  "unitDisplaySummonPosition_KC3Jk8Br": null,
+  "unitDisplayHpPosition_3BpHN6VD": null,
+  "unitDisplayCursorPosition": null,
+  "sellPrice": "",
+  "sellCaution": false,
+  "effectFrames": "",
+  "evofrom": "61276",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "unreleased": "true",
+  "untranslated": "true",
+  "doenter": "true",
+  "basexp": "21",
+  "animation_attack": "160",
+  "animation_idle": "96",
+  "animation_move": "8",
+  "movespeed_attack": "0.0033",
+  "speedtype_attack": "3",
+  "movetype_attack": "1",
+  "movespeed_skill": "0.0033",
+  "speedtype_skill": "3",
+  "movetype_skill": "1",
+  "description": "",
+  "summon": "",
+  "fusion": "",
+  "evolution": "",
+  "hp_base": "5873",
+  "atk_base": "2207",
+  "def_base": "2454",
+  "rec_base": "2047",
+  "hp_lord": "7652",
+  "atk_lord": "2734",
+  "def_lord": "3067",
+  "rec_lord": "2547",
+  "hp_anima": "8769",
+  "rec_anima": "2249",
+  "atk_breaker": "3032",
+  "def_breaker": "2769",
+  "def_guardian": "3365",
+  "rec_guardian": "2398",
+  "def_oracle": "2918",
+  "rec_oracle": "2994",
+  "hp_bonus": "1250",
+  "atk_bonus": "400",
+  "def_bonus": "800",
+  "rec_bonus": "500",
+  "lordonly": "",
+  "normal_frames": "2, 5, 8, 11, 14, 17, 32, 35, 38, 41, 44, 47, 50",
+  "normal_distribute": "4, 4, 4, 13, 12, 12, 9, 9, 9, 9, 5, 5, 5",
+  "normal_totaldistr": "100",
+  "combo_hits": "13",
+  "normaldc": "52",
+  "ls": "探究者の叡智",
+  "lsdescription": "全てのユニットの防御力・最大ＨＰを５０％アップ＆ＢＢ発動時のＢＢゲージ消費量を少し軽減＆ＢＣ獲得時の増加量をかなりアップ＆光・闇属性ユニットからの被ダメージを５％軽減",
+  "lsnote": "50% boost to Def, HP, reduces BB gauge amount consumed during BB by 10-15%, 50% boost to BB gauge fill rate & 5% damage reduction from Light, Dark attacks",
+  "es": "裂け目の知識",
+  "esdescription": "攻撃・防御・回復・最大ＨＰ２０％アップ＆「ダメージ軽減系」タイプスフィア装備時、ＳＢＢに「味方全体に１ターン、光・闇属性ユニットからの被ダメージ少し軽減」追加・ＢＢ及びＳＢＢに「味方全体に３ターン、ターン毎にＢＢゲージ大幅に増加」追加",
+  "esitem": "Damage Reducing Sphere",
+  "esnote": "Adds 5% damage reduction to Light, Dark attacks for 1 turn & gradually fills 7 BC to all allies for 3 turns effect to BB/SBB when Damage Reducing sphere is equipped & 20% boost to all parameters",
+  "bbdescription": "敵全体に闇属性１８連ダメージ＆味方全体の最大ＨＰを少しアップ＆３ターン、回復力に応じて防御力をかなりアップ＆１ターン、被ダメージを半分に軽減",
+  "bbnote": "{{UnitBuffList",
+  "buff_1_proc": "1",
+  "buff_1_potency": "1300% damage modifier",
+  "buff_1_duration": "—",
+  "buff_1_target": "All enemies",
+  "buff_2_proc": "18",
+  "buff_2_potency": "Reduces damage taken by 75%",
+  "buff_2_duration": "3 turns",
+  "buff_2_target": "All allies",
+  "buff_3_proc": "19",
+  "buff_3_potency": "Boosts BB gauge by 50 BC each turn",
+  "buff_3_duration": "3 turns",
+  "buff_3_target": "All allies",
+  "buff_4_proc": "66",
+  "buff_4_potency": "50% chance of reviving with 30% HP",
+  "buff_4_duration": "—",
+  "buff_4_target": "All allies",
+  "bbtype": "Offense",
+  "bbgauge": "26",
+  "bb_frames": "2, 5, 8, 11, 14, 17, 32, 35, 38, 41, 44, 47, 50, 53, 56, 59, 62, 65",
+  "bb_distribute": "2, 2, 2, 2, 2, 2, 12, 12, 12, 7, 7, 7, 7, 5, 5, 5, 5, 4",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "bbhits": "18",
+  "bbaoe": "A",
+  "bbdc": "18",
+  "bbmultiplier": "300",
+  "bb_hpscale": "",
+  "sbbdescription": "敵全体に強力な闇属性２８連ダメージ＆味方全体に確率で戦闘不能を回復＆３ターン、防御力を大幅にアップ＆１ターン、被ダメージを半分に軽減",
+  "sbbnote": "{{UnitBuffList",
+  "sbbtype": "Offense",
+  "sbbgauge": "28",
+  "sbb_frames": "2, 5, 8, 11, 14, 17, 32, 35, 38, 41, 44, 47, 50, 53, 56, 59, 62, 65, 68, 71, 74, 77, 80, 83, 86, 89, 92, 95",
+  "sbb_distribute": "2, 2, 2, 2, 2, 2, 10, 10, 10, 6, 6, 6, 6, 3, 3, 3, 3, 3, 3, 3, 2, 2, 2, 2, 2, 1, 1, 1",
+  "sbb_totaldistr": "100",
+  "sbb_effectdelay": "1",
+  "sbbhits": "28",
+  "sbbaoe": "A",
+  "sbbdc": "28",
+  "sbbmultiplier": "480",
+  "sbb_hpscale": "",
   "ubbdescription": "敵全体に超強力な闇属性３４連ダメージ＆味方全体に確率で戦闘不能を回復＆３ターン、回復力に応じて攻撃力を超絶アップ・被ダメージを１/４に軽減・ターン毎にＢＢゲージを超絶増加",
   "ubbnote": "{{UnitBuffList",
   "buff_5_proc": "24_atk",
@@ -1282,152 +1528,5 @@
   "notes": "",
   "incorrectinfo": "",
   "addcat": "",
-  "addcatname": "",
-  "stats": {
-    "_base": {
-      "atk": 2207,
-      "def": 2454,
-      "hp": 5873,
-      "rec": 2047
-    },
-    "_lord": {
-      "atk": 2734,
-      "def": 3067,
-      "hp": 7652,
-      "rec": 2547
-    },
-    "anima": {
-      "atk": 2734,
-      "def": 3067,
-      "hp max": 9142,
-      "hp min": 8397,
-      "rec max": 2398,
-      "rec min": 2100
-    },
-    "breaker": {
-      "atk max": 3181,
-      "atk min": 2883,
-      "def max": 2918,
-      "def min": 2620,
-      "hp": 7652,
-      "rec": 2547
-    },
-    "guardian": {
-      "atk": 2734,
-      "def max": 3514,
-      "def min": 3216,
-      "hp": 7652,
-      "rec max": 2547,
-      "rec min": 2249
-    },
-    "oracle": {
-      "atk": 2734,
-      "def max": 3067,
-      "def min": 2769,
-      "hp": 7652,
-      "rec max": 3143,
-      "rec min": 2845
-    }
-  },
-  "leader_skill": {
-    "desc": "全てのユニットの防御力・最大ＨＰを５０％アップ＆ＢＢ発動時のＢＢゲージ消費量を少し軽減＆ＢＣ獲得時の増加量をかなりアップ＆光・闇属性ユニットからの被ダメージを５％軽減",
-    "effects": [
-      {
-        "def% buff": 50,
-        "hp% buff": 50,
-        "passive id": "1"
-      },
-      {
-        "passive id": "49",
-        "reduced bb bc use chance%": 100,
-        "reduced bb bc use% high": 15,
-        "reduced bb bc use% low": 10
-      },
-      {
-        "bb gauge fill rate%": 50,
-        "passive id": "32"
-      },
-      {
-        "dmg% mitigation for elemental attacks": 5.0,
-        "mitigate dark attacks": true,
-        "mitigate light attacks": true,
-        "passive id": "62"
-      }
-    ],
-    "id": "4395",
-    "name": "探究者の叡智"
-  },
-  "extra_skill": {
-    "desc": "攻撃・防御・回復・最大ＨＰ２０％アップ＆「ダメージ軽減系」タイプスフィア装備時、ＳＢＢに「味方全体に１ターン、光・闇属性ユニットからの被ダメージ少し軽減」追加・ＢＢ及びＳＢＢに「味方全体に３ターン、ターン毎にＢＢゲージ大幅に増加」追加",
-    "effects": [
-      {
-        "conditions": [
-          {
-            "sphere category required": "Damage Reducing",
-            "sphere category required (raw)": "10"
-          }
-        ],
-        "passive id": "66",
-        "passive target": "self",
-        "trigger on sbb": true,
-        "triggered effect": [
-          {
-            "dmg% mitigation for elemental attacks": 5,
-            "dmg% mitigation for elemental attacks buff turns": 1,
-            "effect delay time(ms)/frame": "0.0/0",
-            "mitigate dark attacks": true,
-            "mitigate light attacks": true,
-            "proc id": "39",
-            "target area": "aoe",
-            "target type": "party"
-          }
-        ]
-      },
-      {
-        "conditions": [
-          {
-            "sphere category required": "Damage Reducing",
-            "sphere category required (raw)": "10"
-          }
-        ],
-        "passive id": "66",
-        "passive target": "self",
-        "trigger on bb": true,
-        "trigger on sbb": true,
-        "triggered effect": [
-          {
-            "effect delay time(ms)/frame": "0.0/0",
-            "increase bb gauge gradual": 7,
-            "increase bb gauge gradual turns (37)": 3,
-            "proc id": "19",
-            "target area": "aoe",
-            "target type": "party"
-          }
-        ]
-      },
-      {
-        "atk% buff": 20,
-        "conditions": [],
-        "def% buff": 20,
-        "hp% buff": 20,
-        "passive id": "1",
-        "passive target": "self",
-        "rec% buff": 20
-      }
-    ],
-    "id": "46800",
-    "name": "裂け目の知識",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": null,
-  "unitDisplayDetailPosition_6z54rgb3": null,
-  "unitDisplayConfirmImagePosition_MYK1fq6c": null,
-  "unitDisplayCutInImagePosition_7hLR6pDN": null,
-  "unitDisplaySummonPosition_KC3Jk8Br": null,
-  "unitDisplayHpPosition_3BpHN6VD": null,
-  "unitDisplayCursorPosition": null,
-  "sellPrice": "",
-  "sellCaution": false,
-  "effectFrames": ""
+  "addcatname": ""
 }

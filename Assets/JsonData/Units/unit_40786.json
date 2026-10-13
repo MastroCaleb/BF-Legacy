@@ -1,69 +1,86 @@
 {
   "id": "40786",
-  "unitName": "Phoenix Thunder Rayla",
-  "idalt": "",
-  "no": "1403",
-  "element": "Thunder",
-  "rarity": "★★★★★★★",
-  "cost": "43",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "126",
-  "animation_idle": "52",
-  "animation_move": "11",
-  "movespeed_attack": "0.0024",
-  "movespeed_skill": "0.0024",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "15, 20, 56, 60, 64, 68, 72",
-  "normal_distribute": "8, 6, 20, 13, 21, 17, 15",
-  "normal_totaldistr": "100",
-  "bb_frames": "15, 20, 56, 59, 62, 65, 68, 71, 74, 77, 80",
-  "bb_distribute": "8, 6, 13, 9, 11, 9, 7, 11, 7, 10, 9",
-  "bb_totaldistr": "100",
-  "sbb_frames": "15, 19, 23, 27, 31, 56, 59, 62, 65, 68, 71, 74, 77, 80, 83, 86, 89, 92",
-  "sbb_distribute": "7, 4, 3, 3, 3, 10, 6, 7, 6, 4, 9, 6, 8, 3, 6, 5, 7, 3",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "15, 19, 23, 27, 31, 35, 56, 59, 62, 65, 68, 71, 74, 77, 80, 83, 86, 89, 92, 95, 98",
-  "ubb_distribute": "6, 4, 3, 3, 3, 3, 9, 6, 7, 4, 3, 8, 5, 8, 3, 4, 3, 7, 3, 5, 3",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "3",
-  "ubb_effectdelay": "3",
-  "description": "A Summoner who once adventured with Owen and his companions. Although she could not see Lucius' Gate initially, she awakened as the third Summoner after nursing wounds Owen suffered on an adventure. However, when the adventurers found themselves in combat with a disciple and the sacred beast that served her, Rayla took an attack to spare her comrade. She then died in Owen's arms. It is said that Owen accepted a last request from her at that time, but he will not speak of the matter to anyone.",
-  "summon": "So I'm being Summoned...<br>I bet he's still healthy even now.<br>He he, I can imagine, even without you telling me.",
-  "fusion": "This...is the secret art of Fusion.<br>I know of it.<br>But although I've used it before,<br>this is the first time I, myself am being fused.",
-  "evolution": "",
-  "hp_base": "5312",
-  "atk_base": "2334",
-  "def_base": "1689",
-  "rec_base": "1586",
-  "hp_lord": "6969",
-  "atk_lord": "3162",
-  "def_lord": "2288",
-  "rec_lord": "2149",
-  "hp_anima": "7861",
-  "rec_anima": "1911",
-  "atk_breaker": "3400",
-  "def_breaker": "2050",
-  "def_guardian": "2526",
-  "rec_guardian": "2030",
-  "def_oracle": "2169",
-  "rec_oracle": "2506",
-  "hp_bonus": "1000",
-  "atk_bonus": "600",
-  "def_bonus": "300",
-  "rec_bonus": "400",
-  "lordonly": "",
-  "combo_hits": "7",
-  "normaldc": "35",
-  "ls": "Triumphant Power",
-  "lsdescription": "30% boost to Atk, max HP & hugely boosts BB Atk",
-  "lsnote": "150% boost",
+  "stats": {
+    "_base": {
+      "atk": 2334,
+      "def": 1689,
+      "hp": 5312,
+      "rec": 1586
+    },
+    "_lord": {
+      "atk": 3162,
+      "def": 2288,
+      "hp": 6969,
+      "rec": 2149
+    },
+    "anima": {
+      "atk": 3162,
+      "def": 2288,
+      "hp max": 8159,
+      "hp min": 7564,
+      "rec max": 2030,
+      "rec min": 1792
+    },
+    "breaker": {
+      "atk max": 3519,
+      "atk min": 3281,
+      "def max": 2169,
+      "def min": 1931,
+      "hp": 6969,
+      "rec": 2149
+    },
+    "guardian": {
+      "atk": 3162,
+      "def max": 2645,
+      "def min": 2407,
+      "hp": 6969,
+      "rec max": 2149,
+      "rec min": 1911
+    },
+    "oracle": {
+      "atk": 3162,
+      "def max": 2288,
+      "def min": 2050,
+      "hp": 6969,
+      "rec max": 2625,
+      "rec min": 2387
+    }
+  },
+  "leader_skill": {
+    "desc": "30% boost to Atk, max HP & hugely boosts BB Atk",
+    "effects": [
+      {
+        "atk% buff": 30,
+        "hp% buff": 30,
+        "passive id": "1"
+      },
+      {
+        "bb atk% buff": 150,
+        "passive id": "64",
+        "sbb atk% buff": 150,
+        "ubb atk% buff": 150
+      }
+    ],
+    "id": "7444",
+    "name": "Triumphant Power"
+  },
+  "extra_skill": {
+    "desc": "Boosts Atk, Def when BB gauge is over 50%",
+    "effects": [
+      {
+        "atk% buff": 50,
+        "bb gauge above % buff requirement": 50,
+        "conditions": [],
+        "def% buff": 50,
+        "passive id": "30",
+        "passive target": "self"
+      }
+    ],
+    "id": "19000",
+    "name": "Eternal Wish",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -622,18 +639,6 @@
     ],
     "name": "Thunder Blade: Yellow Silk"
   },
-  "bbdescription": "11 combo Thunder attack on all foes, adds probable 1 turn Atk, Def reduction effect to attack for 3 turns, negates all status ailments for 3 turns & negates Atk, Def, Rec reductions for 1 turn",
-  "bbnote": "10% chance to reduce 20% Atk/Def",
-  "bbtype": "Offense",
-  "bbhits": "11",
-  "bbaoe": "A",
-  "bbgauge": "26",
-  "bbdc": "11",
-  "bbmultiplier": "350",
-  "bbhits2": "",
-  "bbaoe2": "",
-  "bbdc2": "",
-  "bbmultiplier2": "",
   "sbb": {
     "damage frames": [
       {
@@ -1328,18 +1333,6 @@
     ],
     "name": "Astinic Fall"
   },
-  "sbbdescription": "18 combo powerful Thunder attack on all foes (consecutive uses boost damage), probable huge 1 turn Atk, Def reduction, probable Spark vulnerability infliction for 2 turns, fills own BB gauge to max & adds probable 1 turn Atk, Def reduction effect to attack for 3 turns",
-  "sbbnote": "+200% multiplier per each use, 3 times max, 600% additional multiplier total, 20% chance to reduce 50% Atk/Def from unit, 20% chance to reduce 20% Atk/Def added to attack, 25% chance to inflict Spark vulnerability that deals 20% more Spark damage",
-  "sbbtype": "Offense",
-  "sbbhits": "18",
-  "sbbaoe": "A",
-  "sbbgauge": "28",
-  "sbbdc": "18",
-  "sbbmultiplier": "420~1020",
-  "sbbhits2": "",
-  "sbbaoe2": "",
-  "sbbdc2": "",
-  "sbbmultiplier2": "",
   "ubb": {
     "damage frames": [
       {
@@ -1506,6 +1499,224 @@
     ],
     "name": "Umber Depression"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 126
+    },
+    "idle": {
+      "total number of frames": 52
+    },
+    "move": {
+      "total number of frames": 11
+    }
+  },
+  "category": 40780,
+  "cost": "43",
+  "damage frames": {
+    "frame times": [
+      15,
+      20,
+      56,
+      60,
+      64,
+      68,
+      72
+    ],
+    "hit dmg% distribution": [
+      8,
+      6,
+      20,
+      13,
+      21,
+      17,
+      15
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 7
+  },
+  "drop check count": 5,
+  "element": "thunder",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 1403,
+  "imp": {
+    "max atk": "600",
+    "max def": "300",
+    "max hp": "1000",
+    "max rec": "400"
+  },
+  "kind": "normal",
+  "lord damage range": "2943~3288",
+  "movement": {
+    "attack": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    }
+  },
+  "name": "Phoenix Thunder Rayla",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Phoenix Thunder Rayla",
+  "maxlv": "120",
+  "no": "1403",
+  "unitDisplayHomePosition_1W9CxaFK": "469,401,165,450",
+  "unitDisplayDetailPosition_6z54rgb3": "-99,-174,1200,1048",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "30,112,624,545,1",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-32,-408,1120,978",
+  "unitDisplaySummonPosition_KC3Jk8Br": "30,112,624,545,1",
+  "unitDisplayHpPosition_3BpHN6VD": "-2,35",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "15000",
+  "sellCaution": false,
+  "effectFrames": "9:400231:1,14:400231:1,15:1341:1,20:1341:1,55:304:1,60:304:1,65:100236:1,70:400534:1,75:100236:1,50:120:1,54:120:1,58:120:1,62:120:1,66:120:1",
+  "evofrom": "",
+  "evointo": "40787",
+  "evozelcost": "3000000",
+  "evokarmacost": "1000000",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "40334",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40132",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    }
+  ],
+  "idalt": "",
+  "basexp": "21",
+  "animation_attack": "126",
+  "animation_idle": "52",
+  "animation_move": "11",
+  "movespeed_attack": "0.0024",
+  "movespeed_skill": "0.0024",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "15, 20, 56, 60, 64, 68, 72",
+  "normal_distribute": "8, 6, 20, 13, 21, 17, 15",
+  "normal_totaldistr": "100",
+  "bb_frames": "15, 20, 56, 59, 62, 65, 68, 71, 74, 77, 80",
+  "bb_distribute": "8, 6, 13, 9, 11, 9, 7, 11, 7, 10, 9",
+  "bb_totaldistr": "100",
+  "sbb_frames": "15, 19, 23, 27, 31, 56, 59, 62, 65, 68, 71, 74, 77, 80, 83, 86, 89, 92",
+  "sbb_distribute": "7, 4, 3, 3, 3, 10, 6, 7, 6, 4, 9, 6, 8, 3, 6, 5, 7, 3",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "15, 19, 23, 27, 31, 35, 56, 59, 62, 65, 68, 71, 74, 77, 80, 83, 86, 89, 92, 95, 98",
+  "ubb_distribute": "6, 4, 3, 3, 3, 3, 9, 6, 7, 4, 3, 8, 5, 8, 3, 4, 3, 7, 3, 5, 3",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "3",
+  "ubb_effectdelay": "3",
+  "description": "A Summoner who once adventured with Owen and his companions. Although she could not see Lucius' Gate initially, she awakened as the third Summoner after nursing wounds Owen suffered on an adventure. However, when the adventurers found themselves in combat with a disciple and the sacred beast that served her, Rayla took an attack to spare her comrade. She then died in Owen's arms. It is said that Owen accepted a last request from her at that time, but he will not speak of the matter to anyone.",
+  "summon": "So I'm being Summoned...<br>I bet he's still healthy even now.<br>He he, I can imagine, even without you telling me.",
+  "fusion": "This...is the secret art of Fusion.<br>I know of it.<br>But although I've used it before,<br>this is the first time I, myself am being fused.",
+  "evolution": "",
+  "hp_base": "5312",
+  "atk_base": "2334",
+  "def_base": "1689",
+  "rec_base": "1586",
+  "hp_lord": "6969",
+  "atk_lord": "3162",
+  "def_lord": "2288",
+  "rec_lord": "2149",
+  "hp_anima": "7861",
+  "rec_anima": "1911",
+  "atk_breaker": "3400",
+  "def_breaker": "2050",
+  "def_guardian": "2526",
+  "rec_guardian": "2030",
+  "def_oracle": "2169",
+  "rec_oracle": "2506",
+  "hp_bonus": "1000",
+  "atk_bonus": "600",
+  "def_bonus": "300",
+  "rec_bonus": "400",
+  "lordonly": "",
+  "combo_hits": "7",
+  "normaldc": "35",
+  "ls": "Triumphant Power",
+  "lsdescription": "30% boost to Atk, max HP & hugely boosts BB Atk",
+  "lsnote": "150% boost",
+  "bbdescription": "11 combo Thunder attack on all foes, adds probable 1 turn Atk, Def reduction effect to attack for 3 turns, negates all status ailments for 3 turns & negates Atk, Def, Rec reductions for 1 turn",
+  "bbnote": "10% chance to reduce 20% Atk/Def",
+  "bbtype": "Offense",
+  "bbhits": "11",
+  "bbaoe": "A",
+  "bbgauge": "26",
+  "bbdc": "11",
+  "bbmultiplier": "350",
+  "bbhits2": "",
+  "bbaoe2": "",
+  "bbdc2": "",
+  "bbmultiplier2": "",
+  "sbbdescription": "18 combo powerful Thunder attack on all foes (consecutive uses boost damage), probable huge 1 turn Atk, Def reduction, probable Spark vulnerability infliction for 2 turns, fills own BB gauge to max & adds probable 1 turn Atk, Def reduction effect to attack for 3 turns",
+  "sbbnote": "+200% multiplier per each use, 3 times max, 600% additional multiplier total, 20% chance to reduce 50% Atk/Def from unit, 20% chance to reduce 20% Atk/Def added to attack, 25% chance to inflict Spark vulnerability that deals 20% more Spark damage",
+  "sbbtype": "Offense",
+  "sbbhits": "18",
+  "sbbaoe": "A",
+  "sbbgauge": "28",
+  "sbbdc": "18",
+  "sbbmultiplier": "420~1020",
+  "sbbhits2": "",
+  "sbbaoe2": "",
+  "sbbdc2": "",
+  "sbbmultiplier2": "",
   "ubbdescription": "21 combo massive Thunder attack on all foes, enormous 2 turn Atk, Def reduction, inflicts enormous Spark vulnerability for 3 turns & enormously boosts BB gauge and hugely boosts BB Atk for 3 turns",
   "ubbnote": "80% Atk/Def reduction, 100% more Spark damage on Spark vulnerability, 50 BC fill, 400% BB Atk boost",
   "ubbtype": "Offense",
@@ -1522,8 +1733,6 @@
   "esitem": "",
   "esdescription": "Boosts Atk, Def when BB gauge is over 50%",
   "esnote": "50% boost",
-  "evofrom": "",
-  "evointo": "40787",
   "evomats1": "Thunder Mecha God",
   "evomats2": "Thunder Mecha God",
   "evomats3": "Miracle Totem",
@@ -1534,97 +1743,5 @@
   "evomats8": "Metal Mimic",
   "evomats9": "",
   "evoitem": "",
-  "evoitem2": "",
-  "evozelcost": "3000000",
-  "stats": {
-    "_base": {
-      "atk": 2334,
-      "def": 1689,
-      "hp": 5312,
-      "rec": 1586
-    },
-    "_lord": {
-      "atk": 3162,
-      "def": 2288,
-      "hp": 6969,
-      "rec": 2149
-    },
-    "anima": {
-      "atk": 3162,
-      "def": 2288,
-      "hp max": 8159,
-      "hp min": 7564,
-      "rec max": 2030,
-      "rec min": 1792
-    },
-    "breaker": {
-      "atk max": 3519,
-      "atk min": 3281,
-      "def max": 2169,
-      "def min": 1931,
-      "hp": 6969,
-      "rec": 2149
-    },
-    "guardian": {
-      "atk": 3162,
-      "def max": 2645,
-      "def min": 2407,
-      "hp": 6969,
-      "rec max": 2149,
-      "rec min": 1911
-    },
-    "oracle": {
-      "atk": 3162,
-      "def max": 2288,
-      "def min": 2050,
-      "hp": 6969,
-      "rec max": 2625,
-      "rec min": 2387
-    }
-  },
-  "leader_skill": {
-    "desc": "30% boost to Atk, max HP & hugely boosts BB Atk",
-    "effects": [
-      {
-        "atk% buff": 30,
-        "hp% buff": 30,
-        "passive id": "1"
-      },
-      {
-        "bb atk% buff": 150,
-        "passive id": "64",
-        "sbb atk% buff": 150,
-        "ubb atk% buff": 150
-      }
-    ],
-    "id": "7444",
-    "name": "Triumphant Power"
-  },
-  "extra_skill": {
-    "desc": "Boosts Atk, Def when BB gauge is over 50%",
-    "effects": [
-      {
-        "atk% buff": 50,
-        "bb gauge above % buff requirement": 50,
-        "conditions": [],
-        "def% buff": 50,
-        "passive id": "30",
-        "passive target": "self"
-      }
-    ],
-    "id": "19000",
-    "name": "Eternal Wish",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "469,401,165,450",
-  "unitDisplayDetailPosition_6z54rgb3": "-99,-174,1200,1048",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "30,112,624,545,1",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-32,-408,1120,978",
-  "unitDisplaySummonPosition_KC3Jk8Br": "30,112,624,545,1",
-  "unitDisplayHpPosition_3BpHN6VD": "-2,35",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "15000",
-  "sellCaution": false,
-  "effectFrames": "9:400231:1,14:400231:1,15:1341:1,20:1341:1,55:304:1,60:304:1,65:100236:1,70:400534:1,75:100236:1,50:120:1,54:120:1,58:120:1,62:120:1,66:120:1"
+  "evoitem2": ""
 }

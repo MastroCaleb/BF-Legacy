@@ -1,68 +1,100 @@
 {
   "id": "30926",
-  "unitName": "Watchful Eyes Baro",
-  "no": "1585",
-  "element": "Earth",
-  "rarity": "★★★★★★★",
-  "cost": "46",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "1",
-  "animation_attack": "192",
-  "animation_idle": "52",
-  "animation_move": "5",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "23, 45, 63, 112, 116, 120",
-  "normal_distribute": "15, 14, 16, 28, 14, 13",
-  "normal_totaldistr": "100",
-  "bb_frames": "23, 26, 45, 48, 63, 66, 112, 115, 118, 121, 124, 127",
-  "bb_distribute": "10, 3, 9, 3, 11, 3, 18, 11, 9, 8, 8, 7",
-  "bb_totaldistr": "100",
-  "sbb_frames": "23, 26, 29, 45, 48, 51, 63, 66, 69, 112, 115, 118, 121, 124, 127, 130",
-  "sbb_distribute": "8, 3, 3, 7, 3, 3, 9, 3, 3, 15, 9, 8, 7, 7, 6, 6",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "23, 26, 29, 32, 45, 48, 51, 54, 63, 66, 69, 72, 112, 115, 118, 121, 124, 127, 130",
-  "ubb_distribute": "7, 3, 3, 3, 6, 3, 3, 3, 8, 3, 3, 3, 14, 8, 7, 6, 6, 6, 5",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "1",
-  "ubb_effectdelay": "1",
-  "description": "A beast trainer who belonged to the fearsome band of outlaws known as the \"Ten Vile Disnomians.\" Active during the early days of the empire, Baro originally belonged to an unusual tribe that coexisted with beasts. However, his people scattered in the face of official persecution, and Baro joined the Ten Viles after spending time living as a wanderer. He excelled in scouting through the use of his tamed beast, and acted as the group's eyes. Baro even gave a warning before the band was ambushed by the imperial guard, buying his comrades time. He was never seen again after the chaos of the ambush abated.",
-  "summon": "Will you accept me, just like they did? Well then, I'll just have to help you out.",
-  "fusion": "With this guy's \"eyes,\" I can see everything for miles around. Want me to show you?",
-  "evolution": "",
-  "hp_base": "5123",
-  "atk_base": "2096",
-  "def_base": "2097",
-  "rec_base": "1938",
-  "hp_lord": "7317",
-  "atk_lord": "2837",
-  "def_lord": "2852",
-  "rec_lord": "2813",
-  "hp_anima": "8209",
-  "rec_anima": "2375",
-  "atk_breaker": "3075",
-  "def_breaker": "2614",
-  "def_guardian": "3090",
-  "rec_guardian": "2494",
-  "def_oracle": "2733",
-  "rec_oracle": "2970",
-  "hp_bonus": "1000",
-  "atk_bonus": "300",
-  "def_bonus": "600",
-  "rec_bonus": "400",
-  "lordonly": "",
-  "combo_hits": "6",
-  "normaldc": "36",
-  "ls": "All-Seeing Sentinel",
-  "lsdescription": "50% boost to Def, max HP, damage taken boosts BB gauge & considerably boosts BB gauge each turn",
-  "lsnote": "Fills 2-4 BC when hit & fills 5 BC per turn",
+  "stats": {
+    "_base": {
+      "atk": 2096,
+      "def": 2097,
+      "hp": 5123,
+      "rec": 1938
+    },
+    "_lord": {
+      "atk": 2837,
+      "def": 2852,
+      "hp": 7317,
+      "rec": 2613
+    },
+    "anima": {
+      "atk": 2837,
+      "def": 2852,
+      "hp max": 8507,
+      "hp min": 7912,
+      "rec max": 2494,
+      "rec min": 2256
+    },
+    "breaker": {
+      "atk max": 3194,
+      "atk min": 2956,
+      "def max": 2733,
+      "def min": 2495,
+      "hp": 7317,
+      "rec": 2613
+    },
+    "guardian": {
+      "atk": 2837,
+      "def max": 3209,
+      "def min": 2971,
+      "hp": 7317,
+      "rec max": 2613,
+      "rec min": 2375
+    },
+    "oracle": {
+      "atk": 2837,
+      "def max": 2852,
+      "def min": 2614,
+      "hp": 7317,
+      "rec max": 3089,
+      "rec min": 2851
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to Def, max HP, damage taken boosts BB gauge & considerably boosts BB gauge each turn",
+    "effects": [
+      {
+        "def% buff": 50,
+        "hp% buff": 50,
+        "passive id": "1"
+      },
+      {
+        "bc fill when attacked high": 4,
+        "bc fill when attacked low": 2,
+        "bc fill when attacked%": 100,
+        "passive id": "25"
+      },
+      {
+        "bc fill per turn": 5,
+        "passive id": "9"
+      }
+    ],
+    "id": "4367",
+    "name": "All-Seeing Sentinel"
+  },
+  "extra_skill": {
+    "desc": "Boosts Atk, Def, Rec each turn (for up to 5 turns) & damage taken slightly boosts BB gauge",
+    "effects": [
+      {
+        "atk% max buff": 30,
+        "conditions": [],
+        "def% max buff": 30,
+        "increase from min to max": 1,
+        "passive id": "105",
+        "passive target": "self",
+        "rec% max buff": 30,
+        "turn count": 5
+      },
+      {
+        "bc fill when attacked high": 2,
+        "bc fill when attacked low": 1,
+        "bc fill when attacked%": 100,
+        "conditions": [],
+        "passive id": "25",
+        "passive target": "self"
+      }
+    ],
+    "id": "31900",
+    "name": "All-Seeing Eye",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -765,14 +797,6 @@
     ],
     "name": "Mad Beast: Marg"
   },
-  "bbdescription": "12 combo Earth attack on all foes (partial HP drain), considerably boosts BB gauge, removes all status ailments, negates all status ailments for 3 turns & negates critical damage for 1 turn",
-  "bbnote": "Drains 20-25% damage & fills 6 BC",
-  "bbtype": "Heal/Offense",
-  "bbhits": "12",
-  "bbaoe": "A",
-  "bbgauge": "18",
-  "bbdc": "12",
-  "bbmultiplier": "380",
   "sbb": {
     "damage frames": [
       {
@@ -1465,14 +1489,6 @@
     ],
     "name": "Batschdever"
   },
-  "sbbdescription": "16 combo powerful Earth attack on all foes (partial HP drain), considerably boosts BB gauge, hugely boosts BB gauge for 3 turns, damage taken may slightly restore HP for 3 turns, negates elemental damage for 1 turn & reduces Spark damage for 1 turn",
-  "sbbnote": "Drains 25-30% damage, fills 6 BC instantly, fills 7 BC per turn, 20% chance to heal 15-20% damage & 25% Spark reduction",
-  "sbbtype": "Heal/Offense",
-  "sbbhits": "16",
-  "sbbaoe": "A",
-  "sbbgauge": "29",
-  "sbbdc": "16",
-  "sbbmultiplier": "580",
   "ubb": {
     "damage frames": [
       {
@@ -1632,6 +1648,213 @@
     ],
     "name": "Au Baro Thete"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "party"
+    },
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 192
+    },
+    "idle": {
+      "total number of frames": 52
+    },
+    "move": {
+      "total number of frames": 5
+    }
+  },
+  "category": 30920,
+  "cost": "46",
+  "damage frames": {
+    "frame times": [
+      23,
+      45,
+      63,
+      112,
+      116,
+      120
+    ],
+    "hit dmg% distribution": [
+      15,
+      14,
+      16,
+      28,
+      14,
+      13
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 6
+  },
+  "drop check count": 6,
+  "element": "earth",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 1585,
+  "imp": {
+    "max atk": "300",
+    "max def": "600",
+    "max hp": "1000",
+    "max rec": "400"
+  },
+  "kind": "normal",
+  "lord damage range": "2641~2950",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Watchful Eyes Baro",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Watchful Eyes Baro",
+  "maxlv": "120",
+  "no": "1585",
+  "unitDisplayHomePosition_1W9CxaFK": "220,9,190,519",
+  "unitDisplayDetailPosition_6z54rgb3": "170,176,650,629",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "147,240,350,339,1",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "151,-46,650,629",
+  "unitDisplaySummonPosition_KC3Jk8Br": "147,240,350,339,1",
+  "unitDisplayHpPosition_3BpHN6VD": "-4,46",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "15000",
+  "sellCaution": false,
+  "effectFrames": "17:120:1,39:120:1,57:120:1,106:120:1,110:120:1,114:120:1,20:600351:1,40:600351:1,23:1818:1,45:1818:1,63:1818:1,112:330721:1,120:600324:1",
+  "evofrom": "",
+  "evointo": "30927",
+  "evozelcost": "3000000",
+  "evokarmacost": "1000000",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "30334",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 2
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "192",
+  "animation_idle": "52",
+  "animation_move": "5",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "23, 45, 63, 112, 116, 120",
+  "normal_distribute": "15, 14, 16, 28, 14, 13",
+  "normal_totaldistr": "100",
+  "bb_frames": "23, 26, 45, 48, 63, 66, 112, 115, 118, 121, 124, 127",
+  "bb_distribute": "10, 3, 9, 3, 11, 3, 18, 11, 9, 8, 8, 7",
+  "bb_totaldistr": "100",
+  "sbb_frames": "23, 26, 29, 45, 48, 51, 63, 66, 69, 112, 115, 118, 121, 124, 127, 130",
+  "sbb_distribute": "8, 3, 3, 7, 3, 3, 9, 3, 3, 15, 9, 8, 7, 7, 6, 6",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "23, 26, 29, 32, 45, 48, 51, 54, 63, 66, 69, 72, 112, 115, 118, 121, 124, 127, 130",
+  "ubb_distribute": "7, 3, 3, 3, 6, 3, 3, 3, 8, 3, 3, 3, 14, 8, 7, 6, 6, 6, 5",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "1",
+  "ubb_effectdelay": "1",
+  "description": "A beast trainer who belonged to the fearsome band of outlaws known as the \"Ten Vile Disnomians.\" Active during the early days of the empire, Baro originally belonged to an unusual tribe that coexisted with beasts. However, his people scattered in the face of official persecution, and Baro joined the Ten Viles after spending time living as a wanderer. He excelled in scouting through the use of his tamed beast, and acted as the group's eyes. Baro even gave a warning before the band was ambushed by the imperial guard, buying his comrades time. He was never seen again after the chaos of the ambush abated.",
+  "summon": "Will you accept me, just like they did? Well then, I'll just have to help you out.",
+  "fusion": "With this guy's \"eyes,\" I can see everything for miles around. Want me to show you?",
+  "evolution": "",
+  "hp_base": "5123",
+  "atk_base": "2096",
+  "def_base": "2097",
+  "rec_base": "1938",
+  "hp_lord": "7317",
+  "atk_lord": "2837",
+  "def_lord": "2852",
+  "rec_lord": "2813",
+  "hp_anima": "8209",
+  "rec_anima": "2375",
+  "atk_breaker": "3075",
+  "def_breaker": "2614",
+  "def_guardian": "3090",
+  "rec_guardian": "2494",
+  "def_oracle": "2733",
+  "rec_oracle": "2970",
+  "hp_bonus": "1000",
+  "atk_bonus": "300",
+  "def_bonus": "600",
+  "rec_bonus": "400",
+  "lordonly": "",
+  "combo_hits": "6",
+  "normaldc": "36",
+  "ls": "All-Seeing Sentinel",
+  "lsdescription": "50% boost to Def, max HP, damage taken boosts BB gauge & considerably boosts BB gauge each turn",
+  "lsnote": "Fills 2-4 BC when hit & fills 5 BC per turn",
+  "bbdescription": "12 combo Earth attack on all foes (partial HP drain), considerably boosts BB gauge, removes all status ailments, negates all status ailments for 3 turns & negates critical damage for 1 turn",
+  "bbnote": "Drains 20-25% damage & fills 6 BC",
+  "bbtype": "Heal/Offense",
+  "bbhits": "12",
+  "bbaoe": "A",
+  "bbgauge": "18",
+  "bbdc": "12",
+  "bbmultiplier": "380",
+  "sbbdescription": "16 combo powerful Earth attack on all foes (partial HP drain), considerably boosts BB gauge, hugely boosts BB gauge for 3 turns, damage taken may slightly restore HP for 3 turns, negates elemental damage for 1 turn & reduces Spark damage for 1 turn",
+  "sbbnote": "Drains 25-30% damage, fills 6 BC instantly, fills 7 BC per turn, 20% chance to heal 15-20% damage & 25% Spark reduction",
+  "sbbtype": "Heal/Offense",
+  "sbbhits": "16",
+  "sbbaoe": "A",
+  "sbbgauge": "29",
+  "sbbdc": "16",
+  "sbbmultiplier": "580",
   "ubbdescription": "19 combo massive Earth attack on all foes (partial HP drain), hugely boosts max HP, negates critical and elemental damage for 3 turns, 50% reduction to Spark damage for 3 turns, enormously boosts BB gauge for 3 turns & damage taken enormously restores HP for 3 turns",
   "ubbnote": "Drains 45-50% damage, 30% HP boost, fills 50 BC & restores 100% damage taken",
   "ubbtype": "Heal/Offense",
@@ -1644,8 +1867,6 @@
   "esitem": "",
   "esdescription": "Boosts Atk, Def, Rec each turn (for up to 5 turns) & damage taken slightly boosts BB gauge",
   "esnote": "6% boost per turn & fills 1-2 BC",
-  "evofrom": "",
-  "evointo": "30927",
   "evomats1": "Earth Mecha God",
   "evomats2": "Earth Mecha God",
   "evomats3": "Miracle Totem",
@@ -1654,111 +1875,5 @@
   "evomats6": "Dragon Mimic",
   "evomats7": "Metal Mimic",
   "evomats8": "Metal Mimic",
-  "evoitem": "",
-  "evozelcost": "3000000",
-  "stats": {
-    "_base": {
-      "atk": 2096,
-      "def": 2097,
-      "hp": 5123,
-      "rec": 1938
-    },
-    "_lord": {
-      "atk": 2837,
-      "def": 2852,
-      "hp": 7317,
-      "rec": 2613
-    },
-    "anima": {
-      "atk": 2837,
-      "def": 2852,
-      "hp max": 8507,
-      "hp min": 7912,
-      "rec max": 2494,
-      "rec min": 2256
-    },
-    "breaker": {
-      "atk max": 3194,
-      "atk min": 2956,
-      "def max": 2733,
-      "def min": 2495,
-      "hp": 7317,
-      "rec": 2613
-    },
-    "guardian": {
-      "atk": 2837,
-      "def max": 3209,
-      "def min": 2971,
-      "hp": 7317,
-      "rec max": 2613,
-      "rec min": 2375
-    },
-    "oracle": {
-      "atk": 2837,
-      "def max": 2852,
-      "def min": 2614,
-      "hp": 7317,
-      "rec max": 3089,
-      "rec min": 2851
-    }
-  },
-  "leader_skill": {
-    "desc": "50% boost to Def, max HP, damage taken boosts BB gauge & considerably boosts BB gauge each turn",
-    "effects": [
-      {
-        "def% buff": 50,
-        "hp% buff": 50,
-        "passive id": "1"
-      },
-      {
-        "bc fill when attacked high": 4,
-        "bc fill when attacked low": 2,
-        "bc fill when attacked%": 100,
-        "passive id": "25"
-      },
-      {
-        "bc fill per turn": 5,
-        "passive id": "9"
-      }
-    ],
-    "id": "4367",
-    "name": "All-Seeing Sentinel"
-  },
-  "extra_skill": {
-    "desc": "Boosts Atk, Def, Rec each turn (for up to 5 turns) & damage taken slightly boosts BB gauge",
-    "effects": [
-      {
-        "atk% max buff": 30,
-        "conditions": [],
-        "def% max buff": 30,
-        "increase from min to max": 1,
-        "passive id": "105",
-        "passive target": "self",
-        "rec% max buff": 30,
-        "turn count": 5
-      },
-      {
-        "bc fill when attacked high": 2,
-        "bc fill when attacked low": 1,
-        "bc fill when attacked%": 100,
-        "conditions": [],
-        "passive id": "25",
-        "passive target": "self"
-      }
-    ],
-    "id": "31900",
-    "name": "All-Seeing Eye",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "220,9,190,519",
-  "unitDisplayDetailPosition_6z54rgb3": "170,176,650,629",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "147,240,350,339,1",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "151,-46,650,629",
-  "unitDisplaySummonPosition_KC3Jk8Br": "147,240,350,339,1",
-  "unitDisplayHpPosition_3BpHN6VD": "-4,46",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "15000",
-  "sellCaution": false,
-  "effectFrames": "17:120:1,39:120:1,57:120:1,106:120:1,110:120:1,114:120:1,20:600351:1,40:600351:1,23:1818:1,45:1818:1,63:1818:1,112:330721:1,120:600324:1"
+  "evoitem": ""
 }

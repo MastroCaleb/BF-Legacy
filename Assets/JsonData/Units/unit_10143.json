@@ -1,62 +1,63 @@
 {
   "id": "10143",
-  "unitName": "God Arm Galant",
-  "no": "205",
-  "element": "Fire",
-  "rarity": "★★★★",
-  "cost": "10",
-  "maxlv": "60",
-  "basexp": "15",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "94",
-  "animation_idle": "52",
-  "animation_move": "13",
-  "movespeed_attack": "0.005",
-  "movespeed_skill": "0.005",
-  "speedtype_attack": "1",
-  "speedtype_skill": "1",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "36",
-  "normal_distribute": "100",
-  "normal_totaldistr": "100",
-  "bb_frames": "36, 40, 44, 48, 52, 56",
-  "bb_distribute": "17, 16, 17, 16, 17, 17",
-  "bb_totaldistr": "100",
-  "description": "A former blacksmith from the ruined Agni Empire, Galant, fueled by his grandfather's final words, continued his training towards becoming an outstanding blacksmith. Often travelling abroad to procure his own materials, he one day came across a fragment from the heavens. It's unknown what methods he used to obtain it, but the helm he made with it remains an article of legend.",
-  "summon": "You've got quite the eye<br>for a mere Summoner!<br>Behold, God Arm's power!",
-  "fusion": "I like your methods.<br>Why not become my pupil and<br>become a blacksmith yourself?",
-  "evolution": "I'll show you the true skill<br>of a master blacksmith!",
-  "hp_base": "2025",
-  "atk_base": "957",
-  "def_base": "957",
-  "rec_base": "526",
-  "hp_lord": "3276",
-  "atk_lord": "1236",
-  "def_lord": "1324",
-  "rec_lord": "725",
-  "hp_anima": "3719",
-  "rec_anima": "607",
-  "atk_breaker": "1354",
-  "def_breaker": "1206",
-  "atk_guardian": "1118",
-  "def_guardian": "1442",
-  "rec_guardian": "666",
-  "def_oracle": "1265",
-  "hp_oracle": "3099",
-  "rec_oracle": "902",
-  "hp_bonus": "400",
-  "atk_bonus": "140",
-  "def_bonus": "140",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "1",
-  "normaldc": "10",
-  "ls": "Intense Strobe",
-  "lsdescription": "Large boost in damage dealt during Spark",
-  "lsnote": "50% boost",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 957,
+      "def": 957,
+      "hp": 2025,
+      "rec": 526
+    },
+    "_lord": {
+      "atk": 1236,
+      "def": 1324,
+      "hp": 3276,
+      "rec": 725
+    },
+    "anima": {
+      "atk": 1236,
+      "def": 1324,
+      "hp max": 3866,
+      "hp min": 3571,
+      "rec max": 666,
+      "rec min": 548
+    },
+    "breaker": {
+      "atk max": 1413,
+      "atk min": 1295,
+      "def max": 1265,
+      "def min": 1147,
+      "hp": 3276,
+      "rec": 725
+    },
+    "guardian": {
+      "atk": 1236,
+      "def max": 1501,
+      "def min": 1383,
+      "hp": 3276,
+      "rec max": 725,
+      "rec min": 607
+    },
+    "oracle": {
+      "atk": 1236,
+      "def max": 1324,
+      "def min": 1206,
+      "hp": 3276,
+      "rec max": 961,
+      "rec min": 843
+    }
+  },
+  "leader_skill": {
+    "desc": "Large boost in damage dealt during Spark",
+    "effects": [
+      {
+        "damage% for spark": 50,
+        "passive id": "31"
+      }
+    ],
+    "id": "1302",
+    "name": "Intense Strobe"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -291,95 +292,83 @@
     ],
     "name": "Ignis Nebula"
   },
-  "bbdescription": "6 combo Fire elemental attack on all enemies & probable Weakness effect",
-  "bbnote": "45% chance",
-  "bbtype": "Offense",
-  "bbhits": "6",
-  "bbaoe": "A",
-  "bbgauge": "20",
-  "bbdc": "6",
-  "bbmultiplier": "105",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "10142",
-  "evointo": "10144",
-  "evomats1": "10133",
-  "evomats2": "10191",
-  "evomats3": "60143",
-  "evomats4": "10131",
-  "evomats5": "10130",
-  "evoitem": "",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 957,
-      "def": 957,
-      "hp": 2025,
-      "rec": 526
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1236,
-      "def": 1324,
-      "hp": 3276,
-      "rec": 725
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1236,
-      "def": 1324,
-      "hp max": 3866,
-      "hp min": 3571,
-      "rec max": 666,
-      "rec min": 548
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 94
     },
-    "breaker": {
-      "atk max": 1413,
-      "atk min": 1295,
-      "def max": 1265,
-      "def min": 1147,
-      "hp": 3276,
-      "rec": 725
+    "idle": {
+      "total number of frames": 52
     },
-    "guardian": {
-      "atk": 1236,
-      "def max": 1501,
-      "def min": 1383,
-      "hp": 3276,
-      "rec max": 725,
-      "rec min": 607
-    },
-    "oracle": {
-      "atk": 1236,
-      "def max": 1324,
-      "def min": 1206,
-      "hp": 3276,
-      "rec max": 961,
-      "rec min": 843
+    "move": {
+      "total number of frames": 13
     }
   },
-  "leader_skill": {
-    "desc": "Large boost in damage dealt during Spark",
-    "effects": [
-      {
-        "damage% for spark": 50,
-        "passive id": "31"
-      }
+  "category": 10140,
+  "cost": "10",
+  "damage frames": {
+    "frame times": [
+      36
     ],
-    "id": "1302",
-    "name": "Intense Strobe"
+    "hit dmg% distribution": [
+      100
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 1
   },
-  "extra_skill": {},
+  "drop check count": 10,
+  "element": "fire",
+  "exp_pattern": 15,
+  "gender": "male",
+  "getting type": "farmable",
+  "guide_id": 205,
+  "imp": {
+    "max atk": "140",
+    "max def": "140",
+    "max hp": "400",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "1150~1285",
+  "movement": {
+    "attack": {
+      "move speed": 0.005,
+      "move speed type": "1",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.005,
+      "move speed type": "1",
+      "move type": "1"
+    }
+  },
+  "name": "God Arm Galant",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "God Arm Galant",
+  "maxlv": "60",
+  "no": "205",
   "unitDisplayHomePosition_1W9CxaFK": "276,46,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "100,130,806,640",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "96,234,495,397,0",
@@ -389,5 +378,111 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "30:131:1,26:160:1"
+  "effectFrames": "30:131:1,26:160:1",
+  "evofrom": "10142",
+  "evointo": "10144",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "10133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10131",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10130",
+      "count": 1
+    }
+  ],
+  "basexp": "15",
+  "animation_attack": "94",
+  "animation_idle": "52",
+  "animation_move": "13",
+  "movespeed_attack": "0.005",
+  "movespeed_skill": "0.005",
+  "speedtype_attack": "1",
+  "speedtype_skill": "1",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "36",
+  "normal_distribute": "100",
+  "normal_totaldistr": "100",
+  "bb_frames": "36, 40, 44, 48, 52, 56",
+  "bb_distribute": "17, 16, 17, 16, 17, 17",
+  "bb_totaldistr": "100",
+  "description": "A former blacksmith from the ruined Agni Empire, Galant, fueled by his grandfather's final words, continued his training towards becoming an outstanding blacksmith. Often travelling abroad to procure his own materials, he one day came across a fragment from the heavens. It's unknown what methods he used to obtain it, but the helm he made with it remains an article of legend.",
+  "summon": "You've got quite the eye<br>for a mere Summoner!<br>Behold, God Arm's power!",
+  "fusion": "I like your methods.<br>Why not become my pupil and<br>become a blacksmith yourself?",
+  "evolution": "I'll show you the true skill<br>of a master blacksmith!",
+  "hp_base": "2025",
+  "atk_base": "957",
+  "def_base": "957",
+  "rec_base": "526",
+  "hp_lord": "3276",
+  "atk_lord": "1236",
+  "def_lord": "1324",
+  "rec_lord": "725",
+  "hp_anima": "3719",
+  "rec_anima": "607",
+  "atk_breaker": "1354",
+  "def_breaker": "1206",
+  "atk_guardian": "1118",
+  "def_guardian": "1442",
+  "rec_guardian": "666",
+  "def_oracle": "1265",
+  "hp_oracle": "3099",
+  "rec_oracle": "902",
+  "hp_bonus": "400",
+  "atk_bonus": "140",
+  "def_bonus": "140",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "1",
+  "normaldc": "10",
+  "ls": "Intense Strobe",
+  "lsdescription": "Large boost in damage dealt during Spark",
+  "lsnote": "50% boost",
+  "lstype": "Attack",
+  "bbdescription": "6 combo Fire elemental attack on all enemies & probable Weakness effect",
+  "bbnote": "45% chance",
+  "bbtype": "Offense",
+  "bbhits": "6",
+  "bbaoe": "A",
+  "bbgauge": "20",
+  "bbdc": "6",
+  "bbmultiplier": "105",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "10133",
+  "evomats2": "10191",
+  "evomats3": "60143",
+  "evomats4": "10131",
+  "evomats5": "10130",
+  "evoitem": ""
 }

@@ -1,61 +1,66 @@
 {
   "id": "60013",
-  "unitName": "Black Magress",
-  "no": "23",
-  "element": "Dark",
-  "rarity": "★★★★",
-  "cost": "8",
-  "maxlv": "60",
-  "basexp": "10",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "106",
-  "animation_idle": "105",
-  "animation_move": "130",
-  "movespeed_attack": "0.005",
-  "movespeed_skill": "0.005",
-  "speedtype_attack": "1",
-  "speedtype_skill": "1",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "55, 61",
-  "normal_distribute": "70, 30",
-  "normal_totaldistr": "100",
-  "bb_frames": "61, 67, 73, 79",
-  "bb_distribute": "25, 25, 25, 25",
-  "bb_totaldistr": "100",
-  "description": "A former knight from the utterly devastated Bariura Empire, he later became one of the Six Heroes. He was the strongest in Bariura, but while he was gone, his parents were murdered. Enraged, he went on to mercilessly kill the knights he thought to be responsible. The image of him fighting encouraged the people and frightened the knights.",
-  "summon": "The world should fear me,<br>for I'm reborn thanks to this<br>foolish Summoner!",
-  "fusion": "My strength is fueled by anger!<br>Can you control this power!?",
-  "evolution": "I am reborn in rage.<br>What is it that you desire <br>more than my power?",
-  "hp_base": "2651",
-  "atk_base": "743",
-  "def_base": "860",
-  "rec_base": "381",
-  "hp_lord": "3979",
-  "atk_lord": "995",
-  "def_lord": "1190",
-  "rec_lord": "572",
-  "hp_anima": "4422",
-  "rec_anima": "454",
-  "atk_breaker": "1113",
-  "def_breaker": "1072",
-  "atk_guardian": "877",
-  "def_guardian": "1308",
-  "rec_guardian": "454",
-  "def_oracle": "1072",
-  "hp_oracle": "3802",
-  "rec_oracle": "749",
-  "hp_bonus": "350",
-  "atk_bonus": "260",
-  "def_bonus": "260",
-  "rec_bonus": "140",
-  "lordonly": "",
-  "combo_hits": "2",
-  "normaldc": "12",
-  "ls": "Dark God's Power",
-  "lsdescription": "50% boost to Atk Power of Dark Types",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 743,
+      "def": 860,
+      "hp": 2651,
+      "rec": 381
+    },
+    "_lord": {
+      "atk": 995,
+      "def": 1190,
+      "hp": 3979,
+      "rec": 572
+    },
+    "anima": {
+      "atk": 995,
+      "def": 1190,
+      "hp max": 4569,
+      "hp min": 4274,
+      "rec max": 513,
+      "rec min": 395
+    },
+    "breaker": {
+      "atk max": 1172,
+      "atk min": 1054,
+      "def max": 1131,
+      "def min": 1013,
+      "hp": 3979,
+      "rec": 572
+    },
+    "guardian": {
+      "atk": 995,
+      "def max": 1367,
+      "def min": 1249,
+      "hp": 3979,
+      "rec max": 572,
+      "rec min": 454
+    },
+    "oracle": {
+      "atk": 995,
+      "def max": 1190,
+      "def min": 1072,
+      "hp": 3979,
+      "rec max": 808,
+      "rec min": 690
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to Atk Power of Dark Types",
+    "effects": [
+      {
+        "atk% buff": 50,
+        "elements buffed": [
+          "dark"
+        ],
+        "passive id": "2"
+      }
+    ],
+    "id": "151",
+    "name": "Dark God's Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -214,96 +219,85 @@
     ],
     "name": "Void Pillar"
   },
-  "bbdescription": "4 combo Dark elemental power attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "4",
-  "bbaoe": "A",
-  "bbgauge": "20",
-  "bbdc": "4",
-  "bbmultiplier": "140",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "60012",
-  "evointo": "60014",
-  "evomats1": "60123",
-  "evomats2": "60122",
-  "evomats3": "60121",
-  "evomats4": "60120",
-  "evomats5": "60120",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 743,
-      "def": 860,
-      "hp": 2651,
-      "rec": 381
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 995,
-      "def": 1190,
-      "hp": 3979,
-      "rec": 572
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 995,
-      "def": 1190,
-      "hp max": 4569,
-      "hp min": 4274,
-      "rec max": 513,
-      "rec min": 395
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 106
     },
-    "breaker": {
-      "atk max": 1172,
-      "atk min": 1054,
-      "def max": 1131,
-      "def min": 1013,
-      "hp": 3979,
-      "rec": 572
+    "idle": {
+      "total number of frames": 105
     },
-    "guardian": {
-      "atk": 995,
-      "def max": 1367,
-      "def min": 1249,
-      "hp": 3979,
-      "rec max": 572,
-      "rec min": 454
-    },
-    "oracle": {
-      "atk": 995,
-      "def max": 1190,
-      "def min": 1072,
-      "hp": 3979,
-      "rec max": 808,
-      "rec min": 690
+    "move": {
+      "total number of frames": 130
     }
   },
-  "leader_skill": {
-    "desc": "50% boost to Atk Power of Dark Types",
-    "effects": [
-      {
-        "atk% buff": 50,
-        "elements buffed": [
-          "dark"
-        ],
-        "passive id": "2"
-      }
+  "category": 60010,
+  "cost": "8",
+  "damage frames": {
+    "frame times": [
+      55,
+      61
     ],
-    "id": "151",
-    "name": "Dark God's Power"
+    "hit dmg% distribution": [
+      70,
+      30
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 2
   },
-  "extra_skill": {},
+  "drop check count": 6,
+  "element": "dark",
+  "exp_pattern": 10,
+  "gender": "male",
+  "getting type": "farmable",
+  "guide_id": 23,
+  "imp": {
+    "max atk": "260",
+    "max def": "260",
+    "max hp": "350",
+    "max rec": "140"
+  },
+  "kind": "normal",
+  "lord damage range": "926~1034",
+  "movement": {
+    "attack": {
+      "move speed": 0.005,
+      "move speed type": "1",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.005,
+      "move speed type": "1",
+      "move type": "1"
+    }
+  },
+  "name": "Black Magress",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Black Magress",
+  "maxlv": "60",
+  "no": "23",
   "unitDisplayHomePosition_1W9CxaFK": "552,120,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-166,53,960,756",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "5,263,480,378,0",
@@ -313,5 +307,103 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "49:126:1,55:126:1"
+  "effectFrames": "49:126:1,55:126:1",
+  "evofrom": "60012",
+  "evointo": "60014",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "60123",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60122",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60121",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60120",
+      "count": 2
+    }
+  ],
+  "basexp": "10",
+  "animation_attack": "106",
+  "animation_idle": "105",
+  "animation_move": "130",
+  "movespeed_attack": "0.005",
+  "movespeed_skill": "0.005",
+  "speedtype_attack": "1",
+  "speedtype_skill": "1",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "55, 61",
+  "normal_distribute": "70, 30",
+  "normal_totaldistr": "100",
+  "bb_frames": "61, 67, 73, 79",
+  "bb_distribute": "25, 25, 25, 25",
+  "bb_totaldistr": "100",
+  "description": "A former knight from the utterly devastated Bariura Empire, he later became one of the Six Heroes. He was the strongest in Bariura, but while he was gone, his parents were murdered. Enraged, he went on to mercilessly kill the knights he thought to be responsible. The image of him fighting encouraged the people and frightened the knights.",
+  "summon": "The world should fear me,<br>for I'm reborn thanks to this<br>foolish Summoner!",
+  "fusion": "My strength is fueled by anger!<br>Can you control this power!?",
+  "evolution": "I am reborn in rage.<br>What is it that you desire <br>more than my power?",
+  "hp_base": "2651",
+  "atk_base": "743",
+  "def_base": "860",
+  "rec_base": "381",
+  "hp_lord": "3979",
+  "atk_lord": "995",
+  "def_lord": "1190",
+  "rec_lord": "572",
+  "hp_anima": "4422",
+  "rec_anima": "454",
+  "atk_breaker": "1113",
+  "def_breaker": "1072",
+  "atk_guardian": "877",
+  "def_guardian": "1308",
+  "rec_guardian": "454",
+  "def_oracle": "1072",
+  "hp_oracle": "3802",
+  "rec_oracle": "749",
+  "hp_bonus": "350",
+  "atk_bonus": "260",
+  "def_bonus": "260",
+  "rec_bonus": "140",
+  "lordonly": "",
+  "combo_hits": "2",
+  "normaldc": "12",
+  "ls": "Dark God's Power",
+  "lsdescription": "50% boost to Atk Power of Dark Types",
+  "lstype": "Attack",
+  "bbdescription": "4 combo Dark elemental power attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "4",
+  "bbaoe": "A",
+  "bbgauge": "20",
+  "bbdc": "4",
+  "bbmultiplier": "140",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "60123",
+  "evomats2": "60122",
+  "evomats3": "60121",
+  "evomats4": "60120",
+  "evomats5": "60120"
 }

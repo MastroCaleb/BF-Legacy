@@ -1,58 +1,63 @@
 {
   "id": "40524",
-  "unitName": "Dragoon Lord Bargus",
-  "no": "825",
-  "element": "Thunder",
-  "rarity": "★★★★★",
-  "cost": "18",
-  "maxlv": "80",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "133",
-  "animation_idle": "52",
-  "animation_move": "5",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "13, 45, 49, 84, 88, 92",
-  "normal_distribute": "20, 30, 15, 20, 10, 5",
-  "normal_totaldistr": "100",
-  "description": "The first dragoon of the Sama Kingdom. Though being able to attack from the skies and from the seas, what really put the Sama Dragoons in the spotlight was Bargus's ability to ride a water dragon. As opposed to riding flying dragons, both great skill and talent are required to ride a water dragon, making this feat quite impressive in of itself. It is said that even among the successors of the Sama Dragoons, there were almost no others who could master riding both a flying and a water dragon, except for Bargus himself.",
-  "summon": "I, Dragoon Lord Bargus,<br>will grow stronger for you.<br>Expect great things from me.",
-  "fusion": "You have my thanks.<br>Dedication like yours is rare.",
-  "evolution": "Now I can build a bond<br>with many more dragons than before.<br>And it's all thanks to you.",
-  "hp_base": "3758",
-  "atk_base": "1263",
-  "def_base": "1370",
-  "rec_base": "1012",
-  "hp_lord": "5303",
-  "atk_lord": "1664",
-  "def_lord": "1813",
-  "rec_lord": "1329",
-  "hp_anima": "5895",
-  "rec_anima": "1171",
-  "atk_breaker": "1822",
-  "def_breaker": "1655",
-  "atk_guardian": "1506",
-  "def_guardian": "1971",
-  "rec_guardian": "1250",
-  "def_oracle": "1734",
-  "hp_oracle": "5066",
-  "rec_oracle": "1566",
-  "hp_bonus": "500",
-  "atk_bonus": "140",
-  "def_bonus": "260",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "6",
-  "normaldc": "12",
-  "ls": "High Ruler's Protection",
-  "lsdescription": "20% boost to Def for all Units",
-  "lstype": "Defense",
+  "stats": {
+    "_base": {
+      "atk": 1263,
+      "def": 1370,
+      "hp": 3758,
+      "rec": 1012
+    },
+    "_lord": {
+      "atk": 1664,
+      "def": 1813,
+      "hp": 5303,
+      "rec": 1329
+    },
+    "anima": {
+      "atk": 1664,
+      "def": 1813,
+      "hp max": 6093,
+      "hp min": 5698,
+      "rec max": 1250,
+      "rec min": 1092
+    },
+    "breaker": {
+      "atk max": 1901,
+      "atk min": 1743,
+      "def max": 1734,
+      "def min": 1576,
+      "hp": 5303,
+      "rec": 1329
+    },
+    "guardian": {
+      "atk": 1664,
+      "def max": 2050,
+      "def min": 1892,
+      "hp": 5303,
+      "rec max": 1329,
+      "rec min": 1171
+    },
+    "oracle": {
+      "atk": 1664,
+      "def max": 1813,
+      "def min": 1655,
+      "hp": 5303,
+      "rec max": 1645,
+      "rec min": 1487
+    }
+  },
+  "leader_skill": {
+    "desc": "20% boost to Def for all Units",
+    "effects": [
+      {
+        "def% buff": 20,
+        "passive id": "1"
+      }
+    ],
+    "id": "8102",
+    "name": "High Ruler's Protection"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -307,92 +312,93 @@
     ],
     "name": "Electro Storm"
   },
-  "bbdescription": "Reduces damage taken for 1 turn & greatly boosts Def for 3 turns",
-  "bbnote": "25% damage reduction, 115% boost to Def",
-  "bbtype": "Support",
-  "bbhits": "0",
-  "bbaoe": "0",
-  "bbgauge": "18",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "40523",
-  "evointo": "40525",
-  "evomats1": "50354",
-  "evomats2": "40133",
-  "evomats3": "40133",
-  "evomats4": "40191",
-  "evomats5": "60224",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 1263,
-      "def": 1370,
-      "hp": 3758,
-      "rec": 1012
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1664,
-      "def": 1813,
-      "hp": 5303,
-      "rec": 1329
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1664,
-      "def": 1813,
-      "hp max": 6093,
-      "hp min": 5698,
-      "rec max": 1250,
-      "rec min": 1092
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 133
     },
-    "breaker": {
-      "atk max": 1901,
-      "atk min": 1743,
-      "def max": 1734,
-      "def min": 1576,
-      "hp": 5303,
-      "rec": 1329
+    "idle": {
+      "total number of frames": 52
     },
-    "guardian": {
-      "atk": 1664,
-      "def max": 2050,
-      "def min": 1892,
-      "hp": 5303,
-      "rec max": 1329,
-      "rec min": 1171
-    },
-    "oracle": {
-      "atk": 1664,
-      "def max": 1813,
-      "def min": 1655,
-      "hp": 5303,
-      "rec max": 1645,
-      "rec min": 1487
+    "move": {
+      "total number of frames": 5
     }
   },
-  "leader_skill": {
-    "desc": "20% boost to Def for all Units",
-    "effects": [
-      {
-        "def% buff": 20,
-        "passive id": "1"
-      }
+  "category": 40520,
+  "cost": "18",
+  "damage frames": {
+    "frame times": [
+      13,
+      45,
+      49,
+      84,
+      88,
+      92
     ],
-    "id": "8102",
-    "name": "High Ruler's Protection"
+    "hit dmg% distribution": [
+      20,
+      30,
+      15,
+      20,
+      10,
+      5
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 6
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "thunder",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 825,
+  "imp": {
+    "max atk": "140",
+    "max def": "260",
+    "max hp": "500",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "1549~1730",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Dragoon Lord Bargus",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Dragoon Lord Bargus",
+  "maxlv": "80",
+  "no": "825",
   "unitDisplayHomePosition_1W9CxaFK": "540,220,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-230,-40,1187,833",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "157,355,319,277,0",
@@ -402,5 +408,99 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "7:130:1,39:124:1,43:124:1,78:400231:1,82:400231:1,86:400231:1,88:400075:1,13:300124:1,13:400182:1,13:400120:1,92:200081:1,49:400224:1"
+  "effectFrames": "7:130:1,39:124:1,43:124:1,78:400231:1,82:400231:1,86:400231:1,88:400075:1,13:300124:1,13:400182:1,13:400120:1,92:200081:1,49:400224:1",
+  "evofrom": "40523",
+  "evointo": "40525",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40133",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "40191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "133",
+  "animation_idle": "52",
+  "animation_move": "5",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "13, 45, 49, 84, 88, 92",
+  "normal_distribute": "20, 30, 15, 20, 10, 5",
+  "normal_totaldistr": "100",
+  "description": "The first dragoon of the Sama Kingdom. Though being able to attack from the skies and from the seas, what really put the Sama Dragoons in the spotlight was Bargus's ability to ride a water dragon. As opposed to riding flying dragons, both great skill and talent are required to ride a water dragon, making this feat quite impressive in of itself. It is said that even among the successors of the Sama Dragoons, there were almost no others who could master riding both a flying and a water dragon, except for Bargus himself.",
+  "summon": "I, Dragoon Lord Bargus,<br>will grow stronger for you.<br>Expect great things from me.",
+  "fusion": "You have my thanks.<br>Dedication like yours is rare.",
+  "evolution": "Now I can build a bond<br>with many more dragons than before.<br>And it's all thanks to you.",
+  "hp_base": "3758",
+  "atk_base": "1263",
+  "def_base": "1370",
+  "rec_base": "1012",
+  "hp_lord": "5303",
+  "atk_lord": "1664",
+  "def_lord": "1813",
+  "rec_lord": "1329",
+  "hp_anima": "5895",
+  "rec_anima": "1171",
+  "atk_breaker": "1822",
+  "def_breaker": "1655",
+  "atk_guardian": "1506",
+  "def_guardian": "1971",
+  "rec_guardian": "1250",
+  "def_oracle": "1734",
+  "hp_oracle": "5066",
+  "rec_oracle": "1566",
+  "hp_bonus": "500",
+  "atk_bonus": "140",
+  "def_bonus": "260",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "6",
+  "normaldc": "12",
+  "ls": "High Ruler's Protection",
+  "lsdescription": "20% boost to Def for all Units",
+  "lstype": "Defense",
+  "bbdescription": "Reduces damage taken for 1 turn & greatly boosts Def for 3 turns",
+  "bbnote": "25% damage reduction, 115% boost to Def",
+  "bbtype": "Support",
+  "bbhits": "0",
+  "bbaoe": "0",
+  "bbgauge": "18",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "40133",
+  "evomats3": "40133",
+  "evomats4": "40191",
+  "evomats5": "60224"
 }

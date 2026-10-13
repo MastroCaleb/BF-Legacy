@@ -1,63 +1,66 @@
 {
   "id": "20162",
-  "unitName": "Dean",
-  "freetext": ":''For other uses, see Dean (disambiguation)''",
-  "no": "242",
-  "element": "Water",
-  "rarity": "★★★",
-  "cost": "7",
-  "maxlv": "40",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "1",
-  "animation_attack": "94",
-  "animation_idle": "76",
-  "animation_move": "76",
-  "movespeed_attack": "0",
-  "movespeed_skill": "0",
-  "speedtype_attack": "5",
-  "speedtype_skill": "5",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "63, 65, 67",
-  "normal_distribute": "40, 20, 40",
-  "normal_totaldistr": "100",
-  "bb_frames": "63, 73, 83, 93, 103",
-  "bb_distribute": "20, 20, 20, 20, 20",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "30",
-  "description": "One of the four legendary warriors who fought to save the Kingdom of Palmyna. Originally a high-ranking priest who specialized in ice magic, his refusal to bow down to authority resulted in his superiors exiling him into the wilderness. Plunged into despair by the gods’ attack on Palmyna and with nowhere to turn, he was relieved one day to receive a visit from a female knight and an old man, who invited him on a journey to defeat the rampaging gods.",
-  "summon": "You’re the one who summoned me, eh?<br>There’s no need to look quite so smug about it.<br>I can still decide to leave, you know.",
-  "fusion": "Borrowing power from the likes of you...<br>My, how the mighty have fallen.<br>Still, can’t complain, I guess.",
-  "evolution": "",
-  "hp_base": "2380",
-  "atk_base": "780",
-  "def_base": "780",
-  "rec_base": "700",
-  "hp_lord": "3632",
-  "atk_lord": "1014",
-  "def_lord": "1014",
-  "rec_lord": "1190",
-  "hp_anima": "3925",
-  "rec_anima": "1112",
-  "atk_breaker": "1092",
-  "def_breaker": "936",
-  "atk_guardian": "936",
-  "def_guardian": "1092",
-  "rec_guardian": "1151",
-  "def_oracle": "975",
-  "hp_oracle": "3515",
-  "rec_oracle": "1307",
-  "hp_bonus": "300",
-  "atk_bonus": "80",
-  "def_bonus": "160",
-  "rec_bonus": "120",
-  "lordonly": "",
-  "combo_hits": "3",
-  "normaldc": "9",
-  "ls": "Water Spirit's Power",
-  "lsdescription": "25% boost to Atk Power of Water Types",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 780,
+      "def": 780,
+      "hp": 2380,
+      "rec": 700
+    },
+    "_lord": {
+      "atk": 1014,
+      "def": 1014,
+      "hp": 3632,
+      "rec": 1190
+    },
+    "anima": {
+      "atk": 1014,
+      "def": 1014,
+      "hp max": 4022,
+      "hp min": 3827,
+      "rec max": 1151,
+      "rec min": 1073
+    },
+    "breaker": {
+      "atk max": 1131,
+      "atk min": 1053,
+      "def max": 975,
+      "def min": 897,
+      "hp": 3632,
+      "rec": 1190
+    },
+    "guardian": {
+      "atk": 1014,
+      "def max": 1131,
+      "def min": 1053,
+      "hp": 3632,
+      "rec max": 1190,
+      "rec min": 1112
+    },
+    "oracle": {
+      "atk": 1014,
+      "def max": 1014,
+      "def min": 936,
+      "hp": 3632,
+      "rec max": 1346,
+      "rec min": 1268
+    }
+  },
+  "leader_skill": {
+    "desc": "25% boost to Atk Power of Water Types",
+    "effects": [
+      {
+        "atk% buff": 25,
+        "elements buffed": [
+          "water"
+        ],
+        "passive id": "2"
+      }
+    ],
+    "id": "110",
+    "name": "Water Spirit's Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -218,97 +221,87 @@
     ],
     "name": "Solid Ice"
   },
-  "bbdescription": "5 Combo Water Elemental Attack on All enemies",
-  "bbtype": "Offense",
-  "bbhits": "5",
-  "bbaoe": "A",
-  "bbgauge": "26",
-  "bbdc": "5",
-  "bbmultiplier": "180",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "20163",
-  "evomats1": "20132",
-  "evomats2": "20130",
-  "evomats3": "20130",
-  "evomats4": "20130",
-  "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "100000",
-  "stats": {
-    "_base": {
-      "atk": 780,
-      "def": 780,
-      "hp": 2380,
-      "rec": 700
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "party"
     },
-    "_lord": {
-      "atk": 1014,
-      "def": 1014,
-      "hp": 3632,
-      "rec": 1190
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1014,
-      "def": 1014,
-      "hp max": 4022,
-      "hp min": 3827,
-      "rec max": 1151,
-      "rec min": 1073
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 94
     },
-    "breaker": {
-      "atk max": 1131,
-      "atk min": 1053,
-      "def max": 975,
-      "def min": 897,
-      "hp": 3632,
-      "rec": 1190
+    "idle": {
+      "total number of frames": 76
     },
-    "guardian": {
-      "atk": 1014,
-      "def max": 1131,
-      "def min": 1053,
-      "hp": 3632,
-      "rec max": 1190,
-      "rec min": 1112
-    },
-    "oracle": {
-      "atk": 1014,
-      "def max": 1014,
-      "def min": 936,
-      "hp": 3632,
-      "rec max": 1346,
-      "rec min": 1268
+    "move": {
+      "total number of frames": 76
     }
   },
-  "leader_skill": {
-    "desc": "25% boost to Atk Power of Water Types",
-    "effects": [
-      {
-        "atk% buff": 25,
-        "elements buffed": [
-          "water"
-        ],
-        "passive id": "2"
-      }
+  "category": 20160,
+  "cost": "7",
+  "damage frames": {
+    "frame times": [
+      63,
+      65,
+      67
     ],
-    "id": "110",
-    "name": "Water Spirit's Power"
+    "hit dmg% distribution": [
+      40,
+      20,
+      40
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 3
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "water",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 242,
+  "imp": {
+    "max atk": "80",
+    "max def": "160",
+    "max hp": "300",
+    "max rec": "120"
+  },
+  "kind": "normal",
+  "lord damage range": "943~1054",
+  "movement": {
+    "attack": {
+      "move speed": 0,
+      "move speed type": "5",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 0,
+      "move speed type": "5",
+      "move type": "3"
+    }
+  },
+  "name": "Dean",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "Dean",
+  "maxlv": "40",
+  "no": "242",
   "unitDisplayHomePosition_1W9CxaFK": "340,65,147,403",
   "unitDisplayDetailPosition_6z54rgb3": "60,140,735,601",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "215,403,265,225,0",
@@ -318,5 +311,101 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "1000",
   "sellCaution": false,
-  "effectFrames": "64:180:1,66:180:1,68:180:1"
+  "effectFrames": "64:180:1,66:180:1,68:180:1",
+  "evofrom": "",
+  "evointo": "20163",
+  "evozelcost": "100000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "20132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20131",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "20130",
+      "count": 1
+    }
+  ],
+  "freetext": ":''For other uses, see Dean (disambiguation)''",
+  "basexp": "21",
+  "animation_attack": "94",
+  "animation_idle": "76",
+  "animation_move": "76",
+  "movespeed_attack": "0",
+  "movespeed_skill": "0",
+  "speedtype_attack": "5",
+  "speedtype_skill": "5",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "63, 65, 67",
+  "normal_distribute": "40, 20, 40",
+  "normal_totaldistr": "100",
+  "bb_frames": "63, 73, 83, 93, 103",
+  "bb_distribute": "20, 20, 20, 20, 20",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "30",
+  "description": "One of the four legendary warriors who fought to save the Kingdom of Palmyna. Originally a high-ranking priest who specialized in ice magic, his refusal to bow down to authority resulted in his superiors exiling him into the wilderness. Plunged into despair by the gods’ attack on Palmyna and with nowhere to turn, he was relieved one day to receive a visit from a female knight and an old man, who invited him on a journey to defeat the rampaging gods.",
+  "summon": "You’re the one who summoned me, eh?<br>There’s no need to look quite so smug about it.<br>I can still decide to leave, you know.",
+  "fusion": "Borrowing power from the likes of you...<br>My, how the mighty have fallen.<br>Still, can’t complain, I guess.",
+  "evolution": "",
+  "hp_base": "2380",
+  "atk_base": "780",
+  "def_base": "780",
+  "rec_base": "700",
+  "hp_lord": "3632",
+  "atk_lord": "1014",
+  "def_lord": "1014",
+  "rec_lord": "1190",
+  "hp_anima": "3925",
+  "rec_anima": "1112",
+  "atk_breaker": "1092",
+  "def_breaker": "936",
+  "atk_guardian": "936",
+  "def_guardian": "1092",
+  "rec_guardian": "1151",
+  "def_oracle": "975",
+  "hp_oracle": "3515",
+  "rec_oracle": "1307",
+  "hp_bonus": "300",
+  "atk_bonus": "80",
+  "def_bonus": "160",
+  "rec_bonus": "120",
+  "lordonly": "",
+  "combo_hits": "3",
+  "normaldc": "9",
+  "ls": "Water Spirit's Power",
+  "lsdescription": "25% boost to Atk Power of Water Types",
+  "lstype": "Attack",
+  "bbdescription": "5 Combo Water Elemental Attack on All enemies",
+  "bbtype": "Offense",
+  "bbhits": "5",
+  "bbaoe": "A",
+  "bbgauge": "26",
+  "bbdc": "5",
+  "bbmultiplier": "180",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "20132",
+  "evomats2": "20130",
+  "evomats3": "20130",
+  "evomats4": "20130",
+  "evomats5": "",
+  "evoitem": ""
 }

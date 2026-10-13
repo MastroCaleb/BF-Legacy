@@ -1,58 +1,63 @@
 {
   "id": "20094",
-  "unitName": "Meltia",
-  "no": "365",
-  "element": "Water",
-  "rarity": "★★★★★",
-  "cost": "12",
-  "maxlv": "80",
-  "basexp": "15",
-  "gender": "N",
-  "ai": "2",
-  "animation_attack": "207",
-  "animation_idle": "68",
-  "animation_move": "68",
-  "movespeed_attack": "6",
-  "movespeed_skill": "6",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "56, 63, 70, 77, 84, 91",
-  "normal_distribute": "20, 15, 15, 15, 15, 20",
-  "normal_totaldistr": "100",
-  "description": "A high-ranked spirit that rules over all water. Even in places with small amounts of water, she moves freely through the air. It's said that when a rainbow filled the sky she would appear dancing above. It's thought that anyone who sees her is lucky, and many have reached toward the skies trying to catch her. She doesn't like this, however, and should anyone try to touch her she encases everything in water with a cold look on her face.",
-  "summon": "Won't you dance with me?<br>Why, you ask? He he he.<br>Won't know 'til you try!",
-  "fusion": "Huh? What could this be?<br>Oh, I see. You're a bad seed,<br>aren't you?",
-  "evolution": "You can actually see me?<br>He he he. Well then, why <br>don't you come a little closer?",
-  "hp_base": "3522",
-  "atk_base": "814",
-  "def_base": "1130",
-  "rec_base": "702",
-  "hp_lord": "4972",
-  "atk_lord": "1164",
-  "def_lord": "1555",
-  "rec_lord": "1151",
-  "hp_anima": "5565",
-  "rec_anima": "993",
-  "atk_breaker": "1322",
-  "def_breaker": "1397",
-  "rec_guardian": "1072",
-  "def_oracle": "1476",
-  "atk_guardian": "1006",
-  "def_guardian": "1713",
-  "hp_oracle": "4735",
-  "rec_oracle": "1388",
-  "hp_bonus": "250",
-  "atk_bonus": "100",
-  "def_bonus": "100",
-  "rec_bonus": "500",
-  "lordonly": "",
-  "combo_hits": "6",
-  "normaldc": "12",
-  "ls": "Water Barrier",
-  "lsdescription": "15% reduction in damage from Water Types",
-  "lstype": "Defense",
+  "stats": {
+    "_base": {
+      "atk": 814,
+      "def": 1130,
+      "hp": 3522,
+      "rec": 702
+    },
+    "_lord": {
+      "atk": 1164,
+      "def": 1555,
+      "hp": 4972,
+      "rec": 1151
+    },
+    "anima": {
+      "atk": 1164,
+      "def": 1555,
+      "hp max": 5762,
+      "hp min": 5367,
+      "rec max": 1072,
+      "rec min": 914
+    },
+    "breaker": {
+      "atk max": 1401,
+      "atk min": 1243,
+      "def max": 1476,
+      "def min": 1318,
+      "hp": 4972,
+      "rec": 1151
+    },
+    "guardian": {
+      "atk": 1164,
+      "def max": 1792,
+      "def min": 1634,
+      "hp": 4972,
+      "rec max": 1151,
+      "rec min": 993
+    },
+    "oracle": {
+      "atk": 1164,
+      "def max": 1555,
+      "def min": 1397,
+      "hp": 4972,
+      "rec max": 1467,
+      "rec min": 1309
+    }
+  },
+  "leader_skill": {
+    "desc": "15% reduction in damage from Water Types",
+    "effects": [
+      {
+        "passive id": "5",
+        "water resist%": 15
+      }
+    ],
+    "id": "503",
+    "name": "Water Barrier"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -225,93 +230,93 @@
     ],
     "name": "Planet Shower"
   },
-  "bbdescription": "Boosts all allies' Def & critical hit rate for 3 turns",
-  "bbnote": "80% boost to Def, 45% boost to Critical Hit rate",
-  "bbtype": "Support",
-  "bbhits": "0",
-  "bbaoe": "0",
-  "bbgauge": "20",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "20093",
-  "evointo": "20095",
-  "evomats1": "50354",
-  "evomats2": "20133",
-  "evomats3": "20191",
-  "evomats4": "20132",
-  "evomats5": "60224",
-  "evoitem": "",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 814,
-      "def": 1130,
-      "hp": 3522,
-      "rec": 702
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1164,
-      "def": 1555,
-      "hp": 4972,
-      "rec": 1151
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1164,
-      "def": 1555,
-      "hp max": 5762,
-      "hp min": 5367,
-      "rec max": 1072,
-      "rec min": 914
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 207
     },
-    "breaker": {
-      "atk max": 1401,
-      "atk min": 1243,
-      "def max": 1476,
-      "def min": 1318,
-      "hp": 4972,
-      "rec": 1151
+    "idle": {
+      "total number of frames": 68
     },
-    "guardian": {
-      "atk": 1164,
-      "def max": 1792,
-      "def min": 1634,
-      "hp": 4972,
-      "rec max": 1151,
-      "rec min": 993
-    },
-    "oracle": {
-      "atk": 1164,
-      "def max": 1555,
-      "def min": 1397,
-      "hp": 4972,
-      "rec max": 1467,
-      "rec min": 1309
+    "move": {
+      "total number of frames": 68
     }
   },
-  "leader_skill": {
-    "desc": "15% reduction in damage from Water Types",
-    "effects": [
-      {
-        "passive id": "5",
-        "water resist%": 15
-      }
+  "category": 20090,
+  "cost": "12",
+  "damage frames": {
+    "frame times": [
+      56,
+      63,
+      70,
+      77,
+      84,
+      91
     ],
-    "id": "503",
-    "name": "Water Barrier"
+    "hit dmg% distribution": [
+      20,
+      15,
+      15,
+      15,
+      15,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 6
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "water",
+  "exp_pattern": 15,
+  "gender": "other",
+  "getting type": "rare summon",
+  "guide_id": 365,
+  "imp": {
+    "max atk": "100",
+    "max def": "100",
+    "max hp": "250",
+    "max rec": "500"
+  },
+  "kind": "normal",
+  "lord damage range": "1083~1210",
+  "movement": {
+    "attack": {
+      "move speed": 6,
+      "move speed type": "2",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 6,
+      "move speed type": "2",
+      "move type": "3"
+    }
+  },
+  "name": "Meltia",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Meltia",
+  "maxlv": "80",
+  "no": "365",
   "unitDisplayHomePosition_1W9CxaFK": "292,103,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "71,34,930,862",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "114,291,459,340,1",
@@ -321,5 +326,105 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "48:200230:1,80:190:1,54:200322:1,56:200030:1,65:200322:1,125:200140:1"
+  "effectFrames": "48:200230:1,80:190:1,54:200322:1,56:200030:1,65:200322:1,125:200140:1",
+  "evofrom": "20093",
+  "evointo": "20095",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    }
+  ],
+  "basexp": "15",
+  "animation_attack": "207",
+  "animation_idle": "68",
+  "animation_move": "68",
+  "movespeed_attack": "6",
+  "movespeed_skill": "6",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "56, 63, 70, 77, 84, 91",
+  "normal_distribute": "20, 15, 15, 15, 15, 20",
+  "normal_totaldistr": "100",
+  "description": "A high-ranked spirit that rules over all water. Even in places with small amounts of water, she moves freely through the air. It's said that when a rainbow filled the sky she would appear dancing above. It's thought that anyone who sees her is lucky, and many have reached toward the skies trying to catch her. She doesn't like this, however, and should anyone try to touch her she encases everything in water with a cold look on her face.",
+  "summon": "Won't you dance with me?<br>Why, you ask? He he he.<br>Won't know 'til you try!",
+  "fusion": "Huh? What could this be?<br>Oh, I see. You're a bad seed,<br>aren't you?",
+  "evolution": "You can actually see me?<br>He he he. Well then, why <br>don't you come a little closer?",
+  "hp_base": "3522",
+  "atk_base": "814",
+  "def_base": "1130",
+  "rec_base": "702",
+  "hp_lord": "4972",
+  "atk_lord": "1164",
+  "def_lord": "1555",
+  "rec_lord": "1151",
+  "hp_anima": "5565",
+  "rec_anima": "993",
+  "atk_breaker": "1322",
+  "def_breaker": "1397",
+  "rec_guardian": "1072",
+  "def_oracle": "1476",
+  "atk_guardian": "1006",
+  "def_guardian": "1713",
+  "hp_oracle": "4735",
+  "rec_oracle": "1388",
+  "hp_bonus": "250",
+  "atk_bonus": "100",
+  "def_bonus": "100",
+  "rec_bonus": "500",
+  "lordonly": "",
+  "combo_hits": "6",
+  "normaldc": "12",
+  "ls": "Water Barrier",
+  "lsdescription": "15% reduction in damage from Water Types",
+  "lstype": "Defense",
+  "bbdescription": "Boosts all allies' Def & critical hit rate for 3 turns",
+  "bbnote": "80% boost to Def, 45% boost to Critical Hit rate",
+  "bbtype": "Support",
+  "bbhits": "0",
+  "bbaoe": "0",
+  "bbgauge": "20",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "20133",
+  "evomats3": "20191",
+  "evomats4": "20132",
+  "evomats5": "60224",
+  "evoitem": ""
 }

@@ -1,62 +1,63 @@
 {
   "id": "20061",
-  "unitName": "Pirate Verica",
-  "no": "81",
-  "element": "Water",
-  "rarity": "★★",
-  "cost": "3",
-  "maxlv": "30",
-  "basexp": "10",
-  "gender": "M",
-  "ai": "4",
-  "animation_attack": "76",
-  "animation_idle": "44",
-  "animation_move": "36",
-  "movespeed_attack": "0.005",
-  "movespeed_skill": "0.005",
-  "speedtype_attack": "1",
-  "speedtype_skill": "1",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "50, 55",
-  "normal_distribute": "60, 40",
-  "normal_totaldistr": "100",
-  "bb_frames": "50, 55",
-  "bb_distribute": "50, 50",
-  "bb_totaldistr": "100",
-  "description": "A novice pirate active in the seas near the ruined Sama Kingdom. From his relaxed appearance and speech, he was often made light of by enemies who would soon regret it. With deceivingly quick movements and a hearty strike, he would cut down opponents in a flash. In his day, his captain would always say, \"As long as there be scum around, there be wine to drink.\"",
-  "summon": "I am a pirate!<br>A pirate's life for me!<br>Yo ho, I'll tag along with you!",
-  "fusion": "Yo ho! Fusion time!<br>Time to power up!",
-  "evolution": "",
-  "hp_base": "1330",
-  "atk_base": "500",
-  "def_base": "400",
-  "rec_base": "200",
-  "hp_lord": "2561",
-  "atk_lord": "750",
-  "def_lord": "532",
-  "rec_lord": "300",
-  "hp_anima": "2779",
-  "rec_anima": "242",
-  "atk_breaker": "808",
-  "def_breaker": "474",
-  "atk_guardian": "692",
-  "def_guardian": "590",
-  "rec_guardian": "271",
-  "def_oracle": "503",
-  "hp_oracle": "2474",
-  "rec_oracle": "387",
-  "hp_bonus": "250",
-  "atk_bonus": "120",
-  "def_bonus": "80",
-  "rec_bonus": "100",
-  "lordonly": "",
-  "combo_hits": "2",
-  "normaldc": "4",
-  "ls": "Pure Light",
-  "lsdescription": "Small boost in Heart Crystals produced during Spark",
-  "lsnote": "20% boost",
-  "lstype": "Recovery",
+  "stats": {
+    "_base": {
+      "atk": 500,
+      "def": 400,
+      "hp": 1330,
+      "rec": 200
+    },
+    "_lord": {
+      "atk": 750,
+      "def": 532,
+      "hp": 2561,
+      "rec": 300
+    },
+    "anima": {
+      "atk": 750,
+      "def": 532,
+      "hp max": 2851,
+      "hp min": 2706,
+      "rec max": 271,
+      "rec min": 213
+    },
+    "breaker": {
+      "atk max": 837,
+      "atk min": 779,
+      "def max": 503,
+      "def min": 445,
+      "hp": 2561,
+      "rec": 300
+    },
+    "guardian": {
+      "atk": 750,
+      "def max": 619,
+      "def min": 561,
+      "hp": 2561,
+      "rec max": 300,
+      "rec min": 242
+    },
+    "oracle": {
+      "atk": 750,
+      "def max": 532,
+      "def min": 474,
+      "hp": 2561,
+      "rec max": 416,
+      "rec min": 358
+    }
+  },
+  "leader_skill": {
+    "desc": "Small boost in Heart Crystals produced during Spark",
+    "effects": [
+      {
+        "hc drop% for spark": 20,
+        "passive id": "31"
+      }
+    ],
+    "id": "1500",
+    "name": "Pure Light"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -283,95 +284,97 @@
     ],
     "name": "Crazy Slash"
   },
-  "bbdescription": "2 combo Water elemental attack on single Enemy & probable Weakness effect",
-  "bbnote": "80% chance",
-  "bbtype": "Offense",
-  "bbhits": "2",
-  "bbaoe": "1",
-  "bbgauge": "15",
-  "bbdc": "2",
-  "bbmultiplier": "200",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "20062",
-  "evomats1": "20130",
-  "evomats2": "20130",
-  "evomats3": "20131",
-  "evomats4": "",
-  "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "50000",
-  "stats": {
-    "_base": {
-      "atk": 500,
-      "def": 400,
-      "hp": 1330,
-      "rec": 200
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_under",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 750,
-      "def": 532,
-      "hp": 2561,
-      "rec": 300
+    {
+      "action": "skill",
+      "chance%": 30.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 750,
-      "def": 532,
-      "hp max": 2851,
-      "hp min": 2706,
-      "rec max": 271,
-      "rec min": 213
+    {
+      "action": "attack",
+      "chance%": 70.0,
+      "target conditions": "hp_max",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 837,
-      "atk min": 779,
-      "def max": 503,
-      "def min": 445,
-      "hp": 2561,
-      "rec": 300
+    {
+      "action": "attack",
+      "chance%": 50.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "guardian": {
-      "atk": 750,
-      "def max": 619,
-      "def min": 561,
-      "hp": 2561,
-      "rec max": 300,
-      "rec min": 242
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 76
     },
-    "oracle": {
-      "atk": 750,
-      "def max": 532,
-      "def min": 474,
-      "hp": 2561,
-      "rec max": 416,
-      "rec min": 358
+    "idle": {
+      "total number of frames": 44
+    },
+    "move": {
+      "total number of frames": 36
     }
   },
-  "leader_skill": {
-    "desc": "Small boost in Heart Crystals produced during Spark",
-    "effects": [
-      {
-        "hc drop% for spark": 20,
-        "passive id": "31"
-      }
+  "category": 20060,
+  "cost": "3",
+  "damage frames": {
+    "frame times": [
+      50,
+      55
     ],
-    "id": "1500",
-    "name": "Pure Light"
+    "hit dmg% distribution": [
+      60,
+      40
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 2
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "water",
+  "exp_pattern": 10,
+  "gender": "male",
+  "getting type": "not eligible for achievement",
+  "guide_id": 81,
+  "imp": {
+    "max atk": "120",
+    "max def": "80",
+    "max hp": "250",
+    "max rec": "100"
+  },
+  "kind": "normal",
+  "lord damage range": "698~780",
+  "movement": {
+    "attack": {
+      "move speed": 0.005,
+      "move speed type": "1",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.005,
+      "move speed type": "1",
+      "move type": "1"
+    }
+  },
+  "name": "Pirate Verica",
+  "rarity": "2",
+  "sell caution": false,
+  "unitName": "Pirate Verica",
+  "maxlv": "30",
+  "no": "81",
   "unitDisplayHomePosition_1W9CxaFK": "174,15,200,544",
   "unitDisplayDetailPosition_6z54rgb3": "204,127,462,632",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "184,300,231,316,0",
@@ -381,5 +384,96 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "300",
   "sellCaution": false,
-  "effectFrames": "44:122:1,49:122:1"
+  "effectFrames": "44:122:1,49:122:1",
+  "evofrom": "",
+  "evointo": "20062",
+  "evozelcost": "50000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "20130",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "20131",
+      "count": 1
+    }
+  ],
+  "basexp": "10",
+  "animation_attack": "76",
+  "animation_idle": "44",
+  "animation_move": "36",
+  "movespeed_attack": "0.005",
+  "movespeed_skill": "0.005",
+  "speedtype_attack": "1",
+  "speedtype_skill": "1",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "50, 55",
+  "normal_distribute": "60, 40",
+  "normal_totaldistr": "100",
+  "bb_frames": "50, 55",
+  "bb_distribute": "50, 50",
+  "bb_totaldistr": "100",
+  "description": "A novice pirate active in the seas near the ruined Sama Kingdom. From his relaxed appearance and speech, he was often made light of by enemies who would soon regret it. With deceivingly quick movements and a hearty strike, he would cut down opponents in a flash. In his day, his captain would always say, \"As long as there be scum around, there be wine to drink.\"",
+  "summon": "I am a pirate!<br>A pirate's life for me!<br>Yo ho, I'll tag along with you!",
+  "fusion": "Yo ho! Fusion time!<br>Time to power up!",
+  "evolution": "",
+  "hp_base": "1330",
+  "atk_base": "500",
+  "def_base": "400",
+  "rec_base": "200",
+  "hp_lord": "2561",
+  "atk_lord": "750",
+  "def_lord": "532",
+  "rec_lord": "300",
+  "hp_anima": "2779",
+  "rec_anima": "242",
+  "atk_breaker": "808",
+  "def_breaker": "474",
+  "atk_guardian": "692",
+  "def_guardian": "590",
+  "rec_guardian": "271",
+  "def_oracle": "503",
+  "hp_oracle": "2474",
+  "rec_oracle": "387",
+  "hp_bonus": "250",
+  "atk_bonus": "120",
+  "def_bonus": "80",
+  "rec_bonus": "100",
+  "lordonly": "",
+  "combo_hits": "2",
+  "normaldc": "4",
+  "ls": "Pure Light",
+  "lsdescription": "Small boost in Heart Crystals produced during Spark",
+  "lsnote": "20% boost",
+  "lstype": "Recovery",
+  "bbdescription": "2 combo Water elemental attack on single Enemy & probable Weakness effect",
+  "bbnote": "80% chance",
+  "bbtype": "Offense",
+  "bbhits": "2",
+  "bbaoe": "1",
+  "bbgauge": "15",
+  "bbdc": "2",
+  "bbmultiplier": "200",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "20130",
+  "evomats2": "20130",
+  "evomats3": "20131",
+  "evomats4": "",
+  "evomats5": "",
+  "evoitem": ""
 }

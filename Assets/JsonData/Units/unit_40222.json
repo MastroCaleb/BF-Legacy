@@ -1,61 +1,65 @@
 {
   "id": "40222",
-  "unitName": "Raiden",
-  "no": "585",
-  "element": "Thunder",
-  "rarity": "★★★",
-  "cost": "6",
-  "maxlv": "40",
-  "basexp": "15",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "87",
-  "animation_idle": "64",
-  "animation_move": "11",
-  "movespeed_attack": "0.0041",
-  "movespeed_skill": "0.0041",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "22, 43, 65, 71",
-  "normal_distribute": "20, 20, 25, 35",
-  "normal_totaldistr": "100",
-  "bb_frames": "22, 26, 43, 47, 65, 70, 75",
-  "bb_distribute": "13, 13, 13, 13, 16, 16, 16",
-  "bb_totaldistr": "100",
-  "description": "The powerful chief of a bandit clan in the Atharva Republic. It is said that whenever a crying child went silent, fear hung in the air, and when the sun went down, no one dared to step outside. He found joy in scaring others in this manner, and it is said that he placed more emphasis in inspiring fear in the heart of this victims than in the profit he made from stealing. A big scale armed force had to be mobilized in order to capture Raiden, but it failed to complete its mission. It wasn't until Falma and Grafl moved independently that Raiden was finally captured.",
-  "summon": "Gahaha!<br> Even children dare not cry in front of me!<br> Raiden, of the slicing thunder, that's me!",
-  "fusion": "Wait, hold it right there.<br>If you make me any stronger...<br>I won't be able to guarantee your safety.",
-  "evolution": "",
-  "hp_base": "2177",
-  "atk_base": "793",
-  "def_base": "731",
-  "rec_base": "572",
-  "hp_lord": "3682",
-  "atk_lord": "1014",
-  "def_lord": "1072",
-  "rec_lord": "678",
-  "hp_anima": "3975",
-  "rec_anima": "600",
-  "atk_breaker": "1092",
-  "def_breaker": "994",
-  "atk_guardian": "936",
-  "def_guardian": "1150",
-  "rec_guardian": "639",
-  "def_oracle": "1033",
-  "hp_oracle": "3565",
-  "rec_oracle": "795",
-  "hp_bonus": "300",
-  "atk_bonus": "120",
-  "def_bonus": "120",
-  "rec_bonus": "120",
-  "lordonly": "",
-  "combo_hits": "4",
-  "normaldc": "8",
-  "ls": "Five Brights Cure",
-  "lsdescription": "15% boost to HP & Rec of all Units when 5 elements or more are present",
-  "lstype": "Hit Points/Recovery",
+  "stats": {
+    "_base": {
+      "atk": 793,
+      "def": 731,
+      "hp": 2177,
+      "rec": 572
+    },
+    "_lord": {
+      "atk": 1014,
+      "def": 1072,
+      "hp": 3682,
+      "rec": 678
+    },
+    "anima": {
+      "atk": 1014,
+      "def": 1072,
+      "hp max": 4072,
+      "hp min": 3877,
+      "rec max": 639,
+      "rec min": 561
+    },
+    "breaker": {
+      "atk max": 1131,
+      "atk min": 1053,
+      "def max": 1033,
+      "def min": 955,
+      "hp": 3682,
+      "rec": 678
+    },
+    "guardian": {
+      "atk": 1014,
+      "def max": 1189,
+      "def min": 1111,
+      "hp": 3682,
+      "rec max": 678,
+      "rec min": 600
+    },
+    "oracle": {
+      "atk": 1014,
+      "def max": 1072,
+      "def min": 994,
+      "hp": 3682,
+      "rec max": 834,
+      "rec min": 756
+    }
+  },
+  "leader_skill": {
+    "desc": "15% boost to HP & Rec of all Units when 5 elements or more are present",
+    "effects": [
+      {
+        "hp% buff": 15,
+        "passive id": "41",
+        "rec% buff": 15,
+        "unique elements required": 5
+      }
+    ],
+    "id": "2210",
+    "name": "Five Brights Cure"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -302,96 +306,89 @@
     ],
     "name": "Thunderous Combo"
   },
-  "bbdescription": "7 combo Thunder elemental attack on all enemies & probable Injury and Weakness effect",
-  "bbnote": "40% chance to inflict",
-  "bbtype": "Offense",
-  "bbhits": "7",
-  "bbaoe": "A",
-  "bbgauge": "20",
-  "bbdc": "7",
-  "bbmultiplier": "120",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "40223",
-  "evomats1": "40132",
-  "evomats2": "40132",
-  "evomats3": "40131",
-  "evomats4": "60143",
-  "evomats5": "60142",
-  "evozelcost": "100000",
-  "stats": {
-    "_base": {
-      "atk": 793,
-      "def": 731,
-      "hp": 2177,
-      "rec": 572
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1014,
-      "def": 1072,
-      "hp": 3682,
-      "rec": 678
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1014,
-      "def": 1072,
-      "hp max": 4072,
-      "hp min": 3877,
-      "rec max": 639,
-      "rec min": 561
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 87
     },
-    "breaker": {
-      "atk max": 1131,
-      "atk min": 1053,
-      "def max": 1033,
-      "def min": 955,
-      "hp": 3682,
-      "rec": 678
+    "idle": {
+      "total number of frames": 64
     },
-    "guardian": {
-      "atk": 1014,
-      "def max": 1189,
-      "def min": 1111,
-      "hp": 3682,
-      "rec max": 678,
-      "rec min": 600
-    },
-    "oracle": {
-      "atk": 1014,
-      "def max": 1072,
-      "def min": 994,
-      "hp": 3682,
-      "rec max": 834,
-      "rec min": 756
+    "move": {
+      "total number of frames": 11
     }
   },
-  "leader_skill": {
-    "desc": "15% boost to HP & Rec of all Units when 5 elements or more are present",
-    "effects": [
-      {
-        "hp% buff": 15,
-        "passive id": "41",
-        "rec% buff": 15,
-        "unique elements required": 5
-      }
+  "category": 40220,
+  "cost": "6",
+  "damage frames": {
+    "frame times": [
+      22,
+      43,
+      65,
+      71
     ],
-    "id": "2210",
-    "name": "Five Brights Cure"
+    "hit dmg% distribution": [
+      20,
+      20,
+      25,
+      35
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 4
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "thunder",
+  "exp_pattern": 15,
+  "gender": "male",
+  "getting type": "farmable",
+  "guide_id": 585,
+  "imp": {
+    "max atk": "120",
+    "max def": "120",
+    "max hp": "300",
+    "max rec": "120"
+  },
+  "kind": "normal",
+  "lord damage range": "943~1054",
+  "movement": {
+    "attack": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    }
+  },
+  "name": "Raiden",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "Raiden",
+  "maxlv": "40",
+  "no": "585",
   "unitDisplayHomePosition_1W9CxaFK": "226,-15,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "67,203,705,596",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "160,336,297,293,0",
@@ -401,5 +398,104 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "1000",
   "sellCaution": false,
-  "effectFrames": "16:124:1,37:124:1,65:134:1,71:134:1"
+  "effectFrames": "16:124:1,37:124:1,65:134:1,71:134:1",
+  "evofrom": "",
+  "evointo": "40223",
+  "evozelcost": "100000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "40132",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "40131",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60142",
+      "count": 1
+    }
+  ],
+  "basexp": "15",
+  "animation_attack": "87",
+  "animation_idle": "64",
+  "animation_move": "11",
+  "movespeed_attack": "0.0041",
+  "movespeed_skill": "0.0041",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "22, 43, 65, 71",
+  "normal_distribute": "20, 20, 25, 35",
+  "normal_totaldistr": "100",
+  "bb_frames": "22, 26, 43, 47, 65, 70, 75",
+  "bb_distribute": "13, 13, 13, 13, 16, 16, 16",
+  "bb_totaldistr": "100",
+  "description": "The powerful chief of a bandit clan in the Atharva Republic. It is said that whenever a crying child went silent, fear hung in the air, and when the sun went down, no one dared to step outside. He found joy in scaring others in this manner, and it is said that he placed more emphasis in inspiring fear in the heart of this victims than in the profit he made from stealing. A big scale armed force had to be mobilized in order to capture Raiden, but it failed to complete its mission. It wasn't until Falma and Grafl moved independently that Raiden was finally captured.",
+  "summon": "Gahaha!<br> Even children dare not cry in front of me!<br> Raiden, of the slicing thunder, that's me!",
+  "fusion": "Wait, hold it right there.<br>If you make me any stronger...<br>I won't be able to guarantee your safety.",
+  "evolution": "",
+  "hp_base": "2177",
+  "atk_base": "793",
+  "def_base": "731",
+  "rec_base": "572",
+  "hp_lord": "3682",
+  "atk_lord": "1014",
+  "def_lord": "1072",
+  "rec_lord": "678",
+  "hp_anima": "3975",
+  "rec_anima": "600",
+  "atk_breaker": "1092",
+  "def_breaker": "994",
+  "atk_guardian": "936",
+  "def_guardian": "1150",
+  "rec_guardian": "639",
+  "def_oracle": "1033",
+  "hp_oracle": "3565",
+  "rec_oracle": "795",
+  "hp_bonus": "300",
+  "atk_bonus": "120",
+  "def_bonus": "120",
+  "rec_bonus": "120",
+  "lordonly": "",
+  "combo_hits": "4",
+  "normaldc": "8",
+  "ls": "Five Brights Cure",
+  "lsdescription": "15% boost to HP & Rec of all Units when 5 elements or more are present",
+  "lstype": "Hit Points/Recovery",
+  "bbdescription": "7 combo Thunder elemental attack on all enemies & probable Injury and Weakness effect",
+  "bbnote": "40% chance to inflict",
+  "bbtype": "Offense",
+  "bbhits": "7",
+  "bbaoe": "A",
+  "bbgauge": "20",
+  "bbdc": "7",
+  "bbmultiplier": "120",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "40132",
+  "evomats2": "40132",
+  "evomats3": "40131",
+  "evomats4": "60143",
+  "evomats5": "60142"
 }

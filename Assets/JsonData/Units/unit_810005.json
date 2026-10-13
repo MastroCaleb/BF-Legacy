@@ -1,62 +1,66 @@
 {
   "id": "810005",
-  "unitName": "War Rocket Cayena",
-  "no": "8002",
-  "element": "Fire",
-  "rarity": "★★★★★",
-  "cost": "15",
-  "maxlv": "80",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "108",
-  "animation_idle": "56",
-  "animation_move": "56",
-  "movespeed_attack": "4",
-  "movespeed_skill": "4",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "36, 41, 46, 51, 56, 61, 66, 86, 88, 90, 92, 96",
-  "normal_distribute": "8, 7, 7, 7, 7, 7, 7, 10, 10, 10, 10, 10",
-  "normal_totaldistr": "100",
-  "bb_frames": "36, 41, 46, 51, 56, 61, 66, 86, 88, 90, 92, 96",
-  "bb_distribute": "8, 7, 7, 7, 7, 7, 7, 10, 10, 10, 10, 10",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "description": "A soldier from another world, she fought only for righteous causes. Enraged by her defeat at the hands of the gods, she sought the power to destroy them. On the brink of being consumed by vengeance, a fellow Battle Maiden, Serin, reached out and saved her. Realizing that true strength comes from a heart that strives for justice, Cayena rallied herself once more to face the gods.",
-  "summon": "Are you fighting for justice?<br>My rockets are at your service!",
-  "fusion": "Yeehaw!<br>This new power burns <br>so splendidly!",
-  "evolution": "For justice,<br>my heart will burn stronger.<br>I'll set the skies ablaze!",
-  "hp_base": "3586",
-  "atk_base": "1225",
-  "def_base": "1088",
-  "rec_base": "1115",
-  "hp_lord": "5150",
-  "atk_lord": "1510",
-  "def_lord": "1515",
-  "rec_lord": "1265",
-  "hp_anima": "5743",
-  "rec_anima": "1107",
-  "atk_breaker": "1668",
-  "def_breaker": "1357",
-  "atk_guardian": "1352",
-  "def_guardian": "1673",
-  "rec_guardian": "1186",
-  "def_oracle": "1436",
-  "hp_oracle": "4913",
-  "rec_oracle": "1502",
-  "hp_bonus": "750",
-  "atk_bonus": "300",
-  "def_bonus": "300",
-  "rec_bonus": "300",
-  "lordonly": "",
-  "combo_hits": "12",
-  "normaldc": "24",
-  "ls": "Fire God's Power",
-  "lsdescription": "50% boost to Atk Power of Fire Types",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 1225,
+      "def": 1088,
+      "hp": 3586,
+      "rec": 1115
+    },
+    "_lord": {
+      "atk": 1510,
+      "def": 1515,
+      "hp": 5150,
+      "rec": 1265
+    },
+    "anima": {
+      "atk": 1510,
+      "def": 1515,
+      "hp max": 5940,
+      "hp min": 5545,
+      "rec max": 1186,
+      "rec min": 1028
+    },
+    "breaker": {
+      "atk max": 1747,
+      "atk min": 1589,
+      "def max": 1436,
+      "def min": 1278,
+      "hp": 5150,
+      "rec": 1265
+    },
+    "guardian": {
+      "atk": 1510,
+      "def max": 1752,
+      "def min": 1594,
+      "hp": 5150,
+      "rec max": 1265,
+      "rec min": 1107
+    },
+    "oracle": {
+      "atk": 1510,
+      "def max": 1515,
+      "def min": 1357,
+      "hp": 5150,
+      "rec max": 1581,
+      "rec min": 1423
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to Atk Power of Fire Types",
+    "effects": [
+      {
+        "atk% buff": 50,
+        "elements buffed": [
+          "fire"
+        ],
+        "passive id": "2"
+      }
+    ],
+    "id": "101",
+    "name": "Fire God's Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -303,97 +307,105 @@
     ],
     "name": "Rocket Storm"
   },
-  "bbdescription": "12 combo Fire attack on all enemies with probable Paralysis effect",
-  "bbnote": "45% chance to inflict",
-  "bbtype": "Offense",
-  "bbhits": "12",
-  "bbaoe": "A",
-  "bbgauge": "24",
-  "bbdc": "12",
-  "bbmultiplier": "200",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "810004",
-  "evointo": "810006",
-  "evomats1": "50354",
-  "evomats2": "10133",
-  "evomats3": "10133",
-  "evomats4": "10132",
-  "evomats5": "60224",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 1225,
-      "def": 1088,
-      "hp": 3586,
-      "rec": 1115
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1510,
-      "def": 1515,
-      "hp": 5150,
-      "rec": 1265
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1510,
-      "def": 1515,
-      "hp max": 5940,
-      "hp min": 5545,
-      "rec max": 1186,
-      "rec min": 1028
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 108
     },
-    "breaker": {
-      "atk max": 1747,
-      "atk min": 1589,
-      "def max": 1436,
-      "def min": 1278,
-      "hp": 5150,
-      "rec": 1265
+    "idle": {
+      "total number of frames": 56
     },
-    "guardian": {
-      "atk": 1510,
-      "def max": 1752,
-      "def min": 1594,
-      "hp": 5150,
-      "rec max": 1265,
-      "rec min": 1107
-    },
-    "oracle": {
-      "atk": 1510,
-      "def max": 1515,
-      "def min": 1357,
-      "hp": 5150,
-      "rec max": 1581,
-      "rec min": 1423
+    "move": {
+      "total number of frames": 56
     }
   },
-  "leader_skill": {
-    "desc": "50% boost to Atk Power of Fire Types",
-    "effects": [
-      {
-        "atk% buff": 50,
-        "elements buffed": [
-          "fire"
-        ],
-        "passive id": "2"
-      }
+  "category": 810000,
+  "cost": "15",
+  "damage frames": {
+    "frame times": [
+      36,
+      41,
+      46,
+      51,
+      56,
+      61,
+      66,
+      86,
+      88,
+      90,
+      92,
+      96
     ],
-    "id": "101",
-    "name": "Fire God's Power"
+    "hit dmg% distribution": [
+      8,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      10,
+      10,
+      10,
+      10,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 12
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "fire",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "farmable",
+  "guide_id": 8002,
+  "imp": {
+    "max atk": "300",
+    "max def": "300",
+    "max hp": "750",
+    "max rec": "300"
+  },
+  "kind": "normal",
+  "lord damage range": "1406~1570",
+  "movement": {
+    "attack": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    }
+  },
+  "name": "War Rocket Cayena",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "War Rocket Cayena",
+  "maxlv": "80",
+  "no": "8002",
   "unitDisplayHomePosition_1W9CxaFK": "458,276,182,498",
   "unitDisplayDetailPosition_6z54rgb3": "-127,-113,1272,973",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "15,138,673,515,0",
@@ -403,5 +415,105 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "30:121:1,30:150:1,35:121:1,40:121:1,45:121:1,50:121:1,55:121:1,60:121:1,80:650:1,80:150:1,82:121:1,84:121:1,86:121:1,88:121:1"
+  "effectFrames": "30:121:1,30:150:1,35:121:1,40:121:1,45:121:1,50:121:1,55:121:1,60:121:1,80:650:1,80:150:1,82:121:1,84:121:1,86:121:1,88:121:1",
+  "evofrom": "810004",
+  "evointo": "810006",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10133",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "10132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "108",
+  "animation_idle": "56",
+  "animation_move": "56",
+  "movespeed_attack": "4",
+  "movespeed_skill": "4",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "36, 41, 46, 51, 56, 61, 66, 86, 88, 90, 92, 96",
+  "normal_distribute": "8, 7, 7, 7, 7, 7, 7, 10, 10, 10, 10, 10",
+  "normal_totaldistr": "100",
+  "bb_frames": "36, 41, 46, 51, 56, 61, 66, 86, 88, 90, 92, 96",
+  "bb_distribute": "8, 7, 7, 7, 7, 7, 7, 10, 10, 10, 10, 10",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "description": "A soldier from another world, she fought only for righteous causes. Enraged by her defeat at the hands of the gods, she sought the power to destroy them. On the brink of being consumed by vengeance, a fellow Battle Maiden, Serin, reached out and saved her. Realizing that true strength comes from a heart that strives for justice, Cayena rallied herself once more to face the gods.",
+  "summon": "Are you fighting for justice?<br>My rockets are at your service!",
+  "fusion": "Yeehaw!<br>This new power burns <br>so splendidly!",
+  "evolution": "For justice,<br>my heart will burn stronger.<br>I'll set the skies ablaze!",
+  "hp_base": "3586",
+  "atk_base": "1225",
+  "def_base": "1088",
+  "rec_base": "1115",
+  "hp_lord": "5150",
+  "atk_lord": "1510",
+  "def_lord": "1515",
+  "rec_lord": "1265",
+  "hp_anima": "5743",
+  "rec_anima": "1107",
+  "atk_breaker": "1668",
+  "def_breaker": "1357",
+  "atk_guardian": "1352",
+  "def_guardian": "1673",
+  "rec_guardian": "1186",
+  "def_oracle": "1436",
+  "hp_oracle": "4913",
+  "rec_oracle": "1502",
+  "hp_bonus": "750",
+  "atk_bonus": "300",
+  "def_bonus": "300",
+  "rec_bonus": "300",
+  "lordonly": "",
+  "combo_hits": "12",
+  "normaldc": "24",
+  "ls": "Fire God's Power",
+  "lsdescription": "50% boost to Atk Power of Fire Types",
+  "lstype": "Attack",
+  "bbdescription": "12 combo Fire attack on all enemies with probable Paralysis effect",
+  "bbnote": "45% chance to inflict",
+  "bbtype": "Offense",
+  "bbhits": "12",
+  "bbaoe": "A",
+  "bbgauge": "24",
+  "bbdc": "12",
+  "bbmultiplier": "200",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "10133",
+  "evomats3": "10133",
+  "evomats4": "10132",
+  "evomats5": "60224"
 }

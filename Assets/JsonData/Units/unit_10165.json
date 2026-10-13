@@ -1,52 +1,68 @@
 {
   "id": "10165",
-  "unitName": "Taskmaster Lorand",
-  "no": "477",
-  "element": "Fire",
-  "rarity": "★★★★★★",
-  "cost": "22",
-  "maxlv": "100",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "88",
-  "animation_idle": "76",
-  "animation_move": "7",
-  "movespeed_attack": "0.0024",
-  "movespeed_skill": "0.0024",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "description": "One of four legendary warriors who fought to save Palmyna. After battling with Cardes, general of the gods, he regained consciousness on the plains of Palmyna. Wanting to know how the battle had ended and if his comrades were safe, he proceeded to the castle. However, upon arriving he saw that everything had been destroyed by the gods. It is said that ferociously wielding his flames he turned all the gods that remained in the city to ash.",
-  "summon": "My blade rages like a dragon!<br>It seems to react to your spirit.<br>Could this be fate, once more...",
-  "fusion": "Usually the quieter someone is,<br>the more emotion they hold.<br>That emotion becomes power.",
-  "evolution": "These flames are my angst!<br>The brighter they burn,<br>the quicker all is scorched!",
-  "hp_base": "4215",
-  "atk_base": "1620",
-  "def_base": "1026",
-  "rec_base": "1201",
-  "hp_lord": "5555",
-  "atk_lord": "2155",
-  "def_lord": "1405",
-  "rec_lord": "1525",
-  "hp_anima": "6297",
-  "rec_anima": "1327",
-  "atk_breaker": "2353",
-  "def_breaker": "1207",
-  "atk_guardian": "1957",
-  "def_guardian": "1603",
-  "hp_oracle": "4812",
-  "rec_oracle": "1723",
-  "hp_bonus": "750",
-  "atk_bonus": "400",
-  "def_bonus": "200",
-  "rec_bonus": "300",
-  "lordonly": "",
-  "combo_hits": "6",
-  "ls": "Fire Master's Power",
-  "lsdescription": "50% boost to Atk power and 10% boost to Def and Rec of Fire types",
-  "lstype": "Attack/Defense/Recovery",
+  "stats": {
+    "_base": {
+      "atk": 1620,
+      "def": 1026,
+      "hp": 4215,
+      "rec": 1201
+    },
+    "_lord": {
+      "atk": 2155,
+      "def": 1405,
+      "hp": 5555,
+      "rec": 1525
+    },
+    "anima": {
+      "atk": 2155,
+      "def": 1405,
+      "hp max": 6545,
+      "hp min": 6050,
+      "rec max": 1426,
+      "rec min": 1228
+    },
+    "breaker": {
+      "atk max": 2452,
+      "atk min": 2254,
+      "def max": 1306,
+      "def min": 1108,
+      "hp": 5555,
+      "rec": 1525
+    },
+    "guardian": {
+      "atk": 2155,
+      "def max": 1702,
+      "def min": 1504,
+      "hp": 5555,
+      "rec max": 1525,
+      "rec min": 1327
+    },
+    "oracle": {
+      "atk": 2155,
+      "def max": 1405,
+      "def min": 1207,
+      "hp": 5555,
+      "rec max": 1921,
+      "rec min": 1723
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to Atk power and 10% boost to Def and Rec of Fire types",
+    "effects": [
+      {
+        "atk% buff": 50,
+        "def% buff": 10,
+        "elements buffed": [
+          "fire"
+        ],
+        "passive id": "2",
+        "rec% buff": 10
+      }
+    ],
+    "id": "104",
+    "name": "Fire Master's Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -313,11 +329,6 @@
     ],
     "name": "Incinerating Spirit"
   },
-  "bbdescription": "7 combo Fire elemental attack on single enemy & probable Injury and Weakness effect",
-  "bbtype": "Offense",
-  "bbhits": "7",
-  "bbaoe": "1",
-  "bbgauge": "18",
   "sbb": {
     "damage frames": [
       {
@@ -606,91 +617,92 @@
     ],
     "name": "Charred Spirit"
   },
-  "sbbdescription": "8 combo massive Fire elemental attack on single enemy & greatly boosts Unit's own Atk, Def, and Rec for 3 turns",
-  "sbbtype": "Support/Offense",
-  "sbbhits": "8",
-  "sbbaoe": "1",
-  "sbbgauge": "22",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "10164",
-  "evointo": "",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 1620,
-      "def": 1026,
-      "hp": 4215,
-      "rec": 1201
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 2155,
-      "def": 1405,
-      "hp": 5555,
-      "rec": 1525
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 2155,
-      "def": 1405,
-      "hp max": 6545,
-      "hp min": 6050,
-      "rec max": 1426,
-      "rec min": 1228
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 88
     },
-    "breaker": {
-      "atk max": 2452,
-      "atk min": 2254,
-      "def max": 1306,
-      "def min": 1108,
-      "hp": 5555,
-      "rec": 1525
+    "idle": {
+      "total number of frames": 76
     },
-    "guardian": {
-      "atk": 2155,
-      "def max": 1702,
-      "def min": 1504,
-      "hp": 5555,
-      "rec max": 1525,
-      "rec min": 1327
-    },
-    "oracle": {
-      "atk": 2155,
-      "def max": 1405,
-      "def min": 1207,
-      "hp": 5555,
-      "rec max": 1921,
-      "rec min": 1723
+    "move": {
+      "total number of frames": 7
     }
   },
-  "leader_skill": {
-    "desc": "50% boost to Atk power and 10% boost to Def and Rec of Fire types",
-    "effects": [
-      {
-        "atk% buff": 50,
-        "def% buff": 10,
-        "elements buffed": [
-          "fire"
-        ],
-        "passive id": "2",
-        "rec% buff": 10
-      }
+  "category": 10160,
+  "cost": "22",
+  "damage frames": {
+    "frame times": [
+      26,
+      34,
+      42,
+      45,
+      48,
+      51
     ],
-    "id": "104",
-    "name": "Fire Master's Power"
+    "hit dmg% distribution": [
+      60,
+      8,
+      8,
+      8,
+      8,
+      8
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 6
   },
-  "extra_skill": {},
+  "drop check count": 5,
+  "element": "fire",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 477,
+  "imp": {
+    "max atk": "400",
+    "max def": "200",
+    "max hp": "750",
+    "max rec": "300"
+  },
+  "kind": "normal",
+  "lord damage range": "2006~2241",
+  "movement": {
+    "attack": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    }
+  },
+  "name": "Taskmaster Lorand",
+  "rarity": "6",
+  "sell caution": false,
+  "unitName": "Taskmaster Lorand",
+  "maxlv": "100",
+  "no": "477",
   "unitDisplayHomePosition_1W9CxaFK": "378,270,142,388",
   "unitDisplayDetailPosition_6z54rgb3": "-96,-137,1200,939",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "96,234,495,397,0",
@@ -700,5 +712,91 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "8000",
   "sellCaution": false,
-  "effectFrames": "20:121:1,28:121:1,36:121:1,39:121:1,42:121:1,28:160:1,20:1011:1"
+  "effectFrames": "20:121:1,28:121:1,36:121:1,39:121:1,42:121:1,28:160:1,20:1011:1",
+  "evofrom": "10164",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "21",
+  "animation_attack": "88",
+  "animation_idle": "76",
+  "animation_move": "7",
+  "movespeed_attack": "0.0024",
+  "movespeed_skill": "0.0024",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "26, 34, 42, 45, 48, 51",
+  "normal_distribute": "60, 8, 8, 8, 8, 8",
+  "normal_totaldistr": "100",
+  "bb_frames": "26, 34, 42, 45, 48, 51, 54",
+  "bb_distribute": "52, 8, 8, 8, 8, 8, 8",
+  "bb_totaldistr": "100",
+  "sbb_frames": "25, 33, 41, 44, 47, 50, 53, 56",
+  "sbb_distribute": "65, 5, 5, 5, 5, 5, 5, 5",
+  "sbb_totaldistr": "100",
+  "sbb_effectdelay": "1",
+  "description": "One of four legendary warriors who fought to save Palmyna. After battling with Cardes, general of the gods, he regained consciousness on the plains of Palmyna. Wanting to know how the battle had ended and if his comrades were safe, he proceeded to the castle. However, upon arriving he saw that everything had been destroyed by the gods. It is said that ferociously wielding his flames he turned all the gods that remained in the city to ash.",
+  "summon": "My blade rages like a dragon!<br>It seems to react to your spirit.<br>Could this be fate, once more...",
+  "fusion": "Usually the quieter someone is,<br>the more emotion they hold.<br>That emotion becomes power.",
+  "evolution": "These flames are my angst!<br>The brighter they burn,<br>the quicker all is scorched!",
+  "hp_base": "4215",
+  "atk_base": "1620",
+  "def_base": "1026",
+  "rec_base": "1201",
+  "hp_lord": "5555",
+  "atk_lord": "2155",
+  "def_lord": "1405",
+  "rec_lord": "1525",
+  "hp_anima": "6298",
+  "rec_anima": "1327",
+  "atk_breaker": "2353",
+  "def_breaker": "1207",
+  "atk_guardian": "1957",
+  "def_guardian": "1603",
+  "rec_guardian": "1426",
+  "def_oracle": "1306",
+  "hp_oracle": "5258",
+  "rec_oracle": "1822",
+  "hp_bonus": "750",
+  "atk_bonus": "400",
+  "def_bonus": "200",
+  "rec_bonus": "300",
+  "lordonly": "",
+  "combo_hits": "6",
+  "normaldc": "30",
+  "ls": "Fire Master's Power",
+  "lsdescription": "50% boost to Atk power and 10% boost to Def and Rec of Fire types",
+  "lstype": "Attack/Defense/Recovery",
+  "bbdescription": "7 combo Fire elemental attack on single enemy & probable Injury and Weakness effect",
+  "bbnote": "80% chance to inflict",
+  "bbtype": "Offense",
+  "bbhits": "7",
+  "bbaoe": "1",
+  "bbgauge": "18",
+  "bbdc": "21",
+  "bbmultiplier": "450",
+  "sbbdescription": "8 combo massive Fire elemental attack on single enemy & greatly boosts Unit's own Atk, Def, and Rec for 3 turns",
+  "sbbnote": "100% boost",
+  "sbbtype": "Support/Offense",
+  "sbbhits": "8",
+  "sbbaoe": "1",
+  "sbbgauge": "22",
+  "sbbdc": "24",
+  "sbbmultiplier": "680",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "",
+  "evomats2": "",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": "",
+  "evoitem": ""
 }

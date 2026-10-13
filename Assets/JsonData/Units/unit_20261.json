@@ -1,62 +1,63 @@
 {
   "id": "20261",
-  "unitName": "Calamity Fish Deenan",
-  "no": "631",
-  "element": "Water",
-  "rarity": "★★",
-  "cost": "4",
-  "maxlv": "30",
-  "basexp": "10",
-  "gender": "N",
-  "ai": "4",
-  "animation_attack": "92",
-  "animation_idle": "76",
-  "animation_move": "84",
-  "movespeed_attack": "0.0024",
-  "movespeed_skill": "0.0024",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "30, 36",
-  "normal_distribute": "50, 50",
-  "normal_totaldistr": "100",
-  "bb_frames": "30, 36, 42, 48",
-  "bb_distribute": "25, 25, 25, 25",
-  "bb_totaldistr": "100",
-  "description": "A ferocious demon fish that inhabits the many rivers of Grand Gaia. Hiding itself in the deep deposits of river banks, it is feared for the manner in which it attacks humans and animals who approach the river. With great leaping ability, it also boasts of a powerful jaw that can tear muscle into shreds. Not only that, but there are tales which say that if it leaps and happens to land on soil, it can move on the ground and chase its prey down quite a good distance away from the river itself.",
-  "summon": "Chomp! Chomp!<br>Grr! Grr!",
-  "fusion": "Grr!<br>Grr! Grr!",
-  "evolution": "",
-  "hp_base": "1281",
-  "atk_base": "532",
-  "def_base": "449",
-  "rec_base": "294",
-  "hp_lord": "2304",
-  "atk_lord": "843",
-  "def_lord": "748",
-  "rec_lord": "673",
-  "hp_anima": "2522",
-  "rec_anima": "615",
-  "atk_breaker": "901",
-  "def_breaker": "690",
-  "atk_guardian": "785",
-  "def_guardian": "806",
-  "rec_guardian": "644",
-  "def_oracle": "719",
-  "hp_oracle": "2217",
-  "rec_oracle": "760",
-  "hp_bonus": "250",
-  "atk_bonus": "100",
-  "def_bonus": "100",
-  "rec_bonus": "100",
-  "lordonly": "",
-  "combo_hits": "2",
-  "normaldc": "4",
-  "ls": "Fighting Light",
-  "lsdescription": "Small boost in Battle Crystals produced during Spark",
-  "lsnote": "30% boost",
-  "lstype": "Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 532,
+      "def": 449,
+      "hp": 1281,
+      "rec": 294
+    },
+    "_lord": {
+      "atk": 843,
+      "def": 748,
+      "hp": 2304,
+      "rec": 673
+    },
+    "anima": {
+      "atk": 843,
+      "def": 748,
+      "hp max": 2594,
+      "hp min": 2449,
+      "rec max": 644,
+      "rec min": 586
+    },
+    "breaker": {
+      "atk max": 930,
+      "atk min": 872,
+      "def max": 719,
+      "def min": 661,
+      "hp": 2304,
+      "rec": 673
+    },
+    "guardian": {
+      "atk": 843,
+      "def max": 835,
+      "def min": 777,
+      "hp": 2304,
+      "rec max": 673,
+      "rec min": 615
+    },
+    "oracle": {
+      "atk": 843,
+      "def max": 748,
+      "def min": 690,
+      "hp": 2304,
+      "rec max": 789,
+      "rec min": 731
+    }
+  },
+  "leader_skill": {
+    "desc": "Small boost in Battle Crystals produced during Spark",
+    "effects": [
+      {
+        "bc drop% for spark": 30,
+        "passive id": "31"
+      }
+    ],
+    "id": "1400",
+    "name": "Fighting Light"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -297,95 +298,97 @@
     ],
     "name": "Aqua Bite"
   },
-  "bbdescription": "4 combo Water elemental attack on single enemy & probable Sickness effect",
-  "bbnote": "80% chance to inflict",
-  "bbtype": "Offense",
-  "bbhits": "4",
-  "bbaoe": "1",
-  "bbgauge": "15",
-  "bbdc": "12",
-  "bbmultiplier": "280",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "20262",
-  "evomats1": "20131",
-  "evomats2": "20130",
-  "evomats3": "60142",
-  "evomats4": "60143",
-  "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "50000",
-  "stats": {
-    "_base": {
-      "atk": 532,
-      "def": 449,
-      "hp": 1281,
-      "rec": 294
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_under",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 843,
-      "def": 748,
-      "hp": 2304,
-      "rec": 673
+    {
+      "action": "skill",
+      "chance%": 30.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 843,
-      "def": 748,
-      "hp max": 2594,
-      "hp min": 2449,
-      "rec max": 644,
-      "rec min": 586
+    {
+      "action": "attack",
+      "chance%": 70.0,
+      "target conditions": "hp_max",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 930,
-      "atk min": 872,
-      "def max": 719,
-      "def min": 661,
-      "hp": 2304,
-      "rec": 673
+    {
+      "action": "attack",
+      "chance%": 50.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "guardian": {
-      "atk": 843,
-      "def max": 835,
-      "def min": 777,
-      "hp": 2304,
-      "rec max": 673,
-      "rec min": 615
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 92
     },
-    "oracle": {
-      "atk": 843,
-      "def max": 748,
-      "def min": 690,
-      "hp": 2304,
-      "rec max": 789,
-      "rec min": 731
+    "idle": {
+      "total number of frames": 76
+    },
+    "move": {
+      "total number of frames": 84
     }
   },
-  "leader_skill": {
-    "desc": "Small boost in Battle Crystals produced during Spark",
-    "effects": [
-      {
-        "bc drop% for spark": 30,
-        "passive id": "31"
-      }
+  "category": 20260,
+  "cost": "4",
+  "damage frames": {
+    "frame times": [
+      30,
+      36
     ],
-    "id": "1400",
-    "name": "Fighting Light"
+    "hit dmg% distribution": [
+      50,
+      50
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 2
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "water",
+  "exp_pattern": 10,
+  "gender": "other",
+  "getting type": "not eligible for achievement",
+  "guide_id": 631,
+  "imp": {
+    "max atk": "100",
+    "max def": "100",
+    "max hp": "250",
+    "max rec": "100"
+  },
+  "kind": "normal",
+  "lord damage range": "784~876",
+  "movement": {
+    "attack": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    }
+  },
+  "name": "Calamity Fish Deenan",
+  "rarity": "2",
+  "sell caution": false,
+  "unitName": "Calamity Fish Deenan",
+  "maxlv": "30",
+  "no": "631",
   "unitDisplayHomePosition_1W9CxaFK": "135,-83,290,792",
   "unitDisplayDetailPosition_6z54rgb3": "77,175,768,580",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "157,355,319,277,0",
@@ -395,5 +398,106 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "300",
   "sellCaution": false,
-  "effectFrames": "24:122:1,30:122:1"
+  "effectFrames": "24:122:1,30:122:1",
+  "evofrom": "",
+  "evointo": "20262",
+  "evozelcost": "50000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "20131",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20130",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60142",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 1
+    }
+  ],
+  "basexp": "10",
+  "animation_attack": "92",
+  "animation_idle": "76",
+  "animation_move": "84",
+  "movespeed_attack": "0.0024",
+  "movespeed_skill": "0.0024",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "30, 36",
+  "normal_distribute": "50, 50",
+  "normal_totaldistr": "100",
+  "bb_frames": "30, 36, 42, 48",
+  "bb_distribute": "25, 25, 25, 25",
+  "bb_totaldistr": "100",
+  "description": "A ferocious demon fish that inhabits the many rivers of Grand Gaia. Hiding itself in the deep deposits of river banks, it is feared for the manner in which it attacks humans and animals who approach the river. With great leaping ability, it also boasts of a powerful jaw that can tear muscle into shreds. Not only that, but there are tales which say that if it leaps and happens to land on soil, it can move on the ground and chase its prey down quite a good distance away from the river itself.",
+  "summon": "Chomp! Chomp!<br>Grr! Grr!",
+  "fusion": "Grr!<br>Grr! Grr!",
+  "evolution": "",
+  "hp_base": "1281",
+  "atk_base": "532",
+  "def_base": "449",
+  "rec_base": "294",
+  "hp_lord": "2304",
+  "atk_lord": "843",
+  "def_lord": "748",
+  "rec_lord": "673",
+  "hp_anima": "2522",
+  "rec_anima": "615",
+  "atk_breaker": "901",
+  "def_breaker": "690",
+  "atk_guardian": "785",
+  "def_guardian": "806",
+  "rec_guardian": "644",
+  "def_oracle": "719",
+  "hp_oracle": "2217",
+  "rec_oracle": "760",
+  "hp_bonus": "250",
+  "atk_bonus": "100",
+  "def_bonus": "100",
+  "rec_bonus": "100",
+  "lordonly": "",
+  "combo_hits": "2",
+  "normaldc": "4",
+  "ls": "Fighting Light",
+  "lsdescription": "Small boost in Battle Crystals produced during Spark",
+  "lsnote": "30% boost",
+  "lstype": "Brave Burst",
+  "bbdescription": "4 combo Water elemental attack on single enemy & probable Sickness effect",
+  "bbnote": "80% chance to inflict",
+  "bbtype": "Offense",
+  "bbhits": "4",
+  "bbaoe": "1",
+  "bbgauge": "15",
+  "bbdc": "12",
+  "bbmultiplier": "280",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "20131",
+  "evomats2": "20130",
+  "evomats3": "60142",
+  "evomats4": "60143",
+  "evomats5": "",
+  "evoitem": ""
 }

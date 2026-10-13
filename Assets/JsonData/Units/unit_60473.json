@@ -1,63 +1,64 @@
 {
   "id": "60473",
-  "unitName": "Kajah",
-  "freetext": ":''For other uses, see Kajah (disambiguation)''",
-  "no": "576",
-  "element": "Dark",
-  "rarity": "★★★★",
-  "cost": "13",
-  "maxlv": "60",
-  "basexp": "21",
-  "gender": "N",
-  "ai": "3",
-  "animation_attack": "124",
-  "animation_idle": "78",
-  "animation_move": "6",
-  "movespeed_attack": "0.0041",
-  "movespeed_skill": "0.0041",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "68, 76, 84, 92",
-  "normal_distribute": "25, 25, 25, 25",
-  "normal_totaldistr": "100",
-  "bb_frames": "68, 88, 108, 128, 148, 168",
-  "bb_distribute": "17, 17, 16, 16, 17, 17",
-  "bb_totaldistr": "100",
-  "description": "A god that was once imprisoned for having committed a grave crime. Originally the god in charge of judgment, his sternness was feared even by the other gods themselves. Once he became aware of Zellha's suspicious activities, he tried to stop her himself. However, Zellha had fed false information to the higher ranking gods, claiming that Kajah judged others based on his personal views, and was thus imprisoned unjustly. It is said that if there is one mistake he did make, it was doubting the fairness of his own judgment.",
-  "summon": "Are you someone who longs for judgment?<br>It doesn't matter who you are, you will be punished for you crimes!",
-  "fusion": "When you sacrifice something<br>in order to make yourself stronger,<br>it's extremely sinful.",
-  "evolution": "",
-  "hp_base": "2979",
-  "atk_base": "1184",
-  "def_base": "932",
-  "rec_base": "725",
-  "hp_lord": "4272",
-  "atk_lord": "1578",
-  "def_lord": "1243",
-  "rec_lord": "966",
-  "hp_anima": "4715",
-  "rec_anima": "848",
-  "atk_breaker": "1696",
-  "def_breaker": "1125",
-  "atk_guardian": "1460",
-  "def_guardian": "1361",
-  "rec_guardian": "907",
-  "def_oracle": "1184",
-  "hp_oracle": "4095",
-  "rec_oracle": "1143",
-  "hp_bonus": "400",
-  "atk_bonus": "200",
-  "def_bonus": "120",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "4",
-  "normaldc": "8",
-  "ls": "Demon Power",
-  "lsdescription": "Great boost to Atk of units with 20% HP or less",
-  "lsnote": "100% boost",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 1184,
+      "def": 932,
+      "hp": 2979,
+      "rec": 725
+    },
+    "_lord": {
+      "atk": 1578,
+      "def": 1243,
+      "hp": 4272,
+      "rec": 966
+    },
+    "anima": {
+      "atk": 1578,
+      "def": 1243,
+      "hp max": 4862,
+      "hp min": 4567,
+      "rec max": 907,
+      "rec min": 789
+    },
+    "breaker": {
+      "atk max": 1755,
+      "atk min": 1637,
+      "def max": 1184,
+      "def min": 1066,
+      "hp": 4272,
+      "rec": 966
+    },
+    "guardian": {
+      "atk": 1578,
+      "def max": 1420,
+      "def min": 1302,
+      "hp": 4272,
+      "rec max": 966,
+      "rec min": 848
+    },
+    "oracle": {
+      "atk": 1578,
+      "def max": 1243,
+      "def min": 1125,
+      "hp": 4272,
+      "rec max": 1202,
+      "rec min": 1084
+    }
+  },
+  "leader_skill": {
+    "desc": "Great boost to Atk of units with 20% HP or less",
+    "effects": [
+      {
+        "atk% buff": 100,
+        "hp below % buff requirement": 20,
+        "passive id": "11"
+      }
+    ],
+    "id": "5000",
+    "name": "Demon Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -302,95 +303,95 @@
     ],
     "name": "Ade "
   },
-  "bbdescription": "6 combo powerful Dark attack on all enemies & probable Injury effect",
-  "bbnote": "60% chance to inflict",
-  "bbtype": "Offense",
-  "bbhits": "6",
-  "bbaoe": "A",
-  "bbgauge": "22",
-  "bbdc": "6",
-  "bbmultiplier": "150",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "60474",
-  "evomats1": "60123",
-  "evomats2": "60201",
-  "evomats3": "60201",
-  "evomats4": "60122",
-  "evomats5": "60144",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 1184,
-      "def": 932,
-      "hp": 2979,
-      "rec": 725
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1578,
-      "def": 1243,
-      "hp": 4272,
-      "rec": 966
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1578,
-      "def": 1243,
-      "hp max": 4862,
-      "hp min": 4567,
-      "rec max": 907,
-      "rec min": 789
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 1755,
-      "atk min": 1637,
-      "def max": 1184,
-      "def min": 1066,
-      "hp": 4272,
-      "rec": 966
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 124
     },
-    "guardian": {
-      "atk": 1578,
-      "def max": 1420,
-      "def min": 1302,
-      "hp": 4272,
-      "rec max": 966,
-      "rec min": 848
+    "idle": {
+      "total number of frames": 78
     },
-    "oracle": {
-      "atk": 1578,
-      "def max": 1243,
-      "def min": 1125,
-      "hp": 4272,
-      "rec max": 1202,
-      "rec min": 1084
+    "move": {
+      "total number of frames": 6
     }
   },
-  "leader_skill": {
-    "desc": "Great boost to Atk of units with 20% HP or less",
-    "effects": [
-      {
-        "atk% buff": 100,
-        "hp below % buff requirement": 20,
-        "passive id": "11"
-      }
+  "category": 60470,
+  "cost": "13",
+  "damage frames": {
+    "frame times": [
+      68,
+      76,
+      84,
+      92
     ],
-    "id": "5000",
-    "name": "Demon Power"
+    "hit dmg% distribution": [
+      25,
+      25,
+      25,
+      25
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 4
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "dark",
+  "exp_pattern": 20,
+  "gender": "other",
+  "getting type": "rare summon",
+  "guide_id": 576,
+  "imp": {
+    "max atk": "200",
+    "max def": "120",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "1469~1641",
+  "movement": {
+    "attack": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    }
+  },
+  "name": "Kajah",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Kajah",
+  "maxlv": "60",
+  "no": "576",
   "unitDisplayHomePosition_1W9CxaFK": "304,17,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "16,148,998,718",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "144,287,352,327,0",
@@ -400,5 +401,106 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "68:200141:1,76:600220:1,84:600220:1,92:600220:1,68:661:1,76:680:1,84:680:1"
+  "effectFrames": "68:200141:1,76:600220:1,84:600220:1,92:600220:1,68:661:1,76:680:1,84:680:1",
+  "evofrom": "",
+  "evointo": "60474",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "60123",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60201",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60122",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 1
+    }
+  ],
+  "freetext": ":''For other uses, see Kajah (disambiguation)''",
+  "basexp": "21",
+  "animation_attack": "124",
+  "animation_idle": "78",
+  "animation_move": "6",
+  "movespeed_attack": "0.0041",
+  "movespeed_skill": "0.0041",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "68, 76, 84, 92",
+  "normal_distribute": "25, 25, 25, 25",
+  "normal_totaldistr": "100",
+  "bb_frames": "68, 88, 108, 128, 148, 168",
+  "bb_distribute": "17, 17, 16, 16, 17, 17",
+  "bb_totaldistr": "100",
+  "description": "A god that was once imprisoned for having committed a grave crime. Originally the god in charge of judgment, his sternness was feared even by the other gods themselves. Once he became aware of Zellha's suspicious activities, he tried to stop her himself. However, Zellha had fed false information to the higher ranking gods, claiming that Kajah judged others based on his personal views, and was thus imprisoned unjustly. It is said that if there is one mistake he did make, it was doubting the fairness of his own judgment.",
+  "summon": "Are you someone who longs for judgment?<br>It doesn't matter who you are, you will be punished for you crimes!",
+  "fusion": "When you sacrifice something<br>in order to make yourself stronger,<br>it's extremely sinful.",
+  "evolution": "",
+  "hp_base": "2979",
+  "atk_base": "1184",
+  "def_base": "932",
+  "rec_base": "725",
+  "hp_lord": "4272",
+  "atk_lord": "1578",
+  "def_lord": "1243",
+  "rec_lord": "966",
+  "hp_anima": "4715",
+  "rec_anima": "848",
+  "atk_breaker": "1696",
+  "def_breaker": "1125",
+  "atk_guardian": "1460",
+  "def_guardian": "1361",
+  "rec_guardian": "907",
+  "def_oracle": "1184",
+  "hp_oracle": "4095",
+  "rec_oracle": "1143",
+  "hp_bonus": "400",
+  "atk_bonus": "200",
+  "def_bonus": "120",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "4",
+  "normaldc": "8",
+  "ls": "Demon Power",
+  "lsdescription": "Great boost to Atk of units with 20% HP or less",
+  "lsnote": "100% boost",
+  "lstype": "Attack",
+  "bbdescription": "6 combo powerful Dark attack on all enemies & probable Injury effect",
+  "bbnote": "60% chance to inflict",
+  "bbtype": "Offense",
+  "bbhits": "6",
+  "bbaoe": "A",
+  "bbgauge": "22",
+  "bbdc": "6",
+  "bbmultiplier": "150",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "60123",
+  "evomats2": "60201",
+  "evomats3": "60201",
+  "evomats4": "60122",
+  "evomats5": "60144"
 }

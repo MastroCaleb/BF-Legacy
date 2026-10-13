@@ -1,71 +1,90 @@
 {
   "id": "40646",
-  "unitName": "Electrical Storm Eldora",
-  "no": "1101",
-  "element": "Thunder",
-  "rarity": "★★★★★★★",
-  "cost": "42",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "N",
-  "ai": "2",
-  "animation_attack": "110",
-  "animation_idle": "64",
-  "animation_move": "6",
-  "movespeed_attack": "0.0041",
-  "movespeed_skill": "0.0041",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "45, 49, 53, 57, 61, 65, 69, 73, 77, 81, 85",
-  "normal_distribute": "21, 13, 10, 9, 8, 8, 7, 7, 6, 6, 5",
-  "normal_totaldistr": "100",
-  "bb_frames": "45, 49, 53, 57, 61, 65, 69, 73, 77, 81, 85, 89, 93, 97, 101",
-  "bb_distribute": "15, 12, 9, 8, 7, 6, 6, 5, 5, 5, 5, 5, 4, 4, 4",
-  "bb_totaldistr": "100",
-  "sbb_frames": "45, 48, 51, 54, 57, 60, 63, 66, 69, 72, 75, 78, 81, 84, 87, 90, 93, 96",
-  "sbb_distribute": "12, 10, 9, 8, 8, 7, 6, 5, 5, 4, 4, 4, 3, 3, 3, 3, 3, 3",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "45, 48, 51, 54, 57, 60, 63, 66, 69, 72, 75, 78, 81, 84, 87, 90, 93, 96, 99, 102",
-  "ubb_distribute": "11, 9, 8, 8, 8, 7, 6, 5, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "2",
-  "sbb_effectdelay": "2",
-  "ubb_effectdelay": "2",
-  "description": "An ancient dragon which kept cultivating its friendship with a demon. Eldora's friend Jed took control over Mildran while persecuting its dethroned ruler, and then named himself the new king. Jed sought to unify Ishgria under his dominion, but the betrayal of his subordinates would soon bring him to his own ruin. And thus, in order to forget its friend's regretful fate, Eldora began its rampage in Ishgria once again. The ancient dragon destroyed the capital and most of what is known of ancient Ishgria's civilization, bringing with it an era of pure chaos.",
-  "summon": "Human, demon... It matters not.<br>Most creatures are worthless.<br>This is why I destroyed it all...",
-  "fusion": "Friendship between man and dragon.<br>It may sound like nonsense,<br>but I have no objections...",
-  "evolution": "I shall continue moving forth, if<br>that is what you wish. No matter the<br>destruction which lies ahead, I shall<br>fulfill the role you have given me.",
-  "hp_base": "5320",
-  "atk_base": "2050",
-  "def_base": "1853",
-  "rec_base": "1686",
-  "hp_lord": "7002",
-  "atk_lord": "2554",
-  "def_lord": "2306",
-  "rec_lord": "2107",
-  "hp_anima": "7894",
-  "rec_anima": "1869",
-  "atk_breaker": "2792",
-  "def_breaker": "2068",
-  "atk_guardian": "2317",
-  "def_guardian": "2544",
-  "rec_guardian": "1988",
-  "def_oracle": "2187",
-  "hp_oracle": "6645",
-  "rec_oracle": "2464",
-  "hp_bonus": "1500",
-  "atk_bonus": "300",
-  "def_bonus": "300",
-  "rec_bonus": "300",
-  "lordonly": "",
-  "combo_hits": "11",
-  "normaldc": "33",
-  "ls": "Electric Water Scales",
-  "lsdescription": "15% damage reduction from Thunder, Water types, 30% boost to max HP & critical damage hugely boosts BB gauge",
-  "lsnote": "Fills 6-8 BC",
-  "lstype": "Hit Points/Defense/Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 2050,
+      "def": 1853,
+      "hp": 5320,
+      "rec": 1686
+    },
+    "_lord": {
+      "atk": 2554,
+      "def": 2306,
+      "hp": 7002,
+      "rec": 2107
+    },
+    "anima": {
+      "atk": 2554,
+      "def": 2306,
+      "hp max": 8192,
+      "hp min": 7597,
+      "rec max": 1988,
+      "rec min": 1750
+    },
+    "breaker": {
+      "atk max": 2911,
+      "atk min": 2673,
+      "def max": 2187,
+      "def min": 1949,
+      "hp": 7002,
+      "rec": 2107
+    },
+    "guardian": {
+      "atk": 2554,
+      "def max": 2663,
+      "def min": 2425,
+      "hp": 7002,
+      "rec max": 2107,
+      "rec min": 1869
+    },
+    "oracle": {
+      "atk": 2554,
+      "def max": 2306,
+      "def min": 2068,
+      "hp": 7002,
+      "rec max": 2583,
+      "rec min": 2345
+    }
+  },
+  "leader_skill": {
+    "desc": "15% damage reduction from Thunder, Water types, 30% boost to max HP & critical damage hugely boosts BB gauge",
+    "effects": [
+      {
+        "dmg% mitigation for elemental attacks": 15.0,
+        "mitigate thunder attacks": true,
+        "mitigate water attacks": true,
+        "passive id": "62"
+      },
+      {
+        "hp% buff": 30,
+        "passive id": "1"
+      },
+      {
+        "bc fill on crit max": 8,
+        "bc fill on crit min": 6,
+        "bc fill on crit%": 100.0,
+        "passive id": "65"
+      }
+    ],
+    "id": "8705",
+    "name": "Electric Water Scales"
+  },
+  "extra_skill": {
+    "desc": "Boosts Atk when BB gauge is full",
+    "effects": [
+      {
+        "atk% buff": 50,
+        "bb gauge above % buff requirement": 100,
+        "conditions": [],
+        "passive id": "30",
+        "passive target": "self"
+      }
+    ],
+    "id": "7800",
+    "name": "Cultivated Friendship",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -430,14 +449,6 @@
     ],
     "name": "Divine Thunder Roar"
   },
-  "bbdescription": "15 combo powerful Thunder attack on all foes, boosts critical hit rate for 3 turns & boosts BB gauge",
-  "bbnote": "40% boost & fills 8 BC",
-  "bbtype": "Support/Offense",
-  "bbhits": "15",
-  "bbaoe": "A",
-  "bbgauge": "27",
-  "bbdc": "15",
-  "bbmultiplier": "300",
   "sbb": {
     "damage frames": [
       {
@@ -900,14 +911,6 @@
     ],
     "name": "Chrysaor Rector"
   },
-  "sbbdescription": "18 combo powerful Thunder attack on all foes, boosts critical hit rate and damage for 3 turns & boosts BB gauge",
-  "sbbnote": "60% crit, 50% crit damage & fills 8 BC",
-  "sbbtype": "Support/Offense",
-  "sbbhits": "18",
-  "sbbaoe": "A",
-  "sbbgauge": "24",
-  "sbbdc": "18",
-  "sbbmultiplier": "540",
   "ubb": {
     "damage frames": [
       {
@@ -1022,6 +1025,195 @@
     ],
     "name": "Sacred Thunder Shrine"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 110
+    },
+    "idle": {
+      "total number of frames": 64
+    },
+    "move": {
+      "total number of frames": 6
+    }
+  },
+  "category": 40640,
+  "cost": "42",
+  "damage frames": {
+    "frame times": [
+      45,
+      49,
+      53,
+      57,
+      61,
+      65,
+      69,
+      73,
+      77,
+      81,
+      85
+    ],
+    "hit dmg% distribution": [
+      21,
+      13,
+      10,
+      9,
+      8,
+      8,
+      7,
+      7,
+      6,
+      6,
+      5
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 11
+  },
+  "drop check count": 3,
+  "element": "thunder",
+  "exp_pattern": 20,
+  "gender": "other",
+  "getting type": "rare summon",
+  "guide_id": 1101,
+  "imp": {
+    "max atk": "300",
+    "max def": "300",
+    "max hp": "1500",
+    "max rec": "300"
+  },
+  "kind": "normal",
+  "lord damage range": "2377~2656",
+  "movement": {
+    "attack": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    }
+  },
+  "name": "Electrical Storm Eldora",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Electrical Storm Eldora",
+  "maxlv": "120",
+  "no": "1101",
+  "unitDisplayHomePosition_1W9CxaFK": "193,175,180,491",
+  "unitDisplayDetailPosition_6z54rgb3": "94,13,960,960",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "57,107,543,543,1",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "65,-224,1000,1000",
+  "unitDisplaySummonPosition_KC3Jk8Br": "57,107,543,543,1",
+  "unitDisplayHpPosition_3BpHN6VD": "-10,30",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "15000",
+  "sellCaution": false,
+  "effectFrames": "45:400081:1,49:130:1,53:130:1,57:130:1,61:130:1,65:130:1,69:130:1,73:130:1,77:130:1,81:130:1,85:130:1,40:400152:1,42:200094:1,62:200094:1,58:400152:1,79:400480:1,86:400480:1,57:400142:1,75:400143:1,68:290:1",
+  "evofrom": "40645",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "21",
+  "animation_attack": "110",
+  "animation_idle": "64",
+  "animation_move": "6",
+  "movespeed_attack": "0.0041",
+  "movespeed_skill": "0.0041",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "45, 49, 53, 57, 61, 65, 69, 73, 77, 81, 85",
+  "normal_distribute": "21, 13, 10, 9, 8, 8, 7, 7, 6, 6, 5",
+  "normal_totaldistr": "100",
+  "bb_frames": "45, 49, 53, 57, 61, 65, 69, 73, 77, 81, 85, 89, 93, 97, 101",
+  "bb_distribute": "15, 12, 9, 8, 7, 6, 6, 5, 5, 5, 5, 5, 4, 4, 4",
+  "bb_totaldistr": "100",
+  "sbb_frames": "45, 48, 51, 54, 57, 60, 63, 66, 69, 72, 75, 78, 81, 84, 87, 90, 93, 96",
+  "sbb_distribute": "12, 10, 9, 8, 8, 7, 6, 5, 5, 4, 4, 4, 3, 3, 3, 3, 3, 3",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "45, 48, 51, 54, 57, 60, 63, 66, 69, 72, 75, 78, 81, 84, 87, 90, 93, 96, 99, 102",
+  "ubb_distribute": "11, 9, 8, 8, 8, 7, 6, 5, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "2",
+  "sbb_effectdelay": "2",
+  "ubb_effectdelay": "2",
+  "description": "An ancient dragon which kept cultivating its friendship with a demon. Eldora's friend Jed took control over Mildran while persecuting its dethroned ruler, and then named himself the new king. Jed sought to unify Ishgria under his dominion, but the betrayal of his subordinates would soon bring him to his own ruin. And thus, in order to forget its friend's regretful fate, Eldora began its rampage in Ishgria once again. The ancient dragon destroyed the capital and most of what is known of ancient Ishgria's civilization, bringing with it an era of pure chaos.",
+  "summon": "Human, demon... It matters not.<br>Most creatures are worthless.<br>This is why I destroyed it all...",
+  "fusion": "Friendship between man and dragon.<br>It may sound like nonsense,<br>but I have no objections...",
+  "evolution": "I shall continue moving forth, if<br>that is what you wish. No matter the<br>destruction which lies ahead, I shall<br>fulfill the role you have given me.",
+  "hp_base": "5320",
+  "atk_base": "2050",
+  "def_base": "1853",
+  "rec_base": "1686",
+  "hp_lord": "7002",
+  "atk_lord": "2554",
+  "def_lord": "2306",
+  "rec_lord": "2107",
+  "hp_anima": "7894",
+  "rec_anima": "1869",
+  "atk_breaker": "2792",
+  "def_breaker": "2068",
+  "atk_guardian": "2317",
+  "def_guardian": "2544",
+  "rec_guardian": "1988",
+  "def_oracle": "2187",
+  "hp_oracle": "6645",
+  "rec_oracle": "2464",
+  "hp_bonus": "1500",
+  "atk_bonus": "300",
+  "def_bonus": "300",
+  "rec_bonus": "300",
+  "lordonly": "",
+  "combo_hits": "11",
+  "normaldc": "33",
+  "ls": "Electric Water Scales",
+  "lsdescription": "15% damage reduction from Thunder, Water types, 30% boost to max HP & critical damage hugely boosts BB gauge",
+  "lsnote": "Fills 6-8 BC",
+  "lstype": "Hit Points/Defense/Brave Burst",
+  "bbdescription": "15 combo powerful Thunder attack on all foes, boosts critical hit rate for 3 turns & boosts BB gauge",
+  "bbnote": "40% boost & fills 8 BC",
+  "bbtype": "Support/Offense",
+  "bbhits": "15",
+  "bbaoe": "A",
+  "bbgauge": "27",
+  "bbdc": "15",
+  "bbmultiplier": "300",
+  "sbbdescription": "18 combo powerful Thunder attack on all foes, boosts critical hit rate and damage for 3 turns & boosts BB gauge",
+  "sbbnote": "60% crit, 50% crit damage & fills 8 BC",
+  "sbbtype": "Support/Offense",
+  "sbbhits": "18",
+  "sbbaoe": "A",
+  "sbbgauge": "24",
+  "sbbdc": "18",
+  "sbbmultiplier": "540",
   "ubbdescription": "20 combo massive Thunder attack on all foes, hugely boosts critical damage and boosts Atk relative to max HP for 3 turns",
   "ubbnote": "300% crit damage & 20% HP to Atk",
   "ubbtype": "Support/Offense",
@@ -1034,108 +1226,10 @@
   "esitem": "",
   "esdescription": "Boosts Atk when BB gauge is full",
   "esnote": "50% boost",
-  "evofrom": "40645",
-  "evointo": "",
   "evomats1": "",
   "evomats2": "",
   "evomats3": "",
   "evomats4": "",
   "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 2050,
-      "def": 1853,
-      "hp": 5320,
-      "rec": 1686
-    },
-    "_lord": {
-      "atk": 2554,
-      "def": 2306,
-      "hp": 7002,
-      "rec": 2107
-    },
-    "anima": {
-      "atk": 2554,
-      "def": 2306,
-      "hp max": 8192,
-      "hp min": 7597,
-      "rec max": 1988,
-      "rec min": 1750
-    },
-    "breaker": {
-      "atk max": 2911,
-      "atk min": 2673,
-      "def max": 2187,
-      "def min": 1949,
-      "hp": 7002,
-      "rec": 2107
-    },
-    "guardian": {
-      "atk": 2554,
-      "def max": 2663,
-      "def min": 2425,
-      "hp": 7002,
-      "rec max": 2107,
-      "rec min": 1869
-    },
-    "oracle": {
-      "atk": 2554,
-      "def max": 2306,
-      "def min": 2068,
-      "hp": 7002,
-      "rec max": 2583,
-      "rec min": 2345
-    }
-  },
-  "leader_skill": {
-    "desc": "15% damage reduction from Thunder, Water types, 30% boost to max HP & critical damage hugely boosts BB gauge",
-    "effects": [
-      {
-        "dmg% mitigation for elemental attacks": 15.0,
-        "mitigate thunder attacks": true,
-        "mitigate water attacks": true,
-        "passive id": "62"
-      },
-      {
-        "hp% buff": 30,
-        "passive id": "1"
-      },
-      {
-        "bc fill on crit max": 8,
-        "bc fill on crit min": 6,
-        "bc fill on crit%": 100.0,
-        "passive id": "65"
-      }
-    ],
-    "id": "8705",
-    "name": "Electric Water Scales"
-  },
-  "extra_skill": {
-    "desc": "Boosts Atk when BB gauge is full",
-    "effects": [
-      {
-        "atk% buff": 50,
-        "bb gauge above % buff requirement": 100,
-        "conditions": [],
-        "passive id": "30",
-        "passive target": "self"
-      }
-    ],
-    "id": "7800",
-    "name": "Cultivated Friendship",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "193,175,180,491",
-  "unitDisplayDetailPosition_6z54rgb3": "94,13,960,960",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "57,107,543,543,1",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "65,-224,1000,1000",
-  "unitDisplaySummonPosition_KC3Jk8Br": "57,107,543,543,1",
-  "unitDisplayHpPosition_3BpHN6VD": "-10,30",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "15000",
-  "sellCaution": false,
-  "effectFrames": "45:400081:1,49:130:1,53:130:1,57:130:1,61:130:1,65:130:1,69:130:1,73:130:1,77:130:1,81:130:1,85:130:1,40:400152:1,42:200094:1,62:200094:1,58:400152:1,79:400480:1,86:400480:1,57:400142:1,75:400143:1,68:290:1"
+  "evoitem": ""
 }

@@ -1,58 +1,68 @@
 {
   "id": "50734",
-  "unitName": "Holy Defender Rinon",
-  "no": "963",
-  "element": "Light",
-  "rarity": "★★★★★",
-  "cost": "19",
-  "maxlv": "80",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "6",
-  "animation_attack": "199",
-  "animation_idle": "52",
-  "animation_move": "5",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "37, 74, 138, 146, 154, 162",
-  "normal_distribute": "10, 10, 20, 20, 20, 20",
-  "normal_totaldistr": "100",
-  "description": "A magician who fought against the gods alongside the Oracle Knight in the later stages. Born at the foot of the Sacred Mt. Bari, Rinon was brought up since young as a candidate for the position of Oracle Maiden, leaving behind her the influence of all earthly life. Training with another candidate for the position of Oracle Maiden, as well as with another young girl who sought to become the next Oracle Knight, she studied hard everyday. However, knowing that in the end only one Oracle Maiden would be chosen, she began to grow restless. Disliking these dark emotions within her, she suddenly decided to relinquish her candidacy one day.",
-  "summon": "You summoned me, right?<br>*Sigh* Oh well.<br>Sure. I'll go with you.",
-  "fusion": "Oh, this is \"Fusion.\"<br>Okay, I got it.<br>Now, can you hurry up?",
-  "evolution": "",
-  "hp_base": "3304",
-  "atk_base": "1188",
-  "def_base": "1294",
-  "rec_base": "1374",
-  "hp_lord": "4706",
-  "atk_lord": "1584",
-  "def_lord": "1725",
-  "rec_lord": "1832",
-  "hp_anima": "5298",
-  "rec_anima": "1674",
-  "atk_breaker": "1742",
-  "def_breaker": "1567",
-  "atk_guardian": "1426",
-  "def_guardian": "1883",
-  "rec_guardian": "1753",
-  "def_oracle": "1646",
-  "hp_oracle": "4469",
-  "rec_oracle": "2069",
-  "hp_bonus": "500",
-  "atk_bonus": "140",
-  "def_bonus": "260",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "6",
-  "normaldc": "12",
-  "ls": "Divine Gale",
-  "lsdescription": "Nullifies all status ailments",
-  "lstype": "Defense",
+  "stats": {
+    "_base": {
+      "atk": 1188,
+      "def": 1294,
+      "hp": 3304,
+      "rec": 1374
+    },
+    "_lord": {
+      "atk": 1584,
+      "def": 1725,
+      "hp": 4706,
+      "rec": 1832
+    },
+    "anima": {
+      "atk": 1584,
+      "def": 1725,
+      "hp max": 5496,
+      "hp min": 5101,
+      "rec max": 1753,
+      "rec min": 1595
+    },
+    "breaker": {
+      "atk max": 1821,
+      "atk min": 1663,
+      "def max": 1646,
+      "def min": 1488,
+      "hp": 4706,
+      "rec": 1832
+    },
+    "guardian": {
+      "atk": 1584,
+      "def max": 1962,
+      "def min": 1804,
+      "hp": 4706,
+      "rec max": 1832,
+      "rec min": 1674
+    },
+    "oracle": {
+      "atk": 1584,
+      "def max": 1725,
+      "def min": 1567,
+      "hp": 4706,
+      "rec max": 2148,
+      "rec min": 1990
+    }
+  },
+  "leader_skill": {
+    "desc": "Nullifies all status ailments",
+    "effects": [
+      {
+        "curse resist%": 100,
+        "injury resist%": 100,
+        "paralysis resist%": 100,
+        "passive id": "4",
+        "poison resist%": 100,
+        "sick resist%": 100,
+        "weaken resist%": 100
+      }
+    ],
+    "id": "2102",
+    "name": "Divine Gale"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -539,99 +549,93 @@
     ],
     "name": "Rune Veil"
   },
-  "bbdescription": "Greatly recovers HP & removes status ailments and negates them for 3 turns",
-  "bbnote": "Heal 2300-2600 + 22.5% of own Rec",
-  "bbtype": "Heal/Support",
-  "bbhits": "0",
-  "bbaoe": "0",
-  "bbgauge": "20",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "es": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "50735",
-  "evomats1": "50354",
-  "evomats2": "50123",
-  "evomats3": "50123",
-  "evomats4": "50191",
-  "evomats5": "60224",
-  "evoitem": "",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 1188,
-      "def": 1294,
-      "hp": 3304,
-      "rec": 1374
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 100.0,
+      "target conditions": "hp_25pr_under",
+      "target type": "party"
     },
-    "_lord": {
-      "atk": 1584,
-      "def": 1725,
-      "hp": 4706,
-      "rec": 1832
+    {
+      "action": "attack",
+      "chance%": 50.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1584,
-      "def": 1725,
-      "hp max": 5496,
-      "hp min": 5101,
-      "rec max": 1753,
-      "rec min": 1595
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 199
     },
-    "breaker": {
-      "atk max": 1821,
-      "atk min": 1663,
-      "def max": 1646,
-      "def min": 1488,
-      "hp": 4706,
-      "rec": 1832
+    "idle": {
+      "total number of frames": 52
     },
-    "guardian": {
-      "atk": 1584,
-      "def max": 1962,
-      "def min": 1804,
-      "hp": 4706,
-      "rec max": 1832,
-      "rec min": 1674
-    },
-    "oracle": {
-      "atk": 1584,
-      "def max": 1725,
-      "def min": 1567,
-      "hp": 4706,
-      "rec max": 2148,
-      "rec min": 1990
+    "move": {
+      "total number of frames": 5
     }
   },
-  "leader_skill": {
-    "desc": "Nullifies all status ailments",
-    "effects": [
-      {
-        "curse resist%": 100,
-        "injury resist%": 100,
-        "paralysis resist%": 100,
-        "passive id": "4",
-        "poison resist%": 100,
-        "sick resist%": 100,
-        "weaken resist%": 100
-      }
+  "category": 50730,
+  "cost": "19",
+  "damage frames": {
+    "frame times": [
+      37,
+      74,
+      138,
+      146,
+      154,
+      162
     ],
-    "id": "2102",
-    "name": "Divine Gale"
+    "hit dmg% distribution": [
+      10,
+      10,
+      20,
+      20,
+      20,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 6
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "light",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 963,
+  "imp": {
+    "max atk": "140",
+    "max def": "260",
+    "max hp": "500",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "1474~1647",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Holy Defender Rinon",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Holy Defender Rinon",
+  "maxlv": "80",
+  "no": "963",
   "unitDisplayHomePosition_1W9CxaFK": "408,230,160,437",
   "unitDisplayDetailPosition_6z54rgb3": "-152,-70,1130,881",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "43,192,550,429,0",
@@ -641,5 +645,101 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "37:135:1,37:200570:1,74:135:1,74:200570:1,138:500078:1,138:400227:1"
+  "effectFrames": "37:135:1,37:200570:1,74:135:1,74:200570:1,138:500078:1,138:400227:1",
+  "evofrom": "",
+  "evointo": "50735",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50123",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "50191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "199",
+  "animation_idle": "52",
+  "animation_move": "5",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "37, 74, 138, 146, 154, 162",
+  "normal_distribute": "10, 10, 20, 20, 20, 20",
+  "normal_totaldistr": "100",
+  "description": "A magician who fought against the gods alongside the Oracle Knight in the later stages. Born at the foot of the Sacred Mt. Bari, Rinon was brought up since young as a candidate for the position of Oracle Maiden, leaving behind her the influence of all earthly life. Training with another candidate for the position of Oracle Maiden, as well as with another young girl who sought to become the next Oracle Knight, she studied hard everyday. However, knowing that in the end only one Oracle Maiden would be chosen, she began to grow restless. Disliking these dark emotions within her, she suddenly decided to relinquish her candidacy one day.",
+  "summon": "You summoned me, right?<br>*Sigh* Oh well.<br>Sure. I'll go with you.",
+  "fusion": "Oh, this is \"Fusion.\"<br>Okay, I got it.<br>Now, can you hurry up?",
+  "evolution": "",
+  "hp_base": "3304",
+  "atk_base": "1188",
+  "def_base": "1294",
+  "rec_base": "1374",
+  "hp_lord": "4706",
+  "atk_lord": "1584",
+  "def_lord": "1725",
+  "rec_lord": "1832",
+  "hp_anima": "5298",
+  "rec_anima": "1674",
+  "atk_breaker": "1742",
+  "def_breaker": "1567",
+  "atk_guardian": "1426",
+  "def_guardian": "1883",
+  "rec_guardian": "1753",
+  "def_oracle": "1646",
+  "hp_oracle": "4469",
+  "rec_oracle": "2069",
+  "hp_bonus": "500",
+  "atk_bonus": "140",
+  "def_bonus": "260",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "6",
+  "normaldc": "12",
+  "ls": "Divine Gale",
+  "lsdescription": "Nullifies all status ailments",
+  "lstype": "Defense",
+  "bbdescription": "Greatly recovers HP & removes status ailments and negates them for 3 turns",
+  "bbnote": "Heal 2300-2600 + 22.5% of own Rec",
+  "bbtype": "Heal/Support",
+  "bbhits": "0",
+  "bbaoe": "0",
+  "bbgauge": "20",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "es": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "50123",
+  "evomats3": "50123",
+  "evomats4": "50191",
+  "evomats5": "60224",
+  "evoitem": ""
 }

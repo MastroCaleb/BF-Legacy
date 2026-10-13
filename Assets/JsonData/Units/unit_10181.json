@@ -1,52 +1,64 @@
 {
   "id": "10181",
-  "unitName": "Hermit Talos",
-  "no": "459",
-  "element": "Fire",
-  "rarity": "★★",
-  "cost": "3",
-  "maxlv": "30",
-  "basexp": "15",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "103",
-  "animation_idle": "64",
-  "animation_move": "19",
-  "movespeed_attack": "6",
-  "movespeed_skill": "6",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "2",
-  "movetype_skill": "2",
-  "description": "A mysterious old man thought to be a hermit living in the area around the La Veda Republic. Though he was a troubled man who enjoyed messing with travelers, it is said that he used his fire techniques to save his neighbors from monster attacks, and also gave away medicine when diseases had spread. Records have been found of him being taken in by nuns here and there, but his absurdly long life suggested by the length of time over which these events occured has many historical scholars worried.",
-  "summon": "Break my curse and<br>I'll become a beautiful girl.<br>He he, I kid, I kid.",
-  "fusion": "Hmph, so this is fusion?<br>This is the first time I've<br>seen it.",
-  "evolution": "",
-  "hp_base": "1268",
-  "atk_base": "547",
-  "def_base": "593",
-  "rec_base": "532",
-  "hp_lord": "2305",
-  "atk_lord": "770",
-  "def_lord": "780",
-  "rec_lord": "739",
-  "hp_anima": "2522",
-  "rec_anima": "681",
-  "atk_breaker": "828",
-  "def_breaker": "722",
-  "atk_guardian": "712",
-  "def_guardian": "838",
-  "hp_oracle": "2087",
-  "rec_oracle": "797",
-  "hp_bonus": "250",
-  "atk_bonus": "100",
-  "def_bonus": "100",
-  "rec_bonus": "100",
-  "lordonly": "",
-  "combo_hits": "5",
-  "ls": "Brave Power",
-  "lsdescription": "25% boost to Atk power of male Units",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 547,
+      "def": 593,
+      "hp": 1268,
+      "rec": 532
+    },
+    "_lord": {
+      "atk": 770,
+      "def": 780,
+      "hp": 2305,
+      "rec": 739
+    },
+    "anima": {
+      "atk": 770,
+      "def": 780,
+      "hp max": 2595,
+      "hp min": 2450,
+      "rec max": 710,
+      "rec min": 652
+    },
+    "breaker": {
+      "atk max": 857,
+      "atk min": 799,
+      "def max": 751,
+      "def min": 693,
+      "hp": 2305,
+      "rec": 739
+    },
+    "guardian": {
+      "atk": 770,
+      "def max": 867,
+      "def min": 809,
+      "hp": 2305,
+      "rec max": 739,
+      "rec min": 681
+    },
+    "oracle": {
+      "atk": 770,
+      "def max": 780,
+      "def min": 722,
+      "hp": 2305,
+      "rec max": 855,
+      "rec min": 797
+    }
+  },
+  "leader_skill": {
+    "desc": "25% boost to Atk power of male Units",
+    "effects": [
+      {
+        "atk% buff": 25,
+        "gender required": "male",
+        "passive id": "42"
+      }
+    ],
+    "id": "4500",
+    "name": "Brave Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -199,93 +211,91 @@
     ],
     "name": "Crimson Boulder"
   },
-  "bbdescription": "6 combo Fire elemental attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "6",
-  "bbaoe": "A",
-  "bbgauge": "20",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "10182",
-  "evomats1": "10131",
-  "evomats2": "10130",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "50000",
-  "stats": {
-    "_base": {
-      "atk": 547,
-      "def": 593,
-      "hp": 1268,
-      "rec": 532
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 770,
-      "def": 780,
-      "hp": 2305,
-      "rec": 739
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 770,
-      "def": 780,
-      "hp max": 2595,
-      "hp min": 2450,
-      "rec max": 710,
-      "rec min": 652
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 103
     },
-    "breaker": {
-      "atk max": 857,
-      "atk min": 799,
-      "def max": 751,
-      "def min": 693,
-      "hp": 2305,
-      "rec": 739
+    "idle": {
+      "total number of frames": 64
     },
-    "guardian": {
-      "atk": 770,
-      "def max": 867,
-      "def min": 809,
-      "hp": 2305,
-      "rec max": 739,
-      "rec min": 681
-    },
-    "oracle": {
-      "atk": 770,
-      "def max": 780,
-      "def min": 722,
-      "hp": 2305,
-      "rec max": 855,
-      "rec min": 797
+    "move": {
+      "total number of frames": 19
     }
   },
-  "leader_skill": {
-    "desc": "25% boost to Atk power of male Units",
-    "effects": [
-      {
-        "atk% buff": 25,
-        "gender required": "male",
-        "passive id": "42"
-      }
+  "category": 10180,
+  "cost": "3",
+  "damage frames": {
+    "frame times": [
+      28,
+      35,
+      55,
+      75,
+      95
     ],
-    "id": "4500",
-    "name": "Brave Power"
+    "hit dmg% distribution": [
+      20,
+      20,
+      20,
+      20,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 5
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "fire",
+  "exp_pattern": 15,
+  "gender": "male",
+  "getting type": "not eligible for achievement",
+  "guide_id": 459,
+  "imp": {
+    "max atk": "100",
+    "max def": "100",
+    "max hp": "250",
+    "max rec": "100"
+  },
+  "kind": "normal",
+  "lord damage range": "717~800",
+  "movement": {
+    "attack": {
+      "move speed": 6,
+      "move speed type": "2",
+      "move type": "2"
+    },
+    "skill": {
+      "move speed": 6,
+      "move speed type": "2",
+      "move type": "2"
+    }
+  },
+  "name": "Hermit Talos",
+  "rarity": "2",
+  "sell caution": false,
+  "unitName": "Hermit Talos",
+  "maxlv": "30",
+  "no": "459",
   "unitDisplayHomePosition_1W9CxaFK": "88,12,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "220,197,471,596",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "160,336,297,293,0",
@@ -295,5 +305,94 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "300",
   "sellCaution": false,
-  "effectFrames": "28:140:1,35:140:1,55:150:1,75:150:1,95:150:1"
+  "effectFrames": "28:140:1,35:140:1,55:150:1,75:150:1,95:150:1",
+  "evofrom": "",
+  "evointo": "10182",
+  "evozelcost": "50000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "10131",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10130",
+      "count": 1
+    }
+  ],
+  "basexp": "15",
+  "animation_attack": "103",
+  "animation_idle": "64",
+  "animation_move": "19",
+  "movespeed_attack": "6",
+  "movespeed_skill": "6",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "2",
+  "movetype_skill": "2",
+  "normal_frames": "28, 35, 55, 75, 95",
+  "normal_distribute": "20, 20, 20, 20, 20",
+  "normal_totaldistr": "100",
+  "bb_frames": "28, 38, 48, 58, 68, 78",
+  "bb_distribute": "16, 16, 17, 17, 17, 17",
+  "bb_totaldistr": "100",
+  "description": "A mysterious old man thought to be a hermit living in the area around the La Veda Republic. Though he was a troubled man who enjoyed messing with travelers, it is said that he used his fire techniques to save his neighbors from monster attacks, and also gave away medicine when diseases had spread. Records have been found of him being taken in by nuns here and there, but his absurdly long life suggested by the length of time over which these events occured has many historical scholars worried.",
+  "summon": "Break my curse and<br>I'll become a beautiful girl.<br>He he, I kid, I kid.",
+  "fusion": "Hmph, so this is fusion?<br>This is the first time I've<br>seen it.",
+  "evolution": "",
+  "hp_base": "1268",
+  "atk_base": "547",
+  "def_base": "593",
+  "rec_base": "532",
+  "hp_lord": "2305",
+  "atk_lord": "770",
+  "def_lord": "780",
+  "rec_lord": "739",
+  "hp_anima": "2523",
+  "rec_anima": "681",
+  "atk_breaker": "828",
+  "def_breaker": "722",
+  "atk_guardian": "712",
+  "def_guardian": "838",
+  "rec_guardian": "710",
+  "def_oracle": "751",
+  "hp_oracle": "2218",
+  "rec_oracle": "826",
+  "hp_bonus": "250",
+  "atk_bonus": "100",
+  "def_bonus": "100",
+  "rec_bonus": "100",
+  "lordonly": "",
+  "combo_hits": "5",
+  "normaldc": "10",
+  "ls": "Brave Power",
+  "lsdescription": "25% boost to Atk power of male Units",
+  "lstype": "Attack",
+  "bbdescription": "6 combo Fire elemental attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "6",
+  "bbaoe": "A",
+  "bbgauge": "20",
+  "bbdc": "6",
+  "bbmultiplier": "65",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "10131",
+  "evomats2": "10130",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": "",
+  "evoitem": ""
 }

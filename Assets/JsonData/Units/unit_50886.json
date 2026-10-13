@@ -1,69 +1,127 @@
 {
   "id": "50886",
-  "unitName": "Lunar Blade Rouche",
-  "no": "1214",
-  "element": "Light",
-  "rarity": "★★★★★★★",
-  "cost": "42",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "106",
-  "animation_idle": "96",
-  "animation_move": "6",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "11, 14, 59, 62, 67, 72, 77, 82, 87",
-  "normal_distribute": "14, 12, 16, 13, 9, 9, 9, 9, 9",
-  "normal_totaldistr": "100",
-  "bb_frames": "11, 59",
-  "bb_distribute": "40, 60",
-  "bb_totaldistr": "100",
-  "sbb_frames": "62",
-  "sbb_distribute": "100",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "59",
-  "ubb_distribute": "100",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "2",
-  "ubb_effectdelay": "3",
-  "description": "Rouche continued growing each day as commanding officer. And though he disliked ordering others around, he trained himself to always see the bigger picture in order to save as many people as possible during a crisis. Unbeknownst to him, however, he would have to make use of this very skill when a demon suddenly attacked the city. It can be said that it was thanks to Rouche's quick wit that immediate action could be taken on the matter. He would then go on to display his own power and ability on the battlefield as he protected his comrades against the demon. Once they emerged victorious, Rouche further strengthened the Guard, and subsequently laid the foundation for the establishment of the Randall Empire.",
-  "summon": "The fear of losing a comrade,<br>and the strength to face it.<br>I feel like I finally understand<br>my father's greatness.",
-  "fusion": "Please lend me your power!<br>I will return the favor, I promise!<br>I will become a real hero!",
-  "evolution": "I won't falter any longer!<br>I will open a road of my own!<br>Please, follow me!",
-  "hp_base": "5119",
-  "atk_base": "2113",
-  "def_base": "2045",
-  "rec_base": "1599",
-  "hp_lord": "6750",
-  "atk_lord": "2680",
-  "def_lord": "2570",
-  "rec_lord": "2001",
-  "hp_anima": "7642",
-  "rec_anima": "1763",
-  "atk_breaker": "2918",
-  "def_breaker": "2332",
-  "def_guardian": "2808",
-  "rec_guardian": "1882",
-  "def_oracle": "2451",
-  "rec_oracle": "2358",
-  "hp_bonus": "1000",
-  "atk_bonus": "600",
-  "def_bonus": "300",
-  "rec_bonus": "400",
-  "lordonly": "",
-  "combo_hits": "9",
-  "normaldc": "36",
-  "ls": "Flash Edge's Spiritual Power",
-  "lsdescription": "40% boost to max HP, Atk, greatly boosts critical damage & reduces BB gauge required for BB",
-  "lsnote": "150% boost & 20% reduction",
-  "lstype": "Hit Points/Attack/Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 2113,
+      "def": 2045,
+      "hp": 5119,
+      "rec": 1599
+    },
+    "_lord": {
+      "atk": 2680,
+      "def": 2570,
+      "hp": 6750,
+      "rec": 2001
+    },
+    "anima": {
+      "atk": 2680,
+      "def": 2570,
+      "hp max": 7940,
+      "hp min": 7345,
+      "rec max": 1882,
+      "rec min": 1644
+    },
+    "breaker": {
+      "atk max": 3037,
+      "atk min": 2799,
+      "def max": 2451,
+      "def min": 2213,
+      "hp": 6750,
+      "rec": 2001
+    },
+    "guardian": {
+      "atk": 2680,
+      "def max": 2927,
+      "def min": 2689,
+      "hp": 6750,
+      "rec max": 2001,
+      "rec min": 1763
+    },
+    "oracle": {
+      "atk": 2680,
+      "def max": 2570,
+      "def min": 2332,
+      "hp": 6750,
+      "rec max": 2477,
+      "rec min": 2239
+    }
+  },
+  "leader_skill": {
+    "desc": "40% boost to max HP, Atk, greatly boosts critical damage & reduces BB gauge required for BB",
+    "effects": [
+      {
+        "atk% buff": 40,
+        "hp% buff": 40,
+        "passive id": "1"
+      },
+      {
+        "crit multiplier%": 150.0,
+        "passive id": "34"
+      },
+      {
+        "passive id": "48",
+        "reduced bb bc cost%": 20
+      }
+    ],
+    "id": "7413",
+    "name": "Flash Edge's Spiritual Power"
+  },
+  "extra_skill": {
+    "desc": "Adds critical hit rate boost to BB/SBB for 3 turns & 20% boost to all parameters and Spark damage enormously boosts BB gauge when Guiding Light is equipped",
+    "effects": [
+      {
+        "atk% buff": 20,
+        "conditions": [
+          {
+            "item required": [
+              "47205"
+            ]
+          }
+        ],
+        "def% buff": 20,
+        "hp% buff": 20,
+        "passive id": "1",
+        "passive target": "self",
+        "rec% buff": 20
+      },
+      {
+        "bc fill on spark high": 10,
+        "bc fill on spark low": 10,
+        "bc fill on spark%": 100,
+        "conditions": [
+          {
+            "item required": [
+              "47205"
+            ]
+          }
+        ],
+        "passive id": "47",
+        "passive target": "self"
+      },
+      {
+        "conditions": [],
+        "passive id": "66",
+        "passive target": "self",
+        "trigger on bb": true,
+        "trigger on sbb": true,
+        "triggered effect": [
+          {
+            "buff turns": 3,
+            "crit% buff (7)": 60,
+            "effect delay time(ms)/frame": "0.0/0",
+            "element buffed": "all",
+            "proc id": "5",
+            "target area": "aoe",
+            "target type": "party"
+          }
+        ]
+      }
+    ],
+    "id": "11200",
+    "name": "Hopeful Hero's Resolve",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -432,14 +490,6 @@
     ],
     "name": "Wal Slave"
   },
-  "bbdescription": "2 combo powerful Light attack on all foes, additional attack at turn's end for 3 turns & boosts critical damage for 3 turns",
-  "bbnote": "300% damage modifier on additional attack, 50% boost",
-  "bbtype": "Support/Offense",
-  "bbhits": "2",
-  "bbaoe": "A",
-  "bbgauge": "24",
-  "bbdc": "30",
-  "bbmultiplier": "300",
   "sbb": {
     "damage frames": [
       {
@@ -968,14 +1018,6 @@
     ],
     "name": "Crescent Sanction"
   },
-  "sbbdescription": "Powerful Light attack on all foes (consecutive uses boost damage), additional attack at turn's end for 3 turns, adds Fire, Water, Earth, Thunder elements to attack for 2 turns & boosts critical damage for 3 turns",
-  "sbbnote": "100% boost to multiplier per use up to 5x, 300% damage modifier on additional attack, 50% boost",
-  "sbbtype": "Support/Offense",
-  "sbbhits": "1",
-  "sbbaoe": "A",
-  "sbbgauge": "29",
-  "sbbdc": "30",
-  "sbbmultiplier": "480-980",
   "ubb": {
     "damage frames": [
       {
@@ -1079,6 +1121,189 @@
     ],
     "name": "Sacred Light: Lord's Faith"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 106
+    },
+    "idle": {
+      "total number of frames": 96
+    },
+    "move": {
+      "total number of frames": 6
+    }
+  },
+  "category": 50880,
+  "cost": "42",
+  "damage frames": {
+    "frame times": [
+      11,
+      14,
+      59,
+      62,
+      67,
+      72,
+      77,
+      82,
+      87
+    ],
+    "hit dmg% distribution": [
+      14,
+      12,
+      16,
+      13,
+      9,
+      9,
+      9,
+      9,
+      9
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 9
+  },
+  "drop check count": 4,
+  "element": "light",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 1214,
+  "imp": {
+    "max atk": "600",
+    "max def": "300",
+    "max hp": "1000",
+    "max rec": "400"
+  },
+  "kind": "normal",
+  "lord damage range": "2495~2787",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Lunar Blade Rouche",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Lunar Blade Rouche",
+  "maxlv": "120",
+  "no": "1214",
+  "unitDisplayHomePosition_1W9CxaFK": "490,305,180,491",
+  "unitDisplayDetailPosition_6z54rgb3": "-168,-71,1050,876",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "9,175,544,454,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-146,-376,1050,876",
+  "unitDisplaySummonPosition_KC3Jk8Br": "9,175,544,454,0",
+  "unitDisplayHpPosition_3BpHN6VD": "-8,41",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "15000",
+  "sellCaution": false,
+  "effectFrames": "5:125:1,8:125:1,56:125:1,59:125:1,62:500633:1,66:100123:1,6:500217:1,7:200032:1,10:200032:1,60:400229:1,8:500217:1,133:200032:1,145:200032:1",
+  "evofrom": "50885",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "21",
+  "animation_attack": "106",
+  "animation_idle": "96",
+  "animation_move": "6",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "11, 14, 59, 62, 67, 72, 77, 82, 87",
+  "normal_distribute": "14, 12, 16, 13, 9, 9, 9, 9, 9",
+  "normal_totaldistr": "100",
+  "bb_frames": "11, 59",
+  "bb_distribute": "40, 60",
+  "bb_totaldistr": "100",
+  "sbb_frames": "62",
+  "sbb_distribute": "100",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "59",
+  "ubb_distribute": "100",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "2",
+  "ubb_effectdelay": "3",
+  "description": "Rouche continued growing each day as commanding officer. And though he disliked ordering others around, he trained himself to always see the bigger picture in order to save as many people as possible during a crisis. Unbeknownst to him, however, he would have to make use of this very skill when a demon suddenly attacked the city. It can be said that it was thanks to Rouche's quick wit that immediate action could be taken on the matter. He would then go on to display his own power and ability on the battlefield as he protected his comrades against the demon. Once they emerged victorious, Rouche further strengthened the Guard, and subsequently laid the foundation for the establishment of the Randall Empire.",
+  "summon": "The fear of losing a comrade,<br>and the strength to face it.<br>I feel like I finally understand<br>my father's greatness.",
+  "fusion": "Please lend me your power!<br>I will return the favor, I promise!<br>I will become a real hero!",
+  "evolution": "I won't falter any longer!<br>I will open a road of my own!<br>Please, follow me!",
+  "hp_base": "5119",
+  "atk_base": "2113",
+  "def_base": "2045",
+  "rec_base": "1599",
+  "hp_lord": "6750",
+  "atk_lord": "2680",
+  "def_lord": "2570",
+  "rec_lord": "2001",
+  "hp_anima": "7642",
+  "rec_anima": "1763",
+  "atk_breaker": "2918",
+  "def_breaker": "2332",
+  "def_guardian": "2808",
+  "rec_guardian": "1882",
+  "def_oracle": "2451",
+  "rec_oracle": "2358",
+  "hp_bonus": "1000",
+  "atk_bonus": "600",
+  "def_bonus": "300",
+  "rec_bonus": "400",
+  "lordonly": "",
+  "combo_hits": "9",
+  "normaldc": "36",
+  "ls": "Flash Edge's Spiritual Power",
+  "lsdescription": "40% boost to max HP, Atk, greatly boosts critical damage & reduces BB gauge required for BB",
+  "lsnote": "150% boost & 20% reduction",
+  "lstype": "Hit Points/Attack/Brave Burst",
+  "bbdescription": "2 combo powerful Light attack on all foes, additional attack at turn's end for 3 turns & boosts critical damage for 3 turns",
+  "bbnote": "300% damage modifier on additional attack, 50% boost",
+  "bbtype": "Support/Offense",
+  "bbhits": "2",
+  "bbaoe": "A",
+  "bbgauge": "24",
+  "bbdc": "30",
+  "bbmultiplier": "300",
+  "sbbdescription": "Powerful Light attack on all foes (consecutive uses boost damage), additional attack at turn's end for 3 turns, adds Fire, Water, Earth, Thunder elements to attack for 2 turns & boosts critical damage for 3 turns",
+  "sbbnote": "100% boost to multiplier per use up to 5x, 300% damage modifier on additional attack, 50% boost",
+  "sbbtype": "Support/Offense",
+  "sbbhits": "1",
+  "sbbaoe": "A",
+  "sbbgauge": "29",
+  "sbbdc": "30",
+  "sbbmultiplier": "480-980",
   "ubbdescription": "Massive Light attack on all foes, adds all elements to attack for 3 turns & boosts critical and Spark damage for 3 turns",
   "ubbnote": "300% Crit & 130% Spark",
   "ubbtype": "Support/Offense",
@@ -1091,145 +1316,10 @@
   "esitem": "Guiding Light",
   "esdescription": "Adds critical hit rate boost to BB/SBB for 3 turns & 20% boost to all parameters and Spark damage enormously boosts BB gauge when Guiding Light is equipped",
   "esnote": "60% boost & fills 10 BC",
-  "evofrom": "50885",
-  "evointo": "",
   "evomats1": "",
   "evomats2": "",
   "evomats3": "",
   "evomats4": "",
   "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 2113,
-      "def": 2045,
-      "hp": 5119,
-      "rec": 1599
-    },
-    "_lord": {
-      "atk": 2680,
-      "def": 2570,
-      "hp": 6750,
-      "rec": 2001
-    },
-    "anima": {
-      "atk": 2680,
-      "def": 2570,
-      "hp max": 7940,
-      "hp min": 7345,
-      "rec max": 1882,
-      "rec min": 1644
-    },
-    "breaker": {
-      "atk max": 3037,
-      "atk min": 2799,
-      "def max": 2451,
-      "def min": 2213,
-      "hp": 6750,
-      "rec": 2001
-    },
-    "guardian": {
-      "atk": 2680,
-      "def max": 2927,
-      "def min": 2689,
-      "hp": 6750,
-      "rec max": 2001,
-      "rec min": 1763
-    },
-    "oracle": {
-      "atk": 2680,
-      "def max": 2570,
-      "def min": 2332,
-      "hp": 6750,
-      "rec max": 2477,
-      "rec min": 2239
-    }
-  },
-  "leader_skill": {
-    "desc": "40% boost to max HP, Atk, greatly boosts critical damage & reduces BB gauge required for BB",
-    "effects": [
-      {
-        "atk% buff": 40,
-        "hp% buff": 40,
-        "passive id": "1"
-      },
-      {
-        "crit multiplier%": 150.0,
-        "passive id": "34"
-      },
-      {
-        "passive id": "48",
-        "reduced bb bc cost%": 20
-      }
-    ],
-    "id": "7413",
-    "name": "Flash Edge's Spiritual Power"
-  },
-  "extra_skill": {
-    "desc": "Adds critical hit rate boost to BB/SBB for 3 turns & 20% boost to all parameters and Spark damage enormously boosts BB gauge when Guiding Light is equipped",
-    "effects": [
-      {
-        "atk% buff": 20,
-        "conditions": [
-          {
-            "item required": [
-              "47205"
-            ]
-          }
-        ],
-        "def% buff": 20,
-        "hp% buff": 20,
-        "passive id": "1",
-        "passive target": "self",
-        "rec% buff": 20
-      },
-      {
-        "bc fill on spark high": 10,
-        "bc fill on spark low": 10,
-        "bc fill on spark%": 100,
-        "conditions": [
-          {
-            "item required": [
-              "47205"
-            ]
-          }
-        ],
-        "passive id": "47",
-        "passive target": "self"
-      },
-      {
-        "conditions": [],
-        "passive id": "66",
-        "passive target": "self",
-        "trigger on bb": true,
-        "trigger on sbb": true,
-        "triggered effect": [
-          {
-            "buff turns": 3,
-            "crit% buff (7)": 60,
-            "effect delay time(ms)/frame": "0.0/0",
-            "element buffed": "all",
-            "proc id": "5",
-            "target area": "aoe",
-            "target type": "party"
-          }
-        ]
-      }
-    ],
-    "id": "11200",
-    "name": "Hopeful Hero's Resolve",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "490,305,180,491",
-  "unitDisplayDetailPosition_6z54rgb3": "-168,-71,1050,876",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "9,175,544,454,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-146,-376,1050,876",
-  "unitDisplaySummonPosition_KC3Jk8Br": "9,175,544,454,0",
-  "unitDisplayHpPosition_3BpHN6VD": "-8,41",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "15000",
-  "sellCaution": false,
-  "effectFrames": "5:125:1,8:125:1,56:125:1,59:125:1,62:500633:1,66:100123:1,6:500217:1,7:200032:1,10:200032:1,60:400229:1,8:500217:1,133:200032:1,145:200032:1"
+  "evoitem": ""
 }

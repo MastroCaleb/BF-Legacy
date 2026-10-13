@@ -1,72 +1,108 @@
 {
   "id": "51106",
-  "unitName": "Alien Light Diastima",
-  "no": "1521",
-  "element": "Light",
-  "rarity": "★★★★★★★",
-  "cost": "46",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "N",
-  "ai": "2",
-  "animation_attack": "167",
-  "animation_idle": "52",
-  "animation_move": "25",
-  "movespeed_attack": "2",
-  "movespeed_skill": "2",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "2",
-  "movetype_skill": "2",
-  "normal_frames": "57, 60, 63, 66, 69, 72, 83, 91, 99, 107, 115",
-  "normal_distribute": "8, 8, 8, 8, 8, 8, 11, 10, 10, 10, 11",
-  "normal_totaldistr": "100",
-  "bb_frames": "57, 60, 63, 66, 69, 72, 83, 88, 93, 98, 103, 108, 113",
-  "bb_distribute": "7, 7, 7, 7, 7, 7, 9, 8, 8, 8, 8, 8, 9",
-  "bb_totaldistr": "100",
-  "sbb_frames": "57, 60, 63, 66, 69, 72, 75, 78, 83, 87, 90, 93, 96, 99, 102, 105",
-  "sbb_distribute": "5, 5, 5, 5, 5, 5, 5, 5, 9, 7, 7, 7, 7, 7, 7, 9",
-  "sbb_totaldistr": "100",
-  "sbb2_frames": "108, 111, 114, 117, 120, 123",
-  "sbb2_distribute": "18, 16, 17, 16, 17, 16",
-  "sbb2_totaldistr": "100",
-  "ubb_frames": "57, 60, 63, 66, 69, 72, 75, 78, 83, 87, 90, 93, 96, 99, 102, 105, 108, 111, 114, 117, 120",
-  "ubb_distribute": "4, 4, 4, 4, 4, 4, 4, 4, 7, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "1",
-  "sbb2_effectdelay": "2",
-  "ubb_effectdelay": "1",
-  "description": "A member of a mysterious race as well as a member of the fearsome ten-strong band of outlaws known as the \"Ten Vile Disnomians.\" Active during the early days of the empire, Diastima's origins and reasons for joining the group are shrouded in mystery. Diastima spoke a unique language, and scholars believe that only the Disnomians' leader understood it, making Diastima particularly distinct even among their colorful members. Diastima's skill in battle was also noteworthy, and saw use in numerous battles before the Disnomian's later disappearance.",
-  "summon": "#......*......?<br>....../......4......><br>+&......",
-  "fusion": "......#......9......!<br>$......7......5<br>......0......",
-  "evolution": "",
-  "hp_base": "5058",
-  "atk_base": "2214",
-  "def_base": "2008",
-  "rec_base": "1852",
-  "hp_lord": "7272",
-  "atk_lord": "3044",
-  "def_lord": "2737",
-  "rec_lord": "2525",
-  "hp_anima": "8164",
-  "rec_anima": "2287",
-  "atk_breaker": "3282",
-  "def_breaker": "2499",
-  "def_guardian": "2975",
-  "rec_guardian": "2406",
-  "def_oracle": "2618",
-  "rec_oracle": "2882",
-  "hp_bonus": "1100",
-  "atk_bonus": "440",
-  "def_bonus": "440",
-  "rec_bonus": "440",
-  "lordonly": "",
-  "combo_hits": "11",
-  "normaldc": "44",
-  "ls": "Curious Coincidence",
-  "lsdescription": "40% boost to max HP, slightly boosts Atk, Def, Rec when HP is over 50% & considerably boosts damage against status afflicted foes",
-  "lsnote": "50% Atk, Def, Rec & 80% boost against afflicted foes",
+  "stats": {
+    "_base": {
+      "atk": 2214,
+      "def": 2008,
+      "hp": 5058,
+      "rec": 1852
+    },
+    "_lord": {
+      "atk": 3044,
+      "def": 2737,
+      "hp": 7272,
+      "rec": 2525
+    },
+    "anima": {
+      "atk": 3044,
+      "def": 2737,
+      "hp max": 8462,
+      "hp min": 7867,
+      "rec max": 2406,
+      "rec min": 2168
+    },
+    "breaker": {
+      "atk max": 3401,
+      "atk min": 3163,
+      "def max": 2618,
+      "def min": 2380,
+      "hp": 7272,
+      "rec": 2525
+    },
+    "guardian": {
+      "atk": 3044,
+      "def max": 3094,
+      "def min": 2856,
+      "hp": 7272,
+      "rec max": 2525,
+      "rec min": 2287
+    },
+    "oracle": {
+      "atk": 3044,
+      "def max": 2737,
+      "def min": 2499,
+      "hp": 7272,
+      "rec max": 3001,
+      "rec min": 2763
+    }
+  },
+  "leader_skill": {
+    "desc": "40% boost to max HP, slightly boosts Atk, Def, Rec when HP is over 50% & considerably boosts damage against status afflicted foes",
+    "effects": [
+      {
+        "hp% buff": 40,
+        "passive id": "1"
+      },
+      {
+        "atk% buff": 30,
+        "def% buff": 30,
+        "hp above % buff requirement": 50,
+        "passive id": "11",
+        "rec% buff": 30
+      },
+      {
+        "atk% buff when enemy has ailment": 80,
+        "atk% buff when enemy has curse": true,
+        "atk% buff when enemy has injury": true,
+        "atk% buff when enemy has paralysis": true,
+        "atk% buff when enemy has poison": true,
+        "atk% buff when enemy has sick": true,
+        "atk% buff when enemy has weaken": true,
+        "passive id": "74"
+      }
+    ],
+    "id": "5543",
+    "name": "Curious Coincidence"
+  },
+  "extra_skill": {
+    "desc": "Boosts Atk relative to remaining HP & considerably boosts damage against status afflicted foes",
+    "effects": [
+      {
+        "atk% buff when enemy has ailment": 80,
+        "atk% buff when enemy has curse": true,
+        "atk% buff when enemy has injury": true,
+        "atk% buff when enemy has paralysis": true,
+        "atk% buff when enemy has poison": true,
+        "atk% buff when enemy has sick": true,
+        "atk% buff when enemy has weaken": true,
+        "conditions": [],
+        "passive id": "74",
+        "passive target": "self"
+      },
+      {
+        "atk% base buff": 0,
+        "atk% extra buff based on hp": 50,
+        "buff proportional to hp": "remaining",
+        "conditions": [],
+        "passive id": "46",
+        "passive target": "self"
+      }
+    ],
+    "id": "27700",
+    "name": "Unfathomable Light",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -651,14 +687,6 @@
     ],
     "name": "D Leg+"
   },
-  "bbdescription": "13 combo Light attack on all foes, probable infliction of random status ailment, considerably boosts BC efficacy for 3 turns & attacks may slightly absorb HP for 3 turns",
-  "bbnote": "65% chance to inflict ailments, 50% chance to drain 3-4% damage & 40% efficacy",
-  "bbtype": "Offense",
-  "bbhits": "13",
-  "bbaoe": "A",
-  "bbgauge": "30",
-  "bbdc": "13",
-  "bbmultiplier": "380",
   "sbb": {
     "damage frames": [
       {
@@ -1249,18 +1277,6 @@
     ],
     "name": "LU/016/"
   },
-  "sbbdescription": "16 combo powerful Light attack on all foes, 6 combo powerful Light attack on Dark types, probable infliction of random status ailment & hugely boosts damage against status afflicted foes for 3 turns",
-  "sbbnote": "65% chance to inflict ailments & 150% boost against afflicted foes",
-  "sbbtype": "Offense",
-  "sbbhits": "16",
-  "sbbaoe": "A",
-  "sbbgauge": "33",
-  "sbbdc": "16",
-  "sbbmultiplier": "580",
-  "sbbhits2": "6",
-  "sbbaoe2": "A",
-  "sbbdc2": "6",
-  "sbbmultiplier2": "580",
   "ubb": {
     "damage frames": [
       {
@@ -1446,6 +1462,231 @@
     ],
     "name": "Infinite Halo"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 167
+    },
+    "idle": {
+      "total number of frames": 52
+    },
+    "move": {
+      "total number of frames": 25
+    }
+  },
+  "category": 51100,
+  "cost": "46",
+  "damage frames": {
+    "frame times": [
+      57,
+      60,
+      63,
+      66,
+      69,
+      72,
+      83,
+      91,
+      99,
+      107,
+      115
+    ],
+    "hit dmg% distribution": [
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      11,
+      10,
+      10,
+      10,
+      11
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 11
+  },
+  "drop check count": 4,
+  "element": "light",
+  "exp_pattern": 20,
+  "gender": "other",
+  "getting type": "rare summon",
+  "guide_id": 1521,
+  "imp": {
+    "max atk": "440",
+    "max def": "440",
+    "max hp": "1100",
+    "max rec": "440"
+  },
+  "kind": "normal",
+  "lord damage range": "2834~3165",
+  "movement": {
+    "attack": {
+      "move speed": 2,
+      "move speed type": "4",
+      "move type": "2"
+    },
+    "skill": {
+      "move speed": 2,
+      "move speed type": "4",
+      "move type": "2"
+    }
+  },
+  "name": "Alien Light Diastima",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Alien Light Diastima",
+  "maxlv": "120",
+  "no": "1521",
+  "unitDisplayHomePosition_1W9CxaFK": "574,346,174,475",
+  "unitDisplayDetailPosition_6z54rgb3": "-193,-101,1080,961",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "-26,121,597,531,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-174,-355,1080,961",
+  "unitDisplaySummonPosition_KC3Jk8Br": "-26,121,597,531,0",
+  "unitDisplayHpPosition_3BpHN6VD": "0,55",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "15000",
+  "sellCaution": false,
+  "effectFrames": "51:120:1,54:120:1,57:120:1,60:120:1,63:120:1,66:120:1,56:201011:1,57:201027:1,83:201304:1",
+  "evofrom": "",
+  "evointo": "51107",
+  "evozelcost": "3000000",
+  "evokarmacost": "1000000",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50394",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50123",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 2
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "167",
+  "animation_idle": "52",
+  "animation_move": "25",
+  "movespeed_attack": "2",
+  "movespeed_skill": "2",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "2",
+  "movetype_skill": "2",
+  "normal_frames": "57, 60, 63, 66, 69, 72, 83, 91, 99, 107, 115",
+  "normal_distribute": "8, 8, 8, 8, 8, 8, 11, 10, 10, 10, 11",
+  "normal_totaldistr": "100",
+  "bb_frames": "57, 60, 63, 66, 69, 72, 83, 88, 93, 98, 103, 108, 113",
+  "bb_distribute": "7, 7, 7, 7, 7, 7, 9, 8, 8, 8, 8, 8, 9",
+  "bb_totaldistr": "100",
+  "sbb_frames": "57, 60, 63, 66, 69, 72, 75, 78, 83, 87, 90, 93, 96, 99, 102, 105",
+  "sbb_distribute": "5, 5, 5, 5, 5, 5, 5, 5, 9, 7, 7, 7, 7, 7, 7, 9",
+  "sbb_totaldistr": "100",
+  "sbb2_frames": "108, 111, 114, 117, 120, 123",
+  "sbb2_distribute": "18, 16, 17, 16, 17, 16",
+  "sbb2_totaldistr": "100",
+  "ubb_frames": "57, 60, 63, 66, 69, 72, 75, 78, 83, 87, 90, 93, 96, 99, 102, 105, 108, 111, 114, 117, 120",
+  "ubb_distribute": "4, 4, 4, 4, 4, 4, 4, 4, 7, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "1",
+  "sbb2_effectdelay": "2",
+  "ubb_effectdelay": "1",
+  "description": "A member of a mysterious race as well as a member of the fearsome ten-strong band of outlaws known as the \"Ten Vile Disnomians.\" Active during the early days of the empire, Diastima's origins and reasons for joining the group are shrouded in mystery. Diastima spoke a unique language, and scholars believe that only the Disnomians' leader understood it, making Diastima particularly distinct even among their colorful members. Diastima's skill in battle was also noteworthy, and saw use in numerous battles before the Disnomian's later disappearance.",
+  "summon": "#......*......?<br>....../......4......><br>+&......",
+  "fusion": "......#......9......!<br>$......7......5<br>......0......",
+  "evolution": "",
+  "hp_base": "5058",
+  "atk_base": "2214",
+  "def_base": "2008",
+  "rec_base": "1852",
+  "hp_lord": "7272",
+  "atk_lord": "3044",
+  "def_lord": "2737",
+  "rec_lord": "2525",
+  "hp_anima": "8164",
+  "rec_anima": "2287",
+  "atk_breaker": "3282",
+  "def_breaker": "2499",
+  "def_guardian": "2975",
+  "rec_guardian": "2406",
+  "def_oracle": "2618",
+  "rec_oracle": "2882",
+  "hp_bonus": "1100",
+  "atk_bonus": "440",
+  "def_bonus": "440",
+  "rec_bonus": "440",
+  "lordonly": "",
+  "combo_hits": "11",
+  "normaldc": "44",
+  "ls": "Curious Coincidence",
+  "lsdescription": "40% boost to max HP, slightly boosts Atk, Def, Rec when HP is over 50% & considerably boosts damage against status afflicted foes",
+  "lsnote": "50% Atk, Def, Rec & 80% boost against afflicted foes",
+  "bbdescription": "13 combo Light attack on all foes, probable infliction of random status ailment, considerably boosts BC efficacy for 3 turns & attacks may slightly absorb HP for 3 turns",
+  "bbnote": "65% chance to inflict ailments, 50% chance to drain 3-4% damage & 40% efficacy",
+  "bbtype": "Offense",
+  "bbhits": "13",
+  "bbaoe": "A",
+  "bbgauge": "30",
+  "bbdc": "13",
+  "bbmultiplier": "380",
+  "sbbdescription": "16 combo powerful Light attack on all foes, 6 combo powerful Light attack on Dark types, probable infliction of random status ailment & hugely boosts damage against status afflicted foes for 3 turns",
+  "sbbnote": "65% chance to inflict ailments & 150% boost against afflicted foes",
+  "sbbtype": "Offense",
+  "sbbhits": "16",
+  "sbbaoe": "A",
+  "sbbgauge": "33",
+  "sbbdc": "16",
+  "sbbmultiplier": "580",
+  "sbbhits2": "6",
+  "sbbaoe2": "A",
+  "sbbdc2": "6",
+  "sbbmultiplier2": "580",
   "ubbdescription": "21 combo massive Light attack on all foes (damage relative to remaining HP), random status ailment infliction, enormously boosts Def relative to Atk for 3 turns, enormously boosts damage against status afflicted foes for 3 turns & adds random status ailment counter for 3 turns",
   "ubbnote": "1500% + 1000% x current HP / max base HP, 200% Atk to Def & 250% boost against afflicted foes",
   "ubbtype": "Offense",
@@ -1459,8 +1700,6 @@
   "esitem": "",
   "esdescription": "Boosts Atk relative to remaining HP & considerably boosts damage against status afflicted foes",
   "esnote": "0.5% boost to Atk per 1% HP remaining & 80% boost against afflicted foes",
-  "evofrom": "",
-  "evointo": "51107",
   "evomats1": "Light Mecha God",
   "evomats2": "Light Mecha God",
   "evomats3": "Miracle Totem",
@@ -1469,119 +1708,5 @@
   "evomats6": "Dragon Mimic",
   "evomats7": "Metal Mimic",
   "evomats8": "Metal Mimic",
-  "evoitem": "",
-  "evozelcost": "3000000",
-  "stats": {
-    "_base": {
-      "atk": 2214,
-      "def": 2008,
-      "hp": 5058,
-      "rec": 1852
-    },
-    "_lord": {
-      "atk": 3044,
-      "def": 2737,
-      "hp": 7272,
-      "rec": 2525
-    },
-    "anima": {
-      "atk": 3044,
-      "def": 2737,
-      "hp max": 8462,
-      "hp min": 7867,
-      "rec max": 2406,
-      "rec min": 2168
-    },
-    "breaker": {
-      "atk max": 3401,
-      "atk min": 3163,
-      "def max": 2618,
-      "def min": 2380,
-      "hp": 7272,
-      "rec": 2525
-    },
-    "guardian": {
-      "atk": 3044,
-      "def max": 3094,
-      "def min": 2856,
-      "hp": 7272,
-      "rec max": 2525,
-      "rec min": 2287
-    },
-    "oracle": {
-      "atk": 3044,
-      "def max": 2737,
-      "def min": 2499,
-      "hp": 7272,
-      "rec max": 3001,
-      "rec min": 2763
-    }
-  },
-  "leader_skill": {
-    "desc": "40% boost to max HP, slightly boosts Atk, Def, Rec when HP is over 50% & considerably boosts damage against status afflicted foes",
-    "effects": [
-      {
-        "hp% buff": 40,
-        "passive id": "1"
-      },
-      {
-        "atk% buff": 30,
-        "def% buff": 30,
-        "hp above % buff requirement": 50,
-        "passive id": "11",
-        "rec% buff": 30
-      },
-      {
-        "atk% buff when enemy has ailment": 80,
-        "atk% buff when enemy has curse": true,
-        "atk% buff when enemy has injury": true,
-        "atk% buff when enemy has paralysis": true,
-        "atk% buff when enemy has poison": true,
-        "atk% buff when enemy has sick": true,
-        "atk% buff when enemy has weaken": true,
-        "passive id": "74"
-      }
-    ],
-    "id": "5543",
-    "name": "Curious Coincidence"
-  },
-  "extra_skill": {
-    "desc": "Boosts Atk relative to remaining HP & considerably boosts damage against status afflicted foes",
-    "effects": [
-      {
-        "atk% buff when enemy has ailment": 80,
-        "atk% buff when enemy has curse": true,
-        "atk% buff when enemy has injury": true,
-        "atk% buff when enemy has paralysis": true,
-        "atk% buff when enemy has poison": true,
-        "atk% buff when enemy has sick": true,
-        "atk% buff when enemy has weaken": true,
-        "conditions": [],
-        "passive id": "74",
-        "passive target": "self"
-      },
-      {
-        "atk% base buff": 0,
-        "atk% extra buff based on hp": 50,
-        "buff proportional to hp": "remaining",
-        "conditions": [],
-        "passive id": "46",
-        "passive target": "self"
-      }
-    ],
-    "id": "27700",
-    "name": "Unfathomable Light",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "574,346,174,475",
-  "unitDisplayDetailPosition_6z54rgb3": "-193,-101,1080,961",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "-26,121,597,531,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-174,-355,1080,961",
-  "unitDisplaySummonPosition_KC3Jk8Br": "-26,121,597,531,0",
-  "unitDisplayHpPosition_3BpHN6VD": "0,55",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "15000",
-  "sellCaution": false,
-  "effectFrames": "51:120:1,54:120:1,57:120:1,60:120:1,63:120:1,66:120:1,56:201011:1,57:201027:1,83:201304:1"
+  "evoitem": ""
 }

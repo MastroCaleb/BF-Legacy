@@ -1,63 +1,143 @@
 {
   "id": "21076",
-  "unitName": "犠の巨蟹宮ミセル",
-  "unreleased": "true",
-  "untranslated": "true",
-  "no": "1706",
-  "element": "Water",
-  "rarity": "★★★★★★★",
-  "cost": "45",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "doenter": "true",
-  "animation_attack": "290",
-  "animation_idle": "64",
-  "animation_move": "8",
-  "movespeed_attack": "0.0033",
-  "speedtype_attack": "3",
-  "movetype_attack": "1",
-  "movespeed_skill": "0.0033",
-  "speedtype_skill": "3",
-  "movetype_skill": "1",
-  "description": "",
-  "summon": "",
-  "fusion": "",
-  "evolution": "",
-  "hp_base": "5313",
-  "atk_base": "2113",
-  "def_base": "1976",
-  "rec_base": "2057",
-  "hp_lord": "6954",
-  "atk_lord": "2617",
-  "def_lord": "2470",
-  "rec_lord": "2559",
-  "hp_anima": "7846",
-  "rec_anima": "2321",
-  "atk_breaker": "2855",
-  "def_breaker": "2232",
-  "def_guardian": "2708",
-  "rec_guardian": "2440",
-  "def_oracle": "2351",
-  "rec_oracle": "2916",
-  "hp_bonus": "1000",
-  "atk_bonus": "600",
-  "def_bonus": "300",
-  "rec_bonus": "400",
-  "lordonly": "",
-  "normal_frames": "30, 35, 39, 43, 55, 65, 75, 84, 93, 102, 114, 116, 122, 167, 171, 177, 179",
-  "normal_distribute": "6, 5, 6, 5, 4, 5, 6, 5, 4, 11, 8, 5, 8, 5, 10, 4, 3",
-  "normal_totaldistr": "100",
-  "combo_hits": "17",
-  "normaldc": "34",
-  "ls": "五魂の流れ",
-  "lsdescription": "パーティのユニットが５属性以上で全能力を３５％アップ＆ＨＰが満タン時、攻撃力を大幅にアップ＆ＢＢ発動に必要なＢＢゲージ量を軽減",
-  "lsnote": "35% boost to all parameters when 5 or more elements are present, 100% boost to Atk when HP is full & 20% BC cost reduction",
-  "es": "果てない海を見つめて",
-  "esdescription": "「DUELのカケラ」を装備時、ＢＢ・ＳＢＢ・ＵＢＢに「味方全体に３ターン、攻撃に闇属性を付与・クリティカル率を超絶アップ」を追加＆クリティカル時、ＢＢゲージをかなり増加",
-  "esitem": "Duel Fragment",
-  "esnote": "Adds Dark element to attacks & 60% boost to critical hit rate for 3 turns effect to BB/SBB/UBB when Duel Fragment is equipped & critical damage fills 4 BC",
+  "stats": {
+    "_base": {
+      "atk": 2113,
+      "def": 1976,
+      "hp": 5313,
+      "rec": 2057
+    },
+    "_lord": {
+      "atk": 2617,
+      "def": 2470,
+      "hp": 6954,
+      "rec": 2559
+    },
+    "anima": {
+      "atk": 2617,
+      "def": 2470,
+      "hp max": 8144,
+      "hp min": 7549,
+      "rec max": 2440,
+      "rec min": 2202
+    },
+    "breaker": {
+      "atk max": 2974,
+      "atk min": 2736,
+      "def max": 2351,
+      "def min": 2113,
+      "hp": 6954,
+      "rec": 2559
+    },
+    "guardian": {
+      "atk": 2617,
+      "def max": 2827,
+      "def min": 2589,
+      "hp": 6954,
+      "rec max": 2559,
+      "rec min": 2321
+    },
+    "oracle": {
+      "atk": 2617,
+      "def max": 2470,
+      "def min": 2232,
+      "hp": 6954,
+      "rec max": 3035,
+      "rec min": 2797
+    }
+  },
+  "leader_skill": {
+    "desc": "パーティのユニットが５属性以上で全能力を３５％アップ＆ＨＰが満タン時、攻撃力を大幅にアップ＆ＢＢ発動に必要なＢＢゲージ量を軽減",
+    "effects": [
+      {
+        "atk% buff": 35,
+        "def% buff": 35,
+        "hp% buff": 35,
+        "passive id": "41",
+        "rec% buff": 35,
+        "unique elements required": 5
+      },
+      {
+        "atk% buff": 100,
+        "hp above % buff requirement": 100,
+        "passive id": "11"
+      },
+      {
+        "passive id": "48",
+        "reduced bb bc cost%": 20
+      }
+    ],
+    "id": "2230",
+    "name": "五魂の流れ"
+  },
+  "extra_skill": {
+    "desc": "「DUELのカケラ」を装備時、ＢＢ・ＳＢＢ・ＵＢＢに「味方全体に３ターン、攻撃に闇属性を付与・クリティカル率を超絶アップ」を追加＆クリティカル時、ＢＢゲージをかなり増加",
+    "effects": [
+      {
+        "conditions": [
+          {
+            "item required": [
+              "47201"
+            ]
+          }
+        ],
+        "passive id": "66",
+        "passive target": "self",
+        "trigger on bb": true,
+        "trigger on sbb": true,
+        "trigger on ubb": true,
+        "triggered effect": [
+          {
+            "effect delay time(ms)/frame": "0.0/0",
+            "elements added": [
+              "dark"
+            ],
+            "elements added turns": 3,
+            "proc id": "30",
+            "target area": "aoe",
+            "target type": "party"
+          }
+        ]
+      },
+      {
+        "conditions": [
+          {
+            "item required": [
+              "47201"
+            ]
+          }
+        ],
+        "passive id": "66",
+        "passive target": "self",
+        "trigger on bb": true,
+        "trigger on sbb": true,
+        "trigger on ubb": true,
+        "triggered effect": [
+          {
+            "buff turns": 3,
+            "crit% buff (7)": 60,
+            "effect delay time(ms)/frame": "0.0/0",
+            "element buffed": "all",
+            "proc id": "5",
+            "target area": "aoe",
+            "target type": "party"
+          }
+        ]
+      },
+      {
+        "bc fill on crit max": 4,
+        "bc fill on crit min": 4,
+        "bc fill on crit%": 100.0,
+        "conditions": [],
+        "passive id": "65",
+        "passive target": "self"
+      }
+    ],
+    "id": "42400",
+    "name": "果てない海を見つめて",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -386,27 +466,6 @@
     ],
     "name": "マーシレスピンサーズ"
   },
-  "bbdescription": "敵全体に炎・水属性１８連ダメージ＆味方全体に３ターン、攻撃力をかなりアップ",
-  "bbnote": "{{UnitBuffList",
-  "buff_1_proc": "29",
-  "buff_1_potency": "1500% damage modifier with Fire and Water elements",
-  "buff_1_duration": "—",
-  "buff_1_target": "All enemies",
-  "buff_2_proc": "5_atk",
-  "buff_2_potency": "250% boost to Atk",
-  "buff_2_duration": "3 turns",
-  "buff_2_target": "All allies",
-  "bbtype": "Offense",
-  "bbgauge": "28",
-  "bb_frames": "30, 35, 39, 43, 48, 55, 65, 75, 84, 93, 102, 114, 117, 122, 167, 171, 177, 180",
-  "bb_distribute": "6, 5, 6, 5, 2, 2, 5, 6, 5, 4, 11, 8, 5, 8, 5, 10, 4, 3",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "bbhits": "18",
-  "bbaoe": "A",
-  "bbdc": "18",
-  "bbmultiplier": "350",
-  "bb_hpscale": "",
   "sbb": {
     "damage frames": [
       {
@@ -981,27 +1040,6 @@
     ],
     "name": "メギドアンチェインド"
   },
-  "sbbdescription": "敵全体に強力な炎・水属性２４連ダメージ＆味方全体に３ターン、攻撃力をかなりアップ・攻撃ＢＢの威力をかなりアップ・攻撃に炎・水属性を付与",
-  "sbbnote": "{{UnitBuffList",
-  "buff_3_proc": "45",
-  "buff_3_potency": "450% boost to BB Atk",
-  "buff_3_duration": "3 turns",
-  "buff_3_target": "All allies",
-  "buff_4_proc": "54",
-  "buff_4_potency": "300% boost to critical damage",
-  "buff_4_duration": "3 turns",
-  "buff_4_target": "All allies",
-  "sbbtype": "Offense",
-  "sbbgauge": "27",
-  "sbb_frames": "30, 33, 36, 39, 43, 48, 55, 65, 75, 84, 93, 102, 107, 110, 113, 117, 120, 123, 126, 167, 170, 173, 176, 179",
-  "sbb_distribute": "3, 3, 5, 6, 5, 2, 2, 5, 6, 5, 4, 5, 3, 3, 4, 4, 5, 4, 4, 5, 5, 5, 4, 3",
-  "sbb_totaldistr": "100",
-  "sbb_effectdelay": "1",
-  "sbbhits": "24",
-  "sbbaoe": "A",
-  "sbbdc": "24",
-  "sbbmultiplier": "560",
-  "sbb_hpscale": "",
   "ubb": {
     "damage frames": [
       {
@@ -1162,6 +1200,225 @@
     ],
     "name": "ディルヴィアン・ツイン"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 290
+    },
+    "idle": {
+      "total number of frames": 64
+    },
+    "move": {
+      "total number of frames": 8
+    }
+  },
+  "category": 21070,
+  "cost": "45",
+  "damage frames": {
+    "frame times": [
+      30,
+      35,
+      39,
+      43,
+      55,
+      65,
+      75,
+      84,
+      93,
+      102,
+      114,
+      116,
+      122,
+      167,
+      171,
+      177,
+      179
+    ],
+    "hit dmg% distribution": [
+      6,
+      5,
+      6,
+      5,
+      4,
+      5,
+      6,
+      5,
+      4,
+      11,
+      8,
+      5,
+      8,
+      5,
+      10,
+      4,
+      3
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 17
+  },
+  "drop check count": 2,
+  "element": "water",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 1706,
+  "imp": {
+    "max atk": "600",
+    "max def": "300",
+    "max hp": "1000",
+    "max rec": "400"
+  },
+  "kind": "normal",
+  "lord damage range": "2436~2721",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "犠の巨蟹宮ミセル",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "犠の巨蟹宮ミセル",
+  "maxlv": "120",
+  "no": "1706",
+  "unitDisplayHomePosition_1W9CxaFK": null,
+  "unitDisplayDetailPosition_6z54rgb3": null,
+  "unitDisplayConfirmImagePosition_MYK1fq6c": null,
+  "unitDisplayCutInImagePosition_7hLR6pDN": null,
+  "unitDisplaySummonPosition_KC3Jk8Br": null,
+  "unitDisplayHpPosition_3BpHN6VD": null,
+  "unitDisplayCursorPosition": null,
+  "sellPrice": "",
+  "sellCaution": false,
+  "effectFrames": "",
+  "evofrom": "",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "unreleased": "true",
+  "untranslated": "true",
+  "basexp": "21",
+  "doenter": "true",
+  "animation_attack": "290",
+  "animation_idle": "64",
+  "animation_move": "8",
+  "movespeed_attack": "0.0033",
+  "speedtype_attack": "3",
+  "movetype_attack": "1",
+  "movespeed_skill": "0.0033",
+  "speedtype_skill": "3",
+  "movetype_skill": "1",
+  "description": "",
+  "summon": "",
+  "fusion": "",
+  "evolution": "",
+  "hp_base": "5313",
+  "atk_base": "2113",
+  "def_base": "1976",
+  "rec_base": "2057",
+  "hp_lord": "6954",
+  "atk_lord": "2617",
+  "def_lord": "2470",
+  "rec_lord": "2559",
+  "hp_anima": "7846",
+  "rec_anima": "2321",
+  "atk_breaker": "2855",
+  "def_breaker": "2232",
+  "def_guardian": "2708",
+  "rec_guardian": "2440",
+  "def_oracle": "2351",
+  "rec_oracle": "2916",
+  "hp_bonus": "1000",
+  "atk_bonus": "600",
+  "def_bonus": "300",
+  "rec_bonus": "400",
+  "lordonly": "",
+  "normal_frames": "30, 35, 39, 43, 55, 65, 75, 84, 93, 102, 114, 116, 122, 167, 171, 177, 179",
+  "normal_distribute": "6, 5, 6, 5, 4, 5, 6, 5, 4, 11, 8, 5, 8, 5, 10, 4, 3",
+  "normal_totaldistr": "100",
+  "combo_hits": "17",
+  "normaldc": "34",
+  "ls": "五魂の流れ",
+  "lsdescription": "パーティのユニットが５属性以上で全能力を３５％アップ＆ＨＰが満タン時、攻撃力を大幅にアップ＆ＢＢ発動に必要なＢＢゲージ量を軽減",
+  "lsnote": "35% boost to all parameters when 5 or more elements are present, 100% boost to Atk when HP is full & 20% BC cost reduction",
+  "es": "果てない海を見つめて",
+  "esdescription": "「DUELのカケラ」を装備時、ＢＢ・ＳＢＢ・ＵＢＢに「味方全体に３ターン、攻撃に闇属性を付与・クリティカル率を超絶アップ」を追加＆クリティカル時、ＢＢゲージをかなり増加",
+  "esitem": "Duel Fragment",
+  "esnote": "Adds Dark element to attacks & 60% boost to critical hit rate for 3 turns effect to BB/SBB/UBB when Duel Fragment is equipped & critical damage fills 4 BC",
+  "bbdescription": "敵全体に炎・水属性１８連ダメージ＆味方全体に３ターン、攻撃力をかなりアップ",
+  "bbnote": "{{UnitBuffList",
+  "buff_1_proc": "29",
+  "buff_1_potency": "1500% damage modifier with Fire and Water elements",
+  "buff_1_duration": "—",
+  "buff_1_target": "All enemies",
+  "buff_2_proc": "5_atk",
+  "buff_2_potency": "250% boost to Atk",
+  "buff_2_duration": "3 turns",
+  "buff_2_target": "All allies",
+  "bbtype": "Offense",
+  "bbgauge": "28",
+  "bb_frames": "30, 35, 39, 43, 48, 55, 65, 75, 84, 93, 102, 114, 117, 122, 167, 171, 177, 180",
+  "bb_distribute": "6, 5, 6, 5, 2, 2, 5, 6, 5, 4, 11, 8, 5, 8, 5, 10, 4, 3",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "bbhits": "18",
+  "bbaoe": "A",
+  "bbdc": "18",
+  "bbmultiplier": "350",
+  "bb_hpscale": "",
+  "sbbdescription": "敵全体に強力な炎・水属性２４連ダメージ＆味方全体に３ターン、攻撃力をかなりアップ・攻撃ＢＢの威力をかなりアップ・攻撃に炎・水属性を付与",
+  "sbbnote": "{{UnitBuffList",
+  "buff_3_proc": "45",
+  "buff_3_potency": "450% boost to BB Atk",
+  "buff_3_duration": "3 turns",
+  "buff_3_target": "All allies",
+  "buff_4_proc": "54",
+  "buff_4_potency": "300% boost to critical damage",
+  "buff_4_duration": "3 turns",
+  "buff_4_target": "All allies",
+  "sbbtype": "Offense",
+  "sbbgauge": "27",
+  "sbb_frames": "30, 33, 36, 39, 43, 48, 55, 65, 75, 84, 93, 102, 107, 110, 113, 117, 120, 123, 126, 167, 170, 173, 176, 179",
+  "sbb_distribute": "3, 3, 5, 6, 5, 2, 2, 5, 6, 5, 4, 5, 3, 3, 4, 4, 5, 4, 4, 5, 5, 5, 4, 3",
+  "sbb_totaldistr": "100",
+  "sbb_effectdelay": "1",
+  "sbbhits": "24",
+  "sbbaoe": "A",
+  "sbbdc": "24",
+  "sbbmultiplier": "560",
+  "sbb_hpscale": "",
   "ubbdescription": "敵全体に超強力な炎・水属性３０連ダメージ＆味方全体に３ターン、攻撃力を超絶アップ・攻撃ＢＢの威力を大幅にアップ・クリティカルダメージを超絶アップ",
   "ubbnote": "{{UnitBuffList",
   "ubbtype": "Offense",
@@ -1179,153 +1436,5 @@
   "notes": "",
   "incorrectinfo": "",
   "addcat": "",
-  "addcatname": "",
-  "stats": {
-    "_base": {
-      "atk": 2113,
-      "def": 1976,
-      "hp": 5313,
-      "rec": 2057
-    },
-    "_lord": {
-      "atk": 2617,
-      "def": 2470,
-      "hp": 6954,
-      "rec": 2559
-    },
-    "anima": {
-      "atk": 2617,
-      "def": 2470,
-      "hp max": 8144,
-      "hp min": 7549,
-      "rec max": 2440,
-      "rec min": 2202
-    },
-    "breaker": {
-      "atk max": 2974,
-      "atk min": 2736,
-      "def max": 2351,
-      "def min": 2113,
-      "hp": 6954,
-      "rec": 2559
-    },
-    "guardian": {
-      "atk": 2617,
-      "def max": 2827,
-      "def min": 2589,
-      "hp": 6954,
-      "rec max": 2559,
-      "rec min": 2321
-    },
-    "oracle": {
-      "atk": 2617,
-      "def max": 2470,
-      "def min": 2232,
-      "hp": 6954,
-      "rec max": 3035,
-      "rec min": 2797
-    }
-  },
-  "leader_skill": {
-    "desc": "パーティのユニットが５属性以上で全能力を３５％アップ＆ＨＰが満タン時、攻撃力を大幅にアップ＆ＢＢ発動に必要なＢＢゲージ量を軽減",
-    "effects": [
-      {
-        "atk% buff": 35,
-        "def% buff": 35,
-        "hp% buff": 35,
-        "passive id": "41",
-        "rec% buff": 35,
-        "unique elements required": 5
-      },
-      {
-        "atk% buff": 100,
-        "hp above % buff requirement": 100,
-        "passive id": "11"
-      },
-      {
-        "passive id": "48",
-        "reduced bb bc cost%": 20
-      }
-    ],
-    "id": "2230",
-    "name": "五魂の流れ"
-  },
-  "extra_skill": {
-    "desc": "「DUELのカケラ」を装備時、ＢＢ・ＳＢＢ・ＵＢＢに「味方全体に３ターン、攻撃に闇属性を付与・クリティカル率を超絶アップ」を追加＆クリティカル時、ＢＢゲージをかなり増加",
-    "effects": [
-      {
-        "conditions": [
-          {
-            "item required": [
-              "47201"
-            ]
-          }
-        ],
-        "passive id": "66",
-        "passive target": "self",
-        "trigger on bb": true,
-        "trigger on sbb": true,
-        "trigger on ubb": true,
-        "triggered effect": [
-          {
-            "effect delay time(ms)/frame": "0.0/0",
-            "elements added": [
-              "dark"
-            ],
-            "elements added turns": 3,
-            "proc id": "30",
-            "target area": "aoe",
-            "target type": "party"
-          }
-        ]
-      },
-      {
-        "conditions": [
-          {
-            "item required": [
-              "47201"
-            ]
-          }
-        ],
-        "passive id": "66",
-        "passive target": "self",
-        "trigger on bb": true,
-        "trigger on sbb": true,
-        "trigger on ubb": true,
-        "triggered effect": [
-          {
-            "buff turns": 3,
-            "crit% buff (7)": 60,
-            "effect delay time(ms)/frame": "0.0/0",
-            "element buffed": "all",
-            "proc id": "5",
-            "target area": "aoe",
-            "target type": "party"
-          }
-        ]
-      },
-      {
-        "bc fill on crit max": 4,
-        "bc fill on crit min": 4,
-        "bc fill on crit%": 100.0,
-        "conditions": [],
-        "passive id": "65",
-        "passive target": "self"
-      }
-    ],
-    "id": "42400",
-    "name": "果てない海を見つめて",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": null,
-  "unitDisplayDetailPosition_6z54rgb3": null,
-  "unitDisplayConfirmImagePosition_MYK1fq6c": null,
-  "unitDisplayCutInImagePosition_7hLR6pDN": null,
-  "unitDisplaySummonPosition_KC3Jk8Br": null,
-  "unitDisplayHpPosition_3BpHN6VD": null,
-  "unitDisplayCursorPosition": null,
-  "sellPrice": "",
-  "sellCaution": false,
-  "effectFrames": ""
+  "addcatname": ""
 }

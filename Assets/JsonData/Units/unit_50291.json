@@ -1,58 +1,64 @@
 {
   "id": "50291",
-  "unitName": "GS-220",
-  "no": "637",
-  "element": "Light",
-  "rarity": "★★",
-  "cost": "4",
-  "maxlv": "30",
-  "basexp": "10",
-  "gender": "N",
-  "ai": "1",
-  "animation_attack": "225",
-  "animation_idle": "64",
-  "animation_move": "11",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "4",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "3",
-  "normal_frames": "70, 76, 82, 88",
-  "normal_distribute": "25, 25, 25, 25",
-  "normal_totaldistr": "100",
-  "description": "A guardian weapon that can move autonomously which can be found in ancient ruins. It is believed that perhaps it came from another world, but there are a considerable number of these still active all over Grand Gaia. Now they inhabit populated areas, making it seem like they were meant to protect the humans around them. However, it seems like their contents have been scrambled somehow and thus have been reduced to nothing but weapons that attack any type of moving object. One should be careful when approaching their mysterious and round bodies.",
-  "summon": "Beep! Beep!<br>Boop! Boop!",
-  "fusion": "Beep!<br>Beep! Beep!<br>Beeeeeeeep!",
-  "evolution": "",
-  "hp_base": "1546",
-  "atk_base": "432",
-  "def_base": "431",
-  "rec_base": "231",
-  "hp_lord": "2642",
-  "atk_lord": "758",
-  "def_lord": "751",
-  "rec_lord": "571",
-  "hp_anima": "2860",
-  "rec_anima": "513",
-  "atk_breaker": "816",
-  "def_breaker": "693",
-  "atk_guardian": "700",
-  "def_guardian": "809",
-  "rec_guardian": "542",
-  "def_oracle": "722",
-  "hp_oracle": "2555",
-  "rec_oracle": "658",
-  "hp_bonus": "250",
-  "atk_bonus": "100",
-  "def_bonus": "100",
-  "rec_bonus": "100",
-  "lordonly": "",
-  "combo_hits": "4",
-  "normaldc": "8",
-  "ls": "Absolute Power",
-  "lsdescription": "25% boost to Atk power of genderless Units",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 432,
+      "def": 431,
+      "hp": 1546,
+      "rec": 231
+    },
+    "_lord": {
+      "atk": 758,
+      "def": 751,
+      "hp": 2642,
+      "rec": 571
+    },
+    "anima": {
+      "atk": 758,
+      "def": 751,
+      "hp max": 2932,
+      "hp min": 2787,
+      "rec max": 542,
+      "rec min": 484
+    },
+    "breaker": {
+      "atk max": 845,
+      "atk min": 787,
+      "def max": 722,
+      "def min": 664,
+      "hp": 2642,
+      "rec": 571
+    },
+    "guardian": {
+      "atk": 758,
+      "def max": 838,
+      "def min": 780,
+      "hp": 2642,
+      "rec max": 571,
+      "rec min": 513
+    },
+    "oracle": {
+      "atk": 758,
+      "def max": 751,
+      "def min": 693,
+      "hp": 2642,
+      "rec max": 687,
+      "rec min": 629
+    }
+  },
+  "leader_skill": {
+    "desc": "25% boost to Atk power of genderless Units",
+    "effects": [
+      {
+        "atk% buff": 25,
+        "gender required": "genderless",
+        "passive id": "42"
+      }
+    ],
+    "id": "4700",
+    "name": "Absolute Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -205,93 +211,89 @@
     ],
     "name": "Defense Level 20"
   },
-  "bbdescription": "Slightly reduces damage taken for 1 turn",
-  "bbnote": "15% reduction",
-  "bbtype": "Support",
-  "bbhits": "0",
-  "bbaoe": "0",
-  "bbgauge": "22",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "50292",
-  "evomats1": "50121",
-  "evomats2": "50120",
-  "evomats3": "60142",
-  "evomats4": "60143",
-  "evomats5": "",
-  "evozelcost": "50000",
-  "stats": {
-    "_base": {
-      "atk": 432,
-      "def": 431,
-      "hp": 1546,
-      "rec": 231
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "party"
     },
-    "_lord": {
-      "atk": 758,
-      "def": 751,
-      "hp": 2642,
-      "rec": 571
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 758,
-      "def": 751,
-      "hp max": 2932,
-      "hp min": 2787,
-      "rec max": 542,
-      "rec min": 484
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 225
     },
-    "breaker": {
-      "atk max": 845,
-      "atk min": 787,
-      "def max": 722,
-      "def min": 664,
-      "hp": 2642,
-      "rec": 571
+    "idle": {
+      "total number of frames": 64
     },
-    "guardian": {
-      "atk": 758,
-      "def max": 838,
-      "def min": 780,
-      "hp": 2642,
-      "rec max": 571,
-      "rec min": 513
-    },
-    "oracle": {
-      "atk": 758,
-      "def max": 751,
-      "def min": 693,
-      "hp": 2642,
-      "rec max": 687,
-      "rec min": 629
+    "move": {
+      "total number of frames": 11
     }
   },
-  "leader_skill": {
-    "desc": "25% boost to Atk power of genderless Units",
-    "effects": [
-      {
-        "atk% buff": 25,
-        "gender required": "genderless",
-        "passive id": "42"
-      }
+  "category": 50290,
+  "cost": "4",
+  "damage frames": {
+    "frame times": [
+      70,
+      76,
+      82,
+      88
     ],
-    "id": "4700",
-    "name": "Absolute Power"
+    "hit dmg% distribution": [
+      25,
+      25,
+      25,
+      25
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 4
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "light",
+  "exp_pattern": 10,
+  "gender": "other",
+  "getting type": "not eligible for achievement",
+  "guide_id": 637,
+  "imp": {
+    "max atk": "100",
+    "max def": "100",
+    "max hp": "250",
+    "max rec": "100"
+  },
+  "kind": "normal",
+  "lord damage range": "705~788",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    }
+  },
+  "name": "GS-220",
+  "rarity": "2",
+  "sell caution": false,
+  "unitName": "GS-220",
+  "maxlv": "30",
+  "no": "637",
   "unitDisplayHomePosition_1W9CxaFK": "127,-67,230,628",
   "unitDisplayDetailPosition_6z54rgb3": "189,228,490,519",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "157,355,319,277,0",
@@ -301,5 +303,99 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "300",
   "sellCaution": false,
-  "effectFrames": "82:500025:1"
+  "effectFrames": "82:500025:1",
+  "evofrom": "",
+  "evointo": "50292",
+  "evozelcost": "50000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50121",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50120",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60142",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 1
+    }
+  ],
+  "basexp": "10",
+  "animation_attack": "225",
+  "animation_idle": "64",
+  "animation_move": "11",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "4",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "3",
+  "normal_frames": "70, 76, 82, 88",
+  "normal_distribute": "25, 25, 25, 25",
+  "normal_totaldistr": "100",
+  "description": "A guardian weapon that can move autonomously which can be found in ancient ruins. It is believed that perhaps it came from another world, but there are a considerable number of these still active all over Grand Gaia. Now they inhabit populated areas, making it seem like they were meant to protect the humans around them. However, it seems like their contents have been scrambled somehow and thus have been reduced to nothing but weapons that attack any type of moving object. One should be careful when approaching their mysterious and round bodies.",
+  "summon": "Beep! Beep!<br>Boop! Boop!",
+  "fusion": "Beep!<br>Beep! Beep!<br>Beeeeeeeep!",
+  "evolution": "",
+  "hp_base": "1546",
+  "atk_base": "432",
+  "def_base": "431",
+  "rec_base": "231",
+  "hp_lord": "2642",
+  "atk_lord": "758",
+  "def_lord": "751",
+  "rec_lord": "571",
+  "hp_anima": "2860",
+  "rec_anima": "513",
+  "atk_breaker": "816",
+  "def_breaker": "693",
+  "atk_guardian": "700",
+  "def_guardian": "809",
+  "rec_guardian": "542",
+  "def_oracle": "722",
+  "hp_oracle": "2555",
+  "rec_oracle": "658",
+  "hp_bonus": "250",
+  "atk_bonus": "100",
+  "def_bonus": "100",
+  "rec_bonus": "100",
+  "lordonly": "",
+  "combo_hits": "4",
+  "normaldc": "8",
+  "ls": "Absolute Power",
+  "lsdescription": "25% boost to Atk power of genderless Units",
+  "lstype": "Attack",
+  "bbdescription": "Slightly reduces damage taken for 1 turn",
+  "bbnote": "15% reduction",
+  "bbtype": "Support",
+  "bbhits": "0",
+  "bbaoe": "0",
+  "bbgauge": "22",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50121",
+  "evomats2": "50120",
+  "evomats3": "60142",
+  "evomats4": "60143",
+  "evomats5": ""
 }

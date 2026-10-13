@@ -1,59 +1,63 @@
 {
   "id": "20153",
-  "unitName": "Royal Elimo",
-  "no": "225",
-  "element": "Water",
-  "rarity": "★★★★",
-  "cost": "8",
-  "maxlv": "60",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "5",
-  "animation_attack": "185",
-  "animation_idle": "48",
-  "animation_move": "48",
-  "movespeed_attack": "0",
-  "movespeed_skill": "0",
-  "speedtype_attack": "5",
-  "speedtype_skill": "5",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "140, 144, 148, 152",
-  "normal_distribute": "25, 25, 25, 25",
-  "normal_totaldistr": "100",
-  "description": "A daughter from an aristocratic family hailing from the Sama Kingdom. Elimo traveled to the stone monuments, where she began to decipher the mysterious tome’s secrets. In time, she learned that the book contained information on a long-lost, esoteric form of magic. Harnessing the book’s techniques, Elimo’s dramatically improved magic abilities earned her the nickname “the Blue Sorceress”. Nevertheless, she continued on her journey, eager to discover the book’s remaining secrets.",
-  "summon": "You’ve summoned me, huh?<br>I’m not too hot at hand-to-hand combat,<br>but you should see me with a spell!",
-  "fusion": "Those powers of yours...<br>They look like could be handy<br>in my research!",
-  "evolution": "Is this a...secret magic technique?!<br>If I could learn to channel these powers, then...",
-  "hp_base": "2520",
-  "atk_base": "538",
-  "def_base": "812",
-  "rec_base": "1147",
-  "hp_lord": "3900",
-  "atk_lord": "858",
-  "def_lord": "1176",
-  "rec_lord": "1596",
-  "hp_anima": "4343",
-  "rec_anima": "1478",
-  "atk_breaker": "976",
-  "def_breaker": "1058",
-  "atk_guardian": "740",
-  "def_guardian": "1294",
-  "rec_guardian": "1547",
-  "def_oracle": "1117",
-  "hp_oracle": "3723",
-  "rec_oracle": "1773",
-  "hp_bonus": "400",
-  "atk_bonus": "160",
-  "def_bonus": "160",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "4",
-  "normaldc": "12",
-  "ls": "Loving Spirit",
-  "lsdescription": "Boost in effectiveness of Heart Crystals",
-  "lsnote": "25% boost",
-  "lstype": "Recovery",
+  "stats": {
+    "_base": {
+      "atk": 538,
+      "def": 812,
+      "hp": 2520,
+      "rec": 1147
+    },
+    "_lord": {
+      "atk": 858,
+      "def": 1176,
+      "hp": 3900,
+      "rec": 1596
+    },
+    "anima": {
+      "atk": 858,
+      "def": 1176,
+      "hp max": 4490,
+      "hp min": 4195,
+      "rec max": 1537,
+      "rec min": 1419
+    },
+    "breaker": {
+      "atk max": 1035,
+      "atk min": 917,
+      "def max": 1117,
+      "def min": 999,
+      "hp": 3900,
+      "rec": 1596
+    },
+    "guardian": {
+      "atk": 858,
+      "def max": 1353,
+      "def min": 1235,
+      "hp": 3900,
+      "rec max": 1596,
+      "rec min": 1478
+    },
+    "oracle": {
+      "atk": 858,
+      "def max": 1176,
+      "def min": 1058,
+      "hp": 3900,
+      "rec max": 1832,
+      "rec min": 1714
+    }
+  },
+  "leader_skill": {
+    "desc": "Boost in effectiveness of Heart Crystals",
+    "effects": [
+      {
+        "hc effectiveness%": 25,
+        "passive id": "10"
+      }
+    ],
+    "id": "1100",
+    "name": "Loving Spirit"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -318,93 +322,89 @@
     ],
     "name": "Aether Shield"
   },
-  "bbdescription": "Greatly Recovers HP for All allies and Boosts DEF for 3 Turns",
-  "bbnote": "Heals (1260~1660 + 27% of healer Rec) HP, 30% boost to Def",
-  "bbtype": "Heal/Support",
-  "bbhits": "",
-  "bbaoe": "0",
-  "bbgauge": "20",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "20152",
-  "evointo": "20154",
-  "evomats1": "20133",
-  "evomats2": "20132",
-  "evomats3": "20131",
-  "evomats4": "60143",
-  "evomats5": "60142",
-  "evoitem": "",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 538,
-      "def": 812,
-      "hp": 2520,
-      "rec": 1147
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 80.0,
+      "target conditions": "hp_50pr_under",
+      "target type": "party"
     },
-    "_lord": {
-      "atk": 858,
-      "def": 1176,
-      "hp": 3900,
-      "rec": 1596
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "hp_min",
+      "target type": "party"
     },
-    "anima": {
-      "atk": 858,
-      "def": 1176,
-      "hp max": 4490,
-      "hp min": 4195,
-      "rec max": 1537,
-      "rec min": 1419
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 185
     },
-    "breaker": {
-      "atk max": 1035,
-      "atk min": 917,
-      "def max": 1117,
-      "def min": 999,
-      "hp": 3900,
-      "rec": 1596
+    "idle": {
+      "total number of frames": 48
     },
-    "guardian": {
-      "atk": 858,
-      "def max": 1353,
-      "def min": 1235,
-      "hp": 3900,
-      "rec max": 1596,
-      "rec min": 1478
-    },
-    "oracle": {
-      "atk": 858,
-      "def max": 1176,
-      "def min": 1058,
-      "hp": 3900,
-      "rec max": 1832,
-      "rec min": 1714
+    "move": {
+      "total number of frames": 48
     }
   },
-  "leader_skill": {
-    "desc": "Boost in effectiveness of Heart Crystals",
-    "effects": [
-      {
-        "hc effectiveness%": 25,
-        "passive id": "10"
-      }
+  "category": 20150,
+  "cost": "8",
+  "damage frames": {
+    "frame times": [
+      140,
+      144,
+      148,
+      152
     ],
-    "id": "1100",
-    "name": "Loving Spirit"
+    "hit dmg% distribution": [
+      25,
+      25,
+      25,
+      25
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 4
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "water",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 225,
+  "imp": {
+    "max atk": "160",
+    "max def": "160",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "798~892",
+  "movement": {
+    "attack": {
+      "move speed": 0,
+      "move speed type": "5",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 0,
+      "move speed type": "5",
+      "move type": "3"
+    }
+  },
+  "name": "Royal Elimo",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Royal Elimo",
+  "maxlv": "60",
+  "no": "225",
   "unitDisplayHomePosition_1W9CxaFK": "276,160,147,403",
   "unitDisplayDetailPosition_6z54rgb3": "100,110,721,646",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "215,387,216,240,0",
@@ -414,5 +414,106 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "115:190:1,140:180:1"
+  "effectFrames": "115:190:1,140:180:1",
+  "evofrom": "20152",
+  "evointo": "20154",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "20133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20131",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60142",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "185",
+  "animation_idle": "48",
+  "animation_move": "48",
+  "movespeed_attack": "0",
+  "movespeed_skill": "0",
+  "speedtype_attack": "5",
+  "speedtype_skill": "5",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "140, 144, 148, 152",
+  "normal_distribute": "25, 25, 25, 25",
+  "normal_totaldistr": "100",
+  "description": "A daughter from an aristocratic family hailing from the Sama Kingdom. Elimo traveled to the stone monuments, where she began to decipher the mysterious tome’s secrets. In time, she learned that the book contained information on a long-lost, esoteric form of magic. Harnessing the book’s techniques, Elimo’s dramatically improved magic abilities earned her the nickname “the Blue Sorceress”. Nevertheless, she continued on her journey, eager to discover the book’s remaining secrets.",
+  "summon": "You’ve summoned me, huh?<br>I’m not too hot at hand-to-hand combat,<br>but you should see me with a spell!",
+  "fusion": "Those powers of yours...<br>They look like could be handy<br>in my research!",
+  "evolution": "Is this a...secret magic technique?!<br>If I could learn to channel these powers, then...",
+  "hp_base": "2520",
+  "atk_base": "538",
+  "def_base": "812",
+  "rec_base": "1147",
+  "hp_lord": "3900",
+  "atk_lord": "858",
+  "def_lord": "1176",
+  "rec_lord": "1596",
+  "hp_anima": "4343",
+  "rec_anima": "1478",
+  "atk_breaker": "976",
+  "def_breaker": "1058",
+  "atk_guardian": "740",
+  "def_guardian": "1294",
+  "rec_guardian": "1547",
+  "def_oracle": "1117",
+  "hp_oracle": "3723",
+  "rec_oracle": "1773",
+  "hp_bonus": "400",
+  "atk_bonus": "160",
+  "def_bonus": "160",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "4",
+  "normaldc": "12",
+  "ls": "Loving Spirit",
+  "lsdescription": "Boost in effectiveness of Heart Crystals",
+  "lsnote": "25% boost",
+  "lstype": "Recovery",
+  "bbdescription": "Greatly Recovers HP for All allies and Boosts DEF for 3 Turns",
+  "bbnote": "Heals (1260~1660 + 27% of healer Rec) HP, 30% boost to Def",
+  "bbtype": "Heal/Support",
+  "bbhits": "",
+  "bbaoe": "0",
+  "bbgauge": "20",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "20133",
+  "evomats2": "20132",
+  "evomats3": "20131",
+  "evomats4": "60143",
+  "evomats5": "60142",
+  "evoitem": ""
 }

@@ -1,68 +1,122 @@
 {
   "id": "830900",
-  "unitName": "Orebi Terra Geode",
-  "no": "8498",
-  "element": "Earth",
-  "rarity": "Omni 2",
-  "cost": "46",
-  "maxlv": "150",
-  "basexp": "21",
-  "gender": "N",
-  "ai": "3",
-  "animation_attack": "134",
-  "animation_idle": "79",
-  "animation_move": "79",
-  "movespeed_attack": "4",
-  "movespeed_skill": "4",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "72, 75, 78, 81, 84, 87, 90, 93, 96, 99, 102, 105",
-  "normal_distribute": "6, 6, 6, 6, 6, 10, 10, 10, 10, 12, 12, 6",
-  "normal_totaldistr": "100",
-  "bb_frames": "72, 75, 78, 81, 84, 87, 90, 93, 96, 99, 102, 105",
-  "bb_distribute": "6, 6, 6, 6, 6, 10, 10, 10, 10, 12, 12, 6",
-  "bb_totaldistr": "100",
-  "sbb_frames": "72, 75, 78, 81, 84, 87, 90, 93, 96, 99, 102, 105, 108, 111",
-  "sbb_distribute": "6, 6, 6, 6, 6, 8, 8, 8, 8, 8, 8, 8, 8, 6",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "66, 69, 72, 75, 78, 81, 84, 87, 90, 93, 96, 99, 102, 105, 108, 111, 114, 117",
-  "ubb_distribute": "4, 4, 4, 4, 4, 6, 6, 6, 6, 6, 6, 6, 8, 8, 6, 6, 6, 4",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "1",
-  "ubb_effectdelay": "1",
-  "description": "Earth Golem companion created by Giselle to provide battle support for Summoners. Incapable of speech or expressions.",
-  "summon": "…",
-  "fusion": "…",
-  "evolution": "…",
-  "hp_base": "5600",
-  "atk_base": "2100",
-  "def_base": "2100",
-  "rec_base": "2100",
-  "hp_lord": "8000",
-  "atk_lord": "3000",
-  "def_lord": "3000",
-  "rec_lord": "3000",
-  "hp_anima": "9117",
-  "rec_anima": "2702",
-  "atk_breaker": "3298",
-  "def_breaker": "2702",
-  "def_guardian": "3298",
-  "rec_guardian": "2851",
-  "def_oracle": "2851",
-  "rec_oracle": "3447",
-  "hp_bonus": "1500",
-  "atk_bonus": "600",
-  "def_bonus": "600",
-  "rec_bonus": "600",
-  "lordonly": "true",
-  "combo_hits": "12",
-  "normaldc": "48",
-  "ls": "Terra Aura",
-  "lsdescription": "100% boost to max HP, Spark damage boosts BB gauge, hugely boosts Earth elemental damage, 15% damage reduction from Thunder types & negates all status ailments",
-  "lsnote": "Fills 2-3 BC & 175% elemental damage",
+  "stats": {
+    "_base": {
+      "atk": 2100,
+      "def": 2100,
+      "hp": 5600,
+      "rec": 2100
+    },
+    "_lord": {
+      "atk": 3000,
+      "def": 3000,
+      "hp": 8000,
+      "rec": 3000
+    },
+    "anima": {
+      "atk": 3000,
+      "def": 3000,
+      "hp max": 9490,
+      "hp min": 8745,
+      "rec max": 2851,
+      "rec min": 2553
+    },
+    "breaker": {
+      "atk max": 3447,
+      "atk min": 3149,
+      "def max": 2851,
+      "def min": 2553,
+      "hp": 8000,
+      "rec": 3000
+    },
+    "guardian": {
+      "atk": 3000,
+      "def max": 3447,
+      "def min": 3149,
+      "hp": 8000,
+      "rec max": 3000,
+      "rec min": 2702
+    },
+    "oracle": {
+      "atk": 3000,
+      "def max": 3000,
+      "def min": 2702,
+      "hp": 8000,
+      "rec max": 3596,
+      "rec min": 3298
+    }
+  },
+  "leader_skill": {
+    "desc": "100% boost to max HP, Spark damage boosts BB gauge, hugely boosts Earth elemental damage, 15% damage reduction from Thunder types & negates all status ailments",
+    "effects": [
+      {
+        "hp% buff": 100,
+        "passive id": "1"
+      },
+      {
+        "curse resist%": 100,
+        "injury resist%": 100,
+        "paralysis resist%": 100,
+        "passive id": "4",
+        "poison resist%": 100,
+        "sick resist%": 100,
+        "weaken resist%": 100
+      },
+      {
+        "bc fill on spark high": 3,
+        "bc fill on spark low": 2,
+        "bc fill on spark%": 100,
+        "passive id": "47"
+      },
+      {
+        "earth units do extra elemental weakness dmg": true,
+        "elemental weakness multiplier%": 175.0,
+        "passive id": "50"
+      },
+      {
+        "dmg% mitigation for elemental attacks": 15.0,
+        "mitigate thunder attacks": true,
+        "passive id": "62"
+      }
+    ],
+    "id": "830900",
+    "name": "Terra Aura"
+  },
+  "extra_skill": {
+    "desc": "10% boost to all parameters of Earth types for all allies, damage taken boosts BB gauge & 30% additional damage reduction",
+    "effects": [
+      {
+        "atk% buff": 10,
+        "conditions": [],
+        "def% buff": 10,
+        "elements buffed": [
+          "earth"
+        ],
+        "hp% buff": 10,
+        "passive id": "2",
+        "passive target": "party",
+        "rec% buff": 10
+      },
+      {
+        "bc fill when attacked high": 3,
+        "bc fill when attacked low": 2,
+        "bc fill when attacked%": 100,
+        "conditions": [],
+        "passive id": "25",
+        "passive target": "self"
+      },
+      {
+        "conditions": [],
+        "passive target": "self",
+        "unknown passive id": "127",
+        "unknown passive params": "100,30"
+      }
+    ],
+    "id": "830900",
+    "name": "Terra Support",
+    "rarity": "7",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -595,14 +649,6 @@
     ],
     "name": "Terra Burst I"
   },
-  "bbdescription": "12 combo powerful Earth attack on all foes, 50% damage reduction for 1 turn, greatly restores HP, slightly boosts OD gauge & greatly boosts max HP",
-  "bbnote": "Recovers 3500-4000 HP, 8% OD fill & 20% HP",
-  "bbtype": "Heal/Offense",
-  "bbhits": "12",
-  "bbaoe": "A",
-  "bbgauge": "25",
-  "bbdc": "12",
-  "bbmultiplier": "420",
   "sbb": {
     "damage frames": [
       {
@@ -1219,15 +1265,6 @@
     ],
     "name": "Terra Burst II"
   },
-  "sbbdescription": "14 combo massive Earth attack on all foes (damage relative to remaining HP), 50% damage reduction for 1 turn, greatly restores HP, hugely boosts Earth elemental damage for 3 turns & hugely boosts Atk, Def, Rec for 3 turns",
-  "sbbnote": "300% + 700% * current HP / max HP, recovers 4000-4500 HP, 150% elemental damage & 170% parameter boost",
-  "sbbtype": "Heal/Offense",
-  "sbbhits": "14",
-  "sbbaoe": "A",
-  "sbbgauge": "30",
-  "sbbdc": "14",
-  "sbbmultiplier": "300",
-  "sbb_hpscale": "true",
   "ubb": {
     "damage frames": [
       {
@@ -1384,6 +1421,201 @@
     ],
     "name": "Terra Burst III"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 134
+    },
+    "idle": {
+      "total number of frames": 79
+    },
+    "move": {
+      "total number of frames": 79
+    }
+  },
+  "category": 830900,
+  "cost": "46",
+  "damage frames": {
+    "frame times": [
+      72,
+      75,
+      78,
+      81,
+      84,
+      87,
+      90,
+      93,
+      96,
+      99,
+      102,
+      105
+    ],
+    "hit dmg% distribution": [
+      6,
+      6,
+      6,
+      6,
+      6,
+      10,
+      10,
+      10,
+      10,
+      12,
+      12,
+      6
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 12
+  },
+  "drop check count": 4,
+  "element": "earth",
+  "exp_pattern": 20,
+  "gender": "other",
+  "getting type": "not eligible for achievement",
+  "guide_id": 8498,
+  "imp": {
+    "max atk": "600",
+    "max def": "600",
+    "max hp": "1500",
+    "max rec": "600"
+  },
+  "kind": "normal",
+  "lord damage range": "2793~3120",
+  "movement": {
+    "attack": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    }
+  },
+  "name": "Orebi Terra Geode",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "8",
+  "sell caution": true,
+  "unitName": "Orebi Terra Geode",
+  "maxlv": "150",
+  "no": "8498",
+  "unitDisplayHomePosition_1W9CxaFK": "98,26,174,475",
+  "unitDisplayDetailPosition_6z54rgb3": "165,113,770,714",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "157,310,322,297,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "244,-37,592,548",
+  "unitDisplaySummonPosition_KC3Jk8Br": "157,310,322,297,0",
+  "unitDisplayHpPosition_3BpHN6VD": "0,25",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "50000",
+  "sellCaution": true,
+  "effectFrames": "69:123:1,100:123:1,130:123:1",
+  "evofrom": "",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "21",
+  "animation_attack": "134",
+  "animation_idle": "79",
+  "animation_move": "79",
+  "movespeed_attack": "4",
+  "movespeed_skill": "4",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "72, 75, 78, 81, 84, 87, 90, 93, 96, 99, 102, 105",
+  "normal_distribute": "6, 6, 6, 6, 6, 10, 10, 10, 10, 12, 12, 6",
+  "normal_totaldistr": "100",
+  "bb_frames": "72, 75, 78, 81, 84, 87, 90, 93, 96, 99, 102, 105",
+  "bb_distribute": "6, 6, 6, 6, 6, 10, 10, 10, 10, 12, 12, 6",
+  "bb_totaldistr": "100",
+  "sbb_frames": "72, 75, 78, 81, 84, 87, 90, 93, 96, 99, 102, 105, 108, 111",
+  "sbb_distribute": "6, 6, 6, 6, 6, 8, 8, 8, 8, 8, 8, 8, 8, 6",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "66, 69, 72, 75, 78, 81, 84, 87, 90, 93, 96, 99, 102, 105, 108, 111, 114, 117",
+  "ubb_distribute": "4, 4, 4, 4, 4, 6, 6, 6, 6, 6, 6, 6, 8, 8, 6, 6, 6, 4",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "1",
+  "ubb_effectdelay": "1",
+  "description": "Earth Golem companion created by Giselle to provide battle support for Summoners. Incapable of speech or expressions.",
+  "summon": "…",
+  "fusion": "…",
+  "evolution": "…",
+  "hp_base": "5600",
+  "atk_base": "2100",
+  "def_base": "2100",
+  "rec_base": "2100",
+  "hp_lord": "8000",
+  "atk_lord": "3000",
+  "def_lord": "3000",
+  "rec_lord": "3000",
+  "hp_anima": "9117",
+  "rec_anima": "2702",
+  "atk_breaker": "3298",
+  "def_breaker": "2702",
+  "def_guardian": "3298",
+  "rec_guardian": "2851",
+  "def_oracle": "2851",
+  "rec_oracle": "3447",
+  "hp_bonus": "1500",
+  "atk_bonus": "600",
+  "def_bonus": "600",
+  "rec_bonus": "600",
+  "lordonly": "true",
+  "combo_hits": "12",
+  "normaldc": "48",
+  "ls": "Terra Aura",
+  "lsdescription": "100% boost to max HP, Spark damage boosts BB gauge, hugely boosts Earth elemental damage, 15% damage reduction from Thunder types & negates all status ailments",
+  "lsnote": "Fills 2-3 BC & 175% elemental damage",
+  "bbdescription": "12 combo powerful Earth attack on all foes, 50% damage reduction for 1 turn, greatly restores HP, slightly boosts OD gauge & greatly boosts max HP",
+  "bbnote": "Recovers 3500-4000 HP, 8% OD fill & 20% HP",
+  "bbtype": "Heal/Offense",
+  "bbhits": "12",
+  "bbaoe": "A",
+  "bbgauge": "25",
+  "bbdc": "12",
+  "bbmultiplier": "420",
+  "sbbdescription": "14 combo massive Earth attack on all foes (damage relative to remaining HP), 50% damage reduction for 1 turn, greatly restores HP, hugely boosts Earth elemental damage for 3 turns & hugely boosts Atk, Def, Rec for 3 turns",
+  "sbbnote": "300% + 700% * current HP / max HP, recovers 4000-4500 HP, 150% elemental damage & 170% parameter boost",
+  "sbbtype": "Heal/Offense",
+  "sbbhits": "14",
+  "sbbaoe": "A",
+  "sbbgauge": "30",
+  "sbbdc": "14",
+  "sbbmultiplier": "300",
+  "sbb_hpscale": "true",
   "ubbdescription": "18 combo massive Earth attack on all foes (uses all allies' BB gauge), 100% damage reduction from Thunder types for 2 turns, enormously boosts Atk, Def, Rec for 3 turns, enormously boosts BB gauge for 3 turns & fully restores HP for 3 turns",
   "ubbnote": "1500% + 500% per BB gauge, 350% parameter boost & fills 50 BC",
   "ubbtype": "Heal/Offense",
@@ -1396,8 +1628,6 @@
   "esitem": "",
   "esdescription": "10% boost to all parameters of Earth types for all allies, damage taken boosts BB gauge & 30% additional damage reduction",
   "esnote": "Fills 2-3 BC",
-  "evofrom": "",
-  "evointo": "",
   "evomats1": "",
   "evomats2": "",
   "evomats3": "",
@@ -1406,133 +1636,5 @@
   "evomats6": "",
   "evomats7": "",
   "evomats8": "",
-  "evoitem": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 2100,
-      "def": 2100,
-      "hp": 5600,
-      "rec": 2100
-    },
-    "_lord": {
-      "atk": 3000,
-      "def": 3000,
-      "hp": 8000,
-      "rec": 3000
-    },
-    "anima": {
-      "atk": 3000,
-      "def": 3000,
-      "hp max": 9490,
-      "hp min": 8745,
-      "rec max": 2851,
-      "rec min": 2553
-    },
-    "breaker": {
-      "atk max": 3447,
-      "atk min": 3149,
-      "def max": 2851,
-      "def min": 2553,
-      "hp": 8000,
-      "rec": 3000
-    },
-    "guardian": {
-      "atk": 3000,
-      "def max": 3447,
-      "def min": 3149,
-      "hp": 8000,
-      "rec max": 3000,
-      "rec min": 2702
-    },
-    "oracle": {
-      "atk": 3000,
-      "def max": 3000,
-      "def min": 2702,
-      "hp": 8000,
-      "rec max": 3596,
-      "rec min": 3298
-    }
-  },
-  "leader_skill": {
-    "desc": "100% boost to max HP, Spark damage boosts BB gauge, hugely boosts Earth elemental damage, 15% damage reduction from Thunder types & negates all status ailments",
-    "effects": [
-      {
-        "hp% buff": 100,
-        "passive id": "1"
-      },
-      {
-        "curse resist%": 100,
-        "injury resist%": 100,
-        "paralysis resist%": 100,
-        "passive id": "4",
-        "poison resist%": 100,
-        "sick resist%": 100,
-        "weaken resist%": 100
-      },
-      {
-        "bc fill on spark high": 3,
-        "bc fill on spark low": 2,
-        "bc fill on spark%": 100,
-        "passive id": "47"
-      },
-      {
-        "earth units do extra elemental weakness dmg": true,
-        "elemental weakness multiplier%": 175.0,
-        "passive id": "50"
-      },
-      {
-        "dmg% mitigation for elemental attacks": 15.0,
-        "mitigate thunder attacks": true,
-        "passive id": "62"
-      }
-    ],
-    "id": "830900",
-    "name": "Terra Aura"
-  },
-  "extra_skill": {
-    "desc": "10% boost to all parameters of Earth types for all allies, damage taken boosts BB gauge & 30% additional damage reduction",
-    "effects": [
-      {
-        "atk% buff": 10,
-        "conditions": [],
-        "def% buff": 10,
-        "elements buffed": [
-          "earth"
-        ],
-        "hp% buff": 10,
-        "passive id": "2",
-        "passive target": "party",
-        "rec% buff": 10
-      },
-      {
-        "bc fill when attacked high": 3,
-        "bc fill when attacked low": 2,
-        "bc fill when attacked%": 100,
-        "conditions": [],
-        "passive id": "25",
-        "passive target": "self"
-      },
-      {
-        "conditions": [],
-        "passive target": "self",
-        "unknown passive id": "127",
-        "unknown passive params": "100,30"
-      }
-    ],
-    "id": "830900",
-    "name": "Terra Support",
-    "rarity": "7",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "98,26,174,475",
-  "unitDisplayDetailPosition_6z54rgb3": "165,113,770,714",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "157,310,322,297,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "244,-37,592,548",
-  "unitDisplaySummonPosition_KC3Jk8Br": "157,310,322,297,0",
-  "unitDisplayHpPosition_3BpHN6VD": "0,25",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "50000",
-  "sellCaution": true,
-  "effectFrames": "69:123:1,100:123:1,130:123:1"
+  "evoitem": ""
 }

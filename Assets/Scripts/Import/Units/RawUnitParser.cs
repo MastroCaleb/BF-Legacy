@@ -142,7 +142,7 @@ public sealed class RawUnitParser
         unit.evoDesc     = data["evolution"]?.ToString();
         unit.summonCost  = ParseInt(data["cost"]);
         unit.element     = ParseElement(data["element"]?.ToString());
-        unit.rarity      = ParseRarity(data["rarity"]?.ToString());
+        unit.rarity      = ParseRarity(ParseInt(data["rarity"]));
         unit.bbType      = data["bbtype"]?.ToString();
 
         // ── Statistics ───────────────────────────────────────────
@@ -152,7 +152,7 @@ public sealed class RawUnitParser
         unit.atk       = ParseInt(data["atk_base"]);
         unit.def       = ParseInt(data["def_base"]);
         unit.rec       = ParseInt(data["rec_base"]);
-        unit.baseExp   = ParseInt(data["basexp"]);
+        unit.baseExp   = ParseInt(data["exp_pattern"]);
 
         // ── Movement ─────────────────────────────────────────────
         unit.moveSpeedAttack = ParseFloat(data["movespeed_attack"]);
@@ -168,11 +168,33 @@ public sealed class RawUnitParser
         unit.evoItem    = data["evoitem"]?.ToString();
         unit.evoZelCost = ParseInt(data["evozelcost"]);
         unit.evoMats    = new List<string>();
-        for (int m = 1; m <= 5; m++)
+
+        // evoMaterials: [{ type, id, count }]. type 1 = unit, type 2 = item.
+        // Units are expanded to one entry per copy (same shape as the old evomats1..N
+        // slots, just ids instead of wiki names). Items are skipped until supported.
+        if (data["evoMaterials"] is JArray mats)
         {
-            string mat = data[$"evomats{m}"]?.ToString();
-            if (!string.IsNullOrEmpty(mat))
-                unit.evoMats.Add(mat);
+            foreach (JToken t in mats)
+            {
+                string type  = t["type"]?.ToString();
+                string matId = t["id"]?.ToString();
+                int    count = Math.Max(1, ParseInt(t["count"]));
+                if (string.IsNullOrEmpty(matId) || matId == "0") continue;
+
+                if (type == "1")
+                {
+                    for (int c = 0; c < count; c++)
+                        unit.evoMats.Add(matId);
+                }
+                else if (type == "2")
+                {
+                    // Item materials not supported yet.
+                }
+                else
+                {
+                    Debug.LogWarning($"[RawUnitParser {unitId}] Unknown evo material type '{type}' (id {matId}).");
+                }
+            }
         }
 
         // ── Sell ─────────────────────────────────────────────────
@@ -187,6 +209,13 @@ public sealed class RawUnitParser
         {
             unit.statsBase = ParseUnitStats(stats["_base"] as JObject);
             unit.statsLord = ParseUnitStats(stats["_lord"] as JObject);
+
+            // Flat Lv1 stats (used by ModifyStats). They used to come from the wiki's *_base keys;
+            // info.json's stats._base is the same data.
+            if (unit.maxHealth == 0) unit.maxHealth = unit.statsBase.hp;
+            if (unit.atk == 0)       unit.atk       = unit.statsBase.atk;
+            if (unit.def == 0)       unit.def       = unit.statsBase.def;
+            if (unit.rec == 0)       unit.rec       = unit.statsBase.rec;
         }
 
         // ── Display Positions (UUID keys are the source of truth) ──
@@ -1019,17 +1048,17 @@ public sealed class RawUnitParser
         _         => ElementalType.None
     };
 
-    private static UnitRarity ParseRarity(string r) => r switch
+    private static UnitRarity ParseRarity(int r) => r switch
     {
-        "Omni"      => UnitRarity.OMNI,
-        "★★★★★★★" => UnitRarity.SEVEN,
-        "★★★★★★"  => UnitRarity.SIX,
-        "★★★★★"   => UnitRarity.FIVE,
-        "★★★★"    => UnitRarity.FOUR,
-        "★★★"     => UnitRarity.THREE,
-        "★★"      => UnitRarity.TWO,
-        "★"       => UnitRarity.ONE,
-        _           => UnitRarity.ONE
+        8       => UnitRarity.OMNI,
+        7       => UnitRarity.SEVEN,
+        6       => UnitRarity.SIX,
+        5       => UnitRarity.FIVE,
+        4       => UnitRarity.FOUR,
+        3       => UnitRarity.THREE,
+        2       => UnitRarity.TWO,
+        1       => UnitRarity.ONE,
+        _       => UnitRarity.ONE
     };
 
     private static string GetAnimationId(string unitId) => unitId switch

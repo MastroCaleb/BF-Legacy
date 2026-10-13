@@ -1,59 +1,91 @@
 {
   "id": "30116",
-  "unitName": "Gaia Tree Vertri",
-  "no": "976",
-  "element": "Earth",
-  "rarity": "★★★★★★★",
-  "cost": "40",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "N",
-  "ai": "5",
-  "animation_attack": "277",
-  "animation_idle": "76",
-  "animation_move": "76",
-  "movespeed_attack": "6",
-  "movespeed_skill": "6",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "110, 118, 126, 132, 140, 148, 156, 164",
-  "normal_distribute": "10, 11, 11, 12, 12, 14, 14, 16",
-  "normal_totaldistr": "100",
-  "description": "Legend tells of a secret dimension found in Grand Gaia. However, instead of being just a separate layer, this dimension holds an entire world within itself. Though it may sound like an impossibility, there remains one literary work which mentions said dimension. And according to it, there was once a tree-like being which borrowed humanity's power to grow stronger in order to return to its own world, completely unaware to the fact that it was already there.",
-  "summon": "What is a world? There is no point<br>to that question, for worlds will<br>keep multiplying regardless.",
-  "fusion": "Every time I grow, something<br>awakens within me... Before long,<br>I shall become one with the world.",
-  "evolution": "I came into being before<br>I ever willed it. Why do you<br>hold on to my existence?",
-  "hp_base": "5493",
-  "atk_base": "1238",
-  "def_base": "1620",
-  "rec_base": "1254",
-  "hp_lord": "7004",
-  "atk_lord": "1804",
-  "def_lord": "2500",
-  "rec_lord": "2055",
-  "hp_anima": "7896",
-  "rec_anima": "1817",
-  "atk_breaker": "2042",
-  "def_breaker": "2262",
-  "atk_guardian": "1586",
-  "def_guardian": "2738",
-  "rec_guardian": "1936",
-  "def_oracle": "2381",
-  "hp_oracle": "6647",
-  "rec_oracle": "2412",
-  "hp_bonus": "1000",
-  "atk_bonus": "300",
-  "def_bonus": "600",
-  "rec_bonus": "400",
-  "lordonly": "",
-  "combo_hits": "8",
-  "normaldc": "32",
-  "ls": "God Tree's Vitality",
-  "lsdescription": "Hugely boosts efficacy of HC & negates enemies' critical and element based damage",
-  "lsnote": "75% boost",
-  "lstype": "Defense/Recovery",
+  "stats": {
+    "_base": {
+      "atk": 1238,
+      "def": 1620,
+      "hp": 5493,
+      "rec": 1254
+    },
+    "_lord": {
+      "atk": 1804,
+      "def": 2500,
+      "hp": 7004,
+      "rec": 2055
+    },
+    "anima": {
+      "atk": 1804,
+      "def": 2500,
+      "hp max": 8194,
+      "hp min": 7599,
+      "rec max": 1936,
+      "rec min": 1698
+    },
+    "breaker": {
+      "atk max": 2161,
+      "atk min": 1923,
+      "def max": 2381,
+      "def min": 2143,
+      "hp": 7004,
+      "rec": 2055
+    },
+    "guardian": {
+      "atk": 1804,
+      "def max": 2857,
+      "def min": 2619,
+      "hp": 7004,
+      "rec max": 2055,
+      "rec min": 1817
+    },
+    "oracle": {
+      "atk": 1804,
+      "def max": 2500,
+      "def min": 2262,
+      "hp": 7004,
+      "rec max": 2531,
+      "rec min": 2293
+    }
+  },
+  "leader_skill": {
+    "desc": "Hugely boosts efficacy of HC & negates critical, elemental damage",
+    "effects": [
+      {
+        "hc effectiveness%": 75,
+        "passive id": "10"
+      },
+      {
+        "crit chance base resist%": 100,
+        "crit chance buffed resist%": 100,
+        "passive id": "53",
+        "strong base element damage resist%": 100,
+        "strong buffed element damage resist%": 100
+      }
+    ],
+    "id": "1103",
+    "name": "God Tree's Vitality"
+  },
+  "extra_skill": {
+    "desc": "Negates enemies' element based damage & probable damage reduction to 1",
+    "effects": [
+      {
+        "conditions": [],
+        "passive id": "43",
+        "passive target": "self",
+        "take 1 dmg%": 10
+      },
+      {
+        "conditions": [],
+        "passive id": "53",
+        "passive target": "self",
+        "strong base element damage resist%": 100,
+        "strong buffed element damage resist%": 100
+      }
+    ],
+    "id": "3600",
+    "name": "Existent World",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -540,12 +572,6 @@
     ],
     "name": "Aurea Purge"
   },
-  "bbdescription": "Greatly recovers HP & removes all status ailments and negates them for 3 turns",
-  "bbnote": "Heal 2400-2700 + 40% of own Rec",
-  "bbtype": "Heal/Support",
-  "bbhits": "0",
-  "bbaoe": "0",
-  "bbgauge": "20",
   "sbb": {
     "damage frames": [
       {
@@ -1064,12 +1090,6 @@
     ],
     "name": "Cosmic Volition"
   },
-  "sbbdescription": "Greatly recovers HP, removes all status ailments, boosts BB gauge & boosts BB gauge fill rate for 3 turns",
-  "sbbnote": "Heal 4000-4200 + 40% Rec, fills 8 BC & 30% boost",
-  "sbbtype": "Heal/Support",
-  "sbbhits": "0",
-  "sbbaoe": "0",
-  "sbbgauge": "10",
   "ubb": {
     "damage frames": [
       {
@@ -1157,6 +1177,173 @@
     ],
     "name": "Fated Purification"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 80.0,
+      "target conditions": "hp_50pr_under",
+      "target type": "party"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "hp_min",
+      "target type": "party"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 277
+    },
+    "idle": {
+      "total number of frames": 76
+    },
+    "move": {
+      "total number of frames": 76
+    }
+  },
+  "category": 30110,
+  "cost": "40",
+  "damage frames": {
+    "frame times": [
+      110,
+      118,
+      126,
+      132,
+      140,
+      148,
+      156,
+      164
+    ],
+    "hit dmg% distribution": [
+      10,
+      11,
+      11,
+      12,
+      12,
+      14,
+      14,
+      16
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 8
+  },
+  "drop check count": 4,
+  "element": "earth",
+  "exp_pattern": 20,
+  "gender": "other",
+  "getting type": "rare summon",
+  "guide_id": 976,
+  "imp": {
+    "max atk": "300",
+    "max def": "600",
+    "max hp": "1000",
+    "max rec": "400"
+  },
+  "kind": "normal",
+  "lord damage range": "1679~1876",
+  "movement": {
+    "attack": {
+      "move speed": 6,
+      "move speed type": "2",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 6,
+      "move speed type": "2",
+      "move type": "3"
+    }
+  },
+  "name": "Gaia Tree Vertri",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Gaia Tree Vertri",
+  "maxlv": "120",
+  "no": "976",
+  "unitDisplayHomePosition_1W9CxaFK": "473,175,174,475",
+  "unitDisplayDetailPosition_6z54rgb3": "-106,36,1000,921",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "40,92,553,510,1",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-40,-223,1000,921",
+  "unitDisplaySummonPosition_KC3Jk8Br": "40,92,553,510,1",
+  "unitDisplayHpPosition_3BpHN6VD": "0,50",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "15000",
+  "sellCaution": false,
+  "effectFrames": "110:250:1,120:300260:1,135:300260:1,150:300260:1,130:330390:1,145:330390:1,160:330390:1,111:500191:1",
+  "evofrom": "30115",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "21",
+  "animation_attack": "277",
+  "animation_idle": "76",
+  "animation_move": "76",
+  "movespeed_attack": "6",
+  "movespeed_skill": "6",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "110, 118, 126, 132, 140, 148, 156, 164",
+  "normal_distribute": "10, 11, 11, 12, 12, 14, 14, 16",
+  "normal_totaldistr": "100",
+  "description": "Legend tells of a secret dimension found in Grand Gaia. However, instead of being just a separate layer, this dimension holds an entire world within itself. Though it may sound like an impossibility, there remains one literary work which mentions said dimension. And according to it, there was once a tree-like being which borrowed humanity's power to grow stronger in order to return to its own world, completely unaware to the fact that it was already there.",
+  "summon": "What is a world? There is no point<br>to that question, for worlds will<br>keep multiplying regardless.",
+  "fusion": "Every time I grow, something<br>awakens within me... Before long,<br>I shall become one with the world.",
+  "evolution": "I came into being before<br>I ever willed it. Why do you<br>hold on to my existence?",
+  "hp_base": "5493",
+  "atk_base": "1238",
+  "def_base": "1620",
+  "rec_base": "1254",
+  "hp_lord": "7004",
+  "atk_lord": "1804",
+  "def_lord": "2500",
+  "rec_lord": "2055",
+  "hp_anima": "7896",
+  "rec_anima": "1817",
+  "atk_breaker": "2042",
+  "def_breaker": "2262",
+  "atk_guardian": "1586",
+  "def_guardian": "2738",
+  "rec_guardian": "1936",
+  "def_oracle": "2381",
+  "hp_oracle": "6647",
+  "rec_oracle": "2412",
+  "hp_bonus": "1000",
+  "atk_bonus": "300",
+  "def_bonus": "600",
+  "rec_bonus": "400",
+  "lordonly": "",
+  "combo_hits": "8",
+  "normaldc": "32",
+  "ls": "God Tree's Vitality",
+  "lsdescription": "Hugely boosts efficacy of HC & negates enemies' critical and element based damage",
+  "lsnote": "75% boost",
+  "lstype": "Defense/Recovery",
+  "bbdescription": "Greatly recovers HP & removes all status ailments and negates them for 3 turns",
+  "bbnote": "Heal 2400-2700 + 40% of own Rec",
+  "bbtype": "Heal/Support",
+  "bbhits": "0",
+  "bbaoe": "0",
+  "bbgauge": "20",
+  "sbbdescription": "Greatly recovers HP, removes all status ailments, boosts BB gauge & boosts BB gauge fill rate for 3 turns",
+  "sbbnote": "Heal 4000-4200 + 40% Rec, fills 8 BC & 30% boost",
+  "sbbtype": "Heal/Support",
+  "sbbhits": "0",
+  "sbbaoe": "0",
+  "sbbgauge": "10",
   "ubbdescription": "Removes all status ailments, completely recovers HP for 3 turns & probable resistance against 1 KO attack",
   "ubbnote": "50% chance",
   "ubbtype": "Heal/Support",
@@ -1167,109 +1354,10 @@
   "esitem": "",
   "esdescription": "Negates enemies' element based damage & probable damage reduction to 1",
   "esnote": "10% chance",
-  "evofrom": "30115",
-  "evointo": "",
   "evomats1": "",
   "evomats2": "",
   "evomats3": "",
   "evomats4": "",
   "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 1238,
-      "def": 1620,
-      "hp": 5493,
-      "rec": 1254
-    },
-    "_lord": {
-      "atk": 1804,
-      "def": 2500,
-      "hp": 7004,
-      "rec": 2055
-    },
-    "anima": {
-      "atk": 1804,
-      "def": 2500,
-      "hp max": 8194,
-      "hp min": 7599,
-      "rec max": 1936,
-      "rec min": 1698
-    },
-    "breaker": {
-      "atk max": 2161,
-      "atk min": 1923,
-      "def max": 2381,
-      "def min": 2143,
-      "hp": 7004,
-      "rec": 2055
-    },
-    "guardian": {
-      "atk": 1804,
-      "def max": 2857,
-      "def min": 2619,
-      "hp": 7004,
-      "rec max": 2055,
-      "rec min": 1817
-    },
-    "oracle": {
-      "atk": 1804,
-      "def max": 2500,
-      "def min": 2262,
-      "hp": 7004,
-      "rec max": 2531,
-      "rec min": 2293
-    }
-  },
-  "leader_skill": {
-    "desc": "Hugely boosts efficacy of HC & negates critical, elemental damage",
-    "effects": [
-      {
-        "hc effectiveness%": 75,
-        "passive id": "10"
-      },
-      {
-        "crit chance base resist%": 100,
-        "crit chance buffed resist%": 100,
-        "passive id": "53",
-        "strong base element damage resist%": 100,
-        "strong buffed element damage resist%": 100
-      }
-    ],
-    "id": "1103",
-    "name": "God Tree's Vitality"
-  },
-  "extra_skill": {
-    "desc": "Negates enemies' element based damage & probable damage reduction to 1",
-    "effects": [
-      {
-        "conditions": [],
-        "passive id": "43",
-        "passive target": "self",
-        "take 1 dmg%": 10
-      },
-      {
-        "conditions": [],
-        "passive id": "53",
-        "passive target": "self",
-        "strong base element damage resist%": 100,
-        "strong buffed element damage resist%": 100
-      }
-    ],
-    "id": "3600",
-    "name": "Existent World",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "473,175,174,475",
-  "unitDisplayDetailPosition_6z54rgb3": "-106,36,1000,921",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "40,92,553,510,1",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-40,-223,1000,921",
-  "unitDisplaySummonPosition_KC3Jk8Br": "40,92,553,510,1",
-  "unitDisplayHpPosition_3BpHN6VD": "0,50",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "15000",
-  "sellCaution": false,
-  "effectFrames": "110:250:1,120:300260:1,135:300260:1,150:300260:1,130:330390:1,145:330390:1,160:330390:1,111:500191:1"
+  "evoitem": ""
 }

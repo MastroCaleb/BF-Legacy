@@ -1,52 +1,63 @@
 {
   "id": "20144",
-  "unitName": "Mother Snow Stya",
-  "no": "436",
-  "element": "Water",
-  "rarity": "★★★★★",
-  "cost": "15",
-  "maxlv": "80",
-  "basexp": "15",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "140",
-  "animation_idle": "52",
-  "animation_move": "13",
-  "movespeed_attack": "0.0015",
-  "movespeed_skill": "0.0015",
-  "speedtype_attack": "5",
-  "speedtype_skill": "5",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "description": "A female pirate with a bad reputation in the Sama Kingdom. She continued her pirate activities even after the gods invaded until one day when the commander which she so despised, Mega, came to her requesting her assistance in battle. Right after she showered him with anger the gods began attacking her. Mega rushed to save her but was gravely injured in the process. Seeing this, Stya became angry like she never had before, vanquishing all enemies around her as she said, \"A debt must always be repaid.\"",
-  "summon": "Well done, Summoner.<br>This time I'm gonna get that <br>moron for sure!",
-  "fusion": "Not bad, Summoner.<br>Your abilities aren't too bad.<br>Hey, that's a compliment!",
-  "evolution": "What's with that dumb look?<br>I said I'll help you, didn't I?<br>Rejoice, feeble Summoner!",
-  "hp_base": "2383",
-  "atk_base": "1026",
-  "def_base": "680",
-  "rec_base": "1240",
-  "hp_lord": "4253",
-  "atk_lord": "1449",
-  "def_lord": "1175",
-  "rec_lord": "1700",
-  "hp_anima": "4845",
-  "rec_anima": "1542",
-  "atk_breaker": "1607",
-  "def_breaker": "1017",
-  "atk_guardian": "1291",
-  "def_guardian": "1333",
-  "hp_oracle": "3660",
-  "rec_oracle": "1858",
-  "hp_bonus": "750",
-  "atk_bonus": "140",
-  "def_bonus": "140",
-  "rec_bonus": "140",
-  "lordonly": "",
-  "combo_hits": "11",
-  "ls": "Fighting Strobe",
-  "lsdescription": "Large boost in Battle Crystals produced during Spark",
-  "lstype": "Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 1026,
+      "def": 680,
+      "hp": 2383,
+      "rec": 1240
+    },
+    "_lord": {
+      "atk": 1449,
+      "def": 1175,
+      "hp": 4253,
+      "rec": 1700
+    },
+    "anima": {
+      "atk": 1449,
+      "def": 1175,
+      "hp max": 5043,
+      "hp min": 4648,
+      "rec max": 1621,
+      "rec min": 1463
+    },
+    "breaker": {
+      "atk max": 1686,
+      "atk min": 1528,
+      "def max": 1096,
+      "def min": 938,
+      "hp": 4253,
+      "rec": 1700
+    },
+    "guardian": {
+      "atk": 1449,
+      "def max": 1412,
+      "def min": 1254,
+      "hp": 4253,
+      "rec max": 1700,
+      "rec min": 1542
+    },
+    "oracle": {
+      "atk": 1449,
+      "def max": 1175,
+      "def min": 1017,
+      "hp": 4253,
+      "rec max": 2016,
+      "rec min": 1858
+    }
+  },
+  "leader_skill": {
+    "desc": "Large boost in Battle Crystals produced during Spark",
+    "effects": [
+      {
+        "bc drop% for spark": 70,
+        "passive id": "31"
+      }
+    ],
+    "id": "1402",
+    "name": "Fighting Strobe"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -221,92 +232,103 @@
     ],
     "name": "Freezing Fjord"
   },
-  "bbdescription": "12 combo Water elemental attack on single enemy & large boost to BC drop rate",
-  "bbtype": "Support/Offense",
-  "bbhits": "12",
-  "bbaoe": "1",
-  "bbgauge": "17",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "20143",
-  "evointo": "20145",
-  "evomats1": "50354",
-  "evomats2": "20133",
-  "evomats3": "20191",
-  "evomats4": "60144",
-  "evomats5": "60144",
-  "evoitem": "",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 1026,
-      "def": 680,
-      "hp": 2383,
-      "rec": 1240
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1449,
-      "def": 1175,
-      "hp": 4253,
-      "rec": 1700
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1449,
-      "def": 1175,
-      "hp max": 5043,
-      "hp min": 4648,
-      "rec max": 1621,
-      "rec min": 1463
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 140
     },
-    "breaker": {
-      "atk max": 1686,
-      "atk min": 1528,
-      "def max": 1096,
-      "def min": 938,
-      "hp": 4253,
-      "rec": 1700
+    "idle": {
+      "total number of frames": 52
     },
-    "guardian": {
-      "atk": 1449,
-      "def max": 1412,
-      "def min": 1254,
-      "hp": 4253,
-      "rec max": 1700,
-      "rec min": 1542
-    },
-    "oracle": {
-      "atk": 1449,
-      "def max": 1175,
-      "def min": 1017,
-      "hp": 4253,
-      "rec max": 2016,
-      "rec min": 1858
+    "move": {
+      "total number of frames": 13
     }
   },
-  "leader_skill": {
-    "desc": "Large boost in Battle Crystals produced during Spark",
-    "effects": [
-      {
-        "bc drop% for spark": 70,
-        "passive id": "31"
-      }
+  "category": 20140,
+  "cost": "15",
+  "damage frames": {
+    "frame times": [
+      24,
+      28,
+      50,
+      54,
+      58,
+      62,
+      66,
+      70,
+      74,
+      78,
+      90
     ],
-    "id": "1402",
-    "name": "Fighting Strobe"
+    "hit dmg% distribution": [
+      20,
+      11,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      5
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 11
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "water",
+  "exp_pattern": 15,
+  "gender": "female",
+  "getting type": "farmable",
+  "guide_id": 436,
+  "imp": {
+    "max atk": "140",
+    "max def": "140",
+    "max hp": "750",
+    "max rec": "140"
+  },
+  "kind": "normal",
+  "lord damage range": "1349~1506",
+  "movement": {
+    "attack": {
+      "move speed": 0.0015,
+      "move speed type": "5",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0015,
+      "move speed type": "5",
+      "move type": "1"
+    }
+  },
+  "name": "Mother Snow Stya",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Mother Snow Stya",
+  "maxlv": "80",
+  "no": "436",
   "unitDisplayHomePosition_1W9CxaFK": "605,127,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-187,68,1260,736",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "96,234,495,397,0",
@@ -316,5 +338,106 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "18:122:1,22:122:1,50:122:1,28:200262:1,48:122:1,52:122:1,56:122:1,60:122:1,64:122:1,68:122:1,72:122:1,84:122:1,90:200030:1"
+  "effectFrames": "18:122:1,22:122:1,50:122:1,28:200262:1,48:122:1,52:122:1,56:122:1,60:122:1,64:122:1,68:122:1,72:122:1,84:122:1,90:200030:1",
+  "evofrom": "20143",
+  "evointo": "20145",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 2
+    }
+  ],
+  "basexp": "15",
+  "animation_attack": "140",
+  "animation_idle": "52",
+  "animation_move": "13",
+  "movespeed_attack": "0.0015",
+  "movespeed_skill": "0.0015",
+  "speedtype_attack": "5",
+  "speedtype_skill": "5",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "24, 28, 50, 54, 58, 62, 66, 70, 74, 78, 90",
+  "normal_distribute": "20, 11, 8, 8, 8, 8, 8, 8, 8, 8, 5",
+  "normal_totaldistr": "100",
+  "bb_frames": "24, 28, 50, 54, 58, 62, 66, 70, 74, 78, 82, 90",
+  "bb_distribute": "20, 10, 8, 8, 8, 8, 8, 8, 8, 5, 5, 4",
+  "bb_totaldistr": "100",
+  "description": "A female pirate with a bad reputation in the Sama Kingdom. She continued her pirate activities even after the gods invaded until one day when the commander which she so despised, Mega, came to her requesting her assistance in battle. Right after she showered him with anger the gods began attacking her. Mega rushed to save her but was gravely injured in the process. Seeing this, Stya became angry like she never had before, vanquishing all enemies around her as she said, \"A debt must always be repaid.\"",
+  "summon": "Well done, Summoner.<br>This time I'm gonna get that <br>moron for sure!",
+  "fusion": "Not bad, Summoner.<br>Your abilities aren't too bad.<br>Hey, that's a compliment!",
+  "evolution": "What's with that dumb look?<br>I said I'll help you, didn't I?<br>Rejoice, feeble Summoner!",
+  "hp_base": "2383",
+  "atk_base": "1026",
+  "def_base": "680",
+  "rec_base": "1240",
+  "hp_lord": "4253",
+  "atk_lord": "1449",
+  "def_lord": "1175",
+  "rec_lord": "1700",
+  "hp_anima": "4846",
+  "rec_anima": "1542",
+  "atk_breaker": "1607",
+  "def_breaker": "1017",
+  "atk_guardian": "1291",
+  "def_guardian": "1333",
+  "rec_guardian": "1621",
+  "def_oracle": "1096",
+  "hp_oracle": "4016",
+  "rec_oracle": "1937",
+  "hp_bonus": "750",
+  "atk_bonus": "140",
+  "def_bonus": "140",
+  "rec_bonus": "140",
+  "lordonly": "",
+  "combo_hits": "11",
+  "normaldc": "22",
+  "ls": "Fighting Strobe",
+  "lsdescription": "Large boost in Battle Crystals produced during Spark",
+  "lsnote": "70% boost",
+  "lstype": "Brave Burst",
+  "bbdescription": "12 combo Water elemental attack on single enemy & large boost to BC drop rate",
+  "bbnote": "75% boost (to self)",
+  "bbtype": "Support/Offense",
+  "bbhits": "12",
+  "bbaoe": "1",
+  "bbgauge": "17",
+  "bbdc": "24",
+  "bbmultiplier": "400",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "20133",
+  "evomats3": "20191",
+  "evomats4": "60144",
+  "evomats5": "60144",
+  "evoitem": ""
 }

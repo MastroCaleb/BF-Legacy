@@ -1,69 +1,94 @@
 {
   "id": "30316",
-  "unitName": "Mayhem Empress Luly",
-  "no": "1135",
-  "element": "Earth",
-  "rarity": "★★★★★★★",
-  "cost": "40",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "3",
-  "animation_attack": "210",
-  "animation_idle": "64",
-  "animation_move": "64",
-  "movespeed_attack": "4",
-  "movespeed_skill": "4",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "116, 126, 136, 146, 156, 166, 176, 186, 196",
-  "normal_distribute": "12, 11, 12, 11, 12, 11, 11, 10, 10",
-  "normal_totaldistr": "100",
-  "bb_frames": "116, 124, 132, 140, 148, 156, 164, 172, 180, 188, 196, 204, 212",
-  "bb_distribute": "8, 8, 7, 8, 8, 7, 8, 8, 7, 8, 8, 7, 8",
-  "bb_totaldistr": "100",
-  "sbb_frames": "116, 122, 128, 134, 140, 146, 152, 158, 164, 170, 176, 182, 188, 194, 200, 206, 212",
-  "sbb_distribute": "6, 6, 6, 6, 6, 5, 6, 6, 6, 6, 6, 5, 6, 6, 6, 6, 6",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "117",
-  "ubb_distribute": "100",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "3",
-  "ubb_effectdelay": "1",
-  "description": "Luly had been watching what had ensued on the battlefield when she suddenly smiled as she approached her former comrade, who had just lost his beloved. She smiled from ear to ear while looking at the knight of fire and his deceased lover, when she was suddenly struck down by him. The truth is that Luly had been blessed with incredible powers since birth thanks to her lineage. Belonging to a clan which had always served as part of the 12 Guardians of the Gods, Luly's family is said to have bolstered its demonic magical powers in order to attract suitable marriage partners to carry its bloodline.",
-  "summon": "I heard a voice in my head.<br>It told me to release all my power.<br>And that's why I did",
-  "fusion": "Huh? This again?<br>I'm bored of this already.<br>Do you really wanna play that much?",
-  "evolution": "I knew it!<br>I wasn't wrong!<br>I'm gonna have me some more fun!",
-  "hp_base": "5019",
-  "atk_base": "1828",
-  "def_base": "1426",
-  "rec_base": "1995",
-  "hp_lord": "6409",
-  "atk_lord": "2432",
-  "def_lord": "2116",
-  "rec_lord": "2413",
-  "hp_anima": "7301",
-  "rec_anima": "2175",
-  "atk_breaker": "2670",
-  "def_breaker": "1878",
-  "def_guardian": "2354",
-  "rec_guardian": "2294",
-  "def_oracle": "1997",
-  "rec_oracle": "2770",
-  "hp_bonus": "1000",
-  "atk_bonus": "300",
-  "def_bonus": "600",
-  "rec_bonus": "400",
-  "lordonly": "",
-  "combo_hits": "9",
-  "normaldc": "36",
-  "ls": "Shining Conviction",
-  "lsdescription": "15% damage reduction from Thunder types, hugely boosts damage against Thunder types & greatly boosts BB Atk",
-  "lsnote": "150% elemental damage & 100% BB Atk",
-  "lstype": "Attack/Defense",
+  "stats": {
+    "_base": {
+      "atk": 1828,
+      "def": 1426,
+      "hp": 5019,
+      "rec": 1995
+    },
+    "_lord": {
+      "atk": 2432,
+      "def": 2116,
+      "hp": 6409,
+      "rec": 2413
+    },
+    "anima": {
+      "atk": 2432,
+      "def": 2116,
+      "hp max": 7599,
+      "hp min": 7004,
+      "rec max": 2294,
+      "rec min": 2056
+    },
+    "breaker": {
+      "atk max": 2789,
+      "atk min": 2551,
+      "def max": 1997,
+      "def min": 1759,
+      "hp": 6409,
+      "rec": 2413
+    },
+    "guardian": {
+      "atk": 2432,
+      "def max": 2473,
+      "def min": 2235,
+      "hp": 6409,
+      "rec max": 2413,
+      "rec min": 2175
+    },
+    "oracle": {
+      "atk": 2432,
+      "def max": 2116,
+      "def min": 1878,
+      "hp": 6409,
+      "rec max": 2889,
+      "rec min": 2651
+    }
+  },
+  "leader_skill": {
+    "desc": "15% damage reduction from Thunder types, hugely boosts damage against Thunder types & greatly boosts BB Atk",
+    "effects": [
+      {
+        "passive id": "5",
+        "thunder resist%": 15
+      },
+      {
+        "earth units do extra elemental weakness dmg": true,
+        "elemental weakness multiplier%": 150.0,
+        "passive id": "50"
+      },
+      {
+        "bb atk% buff": 100,
+        "passive id": "64",
+        "sbb atk% buff": 100,
+        "ubb atk% buff": 100
+      }
+    ],
+    "id": "551",
+    "name": "Shining Conviction"
+  },
+  "extra_skill": {
+    "desc": "Boosts BB Atk when damage taken has exceeded certain amount for 2 turns",
+    "effects": [
+      {
+        "buff": {
+          "bb atk% buff": 200,
+          "buff turns (72)": "2",
+          "sbb atk% buff": 200,
+          "ubb atk% buff": 200
+        },
+        "conditions": [],
+        "damage threshold buff activation": 10000,
+        "passive id": "78",
+        "passive target": "self"
+      }
+    ],
+    "id": "8300",
+    "name": "Wicked Lineage",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -342,14 +367,6 @@
     ],
     "name": "Earth, unleash your power!"
   },
-  "bbdescription": "13 combo powerful Earth attack on all foes & boosts BC, HC drop rate for 3 turns",
-  "bbnote": "25% boost",
-  "bbtype": "Support/Offense",
-  "bbhits": "13",
-  "bbaoe": "A",
-  "bbgauge": "20",
-  "bbdc": "13",
-  "bbmultiplier": "270",
   "sbb": {
     "damage frames": [
       {
@@ -840,14 +857,6 @@
     ],
     "name": "God of Mayhem's Sanctuary"
   },
-  "sbbdescription": "17 combo powerful Earth attack on all foes, boosts BC, HC drop rate for 3 turns & boosts Def relative to Rec and Earth elemental damage for 3 turns",
-  "sbbnote": "30% BC/HC, 50% Rec to Def & 60% elemental damage",
-  "sbbtype": "Support/Offense",
-  "sbbhits": "17",
-  "sbbaoe": "A",
-  "sbbgauge": "24",
-  "sbbdc": "17",
-  "sbbmultiplier": "520",
   "ubb": {
     "damage frames": [
       {
@@ -907,6 +916,195 @@
     ],
     "name": "Arcane Phenomena"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 210
+    },
+    "idle": {
+      "total number of frames": 64
+    },
+    "move": {
+      "total number of frames": 64
+    }
+  },
+  "category": 30310,
+  "cost": "40",
+  "damage frames": {
+    "frame times": [
+      116,
+      126,
+      136,
+      146,
+      156,
+      166,
+      176,
+      186,
+      196
+    ],
+    "hit dmg% distribution": [
+      12,
+      11,
+      12,
+      11,
+      12,
+      11,
+      11,
+      10,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 9
+  },
+  "drop check count": 4,
+  "element": "earth",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 1135,
+  "imp": {
+    "max atk": "300",
+    "max def": "600",
+    "max hp": "1000",
+    "max rec": "400"
+  },
+  "kind": "normal",
+  "lord damage range": "2264~2529",
+  "movement": {
+    "attack": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    }
+  },
+  "name": "Mayhem Empress Luly",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Mayhem Empress Luly",
+  "maxlv": "120",
+  "no": "1135",
+  "unitDisplayHomePosition_1W9CxaFK": "440,309,190,519",
+  "unitDisplayDetailPosition_6z54rgb3": "-52,-84,1150,1004",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "47,114,647,565,1",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "3,-335,1100,961",
+  "unitDisplaySummonPosition_KC3Jk8Br": "47,114,647,565,1",
+  "unitDisplayHpPosition_3BpHN6VD": "-3,60",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "15000",
+  "sellCaution": false,
+  "effectFrames": "113:330560:1,121:680:1,137:300261:1,157:300261:1,177:300261:1,180:251:1,210:300230:1,161:330401:1,195:330401:1,165:330449:1",
+  "evofrom": "30315",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "21",
+  "animation_attack": "210",
+  "animation_idle": "64",
+  "animation_move": "64",
+  "movespeed_attack": "4",
+  "movespeed_skill": "4",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "116, 126, 136, 146, 156, 166, 176, 186, 196",
+  "normal_distribute": "12, 11, 12, 11, 12, 11, 11, 10, 10",
+  "normal_totaldistr": "100",
+  "bb_frames": "116, 124, 132, 140, 148, 156, 164, 172, 180, 188, 196, 204, 212",
+  "bb_distribute": "8, 8, 7, 8, 8, 7, 8, 8, 7, 8, 8, 7, 8",
+  "bb_totaldistr": "100",
+  "sbb_frames": "116, 122, 128, 134, 140, 146, 152, 158, 164, 170, 176, 182, 188, 194, 200, 206, 212",
+  "sbb_distribute": "6, 6, 6, 6, 6, 5, 6, 6, 6, 6, 6, 5, 6, 6, 6, 6, 6",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "117",
+  "ubb_distribute": "100",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "3",
+  "ubb_effectdelay": "1",
+  "description": "Luly had been watching what had ensued on the battlefield when she suddenly smiled as she approached her former comrade, who had just lost his beloved. She smiled from ear to ear while looking at the knight of fire and his deceased lover, when she was suddenly struck down by him. The truth is that Luly had been blessed with incredible powers since birth thanks to her lineage. Belonging to a clan which had always served as part of the 12 Guardians of the Gods, Luly's family is said to have bolstered its demonic magical powers in order to attract suitable marriage partners to carry its bloodline.",
+  "summon": "I heard a voice in my head.<br>It told me to release all my power.<br>And that's why I did",
+  "fusion": "Huh? This again?<br>I'm bored of this already.<br>Do you really wanna play that much?",
+  "evolution": "I knew it!<br>I wasn't wrong!<br>I'm gonna have me some more fun!",
+  "hp_base": "5019",
+  "atk_base": "1828",
+  "def_base": "1426",
+  "rec_base": "1995",
+  "hp_lord": "6409",
+  "atk_lord": "2432",
+  "def_lord": "2116",
+  "rec_lord": "2413",
+  "hp_anima": "7301",
+  "rec_anima": "2175",
+  "atk_breaker": "2670",
+  "def_breaker": "1878",
+  "def_guardian": "2354",
+  "rec_guardian": "2294",
+  "def_oracle": "1997",
+  "rec_oracle": "2770",
+  "hp_bonus": "1000",
+  "atk_bonus": "300",
+  "def_bonus": "600",
+  "rec_bonus": "400",
+  "lordonly": "",
+  "combo_hits": "9",
+  "normaldc": "36",
+  "ls": "Shining Conviction",
+  "lsdescription": "15% damage reduction from Thunder types, hugely boosts damage against Thunder types & greatly boosts BB Atk",
+  "lsnote": "150% elemental damage & 100% BB Atk",
+  "lstype": "Attack/Defense",
+  "bbdescription": "13 combo powerful Earth attack on all foes & boosts BC, HC drop rate for 3 turns",
+  "bbnote": "25% boost",
+  "bbtype": "Support/Offense",
+  "bbhits": "13",
+  "bbaoe": "A",
+  "bbgauge": "20",
+  "bbdc": "13",
+  "bbmultiplier": "270",
+  "sbbdescription": "17 combo powerful Earth attack on all foes, boosts BC, HC drop rate for 3 turns & boosts Def relative to Rec and Earth elemental damage for 3 turns",
+  "sbbnote": "30% BC/HC, 50% Rec to Def & 60% elemental damage",
+  "sbbtype": "Support/Offense",
+  "sbbhits": "17",
+  "sbbaoe": "A",
+  "sbbgauge": "24",
+  "sbbdc": "17",
+  "sbbmultiplier": "520",
   "ubbdescription": "Massive Earth attack on all foes (damage relative to remaining HP) & boosts BB Atk for 3 turns",
   "ubbnote": "1300% + 1200% x current HP / max base HP & 500% BB Atk",
   "ubbtype": "Support/Offense",
@@ -920,112 +1118,10 @@
   "esitem": "",
   "esdescription": "Boosts BB Atk when damage taken has exceeded certain amount for 2 turns",
   "esnote": "200% boost when 10,000 damage is taken",
-  "evofrom": "30315",
-  "evointo": "",
   "evomats1": "",
   "evomats2": "",
   "evomats3": "",
   "evomats4": "",
   "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 1828,
-      "def": 1426,
-      "hp": 5019,
-      "rec": 1995
-    },
-    "_lord": {
-      "atk": 2432,
-      "def": 2116,
-      "hp": 6409,
-      "rec": 2413
-    },
-    "anima": {
-      "atk": 2432,
-      "def": 2116,
-      "hp max": 7599,
-      "hp min": 7004,
-      "rec max": 2294,
-      "rec min": 2056
-    },
-    "breaker": {
-      "atk max": 2789,
-      "atk min": 2551,
-      "def max": 1997,
-      "def min": 1759,
-      "hp": 6409,
-      "rec": 2413
-    },
-    "guardian": {
-      "atk": 2432,
-      "def max": 2473,
-      "def min": 2235,
-      "hp": 6409,
-      "rec max": 2413,
-      "rec min": 2175
-    },
-    "oracle": {
-      "atk": 2432,
-      "def max": 2116,
-      "def min": 1878,
-      "hp": 6409,
-      "rec max": 2889,
-      "rec min": 2651
-    }
-  },
-  "leader_skill": {
-    "desc": "15% damage reduction from Thunder types, hugely boosts damage against Thunder types & greatly boosts BB Atk",
-    "effects": [
-      {
-        "passive id": "5",
-        "thunder resist%": 15
-      },
-      {
-        "earth units do extra elemental weakness dmg": true,
-        "elemental weakness multiplier%": 150.0,
-        "passive id": "50"
-      },
-      {
-        "bb atk% buff": 100,
-        "passive id": "64",
-        "sbb atk% buff": 100,
-        "ubb atk% buff": 100
-      }
-    ],
-    "id": "551",
-    "name": "Shining Conviction"
-  },
-  "extra_skill": {
-    "desc": "Boosts BB Atk when damage taken has exceeded certain amount for 2 turns",
-    "effects": [
-      {
-        "buff": {
-          "bb atk% buff": 200,
-          "buff turns (72)": "2",
-          "sbb atk% buff": 200,
-          "ubb atk% buff": 200
-        },
-        "conditions": [],
-        "damage threshold buff activation": 10000,
-        "passive id": "78",
-        "passive target": "self"
-      }
-    ],
-    "id": "8300",
-    "name": "Wicked Lineage",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "440,309,190,519",
-  "unitDisplayDetailPosition_6z54rgb3": "-52,-84,1150,1004",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "47,114,647,565,1",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "3,-335,1100,961",
-  "unitDisplaySummonPosition_KC3Jk8Br": "47,114,647,565,1",
-  "unitDisplayHpPosition_3BpHN6VD": "-3,60",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "15000",
-  "sellCaution": false,
-  "effectFrames": "113:330560:1,121:680:1,137:300261:1,157:300261:1,177:300261:1,180:251:1,210:300230:1,161:330401:1,195:330401:1,165:330449:1"
+  "evoitem": ""
 }

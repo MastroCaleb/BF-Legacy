@@ -1,63 +1,63 @@
 {
   "id": "30283",
-  "unitName": "Pugilist Dilma",
-  "no": "381",
-  "element": "Earth",
-  "rarity": "★★★★",
-  "cost": "10",
-  "maxlv": "60",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "4",
-  "animation_attack": "106",
-  "animation_idle": "52",
-  "animation_move": "9",
-  "movespeed_attack": "0.0024",
-  "movespeed_skill": "0.0024",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "50, 65",
-  "normal_distribute": "90, 10",
-  "normal_totaldistr": "100",
-  "bb_frames": "49",
-  "bb_distribute": "100",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "description": "A martial artist from the Toltya School of Martial Arts in the Sama Kingdom. In addition to the countless techniques he had at the command of his well-trained body, he also had the ability to manipulate people's vitality. Despite being one of the highest class fighters in his school, no longer satisfied fighting those around him he left in search of a stronger opponent. Wandering the lands he heard rumors of an evil demon, but on his way to investigate in the Bariura Empire he came across someone who would change his life forever.",
-  "summon": "Hey there!<br>You look pretty strong!<br>Mind lending me a hand?",
-  "fusion": "That's it!<br>Great! Now let me show<br>you what I've got!",
-  "evolution": "",
-  "hp_base": "2646",
-  "atk_base": "1002",
-  "def_base": "614",
-  "rec_base": "1066",
-  "hp_lord": "3981",
-  "atk_lord": "1438",
-  "def_lord": "877",
-  "rec_lord": "1422",
-  "hp_anima": "4424",
-  "rec_anima": "1304",
-  "atk_breaker": "1556",
-  "def_breaker": "759",
-  "atk_guardian": "1320",
-  "def_guardian": "995",
-  "rec_guardian": "1363",
-  "def_oracle": "818",
-  "hp_oracle": "3804",
-  "rec_oracle": "1599",
-  "hp_bonus": "400",
-  "atk_bonus": "200",
-  "def_bonus": "120",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "2",
-  "normaldc": "10",
-  "ls": "Pulsating Energy",
-  "lsdescription": "BB Gauge fills after each turn",
-  "lsnote": "1 BC fill per turn",
-  "lstype": "Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 1002,
+      "def": 614,
+      "hp": 2646,
+      "rec": 1066
+    },
+    "_lord": {
+      "atk": 1438,
+      "def": 877,
+      "hp": 3981,
+      "rec": 1422
+    },
+    "anima": {
+      "atk": 1438,
+      "def": 877,
+      "hp max": 4571,
+      "hp min": 4276,
+      "rec max": 1363,
+      "rec min": 1245
+    },
+    "breaker": {
+      "atk max": 1615,
+      "atk min": 1497,
+      "def max": 818,
+      "def min": 700,
+      "hp": 3981,
+      "rec": 1422
+    },
+    "guardian": {
+      "atk": 1438,
+      "def max": 1054,
+      "def min": 936,
+      "hp": 3981,
+      "rec max": 1422,
+      "rec min": 1304
+    },
+    "oracle": {
+      "atk": 1438,
+      "def max": 877,
+      "def min": 759,
+      "hp": 3981,
+      "rec max": 1658,
+      "rec min": 1540
+    }
+  },
+  "leader_skill": {
+    "desc": "BB Gauge fills after each turn",
+    "effects": [
+      {
+        "bc fill per turn": 1,
+        "passive id": "9"
+      }
+    ],
+    "id": "1200",
+    "name": "Pulsating Energy"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -302,93 +302,97 @@
     ],
     "name": "Earth Strike"
   },
-  "bbdescription": "Powerful Earth attack against all enemies & adds defense ignoring effect to all allies' attack for 2 turns",
-  "bbtype": "Offense",
-  "bbhits": "1",
-  "bbaoe": "A",
-  "bbgauge": "28",
-  "bbdc": "10",
-  "bbmultiplier": "190",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "30284",
-  "evomats1": "30133",
-  "evomats2": "30132",
-  "evomats3": "30191",
-  "evomats4": "30131",
-  "evomats5": "30130",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 1002,
-      "def": 614,
-      "hp": 2646,
-      "rec": 1066
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_under",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1438,
-      "def": 877,
-      "hp": 3981,
-      "rec": 1422
+    {
+      "action": "skill",
+      "chance%": 30.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1438,
-      "def": 877,
-      "hp max": 4571,
-      "hp min": 4276,
-      "rec max": 1363,
-      "rec min": 1245
+    {
+      "action": "attack",
+      "chance%": 70.0,
+      "target conditions": "hp_max",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 1615,
-      "atk min": 1497,
-      "def max": 818,
-      "def min": 700,
-      "hp": 3981,
-      "rec": 1422
+    {
+      "action": "attack",
+      "chance%": 50.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "guardian": {
-      "atk": 1438,
-      "def max": 1054,
-      "def min": 936,
-      "hp": 3981,
-      "rec max": 1422,
-      "rec min": 1304
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 106
     },
-    "oracle": {
-      "atk": 1438,
-      "def max": 877,
-      "def min": 759,
-      "hp": 3981,
-      "rec max": 1658,
-      "rec min": 1540
+    "idle": {
+      "total number of frames": 52
+    },
+    "move": {
+      "total number of frames": 9
     }
   },
-  "leader_skill": {
-    "desc": "BB Gauge fills after each turn",
-    "effects": [
-      {
-        "bc fill per turn": 1,
-        "passive id": "9"
-      }
+  "category": 30280,
+  "cost": "10",
+  "damage frames": {
+    "frame times": [
+      50,
+      65
     ],
-    "id": "1200",
-    "name": "Pulsating Energy"
+    "hit dmg% distribution": [
+      90,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 2
   },
-  "extra_skill": {},
+  "drop check count": 5,
+  "element": "earth",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 381,
+  "imp": {
+    "max atk": "200",
+    "max def": "120",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "1338~1495",
+  "movement": {
+    "attack": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    }
+  },
+  "name": "Pugilist Dilma",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Pugilist Dilma",
+  "maxlv": "60",
+  "no": "381",
   "unitDisplayHomePosition_1W9CxaFK": "250,40,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "54,134,900,650",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "103,355,332,239,0",
@@ -398,5 +402,110 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "44:133:1,50:300120:1,48:252:1,65:200081:1"
+  "effectFrames": "44:133:1,50:300120:1,48:252:1,65:200081:1",
+  "evofrom": "",
+  "evointo": "30284",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "30133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30131",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30130",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "106",
+  "animation_idle": "52",
+  "animation_move": "9",
+  "movespeed_attack": "0.0024",
+  "movespeed_skill": "0.0024",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "50, 65",
+  "normal_distribute": "90, 10",
+  "normal_totaldistr": "100",
+  "bb_frames": "49",
+  "bb_distribute": "100",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "description": "A martial artist from the Toltya School of Martial Arts in the Sama Kingdom. In addition to the countless techniques he had at the command of his well-trained body, he also had the ability to manipulate people's vitality. Despite being one of the highest class fighters in his school, no longer satisfied fighting those around him he left in search of a stronger opponent. Wandering the lands he heard rumors of an evil demon, but on his way to investigate in the Bariura Empire he came across someone who would change his life forever.",
+  "summon": "Hey there!<br>You look pretty strong!<br>Mind lending me a hand?",
+  "fusion": "That's it!<br>Great! Now let me show<br>you what I've got!",
+  "evolution": "",
+  "hp_base": "2646",
+  "atk_base": "1002",
+  "def_base": "614",
+  "rec_base": "1066",
+  "hp_lord": "3981",
+  "atk_lord": "1438",
+  "def_lord": "877",
+  "rec_lord": "1422",
+  "hp_anima": "4424",
+  "rec_anima": "1304",
+  "atk_breaker": "1556",
+  "def_breaker": "759",
+  "atk_guardian": "1320",
+  "def_guardian": "995",
+  "rec_guardian": "1363",
+  "def_oracle": "818",
+  "hp_oracle": "3804",
+  "rec_oracle": "1599",
+  "hp_bonus": "400",
+  "atk_bonus": "200",
+  "def_bonus": "120",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "2",
+  "normaldc": "10",
+  "ls": "Pulsating Energy",
+  "lsdescription": "BB Gauge fills after each turn",
+  "lsnote": "1 BC fill per turn",
+  "lstype": "Brave Burst",
+  "bbdescription": "Powerful Earth attack against all enemies & adds defense ignoring effect to all allies' attack for 2 turns",
+  "bbtype": "Offense",
+  "bbhits": "1",
+  "bbaoe": "A",
+  "bbgauge": "28",
+  "bbdc": "10",
+  "bbmultiplier": "190",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "30133",
+  "evomats2": "30132",
+  "evomats3": "30191",
+  "evomats4": "30131",
+  "evomats5": "30130"
 }

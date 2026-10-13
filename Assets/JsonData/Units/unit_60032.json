@@ -1,61 +1,70 @@
 {
   "id": "60032",
-  "unitName": "Kaiser Gloomy",
-  "no": "1084",
-  "element": "Dark",
-  "rarity": "★★★",
-  "cost": "5",
-  "maxlv": "40",
-  "basexp": "10",
-  "gender": "N",
-  "ai": "2",
-  "animation_attack": "71",
-  "animation_idle": "112",
-  "animation_move": "7",
-  "movespeed_attack": "0.0041",
-  "movespeed_skill": "0.0041",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "30, 33, 36",
-  "normal_distribute": "33, 33, 34",
-  "normal_totaldistr": "100",
-  "bb_frames": "30, 34, 38, 42, 45, 49",
-  "bb_distribute": "20, 14, 19, 14, 19, 14",
-  "bb_totaldistr": "100",
-  "description": "The Kaiser Gloomy is the evolved form of a King Gloomy which was exposed to pure evil energy while roaming Ishgria. Though it tends to spit out obscenities and profanity about everything around it, the Kaiser Gloomy's habit of saying something nice in the midst of it all remains a part of its personality. The bat-like things that surround it don't really serve much purpose, though they can be heard whispering vulgarities as they fly about. Some Kaiser Gloomy are known to rule over other Gloomy by establishing hierarchical colonies within caves.",
-  "summon": "You must have a lot of guts<br>to have summoned me.<br>You'd make a good minion!",
-  "fusion": "What the heck is this?<br>You're a stingy one, aren't you?<br>Oh well. Thanks, I guess.",
-  "evolution": "\"I evolved! But what's with the face?<br>You got a problem, or something?<br>I can evolve if I want to, you know!",
-  "hp_base": "1460",
-  "atk_base": "740",
-  "def_base": "440",
-  "rec_base": "440",
-  "hp_lord": "3101",
-  "atk_lord": "1208",
-  "def_lord": "683",
-  "rec_lord": "683",
-  "hp_anima": "3393",
-  "rec_anima": "605",
-  "atk_breaker": "1286",
-  "def_breaker": "605",
-  "atk_guardian": "",
-  "def_guardian": "761",
-  "rec_guardian": "644",
-  "def_oracle": "644",
-  "hp_oracle": "",
-  "rec_oracle": "800",
-  "hp_bonus": "3000",
-  "atk_bonus": "1200",
-  "def_bonus": "1200",
-  "rec_bonus": "1200",
-  "lordonly": "",
-  "combo_hits": "3",
-  "normaldc": "9",
-  "ls": "Divine Dark Crown",
-  "lsdescription": "15% boost to Atk of Dark types & 15% damage reduction from Dark types",
-  "lstype": "Attack/Defense",
+  "stats": {
+    "_base": {
+      "atk": 740,
+      "def": 440,
+      "hp": 1460,
+      "rec": 440
+    },
+    "_lord": {
+      "atk": 1208,
+      "def": 683,
+      "hp": 3101,
+      "rec": 683
+    },
+    "anima": {
+      "atk": 1208,
+      "def": 683,
+      "hp max": 3491,
+      "hp min": 3296,
+      "rec max": 644,
+      "rec min": 566
+    },
+    "breaker": {
+      "atk max": 1325,
+      "atk min": 1247,
+      "def max": 644,
+      "def min": 566,
+      "hp": 3101,
+      "rec": 683
+    },
+    "guardian": {
+      "atk": 1208,
+      "def max": 800,
+      "def min": 722,
+      "hp": 3101,
+      "rec max": 683,
+      "rec min": 605
+    },
+    "oracle": {
+      "atk": 1208,
+      "def max": 683,
+      "def min": 605,
+      "hp": 3101,
+      "rec max": 839,
+      "rec min": 761
+    }
+  },
+  "leader_skill": {
+    "desc": "15% boost to Atk of Dark types & 15% damage reduction from Dark types ",
+    "effects": [
+      {
+        "atk% buff": 15,
+        "elements buffed": [
+          "dark"
+        ],
+        "passive id": "2"
+      },
+      {
+        "dark resist%": 15,
+        "passive id": "5"
+      }
+    ],
+    "id": "9765",
+    "name": "Divine Dark Crown"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -218,102 +227,87 @@
     ],
     "name": "Shadow Gulp"
   },
-  "bbdescription": "6 combo powerful Dark attack on all foes",
-  "bbtype": "Offense",
-  "bbhits": "6",
-  "bbaoe": "A",
-  "bbgauge": "12",
-  "bbdc": "6",
-  "bbmultiplier": "130",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "es": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "60031",
-  "evointo": "",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 740,
-      "def": 440,
-      "hp": 1460,
-      "rec": 440
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1208,
-      "def": 683,
-      "hp": 3101,
-      "rec": 683
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1208,
-      "def": 683,
-      "hp max": 3491,
-      "hp min": 3296,
-      "rec max": 644,
-      "rec min": 566
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 71
     },
-    "breaker": {
-      "atk max": 1325,
-      "atk min": 1247,
-      "def max": 644,
-      "def min": 566,
-      "hp": 3101,
-      "rec": 683
+    "idle": {
+      "total number of frames": 112
     },
-    "guardian": {
-      "atk": 1208,
-      "def max": 800,
-      "def min": 722,
-      "hp": 3101,
-      "rec max": 683,
-      "rec min": 605
-    },
-    "oracle": {
-      "atk": 1208,
-      "def max": 683,
-      "def min": 605,
-      "hp": 3101,
-      "rec max": 839,
-      "rec min": 761
+    "move": {
+      "total number of frames": 7
     }
   },
-  "leader_skill": {
-    "desc": "15% boost to Atk of Dark types & 15% damage reduction from Dark types ",
-    "effects": [
-      {
-        "atk% buff": 15,
-        "elements buffed": [
-          "dark"
-        ],
-        "passive id": "2"
-      },
-      {
-        "dark resist%": 15,
-        "passive id": "5"
-      }
+  "category": 60030,
+  "cost": "5",
+  "damage frames": {
+    "frame times": [
+      30,
+      33,
+      36
     ],
-    "id": "9765",
-    "name": "Divine Dark Crown"
+    "hit dmg% distribution": [
+      33,
+      33,
+      34
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 3
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "dark",
+  "exp_pattern": 10,
+  "gender": "other",
+  "getting type": "farmable",
+  "guide_id": 1084,
+  "imp": {
+    "max atk": "1200",
+    "max def": "1200",
+    "max hp": "3000",
+    "max rec": "1200"
+  },
+  "kind": "normal",
+  "lord damage range": "1124~1256",
+  "movement": {
+    "attack": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    }
+  },
+  "name": "Kaiser Gloomy",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "Kaiser Gloomy",
+  "maxlv": "40",
+  "no": "1084",
   "unitDisplayHomePosition_1W9CxaFK": "342,184,240,655",
   "unitDisplayDetailPosition_6z54rgb3": "-11,21,974,828",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "82,170,533,453,1",
@@ -323,5 +317,84 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "1000",
   "sellCaution": false,
-  "effectFrames": "27:126:1,31:126:1,30:360:1,40:600221:1"
+  "effectFrames": "27:126:1,31:126:1,30:360:1,40:600221:1",
+  "evofrom": "60031",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "10",
+  "animation_attack": "71",
+  "animation_idle": "112",
+  "animation_move": "7",
+  "movespeed_attack": "0.0041",
+  "movespeed_skill": "0.0041",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "30, 33, 36",
+  "normal_distribute": "33, 33, 34",
+  "normal_totaldistr": "100",
+  "bb_frames": "30, 34, 38, 42, 45, 49",
+  "bb_distribute": "20, 14, 19, 14, 19, 14",
+  "bb_totaldistr": "100",
+  "description": "The Kaiser Gloomy is the evolved form of a King Gloomy which was exposed to pure evil energy while roaming Ishgria. Though it tends to spit out obscenities and profanity about everything around it, the Kaiser Gloomy's habit of saying something nice in the midst of it all remains a part of its personality. The bat-like things that surround it don't really serve much purpose, though they can be heard whispering vulgarities as they fly about. Some Kaiser Gloomy are known to rule over other Gloomy by establishing hierarchical colonies within caves.",
+  "summon": "You must have a lot of guts<br>to have summoned me.<br>You'd make a good minion!",
+  "fusion": "What the heck is this?<br>You're a stingy one, aren't you?<br>Oh well. Thanks, I guess.",
+  "evolution": "\"I evolved! But what's with the face?<br>You got a problem, or something?<br>I can evolve if I want to, you know!",
+  "hp_base": "1460",
+  "atk_base": "740",
+  "def_base": "440",
+  "rec_base": "440",
+  "hp_lord": "3101",
+  "atk_lord": "1208",
+  "def_lord": "683",
+  "rec_lord": "683",
+  "hp_anima": "3393",
+  "rec_anima": "605",
+  "atk_breaker": "1286",
+  "def_breaker": "605",
+  "atk_guardian": "",
+  "def_guardian": "761",
+  "rec_guardian": "644",
+  "def_oracle": "644",
+  "hp_oracle": "",
+  "rec_oracle": "800",
+  "hp_bonus": "3000",
+  "atk_bonus": "1200",
+  "def_bonus": "1200",
+  "rec_bonus": "1200",
+  "lordonly": "",
+  "combo_hits": "3",
+  "normaldc": "9",
+  "ls": "Divine Dark Crown",
+  "lsdescription": "15% boost to Atk of Dark types & 15% damage reduction from Dark types",
+  "lstype": "Attack/Defense",
+  "bbdescription": "6 combo powerful Dark attack on all foes",
+  "bbtype": "Offense",
+  "bbhits": "6",
+  "bbaoe": "A",
+  "bbgauge": "12",
+  "bbdc": "6",
+  "bbmultiplier": "130",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "es": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "",
+  "evomats2": "",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": "",
+  "evoitem": ""
 }

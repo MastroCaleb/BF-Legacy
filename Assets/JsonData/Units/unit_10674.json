@@ -1,62 +1,64 @@
 {
   "id": "10674",
-  "unitName": "Strong Flame Griff",
-  "no": "1005",
-  "element": "Fire",
-  "rarity": "★★★★★",
-  "cost": "20",
-  "maxlv": "80",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "117",
-  "animation_idle": "52",
-  "animation_move": "13",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "21, 24, 29, 64, 70, 75, 79",
-  "normal_distribute": "20, 8, 7, 5, 10, 20, 30",
-  "normal_totaldistr": "100",
-  "bb_frames": "21, 24, 27, 30, 64, 70, 75, 79, 82, 85",
-  "bb_distribute": "20, 10, 5, 3, 3, 5, 8, 11, 15, 20",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "2",
-  "description": "A Summoner who served the Akras Summoners' Hall since the dawn of time. Though initially a soldier of humble beginnings from the Randall Empire, he quickly rose through the ranks to become a general, earning the support of many young soldiers along the way. However, he was unsatisfied with the small skirmishes between the Empire and the Federation, instead hoping for the chance to fight in a real battle. That opportunity presented itself when the First Summoner returned from Grand Gaia and Griff challenged him to a fierce duel. A few days later he sent his letter of resignation to the Imperial Army, and joined Summoners' Hall.",
-  "summon": "Congratulations for summoning me.<br>But I dare you to show me a<br>petty fight. I'll send you flying.",
-  "fusion": "You think this training's enough?!<br>The enemy's not gonna take it<br>easy on you, you know!",
-  "evolution": "",
-  "hp_base": "3623",
-  "atk_base": "1442",
-  "def_base": "1279",
-  "rec_base": "1143",
-  "hp_lord": "5131",
-  "atk_lord": "1923",
-  "def_lord": "1705",
-  "rec_lord": "1524",
-  "hp_anima": "5723",
-  "rec_anima": "1366",
-  "atk_breaker": "2081",
-  "def_breaker": "1547",
-  "atk_guardian": "1765",
-  "def_guardian": "1863",
-  "rec_guardian": "1445",
-  "def_oracle": "1626",
-  "hp_oracle": "4894",
-  "rec_oracle": "1761",
-  "hp_bonus": "750",
-  "atk_bonus": "140",
-  "def_bonus": "140",
-  "rec_bonus": "140",
-  "lordonly": "",
-  "combo_hits": "7",
-  "normaldc": "21",
-  "ls": "High Ruler's Chakra",
-  "lsdescription": "30% boost to Atk and max HP of all Units",
-  "lstype": "Hit Points/Attack",
+  "stats": {
+    "_base": {
+      "atk": 1442,
+      "def": 1279,
+      "hp": 3623,
+      "rec": 1143
+    },
+    "_lord": {
+      "atk": 1923,
+      "def": 1705,
+      "hp": 5131,
+      "rec": 1524
+    },
+    "anima": {
+      "atk": 1923,
+      "def": 1705,
+      "hp max": 5921,
+      "hp min": 5526,
+      "rec max": 1445,
+      "rec min": 1287
+    },
+    "breaker": {
+      "atk max": 2160,
+      "atk min": 2002,
+      "def max": 1626,
+      "def min": 1468,
+      "hp": 5131,
+      "rec": 1524
+    },
+    "guardian": {
+      "atk": 1923,
+      "def max": 1942,
+      "def min": 1784,
+      "hp": 5131,
+      "rec max": 1524,
+      "rec min": 1366
+    },
+    "oracle": {
+      "atk": 1923,
+      "def max": 1705,
+      "def min": 1547,
+      "hp": 5131,
+      "rec max": 1840,
+      "rec min": 1682
+    }
+  },
+  "leader_skill": {
+    "desc": "30% boost to Atk and max HP for all Units",
+    "effects": [
+      {
+        "atk% buff": 30,
+        "hp% buff": 30,
+        "passive id": "1"
+      }
+    ],
+    "id": "7401",
+    "name": "High Ruler's Chakra"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -441,97 +443,95 @@
     ],
     "name": "Fervent Edge"
   },
-  "bbdescription": "10 combo powerful Fire attack on all foes & adds Fire, Water elements attack and boosts critical damage for 3 turns",
-  "bbnote": "50% boost",
-  "bbtype": "Support/Offense",
-  "bbhits": "10",
-  "bbaoe": "A",
-  "bbgauge": "25",
-  "bbdc": "10",
-  "bbmultiplier": "250",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "es": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "10675",
-  "evomats1": "50354",
-  "evomats2": "10133",
-  "evomats3": "10133",
-  "evomats4": "10191",
-  "evomats5": "60224",
-  "evoitem": "",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 1442,
-      "def": 1279,
-      "hp": 3623,
-      "rec": 1143
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1923,
-      "def": 1705,
-      "hp": 5131,
-      "rec": 1524
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1923,
-      "def": 1705,
-      "hp max": 5921,
-      "hp min": 5526,
-      "rec max": 1445,
-      "rec min": 1287
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 117
     },
-    "breaker": {
-      "atk max": 2160,
-      "atk min": 2002,
-      "def max": 1626,
-      "def min": 1468,
-      "hp": 5131,
-      "rec": 1524
+    "idle": {
+      "total number of frames": 52
     },
-    "guardian": {
-      "atk": 1923,
-      "def max": 1942,
-      "def min": 1784,
-      "hp": 5131,
-      "rec max": 1524,
-      "rec min": 1366
-    },
-    "oracle": {
-      "atk": 1923,
-      "def max": 1705,
-      "def min": 1547,
-      "hp": 5131,
-      "rec max": 1840,
-      "rec min": 1682
+    "move": {
+      "total number of frames": 13
     }
   },
-  "leader_skill": {
-    "desc": "30% boost to Atk and max HP for all Units",
-    "effects": [
-      {
-        "atk% buff": 30,
-        "hp% buff": 30,
-        "passive id": "1"
-      }
+  "category": 10670,
+  "cost": "20",
+  "damage frames": {
+    "frame times": [
+      21,
+      24,
+      29,
+      64,
+      70,
+      75,
+      79
     ],
-    "id": "7401",
-    "name": "High Ruler's Chakra"
+    "hit dmg% distribution": [
+      20,
+      8,
+      7,
+      5,
+      10,
+      20,
+      30
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 7
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "fire",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 1005,
+  "imp": {
+    "max atk": "140",
+    "max def": "140",
+    "max hp": "750",
+    "max rec": "140"
+  },
+  "kind": "normal",
+  "lord damage range": "1790~1999",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Strong Flame Griff",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Strong Flame Griff",
+  "maxlv": "80",
+  "no": "1005",
   "unitDisplayHomePosition_1W9CxaFK": "461,200,150,409",
   "unitDisplayDetailPosition_6z54rgb3": "-175,15,980,767",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "8,220,500,396,0",
@@ -541,5 +541,107 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "20:1103:1,21:120:1,23:1103:1,24:100081:1,29:400132:1,58:400132:1,59:100083:1,60:400132:1,64:120:1,65:100192:1,66:400131:1,70:120:1,75:120:1,79:120:1,80:400131:1"
+  "effectFrames": "20:1103:1,21:120:1,23:1103:1,24:100081:1,29:400132:1,58:400132:1,59:100083:1,60:400132:1,64:120:1,65:100192:1,66:400131:1,70:120:1,75:120:1,79:120:1,80:400131:1",
+  "evofrom": "",
+  "evointo": "10675",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10133",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "10191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "117",
+  "animation_idle": "52",
+  "animation_move": "13",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "21, 24, 29, 64, 70, 75, 79",
+  "normal_distribute": "20, 8, 7, 5, 10, 20, 30",
+  "normal_totaldistr": "100",
+  "bb_frames": "21, 24, 27, 30, 64, 70, 75, 79, 82, 85",
+  "bb_distribute": "20, 10, 5, 3, 3, 5, 8, 11, 15, 20",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "2",
+  "description": "A Summoner who served the Akras Summoners' Hall since the dawn of time. Though initially a soldier of humble beginnings from the Randall Empire, he quickly rose through the ranks to become a general, earning the support of many young soldiers along the way. However, he was unsatisfied with the small skirmishes between the Empire and the Federation, instead hoping for the chance to fight in a real battle. That opportunity presented itself when the First Summoner returned from Grand Gaia and Griff challenged him to a fierce duel. A few days later he sent his letter of resignation to the Imperial Army, and joined Summoners' Hall.",
+  "summon": "Congratulations for summoning me.<br>But I dare you to show me a<br>petty fight. I'll send you flying.",
+  "fusion": "You think this training's enough?!<br>The enemy's not gonna take it<br>easy on you, you know!",
+  "evolution": "",
+  "hp_base": "3623",
+  "atk_base": "1442",
+  "def_base": "1279",
+  "rec_base": "1143",
+  "hp_lord": "5131",
+  "atk_lord": "1923",
+  "def_lord": "1705",
+  "rec_lord": "1524",
+  "hp_anima": "5723",
+  "rec_anima": "1366",
+  "atk_breaker": "2081",
+  "def_breaker": "1547",
+  "atk_guardian": "1765",
+  "def_guardian": "1863",
+  "rec_guardian": "1445",
+  "def_oracle": "1626",
+  "hp_oracle": "4894",
+  "rec_oracle": "1761",
+  "hp_bonus": "750",
+  "atk_bonus": "140",
+  "def_bonus": "140",
+  "rec_bonus": "140",
+  "lordonly": "",
+  "combo_hits": "7",
+  "normaldc": "21",
+  "ls": "High Ruler's Chakra",
+  "lsdescription": "30% boost to Atk and max HP of all Units",
+  "lstype": "Hit Points/Attack",
+  "bbdescription": "10 combo powerful Fire attack on all foes & adds Fire, Water elements attack and boosts critical damage for 3 turns",
+  "bbnote": "50% boost",
+  "bbtype": "Support/Offense",
+  "bbhits": "10",
+  "bbaoe": "A",
+  "bbgauge": "25",
+  "bbdc": "10",
+  "bbmultiplier": "250",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "es": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "10133",
+  "evomats3": "10133",
+  "evomats4": "10191",
+  "evomats5": "60224",
+  "evoitem": ""
 }

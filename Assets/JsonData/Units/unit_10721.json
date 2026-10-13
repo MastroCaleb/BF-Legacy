@@ -1,63 +1,65 @@
 {
   "id": "10721",
-  "unitName": "Carbuncle",
-  "no": "1158",
-  "element": "Fire",
-  "rarity": "★★",
-  "cost": "4",
-  "maxlv": "30",
-  "basexp": "15",
-  "gender": "N",
-  "ai": "2",
-  "animation_attack": "74",
-  "animation_idle": "84",
-  "animation_move": "36",
-  "movespeed_attack": "0.0041",
-  "movespeed_skill": "0.0041",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "19, 34, 38",
-  "normal_distribute": "35, 45, 20",
-  "normal_totaldistr": "100",
-  "bb_frames": "19, 25, 34, 38, 42, 48",
-  "bb_distribute": "15, 10, 35, 20, 10, 10",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "description": "A wild animal native to Ishgria. The Carbuncle is quadrupedal when first born, and is closely protected by its parents as it grows. Accordingly, almost all quadrupedal Carbuncles spotted by humans have lost their parents, or have been separated from them. They are generally rough-natured, with vicious personalities. Difficult to tame even before maturity, Carbuncles have been known to attack humans to secure a meal. They can control the flames extending from their haunches like a tail.",
-  "summon": "Grrrrrr!",
-  "fusion": "Grrr! Grrr!",
-  "evolution": "",
-  "hp_base": "1480",
-  "atk_base": "660",
-  "def_base": "329",
-  "rec_base": "249",
-  "hp_lord": "2402",
-  "atk_lord": "912",
-  "def_lord": "554",
-  "rec_lord": "643",
-  "hp_anima": "2619",
-  "rec_anima": "585",
-  "atk_breaker": "970",
-  "def_breaker": "496",
-  "atk_guardian": "",
-  "def_guardian": "612",
-  "rec_guardian": "614",
-  "def_oracle": "525",
-  "hp_oracle": "",
-  "rec_oracle": "730",
-  "hp_bonus": "300",
-  "atk_bonus": "120",
-  "def_bonus": "120",
-  "rec_bonus": "120",
-  "lordonly": "",
-  "combo_hits": "3",
-  "normaldc": "6",
-  "ls": "Shining War Blade",
-  "lsdescription": "Critical damage slightly boosts BB gauge",
-  "lsnote": "Fills 2-3 BC",
-  "lstype": "Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 660,
+      "def": 329,
+      "hp": 1480,
+      "rec": 249
+    },
+    "_lord": {
+      "atk": 912,
+      "def": 554,
+      "hp": 2402,
+      "rec": 643
+    },
+    "anima": {
+      "atk": 912,
+      "def": 554,
+      "hp max": 2692,
+      "hp min": 2547,
+      "rec max": 614,
+      "rec min": 556
+    },
+    "breaker": {
+      "atk max": 999,
+      "atk min": 941,
+      "def max": 525,
+      "def min": 467,
+      "hp": 2402,
+      "rec": 643
+    },
+    "guardian": {
+      "atk": 912,
+      "def max": 641,
+      "def min": 583,
+      "hp": 2402,
+      "rec max": 643,
+      "rec min": 585
+    },
+    "oracle": {
+      "atk": 912,
+      "def max": 554,
+      "def min": 496,
+      "hp": 2402,
+      "rec max": 759,
+      "rec min": 701
+    }
+  },
+  "leader_skill": {
+    "desc": "Critical damage slightly boosts BB gauge",
+    "effects": [
+      {
+        "bc fill on crit max": 3,
+        "bc fill on crit min": 2,
+        "bc fill on crit%": 100.0,
+        "passive id": "65"
+      }
+    ],
+    "id": "10200",
+    "name": "Shining War Blade"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -302,97 +304,87 @@
     ],
     "name": "Flame Tail"
   },
-  "bbdescription": "6 combo Fire attack on single foe & slightly boosts BB gauge fill rate for 3 turns",
-  "bbnote": "10% boost",
-  "bbtype": "Support/Offense",
-  "bbhits": "6",
-  "bbaoe": "1",
-  "bbgauge": "12",
-  "bbdc": "12",
-  "bbmultiplier": "190",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "10722",
-  "evomats1": "10131",
-  "evomats2": "60142",
-  "evomats3": "60143",
-  "evomats4": "",
-  "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "50000",
-  "stats": {
-    "_base": {
-      "atk": 660,
-      "def": 329,
-      "hp": 1480,
-      "rec": 249
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 912,
-      "def": 554,
-      "hp": 2402,
-      "rec": 643
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 912,
-      "def": 554,
-      "hp max": 2692,
-      "hp min": 2547,
-      "rec max": 614,
-      "rec min": 556
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 74
     },
-    "breaker": {
-      "atk max": 999,
-      "atk min": 941,
-      "def max": 525,
-      "def min": 467,
-      "hp": 2402,
-      "rec": 643
+    "idle": {
+      "total number of frames": 84
     },
-    "guardian": {
-      "atk": 912,
-      "def max": 641,
-      "def min": 583,
-      "hp": 2402,
-      "rec max": 643,
-      "rec min": 585
-    },
-    "oracle": {
-      "atk": 912,
-      "def max": 554,
-      "def min": 496,
-      "hp": 2402,
-      "rec max": 759,
-      "rec min": 701
+    "move": {
+      "total number of frames": 36
     }
   },
-  "leader_skill": {
-    "desc": "Critical damage slightly boosts BB gauge",
-    "effects": [
-      {
-        "bc fill on crit max": 3,
-        "bc fill on crit min": 2,
-        "bc fill on crit%": 100.0,
-        "passive id": "65"
-      }
+  "category": 10720,
+  "cost": "4",
+  "damage frames": {
+    "frame times": [
+      19,
+      34,
+      38
     ],
-    "id": "10200",
-    "name": "Shining War Blade"
+    "hit dmg% distribution": [
+      35,
+      45,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 3
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "fire",
+  "exp_pattern": 15,
+  "gender": "other",
+  "getting type": "not eligible for achievement",
+  "guide_id": 1158,
+  "imp": {
+    "max atk": "120",
+    "max def": "120",
+    "max hp": "300",
+    "max rec": "120"
+  },
+  "kind": "normal",
+  "lord damage range": "848~948",
+  "movement": {
+    "attack": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    }
+  },
+  "name": "Carbuncle",
+  "rarity": "2",
+  "sell caution": false,
+  "unitName": "Carbuncle",
+  "maxlv": "30",
+  "no": "1158",
   "unitDisplayHomePosition_1W9CxaFK": "40,26,200,546",
   "unitDisplayDetailPosition_6z54rgb3": "250,227,500,551",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "223,287,300,330,0",
@@ -402,5 +394,102 @@
   "unitDisplayCursorPosition": "-2,10",
   "sellPrice": "300",
   "sellCaution": false,
-  "effectFrames": "13:121:1,34:131:1,38:131:1,33:140:1,15:100083:1"
+  "effectFrames": "13:121:1,34:131:1,38:131:1,33:140:1,15:100083:1",
+  "evofrom": "",
+  "evointo": "10722",
+  "evozelcost": "50000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "10131",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60142",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 1
+    }
+  ],
+  "basexp": "15",
+  "animation_attack": "74",
+  "animation_idle": "84",
+  "animation_move": "36",
+  "movespeed_attack": "0.0041",
+  "movespeed_skill": "0.0041",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "19, 34, 38",
+  "normal_distribute": "35, 45, 20",
+  "normal_totaldistr": "100",
+  "bb_frames": "19, 25, 34, 38, 42, 48",
+  "bb_distribute": "15, 10, 35, 20, 10, 10",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "description": "A wild animal native to Ishgria. The Carbuncle is quadrupedal when first born, and is closely protected by its parents as it grows. Accordingly, almost all quadrupedal Carbuncles spotted by humans have lost their parents, or have been separated from them. They are generally rough-natured, with vicious personalities. Difficult to tame even before maturity, Carbuncles have been known to attack humans to secure a meal. They can control the flames extending from their haunches like a tail.",
+  "summon": "Grrrrrr!",
+  "fusion": "Grrr! Grrr!",
+  "evolution": "",
+  "hp_base": "1480",
+  "atk_base": "660",
+  "def_base": "329",
+  "rec_base": "249",
+  "hp_lord": "2402",
+  "atk_lord": "912",
+  "def_lord": "554",
+  "rec_lord": "643",
+  "hp_anima": "2619",
+  "rec_anima": "585",
+  "atk_breaker": "970",
+  "def_breaker": "496",
+  "atk_guardian": "",
+  "def_guardian": "612",
+  "rec_guardian": "614",
+  "def_oracle": "525",
+  "hp_oracle": "",
+  "rec_oracle": "730",
+  "hp_bonus": "300",
+  "atk_bonus": "120",
+  "def_bonus": "120",
+  "rec_bonus": "120",
+  "lordonly": "",
+  "combo_hits": "3",
+  "normaldc": "6",
+  "ls": "Shining War Blade",
+  "lsdescription": "Critical damage slightly boosts BB gauge",
+  "lsnote": "Fills 2-3 BC",
+  "lstype": "Brave Burst",
+  "bbdescription": "6 combo Fire attack on single foe & slightly boosts BB gauge fill rate for 3 turns",
+  "bbnote": "10% boost",
+  "bbtype": "Support/Offense",
+  "bbhits": "6",
+  "bbaoe": "1",
+  "bbgauge": "12",
+  "bbdc": "12",
+  "bbmultiplier": "190",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "10131",
+  "evomats2": "60142",
+  "evomats3": "60143",
+  "evomats4": "",
+  "evomats5": "",
+  "evoitem": ""
 }

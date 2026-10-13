@@ -1,52 +1,64 @@
 {
   "id": "30155",
-  "unitName": "Pixy Lord Leore",
-  "no": "473",
-  "element": "Earth",
-  "rarity": "★★★★★★",
-  "cost": "22",
-  "maxlv": "100",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "147",
-  "animation_idle": "96",
-  "animation_move": "36",
-  "movespeed_attack": "0.0024",
-  "movespeed_skill": "0.0024",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "description": "A human boy who was raised by Titania as a pixy. He was seen as a threat thanks to his ability to bring pixy and human forces together, and a plot was formed for his assassination. However, thanks to Titania's intervention this attempt never came to fruition, though in return she lost her life. Immediately after, Leore exploded with rage, angrily swinging his sword until all the flowers floating around him were soaked red with blood.",
-  "summon": "I can't forgive a world in <br>which the good are trampled.<br>That is why I fight!",
-  "fusion": "Life is more fleeting than<br>a flower in the wind.<br>Still, it is important to fight!",
-  "evolution": "There are some who will<br>never receive my mercy!<br>I'll chop them all up!",
-  "hp_base": "4181",
-  "atk_base": "1247",
-  "def_base": "944",
-  "rec_base": "1213",
-  "hp_lord": "5805",
-  "atk_lord": "1702",
-  "def_lord": "1422",
-  "rec_lord": "1716",
-  "hp_anima": "6547",
-  "rec_anima": "1518",
-  "atk_breaker": "1900",
-  "def_breaker": "1224",
-  "atk_guardian": "1504",
-  "def_guardian": "1620",
-  "hp_oracle": "5062",
-  "rec_oracle": "1914",
-  "hp_bonus": "750",
-  "atk_bonus": "300",
-  "def_bonus": "300",
-  "rec_bonus": "300",
-  "lordonly": "",
-  "combo_hits": "9",
-  "ls": "Divine Wave",
-  "lsdescription": "25% boost to Atk and Def for all types",
-  "lstype": "Attack/Defense",
+  "stats": {
+    "_base": {
+      "atk": 1247,
+      "def": 944,
+      "hp": 4181,
+      "rec": 1213
+    },
+    "_lord": {
+      "atk": 1702,
+      "def": 1422,
+      "hp": 5805,
+      "rec": 1716
+    },
+    "anima": {
+      "atk": 1702,
+      "def": 1422,
+      "hp max": 6795,
+      "hp min": 6300,
+      "rec max": 1617,
+      "rec min": 1419
+    },
+    "breaker": {
+      "atk max": 1999,
+      "atk min": 1801,
+      "def max": 1323,
+      "def min": 1125,
+      "hp": 5805,
+      "rec": 1716
+    },
+    "guardian": {
+      "atk": 1702,
+      "def max": 1719,
+      "def min": 1521,
+      "hp": 5805,
+      "rec max": 1716,
+      "rec min": 1518
+    },
+    "oracle": {
+      "atk": 1702,
+      "def max": 1422,
+      "def min": 1224,
+      "hp": 5805,
+      "rec max": 2112,
+      "rec min": 1914
+    }
+  },
+  "leader_skill": {
+    "desc": "25% boost to Atk and Def for all types",
+    "effects": [
+      {
+        "atk% buff": 25,
+        "def% buff": 25,
+        "passive id": "1"
+      }
+    ],
+    "id": "2402",
+    "name": "Divine Wave"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -303,11 +315,6 @@
     ],
     "name": "Noble Stab"
   },
-  "bbdescription": "12 combo Earth elemental attack on all enemies & probable Weakness effect",
-  "bbtype": "Offense",
-  "bbhits": "12",
-  "bbaoe": "A",
-  "bbgauge": "28",
   "sbb": {
     "damage frames": [
       {
@@ -670,86 +677,98 @@
     ],
     "name": "Rose Riposte"
   },
-  "sbbdescription": "14 combo Earth elemental attack on all enemies, probable Weakness effect, and recovers HP for all allies",
-  "sbbtype": "Heal/Offense",
-  "sbbhits": "14",
-  "sbbaoe": "A",
-  "sbbgauge": "20",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "30154",
-  "evointo": "",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 1247,
-      "def": 944,
-      "hp": 4181,
-      "rec": 1213
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1702,
-      "def": 1422,
-      "hp": 5805,
-      "rec": 1716
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1702,
-      "def": 1422,
-      "hp max": 6795,
-      "hp min": 6300,
-      "rec max": 1617,
-      "rec min": 1419
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 147
     },
-    "breaker": {
-      "atk max": 1999,
-      "atk min": 1801,
-      "def max": 1323,
-      "def min": 1125,
-      "hp": 5805,
-      "rec": 1716
+    "idle": {
+      "total number of frames": 96
     },
-    "guardian": {
-      "atk": 1702,
-      "def max": 1719,
-      "def min": 1521,
-      "hp": 5805,
-      "rec max": 1716,
-      "rec min": 1518
-    },
-    "oracle": {
-      "atk": 1702,
-      "def max": 1422,
-      "def min": 1224,
-      "hp": 5805,
-      "rec max": 2112,
-      "rec min": 1914
+    "move": {
+      "total number of frames": 36
     }
   },
-  "leader_skill": {
-    "desc": "25% boost to Atk and Def for all types",
-    "effects": [
-      {
-        "atk% buff": 25,
-        "def% buff": 25,
-        "passive id": "1"
-      }
+  "category": 30150,
+  "cost": "22",
+  "damage frames": {
+    "frame times": [
+      20,
+      25,
+      30,
+      35,
+      40,
+      45,
+      80,
+      86,
+      92
     ],
-    "id": "2402",
-    "name": "Divine Wave"
+    "hit dmg% distribution": [
+      10,
+      6,
+      6,
+      6,
+      6,
+      6,
+      30,
+      20,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 9
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "earth",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 473,
+  "imp": {
+    "max atk": "300",
+    "max def": "300",
+    "max hp": "750",
+    "max rec": "300"
+  },
+  "kind": "normal",
+  "lord damage range": "1584~1770",
+  "movement": {
+    "attack": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    }
+  },
+  "name": "Pixy Lord Leore",
+  "rarity": "6",
+  "sell caution": false,
+  "unitName": "Pixy Lord Leore",
+  "maxlv": "100",
+  "no": "473",
   "unitDisplayHomePosition_1W9CxaFK": "288,145,200,544",
   "unitDisplayDetailPosition_6z54rgb3": "27,30,805,750",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "96,234,495,397,0",
@@ -759,5 +778,89 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "8000",
   "sellCaution": false,
-  "effectFrames": "14:123:1,14:300151:1,19:123:1,24:123:1,29:123:1,34:123:1,39:123:1,74:123:1,74:300120:1,70:330391:1,80:123:1,86:123:1"
+  "effectFrames": "14:123:1,14:300151:1,19:123:1,24:123:1,29:123:1,34:123:1,39:123:1,74:123:1,74:300120:1,70:330391:1,80:123:1,86:123:1",
+  "evofrom": "30154",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "21",
+  "animation_attack": "147",
+  "animation_idle": "96",
+  "animation_move": "36",
+  "movespeed_attack": "0.0024",
+  "movespeed_skill": "0.0024",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "20, 25, 30, 35, 40, 45, 80, 86, 92",
+  "normal_distribute": "10, 6, 6, 6, 6, 6, 30, 20, 10",
+  "normal_totaldistr": "100",
+  "bb_frames": "20, 25, 30, 35, 40, 45, 80, 86, 92, 98, 104, 110",
+  "bb_distribute": "10, 6, 6, 6, 6, 6, 20, 10, 8, 7, 8, 7",
+  "bb_totaldistr": "100",
+  "sbb_frames": "20, 25, 30, 35, 40, 45, 80, 86, 92, 98, 104, 110, 116, 122",
+  "sbb_distribute": "10, 5, 5, 5, 5, 5, 15, 8, 7, 7, 7, 7, 7, 7",
+  "sbb_totaldistr": "100",
+  "description": "A human boy who was raised by Titania as a pixy. He was seen as a threat thanks to his ability to bring pixy and human forces together, and a plot was formed for his assassination. However, thanks to Titania's intervention this attempt never came to fruition, though in return she lost her life. Immediately after, Leore exploded with rage, angrily swinging his sword until all the flowers floating around him were soaked red with blood.",
+  "summon": "I can't forgive a world in <br>which the good are trampled.<br>That is why I fight!",
+  "fusion": "Life is more fleeting than<br>a flower in the wind.<br>Still, it is important to fight!",
+  "evolution": "There are some who will<br>never receive my mercy!<br>I'll chop them all up!",
+  "hp_base": "4181",
+  "atk_base": "1247",
+  "def_base": "944",
+  "rec_base": "1213",
+  "hp_lord": "5805",
+  "atk_lord": "1702",
+  "def_lord": "1422",
+  "rec_lord": "1716",
+  "hp_anima": "6548",
+  "rec_anima": "1518",
+  "atk_breaker": "1900",
+  "def_breaker": "1224",
+  "atk_guardian": "1504",
+  "def_guardian": "1620",
+  "rec_guardian": "1617",
+  "def_oracle": "1323",
+  "hp_oracle": "5508",
+  "rec_oracle": "2013",
+  "hp_bonus": "750",
+  "atk_bonus": "300",
+  "def_bonus": "300",
+  "rec_bonus": "300",
+  "lordonly": "",
+  "combo_hits": "9",
+  "normaldc": "27",
+  "ls": "Divine Wave",
+  "lsdescription": "25% boost to Atk and Def for all types",
+  "lstype": "Attack/Defense",
+  "bbdescription": "12 combo Earth elemental attack on all enemies & probable Weakness effect",
+  "bbnote": "45% chance to inflict",
+  "bbtype": "Offense",
+  "bbhits": "12",
+  "bbaoe": "A",
+  "bbgauge": "25",
+  "bbdc": "24",
+  "bbmultiplier": "210",
+  "sbbdescription": "14 combo Earth elemental attack on all enemies, probable Weakness effect, and recovers HP for all allies",
+  "sbbnote": "60% chance to inflict Weakness, heals (1600~1900 + 22.5% of healer Rec) HP",
+  "sbbtype": "Heal/Offense",
+  "sbbhits": "14",
+  "sbbaoe": "A",
+  "sbbgauge": "20",
+  "sbbdc": "28",
+  "sbbmultiplier": "400",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "",
+  "evomats2": "",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": ""
 }

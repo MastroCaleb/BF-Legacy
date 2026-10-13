@@ -1,68 +1,93 @@
 {
   "id": "61006",
-  "unitName": "Heresy Demon Kalon",
-  "no": "1409",
-  "element": "Dark",
-  "rarity": "★★★★★★★",
-  "cost": "45",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "140",
-  "animation_idle": "52",
-  "animation_move": "48",
-  "movespeed_attack": "4",
-  "movespeed_skill": "4",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "2",
-  "movetype_skill": "2",
-  "normal_frames": "74, 77, 80, 83, 86, 89, 92",
-  "normal_distribute": "20, 16, 15, 14, 13, 12, 10",
-  "normal_totaldistr": "100",
-  "bb_frames": "74, 77, 80, 83, 86, 89, 92, 95, 98, 101, 104",
-  "bb_distribute": "15, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4",
-  "bb_totaldistr": "100",
-  "sbb_frames": "74, 77, 80, 83, 86, 89, 92, 95, 98, 101, 104, 107, 110, 113, 116, 119",
-  "sbb_distribute": "14, 11, 10, 9, 8, 7, 6, 5, 5, 4, 4, 4, 4, 3, 3, 3",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "74, 77, 80, 83, 86, 89, 92, 95, 98, 101, 104, 107, 110, 113, 116, 119, 122, 125, 128, 131",
-  "ubb_distribute": "12, 10, 9, 8, 7, 6, 5, 4, 3, 3, 3, 4, 3, 3, 3, 4, 3, 3, 3, 4",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "3",
-  "sbb_effectdelay": "4",
-  "ubb_effectdelay": "3",
-  "description": "A mock Unit modeled after Kalon, the Heresy Demon. Kalon was known in Ishgria as a terrifying demon with the ability to divide his incredible power into multiple parts. However, after meeting a certain Oracle Maiden, he ceased any unnecessary displays of power, and took it upon himself to use his powers to protect the world of Ishgria. Rumor has it that his new course of action was influenced by the Oracle Maiden's self-sacrifice.",
-  "summon": "A human has managed to summon me...?<br>Very well. If your will is as powerful as hers was, I shall serve you.",
-  "fusion": "Real strength is not born from power. It is because I lived without a purpose for so long that I can now see the true value of things.",
-  "evolution": "",
-  "hp_base": "5073",
-  "atk_base": "2232",
-  "def_base": "1683",
-  "rec_base": "1678",
-  "hp_lord": "7248",
-  "atk_lord": "3020",
-  "def_lord": "2289",
-  "rec_lord": "2263",
-  "hp_anima": "8140",
-  "rec_anima": "2025",
-  "atk_breaker": "3258",
-  "def_breaker": "2051",
-  "def_guardian": "2527",
-  "rec_guardian": "2144",
-  "def_oracle": "2170",
-  "rec_oracle": "2520",
-  "hp_bonus": "1000",
-  "atk_bonus": "600",
-  "def_bonus": "300",
-  "rec_bonus": "400",
-  "lordonly": "",
-  "combo_hits": "7",
-  "normaldc": "35",
-  "ls": "Dark God's Sealed Wings",
-  "lsdescription": "30% boost to Atk, max HP, enormously boosts BB Atk & adds probable Spark critical",
-  "lsnote": "200% boost to BB Atk, 3% chance to deal 50% more Spark damage from Spark critical",
+  "stats": {
+    "_base": {
+      "atk": 2232,
+      "def": 1683,
+      "hp": 5073,
+      "rec": 1678
+    },
+    "_lord": {
+      "atk": 3020,
+      "def": 2289,
+      "hp": 7248,
+      "rec": 2263
+    },
+    "anima": {
+      "atk": 3020,
+      "def": 2289,
+      "hp max": 8438,
+      "hp min": 7843,
+      "rec max": 2144,
+      "rec min": 1906
+    },
+    "breaker": {
+      "atk max": 3377,
+      "atk min": 3139,
+      "def max": 2170,
+      "def min": 1932,
+      "hp": 7248,
+      "rec": 2263
+    },
+    "guardian": {
+      "atk": 3020,
+      "def max": 2646,
+      "def min": 2408,
+      "hp": 7248,
+      "rec max": 2263,
+      "rec min": 2025
+    },
+    "oracle": {
+      "atk": 3020,
+      "def max": 2289,
+      "def min": 2051,
+      "hp": 7248,
+      "rec max": 2739,
+      "rec min": 2501
+    }
+  },
+  "leader_skill": {
+    "desc": "30% boost to Atk, max HP, enormously boosts BB Atk & adds probable Spark critical",
+    "effects": [
+      {
+        "atk% buff": 30,
+        "hp% buff": 30,
+        "passive id": "1"
+      },
+      {
+        "bb atk% buff": 200,
+        "passive id": "64",
+        "sbb atk% buff": 200,
+        "ubb atk% buff": 200
+      },
+      {
+        "passive id": "100",
+        "spark crit chance%": 3,
+        "spark crit dmg%": 50
+      }
+    ],
+    "id": "7448",
+    "name": "Dark God's Sealed Wings"
+  },
+  "extra_skill": {
+    "desc": "Considerably boosts BB Atk when HP is over 50%",
+    "effects": [
+      {
+        "bb atk% add": 100,
+        "conditions": [],
+        "hp threshold": 50,
+        "passive id": "103",
+        "passive target": "self",
+        "sbb atk% add": 100,
+        "triggered when hp": "higher",
+        "ubb atk% add": 100
+      }
+    ],
+    "id": "19600",
+    "name": "Bestowing Hope",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -713,18 +738,6 @@
     ],
     "name": "Chaos Squeeze"
   },
-  "bbdescription": "11 combo Dark attack on all foes, hugely boosts Atk and considerably boosts BB Atk for 3 turns, boosts elemental based damage for 3 turns & probable slight HP absorption when attacking for 3 turns",
-  "bbnote": "150% boost to Atk, 230% boost to BB Atk, 50% boost to elemental damage, 50% chance to drain 3~5% HP from damage dealt",
-  "bbtype": "Offense",
-  "bbhits": "11",
-  "bbaoe": "A",
-  "bbgauge": "25",
-  "bbdc": "11",
-  "bbmultiplier": "350",
-  "bbhits2": "",
-  "bbaoe2": "",
-  "bbdc2": "",
-  "bbmultiplier2": "",
   "sbb": {
     "damage frames": [
       {
@@ -1537,18 +1550,6 @@
     ],
     "name": "Disparity"
   },
-  "sbbdescription": "16 combo powerful Light and Dark attack on all foes, powerful additional attack at turn's end for 2 turns, hugely boosts Atk and BB Atk for 3 turns, boosts elemental based damage for 3 turns & probable Spark critical for 3 turns",
-  "sbbnote": "400% multiplier on additional attack, 150% boost to Atk, 300% boost to BB Atk, 50% boost to elemental damage, 20% chance to deal 50% more Spark damage from Spark critical",
-  "sbbtype": "Offense",
-  "sbbhits": "16",
-  "sbbaoe": "A",
-  "sbbgauge": "30",
-  "sbbdc": "16",
-  "sbbmultiplier": "560",
-  "sbbhits2": "",
-  "sbbaoe2": "",
-  "sbbdc2": "",
-  "sbbmultiplier2": "",
   "ubb": {
     "damage frames": [
       {
@@ -1710,6 +1711,218 @@
     ],
     "name": "Dark Corridor"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 140
+    },
+    "idle": {
+      "total number of frames": 52
+    },
+    "move": {
+      "total number of frames": 48
+    }
+  },
+  "category": 61000,
+  "cost": "44",
+  "damage frames": {
+    "frame times": [
+      74,
+      77,
+      80,
+      83,
+      86,
+      89,
+      92
+    ],
+    "hit dmg% distribution": [
+      20,
+      16,
+      15,
+      14,
+      13,
+      12,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 7
+  },
+  "drop check count": 5,
+  "element": "dark",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 1409,
+  "imp": {
+    "max atk": "600",
+    "max def": "300",
+    "max hp": "1000",
+    "max rec": "400"
+  },
+  "kind": "normal",
+  "lord damage range": "2812~3140",
+  "movement": {
+    "attack": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "2"
+    },
+    "skill": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "2"
+    }
+  },
+  "name": "Heresy Demon Kalon",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Heresy Demon Kalon",
+  "maxlv": "120",
+  "no": "1409",
+  "unitDisplayHomePosition_1W9CxaFK": "524,318,190,519",
+  "unitDisplayDetailPosition_6z54rgb3": "-88,-46,1000,908",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "53,169,520,472,1",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-18,-289,930,845",
+  "unitDisplaySummonPosition_KC3Jk8Br": "53,169,520,472,1",
+  "unitDisplayHpPosition_3BpHN6VD": "1,37",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "15000",
+  "sellCaution": false,
+  "effectFrames": "68:127:1,73:600040:1,74:600329:1,77:600210:1,85:601085:1,90:600904:1",
+  "evofrom": "",
+  "evointo": "61007",
+  "evozelcost": "3000000",
+  "evokarmacost": "1000000",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "60344",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60123",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 2
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "140",
+  "animation_idle": "52",
+  "animation_move": "48",
+  "movespeed_attack": "4",
+  "movespeed_skill": "4",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "2",
+  "movetype_skill": "2",
+  "normal_frames": "74, 77, 80, 83, 86, 89, 92",
+  "normal_distribute": "20, 16, 15, 14, 13, 12, 10",
+  "normal_totaldistr": "100",
+  "bb_frames": "74, 77, 80, 83, 86, 89, 92, 95, 98, 101, 104",
+  "bb_distribute": "15, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4",
+  "bb_totaldistr": "100",
+  "sbb_frames": "74, 77, 80, 83, 86, 89, 92, 95, 98, 101, 104, 107, 110, 113, 116, 119",
+  "sbb_distribute": "14, 11, 10, 9, 8, 7, 6, 5, 5, 4, 4, 4, 4, 3, 3, 3",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "74, 77, 80, 83, 86, 89, 92, 95, 98, 101, 104, 107, 110, 113, 116, 119, 122, 125, 128, 131",
+  "ubb_distribute": "12, 10, 9, 8, 7, 6, 5, 4, 3, 3, 3, 4, 3, 3, 3, 4, 3, 3, 3, 4",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "3",
+  "sbb_effectdelay": "4",
+  "ubb_effectdelay": "3",
+  "description": "A mock Unit modeled after Kalon, the Heresy Demon. Kalon was known in Ishgria as a terrifying demon with the ability to divide his incredible power into multiple parts. However, after meeting a certain Oracle Maiden, he ceased any unnecessary displays of power, and took it upon himself to use his powers to protect the world of Ishgria. Rumor has it that his new course of action was influenced by the Oracle Maiden's self-sacrifice.",
+  "summon": "A human has managed to summon me...?<br>Very well. If your will is as powerful as hers was, I shall serve you.",
+  "fusion": "Real strength is not born from power. It is because I lived without a purpose for so long that I can now see the true value of things.",
+  "evolution": "",
+  "hp_base": "5073",
+  "atk_base": "2232",
+  "def_base": "1683",
+  "rec_base": "1678",
+  "hp_lord": "7248",
+  "atk_lord": "3020",
+  "def_lord": "2289",
+  "rec_lord": "2263",
+  "hp_anima": "8140",
+  "rec_anima": "2025",
+  "atk_breaker": "3258",
+  "def_breaker": "2051",
+  "def_guardian": "2527",
+  "rec_guardian": "2144",
+  "def_oracle": "2170",
+  "rec_oracle": "2520",
+  "hp_bonus": "1000",
+  "atk_bonus": "600",
+  "def_bonus": "300",
+  "rec_bonus": "400",
+  "lordonly": "",
+  "combo_hits": "7",
+  "normaldc": "35",
+  "ls": "Dark God's Sealed Wings",
+  "lsdescription": "30% boost to Atk, max HP, enormously boosts BB Atk & adds probable Spark critical",
+  "lsnote": "200% boost to BB Atk, 3% chance to deal 50% more Spark damage from Spark critical",
+  "bbdescription": "11 combo Dark attack on all foes, hugely boosts Atk and considerably boosts BB Atk for 3 turns, boosts elemental based damage for 3 turns & probable slight HP absorption when attacking for 3 turns",
+  "bbnote": "150% boost to Atk, 230% boost to BB Atk, 50% boost to elemental damage, 50% chance to drain 3~5% HP from damage dealt",
+  "bbtype": "Offense",
+  "bbhits": "11",
+  "bbaoe": "A",
+  "bbgauge": "25",
+  "bbdc": "11",
+  "bbmultiplier": "350",
+  "bbhits2": "",
+  "bbaoe2": "",
+  "bbdc2": "",
+  "bbmultiplier2": "",
+  "sbbdescription": "16 combo powerful Light and Dark attack on all foes, powerful additional attack at turn's end for 2 turns, hugely boosts Atk and BB Atk for 3 turns, boosts elemental based damage for 3 turns & probable Spark critical for 3 turns",
+  "sbbnote": "400% multiplier on additional attack, 150% boost to Atk, 300% boost to BB Atk, 50% boost to elemental damage, 20% chance to deal 50% more Spark damage from Spark critical",
+  "sbbtype": "Offense",
+  "sbbhits": "16",
+  "sbbaoe": "A",
+  "sbbgauge": "30",
+  "sbbdc": "16",
+  "sbbmultiplier": "560",
+  "sbbhits2": "",
+  "sbbaoe2": "",
+  "sbbdc2": "",
+  "sbbmultiplier2": "",
   "ubbdescription": "20 combo massive Light and Dark attack on all foes, enormously boosts Atk and hugely boosts BB Atk for 3 turns, probable Spark critical for 3 turns & enormous damage reduction for 1 turn",
   "ubbnote": "250% boost to Atk, 450% boost to BB Atk, 50% chance to deal 50% more Spark damage from Spark critical, 100% damage reduction",
   "ubbtype": "Offense",
@@ -1726,8 +1939,6 @@
   "esitem": "",
   "esdescription": "Considerably boosts BB Atk when HP is over 50%",
   "esnote": "100% boost",
-  "evofrom": "",
-  "evointo": "61007",
   "evomats1": "Dark Mecha God",
   "evomats2": "Dark Mecha God",
   "evomats3": "Miracle Totem",
@@ -1738,104 +1949,5 @@
   "evomats8": "Metal Mimic",
   "evomats9": "",
   "evoitem": "",
-  "evoitem2": "",
-  "evozelcost": "3000000",
-  "stats": {
-    "_base": {
-      "atk": 2232,
-      "def": 1683,
-      "hp": 5073,
-      "rec": 1678
-    },
-    "_lord": {
-      "atk": 3020,
-      "def": 2289,
-      "hp": 7248,
-      "rec": 2263
-    },
-    "anima": {
-      "atk": 3020,
-      "def": 2289,
-      "hp max": 8438,
-      "hp min": 7843,
-      "rec max": 2144,
-      "rec min": 1906
-    },
-    "breaker": {
-      "atk max": 3377,
-      "atk min": 3139,
-      "def max": 2170,
-      "def min": 1932,
-      "hp": 7248,
-      "rec": 2263
-    },
-    "guardian": {
-      "atk": 3020,
-      "def max": 2646,
-      "def min": 2408,
-      "hp": 7248,
-      "rec max": 2263,
-      "rec min": 2025
-    },
-    "oracle": {
-      "atk": 3020,
-      "def max": 2289,
-      "def min": 2051,
-      "hp": 7248,
-      "rec max": 2739,
-      "rec min": 2501
-    }
-  },
-  "leader_skill": {
-    "desc": "30% boost to Atk, max HP, enormously boosts BB Atk & adds probable Spark critical",
-    "effects": [
-      {
-        "atk% buff": 30,
-        "hp% buff": 30,
-        "passive id": "1"
-      },
-      {
-        "bb atk% buff": 200,
-        "passive id": "64",
-        "sbb atk% buff": 200,
-        "ubb atk% buff": 200
-      },
-      {
-        "passive id": "100",
-        "spark crit chance%": 3,
-        "spark crit dmg%": 50
-      }
-    ],
-    "id": "7448",
-    "name": "Dark God's Sealed Wings"
-  },
-  "extra_skill": {
-    "desc": "Considerably boosts BB Atk when HP is over 50%",
-    "effects": [
-      {
-        "bb atk% add": 100,
-        "conditions": [],
-        "hp threshold": 50,
-        "passive id": "103",
-        "passive target": "self",
-        "sbb atk% add": 100,
-        "triggered when hp": "higher",
-        "ubb atk% add": 100
-      }
-    ],
-    "id": "19600",
-    "name": "Bestowing Hope",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "524,318,190,519",
-  "unitDisplayDetailPosition_6z54rgb3": "-88,-46,1000,908",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "53,169,520,472,1",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-18,-289,930,845",
-  "unitDisplaySummonPosition_KC3Jk8Br": "53,169,520,472,1",
-  "unitDisplayHpPosition_3BpHN6VD": "1,37",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "15000",
-  "sellCaution": false,
-  "effectFrames": "68:127:1,73:600040:1,74:600329:1,77:600210:1,85:601085:1,90:600904:1"
+  "evoitem2": ""
 }

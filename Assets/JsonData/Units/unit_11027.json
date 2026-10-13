@@ -1,61 +1,112 @@
 {
   "id": "11027",
-  "unitName": "Strife God Afla Dilith",
-  "freetext": ":''For the 6★ unit, see Beast God Afla Dilith''",
-  "no": "1553",
-  "element": "Fire",
-  "rarity": "Omni",
-  "cost": "54",
-  "maxlv": "150",
-  "basexp": "21",
-  "gender": "N",
-  "ai": "3",
-  "animation_attack": "213",
-  "animation_idle": "58",
-  "animation_move": "6",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "16, 21, 26, 62, 68, 74, 102, 106, 110, 114, 118, 122",
-  "normal_distribute": "10, 7, 6, 11, 8, 7, 13, 11, 9, 7, 6, 5",
-  "normal_totaldistr": "100",
-  "bb_frames": "16, 21, 26, 31, 62, 68, 74, 80, 102, 106, 110, 114, 118, 122, 126, 130",
-  "bb_distribute": "9, 6, 4, 3, 10, 7, 5, 3, 12, 10, 9, 7, 5, 4, 3, 3",
-  "bb_totaldistr": "100",
-  "sbb_frames": "16, 20, 24, 28, 32, 62, 67, 72, 77, 82, 102, 105, 108, 111, 114, 117, 120, 123, 126, 129",
-  "sbb_distribute": "8, 5, 4, 3, 3, 9, 5, 4, 3, 3, 11, 8, 7, 6, 5, 4, 3, 3, 3, 3",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "16, 19, 22, 25, 28, 31, 34, 62, 65, 68, 71, 74, 77, 80, 102, 105, 108, 111, 114, 117, 120, 123, 126, 129, 132, 135, 138, 141",
-  "ubb_distribute": "6, 4, 3, 3, 3, 3, 3, 7, 4, 3, 3, 3, 3, 3, 9, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "1",
-  "ubb_effectdelay": "1",
-  "description": "It is said that among the Divine Ten, Afla Dilith ruled over conflict and victory. Afla Dilith's creed was that conflict built strength for all involved, and that strife would produce a brighter future. Although an effort to rule Grand Gaia according to this philosophy would lead to Afla Dilith's inclusion in the Four Fallen Gods, he originally played a key role in sustaining the world with an orderly system. Had Afla Dilith known of a certain god's plans to upset the order of the world, he might have confronted them head-on.",
-  "summon": "I have no issue with using force to rise up. I have only to accept any challenge made of me.",
-  "fusion": "The mighty strike down the mighty, creating beings even mightier still. That is the real truth of the world!",
-  "evolution": "",
-  "hp_base": "6580",
-  "atk_base": "3030",
-  "def_base": "2420",
-  "rec_base": "2270",
-  "hp_lord": "8580",
-  "atk_lord": "3770",
-  "def_lord": "3010",
-  "rec_lord": "2840",
-  "hp_bonus": "1500",
-  "atk_bonus": "600",
-  "def_bonus": "600",
-  "rec_bonus": "600",
-  "lordonly": "Y",
-  "combo_hits": "12",
-  "normaldc": "48",
-  "ls": "Conqueror Burst",
-  "lsdescription": "60% boost to Atk, max HP, 120% boost to Spark damage, considerably boosts BB Atk for 2 turns when Spark damage exceeds certain amount & attacks slightly absorb HP",
-  "lsnote": "250% BB Atk after 15 Sparks & drain 5-10% damage dealt",
+  "stats": {
+    "_base": {
+      "atk": 3030,
+      "def": 2420,
+      "hp": 6580,
+      "rec": 2270
+    },
+    "_lord": {
+      "atk": 3770,
+      "def": 3010,
+      "hp": 8580,
+      "rec": 2840
+    },
+    "anima": {
+      "atk": 3770,
+      "def": 3010,
+      "hp max": 10070,
+      "hp min": 9325,
+      "rec max": 2691,
+      "rec min": 2393
+    },
+    "breaker": {
+      "atk max": 4217,
+      "atk min": 3919,
+      "def max": 2861,
+      "def min": 2563,
+      "hp": 8580,
+      "rec": 2840
+    },
+    "guardian": {
+      "atk": 3770,
+      "def max": 3457,
+      "def min": 3159,
+      "hp": 8580,
+      "rec max": 2840,
+      "rec min": 2542
+    },
+    "oracle": {
+      "atk": 3770,
+      "def max": 3010,
+      "def min": 2712,
+      "hp": 8580,
+      "rec max": 3436,
+      "rec min": 3138
+    }
+  },
+  "leader_skill": {
+    "desc": "60% boost to Atk, max HP, 120% boost to Spark damage, considerably boosts BB Atk for 2 turns when Spark damage exceeds certain amount & attacks slightly absorb HP",
+    "effects": [
+      {
+        "atk% buff": 60,
+        "hp% buff": 60,
+        "passive id": "1"
+      },
+      {
+        "damage% for spark": 120,
+        "passive id": "31"
+      },
+      {
+        "buff": {
+          "bb atk% buff": 250,
+          "buff turns (72)": "2",
+          "sbb atk% buff": 250,
+          "ubb atk% buff": 250
+        },
+        "passive id": "86",
+        "spark count buff activation": 15
+      },
+      {
+        "hp drain chance%": 100,
+        "hp drain% high": 10,
+        "hp drain% low": 5,
+        "passive id": "17"
+      }
+    ],
+    "id": "7489",
+    "name": "Conqueror Burst"
+  },
+  "extra_skill": {
+    "desc": "50% boost to Spark damage, hugely boosts BB Atk & raises max Atk value from 99999 to 130000",
+    "effects": [
+      {
+        "conditions": [],
+        "damage% for spark": 50,
+        "passive id": "31",
+        "passive target": "self"
+      },
+      {
+        "bb atk% buff": 150,
+        "conditions": [],
+        "passive id": "64",
+        "passive target": "self",
+        "sbb atk% buff": 150,
+        "ubb atk% buff": 150
+      },
+      {
+        "conditions": [],
+        "increase atk cap": 130000,
+        "passive id": "143",
+        "passive target": "self"
+      }
+    ],
+    "id": "29300",
+    "name": "True Victory",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -564,14 +615,6 @@
     ],
     "name": "Resonating Adis"
   },
-  "bbdescription": "16 combo powerful Fire, Water attack on all foes, hugely boosts BB gauge, enormously boosts Spark damage for 3 turns & hugely boosts BB Atk for 3 turns",
-  "bbnote": "Fills 8 BC, 120% Spark and 350% BB Atk",
-  "bbtype": "Offense",
-  "bbhits": "16",
-  "bbaoe": "A",
-  "bbgauge": "30",
-  "bbdc": "16",
-  "bbmultiplier": "450",
   "sbb": {
     "damage frames": [
       {
@@ -1220,14 +1263,6 @@
     ],
     "name": "Purification Rite"
   },
-  "sbbdescription": "20 combo powerful Fire, Water attack on all foes, probable Spark vulnerability infliction for 2 turns, hugely boosts BB Atk for 3 turns, Spark damage boosts BB gauge for 3 turns & enormously boosts Spark damage for 3 turns",
-  "sbbnote": "120% Spark, 350% BB Atk, fills 2-3 BC & 30% chance for 30% vulnerability",
-  "sbbtype": "Offense",
-  "sbbhits": "20",
-  "sbbaoe": "A",
-  "sbbgauge": "35",
-  "sbbdc": "20",
-  "sbbmultiplier": "700",
   "ubb": {
     "damage frames": [
       {
@@ -1407,6 +1442,193 @@
     ],
     "name": "Divine Destruction"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 213
+    },
+    "idle": {
+      "total number of frames": 58
+    },
+    "move": {
+      "total number of frames": 6
+    }
+  },
+  "category": 11020,
+  "cost": "54",
+  "damage frames": {
+    "frame times": [
+      16,
+      21,
+      26,
+      62,
+      68,
+      74,
+      102,
+      106,
+      110,
+      114,
+      118,
+      122
+    ],
+    "hit dmg% distribution": [
+      10,
+      7,
+      6,
+      11,
+      8,
+      7,
+      13,
+      11,
+      9,
+      7,
+      6,
+      5
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 12
+  },
+  "drop check count": 4,
+  "element": "fire",
+  "exp_pattern": 20,
+  "gender": "other",
+  "getting type": "farmable",
+  "guide_id": 1553,
+  "imp": {
+    "max atk": "600",
+    "max def": "600",
+    "max hp": "1500",
+    "max rec": "600"
+  },
+  "kind": "normal",
+  "lord damage range": "3510~3920",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Strife God Afla Dilith",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "8",
+  "sell caution": true,
+  "unitName": "Strife God Afla Dilith",
+  "maxlv": "150",
+  "no": "1553",
+  "unitDisplayHomePosition_1W9CxaFK": "601,335,174,475",
+  "unitDisplayDetailPosition_6z54rgb3": "-311,-124,1378,1014",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "-61,147,689,507,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-223,-339,1250,920",
+  "unitDisplaySummonPosition_KC3Jk8Br": "-61,147,689,507,0",
+  "unitDisplayHpPosition_3BpHN6VD": "-2,57",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "50000",
+  "sellCaution": true,
+  "effectFrames": "10:120:1,15:120:1,21:120:1,56:120:1,62:120:1,68:120:1,96:120:1,100:120:1,104:120:1,108:120:1,112:120:1,116:120:1,15:201134:1,16:200787:1,61:1097:1,62:100199:1,102:1757:1,109:200787:1,116:600324:1,65:1656:1",
+  "evofrom": "",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "freetext": ":''For the 6★ unit, see Beast God Afla Dilith''",
+  "basexp": "21",
+  "animation_attack": "213",
+  "animation_idle": "58",
+  "animation_move": "6",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "16, 21, 26, 62, 68, 74, 102, 106, 110, 114, 118, 122",
+  "normal_distribute": "10, 7, 6, 11, 8, 7, 13, 11, 9, 7, 6, 5",
+  "normal_totaldistr": "100",
+  "bb_frames": "16, 21, 26, 31, 62, 68, 74, 80, 102, 106, 110, 114, 118, 122, 126, 130",
+  "bb_distribute": "9, 6, 4, 3, 10, 7, 5, 3, 12, 10, 9, 7, 5, 4, 3, 3",
+  "bb_totaldistr": "100",
+  "sbb_frames": "16, 20, 24, 28, 32, 62, 67, 72, 77, 82, 102, 105, 108, 111, 114, 117, 120, 123, 126, 129",
+  "sbb_distribute": "8, 5, 4, 3, 3, 9, 5, 4, 3, 3, 11, 8, 7, 6, 5, 4, 3, 3, 3, 3",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "16, 19, 22, 25, 28, 31, 34, 62, 65, 68, 71, 74, 77, 80, 102, 105, 108, 111, 114, 117, 120, 123, 126, 129, 132, 135, 138, 141",
+  "ubb_distribute": "6, 4, 3, 3, 3, 3, 3, 7, 4, 3, 3, 3, 3, 3, 9, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "1",
+  "ubb_effectdelay": "1",
+  "description": "It is said that among the Divine Ten, Afla Dilith ruled over conflict and victory. Afla Dilith's creed was that conflict built strength for all involved, and that strife would produce a brighter future. Although an effort to rule Grand Gaia according to this philosophy would lead to Afla Dilith's inclusion in the Four Fallen Gods, he originally played a key role in sustaining the world with an orderly system. Had Afla Dilith known of a certain god's plans to upset the order of the world, he might have confronted them head-on.",
+  "summon": "I have no issue with using force to rise up. I have only to accept any challenge made of me.",
+  "fusion": "The mighty strike down the mighty, creating beings even mightier still. That is the real truth of the world!",
+  "evolution": "",
+  "hp_base": "6580",
+  "atk_base": "3030",
+  "def_base": "2420",
+  "rec_base": "2270",
+  "hp_lord": "8580",
+  "atk_lord": "3770",
+  "def_lord": "3010",
+  "rec_lord": "2840",
+  "hp_bonus": "1500",
+  "atk_bonus": "600",
+  "def_bonus": "600",
+  "rec_bonus": "600",
+  "lordonly": "Y",
+  "combo_hits": "12",
+  "normaldc": "48",
+  "ls": "Conqueror Burst",
+  "lsdescription": "60% boost to Atk, max HP, 120% boost to Spark damage, considerably boosts BB Atk for 2 turns when Spark damage exceeds certain amount & attacks slightly absorb HP",
+  "lsnote": "250% BB Atk after 15 Sparks & drain 5-10% damage dealt",
+  "bbdescription": "16 combo powerful Fire, Water attack on all foes, hugely boosts BB gauge, enormously boosts Spark damage for 3 turns & hugely boosts BB Atk for 3 turns",
+  "bbnote": "Fills 8 BC, 120% Spark and 350% BB Atk",
+  "bbtype": "Offense",
+  "bbhits": "16",
+  "bbaoe": "A",
+  "bbgauge": "30",
+  "bbdc": "16",
+  "bbmultiplier": "450",
+  "sbbdescription": "20 combo powerful Fire, Water attack on all foes, probable Spark vulnerability infliction for 2 turns, hugely boosts BB Atk for 3 turns, Spark damage boosts BB gauge for 3 turns & enormously boosts Spark damage for 3 turns",
+  "sbbnote": "120% Spark, 350% BB Atk, fills 2-3 BC & 30% chance for 30% vulnerability",
+  "sbbtype": "Offense",
+  "sbbhits": "20",
+  "sbbaoe": "A",
+  "sbbgauge": "35",
+  "sbbdc": "20",
+  "sbbmultiplier": "700",
   "ubbdescription": "28 combo massive Fire attack on all foes (damage relative to remaining HP), enormously boosts Spark damage for 3 turns, probable powerful Spark critical for 3 turns, adds all elements to Atk for 3 turns & enormously boosts BB gauge for 3 turns",
   "ubbnote": "1500% + 1500% x current HP / max base HP, 350% Spark, 50% chance Sparks deal 150% extra damage & fills 50 BC",
   "ubbtype": "Offense",
@@ -1420,8 +1642,6 @@
   "esitem": "",
   "esdescription": "50% boost to Spark damage, hugely boosts BB Atk & raises max Atk value from 99999 to 130000",
   "esnote": "150% BB Atk",
-  "evofrom": "",
-  "evointo": "",
   "evomats1": "",
   "evomats2": "",
   "evomats3": "",
@@ -1430,123 +1650,5 @@
   "evomats6": "",
   "evomats7": "",
   "evomats8": "",
-  "evoitem": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 3030,
-      "def": 2420,
-      "hp": 6580,
-      "rec": 2270
-    },
-    "_lord": {
-      "atk": 3770,
-      "def": 3010,
-      "hp": 8580,
-      "rec": 2840
-    },
-    "anima": {
-      "atk": 3770,
-      "def": 3010,
-      "hp max": 10070,
-      "hp min": 9325,
-      "rec max": 2691,
-      "rec min": 2393
-    },
-    "breaker": {
-      "atk max": 4217,
-      "atk min": 3919,
-      "def max": 2861,
-      "def min": 2563,
-      "hp": 8580,
-      "rec": 2840
-    },
-    "guardian": {
-      "atk": 3770,
-      "def max": 3457,
-      "def min": 3159,
-      "hp": 8580,
-      "rec max": 2840,
-      "rec min": 2542
-    },
-    "oracle": {
-      "atk": 3770,
-      "def max": 3010,
-      "def min": 2712,
-      "hp": 8580,
-      "rec max": 3436,
-      "rec min": 3138
-    }
-  },
-  "leader_skill": {
-    "desc": "60% boost to Atk, max HP, 120% boost to Spark damage, considerably boosts BB Atk for 2 turns when Spark damage exceeds certain amount & attacks slightly absorb HP",
-    "effects": [
-      {
-        "atk% buff": 60,
-        "hp% buff": 60,
-        "passive id": "1"
-      },
-      {
-        "damage% for spark": 120,
-        "passive id": "31"
-      },
-      {
-        "buff": {
-          "bb atk% buff": 250,
-          "buff turns (72)": "2",
-          "sbb atk% buff": 250,
-          "ubb atk% buff": 250
-        },
-        "passive id": "86",
-        "spark count buff activation": 15
-      },
-      {
-        "hp drain chance%": 100,
-        "hp drain% high": 10,
-        "hp drain% low": 5,
-        "passive id": "17"
-      }
-    ],
-    "id": "7489",
-    "name": "Conqueror Burst"
-  },
-  "extra_skill": {
-    "desc": "50% boost to Spark damage, hugely boosts BB Atk & raises max Atk value from 99999 to 130000",
-    "effects": [
-      {
-        "conditions": [],
-        "damage% for spark": 50,
-        "passive id": "31",
-        "passive target": "self"
-      },
-      {
-        "bb atk% buff": 150,
-        "conditions": [],
-        "passive id": "64",
-        "passive target": "self",
-        "sbb atk% buff": 150,
-        "ubb atk% buff": 150
-      },
-      {
-        "conditions": [],
-        "increase atk cap": 130000,
-        "passive id": "143",
-        "passive target": "self"
-      }
-    ],
-    "id": "29300",
-    "name": "True Victory",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "601,335,174,475",
-  "unitDisplayDetailPosition_6z54rgb3": "-311,-124,1378,1014",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "-61,147,689,507,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-223,-339,1250,920",
-  "unitDisplaySummonPosition_KC3Jk8Br": "-61,147,689,507,0",
-  "unitDisplayHpPosition_3BpHN6VD": "-2,57",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "50000",
-  "sellCaution": true,
-  "effectFrames": "10:120:1,15:120:1,21:120:1,56:120:1,62:120:1,68:120:1,96:120:1,100:120:1,104:120:1,108:120:1,112:120:1,116:120:1,15:201134:1,16:200787:1,61:1097:1,62:100199:1,102:1757:1,109:200787:1,116:600324:1,65:1656:1"
+  "evoitem": ""
 }

@@ -1,52 +1,63 @@
 {
   "id": "50304",
-  "unitName": "Lubradine",
-  "no": "424",
-  "element": "Light",
-  "rarity": "★★★★★",
-  "cost": "16",
-  "maxlv": "80",
-  "basexp": "21",
-  "gender": "N",
-  "ai": "1",
-  "animation_attack": "116",
-  "animation_idle": "68",
-  "animation_move": "36",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "4",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "3",
-  "description": "A white beast who served as the keeper of order and helped maintain peace. He headed to the battlefield with Lira and Golem where the Rebel Angel had already unleashed the disastrous beast. When they arrived, however, it was Elsel herself who was waiting for them. Going ahead of Lira and Golem, the white beast was the first to confront the Rebel Angel. Seeing through to how she was struggling with her newfound freedom, the white beast took on the brunt of her attack as he attempted to persuade her to stop.",
-  "summon": "I am the keeper of order.<br>If I determine you to be just, <br>then my power is yours.",
-  "fusion": "Summoner, do you act knowing<br>the true meaning of power?<br>If so, then let me be your blade.",
-  "evolution": "If it's my power that you seek<br>then allow me to show you. <br>This is my true beastly form.",
-  "hp_base": "3492",
-  "atk_base": "1152",
-  "def_base": "1048",
-  "rec_base": "1296",
-  "hp_lord": "5294",
-  "atk_lord": "1617",
-  "def_lord": "1470",
-  "rec_lord": "1764",
-  "hp_anima": "5886",
-  "rec_anima": "1606",
-  "atk_breaker": "1775",
-  "def_breaker": "1312",
-  "atk_guardian": "1459",
-  "def_guardian": "1628",
-  "hp_oracle": "4701",
-  "rec_oracle": "1922",
-  "hp_bonus": "500",
-  "atk_bonus": "200",
-  "def_bonus": "200",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "5",
-  "ls": "Intense Strobe",
-  "lsdescription": "Large boost in damage dealt during Spark",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 1152,
+      "def": 1048,
+      "hp": 3492,
+      "rec": 1296
+    },
+    "_lord": {
+      "atk": 1617,
+      "def": 1470,
+      "hp": 5294,
+      "rec": 1764
+    },
+    "anima": {
+      "atk": 1617,
+      "def": 1470,
+      "hp max": 6084,
+      "hp min": 5689,
+      "rec max": 1685,
+      "rec min": 1527
+    },
+    "breaker": {
+      "atk max": 1854,
+      "atk min": 1696,
+      "def max": 1391,
+      "def min": 1233,
+      "hp": 5294,
+      "rec": 1764
+    },
+    "guardian": {
+      "atk": 1617,
+      "def max": 1707,
+      "def min": 1549,
+      "hp": 5294,
+      "rec max": 1764,
+      "rec min": 1606
+    },
+    "oracle": {
+      "atk": 1617,
+      "def max": 1470,
+      "def min": 1312,
+      "hp": 5294,
+      "rec max": 2080,
+      "rec min": 1922
+    }
+  },
+  "leader_skill": {
+    "desc": "Large boost in damage dealt during Spark",
+    "effects": [
+      {
+        "damage% for spark": 50,
+        "passive id": "31"
+      }
+    ],
+    "id": "1302",
+    "name": "Intense Strobe"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -229,91 +240,91 @@
     ],
     "name": "King Beast's Roar"
   },
-  "bbdescription": "Greatly boosts Atk, Def, and Rec for all allies for 3 turns",
-  "bbtype": "Support",
-  "bbhits": "",
-  "bbaoe": "0",
-  "bbgauge": "25",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "50303",
-  "evointo": "50305",
-  "evomats1": "50354",
-  "evomats2": "50123",
-  "evomats3": "60224",
-  "evomats4": "50122",
-  "evomats5": "50191",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 1152,
-      "def": 1048,
-      "hp": 3492,
-      "rec": 1296
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "party"
     },
-    "_lord": {
-      "atk": 1617,
-      "def": 1470,
-      "hp": 5294,
-      "rec": 1764
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1617,
-      "def": 1470,
-      "hp max": 6084,
-      "hp min": 5689,
-      "rec max": 1685,
-      "rec min": 1527
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 116
     },
-    "breaker": {
-      "atk max": 1854,
-      "atk min": 1696,
-      "def max": 1391,
-      "def min": 1233,
-      "hp": 5294,
-      "rec": 1764
+    "idle": {
+      "total number of frames": 68
     },
-    "guardian": {
-      "atk": 1617,
-      "def max": 1707,
-      "def min": 1549,
-      "hp": 5294,
-      "rec max": 1764,
-      "rec min": 1606
-    },
-    "oracle": {
-      "atk": 1617,
-      "def max": 1470,
-      "def min": 1312,
-      "hp": 5294,
-      "rec max": 2080,
-      "rec min": 1922
+    "move": {
+      "total number of frames": 36
     }
   },
-  "leader_skill": {
-    "desc": "Large boost in damage dealt during Spark",
-    "effects": [
-      {
-        "damage% for spark": 50,
-        "passive id": "31"
-      }
+  "category": 50300,
+  "cost": "16",
+  "damage frames": {
+    "frame times": [
+      62,
+      67,
+      72,
+      77,
+      82
     ],
-    "id": "1302",
-    "name": "Intense Strobe"
+    "hit dmg% distribution": [
+      20,
+      20,
+      20,
+      20,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 5
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "light",
+  "exp_pattern": 20,
+  "gender": "other",
+  "getting type": "rare summon",
+  "guide_id": 424,
+  "imp": {
+    "max atk": "200",
+    "max def": "200",
+    "max hp": "500",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "1505~1681",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    }
+  },
+  "name": "Lubradine",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Lubradine",
+  "maxlv": "80",
+  "no": "424",
   "unitDisplayHomePosition_1W9CxaFK": "123,196,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "57,25,1000,769",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "58,243,650,376,1",
@@ -323,5 +334,105 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "62:300181:1,72:300181:1,82:300181:1,56:125:1,61:125:1,66:125:1,71:125:1,76:125:1,56:500131:1,67:400122:1,77:400122:1,82:500170:1,82:200081:1"
+  "effectFrames": "62:300181:1,72:300181:1,82:300181:1,56:125:1,61:125:1,66:125:1,71:125:1,76:125:1,56:500131:1,67:400122:1,77:400122:1,82:500170:1,82:200081:1",
+  "evofrom": "50303",
+  "evointo": "50305",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50123",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50122",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50191",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "116",
+  "animation_idle": "68",
+  "animation_move": "36",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "4",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "3",
+  "normal_frames": "62, 67, 72, 77, 82",
+  "normal_distribute": "20, 20, 20, 20, 20",
+  "normal_totaldistr": "100",
+  "description": "A white beast who served as the keeper of order and helped maintain peace. He headed to the battlefield with Lira and Golem where the Rebel Angel had already unleashed the disastrous beast. When they arrived, however, it was Elsel herself who was waiting for them. Going ahead of Lira and Golem, the white beast was the first to confront the Rebel Angel. Seeing through to how she was struggling with her newfound freedom, the white beast took on the brunt of her attack as he attempted to persuade her to stop.",
+  "summon": "I am the keeper of order.<br>If I determine you to be just, <br>then my power is yours.",
+  "fusion": "Summoner, do you act knowing<br>the true meaning of power?<br>If so, then let me be your blade.",
+  "evolution": "If it's my power that you seek<br>then allow me to show you. <br>This is my true beastly form.",
+  "hp_base": "3492",
+  "atk_base": "1152",
+  "def_base": "1048",
+  "rec_base": "1296",
+  "hp_lord": "5294",
+  "atk_lord": "1617",
+  "def_lord": "1470",
+  "rec_lord": "1764",
+  "hp_anima": "5887",
+  "rec_anima": "1606",
+  "atk_breaker": "1775",
+  "def_breaker": "1312",
+  "atk_guardian": "1459",
+  "def_guardian": "1628",
+  "rec_guardian": "1685",
+  "def_oracle": "1391",
+  "hp_oracle": "5057",
+  "rec_oracle": "2001",
+  "hp_bonus": "500",
+  "atk_bonus": "200",
+  "def_bonus": "200",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "5",
+  "normaldc": "15",
+  "ls": "Intense Strobe",
+  "lsdescription": "Large boost in damage dealt during Spark",
+  "lsnote": "50% boost",
+  "lstype": "Attack",
+  "bbdescription": "Greatly boosts Atk, Def, and Rec for all allies for 3 turns",
+  "bbnote": "50% boost",
+  "bbtype": "Support",
+  "bbhits": "",
+  "bbaoe": "0",
+  "bbgauge": "25",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "50123",
+  "evomats3": "60224",
+  "evomats4": "50122",
+  "evomats5": "50191"
 }

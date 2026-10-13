@@ -1,62 +1,63 @@
 {
   "id": "50052",
-  "unitName": "Azrael",
-  "no": "522",
-  "element": "Light",
-  "rarity": "★★★",
-  "cost": "6",
-  "maxlv": "40",
-  "basexp": "10",
-  "gender": "N",
-  "ai": "1",
-  "animation_attack": "69",
-  "animation_idle": "52",
-  "animation_move": "18",
-  "movespeed_attack": "0.005",
-  "movespeed_skill": "0.005",
-  "speedtype_attack": "1",
-  "speedtype_skill": "1",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "38, 41, 45",
-  "normal_distribute": "30, 30, 40",
-  "normal_totaldistr": "100",
-  "bb_frames": "36, 42, 47, 52",
-  "bb_distribute": "24, 25, 25, 26",
-  "bb_totaldistr": "100",
-  "description": "A humanoid with heavenly white wings on its back. Though once thought to have been of the same species as Valkyries, this new species evolved from Archangels that were blessed with power from the gods thanks to their virtuoucity. They were likely mistakenly identified this way as though they have the personality of Angels, their roles are similar to that of Valkyries. Beautiful depictions of them clearing the skies of evil are depicted on the ceiling of the Veda Cathedral.",
-  "summon": "This blade granted to me is<br>proof the gods have blessed me!<br>Rejoice, child of man!",
-  "fusion": "I am humbled by the gods' grace!<br>My increasing power is proof of<br>their existance!",
-  "evolution": "These are blessings from the gods!<br>Just look! My wings! My blades!<br>No evil can escape them!",
-  "hp_base": "2088",
-  "atk_base": "629",
-  "def_base": "649",
-  "rec_base": "493",
-  "hp_lord": "3320",
-  "atk_lord": "849",
-  "def_lord": "876",
-  "rec_lord": "665",
-  "hp_anima": "3613",
-  "rec_anima": "587",
-  "atk_breaker": "927",
-  "def_breaker": "798",
-  "atk_guardian": "771",
-  "def_guardian": "954",
-  "rec_guardian": "626",
-  "def_oracle": "837",
-  "hp_oracle": "3203",
-  "rec_oracle": "782",
-  "hp_bonus": "300",
-  "atk_bonus": "160",
-  "def_bonus": "80",
-  "rec_bonus": "120",
-  "lordonly": "",
-  "combo_hits": "3",
-  "normaldc": "6",
-  "ls": "Pure Light",
-  "lsdescription": "Small boost in Heart Crystals produced during Spark",
-  "lsnote": "20% boost",
-  "lstype": "Recovery",
+  "stats": {
+    "_base": {
+      "atk": 629,
+      "def": 649,
+      "hp": 2088,
+      "rec": 493
+    },
+    "_lord": {
+      "atk": 849,
+      "def": 876,
+      "hp": 3320,
+      "rec": 665
+    },
+    "anima": {
+      "atk": 849,
+      "def": 876,
+      "hp max": 3710,
+      "hp min": 3515,
+      "rec max": 626,
+      "rec min": 548
+    },
+    "breaker": {
+      "atk max": 966,
+      "atk min": 888,
+      "def max": 837,
+      "def min": 759,
+      "hp": 3320,
+      "rec": 665
+    },
+    "guardian": {
+      "atk": 849,
+      "def max": 993,
+      "def min": 915,
+      "hp": 3320,
+      "rec max": 665,
+      "rec min": 587
+    },
+    "oracle": {
+      "atk": 849,
+      "def max": 876,
+      "def min": 798,
+      "hp": 3320,
+      "rec max": 821,
+      "rec min": 743
+    }
+  },
+  "leader_skill": {
+    "desc": "Small boost in Heart Crystals produced during Spark",
+    "effects": [
+      {
+        "hc drop% for spark": 20,
+        "passive id": "31"
+      }
+    ],
+    "id": "1500",
+    "name": "Pure Light"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -225,94 +226,87 @@
     ],
     "name": "Heaven Pillar"
   },
-  "bbdescription": "4 combo Light elemental attack on single enemy & boost to HC drop rate",
-  "bbnote": "40% boost to self",
-  "bbtype": "Support/Offense",
-  "bbhits": "4",
-  "bbaoe": "1",
-  "bbgauge": "10",
-  "bbdc": "24",
-  "bbmultiplier": "180",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "50051",
-  "evointo": "",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 629,
-      "def": 649,
-      "hp": 2088,
-      "rec": 493
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "party"
     },
-    "_lord": {
-      "atk": 849,
-      "def": 876,
-      "hp": 3320,
-      "rec": 665
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 849,
-      "def": 876,
-      "hp max": 3710,
-      "hp min": 3515,
-      "rec max": 626,
-      "rec min": 548
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 69
     },
-    "breaker": {
-      "atk max": 966,
-      "atk min": 888,
-      "def max": 837,
-      "def min": 759,
-      "hp": 3320,
-      "rec": 665
+    "idle": {
+      "total number of frames": 52
     },
-    "guardian": {
-      "atk": 849,
-      "def max": 993,
-      "def min": 915,
-      "hp": 3320,
-      "rec max": 665,
-      "rec min": 587
-    },
-    "oracle": {
-      "atk": 849,
-      "def max": 876,
-      "def min": 798,
-      "hp": 3320,
-      "rec max": 821,
-      "rec min": 743
+    "move": {
+      "total number of frames": 18
     }
   },
-  "leader_skill": {
-    "desc": "Small boost in Heart Crystals produced during Spark",
-    "effects": [
-      {
-        "hc drop% for spark": 20,
-        "passive id": "31"
-      }
+  "category": 50050,
+  "cost": "6",
+  "damage frames": {
+    "frame times": [
+      38,
+      41,
+      45
     ],
-    "id": "1500",
-    "name": "Pure Light"
+    "hit dmg% distribution": [
+      30,
+      30,
+      40
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 3
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "light",
+  "exp_pattern": 10,
+  "gender": "other",
+  "getting type": "farmable",
+  "guide_id": 522,
+  "imp": {
+    "max atk": "160",
+    "max def": "80",
+    "max hp": "300",
+    "max rec": "120"
+  },
+  "kind": "normal",
+  "lord damage range": "790~882",
+  "movement": {
+    "attack": {
+      "move speed": 0.005,
+      "move speed type": "1",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.005,
+      "move speed type": "1",
+      "move type": "1"
+    }
+  },
+  "name": "Azrael",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "Azrael",
+  "maxlv": "40",
+  "no": "522",
   "unitDisplayHomePosition_1W9CxaFK": "335,200,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "0,-15,951,777",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "40,218,512,410,1",
@@ -322,5 +316,84 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "1000",
   "sellCaution": false,
-  "effectFrames": "32:125:1,35:125:1,36:500170:1,39:125:1"
+  "effectFrames": "32:125:1,35:125:1,36:500170:1,39:125:1",
+  "evofrom": "50051",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "10",
+  "animation_attack": "69",
+  "animation_idle": "52",
+  "animation_move": "18",
+  "movespeed_attack": "0.005",
+  "movespeed_skill": "0.005",
+  "speedtype_attack": "1",
+  "speedtype_skill": "1",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "38, 41, 45",
+  "normal_distribute": "30, 30, 40",
+  "normal_totaldistr": "100",
+  "bb_frames": "36, 42, 47, 52",
+  "bb_distribute": "24, 25, 25, 26",
+  "bb_totaldistr": "100",
+  "description": "A humanoid with heavenly white wings on its back. Though once thought to have been of the same species as Valkyries, this new species evolved from Archangels that were blessed with power from the gods thanks to their virtuoucity. They were likely mistakenly identified this way as though they have the personality of Angels, their roles are similar to that of Valkyries. Beautiful depictions of them clearing the skies of evil are depicted on the ceiling of the Veda Cathedral.",
+  "summon": "This blade granted to me is<br>proof the gods have blessed me!<br>Rejoice, child of man!",
+  "fusion": "I am humbled by the gods' grace!<br>My increasing power is proof of<br>their existance!",
+  "evolution": "These are blessings from the gods!<br>Just look! My wings! My blades!<br>No evil can escape them!",
+  "hp_base": "2088",
+  "atk_base": "629",
+  "def_base": "649",
+  "rec_base": "493",
+  "hp_lord": "3320",
+  "atk_lord": "849",
+  "def_lord": "876",
+  "rec_lord": "665",
+  "hp_anima": "3613",
+  "rec_anima": "587",
+  "atk_breaker": "927",
+  "def_breaker": "798",
+  "atk_guardian": "771",
+  "def_guardian": "954",
+  "rec_guardian": "626",
+  "def_oracle": "837",
+  "hp_oracle": "3203",
+  "rec_oracle": "782",
+  "hp_bonus": "300",
+  "atk_bonus": "160",
+  "def_bonus": "80",
+  "rec_bonus": "120",
+  "lordonly": "",
+  "combo_hits": "3",
+  "normaldc": "6",
+  "ls": "Pure Light",
+  "lsdescription": "Small boost in Heart Crystals produced during Spark",
+  "lsnote": "20% boost",
+  "lstype": "Recovery",
+  "bbdescription": "4 combo Light elemental attack on single enemy & boost to HC drop rate",
+  "bbnote": "40% boost to self",
+  "bbtype": "Support/Offense",
+  "bbhits": "4",
+  "bbaoe": "1",
+  "bbgauge": "10",
+  "bbdc": "24",
+  "bbmultiplier": "180",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "",
+  "evomats2": "",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": ""
 }

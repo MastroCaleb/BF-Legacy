@@ -1,62 +1,63 @@
 {
   "id": "50504",
-  "unitName": "Brave King Hogar",
-  "no": "668",
-  "element": "Light",
-  "rarity": "★★★★★",
-  "cost": "17",
-  "maxlv": "80",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "4",
-  "animation_attack": "180",
-  "animation_idle": "52",
-  "animation_move": "6",
-  "movespeed_attack": "0.0041",
-  "movespeed_skill": "0.0041",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "79, 83, 136, 142",
-  "normal_distribute": "25, 15, 40, 20",
-  "normal_totaldistr": "100",
-  "bb_frames": "79, 83, 87, 136, 142",
-  "bb_distribute": "20, 10, 10, 40, 20",
-  "bb_totaldistr": "100",
-  "description": "A famous adventurer and world traveler. It is said that he heroically defeated his enemies on the battlefield, and that his decisiveness and awareness were so top class that he was able to avoid any kind of trap in mere seconds. During his travels, a spectacled scholar girl told him about a great destructive power that lay dormant within some ancient ruins. He then decided to head in that direction in order to seal it. However, he was worried about what would become of his daughter. After his wife pleaded that she take them with him, they set off on their journey as a family.",
-  "summon": "Summoner!<br>Let's go on a new adventure!<br>We should prepare as soon as possible!",
-  "fusion": "I feel more powerful!<br>Just like after eating<br>my wife's cooking!<br>Haha! Did I say too much?",
-  "evolution": "With this power I can go to<br>new and unexplored places.<br>Okay, let's get going!",
-  "hp_base": "4454",
-  "atk_base": "1456",
-  "def_base": "1192",
-  "rec_base": "910",
-  "hp_lord": "5129",
-  "atk_lord": "1926",
-  "def_lord": "1577",
-  "rec_lord": "1204",
-  "hp_anima": "5722",
-  "rec_anima": "1046",
-  "atk_breaker": "2084",
-  "def_breaker": "1419",
-  "atk_guardian": "1768",
-  "def_guardian": "1735",
-  "rec_guardian": "1125",
-  "def_oracle": "1498",
-  "hp_oracle": "4892",
-  "rec_oracle": "1441",
-  "hp_bonus": "750",
-  "atk_bonus": "140",
-  "def_bonus": "140",
-  "rec_bonus": "140",
-  "lordonly": "",
-  "combo_hits": "4",
-  "normaldc": "16",
-  "ls": "Intense Strobe",
-  "lsdescription": "Large boost in damage dealt during Spark",
-  "lsnote": "75% boost to Spark damage",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 1456,
+      "def": 1192,
+      "hp": 4454,
+      "rec": 910
+    },
+    "_lord": {
+      "atk": 1926,
+      "def": 1577,
+      "hp": 5129,
+      "rec": 1204
+    },
+    "anima": {
+      "atk": 1926,
+      "def": 1577,
+      "hp max": 5919,
+      "hp min": 5524,
+      "rec max": 1125,
+      "rec min": 967
+    },
+    "breaker": {
+      "atk max": 2163,
+      "atk min": 2005,
+      "def max": 1498,
+      "def min": 1340,
+      "hp": 5129,
+      "rec": 1204
+    },
+    "guardian": {
+      "atk": 1926,
+      "def max": 1814,
+      "def min": 1656,
+      "hp": 5129,
+      "rec max": 1204,
+      "rec min": 1046
+    },
+    "oracle": {
+      "atk": 1926,
+      "def max": 1577,
+      "def min": 1419,
+      "hp": 5129,
+      "rec max": 1520,
+      "rec min": 1362
+    }
+  },
+  "leader_skill": {
+    "desc": "Large boost in damage dealt during Spark",
+    "effects": [
+      {
+        "damage% for spark": 50,
+        "passive id": "31"
+      }
+    ],
+    "id": "1302",
+    "name": "Intense Strobe"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -217,93 +218,101 @@
     ],
     "name": "Gravity Break"
   },
-  "bbdescription": "5 combo Light elemental attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "5",
-  "bbaoe": "A",
-  "bbgauge": "15",
-  "bbdc": "10",
-  "bbmultiplier": "150",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "50503",
-  "evointo": "50505",
-  "evomats1": "50354",
-  "evomats2": "50123",
-  "evomats3": "50123",
-  "evomats4": "60144",
-  "evomats5": "60224",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 1456,
-      "def": 1192,
-      "hp": 4454,
-      "rec": 910
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_under",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1926,
-      "def": 1577,
-      "hp": 5129,
-      "rec": 1204
+    {
+      "action": "skill",
+      "chance%": 30.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1926,
-      "def": 1577,
-      "hp max": 5919,
-      "hp min": 5524,
-      "rec max": 1125,
-      "rec min": 967
+    {
+      "action": "attack",
+      "chance%": 70.0,
+      "target conditions": "hp_max",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 2163,
-      "atk min": 2005,
-      "def max": 1498,
-      "def min": 1340,
-      "hp": 5129,
-      "rec": 1204
+    {
+      "action": "attack",
+      "chance%": 50.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "guardian": {
-      "atk": 1926,
-      "def max": 1814,
-      "def min": 1656,
-      "hp": 5129,
-      "rec max": 1204,
-      "rec min": 1046
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 180
     },
-    "oracle": {
-      "atk": 1926,
-      "def max": 1577,
-      "def min": 1419,
-      "hp": 5129,
-      "rec max": 1520,
-      "rec min": 1362
+    "idle": {
+      "total number of frames": 52
+    },
+    "move": {
+      "total number of frames": 6
     }
   },
-  "leader_skill": {
-    "desc": "Large boost in damage dealt during Spark",
-    "effects": [
-      {
-        "damage% for spark": 50,
-        "passive id": "31"
-      }
+  "category": 50500,
+  "cost": "17",
+  "damage frames": {
+    "frame times": [
+      79,
+      83,
+      136,
+      142
     ],
-    "id": "1302",
-    "name": "Intense Strobe"
+    "hit dmg% distribution": [
+      25,
+      15,
+      40,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 4
   },
-  "extra_skill": {},
+  "drop check count": 4,
+  "element": "light",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 668,
+  "imp": {
+    "max atk": "140",
+    "max def": "140",
+    "max hp": "750",
+    "max rec": "140"
+  },
+  "kind": "normal",
+  "lord damage range": "1793~2003",
+  "movement": {
+    "attack": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    }
+  },
+  "name": "Brave King Hogar",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Brave King Hogar",
+  "maxlv": "80",
+  "no": "668",
   "unitDisplayHomePosition_1W9CxaFK": "330,440,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-31,-239,881,1060",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "57,251,457,378,0",
@@ -313,5 +322,104 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "73:125:1,77:125:1,130:125:1,136:137:1,79:300183:1,136:500221:1,79:500173:1,87:100083:1"
+  "effectFrames": "73:125:1,77:125:1,130:125:1,136:137:1,79:300183:1,136:500221:1,79:500173:1,87:100083:1",
+  "evofrom": "50503",
+  "evointo": "50505",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50123",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "180",
+  "animation_idle": "52",
+  "animation_move": "6",
+  "movespeed_attack": "0.0041",
+  "movespeed_skill": "0.0041",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "79, 83, 136, 142",
+  "normal_distribute": "25, 15, 40, 20",
+  "normal_totaldistr": "100",
+  "bb_frames": "79, 83, 87, 136, 142",
+  "bb_distribute": "20, 10, 10, 40, 20",
+  "bb_totaldistr": "100",
+  "description": "A famous adventurer and world traveler. It is said that he heroically defeated his enemies on the battlefield, and that his decisiveness and awareness were so top class that he was able to avoid any kind of trap in mere seconds. During his travels, a spectacled scholar girl told him about a great destructive power that lay dormant within some ancient ruins. He then decided to head in that direction in order to seal it. However, he was worried about what would become of his daughter. After his wife pleaded that she take them with him, they set off on their journey as a family.",
+  "summon": "Summoner!<br>Let's go on a new adventure!<br>We should prepare as soon as possible!",
+  "fusion": "I feel more powerful!<br>Just like after eating<br>my wife's cooking!<br>Haha! Did I say too much?",
+  "evolution": "With this power I can go to<br>new and unexplored places.<br>Okay, let's get going!",
+  "hp_base": "4454",
+  "atk_base": "1456",
+  "def_base": "1192",
+  "rec_base": "910",
+  "hp_lord": "5129",
+  "atk_lord": "1926",
+  "def_lord": "1577",
+  "rec_lord": "1204",
+  "hp_anima": "5722",
+  "rec_anima": "1046",
+  "atk_breaker": "2084",
+  "def_breaker": "1419",
+  "atk_guardian": "1768",
+  "def_guardian": "1735",
+  "rec_guardian": "1125",
+  "def_oracle": "1498",
+  "hp_oracle": "4892",
+  "rec_oracle": "1441",
+  "hp_bonus": "750",
+  "atk_bonus": "140",
+  "def_bonus": "140",
+  "rec_bonus": "140",
+  "lordonly": "",
+  "combo_hits": "4",
+  "normaldc": "16",
+  "ls": "Intense Strobe",
+  "lsdescription": "Large boost in damage dealt during Spark",
+  "lsnote": "75% boost to Spark damage",
+  "lstype": "Attack",
+  "bbdescription": "5 combo Light elemental attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "5",
+  "bbaoe": "A",
+  "bbgauge": "15",
+  "bbdc": "10",
+  "bbmultiplier": "150",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "50123",
+  "evomats3": "50123",
+  "evomats4": "60144",
+  "evomats5": "60224"
 }

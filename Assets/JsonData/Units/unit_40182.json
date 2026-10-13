@@ -1,52 +1,64 @@
 {
   "id": "40182",
-  "unitName": "Thunder Cat Parmi",
-  "no": "466",
-  "element": "Thunder",
-  "rarity": "★★★",
-  "cost": "7",
-  "maxlv": "40",
-  "basexp": "15",
-  "gender": "N",
-  "ai": "2",
-  "animation_attack": "106",
-  "animation_idle": "52",
-  "animation_move": "36",
-  "movespeed_attack": "0.0024",
-  "movespeed_skill": "0.0024",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "description": "A girl with cat-like ears and a tail discovered near the border of the La Veda Republic. As the bond between herself and the acrobat who gave her her name deepened, she grew tired of her life as an exhibit. With lightning fast agility there was no one who can stop her and she was easily able to escape. Having gained her independence, she lived a determined life in the shadows of the big city, though it seems she was still able to meet the acrobat from time to time.",
-  "summon": "I'm Parmi.<br>You smell nice, Summoner.<br>I, Parmi, will go with you.",
-  "fusion": "Parmi is getting stronger!<br>I wanna grow even more<br>powerful for you, Summoner!",
-  "evolution": "I like you, Summoner.<br>Have I gotten stronger?<br>Do you like me too now?",
-  "hp_base": "2147",
-  "atk_base": "823",
-  "def_base": "587",
-  "rec_base": "667",
-  "hp_lord": "3542",
-  "atk_lord": "1160",
-  "def_lord": "804",
-  "rec_lord": "953",
-  "hp_anima": "3834",
-  "rec_anima": "875",
-  "atk_breaker": "1238",
-  "def_breaker": "726",
-  "atk_guardian": "1082",
-  "def_guardian": "882",
-  "hp_oracle": "3249",
-  "rec_oracle": "1031",
-  "hp_bonus": "300",
-  "atk_bonus": "160",
-  "def_bonus": "80",
-  "rec_bonus": "120",
-  "lordonly": "",
-  "combo_hits": "8",
-  "ls": "Absolute Power",
-  "lsdescription": "25% boost to Atk power of genderless Units",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 823,
+      "def": 587,
+      "hp": 2147,
+      "rec": 667
+    },
+    "_lord": {
+      "atk": 1160,
+      "def": 804,
+      "hp": 3542,
+      "rec": 953
+    },
+    "anima": {
+      "atk": 1160,
+      "def": 804,
+      "hp max": 3932,
+      "hp min": 3737,
+      "rec max": 914,
+      "rec min": 836
+    },
+    "breaker": {
+      "atk max": 1277,
+      "atk min": 1199,
+      "def max": 765,
+      "def min": 687,
+      "hp": 3542,
+      "rec": 953
+    },
+    "guardian": {
+      "atk": 1160,
+      "def max": 921,
+      "def min": 843,
+      "hp": 3542,
+      "rec max": 953,
+      "rec min": 875
+    },
+    "oracle": {
+      "atk": 1160,
+      "def max": 804,
+      "def min": 726,
+      "hp": 3542,
+      "rec max": 1109,
+      "rec min": 1031
+    }
+  },
+  "leader_skill": {
+    "desc": "25% boost to Atk power of genderless Units",
+    "effects": [
+      {
+        "atk% buff": 25,
+        "gender required": "genderless",
+        "passive id": "42"
+      }
+    ],
+    "id": "4700",
+    "name": "Absolute Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -225,92 +237,97 @@
     ],
     "name": "Spiral Scratch"
   },
-  "bbdescription": "9 combo Thunder elemental attack on single enemy & boost to HC drop rate",
-  "bbtype": "Support/Offense",
-  "bbhits": "9",
-  "bbaoe": "1",
-  "bbgauge": "15",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "40181",
-  "evointo": "",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 823,
-      "def": 587,
-      "hp": 2147,
-      "rec": 667
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1160,
-      "def": 804,
-      "hp": 3542,
-      "rec": 953
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1160,
-      "def": 804,
-      "hp max": 3932,
-      "hp min": 3737,
-      "rec max": 914,
-      "rec min": 836
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 106
     },
-    "breaker": {
-      "atk max": 1277,
-      "atk min": 1199,
-      "def max": 765,
-      "def min": 687,
-      "hp": 3542,
-      "rec": 953
+    "idle": {
+      "total number of frames": 52
     },
-    "guardian": {
-      "atk": 1160,
-      "def max": 921,
-      "def min": 843,
-      "hp": 3542,
-      "rec max": 953,
-      "rec min": 875
-    },
-    "oracle": {
-      "atk": 1160,
-      "def max": 804,
-      "def min": 726,
-      "hp": 3542,
-      "rec max": 1109,
-      "rec min": 1031
+    "move": {
+      "total number of frames": 36
     }
   },
-  "leader_skill": {
-    "desc": "25% boost to Atk power of genderless Units",
-    "effects": [
-      {
-        "atk% buff": 25,
-        "gender required": "genderless",
-        "passive id": "42"
-      }
+  "category": 40180,
+  "cost": "7",
+  "damage frames": {
+    "frame times": [
+      15,
+      22,
+      31,
+      39,
+      47,
+      52,
+      59,
+      67
     ],
-    "id": "4700",
-    "name": "Absolute Power"
+    "hit dmg% distribution": [
+      12,
+      12,
+      12,
+      12,
+      12,
+      12,
+      14,
+      14
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 8
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "thunder",
+  "exp_pattern": 15,
+  "gender": "other",
+  "getting type": "farmable",
+  "guide_id": 466,
+  "imp": {
+    "max atk": "160",
+    "max def": "80",
+    "max hp": "300",
+    "max rec": "120"
+  },
+  "kind": "normal",
+  "lord damage range": "1080~1206",
+  "movement": {
+    "attack": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    }
+  },
+  "name": "Thunder Cat Parmi",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "Thunder Cat Parmi",
+  "maxlv": "40",
+  "no": "466",
   "unitDisplayHomePosition_1W9CxaFK": "169,-44,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "170,242,613,541",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "160,336,297,293,0",
@@ -320,5 +337,83 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "1000",
   "sellCaution": false,
-  "effectFrames": "9:124:1,16:124:1,25:124:1,33:124:1,41:124:1,46:124:1,53:124:1,61:124:1,61:400061:1,67:200081:1"
+  "effectFrames": "9:124:1,16:124:1,25:124:1,33:124:1,41:124:1,46:124:1,53:124:1,61:124:1,61:400061:1,67:200081:1",
+  "evofrom": "40181",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "15",
+  "animation_attack": "106",
+  "animation_idle": "52",
+  "animation_move": "36",
+  "movespeed_attack": "0.0024",
+  "movespeed_skill": "0.0024",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "15, 22, 31, 39, 47, 52, 59, 67",
+  "normal_distribute": "12, 12, 12, 12, 12, 12, 14, 14",
+  "normal_totaldistr": "100",
+  "bb_frames": "15, 22, 31, 39, 47, 52, 59, 63, 67",
+  "bb_distribute": "11, 11, 11, 11, 11, 11, 11, 11, 12",
+  "bb_totaldistr": "100",
+  "description": "A girl with cat-like ears and a tail discovered near the border of the La Veda Republic. As the bond between herself and the acrobat who gave her her name deepened, she grew tired of her life as an exhibit. With lightning fast agility there was no one who can stop her and she was easily able to escape. Having gained her independence, she lived a determined life in the shadows of the big city, though it seems she was still able to meet the acrobat from time to time.",
+  "summon": "I'm Parmi.<br>You smell nice, Summoner.<br>I, Parmi, will go with you.",
+  "fusion": "Parmi is getting stronger!<br>I wanna grow even more<br>powerful for you, Summoner!",
+  "evolution": "I like you, Summoner.<br>Have I gotten stronger?<br>Do you like me too now?",
+  "hp_base": "2147",
+  "atk_base": "823",
+  "def_base": "587",
+  "rec_base": "667",
+  "hp_lord": "3542",
+  "atk_lord": "1160",
+  "def_lord": "804",
+  "rec_lord": "953",
+  "hp_anima": "3835",
+  "rec_anima": "875",
+  "atk_breaker": "1238",
+  "def_breaker": "726",
+  "atk_guardian": "1082",
+  "def_guardian": "882",
+  "rec_guardian": "914",
+  "def_oracle": "765",
+  "hp_oracle": "3425",
+  "rec_oracle": "1070",
+  "hp_bonus": "300",
+  "atk_bonus": "160",
+  "def_bonus": "80",
+  "rec_bonus": "120",
+  "lordonly": "",
+  "combo_hits": "8",
+  "normaldc": "16",
+  "ls": "Absolute Power",
+  "lsdescription": "25% boost to Atk power of genderless Units",
+  "lstype": "Attack",
+  "bbdescription": "9 combo Thunder elemental attack on single enemy & boost to HC drop rate",
+  "bbnote": "50% boost",
+  "bbtype": "Support/Offense",
+  "bbhits": "9",
+  "bbaoe": "1",
+  "bbgauge": "15",
+  "bbdc": "9",
+  "bbmultiplier": "125",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "",
+  "evomats2": "",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": ""
 }

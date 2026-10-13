@@ -1,64 +1,66 @@
 {
   "id": "18830",
-  "unitName": "Pumburkiny",
-  "no": "8046",
-  "element": "Fire",
-  "rarity": "★★",
-  "cost": "3",
-  "maxlv": "30",
-  "basexp": "10",
-  "gender": "N",
-  "ai": "2",
-  "animation_attack": "64",
-  "animation_idle": "46",
-  "animation_move": "35",
-  "movespeed_attack": "0.0041",
-  "movespeed_skill": "0.0041",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "30",
-  "normal_distribute": "100",
-  "normal_totaldistr": "100",
-  "bb_frames": "30",
-  "bb_distribute": "100",
-  "bb_totaldistr": "100",
-  "description": "A group of burnys came across a pumpkin field and decided to fuse their bodies with the pumpkins which granted them an extra buffer to their strength and defense.",
-  "summon": "Guess who?!",
-  "fusion": "I bet you don't know who I am!",
-  "evolution": "",
-  "hp_base": "950",
-  "atk_base": "420",
-  "def_base": "310",
-  "rec_base": "280",
-  "hp_lord": "1820",
-  "atk_lord": "550",
-  "def_lord": "420",
-  "rec_lord": "340",
-  "hp_anima": "2038",
-  "rec_anima": "282",
-  "atk_breaker": "608",
-  "def_breaker": "362",
-  "atk_guardian": "492",
-  "def_guardian": "478",
-  "rec_guardian": "311",
-  "def_oracle": "391",
-  "hp_oracle": "1733",
-  "rec_oracle": "427",
-  "hp_bonus": "0",
-  "atk_bonus": "0",
-  "def_bonus": "0",
-  "rec_bonus": "0",
-  "lordonly": "",
-  "apcost": "50",
-  "aplimit": "Varies/Unlimited",
-  "aprenew": "",
-  "combo_hits": "1",
-  "normaldc": "2",
-  "ls": "Fire Spirit's Power",
-  "lsdescription": "25% boost to Atk Power of Fire Types",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 420,
+      "def": 310,
+      "hp": 950,
+      "rec": 280
+    },
+    "_lord": {
+      "atk": 550,
+      "def": 420,
+      "hp": 1820,
+      "rec": 340
+    },
+    "anima": {
+      "atk": 550,
+      "def": 420,
+      "hp max": 2110,
+      "hp min": 1965,
+      "rec max": 311,
+      "rec min": 253
+    },
+    "breaker": {
+      "atk max": 637,
+      "atk min": 579,
+      "def max": 391,
+      "def min": 333,
+      "hp": 1820,
+      "rec": 340
+    },
+    "guardian": {
+      "atk": 550,
+      "def max": 507,
+      "def min": 449,
+      "hp": 1820,
+      "rec max": 340,
+      "rec min": 282
+    },
+    "oracle": {
+      "atk": 550,
+      "def max": 420,
+      "def min": 362,
+      "hp": 1820,
+      "rec max": 456,
+      "rec min": 398
+    }
+  },
+  "leader_skill": {
+    "desc": "25% boost to Atk Power of Fire Types",
+    "effects": [
+      {
+        "atk% buff": 25,
+        "elements buffed": [
+          "fire"
+        ],
+        "passive id": "2"
+      }
+    ],
+    "id": "100",
+    "name": "Fire Spirit's Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -211,96 +213,83 @@
     ],
     "name": "Gnawing Flame"
   },
-  "bbdescription": "Fire elemental attack on single Enemy",
-  "bbtype": "Offense",
-  "bbhits": "1",
-  "bbaoe": "1",
-  "bbgauge": "12",
-  "bbdc": "5",
-  "bbmultiplier": "100",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 420,
-      "def": 310,
-      "hp": 950,
-      "rec": 280
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 550,
-      "def": 420,
-      "hp": 1820,
-      "rec": 340
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 550,
-      "def": 420,
-      "hp max": 2110,
-      "hp min": 1965,
-      "rec max": 311,
-      "rec min": 253
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 64
     },
-    "breaker": {
-      "atk max": 637,
-      "atk min": 579,
-      "def max": 391,
-      "def min": 333,
-      "hp": 1820,
-      "rec": 340
+    "idle": {
+      "total number of frames": 46
     },
-    "guardian": {
-      "atk": 550,
-      "def max": 507,
-      "def min": 449,
-      "hp": 1820,
-      "rec max": 340,
-      "rec min": 282
-    },
-    "oracle": {
-      "atk": 550,
-      "def max": 420,
-      "def min": 362,
-      "hp": 1820,
-      "rec max": 456,
-      "rec min": 398
+    "move": {
+      "total number of frames": 35
     }
   },
-  "leader_skill": {
-    "desc": "25% boost to Atk Power of Fire Types",
-    "effects": [
-      {
-        "atk% buff": 25,
-        "elements buffed": [
-          "fire"
-        ],
-        "passive id": "2"
-      }
+  "category": 18830,
+  "cost": "3",
+  "damage frames": {
+    "frame times": [
+      30
     ],
-    "id": "100",
-    "name": "Fire Spirit's Power"
+    "hit dmg% distribution": [
+      100
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 1
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "fire",
+  "exp_pattern": 10,
+  "gender": "other",
+  "getting type": "farmable",
+  "guide_id": 8046,
+  "imp": {
+    "max atk": "0",
+    "max def": "0",
+    "max hp": "0",
+    "max rec": "0"
+  },
+  "kind": "normal",
+  "lord damage range": "512~572",
+  "movement": {
+    "attack": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    }
+  },
+  "name": "Pumburkiny",
+  "rarity": "2",
+  "sell caution": false,
+  "unitName": "Pumburkiny",
+  "maxlv": "30",
+  "no": "8046",
   "unitDisplayHomePosition_1W9CxaFK": "38,-139,140,382",
   "unitDisplayDetailPosition_6z54rgb3": "205,256,550,440",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "255,494,150,120,0",
@@ -310,5 +299,85 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "300",
   "sellCaution": false,
-  "effectFrames": "24:121:1"
+  "effectFrames": "24:121:1",
+  "evofrom": "",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "10",
+  "animation_attack": "64",
+  "animation_idle": "46",
+  "animation_move": "35",
+  "movespeed_attack": "0.0041",
+  "movespeed_skill": "0.0041",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "30",
+  "normal_distribute": "100",
+  "normal_totaldistr": "100",
+  "bb_frames": "30",
+  "bb_distribute": "100",
+  "bb_totaldistr": "100",
+  "description": "A group of burnys came across a pumpkin field and decided to fuse their bodies with the pumpkins which granted them an extra buffer to their strength and defense.",
+  "summon": "Guess who?!",
+  "fusion": "I bet you don't know who I am!",
+  "evolution": "",
+  "hp_base": "950",
+  "atk_base": "420",
+  "def_base": "310",
+  "rec_base": "280",
+  "hp_lord": "1820",
+  "atk_lord": "550",
+  "def_lord": "420",
+  "rec_lord": "340",
+  "hp_anima": "2038",
+  "rec_anima": "282",
+  "atk_breaker": "608",
+  "def_breaker": "362",
+  "atk_guardian": "492",
+  "def_guardian": "478",
+  "rec_guardian": "311",
+  "def_oracle": "391",
+  "hp_oracle": "1733",
+  "rec_oracle": "427",
+  "hp_bonus": "0",
+  "atk_bonus": "0",
+  "def_bonus": "0",
+  "rec_bonus": "0",
+  "lordonly": "",
+  "apcost": "50",
+  "aplimit": "Varies/Unlimited",
+  "aprenew": "",
+  "combo_hits": "1",
+  "normaldc": "2",
+  "ls": "Fire Spirit's Power",
+  "lsdescription": "25% boost to Atk Power of Fire Types",
+  "lstype": "Attack",
+  "bbdescription": "Fire elemental attack on single Enemy",
+  "bbtype": "Offense",
+  "bbhits": "1",
+  "bbaoe": "1",
+  "bbgauge": "12",
+  "bbdc": "5",
+  "bbmultiplier": "100",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "",
+  "evomats2": "",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": ""
 }

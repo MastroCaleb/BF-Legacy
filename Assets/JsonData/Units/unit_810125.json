@@ -1,62 +1,64 @@
 {
   "id": "810125",
-  "unitName": "Turbo Cyclaw",
-  "no": "8048",
-  "element": "Fire",
-  "rarity": "★★★★★",
-  "cost": "16",
-  "maxlv": "80",
-  "basexp": "15",
-  "gender": "N",
-  "ai": "2",
-  "animation_attack": "Unsupported",
-  "animation_idle": "Unsupported",
-  "animation_move": "Unsupported",
-  "movespeed_attack": "6",
-  "movespeed_skill": "6",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "135, 145, 155, 165, 175",
-  "normal_distribute": "20, 20, 20, 20, 20",
-  "normal_totaldistr": "100",
-  "bb_frames": "120, 130, 135, 140, 145, 150, 155, 160, 165, 170",
-  "bb_distribute": "5, 5, 5, 5, 5, 5, 5, 5, 30, 30",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "description": "Cyclaw was created by Gazia, a demi-god fallen into his abyss of power and stature during the days of the augmented wars in Athensphere. It was built in the form of a strong legendary beast to mimic its formidable size and aggression as a symbol of destruction and power. It was said that a powerful soul of a living cyclops was infused into its mechanical processes to enable it to rampage through the lands aiming to cause destruction and chaos. Through the rubble, it was able to reconstruct its processes and hardware efficiency with materials and knowledge gained.",
-  "summon": "DESTROY…",
-  "fusion": "TURBO CHARGING.. .. ..",
-  "evolution": "TURBO UPGRADE COMPLETE.",
-  "hp_base": "3568",
-  "atk_base": "1410",
-  "def_base": "1395",
-  "rec_base": "1088",
-  "hp_lord": "5090",
-  "atk_lord": "1650",
-  "def_lord": "1545",
-  "rec_lord": "1315",
-  "hp_anima": "5683",
-  "rec_anima": "1157",
-  "atk_breaker": "1808",
-  "def_breaker": "1387",
-  "atk_guardian": "1492",
-  "def_guardian": "1703",
-  "rec_guardian": "1236",
-  "def_oracle": "1466",
-  "hp_oracle": "4853",
-  "rec_oracle": "1552",
-  "hp_bonus": "550",
-  "atk_bonus": "220",
-  "def_bonus": "220",
-  "rec_bonus": "340",
-  "lordonly": "",
-  "combo_hits": "5",
-  "normaldc": "10",
-  "ls": "Turbo Charger",
-  "lsdescription": "15% boost to critical hit rate & 50% boost to Def of all Units",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 1410,
+      "def": 1395,
+      "hp": 3568,
+      "rec": 1088
+    },
+    "_lord": {
+      "atk": 1650,
+      "def": 1545,
+      "hp": 5090,
+      "rec": 1315
+    },
+    "anima": {
+      "atk": 1650,
+      "def": 1545,
+      "hp max": 5880,
+      "hp min": 5485,
+      "rec max": 1236,
+      "rec min": 1078
+    },
+    "breaker": {
+      "atk max": 1887,
+      "atk min": 1729,
+      "def max": 1466,
+      "def min": 1308,
+      "hp": 5090,
+      "rec": 1315
+    },
+    "guardian": {
+      "atk": 1650,
+      "def max": 1782,
+      "def min": 1624,
+      "hp": 5090,
+      "rec max": 1315,
+      "rec min": 1157
+    },
+    "oracle": {
+      "atk": 1650,
+      "def max": 1545,
+      "def min": 1387,
+      "hp": 5090,
+      "rec max": 1631,
+      "rec min": 1473
+    }
+  },
+  "leader_skill": {
+    "desc": "15% boost to critical hit rate & 50% boost to Def of all Units",
+    "effects": [
+      {
+        "crit% buff": 15,
+        "def% buff": 50,
+        "passive id": "1"
+      }
+    ],
+    "id": "801006",
+    "name": "Turbo Charger"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -305,95 +307,83 @@
     ],
     "name": "Ocular Blaster"
   },
-  "bbdescription": "10 combo powerful Fire attack on single enemy & probable Paralysis and Weakness effect",
-  "bbnote": "55% chance to inflict",
-  "bbtype": "Offense",
-  "bbhits": "10",
-  "bbaoe": "1",
-  "bbgauge": "23",
-  "bbdc": "10",
-  "bbmultiplier": "250",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "810124",
-  "evointo": "",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 1410,
-      "def": 1395,
-      "hp": 3568,
-      "rec": 1088
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1650,
-      "def": 1545,
-      "hp": 5090,
-      "rec": 1315
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1650,
-      "def": 1545,
-      "hp max": 5880,
-      "hp min": 5485,
-      "rec max": 1236,
-      "rec min": 1078
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "error": "sam file not supported"
+  },
+  "category": 810120,
+  "cost": "16",
+  "damage frames": {
+    "frame times": [
+      135,
+      145,
+      155,
+      165,
+      175
+    ],
+    "hit dmg% distribution": [
+      20,
+      20,
+      20,
+      20,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 5
+  },
+  "drop check count": 2,
+  "element": "fire",
+  "exp_pattern": 15,
+  "gender": "other",
+  "getting type": "farmable",
+  "guide_id": 8048,
+  "imp": {
+    "max atk": "220",
+    "max def": "220",
+    "max hp": "550",
+    "max rec": "340"
+  },
+  "kind": "normal",
+  "lord damage range": "1536~1716",
+  "movement": {
+    "attack": {
+      "move speed": 6,
+      "move speed type": "2",
+      "move type": "3"
     },
-    "breaker": {
-      "atk max": 1887,
-      "atk min": 1729,
-      "def max": 1466,
-      "def min": 1308,
-      "hp": 5090,
-      "rec": 1315
-    },
-    "guardian": {
-      "atk": 1650,
-      "def max": 1782,
-      "def min": 1624,
-      "hp": 5090,
-      "rec max": 1315,
-      "rec min": 1157
-    },
-    "oracle": {
-      "atk": 1650,
-      "def max": 1545,
-      "def min": 1387,
-      "hp": 5090,
-      "rec max": 1631,
-      "rec min": 1473
+    "skill": {
+      "move speed": 6,
+      "move speed type": "2",
+      "move type": "3"
     }
   },
-  "leader_skill": {
-    "desc": "15% boost to critical hit rate & 50% boost to Def of all Units",
-    "effects": [
-      {
-        "crit% buff": 15,
-        "def% buff": 50,
-        "passive id": "1"
-      }
-    ],
-    "id": "801006",
-    "name": "Turbo Charger"
-  },
-  "extra_skill": {},
+  "name": "Turbo Cyclaw",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Turbo Cyclaw",
+  "maxlv": "80",
+  "no": "8048",
   "unitDisplayHomePosition_1W9CxaFK": "193,243,250,682",
   "unitDisplayDetailPosition_6z54rgb3": "93,44,695,781",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "160,271,330,371,0",
@@ -403,5 +393,84 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "130:131:1,140:131:1,150:131:1,160:131:1,170:131:1,125:100131:1,135:100131:1,145:100131:1,155:100131:1"
+  "effectFrames": "130:131:1,140:131:1,150:131:1,160:131:1,170:131:1,125:100131:1,135:100131:1,145:100131:1,155:100131:1",
+  "evofrom": "810124",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "15",
+  "animation_attack": "Unsupported",
+  "animation_idle": "Unsupported",
+  "animation_move": "Unsupported",
+  "movespeed_attack": "6",
+  "movespeed_skill": "6",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "135, 145, 155, 165, 175",
+  "normal_distribute": "20, 20, 20, 20, 20",
+  "normal_totaldistr": "100",
+  "bb_frames": "120, 130, 135, 140, 145, 150, 155, 160, 165, 170",
+  "bb_distribute": "5, 5, 5, 5, 5, 5, 5, 5, 30, 30",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "description": "Cyclaw was created by Gazia, a demi-god fallen into his abyss of power and stature during the days of the augmented wars in Athensphere. It was built in the form of a strong legendary beast to mimic its formidable size and aggression as a symbol of destruction and power. It was said that a powerful soul of a living cyclops was infused into its mechanical processes to enable it to rampage through the lands aiming to cause destruction and chaos. Through the rubble, it was able to reconstruct its processes and hardware efficiency with materials and knowledge gained.",
+  "summon": "DESTROY…",
+  "fusion": "TURBO CHARGING.. .. ..",
+  "evolution": "TURBO UPGRADE COMPLETE.",
+  "hp_base": "3568",
+  "atk_base": "1410",
+  "def_base": "1395",
+  "rec_base": "1088",
+  "hp_lord": "5090",
+  "atk_lord": "1650",
+  "def_lord": "1545",
+  "rec_lord": "1315",
+  "hp_anima": "5683",
+  "rec_anima": "1157",
+  "atk_breaker": "1808",
+  "def_breaker": "1387",
+  "atk_guardian": "1492",
+  "def_guardian": "1703",
+  "rec_guardian": "1236",
+  "def_oracle": "1466",
+  "hp_oracle": "4853",
+  "rec_oracle": "1552",
+  "hp_bonus": "550",
+  "atk_bonus": "220",
+  "def_bonus": "220",
+  "rec_bonus": "340",
+  "lordonly": "",
+  "combo_hits": "5",
+  "normaldc": "10",
+  "ls": "Turbo Charger",
+  "lsdescription": "15% boost to critical hit rate & 50% boost to Def of all Units",
+  "lstype": "Attack",
+  "bbdescription": "10 combo powerful Fire attack on single enemy & probable Paralysis and Weakness effect",
+  "bbnote": "55% chance to inflict",
+  "bbtype": "Offense",
+  "bbhits": "10",
+  "bbaoe": "1",
+  "bbgauge": "23",
+  "bbdc": "10",
+  "bbmultiplier": "250",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "",
+  "evomats2": "",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": ""
 }

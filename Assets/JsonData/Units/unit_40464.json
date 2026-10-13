@@ -1,59 +1,63 @@
 {
   "id": "40464",
-  "unitName": "Head Engineer Garnan",
-  "no": "665",
-  "element": "Thunder",
-  "rarity": "★★★★★",
-  "cost": "17",
-  "maxlv": "80",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "4",
-  "animation_attack": "144",
-  "animation_idle": "68",
-  "animation_move": "19",
-  "movespeed_attack": "0.005",
-  "movespeed_skill": "8",
-  "speedtype_attack": "1",
-  "speedtype_skill": "1",
-  "movetype_attack": "1",
-  "movetype_skill": "3",
-  "normal_frames": "45, 49, 55, 63, 71, 79, 87, 95, 103",
-  "normal_distribute": "15, 15, 10, 10, 10, 10, 10, 10, 10",
-  "normal_totaldistr": "100",
-  "description": "An old technician from the Atharva Republic who studied techniques from other worlds, and Elulu's grandfather. As the head engineer in charge of the research of otherworldly techniques, he was very strict with his subordinates' work, though he always praised any machinery his granddaughter Elulu made, no matter what it was. Also known for having left an impression on Rashil, he could be often seen brusquely answering Rashil's burning questions in front of a suit of armor that had been evolved by using techniques from other worlds.",
-  "summon": "Can you pass me that tool?<br>We can talk after<br> I'm done making this.",
-  "fusion": "What incredible power.<br>Couldn't expect any less.<br>Well done, partner!",
-  "evolution": "It's a new invention.<br>It's not finished yet,<br>but its power is no joke!",
-  "hp_base": "4361",
-  "atk_base": "1286",
-  "def_base": "1286",
-  "rec_base": "1004",
-  "hp_lord": "5030",
-  "atk_lord": "1702",
-  "def_lord": "1702",
-  "rec_lord": "1328",
-  "hp_anima": "5623",
-  "rec_anima": "1170",
-  "atk_breaker": "1860",
-  "def_breaker": "1544",
-  "atk_guardian": "1544",
-  "def_guardian": "1860",
-  "rec_guardian": "1249",
-  "def_oracle": "1623",
-  "hp_oracle": "4793",
-  "rec_oracle": "1565",
-  "hp_bonus": "500",
-  "atk_bonus": "160",
-  "def_bonus": "160",
-  "rec_bonus": "280",
-  "lordonly": "",
-  "combo_hits": "9",
-  "normaldc": "18",
-  "ls": "Intense Strobe",
-  "lsdescription": "Large boost in damage dealt during Spark",
-  "lsnote": "50% boost",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 1286,
+      "def": 1286,
+      "hp": 4361,
+      "rec": 1004
+    },
+    "_lord": {
+      "atk": 1702,
+      "def": 1702,
+      "hp": 5030,
+      "rec": 1328
+    },
+    "anima": {
+      "atk": 1702,
+      "def": 1702,
+      "hp max": 5820,
+      "hp min": 5425,
+      "rec max": 1249,
+      "rec min": 1091
+    },
+    "breaker": {
+      "atk max": 1939,
+      "atk min": 1781,
+      "def max": 1623,
+      "def min": 1465,
+      "hp": 5030,
+      "rec": 1328
+    },
+    "guardian": {
+      "atk": 1702,
+      "def max": 1939,
+      "def min": 1781,
+      "hp": 5030,
+      "rec max": 1328,
+      "rec min": 1170
+    },
+    "oracle": {
+      "atk": 1702,
+      "def max": 1702,
+      "def min": 1544,
+      "hp": 5030,
+      "rec max": 1644,
+      "rec min": 1486
+    }
+  },
+  "leader_skill": {
+    "desc": "Large boost in damage dealt during Spark",
+    "effects": [
+      {
+        "damage% for spark": 50,
+        "passive id": "31"
+      }
+    ],
+    "id": "1302",
+    "name": "Intense Strobe"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -400,92 +404,111 @@
     ],
     "name": "Spindisk  Charge"
   },
-  "bbdescription": "Boosts critical hit rate for 3 turns, boost to Spark damage & slightly increases BB gauge",
-  "bbnote": "30% boost to critical hit rate, 50% boost to Spark damage, 3 BC fill",
-  "bbtype": "Support",
-  "bbhits": "0",
-  "bbaoe": "0",
-  "bbgauge": "18",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "40463",
-  "evointo": "40465",
-  "evomats1": "50354",
-  "evomats2": "40133",
-  "evomats3": "40133",
-  "evomats4": "60144",
-  "evomats5": "60224",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 1286,
-      "def": 1286,
-      "hp": 4361,
-      "rec": 1004
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_under",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1702,
-      "def": 1702,
-      "hp": 5030,
-      "rec": 1328
+    {
+      "action": "skill",
+      "chance%": 30.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1702,
-      "def": 1702,
-      "hp max": 5820,
-      "hp min": 5425,
-      "rec max": 1249,
-      "rec min": 1091
+    {
+      "action": "attack",
+      "chance%": 70.0,
+      "target conditions": "hp_max",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 1939,
-      "atk min": 1781,
-      "def max": 1623,
-      "def min": 1465,
-      "hp": 5030,
-      "rec": 1328
+    {
+      "action": "attack",
+      "chance%": 50.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "guardian": {
-      "atk": 1702,
-      "def max": 1939,
-      "def min": 1781,
-      "hp": 5030,
-      "rec max": 1328,
-      "rec min": 1170
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 144
     },
-    "oracle": {
-      "atk": 1702,
-      "def max": 1702,
-      "def min": 1544,
-      "hp": 5030,
-      "rec max": 1644,
-      "rec min": 1486
+    "idle": {
+      "total number of frames": 68
+    },
+    "move": {
+      "total number of frames": 19
     }
   },
-  "leader_skill": {
-    "desc": "Large boost in damage dealt during Spark",
-    "effects": [
-      {
-        "damage% for spark": 50,
-        "passive id": "31"
-      }
+  "category": 40460,
+  "cost": "17",
+  "damage frames": {
+    "frame times": [
+      45,
+      49,
+      55,
+      63,
+      71,
+      79,
+      87,
+      95,
+      103
     ],
-    "id": "1302",
-    "name": "Intense Strobe"
+    "hit dmg% distribution": [
+      15,
+      15,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 9
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "thunder",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 665,
+  "imp": {
+    "max atk": "160",
+    "max def": "160",
+    "max hp": "500",
+    "max rec": "280"
+  },
+  "kind": "normal",
+  "lord damage range": "1584~1770",
+  "movement": {
+    "attack": {
+      "move speed": 0.005,
+      "move speed type": "1",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 8,
+      "move speed type": "1",
+      "move type": "3"
+    }
+  },
+  "name": "Head Engineer Garnan",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Head Engineer Garnan",
+  "maxlv": "80",
+  "no": "665",
   "unitDisplayHomePosition_1W9CxaFK": "460,390,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-132,-173,1170,991",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "96,234,495,397,0",
@@ -495,5 +518,100 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "39:130:1,43:130:1,49:130:1,57:130:1,65:130:1,73:130:1,81:130:1,89:130:1,97:130:1,45:400061:1,55:400070:1,63:400126:1,71:400070:1,79:400126:1,87:400070:1,95:400126:1,103:400126:1,55:400132:1,87:400132:1,45:200404:1"
+  "effectFrames": "39:130:1,43:130:1,49:130:1,57:130:1,65:130:1,73:130:1,81:130:1,89:130:1,97:130:1,45:400061:1,55:400070:1,63:400126:1,71:400070:1,79:400126:1,87:400070:1,95:400126:1,103:400126:1,55:400132:1,87:400132:1,45:200404:1",
+  "evofrom": "40463",
+  "evointo": "40465",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40133",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "144",
+  "animation_idle": "68",
+  "animation_move": "19",
+  "movespeed_attack": "0.005",
+  "movespeed_skill": "8",
+  "speedtype_attack": "1",
+  "speedtype_skill": "1",
+  "movetype_attack": "1",
+  "movetype_skill": "3",
+  "normal_frames": "45, 49, 55, 63, 71, 79, 87, 95, 103",
+  "normal_distribute": "15, 15, 10, 10, 10, 10, 10, 10, 10",
+  "normal_totaldistr": "100",
+  "description": "An old technician from the Atharva Republic who studied techniques from other worlds, and Elulu's grandfather. As the head engineer in charge of the research of otherworldly techniques, he was very strict with his subordinates' work, though he always praised any machinery his granddaughter Elulu made, no matter what it was. Also known for having left an impression on Rashil, he could be often seen brusquely answering Rashil's burning questions in front of a suit of armor that had been evolved by using techniques from other worlds.",
+  "summon": "Can you pass me that tool?<br>We can talk after<br> I'm done making this.",
+  "fusion": "What incredible power.<br>Couldn't expect any less.<br>Well done, partner!",
+  "evolution": "It's a new invention.<br>It's not finished yet,<br>but its power is no joke!",
+  "hp_base": "4361",
+  "atk_base": "1286",
+  "def_base": "1286",
+  "rec_base": "1004",
+  "hp_lord": "5030",
+  "atk_lord": "1702",
+  "def_lord": "1702",
+  "rec_lord": "1328",
+  "hp_anima": "5623",
+  "rec_anima": "1170",
+  "atk_breaker": "1860",
+  "def_breaker": "1544",
+  "atk_guardian": "1544",
+  "def_guardian": "1860",
+  "rec_guardian": "1249",
+  "def_oracle": "1623",
+  "hp_oracle": "4793",
+  "rec_oracle": "1565",
+  "hp_bonus": "500",
+  "atk_bonus": "160",
+  "def_bonus": "160",
+  "rec_bonus": "280",
+  "lordonly": "",
+  "combo_hits": "9",
+  "normaldc": "18",
+  "ls": "Intense Strobe",
+  "lsdescription": "Large boost in damage dealt during Spark",
+  "lsnote": "50% boost",
+  "lstype": "Attack",
+  "bbdescription": "Boosts critical hit rate for 3 turns, boost to Spark damage & slightly increases BB gauge",
+  "bbnote": "30% boost to critical hit rate, 50% boost to Spark damage, 3 BC fill",
+  "bbtype": "Support",
+  "bbhits": "0",
+  "bbaoe": "0",
+  "bbgauge": "18",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "40133",
+  "evomats3": "40133",
+  "evomats4": "60144",
+  "evomats5": "60224"
 }

@@ -1,63 +1,69 @@
 {
   "id": "60994",
-  "unitName": "菩薩峠",
-  "unreleased": "true",
-  "untranslated": "true",
-  "no": "1416",
-  "altname": "Bosatsu-kun",
-  "element": "Dark",
-  "rarity": "★★★★★",
-  "cost": "16",
-  "maxlv": "80",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "149",
-  "animation_idle": "78",
-  "animation_move": "78",
-  "movespeed_attack": "8",
-  "movespeed_skill": "8",
-  "speedtype_attack": "1",
-  "speedtype_skill": "1",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "26, 36, 46, 56, 66, 83, 87, 91, 95, 99, 103, 107, 111",
-  "normal_distribute": "4, 6, 5, 4, 6, 8, 10, 9, 10, 9, 10, 9, 10",
-  "normal_totaldistr": "100",
-  "bb_frames": "60, 80, 100, 120, 140, 150, 154, 158, 162, 166, 170, 174, 178, 182, 186",
-  "bb_distribute": "8, 8, 8, 8, 8, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "description": "",
-  "summon": "",
-  "fusion": "",
-  "evolution": "",
-  "hp_base": "3960",
-  "atk_base": "1240",
-  "def_base": "1410",
-  "rec_base": "1140",
-  "hp_lord": "5280",
-  "atk_lord": "1550",
-  "def_lord": "1750",
-  "rec_lord": "1420",
-  "hp_anima": "5873",
-  "rec_anima": "1262",
-  "atk_breaker": "1708",
-  "def_breaker": "1592",
-  "def_guardian": "1908",
-  "rec_guardian": "1341",
-  "def_oracle": "1671",
-  "rec_oracle": "1657",
-  "hp_bonus": "500",
-  "atk_bonus": "260",
-  "def_bonus": "140",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "13",
-  "normaldc": "26",
-  "ls": "最強の超能力少年",
-  "lsdescription": "残りＨＰが多いほど、攻撃力をアップ＆攻撃ＢＢの威力をアップ",
-  "lsnote": "0.6% Atk boost relative to HP remaining (60% max) & 50% boost to BB Atk",
+  "stats": {
+    "_base": {
+      "atk": 1540,
+      "def": 1210,
+      "hp": 3660,
+      "rec": 1290
+    },
+    "_lord": {
+      "atk": 1930,
+      "def": 1520,
+      "hp": 4920,
+      "rec": 1630
+    },
+    "anima": {
+      "atk": 1930,
+      "def": 1520,
+      "hp max": 5710,
+      "hp min": 5315,
+      "rec max": 1551,
+      "rec min": 1393
+    },
+    "breaker": {
+      "atk max": 2167,
+      "atk min": 2009,
+      "def max": 1441,
+      "def min": 1283,
+      "hp": 4920,
+      "rec": 1630
+    },
+    "guardian": {
+      "atk": 1930,
+      "def max": 1757,
+      "def min": 1599,
+      "hp": 4920,
+      "rec max": 1630,
+      "rec min": 1472
+    },
+    "oracle": {
+      "atk": 1930,
+      "def max": 1520,
+      "def min": 1362,
+      "hp": 4920,
+      "rec max": 1946,
+      "rec min": 1788
+    }
+  },
+  "leader_skill": {
+    "desc": "残りＨＰが多いほど、攻撃力をアップ＆攻撃ＢＢの威力をアップ",
+    "effects": [
+      {
+        "atk% base buff": 0,
+        "atk% extra buff based on hp": 60,
+        "buff proportional to hp": "remaining",
+        "passive id": "46"
+      },
+      {
+        "bb atk% buff": 50,
+        "passive id": "64"
+      }
+    ],
+    "id": "11520",
+    "name": "最強の超能力少年"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -482,6 +488,172 @@
     ],
     "name": "パッ破！！！"
   },
+  "sbb": {},
+  "ubb": {},
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 149
+    },
+    "idle": {
+      "total number of frames": 78
+    },
+    "move": {
+      "total number of frames": 78
+    }
+  },
+  "category": 60990,
+  "cost": "16",
+  "damage frames": {
+    "frame times": [
+      26,
+      36,
+      46,
+      56,
+      66,
+      83,
+      87,
+      91,
+      95,
+      99,
+      103,
+      107,
+      111
+    ],
+    "hit dmg% distribution": [
+      4,
+      6,
+      5,
+      4,
+      6,
+      8,
+      10,
+      9,
+      10,
+      9,
+      10,
+      9,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 13
+  },
+  "drop check count": 2,
+  "element": "dark",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "farmable",
+  "guide_id": 1416,
+  "imp": {
+    "max atk": "260",
+    "max def": "140",
+    "max hp": "500",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "1797~2007",
+  "movement": {
+    "attack": {
+      "move speed": 8,
+      "move speed type": "1",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 8,
+      "move speed type": "1",
+      "move type": "3"
+    }
+  },
+  "name": "菩薩峠",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "菩薩峠",
+  "maxlv": "80",
+  "no": "1416",
+  "unitDisplayHomePosition_1W9CxaFK": "63,-27,174,475",
+  "unitDisplayDetailPosition_6z54rgb3": "229,244,390,458",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "192,383,200,235,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "272,-53,390,458",
+  "unitDisplaySummonPosition_KC3Jk8Br": "192,383,200,235,0",
+  "unitDisplayHpPosition_3BpHN6VD": "-6,10",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "5000",
+  "sellCaution": false,
+  "effectFrames": "26:600083:1,80:600372:1,83:360:1,91:360:1,99:360:1,107:360:1",
+  "evofrom": "",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "unreleased": "true",
+  "untranslated": "true",
+  "altname": "Bosatsu-kun",
+  "basexp": "21",
+  "animation_attack": "149",
+  "animation_idle": "78",
+  "animation_move": "78",
+  "movespeed_attack": "8",
+  "movespeed_skill": "8",
+  "speedtype_attack": "1",
+  "speedtype_skill": "1",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "26, 36, 46, 56, 66, 83, 87, 91, 95, 99, 103, 107, 111",
+  "normal_distribute": "4, 6, 5, 4, 6, 8, 10, 9, 10, 9, 10, 9, 10",
+  "normal_totaldistr": "100",
+  "bb_frames": "60, 80, 100, 120, 140, 150, 154, 158, 162, 166, 170, 174, 178, 182, 186",
+  "bb_distribute": "8, 8, 8, 8, 8, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "description": "",
+  "summon": "",
+  "fusion": "",
+  "evolution": "",
+  "hp_base": "3960",
+  "atk_base": "1240",
+  "def_base": "1410",
+  "rec_base": "1140",
+  "hp_lord": "5280",
+  "atk_lord": "1550",
+  "def_lord": "1750",
+  "rec_lord": "1420",
+  "hp_anima": "5873",
+  "rec_anima": "1262",
+  "atk_breaker": "1708",
+  "def_breaker": "1592",
+  "def_guardian": "1908",
+  "rec_guardian": "1341",
+  "def_oracle": "1671",
+  "rec_oracle": "1657",
+  "hp_bonus": "500",
+  "atk_bonus": "260",
+  "def_bonus": "140",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "13",
+  "normaldc": "26",
+  "ls": "最強の超能力少年",
+  "lsdescription": "残りＨＰが多いほど、攻撃力をアップ＆攻撃ＢＢの威力をアップ",
+  "lsnote": "0.6% Atk boost relative to HP remaining (60% max) & 50% boost to BB Atk",
   "bbdescription": "敵全体に闇属性１５連ダメージ＆味方全体に３ターン、攻撃ＢＢの威力を少しアップ・全属性の弱点属性ダメージを少しアップ",
   "bbnote": "15 combo Dark attack on all foes, 30% boost to BB Atk & 30% boost to elemental weakness damage for 3 turns",
   "bbtype": "Offense",
@@ -494,81 +666,5 @@
   "howtoget": "*Complete Silver objective in Grand Quest Collaboration: Takanotsume",
   "notes": "",
   "addcat": "Takanotsume",
-  "addcatname": "菩薩峠1",
-  "stats": {
-    "_base": {
-      "atk": 1540,
-      "def": 1210,
-      "hp": 3660,
-      "rec": 1290
-    },
-    "_lord": {
-      "atk": 1930,
-      "def": 1520,
-      "hp": 4920,
-      "rec": 1630
-    },
-    "anima": {
-      "atk": 1930,
-      "def": 1520,
-      "hp max": 5710,
-      "hp min": 5315,
-      "rec max": 1551,
-      "rec min": 1393
-    },
-    "breaker": {
-      "atk max": 2167,
-      "atk min": 2009,
-      "def max": 1441,
-      "def min": 1283,
-      "hp": 4920,
-      "rec": 1630
-    },
-    "guardian": {
-      "atk": 1930,
-      "def max": 1757,
-      "def min": 1599,
-      "hp": 4920,
-      "rec max": 1630,
-      "rec min": 1472
-    },
-    "oracle": {
-      "atk": 1930,
-      "def max": 1520,
-      "def min": 1362,
-      "hp": 4920,
-      "rec max": 1946,
-      "rec min": 1788
-    }
-  },
-  "leader_skill": {
-    "desc": "残りＨＰが多いほど、攻撃力をアップ＆攻撃ＢＢの威力をアップ",
-    "effects": [
-      {
-        "atk% base buff": 0,
-        "atk% extra buff based on hp": 60,
-        "buff proportional to hp": "remaining",
-        "passive id": "46"
-      },
-      {
-        "bb atk% buff": 50,
-        "passive id": "64"
-      }
-    ],
-    "id": "11520",
-    "name": "最強の超能力少年"
-  },
-  "extra_skill": {},
-  "sbb": {},
-  "ubb": {},
-  "unitDisplayHomePosition_1W9CxaFK": "63,-27,174,475",
-  "unitDisplayDetailPosition_6z54rgb3": "229,244,390,458",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "192,383,200,235,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "272,-53,390,458",
-  "unitDisplaySummonPosition_KC3Jk8Br": "192,383,200,235,0",
-  "unitDisplayHpPosition_3BpHN6VD": "-6,10",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "5000",
-  "sellCaution": false,
-  "effectFrames": "26:600083:1,80:600372:1,83:360:1,91:360:1,99:360:1,107:360:1"
+  "addcatname": "菩薩峠1"
 }

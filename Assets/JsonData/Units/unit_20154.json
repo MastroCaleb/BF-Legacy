@@ -1,59 +1,63 @@
 {
   "id": "20154",
-  "unitName": "Genius Elimo",
-  "no": "226",
-  "element": "Water",
-  "rarity": "★★★★★",
-  "cost": "12",
-  "maxlv": "80",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "5",
-  "animation_attack": "185",
-  "animation_idle": "40",
-  "animation_move": "40",
-  "movespeed_attack": "0",
-  "movespeed_skill": "0",
-  "speedtype_attack": "5",
-  "speedtype_skill": "5",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "140, 146, 152, 158, 164",
-  "normal_distribute": "20, 20, 20, 20, 20",
-  "normal_totaldistr": "100",
-  "description": "A daughter from an aristocratic family hailing from the Sama Kingdom. On her travels from kingdom to kingdom, Elimo eventually reached the land of the gods, where she discovered it was they who had written the mysterious book she held. Impressed by her determination, the gods invited Elimo to become of them, but she refused. With her newly acquired divine techniques, Elimo subsequently spent her days wandering the land, imparting the gods’ wisdom to any who would listen.",
-  "summon": "My magic was created by the gods.<br>Perhaps I should call it<br>“divine wisdom” instead...",
-  "fusion": "All the world’s wisdom should be shared<br>out equally among its people.<br>The same goes for this power...",
-  "evolution": "My magic once belonged to the gods.<br>I’m happy to fight against them<br>if you want me to, though.",
-  "hp_base": "3060",
-  "atk_base": "729",
-  "def_base": "1000",
-  "rec_base": "1356",
-  "hp_lord": "4680",
-  "atk_lord": "1003",
-  "def_lord": "1376",
-  "rec_lord": "1873",
-  "hp_anima": "5273",
-  "rec_anima": "1715",
-  "atk_breaker": "1161",
-  "def_breaker": "1218",
-  "atk_guardian": "845",
-  "def_guardian": "1534",
-  "rec_guardian": "1794",
-  "def_oracle": "1297",
-  "hp_oracle": "4443",
-  "rec_oracle": "2110",
-  "hp_bonus": "500",
-  "atk_bonus": "200",
-  "def_bonus": "200",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "5",
-  "normaldc": "15",
-  "ls": "Loving Devotion",
-  "lsdescription": "Large boost in effectiveness of Heart Crystals",
-  "lsnote": "50% boost",
-  "lstype": "Recovery",
+  "stats": {
+    "_base": {
+      "atk": 729,
+      "def": 1000,
+      "hp": 3060,
+      "rec": 1356
+    },
+    "_lord": {
+      "atk": 1003,
+      "def": 1376,
+      "hp": 4680,
+      "rec": 1873
+    },
+    "anima": {
+      "atk": 1003,
+      "def": 1376,
+      "hp max": 5470,
+      "hp min": 5075,
+      "rec max": 1794,
+      "rec min": 1636
+    },
+    "breaker": {
+      "atk max": 1240,
+      "atk min": 1082,
+      "def max": 1297,
+      "def min": 1139,
+      "hp": 4680,
+      "rec": 1873
+    },
+    "guardian": {
+      "atk": 1003,
+      "def max": 1613,
+      "def min": 1455,
+      "hp": 4680,
+      "rec max": 1873,
+      "rec min": 1715
+    },
+    "oracle": {
+      "atk": 1003,
+      "def max": 1376,
+      "def min": 1218,
+      "hp": 4680,
+      "rec max": 2189,
+      "rec min": 2031
+    }
+  },
+  "leader_skill": {
+    "desc": "Large boost in effectiveness of Heart Crystals",
+    "effects": [
+      {
+        "hc effectiveness%": 50,
+        "passive id": "10"
+      }
+    ],
+    "id": "1101",
+    "name": "Loving Devotion"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -318,93 +322,91 @@
     ],
     "name": "Guardian Force"
   },
-  "bbdescription": "Greatly Recovers HP for All allies and Boosts DEF for 3 Turns",
-  "bbnote": "Heals (1760~2060 + 27% of healer Rec) HP, 35% boost to Def",
-  "bbtype": "Heal/Support",
-  "bbhits": "",
-  "bbaoe": "0",
-  "bbgauge": "20",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "20153",
-  "evointo": "20155",
-  "evomats1": "50354",
-  "evomats2": "20133",
-  "evomats3": "60144",
-  "evomats4": "60143",
-  "evomats5": "20191",
-  "evoitem": "",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 729,
-      "def": 1000,
-      "hp": 3060,
-      "rec": 1356
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 80.0,
+      "target conditions": "hp_50pr_under",
+      "target type": "party"
     },
-    "_lord": {
-      "atk": 1003,
-      "def": 1376,
-      "hp": 4680,
-      "rec": 1873
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "hp_min",
+      "target type": "party"
     },
-    "anima": {
-      "atk": 1003,
-      "def": 1376,
-      "hp max": 5470,
-      "hp min": 5075,
-      "rec max": 1794,
-      "rec min": 1636
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 185
     },
-    "breaker": {
-      "atk max": 1240,
-      "atk min": 1082,
-      "def max": 1297,
-      "def min": 1139,
-      "hp": 4680,
-      "rec": 1873
+    "idle": {
+      "total number of frames": 40
     },
-    "guardian": {
-      "atk": 1003,
-      "def max": 1613,
-      "def min": 1455,
-      "hp": 4680,
-      "rec max": 1873,
-      "rec min": 1715
-    },
-    "oracle": {
-      "atk": 1003,
-      "def max": 1376,
-      "def min": 1218,
-      "hp": 4680,
-      "rec max": 2189,
-      "rec min": 2031
+    "move": {
+      "total number of frames": 40
     }
   },
-  "leader_skill": {
-    "desc": "Large boost in effectiveness of Heart Crystals",
-    "effects": [
-      {
-        "hc effectiveness%": 50,
-        "passive id": "10"
-      }
+  "category": 20150,
+  "cost": "12",
+  "damage frames": {
+    "frame times": [
+      140,
+      146,
+      152,
+      158,
+      164
     ],
-    "id": "1101",
-    "name": "Loving Devotion"
+    "hit dmg% distribution": [
+      20,
+      20,
+      20,
+      20,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 5
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "water",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 226,
+  "imp": {
+    "max atk": "200",
+    "max def": "200",
+    "max hp": "500",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "933~1043",
+  "movement": {
+    "attack": {
+      "move speed": 0,
+      "move speed type": "5",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 0,
+      "move speed type": "5",
+      "move type": "3"
+    }
+  },
+  "name": "Genius Elimo",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Genius Elimo",
+  "maxlv": "80",
+  "no": "226",
   "unitDisplayHomePosition_1W9CxaFK": "276,160,147,403",
   "unitDisplayDetailPosition_6z54rgb3": "100,110,721,646",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "96,234,495,397,0",
@@ -414,5 +416,106 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "115:190:1,120:190:1,134:180:1,136:180:1,138:180:1"
+  "effectFrames": "115:190:1,120:190:1,134:180:1,136:180:1,138:180:1",
+  "evofrom": "20153",
+  "evointo": "20155",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20191",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "185",
+  "animation_idle": "40",
+  "animation_move": "40",
+  "movespeed_attack": "0",
+  "movespeed_skill": "0",
+  "speedtype_attack": "5",
+  "speedtype_skill": "5",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "140, 146, 152, 158, 164",
+  "normal_distribute": "20, 20, 20, 20, 20",
+  "normal_totaldistr": "100",
+  "description": "A daughter from an aristocratic family hailing from the Sama Kingdom. On her travels from kingdom to kingdom, Elimo eventually reached the land of the gods, where she discovered it was they who had written the mysterious book she held. Impressed by her determination, the gods invited Elimo to become of them, but she refused. With her newly acquired divine techniques, Elimo subsequently spent her days wandering the land, imparting the gods’ wisdom to any who would listen.",
+  "summon": "My magic was created by the gods.<br>Perhaps I should call it<br>“divine wisdom” instead...",
+  "fusion": "All the world’s wisdom should be shared<br>out equally among its people.<br>The same goes for this power...",
+  "evolution": "My magic once belonged to the gods.<br>I’m happy to fight against them<br>if you want me to, though.",
+  "hp_base": "3060",
+  "atk_base": "729",
+  "def_base": "1000",
+  "rec_base": "1356",
+  "hp_lord": "4680",
+  "atk_lord": "1003",
+  "def_lord": "1376",
+  "rec_lord": "1873",
+  "hp_anima": "5273",
+  "rec_anima": "1715",
+  "atk_breaker": "1161",
+  "def_breaker": "1218",
+  "atk_guardian": "845",
+  "def_guardian": "1534",
+  "rec_guardian": "1794",
+  "def_oracle": "1297",
+  "hp_oracle": "4443",
+  "rec_oracle": "2110",
+  "hp_bonus": "500",
+  "atk_bonus": "200",
+  "def_bonus": "200",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "5",
+  "normaldc": "15",
+  "ls": "Loving Devotion",
+  "lsdescription": "Large boost in effectiveness of Heart Crystals",
+  "lsnote": "50% boost",
+  "lstype": "Recovery",
+  "bbdescription": "Greatly Recovers HP for All allies and Boosts DEF for 3 Turns",
+  "bbnote": "Heals (1760~2060 + 27% of healer Rec) HP, 35% boost to Def",
+  "bbtype": "Heal/Support",
+  "bbhits": "",
+  "bbaoe": "0",
+  "bbgauge": "20",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "20133",
+  "evomats3": "60144",
+  "evomats4": "60143",
+  "evomats5": "20191",
+  "evoitem": ""
 }

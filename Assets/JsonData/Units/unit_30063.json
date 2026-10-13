@@ -1,62 +1,63 @@
 {
   "id": "30063",
-  "unitName": "Wild Bandit Zaza",
-  "no": "314",
-  "element": "Earth",
-  "rarity": "★★★★",
-  "cost": "9",
-  "maxlv": "60",
-  "basexp": "10",
-  "gender": "M",
-  "ai": "4",
-  "animation_attack": "73",
-  "animation_idle": "42",
-  "animation_move": "6",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "36, 40, 42, 44, 46, 48",
-  "normal_distribute": "50, 10, 10, 10, 10, 10",
-  "normal_totaldistr": "100",
-  "bb_frames": "36, 40, 42, 44, 46, 48",
-  "bb_distribute": "50, 10, 10, 10, 10, 10",
-  "bb_totaldistr": "100",
-  "description": "A bandit from the forested mountain bordering the ruined Vriksha Duchy. After his subordinates were killed by the gods, it is said he was drained of emotion and sought revenge against the gods, relentlessly chopping away at them with his axe. He was feared by not only the gods but humans as well, and his unwavering anger led him to be known as the \"Wild Bandit.\" However, he continued slashing ahead with his axe, unaware of the title bestowed upon him.",
-  "summon": "Are you god or ally?<br>If you're going after them<br>then my axe may be of use!",
-  "fusion": "Give me more power!<br>At this rate, I won't be able<br>to hold back my rage!",
-  "evolution": "Did you feel my rage?<br>I continue swinging my axe<br>so they can rest at ease.",
-  "hp_base": "2040",
-  "atk_base": "856",
-  "def_base": "809",
-  "rec_base": "344",
-  "hp_lord": "3291",
-  "atk_lord": "1230",
-  "def_lord": "1079",
-  "rec_lord": "556",
-  "hp_anima": "3734",
-  "rec_anima": "438",
-  "atk_breaker": "1348",
-  "def_breaker": "961",
-  "atk_guardian": "1112",
-  "def_guardian": "1197",
-  "rec_guardian": "497",
-  "def_oracle": "1020",
-  "hp_oracle": "3114",
-  "rec_oracle": "733",
-  "hp_bonus": "400",
-  "atk_bonus": "200",
-  "def_bonus": "120",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "6",
-  "normaldc": "12",
-  "ls": "Intense Flash",
-  "lsdescription": "Boost in damage dealt during Spark",
-  "lsnote": "30% boost",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 856,
+      "def": 809,
+      "hp": 2040,
+      "rec": 344
+    },
+    "_lord": {
+      "atk": 1230,
+      "def": 1079,
+      "hp": 3291,
+      "rec": 556
+    },
+    "anima": {
+      "atk": 1230,
+      "def": 1079,
+      "hp max": 3881,
+      "hp min": 3586,
+      "rec max": 497,
+      "rec min": 379
+    },
+    "breaker": {
+      "atk max": 1407,
+      "atk min": 1289,
+      "def max": 1020,
+      "def min": 902,
+      "hp": 3291,
+      "rec": 556
+    },
+    "guardian": {
+      "atk": 1230,
+      "def max": 1256,
+      "def min": 1138,
+      "hp": 3291,
+      "rec max": 556,
+      "rec min": 438
+    },
+    "oracle": {
+      "atk": 1230,
+      "def max": 1079,
+      "def min": 961,
+      "hp": 3291,
+      "rec max": 792,
+      "rec min": 674
+    }
+  },
+  "leader_skill": {
+    "desc": "Boost in damage dealt during Spark",
+    "effects": [
+      {
+        "damage% for spark": 30,
+        "passive id": "31"
+      }
+    ],
+    "id": "1301",
+    "name": "Intense Flash"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -301,94 +302,105 @@
     ],
     "name": "Demon's Punishment"
   },
-  "bbdescription": "6 combo Earth elemental attack on single enemy & probable Injury effect",
-  "bbnote": "80% chance",
-  "bbtype": "Offense",
-  "bbhits": "6",
-  "bbaoe": "1",
-  "bbgauge": "15",
-  "bbdc": "6",
-  "bbmultiplier": "280",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "30062",
-  "evointo": "",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 856,
-      "def": 809,
-      "hp": 2040,
-      "rec": 344
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_under",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1230,
-      "def": 1079,
-      "hp": 3291,
-      "rec": 556
+    {
+      "action": "skill",
+      "chance%": 30.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1230,
-      "def": 1079,
-      "hp max": 3881,
-      "hp min": 3586,
-      "rec max": 497,
-      "rec min": 379
+    {
+      "action": "attack",
+      "chance%": 70.0,
+      "target conditions": "hp_max",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 1407,
-      "atk min": 1289,
-      "def max": 1020,
-      "def min": 902,
-      "hp": 3291,
-      "rec": 556
+    {
+      "action": "attack",
+      "chance%": 50.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "guardian": {
-      "atk": 1230,
-      "def max": 1256,
-      "def min": 1138,
-      "hp": 3291,
-      "rec max": 556,
-      "rec min": 438
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 73
     },
-    "oracle": {
-      "atk": 1230,
-      "def max": 1079,
-      "def min": 961,
-      "hp": 3291,
-      "rec max": 792,
-      "rec min": 674
+    "idle": {
+      "total number of frames": 42
+    },
+    "move": {
+      "total number of frames": 6
     }
   },
-  "leader_skill": {
-    "desc": "Boost in damage dealt during Spark",
-    "effects": [
-      {
-        "damage% for spark": 30,
-        "passive id": "31"
-      }
+  "category": 30060,
+  "cost": "9",
+  "damage frames": {
+    "frame times": [
+      36,
+      40,
+      42,
+      44,
+      46,
+      48
     ],
-    "id": "1301",
-    "name": "Intense Flash"
+    "hit dmg% distribution": [
+      50,
+      10,
+      10,
+      10,
+      10,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 6
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "earth",
+  "exp_pattern": 10,
+  "gender": "male",
+  "getting type": "farmable",
+  "guide_id": 314,
+  "imp": {
+    "max atk": "200",
+    "max def": "120",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "1145~1279",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Wild Bandit Zaza",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Wild Bandit Zaza",
+  "maxlv": "60",
+  "no": "314",
   "unitDisplayHomePosition_1W9CxaFK": "366,58,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-18,111,873,695",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "170,329,310,295,0",
@@ -398,5 +410,84 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "30:123:1,34:123:1,36:123:1,38:123:1,40:123:1,42:230:1"
+  "effectFrames": "30:123:1,34:123:1,36:123:1,38:123:1,40:123:1,42:230:1",
+  "evofrom": "30062",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "10",
+  "animation_attack": "73",
+  "animation_idle": "42",
+  "animation_move": "6",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "36, 40, 42, 44, 46, 48",
+  "normal_distribute": "50, 10, 10, 10, 10, 10",
+  "normal_totaldistr": "100",
+  "bb_frames": "36, 40, 42, 44, 46, 48",
+  "bb_distribute": "50, 10, 10, 10, 10, 10",
+  "bb_totaldistr": "100",
+  "description": "A bandit from the forested mountain bordering the ruined Vriksha Duchy. After his subordinates were killed by the gods, it is said he was drained of emotion and sought revenge against the gods, relentlessly chopping away at them with his axe. He was feared by not only the gods but humans as well, and his unwavering anger led him to be known as the \"Wild Bandit.\" However, he continued slashing ahead with his axe, unaware of the title bestowed upon him.",
+  "summon": "Are you god or ally?<br>If you're going after them<br>then my axe may be of use!",
+  "fusion": "Give me more power!<br>At this rate, I won't be able<br>to hold back my rage!",
+  "evolution": "Did you feel my rage?<br>I continue swinging my axe<br>so they can rest at ease.",
+  "hp_base": "2040",
+  "atk_base": "856",
+  "def_base": "809",
+  "rec_base": "344",
+  "hp_lord": "3291",
+  "atk_lord": "1230",
+  "def_lord": "1079",
+  "rec_lord": "556",
+  "hp_anima": "3734",
+  "rec_anima": "438",
+  "atk_breaker": "1348",
+  "def_breaker": "961",
+  "atk_guardian": "1112",
+  "def_guardian": "1197",
+  "rec_guardian": "497",
+  "def_oracle": "1020",
+  "hp_oracle": "3114",
+  "rec_oracle": "733",
+  "hp_bonus": "400",
+  "atk_bonus": "200",
+  "def_bonus": "120",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "6",
+  "normaldc": "12",
+  "ls": "Intense Flash",
+  "lsdescription": "Boost in damage dealt during Spark",
+  "lsnote": "30% boost",
+  "lstype": "Attack",
+  "bbdescription": "6 combo Earth elemental attack on single enemy & probable Injury effect",
+  "bbnote": "80% chance",
+  "bbtype": "Offense",
+  "bbhits": "6",
+  "bbaoe": "1",
+  "bbgauge": "15",
+  "bbdc": "6",
+  "bbmultiplier": "280",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "",
+  "evomats2": "",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": ""
 }

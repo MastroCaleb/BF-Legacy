@@ -1,58 +1,63 @@
 {
   "id": "30052",
-  "unitName": "Leshy",
-  "no": "520",
-  "element": "Earth",
-  "rarity": "★★★",
-  "cost": "6",
-  "maxlv": "40",
-  "basexp": "10",
-  "gender": "N",
-  "ai": "1",
-  "animation_attack": "164",
-  "animation_idle": "68",
-  "animation_move": "68",
-  "movespeed_attack": "6",
-  "movespeed_skill": "6",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "64, 78, 91, 104",
-  "normal_distribute": "25, 25, 25, 25",
-  "normal_totaldistr": "100",
-  "description": "An animal-like plant that lives deep in the forest. They like humid places and will eat anything that fits in their mouth. They are feared as protectors of the forest as they live deep within and are rarely ever encountered by humans. However, as scary as they may look, out of kindness they give fruits to starving travelers. Apart from that, should anyone cause harm to the forest they release an aroma throughout the forest which changes the personality of all its creatures and makes them attack aggressively.",
-  "summon": "I am Leshy.<br>You're a Summoner, are you not?<br>I wonder if I should go with you.",
-  "fusion": "I still hunger, Summoner.<br>Give me more of that.<br>Please, hurry.",
-  "evolution": "Did I scare you, Summoner?<br>There's no need to get defensive,<br>it's just me.",
-  "hp_base": "1904",
-  "atk_base": "572",
-  "def_base": "766",
-  "rec_base": "445",
-  "hp_lord": "3179",
-  "atk_lord": "772",
-  "def_lord": "1049",
-  "rec_lord": "601",
-  "hp_anima": "3472",
-  "rec_anima": "523",
-  "atk_breaker": "850",
-  "def_breaker": "971",
-  "atk_guardian": "694",
-  "def_guardian": "1127",
-  "rec_guardian": "562",
-  "def_oracle": "1010",
-  "hp_oracle": "3062",
-  "rec_oracle": "718",
-  "hp_bonus": "300",
-  "atk_bonus": "120",
-  "def_bonus": "120",
-  "rec_bonus": "120",
-  "lordonly": "",
-  "combo_hits": "4",
-  "normaldc": "8",
-  "ls": "Earth's Protection",
-  "lsdescription": "10% reduction in damage from Earth Types",
-  "lstype": "Defense",
+  "stats": {
+    "_base": {
+      "atk": 572,
+      "def": 766,
+      "hp": 1904,
+      "rec": 445
+    },
+    "_lord": {
+      "atk": 772,
+      "def": 1049,
+      "hp": 3179,
+      "rec": 601
+    },
+    "anima": {
+      "atk": 772,
+      "def": 1049,
+      "hp max": 3569,
+      "hp min": 3374,
+      "rec max": 562,
+      "rec min": 484
+    },
+    "breaker": {
+      "atk max": 889,
+      "atk min": 811,
+      "def max": 1010,
+      "def min": 932,
+      "hp": 3179,
+      "rec": 601
+    },
+    "guardian": {
+      "atk": 772,
+      "def max": 1166,
+      "def min": 1088,
+      "hp": 3179,
+      "rec max": 601,
+      "rec min": 523
+    },
+    "oracle": {
+      "atk": 772,
+      "def max": 1049,
+      "def min": 971,
+      "hp": 3179,
+      "rec max": 757,
+      "rec min": 679
+    }
+  },
+  "leader_skill": {
+    "desc": "10% reduction in damage from Earth Types",
+    "effects": [
+      {
+        "earth resist%": 10,
+        "passive id": "5"
+      }
+    ],
+    "id": "504",
+    "name": "Earth's Protection"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -215,92 +220,89 @@
     ],
     "name": "Gaia's Howl"
   },
-  "bbdescription": "Boosts all allies' Atk for 3 turns",
-  "bbnote": "44% boost",
-  "bbtype": "Support",
-  "bbhits": "",
-  "bbaoe": "0",
-  "bbgauge": "15",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "30051",
-  "evointo": "",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 572,
-      "def": 766,
-      "hp": 1904,
-      "rec": 445
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "party"
     },
-    "_lord": {
-      "atk": 772,
-      "def": 1049,
-      "hp": 3179,
-      "rec": 601
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 772,
-      "def": 1049,
-      "hp max": 3569,
-      "hp min": 3374,
-      "rec max": 562,
-      "rec min": 484
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 164
     },
-    "breaker": {
-      "atk max": 889,
-      "atk min": 811,
-      "def max": 1010,
-      "def min": 932,
-      "hp": 3179,
-      "rec": 601
+    "idle": {
+      "total number of frames": 68
     },
-    "guardian": {
-      "atk": 772,
-      "def max": 1166,
-      "def min": 1088,
-      "hp": 3179,
-      "rec max": 601,
-      "rec min": 523
-    },
-    "oracle": {
-      "atk": 772,
-      "def max": 1049,
-      "def min": 971,
-      "hp": 3179,
-      "rec max": 757,
-      "rec min": 679
+    "move": {
+      "total number of frames": 68
     }
   },
-  "leader_skill": {
-    "desc": "10% reduction in damage from Earth Types",
-    "effects": [
-      {
-        "earth resist%": 10,
-        "passive id": "5"
-      }
+  "category": 30050,
+  "cost": "6",
+  "damage frames": {
+    "frame times": [
+      64,
+      78,
+      91,
+      104
     ],
-    "id": "504",
-    "name": "Earth's Protection"
+    "hit dmg% distribution": [
+      25,
+      25,
+      25,
+      25
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 4
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "earth",
+  "exp_pattern": 10,
+  "gender": "other",
+  "getting type": "farmable",
+  "guide_id": 520,
+  "imp": {
+    "max atk": "120",
+    "max def": "120",
+    "max hp": "300",
+    "max rec": "120"
+  },
+  "kind": "normal",
+  "lord damage range": "718~802",
+  "movement": {
+    "attack": {
+      "move speed": 6,
+      "move speed type": "2",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 6,
+      "move speed type": "2",
+      "move type": "3"
+    }
+  },
+  "name": "Leshy",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "Leshy",
+  "maxlv": "40",
+  "no": "520",
   "unitDisplayHomePosition_1W9CxaFK": "103,-33,240,655",
   "unitDisplayDetailPosition_6z54rgb3": "182,234,600,549",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "135,266,380,386,0",
@@ -310,5 +312,78 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "1000",
   "sellCaution": false,
-  "effectFrames": "60:230:1,74:230:1,87:230:1,100:670:1"
+  "effectFrames": "60:230:1,74:230:1,87:230:1,100:670:1",
+  "evofrom": "30051",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "10",
+  "animation_attack": "164",
+  "animation_idle": "68",
+  "animation_move": "68",
+  "movespeed_attack": "6",
+  "movespeed_skill": "6",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "64, 78, 91, 104",
+  "normal_distribute": "25, 25, 25, 25",
+  "normal_totaldistr": "100",
+  "description": "An animal-like plant that lives deep in the forest. They like humid places and will eat anything that fits in their mouth. They are feared as protectors of the forest as they live deep within and are rarely ever encountered by humans. However, as scary as they may look, out of kindness they give fruits to starving travelers. Apart from that, should anyone cause harm to the forest they release an aroma throughout the forest which changes the personality of all its creatures and makes them attack aggressively.",
+  "summon": "I am Leshy.<br>You're a Summoner, are you not?<br>I wonder if I should go with you.",
+  "fusion": "I still hunger, Summoner.<br>Give me more of that.<br>Please, hurry.",
+  "evolution": "Did I scare you, Summoner?<br>There's no need to get defensive,<br>it's just me.",
+  "hp_base": "1904",
+  "atk_base": "572",
+  "def_base": "766",
+  "rec_base": "445",
+  "hp_lord": "3179",
+  "atk_lord": "772",
+  "def_lord": "1049",
+  "rec_lord": "601",
+  "hp_anima": "3472",
+  "rec_anima": "523",
+  "atk_breaker": "850",
+  "def_breaker": "971",
+  "atk_guardian": "694",
+  "def_guardian": "1127",
+  "rec_guardian": "562",
+  "def_oracle": "1010",
+  "hp_oracle": "3062",
+  "rec_oracle": "718",
+  "hp_bonus": "300",
+  "atk_bonus": "120",
+  "def_bonus": "120",
+  "rec_bonus": "120",
+  "lordonly": "",
+  "combo_hits": "4",
+  "normaldc": "8",
+  "ls": "Earth's Protection",
+  "lsdescription": "10% reduction in damage from Earth Types",
+  "lstype": "Defense",
+  "bbdescription": "Boosts all allies' Atk for 3 turns",
+  "bbnote": "44% boost",
+  "bbtype": "Support",
+  "bbhits": "",
+  "bbaoe": "0",
+  "bbgauge": "15",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "",
+  "evomats2": "",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": ""
 }

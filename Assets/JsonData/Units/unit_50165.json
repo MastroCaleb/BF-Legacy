@@ -1,52 +1,70 @@
 {
   "id": "50165",
-  "unitName": "Holy Blades Sefia",
-  "no": "486",
-  "element": "Light",
-  "rarity": "★★★★★★",
-  "cost": "24",
-  "maxlv": "100",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "119",
-  "animation_idle": "64",
-  "animation_move": "36",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "description": "The woman warrior who wore 8 blades on her back. Throwing away the responsibility she had been given of judging otherworldly beings, she turned her blades on the gods. In the heat of battle, she once again came face to face with an old foe. The smell of blood drifting through the air, she swore that if she was able to survive the battle that they would fight just the two of them once again. As she said this, blades shot out from the back of the wicked creature that stood before her.",
-  "summon": "I entrust my eight blades to you.<br>Let us decide together at whom<br>we will use them on!",
-  "fusion": "What's the meaning of fighting?<br>Hehe, I've never even thought<br>of such a thing before.",
-  "evolution": "Focus on your mission in life.<br>I will be your sword and cut <br>open for you a path forward!",
-  "hp_base": "4380",
-  "atk_base": "1621",
-  "def_base": "1454",
-  "rec_base": "889",
-  "hp_lord": "5999",
-  "atk_lord": "2080",
-  "def_lord": "1782",
-  "rec_lord": "1443",
-  "hp_anima": "6741",
-  "rec_anima": "1245",
-  "atk_breaker": "2278",
-  "def_breaker": "1584",
-  "atk_guardian": "1882",
-  "def_guardian": "1980",
-  "hp_oracle": "5256",
-  "rec_oracle": "1641",
-  "hp_bonus": "750",
-  "atk_bonus": "240",
-  "def_bonus": "240",
-  "rec_bonus": "420",
-  "lordonly": "",
-  "combo_hits": "10",
-  "ls": "Bright Light's Power",
-  "lsdescription": "50% boost to Atk power of Light types and boost in the BB gauge fill rate",
-  "lstype": "Attack/Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 1621,
+      "def": 1454,
+      "hp": 4380,
+      "rec": 889
+    },
+    "_lord": {
+      "atk": 2080,
+      "def": 1782,
+      "hp": 5999,
+      "rec": 1443
+    },
+    "anima": {
+      "atk": 2080,
+      "def": 1782,
+      "hp max": 6989,
+      "hp min": 6494,
+      "rec max": 1344,
+      "rec min": 1146
+    },
+    "breaker": {
+      "atk max": 2377,
+      "atk min": 2179,
+      "def max": 1683,
+      "def min": 1485,
+      "hp": 5999,
+      "rec": 1443
+    },
+    "guardian": {
+      "atk": 2080,
+      "def max": 2079,
+      "def min": 1881,
+      "hp": 5999,
+      "rec max": 1443,
+      "rec min": 1245
+    },
+    "oracle": {
+      "atk": 2080,
+      "def max": 1782,
+      "def min": 1584,
+      "hp": 5999,
+      "rec max": 1839,
+      "rec min": 1641
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to Atk power of Light types and boost in the BB gauge fill rate",
+    "effects": [
+      {
+        "atk% buff": 50,
+        "elements buffed": [
+          "light"
+        ],
+        "passive id": "2"
+      },
+      {
+        "bb gauge fill rate%": 30,
+        "passive id": "32"
+      }
+    ],
+    "id": "144",
+    "name": "Bright Light's Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -303,11 +321,6 @@
     ],
     "name": "Rogue Bind Fencer"
   },
-  "bbdescription": "12 combo powerful Light attack on all enemies & probable Paralysis effect",
-  "bbtype": "Offense",
-  "bbhits": "12",
-  "bbaoe": "A",
-  "bbgauge": "34",
   "sbb": {
     "damage frames": [
       {
@@ -580,93 +593,100 @@
     ],
     "name": "Atomic Nova"
   },
-  "sbbdescription": "15 combo powerful Light attack on all enemies & probable Paralysis effect",
-  "sbbtype": "Offense",
-  "sbbhits": "15",
-  "sbbaoe": "A",
-  "sbbgauge": "20",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "50164",
-  "evointo": "50166",
-  "evomats1": "50394",
-  "evomats2": "50354",
-  "evomats3": "50123",
-  "evomats4": "50191",
-  "evomats5": "",
-  "evoitem": "Legend Stone",
-  "evozelcost": "1500000",
-  "stats": {
-    "_base": {
-      "atk": 1621,
-      "def": 1454,
-      "hp": 4380,
-      "rec": 889
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 2080,
-      "def": 1782,
-      "hp": 5999,
-      "rec": 1443
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 2080,
-      "def": 1782,
-      "hp max": 6989,
-      "hp min": 6494,
-      "rec max": 1344,
-      "rec min": 1146
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 119
     },
-    "breaker": {
-      "atk max": 2377,
-      "atk min": 2179,
-      "def max": 1683,
-      "def min": 1485,
-      "hp": 5999,
-      "rec": 1443
+    "idle": {
+      "total number of frames": 64
     },
-    "guardian": {
-      "atk": 2080,
-      "def max": 2079,
-      "def min": 1881,
-      "hp": 5999,
-      "rec max": 1443,
-      "rec min": 1245
-    },
-    "oracle": {
-      "atk": 2080,
-      "def max": 1782,
-      "def min": 1584,
-      "hp": 5999,
-      "rec max": 1839,
-      "rec min": 1641
+    "move": {
+      "total number of frames": 36
     }
   },
-  "leader_skill": {
-    "desc": "50% boost to Atk power of Light types and boost in the BB gauge fill rate",
-    "effects": [
-      {
-        "atk% buff": 50,
-        "elements buffed": [
-          "light"
-        ],
-        "passive id": "2"
-      },
-      {
-        "bb gauge fill rate%": 30,
-        "passive id": "32"
-      }
+  "category": 50160,
+  "cost": "24",
+  "damage frames": {
+    "frame times": [
+      55,
+      58,
+      66,
+      69,
+      72,
+      75,
+      78,
+      81,
+      84,
+      87
     ],
-    "id": "144",
-    "name": "Bright Light's Power"
+    "hit dmg% distribution": [
+      15,
+      13,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 10
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "light",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 486,
+  "imp": {
+    "max atk": "240",
+    "max def": "240",
+    "max hp": "750",
+    "max rec": "420"
+  },
+  "kind": "normal",
+  "lord damage range": "1937~2163",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Holy Blades Sefia",
+  "rarity": "6",
+  "sell caution": false,
+  "unitName": "Holy Blades Sefia",
+  "maxlv": "100",
+  "no": "486",
   "unitDisplayHomePosition_1W9CxaFK": "395,165,148,404",
   "unitDisplayDetailPosition_6z54rgb3": "-110,11,1106,847",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "96,234,495,397,0",
@@ -676,5 +696,117 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "8000",
   "sellCaution": false,
-  "effectFrames": "71:500132:1,80:500132:1,89:500132:1,49:125:1,52:125:1,60:125:1,63:125:1,66:125:1,69:125:1,72:125:1,75:125:1,78:125:1,81:125:1,55:200140:1,58:500170:1,100:200030:1,55:200401:1,66:500090:1"
+  "effectFrames": "71:500132:1,80:500132:1,89:500132:1,49:125:1,52:125:1,60:125:1,63:125:1,66:125:1,69:125:1,72:125:1,75:125:1,78:125:1,81:125:1,55:200140:1,58:500170:1,100:200030:1,55:200401:1,66:500090:1",
+  "evofrom": "50164",
+  "evointo": "50166",
+  "evozelcost": "1500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50394",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50123",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50191",
+      "count": 1
+    },
+    {
+      "type": "2",
+      "id": "110100",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "119",
+  "animation_idle": "64",
+  "animation_move": "36",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "55, 58, 66, 69, 72, 75, 78, 81, 84, 87",
+  "normal_distribute": "15, 13, 9, 9, 9, 9, 9, 9, 9, 9",
+  "normal_totaldistr": "100",
+  "bb_frames": "55, 58, 66, 69, 72, 75, 78, 81, 84, 87, 128, 132",
+  "bb_distribute": "15, 13, 8, 8, 8, 8, 8, 8, 8, 8, 4, 4",
+  "bb_totaldistr": "100",
+  "sbb_frames": "55, 58, 68, 74, 80, 86, 92, 98, 104, 110, 116, 122, 128, 134, 150",
+  "sbb_distribute": "10, 10, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 10",
+  "sbb_totaldistr": "102",
+  "description": "The woman warrior who wore 8 blades on her back. Throwing away the responsibility she had been given of judging otherworldly beings, she turned her blades on the gods. In the heat of battle, she once again came face to face with an old foe. The smell of blood drifting through the air, she swore that if she was able to survive the battle that they would fight just the two of them once again. As she said this, blades shot out from the back of the wicked creature that stood before her.",
+  "summon": "I entrust my eight blades to you.<br>Let us decide together at whom<br>we will use them on!",
+  "fusion": "What's the meaning of fighting?<br>Hehe, I've never even thought<br>of such a thing before.",
+  "evolution": "Focus on your mission in life.<br>I will be your sword and cut <br>open for you a path forward!",
+  "hp_base": "4380",
+  "atk_base": "1621",
+  "def_base": "1454",
+  "rec_base": "889",
+  "hp_lord": "5999",
+  "atk_lord": "2080",
+  "def_lord": "1782",
+  "rec_lord": "1443",
+  "hp_anima": "6742",
+  "rec_anima": "1245",
+  "atk_breaker": "2278",
+  "def_breaker": "1584",
+  "atk_guardian": "1882",
+  "def_guardian": "1980",
+  "rec_guardian": "1344",
+  "def_oracle": "1683",
+  "hp_oracle": "5702",
+  "rec_oracle": "1740",
+  "hp_bonus": "750",
+  "atk_bonus": "240",
+  "def_bonus": "240",
+  "rec_bonus": "420",
+  "lordonly": "",
+  "combo_hits": "10",
+  "normaldc": "30",
+  "ls": "Bright Light's Power",
+  "lsdescription": "50% boost to Atk power of Light types and boost in the BB gauge fill rate",
+  "lsnote": "30% boost to BB gauge fill rate",
+  "lstype": "Attack/Brave Burst",
+  "bbdescription": "12 combo powerful Light attack on all enemies & probable Paralysis effect",
+  "bbnote": "45% chance to inflict",
+  "bbtype": "Offense",
+  "bbhits": "12",
+  "bbaoe": "A",
+  "bbgauge": "26",
+  "bbdc": "12",
+  "bbmultiplier": "250",
+  "sbbdescription": "15 combo powerful Light attack on all enemies & probable Paralysis effect",
+  "sbbnote": "70% chance to inflict",
+  "sbbtype": "Offense",
+  "sbbhits": "15",
+  "sbbaoe": "A",
+  "sbbgauge": "15",
+  "sbbdc": "30",
+  "sbbmultiplier": "500",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50394",
+  "evomats2": "50354",
+  "evomats3": "50123",
+  "evomats4": "50191",
+  "evomats5": "",
+  "evoitem": "Legend Stone"
 }

@@ -1,68 +1,111 @@
 {
   "id": "20877",
-  "unitName": "Torrential Scar Holia",
-  "no": "1437",
-  "element": "Water",
-  "rarity": "Omni",
-  "cost": "48",
-  "maxlv": "150",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "146",
-  "animation_idle": "64",
-  "animation_move": "3",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "16, 19, 49, 52, 71, 74, 99, 102, 105, 108, 111",
-  "normal_distribute": "8, 5, 8, 5, 8, 5, 23, 13, 11, 8, 6",
-  "normal_totaldistr": "100",
-  "bb_frames": "16, 19, 49, 52, 71, 74, 99, 102, 105, 108, 111, 114, 117, 120",
-  "bb_distribute": "6, 3, 6, 3, 6, 3, 20, 13, 10, 8, 7, 6, 5, 4",
-  "bb_totaldistr": "100",
-  "sbb_frames": "16, 19, 22, 49, 52, 55, 71, 74, 77, 99, 102, 105, 108, 111, 114, 117, 120, 123, 126",
-  "sbb_distribute": "5, 4, 3, 5, 4, 3, 5, 4, 3, 17, 10, 8, 6, 6, 4, 4, 3, 3, 3",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "16, 19, 22, 25, 49, 52, 55, 58, 71, 74, 77, 80, 99, 102, 105, 108, 111, 114, 117, 120, 123, 126",
-  "ubb_distribute": "3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 17, 10, 8, 6, 6, 4, 4, 3, 3, 3",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "4",
-  "sbb_effectdelay": "4",
-  "ubb_effectdelay": "5",
-  "description": "According to the research notes she left behind, Holia was deeply fascinated by the distinctly non-demonic nature of the god of destruction she'd created, indifferent as it was to bloodlust and desire even with its immense power. Had she pursued her fascination and continued her research, this clue might have led her to create techniques to eliminate such petty emotions. Then perhaps, twisted as it was, her territory might have become a peaceful land, unlike the Ishgria we know.",
-  "summon": "Just let me know when you want to remove your suffering and anger. It'll take no time at all!",
-  "fusion": "He he... Shall I grant you happiness as thanks for this technique? It's alright, just leave everything to me.",
-  "evolution": "Oh, my, emotions are so interesting! They change and break so quickly when you just toy with them a little bit!",
-  "hp_base": "6192",
-  "atk_base": "2261",
-  "def_base": "1999",
-  "rec_base": "2362",
-  "hp_lord": "8162",
-  "atk_lord": "2761",
-  "def_lord": "2806",
-  "rec_lord": "2882",
-  "hp_anima": "9279",
-  "rec_anima": "2584",
-  "atk_breaker": "3059",
-  "def_breaker": "2508",
-  "def_guardian": "3104",
-  "rec_guardian": "2733",
-  "def_oracle": "2657",
-  "rec_oracle": "3329",
-  "hp_bonus": "1250",
-  "atk_bonus": "400",
-  "def_bonus": "800",
-  "rec_bonus": "500",
-  "lordonly": "",
-  "combo_hits": "11",
-  "normaldc": "44",
-  "ls": "Divine Mercy",
-  "lsdescription": "60% boost to max HP, boosts Atk, Def, Rec relative to remaining HP, restores HP each turn & 15% damage reduction from Fire, Water types",
-  "lsnote": "0.5% boost per 1% HP remaining, 50% boost max, & heals 800-1000 + 10% Rec",
+  "stats": {
+    "_base": {
+      "atk": 2261,
+      "def": 1999,
+      "hp": 6192,
+      "rec": 2362
+    },
+    "_lord": {
+      "atk": 2761,
+      "def": 2806,
+      "hp": 8162,
+      "rec": 2882
+    },
+    "anima": {
+      "atk": 2761,
+      "def": 2806,
+      "hp max": 9652,
+      "hp min": 8907,
+      "rec max": 2733,
+      "rec min": 2435
+    },
+    "breaker": {
+      "atk max": 3208,
+      "atk min": 2910,
+      "def max": 2657,
+      "def min": 2359,
+      "hp": 8162,
+      "rec": 2882
+    },
+    "guardian": {
+      "atk": 2761,
+      "def max": 3253,
+      "def min": 2955,
+      "hp": 8162,
+      "rec max": 2882,
+      "rec min": 2584
+    },
+    "oracle": {
+      "atk": 2761,
+      "def max": 2806,
+      "def min": 2508,
+      "hp": 8162,
+      "rec max": 3478,
+      "rec min": 3180
+    }
+  },
+  "leader_skill": {
+    "desc": "60% boost to max HP, boosts Atk, Def, Rec relative to remaining HP, restores HP each turn & 15% damage reduction from Fire, Water types",
+    "effects": [
+      {
+        "hp% buff": 60,
+        "passive id": "1"
+      },
+      {
+        "atk% base buff": 0,
+        "atk% extra buff based on hp": 50,
+        "buff proportional to hp": "remaining",
+        "def% base buff": 0,
+        "def% extra buff based on hp": 50,
+        "passive id": "46",
+        "rec% base buff": 0,
+        "rec% extra buff based on hp": 50
+      },
+      {
+        "dmg% mitigation for elemental attacks": 15.0,
+        "mitigate fire attacks": true,
+        "mitigate water attacks": true,
+        "passive id": "62"
+      },
+      {
+        "passive id": "33",
+        "rec% added (turn heal)": 10.0,
+        "turn heal high": 1000,
+        "turn heal low": 800
+      }
+    ],
+    "id": "5532",
+    "name": "Divine Mercy"
+  },
+  "extra_skill": {
+    "desc": "10% boost to all parameters & probable resistance against 2 KO attacks",
+    "effects": [
+      {
+        "atk% buff": 10,
+        "conditions": [],
+        "def% buff": 10,
+        "hp% buff": 10,
+        "passive id": "1",
+        "passive target": "party",
+        "rec% buff": 10
+      },
+      {
+        "angel idol chance% condition": 0,
+        "angel idol recover chance% high": 40,
+        "angel idol recover chance% low": 40,
+        "angel idol recover counts": 2,
+        "conditions": [],
+        "passive id": "69",
+        "passive target": "self"
+      }
+    ],
+    "id": "21000",
+    "name": "Absolute Order",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -639,14 +682,6 @@
     ],
     "name": "Eminent Ritual"
   },
-  "bbdescription": "14 combo Water attack on all foes, boosts max HP, greatly restores HP, slight probable resistance against 1 KO attack & greatly restores HP for 3 turns",
-  "bbnote": "Heal 3000-3500 + 15% Rec for 3 turns, heal 3500-4000 + 40% of own Rec instantly, 15% HP boost & 10% chance to survive 1 KO attack",
-  "bbtype": "Heal/Offense",
-  "bbhits": "14",
-  "bbaoe": "A",
-  "bbgauge": "27",
-  "bbdc": "14",
-  "bbmultiplier": "370",
   "sbb": {
     "damage frames": [
       {
@@ -1283,14 +1318,6 @@
     ],
     "name": "Flux Irrigation"
   },
-  "sbbdescription": "19 combo powerful Water attack on all foes, greatly restores HP for 3 turns, considerably boosts Rec relative to max HP for 3 turns, negates critical and elemental damage for 1 turn & negates Atk, Def, Rec reductions for 1 turn",
-  "sbbnote": "20% HP to Rec & heal 3000-3500 + 15% Rec",
-  "sbbtype": "Heal/Offense",
-  "sbbhits": "19",
-  "sbbaoe": "A",
-  "sbbgauge": "28",
-  "sbbdc": "19",
-  "sbbmultiplier": "580",
   "ubb": {
     "damage frames": [
       {
@@ -1475,6 +1502,192 @@
     ],
     "name": "Primal Dissolver"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 146
+    },
+    "idle": {
+      "total number of frames": 64
+    },
+    "move": {
+      "total number of frames": 3
+    }
+  },
+  "category": 20870,
+  "cost": "48",
+  "damage frames": {
+    "frame times": [
+      16,
+      19,
+      49,
+      52,
+      71,
+      74,
+      99,
+      102,
+      105,
+      108,
+      111
+    ],
+    "hit dmg% distribution": [
+      8,
+      5,
+      8,
+      5,
+      8,
+      5,
+      23,
+      13,
+      11,
+      8,
+      6
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 11
+  },
+  "drop check count": 4,
+  "element": "water",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 1437,
+  "imp": {
+    "max atk": "400",
+    "max def": "800",
+    "max hp": "1250",
+    "max rec": "500"
+  },
+  "kind": "normal",
+  "lord damage range": "2570~2871",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Torrential Scar Holia",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "8",
+  "sell caution": false,
+  "unitName": "Torrential Scar Holia",
+  "maxlv": "150",
+  "no": "1437",
+  "unitDisplayHomePosition_1W9CxaFK": "603,216,155,423",
+  "unitDisplayDetailPosition_6z54rgb3": "-274,-14,1230,1013",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "-76,157,685,564,1",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-231,-243,1180,972",
+  "unitDisplaySummonPosition_KC3Jk8Br": "-76,157,685,564,1",
+  "unitDisplayHpPosition_3BpHN6VD": "-4,57",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "50000",
+  "sellCaution": false,
+  "effectFrames": "10:120:1,13:120:1,16:120:1,46:120:1,49:120:1,68:120:1,71:120:1,16:200961:1,17:200398:1,18:200094:1,52:201083:1,53:200398:1,54:200094:1,74:300181:1,74:201083:1,75:200398:1,76:200094:1,102:200752:1,103:400447:1,110:400447:1",
+  "evofrom": "20876",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "21",
+  "animation_attack": "146",
+  "animation_idle": "64",
+  "animation_move": "3",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "16, 19, 49, 52, 71, 74, 99, 102, 105, 108, 111",
+  "normal_distribute": "8, 5, 8, 5, 8, 5, 23, 13, 11, 8, 6",
+  "normal_totaldistr": "100",
+  "bb_frames": "16, 19, 49, 52, 71, 74, 99, 102, 105, 108, 111, 114, 117, 120",
+  "bb_distribute": "6, 3, 6, 3, 6, 3, 20, 13, 10, 8, 7, 6, 5, 4",
+  "bb_totaldistr": "100",
+  "sbb_frames": "16, 19, 22, 49, 52, 55, 71, 74, 77, 99, 102, 105, 108, 111, 114, 117, 120, 123, 126",
+  "sbb_distribute": "5, 4, 3, 5, 4, 3, 5, 4, 3, 17, 10, 8, 6, 6, 4, 4, 3, 3, 3",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "16, 19, 22, 25, 49, 52, 55, 58, 71, 74, 77, 80, 99, 102, 105, 108, 111, 114, 117, 120, 123, 126",
+  "ubb_distribute": "3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 17, 10, 8, 6, 6, 4, 4, 3, 3, 3",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "4",
+  "sbb_effectdelay": "4",
+  "ubb_effectdelay": "5",
+  "description": "According to the research notes she left behind, Holia was deeply fascinated by the distinctly non-demonic nature of the god of destruction she'd created, indifferent as it was to bloodlust and desire even with its immense power. Had she pursued her fascination and continued her research, this clue might have led her to create techniques to eliminate such petty emotions. Then perhaps, twisted as it was, her territory might have become a peaceful land, unlike the Ishgria we know.",
+  "summon": "Just let me know when you want to remove your suffering and anger. It'll take no time at all!",
+  "fusion": "He he... Shall I grant you happiness as thanks for this technique? It's alright, just leave everything to me.",
+  "evolution": "Oh, my, emotions are so interesting! They change and break so quickly when you just toy with them a little bit!",
+  "hp_base": "6192",
+  "atk_base": "2261",
+  "def_base": "1999",
+  "rec_base": "2362",
+  "hp_lord": "8162",
+  "atk_lord": "2761",
+  "def_lord": "2806",
+  "rec_lord": "2882",
+  "hp_anima": "9279",
+  "rec_anima": "2584",
+  "atk_breaker": "3059",
+  "def_breaker": "2508",
+  "def_guardian": "3104",
+  "rec_guardian": "2733",
+  "def_oracle": "2657",
+  "rec_oracle": "3329",
+  "hp_bonus": "1250",
+  "atk_bonus": "400",
+  "def_bonus": "800",
+  "rec_bonus": "500",
+  "lordonly": "",
+  "combo_hits": "11",
+  "normaldc": "44",
+  "ls": "Divine Mercy",
+  "lsdescription": "60% boost to max HP, boosts Atk, Def, Rec relative to remaining HP, restores HP each turn & 15% damage reduction from Fire, Water types",
+  "lsnote": "0.5% boost per 1% HP remaining, 50% boost max, & heals 800-1000 + 10% Rec",
+  "bbdescription": "14 combo Water attack on all foes, boosts max HP, greatly restores HP, slight probable resistance against 1 KO attack & greatly restores HP for 3 turns",
+  "bbnote": "Heal 3000-3500 + 15% Rec for 3 turns, heal 3500-4000 + 40% of own Rec instantly, 15% HP boost & 10% chance to survive 1 KO attack",
+  "bbtype": "Heal/Offense",
+  "bbhits": "14",
+  "bbaoe": "A",
+  "bbgauge": "27",
+  "bbdc": "14",
+  "bbmultiplier": "370",
+  "sbbdescription": "19 combo powerful Water attack on all foes, greatly restores HP for 3 turns, considerably boosts Rec relative to max HP for 3 turns, negates critical and elemental damage for 1 turn & negates Atk, Def, Rec reductions for 1 turn",
+  "sbbnote": "20% HP to Rec & heal 3000-3500 + 15% Rec",
+  "sbbtype": "Heal/Offense",
+  "sbbhits": "19",
+  "sbbaoe": "A",
+  "sbbgauge": "28",
+  "sbbdc": "19",
+  "sbbmultiplier": "580",
   "ubbdescription": "22 combo massive Water attack on all foes, hugely boosts max HP, high probable resistance against 1 KO attack, fully restores HP for 3 turns, negates critical and elemental damage for 3 turns & negates Atk, Def, Rec reductions for 3 turns",
   "ubbnote": "35% HP boost & 80% chance to survive 1 KO attack",
   "ubbtype": "Heal/Offense",
@@ -1487,7 +1700,6 @@
   "esitem": "",
   "esdescription": "10% boost to all parameters & probable resistance against 2 KO attacks",
   "esnote": "40% chance (parameter boost applies to all units in party)",
-  "evofrom": "20876",
   "howtoget": "",
   "omniskill1_cat": "Parameter Boost",
   "omniskill1_1_sp": "10",
@@ -1520,121 +1732,5 @@
   "notes": "",
   "addcat": "Demon Inventors",
   "addcatname": "Holia2",
-  "bottomtext": "",
-  "stats": {
-    "_base": {
-      "atk": 2261,
-      "def": 1999,
-      "hp": 6192,
-      "rec": 2362
-    },
-    "_lord": {
-      "atk": 2761,
-      "def": 2806,
-      "hp": 8162,
-      "rec": 2882
-    },
-    "anima": {
-      "atk": 2761,
-      "def": 2806,
-      "hp max": 9652,
-      "hp min": 8907,
-      "rec max": 2733,
-      "rec min": 2435
-    },
-    "breaker": {
-      "atk max": 3208,
-      "atk min": 2910,
-      "def max": 2657,
-      "def min": 2359,
-      "hp": 8162,
-      "rec": 2882
-    },
-    "guardian": {
-      "atk": 2761,
-      "def max": 3253,
-      "def min": 2955,
-      "hp": 8162,
-      "rec max": 2882,
-      "rec min": 2584
-    },
-    "oracle": {
-      "atk": 2761,
-      "def max": 2806,
-      "def min": 2508,
-      "hp": 8162,
-      "rec max": 3478,
-      "rec min": 3180
-    }
-  },
-  "leader_skill": {
-    "desc": "60% boost to max HP, boosts Atk, Def, Rec relative to remaining HP, restores HP each turn & 15% damage reduction from Fire, Water types",
-    "effects": [
-      {
-        "hp% buff": 60,
-        "passive id": "1"
-      },
-      {
-        "atk% base buff": 0,
-        "atk% extra buff based on hp": 50,
-        "buff proportional to hp": "remaining",
-        "def% base buff": 0,
-        "def% extra buff based on hp": 50,
-        "passive id": "46",
-        "rec% base buff": 0,
-        "rec% extra buff based on hp": 50
-      },
-      {
-        "dmg% mitigation for elemental attacks": 15.0,
-        "mitigate fire attacks": true,
-        "mitigate water attacks": true,
-        "passive id": "62"
-      },
-      {
-        "passive id": "33",
-        "rec% added (turn heal)": 10.0,
-        "turn heal high": 1000,
-        "turn heal low": 800
-      }
-    ],
-    "id": "5532",
-    "name": "Divine Mercy"
-  },
-  "extra_skill": {
-    "desc": "10% boost to all parameters & probable resistance against 2 KO attacks",
-    "effects": [
-      {
-        "atk% buff": 10,
-        "conditions": [],
-        "def% buff": 10,
-        "hp% buff": 10,
-        "passive id": "1",
-        "passive target": "party",
-        "rec% buff": 10
-      },
-      {
-        "angel idol chance% condition": 0,
-        "angel idol recover chance% high": 40,
-        "angel idol recover chance% low": 40,
-        "angel idol recover counts": 2,
-        "conditions": [],
-        "passive id": "69",
-        "passive target": "self"
-      }
-    ],
-    "id": "21000",
-    "name": "Absolute Order",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "603,216,155,423",
-  "unitDisplayDetailPosition_6z54rgb3": "-274,-14,1230,1013",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "-76,157,685,564,1",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-231,-243,1180,972",
-  "unitDisplaySummonPosition_KC3Jk8Br": "-76,157,685,564,1",
-  "unitDisplayHpPosition_3BpHN6VD": "-4,57",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "50000",
-  "sellCaution": false,
-  "effectFrames": "10:120:1,13:120:1,16:120:1,46:120:1,49:120:1,68:120:1,71:120:1,16:200961:1,17:200398:1,18:200094:1,52:201083:1,53:200398:1,54:200094:1,74:300181:1,74:201083:1,75:200398:1,76:200094:1,102:200752:1,103:400447:1,110:400447:1"
+  "bottomtext": ""
 }

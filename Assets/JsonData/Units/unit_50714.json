@@ -1,62 +1,68 @@
 {
   "id": "50714",
-  "unitName": "聖神姫エスティア",
-  "freetext": ":''Not to be confused with Global counterpart, Princess Estia.''",
-  "unreleased": "true",
-  "untranslated": "true",
-  "doenter": "true",
-  "no": "928",
-  "element": "Light",
-  "rarity": "★★★★★",
-  "cost": "15",
-  "maxlv": "80",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "160",
-  "animation_idle": "130",
-  "animation_move": "130",
-  "movespeed_attack": "4",
-  "speedtype_attack": "3",
-  "movetype_attack": "3",
-  "movespeed_skill": "4",
-  "speedtype_skill": "3",
-  "movetype_skill": "3",
-  "description": "神々に滅ぼされたエリシアン王国の王女。王国が神々の侵攻を受け、滅亡に追い込まれる中、彼女は国王である父の言葉に従い、幼馴染であり信頼できる騎士ゼノンに導かれて神軍より逃亡。国を脱出し、荒廃した塔に辿り着き、かろうじて神々の追撃を逃れることに成功する。その後、神軍の追っ手と戦いつつ逃亡の旅を続けた２人だが、その旅路はこれまで以上に過酷なものだったという。",
-  "summon": "あなたと会えたことを嬉しいと思う。<br>あなたは私の２番目の友達ね。<br>たまには私の相手もしてね♪",
-  "fusion": "今のは何かしら？<br>なんだかすごくいい…<br>ねえ、もっとできない？",
-  "evolution": "痛みや悲しみを克服する<br>強さを持ちたい…<br>いえ、持たなければならないの！",
-  "hp_base": "3341",
-  "atk_base": "1190",
-  "def_base": "955",
-  "rec_base": "1153",
-  "hp_lord": "4960",
-  "atk_lord": "1640",
-  "def_lord": "1320",
-  "rec_lord": "1580",
-  "hp_anima": "5552",
-  "rec_anima": "1422",
-  "atk_breaker": "1798",
-  "def_breaker": "1162",
-  "def_guardian": "1478",
-  "rec_guardian": "1501",
-  "def_oracle": "1241",
-  "rec_oracle": "1817",
-  "hp_bonus": "750",
-  "atk_bonus": "300",
-  "def_bonus": "300",
-  "rec_bonus": "300",
-  "lordonly": "",
-  "evofrom": "50713",
-  "evointo": "",
-  "normal_frames": "25, 28, 35, 38, 76, 83, 86, 89, 92, 95",
-  "normal_distribute": "10, 10, 10, 10, 10, 10, 10, 10, 10, 10",
-  "normal_totaldistr": "100",
-  "combo_hits": "10",
-  "normaldc": "20",
-  "ls": "王女の神護光",
-  "lsdescription": "全てのユニットの回復力・最大ＨＰを２０％アップ＆ＨＣ獲得時の回復量をかなりアップ",
-  "lsnote": "20% boost to HP, Rec & 50% boost to HC efficacy",
+  "stats": {
+    "_base": {
+      "atk": 1190,
+      "def": 955,
+      "hp": 3341,
+      "rec": 1153
+    },
+    "_lord": {
+      "atk": 1640,
+      "def": 1320,
+      "hp": 4960,
+      "rec": 1580
+    },
+    "anima": {
+      "atk": 1640,
+      "def": 1320,
+      "hp max": 5750,
+      "hp min": 5355,
+      "rec max": 1501,
+      "rec min": 1343
+    },
+    "breaker": {
+      "atk max": 1877,
+      "atk min": 1719,
+      "def max": 1241,
+      "def min": 1083,
+      "hp": 4960,
+      "rec": 1580
+    },
+    "guardian": {
+      "atk": 1640,
+      "def max": 1557,
+      "def min": 1399,
+      "hp": 4960,
+      "rec max": 1580,
+      "rec min": 1422
+    },
+    "oracle": {
+      "atk": 1640,
+      "def max": 1320,
+      "def min": 1162,
+      "hp": 4960,
+      "rec max": 1896,
+      "rec min": 1738
+    }
+  },
+  "leader_skill": {
+    "desc": "全てのユニットの回復力・最大ＨＰを２０％アップ＆ＨＣ獲得時の回復量をかなりアップ",
+    "effects": [
+      {
+        "hp% buff": 20,
+        "passive id": "1",
+        "rec% buff": 20
+      },
+      {
+        "hc effectiveness%": 50,
+        "passive id": "10"
+      }
+    ],
+    "id": "8802",
+    "name": "王女の神護光"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -513,6 +519,163 @@
     ],
     "name": "プラチナスターライト"
   },
+  "sbb": {},
+  "ubb": {},
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 160
+    },
+    "idle": {
+      "total number of frames": 130
+    },
+    "move": {
+      "total number of frames": 130
+    }
+  },
+  "category": 50710,
+  "cost": "15",
+  "damage frames": {
+    "frame times": [
+      25,
+      28,
+      35,
+      38,
+      76,
+      83,
+      86,
+      89,
+      92,
+      95
+    ],
+    "hit dmg% distribution": [
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 10
+  },
+  "drop check count": 2,
+  "element": "light",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "farmable",
+  "guide_id": 928,
+  "imp": {
+    "max atk": "300",
+    "max def": "300",
+    "max hp": "750",
+    "max rec": "300"
+  },
+  "kind": "normal",
+  "lord damage range": "1527~1705",
+  "movement": {
+    "attack": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    }
+  },
+  "name": "聖神姫エスティア",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "聖神姫エスティア",
+  "maxlv": "80",
+  "no": "928",
+  "unitDisplayHomePosition_1W9CxaFK": null,
+  "unitDisplayDetailPosition_6z54rgb3": null,
+  "unitDisplayConfirmImagePosition_MYK1fq6c": null,
+  "unitDisplayCutInImagePosition_7hLR6pDN": null,
+  "unitDisplaySummonPosition_KC3Jk8Br": null,
+  "unitDisplayHpPosition_3BpHN6VD": null,
+  "unitDisplayCursorPosition": null,
+  "sellPrice": "",
+  "sellCaution": false,
+  "effectFrames": "",
+  "evofrom": "50713",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "freetext": ":''Not to be confused with Global counterpart, Princess Estia.''",
+  "unreleased": "true",
+  "untranslated": "true",
+  "doenter": "true",
+  "basexp": "21",
+  "animation_attack": "160",
+  "animation_idle": "130",
+  "animation_move": "130",
+  "movespeed_attack": "4",
+  "speedtype_attack": "3",
+  "movetype_attack": "3",
+  "movespeed_skill": "4",
+  "speedtype_skill": "3",
+  "movetype_skill": "3",
+  "description": "神々に滅ぼされたエリシアン王国の王女。王国が神々の侵攻を受け、滅亡に追い込まれる中、彼女は国王である父の言葉に従い、幼馴染であり信頼できる騎士ゼノンに導かれて神軍より逃亡。国を脱出し、荒廃した塔に辿り着き、かろうじて神々の追撃を逃れることに成功する。その後、神軍の追っ手と戦いつつ逃亡の旅を続けた２人だが、その旅路はこれまで以上に過酷なものだったという。",
+  "summon": "あなたと会えたことを嬉しいと思う。<br>あなたは私の２番目の友達ね。<br>たまには私の相手もしてね♪",
+  "fusion": "今のは何かしら？<br>なんだかすごくいい…<br>ねえ、もっとできない？",
+  "evolution": "痛みや悲しみを克服する<br>強さを持ちたい…<br>いえ、持たなければならないの！",
+  "hp_base": "3341",
+  "atk_base": "1190",
+  "def_base": "955",
+  "rec_base": "1153",
+  "hp_lord": "4960",
+  "atk_lord": "1640",
+  "def_lord": "1320",
+  "rec_lord": "1580",
+  "hp_anima": "5552",
+  "rec_anima": "1422",
+  "atk_breaker": "1798",
+  "def_breaker": "1162",
+  "def_guardian": "1478",
+  "rec_guardian": "1501",
+  "def_oracle": "1241",
+  "rec_oracle": "1817",
+  "hp_bonus": "750",
+  "atk_bonus": "300",
+  "def_bonus": "300",
+  "rec_bonus": "300",
+  "lordonly": "",
+  "normal_frames": "25, 28, 35, 38, 76, 83, 86, 89, 92, 95",
+  "normal_distribute": "10, 10, 10, 10, 10, 10, 10, 10, 10, 10",
+  "normal_totaldistr": "100",
+  "combo_hits": "10",
+  "normaldc": "20",
+  "ls": "王女の神護光",
+  "lsdescription": "全てのユニットの回復力・最大ＨＰを２０％アップ＆ＨＣ獲得時の回復量をかなりアップ",
+  "lsnote": "20% boost to HP, Rec & 50% boost to HC efficacy",
   "bbdescription": "味方全体のＨＰを大回復・全状態異常を回復＆３ターン、防御力・回復力をアップ",
   "bbnote": "{{UnitBuffList",
   "buff_1_proc": "2",
@@ -537,80 +700,5 @@
   "notes": "",
   "incorrectinfo": "",
   "addcat": "",
-  "addcatname": "",
-  "stats": {
-    "_base": {
-      "atk": 1190,
-      "def": 955,
-      "hp": 3341,
-      "rec": 1153
-    },
-    "_lord": {
-      "atk": 1640,
-      "def": 1320,
-      "hp": 4960,
-      "rec": 1580
-    },
-    "anima": {
-      "atk": 1640,
-      "def": 1320,
-      "hp max": 5750,
-      "hp min": 5355,
-      "rec max": 1501,
-      "rec min": 1343
-    },
-    "breaker": {
-      "atk max": 1877,
-      "atk min": 1719,
-      "def max": 1241,
-      "def min": 1083,
-      "hp": 4960,
-      "rec": 1580
-    },
-    "guardian": {
-      "atk": 1640,
-      "def max": 1557,
-      "def min": 1399,
-      "hp": 4960,
-      "rec max": 1580,
-      "rec min": 1422
-    },
-    "oracle": {
-      "atk": 1640,
-      "def max": 1320,
-      "def min": 1162,
-      "hp": 4960,
-      "rec max": 1896,
-      "rec min": 1738
-    }
-  },
-  "leader_skill": {
-    "desc": "全てのユニットの回復力・最大ＨＰを２０％アップ＆ＨＣ獲得時の回復量をかなりアップ",
-    "effects": [
-      {
-        "hp% buff": 20,
-        "passive id": "1",
-        "rec% buff": 20
-      },
-      {
-        "hc effectiveness%": 50,
-        "passive id": "10"
-      }
-    ],
-    "id": "8802",
-    "name": "王女の神護光"
-  },
-  "extra_skill": {},
-  "sbb": {},
-  "ubb": {},
-  "unitDisplayHomePosition_1W9CxaFK": null,
-  "unitDisplayDetailPosition_6z54rgb3": null,
-  "unitDisplayConfirmImagePosition_MYK1fq6c": null,
-  "unitDisplayCutInImagePosition_7hLR6pDN": null,
-  "unitDisplaySummonPosition_KC3Jk8Br": null,
-  "unitDisplayHpPosition_3BpHN6VD": null,
-  "unitDisplayCursorPosition": null,
-  "sellPrice": "",
-  "sellCaution": false,
-  "effectFrames": ""
+  "addcatname": ""
 }

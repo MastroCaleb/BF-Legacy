@@ -1,52 +1,64 @@
 {
   "id": "50182",
-  "unitName": "Holy Maiden Amul",
-  "no": "468",
-  "element": "Light",
-  "rarity": "★★★",
-  "cost": "7",
-  "maxlv": "40",
-  "basexp": "15",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "61",
-  "animation_idle": "52",
-  "animation_move": "28",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "4",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "3",
-  "description": "A shrine maiden said to have descended from a group of people from another world that inhabited the mountains in the La Veda Republic. As Amul vanquished monster after monster, sacrificing sleep and food to train her fortune telling abilities, she became proficient in both and her techniques were soon second to none among her people. Amul's spiritual power was stronger than any before her and it was said that she had the power to tell all things from the arrangement of the stars, and was even able to predict the movement of monsters.",
-  "summon": "I'm Amul the fortune teller.<br>I foretold you would come.<br>Let us chase our fate!",
-  "fusion": "The stars have aligned.<br>It's a good time to train.<br>Let's get stronger!",
-  "evolution": "What a favorable constellation.<br>Thanks to the stars and you<br>it seems it's time to evolve!",
-  "hp_base": "1915",
-  "atk_base": "786",
-  "def_base": "661",
-  "rec_base": "902",
-  "hp_lord": "3160",
-  "atk_lord": "1091",
-  "def_lord": "931",
-  "rec_lord": "1253",
-  "hp_anima": "3452",
-  "rec_anima": "1175",
-  "atk_breaker": "1169",
-  "def_breaker": "853",
-  "atk_guardian": "1013",
-  "def_guardian": "1009",
-  "hp_oracle": "2867",
-  "rec_oracle": "1331",
-  "hp_bonus": "300",
-  "atk_bonus": "100",
-  "def_bonus": "100",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "6",
-  "ls": "Sweet Power",
-  "lsdescription": "25% boost to Atk power of female Units",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 786,
+      "def": 661,
+      "hp": 1915,
+      "rec": 902
+    },
+    "_lord": {
+      "atk": 1091,
+      "def": 931,
+      "hp": 3160,
+      "rec": 1253
+    },
+    "anima": {
+      "atk": 1091,
+      "def": 931,
+      "hp max": 3550,
+      "hp min": 3355,
+      "rec max": 1214,
+      "rec min": 1136
+    },
+    "breaker": {
+      "atk max": 1208,
+      "atk min": 1130,
+      "def max": 892,
+      "def min": 814,
+      "hp": 3160,
+      "rec": 1253
+    },
+    "guardian": {
+      "atk": 1091,
+      "def max": 1048,
+      "def min": 970,
+      "hp": 3160,
+      "rec max": 1253,
+      "rec min": 1175
+    },
+    "oracle": {
+      "atk": 1091,
+      "def max": 931,
+      "def min": 853,
+      "hp": 3160,
+      "rec max": 1409,
+      "rec min": 1331
+    }
+  },
+  "leader_skill": {
+    "desc": "25% boost to Atk power of female Units",
+    "effects": [
+      {
+        "atk% buff": 25,
+        "gender required": "female",
+        "passive id": "42"
+      }
+    ],
+    "id": "4600",
+    "name": "Sweet Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -219,92 +231,93 @@
     ],
     "name": "Prayer for Health"
   },
-  "bbdescription": "Gradually recovers HP for all allies' over 3 turns",
-  "bbtype": "Heal",
-  "bbhits": "",
-  "bbaoe": "0",
-  "bbgauge": "15",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "50181",
-  "evointo": "",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 786,
-      "def": 661,
-      "hp": 1915,
-      "rec": 902
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1091,
-      "def": 931,
-      "hp": 3160,
-      "rec": 1253
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1091,
-      "def": 931,
-      "hp max": 3550,
-      "hp min": 3355,
-      "rec max": 1214,
-      "rec min": 1136
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 61
     },
-    "breaker": {
-      "atk max": 1208,
-      "atk min": 1130,
-      "def max": 892,
-      "def min": 814,
-      "hp": 3160,
-      "rec": 1253
+    "idle": {
+      "total number of frames": 52
     },
-    "guardian": {
-      "atk": 1091,
-      "def max": 1048,
-      "def min": 970,
-      "hp": 3160,
-      "rec max": 1253,
-      "rec min": 1175
-    },
-    "oracle": {
-      "atk": 1091,
-      "def max": 931,
-      "def min": 853,
-      "hp": 3160,
-      "rec max": 1409,
-      "rec min": 1331
+    "move": {
+      "total number of frames": 28
     }
   },
-  "leader_skill": {
-    "desc": "25% boost to Atk power of female Units",
-    "effects": [
-      {
-        "atk% buff": 25,
-        "gender required": "female",
-        "passive id": "42"
-      }
+  "category": 50180,
+  "cost": "7",
+  "damage frames": {
+    "frame times": [
+      12,
+      16,
+      20,
+      26,
+      30,
+      34
     ],
-    "id": "4600",
-    "name": "Sweet Power"
+    "hit dmg% distribution": [
+      20,
+      15,
+      15,
+      20,
+      15,
+      15
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 6
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "light",
+  "exp_pattern": 15,
+  "gender": "female",
+  "getting type": "farmable",
+  "guide_id": 468,
+  "imp": {
+    "max atk": "100",
+    "max def": "100",
+    "max hp": "300",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "1015~1134",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    }
+  },
+  "name": "Holy Maiden Amul",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "Holy Maiden Amul",
+  "maxlv": "40",
+  "no": "468",
   "unitDisplayHomePosition_1W9CxaFK": "189,90,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "145,61,518,721",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "160,336,297,293,0",
@@ -314,5 +327,78 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "1000",
   "sellCaution": false,
-  "effectFrames": "6:125:1,8:100120:1,10:125:1,14:125:1,20:125:1,22:100120:1,24:125:1,28:125:1"
+  "effectFrames": "6:125:1,8:100120:1,10:125:1,14:125:1,20:125:1,22:100120:1,24:125:1,28:125:1",
+  "evofrom": "50181",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "15",
+  "animation_attack": "61",
+  "animation_idle": "52",
+  "animation_move": "28",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "4",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "3",
+  "normal_frames": "12, 16, 20, 26, 30, 34",
+  "normal_distribute": "20, 15, 15, 20, 15, 15",
+  "normal_totaldistr": "100",
+  "description": "A shrine maiden said to have descended from a group of people from another world that inhabited the mountains in the La Veda Republic. As Amul vanquished monster after monster, sacrificing sleep and food to train her fortune telling abilities, she became proficient in both and her techniques were soon second to none among her people. Amul's spiritual power was stronger than any before her and it was said that she had the power to tell all things from the arrangement of the stars, and was even able to predict the movement of monsters.",
+  "summon": "I'm Amul the fortune teller.<br>I foretold you would come.<br>Let us chase our fate!",
+  "fusion": "The stars have aligned.<br>It's a good time to train.<br>Let's get stronger!",
+  "evolution": "What a favorable constellation.<br>Thanks to the stars and you<br>it seems it's time to evolve!",
+  "hp_base": "1915",
+  "atk_base": "786",
+  "def_base": "661",
+  "rec_base": "902",
+  "hp_lord": "3160",
+  "atk_lord": "1091",
+  "def_lord": "931",
+  "rec_lord": "1253",
+  "hp_anima": "3453",
+  "rec_anima": "1175",
+  "atk_breaker": "1169",
+  "def_breaker": "853",
+  "atk_guardian": "1013",
+  "def_guardian": "1009",
+  "rec_guardian": "1214",
+  "def_oracle": "892",
+  "hp_oracle": "3043",
+  "rec_oracle": "1370",
+  "hp_bonus": "300",
+  "atk_bonus": "100",
+  "def_bonus": "100",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "6",
+  "normaldc": "12",
+  "ls": "Sweet Power",
+  "lsdescription": "25% boost to Atk power of female Units",
+  "lstype": "Attack",
+  "bbdescription": "Gradually recovers HP for all allies' over 3 turns",
+  "bbnote": "Heals (450~550 + 10% of target's Rec) HP",
+  "bbtype": "Heal",
+  "bbhits": "",
+  "bbaoe": "0",
+  "bbgauge": "15",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "",
+  "evomats2": "",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": ""
 }

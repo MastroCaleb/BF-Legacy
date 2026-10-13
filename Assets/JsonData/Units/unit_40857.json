@@ -1,68 +1,107 @@
 {
   "id": "40857",
-  "unitName": "Gracious Champion Licht",
-  "no": "1496",
-  "element": "Thunder",
-  "rarity": "Omni",
-  "cost": "48",
-  "maxlv": "150",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "142",
-  "animation_idle": "53",
-  "animation_move": "13",
-  "movespeed_attack": "4",
-  "movespeed_skill": "4",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "2",
-  "movetype_skill": "2",
-  "normal_frames": "29, 35, 41, 47, 64, 70, 76, 82, 88",
-  "normal_distribute": "13, 10, 9, 8, 14, 13, 12, 11, 10",
-  "normal_totaldistr": "100",
-  "bb_frames": "29, 32, 35, 38, 41, 44, 64, 67, 70, 73, 76, 79, 82, 85",
-  "bb_distribute": "9, 8, 7, 6, 5, 4, 12, 10, 9, 8, 7, 6, 5, 4",
-  "bb_totaldistr": "100",
-  "sbb_frames": "29, 32, 35, 38, 41, 44, 47, 50, 64, 67, 70, 73, 76, 79, 82, 85, 88, 91, 94",
-  "sbb_distribute": "7, 6, 5, 5, 4, 4, 3, 3, 9, 8, 7, 6, 6, 5, 5, 5, 4, 4, 4",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "29, 32, 35, 38, 41, 44, 47, 50, 53, 64, 67, 70, 73, 76, 79, 82, 85, 88, 91, 94, 97, 100, 103",
-  "ubb_distribute": "6, 5, 5, 4, 4, 3, 3, 3, 3, 7, 6, 6, 6, 5, 5, 5, 4, 4, 4, 3, 3, 3, 3",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "1",
-  "ubb_effectdelay": "1",
-  "description": "He was on a frontier survey mission with the imperial guard when an officer of the emperor's staff issued a death warrant for the volunteer army's leader. Some theories hold that this same officer removed him from his original assignment because he was the largest obstacle to this plan. Had he survived and continued defending the volunteer army's leader, he could have gone on to great things. Most likely, he would have aided the anti-imperial faction and its leader directly, causing significant problems for the empire.",
-  "summon": "Leave the spying to me...<br>She said, \"it's a job only you can do.\" I take pride in that.",
-  "fusion": "My mission hasn't changed...even if we face the empire itself. I will fight and do all I can for her.",
-  "evolution": "I still...can't die.<br>If I die, there won't be anyone who can stop her.",
-  "hp_base": "6172",
-  "atk_base": "2572",
-  "def_base": "2052",
-  "rec_base": "2232",
-  "hp_lord": "8034",
-  "atk_lord": "3226",
-  "def_lord": "2553",
-  "rec_lord": "2787",
-  "hp_anima": "9151",
-  "rec_anima": "2489",
-  "atk_breaker": "3524",
-  "def_breaker": "2255",
-  "def_guardian": "2851",
-  "rec_guardian": "2638",
-  "def_oracle": "2404",
-  "rec_oracle": "3234",
-  "hp_bonus": "1250",
-  "atk_bonus": "800",
-  "def_bonus": "400",
-  "rec_bonus": "500",
-  "lordonly": "",
-  "combo_hits": "9",
-  "normaldc": "45",
-  "ls": "Phantom Blessing",
-  "lsdescription": "50% boost to Atk, max HP, Spark damage restores HP, 120% boost to Spark damage & considerably boosts BB Atk for 2 turns when damage taken exceeds certain amount",
-  "lsnote": "200% BB Atk after 5000 damage & heal 300-500 HP per Spark",
+  "stats": {
+    "_base": {
+      "atk": 2572,
+      "def": 2052,
+      "hp": 6172,
+      "rec": 2232
+    },
+    "_lord": {
+      "atk": 3226,
+      "def": 2553,
+      "hp": 8034,
+      "rec": 2787
+    },
+    "anima": {
+      "atk": 3226,
+      "def": 2553,
+      "hp max": 9524,
+      "hp min": 8779,
+      "rec max": 2638,
+      "rec min": 2340
+    },
+    "breaker": {
+      "atk max": 3673,
+      "atk min": 3375,
+      "def max": 2404,
+      "def min": 2106,
+      "hp": 8034,
+      "rec": 2787
+    },
+    "guardian": {
+      "atk": 3226,
+      "def max": 3000,
+      "def min": 2702,
+      "hp": 8034,
+      "rec max": 2787,
+      "rec min": 2489
+    },
+    "oracle": {
+      "atk": 3226,
+      "def max": 2553,
+      "def min": 2255,
+      "hp": 8034,
+      "rec max": 3383,
+      "rec min": 3085
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to Atk, max HP, Spark damage restores HP, 120% boost to Spark damage & considerably boosts BB Atk for 2 turns when damage taken exceeds certain amount",
+    "effects": [
+      {
+        "atk% buff": 50,
+        "hp% buff": 50,
+        "passive id": "1"
+      },
+      {
+        "damage% for spark": 120,
+        "passive id": "31"
+      },
+      {
+        "buff": {
+          "bb atk% buff": 200,
+          "buff turns (72)": "1",
+          "sbb atk% buff": 200,
+          "ubb atk% buff": 200
+        },
+        "damage threshold buff activation": 5000,
+        "passive id": "78"
+      },
+      {
+        "heal on spark high": 500,
+        "heal on spark low": 300,
+        "heal on spark%": 100,
+        "passive id": "101"
+      }
+    ],
+    "id": "7475",
+    "name": "Phantom Blessing"
+  },
+  "extra_skill": {
+    "desc": "Probable infliction of slight Spark vulnerability for 2 turns & hugely boosts Spark damage when HP is full",
+    "effects": [
+      {
+        "conditions": [],
+        "damage% for spark": 80,
+        "hp above % buff requirement": 100,
+        "passive id": "104",
+        "passive target": "self"
+      },
+      {
+        "conditions": [],
+        "passive id": "75",
+        "passive target": "self",
+        "spark debuff chance%": 10,
+        "spark debuff turns": 1,
+        "spark debuff%": 25
+      }
+    ],
+    "id": "25800",
+    "name": "Bold Shadows",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -527,14 +566,6 @@
     ],
     "name": "Shade Frammento"
   },
-  "bbdescription": "14 combo Thunder attack on all foes, hugely boosts BB gauge, Spark damage considerably restores HP for 3 turns & enormously boosts Spark damage for 3 turns",
-  "bbnote": "100% Spark, heal 400-500 HP per Spark & fills 8 BC",
-  "bbtype": "Heal/Offense",
-  "bbhits": "14",
-  "bbaoe": "A",
-  "bbgauge": "28",
-  "bbdc": "14",
-  "bbmultiplier": "370",
   "sbb": {
     "damage frames": [
       {
@@ -1111,14 +1142,6 @@
     ],
     "name": "Shade Ordeal"
   },
-  "sbbdescription": "19 combo powerful Thunder attack on all foes, hugely boosts BB gauge, adds probable Spark critical for 3 turns, Spark damage slightly boosts BB gauge for 3 turns & enormously boosts Spark damage for 3 turns",
-  "sbbnote": "100% Spark, 20% chance Sparks deal 50% extra damage, fills 2-3 BC per Spark & fills 8 BC",
-  "sbbtype": "Offense",
-  "sbbhits": "19",
-  "sbbaoe": "A",
-  "sbbgauge": "29",
-  "sbbdc": "19",
-  "sbbmultiplier": "580",
   "ubb": {
     "damage frames": [
       {
@@ -1283,6 +1306,188 @@
     ],
     "name": "Blue Ritual Flash"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 142
+    },
+    "idle": {
+      "total number of frames": 53
+    },
+    "move": {
+      "total number of frames": 13
+    }
+  },
+  "category": 40850,
+  "cost": "48",
+  "damage frames": {
+    "frame times": [
+      29,
+      35,
+      41,
+      47,
+      64,
+      70,
+      76,
+      82,
+      88
+    ],
+    "hit dmg% distribution": [
+      13,
+      10,
+      9,
+      8,
+      14,
+      13,
+      12,
+      11,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 9
+  },
+  "drop check count": 5,
+  "element": "thunder",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 1496,
+  "imp": {
+    "max atk": "800",
+    "max def": "400",
+    "max hp": "1250",
+    "max rec": "500"
+  },
+  "kind": "normal",
+  "lord damage range": "3003~3355",
+  "movement": {
+    "attack": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "2"
+    },
+    "skill": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "2"
+    }
+  },
+  "name": "Gracious Champion Licht",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "8",
+  "sell caution": false,
+  "unitName": "Gracious Champion Licht",
+  "maxlv": "150",
+  "no": "1496",
+  "unitDisplayHomePosition_1W9CxaFK": "545,510,190,519",
+  "unitDisplayDetailPosition_6z54rgb3": "-100,-237,1050,1023",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "18,40,600,585,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-69,-449,980,955",
+  "unitDisplaySummonPosition_KC3Jk8Br": "18,40,600,585,0",
+  "unitDisplayHpPosition_3BpHN6VD": "4,75",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "50000",
+  "sellCaution": false,
+  "effectFrames": "23:120:1,29:120:1,35:120:1,41:120:1,58:120:1,64:120:1,70:120:1,76:120:1,82:120:1,29:400480:1,30:201166:1,32:601446:1,64:500877:1,75:200718:1,78:200718:1,80:401120:1,90:401110:1,79:600767:1",
+  "evofrom": "40856",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "21",
+  "animation_attack": "142",
+  "animation_idle": "53",
+  "animation_move": "13",
+  "movespeed_attack": "4",
+  "movespeed_skill": "4",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "2",
+  "movetype_skill": "2",
+  "normal_frames": "29, 35, 41, 47, 64, 70, 76, 82, 88",
+  "normal_distribute": "13, 10, 9, 8, 14, 13, 12, 11, 10",
+  "normal_totaldistr": "100",
+  "bb_frames": "29, 32, 35, 38, 41, 44, 64, 67, 70, 73, 76, 79, 82, 85",
+  "bb_distribute": "9, 8, 7, 6, 5, 4, 12, 10, 9, 8, 7, 6, 5, 4",
+  "bb_totaldistr": "100",
+  "sbb_frames": "29, 32, 35, 38, 41, 44, 47, 50, 64, 67, 70, 73, 76, 79, 82, 85, 88, 91, 94",
+  "sbb_distribute": "7, 6, 5, 5, 4, 4, 3, 3, 9, 8, 7, 6, 6, 5, 5, 5, 4, 4, 4",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "29, 32, 35, 38, 41, 44, 47, 50, 53, 64, 67, 70, 73, 76, 79, 82, 85, 88, 91, 94, 97, 100, 103",
+  "ubb_distribute": "6, 5, 5, 4, 4, 3, 3, 3, 3, 7, 6, 6, 6, 5, 5, 5, 4, 4, 4, 3, 3, 3, 3",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "1",
+  "ubb_effectdelay": "1",
+  "description": "He was on a frontier survey mission with the imperial guard when an officer of the emperor's staff issued a death warrant for the volunteer army's leader. Some theories hold that this same officer removed him from his original assignment because he was the largest obstacle to this plan. Had he survived and continued defending the volunteer army's leader, he could have gone on to great things. Most likely, he would have aided the anti-imperial faction and its leader directly, causing significant problems for the empire.",
+  "summon": "Leave the spying to me...<br>She said, \"it's a job only you can do.\" I take pride in that.",
+  "fusion": "My mission hasn't changed...even if we face the empire itself. I will fight and do all I can for her.",
+  "evolution": "I still...can't die.<br>If I die, there won't be anyone who can stop her.",
+  "hp_base": "6172",
+  "atk_base": "2572",
+  "def_base": "2052",
+  "rec_base": "2232",
+  "hp_lord": "8034",
+  "atk_lord": "3226",
+  "def_lord": "2553",
+  "rec_lord": "2787",
+  "hp_anima": "9151",
+  "rec_anima": "2489",
+  "atk_breaker": "3524",
+  "def_breaker": "2255",
+  "def_guardian": "2851",
+  "rec_guardian": "2638",
+  "def_oracle": "2404",
+  "rec_oracle": "3234",
+  "hp_bonus": "1250",
+  "atk_bonus": "800",
+  "def_bonus": "400",
+  "rec_bonus": "500",
+  "lordonly": "",
+  "combo_hits": "9",
+  "normaldc": "45",
+  "ls": "Phantom Blessing",
+  "lsdescription": "50% boost to Atk, max HP, Spark damage restores HP, 120% boost to Spark damage & considerably boosts BB Atk for 2 turns when damage taken exceeds certain amount",
+  "lsnote": "200% BB Atk after 5000 damage & heal 300-500 HP per Spark",
+  "bbdescription": "14 combo Thunder attack on all foes, hugely boosts BB gauge, Spark damage considerably restores HP for 3 turns & enormously boosts Spark damage for 3 turns",
+  "bbnote": "100% Spark, heal 400-500 HP per Spark & fills 8 BC",
+  "bbtype": "Heal/Offense",
+  "bbhits": "14",
+  "bbaoe": "A",
+  "bbgauge": "28",
+  "bbdc": "14",
+  "bbmultiplier": "370",
+  "sbbdescription": "19 combo powerful Thunder attack on all foes, hugely boosts BB gauge, adds probable Spark critical for 3 turns, Spark damage slightly boosts BB gauge for 3 turns & enormously boosts Spark damage for 3 turns",
+  "sbbnote": "100% Spark, 20% chance Sparks deal 50% extra damage, fills 2-3 BC per Spark & fills 8 BC",
+  "sbbtype": "Offense",
+  "sbbhits": "19",
+  "sbbaoe": "A",
+  "sbbgauge": "29",
+  "sbbdc": "19",
+  "sbbmultiplier": "580",
   "ubbdescription": "23 combo massive Thunder attack on all foes, adds probable powerful Spark critical for 3 turns, Spark damage enormously boosts BB gauge and enormously restores HP for 3 turns & enormously boosts Spark damage for 3 turns",
   "ubbnote": "300% Spark, 50% chance Sparks deal 100% extra damage, fills 5-8 BC & heal 800-1000 HP per Spark",
   "ubbtype": "Heal/Offense",
@@ -1295,7 +1500,6 @@
   "esitem": "",
   "esdescription": "Probable infliction of slight Spark vulnerability for 2 turns & hugely boosts Spark damage when HP is full",
   "esnote": "80% Spark & 10% chance for 25% vulnerability",
-  "evofrom": "40856",
   "howtoget": "",
   "omniskill1_cat": "Parameter Boost",
   "omniskill1_1_sp": "10",
@@ -1329,117 +1533,5 @@
   "notes": "",
   "addcat": "Champions of Randall",
   "addcatname": "Licht2",
-  "bottomtext": "",
-  "stats": {
-    "_base": {
-      "atk": 2572,
-      "def": 2052,
-      "hp": 6172,
-      "rec": 2232
-    },
-    "_lord": {
-      "atk": 3226,
-      "def": 2553,
-      "hp": 8034,
-      "rec": 2787
-    },
-    "anima": {
-      "atk": 3226,
-      "def": 2553,
-      "hp max": 9524,
-      "hp min": 8779,
-      "rec max": 2638,
-      "rec min": 2340
-    },
-    "breaker": {
-      "atk max": 3673,
-      "atk min": 3375,
-      "def max": 2404,
-      "def min": 2106,
-      "hp": 8034,
-      "rec": 2787
-    },
-    "guardian": {
-      "atk": 3226,
-      "def max": 3000,
-      "def min": 2702,
-      "hp": 8034,
-      "rec max": 2787,
-      "rec min": 2489
-    },
-    "oracle": {
-      "atk": 3226,
-      "def max": 2553,
-      "def min": 2255,
-      "hp": 8034,
-      "rec max": 3383,
-      "rec min": 3085
-    }
-  },
-  "leader_skill": {
-    "desc": "50% boost to Atk, max HP, Spark damage restores HP, 120% boost to Spark damage & considerably boosts BB Atk for 2 turns when damage taken exceeds certain amount",
-    "effects": [
-      {
-        "atk% buff": 50,
-        "hp% buff": 50,
-        "passive id": "1"
-      },
-      {
-        "damage% for spark": 120,
-        "passive id": "31"
-      },
-      {
-        "buff": {
-          "bb atk% buff": 200,
-          "buff turns (72)": "1",
-          "sbb atk% buff": 200,
-          "ubb atk% buff": 200
-        },
-        "damage threshold buff activation": 5000,
-        "passive id": "78"
-      },
-      {
-        "heal on spark high": 500,
-        "heal on spark low": 300,
-        "heal on spark%": 100,
-        "passive id": "101"
-      }
-    ],
-    "id": "7475",
-    "name": "Phantom Blessing"
-  },
-  "extra_skill": {
-    "desc": "Probable infliction of slight Spark vulnerability for 2 turns & hugely boosts Spark damage when HP is full",
-    "effects": [
-      {
-        "conditions": [],
-        "damage% for spark": 80,
-        "hp above % buff requirement": 100,
-        "passive id": "104",
-        "passive target": "self"
-      },
-      {
-        "conditions": [],
-        "passive id": "75",
-        "passive target": "self",
-        "spark debuff chance%": 10,
-        "spark debuff turns": 1,
-        "spark debuff%": 25
-      }
-    ],
-    "id": "25800",
-    "name": "Bold Shadows",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "545,510,190,519",
-  "unitDisplayDetailPosition_6z54rgb3": "-100,-237,1050,1023",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "18,40,600,585,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-69,-449,980,955",
-  "unitDisplaySummonPosition_KC3Jk8Br": "18,40,600,585,0",
-  "unitDisplayHpPosition_3BpHN6VD": "4,75",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "50000",
-  "sellCaution": false,
-  "effectFrames": "23:120:1,29:120:1,35:120:1,41:120:1,58:120:1,64:120:1,70:120:1,76:120:1,82:120:1,29:400480:1,30:201166:1,32:601446:1,64:500877:1,75:200718:1,78:200718:1,80:401120:1,90:401110:1,79:600767:1"
+  "bottomtext": ""
 }

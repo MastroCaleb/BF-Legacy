@@ -1,58 +1,116 @@
 {
   "id": "20157",
-  "unitName": "Salacia Persei Elimo",
-  "idalt": "20157 2",
-  "has_altart": "true",
-  "no": "1492",
-  "element": "Water",
-  "rarity": "Omni",
-  "cost": "47",
-  "maxlv": "150",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "5",
-  "animation_attack": "274",
-  "animation_idle": "96",
-  "animation_move": "96",
-  "movespeed_attack": "4",
-  "movespeed_skill": "4",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "70, 74, 78, 82, 86, 90, 94, 98, 102, 106, 110",
-  "normal_distribute": "11, 9, 8, 9, 10, 9, 8, 9, 10, 9, 8",
-  "normal_totaldistr": "100",
-  "description": "Elimo had once been given the chance to join the ranks of the gods, but refused them in order to face them as a human. However, had she taken their offer, it is likely that the essence of her person would have remained the same. Her mortal body would have not been able to withstand such divine powers, but as a goddess she might have been able to manipulate them with ease. Perhaps she would have used such power to enlighten humanity and the gods with the wisdom to understand each other in order to build a better world together.",
-  "summon": "Oh dear...<br>Being called a \"goddess\" is awfully embarrassing...",
-  "fusion": "I have no regrets.<br>My body may no longer be human,<br>but my heart remains unchanged.",
-  "evolution": "Now I understand that not all wisdom is gained through knowledge. There is still so much for me to learn.",
-  "hp_base": "6179",
-  "atk_base": "1980",
-  "def_base": "2272",
-  "rec_base": "2377",
-  "hp_lord": "8042",
-  "atk_lord": "2483",
-  "def_lord": "2827",
-  "rec_lord": "2968",
-  "hp_anima": "9159",
-  "rec_anima": "2670",
-  "atk_breaker": "2781",
-  "def_breaker": "2529",
-  "def_guardian": "3125",
-  "rec_guardian": "2819",
-  "def_oracle": "2678",
-  "rec_oracle": "3415",
-  "hp_bonus": "1500",
-  "atk_bonus": "600",
-  "def_bonus": "600",
-  "rec_bonus": "600",
-  "lordonly": "",
-  "combo_hits": "11",
-  "normaldc": "44",
-  "ls": "Merciful Goddess's Wisdom",
-  "lsdescription": "60% boost to max HP, enormously boosts HC drop rate, hugely boosts HC efficacy & probable 20% damage reduction",
-  "lsnote": "30% boost, 75% effectiveness & 15% chance to reduce damage taken by 20%",
+  "stats": {
+    "_base": {
+      "atk": 1980,
+      "def": 2272,
+      "hp": 6179,
+      "rec": 2377
+    },
+    "_lord": {
+      "atk": 2483,
+      "def": 2827,
+      "hp": 8042,
+      "rec": 2968
+    },
+    "anima": {
+      "atk": 2483,
+      "def": 2827,
+      "hp max": 9532,
+      "hp min": 8787,
+      "rec max": 2819,
+      "rec min": 2521
+    },
+    "breaker": {
+      "atk max": 2930,
+      "atk min": 2632,
+      "def max": 2678,
+      "def min": 2380,
+      "hp": 8042,
+      "rec": 2968
+    },
+    "guardian": {
+      "atk": 2483,
+      "def max": 3274,
+      "def min": 2976,
+      "hp": 8042,
+      "rec max": 2968,
+      "rec min": 2670
+    },
+    "oracle": {
+      "atk": 2483,
+      "def max": 2827,
+      "def min": 2529,
+      "hp": 8042,
+      "rec max": 3564,
+      "rec min": 3266
+    }
+  },
+  "leader_skill": {
+    "desc": "60% boost to max HP, enormously boosts HC drop rate, hugely boosts HC efficacy & probable 20% damage reduction",
+    "effects": [
+      {
+        "hp% buff": 60,
+        "passive id": "1"
+      },
+      {
+        "hc effectiveness%": 75,
+        "passive id": "10"
+      },
+      {
+        "hc drop rate% buff": 30,
+        "passive id": "19"
+      },
+      {
+        "dmg reduction chance%": 15,
+        "dmg reduction%": 20,
+        "passive id": "14"
+      }
+    ],
+    "id": "5539",
+    "name": "Merciful Goddess's Wisdom"
+  },
+  "extra_skill": {
+    "desc": "Adds Water barrier for all allies effect to BB/SBB, reduces BB gauge required for BB & probable 20% damage reduction",
+    "effects": [
+      {
+        "conditions": [],
+        "dmg reduction chance%": 20,
+        "dmg reduction%": 20,
+        "passive id": "14",
+        "passive target": "self"
+      },
+      {
+        "conditions": [],
+        "passive id": "48",
+        "passive target": "self",
+        "reduced bb bc cost%": 20
+      },
+      {
+        "conditions": [],
+        "passive id": "66",
+        "passive target": "self",
+        "trigger on bb": true,
+        "trigger on sbb": true,
+        "triggered effect": [
+          {
+            "effect delay time(ms)/frame": "0.0/0",
+            "elemental barrier absorb dmg%": 100,
+            "elemental barrier def": 0,
+            "elemental barrier element": "water",
+            "elemental barrier hp": 3000,
+            "proc id": "62",
+            "target area": "aoe",
+            "target type": "party"
+          }
+        ]
+      }
+    ],
+    "id": "25100",
+    "name": "Aurora of Wisdom",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -601,14 +659,6 @@
     ],
     "name": "Difique Force"
   },
-  "bbdescription": "Greatly restores HP, removes all status ailments, hugely boosts Def and Rec for 3 turns & 50% damage reduction for 2 turns",
-  "bbnote": "Heals 3500-4000 + 40% of own Rec & 160% Def, Rec",
-  "bbtype": "Heal",
-  "bbhits": "",
-  "bbaoe": "",
-  "bbgauge": "25",
-  "bbdc": "",
-  "bbmultiplier": "",
   "sbb": {
     "damage frames": [
       {
@@ -1087,14 +1137,6 @@
     ],
     "name": "Sacred Spring of Logos"
   },
-  "sbbdescription": "Greatly restores HP, hugely boosts Def and Rec for 3 turns, damage taken may restore HP for 3 turns & 50% damage reduction for 2 turns",
-  "sbbnote": "Heals 4300-4500 + 40% of own Rec, 160% Def, Rec & 20% chance to heal 25-30% damage taken",
-  "sbbtype": "Heal",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "25",
-  "sbbdc": "",
-  "sbbmultiplier": "",
   "ubb": {
     "damage frames": [
       {
@@ -1218,6 +1260,182 @@
     ],
     "name": "Phantom Star's Fate"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 80.0,
+      "target conditions": "hp_50pr_under",
+      "target type": "party"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "hp_min",
+      "target type": "party"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 274
+    },
+    "idle": {
+      "total number of frames": 96
+    },
+    "move": {
+      "total number of frames": 96
+    }
+  },
+  "category": 20150,
+  "cost": "47",
+  "damage frames": {
+    "frame times": [
+      70,
+      74,
+      78,
+      82,
+      86,
+      90,
+      94,
+      98,
+      102,
+      106,
+      110
+    ],
+    "hit dmg% distribution": [
+      11,
+      9,
+      8,
+      9,
+      10,
+      9,
+      8,
+      9,
+      10,
+      9,
+      8
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 11
+  },
+  "drop check count": 4,
+  "element": "water",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 1492,
+  "imp": {
+    "max atk": "600",
+    "max def": "600",
+    "max hp": "1500",
+    "max rec": "600"
+  },
+  "kind": "normal",
+  "lord damage range": "2311~2582",
+  "movement": {
+    "attack": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    }
+  },
+  "name": "Salacia Persei Elimo",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "8",
+  "sell caution": false,
+  "unitName": "Salacia Persei Elimo",
+  "maxlv": "150",
+  "no": "1492",
+  "unitDisplayHomePosition_1W9CxaFK": "369,223,150,409",
+  "unitDisplayDetailPosition_6z54rgb3": "-61,-26,1100,1045",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "55,174,550,522,1",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-32,-278,1032,980",
+  "unitDisplaySummonPosition_KC3Jk8Br": "55,174,550,522,1",
+  "unitDisplayHpPosition_3BpHN6VD": "-1,48",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "50000",
+  "sellCaution": false,
+  "effectFrames": "70:201360:1,35:500791:1,30:200394:1,45:200394:1,55:200424:1,75:200286:1,95:200286:1,80:500791:1,110:500791:1,130:500791:1",
+  "evofrom": "20156",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "idalt": "20157 2",
+  "has_altart": "true",
+  "basexp": "21",
+  "animation_attack": "274",
+  "animation_idle": "96",
+  "animation_move": "96",
+  "movespeed_attack": "4",
+  "movespeed_skill": "4",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "70, 74, 78, 82, 86, 90, 94, 98, 102, 106, 110",
+  "normal_distribute": "11, 9, 8, 9, 10, 9, 8, 9, 10, 9, 8",
+  "normal_totaldistr": "100",
+  "description": "Elimo had once been given the chance to join the ranks of the gods, but refused them in order to face them as a human. However, had she taken their offer, it is likely that the essence of her person would have remained the same. Her mortal body would have not been able to withstand such divine powers, but as a goddess she might have been able to manipulate them with ease. Perhaps she would have used such power to enlighten humanity and the gods with the wisdom to understand each other in order to build a better world together.",
+  "summon": "Oh dear...<br>Being called a \"goddess\" is awfully embarrassing...",
+  "fusion": "I have no regrets.<br>My body may no longer be human,<br>but my heart remains unchanged.",
+  "evolution": "Now I understand that not all wisdom is gained through knowledge. There is still so much for me to learn.",
+  "hp_base": "6179",
+  "atk_base": "1980",
+  "def_base": "2272",
+  "rec_base": "2377",
+  "hp_lord": "8042",
+  "atk_lord": "2483",
+  "def_lord": "2827",
+  "rec_lord": "2968",
+  "hp_anima": "9159",
+  "rec_anima": "2670",
+  "atk_breaker": "2781",
+  "def_breaker": "2529",
+  "def_guardian": "3125",
+  "rec_guardian": "2819",
+  "def_oracle": "2678",
+  "rec_oracle": "3415",
+  "hp_bonus": "1500",
+  "atk_bonus": "600",
+  "def_bonus": "600",
+  "rec_bonus": "600",
+  "lordonly": "",
+  "combo_hits": "11",
+  "normaldc": "44",
+  "ls": "Merciful Goddess's Wisdom",
+  "lsdescription": "60% boost to max HP, enormously boosts HC drop rate, hugely boosts HC efficacy & probable 20% damage reduction",
+  "lsnote": "30% boost, 75% effectiveness & 15% chance to reduce damage taken by 20%",
+  "bbdescription": "Greatly restores HP, removes all status ailments, hugely boosts Def and Rec for 3 turns & 50% damage reduction for 2 turns",
+  "bbnote": "Heals 3500-4000 + 40% of own Rec & 160% Def, Rec",
+  "bbtype": "Heal",
+  "bbhits": "",
+  "bbaoe": "",
+  "bbgauge": "25",
+  "bbdc": "",
+  "bbmultiplier": "",
+  "sbbdescription": "Greatly restores HP, hugely boosts Def and Rec for 3 turns, damage taken may restore HP for 3 turns & 50% damage reduction for 2 turns",
+  "sbbnote": "Heals 4300-4500 + 40% of own Rec, 160% Def, Rec & 20% chance to heal 25-30% damage taken",
+  "sbbtype": "Heal",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "25",
+  "sbbdc": "",
+  "sbbmultiplier": "",
   "ubbdescription": "Fills all allies' BB gauge to max, negates all status ailments for 3 turns, 75% damage reduction for 3 turns, fully restores HP for 3 turns & damage taken enormously boosts BB gauge for 3 turns",
   "ubbnote": "Fills 50 BC",
   "ubbtype": "Heal",
@@ -1230,7 +1448,6 @@
   "esitem": "",
   "esdescription": "Adds Water barrier for all allies effect to BB/SBB, reduces BB gauge required for BB & probable 20% damage reduction",
   "esnote": "20% reduction, 20% chance to reduce damage & activates 3000 HP barrier",
-  "evofrom": "20156",
   "howtoget": "",
   "omniskill1_cat": "Parameter Boost",
   "omniskill1_1_sp": "20",
@@ -1264,126 +1481,5 @@
   "notes": "*In ancient Roman mythology, Salacia was the female divinity of the sea, worshipped as the goddess of salt water who presided over the depths of the ocean.",
   "addcat": "",
   "addcatname": "",
-  "bottomtext": "",
-  "stats": {
-    "_base": {
-      "atk": 1980,
-      "def": 2272,
-      "hp": 6179,
-      "rec": 2377
-    },
-    "_lord": {
-      "atk": 2483,
-      "def": 2827,
-      "hp": 8042,
-      "rec": 2968
-    },
-    "anima": {
-      "atk": 2483,
-      "def": 2827,
-      "hp max": 9532,
-      "hp min": 8787,
-      "rec max": 2819,
-      "rec min": 2521
-    },
-    "breaker": {
-      "atk max": 2930,
-      "atk min": 2632,
-      "def max": 2678,
-      "def min": 2380,
-      "hp": 8042,
-      "rec": 2968
-    },
-    "guardian": {
-      "atk": 2483,
-      "def max": 3274,
-      "def min": 2976,
-      "hp": 8042,
-      "rec max": 2968,
-      "rec min": 2670
-    },
-    "oracle": {
-      "atk": 2483,
-      "def max": 2827,
-      "def min": 2529,
-      "hp": 8042,
-      "rec max": 3564,
-      "rec min": 3266
-    }
-  },
-  "leader_skill": {
-    "desc": "60% boost to max HP, enormously boosts HC drop rate, hugely boosts HC efficacy & probable 20% damage reduction",
-    "effects": [
-      {
-        "hp% buff": 60,
-        "passive id": "1"
-      },
-      {
-        "hc effectiveness%": 75,
-        "passive id": "10"
-      },
-      {
-        "hc drop rate% buff": 30,
-        "passive id": "19"
-      },
-      {
-        "dmg reduction chance%": 15,
-        "dmg reduction%": 20,
-        "passive id": "14"
-      }
-    ],
-    "id": "5539",
-    "name": "Merciful Goddess's Wisdom"
-  },
-  "extra_skill": {
-    "desc": "Adds Water barrier for all allies effect to BB/SBB, reduces BB gauge required for BB & probable 20% damage reduction",
-    "effects": [
-      {
-        "conditions": [],
-        "dmg reduction chance%": 20,
-        "dmg reduction%": 20,
-        "passive id": "14",
-        "passive target": "self"
-      },
-      {
-        "conditions": [],
-        "passive id": "48",
-        "passive target": "self",
-        "reduced bb bc cost%": 20
-      },
-      {
-        "conditions": [],
-        "passive id": "66",
-        "passive target": "self",
-        "trigger on bb": true,
-        "trigger on sbb": true,
-        "triggered effect": [
-          {
-            "effect delay time(ms)/frame": "0.0/0",
-            "elemental barrier absorb dmg%": 100,
-            "elemental barrier def": 0,
-            "elemental barrier element": "water",
-            "elemental barrier hp": 3000,
-            "proc id": "62",
-            "target area": "aoe",
-            "target type": "party"
-          }
-        ]
-      }
-    ],
-    "id": "25100",
-    "name": "Aurora of Wisdom",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "369,223,150,409",
-  "unitDisplayDetailPosition_6z54rgb3": "-61,-26,1100,1045",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "55,174,550,522,1",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-32,-278,1032,980",
-  "unitDisplaySummonPosition_KC3Jk8Br": "55,174,550,522,1",
-  "unitDisplayHpPosition_3BpHN6VD": "-1,48",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "50000",
-  "sellCaution": false,
-  "effectFrames": "70:201360:1,35:500791:1,30:200394:1,45:200394:1,55:200424:1,75:200286:1,95:200286:1,80:500791:1,110:500791:1,130:500791:1"
+  "bottomtext": ""
 }

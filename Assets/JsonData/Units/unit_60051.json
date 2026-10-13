@@ -1,62 +1,63 @@
 {
   "id": "60051",
-  "unitName": "Skeleton King",
-  "no": "78",
-  "element": "Dark",
-  "rarity": "★★",
-  "cost": "4",
-  "maxlv": "30",
-  "basexp": "10",
-  "gender": "N",
-  "ai": "4",
-  "animation_attack": "54",
-  "animation_idle": "62",
-  "animation_move": "36",
-  "movespeed_attack": "0.005",
-  "movespeed_skill": "0.005",
-  "speedtype_attack": "1",
-  "speedtype_skill": "1",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "30, 36",
-  "normal_distribute": "50, 50",
-  "normal_totaldistr": "100",
-  "bb_frames": "30, 36, 42",
-  "bb_distribute": "33, 33, 34",
-  "bb_totaldistr": "100",
-  "description": "An undead monster that moves freely thanks to the power of darkness in its bones. It gains experience and wisdom through battle. Its combat ability is greatly enhanced due to having learned it can equip armor and a shield. It is more hostile towards the living, and more than group victories, it tends to strongly wish for its opponents' death.",
-  "summon": "H-Hurray!<br>Hurray for m-master!<br>I'm so happy! H-Hurray!",
-  "fusion": "M-Master!!<br>I want more power! Please!!",
-  "evolution": "I h-have evolved!!<br>I h-have evolved, m-master!!",
-  "hp_base": "1256",
-  "atk_base": "571",
-  "def_base": "272",
-  "rec_base": "136",
-  "hp_lord": "2295",
-  "atk_lord": "905",
-  "def_lord": "538",
-  "rec_lord": "377",
-  "hp_anima": "2513",
-  "rec_anima": "319",
-  "atk_breaker": "963",
-  "def_breaker": "480",
-  "atk_guardian": "847",
-  "def_guardian": "596",
-  "rec_guardian": "348",
-  "def_oracle": "509",
-  "hp_oracle": "2208",
-  "rec_oracle": "464",
-  "hp_bonus": "250",
-  "atk_bonus": "80",
-  "def_bonus": "120",
-  "rec_bonus": "100",
-  "lordonly": "",
-  "combo_hits": "2",
-  "normaldc": "4",
-  "ls": "Soul Light",
-  "lsdescription": "Small boost in Karma produced during Spark",
-  "lsnote": "30% boost",
-  "lstype": "Karma",
+  "stats": {
+    "_base": {
+      "atk": 571,
+      "def": 272,
+      "hp": 1256,
+      "rec": 136
+    },
+    "_lord": {
+      "atk": 905,
+      "def": 538,
+      "hp": 2295,
+      "rec": 377
+    },
+    "anima": {
+      "atk": 905,
+      "def": 538,
+      "hp max": 2585,
+      "hp min": 2440,
+      "rec max": 348,
+      "rec min": 290
+    },
+    "breaker": {
+      "atk max": 992,
+      "atk min": 934,
+      "def max": 509,
+      "def min": 451,
+      "hp": 2295,
+      "rec": 377
+    },
+    "guardian": {
+      "atk": 905,
+      "def max": 625,
+      "def min": 567,
+      "hp": 2295,
+      "rec max": 377,
+      "rec min": 319
+    },
+    "oracle": {
+      "atk": 905,
+      "def max": 538,
+      "def min": 480,
+      "hp": 2295,
+      "rec max": 493,
+      "rec min": 435
+    }
+  },
+  "leader_skill": {
+    "desc": "Small boost in Karma produced during Spark",
+    "effects": [
+      {
+        "karma drop% for spark": 30,
+        "passive id": "31"
+      }
+    ],
+    "id": "1700",
+    "name": "Soul Light"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -295,94 +296,97 @@
     ],
     "name": "Vorpal Shock"
   },
-  "bbdescription": "3 combo Dark elemental attack on single Enemy & probable Sickness effect",
-  "bbnote": "80% chance",
-  "bbtype": "Offense",
-  "bbhits": "3",
-  "bbaoe": "1",
-  "bbgauge": "10",
-  "bbdc": "3",
-  "bbmultiplier": "150",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "60050",
-  "evointo": "60052",
-  "evomats1": "60121",
-  "evomats2": "60142",
-  "evomats3": "60142",
-  "evomats4": "",
-  "evomats5": "",
-  "evozelcost": "50000",
-  "stats": {
-    "_base": {
-      "atk": 571,
-      "def": 272,
-      "hp": 1256,
-      "rec": 136
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_under",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 905,
-      "def": 538,
-      "hp": 2295,
-      "rec": 377
+    {
+      "action": "skill",
+      "chance%": 30.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 905,
-      "def": 538,
-      "hp max": 2585,
-      "hp min": 2440,
-      "rec max": 348,
-      "rec min": 290
+    {
+      "action": "attack",
+      "chance%": 70.0,
+      "target conditions": "hp_max",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 992,
-      "atk min": 934,
-      "def max": 509,
-      "def min": 451,
-      "hp": 2295,
-      "rec": 377
+    {
+      "action": "attack",
+      "chance%": 50.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "guardian": {
-      "atk": 905,
-      "def max": 625,
-      "def min": 567,
-      "hp": 2295,
-      "rec max": 377,
-      "rec min": 319
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 54
     },
-    "oracle": {
-      "atk": 905,
-      "def max": 538,
-      "def min": 480,
-      "hp": 2295,
-      "rec max": 493,
-      "rec min": 435
+    "idle": {
+      "total number of frames": 62
+    },
+    "move": {
+      "total number of frames": 36
     }
   },
-  "leader_skill": {
-    "desc": "Small boost in Karma produced during Spark",
-    "effects": [
-      {
-        "karma drop% for spark": 30,
-        "passive id": "31"
-      }
+  "category": 60050,
+  "cost": "4",
+  "damage frames": {
+    "frame times": [
+      30,
+      36
     ],
-    "id": "1700",
-    "name": "Soul Light"
+    "hit dmg% distribution": [
+      50,
+      50
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 2
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "dark",
+  "exp_pattern": 10,
+  "gender": "other",
+  "getting type": "not eligible for achievement",
+  "guide_id": 78,
+  "imp": {
+    "max atk": "80",
+    "max def": "120",
+    "max hp": "250",
+    "max rec": "100"
+  },
+  "kind": "normal",
+  "lord damage range": "842~941",
+  "movement": {
+    "attack": {
+      "move speed": 0.005,
+      "move speed type": "1",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.005,
+      "move speed type": "1",
+      "move type": "1"
+    }
+  },
+  "name": "Skeleton King",
+  "rarity": "2",
+  "sell caution": false,
+  "unitName": "Skeleton King",
+  "maxlv": "30",
+  "no": "78",
   "unitDisplayHomePosition_1W9CxaFK": "186,13,200,544",
   "unitDisplayDetailPosition_6z54rgb3": "130,88,610,697",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "172,294,283,324,0",
@@ -392,5 +396,95 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "300",
   "sellCaution": false,
-  "effectFrames": "24:126:1,30:126:1"
+  "effectFrames": "24:126:1,30:126:1",
+  "evofrom": "60050",
+  "evointo": "60052",
+  "evozelcost": "50000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "60121",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60142",
+      "count": 2
+    }
+  ],
+  "basexp": "10",
+  "animation_attack": "54",
+  "animation_idle": "62",
+  "animation_move": "36",
+  "movespeed_attack": "0.005",
+  "movespeed_skill": "0.005",
+  "speedtype_attack": "1",
+  "speedtype_skill": "1",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "30, 36",
+  "normal_distribute": "50, 50",
+  "normal_totaldistr": "100",
+  "bb_frames": "30, 36, 42",
+  "bb_distribute": "33, 33, 34",
+  "bb_totaldistr": "100",
+  "description": "An undead monster that moves freely thanks to the power of darkness in its bones. It gains experience and wisdom through battle. Its combat ability is greatly enhanced due to having learned it can equip armor and a shield. It is more hostile towards the living, and more than group victories, it tends to strongly wish for its opponents' death.",
+  "summon": "H-Hurray!<br>Hurray for m-master!<br>I'm so happy! H-Hurray!",
+  "fusion": "M-Master!!<br>I want more power! Please!!",
+  "evolution": "I h-have evolved!!<br>I h-have evolved, m-master!!",
+  "hp_base": "1256",
+  "atk_base": "571",
+  "def_base": "272",
+  "rec_base": "136",
+  "hp_lord": "2295",
+  "atk_lord": "905",
+  "def_lord": "538",
+  "rec_lord": "377",
+  "hp_anima": "2513",
+  "rec_anima": "319",
+  "atk_breaker": "963",
+  "def_breaker": "480",
+  "atk_guardian": "847",
+  "def_guardian": "596",
+  "rec_guardian": "348",
+  "def_oracle": "509",
+  "hp_oracle": "2208",
+  "rec_oracle": "464",
+  "hp_bonus": "250",
+  "atk_bonus": "80",
+  "def_bonus": "120",
+  "rec_bonus": "100",
+  "lordonly": "",
+  "combo_hits": "2",
+  "normaldc": "4",
+  "ls": "Soul Light",
+  "lsdescription": "Small boost in Karma produced during Spark",
+  "lsnote": "30% boost",
+  "lstype": "Karma",
+  "bbdescription": "3 combo Dark elemental attack on single Enemy & probable Sickness effect",
+  "bbnote": "80% chance",
+  "bbtype": "Offense",
+  "bbhits": "3",
+  "bbaoe": "1",
+  "bbgauge": "10",
+  "bbdc": "3",
+  "bbmultiplier": "150",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "60121",
+  "evomats2": "60142",
+  "evomats3": "60142",
+  "evomats4": "",
+  "evomats5": ""
 }

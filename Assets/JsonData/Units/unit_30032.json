@@ -1,61 +1,70 @@
 {
   "id": "30032",
-  "unitName": "Kaiser Mossy",
-  "no": "1081",
-  "element": "Earth",
-  "rarity": "★★★",
-  "cost": "5",
-  "maxlv": "40",
-  "basexp": "10",
-  "gender": "N",
-  "ai": "2",
-  "animation_attack": "71",
-  "animation_idle": "112",
-  "animation_move": "7",
-  "movespeed_attack": "0.0041",
-  "movespeed_skill": "0.0041",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "30, 33, 36",
-  "normal_distribute": "33, 33, 34",
-  "normal_totaldistr": "100",
-  "bb_frames": "30, 34, 38, 42, 45, 49",
-  "bb_distribute": "20, 14, 19, 14, 19, 14",
-  "bb_totaldistr": "100",
-  "description": "The mischievous Kaiser Mossy is said to have come into being after living for an eternity. It spends its time breathing life into withering plants by the sacred fruit-bearing tree it calls home. When it gets hungry though, the Kaiser Mossy is known to release a powerful blast of wind that often sends the pixies of the forest flying. Some believe the reason this creature was found in the desolate lands of Ishgria is because it had gone there in search of delicious food to eat.",
-  "summon": "You're a Summoner, right? Nom.<br>Go out there and collect the tastiest<br>fruits you can find! Nom!",
-  "fusion": "This isn't enough, nom.<br>If you don't hurry up and feed me...<br>I may just...! Nom!",
-  "evolution": "Do I still like pranks, you ask?<br>I don't do such childish<br>things anymore, nom!",
-  "hp_base": "1810",
-  "atk_base": "510",
-  "def_base": "670",
-  "rec_base": "470",
-  "hp_lord": "3683",
-  "atk_lord": "797",
-  "def_lord": "1129",
-  "rec_lord": "705",
-  "hp_anima": "3975",
-  "rec_anima": "627",
-  "atk_breaker": "875",
-  "def_breaker": "1051",
-  "atk_guardian": "",
-  "def_guardian": "1207",
-  "rec_guardian": "666",
-  "def_oracle": "1090",
-  "hp_oracle": "",
-  "rec_oracle": "822",
-  "hp_bonus": "3000",
-  "atk_bonus": "1200",
-  "def_bonus": "1200",
-  "rec_bonus": "1200",
-  "lordonly": "",
-  "combo_hits": "3",
-  "normaldc": "9",
-  "ls": "Divine Earth Crown",
-  "lsdescription": "15% boost to Atk of Earth types & 15% damage reduction from Earth types",
-  "lstype": "Attack/Defense",
+  "stats": {
+    "_base": {
+      "atk": 510,
+      "def": 670,
+      "hp": 1810,
+      "rec": 470
+    },
+    "_lord": {
+      "atk": 797,
+      "def": 1129,
+      "hp": 3683,
+      "rec": 705
+    },
+    "anima": {
+      "atk": 797,
+      "def": 1129,
+      "hp max": 4073,
+      "hp min": 3878,
+      "rec max": 666,
+      "rec min": 588
+    },
+    "breaker": {
+      "atk max": 914,
+      "atk min": 836,
+      "def max": 1090,
+      "def min": 1012,
+      "hp": 3683,
+      "rec": 705
+    },
+    "guardian": {
+      "atk": 797,
+      "def max": 1246,
+      "def min": 1168,
+      "hp": 3683,
+      "rec max": 705,
+      "rec min": 627
+    },
+    "oracle": {
+      "atk": 797,
+      "def max": 1129,
+      "def min": 1051,
+      "hp": 3683,
+      "rec max": 861,
+      "rec min": 783
+    }
+  },
+  "leader_skill": {
+    "desc": "15% boost to Atk of Earth types & 15% damage reduction from Earth types ",
+    "effects": [
+      {
+        "atk% buff": 15,
+        "elements buffed": [
+          "earth"
+        ],
+        "passive id": "2"
+      },
+      {
+        "earth resist%": 15,
+        "passive id": "5"
+      }
+    ],
+    "id": "9762",
+    "name": "Divine Earth Crown"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -218,102 +227,87 @@
     ],
     "name": "Wood Gulp"
   },
-  "bbdescription": "6 combo powerful Earth attack on all foes",
-  "bbtype": "Offense",
-  "bbhits": "6",
-  "bbaoe": "A",
-  "bbgauge": "12",
-  "bbdc": "6",
-  "bbmultiplier": "130",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "es": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "30031",
-  "evointo": "",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 510,
-      "def": 670,
-      "hp": 1810,
-      "rec": 470
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 797,
-      "def": 1129,
-      "hp": 3683,
-      "rec": 705
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 797,
-      "def": 1129,
-      "hp max": 4073,
-      "hp min": 3878,
-      "rec max": 666,
-      "rec min": 588
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 71
     },
-    "breaker": {
-      "atk max": 914,
-      "atk min": 836,
-      "def max": 1090,
-      "def min": 1012,
-      "hp": 3683,
-      "rec": 705
+    "idle": {
+      "total number of frames": 112
     },
-    "guardian": {
-      "atk": 797,
-      "def max": 1246,
-      "def min": 1168,
-      "hp": 3683,
-      "rec max": 705,
-      "rec min": 627
-    },
-    "oracle": {
-      "atk": 797,
-      "def max": 1129,
-      "def min": 1051,
-      "hp": 3683,
-      "rec max": 861,
-      "rec min": 783
+    "move": {
+      "total number of frames": 7
     }
   },
-  "leader_skill": {
-    "desc": "15% boost to Atk of Earth types & 15% damage reduction from Earth types ",
-    "effects": [
-      {
-        "atk% buff": 15,
-        "elements buffed": [
-          "earth"
-        ],
-        "passive id": "2"
-      },
-      {
-        "earth resist%": 15,
-        "passive id": "5"
-      }
+  "category": 30030,
+  "cost": "5",
+  "damage frames": {
+    "frame times": [
+      30,
+      33,
+      36
     ],
-    "id": "9762",
-    "name": "Divine Earth Crown"
+    "hit dmg% distribution": [
+      33,
+      33,
+      34
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 3
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "earth",
+  "exp_pattern": 10,
+  "gender": "other",
+  "getting type": "farmable",
+  "guide_id": 1081,
+  "imp": {
+    "max atk": "1200",
+    "max def": "1200",
+    "max hp": "3000",
+    "max rec": "1200"
+  },
+  "kind": "normal",
+  "lord damage range": "741~828",
+  "movement": {
+    "attack": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    }
+  },
+  "name": "Kaiser Mossy",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "Kaiser Mossy",
+  "maxlv": "40",
+  "no": "1081",
   "unitDisplayHomePosition_1W9CxaFK": "339,184,240,655",
   "unitDisplayDetailPosition_6z54rgb3": "-11,21,974,828",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "82,170,533,453,1",
@@ -323,5 +317,84 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "1000",
   "sellCaution": false,
-  "effectFrames": "27:123:1,31:123:1,30:230:1,37:300122:1"
+  "effectFrames": "27:123:1,31:123:1,30:230:1,37:300122:1",
+  "evofrom": "30031",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "10",
+  "animation_attack": "71",
+  "animation_idle": "112",
+  "animation_move": "7",
+  "movespeed_attack": "0.0041",
+  "movespeed_skill": "0.0041",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "30, 33, 36",
+  "normal_distribute": "33, 33, 34",
+  "normal_totaldistr": "100",
+  "bb_frames": "30, 34, 38, 42, 45, 49",
+  "bb_distribute": "20, 14, 19, 14, 19, 14",
+  "bb_totaldistr": "100",
+  "description": "The mischievous Kaiser Mossy is said to have come into being after living for an eternity. It spends its time breathing life into withering plants by the sacred fruit-bearing tree it calls home. When it gets hungry though, the Kaiser Mossy is known to release a powerful blast of wind that often sends the pixies of the forest flying. Some believe the reason this creature was found in the desolate lands of Ishgria is because it had gone there in search of delicious food to eat.",
+  "summon": "You're a Summoner, right? Nom.<br>Go out there and collect the tastiest<br>fruits you can find! Nom!",
+  "fusion": "This isn't enough, nom.<br>If you don't hurry up and feed me...<br>I may just...! Nom!",
+  "evolution": "Do I still like pranks, you ask?<br>I don't do such childish<br>things anymore, nom!",
+  "hp_base": "1810",
+  "atk_base": "510",
+  "def_base": "670",
+  "rec_base": "470",
+  "hp_lord": "3683",
+  "atk_lord": "797",
+  "def_lord": "1129",
+  "rec_lord": "705",
+  "hp_anima": "3975",
+  "rec_anima": "627",
+  "atk_breaker": "875",
+  "def_breaker": "1051",
+  "atk_guardian": "",
+  "def_guardian": "1207",
+  "rec_guardian": "666",
+  "def_oracle": "1090",
+  "hp_oracle": "",
+  "rec_oracle": "822",
+  "hp_bonus": "3000",
+  "atk_bonus": "1200",
+  "def_bonus": "1200",
+  "rec_bonus": "1200",
+  "lordonly": "",
+  "combo_hits": "3",
+  "normaldc": "9",
+  "ls": "Divine Earth Crown",
+  "lsdescription": "15% boost to Atk of Earth types & 15% damage reduction from Earth types",
+  "lstype": "Attack/Defense",
+  "bbdescription": "6 combo powerful Earth attack on all foes",
+  "bbtype": "Offense",
+  "bbhits": "6",
+  "bbaoe": "A",
+  "bbgauge": "12",
+  "bbdc": "6",
+  "bbmultiplier": "130",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "es": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "",
+  "evomats2": "",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": "",
+  "evoitem": ""
 }

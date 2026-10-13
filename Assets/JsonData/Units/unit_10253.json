@@ -1,58 +1,64 @@
 {
   "id": "10253",
-  "unitName": "Red Axe Michele",
-  "no": "346",
-  "element": "Fire",
-  "rarity": "★★★★",
-  "cost": "8",
-  "maxlv": "60",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "1",
-  "animation_attack": "187",
-  "animation_idle": "77",
-  "animation_move": "11",
-  "movespeed_attack": "0.0024",
-  "movespeed_skill": "2",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "1",
-  "movetype_skill": "3",
-  "normal_frames": "12, 31, 47, 58, 68, 77, 86, 95, 104, 125",
-  "normal_distribute": "10, 10, 10, 10, 10, 10, 10, 10, 10, 10",
-  "normal_totaldistr": "100",
-  "description": "The daughter of a prominent aristocrat from the La Veda Republic. She was unstoppable with her axe, but thanks to her overprotective upbringing she became quite self-centered. However, having recognized this herself as well, she came to extremely dislike getting involved with other people. Then one day she met a certain mechanical figure and her objective changed to battle. She would now face off against an evil force the likes of which had never been seen.",
-  "summon": "How did 'you' summon me?<br>Whatever! If you don't keep me happy<br>I'll just go home!",
-  "fusion": "Are you kidding me!?<br>I'm the only one you <br>should be strengthening!",
-  "evolution": "",
-  "hp_base": "2680",
-  "atk_base": "1041",
-  "def_base": "687",
-  "rec_base": "1062",
-  "hp_lord": "3828",
-  "atk_lord": "1487",
-  "def_lord": "982",
-  "rec_lord": "1416",
-  "hp_anima": "4271",
-  "rec_anima": "1298",
-  "atk_breaker": "1605",
-  "def_breaker": "864",
-  "atk_guardian": "1369",
-  "def_guardian": "1100",
-  "rec_guardian": "1357",
-  "def_oracle": "923",
-  "hp_oracle": "3651",
-  "rec_oracle": "1593",
-  "hp_bonus": "400",
-  "atk_bonus": "120",
-  "def_bonus": "200",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "10",
-  "normaldc": "20",
-  "ls": "Five Light's Power",
-  "lsdescription": "25% boost to Atk power of all Units when 5 elements or more are present",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 1041,
+      "def": 687,
+      "hp": 2680,
+      "rec": 1062
+    },
+    "_lord": {
+      "atk": 1487,
+      "def": 982,
+      "hp": 3828,
+      "rec": 1416
+    },
+    "anima": {
+      "atk": 1487,
+      "def": 982,
+      "hp max": 4418,
+      "hp min": 4123,
+      "rec max": 1357,
+      "rec min": 1239
+    },
+    "breaker": {
+      "atk max": 1664,
+      "atk min": 1546,
+      "def max": 923,
+      "def min": 805,
+      "hp": 3828,
+      "rec": 1416
+    },
+    "guardian": {
+      "atk": 1487,
+      "def max": 1159,
+      "def min": 1041,
+      "hp": 3828,
+      "rec max": 1416,
+      "rec min": 1298
+    },
+    "oracle": {
+      "atk": 1487,
+      "def max": 982,
+      "def min": 864,
+      "hp": 3828,
+      "rec max": 1652,
+      "rec min": 1534
+    }
+  },
+  "leader_skill": {
+    "desc": "25% boost to Atk power of all Units when 5 elements or more are present",
+    "effects": [
+      {
+        "atk% buff": 25,
+        "passive id": "41",
+        "unique elements required": 5
+      }
+    ],
+    "id": "2200",
+    "name": "Five Light's Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -327,94 +333,101 @@
     ],
     "name": "Flame Changer"
   },
-  "bbdescription": "Boosts Atk & adds Fire element to attack for all allies for 3 turns",
-  "bbnote": "80% boost",
-  "bbtype": "Support",
-  "bbhits": "",
-  "bbaoe": "0",
-  "bbgauge": "17",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "10254",
-  "evomats1": "10133",
-  "evomats2": "10132",
-  "evomats3": "10132",
-  "evomats4": "10191",
-  "evomats5": "60143",
-  "evoitem": "",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 1041,
-      "def": 687,
-      "hp": 2680,
-      "rec": 1062
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "party"
     },
-    "_lord": {
-      "atk": 1487,
-      "def": 982,
-      "hp": 3828,
-      "rec": 1416
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1487,
-      "def": 982,
-      "hp max": 4418,
-      "hp min": 4123,
-      "rec max": 1357,
-      "rec min": 1239
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 187
     },
-    "breaker": {
-      "atk max": 1664,
-      "atk min": 1546,
-      "def max": 923,
-      "def min": 805,
-      "hp": 3828,
-      "rec": 1416
+    "idle": {
+      "total number of frames": 77
     },
-    "guardian": {
-      "atk": 1487,
-      "def max": 1159,
-      "def min": 1041,
-      "hp": 3828,
-      "rec max": 1416,
-      "rec min": 1298
-    },
-    "oracle": {
-      "atk": 1487,
-      "def max": 982,
-      "def min": 864,
-      "hp": 3828,
-      "rec max": 1652,
-      "rec min": 1534
+    "move": {
+      "total number of frames": 11
     }
   },
-  "leader_skill": {
-    "desc": "25% boost to Atk power of all Units when 5 elements or more are present",
-    "effects": [
-      {
-        "atk% buff": 25,
-        "passive id": "41",
-        "unique elements required": 5
-      }
+  "category": 10250,
+  "cost": "8",
+  "damage frames": {
+    "frame times": [
+      12,
+      31,
+      47,
+      58,
+      68,
+      77,
+      86,
+      95,
+      104,
+      125
     ],
-    "id": "2200",
-    "name": "Five Light's Power"
+    "hit dmg% distribution": [
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 10
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "fire",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 346,
+  "imp": {
+    "max atk": "120",
+    "max def": "200",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "1384~1546",
+  "movement": {
+    "attack": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 2,
+      "move speed type": "4",
+      "move type": "3"
+    }
+  },
+  "name": "Red Axe Michele",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Red Axe Michele",
+  "maxlv": "60",
+  "no": "346",
   "unitDisplayHomePosition_1W9CxaFK": "509,115,174,545",
   "unitDisplayDetailPosition_6z54rgb3": "-169,100,1204,679",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "160,336,297,293,0",
@@ -424,5 +437,100 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "6:121:1,6:100010:1,25:121:1,25:100010:1,41:121:1,41:100010:1,52:121:1,52:100010:1,62:121:1,62:100010:1,71:121:1,71:100010:1,80:121:1,80:100010:1,89:121:1,89:100010:1,98:121:1,98:100010:1,119:150:1"
+  "effectFrames": "6:121:1,6:100010:1,25:121:1,25:100010:1,41:121:1,41:100010:1,52:121:1,52:100010:1,62:121:1,62:100010:1,71:121:1,71:100010:1,80:121:1,80:100010:1,89:121:1,89:100010:1,98:121:1,98:100010:1,119:150:1",
+  "evofrom": "",
+  "evointo": "10254",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "10133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10132",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "10191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "187",
+  "animation_idle": "77",
+  "animation_move": "11",
+  "movespeed_attack": "0.0024",
+  "movespeed_skill": "2",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "1",
+  "movetype_skill": "3",
+  "normal_frames": "12, 31, 47, 58, 68, 77, 86, 95, 104, 125",
+  "normal_distribute": "10, 10, 10, 10, 10, 10, 10, 10, 10, 10",
+  "normal_totaldistr": "100",
+  "description": "The daughter of a prominent aristocrat from the La Veda Republic. She was unstoppable with her axe, but thanks to her overprotective upbringing she became quite self-centered. However, having recognized this herself as well, she came to extremely dislike getting involved with other people. Then one day she met a certain mechanical figure and her objective changed to battle. She would now face off against an evil force the likes of which had never been seen.",
+  "summon": "How did 'you' summon me?<br>Whatever! If you don't keep me happy<br>I'll just go home!",
+  "fusion": "Are you kidding me!?<br>I'm the only one you <br>should be strengthening!",
+  "evolution": "",
+  "hp_base": "2680",
+  "atk_base": "1041",
+  "def_base": "687",
+  "rec_base": "1062",
+  "hp_lord": "3828",
+  "atk_lord": "1487",
+  "def_lord": "982",
+  "rec_lord": "1416",
+  "hp_anima": "4271",
+  "rec_anima": "1298",
+  "atk_breaker": "1605",
+  "def_breaker": "864",
+  "atk_guardian": "1369",
+  "def_guardian": "1100",
+  "rec_guardian": "1357",
+  "def_oracle": "923",
+  "hp_oracle": "3651",
+  "rec_oracle": "1593",
+  "hp_bonus": "400",
+  "atk_bonus": "120",
+  "def_bonus": "200",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "10",
+  "normaldc": "20",
+  "ls": "Five Light's Power",
+  "lsdescription": "25% boost to Atk power of all Units when 5 elements or more are present",
+  "lstype": "Attack",
+  "bbdescription": "Boosts Atk & adds Fire element to attack for all allies for 3 turns",
+  "bbnote": "80% boost",
+  "bbtype": "Support",
+  "bbhits": "",
+  "bbaoe": "0",
+  "bbgauge": "17",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "10133",
+  "evomats2": "10132",
+  "evomats3": "10132",
+  "evomats4": "10191",
+  "evomats5": "60143",
+  "evoitem": ""
 }

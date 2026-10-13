@@ -1,62 +1,64 @@
 {
   "id": "50243",
-  "unitName": "Twinkling Flash Mila",
-  "no": "588",
-  "element": "Light",
-  "rarity": "★★★★",
-  "cost": "10",
-  "maxlv": "60",
-  "basexp": "15",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "120",
-  "animation_idle": "52",
-  "animation_move": "52",
-  "movespeed_attack": "6",
-  "movespeed_skill": "6",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "48, 56, 64, 72, 80",
-  "normal_distribute": "20, 20, 20, 20, 20",
-  "normal_totaldistr": "100",
-  "bb_frames": "48, 57, 66, 75, 84, 93, 102",
-  "bb_distribute": "14, 14, 14, 14, 14, 15, 15",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "description": "An archer from the La Veda Republic. Having joined the order of knights in the republic to get closer to Atro, once she became a knight her interest shifted towards their leader, Will. A senior knight by the name of Aem used to look at her with suggestive eyes, but she took this as a sign of his interest in her. With an incredible talent for the art of war, her reputation grew in other countries, praising her machine-like precision shooting skills, and outstanding speed. This daughter of a noble came to be a figure to be both admired and feared.",
-  "summon": "My bow and arrow will go shoot straight through your heart! <br>Hehe. I wish!",
-  "fusion": "What do you think? <br>I got better again, didn't I?<br> I wonder if Will and Aem will fall even deeper for me now!",
-  "evolution": "Atro, and Will, and Aem isn't bad either...<br>Oh, what?!<br> When did I evolve?!",
-  "hp_base": "2436",
-  "atk_base": "907",
-  "def_base": "879",
-  "rec_base": "990",
-  "hp_lord": "3654",
-  "atk_lord": "1224",
-  "def_lord": "1186",
-  "rec_lord": "1337",
-  "hp_anima": "4097",
-  "rec_anima": "1219",
-  "atk_breaker": "1342",
-  "def_breaker": "1068",
-  "atk_guardian": "1106",
-  "def_guardian": "1304",
-  "rec_guardian": "1278",
-  "def_oracle": "1127",
-  "hp_oracle": "3477",
-  "rec_oracle": "1514",
-  "hp_bonus": "400",
-  "atk_bonus": "160",
-  "def_bonus": "160",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "5",
-  "normaldc": "10",
-  "ls": "Magic Flood",
-  "lsdescription": "50% boost to Atk when BB gauge is full",
-  "lstype": "Attack/Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 907,
+      "def": 879,
+      "hp": 2436,
+      "rec": 990
+    },
+    "_lord": {
+      "atk": 1224,
+      "def": 1186,
+      "hp": 3654,
+      "rec": 1337
+    },
+    "anima": {
+      "atk": 1224,
+      "def": 1186,
+      "hp max": 4244,
+      "hp min": 3949,
+      "rec max": 1278,
+      "rec min": 1160
+    },
+    "breaker": {
+      "atk max": 1401,
+      "atk min": 1283,
+      "def max": 1127,
+      "def min": 1009,
+      "hp": 3654,
+      "rec": 1337
+    },
+    "guardian": {
+      "atk": 1224,
+      "def max": 1363,
+      "def min": 1245,
+      "hp": 3654,
+      "rec max": 1337,
+      "rec min": 1219
+    },
+    "oracle": {
+      "atk": 1224,
+      "def max": 1186,
+      "def min": 1068,
+      "hp": 3654,
+      "rec max": 1573,
+      "rec min": 1455
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to Atk when BB gauge is full",
+    "effects": [
+      {
+        "atk% buff": 50,
+        "bb gauge above % buff requirement": 100,
+        "passive id": "30"
+      }
+    ],
+    "id": "5201",
+    "name": "Magic Flood"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -303,95 +305,91 @@
     ],
     "name": "Shining Arrow"
   },
-  "bbdescription": "7 combo Light elemental attack on all enemies & boost to HC drop rate for 3 turns",
-  "bbnote": "20% boost",
-  "bbtype": "Support/Offense",
-  "bbhits": "7",
-  "bbaoe": "A",
-  "bbgauge": "20",
-  "bbdc": "7",
-  "bbmultiplier": "135",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "50242",
-  "evointo": "",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 907,
-      "def": 879,
-      "hp": 2436,
-      "rec": 990
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1224,
-      "def": 1186,
-      "hp": 3654,
-      "rec": 1337
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1224,
-      "def": 1186,
-      "hp max": 4244,
-      "hp min": 3949,
-      "rec max": 1278,
-      "rec min": 1160
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 120
     },
-    "breaker": {
-      "atk max": 1401,
-      "atk min": 1283,
-      "def max": 1127,
-      "def min": 1009,
-      "hp": 3654,
-      "rec": 1337
+    "idle": {
+      "total number of frames": 52
     },
-    "guardian": {
-      "atk": 1224,
-      "def max": 1363,
-      "def min": 1245,
-      "hp": 3654,
-      "rec max": 1337,
-      "rec min": 1219
-    },
-    "oracle": {
-      "atk": 1224,
-      "def max": 1186,
-      "def min": 1068,
-      "hp": 3654,
-      "rec max": 1573,
-      "rec min": 1455
+    "move": {
+      "total number of frames": 52
     }
   },
-  "leader_skill": {
-    "desc": "50% boost to Atk when BB gauge is full",
-    "effects": [
-      {
-        "atk% buff": 50,
-        "bb gauge above % buff requirement": 100,
-        "passive id": "30"
-      }
+  "category": 50240,
+  "cost": "10",
+  "damage frames": {
+    "frame times": [
+      48,
+      56,
+      64,
+      72,
+      80
     ],
-    "id": "5201",
-    "name": "Magic Flood"
+    "hit dmg% distribution": [
+      20,
+      20,
+      20,
+      20,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 5
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "light",
+  "exp_pattern": 15,
+  "gender": "female",
+  "getting type": "farmable",
+  "guide_id": 588,
+  "imp": {
+    "max atk": "160",
+    "max def": "160",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "1139~1272",
+  "movement": {
+    "attack": {
+      "move speed": 6,
+      "move speed type": "2",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 6,
+      "move speed type": "2",
+      "move type": "3"
+    }
+  },
+  "name": "Twinkling Flash Mila",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Twinkling Flash Mila",
+  "maxlv": "60",
+  "no": "588",
   "unitDisplayHomePosition_1W9CxaFK": "212,-26,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "100,227,730,570",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "160,336,297,293,0",
@@ -401,5 +399,84 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "48:135:1,48:400132:1,50:500171:1,56:135:1,64:135:1,64:400132:1,66:500171:1,72:135:1,80:135:1,80:400132:1,82:500171:1"
+  "effectFrames": "48:135:1,48:400132:1,50:500171:1,56:135:1,64:135:1,64:400132:1,66:500171:1,72:135:1,80:135:1,80:400132:1,82:500171:1",
+  "evofrom": "50242",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "15",
+  "animation_attack": "120",
+  "animation_idle": "52",
+  "animation_move": "52",
+  "movespeed_attack": "6",
+  "movespeed_skill": "6",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "48, 56, 64, 72, 80",
+  "normal_distribute": "20, 20, 20, 20, 20",
+  "normal_totaldistr": "100",
+  "bb_frames": "48, 57, 66, 75, 84, 93, 102",
+  "bb_distribute": "14, 14, 14, 14, 14, 15, 15",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "description": "An archer from the La Veda Republic. Having joined the order of knights in the republic to get closer to Atro, once she became a knight her interest shifted towards their leader, Will. A senior knight by the name of Aem used to look at her with suggestive eyes, but she took this as a sign of his interest in her. With an incredible talent for the art of war, her reputation grew in other countries, praising her machine-like precision shooting skills, and outstanding speed. This daughter of a noble came to be a figure to be both admired and feared.",
+  "summon": "My bow and arrow will go shoot straight through your heart! <br>Hehe. I wish!",
+  "fusion": "What do you think? <br>I got better again, didn't I?<br> I wonder if Will and Aem will fall even deeper for me now!",
+  "evolution": "Atro, and Will, and Aem isn't bad either...<br>Oh, what?!<br> When did I evolve?!",
+  "hp_base": "2436",
+  "atk_base": "907",
+  "def_base": "879",
+  "rec_base": "990",
+  "hp_lord": "3654",
+  "atk_lord": "1224",
+  "def_lord": "1186",
+  "rec_lord": "1337",
+  "hp_anima": "4097",
+  "rec_anima": "1219",
+  "atk_breaker": "1342",
+  "def_breaker": "1068",
+  "atk_guardian": "1106",
+  "def_guardian": "1304",
+  "rec_guardian": "1278",
+  "def_oracle": "1127",
+  "hp_oracle": "3477",
+  "rec_oracle": "1514",
+  "hp_bonus": "400",
+  "atk_bonus": "160",
+  "def_bonus": "160",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "5",
+  "normaldc": "10",
+  "ls": "Magic Flood",
+  "lsdescription": "50% boost to Atk when BB gauge is full",
+  "lstype": "Attack/Brave Burst",
+  "bbdescription": "7 combo Light elemental attack on all enemies & boost to HC drop rate for 3 turns",
+  "bbnote": "20% boost",
+  "bbtype": "Support/Offense",
+  "bbhits": "7",
+  "bbaoe": "A",
+  "bbgauge": "20",
+  "bbdc": "7",
+  "bbmultiplier": "135",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "",
+  "evomats2": "",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": ""
 }

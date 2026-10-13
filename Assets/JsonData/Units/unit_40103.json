@@ -1,61 +1,63 @@
 {
   "id": "40103",
-  "unitName": "Sky King Falma",
-  "no": "130",
-  "element": "Thunder",
-  "rarity": "★★★★",
-  "cost": "8",
-  "maxlv": "60",
-  "basexp": "15",
-  "gender": "M",
-  "ai": "3",
-  "animation_attack": "166",
-  "animation_idle": "64",
-  "animation_move": "10",
-  "movespeed_attack": "0.0024",
-  "movespeed_skill": "0.0024",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "34, 45, 66, 77, 106, 110, 115",
-  "normal_distribute": "15, 10, 15, 10, 20, 15, 15",
-  "normal_totaldistr": "100",
-  "bb_frames": "34, 45, 66, 77, 106, 110, 115",
-  "bb_distribute": "15, 10, 15, 10, 20, 15, 15",
-  "bb_totaldistr": "100",
-  "description": "A mighty dual-wielding knight that belonged to the ruined Atharva Republic's cavalry. During the battle with the gods, he battled along side his friend, Sky Boss Grafl, on his airship. He had always been good at mid-air fighting, so his soldiers called him the Sky King. Legend has it that he defeated god after god by fearlessly leaping onto their backs and attacking.",
-  "summon": "My right hand is justice, <br>my left is friendship.<br>But who do my blades shine for?",
-  "fusion": "My dual blades harness <br>the strength of friendship!<br>That's how I got so strong!",
-  "evolution": "Look! See my dual blades shine!<br>That is the light of friendship, tempered with my friends!",
-  "hp_base": "2835",
-  "atk_base": "859",
-  "def_base": "693",
-  "rec_base": "686",
-  "hp_lord": "4025",
-  "atk_lord": "1198",
-  "def_lord": "1020",
-  "rec_lord": "1095",
-  "hp_anima": "4468",
-  "rec_anima": "977",
-  "atk_breaker": "1316",
-  "def_breaker": "902",
-  "atk_guardian": "1080",
-  "def_guardian": "1138",
-  "rec_guardian": "1036",
-  "def_oracle": "961",
-  "hp_oracle": "3848",
-  "rec_oracle": "1272",
-  "hp_bonus": "400",
-  "atk_bonus": "160",
-  "def_bonus": "160",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "7",
-  "normaldc": "14",
-  "ls": "Royal Power",
-  "lsdescription": "15% boost to Atk Power of all types",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 859,
+      "def": 693,
+      "hp": 2835,
+      "rec": 686
+    },
+    "_lord": {
+      "atk": 1198,
+      "def": 1020,
+      "hp": 4025,
+      "rec": 1095
+    },
+    "anima": {
+      "atk": 1198,
+      "def": 1020,
+      "hp max": 4615,
+      "hp min": 4320,
+      "rec max": 1036,
+      "rec min": 918
+    },
+    "breaker": {
+      "atk max": 1375,
+      "atk min": 1257,
+      "def max": 961,
+      "def min": 843,
+      "hp": 4025,
+      "rec": 1095
+    },
+    "guardian": {
+      "atk": 1198,
+      "def max": 1197,
+      "def min": 1079,
+      "hp": 4025,
+      "rec max": 1095,
+      "rec min": 977
+    },
+    "oracle": {
+      "atk": 1198,
+      "def max": 1020,
+      "def min": 902,
+      "hp": 4025,
+      "rec max": 1331,
+      "rec min": 1213
+    }
+  },
+  "leader_skill": {
+    "desc": "15% boost to Atk",
+    "effects": [
+      {
+        "atk% buff": 15,
+        "passive id": "1"
+      }
+    ],
+    "id": "1901",
+    "name": "Royal Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -292,94 +294,101 @@
     ],
     "name": "Dual Arch"
   },
-  "bbdescription": "7 combo Thunder elemental power attack on single Enemy & probable Paralysis effect",
-  "bbnote": "80% chance",
-  "bbtype": "Offense",
-  "bbhits": "7",
-  "bbaoe": "1",
-  "bbgauge": "15",
-  "bbdc": "7",
-  "bbmultiplier": "300",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "40102",
-  "evointo": "40104",
-  "evomats1": "40133",
-  "evomats2": "40191",
-  "evomats3": "40132",
-  "evomats4": "40130",
-  "evomats5": "40130",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 859,
-      "def": 693,
-      "hp": 2835,
-      "rec": 686
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1198,
-      "def": 1020,
-      "hp": 4025,
-      "rec": 1095
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1198,
-      "def": 1020,
-      "hp max": 4615,
-      "hp min": 4320,
-      "rec max": 1036,
-      "rec min": 918
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 1375,
-      "atk min": 1257,
-      "def max": 961,
-      "def min": 843,
-      "hp": 4025,
-      "rec": 1095
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 166
     },
-    "guardian": {
-      "atk": 1198,
-      "def max": 1197,
-      "def min": 1079,
-      "hp": 4025,
-      "rec max": 1095,
-      "rec min": 977
+    "idle": {
+      "total number of frames": 64
     },
-    "oracle": {
-      "atk": 1198,
-      "def max": 1020,
-      "def min": 902,
-      "hp": 4025,
-      "rec max": 1331,
-      "rec min": 1213
+    "move": {
+      "total number of frames": 10
     }
   },
-  "leader_skill": {
-    "desc": "15% boost to Atk",
-    "effects": [
-      {
-        "atk% buff": 15,
-        "passive id": "1"
-      }
+  "category": 40100,
+  "cost": "8",
+  "damage frames": {
+    "frame times": [
+      34,
+      45,
+      66,
+      77,
+      106,
+      110,
+      115
     ],
-    "id": "1901",
-    "name": "Royal Power"
+    "hit dmg% distribution": [
+      15,
+      10,
+      15,
+      10,
+      20,
+      15,
+      15
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 7
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "thunder",
+  "exp_pattern": 15,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 130,
+  "imp": {
+    "max atk": "160",
+    "max def": "160",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "1115~1245",
+  "movement": {
+    "attack": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    }
+  },
+  "name": "Sky King Falma",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Sky King Falma",
+  "maxlv": "60",
+  "no": "130",
   "unitDisplayHomePosition_1W9CxaFK": "289,-37,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "54,210,840,554",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "129,353,394,260,0",
@@ -389,5 +398,104 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "28:124:1,39:124:1,60:124:1,71:124:1,100:124:1,104:124:1,109:124:1"
+  "effectFrames": "28:124:1,39:124:1,60:124:1,71:124:1,100:124:1,104:124:1,109:124:1",
+  "evofrom": "40102",
+  "evointo": "40104",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "40133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40130",
+      "count": 2
+    }
+  ],
+  "basexp": "15",
+  "animation_attack": "166",
+  "animation_idle": "64",
+  "animation_move": "10",
+  "movespeed_attack": "0.0024",
+  "movespeed_skill": "0.0024",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "34, 45, 66, 77, 106, 110, 115",
+  "normal_distribute": "15, 10, 15, 10, 20, 15, 15",
+  "normal_totaldistr": "100",
+  "bb_frames": "34, 45, 66, 77, 106, 110, 115",
+  "bb_distribute": "15, 10, 15, 10, 20, 15, 15",
+  "bb_totaldistr": "100",
+  "description": "A mighty dual-wielding knight that belonged to the ruined Atharva Republic's cavalry. During the battle with the gods, he battled along side his friend, Sky Boss Grafl, on his airship. He had always been good at mid-air fighting, so his soldiers called him the Sky King. Legend has it that he defeated god after god by fearlessly leaping onto their backs and attacking.",
+  "summon": "My right hand is justice, <br>my left is friendship.<br>But who do my blades shine for?",
+  "fusion": "My dual blades harness <br>the strength of friendship!<br>That's how I got so strong!",
+  "evolution": "Look! See my dual blades shine!<br>That is the light of friendship, tempered with my friends!",
+  "hp_base": "2835",
+  "atk_base": "859",
+  "def_base": "693",
+  "rec_base": "686",
+  "hp_lord": "4025",
+  "atk_lord": "1198",
+  "def_lord": "1020",
+  "rec_lord": "1095",
+  "hp_anima": "4468",
+  "rec_anima": "977",
+  "atk_breaker": "1316",
+  "def_breaker": "902",
+  "atk_guardian": "1080",
+  "def_guardian": "1138",
+  "rec_guardian": "1036",
+  "def_oracle": "961",
+  "hp_oracle": "3848",
+  "rec_oracle": "1272",
+  "hp_bonus": "400",
+  "atk_bonus": "160",
+  "def_bonus": "160",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "7",
+  "normaldc": "14",
+  "ls": "Royal Power",
+  "lsdescription": "15% boost to Atk Power of all types",
+  "lstype": "Attack",
+  "bbdescription": "7 combo Thunder elemental power attack on single Enemy & probable Paralysis effect",
+  "bbnote": "80% chance",
+  "bbtype": "Offense",
+  "bbhits": "7",
+  "bbaoe": "1",
+  "bbgauge": "15",
+  "bbdc": "7",
+  "bbmultiplier": "300",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "40133",
+  "evomats2": "40191",
+  "evomats3": "40132",
+  "evomats4": "40130",
+  "evomats5": "40130"
 }

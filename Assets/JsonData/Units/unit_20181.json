@@ -1,52 +1,64 @@
 {
   "id": "20181",
-  "unitName": "Black Rose Elize",
-  "no": "461",
-  "element": "Water",
-  "rarity": "★★",
-  "cost": "3",
-  "maxlv": "30",
-  "basexp": "15",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "112",
-  "animation_idle": "52",
-  "animation_move": "13",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "description": "A wicked woman shopkeeper once famous in the La Veda Republic. She was a talented woman who made her way as a peddler, eventually establishing a company in an area which was dominated by monsters. However, those jealous of her success spread nasty rumors that her company was built on deception, and she came to be known by the people as the \"Black Rose.\" To this, it is said she stated, \"If that's how it's going to be, I guess I should live up to my name.\"",
-  "summon": "You wish to hire me?<br>The Black Rose isn't cheap,<br>you know?",
-  "fusion": "Hehe, thank you very much.<br>I'll repay your kind investment<br>with ample interest.",
-  "evolution": "",
-  "hp_base": "1245",
-  "atk_base": "610",
-  "def_base": "491",
-  "rec_base": "487",
-  "hp_lord": "2442",
-  "atk_lord": "871",
-  "def_lord": "673",
-  "rec_lord": "686",
-  "hp_anima": "2659",
-  "rec_anima": "628",
-  "atk_breaker": "929",
-  "def_breaker": "615",
-  "atk_guardian": "813",
-  "def_guardian": "731",
-  "hp_oracle": "2224",
-  "rec_oracle": "744",
-  "hp_bonus": "300",
-  "atk_bonus": "80",
-  "def_bonus": "80",
-  "rec_bonus": "80",
-  "lordonly": "",
-  "combo_hits": "4",
-  "ls": "Sweet Power",
-  "lsdescription": "25% boost to Atk power of female Units",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 610,
+      "def": 491,
+      "hp": 1245,
+      "rec": 487
+    },
+    "_lord": {
+      "atk": 871,
+      "def": 673,
+      "hp": 2442,
+      "rec": 686
+    },
+    "anima": {
+      "atk": 871,
+      "def": 673,
+      "hp max": 2732,
+      "hp min": 2587,
+      "rec max": 657,
+      "rec min": 599
+    },
+    "breaker": {
+      "atk max": 958,
+      "atk min": 900,
+      "def max": 644,
+      "def min": 586,
+      "hp": 2442,
+      "rec": 686
+    },
+    "guardian": {
+      "atk": 871,
+      "def max": 760,
+      "def min": 702,
+      "hp": 2442,
+      "rec max": 686,
+      "rec min": 628
+    },
+    "oracle": {
+      "atk": 871,
+      "def max": 673,
+      "def min": 615,
+      "hp": 2442,
+      "rec max": 802,
+      "rec min": 744
+    }
+  },
+  "leader_skill": {
+    "desc": "25% boost to Atk power of female Units",
+    "effects": [
+      {
+        "atk% buff": 25,
+        "gender required": "female",
+        "passive id": "42"
+      }
+    ],
+    "id": "4600",
+    "name": "Sweet Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -207,93 +219,89 @@
     ],
     "name": "Diamond Rose"
   },
-  "bbdescription": "5 combo Water elemental attack on single enemy & boost to BC drop rate",
-  "bbtype": "Support/Offense",
-  "bbhits": "5",
-  "bbaoe": "1",
-  "bbgauge": "15",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "20182",
-  "evomats1": "20131",
-  "evomats2": "20130",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "50000",
-  "stats": {
-    "_base": {
-      "atk": 610,
-      "def": 491,
-      "hp": 1245,
-      "rec": 487
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 871,
-      "def": 673,
-      "hp": 2442,
-      "rec": 686
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 871,
-      "def": 673,
-      "hp max": 2732,
-      "hp min": 2587,
-      "rec max": 657,
-      "rec min": 599
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 112
     },
-    "breaker": {
-      "atk max": 958,
-      "atk min": 900,
-      "def max": 644,
-      "def min": 586,
-      "hp": 2442,
-      "rec": 686
+    "idle": {
+      "total number of frames": 52
     },
-    "guardian": {
-      "atk": 871,
-      "def max": 760,
-      "def min": 702,
-      "hp": 2442,
-      "rec max": 686,
-      "rec min": 628
-    },
-    "oracle": {
-      "atk": 871,
-      "def max": 673,
-      "def min": 615,
-      "hp": 2442,
-      "rec max": 802,
-      "rec min": 744
+    "move": {
+      "total number of frames": 13
     }
   },
-  "leader_skill": {
-    "desc": "25% boost to Atk power of female Units",
-    "effects": [
-      {
-        "atk% buff": 25,
-        "gender required": "female",
-        "passive id": "42"
-      }
+  "category": 20180,
+  "cost": "3",
+  "damage frames": {
+    "frame times": [
+      19,
+      34,
+      50,
+      63
     ],
-    "id": "4600",
-    "name": "Sweet Power"
+    "hit dmg% distribution": [
+      25,
+      25,
+      25,
+      25
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 4
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "water",
+  "exp_pattern": 15,
+  "gender": "female",
+  "getting type": "not eligible for achievement",
+  "guide_id": 461,
+  "imp": {
+    "max atk": "80",
+    "max def": "80",
+    "max hp": "300",
+    "max rec": "80"
+  },
+  "kind": "normal",
+  "lord damage range": "810~905",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Black Rose Elize",
+  "rarity": "2",
+  "sell caution": false,
+  "unitName": "Black Rose Elize",
+  "maxlv": "30",
+  "no": "461",
   "unitDisplayHomePosition_1W9CxaFK": "261,-12,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "59,176,638,631",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "160,336,297,293,0",
@@ -303,5 +311,95 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "300",
   "sellCaution": false,
-  "effectFrames": "13:122:1,13:180:1,28:122:1,44:122:1,57:122:1"
+  "effectFrames": "13:122:1,13:180:1,28:122:1,44:122:1,57:122:1",
+  "evofrom": "",
+  "evointo": "20182",
+  "evozelcost": "50000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "20131",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20130",
+      "count": 1
+    }
+  ],
+  "basexp": "15",
+  "animation_attack": "112",
+  "animation_idle": "52",
+  "animation_move": "13",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "19, 34, 50, 63",
+  "normal_distribute": "25, 25, 25, 25",
+  "normal_totaldistr": "100",
+  "bb_frames": "19, 34, 50, 63, 66",
+  "bb_distribute": "20, 20, 20, 20, 20",
+  "bb_totaldistr": "100",
+  "description": "A wicked woman shopkeeper once famous in the La Veda Republic. She was a talented woman who made her way as a peddler, eventually establishing a company in an area which was dominated by monsters. However, those jealous of her success spread nasty rumors that her company was built on deception, and she came to be known by the people as the \"Black Rose.\" To this, it is said she stated, \"If that's how it's going to be, I guess I should live up to my name.\"",
+  "summon": "You wish to hire me?<br>The Black Rose isn't cheap,<br>you know?",
+  "fusion": "Hehe, thank you very much.<br>I'll repay your kind investment<br>with ample interest.",
+  "evolution": "",
+  "hp_base": "1245",
+  "atk_base": "610",
+  "def_base": "491",
+  "rec_base": "487",
+  "hp_lord": "2442",
+  "atk_lord": "871",
+  "def_lord": "673",
+  "rec_lord": "686",
+  "hp_anima": "2660",
+  "rec_anima": "628",
+  "atk_breaker": "929",
+  "def_breaker": "615",
+  "atk_guardian": "813",
+  "def_guardian": "731",
+  "rec_guardian": "657",
+  "def_oracle": "644",
+  "hp_oracle": "2355",
+  "rec_oracle": "773",
+  "hp_bonus": "300",
+  "atk_bonus": "80",
+  "def_bonus": "80",
+  "rec_bonus": "80",
+  "lordonly": "",
+  "combo_hits": "4",
+  "normaldc": "8",
+  "ls": "Sweet Power",
+  "lsdescription": "25% boost to Atk power of female Units",
+  "lstype": "Attack",
+  "bbdescription": "5 combo Water elemental attack on single enemy & boost to BC drop rate",
+  "bbnote": "50% boost",
+  "bbtype": "Support/Offense",
+  "bbhits": "5",
+  "bbaoe": "1",
+  "bbgauge": "15",
+  "bbdc": "5",
+  "bbmultiplier": "115",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "20131",
+  "evomats2": "20130",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": "",
+  "evoitem": ""
 }

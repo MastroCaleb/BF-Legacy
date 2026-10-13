@@ -1,73 +1,113 @@
 {
   "id": "860577",
-  "unitName": "Kranus",
-  "freetext": ":''For other uses, see Kranus (disambiguation).''",
-  "no": "8477",
-  "element": "Dark",
-  "rarity": "★★★★★★★",
-  "cost": "52",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "N",
-  "ai": "2",
-  "animation_attack": "147",
-  "animation_idle": "80",
-  "animation_move": "21",
-  "movespeed_attack": "4",
-  "movespeed_skill": "4",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "2",
-  "movetype_skill": "2",
-  "normal_frames": "43, 49, 58, 64, 70",
-  "normal_distribute": "15, 20, 30, 20, 15",
-  "normal_totaldistr": "100",
-  "sbb_frames": "43, 49, 55, 61, 67",
-  "sbb_distribute": "20, 20, 20, 20, 20",
-  "sbb_totaldistr": "100",
-  "sbb2_frames": "46, 52, 58, 64, 70",
-  "sbb2_distribute": "10, 20, 30, 25, 15",
-  "sbb2_totaldistr": "100",
-  "ubb_frames": "43, 49, 55, 61, 67, 73",
-  "ubb_distribute": "16, 16, 18, 18, 16, 16",
-  "ubb_totaldistr": "100",
-  "ubb2_frames": "46, 52, 58, 64, 70, 76",
-  "ubb2_distribute": "8, 16, 32, 20, 16, 8",
-  "ubb2_totaldistr": "100",
-  "sbb_effectdelay": "1",
-  "sbb2_effectdelay": "1",
-  "ubb_effectdelay": "1",
-  "ubb2_effectdelay": "1",
-  "description": "When Athensphere was cast into the Void by the old gods, Draegar's sanity was said to have been shattered by frenzy. After a wild conquest through the world of Elysia, fate led the tortured captain back to Gazia, who attempted to restore his mental state. By piecing together his shattered mind, the Tinkerer found memories of a great Cosmic Unknown.Intrigued by this being that seemed to be on par with—or even greater—than the old gods, Gazia retrieved the data and set out to create a reflection of it. Bafflingly enough, it possessed no discernible form, as though Draegar was driven mad through mere perception. Neither could Gazia determine the being's intentions: was Draegar operating under its malefic instruction, or did the inflicted frenzy unlock some primal urge within him?Gazia combined his tinkering genius with the yawning darkness of these memories. The result was an alien, masculine structure wrapped in a mechanical shell. Though it is but a sliver of the Cosmic Unknown's unfathomable form, this imperfect reflection still carries its dread vibe. Its physical appearance and manner of speech, however, are derived entirely from Gazia's own preference.The being named \"Kranus\" now accompanies the Tinkerer as both an experiment and a servant. Indeed, there was no other lifeform quite like him, and Gazia was curious to mold this cosmic nothingness to his liking. What secrets would the yawning Void reveal to him, now that it possessed a physical shell?",
-  "summon": "And you say this enhances my \"functions\"?<br>I suppose these electric things have their lives as well.",
-  "fusion": "Hmm. \"Summoner.\"<br>It seems I am now at your beck and call.<br>What is it that you wish?",
-  "evolution": "",
-  "hp_base": "5250",
-  "atk_base": "2100",
-  "def_base": "2100",
-  "rec_base": "2100",
-  "hp_lord": "7500",
-  "atk_lord": "3000",
-  "def_lord": "3000",
-  "rec_lord": "3000",
-  "hp_anima": "8392",
-  "rec_anima": "2762",
-  "atk_breaker": "3238",
-  "def_breaker": "2762",
-  "def_guardian": "3238",
-  "rec_guardian": "2881",
-  "def_oracle": "2881",
-  "rec_oracle": "3357",
-  "hp_bonus": "1100",
-  "atk_bonus": "440",
-  "def_bonus": "440",
-  "rec_bonus": "440",
-  "lordonly": "",
-  "combo_hits": "5",
-  "normaldc": "40",
-  "ls": "Imperfect Mimicry",
-  "lsdescription": "130% boost to max HP, hugely boosts Spark damage, restores HP each turn & Spark damage slightly boosts BB gauge",
-  "lsnote": "150% Spark, heals 1000-2000 + 10% Rec HP each turn & fills 1-2 BC on spark",
+  "stats": {
+    "_base": {
+      "atk": 2100,
+      "def": 2100,
+      "hp": 5250,
+      "rec": 2100
+    },
+    "_lord": {
+      "atk": 3000,
+      "def": 3000,
+      "hp": 7500,
+      "rec": 3000
+    },
+    "anima": {
+      "atk": 3000,
+      "def": 3000,
+      "hp max": 8690,
+      "hp min": 8095,
+      "rec max": 2881,
+      "rec min": 2643
+    },
+    "breaker": {
+      "atk max": 3357,
+      "atk min": 3119,
+      "def max": 2881,
+      "def min": 2643,
+      "hp": 7500,
+      "rec": 3000
+    },
+    "guardian": {
+      "atk": 3000,
+      "def max": 3357,
+      "def min": 3119,
+      "hp": 7500,
+      "rec max": 3000,
+      "rec min": 2762
+    },
+    "oracle": {
+      "atk": 3000,
+      "def max": 3000,
+      "def min": 2762,
+      "hp": 7500,
+      "rec max": 3476,
+      "rec min": 3238
+    }
+  },
+  "leader_skill": {
+    "desc": "130% boost to max HP, hugely boosts Spark damage, restores HP each turn & Spark damage slightly boosts BB gauge",
+    "effects": [
+      {
+        "hp% buff": 130,
+        "passive id": "1"
+      },
+      {
+        "damage% for spark": 150,
+        "passive id": "31"
+      },
+      {
+        "passive id": "33",
+        "rec% added (turn heal)": 10.0,
+        "turn heal high": 2000,
+        "turn heal low": 1000
+      },
+      {
+        "bc fill on spark high": 2,
+        "bc fill on spark low": 1,
+        "bc fill on spark%": 100,
+        "passive id": "47"
+      }
+    ],
+    "id": "860577",
+    "name": "Imperfect Mimicry"
+  },
+  "extra_skill": {
+    "desc": "Boosts Atk, Def, Rec relative to remaining HP, probable damage reduction to 1 & damage taken may boost BB gauge",
+    "effects": [
+      {
+        "atk% base buff": 0,
+        "atk% extra buff based on hp": 80,
+        "buff proportional to hp": "remaining",
+        "conditions": [],
+        "def% base buff": 0,
+        "def% extra buff based on hp": 80,
+        "passive id": "46",
+        "passive target": "self",
+        "rec% base buff": 0,
+        "rec% extra buff based on hp": 80
+      },
+      {
+        "conditions": [],
+        "passive id": "43",
+        "passive target": "self",
+        "take 1 dmg%": 10
+      },
+      {
+        "bc fill when attacked high": 3,
+        "bc fill when attacked low": 2,
+        "bc fill when attacked%": 100,
+        "conditions": [],
+        "passive id": "25",
+        "passive target": "self"
+      }
+    ],
+    "id": "860577",
+    "name": "Identity Violator",
+    "rarity": "7",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -688,10 +728,6 @@
     ],
     "name": "Paltry As Those Lives Are"
   },
-  "bbdescription": "50% damage reduction for 2 turns, greatly restores HP, damage taken may restore HP for 3 turns & negates all status ailments and Atk, Def, Rec reduction effects for 3 turns",
-  "bbnote": "Heals 3000~5000 HP + 40% Rec HP & 50% chance of healing 20-25% damage taken",
-  "bbtype": "Heal/Support",
-  "bbgauge": "30",
   "sbb": {
     "damage frames": [
       {
@@ -1308,20 +1344,6 @@
     ],
     "name": "Mind Conflict"
   },
-  "sbbdescription": "5 combo powerful Light, Dark attack on all foes, 5 combo powerful Dark attack on all foes (damage relative to remaining HP), hugely boosts Atk, Def, Rec for 3 turns, considerably boosts own Spark damage for 3 turns & hugely boosts Spark damage for 3 turns",
-  "sbbnote": "200% + 500% * current HP / max HP, 100% Spark to self, 170% Spark & 170% parameter boost",
-  "sbbtype": "Offense",
-  "sbbhits": "5",
-  "sbbaoe": "A",
-  "sbbgauge": "30",
-  "sbbdc": "5",
-  "sbbmultiplier": "600",
-  "sbb_hpscale": "",
-  "sbbhits2": "5",
-  "sbbaoe2": "A",
-  "sbbdc2": "5",
-  "sbbmultiplier2": "200",
-  "sbb_hpscale2": "true",
   "ubb": {
     "damage frames": [
       {
@@ -1487,6 +1509,218 @@
     ],
     "name": "Void of Existence"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 147
+    },
+    "idle": {
+      "total number of frames": 80
+    },
+    "move": {
+      "total number of frames": 21
+    }
+  },
+  "category": 860570,
+  "cost": "52",
+  "damage frames": {
+    "frame times": [
+      43,
+      49,
+      58,
+      64,
+      70
+    ],
+    "hit dmg% distribution": [
+      15,
+      20,
+      30,
+      20,
+      15
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 5
+  },
+  "drop check count": 8,
+  "element": "dark",
+  "exp_pattern": 20,
+  "gender": "other",
+  "getting type": "rare summon",
+  "guide_id": 8477,
+  "imp": {
+    "max atk": "440",
+    "max def": "440",
+    "max hp": "1100",
+    "max rec": "440"
+  },
+  "kind": "normal",
+  "lord damage range": "2793~3120",
+  "movement": {
+    "attack": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "2"
+    },
+    "skill": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "2"
+    }
+  },
+  "name": "Kranus",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Kranus",
+  "maxlv": "120",
+  "no": "8477",
+  "unitDisplayHomePosition_1W9CxaFK": "291,60,174,475",
+  "unitDisplayDetailPosition_6z54rgb3": "159,93,577,680",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "117,222,343,405,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "117,-74,678,799",
+  "unitDisplaySummonPosition_KC3Jk8Br": "117,222,343,405,0",
+  "unitDisplayHpPosition_3BpHN6VD": "0,18",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "15000",
+  "sellCaution": false,
+  "effectFrames": "43:126:1,49:126:1,55:126:1,61:126:1,67:126:1,73:126:1,45:600170:1,44:600372:1,53:600351:1,62:600351:1,43:602340:1",
+  "evofrom": "",
+  "evointo": "860578",
+  "evozelcost": "3000000",
+  "evokarmacost": "1000000",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "60344",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "860034",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60123",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    },
+    {
+      "type": "2",
+      "id": "110100",
+      "count": 1
+    }
+  ],
+  "freetext": ":''For other uses, see Kranus (disambiguation).''",
+  "basexp": "21",
+  "animation_attack": "147",
+  "animation_idle": "80",
+  "animation_move": "21",
+  "movespeed_attack": "4",
+  "movespeed_skill": "4",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "2",
+  "movetype_skill": "2",
+  "normal_frames": "43, 49, 58, 64, 70",
+  "normal_distribute": "15, 20, 30, 20, 15",
+  "normal_totaldistr": "100",
+  "sbb_frames": "43, 49, 55, 61, 67",
+  "sbb_distribute": "20, 20, 20, 20, 20",
+  "sbb_totaldistr": "100",
+  "sbb2_frames": "46, 52, 58, 64, 70",
+  "sbb2_distribute": "10, 20, 30, 25, 15",
+  "sbb2_totaldistr": "100",
+  "ubb_frames": "43, 49, 55, 61, 67, 73",
+  "ubb_distribute": "16, 16, 18, 18, 16, 16",
+  "ubb_totaldistr": "100",
+  "ubb2_frames": "46, 52, 58, 64, 70, 76",
+  "ubb2_distribute": "8, 16, 32, 20, 16, 8",
+  "ubb2_totaldistr": "100",
+  "sbb_effectdelay": "1",
+  "sbb2_effectdelay": "1",
+  "ubb_effectdelay": "1",
+  "ubb2_effectdelay": "1",
+  "description": "When Athensphere was cast into the Void by the old gods, Draegar's sanity was said to have been shattered by frenzy. After a wild conquest through the world of Elysia, fate led the tortured captain back to Gazia, who attempted to restore his mental state. By piecing together his shattered mind, the Tinkerer found memories of a great Cosmic Unknown.Intrigued by this being that seemed to be on par with—or even greater—than the old gods, Gazia retrieved the data and set out to create a reflection of it. Bafflingly enough, it possessed no discernible form, as though Draegar was driven mad through mere perception. Neither could Gazia determine the being's intentions: was Draegar operating under its malefic instruction, or did the inflicted frenzy unlock some primal urge within him?Gazia combined his tinkering genius with the yawning darkness of these memories. The result was an alien, masculine structure wrapped in a mechanical shell. Though it is but a sliver of the Cosmic Unknown's unfathomable form, this imperfect reflection still carries its dread vibe. Its physical appearance and manner of speech, however, are derived entirely from Gazia's own preference.The being named \"Kranus\" now accompanies the Tinkerer as both an experiment and a servant. Indeed, there was no other lifeform quite like him, and Gazia was curious to mold this cosmic nothingness to his liking. What secrets would the yawning Void reveal to him, now that it possessed a physical shell?",
+  "summon": "And you say this enhances my \"functions\"?<br>I suppose these electric things have their lives as well.",
+  "fusion": "Hmm. \"Summoner.\"<br>It seems I am now at your beck and call.<br>What is it that you wish?",
+  "evolution": "",
+  "hp_base": "5250",
+  "atk_base": "2100",
+  "def_base": "2100",
+  "rec_base": "2100",
+  "hp_lord": "7500",
+  "atk_lord": "3000",
+  "def_lord": "3000",
+  "rec_lord": "3000",
+  "hp_anima": "8392",
+  "rec_anima": "2762",
+  "atk_breaker": "3238",
+  "def_breaker": "2762",
+  "def_guardian": "3238",
+  "rec_guardian": "2881",
+  "def_oracle": "2881",
+  "rec_oracle": "3357",
+  "hp_bonus": "1100",
+  "atk_bonus": "440",
+  "def_bonus": "440",
+  "rec_bonus": "440",
+  "lordonly": "",
+  "combo_hits": "5",
+  "normaldc": "40",
+  "ls": "Imperfect Mimicry",
+  "lsdescription": "130% boost to max HP, hugely boosts Spark damage, restores HP each turn & Spark damage slightly boosts BB gauge",
+  "lsnote": "150% Spark, heals 1000-2000 + 10% Rec HP each turn & fills 1-2 BC on spark",
+  "bbdescription": "50% damage reduction for 2 turns, greatly restores HP, damage taken may restore HP for 3 turns & negates all status ailments and Atk, Def, Rec reduction effects for 3 turns",
+  "bbnote": "Heals 3000~5000 HP + 40% Rec HP & 50% chance of healing 20-25% damage taken",
+  "bbtype": "Heal/Support",
+  "bbgauge": "30",
+  "sbbdescription": "5 combo powerful Light, Dark attack on all foes, 5 combo powerful Dark attack on all foes (damage relative to remaining HP), hugely boosts Atk, Def, Rec for 3 turns, considerably boosts own Spark damage for 3 turns & hugely boosts Spark damage for 3 turns",
+  "sbbnote": "200% + 500% * current HP / max HP, 100% Spark to self, 170% Spark & 170% parameter boost",
+  "sbbtype": "Offense",
+  "sbbhits": "5",
+  "sbbaoe": "A",
+  "sbbgauge": "30",
+  "sbbdc": "5",
+  "sbbmultiplier": "600",
+  "sbb_hpscale": "",
+  "sbbhits2": "5",
+  "sbbaoe2": "A",
+  "sbbdc2": "5",
+  "sbbmultiplier2": "200",
+  "sbb_hpscale2": "true",
   "ubbdescription": "6 combo massive Light, Dark attack on all foes, 6 combo massive Dark attack on all foes (damage relative to remaining HP), enormously boosts Atk, Def, Rec for 3 turns, probability of raising allies from KO, enormously boosts Spark damage for 3 turns & 100% damage reduction from Light, Dark types for 3 turns",
   "ubbnote": "1000% + 500% * current HP / max HP, 70% chance of reviving, 400% Spark & 400% parameter boost",
   "ubbtype": "Offense",
@@ -1504,7 +1738,6 @@
   "es": "Identity Violator",
   "esdescription": "Boosts Atk, Def, Rec relative to remaining HP, probable damage reduction to 1 & damage taken may boost BB gauge",
   "esnote": "0.8% boost per 1% HP remaining, 10% chance of taking 1 damage & fills 2-3 BC when hit",
-  "evointo": "860578",
   "evomats1": "60344",
   "evomats2": "60344",
   "evomats3": "50354",
@@ -1512,124 +1745,5 @@
   "evomats5": "860034",
   "evomats6": "60123",
   "evomats7": "60224",
-  "evoitem": "Legend Stone",
-  "evozelcost": "3000000",
-  "stats": {
-    "_base": {
-      "atk": 2100,
-      "def": 2100,
-      "hp": 5250,
-      "rec": 2100
-    },
-    "_lord": {
-      "atk": 3000,
-      "def": 3000,
-      "hp": 7500,
-      "rec": 3000
-    },
-    "anima": {
-      "atk": 3000,
-      "def": 3000,
-      "hp max": 8690,
-      "hp min": 8095,
-      "rec max": 2881,
-      "rec min": 2643
-    },
-    "breaker": {
-      "atk max": 3357,
-      "atk min": 3119,
-      "def max": 2881,
-      "def min": 2643,
-      "hp": 7500,
-      "rec": 3000
-    },
-    "guardian": {
-      "atk": 3000,
-      "def max": 3357,
-      "def min": 3119,
-      "hp": 7500,
-      "rec max": 3000,
-      "rec min": 2762
-    },
-    "oracle": {
-      "atk": 3000,
-      "def max": 3000,
-      "def min": 2762,
-      "hp": 7500,
-      "rec max": 3476,
-      "rec min": 3238
-    }
-  },
-  "leader_skill": {
-    "desc": "130% boost to max HP, hugely boosts Spark damage, restores HP each turn & Spark damage slightly boosts BB gauge",
-    "effects": [
-      {
-        "hp% buff": 130,
-        "passive id": "1"
-      },
-      {
-        "damage% for spark": 150,
-        "passive id": "31"
-      },
-      {
-        "passive id": "33",
-        "rec% added (turn heal)": 10.0,
-        "turn heal high": 2000,
-        "turn heal low": 1000
-      },
-      {
-        "bc fill on spark high": 2,
-        "bc fill on spark low": 1,
-        "bc fill on spark%": 100,
-        "passive id": "47"
-      }
-    ],
-    "id": "860577",
-    "name": "Imperfect Mimicry"
-  },
-  "extra_skill": {
-    "desc": "Boosts Atk, Def, Rec relative to remaining HP, probable damage reduction to 1 & damage taken may boost BB gauge",
-    "effects": [
-      {
-        "atk% base buff": 0,
-        "atk% extra buff based on hp": 80,
-        "buff proportional to hp": "remaining",
-        "conditions": [],
-        "def% base buff": 0,
-        "def% extra buff based on hp": 80,
-        "passive id": "46",
-        "passive target": "self",
-        "rec% base buff": 0,
-        "rec% extra buff based on hp": 80
-      },
-      {
-        "conditions": [],
-        "passive id": "43",
-        "passive target": "self",
-        "take 1 dmg%": 10
-      },
-      {
-        "bc fill when attacked high": 3,
-        "bc fill when attacked low": 2,
-        "bc fill when attacked%": 100,
-        "conditions": [],
-        "passive id": "25",
-        "passive target": "self"
-      }
-    ],
-    "id": "860577",
-    "name": "Identity Violator",
-    "rarity": "7",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "291,60,174,475",
-  "unitDisplayDetailPosition_6z54rgb3": "159,93,577,680",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "117,222,343,405,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "117,-74,678,799",
-  "unitDisplaySummonPosition_KC3Jk8Br": "117,222,343,405,0",
-  "unitDisplayHpPosition_3BpHN6VD": "0,18",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "15000",
-  "sellCaution": false,
-  "effectFrames": "43:126:1,49:126:1,55:126:1,61:126:1,67:126:1,73:126:1,45:600170:1,44:600372:1,53:600351:1,62:600351:1,43:602340:1"
+  "evoitem": "Legend Stone"
 }

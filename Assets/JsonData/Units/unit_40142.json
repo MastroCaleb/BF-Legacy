@@ -1,61 +1,63 @@
 {
   "id": "40142",
-  "unitName": "Spark Kick Zeln",
-  "no": "213",
-  "element": "Thunder",
-  "rarity": "★★★",
-  "cost": "6",
-  "maxlv": "40",
-  "basexp": "15",
-  "gender": "M",
-  "ai": "3",
-  "animation_attack": "61",
-  "animation_idle": "44",
-  "animation_move": "6",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "28, 30, 33, 36",
-  "normal_distribute": "25, 25, 25, 25",
-  "normal_totaldistr": "100",
-  "bb_frames": "28, 30, 33, 36",
-  "bb_distribute": "25, 25, 25, 25",
-  "bb_totaldistr": "100",
-  "description": "A fighter hailing from the Republic of Atalva who trained at the Toltya Dojo in the Sama Kingdom.After Nemia left the dojo to look for her parents, Zeln began to focus on his training so that he might one day be able to follow after her. His legs, already strong from all the running away he’d done as a child, seemed like the natural place to start. Before long, he had developed his signature Lightning Kick, a flurry of kicks so fast it defied belief.",
-  "summon": "It’s finally my turn to shine! Just wait’ll you see this kick I’ve been working on!",
-  "fusion": "It’s still not enough! My kick needs to be stronger if I’m to impress her!",
-  "evolution": "My new and evolved kick technique is faster than lightning. Think you can keep up?",
-  "hp_base": "2080",
-  "atk_base": "766",
-  "def_base": "378",
-  "rec_base": "378",
-  "hp_lord": "3309",
-  "atk_lord": "1079",
-  "def_lord": "640",
-  "rec_lord": "614",
-  "hp_anima": "3602",
-  "rec_anima": "536",
-  "atk_breaker": "1157",
-  "def_breaker": "562",
-  "atk_guardian": "1001",
-  "def_guardian": "718",
-  "rec_guardian": "575",
-  "def_oracle": "601",
-  "hp_oracle": "3192",
-  "rec_oracle": "731",
-  "hp_bonus": "300",
-  "atk_bonus": "80",
-  "def_bonus": "160",
-  "rec_bonus": "120",
-  "lordonly": "",
-  "combo_hits": "4",
-  "normaldc": "16",
-  "ls": "Valiant Power",
-  "lsdescription": "10% boost to Atk Power of all types",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 766,
+      "def": 378,
+      "hp": 2080,
+      "rec": 378
+    },
+    "_lord": {
+      "atk": 1079,
+      "def": 640,
+      "hp": 3309,
+      "rec": 614
+    },
+    "anima": {
+      "atk": 1079,
+      "def": 640,
+      "hp max": 3699,
+      "hp min": 3504,
+      "rec max": 575,
+      "rec min": 497
+    },
+    "breaker": {
+      "atk max": 1196,
+      "atk min": 1118,
+      "def max": 601,
+      "def min": 523,
+      "hp": 3309,
+      "rec": 614
+    },
+    "guardian": {
+      "atk": 1079,
+      "def max": 757,
+      "def min": 679,
+      "hp": 3309,
+      "rec max": 614,
+      "rec min": 536
+    },
+    "oracle": {
+      "atk": 1079,
+      "def max": 640,
+      "def min": 562,
+      "hp": 3309,
+      "rec max": 770,
+      "rec min": 692
+    }
+  },
+  "leader_skill": {
+    "desc": "10% boost to Atk",
+    "effects": [
+      {
+        "atk% buff": 10,
+        "passive id": "1"
+      }
+    ],
+    "id": "1900",
+    "name": "Valiant Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -286,94 +288,95 @@
     ],
     "name": "Spark Kick"
   },
-  "bbdescription": "4 Combo Thunder Elemental Attack on All enemies & Slight Probability of Injury Effect",
-  "bbnote": "45% chance",
-  "bbtype": "Offense",
-  "bbhits": "4",
-  "bbaoe": "A",
-  "bbgauge": "20",
-  "bbdc": "4",
-  "bbmultiplier": "95",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "40141",
-  "evointo": "40143",
-  "evomats1": "40132",
-  "evomats2": "60143",
-  "evomats3": "40131",
-  "evomats4": "40130",
-  "evomats5": "40130",
-  "evozelcost": "100000",
-  "stats": {
-    "_base": {
-      "atk": 766,
-      "def": 378,
-      "hp": 2080,
-      "rec": 378
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1079,
-      "def": 640,
-      "hp": 3309,
-      "rec": 614
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1079,
-      "def": 640,
-      "hp max": 3699,
-      "hp min": 3504,
-      "rec max": 575,
-      "rec min": 497
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 1196,
-      "atk min": 1118,
-      "def max": 601,
-      "def min": 523,
-      "hp": 3309,
-      "rec": 614
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 61
     },
-    "guardian": {
-      "atk": 1079,
-      "def max": 757,
-      "def min": 679,
-      "hp": 3309,
-      "rec max": 614,
-      "rec min": 536
+    "idle": {
+      "total number of frames": 44
     },
-    "oracle": {
-      "atk": 1079,
-      "def max": 640,
-      "def min": 562,
-      "hp": 3309,
-      "rec max": 770,
-      "rec min": 692
+    "move": {
+      "total number of frames": 6
     }
   },
-  "leader_skill": {
-    "desc": "10% boost to Atk",
-    "effects": [
-      {
-        "atk% buff": 10,
-        "passive id": "1"
-      }
+  "category": 40140,
+  "cost": "6",
+  "damage frames": {
+    "frame times": [
+      28,
+      30,
+      33,
+      36
     ],
-    "id": "1900",
-    "name": "Valiant Power"
+    "hit dmg% distribution": [
+      25,
+      25,
+      25,
+      25
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 4
   },
-  "extra_skill": {},
+  "drop check count": 4,
+  "element": "thunder",
+  "exp_pattern": 15,
+  "gender": "male",
+  "getting type": "farmable",
+  "guide_id": 213,
+  "imp": {
+    "max atk": "80",
+    "max def": "160",
+    "max hp": "300",
+    "max rec": "120"
+  },
+  "kind": "normal",
+  "lord damage range": "1004~1122",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Spark Kick Zeln",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "Spark Kick Zeln",
+  "maxlv": "40",
+  "no": "213",
   "unitDisplayHomePosition_1W9CxaFK": "256,35,208,570",
   "unitDisplayDetailPosition_6z54rgb3": "181,153,595,625",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "215,387,216,240,0",
@@ -383,5 +386,104 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "1000",
   "sellCaution": false,
-  "effectFrames": "22:400130:1,24:400130:1,27:400130:1,30:134:1"
+  "effectFrames": "22:400130:1,24:400130:1,27:400130:1,30:134:1",
+  "evofrom": "40141",
+  "evointo": "40143",
+  "evozelcost": "100000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "40132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40131",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40130",
+      "count": 2
+    }
+  ],
+  "basexp": "15",
+  "animation_attack": "61",
+  "animation_idle": "44",
+  "animation_move": "6",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "28, 30, 33, 36",
+  "normal_distribute": "25, 25, 25, 25",
+  "normal_totaldistr": "100",
+  "bb_frames": "28, 30, 33, 36",
+  "bb_distribute": "25, 25, 25, 25",
+  "bb_totaldistr": "100",
+  "description": "A fighter hailing from the Republic of Atalva who trained at the Toltya Dojo in the Sama Kingdom.After Nemia left the dojo to look for her parents, Zeln began to focus on his training so that he might one day be able to follow after her. His legs, already strong from all the running away he’d done as a child, seemed like the natural place to start. Before long, he had developed his signature Lightning Kick, a flurry of kicks so fast it defied belief.",
+  "summon": "It’s finally my turn to shine! Just wait’ll you see this kick I’ve been working on!",
+  "fusion": "It’s still not enough! My kick needs to be stronger if I’m to impress her!",
+  "evolution": "My new and evolved kick technique is faster than lightning. Think you can keep up?",
+  "hp_base": "2080",
+  "atk_base": "766",
+  "def_base": "378",
+  "rec_base": "378",
+  "hp_lord": "3309",
+  "atk_lord": "1079",
+  "def_lord": "640",
+  "rec_lord": "614",
+  "hp_anima": "3602",
+  "rec_anima": "536",
+  "atk_breaker": "1157",
+  "def_breaker": "562",
+  "atk_guardian": "1001",
+  "def_guardian": "718",
+  "rec_guardian": "575",
+  "def_oracle": "601",
+  "hp_oracle": "3192",
+  "rec_oracle": "731",
+  "hp_bonus": "300",
+  "atk_bonus": "80",
+  "def_bonus": "160",
+  "rec_bonus": "120",
+  "lordonly": "",
+  "combo_hits": "4",
+  "normaldc": "16",
+  "ls": "Valiant Power",
+  "lsdescription": "10% boost to Atk Power of all types",
+  "lstype": "Attack",
+  "bbdescription": "4 Combo Thunder Elemental Attack on All enemies & Slight Probability of Injury Effect",
+  "bbnote": "45% chance",
+  "bbtype": "Offense",
+  "bbhits": "4",
+  "bbaoe": "A",
+  "bbgauge": "20",
+  "bbdc": "4",
+  "bbmultiplier": "95",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "40132",
+  "evomats2": "60143",
+  "evomats3": "40131",
+  "evomats4": "40130",
+  "evomats5": "40130"
 }

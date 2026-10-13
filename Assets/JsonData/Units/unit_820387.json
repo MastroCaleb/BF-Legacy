@@ -1,67 +1,97 @@
 {
   "id": "820387",
-  "unitName": "Charlotte (7★)",
-  "altname": "Charlotte",
-  "freetext": ":''For other uses, see Charlotte.''",
-  "no": "8238",
-  "element": "Water",
-  "rarity": "★★★★★★★",
-  "cost": "43",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "140",
-  "animation_idle": "108",
-  "animation_move": "10",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "4",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "3",
-  "normal_frames": "88, 93, 98",
-  "normal_distribute": "30, 30, 40",
-  "normal_totaldistr": "100",
-  "bb_frames": "72, 80, 88, 93, 98",
-  "bb_distribute": "15, 15, 20, 20, 30",
-  "bb_totaldistr": "100",
-  "sbb_frames": "64, 72, 80, 88, 93, 98",
-  "sbb_distribute": "10, 10, 10, 20, 20, 30",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "56, 64, 72, 80, 88, 93, 98",
-  "ubb_distribute": "8, 8, 8, 8, 20, 20, 28",
-  "ubb_totaldistr": "100",
-  "description": "A knight of the Kingdom of Grandshelt, Charlotte is stern of character with a surprisingly caring side that she expresses through her concern for comrades Rain and Lasswell as they travel the world. Unable to make peace with her worriment, her feelings have manifested in such a form that her spirit can now follow Rain and Lasswell into battle, even in other worlds. Charlotte serves as a second blade against the monsters they encounter, as well as other interesting enemies that cross their path. Curiously enough, she has secretly admired Lasswell's courage from a distance, despite her misgivings for the actions of her compatriots, particularly Rain.",
-  "summon": "Have you seen a couple of knights nearby? I cannot seem to locate them.",
-  "fusion": "You have my thanks for the power you have lent me. I will put it to good use.",
-  "evolution": "",
-  "hp_base": "4945",
-  "atk_base": "1625",
-  "def_base": "1877",
-  "rec_base": "1449",
-  "hp_lord": "7065",
-  "atk_lord": "2322",
-  "def_lord": "2682",
-  "rec_lord": "2070",
-  "hp_anima": "",
-  "rec_anima": "",
-  "atk_breaker": "",
-  "def_breaker": "",
-  "def_guardian": "",
-  "rec_guardian": "",
-  "def_oracle": "",
-  "rec_oracle": "",
-  "hp_bonus": "1100",
-  "atk_bonus": "440",
-  "def_bonus": "440",
-  "rec_bonus": "440",
-  "lordonly": "yes",
-  "combo_hits": "3",
-  "normaldc": "42",
-  "ls": "Chivalrous Spirit",
-  "lsdescription": "50% boost to max HP, Def, 5% damage reduction, boosts damage reduced while guarding & restores HP each turn",
-  "lsnote": "10% guard mitigation & heals 600-800 HP",
+  "stats": {
+    "_base": {
+      "atk": 1625,
+      "def": 1877,
+      "hp": 4945,
+      "rec": 1449
+    },
+    "_lord": {
+      "atk": 2322,
+      "def": 2682,
+      "hp": 7065,
+      "rec": 2070
+    },
+    "anima": {
+      "atk": 2322,
+      "def": 2682,
+      "hp max": 8255,
+      "hp min": 7660,
+      "rec max": 1951,
+      "rec min": 1713
+    },
+    "breaker": {
+      "atk max": 2679,
+      "atk min": 2441,
+      "def max": 2563,
+      "def min": 2325,
+      "hp": 7065,
+      "rec": 2070
+    },
+    "guardian": {
+      "atk": 2322,
+      "def max": 3039,
+      "def min": 2801,
+      "hp": 7065,
+      "rec max": 2070,
+      "rec min": 1832
+    },
+    "oracle": {
+      "atk": 2322,
+      "def max": 2682,
+      "def min": 2444,
+      "hp": 7065,
+      "rec max": 2546,
+      "rec min": 2308
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to max HP, Def, 5% damage reduction, boosts damage reduced while guarding & restores HP each turn",
+    "effects": [
+      {
+        "def% buff": 50,
+        "hp% buff": 50,
+        "passive id": "1"
+      },
+      {
+        "dmg% mitigation": 5,
+        "passive id": "8"
+      },
+      {
+        "guard increase mitigation%": 10,
+        "passive id": "58"
+      },
+      {
+        "passive id": "33",
+        "rec% added (turn heal)": 10.0,
+        "turn heal high": 800,
+        "turn heal low": 600
+      }
+    ],
+    "id": "810014",
+    "name": "Chivalrous Spirit"
+  },
+  "extra_skill": {
+    "desc": "Negates all status ailments",
+    "effects": [
+      {
+        "conditions": [],
+        "curse resist%": 100,
+        "injury resist%": 100,
+        "paralysis resist%": 100,
+        "passive id": "4",
+        "passive target": "self",
+        "poison resist%": 100,
+        "sick resist%": 100,
+        "weaken resist%": 100
+      }
+    ],
+    "id": "820387",
+    "name": "Unquestionable Loyalty",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -476,14 +506,6 @@
     ],
     "name": "Benevolent Shield"
   },
-  "bbdescription": "5 combo powerful Water attack on all foes, negates all status ailments for 3 turns & gradually restores HP for 3 turns",
-  "bbnote": "Heals 1500-3000 HP",
-  "bbtype": "Heal/Offense",
-  "bbhits": "5",
-  "bbaoe": "A",
-  "bbgauge": "25",
-  "bbdc": "10",
-  "bbmultiplier": "270",
   "sbb": {
     "damage frames": [
       {
@@ -982,14 +1004,6 @@
     ],
     "name": "Noble Guard"
   },
-  "sbbdescription": "6 combo powerful Water attack on all foes, negates all status ailments for 3 turns, considerably boosts Def for 3 turns & 50% damage reduction for 1 turn",
-  "sbbnote": "140% Def",
-  "sbbtype": "Offense",
-  "sbbhits": "6",
-  "sbbaoe": "A",
-  "sbbgauge": "30",
-  "sbbdc": "12",
-  "sbbmultiplier": "480",
   "ubb": {
     "damage frames": [
       {
@@ -1102,6 +1116,211 @@
     ],
     "name": "Barricade"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 140
+    },
+    "idle": {
+      "total number of frames": 108
+    },
+    "move": {
+      "total number of frames": 10
+    }
+  },
+  "category": 860420,
+  "cost": "43",
+  "damage frames": {
+    "frame times": [
+      88,
+      93,
+      98
+    ],
+    "hit dmg% distribution": [
+      30,
+      30,
+      40
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 3
+  },
+  "drop check count": 14,
+  "element": "water",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "not eligible for achievement",
+  "guide_id": 8238,
+  "imp": {
+    "max atk": "440",
+    "max def": "440",
+    "max hp": "1100",
+    "max rec": "440"
+  },
+  "kind": "normal",
+  "lord damage range": "2161~2414",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    }
+  },
+  "name": "Charlotte",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Charlotte",
+  "maxlv": "120",
+  "no": "8238",
+  "unitDisplayHomePosition_1W9CxaFK": "400,64,140,382",
+  "unitDisplayDetailPosition_6z54rgb3": "-150,127,1169,798",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "78,303,487,332,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-135,-99,1169,798",
+  "unitDisplaySummonPosition_KC3Jk8Br": "78,303,487,332,0",
+  "unitDisplayHpPosition_3BpHN6VD": "0,15",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "15000",
+  "sellCaution": false,
+  "effectFrames": "88:122:1,93:122:1,98:122:1",
+  "evofrom": "",
+  "evointo": "820388",
+  "evozelcost": "3000000",
+  "evokarmacost": "1000000",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "20344",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20131",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "820034",
+      "count": 1
+    },
+    {
+      "type": "2",
+      "id": "800104",
+      "count": 1
+    }
+  ],
+  "altname": "Charlotte",
+  "freetext": ":''For other uses, see Charlotte.''",
+  "basexp": "21",
+  "animation_attack": "140",
+  "animation_idle": "108",
+  "animation_move": "10",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "4",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "3",
+  "normal_frames": "88, 93, 98",
+  "normal_distribute": "30, 30, 40",
+  "normal_totaldistr": "100",
+  "bb_frames": "72, 80, 88, 93, 98",
+  "bb_distribute": "15, 15, 20, 20, 30",
+  "bb_totaldistr": "100",
+  "sbb_frames": "64, 72, 80, 88, 93, 98",
+  "sbb_distribute": "10, 10, 10, 20, 20, 30",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "56, 64, 72, 80, 88, 93, 98",
+  "ubb_distribute": "8, 8, 8, 8, 20, 20, 28",
+  "ubb_totaldistr": "100",
+  "description": "A knight of the Kingdom of Grandshelt, Charlotte is stern of character with a surprisingly caring side that she expresses through her concern for comrades Rain and Lasswell as they travel the world. Unable to make peace with her worriment, her feelings have manifested in such a form that her spirit can now follow Rain and Lasswell into battle, even in other worlds. Charlotte serves as a second blade against the monsters they encounter, as well as other interesting enemies that cross their path. Curiously enough, she has secretly admired Lasswell's courage from a distance, despite her misgivings for the actions of her compatriots, particularly Rain.",
+  "summon": "Have you seen a couple of knights nearby? I cannot seem to locate them.",
+  "fusion": "You have my thanks for the power you have lent me. I will put it to good use.",
+  "evolution": "",
+  "hp_base": "4945",
+  "atk_base": "1625",
+  "def_base": "1877",
+  "rec_base": "1449",
+  "hp_lord": "7065",
+  "atk_lord": "2322",
+  "def_lord": "2682",
+  "rec_lord": "2070",
+  "hp_anima": "",
+  "rec_anima": "",
+  "atk_breaker": "",
+  "def_breaker": "",
+  "def_guardian": "",
+  "rec_guardian": "",
+  "def_oracle": "",
+  "rec_oracle": "",
+  "hp_bonus": "1100",
+  "atk_bonus": "440",
+  "def_bonus": "440",
+  "rec_bonus": "440",
+  "lordonly": "yes",
+  "combo_hits": "3",
+  "normaldc": "42",
+  "ls": "Chivalrous Spirit",
+  "lsdescription": "50% boost to max HP, Def, 5% damage reduction, boosts damage reduced while guarding & restores HP each turn",
+  "lsnote": "10% guard mitigation & heals 600-800 HP",
+  "bbdescription": "5 combo powerful Water attack on all foes, negates all status ailments for 3 turns & gradually restores HP for 3 turns",
+  "bbnote": "Heals 1500-3000 HP",
+  "bbtype": "Heal/Offense",
+  "bbhits": "5",
+  "bbaoe": "A",
+  "bbgauge": "25",
+  "bbdc": "10",
+  "bbmultiplier": "270",
+  "sbbdescription": "6 combo powerful Water attack on all foes, negates all status ailments for 3 turns, considerably boosts Def for 3 turns & 50% damage reduction for 1 turn",
+  "sbbnote": "140% Def",
+  "sbbtype": "Offense",
+  "sbbhits": "6",
+  "sbbaoe": "A",
+  "sbbgauge": "30",
+  "sbbdc": "12",
+  "sbbmultiplier": "480",
   "ubbdescription": "7 combo massive Water attack on all foes, enormously boosts Def for 3 turns, 50% damage reduction for 3 turns & probable enormous 2 turn Atk reduction",
   "ubbnote": "250% Def & 80% reduction",
   "ubbtype": "Offense",
@@ -1114,8 +1333,6 @@
   "esitem": "",
   "esdescription": "Negates all status ailments",
   "esnote": "",
-  "evofrom": "",
-  "evointo": "820388",
   "evomats1": "Water Mecha God",
   "evomats2": "Water Mecha God",
   "evomats3": "Miracle Totem",
@@ -1124,108 +1341,5 @@
   "evomats6": "Water Spirit",
   "evomats7": "Water Bulb",
   "evomats8": "",
-  "evoitem": "Memory Fragment",
-  "evozelcost": "3000000",
-  "stats": {
-    "_base": {
-      "atk": 1625,
-      "def": 1877,
-      "hp": 4945,
-      "rec": 1449
-    },
-    "_lord": {
-      "atk": 2322,
-      "def": 2682,
-      "hp": 7065,
-      "rec": 2070
-    },
-    "anima": {
-      "atk": 2322,
-      "def": 2682,
-      "hp max": 8255,
-      "hp min": 7660,
-      "rec max": 1951,
-      "rec min": 1713
-    },
-    "breaker": {
-      "atk max": 2679,
-      "atk min": 2441,
-      "def max": 2563,
-      "def min": 2325,
-      "hp": 7065,
-      "rec": 2070
-    },
-    "guardian": {
-      "atk": 2322,
-      "def max": 3039,
-      "def min": 2801,
-      "hp": 7065,
-      "rec max": 2070,
-      "rec min": 1832
-    },
-    "oracle": {
-      "atk": 2322,
-      "def max": 2682,
-      "def min": 2444,
-      "hp": 7065,
-      "rec max": 2546,
-      "rec min": 2308
-    }
-  },
-  "leader_skill": {
-    "desc": "50% boost to max HP, Def, 5% damage reduction, boosts damage reduced while guarding & restores HP each turn",
-    "effects": [
-      {
-        "def% buff": 50,
-        "hp% buff": 50,
-        "passive id": "1"
-      },
-      {
-        "dmg% mitigation": 5,
-        "passive id": "8"
-      },
-      {
-        "guard increase mitigation%": 10,
-        "passive id": "58"
-      },
-      {
-        "passive id": "33",
-        "rec% added (turn heal)": 10.0,
-        "turn heal high": 800,
-        "turn heal low": 600
-      }
-    ],
-    "id": "810014",
-    "name": "Chivalrous Spirit"
-  },
-  "extra_skill": {
-    "desc": "Negates all status ailments",
-    "effects": [
-      {
-        "conditions": [],
-        "curse resist%": 100,
-        "injury resist%": 100,
-        "paralysis resist%": 100,
-        "passive id": "4",
-        "passive target": "self",
-        "poison resist%": 100,
-        "sick resist%": 100,
-        "weaken resist%": 100
-      }
-    ],
-    "id": "820387",
-    "name": "Unquestionable Loyalty",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "400,64,140,382",
-  "unitDisplayDetailPosition_6z54rgb3": "-150,127,1169,798",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "78,303,487,332,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-135,-99,1169,798",
-  "unitDisplaySummonPosition_KC3Jk8Br": "78,303,487,332,0",
-  "unitDisplayHpPosition_3BpHN6VD": "0,15",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "15000",
-  "sellCaution": false,
-  "effectFrames": "88:122:1,93:122:1,98:122:1"
+  "evoitem": "Memory Fragment"
 }

@@ -1,62 +1,66 @@
 {
   "id": "10122",
-  "unitName": "Lava",
-  "freetext": ":''For other uses, see Lava (disambiguation).''",
-  "no": "153",
-  "element": "Fire",
-  "rarity": "★★★",
-  "cost": "5",
-  "maxlv": "40",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "122",
-  "animation_idle": "64",
-  "animation_move": "10",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "75, 79, 73",
-  "normal_distribute": "40, 30, 30",
-  "normal_totaldistr": "100",
-  "bb_frames": "75, 80, 85, 90",
-  "bb_distribute": "20, 25, 25, 30",
-  "bb_totaldistr": "100",
-  "description": "An elite swordswoman from a top-secret project in the ruined Agni Empire. She was given harsh training from birth to make her the ultimate warrior. She was ranked highest in her order by age 14. Alas, as she was raised this way, she developed personality issues. She communicated only through commands which further distanced her from others.",
-  "summon": "You need my blade?<br>Promise me I'll face the<br>strongest and it's yours.",
-  "fusion": "My value is my strength.<br>Therefore, I need to become<br>stronger.",
-  "evolution": "",
-  "hp_base": "2000",
-  "atk_base": "700",
-  "def_base": "680",
-  "rec_base": "500",
-  "hp_lord": "3100",
-  "atk_lord": "938",
-  "def_lord": "898",
-  "rec_lord": "850",
-  "hp_anima": "3393",
-  "rec_anima": "772",
-  "atk_breaker": "1016",
-  "def_breaker": "820",
-  "atk_guardian": "860",
-  "def_guardian": "976",
-  "rec_guardian": "811",
-  "def_oracle": "859",
-  "hp_oracle": "2983",
-  "rec_oracle": "967",
-  "hp_bonus": "300",
-  "atk_bonus": "160",
-  "def_bonus": "80",
-  "rec_bonus": "120",
-  "lordonly": "",
-  "combo_hits": "3",
-  "normaldc": "9",
-  "ls": "Fire Spirit's Power",
-  "lsdescription": "25% boost to Atk Power of Fire Types",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 700,
+      "def": 680,
+      "hp": 2000,
+      "rec": 500
+    },
+    "_lord": {
+      "atk": 938,
+      "def": 898,
+      "hp": 3100,
+      "rec": 850
+    },
+    "anima": {
+      "atk": 938,
+      "def": 898,
+      "hp max": 3490,
+      "hp min": 3295,
+      "rec max": 811,
+      "rec min": 733
+    },
+    "breaker": {
+      "atk max": 1055,
+      "atk min": 977,
+      "def max": 859,
+      "def min": 781,
+      "hp": 3100,
+      "rec": 850
+    },
+    "guardian": {
+      "atk": 938,
+      "def max": 1015,
+      "def min": 937,
+      "hp": 3100,
+      "rec max": 850,
+      "rec min": 772
+    },
+    "oracle": {
+      "atk": 938,
+      "def max": 898,
+      "def min": 820,
+      "hp": 3100,
+      "rec max": 1006,
+      "rec min": 928
+    }
+  },
+  "leader_skill": {
+    "desc": "25% boost to Atk Power of Fire Types",
+    "effects": [
+      {
+        "atk% buff": 25,
+        "elements buffed": [
+          "fire"
+        ],
+        "passive id": "2"
+      }
+    ],
+    "id": "100",
+    "name": "Fire Spirit's Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -215,97 +219,87 @@
     ],
     "name": "Blazing Inferno"
   },
-  "bbdescription": "4 combo Fire elemental attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "4",
-  "bbaoe": "A",
-  "bbgauge": "25",
-  "bbdc": "4",
-  "bbmultiplier": "160",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "10123",
-  "evomats1": "10132",
-  "evomats2": "10131",
-  "evomats3": "10131",
-  "evomats4": "10131",
-  "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "100000",
-  "stats": {
-    "_base": {
-      "atk": 700,
-      "def": 680,
-      "hp": 2000,
-      "rec": 500
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 938,
-      "def": 898,
-      "hp": 3100,
-      "rec": 850
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 938,
-      "def": 898,
-      "hp max": 3490,
-      "hp min": 3295,
-      "rec max": 811,
-      "rec min": 733
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 122
     },
-    "breaker": {
-      "atk max": 1055,
-      "atk min": 977,
-      "def max": 859,
-      "def min": 781,
-      "hp": 3100,
-      "rec": 850
+    "idle": {
+      "total number of frames": 64
     },
-    "guardian": {
-      "atk": 938,
-      "def max": 1015,
-      "def min": 937,
-      "hp": 3100,
-      "rec max": 850,
-      "rec min": 772
-    },
-    "oracle": {
-      "atk": 938,
-      "def max": 898,
-      "def min": 820,
-      "hp": 3100,
-      "rec max": 1006,
-      "rec min": 928
+    "move": {
+      "total number of frames": 10
     }
   },
-  "leader_skill": {
-    "desc": "25% boost to Atk Power of Fire Types",
-    "effects": [
-      {
-        "atk% buff": 25,
-        "elements buffed": [
-          "fire"
-        ],
-        "passive id": "2"
-      }
+  "category": 10120,
+  "cost": "5",
+  "damage frames": {
+    "frame times": [
+      75,
+      79,
+      73
     ],
-    "id": "100",
-    "name": "Fire Spirit's Power"
+    "hit dmg% distribution": [
+      40,
+      30,
+      30
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 3
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "fire",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 153,
+  "imp": {
+    "max atk": "160",
+    "max def": "80",
+    "max hp": "300",
+    "max rec": "120"
+  },
+  "kind": "normal",
+  "lord damage range": "873~975",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Lava",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "Lava",
+  "maxlv": "40",
+  "no": "153",
   "unitDisplayHomePosition_1W9CxaFK": "252,-88,200,544",
   "unitDisplayDetailPosition_6z54rgb3": "120,209,614,560",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "146,331,307,280,0",
@@ -315,5 +309,95 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "1000",
   "sellCaution": false,
-  "effectFrames": "69:121:1,69:140:1,73:121:1,73:140:1,67:121:1,67:140:1"
+  "effectFrames": "69:121:1,69:140:1,73:121:1,73:140:1,67:121:1,67:140:1",
+  "evofrom": "",
+  "evointo": "10123",
+  "evozelcost": "100000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "10132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10131",
+      "count": 3
+    }
+  ],
+  "freetext": ":''For other uses, see Lava (disambiguation).''",
+  "basexp": "21",
+  "animation_attack": "122",
+  "animation_idle": "64",
+  "animation_move": "10",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "75, 79, 73",
+  "normal_distribute": "40, 30, 30",
+  "normal_totaldistr": "100",
+  "bb_frames": "75, 80, 85, 90",
+  "bb_distribute": "20, 25, 25, 30",
+  "bb_totaldistr": "100",
+  "description": "An elite swordswoman from a top-secret project in the ruined Agni Empire. She was given harsh training from birth to make her the ultimate warrior. She was ranked highest in her order by age 14. Alas, as she was raised this way, she developed personality issues. She communicated only through commands which further distanced her from others.",
+  "summon": "You need my blade?<br>Promise me I'll face the<br>strongest and it's yours.",
+  "fusion": "My value is my strength.<br>Therefore, I need to become<br>stronger.",
+  "evolution": "",
+  "hp_base": "2000",
+  "atk_base": "700",
+  "def_base": "680",
+  "rec_base": "500",
+  "hp_lord": "3100",
+  "atk_lord": "938",
+  "def_lord": "898",
+  "rec_lord": "850",
+  "hp_anima": "3393",
+  "rec_anima": "772",
+  "atk_breaker": "1016",
+  "def_breaker": "820",
+  "atk_guardian": "860",
+  "def_guardian": "976",
+  "rec_guardian": "811",
+  "def_oracle": "859",
+  "hp_oracle": "2983",
+  "rec_oracle": "967",
+  "hp_bonus": "300",
+  "atk_bonus": "160",
+  "def_bonus": "80",
+  "rec_bonus": "120",
+  "lordonly": "",
+  "combo_hits": "3",
+  "normaldc": "9",
+  "ls": "Fire Spirit's Power",
+  "lsdescription": "25% boost to Atk Power of Fire Types",
+  "lstype": "Attack",
+  "bbdescription": "4 combo Fire elemental attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "4",
+  "bbaoe": "A",
+  "bbgauge": "25",
+  "bbdc": "4",
+  "bbmultiplier": "160",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "10132",
+  "evomats2": "10131",
+  "evomats3": "10131",
+  "evomats4": "10131",
+  "evomats5": "",
+  "evoitem": ""
 }

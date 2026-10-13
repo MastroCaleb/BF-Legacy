@@ -1,63 +1,69 @@
 {
   "id": "10574",
-  "unitName": "Stahn (5★)",
-  "idalt": "",
-  "altname": "Stahn",
-  "no": "781",
-  "element": "Fire",
-  "rarity": "★★★★★",
-  "cost": "16",
-  "maxlv": "80",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "156",
-  "animation_idle": "68",
-  "animation_move": "4",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "18, 22, 40, 44, 82, 86, 90, 94, 98",
-  "normal_distribute": "10, 5, 15, 10, 20, 15, 10, 10, 5",
-  "normal_totaldistr": "100",
-  "bb_frames": "18, 22, 40, 44, 78, 82, 86, 90, 94, 98, 102, 106, 110",
-  "bb_distribute": "9, 7, 8, 7, 8, 7, 8, 7, 8, 7, 8, 7, 9",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "2",
-  "description": "A young man from another world in search of the Eye of Atamoni. After smuggling himself aboard the Draconis, Stahn met a sentient sword called Swordian Dymlos lying within the vessel, and became promptly enveloped in all of the fighting taking place on the ship. He would later meet another Swordian Master by the name of Rutee, and set off together to find the Eye of Atamoni, which had been the source of a great war thousands of years ago. Although Stahn was able to develop his swordsmanship skills during his journey, his horrible habit of oversleeping never improved.",
-  "summon": "Huh? Where am I?<br>I wonder if I'm still dreaming...<br>At least it looks like fun!",
-  "fusion": "I feel more powerful!<br>Now I feel like I can really protect everyone!",
-  "evolution": "I've become even stronger!<br>Now I can take on any enemy that comes at us! So just leave it to me!",
-  "hp_base": "3590",
-  "atk_base": "1250",
-  "def_base": "1030",
-  "rec_base": "980",
-  "hp_lord": "5300",
-  "atk_lord": "1700",
-  "def_lord": "1550",
-  "rec_lord": "1400",
-  "hp_anima": "5892",
-  "rec_anima": "1242",
-  "atk_breaker": "1858",
-  "def_breaker": "1392",
-  "def_guardian": "1708",
-  "rec_guardian": "1321",
-  "def_oracle": "1471",
-  "rec_oracle": "1637",
-  "hp_bonus": "750",
-  "atk_bonus": "300",
-  "def_bonus": "300",
-  "rec_bonus": "300",
-  "lordonly": "",
-  "combo_hits": "9",
-  "normaldc": "18",
-  "ls": "Heir to the Sun's Courage",
-  "lsdescription": "Boosts Atk relative to how high remaining HP is & boosts BB gauge each turn",
-  "lsnote": "20% base boost to Atk + 0.55% boost per 1% HP remaining, 75% boost max., 2 BC fill each turn",
-  "lstype": "Attack/Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 1250,
+      "def": 1030,
+      "hp": 3590,
+      "rec": 980
+    },
+    "_lord": {
+      "atk": 1700,
+      "def": 1550,
+      "hp": 5300,
+      "rec": 1400
+    },
+    "anima": {
+      "atk": 1700,
+      "def": 1550,
+      "hp max": 6090,
+      "hp min": 5695,
+      "rec max": 1321,
+      "rec min": 1163
+    },
+    "breaker": {
+      "atk max": 1937,
+      "atk min": 1779,
+      "def max": 1471,
+      "def min": 1313,
+      "hp": 5300,
+      "rec": 1400
+    },
+    "guardian": {
+      "atk": 1700,
+      "def max": 1787,
+      "def min": 1629,
+      "hp": 5300,
+      "rec max": 1400,
+      "rec min": 1242
+    },
+    "oracle": {
+      "atk": 1700,
+      "def max": 1550,
+      "def min": 1392,
+      "hp": 5300,
+      "rec max": 1716,
+      "rec min": 1558
+    }
+  },
+  "leader_skill": {
+    "desc": "Boosts Atk relative to how high remaining HP is & boosts BB gauge each turn",
+    "effects": [
+      {
+        "atk% base buff": 20,
+        "atk% extra buff based on hp": 55,
+        "buff proportional to hp": "remaining",
+        "passive id": "46"
+      },
+      {
+        "bc fill per turn": 2,
+        "passive id": "9"
+      }
+    ],
+    "id": "7900",
+    "name": "Heir to the Sun's Courage"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -428,6 +434,190 @@
     ],
     "name": "Phoenix"
   },
+  "sbb": {},
+  "ubb": {},
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 156
+    },
+    "idle": {
+      "total number of frames": 68
+    },
+    "move": {
+      "total number of frames": 4
+    }
+  },
+  "category": 10570,
+  "cost": "16",
+  "damage frames": {
+    "frame times": [
+      18,
+      22,
+      40,
+      44,
+      82,
+      86,
+      90,
+      94,
+      98
+    ],
+    "hit dmg% distribution": [
+      10,
+      5,
+      15,
+      10,
+      20,
+      15,
+      10,
+      10,
+      5
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 9
+  },
+  "drop check count": 2,
+  "element": "fire",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "farmable",
+  "guide_id": 781,
+  "imp": {
+    "max atk": "300",
+    "max def": "300",
+    "max hp": "750",
+    "max rec": "300"
+  },
+  "kind": "normal",
+  "lord damage range": "1583~1768",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Stahn",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Stahn",
+  "maxlv": "80",
+  "no": "781",
+  "unitDisplayHomePosition_1W9CxaFK": "389,118,174,475",
+  "unitDisplayDetailPosition_6z54rgb3": "-110,71,920,716",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "157,355,319,277,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-75,-194,876,682",
+  "unitDisplaySummonPosition_KC3Jk8Br": "40,260,460,358,0",
+  "unitDisplayHpPosition_3BpHN6VD": "0,35",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "5000",
+  "sellCaution": false,
+  "effectFrames": "12:121:1,16:121:1,34:121:1,38:121:1,76:121:1,80:121:1,84:121:1,88:121:1,82:121:1,12:650:1,22:1052:1,94:100010:1,90:150:1,98:150:1,82:153:1,86:200084:1",
+  "evofrom": "10573",
+  "evointo": "10575",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 1
+    }
+  ],
+  "idalt": "",
+  "altname": "Stahn",
+  "basexp": "21",
+  "animation_attack": "156",
+  "animation_idle": "68",
+  "animation_move": "4",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "18, 22, 40, 44, 82, 86, 90, 94, 98",
+  "normal_distribute": "10, 5, 15, 10, 20, 15, 10, 10, 5",
+  "normal_totaldistr": "100",
+  "bb_frames": "18, 22, 40, 44, 78, 82, 86, 90, 94, 98, 102, 106, 110",
+  "bb_distribute": "9, 7, 8, 7, 8, 7, 8, 7, 8, 7, 8, 7, 9",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "2",
+  "description": "A young man from another world in search of the Eye of Atamoni. After smuggling himself aboard the Draconis, Stahn met a sentient sword called Swordian Dymlos lying within the vessel, and became promptly enveloped in all of the fighting taking place on the ship. He would later meet another Swordian Master by the name of Rutee, and set off together to find the Eye of Atamoni, which had been the source of a great war thousands of years ago. Although Stahn was able to develop his swordsmanship skills during his journey, his horrible habit of oversleeping never improved.",
+  "summon": "Huh? Where am I?<br>I wonder if I'm still dreaming...<br>At least it looks like fun!",
+  "fusion": "I feel more powerful!<br>Now I feel like I can really protect everyone!",
+  "evolution": "I've become even stronger!<br>Now I can take on any enemy that comes at us! So just leave it to me!",
+  "hp_base": "3590",
+  "atk_base": "1250",
+  "def_base": "1030",
+  "rec_base": "980",
+  "hp_lord": "5300",
+  "atk_lord": "1700",
+  "def_lord": "1550",
+  "rec_lord": "1400",
+  "hp_anima": "5892",
+  "rec_anima": "1242",
+  "atk_breaker": "1858",
+  "def_breaker": "1392",
+  "def_guardian": "1708",
+  "rec_guardian": "1321",
+  "def_oracle": "1471",
+  "rec_oracle": "1637",
+  "hp_bonus": "750",
+  "atk_bonus": "300",
+  "def_bonus": "300",
+  "rec_bonus": "300",
+  "lordonly": "",
+  "combo_hits": "9",
+  "normaldc": "18",
+  "ls": "Heir to the Sun's Courage",
+  "lsdescription": "Boosts Atk relative to how high remaining HP is & boosts BB gauge each turn",
+  "lsnote": "20% base boost to Atk + 0.55% boost per 1% HP remaining, 75% boost max., 2 BC fill each turn",
+  "lstype": "Attack/Brave Burst",
   "bbdescription": "13 combo Fire attack on all foes, considerably boosts BB gauge & adds Fire element to attack for 3 turns",
   "bbnote": "6 BC fill",
   "bbtype": "Support/Offense",
@@ -440,7 +630,6 @@
   "bbaoe2": "",
   "bbdc2": "",
   "bbmultiplier2": "",
-  "sbb": {},
   "sbbdescription": "",
   "sbbnote": "",
   "sbbtype": "",
@@ -453,7 +642,6 @@
   "sbbaoe2": "",
   "sbbdc2": "",
   "sbbmultiplier2": "",
-  "ubb": {},
   "ubbdescription": "",
   "ubbnote": "",
   "ubbtype": "",
@@ -470,8 +658,6 @@
   "esitem": "",
   "esdescription": "",
   "esnote": "",
-  "evofrom": "10573",
-  "evointo": "10575",
   "evomats1": "50354",
   "evomats2": "10133",
   "evomats3": "10191",
@@ -482,80 +668,5 @@
   "evomats8": "",
   "evomats9": "",
   "evoitem": "",
-  "evoitem2": "",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 1250,
-      "def": 1030,
-      "hp": 3590,
-      "rec": 980
-    },
-    "_lord": {
-      "atk": 1700,
-      "def": 1550,
-      "hp": 5300,
-      "rec": 1400
-    },
-    "anima": {
-      "atk": 1700,
-      "def": 1550,
-      "hp max": 6090,
-      "hp min": 5695,
-      "rec max": 1321,
-      "rec min": 1163
-    },
-    "breaker": {
-      "atk max": 1937,
-      "atk min": 1779,
-      "def max": 1471,
-      "def min": 1313,
-      "hp": 5300,
-      "rec": 1400
-    },
-    "guardian": {
-      "atk": 1700,
-      "def max": 1787,
-      "def min": 1629,
-      "hp": 5300,
-      "rec max": 1400,
-      "rec min": 1242
-    },
-    "oracle": {
-      "atk": 1700,
-      "def max": 1550,
-      "def min": 1392,
-      "hp": 5300,
-      "rec max": 1716,
-      "rec min": 1558
-    }
-  },
-  "leader_skill": {
-    "desc": "Boosts Atk relative to how high remaining HP is & boosts BB gauge each turn",
-    "effects": [
-      {
-        "atk% base buff": 20,
-        "atk% extra buff based on hp": 55,
-        "buff proportional to hp": "remaining",
-        "passive id": "46"
-      },
-      {
-        "bc fill per turn": 2,
-        "passive id": "9"
-      }
-    ],
-    "id": "7900",
-    "name": "Heir to the Sun's Courage"
-  },
-  "extra_skill": {},
-  "unitDisplayHomePosition_1W9CxaFK": "389,118,174,475",
-  "unitDisplayDetailPosition_6z54rgb3": "-110,71,920,716",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "157,355,319,277,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-75,-194,876,682",
-  "unitDisplaySummonPosition_KC3Jk8Br": "40,260,460,358,0",
-  "unitDisplayHpPosition_3BpHN6VD": "0,35",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "5000",
-  "sellCaution": false,
-  "effectFrames": "12:121:1,16:121:1,34:121:1,38:121:1,76:121:1,80:121:1,84:121:1,88:121:1,82:121:1,12:650:1,22:1052:1,94:100010:1,90:150:1,98:150:1,82:153:1,86:200084:1"
+  "evoitem2": ""
 }

@@ -1,68 +1,118 @@
 {
   "id": "30517",
-  "unitName": "Divine Dragon Ragzbyul",
-  "no": "1539",
-  "element": "Earth",
-  "rarity": "Omni",
-  "cost": "47",
-  "maxlv": "150",
-  "basexp": "21",
-  "gender": "N",
-  "ai": "2",
-  "animation_attack": "232",
-  "animation_idle": "54",
-  "animation_move": "6",
-  "movespeed_attack": "0.005",
-  "movespeed_skill": "0.005",
-  "speedtype_attack": "1",
-  "speedtype_skill": "1",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "63, 67, 71, 75, 79, 83, 87, 91, 95, 99, 103, 107, 111, 115, 119",
-  "normal_distribute": "5, 5, 5, 6, 6, 6, 6, 7, 7, 7, 8, 8, 8, 8, 8",
-  "normal_totaldistr": "100",
-  "bb_frames": "63, 67, 71, 75, 79, 83, 87, 91, 95, 99, 103, 107, 111, 115, 119, 123, 127, 131",
-  "bb_distribute": "4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 6, 6, 6, 7, 7, 7, 8, 8",
-  "bb_totaldistr": "100",
-  "sbb_frames": "63, 66, 68, 71, 74, 77, 80, 83, 86, 89, 92, 95, 99, 103, 107, 111, 115, 119, 123, 127, 131",
-  "sbb_distribute": "3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 6, 6, 6, 7, 7, 8, 8",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "63, 66, 68, 71, 74, 77, 80, 83, 86, 89, 92, 95, 98, 101, 104, 107, 110, 113, 116, 119, 122, 125, 128, 131, 134",
-  "ubb_distribute": "3, 3, 4, 3, 3, 3, 4, 3, 3, 4, 3, 4, 5, 4, 3, 5, 4, 4, 4, 5, 4, 5, 5, 6, 6",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "1",
-  "ubb_effectdelay": "1",
-  "description": "People tell the same legend of an ancient dragon across two worlds, in Grand Gaia and Ishgria. According to the legend, the ancient dragon casts off its aged form when it dies. The dragon is then reborn in a new body, and sets out for another world. There was an ancient dragon in the land of Bariura that was used in a demon conspiracy. If not for that incident, it might have been reborn in a new body and found freedom in new and unknown worlds.",
-  "summon": "On the great wheel of fate, I die and live again. I will fulfill my role in the next world.",
-  "fusion": "I accept your tribute.<br>I must fly to a new world.<br>To do that...I need power.",
-  "evolution": "My time on this world is done. I now have only to fulfill my role in a new body...on a new world.",
-  "hp_base": "6310",
-  "atk_base": "2254",
-  "def_base": "2249",
-  "rec_base": "1942",
-  "hp_lord": "8233",
-  "atk_lord": "2824",
-  "def_lord": "2817",
-  "rec_lord": "2446",
-  "hp_anima": "9350",
-  "rec_anima": "2148",
-  "atk_breaker": "3122",
-  "def_breaker": "2519",
-  "def_guardian": "3315",
-  "rec_guardian": "2297",
-  "def_oracle": "2668",
-  "rec_oracle": "2893",
-  "hp_bonus": "1250",
-  "atk_bonus": "460",
-  "def_bonus": "460",
-  "rec_bonus": "820",
-  "lordonly": "",
-  "combo_hits": "15",
-  "normaldc": "45",
-  "ls": "Natural Rebirth",
-  "lsdescription": "50% boost to Atk and max HP, probable Def ignoring effect, boosts damage reduction rate when guarding & probable 1 turn Atk reduction for 2 turns when damage dealt exceeds certain amount",
-  "lsnote": "20% chance to Ignore Def, 10% guard mitigation & 30% chance to reduce enemy Atk by 20% after 10,000 damage",
+  "stats": {
+    "_base": {
+      "atk": 2254,
+      "def": 2249,
+      "hp": 6310,
+      "rec": 1942
+    },
+    "_lord": {
+      "atk": 2824,
+      "def": 2817,
+      "hp": 8233,
+      "rec": 2446
+    },
+    "anima": {
+      "atk": 2824,
+      "def": 2817,
+      "hp max": 9723,
+      "hp min": 8978,
+      "rec max": 2297,
+      "rec min": 1999
+    },
+    "breaker": {
+      "atk max": 3271,
+      "atk min": 2973,
+      "def max": 2668,
+      "def min": 2370,
+      "hp": 8233,
+      "rec": 2446
+    },
+    "guardian": {
+      "atk": 2824,
+      "def max": 3264,
+      "def min": 2966,
+      "hp": 8233,
+      "rec max": 2446,
+      "rec min": 2148
+    },
+    "oracle": {
+      "atk": 2824,
+      "def max": 2817,
+      "def min": 2519,
+      "hp": 8233,
+      "rec max": 3042,
+      "rec min": 2744
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to Atk and max HP, probable Def ignoring effect, boosts damage reduction rate when guarding & adds probable 1 turn Atk reduction effect to attack for 2 turns when damage dealt has exceeded certain amount",
+    "effects": [
+      {
+        "atk% buff": 50,
+        "hp% buff": 50,
+        "passive id": "1"
+      },
+      {
+        "ignore def%": 20,
+        "passive id": "29"
+      },
+      {
+        "guard increase mitigation%": 10,
+        "passive id": "58"
+      },
+      {
+        "buff": {
+          "buff turns (74)": "2",
+          "unknown buff id": "74",
+          "unknown buff params": "-20&30&1"
+        },
+        "damage dealt threshold buff activation": 10000,
+        "passive id": "80"
+      }
+    ],
+    "id": "7482",
+    "name": "Natural Rebirth"
+  },
+  "extra_skill": {
+    "desc": "Enormously boosts damage against status afflicted enemies & adds Def ignoring effect to attack for 2 turns to BB/SBB",
+    "effects": [
+      {
+        "atk% buff when enemy has ailment": 150,
+        "atk% buff when enemy has curse": true,
+        "atk% buff when enemy has injury": true,
+        "atk% buff when enemy has paralysis": true,
+        "atk% buff when enemy has poison": true,
+        "atk% buff when enemy has sick": true,
+        "atk% buff when enemy has weaken": true,
+        "conditions": [],
+        "passive id": "74",
+        "passive target": "self"
+      },
+      {
+        "conditions": [],
+        "passive id": "66",
+        "passive target": "self",
+        "trigger on bb": true,
+        "trigger on sbb": true,
+        "triggered effect": [
+          {
+            "defense% ignore": 100,
+            "defense% ignore turns (39)": 2,
+            "effect delay time(ms)/frame": "0.0/0",
+            "proc id": "22",
+            "target area": "aoe",
+            "target type": "party"
+          }
+        ]
+      }
+    ],
+    "id": "28400",
+    "name": "Otherworldly Heavens",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -827,14 +877,6 @@
     ],
     "name": "Emerald Stratum"
   },
-  "bbdescription": "18 combo Earth attack on all foes, probable huge 1 turn Atk, Def reduction, removes all status ailments & adds probable random status ailment infliction to attack for 3 turn",
-  "bbnote": "30% chance to reduce enemy Atk, Def by 50%, 20% chance to inflict Injury, 15% chance to inflict Weak, Sick & 10% chance to inflict Curse, Poison, Paralysis",
-  "bbtype": "Offense",
-  "bbhits": "18",
-  "bbaoe": "A",
-  "bbgauge": "27",
-  "bbdc": "18",
-  "bbmultiplier": "360",
   "sbb": {
     "damage frames": [
       {
@@ -1525,14 +1567,6 @@
     ],
     "name": "Archaic Vertex"
   },
-  "sbbdescription": "21 combo powerful Earth attack on all foes, probable huge 2 turn Atk, Def reduction, probable Spark vulnerability infliction for 2 turns & adds probable random status ailment infliction to attack for 3 turns",
-  "sbbnote": "30% chance to reduce enemy Atk, Def by 50%, 20% chance to inflict Injury, 15% chance to inflict Weak, Sick, 10% chance to inflict Curse, Poison, Paralysis & 30% chance for 30% vulnerability",
-  "sbbtype": "Offense",
-  "sbbhits": "21",
-  "sbbaoe": "A",
-  "sbbgauge": "25",
-  "sbbdc": "21",
-  "sbbmultiplier": "560",
   "ubb": {
     "damage frames": [
       {
@@ -1729,6 +1763,200 @@
     ],
     "name": "Eternal Will"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 232
+    },
+    "idle": {
+      "total number of frames": 54
+    },
+    "move": {
+      "total number of frames": 6
+    }
+  },
+  "category": 30510,
+  "cost": "47",
+  "damage frames": {
+    "frame times": [
+      63,
+      67,
+      71,
+      75,
+      79,
+      83,
+      87,
+      91,
+      95,
+      99,
+      103,
+      107,
+      111,
+      115,
+      119
+    ],
+    "hit dmg% distribution": [
+      5,
+      5,
+      5,
+      6,
+      6,
+      6,
+      6,
+      7,
+      7,
+      7,
+      8,
+      8,
+      8,
+      8,
+      8
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 15
+  },
+  "drop check count": 3,
+  "element": "earth",
+  "exp_pattern": 20,
+  "gender": "other",
+  "getting type": "rare summon",
+  "guide_id": 1539,
+  "imp": {
+    "max atk": "460",
+    "max def": "460",
+    "max hp": "1250",
+    "max rec": "820"
+  },
+  "kind": "normal",
+  "lord damage range": "2629~2936",
+  "movement": {
+    "attack": {
+      "move speed": 0.005,
+      "move speed type": "1",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.005,
+      "move speed type": "1",
+      "move type": "1"
+    }
+  },
+  "name": "Divine Dragon Ragzbyul",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "8",
+  "sell caution": false,
+  "unitName": "Divine Dragon Ragzbyul",
+  "maxlv": "150",
+  "no": "1539",
+  "unitDisplayHomePosition_1W9CxaFK": "143,590,174,475",
+  "unitDisplayDetailPosition_6z54rgb3": "56,-261,1120,1120",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "58,67,560,560,1",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "58,-571,1120,1120",
+  "unitDisplaySummonPosition_KC3Jk8Br": "58,67,560,560,1",
+  "unitDisplayHpPosition_3BpHN6VD": "-40,76",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "50000",
+  "sellCaution": false,
+  "effectFrames": "63:300233:1,62:330411:1,83:300233:1,103:300233:1,113:300233:1,80:330444:1,100:330444:1,120:330444:1,70:200814:1,90:200814:1,110:200814:1",
+  "evofrom": "30516",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "21",
+  "animation_attack": "232",
+  "animation_idle": "54",
+  "animation_move": "6",
+  "movespeed_attack": "0.005",
+  "movespeed_skill": "0.005",
+  "speedtype_attack": "1",
+  "speedtype_skill": "1",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "63, 67, 71, 75, 79, 83, 87, 91, 95, 99, 103, 107, 111, 115, 119",
+  "normal_distribute": "5, 5, 5, 6, 6, 6, 6, 7, 7, 7, 8, 8, 8, 8, 8",
+  "normal_totaldistr": "100",
+  "bb_frames": "63, 67, 71, 75, 79, 83, 87, 91, 95, 99, 103, 107, 111, 115, 119, 123, 127, 131",
+  "bb_distribute": "4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 6, 6, 6, 7, 7, 7, 8, 8",
+  "bb_totaldistr": "100",
+  "sbb_frames": "63, 66, 68, 71, 74, 77, 80, 83, 86, 89, 92, 95, 99, 103, 107, 111, 115, 119, 123, 127, 131",
+  "sbb_distribute": "3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 6, 6, 6, 7, 7, 8, 8",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "63, 66, 68, 71, 74, 77, 80, 83, 86, 89, 92, 95, 98, 101, 104, 107, 110, 113, 116, 119, 122, 125, 128, 131, 134",
+  "ubb_distribute": "3, 3, 4, 3, 3, 3, 4, 3, 3, 4, 3, 4, 5, 4, 3, 5, 4, 4, 4, 5, 4, 5, 5, 6, 6",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "1",
+  "ubb_effectdelay": "1",
+  "description": "People tell the same legend of an ancient dragon across two worlds, in Grand Gaia and Ishgria. According to the legend, the ancient dragon casts off its aged form when it dies. The dragon is then reborn in a new body, and sets out for another world. There was an ancient dragon in the land of Bariura that was used in a demon conspiracy. If not for that incident, it might have been reborn in a new body and found freedom in new and unknown worlds.",
+  "summon": "On the great wheel of fate, I die and live again. I will fulfill my role in the next world.",
+  "fusion": "I accept your tribute.<br>I must fly to a new world.<br>To do that...I need power.",
+  "evolution": "My time on this world is done. I now have only to fulfill my role in a new body...on a new world.",
+  "hp_base": "6310",
+  "atk_base": "2254",
+  "def_base": "2249",
+  "rec_base": "1942",
+  "hp_lord": "8233",
+  "atk_lord": "2824",
+  "def_lord": "2817",
+  "rec_lord": "2446",
+  "hp_anima": "9350",
+  "rec_anima": "2148",
+  "atk_breaker": "3122",
+  "def_breaker": "2519",
+  "def_guardian": "3315",
+  "rec_guardian": "2297",
+  "def_oracle": "2668",
+  "rec_oracle": "2893",
+  "hp_bonus": "1250",
+  "atk_bonus": "460",
+  "def_bonus": "460",
+  "rec_bonus": "820",
+  "lordonly": "",
+  "combo_hits": "15",
+  "normaldc": "45",
+  "ls": "Natural Rebirth",
+  "lsdescription": "50% boost to Atk and max HP, probable Def ignoring effect, boosts damage reduction rate when guarding & probable 1 turn Atk reduction for 2 turns when damage dealt exceeds certain amount",
+  "lsnote": "20% chance to Ignore Def, 10% guard mitigation & 30% chance to reduce enemy Atk by 20% after 10,000 damage",
+  "bbdescription": "18 combo Earth attack on all foes, probable huge 1 turn Atk, Def reduction, removes all status ailments & adds probable random status ailment infliction to attack for 3 turn",
+  "bbnote": "30% chance to reduce enemy Atk, Def by 50%, 20% chance to inflict Injury, 15% chance to inflict Weak, Sick & 10% chance to inflict Curse, Poison, Paralysis",
+  "bbtype": "Offense",
+  "bbhits": "18",
+  "bbaoe": "A",
+  "bbgauge": "27",
+  "bbdc": "18",
+  "bbmultiplier": "360",
+  "sbbdescription": "21 combo powerful Earth attack on all foes, probable huge 2 turn Atk, Def reduction, probable Spark vulnerability infliction for 2 turns & adds probable random status ailment infliction to attack for 3 turns",
+  "sbbnote": "30% chance to reduce enemy Atk, Def by 50%, 20% chance to inflict Injury, 15% chance to inflict Weak, Sick, 10% chance to inflict Curse, Poison, Paralysis & 30% chance for 30% vulnerability",
+  "sbbtype": "Offense",
+  "sbbhits": "21",
+  "sbbaoe": "A",
+  "sbbgauge": "25",
+  "sbbdc": "21",
+  "sbbmultiplier": "560",
   "ubbdescription": "25 combo massive Earth attack on all foes, probable enormous 2 turn Atk, Def reduction, probable enormous Spark vulnerability infliction for 2 turns, boosts damage against status afflicted foes for 3 turns & adds probable random status ailment infliction to attack for 3 turns",
   "ubbnote": "80% reduction, 150% Spark vulnerability & 300% Atk against afflicted foes",
   "ubbtype": "Offense",
@@ -1741,8 +1969,6 @@
   "esitem": "",
   "esdescription": "Enormously boosts damage against status afflicted enemies & adds Def ignoring effect to attack for 2 turns to BB/SBB",
   "esnote": "150% Atk",
-  "evofrom": "30516",
-  "evointo": "",
   "evomats1": "",
   "evomats2": "",
   "evomats3": "",
@@ -1751,129 +1977,5 @@
   "evomats6": "",
   "evomats7": "",
   "evomats8": "",
-  "evoitem": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 2254,
-      "def": 2249,
-      "hp": 6310,
-      "rec": 1942
-    },
-    "_lord": {
-      "atk": 2824,
-      "def": 2817,
-      "hp": 8233,
-      "rec": 2446
-    },
-    "anima": {
-      "atk": 2824,
-      "def": 2817,
-      "hp max": 9723,
-      "hp min": 8978,
-      "rec max": 2297,
-      "rec min": 1999
-    },
-    "breaker": {
-      "atk max": 3271,
-      "atk min": 2973,
-      "def max": 2668,
-      "def min": 2370,
-      "hp": 8233,
-      "rec": 2446
-    },
-    "guardian": {
-      "atk": 2824,
-      "def max": 3264,
-      "def min": 2966,
-      "hp": 8233,
-      "rec max": 2446,
-      "rec min": 2148
-    },
-    "oracle": {
-      "atk": 2824,
-      "def max": 2817,
-      "def min": 2519,
-      "hp": 8233,
-      "rec max": 3042,
-      "rec min": 2744
-    }
-  },
-  "leader_skill": {
-    "desc": "50% boost to Atk and max HP, probable Def ignoring effect, boosts damage reduction rate when guarding & adds probable 1 turn Atk reduction effect to attack for 2 turns when damage dealt has exceeded certain amount",
-    "effects": [
-      {
-        "atk% buff": 50,
-        "hp% buff": 50,
-        "passive id": "1"
-      },
-      {
-        "ignore def%": 20,
-        "passive id": "29"
-      },
-      {
-        "guard increase mitigation%": 10,
-        "passive id": "58"
-      },
-      {
-        "buff": {
-          "buff turns (74)": "2",
-          "unknown buff id": "74",
-          "unknown buff params": "-20&30&1"
-        },
-        "damage dealt threshold buff activation": 10000,
-        "passive id": "80"
-      }
-    ],
-    "id": "7482",
-    "name": "Natural Rebirth"
-  },
-  "extra_skill": {
-    "desc": "Enormously boosts damage against status afflicted enemies & adds Def ignoring effect to attack for 2 turns to BB/SBB",
-    "effects": [
-      {
-        "atk% buff when enemy has ailment": 150,
-        "atk% buff when enemy has curse": true,
-        "atk% buff when enemy has injury": true,
-        "atk% buff when enemy has paralysis": true,
-        "atk% buff when enemy has poison": true,
-        "atk% buff when enemy has sick": true,
-        "atk% buff when enemy has weaken": true,
-        "conditions": [],
-        "passive id": "74",
-        "passive target": "self"
-      },
-      {
-        "conditions": [],
-        "passive id": "66",
-        "passive target": "self",
-        "trigger on bb": true,
-        "trigger on sbb": true,
-        "triggered effect": [
-          {
-            "defense% ignore": 100,
-            "defense% ignore turns (39)": 2,
-            "effect delay time(ms)/frame": "0.0/0",
-            "proc id": "22",
-            "target area": "aoe",
-            "target type": "party"
-          }
-        ]
-      }
-    ],
-    "id": "28400",
-    "name": "Otherworldly Heavens",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "143,590,174,475",
-  "unitDisplayDetailPosition_6z54rgb3": "56,-261,1120,1120",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "58,67,560,560,1",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "58,-571,1120,1120",
-  "unitDisplaySummonPosition_KC3Jk8Br": "58,67,560,560,1",
-  "unitDisplayHpPosition_3BpHN6VD": "-40,76",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "50000",
-  "sellCaution": false,
-  "effectFrames": "63:300233:1,62:330411:1,83:300233:1,103:300233:1,113:300233:1,80:330444:1,100:330444:1,120:330444:1,70:200814:1,90:200814:1,110:200814:1"
+  "evoitem": ""
 }

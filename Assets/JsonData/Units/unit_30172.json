@@ -1,62 +1,63 @@
 {
   "id": "30172",
-  "unitName": "Dwarf Prince",
-  "no": "274",
-  "element": "Earth",
-  "rarity": "★★★",
-  "cost": "5",
-  "maxlv": "40",
-  "basexp": "10",
-  "gender": "N",
-  "ai": "2",
-  "animation_attack": "89",
-  "animation_idle": "58",
-  "animation_move": "16",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "53",
-  "normal_distribute": "100",
-  "normal_totaldistr": "100",
-  "bb_frames": "53, 55, 57, 59, 61",
-  "bb_distribute": "20, 20, 20, 20, 20",
-  "bb_totaldistr": "100",
-  "description": "A member of an elven race which bears the power of the earth. Powerful enough to be known as a \"Prince\" by others, this individual fights wielding a halberd larger than its own body. Even more skillful than other Dwarves, equipment and accessories made by a Dwarf Prince are often traded as high value items. However, they don't really care about price, instead concentrating on making sure the person they sell to is worthy of owning what they've made.",
-  "summon": "I think you'd look good in<br>what I've made here, boss.<br>Alright! Let's fight together!",
-  "fusion": "I'm bursting with power!<br>Not even the young'uns can <br>beat me like this!",
-  "evolution": "Oh, how the power flows...<br>Surely now I can swing an<br>even larger axe!",
-  "hp_base": "1656",
-  "atk_base": "667",
-  "def_base": "667",
-  "rec_base": "405",
-  "hp_lord": "2170",
-  "atk_lord": "985",
-  "def_lord": "963",
-  "rec_lord": "650",
-  "hp_anima": "2463",
-  "rec_anima": "572",
-  "atk_breaker": "1063",
-  "def_breaker": "885",
-  "atk_guardian": "907",
-  "def_guardian": "1041",
-  "rec_guardian": "611",
-  "def_oracle": "924",
-  "hp_oracle": "2053",
-  "rec_oracle": "767",
-  "hp_bonus": "300",
-  "atk_bonus": "120",
-  "def_bonus": "120",
-  "rec_bonus": "120",
-  "lordonly": "",
-  "combo_hits": "1",
-  "normaldc": "2",
-  "ls": "Abundant Light",
-  "lsdescription": "Small boost in Zel produced during Spark",
-  "lsnote": "50% boost",
-  "lstype": "Zel",
+  "stats": {
+    "_base": {
+      "atk": 667,
+      "def": 667,
+      "hp": 1656,
+      "rec": 405
+    },
+    "_lord": {
+      "atk": 985,
+      "def": 963,
+      "hp": 2170,
+      "rec": 650
+    },
+    "anima": {
+      "atk": 985,
+      "def": 963,
+      "hp max": 2560,
+      "hp min": 2365,
+      "rec max": 611,
+      "rec min": 533
+    },
+    "breaker": {
+      "atk max": 1102,
+      "atk min": 1024,
+      "def max": 924,
+      "def min": 846,
+      "hp": 2170,
+      "rec": 650
+    },
+    "guardian": {
+      "atk": 985,
+      "def max": 1080,
+      "def min": 1002,
+      "hp": 2170,
+      "rec max": 650,
+      "rec min": 572
+    },
+    "oracle": {
+      "atk": 985,
+      "def max": 963,
+      "def min": 885,
+      "hp": 2170,
+      "rec max": 806,
+      "rec min": 728
+    }
+  },
+  "leader_skill": {
+    "desc": "Small boost in Zel produced during Spark",
+    "effects": [
+      {
+        "passive id": "31",
+        "zel drop% for spark": 50
+      }
+    ],
+    "id": "1600",
+    "name": "Abundant Light"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -299,94 +300,83 @@
     ],
     "name": "Bind Fork"
   },
-  "bbdescription": "5 combo Earth elemental attack on single enemy & probable Paralysis effect",
-  "bbnote": "80% chance",
-  "bbtype": "Offense",
-  "bbhits": "5",
-  "bbaoe": "1",
-  "bbgauge": "12",
-  "bbdc": "15",
-  "bbmultiplier": "280",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "30171",
-  "evointo": "",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 667,
-      "def": 667,
-      "hp": 1656,
-      "rec": 405
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 985,
-      "def": 963,
-      "hp": 2170,
-      "rec": 650
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 985,
-      "def": 963,
-      "hp max": 2560,
-      "hp min": 2365,
-      "rec max": 611,
-      "rec min": 533
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 89
     },
-    "breaker": {
-      "atk max": 1102,
-      "atk min": 1024,
-      "def max": 924,
-      "def min": 846,
-      "hp": 2170,
-      "rec": 650
+    "idle": {
+      "total number of frames": 58
     },
-    "guardian": {
-      "atk": 985,
-      "def max": 1080,
-      "def min": 1002,
-      "hp": 2170,
-      "rec max": 650,
-      "rec min": 572
-    },
-    "oracle": {
-      "atk": 985,
-      "def max": 963,
-      "def min": 885,
-      "hp": 2170,
-      "rec max": 806,
-      "rec min": 728
+    "move": {
+      "total number of frames": 16
     }
   },
-  "leader_skill": {
-    "desc": "Small boost in Zel produced during Spark",
-    "effects": [
-      {
-        "passive id": "31",
-        "zel drop% for spark": 50
-      }
+  "category": 30170,
+  "cost": "5",
+  "damage frames": {
+    "frame times": [
+      53
     ],
-    "id": "1600",
-    "name": "Abundant Light"
+    "hit dmg% distribution": [
+      100
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 1
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "earth",
+  "exp_pattern": 10,
+  "gender": "other",
+  "getting type": "farmable",
+  "guide_id": 274,
+  "imp": {
+    "max atk": "120",
+    "max def": "120",
+    "max hp": "300",
+    "max rec": "120"
+  },
+  "kind": "normal",
+  "lord damage range": "916~1024",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Dwarf Prince",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "Dwarf Prince",
+  "maxlv": "40",
+  "no": "274",
   "unitDisplayHomePosition_1W9CxaFK": "270,162,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "76,102,602,652",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "130,408,303,232,0",
@@ -396,5 +386,84 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "1000",
   "sellCaution": false,
-  "effectFrames": "47:123:1,47:230:1"
+  "effectFrames": "47:123:1,47:230:1",
+  "evofrom": "30171",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "10",
+  "animation_attack": "89",
+  "animation_idle": "58",
+  "animation_move": "16",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "53",
+  "normal_distribute": "100",
+  "normal_totaldistr": "100",
+  "bb_frames": "53, 55, 57, 59, 61",
+  "bb_distribute": "20, 20, 20, 20, 20",
+  "bb_totaldistr": "100",
+  "description": "A member of an elven race which bears the power of the earth. Powerful enough to be known as a \"Prince\" by others, this individual fights wielding a halberd larger than its own body. Even more skillful than other Dwarves, equipment and accessories made by a Dwarf Prince are often traded as high value items. However, they don't really care about price, instead concentrating on making sure the person they sell to is worthy of owning what they've made.",
+  "summon": "I think you'd look good in<br>what I've made here, boss.<br>Alright! Let's fight together!",
+  "fusion": "I'm bursting with power!<br>Not even the young'uns can <br>beat me like this!",
+  "evolution": "Oh, how the power flows...<br>Surely now I can swing an<br>even larger axe!",
+  "hp_base": "1656",
+  "atk_base": "667",
+  "def_base": "667",
+  "rec_base": "405",
+  "hp_lord": "2170",
+  "atk_lord": "985",
+  "def_lord": "963",
+  "rec_lord": "650",
+  "hp_anima": "2463",
+  "rec_anima": "572",
+  "atk_breaker": "1063",
+  "def_breaker": "885",
+  "atk_guardian": "907",
+  "def_guardian": "1041",
+  "rec_guardian": "611",
+  "def_oracle": "924",
+  "hp_oracle": "2053",
+  "rec_oracle": "767",
+  "hp_bonus": "300",
+  "atk_bonus": "120",
+  "def_bonus": "120",
+  "rec_bonus": "120",
+  "lordonly": "",
+  "combo_hits": "1",
+  "normaldc": "2",
+  "ls": "Abundant Light",
+  "lsdescription": "Small boost in Zel produced during Spark",
+  "lsnote": "50% boost",
+  "lstype": "Zel",
+  "bbdescription": "5 combo Earth elemental attack on single enemy & probable Paralysis effect",
+  "bbnote": "80% chance",
+  "bbtype": "Offense",
+  "bbhits": "5",
+  "bbaoe": "1",
+  "bbgauge": "12",
+  "bbdc": "15",
+  "bbmultiplier": "280",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "",
+  "evomats2": "",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": ""
 }

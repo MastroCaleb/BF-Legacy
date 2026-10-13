@@ -1,62 +1,64 @@
 {
   "id": "30354",
-  "unitName": "Steel Shield Darvan",
-  "no": "537",
-  "element": "Earth",
-  "rarity": "★★★★★",
-  "cost": "16",
-  "maxlv": "80",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "3",
-  "animation_attack": "128",
-  "animation_idle": "126",
-  "animation_move": "136",
-  "movespeed_attack": "0.005",
-  "movespeed_skill": "0.005",
-  "speedtype_attack": "1",
-  "speedtype_skill": "1",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "45, 55, 82, 88, 94",
-  "normal_distribute": "25, 15, 30, 20, 10",
-  "normal_totaldistr": "100",
-  "bb_frames": "39, 49, 59, 79, 87, 95, 103, 111",
-  "bb_distribute": "15, 10, 10, 25, 10, 10, 10, 10",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "description": "A mild-mannered general of the Principality of Vriksha, whose bolstered defenses, combined with Douglas' pulverizing attacks, drove the gods away time after time. The night before Douglas left to intercept the army of gods by himself, he confessed to Darvan that his armor was from another world. He also informed him that though Darvan could unleash his armor's full potential, controlling it would be a different ordeal altogether.",
-  "summon": "No enemy army is too big.<br>I won't run away.<br>So neither should you.",
-  "fusion": "Ideas and principles...<br>they were meaningless in that war.<br>I know that now.",
-  "evolution": "My armor's potential has been unleashed.<br>Can you handle it?<br>I should ask myself that too.",
-  "hp_base": "3628",
-  "atk_base": "1147",
-  "def_base": "1144",
-  "rec_base": "995",
-  "hp_lord": "5243",
-  "atk_lord": "1522",
-  "def_lord": "1522",
-  "rec_lord": "1341",
-  "hp_anima": "5836",
-  "rec_anima": "1183",
-  "atk_breaker": "1680",
-  "def_breaker": "1364",
-  "atk_guardian": "1364",
-  "def_guardian": "1680",
-  "rec_guardian": "1262",
-  "def_oracle": "1443",
-  "hp_oracle": "5006",
-  "rec_oracle": "1578",
-  "hp_bonus": "500",
-  "atk_bonus": "160",
-  "def_bonus": "160",
-  "rec_bonus": "280",
-  "lordonly": "",
-  "combo_hits": "5",
-  "normaldc": "15",
-  "ls": "Five Light's Force",
-  "lsdescription": "50% boost to Atk power of all Units when 5 elements or more are present",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 1147,
+      "def": 1144,
+      "hp": 3628,
+      "rec": 995
+    },
+    "_lord": {
+      "atk": 1522,
+      "def": 1522,
+      "hp": 5243,
+      "rec": 1341
+    },
+    "anima": {
+      "atk": 1522,
+      "def": 1522,
+      "hp max": 6033,
+      "hp min": 5638,
+      "rec max": 1262,
+      "rec min": 1104
+    },
+    "breaker": {
+      "atk max": 1759,
+      "atk min": 1601,
+      "def max": 1443,
+      "def min": 1285,
+      "hp": 5243,
+      "rec": 1341
+    },
+    "guardian": {
+      "atk": 1522,
+      "def max": 1759,
+      "def min": 1601,
+      "hp": 5243,
+      "rec max": 1341,
+      "rec min": 1183
+    },
+    "oracle": {
+      "atk": 1522,
+      "def max": 1522,
+      "def min": 1364,
+      "hp": 5243,
+      "rec max": 1657,
+      "rec min": 1499
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to Atk power of all Units when 5 elements or more are present",
+    "effects": [
+      {
+        "atk% buff": 50,
+        "passive id": "41",
+        "unique elements required": 5
+      }
+    ],
+    "id": "2201",
+    "name": "Five Light's Force"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -335,94 +337,97 @@
     ],
     "name": "Crack Hail"
   },
-  "bbdescription": "8 combo Earth elemental attack on all enemies & Water element added to attack for 3 turns",
-  "bbtype": "Support/Offense",
-  "bbhits": "8",
-  "bbaoe": "A",
-  "bbgauge": "25",
-  "bbdc": "8",
-  "bbmultiplier": "190",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "30353",
-  "evointo": "30355",
-  "evomats1": "50354",
-  "evomats2": "30133",
-  "evomats3": "30191",
-  "evomats4": "30191",
-  "evomats5": "60224",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 1147,
-      "def": 1144,
-      "hp": 3628,
-      "rec": 995
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1522,
-      "def": 1522,
-      "hp": 5243,
-      "rec": 1341
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1522,
-      "def": 1522,
-      "hp max": 6033,
-      "hp min": 5638,
-      "rec max": 1262,
-      "rec min": 1104
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 1759,
-      "atk min": 1601,
-      "def max": 1443,
-      "def min": 1285,
-      "hp": 5243,
-      "rec": 1341
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 128
     },
-    "guardian": {
-      "atk": 1522,
-      "def max": 1759,
-      "def min": 1601,
-      "hp": 5243,
-      "rec max": 1341,
-      "rec min": 1183
+    "idle": {
+      "total number of frames": 126
     },
-    "oracle": {
-      "atk": 1522,
-      "def max": 1522,
-      "def min": 1364,
-      "hp": 5243,
-      "rec max": 1657,
-      "rec min": 1499
+    "move": {
+      "total number of frames": 136
     }
   },
-  "leader_skill": {
-    "desc": "50% boost to Atk power of all Units when 5 elements or more are present",
-    "effects": [
-      {
-        "atk% buff": 50,
-        "passive id": "41",
-        "unique elements required": 5
-      }
+  "category": 30350,
+  "cost": "16",
+  "damage frames": {
+    "frame times": [
+      45,
+      55,
+      82,
+      88,
+      94
     ],
-    "id": "2201",
-    "name": "Five Light's Force"
+    "hit dmg% distribution": [
+      25,
+      15,
+      30,
+      20,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 5
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "earth",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 537,
+  "imp": {
+    "max atk": "160",
+    "max def": "160",
+    "max hp": "500",
+    "max rec": "280"
+  },
+  "kind": "normal",
+  "lord damage range": "1416~1582",
+  "movement": {
+    "attack": {
+      "move speed": 0.005,
+      "move speed type": "1",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.005,
+      "move speed type": "1",
+      "move type": "1"
+    }
+  },
+  "name": "Steel Shield Darvan",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Steel Shield Darvan",
+  "maxlv": "80",
+  "no": "537",
   "unitDisplayHomePosition_1W9CxaFK": "544,406,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-173,-156,1100,956",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "129,353,394,260,0",
@@ -432,5 +437,104 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "45:500133:1,39:123:1,49:123:1,55:230:1,76:500133:1,76:123:1,82:123:1,88:123:1,88:300261:1,82:230:1,82:300120:1"
+  "effectFrames": "45:500133:1,39:123:1,49:123:1,55:230:1,76:500133:1,76:123:1,82:123:1,88:123:1,88:300261:1,82:230:1,82:300120:1",
+  "evofrom": "30353",
+  "evointo": "30355",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30191",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "128",
+  "animation_idle": "126",
+  "animation_move": "136",
+  "movespeed_attack": "0.005",
+  "movespeed_skill": "0.005",
+  "speedtype_attack": "1",
+  "speedtype_skill": "1",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "45, 55, 82, 88, 94",
+  "normal_distribute": "25, 15, 30, 20, 10",
+  "normal_totaldistr": "100",
+  "bb_frames": "39, 49, 59, 79, 87, 95, 103, 111",
+  "bb_distribute": "15, 10, 10, 25, 10, 10, 10, 10",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "description": "A mild-mannered general of the Principality of Vriksha, whose bolstered defenses, combined with Douglas' pulverizing attacks, drove the gods away time after time. The night before Douglas left to intercept the army of gods by himself, he confessed to Darvan that his armor was from another world. He also informed him that though Darvan could unleash his armor's full potential, controlling it would be a different ordeal altogether.",
+  "summon": "No enemy army is too big.<br>I won't run away.<br>So neither should you.",
+  "fusion": "Ideas and principles...<br>they were meaningless in that war.<br>I know that now.",
+  "evolution": "My armor's potential has been unleashed.<br>Can you handle it?<br>I should ask myself that too.",
+  "hp_base": "3628",
+  "atk_base": "1147",
+  "def_base": "1144",
+  "rec_base": "995",
+  "hp_lord": "5243",
+  "atk_lord": "1522",
+  "def_lord": "1522",
+  "rec_lord": "1341",
+  "hp_anima": "5836",
+  "rec_anima": "1183",
+  "atk_breaker": "1680",
+  "def_breaker": "1364",
+  "atk_guardian": "1364",
+  "def_guardian": "1680",
+  "rec_guardian": "1262",
+  "def_oracle": "1443",
+  "hp_oracle": "5006",
+  "rec_oracle": "1578",
+  "hp_bonus": "500",
+  "atk_bonus": "160",
+  "def_bonus": "160",
+  "rec_bonus": "280",
+  "lordonly": "",
+  "combo_hits": "5",
+  "normaldc": "15",
+  "ls": "Five Light's Force",
+  "lsdescription": "50% boost to Atk power of all Units when 5 elements or more are present",
+  "lstype": "Attack",
+  "bbdescription": "8 combo Earth elemental attack on all enemies & Water element added to attack for 3 turns",
+  "bbtype": "Support/Offense",
+  "bbhits": "8",
+  "bbaoe": "A",
+  "bbgauge": "25",
+  "bbdc": "8",
+  "bbmultiplier": "190",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "30133",
+  "evomats3": "30191",
+  "evomats4": "30191",
+  "evomats5": "60224"
 }

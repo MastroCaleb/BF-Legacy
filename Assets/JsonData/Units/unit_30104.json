@@ -1,61 +1,63 @@
 {
   "id": "30104",
-  "unitName": "Empress Lidith",
-  "no": "328",
-  "element": "Earth",
-  "rarity": "★★★★★",
-  "cost": "13",
-  "maxlv": "80",
-  "basexp": "15",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "98",
-  "animation_idle": "80",
-  "animation_move": "24",
-  "movespeed_attack": "0.0041",
-  "movespeed_skill": "0.0041",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "31, 37, 40, 43, 46, 49, 52, 55, 58",
-  "normal_distribute": "60, 5, 5, 5, 5, 5, 5, 5, 5",
-  "normal_totaldistr": "100",
-  "bb_frames": "31, 37, 40, 43, 46, 49, 52, 55, 60, 65",
-  "bb_distribute": "10, 10, 10, 10, 7, 7, 6, 20, 10, 10",
-  "bb_totaldistr": "100",
-  "description": "A princess from the ruined Vriksha Duchy, she was also a prominent warrior in her home country. Through her actions there was a moment of peace, but soon the duchy began to collapse under the enemy's overwhelming force. Then, just as she was about to sacrifice herself for her people, a miracle happened. An entity entered her body, granting her even more strength than before. However, what the people didn't know was that she exchanged her life for this power.",
-  "summon": "Summoner, I would like...<br>No, never mind...<br>Alright, let's be on our way!",
-  "fusion": "I must get stronger...<br>Even if it means my body is<br>destroyed in the process...",
-  "evolution": "This form...<br>It seems I have evolved.<br>Could this be a mistake?",
-  "hp_base": "3226",
-  "atk_base": "1061",
-  "def_base": "760",
-  "rec_base": "1282",
-  "hp_lord": "4645",
-  "atk_lord": "1553",
-  "def_lord": "1067",
-  "rec_lord": "1696",
-  "hp_anima": "5238",
-  "rec_anima": "1538",
-  "atk_breaker": "1711",
-  "def_breaker": "909",
-  "atk_guardian": "1395",
-  "def_guardian": "1225",
-  "rec_guardian": "1617",
-  "def_oracle": "988",
-  "hp_oracle": "4408",
-  "rec_oracle": "1933",
-  "hp_bonus": "500",
-  "atk_bonus": "200",
-  "def_bonus": "200",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "9",
-  "normaldc": "18",
-  "ls": "Dynasty Power",
-  "lsdescription": "20% boost to Atk Power of all types",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 1061,
+      "def": 760,
+      "hp": 3226,
+      "rec": 1282
+    },
+    "_lord": {
+      "atk": 1553,
+      "def": 1067,
+      "hp": 4645,
+      "rec": 1696
+    },
+    "anima": {
+      "atk": 1553,
+      "def": 1067,
+      "hp max": 5435,
+      "hp min": 5040,
+      "rec max": 1617,
+      "rec min": 1459
+    },
+    "breaker": {
+      "atk max": 1790,
+      "atk min": 1632,
+      "def max": 988,
+      "def min": 830,
+      "hp": 4645,
+      "rec": 1696
+    },
+    "guardian": {
+      "atk": 1553,
+      "def max": 1304,
+      "def min": 1146,
+      "hp": 4645,
+      "rec max": 1696,
+      "rec min": 1538
+    },
+    "oracle": {
+      "atk": 1553,
+      "def max": 1067,
+      "def min": 909,
+      "hp": 4645,
+      "rec max": 2012,
+      "rec min": 1854
+    }
+  },
+  "leader_skill": {
+    "desc": "20% boost to Atk",
+    "effects": [
+      {
+        "atk% buff": 20,
+        "passive id": "1"
+      }
+    ],
+    "id": "1902",
+    "name": "Dynasty Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -226,94 +228,99 @@
     ],
     "name": "Royal Chop"
   },
-  "bbdescription": "10 combo powerful Earth attack on single enemy & boost to HC drop rate",
-  "bbnote": "100% boost to self only",
-  "bbtype": "Offense",
-  "bbhits": "10",
-  "bbaoe": "1",
-  "bbgauge": "15",
-  "bbdc": "20",
-  "bbmultiplier": "350",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "30103",
-  "evointo": "30105",
-  "evomats1": "50354",
-  "evomats2": "30133",
-  "evomats3": "30191",
-  "evomats4": "30132",
-  "evomats5": "60224",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 1061,
-      "def": 760,
-      "hp": 3226,
-      "rec": 1282
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1553,
-      "def": 1067,
-      "hp": 4645,
-      "rec": 1696
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1553,
-      "def": 1067,
-      "hp max": 5435,
-      "hp min": 5040,
-      "rec max": 1617,
-      "rec min": 1459
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 98
     },
-    "breaker": {
-      "atk max": 1790,
-      "atk min": 1632,
-      "def max": 988,
-      "def min": 830,
-      "hp": 4645,
-      "rec": 1696
+    "idle": {
+      "total number of frames": 80
     },
-    "guardian": {
-      "atk": 1553,
-      "def max": 1304,
-      "def min": 1146,
-      "hp": 4645,
-      "rec max": 1696,
-      "rec min": 1538
-    },
-    "oracle": {
-      "atk": 1553,
-      "def max": 1067,
-      "def min": 909,
-      "hp": 4645,
-      "rec max": 2012,
-      "rec min": 1854
+    "move": {
+      "total number of frames": 24
     }
   },
-  "leader_skill": {
-    "desc": "20% boost to Atk",
-    "effects": [
-      {
-        "atk% buff": 20,
-        "passive id": "1"
-      }
+  "category": 30100,
+  "cost": "13",
+  "damage frames": {
+    "frame times": [
+      31,
+      37,
+      40,
+      43,
+      46,
+      49,
+      52,
+      55,
+      58
     ],
-    "id": "1902",
-    "name": "Dynasty Power"
+    "hit dmg% distribution": [
+      60,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 9
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "earth",
+  "exp_pattern": 15,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 328,
+  "imp": {
+    "max atk": "200",
+    "max def": "200",
+    "max hp": "500",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "1445~1615",
+  "movement": {
+    "attack": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    }
+  },
+  "name": "Empress Lidith",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Empress Lidith",
+  "maxlv": "80",
+  "no": "328",
   "unitDisplayHomePosition_1W9CxaFK": "294,16,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "59,131,935,615",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "175,319,235,292,0",
@@ -323,5 +330,109 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "25:123:1,25:240:1,31:123:1,34:123:1,37:123:1,40:123:1,43:123:1,46:123:1,49:123:1,52:123:1"
+  "effectFrames": "25:123:1,25:240:1,31:123:1,34:123:1,37:123:1,40:123:1,43:123:1,46:123:1,49:123:1,52:123:1",
+  "evofrom": "30103",
+  "evointo": "30105",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    }
+  ],
+  "basexp": "15",
+  "animation_attack": "98",
+  "animation_idle": "80",
+  "animation_move": "24",
+  "movespeed_attack": "0.0041",
+  "movespeed_skill": "0.0041",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "31, 37, 40, 43, 46, 49, 52, 55, 58",
+  "normal_distribute": "60, 5, 5, 5, 5, 5, 5, 5, 5",
+  "normal_totaldistr": "100",
+  "bb_frames": "31, 37, 40, 43, 46, 49, 52, 55, 60, 65",
+  "bb_distribute": "10, 10, 10, 10, 7, 7, 6, 20, 10, 10",
+  "bb_totaldistr": "100",
+  "description": "A princess from the ruined Vriksha Duchy, she was also a prominent warrior in her home country. Through her actions there was a moment of peace, but soon the duchy began to collapse under the enemy's overwhelming force. Then, just as she was about to sacrifice herself for her people, a miracle happened. An entity entered her body, granting her even more strength than before. However, what the people didn't know was that she exchanged her life for this power.",
+  "summon": "Summoner, I would like...<br>No, never mind...<br>Alright, let's be on our way!",
+  "fusion": "I must get stronger...<br>Even if it means my body is<br>destroyed in the process...",
+  "evolution": "This form...<br>It seems I have evolved.<br>Could this be a mistake?",
+  "hp_base": "3226",
+  "atk_base": "1061",
+  "def_base": "760",
+  "rec_base": "1282",
+  "hp_lord": "4645",
+  "atk_lord": "1553",
+  "def_lord": "1067",
+  "rec_lord": "1696",
+  "hp_anima": "5238",
+  "rec_anima": "1538",
+  "atk_breaker": "1711",
+  "def_breaker": "909",
+  "atk_guardian": "1395",
+  "def_guardian": "1225",
+  "rec_guardian": "1617",
+  "def_oracle": "988",
+  "hp_oracle": "4408",
+  "rec_oracle": "1933",
+  "hp_bonus": "500",
+  "atk_bonus": "200",
+  "def_bonus": "200",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "9",
+  "normaldc": "18",
+  "ls": "Dynasty Power",
+  "lsdescription": "20% boost to Atk Power of all types",
+  "lstype": "Attack",
+  "bbdescription": "10 combo powerful Earth attack on single enemy & boost to HC drop rate",
+  "bbnote": "100% boost to self only",
+  "bbtype": "Offense",
+  "bbhits": "10",
+  "bbaoe": "1",
+  "bbgauge": "15",
+  "bbdc": "20",
+  "bbmultiplier": "350",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "30133",
+  "evomats3": "30191",
+  "evomats4": "30132",
+  "evomats5": "60224"
 }

@@ -1,61 +1,63 @@
 {
   "id": "20104",
-  "unitName": "Ice Knight Sergio",
-  "no": "327",
-  "element": "Water",
-  "rarity": "★★★★★",
-  "cost": "13",
-  "maxlv": "80",
-  "basexp": "15",
-  "gender": "M",
-  "ai": "3",
-  "animation_attack": "84",
-  "animation_idle": "42",
-  "animation_move": "21",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "24, 28, 40, 44, 47, 50, 53",
-  "normal_distribute": "25, 10, 25, 10, 10, 10, 10",
-  "normal_totaldistr": "100",
-  "bb_frames": "24, 28, 40, 44, 73, 78, 83, 88",
-  "bb_distribute": "20, 10, 20, 10, 10, 10, 10, 10",
-  "bb_totaldistr": "100",
-  "description": "A knight from the ruined Sama Kingdom. Injured in the fight against the gods, he collapsed and was prepared to die. But as the final strike came, his troops rushed forward to protect him. Though he refused to befriend them, many of them admired his indifference. Watching them, Sergio found the strength to swing his sword of ice to protect the people.",
-  "summon": "What kind of strength can you give me?<br>Will that be worth a swing of my sword?",
-  "fusion": "To be strengthened by one whom I thought of as a burden…<br>Such irony.",
-  "evolution": "Strength comes from solitude.<br>Why then did I fail to find power<br>in my isolation?<br>",
-  "hp_base": "3689",
-  "atk_base": "986",
-  "def_base": "957",
-  "rec_base": "961",
-  "hp_lord": "5050",
-  "atk_lord": "1424",
-  "def_lord": "1307",
-  "rec_lord": "1376",
-  "hp_anima": "5643",
-  "rec_anima": "1218",
-  "atk_breaker": "1582",
-  "def_breaker": "1149",
-  "atk_guardian": "1266",
-  "def_guardian": "1465",
-  "rec_guardian": "1297",
-  "def_oracle": "1228",
-  "hp_oracle": "4813",
-  "rec_oracle": "1613",
-  "hp_bonus": "500",
-  "atk_bonus": "200",
-  "def_bonus": "200",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "7",
-  "normaldc": "21",
-  "ls": "Dynasty Power",
-  "lsdescription": "20% boost to Atk Power of all types",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 986,
+      "def": 957,
+      "hp": 3689,
+      "rec": 961
+    },
+    "_lord": {
+      "atk": 1424,
+      "def": 1307,
+      "hp": 5050,
+      "rec": 1376
+    },
+    "anima": {
+      "atk": 1424,
+      "def": 1307,
+      "hp max": 5840,
+      "hp min": 5445,
+      "rec max": 1297,
+      "rec min": 1139
+    },
+    "breaker": {
+      "atk max": 1661,
+      "atk min": 1503,
+      "def max": 1228,
+      "def min": 1070,
+      "hp": 5050,
+      "rec": 1376
+    },
+    "guardian": {
+      "atk": 1424,
+      "def max": 1544,
+      "def min": 1386,
+      "hp": 5050,
+      "rec max": 1376,
+      "rec min": 1218
+    },
+    "oracle": {
+      "atk": 1424,
+      "def max": 1307,
+      "def min": 1149,
+      "hp": 5050,
+      "rec max": 1692,
+      "rec min": 1534
+    }
+  },
+  "leader_skill": {
+    "desc": "20% boost to Atk",
+    "effects": [
+      {
+        "atk% buff": 20,
+        "passive id": "1"
+      }
+    ],
+    "id": "1902",
+    "name": "Dynasty Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -294,95 +296,101 @@
     ],
     "name": "Glacier Crush"
   },
-  "bbdescription": "8 combo powerful Water attack on single enemy & probable Weakness effect",
-  "bbnote": "80% chance",
-  "bbtype": "Offense",
-  "bbhits": "8",
-  "bbaoe": "1",
-  "bbgauge": "13",
-  "bbdc": "8",
-  "bbmultiplier": "350",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "20103",
-  "evointo": "20105",
-  "evomats1": "50354",
-  "evomats2": "20133",
-  "evomats3": "20191",
-  "evomats4": "20132",
-  "evomats5": "60224",
-  "evoitem": "",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 986,
-      "def": 957,
-      "hp": 3689,
-      "rec": 961
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1424,
-      "def": 1307,
-      "hp": 5050,
-      "rec": 1376
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1424,
-      "def": 1307,
-      "hp max": 5840,
-      "hp min": 5445,
-      "rec max": 1297,
-      "rec min": 1139
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 1661,
-      "atk min": 1503,
-      "def max": 1228,
-      "def min": 1070,
-      "hp": 5050,
-      "rec": 1376
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 84
     },
-    "guardian": {
-      "atk": 1424,
-      "def max": 1544,
-      "def min": 1386,
-      "hp": 5050,
-      "rec max": 1376,
-      "rec min": 1218
+    "idle": {
+      "total number of frames": 42
     },
-    "oracle": {
-      "atk": 1424,
-      "def max": 1307,
-      "def min": 1149,
-      "hp": 5050,
-      "rec max": 1692,
-      "rec min": 1534
+    "move": {
+      "total number of frames": 21
     }
   },
-  "leader_skill": {
-    "desc": "20% boost to Atk",
-    "effects": [
-      {
-        "atk% buff": 20,
-        "passive id": "1"
-      }
+  "category": 20100,
+  "cost": "13",
+  "damage frames": {
+    "frame times": [
+      24,
+      28,
+      40,
+      44,
+      47,
+      50,
+      53
     ],
-    "id": "1902",
-    "name": "Dynasty Power"
+    "hit dmg% distribution": [
+      25,
+      10,
+      25,
+      10,
+      10,
+      10,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 7
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "water",
+  "exp_pattern": 15,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 327,
+  "imp": {
+    "max atk": "200",
+    "max def": "200",
+    "max hp": "500",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "1325~1480",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Ice Knight Sergio",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Ice Knight Sergio",
+  "maxlv": "80",
+  "no": "327",
   "unitDisplayHomePosition_1W9CxaFK": "572,63,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-315,30,1226,750",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "214,352,244,267,0",
@@ -392,5 +400,110 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "18:122:1,18:660:1,22:122:1,34:122:1,34:660:1,38:122:1,33:190:1,36:190:1,40:190:1,44:190:1"
+  "effectFrames": "18:122:1,18:660:1,22:122:1,34:122:1,34:660:1,38:122:1,33:190:1,36:190:1,40:190:1,44:190:1",
+  "evofrom": "20103",
+  "evointo": "20105",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    }
+  ],
+  "basexp": "15",
+  "animation_attack": "84",
+  "animation_idle": "42",
+  "animation_move": "21",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "24, 28, 40, 44, 47, 50, 53",
+  "normal_distribute": "25, 10, 25, 10, 10, 10, 10",
+  "normal_totaldistr": "100",
+  "bb_frames": "24, 28, 40, 44, 73, 78, 83, 88",
+  "bb_distribute": "20, 10, 20, 10, 10, 10, 10, 10",
+  "bb_totaldistr": "100",
+  "description": "A knight from the ruined Sama Kingdom. Injured in the fight against the gods, he collapsed and was prepared to die. But as the final strike came, his troops rushed forward to protect him. Though he refused to befriend them, many of them admired his indifference. Watching them, Sergio found the strength to swing his sword of ice to protect the people.",
+  "summon": "What kind of strength can you give me?<br>Will that be worth a swing of my sword?",
+  "fusion": "To be strengthened by one whom I thought of as a burden…<br>Such irony.",
+  "evolution": "Strength comes from solitude.<br>Why then did I fail to find power<br>in my isolation?<br>",
+  "hp_base": "3689",
+  "atk_base": "986",
+  "def_base": "957",
+  "rec_base": "961",
+  "hp_lord": "5050",
+  "atk_lord": "1424",
+  "def_lord": "1307",
+  "rec_lord": "1376",
+  "hp_anima": "5643",
+  "rec_anima": "1218",
+  "atk_breaker": "1582",
+  "def_breaker": "1149",
+  "atk_guardian": "1266",
+  "def_guardian": "1465",
+  "rec_guardian": "1297",
+  "def_oracle": "1228",
+  "hp_oracle": "4813",
+  "rec_oracle": "1613",
+  "hp_bonus": "500",
+  "atk_bonus": "200",
+  "def_bonus": "200",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "7",
+  "normaldc": "21",
+  "ls": "Dynasty Power",
+  "lsdescription": "20% boost to Atk Power of all types",
+  "lstype": "Attack",
+  "bbdescription": "8 combo powerful Water attack on single enemy & probable Weakness effect",
+  "bbnote": "80% chance",
+  "bbtype": "Offense",
+  "bbhits": "8",
+  "bbaoe": "1",
+  "bbgauge": "13",
+  "bbdc": "8",
+  "bbmultiplier": "350",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "20133",
+  "evomats3": "20191",
+  "evomats4": "20132",
+  "evomats5": "60224",
+  "evoitem": ""
 }

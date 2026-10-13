@@ -1,61 +1,65 @@
 {
   "id": "40223",
-  "unitName": "Slicing Bolt Raiden",
-  "no": "586",
-  "element": "Thunder",
-  "rarity": "★★★★",
-  "cost": "10",
-  "maxlv": "60",
-  "basexp": "15",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "100",
-  "animation_idle": "64",
-  "animation_move": "11",
-  "movespeed_attack": "0.0041",
-  "movespeed_skill": "0.0041",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "22, 38, 54, 76, 82",
-  "normal_distribute": "15, 15, 15, 20, 35",
-  "normal_totaldistr": "100",
-  "bb_frames": "22, 26, 38, 42, 54, 58, 76, 81, 86",
-  "bb_distribute": "10, 10, 10, 10, 10, 10, 14, 13, 13",
-  "bb_totaldistr": "100",
-  "description": "The powerful chief of a bandit clan in the Atharva Republic. Captured by Falma and Grafl, he was initially sentenced to life in prison until the war against the gods broke out. He was given the chance to fight in the civilian army in order to earn back his freedom. Apparently, having enjoyed fighting the gods so much, there are no accounts which state that he committed any crimes during this time. However, having chosen Eze as his rival, it is said that he unsuccessfully tried to take the Thunder Sword Batootha from him on numerous occasions.",
-  "summon": "Gahahaha! <br>Supreme leader of the slicing thunder, Raiden has arrived!<br> Hey, act a bit more scared!",
-  "fusion": "You're doing that again<br>to make me work hard for you? <br> Not interested!",
-  "evolution": "What do you think?<br> Cool mask, right?<br>I wanna see you guys cower right now!",
-  "hp_base": "3044",
-  "atk_base": "882",
-  "def_base": "933",
-  "rec_base": "590",
-  "hp_lord": "4566",
-  "atk_lord": "1191",
-  "def_lord": "1259",
-  "rec_lord": "796",
-  "hp_anima": "5009",
-  "rec_anima": "678",
-  "atk_breaker": "1309",
-  "def_breaker": "1141",
-  "atk_guardian": "1073",
-  "def_guardian": "1377",
-  "rec_guardian": "737",
-  "def_oracle": "1200",
-  "hp_oracle": "4389",
-  "rec_oracle": "973",
-  "hp_bonus": "400",
-  "atk_bonus": "160",
-  "def_bonus": "160",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "5",
-  "normaldc": "10",
-  "ls": "Divine Five Brights Cure",
-  "lsdescription": "30% boost to HP & Rec of all Units when 5 elements or more are present",
-  "lstype": "Hit Points/Recovery",
+  "stats": {
+    "_base": {
+      "atk": 882,
+      "def": 933,
+      "hp": 3044,
+      "rec": 590
+    },
+    "_lord": {
+      "atk": 1191,
+      "def": 1259,
+      "hp": 4566,
+      "rec": 796
+    },
+    "anima": {
+      "atk": 1191,
+      "def": 1259,
+      "hp max": 5156,
+      "hp min": 4861,
+      "rec max": 737,
+      "rec min": 619
+    },
+    "breaker": {
+      "atk max": 1368,
+      "atk min": 1250,
+      "def max": 1200,
+      "def min": 1082,
+      "hp": 4566,
+      "rec": 796
+    },
+    "guardian": {
+      "atk": 1191,
+      "def max": 1436,
+      "def min": 1318,
+      "hp": 4566,
+      "rec max": 796,
+      "rec min": 678
+    },
+    "oracle": {
+      "atk": 1191,
+      "def max": 1259,
+      "def min": 1141,
+      "hp": 4566,
+      "rec max": 1032,
+      "rec min": 914
+    }
+  },
+  "leader_skill": {
+    "desc": "30% boost to HP & Rec of all Units when 5 elements or more are present",
+    "effects": [
+      {
+        "hp% buff": 30,
+        "passive id": "41",
+        "rec% buff": 30,
+        "unique elements required": 5
+      }
+    ],
+    "id": "2211",
+    "name": "Divine Five Brights Cure"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -306,96 +310,91 @@
     ],
     "name": "Death by Thunder"
   },
-  "bbdescription": "9 combo Thunder elemental attack on all enemies & probable Injury and Weakness effect",
-  "bbnote": "45% chance to inflict",
-  "bbtype": "Offense",
-  "bbhits": "9",
-  "bbaoe": "A",
-  "bbgauge": "20",
-  "bbdc": "9",
-  "bbmultiplier": "135",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "40222",
-  "evointo": "",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 882,
-      "def": 933,
-      "hp": 3044,
-      "rec": 590
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1191,
-      "def": 1259,
-      "hp": 4566,
-      "rec": 796
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1191,
-      "def": 1259,
-      "hp max": 5156,
-      "hp min": 4861,
-      "rec max": 737,
-      "rec min": 619
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 100
     },
-    "breaker": {
-      "atk max": 1368,
-      "atk min": 1250,
-      "def max": 1200,
-      "def min": 1082,
-      "hp": 4566,
-      "rec": 796
+    "idle": {
+      "total number of frames": 64
     },
-    "guardian": {
-      "atk": 1191,
-      "def max": 1436,
-      "def min": 1318,
-      "hp": 4566,
-      "rec max": 796,
-      "rec min": 678
-    },
-    "oracle": {
-      "atk": 1191,
-      "def max": 1259,
-      "def min": 1141,
-      "hp": 4566,
-      "rec max": 1032,
-      "rec min": 914
+    "move": {
+      "total number of frames": 11
     }
   },
-  "leader_skill": {
-    "desc": "30% boost to HP & Rec of all Units when 5 elements or more are present",
-    "effects": [
-      {
-        "hp% buff": 30,
-        "passive id": "41",
-        "rec% buff": 30,
-        "unique elements required": 5
-      }
+  "category": 40220,
+  "cost": "10",
+  "damage frames": {
+    "frame times": [
+      22,
+      38,
+      54,
+      76,
+      82
     ],
-    "id": "2211",
-    "name": "Divine Five Brights Cure"
+    "hit dmg% distribution": [
+      15,
+      15,
+      15,
+      20,
+      35
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 5
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "thunder",
+  "exp_pattern": 15,
+  "gender": "male",
+  "getting type": "farmable",
+  "guide_id": 586,
+  "imp": {
+    "max atk": "160",
+    "max def": "160",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "1108~1238",
+  "movement": {
+    "attack": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    }
+  },
+  "name": "Slicing Bolt Raiden",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Slicing Bolt Raiden",
+  "maxlv": "60",
+  "no": "586",
   "unitDisplayHomePosition_1W9CxaFK": "217,-15,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "67,203,705,596",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "160,336,297,293,0",
@@ -405,5 +404,83 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "16:124:1,32:124:1,48:124:1,76:134:1,76:200081:1,82:134:1,82:400061:1"
+  "effectFrames": "16:124:1,32:124:1,48:124:1,76:134:1,76:200081:1,82:134:1,82:400061:1",
+  "evofrom": "40222",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "15",
+  "animation_attack": "100",
+  "animation_idle": "64",
+  "animation_move": "11",
+  "movespeed_attack": "0.0041",
+  "movespeed_skill": "0.0041",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "22, 38, 54, 76, 82",
+  "normal_distribute": "15, 15, 15, 20, 35",
+  "normal_totaldistr": "100",
+  "bb_frames": "22, 26, 38, 42, 54, 58, 76, 81, 86",
+  "bb_distribute": "10, 10, 10, 10, 10, 10, 14, 13, 13",
+  "bb_totaldistr": "100",
+  "description": "The powerful chief of a bandit clan in the Atharva Republic. Captured by Falma and Grafl, he was initially sentenced to life in prison until the war against the gods broke out. He was given the chance to fight in the civilian army in order to earn back his freedom. Apparently, having enjoyed fighting the gods so much, there are no accounts which state that he committed any crimes during this time. However, having chosen Eze as his rival, it is said that he unsuccessfully tried to take the Thunder Sword Batootha from him on numerous occasions.",
+  "summon": "Gahahaha! <br>Supreme leader of the slicing thunder, Raiden has arrived!<br> Hey, act a bit more scared!",
+  "fusion": "You're doing that again<br>to make me work hard for you? <br> Not interested!",
+  "evolution": "What do you think?<br> Cool mask, right?<br>I wanna see you guys cower right now!",
+  "hp_base": "3044",
+  "atk_base": "882",
+  "def_base": "933",
+  "rec_base": "590",
+  "hp_lord": "4566",
+  "atk_lord": "1191",
+  "def_lord": "1259",
+  "rec_lord": "796",
+  "hp_anima": "5009",
+  "rec_anima": "678",
+  "atk_breaker": "1309",
+  "def_breaker": "1141",
+  "atk_guardian": "1073",
+  "def_guardian": "1377",
+  "rec_guardian": "737",
+  "def_oracle": "1200",
+  "hp_oracle": "4389",
+  "rec_oracle": "973",
+  "hp_bonus": "400",
+  "atk_bonus": "160",
+  "def_bonus": "160",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "5",
+  "normaldc": "10",
+  "ls": "Divine Five Brights Cure",
+  "lsdescription": "30% boost to HP & Rec of all Units when 5 elements or more are present",
+  "lstype": "Hit Points/Recovery",
+  "bbdescription": "9 combo Thunder elemental attack on all enemies & probable Injury and Weakness effect",
+  "bbnote": "45% chance to inflict",
+  "bbtype": "Offense",
+  "bbhits": "9",
+  "bbaoe": "A",
+  "bbgauge": "20",
+  "bbdc": "9",
+  "bbmultiplier": "135",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "",
+  "evomats2": "",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": ""
 }

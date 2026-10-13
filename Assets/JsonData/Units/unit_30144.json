@@ -1,52 +1,63 @@
 {
   "id": "30144",
-  "unitName": "Quake Fist Nemia",
-  "no": "437",
-  "element": "Earth",
-  "rarity": "★★★★★",
-  "cost": "15",
-  "maxlv": "80",
-  "basexp": "15",
-  "gender": "F",
-  "ai": "4",
-  "animation_attack": "89",
-  "animation_idle": "40",
-  "animation_move": "7",
-  "movespeed_attack": "0.0024",
-  "movespeed_skill": "0.0024",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "description": "A boxer who studied martial arts at the Toltya Dojo. She entered tournament after tournament looking for her parents, but after so many victories she became somewhat prideful. In addition to the invasion of the gods, she soon saw herself in a crisis. She was then saved by the boy who was once her pupil. Though she now continued her training out of the shame in how prideful she had become, it has also been said that she was strict on herself in part because she'd come to see her former pupil as a grown man.",
-  "summon": "I'm so happy to have<br>this chance to grow.<br>What are you looking at?",
-  "fusion": "Alright, let's go!<br>I'll smash everything with<br>my god-like fists!",
-  "evolution": "I'm stronger, don't you think?<br>But I'm still looking forward.<br>I can't lose another fight!",
-  "hp_base": "3039",
-  "atk_base": "1085",
-  "def_base": "649",
-  "rec_base": "598",
-  "hp_lord": "4854",
-  "atk_lord": "1651",
-  "def_lord": "1052",
-  "rec_lord": "1089",
-  "hp_anima": "5446",
-  "rec_anima": "931",
-  "atk_breaker": "1809",
-  "def_breaker": "894",
-  "atk_guardian": "1493",
-  "def_guardian": "1210",
-  "hp_oracle": "4261",
-  "rec_oracle": "1247",
-  "hp_bonus": "500",
-  "atk_bonus": "160",
-  "def_bonus": "160",
-  "rec_bonus": "280",
-  "lordonly": "",
-  "combo_hits": "6",
-  "ls": "Dynasty Power",
-  "lsdescription": "20% boost to Atk Power of all types",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 1085,
+      "def": 649,
+      "hp": 3039,
+      "rec": 598
+    },
+    "_lord": {
+      "atk": 1651,
+      "def": 1052,
+      "hp": 4854,
+      "rec": 1089
+    },
+    "anima": {
+      "atk": 1651,
+      "def": 1052,
+      "hp max": 5644,
+      "hp min": 5249,
+      "rec max": 1010,
+      "rec min": 852
+    },
+    "breaker": {
+      "atk max": 1888,
+      "atk min": 1730,
+      "def max": 973,
+      "def min": 815,
+      "hp": 4854,
+      "rec": 1089
+    },
+    "guardian": {
+      "atk": 1651,
+      "def max": 1289,
+      "def min": 1131,
+      "hp": 4854,
+      "rec max": 1089,
+      "rec min": 931
+    },
+    "oracle": {
+      "atk": 1651,
+      "def max": 1052,
+      "def min": 894,
+      "hp": 4854,
+      "rec max": 1405,
+      "rec min": 1247
+    }
+  },
+  "leader_skill": {
+    "desc": "20% boost to Atk",
+    "effects": [
+      {
+        "atk% buff": 20,
+        "passive id": "1"
+      }
+    ],
+    "id": "1902",
+    "name": "Dynasty Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -291,91 +302,105 @@
     ],
     "name": "Atira Shake"
   },
-  "bbdescription": "6 combo Earth elemental attack on single enemy & probable Injury and Weakness effect",
-  "bbtype": "Offense",
-  "bbhits": "6",
-  "bbaoe": "1",
-  "bbgauge": "15",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "30143",
-  "evointo": "30145",
-  "evomats1": "50354",
-  "evomats2": "30133",
-  "evomats3": "30191",
-  "evomats4": "60144",
-  "evomats5": "60144",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 1085,
-      "def": 649,
-      "hp": 3039,
-      "rec": 598
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_under",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1651,
-      "def": 1052,
-      "hp": 4854,
-      "rec": 1089
+    {
+      "action": "skill",
+      "chance%": 30.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1651,
-      "def": 1052,
-      "hp max": 5644,
-      "hp min": 5249,
-      "rec max": 1010,
-      "rec min": 852
+    {
+      "action": "attack",
+      "chance%": 70.0,
+      "target conditions": "hp_max",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 1888,
-      "atk min": 1730,
-      "def max": 973,
-      "def min": 815,
-      "hp": 4854,
-      "rec": 1089
+    {
+      "action": "attack",
+      "chance%": 50.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "guardian": {
-      "atk": 1651,
-      "def max": 1289,
-      "def min": 1131,
-      "hp": 4854,
-      "rec max": 1089,
-      "rec min": 931
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 89
     },
-    "oracle": {
-      "atk": 1651,
-      "def max": 1052,
-      "def min": 894,
-      "hp": 4854,
-      "rec max": 1405,
-      "rec min": 1247
+    "idle": {
+      "total number of frames": 40
+    },
+    "move": {
+      "total number of frames": 7
     }
   },
-  "leader_skill": {
-    "desc": "20% boost to Atk",
-    "effects": [
-      {
-        "atk% buff": 20,
-        "passive id": "1"
-      }
+  "category": 30140,
+  "cost": "15",
+  "damage frames": {
+    "frame times": [
+      28,
+      34,
+      64,
+      72,
+      76,
+      80
     ],
-    "id": "1902",
-    "name": "Dynasty Power"
+    "hit dmg% distribution": [
+      10,
+      10,
+      10,
+      30,
+      20,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 6
   },
-  "extra_skill": {},
+  "drop check count": 4,
+  "element": "earth",
+  "exp_pattern": 15,
+  "gender": "female",
+  "getting type": "farmable",
+  "guide_id": 437,
+  "imp": {
+    "max atk": "160",
+    "max def": "160",
+    "max hp": "500",
+    "max rec": "280"
+  },
+  "kind": "normal",
+  "lord damage range": "1536~1717",
+  "movement": {
+    "attack": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    }
+  },
+  "name": "Quake Fist Nemia",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Quake Fist Nemia",
+  "maxlv": "80",
+  "no": "437",
   "unitDisplayHomePosition_1W9CxaFK": "209,66,182,498",
   "unitDisplayDetailPosition_6z54rgb3": "130,136,608,656",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "96,234,495,397,0",
@@ -385,5 +410,104 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "22:133:1,28:133:1,58:133:1,66:133:1,70:133:1,74:133:1,28:300113:1,64:300113:1,76:300113:1,80:300120:1"
+  "effectFrames": "22:133:1,28:133:1,58:133:1,66:133:1,70:133:1,74:133:1,28:300113:1,64:300113:1,76:300113:1,80:300120:1",
+  "evofrom": "30143",
+  "evointo": "30145",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 2
+    }
+  ],
+  "basexp": "15",
+  "animation_attack": "89",
+  "animation_idle": "40",
+  "animation_move": "7",
+  "movespeed_attack": "0.0024",
+  "movespeed_skill": "0.0024",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "28, 34, 64, 72, 76, 80",
+  "normal_distribute": "10, 10, 10, 30, 20, 20",
+  "normal_totaldistr": "100",
+  "bb_frames": "28, 34, 64, 72, 76, 80",
+  "bb_distribute": "10, 10, 10, 30, 20, 20",
+  "bb_totaldistr": "100",
+  "description": "A boxer who studied martial arts at the Toltya Dojo. She entered tournament after tournament looking for her parents, but after so many victories she became somewhat prideful. In addition to the invasion of the gods, she soon saw herself in a crisis. She was then saved by the boy who was once her pupil. Though she now continued her training out of the shame in how prideful she had become, it has also been said that she was strict on herself in part because she'd come to see her former pupil as a grown man.",
+  "summon": "I'm so happy to have<br>this chance to grow.<br>What are you looking at?",
+  "fusion": "Alright, let's go!<br>I'll smash everything with<br>my god-like fists!",
+  "evolution": "I'm stronger, don't you think?<br>But I'm still looking forward.<br>I can't lose another fight!",
+  "hp_base": "3039",
+  "atk_base": "1085",
+  "def_base": "649",
+  "rec_base": "598",
+  "hp_lord": "4854",
+  "atk_lord": "1651",
+  "def_lord": "1052",
+  "rec_lord": "1089",
+  "hp_anima": "5447",
+  "rec_anima": "931",
+  "atk_breaker": "1809",
+  "def_breaker": "894",
+  "atk_guardian": "1493",
+  "def_guardian": "1210",
+  "rec_guardian": "1010",
+  "def_oracle": "973",
+  "hp_oracle": "4617",
+  "rec_oracle": "1326",
+  "hp_bonus": "500",
+  "atk_bonus": "160",
+  "def_bonus": "160",
+  "rec_bonus": "280",
+  "lordonly": "",
+  "combo_hits": "6",
+  "normaldc": "24",
+  "ls": "Dynasty Power",
+  "lsdescription": "20% boost to Atk Power of all types",
+  "lstype": "Attack",
+  "bbdescription": "6 combo Earth elemental attack on single enemy & probable Injury and Weakness effect",
+  "bbnote": "80% chance",
+  "bbtype": "Offense",
+  "bbhits": "6",
+  "bbaoe": "1",
+  "bbgauge": "15",
+  "bbdc": "12",
+  "bbmultiplier": "400",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "30133",
+  "evomats3": "30191",
+  "evomats4": "60144",
+  "evomats5": "60144"
 }

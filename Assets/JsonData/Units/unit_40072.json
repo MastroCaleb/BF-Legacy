@@ -1,62 +1,63 @@
 {
   "id": "40072",
-  "unitName": "Cyclops",
-  "no": "94",
-  "element": "Thunder",
-  "rarity": "★★★",
-  "cost": "5",
-  "maxlv": "40",
-  "basexp": "10",
-  "gender": "N",
-  "ai": "4",
-  "animation_attack": "78",
-  "animation_idle": "44",
-  "animation_move": "11",
-  "movespeed_attack": "0.005",
-  "movespeed_skill": "0.005",
-  "speedtype_attack": "1",
-  "speedtype_skill": "1",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "40, 43, 47",
-  "normal_distribute": "50, 30, 20",
-  "normal_totaldistr": "100",
-  "bb_frames": "40, 43, 47, 50",
-  "bb_distribute": "25, 25, 25, 25",
-  "bb_totaldistr": "100",
-  "description": "An extremely powerful monster from the giant tribe. They are warlike, just like all giants. Above all, they like tough combat with strong opponents. They are more intelligent than they look, and have a unique philosophy that says \"fighting for food is hunting, not combat.\" Thus, they won't plunder, and get food by capturing others and forcing them into slavery.",
-  "summon": "My power of destruction is<br>capable of destroying everything.<br>You think you can control me?",
-  "fusion": "My power is my <br>strength in combat!<br>Now lets fight!",
-  "evolution": "As I get stronger, <br>I become happier.<br>Are you happy?",
-  "hp_base": "2142",
-  "atk_base": "702",
-  "def_base": "354",
-  "rec_base": "171",
-  "hp_lord": "3216",
-  "atk_lord": "979",
-  "def_lord": "655",
-  "rec_lord": "396",
-  "hp_anima": "3509",
-  "rec_anima": "318",
-  "atk_breaker": "1057",
-  "def_breaker": "577",
-  "atk_guardian": "901",
-  "def_guardian": "733",
-  "rec_guardian": "357",
-  "def_oracle": "616",
-  "hp_oracle": "3099",
-  "rec_oracle": "513",
-  "hp_bonus": "300",
-  "atk_bonus": "120",
-  "def_bonus": "120",
-  "rec_bonus": "120",
-  "lordonly": "",
-  "combo_hits": "3",
-  "normaldc": "12",
-  "ls": "Soul Light",
-  "lsdescription": "Small boost in Karma produced during Spark",
-  "lsnote": "30% boost",
-  "lstype": "Karma",
+  "stats": {
+    "_base": {
+      "atk": 702,
+      "def": 354,
+      "hp": 2142,
+      "rec": 171
+    },
+    "_lord": {
+      "atk": 979,
+      "def": 655,
+      "hp": 3216,
+      "rec": 396
+    },
+    "anima": {
+      "atk": 979,
+      "def": 655,
+      "hp max": 3606,
+      "hp min": 3411,
+      "rec max": 357,
+      "rec min": 279
+    },
+    "breaker": {
+      "atk max": 1096,
+      "atk min": 1018,
+      "def max": 616,
+      "def min": 538,
+      "hp": 3216,
+      "rec": 396
+    },
+    "guardian": {
+      "atk": 979,
+      "def max": 772,
+      "def min": 694,
+      "hp": 3216,
+      "rec max": 396,
+      "rec min": 318
+    },
+    "oracle": {
+      "atk": 979,
+      "def max": 655,
+      "def min": 577,
+      "hp": 3216,
+      "rec max": 552,
+      "rec min": 474
+    }
+  },
+  "leader_skill": {
+    "desc": "Small boost in Karma produced during Spark",
+    "effects": [
+      {
+        "karma drop% for spark": 30,
+        "passive id": "31"
+      }
+    ],
+    "id": "1700",
+    "name": "Soul Light"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -297,94 +298,99 @@
     ],
     "name": "Destructive Attack"
   },
-  "bbdescription": "4 combo Thunder elemental attack on single Enemy & probable Injury effect",
-  "bbnote": "80% chance",
-  "bbtype": "Offense",
-  "bbhits": "4",
-  "bbaoe": "1",
-  "bbgauge": "15",
-  "bbdc": "12",
-  "bbmultiplier": "230",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "40071",
-  "evointo": "40073",
-  "evomats1": "40131",
-  "evomats2": "40131",
-  "evomats3": "60142",
-  "evomats4": "60143",
-  "evomats5": "",
-  "evozelcost": "100000",
-  "stats": {
-    "_base": {
-      "atk": 702,
-      "def": 354,
-      "hp": 2142,
-      "rec": 171
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_under",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 979,
-      "def": 655,
-      "hp": 3216,
-      "rec": 396
+    {
+      "action": "skill",
+      "chance%": 30.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 979,
-      "def": 655,
-      "hp max": 3606,
-      "hp min": 3411,
-      "rec max": 357,
-      "rec min": 279
+    {
+      "action": "attack",
+      "chance%": 70.0,
+      "target conditions": "hp_max",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 1096,
-      "atk min": 1018,
-      "def max": 616,
-      "def min": 538,
-      "hp": 3216,
-      "rec": 396
+    {
+      "action": "attack",
+      "chance%": 50.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "guardian": {
-      "atk": 979,
-      "def max": 772,
-      "def min": 694,
-      "hp": 3216,
-      "rec max": 396,
-      "rec min": 318
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 78
     },
-    "oracle": {
-      "atk": 979,
-      "def max": 655,
-      "def min": 577,
-      "hp": 3216,
-      "rec max": 552,
-      "rec min": 474
+    "idle": {
+      "total number of frames": 44
+    },
+    "move": {
+      "total number of frames": 11
     }
   },
-  "leader_skill": {
-    "desc": "Small boost in Karma produced during Spark",
-    "effects": [
-      {
-        "karma drop% for spark": 30,
-        "passive id": "31"
-      }
+  "category": 40070,
+  "cost": "5",
+  "damage frames": {
+    "frame times": [
+      40,
+      43,
+      47
     ],
-    "id": "1700",
-    "name": "Soul Light"
+    "hit dmg% distribution": [
+      50,
+      30,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 3
   },
-  "extra_skill": {},
+  "drop check count": 4,
+  "element": "thunder",
+  "exp_pattern": 10,
+  "gender": "other",
+  "getting type": "farmable",
+  "guide_id": 94,
+  "imp": {
+    "max atk": "120",
+    "max def": "120",
+    "max hp": "300",
+    "max rec": "120"
+  },
+  "kind": "normal",
+  "lord damage range": "911~1018",
+  "movement": {
+    "attack": {
+      "move speed": 0.005,
+      "move speed type": "1",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.005,
+      "move speed type": "1",
+      "move type": "1"
+    }
+  },
+  "name": "Cyclops",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "Cyclops",
+  "maxlv": "40",
+  "no": "94",
   "unitDisplayHomePosition_1W9CxaFK": "213,2,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "88,187,620,590",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "61,240,420,398,0",
@@ -394,5 +400,100 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "1000",
   "sellCaution": false,
-  "effectFrames": "34:134:1,37:134:1,41:134:1"
+  "effectFrames": "34:134:1,37:134:1,41:134:1",
+  "evofrom": "40071",
+  "evointo": "40073",
+  "evozelcost": "100000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "40131",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60142",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 1
+    }
+  ],
+  "basexp": "10",
+  "animation_attack": "78",
+  "animation_idle": "44",
+  "animation_move": "11",
+  "movespeed_attack": "0.005",
+  "movespeed_skill": "0.005",
+  "speedtype_attack": "1",
+  "speedtype_skill": "1",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "40, 43, 47",
+  "normal_distribute": "50, 30, 20",
+  "normal_totaldistr": "100",
+  "bb_frames": "40, 43, 47, 50",
+  "bb_distribute": "25, 25, 25, 25",
+  "bb_totaldistr": "100",
+  "description": "An extremely powerful monster from the giant tribe. They are warlike, just like all giants. Above all, they like tough combat with strong opponents. They are more intelligent than they look, and have a unique philosophy that says \"fighting for food is hunting, not combat.\" Thus, they won't plunder, and get food by capturing others and forcing them into slavery.",
+  "summon": "My power of destruction is<br>capable of destroying everything.<br>You think you can control me?",
+  "fusion": "My power is my <br>strength in combat!<br>Now lets fight!",
+  "evolution": "As I get stronger, <br>I become happier.<br>Are you happy?",
+  "hp_base": "2142",
+  "atk_base": "702",
+  "def_base": "354",
+  "rec_base": "171",
+  "hp_lord": "3216",
+  "atk_lord": "979",
+  "def_lord": "655",
+  "rec_lord": "396",
+  "hp_anima": "3509",
+  "rec_anima": "318",
+  "atk_breaker": "1057",
+  "def_breaker": "577",
+  "atk_guardian": "901",
+  "def_guardian": "733",
+  "rec_guardian": "357",
+  "def_oracle": "616",
+  "hp_oracle": "3099",
+  "rec_oracle": "513",
+  "hp_bonus": "300",
+  "atk_bonus": "120",
+  "def_bonus": "120",
+  "rec_bonus": "120",
+  "lordonly": "",
+  "combo_hits": "3",
+  "normaldc": "12",
+  "ls": "Soul Light",
+  "lsdescription": "Small boost in Karma produced during Spark",
+  "lsnote": "30% boost",
+  "lstype": "Karma",
+  "bbdescription": "4 combo Thunder elemental attack on single Enemy & probable Injury effect",
+  "bbnote": "80% chance",
+  "bbtype": "Offense",
+  "bbhits": "4",
+  "bbaoe": "1",
+  "bbgauge": "15",
+  "bbdc": "12",
+  "bbmultiplier": "230",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "40131",
+  "evomats2": "40131",
+  "evomats3": "60142",
+  "evomats4": "60143",
+  "evomats5": ""
 }

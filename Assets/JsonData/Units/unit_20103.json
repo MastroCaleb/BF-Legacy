@@ -1,61 +1,63 @@
 {
   "id": "20103",
-  "unitName": "Ice Ruler Sergio",
-  "no": "126",
-  "element": "Water",
-  "rarity": "★★★★",
-  "cost": "8",
-  "maxlv": "60",
-  "basexp": "15",
-  "gender": "M",
-  "ai": "3",
-  "animation_attack": "73",
-  "animation_idle": "42",
-  "animation_move": "21",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "18, 33, 50, 54, 58",
-  "normal_distribute": "40, 30, 10, 10, 10",
-  "normal_totaldistr": "100",
-  "bb_frames": "18, 26, 33, 70, 75, 80, 85",
-  "bb_distribute": "20, 20, 20, 10, 10, 10, 10",
-  "bb_totaldistr": "100",
-  "description": "A knight from the ruined Sama Kingdom. He was the commander of a Sama Kingdom Cavalry commando unit, but left to face the gods alone when the war began. Some admired him and tried to join, but Sergio refused them. He was always aloof even while being admired by people for his battles with the gods. At some point, he earned the title Ice Ruler.",
-  "summon": "People call me the Ice Ruler<br>You want me to join you?<br>Interesting. This should be fun.",
-  "fusion": "Can I grow even stronger?<br>Is that your answer?",
-  "evolution": "I don't need any allies.<br>I'm fine as long as there are enemies to slay.",
-  "hp_base": "2767",
-  "atk_base": "810",
-  "def_base": "734",
-  "rec_base": "783",
-  "hp_lord": "4099",
-  "atk_lord": "1096",
-  "def_lord": "1064",
-  "rec_lord": "1068",
-  "hp_anima": "4542",
-  "rec_anima": "950",
-  "atk_breaker": "1214",
-  "def_breaker": "946",
-  "atk_guardian": "978",
-  "def_guardian": "1182",
-  "rec_guardian": "1009",
-  "def_oracle": "1005",
-  "hp_oracle": "3922",
-  "rec_oracle": "1245",
-  "hp_bonus": "400",
-  "atk_bonus": "160",
-  "def_bonus": "160",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "5",
-  "normaldc": "15",
-  "ls": "Royal Power",
-  "lsdescription": "15% boost to Atk Power of all types",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 810,
+      "def": 734,
+      "hp": 2767,
+      "rec": 783
+    },
+    "_lord": {
+      "atk": 1096,
+      "def": 1064,
+      "hp": 4099,
+      "rec": 1068
+    },
+    "anima": {
+      "atk": 1096,
+      "def": 1064,
+      "hp max": 4689,
+      "hp min": 4394,
+      "rec max": 1009,
+      "rec min": 891
+    },
+    "breaker": {
+      "atk max": 1273,
+      "atk min": 1155,
+      "def max": 1005,
+      "def min": 887,
+      "hp": 4099,
+      "rec": 1068
+    },
+    "guardian": {
+      "atk": 1096,
+      "def max": 1241,
+      "def min": 1123,
+      "hp": 4099,
+      "rec max": 1068,
+      "rec min": 950
+    },
+    "oracle": {
+      "atk": 1096,
+      "def max": 1064,
+      "def min": 946,
+      "hp": 4099,
+      "rec max": 1304,
+      "rec min": 1186
+    }
+  },
+  "leader_skill": {
+    "desc": "15% boost to Atk",
+    "effects": [
+      {
+        "atk% buff": 15,
+        "passive id": "1"
+      }
+    ],
+    "id": "1901",
+    "name": "Royal Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -292,95 +294,97 @@
     ],
     "name": "Royal Ice Blade"
   },
-  "bbdescription": "7 combo Water elemental power attack on single Enemy & probable Weakness effect",
-  "bbnote": "80% chance",
-  "bbtype": "Offense",
-  "bbhits": "7",
-  "bbaoe": "1",
-  "bbgauge": "13",
-  "bbdc": "7",
-  "bbmultiplier": "300",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "20102",
-  "evointo": "20104",
-  "evomats1": "20133",
-  "evomats2": "20191",
-  "evomats3": "20132",
-  "evomats4": "20130",
-  "evomats5": "20130",
-  "evoitem": "",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 810,
-      "def": 734,
-      "hp": 2767,
-      "rec": 783
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1096,
-      "def": 1064,
-      "hp": 4099,
-      "rec": 1068
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1096,
-      "def": 1064,
-      "hp max": 4689,
-      "hp min": 4394,
-      "rec max": 1009,
-      "rec min": 891
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 1273,
-      "atk min": 1155,
-      "def max": 1005,
-      "def min": 887,
-      "hp": 4099,
-      "rec": 1068
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 73
     },
-    "guardian": {
-      "atk": 1096,
-      "def max": 1241,
-      "def min": 1123,
-      "hp": 4099,
-      "rec max": 1068,
-      "rec min": 950
+    "idle": {
+      "total number of frames": 42
     },
-    "oracle": {
-      "atk": 1096,
-      "def max": 1064,
-      "def min": 946,
-      "hp": 4099,
-      "rec max": 1304,
-      "rec min": 1186
+    "move": {
+      "total number of frames": 21
     }
   },
-  "leader_skill": {
-    "desc": "15% boost to Atk",
-    "effects": [
-      {
-        "atk% buff": 15,
-        "passive id": "1"
-      }
+  "category": 20100,
+  "cost": "8",
+  "damage frames": {
+    "frame times": [
+      18,
+      33,
+      50,
+      54,
+      58
     ],
-    "id": "1901",
-    "name": "Royal Power"
+    "hit dmg% distribution": [
+      40,
+      30,
+      10,
+      10,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 5
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "water",
+  "exp_pattern": 15,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 126,
+  "imp": {
+    "max atk": "160",
+    "max def": "160",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "1020~1139",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Ice Ruler Sergio",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Ice Ruler Sergio",
+  "maxlv": "60",
+  "no": "126",
   "unitDisplayHomePosition_1W9CxaFK": "122,-56,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "213,171,550,601",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "214,352,244,267,0",
@@ -390,5 +394,105 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "12:122:1,27:122:1,25:190:1,29:190:1,34:190:1"
+  "effectFrames": "12:122:1,27:122:1,25:190:1,29:190:1,34:190:1",
+  "evofrom": "20102",
+  "evointo": "20104",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "20133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20130",
+      "count": 2
+    }
+  ],
+  "basexp": "15",
+  "animation_attack": "73",
+  "animation_idle": "42",
+  "animation_move": "21",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "18, 33, 50, 54, 58",
+  "normal_distribute": "40, 30, 10, 10, 10",
+  "normal_totaldistr": "100",
+  "bb_frames": "18, 26, 33, 70, 75, 80, 85",
+  "bb_distribute": "20, 20, 20, 10, 10, 10, 10",
+  "bb_totaldistr": "100",
+  "description": "A knight from the ruined Sama Kingdom. He was the commander of a Sama Kingdom Cavalry commando unit, but left to face the gods alone when the war began. Some admired him and tried to join, but Sergio refused them. He was always aloof even while being admired by people for his battles with the gods. At some point, he earned the title Ice Ruler.",
+  "summon": "People call me the Ice Ruler<br>You want me to join you?<br>Interesting. This should be fun.",
+  "fusion": "Can I grow even stronger?<br>Is that your answer?",
+  "evolution": "I don't need any allies.<br>I'm fine as long as there are enemies to slay.",
+  "hp_base": "2767",
+  "atk_base": "810",
+  "def_base": "734",
+  "rec_base": "783",
+  "hp_lord": "4099",
+  "atk_lord": "1096",
+  "def_lord": "1064",
+  "rec_lord": "1068",
+  "hp_anima": "4542",
+  "rec_anima": "950",
+  "atk_breaker": "1214",
+  "def_breaker": "946",
+  "atk_guardian": "978",
+  "def_guardian": "1182",
+  "rec_guardian": "1009",
+  "def_oracle": "1005",
+  "hp_oracle": "3922",
+  "rec_oracle": "1245",
+  "hp_bonus": "400",
+  "atk_bonus": "160",
+  "def_bonus": "160",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "5",
+  "normaldc": "15",
+  "ls": "Royal Power",
+  "lsdescription": "15% boost to Atk Power of all types",
+  "lstype": "Attack",
+  "bbdescription": "7 combo Water elemental power attack on single Enemy & probable Weakness effect",
+  "bbnote": "80% chance",
+  "bbtype": "Offense",
+  "bbhits": "7",
+  "bbaoe": "1",
+  "bbgauge": "13",
+  "bbdc": "7",
+  "bbmultiplier": "300",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "20133",
+  "evomats2": "20191",
+  "evomats3": "20132",
+  "evomats4": "20130",
+  "evomats5": "20130",
+  "evoitem": ""
 }

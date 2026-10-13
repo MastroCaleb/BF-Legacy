@@ -1,63 +1,99 @@
 {
   "id": "10116",
-  "unitName": "Immortal Phoenix Levarza",
-  "no": "1232",
-  "element": "Fire",
-  "rarity": "★★★★★★★",
-  "cost": "40",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "N",
-  "ai": "1",
-  "animation_attack": "198",
-  "animation_idle": "102",
-  "animation_move": "15",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "75, 79, 83, 87, 90, 94, 98, 102, 106, 110, 114",
-  "normal_distribute": "7, 7, 7, 7, 15, 13, 10, 9, 9, 8, 8",
-  "normal_totaldistr": "100",
-  "bb_frames": "75, 79, 83, 87, 90, 94, 98, 102, 106, 110, 114, 118, 122",
-  "bb_distribute": "5, 5, 5, 5, 14, 12, 11, 10, 8, 7, 7, 6, 5",
-  "bb_totaldistr": "100",
-  "sbb_frames": "75, 78, 81, 84, 87, 90, 94, 98, 102, 106, 110, 114, 118, 122, 126, 130, 134",
-  "sbb_distribute": "4, 4, 4, 4, 4, 11, 10, 9, 8, 7, 5, 5, 5, 5, 5, 5, 5",
-  "sbb_totaldistr": "100",
-  "description": "The culmination of all phoenixes in Grand Gaia. Its brilliant wings burned with eidolon flame, capable of both crushing enemies and healing wounds. According to legend, after the God Army invaded its ancient volcanic home, Levarza offered aid to the human resistance, working countless miracles. As the war raged to an end, all hope seemed lost until Levarza burned its own body to ash, creating a wall of flame between the humans and the God Army. It's said that this wall of iridescent flame has continued to shine upon and protect Levarza's beloved humans.",
-  "summon": "The eidolon flame is my eternal legacy. Even if my body should burn to ash, I swear to always protect.",
-  "fusion": "Leave this to me. My wings of flame shall bring ruin to your foes, and soothe the injuries of your companions.",
-  "evolution": "My eidolon flame illuminates this world. If but one soul believes, my flame shall bring hope to even the deepest darkness.",
-  "hp_base": "5239",
-  "atk_base": "1298",
-  "def_base": "1489",
-  "rec_base": "1781",
-  "hp_lord": "6671",
-  "atk_lord": "2100",
-  "def_lord": "2211",
-  "rec_lord": "2223",
-  "hp_anima": "7563",
-  "rec_anima": "1985",
-  "atk_breaker": "2538",
-  "def_breaker": "1973",
-  "def_guardian": "2449",
-  "rec_guardian": "2104",
-  "def_oracle": "2092",
-  "rec_oracle": "2580",
-  "hp_bonus": "1000",
-  "atk_bonus": "600",
-  "def_bonus": "300",
-  "rec_bonus": "400",
-  "lordonly": "",
-  "combo_hits": "11",
-  "normaldc": "44",
-  "ls": "Loving Purification Flames",
-  "lsdescription": "40% boost to Def, max HP of all Units, hugely boosts HC efficacy, Spark damage restores HP & restores HP each turn",
-  "lsnote": "80% boost, heals (200-400) HP per Spark & heals (500-1000 + 10% Rec) HP",
-  "lstype": "Hit Points/Defense/Recovery",
+  "stats": {
+    "_base": {
+      "atk": 1298,
+      "def": 1489,
+      "hp": 5239,
+      "rec": 1741
+    },
+    "_lord": {
+      "atk": 2300,
+      "def": 2211,
+      "hp": 6671,
+      "rec": 2223
+    },
+    "anima": {
+      "atk": 2300,
+      "def": 2211,
+      "hp max": 7861,
+      "hp min": 7266,
+      "rec max": 2104,
+      "rec min": 1866
+    },
+    "breaker": {
+      "atk max": 2657,
+      "atk min": 2419,
+      "def max": 2092,
+      "def min": 1854,
+      "hp": 6671,
+      "rec": 2223
+    },
+    "guardian": {
+      "atk": 2300,
+      "def max": 2568,
+      "def min": 2330,
+      "hp": 6671,
+      "rec max": 2223,
+      "rec min": 1985
+    },
+    "oracle": {
+      "atk": 2300,
+      "def max": 2211,
+      "def min": 1973,
+      "hp": 6671,
+      "rec max": 2699,
+      "rec min": 2461
+    }
+  },
+  "leader_skill": {
+    "desc": "40% boost to Def, max HP of all Units, hugely boosts HC efficacy, Spark damage restores HP & restores HP each turn",
+    "effects": [
+      {
+        "hc effectiveness%": 80,
+        "passive id": "10"
+      },
+      {
+        "def% buff": 40,
+        "hp% buff": 40,
+        "passive id": "1"
+      },
+      {
+        "heal on spark high": 400,
+        "heal on spark low": 200,
+        "heal on spark%": 100,
+        "passive id": "101"
+      },
+      {
+        "passive id": "33",
+        "rec% added (turn heal)": 10.0,
+        "turn heal high": 1000,
+        "turn heal low": 500
+      }
+    ],
+    "id": "1113",
+    "name": "Loving Purification Flames"
+  },
+  "extra_skill": {
+    "desc": "Resistance against 1 KO attack when HP is below 20%",
+    "effects": [
+      {
+        "buff": {
+          "angel idol buff (12)": true,
+          "angel idol recover hp%": 100,
+          "buff turns (12)": "-1"
+        },
+        "conditions": [],
+        "hp below % buff activation": 20,
+        "passive id": "55",
+        "passive target": "self"
+      }
+    ],
+    "id": "11600",
+    "name": "Iridescent Flame",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -550,14 +586,6 @@
     ],
     "name": "Vermillion Feather"
   },
-  "bbdescription": "13 combo Fire attack on all foes, greatly restores HP and damage taken slightly restores HP for 3 turns & probable resistance against 1 KO attack",
-  "bbnote": "Heals (3500-4000 + 18% Rec) HP, 20% chance to heal 20-25% of damage taken & 10% chance to survive fatal attack",
-  "bbtype": "Heal/Support/Offense",
-  "bbhits": "13",
-  "bbaoe": "A",
-  "bbgauge": "25",
-  "bbdc": "13",
-  "bbmultiplier": "260",
   "sbb": {
     "damage frames": [
       {
@@ -1068,14 +1096,6 @@
     ],
     "name": "Renaissance Soar"
   },
-  "sbbdescription": "17 combo powerful Fire attack on all foes, additional attack at turn's end for 3 turns, considerably restores HP & boosts Def relative to max HP for 3 turns",
-  "sbbnote": "Heals (1400-1600 + 22.5% of own Rec) HP & 15% HP to Def",
-  "sbbtype": "Heal/Support/Offense",
-  "sbbhits": "17",
-  "sbbaoe": "A",
-  "sbbgauge": "20",
-  "sbbdc": "17",
-  "sbbmultiplier": "500",
   "ubb": {
     "damage frames": [
       {
@@ -1173,6 +1193,188 @@
     ],
     "name": "Ra-Hoor-Khuit"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "party"
+    },
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 198
+    },
+    "idle": {
+      "total number of frames": 102
+    },
+    "move": {
+      "total number of frames": 15
+    }
+  },
+  "category": 10110,
+  "cost": "40",
+  "damage frames": {
+    "frame times": [
+      75,
+      79,
+      83,
+      87,
+      90,
+      94,
+      98,
+      102,
+      106,
+      110,
+      114
+    ],
+    "hit dmg% distribution": [
+      7,
+      7,
+      7,
+      7,
+      15,
+      13,
+      10,
+      9,
+      9,
+      8,
+      8
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 11
+  },
+  "drop check count": 4,
+  "element": "fire",
+  "exp_pattern": 20,
+  "gender": "other",
+  "getting type": "rare summon",
+  "guide_id": 1232,
+  "imp": {
+    "max atk": "600",
+    "max def": "300",
+    "max hp": "1000",
+    "max rec": "400"
+  },
+  "kind": "normal",
+  "lord damage range": "2141~2392",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Immortal Phoenix Levarza",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "od cost increase": 5000,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Immortal Phoenix Levarza",
+  "maxlv": "120",
+  "no": "1232",
+  "unitDisplayHomePosition_1W9CxaFK": "479,457,160,437",
+  "unitDisplayDetailPosition_6z54rgb3": "-172,-257,1160,1099",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "31,99,580,550,1",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-120,-490,1160,1099",
+  "unitDisplaySummonPosition_KC3Jk8Br": "31,99,580,550,1",
+  "unitDisplayHpPosition_3BpHN6VD": "-3,76",
+  "unitDisplayCursorPosition": "0,-30",
+  "sellPrice": "15000",
+  "sellCaution": false,
+  "effectFrames": "0:10114:1,65:100186:1,85:100190:1,25:1561:1",
+  "evofrom": "10115",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "21",
+  "animation_attack": "198",
+  "animation_idle": "102",
+  "animation_move": "15",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "75, 79, 83, 87, 90, 94, 98, 102, 106, 110, 114",
+  "normal_distribute": "7, 7, 7, 7, 15, 13, 10, 9, 9, 8, 8",
+  "normal_totaldistr": "100",
+  "bb_frames": "75, 79, 83, 87, 90, 94, 98, 102, 106, 110, 114, 118, 122",
+  "bb_distribute": "5, 5, 5, 5, 14, 12, 11, 10, 8, 7, 7, 6, 5",
+  "bb_totaldistr": "100",
+  "sbb_frames": "75, 78, 81, 84, 87, 90, 94, 98, 102, 106, 110, 114, 118, 122, 126, 130, 134",
+  "sbb_distribute": "4, 4, 4, 4, 4, 11, 10, 9, 8, 7, 5, 5, 5, 5, 5, 5, 5",
+  "sbb_totaldistr": "100",
+  "description": "The culmination of all phoenixes in Grand Gaia. Its brilliant wings burned with eidolon flame, capable of both crushing enemies and healing wounds. According to legend, after the God Army invaded its ancient volcanic home, Levarza offered aid to the human resistance, working countless miracles. As the war raged to an end, all hope seemed lost until Levarza burned its own body to ash, creating a wall of flame between the humans and the God Army. It's said that this wall of iridescent flame has continued to shine upon and protect Levarza's beloved humans.",
+  "summon": "The eidolon flame is my eternal legacy. Even if my body should burn to ash, I swear to always protect.",
+  "fusion": "Leave this to me. My wings of flame shall bring ruin to your foes, and soothe the injuries of your companions.",
+  "evolution": "My eidolon flame illuminates this world. If but one soul believes, my flame shall bring hope to even the deepest darkness.",
+  "hp_base": "5239",
+  "atk_base": "1298",
+  "def_base": "1489",
+  "rec_base": "1781",
+  "hp_lord": "6671",
+  "atk_lord": "2100",
+  "def_lord": "2211",
+  "rec_lord": "2223",
+  "hp_anima": "7563",
+  "rec_anima": "1985",
+  "atk_breaker": "2538",
+  "def_breaker": "1973",
+  "def_guardian": "2449",
+  "rec_guardian": "2104",
+  "def_oracle": "2092",
+  "rec_oracle": "2580",
+  "hp_bonus": "1000",
+  "atk_bonus": "600",
+  "def_bonus": "300",
+  "rec_bonus": "400",
+  "lordonly": "",
+  "combo_hits": "11",
+  "normaldc": "44",
+  "ls": "Loving Purification Flames",
+  "lsdescription": "40% boost to Def, max HP of all Units, hugely boosts HC efficacy, Spark damage restores HP & restores HP each turn",
+  "lsnote": "80% boost, heals (200-400) HP per Spark & heals (500-1000 + 10% Rec) HP",
+  "lstype": "Hit Points/Defense/Recovery",
+  "bbdescription": "13 combo Fire attack on all foes, greatly restores HP and damage taken slightly restores HP for 3 turns & probable resistance against 1 KO attack",
+  "bbnote": "Heals (3500-4000 + 18% Rec) HP, 20% chance to heal 20-25% of damage taken & 10% chance to survive fatal attack",
+  "bbtype": "Heal/Support/Offense",
+  "bbhits": "13",
+  "bbaoe": "A",
+  "bbgauge": "25",
+  "bbdc": "13",
+  "bbmultiplier": "260",
+  "sbbdescription": "17 combo powerful Fire attack on all foes, additional attack at turn's end for 3 turns, considerably restores HP & boosts Def relative to max HP for 3 turns",
+  "sbbnote": "Heals (1400-1600 + 22.5% of own Rec) HP & 15% HP to Def",
+  "sbbtype": "Heal/Support/Offense",
+  "sbbhits": "17",
+  "sbbaoe": "A",
+  "sbbgauge": "20",
+  "sbbdc": "17",
+  "sbbmultiplier": "500",
   "ubbdescription": "Fully restores HP, high probability of raising allies from KO, considerably boosts max HP & activates Fire barrier",
   "ubbnote": "66% chance to revive allies, 25% boost & activates 20,000 HP Fire barrier",
   "ubbtype": "Heal/Support",
@@ -1184,114 +1386,9 @@
   "es": "Iridescent Flames",
   "esitem": "",
   "esdescription": "Resistance against 1 KO attack when HP is below 20%",
-  "evofrom": "10115",
   "howtoget": "",
   "notes": "",
   "addcat": "",
   "addcatname": "",
-  "bottomtext": "",
-  "stats": {
-    "_base": {
-      "atk": 1298,
-      "def": 1489,
-      "hp": 5239,
-      "rec": 1741
-    },
-    "_lord": {
-      "atk": 2300,
-      "def": 2211,
-      "hp": 6671,
-      "rec": 2223
-    },
-    "anima": {
-      "atk": 2300,
-      "def": 2211,
-      "hp max": 7861,
-      "hp min": 7266,
-      "rec max": 2104,
-      "rec min": 1866
-    },
-    "breaker": {
-      "atk max": 2657,
-      "atk min": 2419,
-      "def max": 2092,
-      "def min": 1854,
-      "hp": 6671,
-      "rec": 2223
-    },
-    "guardian": {
-      "atk": 2300,
-      "def max": 2568,
-      "def min": 2330,
-      "hp": 6671,
-      "rec max": 2223,
-      "rec min": 1985
-    },
-    "oracle": {
-      "atk": 2300,
-      "def max": 2211,
-      "def min": 1973,
-      "hp": 6671,
-      "rec max": 2699,
-      "rec min": 2461
-    }
-  },
-  "leader_skill": {
-    "desc": "40% boost to Def, max HP of all Units, hugely boosts HC efficacy, Spark damage restores HP & restores HP each turn",
-    "effects": [
-      {
-        "hc effectiveness%": 80,
-        "passive id": "10"
-      },
-      {
-        "def% buff": 40,
-        "hp% buff": 40,
-        "passive id": "1"
-      },
-      {
-        "heal on spark high": 400,
-        "heal on spark low": 200,
-        "heal on spark%": 100,
-        "passive id": "101"
-      },
-      {
-        "passive id": "33",
-        "rec% added (turn heal)": 10.0,
-        "turn heal high": 1000,
-        "turn heal low": 500
-      }
-    ],
-    "id": "1113",
-    "name": "Loving Purification Flames"
-  },
-  "extra_skill": {
-    "desc": "Resistance against 1 KO attack when HP is below 20%",
-    "effects": [
-      {
-        "buff": {
-          "angel idol buff (12)": true,
-          "angel idol recover hp%": 100,
-          "buff turns (12)": "-1"
-        },
-        "conditions": [],
-        "hp below % buff activation": 20,
-        "passive id": "55",
-        "passive target": "self"
-      }
-    ],
-    "id": "11600",
-    "name": "Iridescent Flame",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "479,457,160,437",
-  "unitDisplayDetailPosition_6z54rgb3": "-172,-257,1160,1099",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "31,99,580,550,1",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-120,-490,1160,1099",
-  "unitDisplaySummonPosition_KC3Jk8Br": "31,99,580,550,1",
-  "unitDisplayHpPosition_3BpHN6VD": "-3,76",
-  "unitDisplayCursorPosition": "0,-30",
-  "sellPrice": "15000",
-  "sellCaution": false,
-  "effectFrames": "0:10114:1,65:100186:1,85:100190:1,25:1561:1"
+  "bottomtext": ""
 }

@@ -1,61 +1,67 @@
 {
   "id": "830315",
-  "unitName": "Chieftain Avani",
-  "no": "8158",
-  "element": "Earth",
-  "rarity": "★★★★★",
-  "cost": "20",
-  "maxlv": "80",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "225",
-  "animation_idle": "56",
-  "animation_move": "6",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "68, 75, 82, 89, 96, 105, 112, 119, 126, 133",
-  "normal_distribute": "9, 9, 9, 9, 10, 10, 10, 10, 12, 12",
-  "normal_totaldistr": "100",
-  "bb_frames": "68, 72, 76, 80, 84, 88, 92, 96, 100, 104, 108, 112, 116, 120, 123, 125, 128, 131, 134, 137",
-  "bb_distribute": "4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "description": "The chieftain of a nomadic band of monster hunters. In an unforgiving land that had no place for the weak, the life of a Morokai is constantly fraught with peril and hardship. Having subdued a legendary Devil Scorpion single-handedly, Avani became the youngest hunter in Morokai history earn the title of \"Master Hunter.\" Unlike most other warlords and chieftains who led through fear and intimidation, Avani possessed qualities rare of a Morokai. Her spirited disposition and fierce loyalty to those she called her friends earned her the adoration and respect of many. As her ring of allies grew larger, Avani and her companions formed the clan \"Rih'alnase\"--the children of the wind.",
-  "summon": "Hmm? A rare beast you say?<br>Wonderful! Let us make haste.<br>What an adventure this will be!",
-  "fusion": "For me? Aww, you're so sweet.<br>So, what's  this gift of yours?<br>Rare materials? Perhaps a new venom?",
-  "evolution": "",
-  "hp_base": "3507",
-  "atk_base": "1429",
-  "def_base": "1130",
-  "rec_base": "1130",
-  "hp_lord": "5011",
-  "atk_lord": "2042",
-  "def_lord": "1615",
-  "rec_lord": "1615",
-  "hp_anima": "5603",
-  "rec_anima": "1457",
-  "atk_breaker": "2200",
-  "def_breaker": "1457",
-  "def_guardian": "1773",
-  "rec_guardian": "1536",
-  "def_oracle": "1536",
-  "rec_oracle": "1852",
-  "hp_bonus": "500",
-  "atk_bonus": "400",
-  "def_bonus": "100",
-  "rec_bonus": "100",
-  "lordonly": "",
-  "combo_hits": "10",
-  "normaldc": "30",
-  "ls": "Hunter's Tenacity",
-  "lsdescription": "20% boost to Atk & boost to Spark damage",
-  "lsnote": "50% boost",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 1429,
+      "def": 1130,
+      "hp": 3507,
+      "rec": 1130
+    },
+    "_lord": {
+      "atk": 2042,
+      "def": 1615,
+      "hp": 5011,
+      "rec": 1615
+    },
+    "anima": {
+      "atk": 2042,
+      "def": 1615,
+      "hp max": 5801,
+      "hp min": 5406,
+      "rec max": 1536,
+      "rec min": 1378
+    },
+    "breaker": {
+      "atk max": 2279,
+      "atk min": 2121,
+      "def max": 1536,
+      "def min": 1378,
+      "hp": 5011,
+      "rec": 1615
+    },
+    "guardian": {
+      "atk": 2042,
+      "def max": 1852,
+      "def min": 1694,
+      "hp": 5011,
+      "rec max": 1615,
+      "rec min": 1457
+    },
+    "oracle": {
+      "atk": 2042,
+      "def max": 1615,
+      "def min": 1457,
+      "hp": 5011,
+      "rec max": 1931,
+      "rec min": 1773
+    }
+  },
+  "leader_skill": {
+    "desc": "20% boost to Atk & boost to Spark damage",
+    "effects": [
+      {
+        "atk% buff": 20,
+        "passive id": "1"
+      },
+      {
+        "damage% for spark": 50,
+        "passive id": "31"
+      }
+    ],
+    "id": "801200",
+    "name": "Hunter's Tenacity"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -562,6 +568,185 @@
     ],
     "name": "Briar Gust"
   },
+  "sbb": {},
+  "ubb": {},
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 225
+    },
+    "idle": {
+      "total number of frames": 56
+    },
+    "move": {
+      "total number of frames": 6
+    }
+  },
+  "category": 830310,
+  "cost": "20",
+  "damage frames": {
+    "frame times": [
+      68,
+      75,
+      82,
+      89,
+      96,
+      105,
+      112,
+      119,
+      126,
+      133
+    ],
+    "hit dmg% distribution": [
+      9,
+      9,
+      9,
+      9,
+      10,
+      10,
+      10,
+      10,
+      12,
+      12
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 10
+  },
+  "drop check count": 3,
+  "element": "earth",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 8158,
+  "imp": {
+    "max atk": "400",
+    "max def": "100",
+    "max hp": "500",
+    "max rec": "100"
+  },
+  "kind": "normal",
+  "lord damage range": "1900~2123",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Chieftain Avani",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Chieftain Avani",
+  "maxlv": "80",
+  "no": "8158",
+  "unitDisplayHomePosition_1W9CxaFK": "442,276,140,382",
+  "unitDisplayDetailPosition_6z54rgb3": "-64,-52,1211,853",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "48,186,653,459,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-8,-306,1457,1025",
+  "unitDisplaySummonPosition_KC3Jk8Br": "48,186,653,459,0",
+  "unitDisplayHpPosition_3BpHN6VD": "0,15",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "5000",
+  "sellCaution": false,
+  "effectFrames": "75:330433:1,68:120:1,75:120:1,82:120:1,89:120:1,96:120:1,105:120:1,112:120:1,119:120:1,126:120:1,133:120:1,88:300194:1,103:230:1",
+  "evofrom": "",
+  "evointo": "830316",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "830034",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "225",
+  "animation_idle": "56",
+  "animation_move": "6",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "68, 75, 82, 89, 96, 105, 112, 119, 126, 133",
+  "normal_distribute": "9, 9, 9, 9, 10, 10, 10, 10, 12, 12",
+  "normal_totaldistr": "100",
+  "bb_frames": "68, 72, 76, 80, 84, 88, 92, 96, 100, 104, 108, 112, 116, 120, 123, 125, 128, 131, 134, 137",
+  "bb_distribute": "4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "description": "The chieftain of a nomadic band of monster hunters. In an unforgiving land that had no place for the weak, the life of a Morokai is constantly fraught with peril and hardship. Having subdued a legendary Devil Scorpion single-handedly, Avani became the youngest hunter in Morokai history earn the title of \"Master Hunter.\" Unlike most other warlords and chieftains who led through fear and intimidation, Avani possessed qualities rare of a Morokai. Her spirited disposition and fierce loyalty to those she called her friends earned her the adoration and respect of many. As her ring of allies grew larger, Avani and her companions formed the clan \"Rih'alnase\"--the children of the wind.",
+  "summon": "Hmm? A rare beast you say?<br>Wonderful! Let us make haste.<br>What an adventure this will be!",
+  "fusion": "For me? Aww, you're so sweet.<br>So, what's  this gift of yours?<br>Rare materials? Perhaps a new venom?",
+  "evolution": "",
+  "hp_base": "3507",
+  "atk_base": "1429",
+  "def_base": "1130",
+  "rec_base": "1130",
+  "hp_lord": "5011",
+  "atk_lord": "2042",
+  "def_lord": "1615",
+  "rec_lord": "1615",
+  "hp_anima": "5603",
+  "rec_anima": "1457",
+  "atk_breaker": "2200",
+  "def_breaker": "1457",
+  "def_guardian": "1773",
+  "rec_guardian": "1536",
+  "def_oracle": "1536",
+  "rec_oracle": "1852",
+  "hp_bonus": "500",
+  "atk_bonus": "400",
+  "def_bonus": "100",
+  "rec_bonus": "100",
+  "lordonly": "",
+  "combo_hits": "10",
+  "normaldc": "30",
+  "ls": "Hunter's Tenacity",
+  "lsdescription": "20% boost to Atk & boost to Spark damage",
+  "lsnote": "50% boost",
+  "lstype": "Attack",
   "bbdescription": "20 combo powerful Earth attack on all foes, probable BB gauge boost during Spark & probable infliction of random status ailment",
   "bbnote": "50% chance to fill 1~2 BC, 30% chance to inflict random aliment",
   "bbtype": "Support/Offense",
@@ -570,7 +755,6 @@
   "bbgauge": "22",
   "bbdc": "20",
   "bbmultiplier": "250",
-  "sbb": {},
   "sbbdescription": "",
   "sbbtype": "",
   "sbbhits": "",
@@ -578,7 +762,6 @@
   "sbbgauge": "",
   "sbbdc": "",
   "sbbmultiplier": "",
-  "ubb": {},
   "ubbdescription": "",
   "ubbtype": "",
   "ubbhits": "",
@@ -589,85 +772,10 @@
   "es": "",
   "esitem": "",
   "esdescription": "",
-  "evofrom": "",
-  "evointo": "830316",
   "evomats1": "50354",
   "evomats2": "30133",
   "evomats3": "60144",
   "evomats4": "60144",
   "evomats5": "830034",
-  "evoitem": "",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 1429,
-      "def": 1130,
-      "hp": 3507,
-      "rec": 1130
-    },
-    "_lord": {
-      "atk": 2042,
-      "def": 1615,
-      "hp": 5011,
-      "rec": 1615
-    },
-    "anima": {
-      "atk": 2042,
-      "def": 1615,
-      "hp max": 5801,
-      "hp min": 5406,
-      "rec max": 1536,
-      "rec min": 1378
-    },
-    "breaker": {
-      "atk max": 2279,
-      "atk min": 2121,
-      "def max": 1536,
-      "def min": 1378,
-      "hp": 5011,
-      "rec": 1615
-    },
-    "guardian": {
-      "atk": 2042,
-      "def max": 1852,
-      "def min": 1694,
-      "hp": 5011,
-      "rec max": 1615,
-      "rec min": 1457
-    },
-    "oracle": {
-      "atk": 2042,
-      "def max": 1615,
-      "def min": 1457,
-      "hp": 5011,
-      "rec max": 1931,
-      "rec min": 1773
-    }
-  },
-  "leader_skill": {
-    "desc": "20% boost to Atk & boost to Spark damage",
-    "effects": [
-      {
-        "atk% buff": 20,
-        "passive id": "1"
-      },
-      {
-        "damage% for spark": 50,
-        "passive id": "31"
-      }
-    ],
-    "id": "801200",
-    "name": "Hunter's Tenacity"
-  },
-  "extra_skill": {},
-  "unitDisplayHomePosition_1W9CxaFK": "442,276,140,382",
-  "unitDisplayDetailPosition_6z54rgb3": "-64,-52,1211,853",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "48,186,653,459,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-8,-306,1457,1025",
-  "unitDisplaySummonPosition_KC3Jk8Br": "48,186,653,459,0",
-  "unitDisplayHpPosition_3BpHN6VD": "0,15",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "5000",
-  "sellCaution": false,
-  "effectFrames": "75:330433:1,68:120:1,75:120:1,82:120:1,89:120:1,96:120:1,105:120:1,112:120:1,119:120:1,126:120:1,133:120:1,88:300194:1,103:230:1"
+  "evoitem": ""
 }

@@ -1,53 +1,64 @@
 {
   "id": "30181",
-  "unitName": "Poet Elton",
-  "no": "463",
-  "element": "Earth",
-  "rarity": "★★",
-  "cost": "3",
-  "maxlv": "30",
-  "basexp": "15",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "104",
-  "animation_idle": "52",
-  "animation_move": "52",
-  "movespeed_attack": "6",
-  "movespeed_skill": "6",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "description": "A wandering poet who travelled all around the La Veda Republic. He once made a living as a singer at a town bar, and for a time became very popular among the people. One theory as to how he became so popular is that one day, while walking through the woods, he saved a fairy from being attacked who then gave him a secret potion of song in return. This is considered a credible explanation due to the magical charm his songs seemed to possess.",
-  "summon": "Do you wish to hear me sing?<br>Understand. I will sing for you.",
-  "fusion": "I can feel power boiling<br>out from inside my body.<br>Mind if I convey this in a song?",
-  "evolution": "",
-  "hp_base": "1280",
-  "atk_base": "466",
-  "def_base": "617",
-  "rec_base": "539",
-  "hp_lord": "2461",
-  "atk_lord": "630",
-  "def_lord": "869",
-  "rec_lord": "769",
-  "hp_anima": "2678",
-  "rec_anima": "711",
-  "atk_breaker": "688",
-  "def_breaker": "811",
-  "atk_guardian": "572",
-  "def_guardian": "927",
-  "hp_oracle": "2243",
-  "rec_oracle": "827",
-  "hp_bonus": "250",
-  "atk_bonus": "80",
-  "def_bonus": "120",
-  "rec_bonus": "100",
-  "lordonly": "",
-  "combo_hits": "4",
-  "normaldc": "8",
-  "ls": "Brave Power",
-  "lsdescription": "25% boost to Atk power of male Units",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 466,
+      "def": 617,
+      "hp": 1280,
+      "rec": 539
+    },
+    "_lord": {
+      "atk": 630,
+      "def": 869,
+      "hp": 2461,
+      "rec": 769
+    },
+    "anima": {
+      "atk": 630,
+      "def": 869,
+      "hp max": 2751,
+      "hp min": 2606,
+      "rec max": 740,
+      "rec min": 682
+    },
+    "breaker": {
+      "atk max": 717,
+      "atk min": 659,
+      "def max": 840,
+      "def min": 782,
+      "hp": 2461,
+      "rec": 769
+    },
+    "guardian": {
+      "atk": 630,
+      "def max": 956,
+      "def min": 898,
+      "hp": 2461,
+      "rec max": 769,
+      "rec min": 711
+    },
+    "oracle": {
+      "atk": 630,
+      "def max": 869,
+      "def min": 811,
+      "hp": 2461,
+      "rec max": 885,
+      "rec min": 827
+    }
+  },
+  "leader_skill": {
+    "desc": "25% boost to Atk power of male Units",
+    "effects": [
+      {
+        "atk% buff": 25,
+        "gender required": "male",
+        "passive id": "42"
+      }
+    ],
+    "id": "4500",
+    "name": "Brave Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -220,93 +231,89 @@
     ],
     "name": "Battle Voice"
   },
-  "bbdescription": "Boosts Atk and Def for all allies for 3 turns",
-  "bbnote": "20% boost",
-  "bbtype": "Support",
-  "bbhits": "",
-  "bbaoe": "0",
-  "bbgauge": "14",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "30182",
-  "evomats1": "30131",
-  "evomats2": "30130",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evozelcost": "50000",
-  "stats": {
-    "_base": {
-      "atk": 466,
-      "def": 617,
-      "hp": 1280,
-      "rec": 539
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 630,
-      "def": 869,
-      "hp": 2461,
-      "rec": 769
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 630,
-      "def": 869,
-      "hp max": 2751,
-      "hp min": 2606,
-      "rec max": 740,
-      "rec min": 682
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 104
     },
-    "breaker": {
-      "atk max": 717,
-      "atk min": 659,
-      "def max": 840,
-      "def min": 782,
-      "hp": 2461,
-      "rec": 769
+    "idle": {
+      "total number of frames": 52
     },
-    "guardian": {
-      "atk": 630,
-      "def max": 956,
-      "def min": 898,
-      "hp": 2461,
-      "rec max": 769,
-      "rec min": 711
-    },
-    "oracle": {
-      "atk": 630,
-      "def max": 869,
-      "def min": 811,
-      "hp": 2461,
-      "rec max": 885,
-      "rec min": 827
+    "move": {
+      "total number of frames": 52
     }
   },
-  "leader_skill": {
-    "desc": "25% boost to Atk power of male Units",
-    "effects": [
-      {
-        "atk% buff": 25,
-        "gender required": "male",
-        "passive id": "42"
-      }
+  "category": 30180,
+  "cost": "3",
+  "damage frames": {
+    "frame times": [
+      35,
+      50,
+      65,
+      80
     ],
-    "id": "4500",
-    "name": "Brave Power"
+    "hit dmg% distribution": [
+      25,
+      25,
+      25,
+      25
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 4
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "earth",
+  "exp_pattern": 15,
+  "gender": "male",
+  "getting type": "not eligible for achievement",
+  "guide_id": 463,
+  "imp": {
+    "max atk": "80",
+    "max def": "120",
+    "max hp": "250",
+    "max rec": "100"
+  },
+  "kind": "normal",
+  "lord damage range": "586~655",
+  "movement": {
+    "attack": {
+      "move speed": 6,
+      "move speed type": "2",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 6,
+      "move speed type": "2",
+      "move type": "3"
+    }
+  },
+  "name": "Poet Elton",
+  "rarity": "2",
+  "sell caution": false,
+  "unitName": "Poet Elton",
+  "maxlv": "30",
+  "no": "463",
   "unitDisplayHomePosition_1W9CxaFK": "64,-48,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "260,231,342,546",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "160,336,297,293,0",
@@ -316,5 +323,89 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "300",
   "sellCaution": false,
-  "effectFrames": "35:230:1,50:230:1,65:230:1,80:230:1"
+  "effectFrames": "35:230:1,50:230:1,65:230:1,80:230:1",
+  "evofrom": "",
+  "evointo": "30182",
+  "evozelcost": "50000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "30131",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30130",
+      "count": 1
+    }
+  ],
+  "basexp": "15",
+  "animation_attack": "104",
+  "animation_idle": "52",
+  "animation_move": "52",
+  "movespeed_attack": "6",
+  "movespeed_skill": "6",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "35, 50, 65, 80",
+  "normal_distribute": "25, 25, 25, 25",
+  "normal_totaldistr": "100",
+  "description": "A wandering poet who travelled all around the La Veda Republic. He once made a living as a singer at a town bar, and for a time became very popular among the people. One theory as to how he became so popular is that one day, while walking through the woods, he saved a fairy from being attacked who then gave him a secret potion of song in return. This is considered a credible explanation due to the magical charm his songs seemed to possess.",
+  "summon": "Do you wish to hear me sing?<br>Understand. I will sing for you.",
+  "fusion": "I can feel power boiling<br>out from inside my body.<br>Mind if I convey this in a song?",
+  "evolution": "",
+  "hp_base": "1280",
+  "atk_base": "466",
+  "def_base": "617",
+  "rec_base": "539",
+  "hp_lord": "2461",
+  "atk_lord": "630",
+  "def_lord": "869",
+  "rec_lord": "769",
+  "hp_anima": "2679",
+  "rec_anima": "711",
+  "atk_breaker": "688",
+  "def_breaker": "811",
+  "atk_guardian": "572",
+  "def_guardian": "927",
+  "rec_guardian": "740",
+  "def_oracle": "840",
+  "hp_oracle": "2374",
+  "rec_oracle": "856",
+  "hp_bonus": "250",
+  "atk_bonus": "80",
+  "def_bonus": "120",
+  "rec_bonus": "100",
+  "lordonly": "",
+  "combo_hits": "4",
+  "normaldc": "8",
+  "ls": "Brave Power",
+  "lsdescription": "25% boost to Atk power of male Units",
+  "lstype": "Attack",
+  "bbdescription": "Boosts Atk and Def for all allies for 3 turns",
+  "bbnote": "20% boost",
+  "bbtype": "Support",
+  "bbhits": "",
+  "bbaoe": "0",
+  "bbgauge": "14",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "30131",
+  "evomats2": "30130",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": ""
 }

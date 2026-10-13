@@ -1,69 +1,127 @@
 {
   "id": "820178",
-  "unitName": "Kula Diamond (Omni)",
-  "no": "8275",
-  "element": "Water",
-  "rarity": "Omni",
-  "altname": "Kula Diamond",
-  "cost": "48",
-  "maxlv": "150",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "227",
-  "animation_idle": "141",
-  "animation_move": "8",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "94, 97, 100, 106, 112, 116, 120, 124, 128, 134, 140, 146",
-  "normal_distribute": "10, 4, 4, 8, 8, 12, 9, 9, 9, 9, 9, 9",
-  "normal_totaldistr": "100",
-  "bb_frames": "94, 97, 100, 106, 112, 115, 118, 121, 124, 127, 130, 136, 142, 148, 152",
-  "bb_distribute": "9, 3, 3, 6, 6, 10, 7, 7, 7, 7, 7, 7, 7, 7, 7",
-  "bb_totaldistr": "100",
-  "sbb_frames": "94, 98, 102, 106, 110, 114, 117, 120, 123, 126, 129, 132, 138, 142, 145, 150, 158",
-  "sbb_distribute": "8, 5, 5, 5, 10, 7, 6, 6, 6, 6, 6, 5, 5, 5, 5, 5, 5",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "94, 98, 102, 106, 110, 114, 118, 122, 126, 130, 134, 138, 142, 146, 150, 154, 158, 162, 166, 170, 174",
-  "ubb_distribute": "5, 4, 4, 4, 8, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 4, 4, 4, 4, 4",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "1",
-  "ubb_effectdelay": "1",
-  "description": "An innocent and vivacious cyborg with the power to manipulate ice. Kula found herself in the middle of a madman's maze as she fought for her sanity and survival. Thanks to the help of her friends, she managed to break free from the chains that bound her and fought by their side to defeat the aspiring deity. No one knows, however, where she went after the madman's defeat. Rumor has it that she had returned to her own world as the maze crumbled. Still others claim that an ice-wielding savior walks the lands of Grand Gaia. Time will tell which story is true...",
-  "summon": "It's my turn!<br>So give it up and freeze!",
-  "fusion": "Cold, with a dash of spice!<br>Just how I like it!",
-  "evolution": "Come on, come on!<br>I'm ready for a fight!",
-  "hp_base": "5538",
-  "atk_base": "1991",
-  "def_base": "2184",
-  "rec_base": "1789",
-  "hp_lord": "7900",
-  "atk_lord": "2844",
-  "def_lord": "3120",
-  "rec_lord": "2556",
-  "hp_anima": "9017",
-  "rec_anima": "2258",
-  "atk_breaker": "3142",
-  "def_breaker": "2822",
-  "def_guardian": "3418",
-  "rec_guardian": "2407",
-  "def_oracle": "2971",
-  "rec_oracle": "3003",
-  "hp_bonus": "1500",
-  "atk_bonus": "600",
-  "def_bonus": "600",
-  "rec_bonus": "600",
-  "lordonly": "",
-  "combo_hits": "12",
-  "normaldc": "48",
-  "ls": "Ice Crow",
-  "lsdescription": "50% boost to Def, max HP, greatly boosts Def when damage dealt has exceeded certain amount, damage taken considerably boosts BB gauge & restores HP each turn",
-  "lsnote": "140% Def after 20,000 damage, fills 4-7 BC & heals 800-1000 + 10% Rec",
+  "stats": {
+    "_base": {
+      "atk": 1991,
+      "def": 2184,
+      "hp": 5530,
+      "rec": 1789
+    },
+    "_lord": {
+      "atk": 2844,
+      "def": 3120,
+      "hp": 7900,
+      "rec": 2556
+    },
+    "anima": {
+      "atk": 2844,
+      "def": 3120,
+      "hp max": 9390,
+      "hp min": 8645,
+      "rec max": 2407,
+      "rec min": 2109
+    },
+    "breaker": {
+      "atk max": 3291,
+      "atk min": 2993,
+      "def max": 2971,
+      "def min": 2673,
+      "hp": 7900,
+      "rec": 2556
+    },
+    "guardian": {
+      "atk": 2844,
+      "def max": 3567,
+      "def min": 3269,
+      "hp": 7900,
+      "rec max": 2556,
+      "rec min": 2258
+    },
+    "oracle": {
+      "atk": 2844,
+      "def max": 3120,
+      "def min": 2822,
+      "hp": 7900,
+      "rec max": 3152,
+      "rec min": 2854
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to Def, max HP, greatly boosts Def when damage dealt has exceeded certain amount, damage taken considerably boosts BB gauge & restores HP each turn",
+    "effects": [
+      {
+        "def% buff": 50,
+        "hp% buff": 50,
+        "passive id": "1"
+      },
+      {
+        "buff": {
+          "buff turns (3)": "2",
+          "def% buff (3)": 140
+        },
+        "damage dealt threshold buff activation": 20000,
+        "passive id": "80"
+      },
+      {
+        "bc fill when attacked high": 7,
+        "bc fill when attacked low": 4,
+        "bc fill when attacked%": 100,
+        "passive id": "25"
+      },
+      {
+        "passive id": "33",
+        "rec% added (turn heal)": 10.0,
+        "turn heal high": 1000,
+        "turn heal low": 800
+      }
+    ],
+    "id": "820178",
+    "name": "Ice Crow"
+  },
+  "extra_skill": {
+    "desc": "Reduces damage taken for 2 turns when damage taken has exceeded certain amount, reduces BB gauge required for BB & adds Water element to BB/SBB for 3 turns",
+    "effects": [
+      {
+        "buff": {
+          "buff turns (36)": "1",
+          "dmg reduction% buff": 25
+        },
+        "conditions": [],
+        "damage threshold buff activation": 10000,
+        "passive id": "78",
+        "passive target": "self"
+      },
+      {
+        "conditions": [],
+        "passive id": "48",
+        "passive target": "self",
+        "reduced bb bc cost%": 20
+      },
+      {
+        "conditions": [],
+        "passive id": "66",
+        "passive target": "self",
+        "trigger on bb": true,
+        "trigger on sbb": true,
+        "triggered effect": [
+          {
+            "effect delay time(ms)/frame": "0.0/0",
+            "elements added": [
+              "water"
+            ],
+            "elements added turns": 3,
+            "proc id": "30",
+            "target area": "aoe",
+            "target type": "party"
+          }
+        ]
+      }
+    ],
+    "id": "820178",
+    "name": "Diamond Freeze",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -570,14 +628,6 @@
     ],
     "name": "SDM: Diamond Edge I"
   },
-  "bbdescription": "15 combo powerful Water attack on all foes, damage taken considerably boosts BB gauge for 3 turns, hugely boosts Def for 3 turns & activates Water barrier",
-  "bbnote": "Fills 5-7 BC, 160% Def & 3000 HP barrier",
-  "bbtype": "Offense",
-  "bbhits": "15",
-  "bbaoe": "A",
-  "bbgauge": "28",
-  "bbdc": "15",
-  "bbmultiplier": "370",
   "sbb": {
     "damage frames": [
       {
@@ -1180,14 +1230,6 @@
     ],
     "name": "SDM: Diamond Edge II"
   },
-  "sbbdescription": "17 combo powerful Water attack on all foes, damage taken considerably boosts BB gauge for 3 turns, hugely boosts Def for 3 turns, considerably boosts Atk relative to Def for 3 turns & negates critical damage for 1 turn",
-  "sbbnote": "Fills 5-7 BC, 160% Def, 70% Def to Atk",
-  "sbbtype": "Offense",
-  "sbbhits": "17",
-  "sbbaoe": "A",
-  "sbbgauge": "23",
-  "sbbdc": "17",
-  "sbbmultiplier": "580",
   "ubb": {
     "damage frames": [
       {
@@ -1349,6 +1391,195 @@
     ],
     "name": "SDM: Diamond Edge MAX"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 227
+    },
+    "idle": {
+      "total number of frames": 141
+    },
+    "move": {
+      "total number of frames": 8
+    }
+  },
+  "category": 820170,
+  "cost": "48",
+  "damage frames": {
+    "frame times": [
+      94,
+      97,
+      100,
+      106,
+      112,
+      116,
+      120,
+      124,
+      128,
+      134,
+      140,
+      146
+    ],
+    "hit dmg% distribution": [
+      10,
+      4,
+      4,
+      8,
+      8,
+      12,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 12
+  },
+  "drop check count": 4,
+  "element": "water",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 8275,
+  "imp": {
+    "max atk": "600",
+    "max def": "600",
+    "max hp": "1500",
+    "max rec": "600"
+  },
+  "kind": "normal",
+  "lord damage range": "2647~2957",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Kula Diamond",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "8",
+  "sell caution": false,
+  "unitName": "Kula Diamond",
+  "maxlv": "150",
+  "no": "8275",
+  "unitDisplayHomePosition_1W9CxaFK": "374,263,140,382",
+  "unitDisplayDetailPosition_6z54rgb3": "-136,-96,1208,1003",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "25,145,636,527,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-88,-336,1208,1003",
+  "unitDisplaySummonPosition_KC3Jk8Br": "25,145,636,527,0",
+  "unitDisplayHpPosition_3BpHN6VD": "0,0",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "20000",
+  "sellCaution": false,
+  "effectFrames": "89:180:1,93:180:1,97:180:1,103:180:1,111:8000855:1,115:8000855:1,119:8000855:1,125:8000855:1,93:200311:2,94:200030:1,115:183:2,116:200141:1,124:660:1,115:8000856:2,116:8000857:1,142:8000858:2,143:8000859:1,150:8000860:1",
+  "evofrom": "820177",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "altname": "Kula Diamond",
+  "basexp": "21",
+  "animation_attack": "227",
+  "animation_idle": "141",
+  "animation_move": "8",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "94, 97, 100, 106, 112, 116, 120, 124, 128, 134, 140, 146",
+  "normal_distribute": "10, 4, 4, 8, 8, 12, 9, 9, 9, 9, 9, 9",
+  "normal_totaldistr": "100",
+  "bb_frames": "94, 97, 100, 106, 112, 115, 118, 121, 124, 127, 130, 136, 142, 148, 152",
+  "bb_distribute": "9, 3, 3, 6, 6, 10, 7, 7, 7, 7, 7, 7, 7, 7, 7",
+  "bb_totaldistr": "100",
+  "sbb_frames": "94, 98, 102, 106, 110, 114, 117, 120, 123, 126, 129, 132, 138, 142, 145, 150, 158",
+  "sbb_distribute": "8, 5, 5, 5, 10, 7, 6, 6, 6, 6, 6, 5, 5, 5, 5, 5, 5",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "94, 98, 102, 106, 110, 114, 118, 122, 126, 130, 134, 138, 142, 146, 150, 154, 158, 162, 166, 170, 174",
+  "ubb_distribute": "5, 4, 4, 4, 8, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 4, 4, 4, 4, 4",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "1",
+  "ubb_effectdelay": "1",
+  "description": "An innocent and vivacious cyborg with the power to manipulate ice. Kula found herself in the middle of a madman's maze as she fought for her sanity and survival. Thanks to the help of her friends, she managed to break free from the chains that bound her and fought by their side to defeat the aspiring deity. No one knows, however, where she went after the madman's defeat. Rumor has it that she had returned to her own world as the maze crumbled. Still others claim that an ice-wielding savior walks the lands of Grand Gaia. Time will tell which story is true...",
+  "summon": "It's my turn!<br>So give it up and freeze!",
+  "fusion": "Cold, with a dash of spice!<br>Just how I like it!",
+  "evolution": "Come on, come on!<br>I'm ready for a fight!",
+  "hp_base": "5538",
+  "atk_base": "1991",
+  "def_base": "2184",
+  "rec_base": "1789",
+  "hp_lord": "7900",
+  "atk_lord": "2844",
+  "def_lord": "3120",
+  "rec_lord": "2556",
+  "hp_anima": "9017",
+  "rec_anima": "2258",
+  "atk_breaker": "3142",
+  "def_breaker": "2822",
+  "def_guardian": "3418",
+  "rec_guardian": "2407",
+  "def_oracle": "2971",
+  "rec_oracle": "3003",
+  "hp_bonus": "1500",
+  "atk_bonus": "600",
+  "def_bonus": "600",
+  "rec_bonus": "600",
+  "lordonly": "",
+  "combo_hits": "12",
+  "normaldc": "48",
+  "ls": "Ice Crow",
+  "lsdescription": "50% boost to Def, max HP, greatly boosts Def when damage dealt has exceeded certain amount, damage taken considerably boosts BB gauge & restores HP each turn",
+  "lsnote": "140% Def after 20,000 damage, fills 4-7 BC & heals 800-1000 + 10% Rec",
+  "bbdescription": "15 combo powerful Water attack on all foes, damage taken considerably boosts BB gauge for 3 turns, hugely boosts Def for 3 turns & activates Water barrier",
+  "bbnote": "Fills 5-7 BC, 160% Def & 3000 HP barrier",
+  "bbtype": "Offense",
+  "bbhits": "15",
+  "bbaoe": "A",
+  "bbgauge": "28",
+  "bbdc": "15",
+  "bbmultiplier": "370",
+  "sbbdescription": "17 combo powerful Water attack on all foes, damage taken considerably boosts BB gauge for 3 turns, hugely boosts Def for 3 turns, considerably boosts Atk relative to Def for 3 turns & negates critical damage for 1 turn",
+  "sbbnote": "Fills 5-7 BC, 160% Def, 70% Def to Atk",
+  "sbbtype": "Offense",
+  "sbbhits": "17",
+  "sbbaoe": "A",
+  "sbbgauge": "23",
+  "sbbdc": "17",
+  "sbbmultiplier": "580",
   "ubbdescription": "21 combo massive Water attack on all foes, damage taken enormously boosts BB gauge for 3 turns, enormously boosts Atk, Def for 3 turns, enormously reduces damage taken for 1 turn & activates Water barrier",
   "ubbnote": "Fills 50 BC, 300% Atk, Def, 100% damage reduction & 20,000 HP barrier",
   "ubbtype": "Offense",
@@ -1361,8 +1592,6 @@
   "esitem": "",
   "esdescription": "Reduces damage taken for 2 turns when damage taken has exceeded certain amount, reduces BB gauge required for BB & adds Water element to BB/SBB for 3 turns",
   "esnote": "25% reduction after 5,000 damage & 20% reduction",
-  "evofrom": "820177",
-  "evointo": "",
   "evomats1": "",
   "evomats2": "",
   "evomats3": "",
@@ -1371,138 +1600,5 @@
   "evomats6": "",
   "evomats7": "",
   "evomats8": "",
-  "evoitem": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 1991,
-      "def": 2184,
-      "hp": 5530,
-      "rec": 1789
-    },
-    "_lord": {
-      "atk": 2844,
-      "def": 3120,
-      "hp": 7900,
-      "rec": 2556
-    },
-    "anima": {
-      "atk": 2844,
-      "def": 3120,
-      "hp max": 9390,
-      "hp min": 8645,
-      "rec max": 2407,
-      "rec min": 2109
-    },
-    "breaker": {
-      "atk max": 3291,
-      "atk min": 2993,
-      "def max": 2971,
-      "def min": 2673,
-      "hp": 7900,
-      "rec": 2556
-    },
-    "guardian": {
-      "atk": 2844,
-      "def max": 3567,
-      "def min": 3269,
-      "hp": 7900,
-      "rec max": 2556,
-      "rec min": 2258
-    },
-    "oracle": {
-      "atk": 2844,
-      "def max": 3120,
-      "def min": 2822,
-      "hp": 7900,
-      "rec max": 3152,
-      "rec min": 2854
-    }
-  },
-  "leader_skill": {
-    "desc": "50% boost to Def, max HP, greatly boosts Def when damage dealt has exceeded certain amount, damage taken considerably boosts BB gauge & restores HP each turn",
-    "effects": [
-      {
-        "def% buff": 50,
-        "hp% buff": 50,
-        "passive id": "1"
-      },
-      {
-        "buff": {
-          "buff turns (3)": "2",
-          "def% buff (3)": 140
-        },
-        "damage dealt threshold buff activation": 20000,
-        "passive id": "80"
-      },
-      {
-        "bc fill when attacked high": 7,
-        "bc fill when attacked low": 4,
-        "bc fill when attacked%": 100,
-        "passive id": "25"
-      },
-      {
-        "passive id": "33",
-        "rec% added (turn heal)": 10.0,
-        "turn heal high": 1000,
-        "turn heal low": 800
-      }
-    ],
-    "id": "820178",
-    "name": "Ice Crow"
-  },
-  "extra_skill": {
-    "desc": "Reduces damage taken for 2 turns when damage taken has exceeded certain amount, reduces BB gauge required for BB & adds Water element to BB/SBB for 3 turns",
-    "effects": [
-      {
-        "buff": {
-          "buff turns (36)": "1",
-          "dmg reduction% buff": 25
-        },
-        "conditions": [],
-        "damage threshold buff activation": 10000,
-        "passive id": "78",
-        "passive target": "self"
-      },
-      {
-        "conditions": [],
-        "passive id": "48",
-        "passive target": "self",
-        "reduced bb bc cost%": 20
-      },
-      {
-        "conditions": [],
-        "passive id": "66",
-        "passive target": "self",
-        "trigger on bb": true,
-        "trigger on sbb": true,
-        "triggered effect": [
-          {
-            "effect delay time(ms)/frame": "0.0/0",
-            "elements added": [
-              "water"
-            ],
-            "elements added turns": 3,
-            "proc id": "30",
-            "target area": "aoe",
-            "target type": "party"
-          }
-        ]
-      }
-    ],
-    "id": "820178",
-    "name": "Diamond Freeze",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "374,263,140,382",
-  "unitDisplayDetailPosition_6z54rgb3": "-136,-96,1208,1003",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "25,145,636,527,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-88,-336,1208,1003",
-  "unitDisplaySummonPosition_KC3Jk8Br": "25,145,636,527,0",
-  "unitDisplayHpPosition_3BpHN6VD": "0,0",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "20000",
-  "sellCaution": false,
-  "effectFrames": "89:180:1,93:180:1,97:180:1,103:180:1,111:8000855:1,115:8000855:1,119:8000855:1,125:8000855:1,93:200311:2,94:200030:1,115:183:2,116:200141:1,124:660:1,115:8000856:2,116:8000857:1,142:8000858:2,143:8000859:1,150:8000860:1"
+  "evoitem": ""
 }

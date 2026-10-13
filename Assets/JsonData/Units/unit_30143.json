@@ -1,61 +1,63 @@
 {
   "id": "30143",
-  "unitName": "Gaia Fist Nemia",
-  "no": "211",
-  "element": "Earth",
-  "rarity": "★★★★",
-  "cost": "10",
-  "maxlv": "60",
-  "basexp": "15",
-  "gender": "F",
-  "ai": "4",
-  "animation_attack": "89",
-  "animation_idle": "40",
-  "animation_move": "7",
-  "movespeed_attack": "0.0024",
-  "movespeed_skill": "0.0024",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "28, 34, 64, 72, 78",
-  "normal_distribute": "10, 10, 10, 40, 30",
-  "normal_totaldistr": "100",
-  "bb_frames": "28, 34, 64, 72, 78",
-  "bb_distribute": "10, 10, 10, 40, 30",
-  "bb_totaldistr": "100",
-  "description": "A boxer who studied martial arts at the Toltya Dojo in Sama. After arriving in Vriksha to look for her real parents, word of Nemia’s strength soon spread, prompting many plucky individuals to challenge her to duels. While dispatching her would-be challengers one after the other, she finally perfected a secret technique her foster father had taught her in her youth. Legend has it that whatever her fist came into contact with shattered into a thousand pieces.",
-  "summon": "Prepare to be dazzled.<br>It’s time you witnessed the secret<br>techniques of Tolteia Dojo!",
-  "fusion": "Tee hee...<br>With your fusion skills and my natural<br>talent, there’s nothing we can’t do!",
-  "evolution": "Yes! Thanks to you,<br>I feel like I’ve finally achieved<br>true strength...",
-  "hp_base": "2631",
-  "atk_base": "982",
-  "def_base": "564",
-  "rec_base": "518",
-  "hp_lord": "3875",
-  "atk_lord": "1277",
-  "def_lord": "763",
-  "rec_lord": "704",
-  "hp_anima": "4318",
-  "rec_anima": "586",
-  "atk_breaker": "1395",
-  "def_breaker": "645",
-  "atk_guardian": "1159",
-  "def_guardian": "881",
-  "rec_guardian": "645",
-  "def_oracle": "704",
-  "hp_oracle": "3698",
-  "rec_oracle": "881",
-  "hp_bonus": "400",
-  "atk_bonus": "140",
-  "def_bonus": "140",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "5",
-  "normaldc": "20",
-  "ls": "Royal Power",
-  "lsdescription": "15% boost to Atk Power of all types",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 982,
+      "def": 564,
+      "hp": 2631,
+      "rec": 518
+    },
+    "_lord": {
+      "atk": 1277,
+      "def": 763,
+      "hp": 3875,
+      "rec": 704
+    },
+    "anima": {
+      "atk": 1277,
+      "def": 763,
+      "hp max": 4465,
+      "hp min": 4170,
+      "rec max": 645,
+      "rec min": 527
+    },
+    "breaker": {
+      "atk max": 1454,
+      "atk min": 1336,
+      "def max": 704,
+      "def min": 586,
+      "hp": 3875,
+      "rec": 704
+    },
+    "guardian": {
+      "atk": 1277,
+      "def max": 940,
+      "def min": 822,
+      "hp": 3875,
+      "rec max": 704,
+      "rec min": 586
+    },
+    "oracle": {
+      "atk": 1277,
+      "def max": 763,
+      "def min": 645,
+      "hp": 3875,
+      "rec max": 940,
+      "rec min": 822
+    }
+  },
+  "leader_skill": {
+    "desc": "15% boost to Atk",
+    "effects": [
+      {
+        "atk% buff": 15,
+        "passive id": "1"
+      }
+    ],
+    "id": "1901",
+    "name": "Royal Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -298,94 +300,103 @@
     ],
     "name": "Grand Geyser"
   },
-  "bbdescription": "5 Combo Earth Elemental Attack on Single Enemy & Probable Injury and Weakness Effect",
-  "bbnote": "80% chance",
-  "bbtype": "Offense",
-  "bbhits": "5",
-  "bbaoe": "1",
-  "bbgauge": "15",
-  "bbdc": "10",
-  "bbmultiplier": "350",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "30142",
-  "evointo": "30144",
-  "evomats1": "30133",
-  "evomats2": "30191",
-  "evomats3": "60143",
-  "evomats4": "30131",
-  "evomats5": "30130",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 982,
-      "def": 564,
-      "hp": 2631,
-      "rec": 518
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_under",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1277,
-      "def": 763,
-      "hp": 3875,
-      "rec": 704
+    {
+      "action": "skill",
+      "chance%": 30.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1277,
-      "def": 763,
-      "hp max": 4465,
-      "hp min": 4170,
-      "rec max": 645,
-      "rec min": 527
+    {
+      "action": "attack",
+      "chance%": 70.0,
+      "target conditions": "hp_max",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 1454,
-      "atk min": 1336,
-      "def max": 704,
-      "def min": 586,
-      "hp": 3875,
-      "rec": 704
+    {
+      "action": "attack",
+      "chance%": 50.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "guardian": {
-      "atk": 1277,
-      "def max": 940,
-      "def min": 822,
-      "hp": 3875,
-      "rec max": 704,
-      "rec min": 586
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 89
     },
-    "oracle": {
-      "atk": 1277,
-      "def max": 763,
-      "def min": 645,
-      "hp": 3875,
-      "rec max": 940,
-      "rec min": 822
+    "idle": {
+      "total number of frames": 40
+    },
+    "move": {
+      "total number of frames": 7
     }
   },
-  "leader_skill": {
-    "desc": "15% boost to Atk",
-    "effects": [
-      {
-        "atk% buff": 15,
-        "passive id": "1"
-      }
+  "category": 30140,
+  "cost": "10",
+  "damage frames": {
+    "frame times": [
+      28,
+      34,
+      64,
+      72,
+      78
     ],
-    "id": "1901",
-    "name": "Royal Power"
+    "hit dmg% distribution": [
+      10,
+      10,
+      10,
+      40,
+      30
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 5
   },
-  "extra_skill": {},
+  "drop check count": 4,
+  "element": "earth",
+  "exp_pattern": 15,
+  "gender": "female",
+  "getting type": "farmable",
+  "guide_id": 211,
+  "imp": {
+    "max atk": "140",
+    "max def": "140",
+    "max hp": "400",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "1188~1328",
+  "movement": {
+    "attack": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    }
+  },
+  "name": "Gaia Fist Nemia",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Gaia Fist Nemia",
+  "maxlv": "60",
+  "no": "211",
   "unitDisplayHomePosition_1W9CxaFK": "140,27,182,498",
   "unitDisplayDetailPosition_6z54rgb3": "197,177,509,608",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "96,234,495,397,0",
@@ -395,5 +406,109 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "22:133:1,28:133:1,58:133:1,66:133:1,72:133:1"
+  "effectFrames": "22:133:1,28:133:1,58:133:1,66:133:1,72:133:1",
+  "evofrom": "30142",
+  "evointo": "30144",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "30133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30131",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30130",
+      "count": 1
+    }
+  ],
+  "basexp": "15",
+  "animation_attack": "89",
+  "animation_idle": "40",
+  "animation_move": "7",
+  "movespeed_attack": "0.0024",
+  "movespeed_skill": "0.0024",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "28, 34, 64, 72, 78",
+  "normal_distribute": "10, 10, 10, 40, 30",
+  "normal_totaldistr": "100",
+  "bb_frames": "28, 34, 64, 72, 78",
+  "bb_distribute": "10, 10, 10, 40, 30",
+  "bb_totaldistr": "100",
+  "description": "A boxer who studied martial arts at the Toltya Dojo in Sama. After arriving in Vriksha to look for her real parents, word of Nemia’s strength soon spread, prompting many plucky individuals to challenge her to duels. While dispatching her would-be challengers one after the other, she finally perfected a secret technique her foster father had taught her in her youth. Legend has it that whatever her fist came into contact with shattered into a thousand pieces.",
+  "summon": "Prepare to be dazzled.<br>It’s time you witnessed the secret<br>techniques of Tolteia Dojo!",
+  "fusion": "Tee hee...<br>With your fusion skills and my natural<br>talent, there’s nothing we can’t do!",
+  "evolution": "Yes! Thanks to you,<br>I feel like I’ve finally achieved<br>true strength...",
+  "hp_base": "2631",
+  "atk_base": "982",
+  "def_base": "564",
+  "rec_base": "518",
+  "hp_lord": "3875",
+  "atk_lord": "1277",
+  "def_lord": "763",
+  "rec_lord": "704",
+  "hp_anima": "4318",
+  "rec_anima": "586",
+  "atk_breaker": "1395",
+  "def_breaker": "645",
+  "atk_guardian": "1159",
+  "def_guardian": "881",
+  "rec_guardian": "645",
+  "def_oracle": "704",
+  "hp_oracle": "3698",
+  "rec_oracle": "881",
+  "hp_bonus": "400",
+  "atk_bonus": "140",
+  "def_bonus": "140",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "5",
+  "normaldc": "20",
+  "ls": "Royal Power",
+  "lsdescription": "15% boost to Atk Power of all types",
+  "lstype": "Attack",
+  "bbdescription": "5 Combo Earth Elemental Attack on Single Enemy & Probable Injury and Weakness Effect",
+  "bbnote": "80% chance",
+  "bbtype": "Offense",
+  "bbhits": "5",
+  "bbaoe": "1",
+  "bbgauge": "15",
+  "bbdc": "10",
+  "bbmultiplier": "350",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "30133",
+  "evomats2": "30191",
+  "evomats3": "60143",
+  "evomats4": "30131",
+  "evomats5": "30130"
 }

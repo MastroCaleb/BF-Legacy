@@ -1,61 +1,53 @@
 {
   "id": "20171",
-  "unitName": "Wendigo",
-  "no": "271",
-  "element": "Water",
-  "rarity": "★★",
-  "cost": "3",
-  "maxlv": "30",
-  "basexp": "10",
-  "gender": "N",
-  "ai": "2",
-  "animation_attack": "86",
-  "animation_idle": "46",
-  "animation_move": "11",
-  "movespeed_attack": "0.005",
-  "movespeed_skill": "0.005",
-  "speedtype_attack": "1",
-  "speedtype_skill": "1",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "40, 54",
-  "normal_distribute": "60, 40",
-  "normal_totaldistr": "100",
-  "bb_frames": "40, 54",
-  "bb_distribute": "50, 50",
-  "bb_totaldistr": "100",
-  "description": "A monster that inhabits snowy mountains, it enjoys the taste of human flesh and therefore is considered extremely dangerous to people. It's not easy escaping from beneath its massive claws, and most are simply swallowed up whole. They seem to be aware of their strengths and weaknesses, avoiding those who carry around thunder types. Summoners however often have trouble dealing with them as it's difficult to ascertain their element.",
-  "summon": "You look delicious!<br>I guess I will follow you!",
-  "fusion": "Wait!<br>I don't want this,<br>I want to eat you!",
-  "evolution": "",
-  "hp_base": "1350",
-  "atk_base": "380",
-  "def_base": "550",
-  "rec_base": "200",
-  "hp_lord": "2295",
-  "atk_lord": "532",
-  "def_lord": "770",
-  "rec_lord": "332",
-  "hp_anima": "2513",
-  "rec_anima": "274",
-  "atk_breaker": "590",
-  "def_breaker": "712",
-  "atk_guardian": "474",
-  "def_guardian": "828",
-  "rec_guardian": "303",
-  "def_oracle": "741",
-  "hp_oracle": "2208",
-  "rec_oracle": "419",
-  "hp_bonus": "250",
-  "atk_bonus": "100",
-  "def_bonus": "100",
-  "rec_bonus": "100",
-  "lordonly": "",
-  "combo_hits": "2",
-  "normaldc": "4",
-  "ls": "",
-  "lsdescription": "",
-  "lstype": "",
+  "stats": {
+    "_base": {
+      "atk": 380,
+      "def": 550,
+      "hp": 1350,
+      "rec": 200
+    },
+    "_lord": {
+      "atk": 532,
+      "def": 770,
+      "hp": 2295,
+      "rec": 332
+    },
+    "anima": {
+      "atk": 532,
+      "def": 770,
+      "hp max": 2585,
+      "hp min": 2440,
+      "rec max": 303,
+      "rec min": 245
+    },
+    "breaker": {
+      "atk max": 619,
+      "atk min": 561,
+      "def max": 741,
+      "def min": 683,
+      "hp": 2295,
+      "rec": 332
+    },
+    "guardian": {
+      "atk": 532,
+      "def max": 857,
+      "def min": 799,
+      "hp": 2295,
+      "rec max": 332,
+      "rec min": 274
+    },
+    "oracle": {
+      "atk": 532,
+      "def max": 770,
+      "def min": 712,
+      "hp": 2295,
+      "rec max": 448,
+      "rec min": 390
+    }
+  },
+  "leader_skill": {},
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -282,85 +274,85 @@
     ],
     "name": "Double Blizzard"
   },
-  "bbdescription": "2 combo Water elemental attack on single enemy & probable Sickness effect",
-  "bbnote": "80% chance",
-  "bbtype": "Offense",
-  "bbhits": "2",
-  "bbaoe": "1",
-  "bbgauge": "12",
-  "bbdc": "6",
-  "bbmultiplier": "250",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "20172",
-  "evomats1": "20131",
-  "evomats2": "60142",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "50000",
-  "stats": {
-    "_base": {
-      "atk": 380,
-      "def": 550,
-      "hp": 1350,
-      "rec": 200
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 532,
-      "def": 770,
-      "hp": 2295,
-      "rec": 332
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 532,
-      "def": 770,
-      "hp max": 2585,
-      "hp min": 2440,
-      "rec max": 303,
-      "rec min": 245
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 86
     },
-    "breaker": {
-      "atk max": 619,
-      "atk min": 561,
-      "def max": 741,
-      "def min": 683,
-      "hp": 2295,
-      "rec": 332
+    "idle": {
+      "total number of frames": 46
     },
-    "guardian": {
-      "atk": 532,
-      "def max": 857,
-      "def min": 799,
-      "hp": 2295,
-      "rec max": 332,
-      "rec min": 274
-    },
-    "oracle": {
-      "atk": 532,
-      "def max": 770,
-      "def min": 712,
-      "hp": 2295,
-      "rec max": 448,
-      "rec min": 390
+    "move": {
+      "total number of frames": 11
     }
   },
-  "leader_skill": {},
-  "extra_skill": {},
+  "category": 20170,
+  "cost": "3",
+  "damage frames": {
+    "frame times": [
+      40,
+      54
+    ],
+    "hit dmg% distribution": [
+      60,
+      40
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 2
+  },
+  "drop check count": 2,
+  "element": "water",
+  "exp_pattern": 10,
+  "gender": "other",
+  "getting type": "not eligible for achievement",
+  "guide_id": 271,
+  "imp": {
+    "max atk": "100",
+    "max def": "100",
+    "max hp": "250",
+    "max rec": "100"
+  },
+  "kind": "normal",
+  "lord damage range": "494~553",
+  "movement": {
+    "attack": {
+      "move speed": 0.005,
+      "move speed type": "1",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.005,
+      "move speed type": "1",
+      "move type": "1"
+    }
+  },
+  "name": "Wendigo",
+  "rarity": "2",
+  "sell caution": false,
+  "unitName": "Wendigo",
+  "maxlv": "30",
+  "no": "271",
   "unitDisplayHomePosition_1W9CxaFK": "109,-22,200,544",
   "unitDisplayDetailPosition_6z54rgb3": "150,240,535,538",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "130,408,303,232,0",
@@ -370,5 +362,95 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "300",
   "sellCaution": false,
-  "effectFrames": "34:132:1,48:132:1"
+  "effectFrames": "34:132:1,48:132:1",
+  "evofrom": "",
+  "evointo": "20172",
+  "evozelcost": "50000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "20131",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60142",
+      "count": 1
+    }
+  ],
+  "basexp": "10",
+  "animation_attack": "86",
+  "animation_idle": "46",
+  "animation_move": "11",
+  "movespeed_attack": "0.005",
+  "movespeed_skill": "0.005",
+  "speedtype_attack": "1",
+  "speedtype_skill": "1",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "40, 54",
+  "normal_distribute": "60, 40",
+  "normal_totaldistr": "100",
+  "bb_frames": "40, 54",
+  "bb_distribute": "50, 50",
+  "bb_totaldistr": "100",
+  "description": "A monster that inhabits snowy mountains, it enjoys the taste of human flesh and therefore is considered extremely dangerous to people. It's not easy escaping from beneath its massive claws, and most are simply swallowed up whole. They seem to be aware of their strengths and weaknesses, avoiding those who carry around thunder types. Summoners however often have trouble dealing with them as it's difficult to ascertain their element.",
+  "summon": "You look delicious!<br>I guess I will follow you!",
+  "fusion": "Wait!<br>I don't want this,<br>I want to eat you!",
+  "evolution": "",
+  "hp_base": "1350",
+  "atk_base": "380",
+  "def_base": "550",
+  "rec_base": "200",
+  "hp_lord": "2295",
+  "atk_lord": "532",
+  "def_lord": "770",
+  "rec_lord": "332",
+  "hp_anima": "2513",
+  "rec_anima": "274",
+  "atk_breaker": "590",
+  "def_breaker": "712",
+  "atk_guardian": "474",
+  "def_guardian": "828",
+  "rec_guardian": "303",
+  "def_oracle": "741",
+  "hp_oracle": "2208",
+  "rec_oracle": "419",
+  "hp_bonus": "250",
+  "atk_bonus": "100",
+  "def_bonus": "100",
+  "rec_bonus": "100",
+  "lordonly": "",
+  "combo_hits": "2",
+  "normaldc": "4",
+  "ls": "",
+  "lsdescription": "",
+  "lstype": "",
+  "bbdescription": "2 combo Water elemental attack on single enemy & probable Sickness effect",
+  "bbnote": "80% chance",
+  "bbtype": "Offense",
+  "bbhits": "2",
+  "bbaoe": "1",
+  "bbgauge": "12",
+  "bbdc": "6",
+  "bbmultiplier": "250",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "20131",
+  "evomats2": "60142",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": "",
+  "evoitem": ""
 }

@@ -1,62 +1,139 @@
 {
   "id": "860288",
-  "unitName": "Warp Arcanist Savei",
-  "idalt": "860288 2",
-  "has_altart": "true",
-  "no": "8345",
-  "element": "Dark",
-  "rarity": "Omni",
-  "cost": "60",
-  "maxlv": "150",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "124",
-  "animation_idle": "52",
-  "animation_move": "6",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "description": "With the scant intelligence that they had gathered, Savei began to plan with the others. It was clear that they had somehow stumbled into a stroke of luck--the enemy armada had splintered into smaller groups, with the main fleet lagging behind its forward elements. The plan that they had gathered was simple: while the majority of the defensive forces would engage the Dust-Yellow King's armada in low orbit, a small team would attempt a decapitation strike on the enemy's flagship. Despite the lack of accurate information about the King's own defenses, it was agreed that this rare opportunity to take out their leadership would be their best chance of success. Savei drilled relentlessly with the other members of the assault team, with every scrap of knowledge that they could find pored over night after night. As the enemy fleet arrived and began their descent, they began to set their plan into action. Explosions filled the air as Orebus's skies were plunged into chaos. Every time the tide of battle seemed to turn in their favor, the enemy had another wave of hungry, insectile soldiers to throw at them. At last, they found a gap in their defenses and launched their assault. In the hot depths of the enemy flagship, they found the Dust-Yellow King seated on its throne. As Savei ignited his dark matter spear, the alien ruler arose with a hundred golden weapons gripped in its arms. The last battle of the Vardket had begun.",
-  "summon": "If it bleeds, we can kill it. If that means risking my life to get it done, so be it!",
-  "fusion": "We'll only have one shot to end this. I've got to make it count. I have to!",
-  "evolution": "What? Oh. I didn't hear you. Is it time already? Well, alright. Let's get this over with then.",
-  "hp_base": "5908",
-  "atk_base": "2555",
-  "def_base": "2261",
-  "rec_base": "2058",
-  "hp_lord": "8440",
-  "atk_lord": "3650",
-  "def_lord": "3230",
-  "rec_lord": "2940",
-  "hp_anima": "9557",
-  "rec_anima": "2642",
-  "atk_breaker": "3948",
-  "def_breaker": "2932",
-  "def_guardian": "3528",
-  "rec_guardian": "2791",
-  "def_oracle": "3081",
-  "rec_oracle": "3387",
-  "hp_bonus": "1500",
-  "atk_bonus": "600",
-  "def_bonus": "600",
-  "rec_bonus": "600",
-  "lordonly": "",
-  "normal_frames": "16, 19, 22, 28, 31, 34, 53, 59, 62, 68, 71, 74, 77, 80",
-  "normal_distribute": "4, 7, 9, 7, 4, 4, 7, 14, 12, 10, 7, 5, 5, 5",
-  "normal_totaldistr": "100",
-  "combo_hits": "14",
-  "normaldc": "42",
-  "ls": "Imaginary Number Fusion",
-  "lsdescription": "150% Atk, max HP, 30% critical rate, 250% spark damage, 50% spark damage reduction, damage taken may restore HP & 15% damage reduction from Light, Dark types",
-  "lsnote": "",
-  "es": "Energy Effusion Calculation",
-  "esdescription": "50% Atk (Dark) for all allies, 100% critical, elemental damage reduction, 100% spark damage & add to BB/SBB (Adds Dark barrier)25% Dark elemental damage for all allies, 75% Atk, Def when BB gauge is above 50% & add to SBB (22 combo Dark attack on Light foes) in Guild Raid",
-  "esitem": "",
-  "esnote": "7000 HP barrier",
+  "stats": {
+    "_base": {
+      "atk": 2555,
+      "def": 2261,
+      "hp": 5908,
+      "rec": 2058
+    },
+    "_lord": {
+      "atk": 3650,
+      "def": 3230,
+      "hp": 8440,
+      "rec": 2940
+    },
+    "anima": {
+      "atk": 3650,
+      "def": 3230,
+      "hp max": 9930,
+      "hp min": 9185,
+      "rec max": 2791,
+      "rec min": 2493
+    },
+    "breaker": {
+      "atk max": 4097,
+      "atk min": 3799,
+      "def max": 3081,
+      "def min": 2783,
+      "hp": 8440,
+      "rec": 2940
+    },
+    "guardian": {
+      "atk": 3650,
+      "def max": 3677,
+      "def min": 3379,
+      "hp": 8440,
+      "rec max": 2940,
+      "rec min": 2642
+    },
+    "oracle": {
+      "atk": 3650,
+      "def max": 3230,
+      "def min": 2932,
+      "hp": 8440,
+      "rec max": 3536,
+      "rec min": 3238
+    }
+  },
+  "leader_skill": {
+    "desc": "150% Atk, max HP, 30% critical rate, 250% spark damage, 50% spark damage reduction, damage taken may restore HP & 15% damage reduction from Light, Dark types",
+    "effects": [
+      {
+        "atk% buff": 150,
+        "crit% buff": 30,
+        "hp% buff": 150,
+        "passive id": "1"
+      },
+      {
+        "damage% for spark": 250,
+        "passive id": "31"
+      },
+      {
+        "base spark dmg% resist": 50,
+        "buff spark dmg% resist": 50,
+        "passive id": "77"
+      },
+      {
+        "dmg% to hp% when attacked chance%": 50,
+        "dmg% to hp% when attacked high": 30,
+        "dmg% to hp% when attacked low": 25,
+        "passive id": "24"
+      },
+      {
+        "dmg% mitigation for elemental attacks": 15.0,
+        "mitigate dark attacks": true,
+        "mitigate light attacks": true,
+        "passive id": "62"
+      }
+    ],
+    "id": "860288",
+    "name": "Imaginary Number Fusion"
+  },
+  "extra_skill": {
+    "desc": "50% Atk (Dark) for all allies, 100% critical, elemental damage reduction, 100% spark damage & add to BB/SBB (Adds Dark barrier)<br>25% Dark elemental damage for all allies, 75% Atk, Def when BB gauge is above 50% & add to SBB (22 combo Dark attack on Light foes) in Guild Raid",
+    "effects": [
+      {
+        "atk% buff": 50,
+        "conditions": [],
+        "elements buffed": [
+          "dark"
+        ],
+        "passive id": "2",
+        "passive target": "party"
+      },
+      {
+        "conditions": [],
+        "crit chance base resist%": 100,
+        "crit chance buffed resist%": 100,
+        "crit dmg base damage resist%": 100,
+        "crit dmg buffed damage resist%": 100,
+        "passive id": "53",
+        "passive target": "self",
+        "strong base element damage resist%": 100,
+        "strong buffed element damage resist%": 100
+      },
+      {
+        "conditions": [],
+        "damage% for spark": 100,
+        "passive id": "31",
+        "passive target": "self"
+      },
+      {
+        "conditions": [],
+        "passive id": "66",
+        "passive target": "self",
+        "trigger on bb": true,
+        "trigger on sbb": true,
+        "triggered effect": [
+          {
+            "effect delay time(ms)/frame": "0.0/0",
+            "elemental barrier absorb dmg%": 100,
+            "elemental barrier def": 0,
+            "elemental barrier element": "dark",
+            "elemental barrier hp": 7000,
+            "proc id": "62",
+            "target area": "aoe",
+            "target type": "party"
+          }
+        ]
+      }
+    ],
+    "id": "860288",
+    "name": "Energy Effusion Calculation",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -771,19 +848,6 @@
     ],
     "name": "Gravitational Crusher"
   },
-  "bbdescription": "17 combo Dark attack on all foes (damage relative to remaining HP, boosts own critical rate), boosts Atk, Def, Rec and critical rate (Dark) for 3 turns, damage taken may restore HP for 3 turns, fills BB gauge for 3 turns, probable evasion for 2 turns & fills OD gauge",
-  "bbnote": "",
-  "bbtype": "Offense",
-  "bbgauge": "30",
-  "bb_frames": "16, 19, 22, 25, 28, 31, 34, 52, 55, 58, 61, 64, 67, 70, 73, 76, 79",
-  "bb_distribute": "3, 6, 8, 6, 4, 4, 4, 5, 6, 12, 10, 10, 8, 5, 3, 3, 3",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "bbhits": "17",
-  "bbaoe": "A",
-  "bbdc": "17",
-  "bbmultiplier": "200",
-  "bb_hpscale": "true",
   "sbb": {
     "damage frames": [
       {
@@ -1508,36 +1572,6 @@
     ],
     "name": "Pyromagnetic Strike"
   },
-  "sbbdescription": "20 combo Dark attack on all foes, 3 combo Dark attack on single foe (damage relative to remaining HP), boosts Atk, Def, Rec and critical rate (Dark) for 3 turns, boosts spark damage (Dark) for 3 turns, spark damage fills BB gauge for 3 turns & boosts own spark damage for 3 turns",
-  "sbbnote": "",
-  "sbbtype": "Offense",
-  "sbbgauge": "32",
-  "sbb_frames": "16, 19, 22, 25, 28, 31, 34, 37, 40, 55, 58, 61, 64, 67, 70, 73, 76, 79, 82, 85",
-  "sbb_distribute": "3, 6, 8, 6, 3, 3, 2, 2, 2, 5, 6, 12, 10, 10, 8, 5, 3, 2, 2, 2",
-  "sbb_totaldistr": "100",
-  "sbb_effectdelay": "1",
-  "sbbhits": "20",
-  "sbbaoe": "A",
-  "sbbdc": "20",
-  "sbbmultiplier": "800",
-  "sbb_hpscale": "",
-  "sbb2_frames": "52, 66, 84",
-  "sbb2_distribute": "30, 50, 20",
-  "sbb2_totaldistr": "100",
-  "sbb2_effectdelay": "1",
-  "sbbhits2": "3",
-  "sbbaoe2": "1",
-  "sbbdc2": "3",
-  "sbbmultiplier2": "300",
-  "sbb2_hpscale": "true",
-  "sbb3_frames": "16, 19, 22, 25, 28, 31, 34, 37, 40, 55, 58, 61, 64, 66, 67, 70, 73, 76, 79, 82, 84, 85",
-  "sbb3_distribute": "3, 6, 8, 6, 3, 3, 2, 2, 2, 5, 6, 12, 10, 50, 10, 8, 5, 3, 2, 2, 20, 2",
-  "sbb3_totaldistr": "170",
-  "sbbhits3": "22",
-  "sbbaoe3": "A",
-  "sbbdc3": "22",
-  "sbbmultiplier3": "1100",
-  "sbb3_guildraid": "true",
   "ubb": {
     "damage frames": [
       {
@@ -1726,6 +1760,219 @@
     ],
     "name": "Black Hole Wyrm"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 124
+    },
+    "idle": {
+      "total number of frames": 52
+    },
+    "move": {
+      "total number of frames": 6
+    }
+  },
+  "category": 860280,
+  "cost": "60",
+  "damage frames": {
+    "frame times": [
+      16,
+      19,
+      22,
+      28,
+      31,
+      34,
+      53,
+      59,
+      62,
+      68,
+      71,
+      74,
+      77,
+      80
+    ],
+    "hit dmg% distribution": [
+      4,
+      7,
+      9,
+      7,
+      4,
+      4,
+      7,
+      14,
+      12,
+      10,
+      7,
+      5,
+      5,
+      5
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 14
+  },
+  "drop check count": 3,
+  "element": "dark",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "not eligible for achievement",
+  "guide_id": 8345,
+  "imp": {
+    "max atk": "600",
+    "max def": "600",
+    "max hp": "1500",
+    "max rec": "600"
+  },
+  "kind": "normal",
+  "lord damage range": "3399~3796",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Warp Arcanist Savei",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "8",
+  "sell caution": false,
+  "unitName": "Warp Arcanist Savei",
+  "maxlv": "150",
+  "no": "8345",
+  "unitDisplayHomePosition_1W9CxaFK": "582,397,174,475",
+  "unitDisplayDetailPosition_6z54rgb3": "-225,-183,1476,1083",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "-33,46,822,603,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-225,-398,1476,1083",
+  "unitDisplaySummonPosition_KC3Jk8Br": "-33,46,822,603,0",
+  "unitDisplayHpPosition_3BpHN6VD": "0,35",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "50000",
+  "sellCaution": false,
+  "effectFrames": "19:8400175:1,20:8400176:1,25:8400176:1,53:8400175:1,52:600947:1,54:8400176:1,60:8400176:1,65:8400176:1,70:8400176:1,75:8400176:1,54:600210:1,51:600311:1,64:600321:1",
+  "evofrom": "860287",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "idalt": "860288 2",
+  "has_altart": "true",
+  "basexp": "21",
+  "animation_attack": "124",
+  "animation_idle": "52",
+  "animation_move": "6",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "description": "With the scant intelligence that they had gathered, Savei began to plan with the others. It was clear that they had somehow stumbled into a stroke of luck--the enemy armada had splintered into smaller groups, with the main fleet lagging behind its forward elements. The plan that they had gathered was simple: while the majority of the defensive forces would engage the Dust-Yellow King's armada in low orbit, a small team would attempt a decapitation strike on the enemy's flagship. Despite the lack of accurate information about the King's own defenses, it was agreed that this rare opportunity to take out their leadership would be their best chance of success. Savei drilled relentlessly with the other members of the assault team, with every scrap of knowledge that they could find pored over night after night. As the enemy fleet arrived and began their descent, they began to set their plan into action. Explosions filled the air as Orebus's skies were plunged into chaos. Every time the tide of battle seemed to turn in their favor, the enemy had another wave of hungry, insectile soldiers to throw at them. At last, they found a gap in their defenses and launched their assault. In the hot depths of the enemy flagship, they found the Dust-Yellow King seated on its throne. As Savei ignited his dark matter spear, the alien ruler arose with a hundred golden weapons gripped in its arms. The last battle of the Vardket had begun.",
+  "summon": "If it bleeds, we can kill it. If that means risking my life to get it done, so be it!",
+  "fusion": "We'll only have one shot to end this. I've got to make it count. I have to!",
+  "evolution": "What? Oh. I didn't hear you. Is it time already? Well, alright. Let's get this over with then.",
+  "hp_base": "5908",
+  "atk_base": "2555",
+  "def_base": "2261",
+  "rec_base": "2058",
+  "hp_lord": "8440",
+  "atk_lord": "3650",
+  "def_lord": "3230",
+  "rec_lord": "2940",
+  "hp_anima": "9557",
+  "rec_anima": "2642",
+  "atk_breaker": "3948",
+  "def_breaker": "2932",
+  "def_guardian": "3528",
+  "rec_guardian": "2791",
+  "def_oracle": "3081",
+  "rec_oracle": "3387",
+  "hp_bonus": "1500",
+  "atk_bonus": "600",
+  "def_bonus": "600",
+  "rec_bonus": "600",
+  "lordonly": "",
+  "normal_frames": "16, 19, 22, 28, 31, 34, 53, 59, 62, 68, 71, 74, 77, 80",
+  "normal_distribute": "4, 7, 9, 7, 4, 4, 7, 14, 12, 10, 7, 5, 5, 5",
+  "normal_totaldistr": "100",
+  "combo_hits": "14",
+  "normaldc": "42",
+  "ls": "Imaginary Number Fusion",
+  "lsdescription": "150% Atk, max HP, 30% critical rate, 250% spark damage, 50% spark damage reduction, damage taken may restore HP & 15% damage reduction from Light, Dark types",
+  "lsnote": "",
+  "es": "Energy Effusion Calculation",
+  "esdescription": "50% Atk (Dark) for all allies, 100% critical, elemental damage reduction, 100% spark damage & add to BB/SBB (Adds Dark barrier)25% Dark elemental damage for all allies, 75% Atk, Def when BB gauge is above 50% & add to SBB (22 combo Dark attack on Light foes) in Guild Raid",
+  "esitem": "",
+  "esnote": "7000 HP barrier",
+  "bbdescription": "17 combo Dark attack on all foes (damage relative to remaining HP, boosts own critical rate), boosts Atk, Def, Rec and critical rate (Dark) for 3 turns, damage taken may restore HP for 3 turns, fills BB gauge for 3 turns, probable evasion for 2 turns & fills OD gauge",
+  "bbnote": "",
+  "bbtype": "Offense",
+  "bbgauge": "30",
+  "bb_frames": "16, 19, 22, 25, 28, 31, 34, 52, 55, 58, 61, 64, 67, 70, 73, 76, 79",
+  "bb_distribute": "3, 6, 8, 6, 4, 4, 4, 5, 6, 12, 10, 10, 8, 5, 3, 3, 3",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "bbhits": "17",
+  "bbaoe": "A",
+  "bbdc": "17",
+  "bbmultiplier": "200",
+  "bb_hpscale": "true",
+  "sbbdescription": "20 combo Dark attack on all foes, 3 combo Dark attack on single foe (damage relative to remaining HP), boosts Atk, Def, Rec and critical rate (Dark) for 3 turns, boosts spark damage (Dark) for 3 turns, spark damage fills BB gauge for 3 turns & boosts own spark damage for 3 turns",
+  "sbbnote": "",
+  "sbbtype": "Offense",
+  "sbbgauge": "32",
+  "sbb_frames": "16, 19, 22, 25, 28, 31, 34, 37, 40, 55, 58, 61, 64, 67, 70, 73, 76, 79, 82, 85",
+  "sbb_distribute": "3, 6, 8, 6, 3, 3, 2, 2, 2, 5, 6, 12, 10, 10, 8, 5, 3, 2, 2, 2",
+  "sbb_totaldistr": "100",
+  "sbb_effectdelay": "1",
+  "sbbhits": "20",
+  "sbbaoe": "A",
+  "sbbdc": "20",
+  "sbbmultiplier": "800",
+  "sbb_hpscale": "",
+  "sbb2_frames": "52, 66, 84",
+  "sbb2_distribute": "30, 50, 20",
+  "sbb2_totaldistr": "100",
+  "sbb2_effectdelay": "1",
+  "sbbhits2": "3",
+  "sbbaoe2": "1",
+  "sbbdc2": "3",
+  "sbbmultiplier2": "300",
+  "sbb2_hpscale": "true",
+  "sbb3_frames": "16, 19, 22, 25, 28, 31, 34, 37, 40, 55, 58, 61, 64, 66, 67, 70, 73, 76, 79, 82, 84, 85",
+  "sbb3_distribute": "3, 6, 8, 6, 3, 3, 2, 2, 2, 5, 6, 12, 10, 50, 10, 8, 5, 3, 2, 2, 20, 2",
+  "sbb3_totaldistr": "170",
+  "sbbhits3": "22",
+  "sbbaoe3": "A",
+  "sbbdc3": "22",
+  "sbbmultiplier3": "1100",
+  "sbb3_guildraid": "true",
   "ubbdescription": "23 combo Dark attack on all foes, 3 combo Dark attack on single foe (damage relative to remaining HP), boosts spark damage for 3 turns, boosts Dark elemental damage for 3 turns, damage taken restores HP for 3 turns & fills BB gauge for 3 turns",
   "ubbnote": "",
   "ubbtype": "Offense",
@@ -1748,7 +1995,6 @@
   "ubbdc2": "3",
   "ubbmultiplier2": "1500",
   "ubb2_hpscale": "true",
-  "evofrom": "860287",
   "omniskill1_cat": "Parameter Boost",
   "omniskill1_1_sp": "15",
   "omniskill1_1_desc": "130% Def, max HP",
@@ -1796,149 +2042,5 @@
   "incorrectinfo": "",
   "addcat": "Guild Raid Exclusive",
   "addcatname": "Savei2",
-  "bottomtext": "",
-  "stats": {
-    "_base": {
-      "atk": 2555,
-      "def": 2261,
-      "hp": 5908,
-      "rec": 2058
-    },
-    "_lord": {
-      "atk": 3650,
-      "def": 3230,
-      "hp": 8440,
-      "rec": 2940
-    },
-    "anima": {
-      "atk": 3650,
-      "def": 3230,
-      "hp max": 9930,
-      "hp min": 9185,
-      "rec max": 2791,
-      "rec min": 2493
-    },
-    "breaker": {
-      "atk max": 4097,
-      "atk min": 3799,
-      "def max": 3081,
-      "def min": 2783,
-      "hp": 8440,
-      "rec": 2940
-    },
-    "guardian": {
-      "atk": 3650,
-      "def max": 3677,
-      "def min": 3379,
-      "hp": 8440,
-      "rec max": 2940,
-      "rec min": 2642
-    },
-    "oracle": {
-      "atk": 3650,
-      "def max": 3230,
-      "def min": 2932,
-      "hp": 8440,
-      "rec max": 3536,
-      "rec min": 3238
-    }
-  },
-  "leader_skill": {
-    "desc": "150% Atk, max HP, 30% critical rate, 250% spark damage, 50% spark damage reduction, damage taken may restore HP & 15% damage reduction from Light, Dark types",
-    "effects": [
-      {
-        "atk% buff": 150,
-        "crit% buff": 30,
-        "hp% buff": 150,
-        "passive id": "1"
-      },
-      {
-        "damage% for spark": 250,
-        "passive id": "31"
-      },
-      {
-        "base spark dmg% resist": 50,
-        "buff spark dmg% resist": 50,
-        "passive id": "77"
-      },
-      {
-        "dmg% to hp% when attacked chance%": 50,
-        "dmg% to hp% when attacked high": 30,
-        "dmg% to hp% when attacked low": 25,
-        "passive id": "24"
-      },
-      {
-        "dmg% mitigation for elemental attacks": 15.0,
-        "mitigate dark attacks": true,
-        "mitigate light attacks": true,
-        "passive id": "62"
-      }
-    ],
-    "id": "860288",
-    "name": "Imaginary Number Fusion"
-  },
-  "extra_skill": {
-    "desc": "50% Atk (Dark) for all allies, 100% critical, elemental damage reduction, 100% spark damage & add to BB/SBB (Adds Dark barrier)<br>25% Dark elemental damage for all allies, 75% Atk, Def when BB gauge is above 50% & add to SBB (22 combo Dark attack on Light foes) in Guild Raid",
-    "effects": [
-      {
-        "atk% buff": 50,
-        "conditions": [],
-        "elements buffed": [
-          "dark"
-        ],
-        "passive id": "2",
-        "passive target": "party"
-      },
-      {
-        "conditions": [],
-        "crit chance base resist%": 100,
-        "crit chance buffed resist%": 100,
-        "crit dmg base damage resist%": 100,
-        "crit dmg buffed damage resist%": 100,
-        "passive id": "53",
-        "passive target": "self",
-        "strong base element damage resist%": 100,
-        "strong buffed element damage resist%": 100
-      },
-      {
-        "conditions": [],
-        "damage% for spark": 100,
-        "passive id": "31",
-        "passive target": "self"
-      },
-      {
-        "conditions": [],
-        "passive id": "66",
-        "passive target": "self",
-        "trigger on bb": true,
-        "trigger on sbb": true,
-        "triggered effect": [
-          {
-            "effect delay time(ms)/frame": "0.0/0",
-            "elemental barrier absorb dmg%": 100,
-            "elemental barrier def": 0,
-            "elemental barrier element": "dark",
-            "elemental barrier hp": 7000,
-            "proc id": "62",
-            "target area": "aoe",
-            "target type": "party"
-          }
-        ]
-      }
-    ],
-    "id": "860288",
-    "name": "Energy Effusion Calculation",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "582,397,174,475",
-  "unitDisplayDetailPosition_6z54rgb3": "-225,-183,1476,1083",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "-33,46,822,603,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-225,-398,1476,1083",
-  "unitDisplaySummonPosition_KC3Jk8Br": "-33,46,822,603,0",
-  "unitDisplayHpPosition_3BpHN6VD": "0,35",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "50000",
-  "sellCaution": false,
-  "effectFrames": "19:8400175:1,20:8400176:1,25:8400176:1,53:8400175:1,52:600947:1,54:8400176:1,60:8400176:1,65:8400176:1,70:8400176:1,75:8400176:1,54:600210:1,51:600311:1,64:600321:1"
+  "bottomtext": ""
 }

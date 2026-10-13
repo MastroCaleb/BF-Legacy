@@ -1,69 +1,161 @@
 {
   "id": "50386",
-  "unitName": "Paladin Crusader Sodis",
-  "no": "1234",
-  "element": "Light",
-  "rarity": "★★★★★★★",
-  "cost": "40",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "4",
-  "animation_attack": "125",
-  "animation_idle": "52",
-  "animation_move": "31",
-  "movespeed_attack": "0.0024",
-  "movespeed_skill": "0.0024",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "22, 26, 30, 34, 38, 55, 58, 61, 64, 67, 70",
-  "normal_distribute": "8, 8, 8, 8, 8, 10, 10, 10, 10, 10, 10",
-  "normal_totaldistr": "100",
-  "bb_frames": "22, 26, 30, 34, 38, 55, 58, 61, 64, 67, 70, 73, 76",
-  "bb_distribute": "6, 6, 6, 6, 6, 9, 9, 8, 9, 9, 8, 9, 9",
-  "bb_totaldistr": "100",
-  "sbb_frames": "22, 26, 30, 34, 38, 41, 44, 47, 55, 58, 61, 64, 67, 70, 73, 76, 79, 82, 85",
-  "sbb_distribute": "3, 3, 3, 3, 3, 3, 3, 3, 7, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "22, 26, 30, 34, 38, 41, 44, 47, 50, 55, 58, 61, 64, 67, 70, 73, 76, 79, 82, 85, 88, 91, 94, 97",
-  "ubb_distribute": "3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 4, 5, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "3",
-  "ubb_effectdelay": "3",
-  "description": "Slain in a duel with his younger brother, Sodis bore deep scars on his soul. Having lived and died for himself, he lost everything including the chance to profess love for his cherished lady, leading him to burn with anger at the gods. At long last his tortured soul, long wracked with chaotic emotion, was shattered and sublimated. His thoughts screamed out across time and space, solidifying into a will to be trusted by his dear ones. Leaving his poignant past behind, Sodis strove forward, silently bearing the crushing weight of his sorrow and regret.",
-  "summon": "At last, at the very end, [[Phantom Victor Zephyr|someone]] I can finally trust with everything. Though I'm sure they find it a burden.",
-  "fusion": "No punishment is too great, if it can save a life! For redemption, I will gladly sacrifice myself.",
-  "evolution": "My sorrow and regret know no bounds.<br>Yet I still believe!<br>Humanity verily seeks the path of righteousness!",
-  "hp_base": "5402",
-  "atk_base": "1713",
-  "def_base": "1713",
-  "rec_base": "1396",
-  "hp_lord": "6725",
-  "atk_lord": "2622",
-  "def_lord": "2154",
-  "rec_lord": "1911",
-  "hp_anima": "7617",
-  "rec_anima": "1673",
-  "atk_breaker": "2860",
-  "def_breaker": "1916",
-  "def_guardian": "2392",
-  "rec_guardian": "1792",
-  "def_oracle": "2035",
-  "rec_oracle": "2268",
-  "hp_bonus": "1100",
-  "atk_bonus": "440",
-  "def_bonus": "440",
-  "rec_bonus": "440",
-  "lordonly": "",
-  "combo_hits": "11",
-  "normaldc": "44",
-  "ls": "Royal Flash Conviction",
-  "lsdescription": "15% damage reduction from Dark types, hugely boosts Light Type elemental damage & 100% boost to Spark damage",
-  "lsnote": "150% boost",
-  "lstype": "Attack/Defense",
+  "stats": {
+    "_base": {
+      "atk": 1713,
+      "def": 1713,
+      "hp": 5402,
+      "rec": 1396
+    },
+    "_lord": {
+      "atk": 2622,
+      "def": 2154,
+      "hp": 6725,
+      "rec": 1911
+    },
+    "anima": {
+      "atk": 2622,
+      "def": 2154,
+      "hp max": 7915,
+      "hp min": 7320,
+      "rec max": 1792,
+      "rec min": 1554
+    },
+    "breaker": {
+      "atk max": 2979,
+      "atk min": 2741,
+      "def max": 2035,
+      "def min": 1797,
+      "hp": 6725,
+      "rec": 1911
+    },
+    "guardian": {
+      "atk": 2622,
+      "def max": 2511,
+      "def min": 2273,
+      "hp": 6725,
+      "rec max": 1911,
+      "rec min": 1673
+    },
+    "oracle": {
+      "atk": 2622,
+      "def max": 2154,
+      "def min": 1916,
+      "hp": 6725,
+      "rec max": 2387,
+      "rec min": 2149
+    }
+  },
+  "leader_skill": {
+    "desc": "15% damage reduction from Dark types, hugely boosts Light Type elemental damage & 100% boost to Spark damage",
+    "effects": [
+      {
+        "dark resist%": 15,
+        "passive id": "5"
+      },
+      {
+        "elemental weakness multiplier%": 150.0,
+        "light units do extra elemental weakness dmg": true,
+        "passive id": "50"
+      },
+      {
+        "damage% for spark": 100,
+        "passive id": "31"
+      }
+    ],
+    "id": "554",
+    "name": "Royal Flash Conviction"
+  },
+  "extra_skill": {
+    "desc": "Spark damage boosts BB gauge, adds 20% boost to Atk, HP and probable Spark vulnerability to BB/SBB when Guardian Shard is equipped & adds 20% boost to Def, HP and 1 turn 50% damage reduction to BB/SBB when Guardian Sliver is equipped",
+    "effects": [
+      {
+        "bc fill on spark high": 2,
+        "bc fill on spark low": 1,
+        "bc fill on spark%": 100,
+        "conditions": [],
+        "passive id": "47",
+        "passive target": "self"
+      },
+      {
+        "conditions": [
+          {
+            "item required": [
+              "47204"
+            ]
+          }
+        ],
+        "passive id": "66",
+        "passive target": "self",
+        "trigger on bb": true,
+        "trigger on sbb": true,
+        "triggered effect": [
+          {
+            "dmg% reduction": 50,
+            "dmg% reduction turns (36)": 1,
+            "effect delay time(ms)/frame": "0.0/0",
+            "proc id": "18",
+            "target area": "aoe",
+            "target type": "party"
+          }
+        ]
+      },
+      {
+        "conditions": [
+          {
+            "item required": [
+              "47204"
+            ]
+          }
+        ],
+        "def% buff": 20,
+        "hp% buff": 20,
+        "passive id": "1",
+        "passive target": "self"
+      },
+      {
+        "conditions": [
+          {
+            "item required": [
+              "47203"
+            ]
+          }
+        ],
+        "passive id": "66",
+        "passive target": "self",
+        "trigger on bb": true,
+        "trigger on sbb": true,
+        "triggered effect": [
+          {
+            "effect delay time(ms)/frame": "0.0/0",
+            "proc id": "58",
+            "spark dmg received apply%": 25,
+            "spark dmg received debuff turns (94)": 1,
+            "spark dmg% received": 25,
+            "target area": "aoe",
+            "target type": "enemy"
+          }
+        ]
+      },
+      {
+        "atk% buff": 20,
+        "conditions": [
+          {
+            "item required": [
+              "47203"
+            ]
+          }
+        ],
+        "hp% buff": 20,
+        "passive id": "1",
+        "passive target": "self"
+      }
+    ],
+    "id": "11800",
+    "name": "Value of Trust",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -424,14 +516,6 @@
     ],
     "name": "Supreme Light Edge"
   },
-  "bbdescription": "13 combo Light attack on all foes & hugely boosts Spark damage and considerably boosts BC efficacy for 3 turns",
-  "bbnote": "90% boost to Spark damage & 30% boost to BC efficacy",
-  "bbtype": "Support/Offense",
-  "bbhits": "13",
-  "bbaoe": "A",
-  "bbgauge": "27",
-  "bbdc": "13",
-  "bbmultiplier": "270",
   "sbb": {
     "damage frames": [
       {
@@ -926,14 +1010,6 @@
     ],
     "name": "Fateful Flare"
   },
-  "sbbdescription": "19 combo powerful Light attack on all foes, hugely boosts Spark damage for 3 turns & boosts BB Atk and Light element damage for 3 turns",
-  "sbbnote": "90% boost to Spark damage, 150% boost to BB Atk & 120% boost to '''Atk of Light types (not Light elemental damage)'''",
-  "sbbtype": "Support/Offense",
-  "sbbhits": "19",
-  "sbbaoe": "A",
-  "sbbgauge": "22",
-  "sbbdc": "19",
-  "sbbmultiplier": "520",
   "ubb": {
     "damage frames": [
       {
@@ -1078,6 +1154,205 @@
     ],
     "name": "Twelve-Pointed Cross"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_under",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 30.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 70.0,
+      "target conditions": "hp_max",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 50.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 125
+    },
+    "idle": {
+      "total number of frames": 52
+    },
+    "move": {
+      "total number of frames": 31
+    }
+  },
+  "category": 50380,
+  "cost": "40",
+  "damage frames": {
+    "frame times": [
+      22,
+      26,
+      30,
+      34,
+      38,
+      55,
+      58,
+      61,
+      64,
+      67,
+      70
+    ],
+    "hit dmg% distribution": [
+      8,
+      8,
+      8,
+      8,
+      8,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 11
+  },
+  "drop check count": 4,
+  "element": "light",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 1234,
+  "imp": {
+    "max atk": "440",
+    "max def": "440",
+    "max hp": "1100",
+    "max rec": "440"
+  },
+  "kind": "normal",
+  "lord damage range": "2440~2726",
+  "movement": {
+    "attack": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    }
+  },
+  "name": "Paladin Crusader Sodis",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Paladin Crusader Sodis",
+  "maxlv": "120",
+  "no": "1234",
+  "unitDisplayHomePosition_1W9CxaFK": "552,298,140,382",
+  "unitDisplayDetailPosition_6z54rgb3": "-193,-111,1206,969",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "14,157,603,485,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-139,-370,1206,969",
+  "unitDisplaySummonPosition_KC3Jk8Br": "14,157,603,485,0",
+  "unitDisplayHpPosition_3BpHN6VD": "-2,45",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "15000",
+  "sellCaution": false,
+  "effectFrames": "22:400486:1,30:400486:1,38:400486:1,49:125:1,52:125:1,55:125:1,58:125:1,61:125:1,64:125:1,61:400515:1,54:100125:1,20:200252:1",
+  "evofrom": "50385",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "21",
+  "animation_attack": "125",
+  "animation_idle": "52",
+  "animation_move": "31",
+  "movespeed_attack": "0.0024",
+  "movespeed_skill": "0.0024",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "22, 26, 30, 34, 38, 55, 58, 61, 64, 67, 70",
+  "normal_distribute": "8, 8, 8, 8, 8, 10, 10, 10, 10, 10, 10",
+  "normal_totaldistr": "100",
+  "bb_frames": "22, 26, 30, 34, 38, 55, 58, 61, 64, 67, 70, 73, 76",
+  "bb_distribute": "6, 6, 6, 6, 6, 9, 9, 8, 9, 9, 8, 9, 9",
+  "bb_totaldistr": "100",
+  "sbb_frames": "22, 26, 30, 34, 38, 41, 44, 47, 55, 58, 61, 64, 67, 70, 73, 76, 79, 82, 85",
+  "sbb_distribute": "3, 3, 3, 3, 3, 3, 3, 3, 7, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "22, 26, 30, 34, 38, 41, 44, 47, 50, 55, 58, 61, 64, 67, 70, 73, 76, 79, 82, 85, 88, 91, 94, 97",
+  "ubb_distribute": "3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 4, 5, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "3",
+  "ubb_effectdelay": "3",
+  "description": "Slain in a duel with his younger brother, Sodis bore deep scars on his soul. Having lived and died for himself, he lost everything including the chance to profess love for his cherished lady, leading him to burn with anger at the gods. At long last his tortured soul, long wracked with chaotic emotion, was shattered and sublimated. His thoughts screamed out across time and space, solidifying into a will to be trusted by his dear ones. Leaving his poignant past behind, Sodis strove forward, silently bearing the crushing weight of his sorrow and regret.",
+  "summon": "At last, at the very end, [[Phantom Victor Zephyr|someone]] I can finally trust with everything. Though I'm sure they find it a burden.",
+  "fusion": "No punishment is too great, if it can save a life! For redemption, I will gladly sacrifice myself.",
+  "evolution": "My sorrow and regret know no bounds.<br>Yet I still believe!<br>Humanity verily seeks the path of righteousness!",
+  "hp_base": "5402",
+  "atk_base": "1713",
+  "def_base": "1713",
+  "rec_base": "1396",
+  "hp_lord": "6725",
+  "atk_lord": "2622",
+  "def_lord": "2154",
+  "rec_lord": "1911",
+  "hp_anima": "7617",
+  "rec_anima": "1673",
+  "atk_breaker": "2860",
+  "def_breaker": "1916",
+  "def_guardian": "2392",
+  "rec_guardian": "1792",
+  "def_oracle": "2035",
+  "rec_oracle": "2268",
+  "hp_bonus": "1100",
+  "atk_bonus": "440",
+  "def_bonus": "440",
+  "rec_bonus": "440",
+  "lordonly": "",
+  "combo_hits": "11",
+  "normaldc": "44",
+  "ls": "Royal Flash Conviction",
+  "lsdescription": "15% damage reduction from Dark types, hugely boosts Light Type elemental damage & 100% boost to Spark damage",
+  "lsnote": "150% boost",
+  "lstype": "Attack/Defense",
+  "bbdescription": "13 combo Light attack on all foes & hugely boosts Spark damage and considerably boosts BC efficacy for 3 turns",
+  "bbnote": "90% boost to Spark damage & 30% boost to BC efficacy",
+  "bbtype": "Support/Offense",
+  "bbhits": "13",
+  "bbaoe": "A",
+  "bbgauge": "27",
+  "bbdc": "13",
+  "bbmultiplier": "270",
+  "sbbdescription": "19 combo powerful Light attack on all foes, hugely boosts Spark damage for 3 turns & boosts BB Atk and Light element damage for 3 turns",
+  "sbbnote": "90% boost to Spark damage, 150% boost to BB Atk & 120% boost to '''Atk of Light types (not Light elemental damage)'''",
+  "sbbtype": "Support/Offense",
+  "sbbhits": "19",
+  "sbbaoe": "A",
+  "sbbgauge": "22",
+  "sbbdc": "19",
+  "sbbmultiplier": "520",
   "ubbdescription": "24 combo massive Light attack on all foes, enormously boosts Spark damage for 3 turns & hugely boosts BB Atk and considerably boosts Light element damage for 3 turns",
   "ubbnote": "130% boost to Spark damage, 300% boost to BB Atk & 200% boost '''Atk of Light types (not Light elemental damage)'''",
   "ubbtype": "Support/Offense",
@@ -1090,176 +1365,9 @@
   "esitem": "Guardian Shard or Guardian Sliver",
   "esdescription": "Spark damage boosts BB gauge, adds 20% boost to Atk, HP and probable Spark vulnerability to BB/SBB when Guardian Shard is equipped & adds 20% boost to Def, HP and 1 turn 50% damage reduction to BB/SBB when Guardian Sliver is equipped",
   "esnote": "Fills 1-2 BC & 25% chance to boost Spark vulnerability by 25%",
-  "evofrom": "50385",
   "notes": "",
   "incorrectinfo": "true",
   "addcat": "12 Guardians of the Gods",
   "addcatname": "Sodis4",
-  "bottomtext": "",
-  "stats": {
-    "_base": {
-      "atk": 1713,
-      "def": 1713,
-      "hp": 5402,
-      "rec": 1396
-    },
-    "_lord": {
-      "atk": 2622,
-      "def": 2154,
-      "hp": 6725,
-      "rec": 1911
-    },
-    "anima": {
-      "atk": 2622,
-      "def": 2154,
-      "hp max": 7915,
-      "hp min": 7320,
-      "rec max": 1792,
-      "rec min": 1554
-    },
-    "breaker": {
-      "atk max": 2979,
-      "atk min": 2741,
-      "def max": 2035,
-      "def min": 1797,
-      "hp": 6725,
-      "rec": 1911
-    },
-    "guardian": {
-      "atk": 2622,
-      "def max": 2511,
-      "def min": 2273,
-      "hp": 6725,
-      "rec max": 1911,
-      "rec min": 1673
-    },
-    "oracle": {
-      "atk": 2622,
-      "def max": 2154,
-      "def min": 1916,
-      "hp": 6725,
-      "rec max": 2387,
-      "rec min": 2149
-    }
-  },
-  "leader_skill": {
-    "desc": "15% damage reduction from Dark types, hugely boosts Light Type elemental damage & 100% boost to Spark damage",
-    "effects": [
-      {
-        "dark resist%": 15,
-        "passive id": "5"
-      },
-      {
-        "elemental weakness multiplier%": 150.0,
-        "light units do extra elemental weakness dmg": true,
-        "passive id": "50"
-      },
-      {
-        "damage% for spark": 100,
-        "passive id": "31"
-      }
-    ],
-    "id": "554",
-    "name": "Royal Flash Conviction"
-  },
-  "extra_skill": {
-    "desc": "Spark damage boosts BB gauge, adds 20% boost to Atk, HP and probable Spark vulnerability to BB/SBB when Guardian Shard is equipped & adds 20% boost to Def, HP and 1 turn 50% damage reduction to BB/SBB when Guardian Sliver is equipped",
-    "effects": [
-      {
-        "bc fill on spark high": 2,
-        "bc fill on spark low": 1,
-        "bc fill on spark%": 100,
-        "conditions": [],
-        "passive id": "47",
-        "passive target": "self"
-      },
-      {
-        "conditions": [
-          {
-            "item required": [
-              "47204"
-            ]
-          }
-        ],
-        "passive id": "66",
-        "passive target": "self",
-        "trigger on bb": true,
-        "trigger on sbb": true,
-        "triggered effect": [
-          {
-            "dmg% reduction": 50,
-            "dmg% reduction turns (36)": 1,
-            "effect delay time(ms)/frame": "0.0/0",
-            "proc id": "18",
-            "target area": "aoe",
-            "target type": "party"
-          }
-        ]
-      },
-      {
-        "conditions": [
-          {
-            "item required": [
-              "47204"
-            ]
-          }
-        ],
-        "def% buff": 20,
-        "hp% buff": 20,
-        "passive id": "1",
-        "passive target": "self"
-      },
-      {
-        "conditions": [
-          {
-            "item required": [
-              "47203"
-            ]
-          }
-        ],
-        "passive id": "66",
-        "passive target": "self",
-        "trigger on bb": true,
-        "trigger on sbb": true,
-        "triggered effect": [
-          {
-            "effect delay time(ms)/frame": "0.0/0",
-            "proc id": "58",
-            "spark dmg received apply%": 25,
-            "spark dmg received debuff turns (94)": 1,
-            "spark dmg% received": 25,
-            "target area": "aoe",
-            "target type": "enemy"
-          }
-        ]
-      },
-      {
-        "atk% buff": 20,
-        "conditions": [
-          {
-            "item required": [
-              "47203"
-            ]
-          }
-        ],
-        "hp% buff": 20,
-        "passive id": "1",
-        "passive target": "self"
-      }
-    ],
-    "id": "11800",
-    "name": "Value of Trust",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "552,298,140,382",
-  "unitDisplayDetailPosition_6z54rgb3": "-193,-111,1206,969",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "14,157,603,485,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-139,-370,1206,969",
-  "unitDisplaySummonPosition_KC3Jk8Br": "14,157,603,485,0",
-  "unitDisplayHpPosition_3BpHN6VD": "-2,45",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "15000",
-  "sellCaution": false,
-  "effectFrames": "22:400486:1,30:400486:1,38:400486:1,49:125:1,52:125:1,55:125:1,58:125:1,61:125:1,64:125:1,61:400515:1,54:100125:1,20:200252:1"
+  "bottomtext": ""
 }

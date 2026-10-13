@@ -1,65 +1,75 @@
 {
   "id": "50765",
-  "unitName": "Celestial Knight Nadore",
-  "no": "1052",
-  "element": "Light",
-  "rarity": "★★★★★★",
-  "cost": "30",
-  "maxlv": "100",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "178",
-  "animation_idle": "72",
-  "animation_move": "11",
-  "movespeed_attack": "0.0041",
-  "movespeed_skill": "0.0041",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "17, 20, 24, 28, 86, 90, 94, 98, 102, 106",
-  "normal_distribute": "15, 10, 8, 5, 20, 13, 10, 8, 6, 5",
-  "normal_totaldistr": "100",
-  "bb_frames": "17, 20, 23, 26, 29, 86, 89, 92, 95, 98, 101, 104, 107",
-  "bb_distribute": "14, 7, 6, 5, 3, 19, 12, 9, 8, 6, 5, 3, 3",
-  "bb_totaldistr": "100",
-  "sbb_frames": "17, 20, 23, 26, 29, 32, 35, 86, 89, 92, 95, 98, 101, 104, 107",
-  "sbb_distribute": "13, 6, 5, 4, 3, 3, 3, 18, 11, 9, 8, 6, 5, 3, 3",
-  "sbb_totaldistr": "100",
-  "bb_effectdelay": "2",
-  "sbb_effectdelay": "2",
-  "description": "A being always mentioned with the Sacred Lance. Though no official historical accounts tell of the appearance of a terribly powerful demonic beast and an evil presence that accompanied it, there is enough information scattered about to infer this indeed happened. However, absolutely no information on the damage they caused, nor on their ultimate fate remains. Those familiarized with the legends of the Sacred Treasures believe that Nadore was the one who defeated said evil, though through a historical tangent not recognized as canon.",
-  "summon": "What is a Sacred Treasure?<br>A meaningless question.<br>Just like asking what a human is.",
-  "fusion": "Those who already have power,<br>always seek more power in the end.<br>Please continue making me stronger.",
-  "evolution": "Evolution has changed me.<br>I've reached a new level.<br>No more, no less.",
-  "hp_base": "3388",
-  "atk_base": "1425",
-  "def_base": "1335",
-  "rec_base": "1251",
-  "hp_lord": "4817",
-  "atk_lord": "1900",
-  "def_lord": "1781",
-  "rec_lord": "1669",
-  "hp_anima": "5410",
-  "rec_anima": "1511",
-  "atk_breaker": "2058",
-  "def_breaker": "1623",
-  "def_guardian": "1939",
-  "rec_guardian": "1590",
-  "def_oracle": "1702",
-  "rec_oracle": "1906",
-  "hp_bonus": "750",
-  "atk_bonus": "400",
-  "def_bonus": "200",
-  "rec_bonus": "300",
-  "lordonly": "",
-  "combo_hits": "7",
-  "normaldc": "21",
-  "ls": "Radiant Deity's Law",
-  "lsdescription": "30% boost to HP & boosts Atk when HP high, boosts Def when HP low",
-  "lsnote": "0.5% boost to Atk per 1% HP remaining & 0.5% boost to Def per 1% HP lost",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 1586,
+      "def": 1555,
+      "hp": 4300,
+      "rec": 1469
+    },
+    "_lord": {
+      "atk": 2146,
+      "def": 2102,
+      "hp": 6200,
+      "rec": 1986
+    },
+    "anima": {
+      "atk": 2146,
+      "def": 2102,
+      "hp max": 7190,
+      "hp min": 6695,
+      "rec max": 1887,
+      "rec min": 1689
+    },
+    "breaker": {
+      "atk max": 2443,
+      "atk min": 2245,
+      "def max": 2003,
+      "def min": 1805,
+      "hp": 6200,
+      "rec": 1986
+    },
+    "guardian": {
+      "atk": 2146,
+      "def max": 2399,
+      "def min": 2201,
+      "hp": 6200,
+      "rec max": 1986,
+      "rec min": 1788
+    },
+    "oracle": {
+      "atk": 2146,
+      "def max": 2102,
+      "def min": 1904,
+      "hp": 6200,
+      "rec max": 2382,
+      "rec min": 2184
+    }
+  },
+  "leader_skill": {
+    "desc": "30% boost to HP & boosts Atk when HP high, boosts Def when HP low",
+    "effects": [
+      {
+        "hp% buff": 30,
+        "passive id": "1"
+      },
+      {
+        "atk% base buff": 0,
+        "atk% extra buff based on hp": 50,
+        "buff proportional to hp": "remaining",
+        "passive id": "46"
+      },
+      {
+        "buff proportional to hp": "lost",
+        "def% base buff": 0,
+        "def% extra buff based on hp": 50,
+        "passive id": "46"
+      }
+    ],
+    "id": "5507",
+    "name": "Radiant Deity's Law"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -460,14 +470,6 @@
     ],
     "name": "Lance of Light: Caelum"
   },
-  "bbdescription": "13 combo powerful Light attack on all foes, greatly boosts Atk, Def, Rec for 3 turns & boosts Light elemental damage",
-  "bbnote": "80% boost & 50% elemental damage",
-  "bbtype": "Support/Offense",
-  "bbhits": "13",
-  "bbaoe": "A",
-  "bbgauge": "24",
-  "bbdc": "13",
-  "bbmultiplier": "250",
   "sbb": {
     "damage frames": [
       {
@@ -984,6 +986,201 @@
     ],
     "name": "Geirskogul"
   },
+  "ubb": {},
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 178
+    },
+    "idle": {
+      "total number of frames": 72
+    },
+    "move": {
+      "total number of frames": 11
+    }
+  },
+  "category": 50760,
+  "cost": "30",
+  "damage frames": {
+    "frame times": [
+      17,
+      20,
+      24,
+      28,
+      86,
+      90,
+      94,
+      98,
+      102,
+      106
+    ],
+    "hit dmg% distribution": [
+      15,
+      10,
+      8,
+      5,
+      20,
+      13,
+      10,
+      8,
+      6,
+      5
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 10
+  },
+  "drop check count": 2,
+  "element": "light",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 1052,
+  "imp": {
+    "max atk": "300",
+    "max def": "300",
+    "max hp": "750",
+    "max rec": "300"
+  },
+  "kind": "normal",
+  "lord damage range": "1998~2231",
+  "movement": {
+    "attack": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    }
+  },
+  "name": "Celestial Knight Nadore",
+  "rarity": "6",
+  "sell caution": false,
+  "unitName": "Celestial Knight Nadore",
+  "maxlv": "100",
+  "no": "1052",
+  "unitDisplayHomePosition_1W9CxaFK": "581,219,180,491",
+  "unitDisplayDetailPosition_6z54rgb3": "-202,22,1250,769",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "-3,236,620,381,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-167,-282,1250,769",
+  "unitDisplaySummonPosition_KC3Jk8Br": "-3,236,620,381,0",
+  "unitDisplayHpPosition_3BpHN6VD": "-1,15",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "8000",
+  "sellCaution": false,
+  "effectFrames": "11:127:1,14:125:1,18:125:1,22:120:1,80:127:1,84:125:1,88:125:1,92:125:1,96:125:1,100:120:1,88:1370:1,90:1390:1,17:1083:1,17:200404:1,40:200404:1,17:300124:1,98:500211:1,70:200428:1",
+  "evofrom": "50764",
+  "evointo": "50766",
+  "evozelcost": "1500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50394",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50123",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "178",
+  "animation_idle": "72",
+  "animation_move": "11",
+  "movespeed_attack": "0.0041",
+  "movespeed_skill": "0.0041",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "17, 20, 24, 28, 86, 90, 94, 98, 102, 106",
+  "normal_distribute": "15, 10, 8, 5, 20, 13, 10, 8, 6, 5",
+  "normal_totaldistr": "100",
+  "bb_frames": "17, 20, 23, 26, 29, 86, 89, 92, 95, 98, 101, 104, 107",
+  "bb_distribute": "14, 7, 6, 5, 3, 19, 12, 9, 8, 6, 5, 3, 3",
+  "bb_totaldistr": "100",
+  "sbb_frames": "17, 20, 23, 26, 29, 32, 35, 86, 89, 92, 95, 98, 101, 104, 107",
+  "sbb_distribute": "13, 6, 5, 4, 3, 3, 3, 18, 11, 9, 8, 6, 5, 3, 3",
+  "sbb_totaldistr": "100",
+  "bb_effectdelay": "2",
+  "sbb_effectdelay": "2",
+  "description": "A being always mentioned with the Sacred Lance. Though no official historical accounts tell of the appearance of a terribly powerful demonic beast and an evil presence that accompanied it, there is enough information scattered about to infer this indeed happened. However, absolutely no information on the damage they caused, nor on their ultimate fate remains. Those familiarized with the legends of the Sacred Treasures believe that Nadore was the one who defeated said evil, though through a historical tangent not recognized as canon.",
+  "summon": "What is a Sacred Treasure?<br>A meaningless question.<br>Just like asking what a human is.",
+  "fusion": "Those who already have power,<br>always seek more power in the end.<br>Please continue making me stronger.",
+  "evolution": "Evolution has changed me.<br>I've reached a new level.<br>No more, no less.",
+  "hp_base": "3388",
+  "atk_base": "1425",
+  "def_base": "1335",
+  "rec_base": "1251",
+  "hp_lord": "4817",
+  "atk_lord": "1900",
+  "def_lord": "1781",
+  "rec_lord": "1669",
+  "hp_anima": "5410",
+  "rec_anima": "1511",
+  "atk_breaker": "2058",
+  "def_breaker": "1623",
+  "def_guardian": "1939",
+  "rec_guardian": "1590",
+  "def_oracle": "1702",
+  "rec_oracle": "1906",
+  "hp_bonus": "750",
+  "atk_bonus": "400",
+  "def_bonus": "200",
+  "rec_bonus": "300",
+  "lordonly": "",
+  "combo_hits": "7",
+  "normaldc": "21",
+  "ls": "Radiant Deity's Law",
+  "lsdescription": "30% boost to HP & boosts Atk when HP high, boosts Def when HP low",
+  "lsnote": "0.5% boost to Atk per 1% HP remaining & 0.5% boost to Def per 1% HP lost",
+  "lstype": "Attack",
+  "bbdescription": "13 combo powerful Light attack on all foes, greatly boosts Atk, Def, Rec for 3 turns & boosts Light elemental damage",
+  "bbnote": "80% boost & 50% elemental damage",
+  "bbtype": "Support/Offense",
+  "bbhits": "13",
+  "bbaoe": "A",
+  "bbgauge": "24",
+  "bbdc": "13",
+  "bbmultiplier": "250",
   "sbbdescription": "15 combo powerful Light attack on all foes, greatly boosts Atk, Def, Rec for 3 turns, boosts Light elemental damage & damage taken greatly boosts BB gauge",
   "sbbnote": "100% boost, 50% elemental damage & fills 4-6 BC",
   "sbbtype": "Support/Offense",
@@ -992,7 +1189,6 @@
   "sbbgauge": "31",
   "sbbdc": "15",
   "sbbmultiplier": "480",
-  "ubb": {},
   "ubbdescription": "",
   "ubbtype": "",
   "ubbhits": "",
@@ -1003,93 +1199,10 @@
   "es": "",
   "esitem": "",
   "esdescription": "",
-  "evofrom": "50764",
-  "evointo": "50766",
   "evomats1": "50394",
   "evomats2": "50354",
   "evomats3": "50123",
   "evomats4": "60144",
   "evomats5": "60224",
-  "evoitem": "",
-  "evozelcost": "1500000",
-  "stats": {
-    "_base": {
-      "atk": 1586,
-      "def": 1555,
-      "hp": 4300,
-      "rec": 1469
-    },
-    "_lord": {
-      "atk": 2146,
-      "def": 2102,
-      "hp": 6200,
-      "rec": 1986
-    },
-    "anima": {
-      "atk": 2146,
-      "def": 2102,
-      "hp max": 7190,
-      "hp min": 6695,
-      "rec max": 1887,
-      "rec min": 1689
-    },
-    "breaker": {
-      "atk max": 2443,
-      "atk min": 2245,
-      "def max": 2003,
-      "def min": 1805,
-      "hp": 6200,
-      "rec": 1986
-    },
-    "guardian": {
-      "atk": 2146,
-      "def max": 2399,
-      "def min": 2201,
-      "hp": 6200,
-      "rec max": 1986,
-      "rec min": 1788
-    },
-    "oracle": {
-      "atk": 2146,
-      "def max": 2102,
-      "def min": 1904,
-      "hp": 6200,
-      "rec max": 2382,
-      "rec min": 2184
-    }
-  },
-  "leader_skill": {
-    "desc": "30% boost to HP & boosts Atk when HP high, boosts Def when HP low",
-    "effects": [
-      {
-        "hp% buff": 30,
-        "passive id": "1"
-      },
-      {
-        "atk% base buff": 0,
-        "atk% extra buff based on hp": 50,
-        "buff proportional to hp": "remaining",
-        "passive id": "46"
-      },
-      {
-        "buff proportional to hp": "lost",
-        "def% base buff": 0,
-        "def% extra buff based on hp": 50,
-        "passive id": "46"
-      }
-    ],
-    "id": "5507",
-    "name": "Radiant Deity's Law"
-  },
-  "extra_skill": {},
-  "unitDisplayHomePosition_1W9CxaFK": "581,219,180,491",
-  "unitDisplayDetailPosition_6z54rgb3": "-202,22,1250,769",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "-3,236,620,381,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-167,-282,1250,769",
-  "unitDisplaySummonPosition_KC3Jk8Br": "-3,236,620,381,0",
-  "unitDisplayHpPosition_3BpHN6VD": "-1,15",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "8000",
-  "sellCaution": false,
-  "effectFrames": "11:127:1,14:125:1,18:125:1,22:120:1,80:127:1,84:125:1,88:125:1,92:125:1,96:125:1,100:120:1,88:1370:1,90:1390:1,17:1083:1,17:200404:1,40:200404:1,17:300124:1,98:500211:1,70:200428:1"
+  "evoitem": ""
 }

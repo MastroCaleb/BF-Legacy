@@ -1,61 +1,70 @@
 {
   "id": "50032",
-  "unitName": "Kaiser Glowy",
-  "no": "1083",
-  "element": "Light",
-  "rarity": "★★★",
-  "cost": "5",
-  "maxlv": "40",
-  "basexp": "10",
-  "gender": "N",
-  "ai": "2",
-  "animation_attack": "71",
-  "animation_idle": "112",
-  "animation_move": "7",
-  "movespeed_attack": "0.0041",
-  "movespeed_skill": "0.0041",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "30, 33, 36",
-  "normal_distribute": "33, 33, 34",
-  "normal_totaldistr": "100",
-  "bb_frames": "30, 34, 38, 42, 45, 49",
-  "bb_distribute": "20, 14, 19, 14, 19, 14",
-  "bb_totaldistr": "100",
-  "description": "The Kaiser Glowy is the evolved form of a King Glowy which became stronger in order to adapt to Ishgria's environment. Directly affected by Ishgria's habitat, the Kaiser Glowy is much more weary than a King Glowy, and thus some of them are known to be quite aggressive. On the other hand, there are various accounts stating that some Kaiser Glowy will guide injured Summoners to places of refuge. In some other instances, this creature will also act as the leader of other Glowies, working together as a team to take down other beasts.",
-  "summon": "Can you see me glow?<br>Because sometimes I'm so bright,<br>people can't see me at all!",
-  "fusion": "He he he... I'm even brighter now!<br>Please bear with my brilliance.<br>Ugh, my eyes... *Sparkle*",
-  "evolution": "Please take in the glory<br>of my new radiance!<br>Feast your eyes on my light!",
-  "hp_base": "1620",
-  "atk_base": "560",
-  "def_base": "740",
-  "rec_base": "570",
-  "hp_lord": "3333",
-  "atk_lord": "873",
-  "def_lord": "1190",
-  "rec_lord": "907",
-  "hp_anima": "3625",
-  "rec_anima": "829",
-  "atk_breaker": "951",
-  "def_breaker": "1112",
-  "atk_guardian": "",
-  "def_guardian": "1268",
-  "rec_guardian": "868",
-  "def_oracle": "1151",
-  "hp_oracle": "",
-  "rec_oracle": "1024",
-  "hp_bonus": "3000",
-  "atk_bonus": "1200",
-  "def_bonus": "1200",
-  "rec_bonus": "1200",
-  "lordonly": "",
-  "combo_hits": "3",
-  "normaldc": "9",
-  "ls": "Divine Light Crown",
-  "lsdescription": "15% boost to Atk of Light types & 15% damage reduction from Light types",
-  "lstype": "Attack/Defense",
+  "stats": {
+    "_base": {
+      "atk": 560,
+      "def": 740,
+      "hp": 1620,
+      "rec": 570
+    },
+    "_lord": {
+      "atk": 873,
+      "def": 1190,
+      "hp": 3333,
+      "rec": 907
+    },
+    "anima": {
+      "atk": 873,
+      "def": 1190,
+      "hp max": 3723,
+      "hp min": 3528,
+      "rec max": 868,
+      "rec min": 790
+    },
+    "breaker": {
+      "atk max": 990,
+      "atk min": 912,
+      "def max": 1151,
+      "def min": 1073,
+      "hp": 3333,
+      "rec": 907
+    },
+    "guardian": {
+      "atk": 873,
+      "def max": 1307,
+      "def min": 1229,
+      "hp": 3333,
+      "rec max": 907,
+      "rec min": 829
+    },
+    "oracle": {
+      "atk": 873,
+      "def max": 1190,
+      "def min": 1112,
+      "hp": 3333,
+      "rec max": 1063,
+      "rec min": 985
+    }
+  },
+  "leader_skill": {
+    "desc": "15% boost to Atk of Light types & 15% damage reduction from Light types ",
+    "effects": [
+      {
+        "atk% buff": 15,
+        "elements buffed": [
+          "light"
+        ],
+        "passive id": "2"
+      },
+      {
+        "light resist%": 15,
+        "passive id": "5"
+      }
+    ],
+    "id": "9764",
+    "name": "Divine Light Crown"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -218,102 +227,87 @@
     ],
     "name": "Photon Gulp"
   },
-  "bbdescription": "6 combo powerful Light attack on all foes",
-  "bbtype": "Offense",
-  "bbhits": "6",
-  "bbaoe": "A",
-  "bbgauge": "12",
-  "bbdc": "6",
-  "bbmultiplier": "130",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "es": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "50031",
-  "evointo": "",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 560,
-      "def": 740,
-      "hp": 1620,
-      "rec": 570
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 873,
-      "def": 1190,
-      "hp": 3333,
-      "rec": 907
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 873,
-      "def": 1190,
-      "hp max": 3723,
-      "hp min": 3528,
-      "rec max": 868,
-      "rec min": 790
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 71
     },
-    "breaker": {
-      "atk max": 990,
-      "atk min": 912,
-      "def max": 1151,
-      "def min": 1073,
-      "hp": 3333,
-      "rec": 907
+    "idle": {
+      "total number of frames": 112
     },
-    "guardian": {
-      "atk": 873,
-      "def max": 1307,
-      "def min": 1229,
-      "hp": 3333,
-      "rec max": 907,
-      "rec min": 829
-    },
-    "oracle": {
-      "atk": 873,
-      "def max": 1190,
-      "def min": 1112,
-      "hp": 3333,
-      "rec max": 1063,
-      "rec min": 985
+    "move": {
+      "total number of frames": 7
     }
   },
-  "leader_skill": {
-    "desc": "15% boost to Atk of Light types & 15% damage reduction from Light types ",
-    "effects": [
-      {
-        "atk% buff": 15,
-        "elements buffed": [
-          "light"
-        ],
-        "passive id": "2"
-      },
-      {
-        "light resist%": 15,
-        "passive id": "5"
-      }
+  "category": 50030,
+  "cost": "5",
+  "damage frames": {
+    "frame times": [
+      30,
+      33,
+      36
     ],
-    "id": "9764",
-    "name": "Divine Light Crown"
+    "hit dmg% distribution": [
+      33,
+      33,
+      34
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 3
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "light",
+  "exp_pattern": 10,
+  "gender": "other",
+  "getting type": "farmable",
+  "guide_id": 1083,
+  "imp": {
+    "max atk": "1200",
+    "max def": "1200",
+    "max hp": "3000",
+    "max rec": "1200"
+  },
+  "kind": "normal",
+  "lord damage range": "812~907",
+  "movement": {
+    "attack": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    }
+  },
+  "name": "Kaiser Glowy",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "Kaiser Glowy",
+  "maxlv": "40",
+  "no": "1083",
   "unitDisplayHomePosition_1W9CxaFK": "340,184,240,655",
   "unitDisplayDetailPosition_6z54rgb3": "-11,21,974,828",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "82,170,533,453,1",
@@ -323,5 +317,84 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "1000",
   "sellCaution": false,
-  "effectFrames": "27:125:1,31:125:1,28:500218:1,30:500225:1,37:500172:1"
+  "effectFrames": "27:125:1,31:125:1,28:500218:1,30:500225:1,37:500172:1",
+  "evofrom": "50031",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "10",
+  "animation_attack": "71",
+  "animation_idle": "112",
+  "animation_move": "7",
+  "movespeed_attack": "0.0041",
+  "movespeed_skill": "0.0041",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "30, 33, 36",
+  "normal_distribute": "33, 33, 34",
+  "normal_totaldistr": "100",
+  "bb_frames": "30, 34, 38, 42, 45, 49",
+  "bb_distribute": "20, 14, 19, 14, 19, 14",
+  "bb_totaldistr": "100",
+  "description": "The Kaiser Glowy is the evolved form of a King Glowy which became stronger in order to adapt to Ishgria's environment. Directly affected by Ishgria's habitat, the Kaiser Glowy is much more weary than a King Glowy, and thus some of them are known to be quite aggressive. On the other hand, there are various accounts stating that some Kaiser Glowy will guide injured Summoners to places of refuge. In some other instances, this creature will also act as the leader of other Glowies, working together as a team to take down other beasts.",
+  "summon": "Can you see me glow?<br>Because sometimes I'm so bright,<br>people can't see me at all!",
+  "fusion": "He he he... I'm even brighter now!<br>Please bear with my brilliance.<br>Ugh, my eyes... *Sparkle*",
+  "evolution": "Please take in the glory<br>of my new radiance!<br>Feast your eyes on my light!",
+  "hp_base": "1620",
+  "atk_base": "560",
+  "def_base": "740",
+  "rec_base": "570",
+  "hp_lord": "3333",
+  "atk_lord": "873",
+  "def_lord": "1190",
+  "rec_lord": "907",
+  "hp_anima": "3625",
+  "rec_anima": "829",
+  "atk_breaker": "951",
+  "def_breaker": "1112",
+  "atk_guardian": "",
+  "def_guardian": "1268",
+  "rec_guardian": "868",
+  "def_oracle": "1151",
+  "hp_oracle": "",
+  "rec_oracle": "1024",
+  "hp_bonus": "3000",
+  "atk_bonus": "1200",
+  "def_bonus": "1200",
+  "rec_bonus": "1200",
+  "lordonly": "",
+  "combo_hits": "3",
+  "normaldc": "9",
+  "ls": "Divine Light Crown",
+  "lsdescription": "15% boost to Atk of Light types & 15% damage reduction from Light types",
+  "lstype": "Attack/Defense",
+  "bbdescription": "6 combo powerful Light attack on all foes",
+  "bbtype": "Offense",
+  "bbhits": "6",
+  "bbaoe": "A",
+  "bbgauge": "12",
+  "bbdc": "6",
+  "bbmultiplier": "130",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "es": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "",
+  "evomats2": "",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": "",
+  "evoitem": ""
 }

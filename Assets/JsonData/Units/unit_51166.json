@@ -1,68 +1,96 @@
 {
   "id": "51166",
-  "unitName": "Guile Demon Mora",
-  "no": "1605",
-  "element": "Light",
-  "rarity": "★★★★★★★",
-  "cost": "46",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "105",
-  "animation_idle": "78",
-  "animation_move": "6",
-  "movespeed_attack": "0.0041",
-  "movespeed_skill": "0.0041",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "43, 47, 51, 55, 59, 64, 70",
-  "normal_distribute": "19, 18, 16, 14, 12, 11, 10",
-  "normal_totaldistr": "100",
-  "bb_frames": "43, 46, 49, 52, 55, 58, 61, 64, 67, 70, 73, 76, 79, 82",
-  "bb_distribute": "11, 10, 10, 9, 8, 8, 7, 7, 6, 6, 5, 5, 4, 4",
-  "bb_totaldistr": "100",
-  "sbb_frames": "43, 46, 49, 52, 55, 58, 61, 64, 67, 70, 73, 76, 79, 82, 85, 88, 91",
-  "sbb_distribute": "11, 10, 8, 8, 7, 7, 6, 6, 5, 5, 5, 5, 4, 4, 3, 3, 3",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "43, 46, 49, 52, 55, 58, 61, 64, 67, 70, 73, 76, 79, 82, 85, 88, 91, 94, 97, 100, 103",
-  "ubb_distribute": "10, 8, 7, 6, 6, 6, 6, 5, 5, 5, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "1",
-  "ubb_effectdelay": "1",
-  "description": "A mock Unit made in an attempt to replicate the powers of Guile Demon Mora. As ruler of the Lem region of Ishgria, Mora is understood to have attempted to use the Summoner's party to seize the power of demons ruling over numerous regions. Mora demonstrated painstaking attention to detail in her plotting, yet also possessed sufficient raw power to face a so-called war demon on equal terms. Furthermore, accounts indicate that Mora's encounters with a certain red-garbed Summoner over her adventures have led to changes in the demon's character.",
-  "summon": "Little human, I must commend<br>your bravery in summoning me.<br>I just hope you don't regret it...",
-  "fusion": "It's the first time since meeting her that gaining power has moved me...<br>Hehe, you're fun.",
-  "evolution": "",
-  "hp_base": "5078",
-  "atk_base": "2168",
-  "def_base": "1993",
-  "rec_base": "1957",
-  "hp_lord": "7238",
-  "atk_lord": "2934",
-  "def_lord": "2701",
-  "rec_lord": "2642",
-  "hp_anima": "8130",
-  "rec_anima": "2404",
-  "atk_breaker": "3172",
-  "def_breaker": "2463",
-  "def_guardian": "2939",
-  "rec_guardian": "2543",
-  "def_oracle": "2582",
-  "rec_oracle": "2999",
-  "hp_bonus": "1100",
-  "atk_bonus": "440",
-  "def_bonus": "440",
-  "rec_bonus": "440",
-  "lordonly": "",
-  "combo_hits": "7",
-  "normaldc": "35",
-  "ls": "Subtle Temptation",
-  "lsdescription": "50% boost to Atk, max HP, Spark damage slightly boosts BB gauge & 110% boost to Spark damage",
-  "lsnote": "Fills 1-2 BC",
+  "stats": {
+    "_base": {
+      "atk": 2168,
+      "def": 1993,
+      "hp": 5078,
+      "rec": 1957
+    },
+    "_lord": {
+      "atk": 2934,
+      "def": 2701,
+      "hp": 7238,
+      "rec": 2642
+    },
+    "anima": {
+      "atk": 2934,
+      "def": 2701,
+      "hp max": 8428,
+      "hp min": 7833,
+      "rec max": 2523,
+      "rec min": 2285
+    },
+    "breaker": {
+      "atk max": 3291,
+      "atk min": 3053,
+      "def max": 2582,
+      "def min": 2344,
+      "hp": 7238,
+      "rec": 2642
+    },
+    "guardian": {
+      "atk": 2934,
+      "def max": 3058,
+      "def min": 2820,
+      "hp": 7238,
+      "rec max": 2642,
+      "rec min": 2404
+    },
+    "oracle": {
+      "atk": 2934,
+      "def max": 2701,
+      "def min": 2463,
+      "hp": 7238,
+      "rec max": 3118,
+      "rec min": 2880
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to Atk, max HP, Spark damage slightly boosts BB gauge & 110% boost to Spark damage",
+    "effects": [
+      {
+        "atk% buff": 50,
+        "hp% buff": 50,
+        "passive id": "1"
+      },
+      {
+        "damage% for spark": 110,
+        "passive id": "31"
+      },
+      {
+        "bc fill on spark high": 2,
+        "bc fill on spark low": 1,
+        "bc fill on spark%": 100,
+        "passive id": "47"
+      }
+    ],
+    "id": "7506",
+    "name": "Subtle Temptation"
+  },
+  "extra_skill": {
+    "desc": "Slightly boosts Atk, Def when BB gauge is over 50% & 30% boost to Spark damage",
+    "effects": [
+      {
+        "atk% buff": 30,
+        "bb gauge above % buff requirement": 50,
+        "conditions": [],
+        "def% buff": 30,
+        "passive id": "30",
+        "passive target": "self"
+      },
+      {
+        "conditions": [],
+        "damage% for spark": 30,
+        "passive id": "31",
+        "passive target": "self"
+      }
+    ],
+    "id": "33500",
+    "name": "Strategic Illumination",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -639,14 +667,6 @@
     ],
     "name": "Dazzling Eyes"
   },
-  "bbdescription": "14 combo powerful Light attack on all foes, enormously boosts Spark damage for 3 turns, considerably boosts BC, HC drop rates for 3 turns, greatly restores HP for 3 turns & hugely boosts BB gauge for 3 turns",
-  "bbnote": "110% Spark, heals 3000-3500 + 10% Rec, fills 6 BC & 30% drop rate",
-  "bbtype": "Heal/Offense",
-  "bbhits": "14",
-  "bbaoe": "A",
-  "bbgauge": "29",
-  "bbdc": "14",
-  "bbmultiplier": "380",
   "sbb": {
     "damage frames": [
       {
@@ -1279,14 +1299,6 @@
     ],
     "name": "Artifice Regina"
   },
-  "sbbdescription": "17 combo powerful Light attack on all foes, adds probable 1 turn Atk, Def reduction to attack for 3 turns, Spark damage slightly boosts BB gauge for 3 turns, enormously boosts Spark damage for 3 turns & Spark damage restores HP for 3 turns",
-  "sbbnote": "110% Spark, heals 300-400 HP, fills 1-2 BC & adds 10% chance to reduce enemy Atk, Def by 20%",
-  "sbbtype": "Heal/Offense",
-  "sbbhits": "17",
-  "sbbaoe": "A",
-  "sbbgauge": "30",
-  "sbbdc": "17",
-  "sbbmultiplier": "580",
   "ubb": {
     "damage frames": [
       {
@@ -1454,6 +1466,210 @@
     ],
     "name": "Liaison's Concerns"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 105
+    },
+    "idle": {
+      "total number of frames": 78
+    },
+    "move": {
+      "total number of frames": 6
+    }
+  },
+  "category": 51160,
+  "cost": "46",
+  "damage frames": {
+    "frame times": [
+      43,
+      47,
+      51,
+      55,
+      59,
+      64,
+      70
+    ],
+    "hit dmg% distribution": [
+      19,
+      18,
+      16,
+      14,
+      12,
+      11,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 7
+  },
+  "drop check count": 5,
+  "element": "light",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 1605,
+  "imp": {
+    "max atk": "440",
+    "max def": "440",
+    "max hp": "1100",
+    "max rec": "440"
+  },
+  "kind": "normal",
+  "lord damage range": "2731~3051",
+  "movement": {
+    "attack": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    }
+  },
+  "name": "Guile Demon Mora",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Guile Demon Mora",
+  "maxlv": "120",
+  "no": "1605",
+  "unitDisplayHomePosition_1W9CxaFK": "492,250,174,475",
+  "unitDisplayDetailPosition_6z54rgb3": "-158,-43,1272,874",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "27,195,636,437,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-157,-274,1200,825",
+  "unitDisplaySummonPosition_KC3Jk8Br": "27,188,636,437,1",
+  "unitDisplayHpPosition_3BpHN6VD": "0,43",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "15000",
+  "sellCaution": false,
+  "effectFrames": "42:400602:1,65:400600:1,70:500718:1,43:200783:1,60:400525:1,60:601960:1",
+  "evofrom": "",
+  "evointo": "51167",
+  "evozelcost": "3000000",
+  "evokarmacost": "1000000",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50394",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50123",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 2
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "105",
+  "animation_idle": "78",
+  "animation_move": "6",
+  "movespeed_attack": "0.0041",
+  "movespeed_skill": "0.0041",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "43, 47, 51, 55, 59, 64, 70",
+  "normal_distribute": "19, 18, 16, 14, 12, 11, 10",
+  "normal_totaldistr": "100",
+  "bb_frames": "43, 46, 49, 52, 55, 58, 61, 64, 67, 70, 73, 76, 79, 82",
+  "bb_distribute": "11, 10, 10, 9, 8, 8, 7, 7, 6, 6, 5, 5, 4, 4",
+  "bb_totaldistr": "100",
+  "sbb_frames": "43, 46, 49, 52, 55, 58, 61, 64, 67, 70, 73, 76, 79, 82, 85, 88, 91",
+  "sbb_distribute": "11, 10, 8, 8, 7, 7, 6, 6, 5, 5, 5, 5, 4, 4, 3, 3, 3",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "43, 46, 49, 52, 55, 58, 61, 64, 67, 70, 73, 76, 79, 82, 85, 88, 91, 94, 97, 100, 103",
+  "ubb_distribute": "10, 8, 7, 6, 6, 6, 6, 5, 5, 5, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "1",
+  "ubb_effectdelay": "1",
+  "description": "A mock Unit made in an attempt to replicate the powers of Guile Demon Mora. As ruler of the Lem region of Ishgria, Mora is understood to have attempted to use the Summoner's party to seize the power of demons ruling over numerous regions. Mora demonstrated painstaking attention to detail in her plotting, yet also possessed sufficient raw power to face a so-called war demon on equal terms. Furthermore, accounts indicate that Mora's encounters with a certain red-garbed Summoner over her adventures have led to changes in the demon's character.",
+  "summon": "Little human, I must commend<br>your bravery in summoning me.<br>I just hope you don't regret it...",
+  "fusion": "It's the first time since meeting her that gaining power has moved me...<br>Hehe, you're fun.",
+  "evolution": "",
+  "hp_base": "5078",
+  "atk_base": "2168",
+  "def_base": "1993",
+  "rec_base": "1957",
+  "hp_lord": "7238",
+  "atk_lord": "2934",
+  "def_lord": "2701",
+  "rec_lord": "2642",
+  "hp_anima": "8130",
+  "rec_anima": "2404",
+  "atk_breaker": "3172",
+  "def_breaker": "2463",
+  "def_guardian": "2939",
+  "rec_guardian": "2543",
+  "def_oracle": "2582",
+  "rec_oracle": "2999",
+  "hp_bonus": "1100",
+  "atk_bonus": "440",
+  "def_bonus": "440",
+  "rec_bonus": "440",
+  "lordonly": "",
+  "combo_hits": "7",
+  "normaldc": "35",
+  "ls": "Subtle Temptation",
+  "lsdescription": "50% boost to Atk, max HP, Spark damage slightly boosts BB gauge & 110% boost to Spark damage",
+  "lsnote": "Fills 1-2 BC",
+  "bbdescription": "14 combo powerful Light attack on all foes, enormously boosts Spark damage for 3 turns, considerably boosts BC, HC drop rates for 3 turns, greatly restores HP for 3 turns & hugely boosts BB gauge for 3 turns",
+  "bbnote": "110% Spark, heals 3000-3500 + 10% Rec, fills 6 BC & 30% drop rate",
+  "bbtype": "Heal/Offense",
+  "bbhits": "14",
+  "bbaoe": "A",
+  "bbgauge": "29",
+  "bbdc": "14",
+  "bbmultiplier": "380",
+  "sbbdescription": "17 combo powerful Light attack on all foes, adds probable 1 turn Atk, Def reduction to attack for 3 turns, Spark damage slightly boosts BB gauge for 3 turns, enormously boosts Spark damage for 3 turns & Spark damage restores HP for 3 turns",
+  "sbbnote": "110% Spark, heals 300-400 HP, fills 1-2 BC & adds 10% chance to reduce enemy Atk, Def by 20%",
+  "sbbtype": "Heal/Offense",
+  "sbbhits": "17",
+  "sbbaoe": "A",
+  "sbbgauge": "30",
+  "sbbdc": "17",
+  "sbbmultiplier": "580",
   "ubbdescription": "21 combo massive Light attack on all foes, enormously reduces Atk, Def for 2 turns, Spark damage hugely boosts BB gauge for 3 turns, enormously boosts Spark damage for 3 turns & Spark damage greatly restores HP for 3 turns",
   "ubbnote": "300% Spark, heals 600-800 HP, fills 4-6 BC & 80% reduction",
   "ubbtype": "Heal/Offense",
@@ -1466,8 +1682,6 @@
   "esitem": "",
   "esdescription": "Slightly boosts Atk, Def when BB gauge is over 50% & 30% boost to Spark damage",
   "esnote": "30% boost",
-  "evofrom": "",
-  "evointo": "51167",
   "evomats1": "Light Mecha God",
   "evomats2": "Light Mecha God",
   "evomats3": "Miracle Totem",
@@ -1476,107 +1690,5 @@
   "evomats6": "Dragon Mimic",
   "evomats7": "Metal Mimic",
   "evomats8": "Metal Mimic",
-  "evoitem": "",
-  "evozelcost": "3000000",
-  "stats": {
-    "_base": {
-      "atk": 2168,
-      "def": 1993,
-      "hp": 5078,
-      "rec": 1957
-    },
-    "_lord": {
-      "atk": 2934,
-      "def": 2701,
-      "hp": 7238,
-      "rec": 2642
-    },
-    "anima": {
-      "atk": 2934,
-      "def": 2701,
-      "hp max": 8428,
-      "hp min": 7833,
-      "rec max": 2523,
-      "rec min": 2285
-    },
-    "breaker": {
-      "atk max": 3291,
-      "atk min": 3053,
-      "def max": 2582,
-      "def min": 2344,
-      "hp": 7238,
-      "rec": 2642
-    },
-    "guardian": {
-      "atk": 2934,
-      "def max": 3058,
-      "def min": 2820,
-      "hp": 7238,
-      "rec max": 2642,
-      "rec min": 2404
-    },
-    "oracle": {
-      "atk": 2934,
-      "def max": 2701,
-      "def min": 2463,
-      "hp": 7238,
-      "rec max": 3118,
-      "rec min": 2880
-    }
-  },
-  "leader_skill": {
-    "desc": "50% boost to Atk, max HP, Spark damage slightly boosts BB gauge & 110% boost to Spark damage",
-    "effects": [
-      {
-        "atk% buff": 50,
-        "hp% buff": 50,
-        "passive id": "1"
-      },
-      {
-        "damage% for spark": 110,
-        "passive id": "31"
-      },
-      {
-        "bc fill on spark high": 2,
-        "bc fill on spark low": 1,
-        "bc fill on spark%": 100,
-        "passive id": "47"
-      }
-    ],
-    "id": "7506",
-    "name": "Subtle Temptation"
-  },
-  "extra_skill": {
-    "desc": "Slightly boosts Atk, Def when BB gauge is over 50% & 30% boost to Spark damage",
-    "effects": [
-      {
-        "atk% buff": 30,
-        "bb gauge above % buff requirement": 50,
-        "conditions": [],
-        "def% buff": 30,
-        "passive id": "30",
-        "passive target": "self"
-      },
-      {
-        "conditions": [],
-        "damage% for spark": 30,
-        "passive id": "31",
-        "passive target": "self"
-      }
-    ],
-    "id": "33500",
-    "name": "Strategic Illumination",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "492,250,174,475",
-  "unitDisplayDetailPosition_6z54rgb3": "-158,-43,1272,874",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "27,195,636,437,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-157,-274,1200,825",
-  "unitDisplaySummonPosition_KC3Jk8Br": "27,188,636,437,1",
-  "unitDisplayHpPosition_3BpHN6VD": "0,43",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "15000",
-  "sellCaution": false,
-  "effectFrames": "42:400602:1,65:400600:1,70:500718:1,43:200783:1,60:400525:1,60:601960:1"
+  "evoitem": ""
 }

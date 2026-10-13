@@ -1,62 +1,63 @@
 {
   "id": "20052",
-  "unitName": "Lizard Man",
-  "no": "519",
-  "element": "Water",
-  "rarity": "★★★",
-  "cost": "6",
-  "maxlv": "40",
-  "basexp": "10",
-  "gender": "N",
-  "ai": "4",
-  "animation_attack": "66",
-  "animation_idle": "44",
-  "animation_move": "6",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "15, 36, 41, 46",
-  "normal_distribute": "10, 40, 30, 20",
-  "normal_totaldistr": "100",
-  "bb_frames": "15, 21, 31, 34, 38, 42, 46",
-  "bb_distribute": "15, 10, 20, 16, 14, 13, 12",
-  "bb_totaldistr": "100",
-  "description": "An evolved Sahuagin which, like them, attacks ships for their treasure. Their organization is larger than some kingdoms, and it's said there are even some among them who understand human languages. It seems they sometimes appear in human settlements looking to trade hard to find items for treasure. Lizard Men are known for their superior group battle techniques, and it seems some even favor militarization over treasure.",
-  "summon": "You're not a normal human.<br>Your power greatly interests me.<br>Take me with you.",
-  "fusion": "What is this technique?<br>How great it is to have strength!<br>I must inform the king!",
-  "evolution": "Let's make a deal, human.<br>In exchange for my servitude,<br>grant me your human knowledge.",
-  "hp_base": "1823",
-  "atk_base": "664",
-  "def_base": "634",
-  "rec_base": "598",
-  "hp_lord": "2971",
-  "atk_lord": "896",
-  "def_lord": "857",
-  "rec_lord": "808",
-  "hp_anima": "3264",
-  "rec_anima": "730",
-  "atk_breaker": "974",
-  "def_breaker": "779",
-  "atk_guardian": "818",
-  "def_guardian": "935",
-  "rec_guardian": "769",
-  "def_oracle": "818",
-  "hp_oracle": "2854",
-  "rec_oracle": "925",
-  "hp_bonus": "300",
-  "atk_bonus": "120",
-  "def_bonus": "120",
-  "rec_bonus": "120",
-  "lordonly": "",
-  "combo_hits": "4",
-  "normaldc": "8",
-  "ls": "Fighting Light",
-  "lsdescription": "Small boost in Battle Crystals produced during Spark",
-  "lsnote": "30% boost",
-  "lstype": "Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 664,
+      "def": 634,
+      "hp": 1823,
+      "rec": 598
+    },
+    "_lord": {
+      "atk": 896,
+      "def": 857,
+      "hp": 2971,
+      "rec": 808
+    },
+    "anima": {
+      "atk": 896,
+      "def": 857,
+      "hp max": 3361,
+      "hp min": 3166,
+      "rec max": 769,
+      "rec min": 691
+    },
+    "breaker": {
+      "atk max": 1013,
+      "atk min": 935,
+      "def max": 818,
+      "def min": 740,
+      "hp": 2971,
+      "rec": 808
+    },
+    "guardian": {
+      "atk": 896,
+      "def max": 974,
+      "def min": 896,
+      "hp": 2971,
+      "rec max": 808,
+      "rec min": 730
+    },
+    "oracle": {
+      "atk": 896,
+      "def max": 857,
+      "def min": 779,
+      "hp": 2971,
+      "rec max": 964,
+      "rec min": 886
+    }
+  },
+  "leader_skill": {
+    "desc": "Small boost in Battle Crystals produced during Spark",
+    "effects": [
+      {
+        "bc drop% for spark": 30,
+        "passive id": "31"
+      }
+    ],
+    "id": "1400",
+    "name": "Fighting Light"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -303,95 +304,101 @@
     ],
     "name": "Freeze Lancer"
   },
-  "bbdescription": "7 combo Water elemental attack on single enemy & probable Sickness effect",
-  "bbnote": "80% chance",
-  "bbtype": "Offense",
-  "bbhits": "7",
-  "bbaoe": "1",
-  "bbgauge": "10",
-  "bbdc": "7",
-  "bbmultiplier": "180",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "20051",
-  "evointo": "",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 664,
-      "def": 634,
-      "hp": 1823,
-      "rec": 598
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_under",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 896,
-      "def": 857,
-      "hp": 2971,
-      "rec": 808
+    {
+      "action": "skill",
+      "chance%": 30.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 896,
-      "def": 857,
-      "hp max": 3361,
-      "hp min": 3166,
-      "rec max": 769,
-      "rec min": 691
+    {
+      "action": "attack",
+      "chance%": 70.0,
+      "target conditions": "hp_max",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 1013,
-      "atk min": 935,
-      "def max": 818,
-      "def min": 740,
-      "hp": 2971,
-      "rec": 808
+    {
+      "action": "attack",
+      "chance%": 50.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "guardian": {
-      "atk": 896,
-      "def max": 974,
-      "def min": 896,
-      "hp": 2971,
-      "rec max": 808,
-      "rec min": 730
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 66
     },
-    "oracle": {
-      "atk": 896,
-      "def max": 857,
-      "def min": 779,
-      "hp": 2971,
-      "rec max": 964,
-      "rec min": 886
+    "idle": {
+      "total number of frames": 44
+    },
+    "move": {
+      "total number of frames": 6
     }
   },
-  "leader_skill": {
-    "desc": "Small boost in Battle Crystals produced during Spark",
-    "effects": [
-      {
-        "bc drop% for spark": 30,
-        "passive id": "31"
-      }
+  "category": 20050,
+  "cost": "6",
+  "damage frames": {
+    "frame times": [
+      15,
+      36,
+      41,
+      46
     ],
-    "id": "1400",
-    "name": "Fighting Light"
+    "hit dmg% distribution": [
+      10,
+      40,
+      30,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 4
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "water",
+  "exp_pattern": 10,
+  "gender": "other",
+  "getting type": "farmable",
+  "guide_id": 519,
+  "imp": {
+    "max atk": "120",
+    "max def": "120",
+    "max hp": "300",
+    "max rec": "120"
+  },
+  "kind": "normal",
+  "lord damage range": "834~931",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Lizard Man",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "Lizard Man",
+  "maxlv": "40",
+  "no": "519",
   "unitDisplayHomePosition_1W9CxaFK": "288,14,170,464",
   "unitDisplayDetailPosition_6z54rgb3": "-10,225,880,601",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "128,354,386,271,0",
@@ -401,5 +408,85 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "1000",
   "sellCaution": false,
-  "effectFrames": "9:122:1,30:122:1,32:200140:1,35:122:1,40:122:1"
+  "effectFrames": "9:122:1,30:122:1,32:200140:1,35:122:1,40:122:1",
+  "evofrom": "20051",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "10",
+  "animation_attack": "66",
+  "animation_idle": "44",
+  "animation_move": "6",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "15, 36, 41, 46",
+  "normal_distribute": "10, 40, 30, 20",
+  "normal_totaldistr": "100",
+  "bb_frames": "15, 21, 31, 34, 38, 42, 46",
+  "bb_distribute": "15, 10, 20, 16, 14, 13, 12",
+  "bb_totaldistr": "100",
+  "description": "An evolved Sahuagin which, like them, attacks ships for their treasure. Their organization is larger than some kingdoms, and it's said there are even some among them who understand human languages. It seems they sometimes appear in human settlements looking to trade hard to find items for treasure. Lizard Men are known for their superior group battle techniques, and it seems some even favor militarization over treasure.",
+  "summon": "You're not a normal human.<br>Your power greatly interests me.<br>Take me with you.",
+  "fusion": "What is this technique?<br>How great it is to have strength!<br>I must inform the king!",
+  "evolution": "Let's make a deal, human.<br>In exchange for my servitude,<br>grant me your human knowledge.",
+  "hp_base": "1823",
+  "atk_base": "664",
+  "def_base": "634",
+  "rec_base": "598",
+  "hp_lord": "2971",
+  "atk_lord": "896",
+  "def_lord": "857",
+  "rec_lord": "808",
+  "hp_anima": "3264",
+  "rec_anima": "730",
+  "atk_breaker": "974",
+  "def_breaker": "779",
+  "atk_guardian": "818",
+  "def_guardian": "935",
+  "rec_guardian": "769",
+  "def_oracle": "818",
+  "hp_oracle": "2854",
+  "rec_oracle": "925",
+  "hp_bonus": "300",
+  "atk_bonus": "120",
+  "def_bonus": "120",
+  "rec_bonus": "120",
+  "lordonly": "",
+  "combo_hits": "4",
+  "normaldc": "8",
+  "ls": "Fighting Light",
+  "lsdescription": "Small boost in Battle Crystals produced during Spark",
+  "lsnote": "30% boost",
+  "lstype": "Brave Burst",
+  "bbdescription": "7 combo Water elemental attack on single enemy & probable Sickness effect",
+  "bbnote": "80% chance",
+  "bbtype": "Offense",
+  "bbhits": "7",
+  "bbaoe": "1",
+  "bbgauge": "10",
+  "bbdc": "7",
+  "bbmultiplier": "180",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "",
+  "evomats2": "",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": "",
+  "evoitem": ""
 }

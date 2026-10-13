@@ -1,58 +1,64 @@
 {
   "id": "10254",
-  "unitName": "Lotus Axe Michele",
-  "no": "347",
-  "element": "Fire",
-  "rarity": "★★★★★",
-  "cost": "13",
-  "maxlv": "80",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "1",
-  "animation_attack": "221",
-  "animation_idle": "77",
-  "animation_move": "11",
-  "movespeed_attack": "0.0024",
-  "movespeed_skill": "2",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "1",
-  "movetype_skill": "3",
-  "normal_frames": "12, 31, 46, 58, 68, 77, 85, 94, 102, 134, 142, 174",
-  "normal_distribute": "8, 8, 8, 8, 8, 8, 8, 8, 8, 10, 10, 8",
-  "normal_totaldistr": "100",
-  "description": "A lotus colored axe wielder and the daughter of a prominent aristocrat from the La Veda Republic. Continuing her journey with the mechanical figure from another world, she came to meet many new people. These people were of stronger character than anyone she'd met before, and through interacting with them her abilities grew even stronger. She then encountered the being she had set out to defeat, and, wielding her newfound powers, unleashed everything she had in a blaze of fury.",
-  "summon": "Having summoned me,<br>you must be planning to fight?<br>Alright then! To the bitter end!",
-  "fusion": "Now you've got it!<br>You've no chance without me!<br>So what do you want me to do?",
-  "evolution": "Hey, look at me!<br>This is who I really am!<br>Maybe I'm too bright to see?",
-  "hp_base": "3254",
-  "atk_base": "1264",
-  "def_base": "835",
-  "rec_base": "1204",
-  "hp_lord": "4804",
-  "atk_lord": "1667",
-  "def_lord": "1210",
-  "rec_lord": "1582",
-  "hp_anima": "5397",
-  "rec_anima": "1424",
-  "atk_breaker": "1825",
-  "def_breaker": "1052",
-  "atk_guardian": "1509",
-  "def_guardian": "1368",
-  "rec_guardian": "1503",
-  "def_oracle": "1131",
-  "hp_oracle": "4567",
-  "rec_oracle": "1819",
-  "hp_bonus": "500",
-  "atk_bonus": "140",
-  "def_bonus": "260",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "12",
-  "normaldc": "24",
-  "ls": "Five Light's Force",
-  "lsdescription": "50% boost to Atk power of all Units when 5 elements or more are present",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 1264,
+      "def": 835,
+      "hp": 3254,
+      "rec": 1204
+    },
+    "_lord": {
+      "atk": 1667,
+      "def": 1210,
+      "hp": 4804,
+      "rec": 1582
+    },
+    "anima": {
+      "atk": 1667,
+      "def": 1210,
+      "hp max": 5594,
+      "hp min": 5199,
+      "rec max": 1503,
+      "rec min": 1345
+    },
+    "breaker": {
+      "atk max": 1904,
+      "atk min": 1746,
+      "def max": 1131,
+      "def min": 973,
+      "hp": 4804,
+      "rec": 1582
+    },
+    "guardian": {
+      "atk": 1667,
+      "def max": 1447,
+      "def min": 1289,
+      "hp": 4804,
+      "rec max": 1582,
+      "rec min": 1424
+    },
+    "oracle": {
+      "atk": 1667,
+      "def max": 1210,
+      "def min": 1052,
+      "hp": 4804,
+      "rec max": 1898,
+      "rec min": 1740
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to Atk power of all Units when 5 elements or more are present",
+    "effects": [
+      {
+        "atk% buff": 50,
+        "passive id": "41",
+        "unique elements required": 5
+      }
+    ],
+    "id": "2201",
+    "name": "Five Light's Force"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -327,94 +333,105 @@
     ],
     "name": "Ignite Changer"
   },
-  "bbdescription": "Boosts Atk & adds Fire element to attack for all allies for 3 turns",
-  "bbnote": "100% boost",
-  "bbtype": "Support",
-  "bbhits": "0",
-  "bbaoe": "0",
-  "bbgauge": "18",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "10253",
-  "evointo": "10255",
-  "evomats1": "50354",
-  "evomats2": "10133",
-  "evomats3": "10133",
-  "evomats4": "10191",
-  "evomats5": "60144",
-  "evoitem": "",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 1264,
-      "def": 835,
-      "hp": 3254,
-      "rec": 1204
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "party"
     },
-    "_lord": {
-      "atk": 1667,
-      "def": 1210,
-      "hp": 4804,
-      "rec": 1582
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1667,
-      "def": 1210,
-      "hp max": 5594,
-      "hp min": 5199,
-      "rec max": 1503,
-      "rec min": 1345
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 221
     },
-    "breaker": {
-      "atk max": 1904,
-      "atk min": 1746,
-      "def max": 1131,
-      "def min": 973,
-      "hp": 4804,
-      "rec": 1582
+    "idle": {
+      "total number of frames": 77
     },
-    "guardian": {
-      "atk": 1667,
-      "def max": 1447,
-      "def min": 1289,
-      "hp": 4804,
-      "rec max": 1582,
-      "rec min": 1424
-    },
-    "oracle": {
-      "atk": 1667,
-      "def max": 1210,
-      "def min": 1052,
-      "hp": 4804,
-      "rec max": 1898,
-      "rec min": 1740
+    "move": {
+      "total number of frames": 11
     }
   },
-  "leader_skill": {
-    "desc": "50% boost to Atk power of all Units when 5 elements or more are present",
-    "effects": [
-      {
-        "atk% buff": 50,
-        "passive id": "41",
-        "unique elements required": 5
-      }
+  "category": 10250,
+  "cost": "13",
+  "damage frames": {
+    "frame times": [
+      12,
+      31,
+      46,
+      58,
+      68,
+      77,
+      85,
+      94,
+      102,
+      134,
+      142,
+      174
     ],
-    "id": "2201",
-    "name": "Five Light's Force"
+    "hit dmg% distribution": [
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      10,
+      10,
+      8
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 12
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "fire",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 347,
+  "imp": {
+    "max atk": "140",
+    "max def": "260",
+    "max hp": "500",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "1552~1733",
+  "movement": {
+    "attack": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 2,
+      "move speed type": "4",
+      "move type": "3"
+    }
+  },
+  "name": "Lotus Axe Michele",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Lotus Axe Michele",
+  "maxlv": "80",
+  "no": "347",
   "unitDisplayHomePosition_1W9CxaFK": "509,115,174,545",
   "unitDisplayDetailPosition_6z54rgb3": "-169,100,1204,679",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "81,371,429,273,0",
@@ -424,5 +441,100 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "6:121:1,6:100181:1,25:121:1,25:100010:1,40:121:1,40:100181:1,52:121:1,52:100010:1,62:121:1,62:100181:1,71:121:1,71:100010:1,79:121:1,79:100181:1,88:121:1,88:100010:1,96:121:1,96:100181:1,128:121:1,128:100010:1,136:100191:1,150:160:1"
+  "effectFrames": "6:121:1,6:100181:1,25:121:1,25:100010:1,40:121:1,40:100181:1,52:121:1,52:100010:1,62:121:1,62:100181:1,71:121:1,71:100010:1,79:121:1,79:100181:1,88:121:1,88:100010:1,96:121:1,96:100181:1,128:121:1,128:100010:1,136:100191:1,150:160:1",
+  "evofrom": "10253",
+  "evointo": "10255",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10133",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "10191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "221",
+  "animation_idle": "77",
+  "animation_move": "11",
+  "movespeed_attack": "0.0024",
+  "movespeed_skill": "2",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "1",
+  "movetype_skill": "3",
+  "normal_frames": "12, 31, 46, 58, 68, 77, 85, 94, 102, 134, 142, 174",
+  "normal_distribute": "8, 8, 8, 8, 8, 8, 8, 8, 8, 10, 10, 8",
+  "normal_totaldistr": "100",
+  "description": "A lotus colored axe wielder and the daughter of a prominent aristocrat from the La Veda Republic. Continuing her journey with the mechanical figure from another world, she came to meet many new people. These people were of stronger character than anyone she'd met before, and through interacting with them her abilities grew even stronger. She then encountered the being she had set out to defeat, and, wielding her newfound powers, unleashed everything she had in a blaze of fury.",
+  "summon": "Having summoned me,<br>you must be planning to fight?<br>Alright then! To the bitter end!",
+  "fusion": "Now you've got it!<br>You've no chance without me!<br>So what do you want me to do?",
+  "evolution": "Hey, look at me!<br>This is who I really am!<br>Maybe I'm too bright to see?",
+  "hp_base": "3254",
+  "atk_base": "1264",
+  "def_base": "835",
+  "rec_base": "1204",
+  "hp_lord": "4804",
+  "atk_lord": "1667",
+  "def_lord": "1210",
+  "rec_lord": "1582",
+  "hp_anima": "5397",
+  "rec_anima": "1424",
+  "atk_breaker": "1825",
+  "def_breaker": "1052",
+  "atk_guardian": "1509",
+  "def_guardian": "1368",
+  "rec_guardian": "1503",
+  "def_oracle": "1131",
+  "hp_oracle": "4567",
+  "rec_oracle": "1819",
+  "hp_bonus": "500",
+  "atk_bonus": "140",
+  "def_bonus": "260",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "12",
+  "normaldc": "24",
+  "ls": "Five Light's Force",
+  "lsdescription": "50% boost to Atk power of all Units when 5 elements or more are present",
+  "lstype": "Attack",
+  "bbdescription": "Boosts Atk & adds Fire element to attack for all allies for 3 turns",
+  "bbnote": "100% boost",
+  "bbtype": "Support",
+  "bbhits": "0",
+  "bbaoe": "0",
+  "bbgauge": "18",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "10133",
+  "evomats3": "10133",
+  "evomats4": "10191",
+  "evomats5": "60144",
+  "evoitem": ""
 }

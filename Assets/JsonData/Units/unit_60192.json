@@ -1,52 +1,63 @@
 {
   "id": "60192",
-  "unitName": "High Roller Zeul",
-  "no": "470",
-  "element": "Dark",
-  "rarity": "★★★",
-  "cost": "7",
-  "maxlv": "40",
-  "basexp": "15",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "104",
-  "animation_idle": "52",
-  "animation_move": "16",
-  "movespeed_attack": "6",
-  "movespeed_skill": "6",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "2",
-  "movetype_skill": "2",
-  "description": "A gambler who made a name for himself in the La Veda Republic. With trickery as his main weapon Zeul continued his winning streak, though after a big win he would often disappear for a while only to return broke. There's a rumor he would take large amounts of money to otherworld casinos where he enjoyed playing with demons and making insane bets, though this has not been confirmed. Himself stating that his reason for living was to put his life on the line, even his colleagues avoided getting involved with him, saying he was just asking for trouble.",
-  "summon": "No choice but to go all-in.<br>I'm placing my bet on you.<br>This is how it should go.",
-  "fusion": "Alright, let's raise.<br>I really like the chance<br>you just took.",
-  "evolution": "This is the showdown <br>I've been waiting for.<br>I'd bet my life on it.",
-  "hp_base": "2249",
-  "atk_base": "707",
-  "def_base": "707",
-  "rec_base": "559",
-  "hp_lord": "3756",
-  "atk_lord": "1010",
-  "def_lord": "1010",
-  "rec_lord": "765",
-  "hp_anima": "4048",
-  "rec_anima": "687",
-  "atk_breaker": "1088",
-  "def_breaker": "932",
-  "atk_guardian": "932",
-  "def_guardian": "1088",
-  "hp_oracle": "3463",
-  "rec_oracle": "843",
-  "hp_bonus": "300",
-  "atk_bonus": "120",
-  "def_bonus": "120",
-  "rec_bonus": "120",
-  "lordonly": "",
-  "combo_hits": "3",
-  "ls": "Abundant Light",
-  "lsdescription": "Small boost in Zel produced during Spark",
-  "lstype": "Zel",
+  "stats": {
+    "_base": {
+      "atk": 707,
+      "def": 707,
+      "hp": 2249,
+      "rec": 559
+    },
+    "_lord": {
+      "atk": 1010,
+      "def": 1010,
+      "hp": 3756,
+      "rec": 765
+    },
+    "anima": {
+      "atk": 1010,
+      "def": 1010,
+      "hp max": 4146,
+      "hp min": 3951,
+      "rec max": 726,
+      "rec min": 648
+    },
+    "breaker": {
+      "atk max": 1127,
+      "atk min": 1049,
+      "def max": 971,
+      "def min": 893,
+      "hp": 3756,
+      "rec": 765
+    },
+    "guardian": {
+      "atk": 1010,
+      "def max": 1127,
+      "def min": 1049,
+      "hp": 3756,
+      "rec max": 765,
+      "rec min": 687
+    },
+    "oracle": {
+      "atk": 1010,
+      "def max": 1010,
+      "def min": 932,
+      "hp": 3756,
+      "rec max": 921,
+      "rec min": 843
+    }
+  },
+  "leader_skill": {
+    "desc": "Small boost in Zel produced during Spark",
+    "effects": [
+      {
+        "passive id": "31",
+        "zel drop% for spark": 50
+      }
+    ],
+    "id": "1600",
+    "name": "Abundant Light"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -217,91 +228,87 @@
     ],
     "name": "Joker's Hand"
   },
-  "bbdescription": "5 combo random Dark elemental attack on single enemy",
-  "bbtype": "Offense",
-  "bbhits": "5",
-  "bbaoe": "1",
-  "bbgauge": "15",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "60191",
-  "evointo": "",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 707,
-      "def": 707,
-      "hp": 2249,
-      "rec": 559
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1010,
-      "def": 1010,
-      "hp": 3756,
-      "rec": 765
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1010,
-      "def": 1010,
-      "hp max": 4146,
-      "hp min": 3951,
-      "rec max": 726,
-      "rec min": 648
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 104
     },
-    "breaker": {
-      "atk max": 1127,
-      "atk min": 1049,
-      "def max": 971,
-      "def min": 893,
-      "hp": 3756,
-      "rec": 765
+    "idle": {
+      "total number of frames": 52
     },
-    "guardian": {
-      "atk": 1010,
-      "def max": 1127,
-      "def min": 1049,
-      "hp": 3756,
-      "rec max": 765,
-      "rec min": 687
-    },
-    "oracle": {
-      "atk": 1010,
-      "def max": 1010,
-      "def min": 932,
-      "hp": 3756,
-      "rec max": 921,
-      "rec min": 843
+    "move": {
+      "total number of frames": 16
     }
   },
-  "leader_skill": {
-    "desc": "Small boost in Zel produced during Spark",
-    "effects": [
-      {
-        "passive id": "31",
-        "zel drop% for spark": 50
-      }
+  "category": 60190,
+  "cost": "7",
+  "damage frames": {
+    "frame times": [
+      50,
+      54,
+      58
     ],
-    "id": "1600",
-    "name": "Abundant Light"
+    "hit dmg% distribution": [
+      34,
+      33,
+      33
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 3
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "dark",
+  "exp_pattern": 15,
+  "gender": "male",
+  "getting type": "farmable",
+  "guide_id": 470,
+  "imp": {
+    "max atk": "120",
+    "max def": "120",
+    "max hp": "300",
+    "max rec": "120"
+  },
+  "kind": "normal",
+  "lord damage range": "940~1050",
+  "movement": {
+    "attack": {
+      "move speed": 6,
+      "move speed type": "2",
+      "move type": "2"
+    },
+    "skill": {
+      "move speed": 6,
+      "move speed type": "2",
+      "move type": "2"
+    }
+  },
+  "name": "High Roller Zeul",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "High Roller Zeul",
+  "maxlv": "40",
+  "no": "470",
   "unitDisplayHomePosition_1W9CxaFK": "122,44,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "181,133,567,662",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "160,336,297,293,0",
@@ -311,5 +318,83 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "1000",
   "sellCaution": false,
-  "effectFrames": "44:126:1,44:600220:1,48:126:1,52:126:1,48:680:1"
+  "effectFrames": "44:126:1,44:600220:1,48:126:1,52:126:1,48:680:1",
+  "evofrom": "60191",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "15",
+  "animation_attack": "104",
+  "animation_idle": "52",
+  "animation_move": "16",
+  "movespeed_attack": "6",
+  "movespeed_skill": "6",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "2",
+  "movetype_skill": "2",
+  "normal_frames": "50, 54, 58",
+  "normal_distribute": "34, 33, 33",
+  "normal_totaldistr": "100",
+  "bb_frames": "50, 54, 58, 62, 66",
+  "bb_distribute": "20, 20, 20, 20, 20",
+  "bb_totaldistr": "100",
+  "description": "A gambler who made a name for himself in the La Veda Republic. With trickery as his main weapon Zeul continued his winning streak, though after a big win he would often disappear for a while only to return broke. There's a rumor he would take large amounts of money to otherworld casinos where he enjoyed playing with demons and making insane bets, though this has not been confirmed. Himself stating that his reason for living was to put his life on the line, even his colleagues avoided getting involved with him, saying he was just asking for trouble.",
+  "summon": "No choice but to go all-in.<br>I'm placing my bet on you.<br>This is how it should go.",
+  "fusion": "Alright, let's raise.<br>I really like the chance<br>you just took.",
+  "evolution": "This is the showdown <br>I've been waiting for.<br>I'd bet my life on it.",
+  "hp_base": "2249",
+  "atk_base": "707",
+  "def_base": "707",
+  "rec_base": "559",
+  "hp_lord": "3756",
+  "atk_lord": "1010",
+  "def_lord": "1010",
+  "rec_lord": "765",
+  "hp_anima": "4049",
+  "rec_anima": "687",
+  "atk_breaker": "1088",
+  "def_breaker": "932",
+  "atk_guardian": "932",
+  "def_guardian": "1088",
+  "rec_guardian": "726",
+  "def_oracle": "971",
+  "hp_oracle": "3639",
+  "rec_oracle": "882",
+  "hp_bonus": "300",
+  "atk_bonus": "120",
+  "def_bonus": "120",
+  "rec_bonus": "120",
+  "lordonly": "",
+  "combo_hits": "3",
+  "normaldc": "6",
+  "ls": "Abundant Light",
+  "lsdescription": "Small boost in Zel produced during Spark",
+  "lsnote": "50% boost",
+  "lstype": "Zel",
+  "bbdescription": "5 combo random Dark elemental attack on single enemy",
+  "bbtype": "Offense",
+  "bbhits": "5",
+  "bbaoe": "1",
+  "bbgauge": "15",
+  "bbdc": "1",
+  "bbmultiplier": "180",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "",
+  "evomats2": "",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": ""
 }

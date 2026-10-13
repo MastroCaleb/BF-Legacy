@@ -1,65 +1,71 @@
 {
   "id": "10755",
-  "unitName": "Strife Blaze Avant",
-  "no": "1139",
-  "element": "Fire",
-  "rarity": "★★★★★★",
-  "cost": "30",
-  "maxlv": "100",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "151",
-  "animation_idle": "52",
-  "animation_move": "17",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "17, 21, 61, 77, 93, 100, 106, 112",
-  "normal_distribute": "12, 10, 11, 20, 15, 12, 11, 9",
-  "normal_totaldistr": "100",
-  "bb_frames": "17, 21, 25, 61, 77, 93, 100, 105, 110, 115, 120, 125",
-  "bb_distribute": "10, 7, 4, 10, 18, 11, 9, 8, 7, 6, 5, 5",
-  "bb_totaldistr": "100",
-  "sbb_frames": "17, 21, 25, 61, 69, 77, 85, 93, 100, 105, 110, 115, 120, 125, 130",
-  "sbb_distribute": "9, 5, 3, 10, 6, 15, 6, 11, 8, 6, 5, 4, 4, 4, 4",
-  "sbb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "3",
-  "description": "A former knight of the Agni Empire. After having lost his memories, a scarred blacksmith appeared before him wielding a sword ablaze. As the blacksmith handed the blade to Avant, he confided in him that the sword knew everything there was to know. They stood in silence for a short while, but the God Army would eventually come in pursuit of the blacksmith. Picking up the sword to stand against the God Army, Avant was engulfed by the will of Fire and recovered his memories.",
-  "summon": "I don't know who I am.<br>But the moment I held this sword,<br>a [[Holy Flame Vargas|small boy]] came to mind.",
-  "fusion": "I was too weak to do anything...<br>So this time I need to be stronger<br>so that I regret nothing in the end!",
-  "evolution": "My memories are coming back<br>along with my powers...<br>I...I have to keep fighting!",
-  "hp_base": "4237",
-  "atk_base": "1847",
-  "def_base": "1461",
-  "rec_base": "1332",
-  "hp_lord": "6129",
-  "atk_lord": "2524",
-  "def_lord": "1970",
-  "rec_lord": "1790",
-  "hp_anima": "6871",
-  "rec_anima": "1592",
-  "atk_breaker": "2722",
-  "def_breaker": "1772",
-  "def_guardian": "2168",
-  "rec_guardian": "1691",
-  "def_oracle": "1871",
-  "rec_oracle": "2087",
-  "hp_bonus": "750",
-  "atk_bonus": "400",
-  "def_bonus": "200",
-  "rec_bonus": "300",
-  "lordonly": "",
-  "combo_hits": "8",
-  "normaldc": "32",
-  "ls": "Smoldering Sky",
-  "lsdescription": "30% boost to max HP & greatly boosts critical, Spark damage",
-  "lsnote": "100% boost to critical damage, 50% boost to spark damage",
-  "lstype": "Hit Points/Attack",
+  "stats": {
+    "_base": {
+      "atk": 1847,
+      "def": 1461,
+      "hp": 4237,
+      "rec": 1332
+    },
+    "_lord": {
+      "atk": 2524,
+      "def": 1970,
+      "hp": 6129,
+      "rec": 1790
+    },
+    "anima": {
+      "atk": 2524,
+      "def": 1970,
+      "hp max": 7119,
+      "hp min": 6624,
+      "rec max": 1691,
+      "rec min": 1493
+    },
+    "breaker": {
+      "atk max": 2821,
+      "atk min": 2623,
+      "def max": 1871,
+      "def min": 1673,
+      "hp": 6129,
+      "rec": 1790
+    },
+    "guardian": {
+      "atk": 2524,
+      "def max": 2267,
+      "def min": 2069,
+      "hp": 6129,
+      "rec max": 1790,
+      "rec min": 1592
+    },
+    "oracle": {
+      "atk": 2524,
+      "def max": 1970,
+      "def min": 1772,
+      "hp": 6129,
+      "rec max": 2186,
+      "rec min": 1988
+    }
+  },
+  "leader_skill": {
+    "desc": "30% boost to max HP & greatly boosts critical, Spark damage",
+    "effects": [
+      {
+        "hp% buff": 30,
+        "passive id": "1"
+      },
+      {
+        "crit multiplier%": 100.0,
+        "passive id": "34"
+      },
+      {
+        "damage% for spark": 50,
+        "passive id": "31"
+      }
+    ],
+    "id": "5512",
+    "name": "Smoldering Sky"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -346,14 +352,6 @@
     ],
     "name": "Flare Blaze"
   },
-  "bbdescription": "12 combo powerful Fire attack on all foes & boosts Atk, critical hit rate for 3 turns",
-  "bbnote": "120% Atk boost, 50% boost to critical rate",
-  "bbtype": "Support/Offense",
-  "bbhits": "12",
-  "bbaoe": "A",
-  "bbgauge": "24",
-  "bbdc": "12",
-  "bbmultiplier": "270",
   "sbb": {
     "damage frames": [
       {
@@ -850,6 +848,192 @@
     ],
     "name": "Vaporizer"
   },
+  "ubb": {},
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 151
+    },
+    "idle": {
+      "total number of frames": 52
+    },
+    "move": {
+      "total number of frames": 17
+    }
+  },
+  "category": 10750,
+  "cost": "30",
+  "damage frames": {
+    "frame times": [
+      17,
+      21,
+      61,
+      77,
+      93,
+      100,
+      106,
+      112
+    ],
+    "hit dmg% distribution": [
+      12,
+      10,
+      11,
+      20,
+      15,
+      12,
+      11,
+      9
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 8
+  },
+  "drop check count": 4,
+  "element": "fire",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 1139,
+  "imp": {
+    "max atk": "400",
+    "max def": "200",
+    "max hp": "750",
+    "max rec": "300"
+  },
+  "kind": "normal",
+  "lord damage range": "2349~2624",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Strife Blaze Avant",
+  "rarity": "6",
+  "sell caution": false,
+  "unitName": "Strife Blaze Avant",
+  "maxlv": "100",
+  "no": "1139",
+  "unitDisplayHomePosition_1W9CxaFK": "512,290,190,519",
+  "unitDisplayDetailPosition_6z54rgb3": "-123,-42,900,820",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "61,224,420,383,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-69,-301,850,774",
+  "unitDisplaySummonPosition_KC3Jk8Br": "61,224,420,383,0",
+  "unitDisplayHpPosition_3BpHN6VD": "0,45",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "8000",
+  "sellCaution": false,
+  "effectFrames": "11:121:1,15:121:1,55:121:1,71:121:1,87:121:1,94:121:1,100:121:1,106:121:1,13:1121:1,20:1370:1,60:1136:1,85:1136:1,95:140:1,101:100191:1",
+  "evofrom": "10754",
+  "evointo": "10756",
+  "evozelcost": "1500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "10354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 2
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "151",
+  "animation_idle": "52",
+  "animation_move": "17",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "17, 21, 61, 77, 93, 100, 106, 112",
+  "normal_distribute": "12, 10, 11, 20, 15, 12, 11, 9",
+  "normal_totaldistr": "100",
+  "bb_frames": "17, 21, 25, 61, 77, 93, 100, 105, 110, 115, 120, 125",
+  "bb_distribute": "10, 7, 4, 10, 18, 11, 9, 8, 7, 6, 5, 5",
+  "bb_totaldistr": "100",
+  "sbb_frames": "17, 21, 25, 61, 69, 77, 85, 93, 100, 105, 110, 115, 120, 125, 130",
+  "sbb_distribute": "9, 5, 3, 10, 6, 15, 6, 11, 8, 6, 5, 4, 4, 4, 4",
+  "sbb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "3",
+  "description": "A former knight of the Agni Empire. After having lost his memories, a scarred blacksmith appeared before him wielding a sword ablaze. As the blacksmith handed the blade to Avant, he confided in him that the sword knew everything there was to know. They stood in silence for a short while, but the God Army would eventually come in pursuit of the blacksmith. Picking up the sword to stand against the God Army, Avant was engulfed by the will of Fire and recovered his memories.",
+  "summon": "I don't know who I am.<br>But the moment I held this sword,<br>a [[Holy Flame Vargas|small boy]] came to mind.",
+  "fusion": "I was too weak to do anything...<br>So this time I need to be stronger<br>so that I regret nothing in the end!",
+  "evolution": "My memories are coming back<br>along with my powers...<br>I...I have to keep fighting!",
+  "hp_base": "4237",
+  "atk_base": "1847",
+  "def_base": "1461",
+  "rec_base": "1332",
+  "hp_lord": "6129",
+  "atk_lord": "2524",
+  "def_lord": "1970",
+  "rec_lord": "1790",
+  "hp_anima": "6871",
+  "rec_anima": "1592",
+  "atk_breaker": "2722",
+  "def_breaker": "1772",
+  "def_guardian": "2168",
+  "rec_guardian": "1691",
+  "def_oracle": "1871",
+  "rec_oracle": "2087",
+  "hp_bonus": "750",
+  "atk_bonus": "400",
+  "def_bonus": "200",
+  "rec_bonus": "300",
+  "lordonly": "",
+  "combo_hits": "8",
+  "normaldc": "32",
+  "ls": "Smoldering Sky",
+  "lsdescription": "30% boost to max HP & greatly boosts critical, Spark damage",
+  "lsnote": "100% boost to critical damage, 50% boost to spark damage",
+  "lstype": "Hit Points/Attack",
+  "bbdescription": "12 combo powerful Fire attack on all foes & boosts Atk, critical hit rate for 3 turns",
+  "bbnote": "120% Atk boost, 50% boost to critical rate",
+  "bbtype": "Support/Offense",
+  "bbhits": "12",
+  "bbaoe": "A",
+  "bbgauge": "24",
+  "bbdc": "12",
+  "bbmultiplier": "270",
   "sbbdescription": "15 combo powerful Fire attack on all foes, probable slight enemy Spark vulnerability boost for 2 turns & boosts Atk relative to max HP and BB Atk for 3 turns",
   "sbbnote": "25% chance to apply 25% spark debuff, 10% HP to Atk, 150% boost to BB Atk",
   "sbbtype": "Support/Offense",
@@ -858,7 +1042,6 @@
   "sbbgauge": "28",
   "sbbdc": "15",
   "sbbmultiplier": "480",
-  "ubb": {},
   "ubbdescription": "",
   "ubbtype": "",
   "ubbhits": "",
@@ -869,89 +1052,10 @@
   "es": "",
   "esitem": "",
   "esdescription": "",
-  "evofrom": "10754",
-  "evointo": "10756",
   "evomats1": "10354",
   "evomats2": "50354",
   "evomats3": "10133",
   "evomats4": "60224",
   "evomats5": "60224",
-  "evoitem": "",
-  "evozelcost": "1500000",
-  "stats": {
-    "_base": {
-      "atk": 1847,
-      "def": 1461,
-      "hp": 4237,
-      "rec": 1332
-    },
-    "_lord": {
-      "atk": 2524,
-      "def": 1970,
-      "hp": 6129,
-      "rec": 1790
-    },
-    "anima": {
-      "atk": 2524,
-      "def": 1970,
-      "hp max": 7119,
-      "hp min": 6624,
-      "rec max": 1691,
-      "rec min": 1493
-    },
-    "breaker": {
-      "atk max": 2821,
-      "atk min": 2623,
-      "def max": 1871,
-      "def min": 1673,
-      "hp": 6129,
-      "rec": 1790
-    },
-    "guardian": {
-      "atk": 2524,
-      "def max": 2267,
-      "def min": 2069,
-      "hp": 6129,
-      "rec max": 1790,
-      "rec min": 1592
-    },
-    "oracle": {
-      "atk": 2524,
-      "def max": 1970,
-      "def min": 1772,
-      "hp": 6129,
-      "rec max": 2186,
-      "rec min": 1988
-    }
-  },
-  "leader_skill": {
-    "desc": "30% boost to max HP & greatly boosts critical, Spark damage",
-    "effects": [
-      {
-        "hp% buff": 30,
-        "passive id": "1"
-      },
-      {
-        "crit multiplier%": 100.0,
-        "passive id": "34"
-      },
-      {
-        "damage% for spark": 50,
-        "passive id": "31"
-      }
-    ],
-    "id": "5512",
-    "name": "Smoldering Sky"
-  },
-  "extra_skill": {},
-  "unitDisplayHomePosition_1W9CxaFK": "512,290,190,519",
-  "unitDisplayDetailPosition_6z54rgb3": "-123,-42,900,820",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "61,224,420,383,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-69,-301,850,774",
-  "unitDisplaySummonPosition_KC3Jk8Br": "61,224,420,383,0",
-  "unitDisplayHpPosition_3BpHN6VD": "0,45",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "8000",
-  "sellCaution": false,
-  "effectFrames": "11:121:1,15:121:1,55:121:1,71:121:1,87:121:1,94:121:1,100:121:1,106:121:1,13:1121:1,20:1370:1,60:1136:1,85:1136:1,95:140:1,101:100191:1"
+  "evoitem": ""
 }

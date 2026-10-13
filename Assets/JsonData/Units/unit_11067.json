@@ -1,68 +1,106 @@
 {
   "id": "11067",
-  "unitName": "Blazing Admonition Agnia",
-  "no": "1625",
-  "element": "Fire",
-  "rarity": "Omni",
-  "cost": "50",
-  "maxlv": "150",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "137",
-  "animation_idle": "52",
-  "animation_move": "6",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "36, 45, 54, 67, 71, 75, 79, 83, 87",
-  "normal_distribute": "5, 4, 3, 10, 20, 15, 20, 14, 9",
-  "normal_totaldistr": "100",
-  "bb_frames": "36, 45, 54, 63, 67, 70, 73, 76, 79, 82, 85, 88, 91, 94",
-  "bb_distribute": "3, 4, 3, 4, 10, 12, 10, 12, 10, 9, 8, 7, 4, 4",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_frames": "36, 45, 54, 63, 67, 70, 73, 76, 79, 82, 85, 88, 91, 94, 97, 100, 103, 106",
-  "sbb_distribute": "3, 4, 3, 4, 8, 10, 8, 10, 8, 7, 6, 5, 5, 5, 4, 4, 3, 3",
-  "sbb_totaldistr": "100",
-  "sbb_effectdelay": "1",
-  "ubb_frames": "36, 45, 54, 63, 67, 70, 73, 76, 79, 82, 85, 88, 91, 94, 97, 100, 103, 106, 109, 112, 115, 118",
-  "ubb_distribute": "3, 4, 3, 4, 6, 8, 6, 8, 6, 5, 5, 5, 5, 5, 4, 4, 4, 3, 3, 3, 3, 3",
-  "ubb_totaldistr": "100",
-  "ubb_effectdelay": "1",
-  "description": "Agnia employed a number of disciples with Thunder powers in order to slay the Marine Emperor, but apparently lost her chance to finish her foe when both sides' disciples deserted them. Had she only stymied their desertion, her dominance over the other Imperial Gods and rule of Grand Gaia likely would have become a reality. A merciless, austere goddess of Agnia's sort would have doubtless demanded absolute obedience from humanity and punished blasphemy severely. Eventually, she may have even delivered a punishment more severe than that of the Holy Emperor and fully annihilated humanity.",
-  "summon": "This world will only be complete when I am its ruler. I cannot leave my role to lesser beings.",
-  "fusion": "I strive to build a perfect world... Sin must be punished; justice must not relent! Fools require discipline!",
-  "evolution": "Only my words are the absolute truth! Death to the infidels! Strike down the blasphemers! Order must be maintained!",
-  "hp_base": "6407",
-  "atk_base": "2581",
-  "def_base": "2482",
-  "rec_base": "2318",
-  "hp_lord": "8317",
-  "atk_lord": "3197",
-  "def_lord": "3102",
-  "rec_lord": "2884",
-  "hp_anima": "9434",
-  "rec_anima": "2586",
-  "atk_breaker": "3495",
-  "def_breaker": "2804",
-  "def_guardian": "3400",
-  "rec_guardian": "2735",
-  "def_oracle": "2953",
-  "rec_oracle": "3331",
-  "hp_bonus": "1500",
-  "atk_bonus": "600",
-  "def_bonus": "600",
-  "rec_bonus": "600",
-  "lordonly": "",
-  "combo_hits": "9",
-  "normaldc": "45",
-  "ls": "Incandescent Precept",
-  "lsdescription": "60% boost to Def, max HP, boosts Atk, Def relative to remaining HP, 130% boost to Spark damage & considerably restores HP each turn",
-  "lsnote": "0.5% boost to Atk, Def per 1% HP remaining & heals (1000-1200 + 10% Rec) HP",
+  "stats": {
+    "_base": {
+      "atk": 2581,
+      "def": 2482,
+      "hp": 6407,
+      "rec": 2318
+    },
+    "_lord": {
+      "atk": 3197,
+      "def": 3102,
+      "hp": 8317,
+      "rec": 2884
+    },
+    "anima": {
+      "atk": 3197,
+      "def": 3102,
+      "hp max": 9807,
+      "hp min": 9062,
+      "rec max": 2735,
+      "rec min": 2437
+    },
+    "breaker": {
+      "atk max": 3644,
+      "atk min": 3346,
+      "def max": 2953,
+      "def min": 2655,
+      "hp": 8317,
+      "rec": 2884
+    },
+    "guardian": {
+      "atk": 3197,
+      "def max": 3549,
+      "def min": 3251,
+      "hp": 8317,
+      "rec max": 2884,
+      "rec min": 2586
+    },
+    "oracle": {
+      "atk": 3197,
+      "def max": 3102,
+      "def min": 2804,
+      "hp": 8317,
+      "rec max": 3480,
+      "rec min": 3182
+    }
+  },
+  "leader_skill": {
+    "desc": "60% boost to Def, max HP, boosts Atk, Def relative to remaining HP, 130% boost to Spark damage & considerably restores HP each turn",
+    "effects": [
+      {
+        "def% buff": 60,
+        "hp% buff": 60,
+        "passive id": "1"
+      },
+      {
+        "atk% base buff": 0,
+        "atk% extra buff based on hp": 50,
+        "buff proportional to hp": "remaining",
+        "def% base buff": 0,
+        "def% extra buff based on hp": 50,
+        "passive id": "46"
+      },
+      {
+        "damage% for spark": 130,
+        "passive id": "31"
+      },
+      {
+        "passive id": "33",
+        "rec% added (turn heal)": 10.0,
+        "turn heal high": 1200,
+        "turn heal low": 1000
+      }
+    ],
+    "id": "4374",
+    "name": "Incandescent Precept"
+  },
+  "extra_skill": {
+    "desc": "Restores HP each turn & damage taken considerably boosts BB gauge",
+    "effects": [
+      {
+        "conditions": [],
+        "passive id": "33",
+        "passive target": "self",
+        "rec% added (turn heal)": 10.0,
+        "turn heal high": 1000,
+        "turn heal low": 800
+      },
+      {
+        "bc fill when attacked high": 4,
+        "bc fill when attacked low": 3,
+        "bc fill when attacked%": 100,
+        "conditions": [],
+        "passive id": "25",
+        "passive target": "self"
+      }
+    ],
+    "id": "35400",
+    "name": "Flawless Precepts",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -759,14 +797,6 @@
     ],
     "name": "Crimson Phoenix Blaze"
   },
-  "bbdescription": "14 combo powerful Fire attack on all foes, removes all status ailments, hugely boosts Def, Rec for 3 turns, hugely boosts Def, Rec relative to max HP for 3 turns & greatly restores HP for 3 turns",
-  "bbnote": "180% parameter boost, 30% HP to Def, Rec & heals 3500-4000 + 15% Rec",
-  "bbtype": "Offense",
-  "bbhits": "14",
-  "bbaoe": "A",
-  "bbgauge": "28",
-  "bbdc": "14",
-  "bbmultiplier": "420",
   "sbb": {
     "damage frames": [
       {
@@ -1349,14 +1379,6 @@
     ],
     "name": "Flame Glaive: Ariagal"
   },
-  "sbbdescription": "18 combo powerful Fire attack on all foes, enormously boosts Spark damage for 3 turns, hugely boosts BB gauge for 3 turns, considerably boosts OD gauge fill rate at turn's end for 3 turns & damage taken may slightly restore HP",
-  "sbbnote": "130% Spark, fills 7 BC, fills 400 OD & 20% chance to heal 20-25% damage",
-  "sbbtype": "Offense",
-  "sbbhits": "18",
-  "sbbaoe": "A",
-  "sbbgauge": "28",
-  "sbbdc": "18",
-  "sbbmultiplier": "620",
   "ubb": {
     "damage frames": [
       {
@@ -1526,6 +1548,188 @@
     ],
     "name": "Wise Saint Havette"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 137
+    },
+    "idle": {
+      "total number of frames": 52
+    },
+    "move": {
+      "total number of frames": 6
+    }
+  },
+  "category": 11060,
+  "cost": "50",
+  "damage frames": {
+    "frame times": [
+      36,
+      45,
+      54,
+      67,
+      71,
+      75,
+      79,
+      83,
+      87
+    ],
+    "hit dmg% distribution": [
+      5,
+      4,
+      3,
+      10,
+      20,
+      15,
+      20,
+      14,
+      9
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 9
+  },
+  "drop check count": 5,
+  "element": "fire",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 1625,
+  "imp": {
+    "max atk": "600",
+    "max def": "600",
+    "max hp": "1500",
+    "max rec": "600"
+  },
+  "kind": "normal",
+  "lord damage range": "2976~3324",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Blazing Admonition Agnia",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "8",
+  "sell caution": false,
+  "unitName": "Blazing Admonition Agnia",
+  "maxlv": "150",
+  "no": "1625",
+  "unitDisplayHomePosition_1W9CxaFK": "677,460,160,437",
+  "unitDisplayDetailPosition_6z54rgb3": "-320,-251,1506,1296",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "-54,49,820,706,1",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-330,-494,1506,1296",
+  "unitDisplaySummonPosition_KC3Jk8Br": "-54,49,820,706,1",
+  "unitDisplayHpPosition_3BpHN6VD": "-1,79",
+  "unitDisplayCursorPosition": "0,3",
+  "sellPrice": "50000",
+  "sellCaution": false,
+  "effectFrames": "30:1911:1,61:11478:1,65:1090:1,68:500152:1,64:100190:1,70:1912:1,75:1912:1",
+  "evofrom": "11066",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "21",
+  "animation_attack": "137",
+  "animation_idle": "52",
+  "animation_move": "6",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "36, 45, 54, 67, 71, 75, 79, 83, 87",
+  "normal_distribute": "5, 4, 3, 10, 20, 15, 20, 14, 9",
+  "normal_totaldistr": "100",
+  "bb_frames": "36, 45, 54, 63, 67, 70, 73, 76, 79, 82, 85, 88, 91, 94",
+  "bb_distribute": "3, 4, 3, 4, 10, 12, 10, 12, 10, 9, 8, 7, 4, 4",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_frames": "36, 45, 54, 63, 67, 70, 73, 76, 79, 82, 85, 88, 91, 94, 97, 100, 103, 106",
+  "sbb_distribute": "3, 4, 3, 4, 8, 10, 8, 10, 8, 7, 6, 5, 5, 5, 4, 4, 3, 3",
+  "sbb_totaldistr": "100",
+  "sbb_effectdelay": "1",
+  "ubb_frames": "36, 45, 54, 63, 67, 70, 73, 76, 79, 82, 85, 88, 91, 94, 97, 100, 103, 106, 109, 112, 115, 118",
+  "ubb_distribute": "3, 4, 3, 4, 6, 8, 6, 8, 6, 5, 5, 5, 5, 5, 4, 4, 4, 3, 3, 3, 3, 3",
+  "ubb_totaldistr": "100",
+  "ubb_effectdelay": "1",
+  "description": "Agnia employed a number of disciples with Thunder powers in order to slay the Marine Emperor, but apparently lost her chance to finish her foe when both sides' disciples deserted them. Had she only stymied their desertion, her dominance over the other Imperial Gods and rule of Grand Gaia likely would have become a reality. A merciless, austere goddess of Agnia's sort would have doubtless demanded absolute obedience from humanity and punished blasphemy severely. Eventually, she may have even delivered a punishment more severe than that of the Holy Emperor and fully annihilated humanity.",
+  "summon": "This world will only be complete when I am its ruler. I cannot leave my role to lesser beings.",
+  "fusion": "I strive to build a perfect world... Sin must be punished; justice must not relent! Fools require discipline!",
+  "evolution": "Only my words are the absolute truth! Death to the infidels! Strike down the blasphemers! Order must be maintained!",
+  "hp_base": "6407",
+  "atk_base": "2581",
+  "def_base": "2482",
+  "rec_base": "2318",
+  "hp_lord": "8317",
+  "atk_lord": "3197",
+  "def_lord": "3102",
+  "rec_lord": "2884",
+  "hp_anima": "9434",
+  "rec_anima": "2586",
+  "atk_breaker": "3495",
+  "def_breaker": "2804",
+  "def_guardian": "3400",
+  "rec_guardian": "2735",
+  "def_oracle": "2953",
+  "rec_oracle": "3331",
+  "hp_bonus": "1500",
+  "atk_bonus": "600",
+  "def_bonus": "600",
+  "rec_bonus": "600",
+  "lordonly": "",
+  "combo_hits": "9",
+  "normaldc": "45",
+  "ls": "Incandescent Precept",
+  "lsdescription": "60% boost to Def, max HP, boosts Atk, Def relative to remaining HP, 130% boost to Spark damage & considerably restores HP each turn",
+  "lsnote": "0.5% boost to Atk, Def per 1% HP remaining & heals (1000-1200 + 10% Rec) HP",
+  "bbdescription": "14 combo powerful Fire attack on all foes, removes all status ailments, hugely boosts Def, Rec for 3 turns, hugely boosts Def, Rec relative to max HP for 3 turns & greatly restores HP for 3 turns",
+  "bbnote": "180% parameter boost, 30% HP to Def, Rec & heals 3500-4000 + 15% Rec",
+  "bbtype": "Offense",
+  "bbhits": "14",
+  "bbaoe": "A",
+  "bbgauge": "28",
+  "bbdc": "14",
+  "bbmultiplier": "420",
+  "sbbdescription": "18 combo powerful Fire attack on all foes, enormously boosts Spark damage for 3 turns, hugely boosts BB gauge for 3 turns, considerably boosts OD gauge fill rate at turn's end for 3 turns & damage taken may slightly restore HP",
+  "sbbnote": "130% Spark, fills 7 BC, fills 400 OD & 20% chance to heal 20-25% damage",
+  "sbbtype": "Offense",
+  "sbbhits": "18",
+  "sbbaoe": "A",
+  "sbbgauge": "28",
+  "sbbdc": "18",
+  "sbbmultiplier": "620",
   "ubbdescription": "22 combo massive Fire attack on all foes, enormously boosts Spark damage for 3 turns, fully restores HP for 3 turns, enormously boosts BB gauge for 3 turns & enormously boosts OD gauge fill rate at turn's end for 3 turns",
   "ubbnote": "350% Spark, fills 50 BC & fills 800 OD",
   "ubbtype": "Offense",
@@ -1538,8 +1742,6 @@
   "esitem": "",
   "esdescription": "Restores HP each turn & damage taken considerably boosts BB gauge",
   "esnote": "Heals 800-1000 + 10% Rec & fills 3-4 BC",
-  "evofrom": "11066",
-  "evointo": "",
   "evomats1": "",
   "evomats2": "",
   "evomats3": "",
@@ -1548,117 +1750,5 @@
   "evomats6": "",
   "evomats7": "",
   "evomats8": "",
-  "evoitem": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 2581,
-      "def": 2482,
-      "hp": 6407,
-      "rec": 2318
-    },
-    "_lord": {
-      "atk": 3197,
-      "def": 3102,
-      "hp": 8317,
-      "rec": 2884
-    },
-    "anima": {
-      "atk": 3197,
-      "def": 3102,
-      "hp max": 9807,
-      "hp min": 9062,
-      "rec max": 2735,
-      "rec min": 2437
-    },
-    "breaker": {
-      "atk max": 3644,
-      "atk min": 3346,
-      "def max": 2953,
-      "def min": 2655,
-      "hp": 8317,
-      "rec": 2884
-    },
-    "guardian": {
-      "atk": 3197,
-      "def max": 3549,
-      "def min": 3251,
-      "hp": 8317,
-      "rec max": 2884,
-      "rec min": 2586
-    },
-    "oracle": {
-      "atk": 3197,
-      "def max": 3102,
-      "def min": 2804,
-      "hp": 8317,
-      "rec max": 3480,
-      "rec min": 3182
-    }
-  },
-  "leader_skill": {
-    "desc": "60% boost to Def, max HP, boosts Atk, Def relative to remaining HP, 130% boost to Spark damage & considerably restores HP each turn",
-    "effects": [
-      {
-        "def% buff": 60,
-        "hp% buff": 60,
-        "passive id": "1"
-      },
-      {
-        "atk% base buff": 0,
-        "atk% extra buff based on hp": 50,
-        "buff proportional to hp": "remaining",
-        "def% base buff": 0,
-        "def% extra buff based on hp": 50,
-        "passive id": "46"
-      },
-      {
-        "damage% for spark": 130,
-        "passive id": "31"
-      },
-      {
-        "passive id": "33",
-        "rec% added (turn heal)": 10.0,
-        "turn heal high": 1200,
-        "turn heal low": 1000
-      }
-    ],
-    "id": "4374",
-    "name": "Incandescent Precept"
-  },
-  "extra_skill": {
-    "desc": "Restores HP each turn & damage taken considerably boosts BB gauge",
-    "effects": [
-      {
-        "conditions": [],
-        "passive id": "33",
-        "passive target": "self",
-        "rec% added (turn heal)": 10.0,
-        "turn heal high": 1000,
-        "turn heal low": 800
-      },
-      {
-        "bc fill when attacked high": 4,
-        "bc fill when attacked low": 3,
-        "bc fill when attacked%": 100,
-        "conditions": [],
-        "passive id": "25",
-        "passive target": "self"
-      }
-    ],
-    "id": "35400",
-    "name": "Flawless Precepts",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "677,460,160,437",
-  "unitDisplayDetailPosition_6z54rgb3": "-320,-251,1506,1296",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "-54,49,820,706,1",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-330,-494,1506,1296",
-  "unitDisplaySummonPosition_KC3Jk8Br": "-54,49,820,706,1",
-  "unitDisplayHpPosition_3BpHN6VD": "-1,79",
-  "unitDisplayCursorPosition": "0,3",
-  "sellPrice": "50000",
-  "sellCaution": false,
-  "effectFrames": "30:1911:1,61:11478:1,65:1090:1,68:500152:1,64:100190:1,70:1912:1,75:1912:1"
+  "evoitem": ""
 }

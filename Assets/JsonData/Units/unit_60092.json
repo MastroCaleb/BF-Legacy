@@ -1,62 +1,63 @@
 {
   "id": "60092",
-  "unitName": "Shida",
-  "freetext": ":''For other uses, see Shida (disambiguation).''",
-  "no": "133",
-  "element": "Dark",
-  "rarity": "★★★",
-  "cost": "5",
-  "maxlv": "40",
-  "basexp": "15",
-  "gender": "M",
-  "ai": "3",
-  "animation_attack": "144",
-  "animation_idle": "127",
-  "animation_move": "127",
-  "movespeed_attack": "8",
-  "movespeed_skill": "8",
-  "speedtype_attack": "1",
-  "speedtype_skill": "1",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "99, 107, 115, 123, 131, 139",
-  "normal_distribute": "30, 10, 10, 30, 10, 10",
-  "normal_totaldistr": "100",
-  "bb_frames": "86, 94, 102, 110, 118, 126",
-  "bb_distribute": "20, 20, 15, 15, 15, 15",
-  "bb_totaldistr": "100",
-  "description": "A supervisor of all magicians in the ruined Bariura Empire. Deeply trusted by the emperor, he oversaw many experiments throughout the empire. He zealously researched a variety of sorcery, focusing on black magic. He called himself a dark magician. Rumor was he discovered new techniques through human experiments, but he would just smile and neither confirm nor deny this.",
-  "summon": "Let us make a pact.<br>From now on, you'll be my<br>new subject... Mwahaha!",
-  "fusion": "Mwahaha. Here we go.<br>I'm on the verge of <br>something amazing!",
-  "evolution": "",
-  "hp_base": "1750",
-  "atk_base": "750",
-  "def_base": "480",
-  "rec_base": "700",
-  "hp_lord": "2925",
-  "atk_lord": "1020",
-  "def_lord": "633",
-  "rec_lord": "1029",
-  "hp_anima": "3218",
-  "rec_anima": "951",
-  "atk_breaker": "1098",
-  "def_breaker": "555",
-  "atk_guardian": "942",
-  "def_guardian": "711",
-  "rec_guardian": "990",
-  "def_oracle": "594",
-  "hp_oracle": "2808",
-  "rec_oracle": "1146",
-  "hp_bonus": "300",
-  "atk_bonus": "120",
-  "def_bonus": "120",
-  "rec_bonus": "120",
-  "lordonly": "",
-  "combo_hits": "6",
-  "normaldc": "12",
-  "ls": "Valiant Power",
-  "lsdescription": "10% boost to Atk Power of all types",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 750,
+      "def": 480,
+      "hp": 1750,
+      "rec": 700
+    },
+    "_lord": {
+      "atk": 1020,
+      "def": 633,
+      "hp": 2925,
+      "rec": 1029
+    },
+    "anima": {
+      "atk": 1020,
+      "def": 633,
+      "hp max": 3315,
+      "hp min": 3120,
+      "rec max": 990,
+      "rec min": 912
+    },
+    "breaker": {
+      "atk max": 1137,
+      "atk min": 1059,
+      "def max": 594,
+      "def min": 516,
+      "hp": 2925,
+      "rec": 1029
+    },
+    "guardian": {
+      "atk": 1020,
+      "def max": 750,
+      "def min": 672,
+      "hp": 2925,
+      "rec max": 1029,
+      "rec min": 951
+    },
+    "oracle": {
+      "atk": 1020,
+      "def max": 633,
+      "def min": 555,
+      "hp": 2925,
+      "rec max": 1185,
+      "rec min": 1107
+    }
+  },
+  "leader_skill": {
+    "desc": "10% boost to Atk",
+    "effects": [
+      {
+        "atk% buff": 10,
+        "passive id": "1"
+      }
+    ],
+    "id": "1900",
+    "name": "Valiant Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -219,93 +220,99 @@
     ],
     "name": "Catastrophe"
   },
-  "bbdescription": "6 combo Dark elemental attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "6",
-  "bbaoe": "A",
-  "bbgauge": "20",
-  "bbdc": "6",
-  "bbmultiplier": "150",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "60093",
-  "evomats1": "60143",
-  "evomats2": "60122",
-  "evomats3": "60121",
-  "evomats4": "",
-  "evomats5": "",
-  "evozelcost": "100000",
-  "stats": {
-    "_base": {
-      "atk": 750,
-      "def": 480,
-      "hp": 1750,
-      "rec": 700
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1020,
-      "def": 633,
-      "hp": 2925,
-      "rec": 1029
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1020,
-      "def": 633,
-      "hp max": 3315,
-      "hp min": 3120,
-      "rec max": 990,
-      "rec min": 912
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 1137,
-      "atk min": 1059,
-      "def max": 594,
-      "def min": 516,
-      "hp": 2925,
-      "rec": 1029
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 144
     },
-    "guardian": {
-      "atk": 1020,
-      "def max": 750,
-      "def min": 672,
-      "hp": 2925,
-      "rec max": 1029,
-      "rec min": 951
+    "idle": {
+      "total number of frames": 127
     },
-    "oracle": {
-      "atk": 1020,
-      "def max": 633,
-      "def min": 555,
-      "hp": 2925,
-      "rec max": 1185,
-      "rec min": 1107
+    "move": {
+      "total number of frames": 127
     }
   },
-  "leader_skill": {
-    "desc": "10% boost to Atk",
-    "effects": [
-      {
-        "atk% buff": 10,
-        "passive id": "1"
-      }
+  "category": 60090,
+  "cost": "5",
+  "damage frames": {
+    "frame times": [
+      99,
+      107,
+      115,
+      123,
+      131,
+      139
     ],
-    "id": "1900",
-    "name": "Valiant Power"
+    "hit dmg% distribution": [
+      30,
+      10,
+      10,
+      30,
+      10,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 6
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "dark",
+  "exp_pattern": 15,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 133,
+  "imp": {
+    "max atk": "120",
+    "max def": "120",
+    "max hp": "300",
+    "max rec": "120"
+  },
+  "kind": "normal",
+  "lord damage range": "949~1060",
+  "movement": {
+    "attack": {
+      "move speed": 8,
+      "move speed type": "1",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 8,
+      "move speed type": "1",
+      "move type": "3"
+    }
+  },
+  "name": "Shida",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "Shida",
+  "maxlv": "40",
+  "no": "133",
   "unitDisplayHomePosition_1W9CxaFK": "203,-74,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "117,219,560,560",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "167,353,256,256,0",
@@ -315,5 +322,99 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "1000",
   "sellCaution": false,
-  "effectFrames": "55:370:1"
+  "effectFrames": "55:370:1",
+  "evofrom": "",
+  "evointo": "60093",
+  "evozelcost": "100000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60122",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60121",
+      "count": 1
+    }
+  ],
+  "freetext": ":''For other uses, see Shida (disambiguation).''",
+  "basexp": "15",
+  "animation_attack": "144",
+  "animation_idle": "127",
+  "animation_move": "127",
+  "movespeed_attack": "8",
+  "movespeed_skill": "8",
+  "speedtype_attack": "1",
+  "speedtype_skill": "1",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "99, 107, 115, 123, 131, 139",
+  "normal_distribute": "30, 10, 10, 30, 10, 10",
+  "normal_totaldistr": "100",
+  "bb_frames": "86, 94, 102, 110, 118, 126",
+  "bb_distribute": "20, 20, 15, 15, 15, 15",
+  "bb_totaldistr": "100",
+  "description": "A supervisor of all magicians in the ruined Bariura Empire. Deeply trusted by the emperor, he oversaw many experiments throughout the empire. He zealously researched a variety of sorcery, focusing on black magic. He called himself a dark magician. Rumor was he discovered new techniques through human experiments, but he would just smile and neither confirm nor deny this.",
+  "summon": "Let us make a pact.<br>From now on, you'll be my<br>new subject... Mwahaha!",
+  "fusion": "Mwahaha. Here we go.<br>I'm on the verge of <br>something amazing!",
+  "evolution": "",
+  "hp_base": "1750",
+  "atk_base": "750",
+  "def_base": "480",
+  "rec_base": "700",
+  "hp_lord": "2925",
+  "atk_lord": "1020",
+  "def_lord": "633",
+  "rec_lord": "1029",
+  "hp_anima": "3218",
+  "rec_anima": "951",
+  "atk_breaker": "1098",
+  "def_breaker": "555",
+  "atk_guardian": "942",
+  "def_guardian": "711",
+  "rec_guardian": "990",
+  "def_oracle": "594",
+  "hp_oracle": "2808",
+  "rec_oracle": "1146",
+  "hp_bonus": "300",
+  "atk_bonus": "120",
+  "def_bonus": "120",
+  "rec_bonus": "120",
+  "lordonly": "",
+  "combo_hits": "6",
+  "normaldc": "12",
+  "ls": "Valiant Power",
+  "lsdescription": "10% boost to Atk Power of all types",
+  "lstype": "Attack",
+  "bbdescription": "6 combo Dark elemental attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "6",
+  "bbaoe": "A",
+  "bbgauge": "20",
+  "bbdc": "6",
+  "bbmultiplier": "150",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "60143",
+  "evomats2": "60122",
+  "evomats3": "60121",
+  "evomats4": "",
+  "evomats5": ""
 }

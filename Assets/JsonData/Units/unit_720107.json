@@ -1,67 +1,136 @@
 {
   "id": "720107",
-  "unitName": "Saint of Love Sergio (EU)",
-  "disam": "Sergio",
-  "altname": "Saint of Love Sergio",
-  "idalt": "",
-  "has_altart": "",
-  "doenter": "true",
-  "no": "7186",
-  "element": "Water",
-  "rarity": "Dream",
-  "cost": "48",
-  "maxlv": "150",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "3",
-  "animation_attack": "106",
-  "animation_idle": "96",
-  "animation_move": "8",
-  "movespeed_attack": "0.0024",
-  "speedtype_attack": "4",
-  "movetype_attack": "1",
-  "movespeed_skill": "0.0024",
-  "speedtype_skill": "4",
-  "movetype_skill": "1",
-  "description": "If Sergio had not fought in the war against the Gods, his future would have been quite different. He would have traveled the world, helping every person who crossed his path to the best of his ability. Gaining the attention of the Goddess of Love and Peace, he became her champion: a saint of Love endowed with powerful healing abilities. He traveled from kingdom to kingdom in order to disseminate and defend the precepts of his goddess.",
-  "summon": "",
-  "fusion": "This power will allow me to defend Peace and Love.",
-  "evolution": "I have a new mission. I must fight for Peace.",
-  "hp_base": "6485",
-  "atk_base": "2585",
-  "def_base": "2107",
-  "rec_base": "2052",
-  "hp_lord": "7912",
-  "atk_lord": "3154",
-  "def_lord": "2571",
-  "rec_lord": "2504",
-  "hp_anima": "9029",
-  "rec_anima": "2206",
-  "atk_breaker": "3452",
-  "def_breaker": "2273",
-  "def_guardian": "2869",
-  "rec_guardian": "2504",
-  "def_oracle": "2571",
-  "rec_oracle": "2802",
-  "hp_bonus": "1500",
-  "atk_bonus": "600",
-  "def_bonus": "600",
-  "rec_bonus": "600",
-  "lordonly": "",
-  "evofrom": "720105",
-  "evointo": "",
-  "normal_frames": "17, 21, 26, 32, 39, 53, 55, 57, 60, 65, 68, 70, 72",
-  "normal_distribute": "18, 10, 9, 8, 7, 17, 5, 5, 8, 7, 2, 2, 2",
-  "normal_totaldistr": "100",
-  "combo_hits": "13",
-  "normaldc": "52",
-  "ls": "Lover's Will",
-  "lsdescription": "80% boost to ATK, 60% boost to max HP & 15% reduction in damage from Fire types & Boosts BB gauge each turn (8 BC) & Boosts BB ATK (200%)",
-  "lsnote": "",
-  "es": "Lover's Harmony",
-  "esdescription": "10% boost to all parameters of Female units (all) & if Sergio sphere is equipped, boosts Spark damage (100%) and adds Spark vulnerability infliction for 2 turns effect (30% chance 30%) to BB/SBB",
-  "esitem": "Sergio's Wedding Ring, Sergio's Vow and/or Wedding Announcement",
-  "esnote": "",
+  "stats": {
+    "_base": {
+      "atk": 2585,
+      "def": 2107,
+      "hp": 6485,
+      "rec": 2052
+    },
+    "_lord": {
+      "atk": 3154,
+      "def": 2571,
+      "hp": 7912,
+      "rec": 2504
+    },
+    "anima": {
+      "atk": 3154,
+      "def": 2571,
+      "hp max": 9402,
+      "hp min": 8657,
+      "rec max": 2355,
+      "rec min": 2057
+    },
+    "breaker": {
+      "atk max": 3601,
+      "atk min": 3303,
+      "def max": 2422,
+      "def min": 2124,
+      "hp": 7912,
+      "rec": 2504
+    },
+    "guardian": {
+      "atk max": 3005,
+      "atk min": 2707,
+      "def max": 3018,
+      "def min": 2720,
+      "hp": 7912,
+      "rec": 2504
+    },
+    "oracle": {
+      "atk": 3154,
+      "def": 2571,
+      "hp max": 7167,
+      "hp min": 6422,
+      "rec max": 2951,
+      "rec min": 2653
+    }
+  },
+  "leader_skill": {
+    "desc": "80% boost to ATK, 60% boost to max HP & 15% reduction in damage from Fire types & Boosts BB gauge each turn (8 BC) & Boosts BB ATK (200%)",
+    "effects": [
+      {
+        "atk% buff": 80,
+        "hp% buff": 60,
+        "passive id": "1"
+      },
+      {
+        "bc fill per turn": 8,
+        "passive id": "9"
+      },
+      {
+        "fire resist%": 15,
+        "passive id": "5"
+      },
+      {
+        "bb atk% buff": 200,
+        "passive id": "64",
+        "sbb atk% buff": 200,
+        "ubb atk% buff": 200
+      }
+    ],
+    "id": "720107",
+    "name": "Lover's Will"
+  },
+  "extra_skill": {
+    "desc": "10% boost to all parameters of Female units (all) & if Sergio sphere is equipped, boosts Spark damage (100%) and adds Spark vulnerability infliction for 2 turns effect (30% chance 30%) to BB/SBB",
+    "effects": [
+      {
+        "atk% buff": 10,
+        "conditions": [],
+        "def% buff": 10,
+        "gender required": "female",
+        "hp% buff": 10,
+        "passive id": "42",
+        "passive target": "party",
+        "rec% buff": 10
+      },
+      {
+        "conditions": [
+          {
+            "item required": [
+              "700043",
+              "700071",
+              "700073"
+            ]
+          }
+        ],
+        "damage% for spark": 100,
+        "passive id": "31",
+        "passive target": "self"
+      },
+      {
+        "conditions": [
+          {
+            "item required": [
+              "700043",
+              "700071",
+              "700073"
+            ]
+          }
+        ],
+        "passive id": "66",
+        "passive target": "self",
+        "trigger on bb": true,
+        "trigger on sbb": true,
+        "triggered effect": [
+          {
+            "effect delay time(ms)/frame": "0.0/0",
+            "proc id": "58",
+            "spark dmg received apply%": 30,
+            "spark dmg received debuff turns (94)": 2,
+            "spark dmg% received": 30,
+            "target area": "single",
+            "target type": "enemy"
+          }
+        ]
+      }
+    ],
+    "id": "720107",
+    "name": "Lover's Harmony",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -898,63 +967,6 @@
     ],
     "name": "Lover's Kiss"
   },
-  "bbdescription": "22 combo Water attack on one foe & probable random status ailment infliction & restores HP & boosts BB gauge (7 BC) for 3 turns & adds all elements to attack (self) for 3 turns & fills own BB gauge to max",
-  "bbnote": "{{UnitBuffList",
-  "buff_1_proc": "1",
-  "buff_1_potency": "1600% damage modifier",
-  "buff_1_duration": "—",
-  "buff_1_target": "Single enemy",
-  "buff_2_proc": "1",
-  "buff_2_potency": "1600% damage modifier",
-  "buff_2_duration": "—",
-  "buff_2_target": "Single enemy",
-  "buff_3_proc": "23",
-  "buff_3_potency": "250% boost to Spark damage",
-  "buff_3_duration": "3 turns",
-  "buff_3_target": "All allies",
-  "buff_4_proc": "45",
-  "buff_4_potency": "450% boost to BB Atk",
-  "buff_4_duration": "3 turns",
-  "buff_4_target": "All allies",
-  "buff_5_proc": "58",
-  "buff_5_potency": "Inflicts 150% spark vulnerability",
-  "buff_5_duration": "3 turns",
-  "buff_5_target": "Single enemy",
-  "buff_6_proc": "18",
-  "buff_6_potency": "Reduces damage taken by 75%",
-  "buff_6_duration": "3 turns",
-  "buff_6_target": "All allies",
-  "buff_7_proc": "11_curse",
-  "buff_7_potency": "60% chance of inflicting Curse",
-  "buff_7_duration": "1 turn",
-  "buff_7_target": "Single enemy",
-  "buff_8_proc": "11_paralysis",
-  "buff_8_potency": "60% chance of inflicting Paralysis",
-  "buff_8_duration": "1 turn",
-  "buff_8_target": "Single enemy",
-  "buff_9_proc": "4",
-  "buff_9_potency": "Refills BB gauge to 100%",
-  "buff_9_duration": "—",
-  "buff_9_target": "To self",
-  "buff_10_proc": "70002",
-  "buff_10_potency": "100% chance of recasting BB/SBB/UBB",
-  "buff_10_duration": "1 turn",
-  "buff_10_target": "To self",
-  "buff_11_proc": "4",
-  "buff_11_potency": "Refills BB gauge to 100%",
-  "buff_11_duration": "—",
-  "buff_11_target": "To self",
-  "bbtype": "Offense",
-  "bbgauge": "25",
-  "bb_frames": "17, 19, 21, 23, 25, 27, 30, 32, 34, 35, 40, 56, 58, 59, 62, 64, 65, 67, 68, 71, 73, 74",
-  "bb_distribute": "4, 4, 8, 4, 7, 4, 4, 2, 2, 3, 4, 13, 2, 9, 8, 2, 5, 2, 6, 3, 2, 2",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "3",
-  "bbhits": "22",
-  "bbaoe": "1",
-  "bbdc": "22",
-  "bbmultiplier": "370",
-  "bb_hpscale": "",
   "sbb": {
     "damage frames": [
       {
@@ -1637,28 +1649,6 @@
     ],
     "name": "Lover's Might"
   },
-  "sbbdescription": "25 combo Water attack on single foe (including sparking combo) , 12 combo Water attack on single foe & probable random status ailment infliction & fills own BB gauge to max & adds cast double BB (self) for 1 turn (100%)",
-  "sbbnote": "{{UnitBuffList",
-  "sbbtype": "Offense",
-  "sbbgauge": "32",
-  "sbb_frames": "17, 19, 20, 21, 23, 25, 27, 29, 30, 31, 32, 34, 40, 58, 59, 60, 61, 62, 65, 68, 67, 70, 71, 73, 74",
-  "sbb_distribute": "4, 2, 2, 8, 4, 7, 2, 2, 2, 2, 2, 2, 4, 13, 2, 9, 8, 2, 5, 2, 6, 3, 3, 2, 2",
-  "sbb_totaldistr": "100",
-  "sbb_effectdelay": "3",
-  "sbbhits": "25",
-  "sbbaoe": "1",
-  "sbbdc": "25",
-  "sbbmultiplier": "460",
-  "sbb_hpscale": "",
-  "sbb2_frames": "18, 22, 26, 33, 39, 55, 60, 63, 66, 68, 69, 71",
-  "sbb2_distribute": "18, 10, 9, 8, 7, 17, 10, 8, 5, 4, 2, 2",
-  "sbb2_totaldistr": "100",
-  "sbb2_effectdelay": "3",
-  "sbbhits2": "12",
-  "sbbaoe2": "1",
-  "sbbdc2": "12",
-  "sbbmultiplier2": "530",
-  "sbb2_hpscale": "",
   "ubb": {
     "damage frames": [
       {
@@ -1883,6 +1873,261 @@
     ],
     "name": "Lover's Ending"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 106
+    },
+    "idle": {
+      "total number of frames": 96
+    },
+    "move": {
+      "total number of frames": 8
+    }
+  },
+  "cost": "48",
+  "damage frames": {
+    "frame times": [
+      17,
+      21,
+      26,
+      32,
+      39,
+      53,
+      55,
+      57,
+      60,
+      65,
+      68,
+      70,
+      72
+    ],
+    "hit dmg% distribution": [
+      18,
+      10,
+      9,
+      8,
+      7,
+      17,
+      5,
+      5,
+      8,
+      7,
+      2,
+      2,
+      2
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 13
+  },
+  "drop check count": 4,
+  "element": "water",
+  "exp_pattern": 10,
+  "gender": "male",
+  "getting type": "farmable",
+  "guide_id": 7186,
+  "imp": {
+    "max atk": "600",
+    "max def": "600",
+    "max hp": "1500",
+    "max rec": "600"
+  },
+  "kind": "normal",
+  "lord damage range": "2936~3280",
+  "movement": {
+    "attack": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    }
+  },
+  "name": "Saint of Love Sergio",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "8",
+  "sell caution": false,
+  "unitName": "Saint of Love Sergio",
+  "maxlv": "150",
+  "no": "7186",
+  "unitDisplayHomePosition_1W9CxaFK": null,
+  "unitDisplayDetailPosition_6z54rgb3": null,
+  "unitDisplayConfirmImagePosition_MYK1fq6c": null,
+  "unitDisplayCutInImagePosition_7hLR6pDN": null,
+  "unitDisplaySummonPosition_KC3Jk8Br": null,
+  "unitDisplayHpPosition_3BpHN6VD": null,
+  "unitDisplayCursorPosition": null,
+  "sellPrice": "",
+  "sellCaution": false,
+  "effectFrames": "",
+  "evofrom": "720105",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "disam": "Sergio",
+  "altname": "Saint of Love Sergio",
+  "idalt": "",
+  "has_altart": "",
+  "doenter": "true",
+  "basexp": "21",
+  "animation_attack": "106",
+  "animation_idle": "96",
+  "animation_move": "8",
+  "movespeed_attack": "0.0024",
+  "speedtype_attack": "4",
+  "movetype_attack": "1",
+  "movespeed_skill": "0.0024",
+  "speedtype_skill": "4",
+  "movetype_skill": "1",
+  "description": "If Sergio had not fought in the war against the Gods, his future would have been quite different. He would have traveled the world, helping every person who crossed his path to the best of his ability. Gaining the attention of the Goddess of Love and Peace, he became her champion: a saint of Love endowed with powerful healing abilities. He traveled from kingdom to kingdom in order to disseminate and defend the precepts of his goddess.",
+  "summon": "",
+  "fusion": "This power will allow me to defend Peace and Love.",
+  "evolution": "I have a new mission. I must fight for Peace.",
+  "hp_base": "6485",
+  "atk_base": "2585",
+  "def_base": "2107",
+  "rec_base": "2052",
+  "hp_lord": "7912",
+  "atk_lord": "3154",
+  "def_lord": "2571",
+  "rec_lord": "2504",
+  "hp_anima": "9029",
+  "rec_anima": "2206",
+  "atk_breaker": "3452",
+  "def_breaker": "2273",
+  "def_guardian": "2869",
+  "rec_guardian": "2504",
+  "def_oracle": "2571",
+  "rec_oracle": "2802",
+  "hp_bonus": "1500",
+  "atk_bonus": "600",
+  "def_bonus": "600",
+  "rec_bonus": "600",
+  "lordonly": "",
+  "normal_frames": "17, 21, 26, 32, 39, 53, 55, 57, 60, 65, 68, 70, 72",
+  "normal_distribute": "18, 10, 9, 8, 7, 17, 5, 5, 8, 7, 2, 2, 2",
+  "normal_totaldistr": "100",
+  "combo_hits": "13",
+  "normaldc": "52",
+  "ls": "Lover's Will",
+  "lsdescription": "80% boost to ATK, 60% boost to max HP & 15% reduction in damage from Fire types & Boosts BB gauge each turn (8 BC) & Boosts BB ATK (200%)",
+  "lsnote": "",
+  "es": "Lover's Harmony",
+  "esdescription": "10% boost to all parameters of Female units (all) & if Sergio sphere is equipped, boosts Spark damage (100%) and adds Spark vulnerability infliction for 2 turns effect (30% chance 30%) to BB/SBB",
+  "esitem": "Sergio's Wedding Ring, Sergio's Vow and/or Wedding Announcement",
+  "esnote": "",
+  "bbdescription": "22 combo Water attack on one foe & probable random status ailment infliction & restores HP & boosts BB gauge (7 BC) for 3 turns & adds all elements to attack (self) for 3 turns & fills own BB gauge to max",
+  "bbnote": "{{UnitBuffList",
+  "buff_1_proc": "1",
+  "buff_1_potency": "1600% damage modifier",
+  "buff_1_duration": "—",
+  "buff_1_target": "Single enemy",
+  "buff_2_proc": "1",
+  "buff_2_potency": "1600% damage modifier",
+  "buff_2_duration": "—",
+  "buff_2_target": "Single enemy",
+  "buff_3_proc": "23",
+  "buff_3_potency": "250% boost to Spark damage",
+  "buff_3_duration": "3 turns",
+  "buff_3_target": "All allies",
+  "buff_4_proc": "45",
+  "buff_4_potency": "450% boost to BB Atk",
+  "buff_4_duration": "3 turns",
+  "buff_4_target": "All allies",
+  "buff_5_proc": "58",
+  "buff_5_potency": "Inflicts 150% spark vulnerability",
+  "buff_5_duration": "3 turns",
+  "buff_5_target": "Single enemy",
+  "buff_6_proc": "18",
+  "buff_6_potency": "Reduces damage taken by 75%",
+  "buff_6_duration": "3 turns",
+  "buff_6_target": "All allies",
+  "buff_7_proc": "11_curse",
+  "buff_7_potency": "60% chance of inflicting Curse",
+  "buff_7_duration": "1 turn",
+  "buff_7_target": "Single enemy",
+  "buff_8_proc": "11_paralysis",
+  "buff_8_potency": "60% chance of inflicting Paralysis",
+  "buff_8_duration": "1 turn",
+  "buff_8_target": "Single enemy",
+  "buff_9_proc": "4",
+  "buff_9_potency": "Refills BB gauge to 100%",
+  "buff_9_duration": "—",
+  "buff_9_target": "To self",
+  "buff_10_proc": "70002",
+  "buff_10_potency": "100% chance of recasting BB/SBB/UBB",
+  "buff_10_duration": "1 turn",
+  "buff_10_target": "To self",
+  "buff_11_proc": "4",
+  "buff_11_potency": "Refills BB gauge to 100%",
+  "buff_11_duration": "—",
+  "buff_11_target": "To self",
+  "bbtype": "Offense",
+  "bbgauge": "25",
+  "bb_frames": "17, 19, 21, 23, 25, 27, 30, 32, 34, 35, 40, 56, 58, 59, 62, 64, 65, 67, 68, 71, 73, 74",
+  "bb_distribute": "4, 4, 8, 4, 7, 4, 4, 2, 2, 3, 4, 13, 2, 9, 8, 2, 5, 2, 6, 3, 2, 2",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "3",
+  "bbhits": "22",
+  "bbaoe": "1",
+  "bbdc": "22",
+  "bbmultiplier": "370",
+  "bb_hpscale": "",
+  "sbbdescription": "25 combo Water attack on single foe (including sparking combo) , 12 combo Water attack on single foe & probable random status ailment infliction & fills own BB gauge to max & adds cast double BB (self) for 1 turn (100%)",
+  "sbbnote": "{{UnitBuffList",
+  "sbbtype": "Offense",
+  "sbbgauge": "32",
+  "sbb_frames": "17, 19, 20, 21, 23, 25, 27, 29, 30, 31, 32, 34, 40, 58, 59, 60, 61, 62, 65, 68, 67, 70, 71, 73, 74",
+  "sbb_distribute": "4, 2, 2, 8, 4, 7, 2, 2, 2, 2, 2, 2, 4, 13, 2, 9, 8, 2, 5, 2, 6, 3, 3, 2, 2",
+  "sbb_totaldistr": "100",
+  "sbb_effectdelay": "3",
+  "sbbhits": "25",
+  "sbbaoe": "1",
+  "sbbdc": "25",
+  "sbbmultiplier": "460",
+  "sbb_hpscale": "",
+  "sbb2_frames": "18, 22, 26, 33, 39, 55, 60, 63, 66, 68, 69, 71",
+  "sbb2_distribute": "18, 10, 9, 8, 7, 17, 10, 8, 5, 4, 2, 2",
+  "sbb2_totaldistr": "100",
+  "sbb2_effectdelay": "3",
+  "sbbhits2": "12",
+  "sbbaoe2": "1",
+  "sbbdc2": "12",
+  "sbbmultiplier2": "530",
+  "sbb2_hpscale": "",
   "ubbdescription": "21 combo Water attack on single foe, 24 combo Water attack on single foe & boost to Spark damage (250%) and BB ATK (450%) for 3 turns & inflicts Spark vulnerabilty (150%) for 3 turns & reduces damage taken by 75% for 3 turns",
   "ubbnote": "{{UnitBuffList",
   "ubbtype": "Offense",
@@ -1948,146 +2193,5 @@
   "notes": "",
   "incorrectinfo": "",
   "addcat": "",
-  "addcatname": "",
-  "stats": {
-    "_base": {
-      "atk": 2585,
-      "def": 2107,
-      "hp": 6485,
-      "rec": 2052
-    },
-    "_lord": {
-      "atk": 3154,
-      "def": 2571,
-      "hp": 7912,
-      "rec": 2504
-    },
-    "anima": {
-      "atk": 3154,
-      "def": 2571,
-      "hp max": 9402,
-      "hp min": 8657,
-      "rec max": 2355,
-      "rec min": 2057
-    },
-    "breaker": {
-      "atk max": 3601,
-      "atk min": 3303,
-      "def max": 2422,
-      "def min": 2124,
-      "hp": 7912,
-      "rec": 2504
-    },
-    "guardian": {
-      "atk max": 3005,
-      "atk min": 2707,
-      "def max": 3018,
-      "def min": 2720,
-      "hp": 7912,
-      "rec": 2504
-    },
-    "oracle": {
-      "atk": 3154,
-      "def": 2571,
-      "hp max": 7167,
-      "hp min": 6422,
-      "rec max": 2951,
-      "rec min": 2653
-    }
-  },
-  "leader_skill": {
-    "desc": "80% boost to ATK, 60% boost to max HP & 15% reduction in damage from Fire types & Boosts BB gauge each turn (8 BC) & Boosts BB ATK (200%)",
-    "effects": [
-      {
-        "atk% buff": 80,
-        "hp% buff": 60,
-        "passive id": "1"
-      },
-      {
-        "bc fill per turn": 8,
-        "passive id": "9"
-      },
-      {
-        "fire resist%": 15,
-        "passive id": "5"
-      },
-      {
-        "bb atk% buff": 200,
-        "passive id": "64",
-        "sbb atk% buff": 200,
-        "ubb atk% buff": 200
-      }
-    ],
-    "id": "720107",
-    "name": "Lover's Will"
-  },
-  "extra_skill": {
-    "desc": "10% boost to all parameters of Female units (all) & if Sergio sphere is equipped, boosts Spark damage (100%) and adds Spark vulnerability infliction for 2 turns effect (30% chance 30%) to BB/SBB",
-    "effects": [
-      {
-        "atk% buff": 10,
-        "conditions": [],
-        "def% buff": 10,
-        "gender required": "female",
-        "hp% buff": 10,
-        "passive id": "42",
-        "passive target": "party",
-        "rec% buff": 10
-      },
-      {
-        "conditions": [
-          {
-            "item required": [
-              "700043",
-              "700071",
-              "700073"
-            ]
-          }
-        ],
-        "damage% for spark": 100,
-        "passive id": "31",
-        "passive target": "self"
-      },
-      {
-        "conditions": [
-          {
-            "item required": [
-              "700043",
-              "700071",
-              "700073"
-            ]
-          }
-        ],
-        "passive id": "66",
-        "passive target": "self",
-        "trigger on bb": true,
-        "trigger on sbb": true,
-        "triggered effect": [
-          {
-            "effect delay time(ms)/frame": "0.0/0",
-            "proc id": "58",
-            "spark dmg received apply%": 30,
-            "spark dmg received debuff turns (94)": 2,
-            "spark dmg% received": 30,
-            "target area": "single",
-            "target type": "enemy"
-          }
-        ]
-      }
-    ],
-    "id": "720107",
-    "name": "Lover's Harmony",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": null,
-  "unitDisplayDetailPosition_6z54rgb3": null,
-  "unitDisplayConfirmImagePosition_MYK1fq6c": null,
-  "unitDisplayCutInImagePosition_7hLR6pDN": null,
-  "unitDisplaySummonPosition_KC3Jk8Br": null,
-  "unitDisplayHpPosition_3BpHN6VD": null,
-  "unitDisplayCursorPosition": null,
-  "sellPrice": "",
-  "sellCaution": false,
-  "effectFrames": ""
+  "addcatname": ""
 }

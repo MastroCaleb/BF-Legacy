@@ -1,71 +1,89 @@
 {
   "id": "10736",
-  "unitName": "Pyro Archfiend Adel",
-  "no": "1092",
-  "element": "Fire",
-  "rarity": "★★★★★★★",
-  "cost": "42",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "135",
-  "animation_idle": "68",
-  "animation_move": "6",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "15, 18, 21, 24, 27, 62, 67, 72, 77, 82",
-  "normal_distribute": "15, 7, 6, 5, 3, 26, 20, 10, 5, 3",
-  "normal_totaldistr": "100",
-  "bb_frames": "15, 18, 21, 24, 27, 30, 62, 66, 70, 74, 78, 82, 86",
-  "bb_distribute": "14, 7, 6, 5, 4, 3, 20, 16, 10, 5, 4, 3, 3",
-  "bb_totaldistr": "100",
-  "sbb_frames": "15, 18, 21, 24, 27, 30, 33, 36, 62, 66, 70, 74, 78, 82, 86, 90",
-  "sbb_distribute": "14, 7, 5, 4, 4, 3, 3, 3, 17, 12, 10, 5, 4, 3, 3, 3",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 62, 65, 68, 71, 74, 77, 80, 83, 86, 89, 92",
-  "ubb_distribute": "10, 5, 4, 4, 3, 3, 3, 3, 3, 3, 16, 9, 7, 5, 4, 3, 3, 3, 3, 3, 3",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "2",
-  "sbb_effectdelay": "2",
-  "ubb_effectdelay": "2",
-  "description": "Any hope for the revolutionary regime Adel sought after came to a halt due to the endless fighting within Ishgria. The queen of Estoria was said to have stolen Adel's heart and influenced him with her pacifist ideals, which contradicted their own demonic nature. In return, this led them both to be branded as enemies of the demon world. It was then when Adel's confidant Jed decided to rebel against him, and pursued him along with the queen. Today Adel and the Queen of Estoria's whereabouts remain unknown after their persecution.",
-  "summon": "After losing my ideals I gained<br>[[Savia|someone]] precious to me<br>and a [[Mora_(character)|small being]] who holds our fate.",
-  "fusion": "Look, this is reality!<br>No matter how strong you get,<br>you will always have limits!",
-  "evolution": "This is not the end!<br>You shall realize the dreams<br>that I left behind!",
-  "hp_base": "5230",
-  "atk_base": "1983",
-  "def_base": "2091",
-  "rec_base": "1642",
-  "hp_lord": "6851",
-  "atk_lord": "2456",
-  "def_lord": "2614",
-  "rec_lord": "2043",
-  "hp_anima": "7743",
-  "rec_anima": "1805",
-  "atk_breaker": "2694",
-  "def_breaker": "2376",
-  "atk_guardian": "2218",
-  "def_guardian": "2852",
-  "rec_guardian": "1924",
-  "def_oracle": "2495",
-  "hp_oracle": "6494",
-  "rec_oracle": "2400",
-  "hp_bonus": "1000",
-  "atk_bonus": "300",
-  "def_bonus": "600",
-  "rec_bonus": "400",
-  "lordonly": "",
-  "combo_hits": "10",
-  "normaldc": "30",
-  "ls": "Emperor's Sanctuary",
-  "lsdescription": "30% boost to max HP, Def, probable slight damage reduction & boosts BB gauge fill rate",
-  "lsnote": "10% chance to reduce 20% damage taken & 30% boost",
-  "lstype": "Hit Points/Defense/Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 1983,
+      "def": 2091,
+      "hp": 5230,
+      "rec": 1642
+    },
+    "_lord": {
+      "atk": 2456,
+      "def": 2614,
+      "hp": 6851,
+      "rec": 2043
+    },
+    "anima": {
+      "atk": 2456,
+      "def": 2614,
+      "hp max": 8041,
+      "hp min": 7446,
+      "rec max": 1924,
+      "rec min": 1686
+    },
+    "breaker": {
+      "atk max": 2813,
+      "atk min": 2575,
+      "def max": 2495,
+      "def min": 2257,
+      "hp": 6851,
+      "rec": 2043
+    },
+    "guardian": {
+      "atk": 2456,
+      "def max": 2971,
+      "def min": 2733,
+      "hp": 6851,
+      "rec max": 2043,
+      "rec min": 1805
+    },
+    "oracle": {
+      "atk": 2456,
+      "def max": 2614,
+      "def min": 2376,
+      "hp": 6851,
+      "rec max": 2519,
+      "rec min": 2281
+    }
+  },
+  "leader_skill": {
+    "desc": "30% boost to max HP, Def, probable slight damage reduction & boosts BB gauge fill rate",
+    "effects": [
+      {
+        "def% buff": 30,
+        "hp% buff": 30,
+        "passive id": "1"
+      },
+      {
+        "dmg reduction chance%": 10,
+        "dmg reduction%": 20,
+        "passive id": "14"
+      },
+      {
+        "bb gauge fill rate%": 30,
+        "passive id": "32"
+      }
+    ],
+    "id": "4317",
+    "name": "Emperor's Sanctuary"
+  },
+  "extra_skill": {
+    "desc": "Damage taken slightly boosts BB gauge",
+    "effects": [
+      {
+        "bc fill when attacked high": 3,
+        "bc fill when attacked low": 2,
+        "bc fill when attacked%": 100,
+        "conditions": [],
+        "passive id": "25",
+        "passive target": "self"
+      }
+    ],
+    "id": "7500",
+    "name": "Pragmatic Dreamer",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -426,14 +444,6 @@
     ],
     "name": "Vatra Defeat"
   },
-  "bbdescription": "13 combo powerful Fire attack on all foes, boosts Spark damage for 3 turns & reduces damage taken by 50% for 1 turn",
-  "bbnote": "70% boost",
-  "bbtype": "Support/Offense",
-  "bbhits": "13",
-  "bbaoe": "A",
-  "bbgauge": "28",
-  "bbdc": "13",
-  "bbmultiplier": "280",
   "sbb": {
     "damage frames": [
       {
@@ -912,14 +922,6 @@
     ],
     "name": "Duke's Endurance"
   },
-  "sbbdescription": "16 combo powerful Fire attack on all foes, boosts Spark damage and gradually recovers HP for 3 turns & reduces damage taken by 50% for 1 turn",
-  "sbbnote": "70% boost & heals 2000-2500 + 12% Rec",
-  "sbbtype": "Heal/Support/Offense",
-  "sbbhits": "16",
-  "sbbaoe": "A",
-  "sbbgauge": "20",
-  "sbbdc": "16",
-  "sbbmultiplier": "480",
   "ubb": {
     "damage frames": [
       {
@@ -1035,6 +1037,229 @@
     ],
     "name": "Supremacy: Cardinal Gene"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 135
+    },
+    "idle": {
+      "total number of frames": 68
+    },
+    "move": {
+      "total number of frames": 6
+    }
+  },
+  "category": 10730,
+  "cost": "42",
+  "damage frames": {
+    "frame times": [
+      15,
+      18,
+      21,
+      24,
+      27,
+      62,
+      67,
+      72,
+      77,
+      82
+    ],
+    "hit dmg% distribution": [
+      15,
+      7,
+      6,
+      5,
+      3,
+      26,
+      20,
+      10,
+      5,
+      3
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 10
+  },
+  "drop check count": 3,
+  "element": "fire",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 1092,
+  "imp": {
+    "max atk": "300",
+    "max def": "600",
+    "max hp": "1000",
+    "max rec": "400"
+  },
+  "kind": "normal",
+  "lord damage range": "2286~2554",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Pyro Archfiend Adel",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Pyro Archfiend Adel",
+  "maxlv": "120",
+  "no": "1092",
+  "unitDisplayHomePosition_1W9CxaFK": "496,343,174,475",
+  "unitDisplayDetailPosition_6z54rgb3": "-155,-92,1100,1050",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "17,106,599,572,1",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-138,-363,1100,1050",
+  "unitDisplaySummonPosition_KC3Jk8Br": "17,106,599,572,1",
+  "unitDisplayHpPosition_3BpHN6VD": "-2,45",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "15000",
+  "sellCaution": false,
+  "effectFrames": "9:121:1,12:121:1,15:121:1,18:121:1,21:121:1,14:1130:1,16:1602:1,60:150:1,70:150:1,54:1130:1,52:100199:1,75:1602:1,88:600351:1",
+  "evofrom": "10735",
+  "evointo": "10737",
+  "evozelcost": "3000000",
+  "evokarmacost": "1000000",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "10354",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    },
+    {
+      "type": "2",
+      "id": "110100",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "135",
+  "animation_idle": "68",
+  "animation_move": "6",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "15, 18, 21, 24, 27, 62, 67, 72, 77, 82",
+  "normal_distribute": "15, 7, 6, 5, 3, 26, 20, 10, 5, 3",
+  "normal_totaldistr": "100",
+  "bb_frames": "15, 18, 21, 24, 27, 30, 62, 66, 70, 74, 78, 82, 86",
+  "bb_distribute": "14, 7, 6, 5, 4, 3, 20, 16, 10, 5, 4, 3, 3",
+  "bb_totaldistr": "100",
+  "sbb_frames": "15, 18, 21, 24, 27, 30, 33, 36, 62, 66, 70, 74, 78, 82, 86, 90",
+  "sbb_distribute": "14, 7, 5, 4, 4, 3, 3, 3, 17, 12, 10, 5, 4, 3, 3, 3",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 62, 65, 68, 71, 74, 77, 80, 83, 86, 89, 92",
+  "ubb_distribute": "10, 5, 4, 4, 3, 3, 3, 3, 3, 3, 16, 9, 7, 5, 4, 3, 3, 3, 3, 3, 3",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "2",
+  "sbb_effectdelay": "2",
+  "ubb_effectdelay": "2",
+  "description": "Any hope for the revolutionary regime Adel sought after came to a halt due to the endless fighting within Ishgria. The queen of Estoria was said to have stolen Adel's heart and influenced him with her pacifist ideals, which contradicted their own demonic nature. In return, this led them both to be branded as enemies of the demon world. It was then when Adel's confidant Jed decided to rebel against him, and pursued him along with the queen. Today Adel and the Queen of Estoria's whereabouts remain unknown after their persecution.",
+  "summon": "After losing my ideals I gained<br>[[Savia|someone]] precious to me<br>and a [[Mora_(character)|small being]] who holds our fate.",
+  "fusion": "Look, this is reality!<br>No matter how strong you get,<br>you will always have limits!",
+  "evolution": "This is not the end!<br>You shall realize the dreams<br>that I left behind!",
+  "hp_base": "5230",
+  "atk_base": "1983",
+  "def_base": "2091",
+  "rec_base": "1642",
+  "hp_lord": "6851",
+  "atk_lord": "2456",
+  "def_lord": "2614",
+  "rec_lord": "2043",
+  "hp_anima": "7743",
+  "rec_anima": "1805",
+  "atk_breaker": "2694",
+  "def_breaker": "2376",
+  "atk_guardian": "2218",
+  "def_guardian": "2852",
+  "rec_guardian": "1924",
+  "def_oracle": "2495",
+  "hp_oracle": "6494",
+  "rec_oracle": "2400",
+  "hp_bonus": "1000",
+  "atk_bonus": "300",
+  "def_bonus": "600",
+  "rec_bonus": "400",
+  "lordonly": "",
+  "combo_hits": "10",
+  "normaldc": "30",
+  "ls": "Emperor's Sanctuary",
+  "lsdescription": "30% boost to max HP, Def, probable slight damage reduction & boosts BB gauge fill rate",
+  "lsnote": "10% chance to reduce 20% damage taken & 30% boost",
+  "lstype": "Hit Points/Defense/Brave Burst",
+  "bbdescription": "13 combo powerful Fire attack on all foes, boosts Spark damage for 3 turns & reduces damage taken by 50% for 1 turn",
+  "bbnote": "70% boost",
+  "bbtype": "Support/Offense",
+  "bbhits": "13",
+  "bbaoe": "A",
+  "bbgauge": "28",
+  "bbdc": "13",
+  "bbmultiplier": "280",
+  "sbbdescription": "16 combo powerful Fire attack on all foes, boosts Spark damage and gradually recovers HP for 3 turns & reduces damage taken by 50% for 1 turn",
+  "sbbnote": "70% boost & heals 2000-2500 + 12% Rec",
+  "sbbtype": "Heal/Support/Offense",
+  "sbbhits": "16",
+  "sbbaoe": "A",
+  "sbbgauge": "20",
+  "sbbdc": "16",
+  "sbbmultiplier": "480",
   "ubbdescription": "21 combo massive Fire attack on all foes, hugely boosts Spark damage for 3 turns & reduces damage taken by 75% for 2 turns",
   "ubbnote": "120% boost",
   "ubbtype": "Support/Offense",
@@ -1047,8 +1272,6 @@
   "esitem": "",
   "esdescription": "Damage taken slightly boosts BB gauge",
   "esnote": "Fills 2-3 BC",
-  "evofrom": "10735",
-  "evointo": "10737",
   "evomats1": "Fire Mecha God",
   "evomats2": "Fire Mecha God",
   "evomats3": "Miracle Totem",
@@ -1057,100 +1280,5 @@
   "evomats6": "Dragon Mimic",
   "evomats7": "Metal Mimic",
   "evomats8": "",
-  "evoitem": "Legend Stone",
-  "evozelcost": "3000000",
-  "stats": {
-    "_base": {
-      "atk": 1983,
-      "def": 2091,
-      "hp": 5230,
-      "rec": 1642
-    },
-    "_lord": {
-      "atk": 2456,
-      "def": 2614,
-      "hp": 6851,
-      "rec": 2043
-    },
-    "anima": {
-      "atk": 2456,
-      "def": 2614,
-      "hp max": 8041,
-      "hp min": 7446,
-      "rec max": 1924,
-      "rec min": 1686
-    },
-    "breaker": {
-      "atk max": 2813,
-      "atk min": 2575,
-      "def max": 2495,
-      "def min": 2257,
-      "hp": 6851,
-      "rec": 2043
-    },
-    "guardian": {
-      "atk": 2456,
-      "def max": 2971,
-      "def min": 2733,
-      "hp": 6851,
-      "rec max": 2043,
-      "rec min": 1805
-    },
-    "oracle": {
-      "atk": 2456,
-      "def max": 2614,
-      "def min": 2376,
-      "hp": 6851,
-      "rec max": 2519,
-      "rec min": 2281
-    }
-  },
-  "leader_skill": {
-    "desc": "30% boost to max HP, Def, probable slight damage reduction & boosts BB gauge fill rate",
-    "effects": [
-      {
-        "def% buff": 30,
-        "hp% buff": 30,
-        "passive id": "1"
-      },
-      {
-        "dmg reduction chance%": 10,
-        "dmg reduction%": 20,
-        "passive id": "14"
-      },
-      {
-        "bb gauge fill rate%": 30,
-        "passive id": "32"
-      }
-    ],
-    "id": "4317",
-    "name": "Emperor's Sanctuary"
-  },
-  "extra_skill": {
-    "desc": "Damage taken slightly boosts BB gauge",
-    "effects": [
-      {
-        "bc fill when attacked high": 3,
-        "bc fill when attacked low": 2,
-        "bc fill when attacked%": 100,
-        "conditions": [],
-        "passive id": "25",
-        "passive target": "self"
-      }
-    ],
-    "id": "7500",
-    "name": "Pragmatic Dreamer",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "496,343,174,475",
-  "unitDisplayDetailPosition_6z54rgb3": "-155,-92,1100,1050",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "17,106,599,572,1",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-138,-363,1100,1050",
-  "unitDisplaySummonPosition_KC3Jk8Br": "17,106,599,572,1",
-  "unitDisplayHpPosition_3BpHN6VD": "-2,45",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "15000",
-  "sellCaution": false,
-  "effectFrames": "9:121:1,12:121:1,15:121:1,18:121:1,21:121:1,14:1130:1,16:1602:1,60:150:1,70:150:1,54:1130:1,52:100199:1,75:1602:1,88:600351:1"
+  "evoitem": "Legend Stone"
 }

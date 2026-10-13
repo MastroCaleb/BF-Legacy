@@ -1,68 +1,101 @@
 {
   "id": "30966",
-  "unitName": "Fickle Flower Phileine",
-  "no": "1632",
-  "element": "Earth",
-  "rarity": "★★★★★★★",
-  "cost": "46",
-  "maxlv": "150",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "1",
-  "animation_attack": "152",
-  "animation_idle": "120",
-  "animation_move": "6",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "99, 102, 105, 108, 111, 114",
-  "normal_distribute": "10, 50, 17, 10, 8, 5",
-  "normal_totaldistr": "100",
-  "bb_frames": "99, 102, 105, 108, 111, 114, 117, 120, 123, 126, 129",
-  "bb_distribute": "5, 35, 15, 10, 8, 6, 5, 4, 5, 4, 3",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "2",
-  "sbb_frames": "99, 102, 105, 108, 111, 114, 117, 120, 123, 126, 129, 132, 135, 138",
-  "sbb_distribute": "4, 34, 11, 9, 8, 6, 5, 4, 5, 4, 3, 2, 3, 2",
-  "sbb_totaldistr": "100",
-  "sbb_effectdelay": "1",
-  "ubb_frames": "99, 117, 120, 123, 126, 129, 132, 135, 138, 141, 144, 147, 151, 155, 160, 166, 172, 178, 184, 190",
-  "ubb_distribute": "4, 25, 13, 8, 6, 5, 4, 5, 4, 3, 2, 3, 2, 2, 3, 2, 2, 3, 2, 2",
-  "ubb_totaldistr": "100",
-  "ubb_effectdelay": "1",
-  "description": "A magician who apprenticed under Bran, the great sage of Atharva. While she displayed incredible potential, Phileine was also drawn toward a forbidden school of magic that could control life itself. After eventually receiving a soul-flaying technique from a certain demon, she went on to work with a former classmate and self-styled dark magician. With the dark magician's aid, Phileine saw a dangerous series of experiments through to success. Subsequently, she left her experimental notes to the dark magician and vanished. From that point onward, there are no records of Phileine conducting any sort of magical work.",
-  "summon": "You need my knowledge? Then get me what I need. We'll talk once that's done.",
-  "fusion": "You call this Fusion? It's still not the power I seek. What I need right now is...",
-  "evolution": "",
-  "hp_base": "5164",
-  "atk_base": "1944",
-  "def_base": "2019",
-  "rec_base": "2128",
-  "hp_lord": "7372",
-  "atk_lord": "2631",
-  "def_lord": "2746",
-  "rec_lord": "2869",
-  "hp_anima": "8264",
-  "rec_anima": "2631",
-  "atk_breaker": "2869",
-  "def_breaker": "2508",
-  "def_guardian": "2984",
-  "rec_guardian": "2750",
-  "def_oracle": "2627",
-  "rec_oracle": "3226",
-  "hp_bonus": "1000",
-  "atk_bonus": "300",
-  "def_bonus": "600",
-  "rec_bonus": "400",
-  "lordonly": "",
-  "combo_hits": "6",
-  "normaldc": "36",
-  "ls": "Emerald Endgame",
-  "lsdescription": "50% boost to Def, Rec, max HP & damage taken boosts BB gauge and may restore HP",
-  "lsnote": "Fills 2-4 BC & 25% chance to heal 20% damage",
+  "stats": {
+    "_base": {
+      "atk": 1944,
+      "def": 2019,
+      "hp": 5164,
+      "rec": 2128
+    },
+    "_lord": {
+      "atk": 2631,
+      "def": 2746,
+      "hp": 7372,
+      "rec": 2869
+    },
+    "anima": {
+      "atk": 2631,
+      "def": 2746,
+      "hp max": 8562,
+      "hp min": 7967,
+      "rec max": 2750,
+      "rec min": 2512
+    },
+    "breaker": {
+      "atk max": 2988,
+      "atk min": 2750,
+      "def max": 2627,
+      "def min": 2389,
+      "hp": 7372,
+      "rec": 2869
+    },
+    "guardian": {
+      "atk": 2631,
+      "def max": 3103,
+      "def min": 2865,
+      "hp": 7372,
+      "rec max": 2869,
+      "rec min": 2631
+    },
+    "oracle": {
+      "atk": 2631,
+      "def max": 2746,
+      "def min": 2508,
+      "hp": 7372,
+      "rec max": 3345,
+      "rec min": 3107
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to Def, Rec, max HP & damage taken boosts BB gauge and may restore HP",
+    "effects": [
+      {
+        "def% buff": 50,
+        "hp% buff": 50,
+        "passive id": "1",
+        "rec% buff": 50
+      },
+      {
+        "dmg% to hp% when attacked chance%": 25,
+        "dmg% to hp% when attacked high": 20,
+        "dmg% to hp% when attacked low": 20,
+        "passive id": "24"
+      },
+      {
+        "bc fill when attacked high": 4,
+        "bc fill when attacked low": 2,
+        "bc fill when attacked%": 100,
+        "passive id": "25"
+      }
+    ],
+    "id": "12516",
+    "name": "Emerald Endgame"
+  },
+  "extra_skill": {
+    "desc": "Damage taken slightly boosts BB gauge and may restore HP",
+    "effects": [
+      {
+        "bc fill when attacked high": 2,
+        "bc fill when attacked low": 1,
+        "bc fill when attacked%": 100,
+        "conditions": [],
+        "passive id": "25",
+        "passive target": "self"
+      },
+      {
+        "conditions": [],
+        "dmg% to hp% when attacked chance%": 20,
+        "dmg% to hp% when attacked high": 25,
+        "dmg% to hp% when attacked low": 20,
+        "passive id": "24",
+        "passive target": "self"
+      }
+    ],
+    "id": "35900",
+    "name": "Anathemic Fascination",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -733,14 +766,6 @@
     ],
     "name": "Vyna Craze"
   },
-  "bbdescription": "11 combo Earth attack on all foes, fully restores HP, removes all status ailments, considerably boosts Atk relative to Def for 3 turns & greatly restores HP for 3 turns",
-  "bbnote": "50% Def to Atk, heals 3500-4000 + 40% of own Rec '''(DOES NOT fully restore HP)''' & heals 3000-3500 + 15% Rec for 3 turns",
-  "bbtype": "Offense",
-  "bbhits": "11",
-  "bbaoe": "A",
-  "bbgauge": "23",
-  "bbdc": "11",
-  "bbmultiplier": "380",
   "sbb": {
     "damage frames": [
       {
@@ -1439,14 +1464,6 @@
     ],
     "name": "Soul Puppetry Espelt"
   },
-  "sbbdescription": "14 combo powerful Earth attack on all foes, probable huge 1 turn Atk reduction, considerably boosts BB gauge, greatly restores HP, considerably boosts Def relative to Atk for 3 turns & considerably boosts BC, HC drop rates for 3 turns",
-  "sbbnote": "20% chance to reduce enemy Atk by 50%, fills 6 BC, heals 3500-4000 + 40% of own Rec, 50% Atk to Def & 35% drop rate",
-  "sbbtype": "Offense",
-  "sbbhits": "14",
-  "sbbaoe": "A",
-  "sbbgauge": "31",
-  "sbbdc": "14",
-  "sbbmultiplier": "580",
   "ubb": {
     "damage frames": [
       {
@@ -1633,6 +1650,208 @@
     ],
     "name": "Zeal Germinous"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "party"
+    },
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 152
+    },
+    "idle": {
+      "total number of frames": 120
+    },
+    "move": {
+      "total number of frames": 6
+    }
+  },
+  "category": 30960,
+  "cost": "46",
+  "damage frames": {
+    "frame times": [
+      99,
+      102,
+      105,
+      108,
+      111,
+      114
+    ],
+    "hit dmg% distribution": [
+      10,
+      50,
+      17,
+      10,
+      8,
+      5
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 6
+  },
+  "drop check count": 6,
+  "element": "earth",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 1632,
+  "imp": {
+    "max atk": "300",
+    "max def": "600",
+    "max hp": "1000",
+    "max rec": "400"
+  },
+  "kind": "normal",
+  "lord damage range": "2449~2736",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Fickle Flower Phileine",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Fickle Flower Phileine",
+  "maxlv": "120",
+  "no": "1632",
+  "unitDisplayHomePosition_1W9CxaFK": "573,150,174,475",
+  "unitDisplayDetailPosition_6z54rgb3": "-250,52,1334,912",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "-21,213,730,499,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-241,-203,1334,912",
+  "unitDisplaySummonPosition_KC3Jk8Br": "-21,213,730,499,0",
+  "unitDisplayHpPosition_3BpHN6VD": "3,44",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "15000",
+  "sellCaution": false,
+  "effectFrames": "45:330966:1,60:331182:1,90:330960:1,94:330757:1,104:330992:1",
+  "evofrom": "",
+  "evointo": "30967",
+  "evozelcost": "3000000",
+  "evokarmacost": "1000000",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "30334",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30191",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 2
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "152",
+  "animation_idle": "120",
+  "animation_move": "6",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "99, 102, 105, 108, 111, 114",
+  "normal_distribute": "10, 50, 17, 10, 8, 5",
+  "normal_totaldistr": "100",
+  "bb_frames": "99, 102, 105, 108, 111, 114, 117, 120, 123, 126, 129",
+  "bb_distribute": "5, 35, 15, 10, 8, 6, 5, 4, 5, 4, 3",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "2",
+  "sbb_frames": "99, 102, 105, 108, 111, 114, 117, 120, 123, 126, 129, 132, 135, 138",
+  "sbb_distribute": "4, 34, 11, 9, 8, 6, 5, 4, 5, 4, 3, 2, 3, 2",
+  "sbb_totaldistr": "100",
+  "sbb_effectdelay": "1",
+  "ubb_frames": "99, 117, 120, 123, 126, 129, 132, 135, 138, 141, 144, 147, 151, 155, 160, 166, 172, 178, 184, 190",
+  "ubb_distribute": "4, 25, 13, 8, 6, 5, 4, 5, 4, 3, 2, 3, 2, 2, 3, 2, 2, 3, 2, 2",
+  "ubb_totaldistr": "100",
+  "ubb_effectdelay": "1",
+  "description": "A magician who apprenticed under Bran, the great sage of Atharva. While she displayed incredible potential, Phileine was also drawn toward a forbidden school of magic that could control life itself. After eventually receiving a soul-flaying technique from a certain demon, she went on to work with a former classmate and self-styled dark magician. With the dark magician's aid, Phileine saw a dangerous series of experiments through to success. Subsequently, she left her experimental notes to the dark magician and vanished. From that point onward, there are no records of Phileine conducting any sort of magical work.",
+  "summon": "You need my knowledge? Then get me what I need. We'll talk once that's done.",
+  "fusion": "You call this Fusion? It's still not the power I seek. What I need right now is...",
+  "evolution": "",
+  "hp_base": "5164",
+  "atk_base": "1944",
+  "def_base": "2019",
+  "rec_base": "2128",
+  "hp_lord": "7372",
+  "atk_lord": "2631",
+  "def_lord": "2746",
+  "rec_lord": "2869",
+  "hp_anima": "8264",
+  "rec_anima": "2631",
+  "atk_breaker": "2869",
+  "def_breaker": "2508",
+  "def_guardian": "2984",
+  "rec_guardian": "2750",
+  "def_oracle": "2627",
+  "rec_oracle": "3226",
+  "hp_bonus": "1000",
+  "atk_bonus": "300",
+  "def_bonus": "600",
+  "rec_bonus": "400",
+  "lordonly": "",
+  "combo_hits": "6",
+  "normaldc": "36",
+  "ls": "Emerald Endgame",
+  "lsdescription": "50% boost to Def, Rec, max HP & damage taken boosts BB gauge and may restore HP",
+  "lsnote": "Fills 2-4 BC & 25% chance to heal 20% damage",
+  "bbdescription": "11 combo Earth attack on all foes, fully restores HP, removes all status ailments, considerably boosts Atk relative to Def for 3 turns & greatly restores HP for 3 turns",
+  "bbnote": "50% Def to Atk, heals 3500-4000 + 40% of own Rec '''(DOES NOT fully restore HP)''' & heals 3000-3500 + 15% Rec for 3 turns",
+  "bbtype": "Offense",
+  "bbhits": "11",
+  "bbaoe": "A",
+  "bbgauge": "23",
+  "bbdc": "11",
+  "bbmultiplier": "380",
+  "sbbdescription": "14 combo powerful Earth attack on all foes, probable huge 1 turn Atk reduction, considerably boosts BB gauge, greatly restores HP, considerably boosts Def relative to Atk for 3 turns & considerably boosts BC, HC drop rates for 3 turns",
+  "sbbnote": "20% chance to reduce enemy Atk by 50%, fills 6 BC, heals 3500-4000 + 40% of own Rec, 50% Atk to Def & 35% drop rate",
+  "sbbtype": "Offense",
+  "sbbhits": "14",
+  "sbbaoe": "A",
+  "sbbgauge": "31",
+  "sbbdc": "14",
+  "sbbmultiplier": "580",
   "ubbdescription": "20 combo massive Earth attack on all foes, enormous 2 turn Atk reduction, activates Earth barrier, enormously boosts Atk, Def, Rec for 3 turns, enormously boosts Atk, Def relative to Rec for 3 turns & fully restores HP for 3 turns",
   "ubbnote": "80% reduction, activates 25,000 HP barrier, 300% parameter boost & 200% Rec to Atk, Def",
   "ubbtype": "Offense",
@@ -1645,8 +1864,6 @@
   "esitem": "",
   "esdescription": "Damage taken slightly boosts BB gauge and may restore HP",
   "esnote": "Fills 1-2 BC & 20% chance to heal 20-25% damage",
-  "evofrom": "",
-  "evointo": "30967",
   "evomats1": "Earth Mecha God",
   "evomats2": "Earth Mecha God",
   "evomats3": "Miracle Totem",
@@ -1655,112 +1872,5 @@
   "evomats6": "Earth Pot",
   "evomats7": "Metal Mimic",
   "evomats8": "Metal Mimic",
-  "evoitem": "",
-  "evozelcost": "3000000",
-  "stats": {
-    "_base": {
-      "atk": 1944,
-      "def": 2019,
-      "hp": 5164,
-      "rec": 2128
-    },
-    "_lord": {
-      "atk": 2631,
-      "def": 2746,
-      "hp": 7372,
-      "rec": 2869
-    },
-    "anima": {
-      "atk": 2631,
-      "def": 2746,
-      "hp max": 8562,
-      "hp min": 7967,
-      "rec max": 2750,
-      "rec min": 2512
-    },
-    "breaker": {
-      "atk max": 2988,
-      "atk min": 2750,
-      "def max": 2627,
-      "def min": 2389,
-      "hp": 7372,
-      "rec": 2869
-    },
-    "guardian": {
-      "atk": 2631,
-      "def max": 3103,
-      "def min": 2865,
-      "hp": 7372,
-      "rec max": 2869,
-      "rec min": 2631
-    },
-    "oracle": {
-      "atk": 2631,
-      "def max": 2746,
-      "def min": 2508,
-      "hp": 7372,
-      "rec max": 3345,
-      "rec min": 3107
-    }
-  },
-  "leader_skill": {
-    "desc": "50% boost to Def, Rec, max HP & damage taken boosts BB gauge and may restore HP",
-    "effects": [
-      {
-        "def% buff": 50,
-        "hp% buff": 50,
-        "passive id": "1",
-        "rec% buff": 50
-      },
-      {
-        "dmg% to hp% when attacked chance%": 25,
-        "dmg% to hp% when attacked high": 20,
-        "dmg% to hp% when attacked low": 20,
-        "passive id": "24"
-      },
-      {
-        "bc fill when attacked high": 4,
-        "bc fill when attacked low": 2,
-        "bc fill when attacked%": 100,
-        "passive id": "25"
-      }
-    ],
-    "id": "12516",
-    "name": "Emerald Endgame"
-  },
-  "extra_skill": {
-    "desc": "Damage taken slightly boosts BB gauge and may restore HP",
-    "effects": [
-      {
-        "bc fill when attacked high": 2,
-        "bc fill when attacked low": 1,
-        "bc fill when attacked%": 100,
-        "conditions": [],
-        "passive id": "25",
-        "passive target": "self"
-      },
-      {
-        "conditions": [],
-        "dmg% to hp% when attacked chance%": 20,
-        "dmg% to hp% when attacked high": 25,
-        "dmg% to hp% when attacked low": 20,
-        "passive id": "24",
-        "passive target": "self"
-      }
-    ],
-    "id": "35900",
-    "name": "Anathemic Fascination",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "573,150,174,475",
-  "unitDisplayDetailPosition_6z54rgb3": "-250,52,1334,912",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "-21,213,730,499,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-241,-203,1334,912",
-  "unitDisplaySummonPosition_KC3Jk8Br": "-21,213,730,499,0",
-  "unitDisplayHpPosition_3BpHN6VD": "3,44",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "15000",
-  "sellCaution": false,
-  "effectFrames": "45:330966:1,60:331182:1,90:330960:1,94:330757:1,104:330992:1"
+  "evoitem": ""
 }

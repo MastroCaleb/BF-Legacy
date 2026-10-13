@@ -1,61 +1,66 @@
 {
   "id": "40123",
-  "unitName": "Princess Emilia",
-  "no": "163",
-  "element": "Thunder",
-  "rarity": "★★★★",
-  "cost": "8",
-  "maxlv": "60",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "4",
-  "animation_attack": "140",
-  "animation_idle": "64",
-  "animation_move": "16",
-  "movespeed_attack": "0.0024",
-  "movespeed_skill": "0.0024",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "26, 28, 60, 66",
-  "normal_distribute": "30, 30, 20, 20",
-  "normal_totaldistr": "100",
-  "bb_frames": "26, 28, 66, 72, 78",
-  "bb_distribute": "20, 20, 20, 20, 20",
-  "bb_totaldistr": "100",
-  "description": "A dual-wielding general mentioned in the records of the ruined Atharva Republic. She focused on training soldiers after becoming a general, but she was so severe that many were honorably discharged from service. Her battlefield initiative earned her the respectful title of Princess Emilia. It is said she tried her hardest to smile whenever her title changed.",
-  "summon": "Stupid child! Be grateful <br>you're able walk with me!<br>Devote your life to me!",
-  "fusion": "My strength isn't for you!<br>It's for protecting the <br>frail masses!",
-  "evolution": "I won't stop now!<br>Come with me and let's <br>aim for the top!",
-  "hp_base": "2538",
-  "atk_base": "832",
-  "def_base": "784",
-  "rec_base": "788",
-  "hp_lord": "3972",
-  "atk_lord": "1170",
-  "def_lord": "1122",
-  "rec_lord": "1085",
-  "hp_anima": "4415",
-  "rec_anima": "967",
-  "atk_breaker": "1288",
-  "def_breaker": "1004",
-  "atk_guardian": "1052",
-  "def_guardian": "1240",
-  "rec_guardian": "1026",
-  "def_oracle": "1063",
-  "hp_oracle": "3795",
-  "rec_oracle": "1262",
-  "hp_bonus": "400",
-  "atk_bonus": "160",
-  "def_bonus": "160",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "4",
-  "normaldc": "12",
-  "ls": "Thunder God's Power",
-  "lsdescription": "50% boost to Atk Power of Thunder Types",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 832,
+      "def": 784,
+      "hp": 2538,
+      "rec": 788
+    },
+    "_lord": {
+      "atk": 1170,
+      "def": 1122,
+      "hp": 3972,
+      "rec": 1085
+    },
+    "anima": {
+      "atk": 1170,
+      "def": 1122,
+      "hp max": 4562,
+      "hp min": 4267,
+      "rec max": 1026,
+      "rec min": 908
+    },
+    "breaker": {
+      "atk max": 1347,
+      "atk min": 1229,
+      "def max": 1063,
+      "def min": 945,
+      "hp": 3972,
+      "rec": 1085
+    },
+    "guardian": {
+      "atk": 1170,
+      "def max": 1299,
+      "def min": 1181,
+      "hp": 3972,
+      "rec max": 1085,
+      "rec min": 967
+    },
+    "oracle": {
+      "atk": 1170,
+      "def max": 1122,
+      "def min": 1004,
+      "hp": 3972,
+      "rec max": 1321,
+      "rec min": 1203
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to Atk Power of Thunder Types",
+    "effects": [
+      {
+        "atk% buff": 50,
+        "elements buffed": [
+          "thunder"
+        ],
+        "passive id": "2"
+      }
+    ],
+    "id": "131",
+    "name": "Thunder God's Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -298,97 +303,101 @@
     ],
     "name": "Elznet Saber"
   },
-  "bbdescription": "5 combo Thunder elemental power attack on single Enemy & probable Paralysis effect",
-  "bbnote": "80% chance",
-  "bbtype": "Offense",
-  "bbhits": "5",
-  "bbaoe": "1",
-  "bbgauge": "17",
-  "bbdc": "5",
-  "bbmultiplier": "350",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "40122",
-  "evointo": "40124",
-  "evomats1": "40133",
-  "evomats2": "40132",
-  "evomats3": "60143",
-  "evomats4": "40130",
-  "evomats5": "40130",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 832,
-      "def": 784,
-      "hp": 2538,
-      "rec": 788
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_under",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1170,
-      "def": 1122,
-      "hp": 3972,
-      "rec": 1085
+    {
+      "action": "skill",
+      "chance%": 30.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1170,
-      "def": 1122,
-      "hp max": 4562,
-      "hp min": 4267,
-      "rec max": 1026,
-      "rec min": 908
+    {
+      "action": "attack",
+      "chance%": 70.0,
+      "target conditions": "hp_max",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 1347,
-      "atk min": 1229,
-      "def max": 1063,
-      "def min": 945,
-      "hp": 3972,
-      "rec": 1085
+    {
+      "action": "attack",
+      "chance%": 50.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "guardian": {
-      "atk": 1170,
-      "def max": 1299,
-      "def min": 1181,
-      "hp": 3972,
-      "rec max": 1085,
-      "rec min": 967
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 140
     },
-    "oracle": {
-      "atk": 1170,
-      "def max": 1122,
-      "def min": 1004,
-      "hp": 3972,
-      "rec max": 1321,
-      "rec min": 1203
+    "idle": {
+      "total number of frames": 64
+    },
+    "move": {
+      "total number of frames": 16
     }
   },
-  "leader_skill": {
-    "desc": "50% boost to Atk Power of Thunder Types",
-    "effects": [
-      {
-        "atk% buff": 50,
-        "elements buffed": [
-          "thunder"
-        ],
-        "passive id": "2"
-      }
+  "category": 40120,
+  "cost": "8",
+  "damage frames": {
+    "frame times": [
+      26,
+      28,
+      60,
+      66
     ],
-    "id": "131",
-    "name": "Thunder God's Power"
+    "hit dmg% distribution": [
+      30,
+      30,
+      20,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 4
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "thunder",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 163,
+  "imp": {
+    "max atk": "160",
+    "max def": "160",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "1089~1216",
+  "movement": {
+    "attack": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    }
+  },
+  "name": "Princess Emilia",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Princess Emilia",
+  "maxlv": "60",
+  "no": "163",
   "unitDisplayHomePosition_1W9CxaFK": "259,25,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "92,127,750,640",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "142,302,359,307,0",
@@ -398,5 +407,104 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "20:124:1,22:124:1,54:124:1,60:124:1"
+  "effectFrames": "20:124:1,22:124:1,54:124:1,60:124:1",
+  "evofrom": "40122",
+  "evointo": "40124",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "40133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40130",
+      "count": 2
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "140",
+  "animation_idle": "64",
+  "animation_move": "16",
+  "movespeed_attack": "0.0024",
+  "movespeed_skill": "0.0024",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "26, 28, 60, 66",
+  "normal_distribute": "30, 30, 20, 20",
+  "normal_totaldistr": "100",
+  "bb_frames": "26, 28, 66, 72, 78",
+  "bb_distribute": "20, 20, 20, 20, 20",
+  "bb_totaldistr": "100",
+  "description": "A dual-wielding general mentioned in the records of the ruined Atharva Republic. She focused on training soldiers after becoming a general, but she was so severe that many were honorably discharged from service. Her battlefield initiative earned her the respectful title of Princess Emilia. It is said she tried her hardest to smile whenever her title changed.",
+  "summon": "Stupid child! Be grateful <br>you're able walk with me!<br>Devote your life to me!",
+  "fusion": "My strength isn't for you!<br>It's for protecting the <br>frail masses!",
+  "evolution": "I won't stop now!<br>Come with me and let's <br>aim for the top!",
+  "hp_base": "2538",
+  "atk_base": "832",
+  "def_base": "784",
+  "rec_base": "788",
+  "hp_lord": "3972",
+  "atk_lord": "1170",
+  "def_lord": "1122",
+  "rec_lord": "1085",
+  "hp_anima": "4415",
+  "rec_anima": "967",
+  "atk_breaker": "1288",
+  "def_breaker": "1004",
+  "atk_guardian": "1052",
+  "def_guardian": "1240",
+  "rec_guardian": "1026",
+  "def_oracle": "1063",
+  "hp_oracle": "3795",
+  "rec_oracle": "1262",
+  "hp_bonus": "400",
+  "atk_bonus": "160",
+  "def_bonus": "160",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "4",
+  "normaldc": "12",
+  "ls": "Thunder God's Power",
+  "lsdescription": "50% boost to Atk Power of Thunder Types",
+  "lstype": "Attack",
+  "bbdescription": "5 combo Thunder elemental power attack on single Enemy & probable Paralysis effect",
+  "bbnote": "80% chance",
+  "bbtype": "Offense",
+  "bbhits": "5",
+  "bbaoe": "1",
+  "bbgauge": "17",
+  "bbdc": "5",
+  "bbmultiplier": "350",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "40133",
+  "evomats2": "40132",
+  "evomats3": "60143",
+  "evomats4": "40130",
+  "evomats5": "40130"
 }

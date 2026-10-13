@@ -1,62 +1,66 @@
 {
   "id": "30162",
-  "unitName": "Edea",
-  "freetext": ":''For other uses, see Edea (disambiguation).''",
-  "no": "245",
-  "element": "Earth",
-  "rarity": "★★★",
-  "cost": "7",
-  "maxlv": "40",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "65",
-  "animation_idle": "52",
-  "animation_move": "13",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "18, 24, 30, 34",
-  "normal_distribute": "50, 20, 20, 10",
-  "normal_totaldistr": "100",
-  "bb_frames": "18, 24, 30, 34",
-  "bb_distribute": "50, 20, 20, 10",
-  "bb_totaldistr": "100",
-  "description": "One of the four legendary warriors who fought to save the Kingdom of Palmyna. Clad from head to toe in armor which concealed her true identity, legend has it that this knight was actually the Princess of Palmyna in disguise. After hearing about the gods’ plans to lay waste to Palmyna, Edea clad herself in the legendary Emerald Armor of Lafdonia, and set out on a mission to save her homeland.",
-  "summon": "Will you join me and fight<br>against the gods?<br>In that case, raise your sword!",
-  "fusion": "W-Wow! I can feel the power<br>surging through me!<br>Hey, don’t peek inside my armor!",
-  "evolution": "",
-  "hp_base": "2250",
-  "atk_base": "800",
-  "def_base": "800",
-  "rec_base": "570",
-  "hp_lord": "3495",
-  "atk_lord": "1080",
-  "def_lord": "1056",
-  "rec_lord": "969",
-  "hp_anima": "3788",
-  "rec_anima": "891",
-  "atk_breaker": "1158",
-  "def_breaker": "978",
-  "atk_guardian": "1002",
-  "def_guardian": "1134",
-  "rec_guardian": "930",
-  "def_oracle": "1017",
-  "hp_oracle": "3378",
-  "rec_oracle": "1086",
-  "hp_bonus": "400",
-  "atk_bonus": "100",
-  "def_bonus": "100",
-  "rec_bonus": "100",
-  "lordonly": "",
-  "combo_hits": "4",
-  "normaldc": "8",
-  "ls": "Earth Spirit's Power",
-  "lsdescription": "25% boost to Atk Power of Earth Types",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 800,
+      "def": 800,
+      "hp": 2250,
+      "rec": 570
+    },
+    "_lord": {
+      "atk": 1080,
+      "def": 1056,
+      "hp": 3495,
+      "rec": 969
+    },
+    "anima": {
+      "atk": 1080,
+      "def": 1056,
+      "hp max": 3885,
+      "hp min": 3690,
+      "rec max": 930,
+      "rec min": 852
+    },
+    "breaker": {
+      "atk max": 1197,
+      "atk min": 1119,
+      "def max": 1017,
+      "def min": 939,
+      "hp": 3495,
+      "rec": 969
+    },
+    "guardian": {
+      "atk": 1080,
+      "def max": 1173,
+      "def min": 1095,
+      "hp": 3495,
+      "rec max": 969,
+      "rec min": 891
+    },
+    "oracle": {
+      "atk": 1080,
+      "def max": 1056,
+      "def min": 978,
+      "hp": 3495,
+      "rec max": 1125,
+      "rec min": 1047
+    }
+  },
+  "leader_skill": {
+    "desc": "25% boost to Atk Power of Earth Types",
+    "effects": [
+      {
+        "atk% buff": 25,
+        "elements buffed": [
+          "earth"
+        ],
+        "passive id": "2"
+      }
+    ],
+    "id": "120",
+    "name": "Earth Spirit's Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -307,97 +311,89 @@
     ],
     "name": "Grand Bash"
   },
-  "bbdescription": "4 Combo Earth Elemental Attack on Single Enemy & Probable Poison & Sickness Effect",
-  "bbnote": "80% chance",
-  "bbtype": "Offense",
-  "bbhits": "4",
-  "bbaoe": "1",
-  "bbgauge": "17",
-  "bbdc": "4",
-  "bbmultiplier": "320",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "30163",
-  "evomats1": "30132",
-  "evomats2": "30130",
-  "evomats3": "30130",
-  "evomats4": "30131",
-  "evomats5": "",
-  "evozelcost": "100000",
-  "stats": {
-    "_base": {
-      "atk": 800,
-      "def": 800,
-      "hp": 2250,
-      "rec": 570
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1080,
-      "def": 1056,
-      "hp": 3495,
-      "rec": 969
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1080,
-      "def": 1056,
-      "hp max": 3885,
-      "hp min": 3690,
-      "rec max": 930,
-      "rec min": 852
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 65
     },
-    "breaker": {
-      "atk max": 1197,
-      "atk min": 1119,
-      "def max": 1017,
-      "def min": 939,
-      "hp": 3495,
-      "rec": 969
+    "idle": {
+      "total number of frames": 52
     },
-    "guardian": {
-      "atk": 1080,
-      "def max": 1173,
-      "def min": 1095,
-      "hp": 3495,
-      "rec max": 969,
-      "rec min": 891
-    },
-    "oracle": {
-      "atk": 1080,
-      "def max": 1056,
-      "def min": 978,
-      "hp": 3495,
-      "rec max": 1125,
-      "rec min": 1047
+    "move": {
+      "total number of frames": 13
     }
   },
-  "leader_skill": {
-    "desc": "25% boost to Atk Power of Earth Types",
-    "effects": [
-      {
-        "atk% buff": 25,
-        "elements buffed": [
-          "earth"
-        ],
-        "passive id": "2"
-      }
+  "category": 30160,
+  "cost": "7",
+  "damage frames": {
+    "frame times": [
+      18,
+      24,
+      30,
+      34
     ],
-    "id": "120",
-    "name": "Earth Spirit's Power"
+    "hit dmg% distribution": [
+      50,
+      20,
+      20,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 4
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "earth",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 245,
+  "imp": {
+    "max atk": "100",
+    "max def": "100",
+    "max hp": "400",
+    "max rec": "100"
+  },
+  "kind": "normal",
+  "lord damage range": "1005~1123",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Edea",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "Edea",
+  "maxlv": "40",
+  "no": "245",
   "unitDisplayHomePosition_1W9CxaFK": "260,120,147,403",
   "unitDisplayDetailPosition_6z54rgb3": "65,100,745,638",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "215,403,265,225,0",
@@ -407,5 +403,100 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "1000",
   "sellCaution": false,
-  "effectFrames": "12:123:1,18:123:1,24:123:1,28:123:1"
+  "effectFrames": "12:123:1,18:123:1,24:123:1,28:123:1",
+  "evofrom": "",
+  "evointo": "30163",
+  "evozelcost": "100000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "30132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30131",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "30130",
+      "count": 1
+    }
+  ],
+  "freetext": ":''For other uses, see Edea (disambiguation).''",
+  "basexp": "21",
+  "animation_attack": "65",
+  "animation_idle": "52",
+  "animation_move": "13",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "18, 24, 30, 34",
+  "normal_distribute": "50, 20, 20, 10",
+  "normal_totaldistr": "100",
+  "bb_frames": "18, 24, 30, 34",
+  "bb_distribute": "50, 20, 20, 10",
+  "bb_totaldistr": "100",
+  "description": "One of the four legendary warriors who fought to save the Kingdom of Palmyna. Clad from head to toe in armor which concealed her true identity, legend has it that this knight was actually the Princess of Palmyna in disguise. After hearing about the gods’ plans to lay waste to Palmyna, Edea clad herself in the legendary Emerald Armor of Lafdonia, and set out on a mission to save her homeland.",
+  "summon": "Will you join me and fight<br>against the gods?<br>In that case, raise your sword!",
+  "fusion": "W-Wow! I can feel the power<br>surging through me!<br>Hey, don’t peek inside my armor!",
+  "evolution": "",
+  "hp_base": "2250",
+  "atk_base": "800",
+  "def_base": "800",
+  "rec_base": "570",
+  "hp_lord": "3495",
+  "atk_lord": "1080",
+  "def_lord": "1056",
+  "rec_lord": "969",
+  "hp_anima": "3788",
+  "rec_anima": "891",
+  "atk_breaker": "1158",
+  "def_breaker": "978",
+  "atk_guardian": "1002",
+  "def_guardian": "1134",
+  "rec_guardian": "930",
+  "def_oracle": "1017",
+  "hp_oracle": "3378",
+  "rec_oracle": "1086",
+  "hp_bonus": "400",
+  "atk_bonus": "100",
+  "def_bonus": "100",
+  "rec_bonus": "100",
+  "lordonly": "",
+  "combo_hits": "4",
+  "normaldc": "8",
+  "ls": "Earth Spirit's Power",
+  "lsdescription": "25% boost to Atk Power of Earth Types",
+  "lstype": "Attack",
+  "bbdescription": "4 Combo Earth Elemental Attack on Single Enemy & Probable Poison & Sickness Effect",
+  "bbnote": "80% chance",
+  "bbtype": "Offense",
+  "bbhits": "4",
+  "bbaoe": "1",
+  "bbgauge": "17",
+  "bbdc": "4",
+  "bbmultiplier": "320",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "30132",
+  "evomats2": "30130",
+  "evomats3": "30130",
+  "evomats4": "30131",
+  "evomats5": ""
 }

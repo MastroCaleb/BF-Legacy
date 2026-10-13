@@ -1,68 +1,101 @@
 {
   "id": "20677",
-  "unitName": "Alluring Empress Savia",
-  "no": "1584",
-  "element": "Water",
-  "rarity": "Omni",
-  "cost": "47",
-  "maxlv": "150",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "170",
-  "animation_idle": "52",
-  "animation_move": "5",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "5, 9, 17, 21, 46, 50, 77, 82, 87, 92, 97, 102, 107, 112",
-  "normal_distribute": "11, 3, 6, 5, 6, 5, 16, 12, 10, 7, 6, 5, 4, 4",
-  "normal_totaldistr": "100",
-  "bb_frames": "5, 9, 17, 21, 25, 46, 50, 54, 77, 82, 87, 92, 97, 102, 107, 112",
-  "bb_distribute": "10, 3, 6, 4, 3, 6, 4, 3, 15, 11, 9, 7, 6, 5, 4, 4",
-  "bb_totaldistr": "100",
-  "sbb_frames": "5, 8, 11, 17, 21, 25, 46, 50, 54, 77, 81, 85, 89, 93, 97, 101, 105, 109, 113, 117",
-  "sbb_distribute": "9, 4, 3, 4, 3, 3, 4, 3, 3, 13, 9, 8, 7, 6, 5, 4, 3, 3, 3, 3",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "5, 8, 11, 17, 21, 25, 46, 50, 54, 77, 80, 83, 86, 89, 92, 95, 98, 101, 104, 107, 110, 113, 116",
-  "ubb_distribute": "8, 4, 3, 4, 3, 3, 4, 3, 3, 11, 8, 7, 6, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "1",
-  "ubb_effectdelay": "1",
-  "description": "The stories hold that an ancient dragon who wished for chaos was behind the schemes that left Savia hunted by demons and her dreams of orderly coexistence in tatters. Had she only noticed the dragon's involvement sooner and slain the monster, it seems likely that peaceful unification of Ishgria would have been within the realm of possibility. Her dreams and those of her supporters would have been carried on for generations had she succeeded, producing an Ishgria entirely unlike the one we know today.",
-  "summon": "The seeds of the future that we sowed here... I look forward to seeing how she cultivates them.",
-  "fusion": "Lusting for combat, instigating it... I will not permit either course of action!",
-  "evolution": "It is precisely because Ishgria is locked in eternal war that peace and coexistence hold value. That is my firm belief.",
-  "hp_base": "6023",
-  "atk_base": "2523",
-  "def_base": "2236",
-  "rec_base": "2024",
-  "hp_lord": "7847",
-  "atk_lord": "3164",
-  "def_lord": "2782",
-  "rec_lord": "2527",
-  "hp_anima": "8964",
-  "rec_anima": "2229",
-  "atk_breaker": "3462",
-  "def_breaker": "2484",
-  "def_guardian": "3080",
-  "rec_guardian": "2378",
-  "def_oracle": "2633",
-  "rec_oracle": "2974",
-  "hp_bonus": "1250",
-  "atk_bonus": "800",
-  "def_bonus": "400",
-  "rec_bonus": "500",
-  "lordonly": "",
-  "combo_hits": "14",
-  "normaldc": "42",
-  "ls": "Omnibenevolence",
-  "lsdescription": "50% boost to Atk, max HP, considerably boosts Atk, Def, Rec when BB gauge is over 50%, 100% boost to Spark damage & hugely boosts BB gauge each turn",
-  "lsnote": "80% boost & fills 7 BC",
+  "stats": {
+    "_base": {
+      "atk": 2523,
+      "def": 2236,
+      "hp": 6023,
+      "rec": 2024
+    },
+    "_lord": {
+      "atk": 3164,
+      "def": 2782,
+      "hp": 7847,
+      "rec": 2527
+    },
+    "anima": {
+      "atk": 3164,
+      "def": 2782,
+      "hp max": 9337,
+      "hp min": 8592,
+      "rec max": 2378,
+      "rec min": 2080
+    },
+    "breaker": {
+      "atk max": 3611,
+      "atk min": 3313,
+      "def max": 2633,
+      "def min": 2335,
+      "hp": 7847,
+      "rec": 2527
+    },
+    "guardian": {
+      "atk": 3164,
+      "def max": 3229,
+      "def min": 2931,
+      "hp": 7847,
+      "rec max": 2527,
+      "rec min": 2229
+    },
+    "oracle": {
+      "atk": 3164,
+      "def max": 2782,
+      "def min": 2484,
+      "hp": 7847,
+      "rec max": 3123,
+      "rec min": 2825
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to Atk, max HP, considerably boosts Atk, Def, Rec when BB gauge is over 50%, 100% boost to Spark damage & hugely boosts BB gauge each turn",
+    "effects": [
+      {
+        "atk% buff": 50,
+        "hp% buff": 50,
+        "passive id": "1"
+      },
+      {
+        "atk% buff": 80,
+        "bb gauge above % buff requirement": 50,
+        "def% buff": 80,
+        "passive id": "30",
+        "rec% buff": 80
+      },
+      {
+        "damage% for spark": 100,
+        "passive id": "31"
+      },
+      {
+        "bc fill per turn": 7,
+        "passive id": "9"
+      }
+    ],
+    "id": "7496",
+    "name": "Omnibenevolence"
+  },
+  "extra_skill": {
+    "desc": "50% boost to Spark damage & hugely boosts BB Atk",
+    "effects": [
+      {
+        "conditions": [],
+        "damage% for spark": 50,
+        "passive id": "31",
+        "passive target": "self"
+      },
+      {
+        "bb atk% buff": 150,
+        "conditions": [],
+        "passive id": "64",
+        "passive target": "self",
+        "sbb atk% buff": 150,
+        "ubb atk% buff": 150
+      }
+    ],
+    "id": "31800",
+    "name": "Seeds of the Future",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -621,14 +654,6 @@
     ],
     "name": "Kyanos Inflation"
   },
-  "bbdescription": "16 combo Water attack on all foes, probable Spark vulnerability infliction for 2 turns, removes all status ailments & hugely boosts BB gauge for 3 turns",
-  "bbnote": "30% chance for 30% vulnerability & fills 7 BC",
-  "bbtype": "Offense",
-  "bbhits": "16",
-  "bbaoe": "A",
-  "bbgauge": "26",
-  "bbdc": "16",
-  "bbmultiplier": "370",
   "sbb": {
     "damage frames": [
       {
@@ -1247,14 +1272,6 @@
     ],
     "name": "Royal Lineage: Tiamat"
   },
-  "sbbdescription": "20 combo powerful Water attack on all foes, probable Spark vulnerability infliction for 2 turns, hugely boosts Atk, Def for 3 turns, Spark damage boosts BB gauge for 3 turns & Spark damage reduction for 1 turn",
-  "sbbnote": "30% chance for 30% vulnerability, 160% Atk/Def, fills 2-3 BC & 25% reduction",
-  "sbbtype": "Offense",
-  "sbbhits": "20",
-  "sbbaoe": "A",
-  "sbbgauge": "28",
-  "sbbdc": "20",
-  "sbbmultiplier": "580",
   "ubb": {
     "damage frames": [
       {
@@ -1418,6 +1435,198 @@
     ],
     "name": "Pure Ionis Regina"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 170
+    },
+    "idle": {
+      "total number of frames": 52
+    },
+    "move": {
+      "total number of frames": 5
+    }
+  },
+  "category": 20670,
+  "cost": "47",
+  "damage frames": {
+    "frame times": [
+      5,
+      9,
+      17,
+      21,
+      46,
+      50,
+      77,
+      82,
+      87,
+      92,
+      97,
+      102,
+      107,
+      112
+    ],
+    "hit dmg% distribution": [
+      11,
+      3,
+      6,
+      5,
+      6,
+      5,
+      16,
+      12,
+      10,
+      7,
+      6,
+      5,
+      4,
+      4
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 14
+  },
+  "drop check count": 3,
+  "element": "water",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 1584,
+  "imp": {
+    "max atk": "800",
+    "max def": "400",
+    "max hp": "1250",
+    "max rec": "500"
+  },
+  "kind": "normal",
+  "lord damage range": "2945~3290",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Alluring Empress Savia",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "8",
+  "sell caution": false,
+  "unitName": "Alluring Empress Savia",
+  "maxlv": "150",
+  "no": "1584",
+  "unitDisplayHomePosition_1W9CxaFK": "462,328,160,437",
+  "unitDisplayDetailPosition_6z54rgb3": "-162,-127,1350,1219",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "34,139,639,577,1",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-159,-376,1350,1219",
+  "unitDisplaySummonPosition_KC3Jk8Br": "34,139,639,577,1",
+  "unitDisplayHpPosition_3BpHN6VD": "-3,44",
+  "unitDisplayCursorPosition": "-3,-20",
+  "sellPrice": "50000",
+  "sellCaution": false,
+  "effectFrames": "5:201555:1,3:500712:1,5:200091:1,15:201303:1,75:200448:1,80:200077:1,105:600359:1",
+  "evofrom": "20676",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "21",
+  "animation_attack": "170",
+  "animation_idle": "52",
+  "animation_move": "5",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "5, 9, 17, 21, 46, 50, 77, 82, 87, 92, 97, 102, 107, 112",
+  "normal_distribute": "11, 3, 6, 5, 6, 5, 16, 12, 10, 7, 6, 5, 4, 4",
+  "normal_totaldistr": "100",
+  "bb_frames": "5, 9, 17, 21, 25, 46, 50, 54, 77, 82, 87, 92, 97, 102, 107, 112",
+  "bb_distribute": "10, 3, 6, 4, 3, 6, 4, 3, 15, 11, 9, 7, 6, 5, 4, 4",
+  "bb_totaldistr": "100",
+  "sbb_frames": "5, 8, 11, 17, 21, 25, 46, 50, 54, 77, 81, 85, 89, 93, 97, 101, 105, 109, 113, 117",
+  "sbb_distribute": "9, 4, 3, 4, 3, 3, 4, 3, 3, 13, 9, 8, 7, 6, 5, 4, 3, 3, 3, 3",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "5, 8, 11, 17, 21, 25, 46, 50, 54, 77, 80, 83, 86, 89, 92, 95, 98, 101, 104, 107, 110, 113, 116",
+  "ubb_distribute": "8, 4, 3, 4, 3, 3, 4, 3, 3, 11, 8, 7, 6, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "1",
+  "ubb_effectdelay": "1",
+  "description": "The stories hold that an ancient dragon who wished for chaos was behind the schemes that left Savia hunted by demons and her dreams of orderly coexistence in tatters. Had she only noticed the dragon's involvement sooner and slain the monster, it seems likely that peaceful unification of Ishgria would have been within the realm of possibility. Her dreams and those of her supporters would have been carried on for generations had she succeeded, producing an Ishgria entirely unlike the one we know today.",
+  "summon": "The seeds of the future that we sowed here... I look forward to seeing how she cultivates them.",
+  "fusion": "Lusting for combat, instigating it... I will not permit either course of action!",
+  "evolution": "It is precisely because Ishgria is locked in eternal war that peace and coexistence hold value. That is my firm belief.",
+  "hp_base": "6023",
+  "atk_base": "2523",
+  "def_base": "2236",
+  "rec_base": "2024",
+  "hp_lord": "7847",
+  "atk_lord": "3164",
+  "def_lord": "2782",
+  "rec_lord": "2527",
+  "hp_anima": "8964",
+  "rec_anima": "2229",
+  "atk_breaker": "3462",
+  "def_breaker": "2484",
+  "def_guardian": "3080",
+  "rec_guardian": "2378",
+  "def_oracle": "2633",
+  "rec_oracle": "2974",
+  "hp_bonus": "1250",
+  "atk_bonus": "800",
+  "def_bonus": "400",
+  "rec_bonus": "500",
+  "lordonly": "",
+  "combo_hits": "14",
+  "normaldc": "42",
+  "ls": "Omnibenevolence",
+  "lsdescription": "50% boost to Atk, max HP, considerably boosts Atk, Def, Rec when BB gauge is over 50%, 100% boost to Spark damage & hugely boosts BB gauge each turn",
+  "lsnote": "80% boost & fills 7 BC",
+  "bbdescription": "16 combo Water attack on all foes, probable Spark vulnerability infliction for 2 turns, removes all status ailments & hugely boosts BB gauge for 3 turns",
+  "bbnote": "30% chance for 30% vulnerability & fills 7 BC",
+  "bbtype": "Offense",
+  "bbhits": "16",
+  "bbaoe": "A",
+  "bbgauge": "26",
+  "bbdc": "16",
+  "bbmultiplier": "370",
+  "sbbdescription": "20 combo powerful Water attack on all foes, probable Spark vulnerability infliction for 2 turns, hugely boosts Atk, Def for 3 turns, Spark damage boosts BB gauge for 3 turns & Spark damage reduction for 1 turn",
+  "sbbnote": "30% chance for 30% vulnerability, 160% Atk/Def, fills 2-3 BC & 25% reduction",
+  "sbbtype": "Offense",
+  "sbbhits": "20",
+  "sbbaoe": "A",
+  "sbbgauge": "28",
+  "sbbdc": "20",
+  "sbbmultiplier": "580",
   "ubbdescription": "23 combo massive Water attack on all foes, Spark vulnerability infliction for 3 turns, enormously boosts Atk, Def for 3 turns, hugely raises normal hit amount for 3 turns & enormously boosts OD gauge fill rate for 3 turns",
   "ubbnote": "350% Atk/Def, adds +3 hits to each hit count (+120% extra damage, 220% total), 100% vulnerability & 250% OD fill rate",
   "ubbtype": "Offense",
@@ -1430,8 +1639,6 @@
   "esitem": "",
   "esdescription": "50% boost to Spark damage & hugely boosts BB Atk",
   "esnote": "150% BB Atk",
-  "evofrom": "20676",
-  "evointo": "",
   "evomats1": "",
   "evomats2": "",
   "evomats3": "",
@@ -1440,112 +1647,5 @@
   "evomats6": "",
   "evomats7": "",
   "evomats8": "",
-  "evoitem": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 2523,
-      "def": 2236,
-      "hp": 6023,
-      "rec": 2024
-    },
-    "_lord": {
-      "atk": 3164,
-      "def": 2782,
-      "hp": 7847,
-      "rec": 2527
-    },
-    "anima": {
-      "atk": 3164,
-      "def": 2782,
-      "hp max": 9337,
-      "hp min": 8592,
-      "rec max": 2378,
-      "rec min": 2080
-    },
-    "breaker": {
-      "atk max": 3611,
-      "atk min": 3313,
-      "def max": 2633,
-      "def min": 2335,
-      "hp": 7847,
-      "rec": 2527
-    },
-    "guardian": {
-      "atk": 3164,
-      "def max": 3229,
-      "def min": 2931,
-      "hp": 7847,
-      "rec max": 2527,
-      "rec min": 2229
-    },
-    "oracle": {
-      "atk": 3164,
-      "def max": 2782,
-      "def min": 2484,
-      "hp": 7847,
-      "rec max": 3123,
-      "rec min": 2825
-    }
-  },
-  "leader_skill": {
-    "desc": "50% boost to Atk, max HP, considerably boosts Atk, Def, Rec when BB gauge is over 50%, 100% boost to Spark damage & hugely boosts BB gauge each turn",
-    "effects": [
-      {
-        "atk% buff": 50,
-        "hp% buff": 50,
-        "passive id": "1"
-      },
-      {
-        "atk% buff": 80,
-        "bb gauge above % buff requirement": 50,
-        "def% buff": 80,
-        "passive id": "30",
-        "rec% buff": 80
-      },
-      {
-        "damage% for spark": 100,
-        "passive id": "31"
-      },
-      {
-        "bc fill per turn": 7,
-        "passive id": "9"
-      }
-    ],
-    "id": "7496",
-    "name": "Omnibenevolence"
-  },
-  "extra_skill": {
-    "desc": "50% boost to Spark damage & hugely boosts BB Atk",
-    "effects": [
-      {
-        "conditions": [],
-        "damage% for spark": 50,
-        "passive id": "31",
-        "passive target": "self"
-      },
-      {
-        "bb atk% buff": 150,
-        "conditions": [],
-        "passive id": "64",
-        "passive target": "self",
-        "sbb atk% buff": 150,
-        "ubb atk% buff": 150
-      }
-    ],
-    "id": "31800",
-    "name": "Seeds of the Future",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "462,328,160,437",
-  "unitDisplayDetailPosition_6z54rgb3": "-162,-127,1350,1219",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "34,139,639,577,1",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-159,-376,1350,1219",
-  "unitDisplaySummonPosition_KC3Jk8Br": "34,139,639,577,1",
-  "unitDisplayHpPosition_3BpHN6VD": "-3,44",
-  "unitDisplayCursorPosition": "-3,-20",
-  "sellPrice": "50000",
-  "sellCaution": false,
-  "effectFrames": "5:201555:1,3:500712:1,5:200091:1,15:201303:1,75:200448:1,80:200077:1,105:600359:1"
+  "evoitem": ""
 }

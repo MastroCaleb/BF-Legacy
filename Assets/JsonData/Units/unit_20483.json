@@ -1,61 +1,63 @@
 {
   "id": "20483",
-  "unitName": "Aquamancer Kuhla",
-  "no": "684",
-  "element": "Water",
-  "rarity": "★★★★",
-  "cost": "13",
-  "maxlv": "60",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "130",
-  "animation_idle": "60",
-  "animation_move": "8",
-  "movespeed_attack": "0.0041",
-  "movespeed_skill": "0.0041",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "66, 74, 82, 90, 98, 106",
-  "normal_distribute": "17, 17, 17, 17, 16, 16",
-  "normal_totaldistr": "100",
-  "bb_frames": "66, 72, 78, 84, 90, 96, 102, 108",
-  "bb_distribute": "13, 13, 13, 13, 12, 12, 12, 12",
-  "bb_totaldistr": "100",
-  "description": "A sorceress from the Sama Kingdom. Innately gifted with magical powers, she was expected to become the greatest sorceress in the land once she received proper instruction. However, due to her silent and introverted personality, most priests refused to teach her and she was confined to the mountains. There she created her own magic research laboratory, where by chance she would find a seriously injured knight one day. Thanks to her devoted nursing, the knight was able to escape death. However, some days later a woman with a revelation from the gods appeared, and the knight left with her.",
-  "summon": "A Summoner...?<br>Please, don't bother me with much...",
-  "fusion": "Huh...?<br>Oh, forget it...",
-  "evolution": "",
-  "hp_base": "2993",
-  "atk_base": "1074",
-  "def_base": "980",
-  "rec_base": "1052",
-  "hp_lord": "4290",
-  "atk_lord": "1432",
-  "def_lord": "1307",
-  "rec_lord": "1402",
-  "hp_anima": "4733",
-  "rec_anima": "1284",
-  "atk_breaker": "1550",
-  "def_breaker": "1189",
-  "atk_guardian": "1314",
-  "def_guardian": "1425",
-  "rec_guardian": "1343",
-  "def_oracle": "1248",
-  "hp_oracle": "4113",
-  "rec_oracle": "1579",
-  "hp_bonus": "400",
-  "atk_bonus": "200",
-  "def_bonus": "120",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "6",
-  "normaldc": "12",
-  "ls": "Royal Oracle",
-  "lsdescription": "15% boost to HP of all Units",
-  "lstype": "Hit Points",
+  "stats": {
+    "_base": {
+      "atk": 1074,
+      "def": 980,
+      "hp": 2993,
+      "rec": 1052
+    },
+    "_lord": {
+      "atk": 1432,
+      "def": 1307,
+      "hp": 4290,
+      "rec": 1402
+    },
+    "anima": {
+      "atk": 1432,
+      "def": 1307,
+      "hp max": 4880,
+      "hp min": 4585,
+      "rec max": 1343,
+      "rec min": 1225
+    },
+    "breaker": {
+      "atk max": 1609,
+      "atk min": 1491,
+      "def max": 1248,
+      "def min": 1130,
+      "hp": 4290,
+      "rec": 1402
+    },
+    "guardian": {
+      "atk": 1432,
+      "def max": 1484,
+      "def min": 1366,
+      "hp": 4290,
+      "rec max": 1402,
+      "rec min": 1284
+    },
+    "oracle": {
+      "atk": 1432,
+      "def max": 1307,
+      "def min": 1189,
+      "hp": 4290,
+      "rec max": 1638,
+      "rec min": 1520
+    }
+  },
+  "leader_skill": {
+    "desc": "15% boost to max HP",
+    "effects": [
+      {
+        "hp% buff": 15,
+        "passive id": "1"
+      }
+    ],
+    "id": "5500",
+    "name": "Royal Oracle"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -304,95 +306,93 @@
     ],
     "name": "Cruel Stream"
   },
-  "bbdescription": "8 combo Water elemental attack on all enemies & slightly increases allies' BB gauge",
-  "bbnote": "5 BC fill",
-  "bbtype": "Support/Offense",
-  "bbhits": "8",
-  "bbaoe": "A",
-  "bbgauge": "25",
-  "bbdc": "8",
-  "bbmultiplier": "180",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "20484",
-  "evomats1": "20133",
-  "evomats2": "20191",
-  "evomats3": "20132",
-  "evomats4": "20132",
-  "evomats5": "60144",
-  "evoitem": "",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 1074,
-      "def": 980,
-      "hp": 2993,
-      "rec": 1052
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1432,
-      "def": 1307,
-      "hp": 4290,
-      "rec": 1402
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1432,
-      "def": 1307,
-      "hp max": 4880,
-      "hp min": 4585,
-      "rec max": 1343,
-      "rec min": 1225
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 130
     },
-    "breaker": {
-      "atk max": 1609,
-      "atk min": 1491,
-      "def max": 1248,
-      "def min": 1130,
-      "hp": 4290,
-      "rec": 1402
+    "idle": {
+      "total number of frames": 60
     },
-    "guardian": {
-      "atk": 1432,
-      "def max": 1484,
-      "def min": 1366,
-      "hp": 4290,
-      "rec max": 1402,
-      "rec min": 1284
-    },
-    "oracle": {
-      "atk": 1432,
-      "def max": 1307,
-      "def min": 1189,
-      "hp": 4290,
-      "rec max": 1638,
-      "rec min": 1520
+    "move": {
+      "total number of frames": 8
     }
   },
-  "leader_skill": {
-    "desc": "15% boost to max HP",
-    "effects": [
-      {
-        "hp% buff": 15,
-        "passive id": "1"
-      }
+  "category": 20480,
+  "cost": "13",
+  "damage frames": {
+    "frame times": [
+      66,
+      74,
+      82,
+      90,
+      98,
+      106
     ],
-    "id": "5500",
-    "name": "Royal Oracle"
+    "hit dmg% distribution": [
+      17,
+      17,
+      17,
+      17,
+      16,
+      16
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 6
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "water",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 684,
+  "imp": {
+    "max atk": "200",
+    "max def": "120",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "1332~1489",
+  "movement": {
+    "attack": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    }
+  },
+  "name": "Aquamancer Kuhla",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Aquamancer Kuhla",
+  "maxlv": "60",
+  "no": "684",
   "unitDisplayHomePosition_1W9CxaFK": "524,219,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-164,-4,1214,864",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "215,387,216,240,0",
@@ -402,5 +402,105 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "60:137:1,66:200062:1,66:200139:1,66:200284:1,78:200284:1"
+  "effectFrames": "60:137:1,66:200062:1,66:200139:1,66:200284:1,78:200284:1",
+  "evofrom": "",
+  "evointo": "20484",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "20133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20132",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "130",
+  "animation_idle": "60",
+  "animation_move": "8",
+  "movespeed_attack": "0.0041",
+  "movespeed_skill": "0.0041",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "66, 74, 82, 90, 98, 106",
+  "normal_distribute": "17, 17, 17, 17, 16, 16",
+  "normal_totaldistr": "100",
+  "bb_frames": "66, 72, 78, 84, 90, 96, 102, 108",
+  "bb_distribute": "13, 13, 13, 13, 12, 12, 12, 12",
+  "bb_totaldistr": "100",
+  "description": "A sorceress from the Sama Kingdom. Innately gifted with magical powers, she was expected to become the greatest sorceress in the land once she received proper instruction. However, due to her silent and introverted personality, most priests refused to teach her and she was confined to the mountains. There she created her own magic research laboratory, where by chance she would find a seriously injured knight one day. Thanks to her devoted nursing, the knight was able to escape death. However, some days later a woman with a revelation from the gods appeared, and the knight left with her.",
+  "summon": "A Summoner...?<br>Please, don't bother me with much...",
+  "fusion": "Huh...?<br>Oh, forget it...",
+  "evolution": "",
+  "hp_base": "2993",
+  "atk_base": "1074",
+  "def_base": "980",
+  "rec_base": "1052",
+  "hp_lord": "4290",
+  "atk_lord": "1432",
+  "def_lord": "1307",
+  "rec_lord": "1402",
+  "hp_anima": "4733",
+  "rec_anima": "1284",
+  "atk_breaker": "1550",
+  "def_breaker": "1189",
+  "atk_guardian": "1314",
+  "def_guardian": "1425",
+  "rec_guardian": "1343",
+  "def_oracle": "1248",
+  "hp_oracle": "4113",
+  "rec_oracle": "1579",
+  "hp_bonus": "400",
+  "atk_bonus": "200",
+  "def_bonus": "120",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "6",
+  "normaldc": "12",
+  "ls": "Royal Oracle",
+  "lsdescription": "15% boost to HP of all Units",
+  "lstype": "Hit Points",
+  "bbdescription": "8 combo Water elemental attack on all enemies & slightly increases allies' BB gauge",
+  "bbnote": "5 BC fill",
+  "bbtype": "Support/Offense",
+  "bbhits": "8",
+  "bbaoe": "A",
+  "bbgauge": "25",
+  "bbdc": "8",
+  "bbmultiplier": "180",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "20133",
+  "evomats2": "20191",
+  "evomats3": "20132",
+  "evomats4": "20132",
+  "evomats5": "60144",
+  "evoitem": ""
 }

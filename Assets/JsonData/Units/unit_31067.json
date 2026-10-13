@@ -1,60 +1,154 @@
 {
   "id": "31067",
-  "unitName": "Endless Cycle Limilnate",
-  "no": "1777",
-  "element": "Earth",
-  "rarity": "Omni",
-  "cost": "60",
-  "maxlv": "150",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "6",
-  "animation_attack": "183",
-  "animation_idle": "84",
-  "animation_move": "42",
-  "movespeed_attack": "6",
-  "movespeed_skill": "6",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "2",
-  "movetype_skill": "3",
-  "normal_frames": "55, 58, 61, 96, 99, 102, 105, 108, 111, 114, 117",
-  "normal_distribute": "12, 8, 6, 25, 18, 9, 4, 5, 4, 5, 4",
-  "normal_totaldistr": "100",
-  "sbb_frames": "55, 58, 61, 96, 99, 102, 105, 108, 111, 114, 117, 120, 123, 126, 129",
-  "sbb_distribute": "10, 7, 6, 20, 15, 8, 6, 4, 4, 4, 4, 3, 3, 3, 3",
-  "sbb_totaldistr": "100",
-  "sbb_effectdelay": "0",
-  "description": "A god tasked with prolonging the lives of worlds. Limilnate's duty was that of imbuing souls into living beings in order to keep the circle of life flowing in worlds, and is said to have played a great part in the planets' longevity as he saw them flourish. However, had he not infused souls to physical bodies he would've most likely never learned of their amazing qualities, and would've instead have to somehow use his own powers to reach the same results.",
-  "summon": "Why were you born, and why do you live? All life eventually meets destruction regardless...and some say there is nothing left afterwards.",
-  "fusion": "My duty is to make sure worlds continue as they are meant to. Nothing else concerns me.",
-  "evolution": "The world moves in a circle. It always has, and always will. And as long as I exist, it will do so for eternity...",
-  "hp_base": "6759",
-  "atk_base": "2356",
-  "def_base": "2610",
-  "rec_base": "3266",
-  "hp_lord": "8756",
-  "atk_lord": "2918",
-  "def_lord": "3262",
-  "rec_lord": "4064",
-  "hp_anima": "9873",
-  "rec_anima": "3766",
-  "atk_breaker": "3216",
-  "def_breaker": "2964",
-  "def_guardian": "3560",
-  "rec_guardian": "3915",
-  "def_oracle": "3113",
-  "rec_oracle": "4511",
-  "hp_bonus": "1250",
-  "atk_bonus": "460",
-  "def_bonus": "460",
-  "rec_bonus": "820",
-  "lordonly": "",
-  "combo_hits": "11",
-  "normaldc": "44",
-  "ls": "Circle of Life",
-  "lsdescription": "80% boost to Def, Rec, max HP, considerably restores HP each turn, damage taken may restore HP & negates all status ailments and Atk, Def, Rec reductions",
-  "lsnote": "25% chance of healing 25% damage taken & heals 1000~1200 + 10% Rec HP gradually",
+  "stats": {
+    "_base": {
+      "atk": 2356,
+      "def": 2610,
+      "hp": 6759,
+      "rec": 3266
+    },
+    "_lord": {
+      "atk": 2918,
+      "def": 3262,
+      "hp": 8756,
+      "rec": 4064
+    },
+    "anima": {
+      "atk": 2918,
+      "def": 3262,
+      "hp max": 10246,
+      "hp min": 9501,
+      "rec max": 3915,
+      "rec min": 3617
+    },
+    "breaker": {
+      "atk max": 3365,
+      "atk min": 3067,
+      "def max": 3113,
+      "def min": 2815,
+      "hp": 8756,
+      "rec": 4064
+    },
+    "guardian": {
+      "atk": 2918,
+      "def max": 3709,
+      "def min": 3411,
+      "hp": 8756,
+      "rec max": 4064,
+      "rec min": 3766
+    },
+    "oracle": {
+      "atk": 2918,
+      "def max": 3262,
+      "def min": 2964,
+      "hp": 8756,
+      "rec max": 4660,
+      "rec min": 4362
+    }
+  },
+  "leader_skill": {
+    "desc": "80% boost to Def, Rec, max HP, considerably restores HP each turn, damage taken may restore HP & negates all status ailments and Atk, Def, Rec reductions",
+    "effects": [
+      {
+        "def% buff": 80,
+        "hp% buff": 80,
+        "passive id": "1",
+        "rec% buff": 80
+      },
+      {
+        "dmg% to hp% when attacked chance%": 25,
+        "dmg% to hp% when attacked high": 25,
+        "dmg% to hp% when attacked low": 25,
+        "passive id": "24"
+      },
+      {
+        "passive id": "33",
+        "rec% added (turn heal)": 10.0,
+        "turn heal high": 1200,
+        "turn heal low": 1000
+      },
+      {
+        "atk down resist%": 100,
+        "curse resist%": 100,
+        "def down resist%": 100,
+        "injury resist%": 100,
+        "paralysis resist%": 100,
+        "passive id": "73",
+        "poison resist%": 100,
+        "rec down resist%": 100,
+        "sick resist%": 100,
+        "weaken resist%": 100
+      }
+    ],
+    "id": "12539",
+    "name": "Circle of Life"
+  },
+  "extra_skill": {
+    "desc": "40% boost to all parameters when HP Recovery Type Sphere is equipped, adds probable resistance against 1 KO attack, adds low probable resistance against 1 KO attack when damage taken exceeds certain amount & adds low probability of resistance against 1 KO attack effect to BB/SBB",
+    "effects": [
+      {
+        "atk% buff": 40,
+        "conditions": [
+          {
+            "sphere category required": "HP Recovery",
+            "sphere category required (raw)": "7"
+          }
+        ],
+        "def% buff": 40,
+        "hp% buff": 40,
+        "passive id": "1",
+        "passive target": "self",
+        "rec% buff": 40
+      },
+      {
+        "buff": {
+          "buff turns (91)": "-1",
+          "unknown buff id": "91",
+          "unknown buff params": "30&0"
+        },
+        "conditions": [
+          {
+            "sphere category required": "HP Recovery",
+            "sphere category required (raw)": "7"
+          }
+        ],
+        "damage threshold buff activation": 200000,
+        "passive id": "78",
+        "passive target": "self"
+      },
+      {
+        "angel idol chance% condition": 0,
+        "angel idol recover chance% high": 80,
+        "angel idol recover chance% low": 80,
+        "angel idol recover counts": 1,
+        "conditions": [],
+        "passive id": "69",
+        "passive target": "self"
+      },
+      {
+        "conditions": [],
+        "passive id": "66",
+        "passive target": "self",
+        "trigger on bb": true,
+        "trigger on sbb": true,
+        "triggered effect": [
+          {
+            "angel idol buff turns (91)": 999,
+            "angel idol recover chance%": 10,
+            "angel idol recover hp%": 1,
+            "effect delay time(ms)/frame": "0.0/0",
+            "proc id": "56",
+            "target area": "aoe",
+            "target type": "party"
+          }
+        ]
+      }
+    ],
+    "id": "47600",
+    "name": "Life's Sole Purpose",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -877,10 +971,6 @@
     ],
     "name": "Restoration"
   },
-  "bbdescription": "Greatly restores HP, removes all status ailments, negates all status ailments and greatly restores HP for 3 turns, damage taken may restore HP for 3 turns & negates Atk, Def, Rec reductions for 1 turn",
-  "bbnote": "Heals 5000~5500 + 40% Rec HP instantly, heals 4000~4500 + 20% Rec HP gradually & 30% chance of 30-35% heal when hit",
-  "bbtype": "Heal/Support",
-  "bbgauge": "20",
   "sbb": {
     "damage frames": [
       {
@@ -1621,15 +1711,6 @@
     ],
     "name": "Anima Convergence"
   },
-  "sbbdescription": "15 combo powerful Earth attack on all foes, enormously boosts BB gauge, fully restores HP, removes all status ailments, considerably boosts max HP, activates Earth barrier & adds low probable resistance against 1 KO attack",
-  "sbbnote": "25% HP buff, fills 50 BC instantly, 4000 HP Earth Barrier & '''no Angel Idol effect provided'''",
-  "sbbtype": "Offense",
-  "sbbhits": "15",
-  "sbbaoe": "A",
-  "sbbgauge": "60",
-  "sbbdc": "15",
-  "sbbmultiplier": "850",
-  "sbb_hpscale": "",
   "ubb": {
     "damage frames": [
       {
@@ -1770,6 +1851,181 @@
     ],
     "name": "Yggdrasil Edict: Limilnate"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 100.0,
+      "target conditions": "hp_25pr_under",
+      "target type": "party"
+    },
+    {
+      "action": "attack",
+      "chance%": 50.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 183
+    },
+    "idle": {
+      "total number of frames": 84
+    },
+    "move": {
+      "total number of frames": 42
+    }
+  },
+  "category": 31060,
+  "cost": "60",
+  "damage frames": {
+    "frame times": [
+      55,
+      58,
+      61,
+      96,
+      99,
+      102,
+      105,
+      108,
+      111,
+      114,
+      117
+    ],
+    "hit dmg% distribution": [
+      12,
+      8,
+      6,
+      25,
+      18,
+      9,
+      4,
+      5,
+      4,
+      5,
+      4
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 11
+  },
+  "drop check count": 4,
+  "element": "earth",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 1777,
+  "imp": {
+    "max atk": "460",
+    "max def": "460",
+    "max hp": "1250",
+    "max rec": "820"
+  },
+  "kind": "normal",
+  "lord damage range": "2717~3034",
+  "movement": {
+    "attack": {
+      "move speed": 6,
+      "move speed type": "2",
+      "move type": "2"
+    },
+    "skill": {
+      "move speed": 6,
+      "move speed type": "2",
+      "move type": "3"
+    }
+  },
+  "name": "Endless Cycle Limilnate",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "8",
+  "sell caution": false,
+  "unitName": "Endless Cycle Limilnate",
+  "maxlv": "150",
+  "no": "1777",
+  "unitDisplayHomePosition_1W9CxaFK": "393,344,154,420",
+  "unitDisplayDetailPosition_6z54rgb3": "-1,-142,914,1088",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "76,51,519,618,1",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-14,-364,924,1100",
+  "unitDisplaySummonPosition_KC3Jk8Br": "76,51,519,618,1",
+  "unitDisplayHpPosition_3BpHN6VD": "0,39",
+  "unitDisplayCursorPosition": "0,-7",
+  "sellPrice": "50000",
+  "sellCaution": false,
+  "effectFrames": "49:120:1,52:120:1,55:120:1,52:330670:1,53:331321:1,94:330413:1,95:300264:1,96:330730:1",
+  "evofrom": "31066",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "21",
+  "animation_attack": "183",
+  "animation_idle": "84",
+  "animation_move": "42",
+  "movespeed_attack": "6",
+  "movespeed_skill": "6",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "2",
+  "movetype_skill": "3",
+  "normal_frames": "55, 58, 61, 96, 99, 102, 105, 108, 111, 114, 117",
+  "normal_distribute": "12, 8, 6, 25, 18, 9, 4, 5, 4, 5, 4",
+  "normal_totaldistr": "100",
+  "sbb_frames": "55, 58, 61, 96, 99, 102, 105, 108, 111, 114, 117, 120, 123, 126, 129",
+  "sbb_distribute": "10, 7, 6, 20, 15, 8, 6, 4, 4, 4, 4, 3, 3, 3, 3",
+  "sbb_totaldistr": "100",
+  "sbb_effectdelay": "0",
+  "description": "A god tasked with prolonging the lives of worlds. Limilnate's duty was that of imbuing souls into living beings in order to keep the circle of life flowing in worlds, and is said to have played a great part in the planets' longevity as he saw them flourish. However, had he not infused souls to physical bodies he would've most likely never learned of their amazing qualities, and would've instead have to somehow use his own powers to reach the same results.",
+  "summon": "Why were you born, and why do you live? All life eventually meets destruction regardless...and some say there is nothing left afterwards.",
+  "fusion": "My duty is to make sure worlds continue as they are meant to. Nothing else concerns me.",
+  "evolution": "The world moves in a circle. It always has, and always will. And as long as I exist, it will do so for eternity...",
+  "hp_base": "6759",
+  "atk_base": "2356",
+  "def_base": "2610",
+  "rec_base": "3266",
+  "hp_lord": "8756",
+  "atk_lord": "2918",
+  "def_lord": "3262",
+  "rec_lord": "4064",
+  "hp_anima": "9873",
+  "rec_anima": "3766",
+  "atk_breaker": "3216",
+  "def_breaker": "2964",
+  "def_guardian": "3560",
+  "rec_guardian": "3915",
+  "def_oracle": "3113",
+  "rec_oracle": "4511",
+  "hp_bonus": "1250",
+  "atk_bonus": "460",
+  "def_bonus": "460",
+  "rec_bonus": "820",
+  "lordonly": "",
+  "combo_hits": "11",
+  "normaldc": "44",
+  "ls": "Circle of Life",
+  "lsdescription": "80% boost to Def, Rec, max HP, considerably restores HP each turn, damage taken may restore HP & negates all status ailments and Atk, Def, Rec reductions",
+  "lsnote": "25% chance of healing 25% damage taken & heals 1000~1200 + 10% Rec HP gradually",
+  "bbdescription": "Greatly restores HP, removes all status ailments, negates all status ailments and greatly restores HP for 3 turns, damage taken may restore HP for 3 turns & negates Atk, Def, Rec reductions for 1 turn",
+  "bbnote": "Heals 5000~5500 + 40% Rec HP instantly, heals 4000~4500 + 20% Rec HP gradually & 30% chance of 30-35% heal when hit",
+  "bbtype": "Heal/Support",
+  "bbgauge": "20",
+  "sbbdescription": "15 combo powerful Earth attack on all foes, enormously boosts BB gauge, fully restores HP, removes all status ailments, considerably boosts max HP, activates Earth barrier & adds low probable resistance against 1 KO attack",
+  "sbbnote": "25% HP buff, fills 50 BC instantly, 4000 HP Earth Barrier & '''no Angel Idol effect provided'''",
+  "sbbtype": "Offense",
+  "sbbhits": "15",
+  "sbbaoe": "A",
+  "sbbgauge": "60",
+  "sbbdc": "15",
+  "sbbmultiplier": "850",
+  "sbb_hpscale": "",
   "ubbdescription": "Probability of raising allies from KO, hugely boosts max HP, enormously boosts Rec for 3 turns, enormously boosts Rec relative to max HP for 3 turns, fully restores HP for 3 turns & damage taken enormously restores HP for 3 turns",
   "ubbnote": "80% chance to revive with 100% HP, 45% HP, 400% Rec, 60% HP to Rec & heals 100% damage taken",
   "ubbtype": "Heal/Support",
@@ -1778,7 +2034,6 @@
   "esitem": "HP Recovery Sphere",
   "esdescription": "40% boost to all parameters when HP Recovery Type Sphere is equipped, adds probable resistance against 1 KO attack, adds low probable resistance against 1 KO attack when damage taken exceeds certain amount & adds low probability of resistance against 1 KO attack effect to BB/SBB",
   "esnote": "80% chance of resisting 1 KO, 30% chance of resisting 1 KO after taking 200000 damage, and adds 10% chance of resisting 1 KO (recovery to 1% HP) to BB/SBB",
-  "evofrom": "31066",
   "omniskill1_cat": "Parameter Boost",
   "omniskill1_1_sp": "10",
   "omniskill1_1_desc": "80% boost to Def, Rec, max HP",
@@ -1818,164 +2073,5 @@
   "notes": "*Limilnate's kit was revamped upon Global's release.",
   "addcat": "Sphere Originators",
   "addcatname": "Limilnate2",
-  "bottomtext": "",
-  "stats": {
-    "_base": {
-      "atk": 2356,
-      "def": 2610,
-      "hp": 6759,
-      "rec": 3266
-    },
-    "_lord": {
-      "atk": 2918,
-      "def": 3262,
-      "hp": 8756,
-      "rec": 4064
-    },
-    "anima": {
-      "atk": 2918,
-      "def": 3262,
-      "hp max": 10246,
-      "hp min": 9501,
-      "rec max": 3915,
-      "rec min": 3617
-    },
-    "breaker": {
-      "atk max": 3365,
-      "atk min": 3067,
-      "def max": 3113,
-      "def min": 2815,
-      "hp": 8756,
-      "rec": 4064
-    },
-    "guardian": {
-      "atk": 2918,
-      "def max": 3709,
-      "def min": 3411,
-      "hp": 8756,
-      "rec max": 4064,
-      "rec min": 3766
-    },
-    "oracle": {
-      "atk": 2918,
-      "def max": 3262,
-      "def min": 2964,
-      "hp": 8756,
-      "rec max": 4660,
-      "rec min": 4362
-    }
-  },
-  "leader_skill": {
-    "desc": "80% boost to Def, Rec, max HP, considerably restores HP each turn, damage taken may restore HP & negates all status ailments and Atk, Def, Rec reductions",
-    "effects": [
-      {
-        "def% buff": 80,
-        "hp% buff": 80,
-        "passive id": "1",
-        "rec% buff": 80
-      },
-      {
-        "dmg% to hp% when attacked chance%": 25,
-        "dmg% to hp% when attacked high": 25,
-        "dmg% to hp% when attacked low": 25,
-        "passive id": "24"
-      },
-      {
-        "passive id": "33",
-        "rec% added (turn heal)": 10.0,
-        "turn heal high": 1200,
-        "turn heal low": 1000
-      },
-      {
-        "atk down resist%": 100,
-        "curse resist%": 100,
-        "def down resist%": 100,
-        "injury resist%": 100,
-        "paralysis resist%": 100,
-        "passive id": "73",
-        "poison resist%": 100,
-        "rec down resist%": 100,
-        "sick resist%": 100,
-        "weaken resist%": 100
-      }
-    ],
-    "id": "12539",
-    "name": "Circle of Life"
-  },
-  "extra_skill": {
-    "desc": "40% boost to all parameters when HP Recovery Type Sphere is equipped, adds probable resistance against 1 KO attack, adds low probable resistance against 1 KO attack when damage taken exceeds certain amount & adds low probability of resistance against 1 KO attack effect to BB/SBB",
-    "effects": [
-      {
-        "atk% buff": 40,
-        "conditions": [
-          {
-            "sphere category required": "HP Recovery",
-            "sphere category required (raw)": "7"
-          }
-        ],
-        "def% buff": 40,
-        "hp% buff": 40,
-        "passive id": "1",
-        "passive target": "self",
-        "rec% buff": 40
-      },
-      {
-        "buff": {
-          "buff turns (91)": "-1",
-          "unknown buff id": "91",
-          "unknown buff params": "30&0"
-        },
-        "conditions": [
-          {
-            "sphere category required": "HP Recovery",
-            "sphere category required (raw)": "7"
-          }
-        ],
-        "damage threshold buff activation": 200000,
-        "passive id": "78",
-        "passive target": "self"
-      },
-      {
-        "angel idol chance% condition": 0,
-        "angel idol recover chance% high": 80,
-        "angel idol recover chance% low": 80,
-        "angel idol recover counts": 1,
-        "conditions": [],
-        "passive id": "69",
-        "passive target": "self"
-      },
-      {
-        "conditions": [],
-        "passive id": "66",
-        "passive target": "self",
-        "trigger on bb": true,
-        "trigger on sbb": true,
-        "triggered effect": [
-          {
-            "angel idol buff turns (91)": 999,
-            "angel idol recover chance%": 10,
-            "angel idol recover hp%": 1,
-            "effect delay time(ms)/frame": "0.0/0",
-            "proc id": "56",
-            "target area": "aoe",
-            "target type": "party"
-          }
-        ]
-      }
-    ],
-    "id": "47600",
-    "name": "Life's Sole Purpose",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "393,344,154,420",
-  "unitDisplayDetailPosition_6z54rgb3": "-1,-142,914,1088",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "76,51,519,618,1",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-14,-364,924,1100",
-  "unitDisplaySummonPosition_KC3Jk8Br": "76,51,519,618,1",
-  "unitDisplayHpPosition_3BpHN6VD": "0,39",
-  "unitDisplayCursorPosition": "0,-7",
-  "sellPrice": "50000",
-  "sellCaution": false,
-  "effectFrames": "49:120:1,52:120:1,55:120:1,52:330670:1,53:331321:1,94:330413:1,95:300264:1,96:330730:1"
+  "bottomtext": ""
 }

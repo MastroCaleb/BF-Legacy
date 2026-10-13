@@ -1,61 +1,66 @@
 {
   "id": "40163",
-  "unitName": "Shock Bow Loch",
-  "no": "249",
-  "element": "Thunder",
-  "rarity": "★★★★",
-  "cost": "10",
-  "maxlv": "60",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "1",
-  "animation_attack": "111",
-  "animation_idle": "52",
-  "animation_move": "52",
-  "movespeed_attack": "4",
-  "movespeed_skill": "4",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "78, 84, 90, 96",
-  "normal_distribute": "25, 25, 25, 25",
-  "normal_totaldistr": "100",
-  "bb_frames": "78, 84, 90, 96, 102, 108",
-  "bb_distribute": "17, 16, 17, 16, 17, 17",
-  "bb_totaldistr": "100",
-  "description": "One of the four legendary warriors who fought to save the Kingdom of Palmyna. While continuing his search for Princess Edea, Loch honed his skills with the bow so that he might one day join her in her fight against the gods. Upon finally reuniting with Edea, however, he was dismayed to hear the ice mage Dean cracking jokes with her. Loch’s arrows were meant for the gods, but in a jealous fit of rage, they very nearly found a new target.",
-  "summon": "I've dedicated all my training to<br>the one most important to me...<br>Who, you ask? Never you mind.",
-  "fusion": "I must train hard every day.<br>There’s no telling when she <br>might need me.",
-  "evolution": "This is evolution, you say?<br>Hmm, not too shabby...<br>You've many talents, I see.",
-  "hp_base": "3024",
-  "atk_base": "938",
-  "def_base": "889",
-  "rec_base": "995",
-  "hp_lord": "4500",
-  "atk_lord": "1336",
-  "def_lord": "1296",
-  "rec_lord": "1275",
-  "hp_anima": "4943",
-  "rec_anima": "1157",
-  "atk_breaker": "1454",
-  "def_breaker": "1178",
-  "atk_guardian": "1218",
-  "def_guardian": "1414",
-  "rec_guardian": "1216",
-  "def_oracle": "1237",
-  "hp_oracle": "4323",
-  "rec_oracle": "1452",
-  "hp_bonus": "400",
-  "atk_bonus": "160",
-  "def_bonus": "160",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "4",
-  "normaldc": "12",
-  "ls": "Thunder God's Power",
-  "lsdescription": "50% boost to Atk Power of Thunder Types",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 938,
+      "def": 889,
+      "hp": 3024,
+      "rec": 995
+    },
+    "_lord": {
+      "atk": 1336,
+      "def": 1296,
+      "hp": 4500,
+      "rec": 1275
+    },
+    "anima": {
+      "atk": 1336,
+      "def": 1296,
+      "hp max": 5090,
+      "hp min": 4795,
+      "rec max": 1216,
+      "rec min": 1098
+    },
+    "breaker": {
+      "atk max": 1513,
+      "atk min": 1395,
+      "def max": 1237,
+      "def min": 1119,
+      "hp": 4500,
+      "rec": 1275
+    },
+    "guardian": {
+      "atk": 1336,
+      "def max": 1473,
+      "def min": 1355,
+      "hp": 4500,
+      "rec max": 1275,
+      "rec min": 1157
+    },
+    "oracle": {
+      "atk": 1336,
+      "def max": 1296,
+      "def min": 1178,
+      "hp": 4500,
+      "rec max": 1511,
+      "rec min": 1393
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to Atk Power of Thunder Types",
+    "effects": [
+      {
+        "atk% buff": 50,
+        "elements buffed": [
+          "thunder"
+        ],
+        "passive id": "2"
+      }
+    ],
+    "id": "131",
+    "name": "Thunder God's Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -218,96 +223,89 @@
     ],
     "name": "Pulsar Fall"
   },
-  "bbdescription": "6 Combo Powerful Thunder Attack on All enemies",
-  "bbtype": "Offense",
-  "bbhits": "6",
-  "bbaoe": "A",
-  "bbgauge": "26",
-  "bbdc": "6",
-  "bbmultiplier": "190",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "40162",
-  "evointo": "40164",
-  "evomats1": "40133",
-  "evomats2": "40132",
-  "evomats3": "40132",
-  "evomats4": "60143",
-  "evomats5": "60143",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 938,
-      "def": 889,
-      "hp": 3024,
-      "rec": 995
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "party"
     },
-    "_lord": {
-      "atk": 1336,
-      "def": 1296,
-      "hp": 4500,
-      "rec": 1275
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1336,
-      "def": 1296,
-      "hp max": 5090,
-      "hp min": 4795,
-      "rec max": 1216,
-      "rec min": 1098
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 111
     },
-    "breaker": {
-      "atk max": 1513,
-      "atk min": 1395,
-      "def max": 1237,
-      "def min": 1119,
-      "hp": 4500,
-      "rec": 1275
+    "idle": {
+      "total number of frames": 52
     },
-    "guardian": {
-      "atk": 1336,
-      "def max": 1473,
-      "def min": 1355,
-      "hp": 4500,
-      "rec max": 1275,
-      "rec min": 1157
-    },
-    "oracle": {
-      "atk": 1336,
-      "def max": 1296,
-      "def min": 1178,
-      "hp": 4500,
-      "rec max": 1511,
-      "rec min": 1393
+    "move": {
+      "total number of frames": 52
     }
   },
-  "leader_skill": {
-    "desc": "50% boost to Atk Power of Thunder Types",
-    "effects": [
-      {
-        "atk% buff": 50,
-        "elements buffed": [
-          "thunder"
-        ],
-        "passive id": "2"
-      }
+  "category": 40160,
+  "cost": "10",
+  "damage frames": {
+    "frame times": [
+      78,
+      84,
+      90,
+      96
     ],
-    "id": "131",
-    "name": "Thunder God's Power"
+    "hit dmg% distribution": [
+      25,
+      25,
+      25,
+      25
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 4
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "thunder",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 249,
+  "imp": {
+    "max atk": "160",
+    "max def": "160",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "1243~1389",
+  "movement": {
+    "attack": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    }
+  },
+  "name": "Shock Bow Loch",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Shock Bow Loch",
+  "maxlv": "60",
+  "no": "249",
   "unitDisplayHomePosition_1W9CxaFK": "400,-10,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "0,200,739,538",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "215,387,216,240,0",
@@ -317,5 +315,98 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "72:134:1,72:400130:1,78:134:1,78:400130:1,84:134:1,84:400130:1,90:290:1,90:400130:1"
+  "effectFrames": "72:134:1,72:400130:1,78:134:1,78:400130:1,84:134:1,84:400130:1,90:290:1,90:400130:1",
+  "evofrom": "40162",
+  "evointo": "40164",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "40133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40132",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 2
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "111",
+  "animation_idle": "52",
+  "animation_move": "52",
+  "movespeed_attack": "4",
+  "movespeed_skill": "4",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "78, 84, 90, 96",
+  "normal_distribute": "25, 25, 25, 25",
+  "normal_totaldistr": "100",
+  "bb_frames": "78, 84, 90, 96, 102, 108",
+  "bb_distribute": "17, 16, 17, 16, 17, 17",
+  "bb_totaldistr": "100",
+  "description": "One of the four legendary warriors who fought to save the Kingdom of Palmyna. While continuing his search for Princess Edea, Loch honed his skills with the bow so that he might one day join her in her fight against the gods. Upon finally reuniting with Edea, however, he was dismayed to hear the ice mage Dean cracking jokes with her. Loch’s arrows were meant for the gods, but in a jealous fit of rage, they very nearly found a new target.",
+  "summon": "I've dedicated all my training to<br>the one most important to me...<br>Who, you ask? Never you mind.",
+  "fusion": "I must train hard every day.<br>There’s no telling when she <br>might need me.",
+  "evolution": "This is evolution, you say?<br>Hmm, not too shabby...<br>You've many talents, I see.",
+  "hp_base": "3024",
+  "atk_base": "938",
+  "def_base": "889",
+  "rec_base": "995",
+  "hp_lord": "4500",
+  "atk_lord": "1336",
+  "def_lord": "1296",
+  "rec_lord": "1275",
+  "hp_anima": "4943",
+  "rec_anima": "1157",
+  "atk_breaker": "1454",
+  "def_breaker": "1178",
+  "atk_guardian": "1218",
+  "def_guardian": "1414",
+  "rec_guardian": "1216",
+  "def_oracle": "1237",
+  "hp_oracle": "4323",
+  "rec_oracle": "1452",
+  "hp_bonus": "400",
+  "atk_bonus": "160",
+  "def_bonus": "160",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "4",
+  "normaldc": "12",
+  "ls": "Thunder God's Power",
+  "lsdescription": "50% boost to Atk Power of Thunder Types",
+  "lstype": "Attack",
+  "bbdescription": "6 Combo Powerful Thunder Attack on All enemies",
+  "bbtype": "Offense",
+  "bbhits": "6",
+  "bbaoe": "A",
+  "bbgauge": "26",
+  "bbdc": "6",
+  "bbmultiplier": "190",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "40133",
+  "evomats2": "40132",
+  "evomats3": "40132",
+  "evomats4": "60143",
+  "evomats5": "60143"
 }

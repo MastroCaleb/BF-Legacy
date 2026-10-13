@@ -1,61 +1,66 @@
 {
   "id": "50112",
-  "unitName": "Knight Will",
-  "no": "165",
-  "element": "Light",
-  "rarity": "★★★",
-  "cost": "5",
-  "maxlv": "40",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "103",
-  "animation_idle": "62",
-  "animation_move": "59",
-  "movespeed_attack": "0",
-  "movespeed_skill": "0",
-  "speedtype_attack": "5",
-  "speedtype_skill": "5",
-  "movetype_attack": "2",
-  "movetype_skill": "2",
-  "normal_frames": "60",
-  "normal_distribute": "100",
-  "normal_totaldistr": "100",
-  "bb_frames": "60, 66",
-  "bb_distribute": "50, 50",
-  "bb_totaldistr": "100",
-  "description": "A knight from the ruined La Veda Republic, history books say he was the only one who fought against the world's destruction until the very end. He was known as the strongest warrior in the Veda cavalry. People wanted to know if he was stronger than Atro, but legend claims he didn't care, saying, \"What would it matter?\"",
-  "summon": "Are you worthy of me<br>dedicating my sword to you?<br>Let me measure your worth.",
-  "fusion": "Strength is always necessary,<br>even in something as simple <br>as keeping one's faith.",
-  "evolution": "",
-  "hp_base": "2200",
-  "atk_base": "630",
-  "def_base": "670",
-  "rec_base": "250",
-  "hp_lord": "3490",
-  "atk_lord": "838",
-  "def_lord": "938",
-  "rec_lord": "475",
-  "hp_anima": "3783",
-  "rec_anima": "397",
-  "atk_breaker": "916",
-  "def_breaker": "860",
-  "atk_guardian": "760",
-  "def_guardian": "1016",
-  "rec_guardian": "436",
-  "def_oracle": "899",
-  "hp_oracle": "3373",
-  "rec_oracle": "592",
-  "hp_bonus": "300",
-  "atk_bonus": "80",
-  "def_bonus": "160",
-  "rec_bonus": "120",
-  "lordonly": "",
-  "combo_hits": "1",
-  "normaldc": "8",
-  "ls": "Light Spirit's Power",
-  "lsdescription": "25% boost to Atk Power of Light Types",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 630,
+      "def": 670,
+      "hp": 2200,
+      "rec": 250
+    },
+    "_lord": {
+      "atk": 838,
+      "def": 938,
+      "hp": 3490,
+      "rec": 475
+    },
+    "anima": {
+      "atk": 838,
+      "def": 938,
+      "hp max": 3880,
+      "hp min": 3685,
+      "rec max": 436,
+      "rec min": 358
+    },
+    "breaker": {
+      "atk max": 955,
+      "atk min": 877,
+      "def max": 899,
+      "def min": 821,
+      "hp": 3490,
+      "rec": 475
+    },
+    "guardian": {
+      "atk": 838,
+      "def max": 1055,
+      "def min": 977,
+      "hp": 3490,
+      "rec max": 475,
+      "rec min": 397
+    },
+    "oracle": {
+      "atk": 838,
+      "def max": 938,
+      "def min": 860,
+      "hp": 3490,
+      "rec max": 631,
+      "rec min": 553
+    }
+  },
+  "leader_skill": {
+    "desc": "25% boost to Atk Power of Light Types",
+    "effects": [
+      {
+        "atk% buff": 25,
+        "elements buffed": [
+          "light"
+        ],
+        "passive id": "2"
+      }
+    ],
+    "id": "140",
+    "name": "Light Spirit's Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -210,96 +215,83 @@
     ],
     "name": "Galactic Volley"
   },
-  "bbdescription": "2 combo Light elemental attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "2",
-  "bbaoe": "A",
-  "bbgauge": "25",
-  "bbdc": "2",
-  "bbmultiplier": "160",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "50113",
-  "evomats1": "50122",
-  "evomats2": "50121",
-  "evomats3": "50121",
-  "evomats4": "50121",
-  "evomats5": "",
-  "evozelcost": "100000",
-  "stats": {
-    "_base": {
-      "atk": 630,
-      "def": 670,
-      "hp": 2200,
-      "rec": 250
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 838,
-      "def": 938,
-      "hp": 3490,
-      "rec": 475
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 838,
-      "def": 938,
-      "hp max": 3880,
-      "hp min": 3685,
-      "rec max": 436,
-      "rec min": 358
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 103
     },
-    "breaker": {
-      "atk max": 955,
-      "atk min": 877,
-      "def max": 899,
-      "def min": 821,
-      "hp": 3490,
-      "rec": 475
+    "idle": {
+      "total number of frames": 62
     },
-    "guardian": {
-      "atk": 838,
-      "def max": 1055,
-      "def min": 977,
-      "hp": 3490,
-      "rec max": 475,
-      "rec min": 397
-    },
-    "oracle": {
-      "atk": 838,
-      "def max": 938,
-      "def min": 860,
-      "hp": 3490,
-      "rec max": 631,
-      "rec min": 553
+    "move": {
+      "total number of frames": 59
     }
   },
-  "leader_skill": {
-    "desc": "25% boost to Atk Power of Light Types",
-    "effects": [
-      {
-        "atk% buff": 25,
-        "elements buffed": [
-          "light"
-        ],
-        "passive id": "2"
-      }
+  "category": 50110,
+  "cost": "5",
+  "damage frames": {
+    "frame times": [
+      60
     ],
-    "id": "140",
-    "name": "Light Spirit's Power"
+    "hit dmg% distribution": [
+      100
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 1
   },
-  "extra_skill": {},
+  "drop check count": 8,
+  "element": "light",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 165,
+  "imp": {
+    "max atk": "80",
+    "max def": "160",
+    "max hp": "300",
+    "max rec": "120"
+  },
+  "kind": "normal",
+  "lord damage range": "780~871",
+  "movement": {
+    "attack": {
+      "move speed": 0,
+      "move speed type": "5",
+      "move type": "2"
+    },
+    "skill": {
+      "move speed": 0,
+      "move speed type": "5",
+      "move type": "2"
+    }
+  },
+  "name": "Knight Will",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "Knight Will",
+  "maxlv": "40",
+  "no": "165",
   "unitDisplayHomePosition_1W9CxaFK": "333,-4,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "5,169,670,584",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "112,334,320,279,0",
@@ -309,5 +301,93 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "1000",
   "sellCaution": false,
-  "effectFrames": "54:125:1"
+  "effectFrames": "54:125:1",
+  "evofrom": "",
+  "evointo": "50113",
+  "evozelcost": "100000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50122",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50121",
+      "count": 3
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "103",
+  "animation_idle": "62",
+  "animation_move": "59",
+  "movespeed_attack": "0",
+  "movespeed_skill": "0",
+  "speedtype_attack": "5",
+  "speedtype_skill": "5",
+  "movetype_attack": "2",
+  "movetype_skill": "2",
+  "normal_frames": "60",
+  "normal_distribute": "100",
+  "normal_totaldistr": "100",
+  "bb_frames": "60, 66",
+  "bb_distribute": "50, 50",
+  "bb_totaldistr": "100",
+  "description": "A knight from the ruined La Veda Republic, history books say he was the only one who fought against the world's destruction until the very end. He was known as the strongest warrior in the Veda cavalry. People wanted to know if he was stronger than Atro, but legend claims he didn't care, saying, \"What would it matter?\"",
+  "summon": "Are you worthy of me<br>dedicating my sword to you?<br>Let me measure your worth.",
+  "fusion": "Strength is always necessary,<br>even in something as simple <br>as keeping one's faith.",
+  "evolution": "",
+  "hp_base": "2200",
+  "atk_base": "630",
+  "def_base": "670",
+  "rec_base": "250",
+  "hp_lord": "3490",
+  "atk_lord": "838",
+  "def_lord": "938",
+  "rec_lord": "475",
+  "hp_anima": "3783",
+  "rec_anima": "397",
+  "atk_breaker": "916",
+  "def_breaker": "860",
+  "atk_guardian": "760",
+  "def_guardian": "1016",
+  "rec_guardian": "436",
+  "def_oracle": "899",
+  "hp_oracle": "3373",
+  "rec_oracle": "592",
+  "hp_bonus": "300",
+  "atk_bonus": "80",
+  "def_bonus": "160",
+  "rec_bonus": "120",
+  "lordonly": "",
+  "combo_hits": "1",
+  "normaldc": "8",
+  "ls": "Light Spirit's Power",
+  "lsdescription": "25% boost to Atk Power of Light Types",
+  "lstype": "Attack",
+  "bbdescription": "2 combo Light elemental attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "2",
+  "bbaoe": "A",
+  "bbgauge": "25",
+  "bbdc": "2",
+  "bbmultiplier": "160",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50122",
+  "evomats2": "50121",
+  "evomats3": "50121",
+  "evomats4": "50121",
+  "evomats5": ""
 }

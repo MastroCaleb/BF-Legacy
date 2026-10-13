@@ -1,52 +1,64 @@
 {
   "id": "20274",
-  "unitName": "Ice Tower Tesla",
-  "no": "418",
-  "element": "Water",
-  "rarity": "★★★★★",
-  "cost": "16",
-  "maxlv": "80",
-  "basexp": "21",
-  "gender": "N",
-  "ai": "2",
-  "animation_attack": "286",
-  "animation_idle": "204",
-  "animation_move": "204",
-  "movespeed_attack": "6",
-  "movespeed_skill": "6",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "description": "A self-reconfiguring freezing weapon created by the gods to seal away a disastrous fiery beast. In the intense battle with the fiery beast, as it grew larger and its armaments stronger, it built around itself an indomitable frozen defense. With this power it managed at one point to completely seal the beast, though later an angel came and released him. The weapon of the gods wasn't concerned with good and evil, and lived only to follow commands.",
-  "summon": "I am the Ice Tower Tesla.<br>I was once used by the gods.<br>Dowsing flames, I obey the light.",
-  "fusion": "I have become a <br>mountain of ice. <br>I will conceal all.",
-  "evolution": "I have evolved.<br>I will entrap all in the ice<br>which surrounds me.",
-  "hp_base": "3800",
-  "atk_base": "995",
-  "def_base": "1219",
-  "rec_base": "688",
-  "hp_lord": "5688",
-  "atk_lord": "1374",
-  "def_lord": "1715",
-  "rec_lord": "980",
-  "hp_anima": "6280",
-  "rec_anima": "822",
-  "atk_breaker": "1532",
-  "def_breaker": "1557",
-  "atk_guardian": "1216",
-  "def_guardian": "1873",
-  "hp_oracle": "5095",
-  "rec_oracle": "1138",
-  "hp_bonus": "500",
-  "atk_bonus": "140",
-  "def_bonus": "260",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "5",
-  "ls": "Supreme Sanctuary",
-  "lsdescription": "10% boost to Def and HP for all types",
-  "lstype": "Hit Points/Defense",
+  "stats": {
+    "_base": {
+      "atk": 995,
+      "def": 1219,
+      "hp": 3800,
+      "rec": 688
+    },
+    "_lord": {
+      "atk": 1374,
+      "def": 1715,
+      "hp": 5688,
+      "rec": 980
+    },
+    "anima": {
+      "atk": 1374,
+      "def": 1715,
+      "hp max": 6478,
+      "hp min": 6083,
+      "rec max": 901,
+      "rec min": 743
+    },
+    "breaker": {
+      "atk max": 1611,
+      "atk min": 1453,
+      "def max": 1636,
+      "def min": 1478,
+      "hp": 5688,
+      "rec": 980
+    },
+    "guardian": {
+      "atk": 1374,
+      "def max": 1952,
+      "def min": 1794,
+      "hp": 5688,
+      "rec max": 980,
+      "rec min": 822
+    },
+    "oracle": {
+      "atk": 1374,
+      "def max": 1715,
+      "def min": 1557,
+      "hp": 5688,
+      "rec max": 1296,
+      "rec min": 1138
+    }
+  },
+  "leader_skill": {
+    "desc": "10% boost to Def and HP for all types",
+    "effects": [
+      {
+        "def% buff": 10,
+        "hp% buff": 10,
+        "passive id": "1"
+      }
+    ],
+    "id": "4301",
+    "name": "Supreme Sanctuary"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -199,93 +211,91 @@
     ],
     "name": "EX Guard"
   },
-  "bbdescription": "Reduces damage taken by half for 1 turn",
-  "bbtype": "Support",
-  "bbhits": "0",
-  "bbaoe": "0",
-  "bbgauge": "32~23",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "20273",
-  "evointo": "20275",
-  "evomats1": "50354",
-  "evomats2": "20133",
-  "evomats3": "60224",
-  "evomats4": "20132",
-  "evomats5": "20191",
-  "evoitem": "",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 995,
-      "def": 1219,
-      "hp": 3800,
-      "rec": 688
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1374,
-      "def": 1715,
-      "hp": 5688,
-      "rec": 980
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1374,
-      "def": 1715,
-      "hp max": 6478,
-      "hp min": 6083,
-      "rec max": 901,
-      "rec min": 743
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 286
     },
-    "breaker": {
-      "atk max": 1611,
-      "atk min": 1453,
-      "def max": 1636,
-      "def min": 1478,
-      "hp": 5688,
-      "rec": 980
+    "idle": {
+      "total number of frames": 204
     },
-    "guardian": {
-      "atk": 1374,
-      "def max": 1952,
-      "def min": 1794,
-      "hp": 5688,
-      "rec max": 980,
-      "rec min": 822
-    },
-    "oracle": {
-      "atk": 1374,
-      "def max": 1715,
-      "def min": 1557,
-      "hp": 5688,
-      "rec max": 1296,
-      "rec min": 1138
+    "move": {
+      "total number of frames": 204
     }
   },
-  "leader_skill": {
-    "desc": "10% boost to Def and HP for all types",
-    "effects": [
-      {
-        "def% buff": 10,
-        "hp% buff": 10,
-        "passive id": "1"
-      }
+  "category": 20270,
+  "cost": "16",
+  "damage frames": {
+    "frame times": [
+      175,
+      180,
+      185,
+      190,
+      195
     ],
-    "id": "4301",
-    "name": "Supreme Sanctuary"
+    "hit dmg% distribution": [
+      20,
+      20,
+      20,
+      20,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 5
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "water",
+  "exp_pattern": 20,
+  "gender": "other",
+  "getting type": "rare summon",
+  "guide_id": 418,
+  "imp": {
+    "max atk": "140",
+    "max def": "260",
+    "max hp": "500",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "1278~1428",
+  "movement": {
+    "attack": {
+      "move speed": 6,
+      "move speed type": "2",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 6,
+      "move speed type": "2",
+      "move type": "3"
+    }
+  },
+  "name": "Ice Tower Tesla",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Ice Tower Tesla",
+  "maxlv": "80",
+  "no": "418",
   "unitDisplayHomePosition_1W9CxaFK": "215,115,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "33,103,900,733",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "143,260,471,407,1",
@@ -295,5 +305,105 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "175:200351:1,175:660:1,195:200030:1,195:200140:1"
+  "effectFrames": "175:200351:1,175:660:1,195:200030:1,195:200140:1",
+  "evofrom": "20273",
+  "evointo": "20275",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20191",
+      "count": 1
+    }
+  ],
+  "freetext": ":''Not to be confused with Tesla and Blind Justice Tesla from Frontier Hunter HR rewards.''",
+  "basexp": "21",
+  "animation_attack": "286",
+  "animation_idle": "204",
+  "animation_move": "204",
+  "movespeed_attack": "6",
+  "movespeed_skill": "6",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "175, 180, 185, 190, 195",
+  "normal_distribute": "20, 20, 20, 20, 20",
+  "normal_totaldistr": "100",
+  "description": "A self-reconfiguring freezing weapon created by the gods to seal away a disastrous fiery beast. In the intense battle with the fiery beast, as it grew larger and its armaments stronger, it built around itself an indomitable frozen defense. With this power it managed at one point to completely seal the beast, though later an angel came and released him. The weapon of the gods wasn't concerned with good and evil, and lived only to follow commands.",
+  "summon": "I am the Ice Tower Tesla.<br>I was once used by the gods.<br>Dowsing flames, I obey the light.",
+  "fusion": "I have become a <br>mountain of ice. <br>I will conceal all.",
+  "evolution": "I have evolved.<br>I will entrap all in the ice<br>which surrounds me.",
+  "hp_base": "3800",
+  "atk_base": "995",
+  "def_base": "1219",
+  "rec_base": "688",
+  "hp_lord": "5688",
+  "atk_lord": "1374",
+  "def_lord": "1715",
+  "rec_lord": "980",
+  "hp_anima": "6281",
+  "rec_anima": "822",
+  "atk_breaker": "1532",
+  "def_breaker": "1557",
+  "atk_guardian": "1216",
+  "def_guardian": "1873",
+  "rec_guardian": "901",
+  "def_oracle": "1636",
+  "hp_oracle": "5451",
+  "rec_oracle": "1217",
+  "hp_bonus": "500",
+  "atk_bonus": "140",
+  "def_bonus": "260",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "5",
+  "normaldc": "10",
+  "ls": "Supreme Sanctuary",
+  "lsdescription": "10% boost to Def and HP for all types",
+  "lstype": "Hit Points/Defense",
+  "bbdescription": "Reduces damage taken by half for 1 turn",
+  "bbtype": "Support",
+  "bbhits": "0",
+  "bbaoe": "0",
+  "bbgauge": "23",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "20133",
+  "evomats3": "60224",
+  "evomats4": "20132",
+  "evomats5": "20191",
+  "evoitem": ""
 }

@@ -1,63 +1,63 @@
 {
   "id": "30503",
-  "unitName": "Spirit Ruler Lucca",
-  "no": "721",
-  "element": "Earth",
-  "rarity": "★★★★",
-  "cost": "13",
-  "maxlv": "60",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "137",
-  "animation_idle": "52",
-  "animation_move": "14",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "58, 62, 66, 70, 74",
-  "normal_distribute": "20, 20, 20, 20, 20",
-  "normal_totaldistr": "100",
-  "bb_frames": "58, 61, 64, 69, 72, 75, 78",
-  "bb_distribute": "15, 14, 15, 14, 14, 14, 14",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "description": "A young noble born during the Amdahl Empire's Golden Age. A fan of fairy tales since he was young, he became a researcher of the spirit world. A practitioner of magic as well, it is said that he suddenly unlocked the ability to manifest creatures from his daydreams into reality. Though mere magic at first, his creations began gaining more substance, granting him powers very similar to those of a Summoner. However, this dark magic that opposes the principles of normal summoning practices still remains a mystery.",
-  "summon": "You summoned me?<br>Hmm... Well, whatever.<br>I'll help you for a little bit.",
-  "fusion": "Hmm.<br>What?<br>Oh, I didn't mean anything by that.",
-  "evolution": "",
-  "hp_base": "3009",
-  "atk_base": "1079",
-  "def_base": "1047",
-  "rec_base": "915",
-  "hp_lord": "4312",
-  "atk_lord": "1439",
-  "def_lord": "1396",
-  "rec_lord": "1221",
-  "hp_anima": "4755",
-  "rec_anima": "1103",
-  "atk_breaker": "1557",
-  "def_breaker": "1278",
-  "atk_guardian": "1321",
-  "def_guardian": "1514",
-  "rec_guardian": "1162",
-  "def_oracle": "1337",
-  "hp_oracle": "4135",
-  "rec_oracle": "1398",
-  "hp_bonus": "400",
-  "atk_bonus": "160",
-  "def_bonus": "160",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "5",
-  "normaldc": "15",
-  "ls": "Monarch's Magic",
-  "lsdescription": "Small reduction in BB gauge required for BB",
-  "lsnote": "10% reduction",
-  "lstype": "Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 1079,
+      "def": 1047,
+      "hp": 3009,
+      "rec": 915
+    },
+    "_lord": {
+      "atk": 1439,
+      "def": 1396,
+      "hp": 4312,
+      "rec": 1221
+    },
+    "anima": {
+      "atk": 1439,
+      "def": 1396,
+      "hp max": 4902,
+      "hp min": 4607,
+      "rec max": 1162,
+      "rec min": 1044
+    },
+    "breaker": {
+      "atk max": 1616,
+      "atk min": 1498,
+      "def max": 1337,
+      "def min": 1219,
+      "hp": 4312,
+      "rec": 1221
+    },
+    "guardian": {
+      "atk": 1439,
+      "def max": 1573,
+      "def min": 1455,
+      "hp": 4312,
+      "rec max": 1221,
+      "rec min": 1103
+    },
+    "oracle": {
+      "atk": 1439,
+      "def max": 1396,
+      "def min": 1278,
+      "hp": 4312,
+      "rec max": 1457,
+      "rec min": 1339
+    }
+  },
+  "leader_skill": {
+    "desc": "Small reduction in BB gauge required for BB",
+    "effects": [
+      {
+        "passive id": "48",
+        "reduced bb bc cost%": 15
+      }
+    ],
+    "id": "4900",
+    "name": "Monarch's Magic"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -344,93 +344,91 @@
     ],
     "name": "Fairy Summon"
   },
-  "bbdescription": "7 combo Earth elemental attack on all enemies & adds Earth and Water elements to attack for all allies for 3 turns",
-  "bbtype": "Support/Offense",
-  "bbhits": "7",
-  "bbaoe": "A",
-  "bbgauge": "23",
-  "bbdc": "7",
-  "bbmultiplier": "200",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "30504",
-  "evomats1": "30133",
-  "evomats2": "30191",
-  "evomats3": "30132",
-  "evomats4": "60144",
-  "evomats5": "60144",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 1079,
-      "def": 1047,
-      "hp": 3009,
-      "rec": 915
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1439,
-      "def": 1396,
-      "hp": 4312,
-      "rec": 1221
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1439,
-      "def": 1396,
-      "hp max": 4902,
-      "hp min": 4607,
-      "rec max": 1162,
-      "rec min": 1044
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 137
     },
-    "breaker": {
-      "atk max": 1616,
-      "atk min": 1498,
-      "def max": 1337,
-      "def min": 1219,
-      "hp": 4312,
-      "rec": 1221
+    "idle": {
+      "total number of frames": 52
     },
-    "guardian": {
-      "atk": 1439,
-      "def max": 1573,
-      "def min": 1455,
-      "hp": 4312,
-      "rec max": 1221,
-      "rec min": 1103
-    },
-    "oracle": {
-      "atk": 1439,
-      "def max": 1396,
-      "def min": 1278,
-      "hp": 4312,
-      "rec max": 1457,
-      "rec min": 1339
+    "move": {
+      "total number of frames": 14
     }
   },
-  "leader_skill": {
-    "desc": "Small reduction in BB gauge required for BB",
-    "effects": [
-      {
-        "passive id": "48",
-        "reduced bb bc cost%": 15
-      }
+  "category": 30500,
+  "cost": "13",
+  "damage frames": {
+    "frame times": [
+      58,
+      62,
+      66,
+      70,
+      74
     ],
-    "id": "4900",
-    "name": "Monarch's Magic"
+    "hit dmg% distribution": [
+      20,
+      20,
+      20,
+      20,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 5
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "earth",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 721,
+  "imp": {
+    "max atk": "160",
+    "max def": "160",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "1339~1496",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Spirit Ruler Lucca",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Spirit Ruler Lucca",
+  "maxlv": "60",
+  "no": "721",
   "unitDisplayHomePosition_1W9CxaFK": "391,300,150,407",
   "unitDisplayDetailPosition_6z54rgb3": "-83,-2,920,856",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "50,-16,684,639,0",
@@ -440,5 +438,105 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "58:330391:1,58:400132:1,66:600221:1,70:400132:1,58:330402:1,58:244:1"
+  "effectFrames": "58:330391:1,58:400132:1,66:600221:1,70:400132:1,58:330402:1,58:244:1",
+  "evofrom": "",
+  "evointo": "30504",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "30133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 2
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "137",
+  "animation_idle": "52",
+  "animation_move": "14",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "58, 62, 66, 70, 74",
+  "normal_distribute": "20, 20, 20, 20, 20",
+  "normal_totaldistr": "100",
+  "bb_frames": "58, 61, 64, 69, 72, 75, 78",
+  "bb_distribute": "15, 14, 15, 14, 14, 14, 14",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "description": "A young noble born during the Amdahl Empire's Golden Age. A fan of fairy tales since he was young, he became a researcher of the spirit world. A practitioner of magic as well, it is said that he suddenly unlocked the ability to manifest creatures from his daydreams into reality. Though mere magic at first, his creations began gaining more substance, granting him powers very similar to those of a Summoner. However, this dark magic that opposes the principles of normal summoning practices still remains a mystery.",
+  "summon": "You summoned me?<br>Hmm... Well, whatever.<br>I'll help you for a little bit.",
+  "fusion": "Hmm.<br>What?<br>Oh, I didn't mean anything by that.",
+  "evolution": "",
+  "hp_base": "3009",
+  "atk_base": "1079",
+  "def_base": "1047",
+  "rec_base": "915",
+  "hp_lord": "4312",
+  "atk_lord": "1439",
+  "def_lord": "1396",
+  "rec_lord": "1221",
+  "hp_anima": "4755",
+  "rec_anima": "1103",
+  "atk_breaker": "1557",
+  "def_breaker": "1278",
+  "atk_guardian": "1321",
+  "def_guardian": "1514",
+  "rec_guardian": "1162",
+  "def_oracle": "1337",
+  "hp_oracle": "4135",
+  "rec_oracle": "1398",
+  "hp_bonus": "400",
+  "atk_bonus": "160",
+  "def_bonus": "160",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "5",
+  "normaldc": "15",
+  "ls": "Monarch's Magic",
+  "lsdescription": "Small reduction in BB gauge required for BB",
+  "lsnote": "10% reduction",
+  "lstype": "Brave Burst",
+  "bbdescription": "7 combo Earth elemental attack on all enemies & adds Earth and Water elements to attack for all allies for 3 turns",
+  "bbtype": "Support/Offense",
+  "bbhits": "7",
+  "bbaoe": "A",
+  "bbgauge": "23",
+  "bbdc": "7",
+  "bbmultiplier": "200",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "30133",
+  "evomats2": "30191",
+  "evomats3": "30132",
+  "evomats4": "60144",
+  "evomats5": "60144"
 }

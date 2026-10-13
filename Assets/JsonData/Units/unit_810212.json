@@ -1,58 +1,65 @@
 {
   "id": "810212",
-  "unitName": "Nice Burny",
-  "no": "8116",
-  "element": "Fire",
-  "rarity": "★★★",
-  "cost": "3",
-  "maxlv": "15",
-  "basexp": "21",
-  "gender": "N",
-  "ai": "2",
-  "animation_attack": "64",
-  "animation_idle": "46",
-  "animation_move": "35",
-  "movespeed_attack": "0.005",
-  "movespeed_skill": "0.005",
-  "speedtype_attack": "1",
-  "speedtype_skill": "1",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "30, 32",
-  "normal_distribute": "50, 50",
-  "normal_totaldistr": "100",
-  "description": "Born from lava, Burny radiates heat from its body. Always bullied by new summoners, it has learnt tricks of the trade such as dodging potential foes as well as avoiding unnecessary confrontations. In time, it has mastered some powerful spells to aid its friends in danger. Fellow slime demons love Nice Burny. Kids that play with it call it the bravest of all burnies.",
-  "summon": "*Sizzle* Are you friend, fiend, freak or foe??",
-  "fusion": "*Sizzle* *Slap!* *Pop!* *Pow!*<br/>Can't touch this!",
-  "evolution": "",
-  "hp_base": "1000",
-  "atk_base": "500",
-  "def_base": "400",
-  "rec_base": "350",
-  "hp_lord": "2000",
-  "atk_lord": "600",
-  "def_lord": "600",
-  "rec_lord": "500",
-  "hp_anima": "2105",
-  "rec_anima": "472",
-  "atk_breaker": "628",
-  "def_breaker": "572",
-  "atk_guardian": "572",
-  "def_guardian": "628",
-  "rec_guardian": "486",
-  "def_oracle": "586",
-  "hp_oracle": "1958",
-  "rec_oracle": "542",
-  "hp_bonus": "250",
-  "atk_bonus": "120",
-  "def_bonus": "120",
-  "rec_bonus": "120",
-  "lordonly": "",
-  "combo_hits": "2",
-  "normaldc": "2",
-  "ls": "Nice Soul",
-  "lsdescription": "10% boost to Atk, Def and Rec for all Units",
-  "lstype": "Attack/Defense/Recovery",
+  "stats": {
+    "_base": {
+      "atk": 500,
+      "def": 400,
+      "hp": 1000,
+      "rec": 350
+    },
+    "_lord": {
+      "atk": 600,
+      "def": 600,
+      "hp": 2000,
+      "rec": 500
+    },
+    "anima": {
+      "atk": 600,
+      "def": 600,
+      "hp max": 2140,
+      "hp min": 2070,
+      "rec max": 486,
+      "rec min": 458
+    },
+    "breaker": {
+      "atk max": 642,
+      "atk min": 614,
+      "def max": 586,
+      "def min": 558,
+      "hp": 2000,
+      "rec": 500
+    },
+    "guardian": {
+      "atk": 600,
+      "def max": 642,
+      "def min": 614,
+      "hp": 2000,
+      "rec max": 500,
+      "rec min": 472
+    },
+    "oracle": {
+      "atk": 600,
+      "def max": 600,
+      "def min": 572,
+      "hp": 2000,
+      "rec max": 556,
+      "rec min": 528
+    }
+  },
+  "leader_skill": {
+    "desc": "10% boost to Atk, Def and Rec for all Units",
+    "effects": [
+      {
+        "atk% buff": 10,
+        "def% buff": 10,
+        "passive id": "1",
+        "rec% buff": 10
+      }
+    ],
+    "id": "801048",
+    "name": "Nice Soul"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -307,12 +314,6 @@
     ],
     "name": "Bravest Burst"
   },
-  "bbdescription": "Add fire element to allies' attack and probable paralysis effect to single enemy due to laughter",
-  "bbnote": "30% chance to inflict Paralysis (Fire element added to attack effect lasts 1 turn)",
-  "bbtype": "Support",
-  "bbhits": "0",
-  "bbaoe": "0",
-  "bbgauge": "30",
   "sbb": {
     "damage frames": [
       {
@@ -617,90 +618,84 @@
     ],
     "name": "Super Bravest Burst"
   },
-  "sbbdescription": "Add all elements to allies' attack and probable paralysis effect to all enemies due to laughter",
-  "sbbnote": "80% chance to inflict Paralysis (All elements added to attack effect lasts 1 turn)",
-  "sbbtype": "Support",
-  "sbbhits": "0",
-  "sbbaoe": "0",
-  "sbbgauge": "26",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "es": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 500,
-      "def": 400,
-      "hp": 1000,
-      "rec": 350
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 600,
-      "def": 600,
-      "hp": 2000,
-      "rec": 500
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 600,
-      "def": 600,
-      "hp max": 2140,
-      "hp min": 2070,
-      "rec max": 486,
-      "rec min": 458
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 64
     },
-    "breaker": {
-      "atk max": 642,
-      "atk min": 614,
-      "def max": 586,
-      "def min": 558,
-      "hp": 2000,
-      "rec": 500
+    "idle": {
+      "total number of frames": 46
     },
-    "guardian": {
-      "atk": 600,
-      "def max": 642,
-      "def min": 614,
-      "hp": 2000,
-      "rec max": 500,
-      "rec min": 472
-    },
-    "oracle": {
-      "atk": 600,
-      "def max": 600,
-      "def min": 572,
-      "hp": 2000,
-      "rec max": 556,
-      "rec min": 528
+    "move": {
+      "total number of frames": 35
     }
   },
-  "leader_skill": {
-    "desc": "10% boost to Atk, Def and Rec for all Units",
-    "effects": [
-      {
-        "atk% buff": 10,
-        "def% buff": 10,
-        "passive id": "1",
-        "rec% buff": 10
-      }
+  "category": 820210,
+  "cost": "4",
+  "damage frames": {
+    "frame times": [
+      30,
+      32
     ],
-    "id": "801048",
-    "name": "Nice Soul"
+    "hit dmg% distribution": [
+      50,
+      50
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 2
   },
-  "extra_skill": {},
+  "drop check count": 1,
+  "element": "fire",
+  "exp_pattern": 20,
+  "gender": "other",
+  "getting type": "farmable",
+  "guide_id": 8116,
+  "imp": {
+    "max atk": "120",
+    "max def": "120",
+    "max hp": "250",
+    "max rec": "120"
+  },
+  "kind": "normal",
+  "lord damage range": "558~624",
+  "movement": {
+    "attack": {
+      "move speed": 0.005,
+      "move speed type": "1",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.005,
+      "move speed type": "1",
+      "move type": "1"
+    }
+  },
+  "name": "Nice Burny",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "Nice Burny",
+  "maxlv": "15",
+  "no": "8116",
   "unitDisplayHomePosition_1W9CxaFK": "38,-139,140,382",
   "unitDisplayDetailPosition_6z54rgb3": "205,256,550,440",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "255,494,150,120,0",
@@ -710,5 +705,81 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "300",
   "sellCaution": false,
-  "effectFrames": "24:121:1,26:8700287:1"
+  "effectFrames": "24:121:1,26:8700287:1",
+  "evofrom": "",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "21",
+  "animation_attack": "64",
+  "animation_idle": "46",
+  "animation_move": "35",
+  "movespeed_attack": "0.005",
+  "movespeed_skill": "0.005",
+  "speedtype_attack": "1",
+  "speedtype_skill": "1",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "30, 32",
+  "normal_distribute": "50, 50",
+  "normal_totaldistr": "100",
+  "description": "Born from lava, Burny radiates heat from its body. Always bullied by new summoners, it has learnt tricks of the trade such as dodging potential foes as well as avoiding unnecessary confrontations. In time, it has mastered some powerful spells to aid its friends in danger. Fellow slime demons love Nice Burny. Kids that play with it call it the bravest of all burnies.",
+  "summon": "*Sizzle* Are you friend, fiend, freak or foe??",
+  "fusion": "*Sizzle* *Slap!* *Pop!* *Pow!*<br/>Can't touch this!",
+  "evolution": "",
+  "hp_base": "1000",
+  "atk_base": "500",
+  "def_base": "400",
+  "rec_base": "350",
+  "hp_lord": "2000",
+  "atk_lord": "600",
+  "def_lord": "600",
+  "rec_lord": "500",
+  "hp_anima": "2105",
+  "rec_anima": "472",
+  "atk_breaker": "628",
+  "def_breaker": "572",
+  "atk_guardian": "572",
+  "def_guardian": "628",
+  "rec_guardian": "486",
+  "def_oracle": "586",
+  "hp_oracle": "1958",
+  "rec_oracle": "542",
+  "hp_bonus": "250",
+  "atk_bonus": "120",
+  "def_bonus": "120",
+  "rec_bonus": "120",
+  "lordonly": "",
+  "combo_hits": "2",
+  "normaldc": "2",
+  "ls": "Nice Soul",
+  "lsdescription": "10% boost to Atk, Def and Rec for all Units",
+  "lstype": "Attack/Defense/Recovery",
+  "bbdescription": "Add fire element to allies' attack and probable paralysis effect to single enemy due to laughter",
+  "bbnote": "30% chance to inflict Paralysis (Fire element added to attack effect lasts 1 turn)",
+  "bbtype": "Support",
+  "bbhits": "0",
+  "bbaoe": "0",
+  "bbgauge": "30",
+  "sbbdescription": "Add all elements to allies' attack and probable paralysis effect to all enemies due to laughter",
+  "sbbnote": "80% chance to inflict Paralysis (All elements added to attack effect lasts 1 turn)",
+  "sbbtype": "Support",
+  "sbbhits": "0",
+  "sbbaoe": "0",
+  "sbbgauge": "26",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "es": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "",
+  "evomats2": "",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": "",
+  "evoitem": ""
 }

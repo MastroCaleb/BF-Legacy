@@ -1,62 +1,63 @@
 {
   "id": "60083",
-  "unitName": "Lich",
-  "freetext": ":''Not to be confused with Licht''",
-  "no": "122",
-  "element": "Dark",
-  "rarity": "★★★★",
-  "cost": "8",
-  "maxlv": "60",
-  "basexp": "15",
-  "gender": "N",
-  "ai": "2",
-  "animation_attack": "137",
-  "animation_idle": "78",
-  "animation_move": "14",
-  "movespeed_attack": "0.005",
-  "movespeed_skill": "0.005",
-  "speedtype_attack": "1",
-  "speedtype_skill": "1",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "66, 69, 72, 75, 78",
-  "normal_distribute": "25, 25, 25, 25, 25",
-  "normal_totaldistr": "125",
-  "bb_frames": "66, 69, 72, 75, 78",
-  "bb_distribute": "25, 25, 25, 25, 25",
-  "bb_totaldistr": "125",
-  "description": "A being with more magical power than all the other demons of the night. It overcame death through diligent magic study, and became a creature that can be resurrected any time it dies. According to a priest who had tried to defeat it, \"It is not resurrected, but lives while at the same time being dead.\" Due to this, he was unable to win and lost his life at the hands of the Lich.",
-  "summon": "How dare you not bow your<br>head to the Undead King?<br>You'll regret this...",
-  "fusion": "Hehe, how wonderful.<br>You'd do well to offer<br>up more of this power.",
-  "evolution": "You continue to seek darkness?<br>Fine, then feel free to sink<br>into the dark abyss.",
-  "hp_base": "2531",
-  "atk_base": "632",
-  "def_base": "666",
-  "rec_base": "743",
-  "hp_lord": "3855",
-  "atk_lord": "970",
-  "def_lord": "1011",
-  "rec_lord": "1013",
-  "hp_anima": "4298",
-  "rec_anima": "895",
-  "atk_breaker": "1088",
-  "def_breaker": "893",
-  "atk_guardian": "852",
-  "def_guardian": "1129",
-  "rec_guardian": "954",
-  "def_oracle": "952",
-  "hp_oracle": "3678",
-  "rec_oracle": "1190",
-  "hp_bonus": "400",
-  "atk_bonus": "160",
-  "def_bonus": "160",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "5",
-  "normaldc": "10",
-  "ls": "Dark Protection",
-  "lsdescription": "10% reduction in damage from Dark Types",
-  "lstype": "Defense",
+  "stats": {
+    "_base": {
+      "atk": 632,
+      "def": 666,
+      "hp": 2531,
+      "rec": 743
+    },
+    "_lord": {
+      "atk": 970,
+      "def": 1011,
+      "hp": 3855,
+      "rec": 1013
+    },
+    "anima": {
+      "atk": 970,
+      "def": 1011,
+      "hp max": 4445,
+      "hp min": 4150,
+      "rec max": 954,
+      "rec min": 836
+    },
+    "breaker": {
+      "atk max": 1147,
+      "atk min": 1029,
+      "def max": 952,
+      "def min": 834,
+      "hp": 3855,
+      "rec": 1013
+    },
+    "guardian": {
+      "atk": 970,
+      "def max": 1188,
+      "def min": 1070,
+      "hp": 3855,
+      "rec max": 1013,
+      "rec min": 895
+    },
+    "oracle": {
+      "atk": 970,
+      "def max": 1011,
+      "def min": 893,
+      "hp": 3855,
+      "rec max": 1249,
+      "rec min": 1131
+    }
+  },
+  "leader_skill": {
+    "desc": "10% reduction in damage from Dark Types",
+    "effects": [
+      {
+        "dark resist%": 10,
+        "passive id": "5"
+      }
+    ],
+    "id": "510",
+    "name": "Dark Protection"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -217,93 +218,91 @@
     ],
     "name": "Abyss Gate"
   },
-  "bbdescription": "5 combo Dark elemental attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "5",
-  "bbaoe": "A",
-  "bbgauge": "20",
-  "bbdc": "5",
-  "bbmultiplier": "110",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "60082",
-  "evointo": "60084",
-  "evomats1": "60123",
-  "evomats2": "60122",
-  "evomats3": "60121",
-  "evomats4": "60120",
-  "evomats5": "60143",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 632,
-      "def": 666,
-      "hp": 2531,
-      "rec": 743
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 970,
-      "def": 1011,
-      "hp": 3855,
-      "rec": 1013
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 970,
-      "def": 1011,
-      "hp max": 4445,
-      "hp min": 4150,
-      "rec max": 954,
-      "rec min": 836
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 137
     },
-    "breaker": {
-      "atk max": 1147,
-      "atk min": 1029,
-      "def max": 952,
-      "def min": 834,
-      "hp": 3855,
-      "rec": 1013
+    "idle": {
+      "total number of frames": 78
     },
-    "guardian": {
-      "atk": 970,
-      "def max": 1188,
-      "def min": 1070,
-      "hp": 3855,
-      "rec max": 1013,
-      "rec min": 895
-    },
-    "oracle": {
-      "atk": 970,
-      "def max": 1011,
-      "def min": 893,
-      "hp": 3855,
-      "rec max": 1249,
-      "rec min": 1131
+    "move": {
+      "total number of frames": 14
     }
   },
-  "leader_skill": {
-    "desc": "10% reduction in damage from Dark Types",
-    "effects": [
-      {
-        "dark resist%": 10,
-        "passive id": "5"
-      }
+  "category": 60080,
+  "cost": "8",
+  "damage frames": {
+    "frame times": [
+      66,
+      69,
+      72,
+      75,
+      78
     ],
-    "id": "510",
-    "name": "Dark Protection"
+    "hit dmg% distribution": [
+      25,
+      25,
+      25,
+      25,
+      25
+    ],
+    "hit dmg% distribution (total)": 125,
+    "hits": 5
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "dark",
+  "exp_pattern": 15,
+  "gender": "other",
+  "getting type": "rare summon",
+  "guide_id": 122,
+  "imp": {
+    "max atk": "160",
+    "max def": "160",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "903~1008",
+  "movement": {
+    "attack": {
+      "move speed": 0.005,
+      "move speed type": "1",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.005,
+      "move speed type": "1",
+      "move type": "1"
+    }
+  },
+  "name": "Lich",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Lich",
+  "maxlv": "60",
+  "no": "122",
   "unitDisplayHomePosition_1W9CxaFK": "156,-15,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "190,131,620,683",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "209,308,283,312,0",
@@ -313,5 +312,109 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "65:360:1,69:360:1,73:360:1"
+  "effectFrames": "65:360:1,69:360:1,73:360:1",
+  "evofrom": "60082",
+  "evointo": "60084",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "60123",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60122",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60121",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60120",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 1
+    }
+  ],
+  "freetext": ":''Not to be confused with Licht''",
+  "basexp": "15",
+  "animation_attack": "137",
+  "animation_idle": "78",
+  "animation_move": "14",
+  "movespeed_attack": "0.005",
+  "movespeed_skill": "0.005",
+  "speedtype_attack": "1",
+  "speedtype_skill": "1",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "66, 69, 72, 75, 78",
+  "normal_distribute": "25, 25, 25, 25, 25",
+  "normal_totaldistr": "125",
+  "bb_frames": "66, 69, 72, 75, 78",
+  "bb_distribute": "25, 25, 25, 25, 25",
+  "bb_totaldistr": "125",
+  "description": "A being with more magical power than all the other demons of the night. It overcame death through diligent magic study, and became a creature that can be resurrected any time it dies. According to a priest who had tried to defeat it, \"It is not resurrected, but lives while at the same time being dead.\" Due to this, he was unable to win and lost his life at the hands of the Lich.",
+  "summon": "How dare you not bow your<br>head to the Undead King?<br>You'll regret this...",
+  "fusion": "Hehe, how wonderful.<br>You'd do well to offer<br>up more of this power.",
+  "evolution": "You continue to seek darkness?<br>Fine, then feel free to sink<br>into the dark abyss.",
+  "hp_base": "2531",
+  "atk_base": "632",
+  "def_base": "666",
+  "rec_base": "743",
+  "hp_lord": "3855",
+  "atk_lord": "970",
+  "def_lord": "1011",
+  "rec_lord": "1013",
+  "hp_anima": "4298",
+  "rec_anima": "895",
+  "atk_breaker": "1088",
+  "def_breaker": "893",
+  "atk_guardian": "852",
+  "def_guardian": "1129",
+  "rec_guardian": "954",
+  "def_oracle": "952",
+  "hp_oracle": "3678",
+  "rec_oracle": "1190",
+  "hp_bonus": "400",
+  "atk_bonus": "160",
+  "def_bonus": "160",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "5",
+  "normaldc": "10",
+  "ls": "Dark Protection",
+  "lsdescription": "10% reduction in damage from Dark Types",
+  "lstype": "Defense",
+  "bbdescription": "5 combo Dark elemental attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "5",
+  "bbaoe": "A",
+  "bbgauge": "20",
+  "bbdc": "5",
+  "bbmultiplier": "110",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "60123",
+  "evomats2": "60122",
+  "evomats3": "60121",
+  "evomats4": "60120",
+  "evomats5": "60143"
 }

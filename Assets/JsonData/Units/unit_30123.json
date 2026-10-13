@@ -1,61 +1,66 @@
 {
   "id": "30123",
-  "unitName": "Gun King Douglas",
-  "no": "160",
-  "element": "Earth",
-  "rarity": "★★★★",
-  "cost": "8",
-  "maxlv": "60",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "4",
-  "animation_attack": "216",
-  "animation_idle": "64",
-  "animation_move": "64",
-  "movespeed_attack": "8",
-  "movespeed_skill": "8",
-  "speedtype_attack": "1",
-  "speedtype_skill": "1",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "26, 35, 44, 53, 62, 71, 80, 89, 98, 106",
-  "normal_distribute": "10, 10, 10, 10, 10, 10, 10, 10, 10, 10",
-  "normal_totaldistr": "100",
-  "bb_frames": "12",
-  "bb_distribute": "100",
-  "bb_totaldistr": "100",
-  "description": "A gatling gunner who forages in the Vriksha Duchy. Douglas was said to be a visitor from another world, and since his gun was nonexistent in Grand Gaia he faced difficulties procuring ammuniction. However, he succeeded in making a mechanism that used magic for ammunition. The gun would then unleash a fury of bullets as long as the user's magic held up.",
-  "summon": "Will you supply me with ammo?<br>If so, with the power of my<br> gatling gun I'll help you!",
-  "fusion": "My power is growing,<br>along with that of <br>my Gatling gun!",
-  "evolution": "The unity of gun and magic.<br>Now I must aim for my place<br>in history!",
-  "hp_base": "2772",
-  "atk_base": "608",
-  "def_base": "894",
-  "rec_base": "405",
-  "hp_lord": "4278",
-  "atk_lord": "917",
-  "def_lord": "1237",
-  "rec_lord": "675",
-  "hp_anima": "4721",
-  "rec_anima": "557",
-  "atk_breaker": "1035",
-  "def_breaker": "1119",
-  "atk_guardian": "799",
-  "def_guardian": "1355",
-  "rec_guardian": "616",
-  "def_oracle": "1178",
-  "hp_oracle": "4101",
-  "rec_oracle": "852",
-  "hp_bonus": "400",
-  "atk_bonus": "140",
-  "def_bonus": "140",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "10",
-  "normaldc": "10",
-  "ls": "Earth God's Power",
-  "lsdescription": "50% boost to Atk Power of Earth Types",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 608,
+      "def": 894,
+      "hp": 2772,
+      "rec": 405
+    },
+    "_lord": {
+      "atk": 917,
+      "def": 1237,
+      "hp": 4278,
+      "rec": 675
+    },
+    "anima": {
+      "atk": 917,
+      "def": 1237,
+      "hp max": 4868,
+      "hp min": 4573,
+      "rec max": 616,
+      "rec min": 498
+    },
+    "breaker": {
+      "atk max": 1094,
+      "atk min": 976,
+      "def max": 1178,
+      "def min": 1060,
+      "hp": 4278,
+      "rec": 675
+    },
+    "guardian": {
+      "atk": 917,
+      "def max": 1414,
+      "def min": 1296,
+      "hp": 4278,
+      "rec max": 675,
+      "rec min": 557
+    },
+    "oracle": {
+      "atk": 917,
+      "def max": 1237,
+      "def min": 1119,
+      "hp": 4278,
+      "rec max": 911,
+      "rec min": 793
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to Atk Power of Earth Types",
+    "effects": [
+      {
+        "atk% buff": 50,
+        "elements buffed": [
+          "earth"
+        ],
+        "passive id": "2"
+      }
+    ],
+    "id": "121",
+    "name": "Earth God's Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -228,96 +233,113 @@
     ],
     "name": "Genocidal Grit"
   },
-  "bbdescription": "15 combo Earth elemental random power attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "15",
-  "bbaoe": "1",
-  "bbgauge": "17",
-  "bbdc": "30",
-  "bbmultiplier": "300",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "30122",
-  "evointo": "30124",
-  "evomats1": "30133",
-  "evomats2": "30132",
-  "evomats3": "60143",
-  "evomats4": "30130",
-  "evomats5": "30130",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 608,
-      "def": 894,
-      "hp": 2772,
-      "rec": 405
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_under",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 917,
-      "def": 1237,
-      "hp": 4278,
-      "rec": 675
+    {
+      "action": "skill",
+      "chance%": 30.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 917,
-      "def": 1237,
-      "hp max": 4868,
-      "hp min": 4573,
-      "rec max": 616,
-      "rec min": 498
+    {
+      "action": "attack",
+      "chance%": 70.0,
+      "target conditions": "hp_max",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 1094,
-      "atk min": 976,
-      "def max": 1178,
-      "def min": 1060,
-      "hp": 4278,
-      "rec": 675
+    {
+      "action": "attack",
+      "chance%": 50.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "guardian": {
-      "atk": 917,
-      "def max": 1414,
-      "def min": 1296,
-      "hp": 4278,
-      "rec max": 675,
-      "rec min": 557
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 216
     },
-    "oracle": {
-      "atk": 917,
-      "def max": 1237,
-      "def min": 1119,
-      "hp": 4278,
-      "rec max": 911,
-      "rec min": 793
+    "idle": {
+      "total number of frames": 64
+    },
+    "move": {
+      "total number of frames": 64
     }
   },
-  "leader_skill": {
-    "desc": "50% boost to Atk Power of Earth Types",
-    "effects": [
-      {
-        "atk% buff": 50,
-        "elements buffed": [
-          "earth"
-        ],
-        "passive id": "2"
-      }
+  "category": 30120,
+  "cost": "8",
+  "damage frames": {
+    "frame times": [
+      26,
+      35,
+      44,
+      53,
+      62,
+      71,
+      80,
+      89,
+      98,
+      106
     ],
-    "id": "121",
-    "name": "Earth God's Power"
+    "hit dmg% distribution": [
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 10
   },
-  "extra_skill": {},
+  "drop check count": 1,
+  "element": "earth",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 160,
+  "imp": {
+    "max atk": "140",
+    "max def": "140",
+    "max hp": "400",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "853~953",
+  "movement": {
+    "attack": {
+      "move speed": 8,
+      "move speed type": "1",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 8,
+      "move speed type": "1",
+      "move type": "3"
+    }
+  },
+  "name": "Gun King Douglas",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Gun King Douglas",
+  "maxlv": "60",
+  "no": "160",
   "unitDisplayHomePosition_1W9CxaFK": "300,-10,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "55,159,650,589",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "129,330,311,282,0",
@@ -327,5 +349,103 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "26:112:1,35:112:1,44:112:1,53:112:1,62:112:1,71:112:1,80:112:1,89:112:1,98:112:1,106:112:1"
+  "effectFrames": "26:112:1,35:112:1,44:112:1,53:112:1,62:112:1,71:112:1,80:112:1,89:112:1,98:112:1,106:112:1",
+  "evofrom": "30122",
+  "evointo": "30124",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "30133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30130",
+      "count": 2
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "216",
+  "animation_idle": "64",
+  "animation_move": "64",
+  "movespeed_attack": "8",
+  "movespeed_skill": "8",
+  "speedtype_attack": "1",
+  "speedtype_skill": "1",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "26, 35, 44, 53, 62, 71, 80, 89, 98, 106",
+  "normal_distribute": "10, 10, 10, 10, 10, 10, 10, 10, 10, 10",
+  "normal_totaldistr": "100",
+  "bb_frames": "12",
+  "bb_distribute": "100",
+  "bb_totaldistr": "100",
+  "description": "A gatling gunner who forages in the Vriksha Duchy. Douglas was said to be a visitor from another world, and since his gun was nonexistent in Grand Gaia he faced difficulties procuring ammuniction. However, he succeeded in making a mechanism that used magic for ammunition. The gun would then unleash a fury of bullets as long as the user's magic held up.",
+  "summon": "Will you supply me with ammo?<br>If so, with the power of my<br> gatling gun I'll help you!",
+  "fusion": "My power is growing,<br>along with that of <br>my Gatling gun!",
+  "evolution": "The unity of gun and magic.<br>Now I must aim for my place<br>in history!",
+  "hp_base": "2772",
+  "atk_base": "608",
+  "def_base": "894",
+  "rec_base": "405",
+  "hp_lord": "4278",
+  "atk_lord": "917",
+  "def_lord": "1237",
+  "rec_lord": "675",
+  "hp_anima": "4721",
+  "rec_anima": "557",
+  "atk_breaker": "1035",
+  "def_breaker": "1119",
+  "atk_guardian": "799",
+  "def_guardian": "1355",
+  "rec_guardian": "616",
+  "def_oracle": "1178",
+  "hp_oracle": "4101",
+  "rec_oracle": "852",
+  "hp_bonus": "400",
+  "atk_bonus": "140",
+  "def_bonus": "140",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "10",
+  "normaldc": "10",
+  "ls": "Earth God's Power",
+  "lsdescription": "50% boost to Atk Power of Earth Types",
+  "lstype": "Attack",
+  "bbdescription": "15 combo Earth elemental random power attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "15",
+  "bbaoe": "1",
+  "bbgauge": "17",
+  "bbdc": "30",
+  "bbmultiplier": "300",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "30133",
+  "evomats2": "30132",
+  "evomats3": "60143",
+  "evomats4": "30130",
+  "evomats5": "30130"
 }

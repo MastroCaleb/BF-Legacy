@@ -1,63 +1,64 @@
 {
   "id": "830124",
-  "unitName": "Euryalis",
-  "freetext": ":''For other uses, see Euryalis (disambiguation)''",
-  "no": "8057",
-  "element": "Earth",
-  "rarity": "★★★★",
-  "cost": "12",
-  "maxlv": "60",
-  "basexp": "15",
-  "gender": "N",
-  "ai": "2",
-  "animation_attack": "Unsupported",
-  "animation_idle": "Unsupported",
-  "animation_move": "Unsupported",
-  "movespeed_attack": "4",
-  "movespeed_skill": "4",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "37, 47, 57, 67, 77",
-  "normal_distribute": "20, 20, 20, 20, 20",
-  "normal_totaldistr": "100",
-  "bb_frames": "37, 45, 53, 61, 69, 77, 85",
-  "bb_distribute": "17, 13, 15, 13, 16, 12, 14",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "description": "Euryalis is a codename given to these augmented machines when they were created by Gazia, a demi-god fallen into his abyss of power and stature during the days of the augmentation wars in Athenshpere. The Euryalis were built to mimic the cunning of mystical gorgons. They slither through the forested lands swiftly while receptor weapons on their heads track and hunt for enemies. It was rumored that Gazia infused the soul of Zahhaks into each Euryalis he created which makes them even more deadly and intelligent.",
-  "summon": "Hisssss…",
-  "fusion": "Hisssss… [Beep.. Beep..]",
-  "evolution": "",
-  "hp_base": "2688",
-  "atk_base": "717",
-  "def_base": "938",
-  "rec_base": "938",
-  "hp_lord": "3840",
-  "atk_lord": "1245",
-  "def_lord": "1340",
-  "rec_lord": "1340",
-  "hp_anima": "4290",
-  "rec_anima": "1220",
-  "atk_breaker": "1365",
-  "def_breaker": "1220",
-  "atk_guardian": "1125",
-  "def_guardian": "1460",
-  "rec_guardian": "1281",
-  "def_oracle": "1281",
-  "hp_oracle": "3660",
-  "rec_oracle": "1520",
-  "hp_bonus": "400",
-  "atk_bonus": "160",
-  "def_bonus": "160",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "5",
-  "normaldc": "10",
-  "ls": "Dark Vigor",
-  "lsdescription": "10% boost to critical hit rate and 25% boost to Rec of all Units",
-  "lstype": "Attack/Recovery",
+  "stats": {
+    "_base": {
+      "atk": 717,
+      "def": 938,
+      "hp": 2688,
+      "rec": 938
+    },
+    "_lord": {
+      "atk": 1245,
+      "def": 1340,
+      "hp": 3840,
+      "rec": 1340
+    },
+    "anima": {
+      "atk": 1245,
+      "def": 1340,
+      "hp max": 4430,
+      "hp min": 4135,
+      "rec max": 1281,
+      "rec min": 1163
+    },
+    "breaker": {
+      "atk max": 1422,
+      "atk min": 1304,
+      "def max": 1281,
+      "def min": 1163,
+      "hp": 3840,
+      "rec": 1340
+    },
+    "guardian": {
+      "atk": 1245,
+      "def max": 1517,
+      "def min": 1399,
+      "hp": 3840,
+      "rec max": 1340,
+      "rec min": 1222
+    },
+    "oracle": {
+      "atk": 1245,
+      "def max": 1340,
+      "def min": 1222,
+      "hp": 3840,
+      "rec max": 1576,
+      "rec min": 1458
+    }
+  },
+  "leader_skill": {
+    "desc": "10% boost to critical hit rate and 25% boost to Rec of all Units",
+    "effects": [
+      {
+        "crit% buff": 10,
+        "passive id": "1",
+        "rec% buff": 30
+      }
+    ],
+    "id": "801037",
+    "name": "Dark Vigor"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -310,96 +311,83 @@
     ],
     "name": "Decaying Gaze"
   },
-  "bbdescription": "7 combo powerful Earth attack to all enemies & adds chance of inflicting Paralysis and Poison",
-  "bbnote": "30% chance to Paralyze & 50% chance to Poison",
-  "bbtype": "Offense",
-  "bbhits": "7",
-  "bbaoe": "A",
-  "bbgauge": "20",
-  "bbdc": "7",
-  "bbmultiplier": "160",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "830125",
-  "evomats1": "30133",
-  "evomats2": "830034",
-  "evomats3": "870034",
-  "evomats4": "30132",
-  "evomats5": "60143",
-  "evoitem": "",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 717,
-      "def": 938,
-      "hp": 2688,
-      "rec": 938
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1245,
-      "def": 1340,
-      "hp": 3840,
-      "rec": 1340
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1245,
-      "def": 1340,
-      "hp max": 4430,
-      "hp min": 4135,
-      "rec max": 1281,
-      "rec min": 1163
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "error": "sam file not supported"
+  },
+  "category": 830120,
+  "cost": "12",
+  "damage frames": {
+    "frame times": [
+      37,
+      47,
+      57,
+      67,
+      77
+    ],
+    "hit dmg% distribution": [
+      20,
+      20,
+      20,
+      20,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 5
+  },
+  "drop check count": 2,
+  "element": "earth",
+  "exp_pattern": 20,
+  "gender": "other",
+  "getting type": "farmable",
+  "guide_id": 8057,
+  "imp": {
+    "max atk": "160",
+    "max def": "160",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "1158~1294",
+  "movement": {
+    "attack": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
     },
-    "breaker": {
-      "atk max": 1422,
-      "atk min": 1304,
-      "def max": 1281,
-      "def min": 1163,
-      "hp": 3840,
-      "rec": 1340
-    },
-    "guardian": {
-      "atk": 1245,
-      "def max": 1517,
-      "def min": 1399,
-      "hp": 3840,
-      "rec max": 1340,
-      "rec min": 1222
-    },
-    "oracle": {
-      "atk": 1245,
-      "def max": 1340,
-      "def min": 1222,
-      "hp": 3840,
-      "rec max": 1576,
-      "rec min": 1458
+    "skill": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
     }
   },
-  "leader_skill": {
-    "desc": "10% boost to critical hit rate and 25% boost to Rec of all Units",
-    "effects": [
-      {
-        "crit% buff": 10,
-        "passive id": "1",
-        "rec% buff": 30
-      }
-    ],
-    "id": "801037",
-    "name": "Dark Vigor"
-  },
-  "extra_skill": {},
+  "name": "Euryalis",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Euryalis",
+  "maxlv": "60",
+  "no": "8057",
   "unitDisplayHomePosition_1W9CxaFK": "387,204,140,382",
   "unitDisplayDetailPosition_6z54rgb3": "-175,-208,1436,1050",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "26,201,625,457,0",
@@ -409,5 +397,112 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "37:126:1,47:126:1,57:126:1,67:126:1,77:126:1,57:300120:1,77:300120:1,47:230:1,67:230:1"
+  "effectFrames": "37:126:1,47:126:1,57:126:1,67:126:1,77:126:1,57:300120:1,77:300120:1,47:230:1,67:230:1",
+  "evofrom": "",
+  "evointo": "830125",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "30133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "830034",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "870034",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 1
+    }
+  ],
+  "freetext": ":''For other uses, see Euryalis (disambiguation)''",
+  "basexp": "15",
+  "animation_attack": "Unsupported",
+  "animation_idle": "Unsupported",
+  "animation_move": "Unsupported",
+  "movespeed_attack": "4",
+  "movespeed_skill": "4",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "37, 47, 57, 67, 77",
+  "normal_distribute": "20, 20, 20, 20, 20",
+  "normal_totaldistr": "100",
+  "bb_frames": "37, 45, 53, 61, 69, 77, 85",
+  "bb_distribute": "17, 13, 15, 13, 16, 12, 14",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "description": "Euryalis is a codename given to these augmented machines when they were created by Gazia, a demi-god fallen into his abyss of power and stature during the days of the augmentation wars in Athenshpere. The Euryalis were built to mimic the cunning of mystical gorgons. They slither through the forested lands swiftly while receptor weapons on their heads track and hunt for enemies. It was rumored that Gazia infused the soul of Zahhaks into each Euryalis he created which makes them even more deadly and intelligent.",
+  "summon": "Hisssss…",
+  "fusion": "Hisssss… [Beep.. Beep..]",
+  "evolution": "",
+  "hp_base": "2688",
+  "atk_base": "717",
+  "def_base": "938",
+  "rec_base": "938",
+  "hp_lord": "3840",
+  "atk_lord": "1245",
+  "def_lord": "1340",
+  "rec_lord": "1340",
+  "hp_anima": "4290",
+  "rec_anima": "1220",
+  "atk_breaker": "1365",
+  "def_breaker": "1220",
+  "atk_guardian": "1125",
+  "def_guardian": "1460",
+  "rec_guardian": "1281",
+  "def_oracle": "1281",
+  "hp_oracle": "3660",
+  "rec_oracle": "1520",
+  "hp_bonus": "400",
+  "atk_bonus": "160",
+  "def_bonus": "160",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "5",
+  "normaldc": "10",
+  "ls": "Dark Vigor",
+  "lsdescription": "10% boost to critical hit rate and 25% boost to Rec of all Units",
+  "lstype": "Attack/Recovery",
+  "bbdescription": "7 combo powerful Earth attack to all enemies & adds chance of inflicting Paralysis and Poison",
+  "bbnote": "30% chance to Paralyze & 50% chance to Poison",
+  "bbtype": "Offense",
+  "bbhits": "7",
+  "bbaoe": "A",
+  "bbgauge": "20",
+  "bbdc": "7",
+  "bbmultiplier": "160",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "30133",
+  "evomats2": "830034",
+  "evomats3": "870034",
+  "evomats4": "30132",
+  "evomats5": "60143",
+  "evoitem": ""
 }

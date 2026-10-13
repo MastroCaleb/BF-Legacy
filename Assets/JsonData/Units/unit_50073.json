@@ -1,59 +1,63 @@
 {
   "id": "50073",
-  "unitName": "Saint Maria",
-  "no": "362",
-  "element": "Light",
-  "rarity": "★★★★",
-  "cost": "8",
-  "maxlv": "60",
-  "basexp": "15",
-  "gender": "F",
-  "ai": "5",
-  "animation_attack": "106",
-  "animation_idle": "64",
-  "animation_move": "64",
-  "movespeed_attack": "8",
-  "movespeed_skill": "8",
-  "speedtype_attack": "1",
-  "speedtype_skill": "1",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "76, 82, 88, 94, 106, 116",
-  "normal_distribute": "20, 20, 20, 10, 10, 20",
-  "normal_totaldistr": "100",
-  "description": "A priestess who preached of the gods in the ruined La Veda Republic. After the war with the gods began she received a lot of criticism from the people, however she held no resentment toward either god or man, and used her healing powers indiscriminately on both. Seeing her in action, a goddess decided to grant her even more power. It's unknown why the goddess bestowed such power to a human, but it's undeniable how many lives that act saved.",
-  "summon": "Let us fight together to <br>put an end to this war.<br>The gods must be judged.",
-  "fusion": "Your energy feels warm to me.<br>It's the same as that which the<br>goddess bestowed to me.",
-  "evolution": "I have faith in everything.<br>You've no need to worry.<br>Select the path you believe in.",
-  "hp_base": "2016",
-  "atk_base": "746",
-  "def_base": "696",
-  "rec_base": "876",
-  "hp_lord": "3464",
-  "atk_lord": "1034",
-  "def_lord": "942",
-  "rec_lord": "1126",
-  "hp_anima": "3907",
-  "rec_anima": "1008",
-  "atk_breaker": "1152",
-  "def_breaker": "824",
-  "atk_guardian": "916",
-  "def_guardian": "1060",
-  "rec_guardian": "1067",
-  "def_oracle": "883",
-  "hp_oracle": "3287",
-  "rec_oracle": "1303",
-  "hp_bonus": "400",
-  "atk_bonus": "140",
-  "def_bonus": "140",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "6",
-  "normaldc": "12",
-  "ls": "Loving Devotion",
-  "lsdescription": "Large boost in effectiveness of Heart Crystals",
-  "lsnote": "50% boost",
-  "lstype": "Recovery",
+  "stats": {
+    "_base": {
+      "atk": 746,
+      "def": 696,
+      "hp": 2016,
+      "rec": 876
+    },
+    "_lord": {
+      "atk": 1034,
+      "def": 942,
+      "hp": 3464,
+      "rec": 1126
+    },
+    "anima": {
+      "atk": 1034,
+      "def": 942,
+      "hp max": 4054,
+      "hp min": 3759,
+      "rec max": 1067,
+      "rec min": 949
+    },
+    "breaker": {
+      "atk max": 1211,
+      "atk min": 1093,
+      "def max": 883,
+      "def min": 765,
+      "hp": 3464,
+      "rec": 1126
+    },
+    "guardian": {
+      "atk": 1034,
+      "def max": 1119,
+      "def min": 1001,
+      "hp": 3464,
+      "rec max": 1126,
+      "rec min": 1008
+    },
+    "oracle": {
+      "atk": 1034,
+      "def max": 942,
+      "def min": 824,
+      "hp": 3464,
+      "rec max": 1362,
+      "rec min": 1244
+    }
+  },
+  "leader_skill": {
+    "desc": "Large boost in effectiveness of Heart Crystals",
+    "effects": [
+      {
+        "hc effectiveness%": 50,
+        "passive id": "10"
+      }
+    ],
+    "id": "1101",
+    "name": "Loving Devotion"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -216,92 +220,93 @@
     ],
     "name": "Creed of Faith"
   },
-  "bbdescription": "Greatly recovers HP for all allies",
-  "bbnote": "Heals (2300~2750 + 30% of healer Rec) HP",
-  "bbtype": "Heal",
-  "bbhits": "0",
-  "bbaoe": "0",
-  "bbgauge": "18",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "50072",
-  "evointo": "",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 746,
-      "def": 696,
-      "hp": 2016,
-      "rec": 876
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 80.0,
+      "target conditions": "hp_50pr_under",
+      "target type": "party"
     },
-    "_lord": {
-      "atk": 1034,
-      "def": 942,
-      "hp": 3464,
-      "rec": 1126
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "hp_min",
+      "target type": "party"
     },
-    "anima": {
-      "atk": 1034,
-      "def": 942,
-      "hp max": 4054,
-      "hp min": 3759,
-      "rec max": 1067,
-      "rec min": 949
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 106
     },
-    "breaker": {
-      "atk max": 1211,
-      "atk min": 1093,
-      "def max": 883,
-      "def min": 765,
-      "hp": 3464,
-      "rec": 1126
+    "idle": {
+      "total number of frames": 64
     },
-    "guardian": {
-      "atk": 1034,
-      "def max": 1119,
-      "def min": 1001,
-      "hp": 3464,
-      "rec max": 1126,
-      "rec min": 1008
-    },
-    "oracle": {
-      "atk": 1034,
-      "def max": 942,
-      "def min": 824,
-      "hp": 3464,
-      "rec max": 1362,
-      "rec min": 1244
+    "move": {
+      "total number of frames": 64
     }
   },
-  "leader_skill": {
-    "desc": "Large boost in effectiveness of Heart Crystals",
-    "effects": [
-      {
-        "hc effectiveness%": 50,
-        "passive id": "10"
-      }
+  "category": 50070,
+  "cost": "8",
+  "damage frames": {
+    "frame times": [
+      76,
+      82,
+      88,
+      94,
+      106,
+      116
     ],
-    "id": "1101",
-    "name": "Loving Devotion"
+    "hit dmg% distribution": [
+      20,
+      20,
+      20,
+      10,
+      10,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 6
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "light",
+  "exp_pattern": 15,
+  "gender": "female",
+  "getting type": "farmable",
+  "guide_id": 362,
+  "imp": {
+    "max atk": "140",
+    "max def": "140",
+    "max hp": "400",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "962~1075",
+  "movement": {
+    "attack": {
+      "move speed": 8,
+      "move speed type": "1",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 8,
+      "move speed type": "1",
+      "move type": "3"
+    }
+  },
+  "name": "Saint Maria",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Saint Maria",
+  "maxlv": "60",
+  "no": "362",
   "unitDisplayHomePosition_1W9CxaFK": "284,255,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "63,-80,875,873",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "164,293,318,324,0",
@@ -311,5 +316,79 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "75:330:1,84:500211:1,92:500211:1,92:500021:1"
+  "effectFrames": "75:330:1,84:500211:1,92:500211:1,92:500021:1",
+  "evofrom": "50072",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "15",
+  "animation_attack": "106",
+  "animation_idle": "64",
+  "animation_move": "64",
+  "movespeed_attack": "8",
+  "movespeed_skill": "8",
+  "speedtype_attack": "1",
+  "speedtype_skill": "1",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "76, 82, 88, 94, 106, 116",
+  "normal_distribute": "20, 20, 20, 10, 10, 20",
+  "normal_totaldistr": "100",
+  "description": "A priestess who preached of the gods in the ruined La Veda Republic. After the war with the gods began she received a lot of criticism from the people, however she held no resentment toward either god or man, and used her healing powers indiscriminately on both. Seeing her in action, a goddess decided to grant her even more power. It's unknown why the goddess bestowed such power to a human, but it's undeniable how many lives that act saved.",
+  "summon": "Let us fight together to <br>put an end to this war.<br>The gods must be judged.",
+  "fusion": "Your energy feels warm to me.<br>It's the same as that which the<br>goddess bestowed to me.",
+  "evolution": "I have faith in everything.<br>You've no need to worry.<br>Select the path you believe in.",
+  "hp_base": "2016",
+  "atk_base": "746",
+  "def_base": "696",
+  "rec_base": "876",
+  "hp_lord": "3464",
+  "atk_lord": "1034",
+  "def_lord": "942",
+  "rec_lord": "1126",
+  "hp_anima": "3907",
+  "rec_anima": "1008",
+  "atk_breaker": "1152",
+  "def_breaker": "824",
+  "atk_guardian": "916",
+  "def_guardian": "1060",
+  "rec_guardian": "1067",
+  "def_oracle": "883",
+  "hp_oracle": "3287",
+  "rec_oracle": "1303",
+  "hp_bonus": "400",
+  "atk_bonus": "140",
+  "def_bonus": "140",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "6",
+  "normaldc": "12",
+  "ls": "Loving Devotion",
+  "lsdescription": "Large boost in effectiveness of Heart Crystals",
+  "lsnote": "50% boost",
+  "lstype": "Recovery",
+  "bbdescription": "Greatly recovers HP for all allies",
+  "bbnote": "Heals (2300~2750 + 30% of healer Rec) HP",
+  "bbtype": "Heal",
+  "bbhits": "0",
+  "bbaoe": "0",
+  "bbgauge": "18",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "",
+  "evomats2": "",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": ""
 }

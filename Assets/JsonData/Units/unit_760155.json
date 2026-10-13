@@ -1,63 +1,71 @@
 {
   "id": "760155",
-  "unitName": "Warlord Pig-Bull (EU)",
-  "disam": "Pig-Bull (disambiguation)",
-  "altname": "Warlord Pig-Bull",
-  "idalt": "",
-  "has_altart": "",
-  "doenter": "true",
-  "no": "7105",
-  "element": "Dark",
-  "rarity": "★★★★★★",
-  "cost": "28",
-  "maxlv": "100",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "3",
-  "animation_attack": "160",
-  "animation_idle": "36",
-  "animation_move": "18",
-  "movespeed_attack": "0.0033",
-  "speedtype_attack": "3",
-  "movetype_attack": "1",
-  "movespeed_skill": "0.0033",
-  "speedtype_skill": "3",
-  "movetype_skill": "1",
-  "description": "Pig Bull, now a Warlord at Coal Cauldron’s side, successfully completed his mission by sabotaging Bloody Blink’s Techs during the attack and allowing the residents of her fortress to be annihilated. Like his allies, he uses Techs. Now he rolls over his enemies like never before, without even hearing the cries of his (numerous) victims.",
-  "summon": "The blood of our enemies will decorate my wheels.",
-  "fusion": "A tip: don’t cross me when I’m behind the wheel.",
-  "evolution": "I feel that my victim quota is going to increase.",
-  "hp_base": "4500",
-  "atk_base": "1750",
-  "def_base": "1280",
-  "rec_base": "1550",
-  "hp_lord": "6400",
-  "atk_lord": "2350",
-  "def_lord": "1700",
-  "rec_lord": "2000",
-  "hp_anima": "7142",
-  "rec_anima": "1802",
-  "atk_breaker": "2548",
-  "def_breaker": "1502",
-  "def_guardian": "1898",
-  "rec_guardian": "2000",
-  "def_oracle": "1700",
-  "rec_oracle": "2198",
-  "hp_bonus": "700",
-  "atk_bonus": "500",
-  "def_bonus": "240",
-  "rec_bonus": "380",
-  "lordonly": "",
-  "evofrom": "760154",
-  "evointo": "",
-  "normal_frames": "15, 31, 47, 63, 79, 95",
-  "normal_distribute": "17, 17, 17, 17, 16, 16",
-  "normal_totaldistr": "100",
-  "combo_hits": "6",
-  "normaldc": "24",
-  "ls": "Memorable match",
-  "lsdescription": "Boosts in the BB gauge when attacked (3-5 BC) & Chance of absorbing HP (50% chance at 3-8% of DMG)",
-  "lsnote": "",
+  "stats": {
+    "_base": {
+      "atk": 1750,
+      "def": 1280,
+      "hp": 4500,
+      "rec": 1550
+    },
+    "_lord": {
+      "atk": 2350,
+      "def": 1700,
+      "hp": 6400,
+      "rec": 2000
+    },
+    "anima": {
+      "atk": 2350,
+      "def": 1700,
+      "hp max": 7390,
+      "hp min": 6895,
+      "rec max": 1901,
+      "rec min": 1703
+    },
+    "breaker": {
+      "atk max": 2647,
+      "atk min": 2449,
+      "def max": 1601,
+      "def min": 1403,
+      "hp": 6400,
+      "rec": 2000
+    },
+    "guardian": {
+      "atk max": 2251,
+      "atk min": 2053,
+      "def max": 1997,
+      "def min": 1799,
+      "hp": 6400,
+      "rec": 2000
+    },
+    "oracle": {
+      "atk": 2350,
+      "def": 1700,
+      "hp max": 5905,
+      "hp min": 5410,
+      "rec max": 2297,
+      "rec min": 2099
+    }
+  },
+  "leader_skill": {
+    "desc": "Boosts in the BB gauge when attacked (3-5 BC) & Chance of absorbing HP (50% chance at 3-8% of DMG)",
+    "effects": [
+      {
+        "bc fill when attacked high": 5,
+        "bc fill when attacked low": 3,
+        "bc fill when attacked%": 100,
+        "passive id": "25"
+      },
+      {
+        "hp drain chance%": 50,
+        "hp drain% high": 8,
+        "hp drain% low": 3,
+        "passive id": "17"
+      }
+    ],
+    "id": "760155",
+    "name": "Memorable match"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -238,23 +246,6 @@
     ],
     "name": "Home Run!"
   },
-  "bbdescription": "5 combo dark elemental attack on all enemies & Partial Hp drain (40% DMG = HP SELF)",
-  "bbnote": "{{UnitBuffList",
-  "buff_1_proc": "1",
-  "buff_1_potency": "955% damage modifier",
-  "buff_1_duration": "—",
-  "buff_1_target": "All enemies",
-  "bbtype": "Offense",
-  "bbgauge": "25",
-  "bb_frames": "15, 35, 55, 75, 95",
-  "bb_distribute": "20, 20, 20, 20, 20",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "0",
-  "bbhits": "5",
-  "bbaoe": "A",
-  "bbdc": "5",
-  "bbmultiplier": "260",
-  "bb_hpscale": "",
   "sbb": {
     "damage frames": [
       {
@@ -573,6 +564,177 @@
     ],
     "name": "No future!"
   },
+  "ubb": {},
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 160
+    },
+    "idle": {
+      "total number of frames": 36
+    },
+    "move": {
+      "total number of frames": 18
+    }
+  },
+  "cost": "28",
+  "damage frames": {
+    "frame times": [
+      15,
+      31,
+      47,
+      63,
+      79,
+      95
+    ],
+    "hit dmg% distribution": [
+      17,
+      17,
+      17,
+      17,
+      16,
+      16
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 6
+  },
+  "drop check count": 4,
+  "element": "dark",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 7105,
+  "imp": {
+    "max atk": "500",
+    "max def": "240",
+    "max hp": "700",
+    "max rec": "380"
+  },
+  "kind": "normal",
+  "lord damage range": "2188~2444",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Warlord Pig-Bull",
+  "rarity": "6",
+  "sell caution": false,
+  "unitName": "Warlord Pig-Bull",
+  "maxlv": "100",
+  "no": "7105",
+  "unitDisplayHomePosition_1W9CxaFK": null,
+  "unitDisplayDetailPosition_6z54rgb3": null,
+  "unitDisplayConfirmImagePosition_MYK1fq6c": null,
+  "unitDisplayCutInImagePosition_7hLR6pDN": null,
+  "unitDisplaySummonPosition_KC3Jk8Br": null,
+  "unitDisplayHpPosition_3BpHN6VD": null,
+  "unitDisplayCursorPosition": null,
+  "sellPrice": "",
+  "sellCaution": false,
+  "effectFrames": "",
+  "evofrom": "760154",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "disam": "Pig-Bull (disambiguation)",
+  "altname": "Warlord Pig-Bull",
+  "idalt": "",
+  "has_altart": "",
+  "doenter": "true",
+  "basexp": "21",
+  "animation_attack": "160",
+  "animation_idle": "36",
+  "animation_move": "18",
+  "movespeed_attack": "0.0033",
+  "speedtype_attack": "3",
+  "movetype_attack": "1",
+  "movespeed_skill": "0.0033",
+  "speedtype_skill": "3",
+  "movetype_skill": "1",
+  "description": "Pig Bull, now a Warlord at Coal Cauldron’s side, successfully completed his mission by sabotaging Bloody Blink’s Techs during the attack and allowing the residents of her fortress to be annihilated. Like his allies, he uses Techs. Now he rolls over his enemies like never before, without even hearing the cries of his (numerous) victims.",
+  "summon": "The blood of our enemies will decorate my wheels.",
+  "fusion": "A tip: don’t cross me when I’m behind the wheel.",
+  "evolution": "I feel that my victim quota is going to increase.",
+  "hp_base": "4500",
+  "atk_base": "1750",
+  "def_base": "1280",
+  "rec_base": "1550",
+  "hp_lord": "6400",
+  "atk_lord": "2350",
+  "def_lord": "1700",
+  "rec_lord": "2000",
+  "hp_anima": "7142",
+  "rec_anima": "1802",
+  "atk_breaker": "2548",
+  "def_breaker": "1502",
+  "def_guardian": "1898",
+  "rec_guardian": "2000",
+  "def_oracle": "1700",
+  "rec_oracle": "2198",
+  "hp_bonus": "700",
+  "atk_bonus": "500",
+  "def_bonus": "240",
+  "rec_bonus": "380",
+  "lordonly": "",
+  "normal_frames": "15, 31, 47, 63, 79, 95",
+  "normal_distribute": "17, 17, 17, 17, 16, 16",
+  "normal_totaldistr": "100",
+  "combo_hits": "6",
+  "normaldc": "24",
+  "ls": "Memorable match",
+  "lsdescription": "Boosts in the BB gauge when attacked (3-5 BC) & Chance of absorbing HP (50% chance at 3-8% of DMG)",
+  "lsnote": "",
+  "bbdescription": "5 combo dark elemental attack on all enemies & Partial Hp drain (40% DMG = HP SELF)",
+  "bbnote": "{{UnitBuffList",
+  "buff_1_proc": "1",
+  "buff_1_potency": "955% damage modifier",
+  "buff_1_duration": "—",
+  "buff_1_target": "All enemies",
+  "bbtype": "Offense",
+  "bbgauge": "25",
+  "bb_frames": "15, 35, 55, 75, 95",
+  "bb_distribute": "20, 20, 20, 20, 20",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "0",
+  "bbhits": "5",
+  "bbaoe": "A",
+  "bbdc": "5",
+  "bbmultiplier": "260",
+  "bb_hpscale": "",
   "sbbdescription": "2 massive Dark elemental attack on all enemies & hurts himself (-5,000 HP) & renders self able to withstand a KO",
   "sbbnote": "{{UnitBuffList",
   "buff_2_proc": "28",
@@ -607,82 +769,5 @@
   "notes": "",
   "incorrectinfo": "",
   "addcat": "",
-  "addcatname": "",
-  "stats": {
-    "_base": {
-      "atk": 1750,
-      "def": 1280,
-      "hp": 4500,
-      "rec": 1550
-    },
-    "_lord": {
-      "atk": 2350,
-      "def": 1700,
-      "hp": 6400,
-      "rec": 2000
-    },
-    "anima": {
-      "atk": 2350,
-      "def": 1700,
-      "hp max": 7390,
-      "hp min": 6895,
-      "rec max": 1901,
-      "rec min": 1703
-    },
-    "breaker": {
-      "atk max": 2647,
-      "atk min": 2449,
-      "def max": 1601,
-      "def min": 1403,
-      "hp": 6400,
-      "rec": 2000
-    },
-    "guardian": {
-      "atk max": 2251,
-      "atk min": 2053,
-      "def max": 1997,
-      "def min": 1799,
-      "hp": 6400,
-      "rec": 2000
-    },
-    "oracle": {
-      "atk": 2350,
-      "def": 1700,
-      "hp max": 5905,
-      "hp min": 5410,
-      "rec max": 2297,
-      "rec min": 2099
-    }
-  },
-  "leader_skill": {
-    "desc": "Boosts in the BB gauge when attacked (3-5 BC) & Chance of absorbing HP (50% chance at 3-8% of DMG)",
-    "effects": [
-      {
-        "bc fill when attacked high": 5,
-        "bc fill when attacked low": 3,
-        "bc fill when attacked%": 100,
-        "passive id": "25"
-      },
-      {
-        "hp drain chance%": 50,
-        "hp drain% high": 8,
-        "hp drain% low": 3,
-        "passive id": "17"
-      }
-    ],
-    "id": "760155",
-    "name": "Memorable match"
-  },
-  "extra_skill": {},
-  "ubb": {},
-  "unitDisplayHomePosition_1W9CxaFK": null,
-  "unitDisplayDetailPosition_6z54rgb3": null,
-  "unitDisplayConfirmImagePosition_MYK1fq6c": null,
-  "unitDisplayCutInImagePosition_7hLR6pDN": null,
-  "unitDisplaySummonPosition_KC3Jk8Br": null,
-  "unitDisplayHpPosition_3BpHN6VD": null,
-  "unitDisplayCursorPosition": null,
-  "sellPrice": "",
-  "sellCaution": false,
-  "effectFrames": ""
+  "addcatname": ""
 }

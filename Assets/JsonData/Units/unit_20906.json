@@ -1,68 +1,94 @@
 {
   "id": "20906",
-  "unitName": "Just Commander Zalts",
-  "no": "1485",
-  "element": "Water",
-  "rarity": "★★★★★★★",
-  "cost": "44",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "97",
-  "animation_idle": "54",
-  "animation_move": "6",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "22, 28, 46, 52, 58",
-  "normal_distribute": "22, 18, 22, 20, 18",
-  "normal_totaldistr": "100",
-  "bb_frames": "22, 25, 28, 31, 34, 46, 49, 52, 55, 58, 61",
-  "bb_distribute": "10, 9, 8, 7, 6, 14, 12, 10, 9, 8, 7",
-  "bb_totaldistr": "100",
-  "sbb_frames": "22, 25, 28, 31, 34, 37, 46, 49, 52, 55, 58, 61, 64, 67, 70",
-  "sbb_distribute": "9, 8, 7, 6, 5, 5, 9, 8, 7, 7, 7, 6, 6, 5, 5",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "22, 25, 28, 31, 34, 37, 40, 43, 46, 49, 52, 55, 58, 61, 64, 67, 70, 73, 76",
-  "ubb_distribute": "7, 6, 5, 5, 5, 4, 4, 4, 9, 8, 7, 6, 6, 5, 5, 4, 4, 3, 3",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "1",
-  "ubb_effectdelay": "1",
-  "description": "A senior general who served under the first emperor of Randall. As a commander of the original Randall Guard, he took pride in molding and encouraging young cadets into real soldiers. Zalts was also the one who convinced the emperor to build his own army, as his loyal service had won him his liege's trust. Unfortunately, he would eventually perish on the field after saving the entire army from a great crisis during the war for Elgaia's unification. The influence he had on the emperor as his close associate made it so that the emperor's will declared that his army remain well taken care of after his death.",
-  "summon": "Hmm...<br>You've got a ways to go, but you show potential. All right, I'll teach you how to fight.",
-  "fusion": "You're still reckless and green!<br>Power is a double edged sword.<br>Did you not know that?",
-  "evolution": "",
-  "hp_base": "4886",
-  "atk_base": "2102",
-  "def_base": "1861",
-  "rec_base": "1563",
-  "hp_lord": "7356",
-  "atk_lord": "2912",
-  "def_lord": "2311",
-  "rec_lord": "2243",
-  "hp_anima": "8248",
-  "rec_anima": "2005",
-  "atk_breaker": "3150",
-  "def_breaker": "2073",
-  "def_guardian": "2549",
-  "rec_guardian": "2124",
-  "def_oracle": "2192",
-  "rec_oracle": "2600",
-  "hp_bonus": "1100",
-  "atk_bonus": "440",
-  "def_bonus": "440",
-  "rec_bonus": "440",
-  "lordonly": "",
-  "combo_hits": "5",
-  "normaldc": "35",
-  "ls": "Formidable Loyalty",
-  "lsdescription": "40% boost to Atk and max HP, enormously boosts BB Atk & enormously boosts Spark damage for 2 turns when BC collected has exceeded certain amount",
-  "lsnote": "200% BB Atk & 100% Spark boost after 20 BC",
+  "stats": {
+    "_base": {
+      "atk": 2102,
+      "def": 1861,
+      "hp": 4886,
+      "rec": 1563
+    },
+    "_lord": {
+      "atk": 2912,
+      "def": 2311,
+      "hp": 7356,
+      "rec": 2243
+    },
+    "anima": {
+      "atk": 2912,
+      "def": 2311,
+      "hp max": 8546,
+      "hp min": 7951,
+      "rec max": 2124,
+      "rec min": 1886
+    },
+    "breaker": {
+      "atk max": 3269,
+      "atk min": 3031,
+      "def max": 2192,
+      "def min": 1954,
+      "hp": 7356,
+      "rec": 2243
+    },
+    "guardian": {
+      "atk": 2912,
+      "def max": 2668,
+      "def min": 2430,
+      "hp": 7356,
+      "rec max": 2243,
+      "rec min": 2005
+    },
+    "oracle": {
+      "atk": 2912,
+      "def max": 2311,
+      "def min": 2073,
+      "hp": 7356,
+      "rec max": 2719,
+      "rec min": 2481
+    }
+  },
+  "leader_skill": {
+    "desc": "40% boost to Atk and max HP, enormously boosts BB Atk & enormously boosts Spark damage for 2 turns when BC collected has exceeded certain amount",
+    "effects": [
+      {
+        "atk% buff": 40,
+        "hp% buff": 40,
+        "passive id": "1"
+      },
+      {
+        "bb atk% buff": 200,
+        "passive id": "64",
+        "sbb atk% buff": 200,
+        "ubb atk% buff": 200
+      },
+      {
+        "bc receive count buff activation": 30,
+        "buff": {
+          "buff turns (40)": "2",
+          "spark dmg% buff": 100
+        },
+        "passive id": "82"
+      }
+    ],
+    "id": "7470",
+    "name": "Formidable Loyalty"
+  },
+  "extra_skill": {
+    "desc": "Considerably boosts BB Atk",
+    "effects": [
+      {
+        "bb atk% buff": 100,
+        "conditions": [],
+        "passive id": "64",
+        "passive target": "self",
+        "sbb atk% buff": 100,
+        "ubb atk% buff": 100
+      }
+    ],
+    "id": "24100",
+    "name": "Old General's Strike",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -541,14 +567,6 @@
     ],
     "name": "Freezing Opposition"
   },
-  "bbdescription": "11 combo Water attack on all foes, considerably boosts BB Atk for 3 turns, considerably boosts BC, HC drop rate for 3 turns & hugely boosts BC efficacy for 3 turns",
-  "bbnote": "200% BB Atk, 50% BC efficacy & 30% BC/HC drop rate",
-  "bbtype": "Offense",
-  "bbhits": "11",
-  "bbaoe": "A",
-  "bbgauge": "28",
-  "bbdc": "11",
-  "bbmultiplier": "350",
   "sbb": {
     "damage frames": [
       {
@@ -1045,15 +1063,6 @@
     ],
     "name": "Imperial Forces: 100 Strong"
   },
-  "sbbdescription": "15 combo powerful Water attack on all foes (damage relative to HP remaining), slightly boosts OD gauge, hugely boosts BB Atk for 3 turns & considerably boosts BC, HC drop rate for 3 turns",
-  "sbbnote": "200% + 520% x current HP / base max HP, 250% BB Atk, 30% BC/HC & 8% OD fill",
-  "sbbtype": "Offense",
-  "sbbhits": "15",
-  "sbbaoe": "A",
-  "sbbgauge": "29",
-  "sbbdc": "15",
-  "sbbmultiplier": "200",
-  "sbb_hpscale": "true",
   "ubb": {
     "damage frames": [
       {
@@ -1218,6 +1227,212 @@
     ],
     "name": "Naraka: Arbuda"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 97
+    },
+    "idle": {
+      "total number of frames": 54
+    },
+    "move": {
+      "total number of frames": 6
+    }
+  },
+  "category": 20900,
+  "cost": "44",
+  "damage frames": {
+    "frame times": [
+      22,
+      28,
+      46,
+      52,
+      58
+    ],
+    "hit dmg% distribution": [
+      22,
+      18,
+      22,
+      20,
+      18
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 5
+  },
+  "drop check count": 7,
+  "element": "water",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 1485,
+  "imp": {
+    "max atk": "440",
+    "max def": "440",
+    "max hp": "1100",
+    "max rec": "440"
+  },
+  "kind": "normal",
+  "lord damage range": "2711~3028",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Just Commander Zalts",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Just Commander Zalts",
+  "maxlv": "120",
+  "no": "1485",
+  "unitDisplayHomePosition_1W9CxaFK": "689,46,180,491",
+  "unitDisplayDetailPosition_6z54rgb3": "-345,184,1218,632",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "-70,316,609,316,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-278,-89,1150,597",
+  "unitDisplaySummonPosition_KC3Jk8Br": "-70,316,609,316,0",
+  "unitDisplayHpPosition_3BpHN6VD": "2,19",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "15000",
+  "sellCaution": false,
+  "effectFrames": "16:120:1,22:120:1,40:120:1,46:120:1,52:120:1,0:191:1,22:201091:1,46:200312:1,49:200319:1,52:200312:1,55:200319:1,58:200312:1,61:200319:1",
+  "evofrom": "",
+  "evointo": "20907",
+  "evozelcost": "3000000",
+  "evokarmacost": "1000000",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "20344",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20132",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "97",
+  "animation_idle": "54",
+  "animation_move": "6",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "22, 28, 46, 52, 58",
+  "normal_distribute": "22, 18, 22, 20, 18",
+  "normal_totaldistr": "100",
+  "bb_frames": "22, 25, 28, 31, 34, 46, 49, 52, 55, 58, 61",
+  "bb_distribute": "10, 9, 8, 7, 6, 14, 12, 10, 9, 8, 7",
+  "bb_totaldistr": "100",
+  "sbb_frames": "22, 25, 28, 31, 34, 37, 46, 49, 52, 55, 58, 61, 64, 67, 70",
+  "sbb_distribute": "9, 8, 7, 6, 5, 5, 9, 8, 7, 7, 7, 6, 6, 5, 5",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "22, 25, 28, 31, 34, 37, 40, 43, 46, 49, 52, 55, 58, 61, 64, 67, 70, 73, 76",
+  "ubb_distribute": "7, 6, 5, 5, 5, 4, 4, 4, 9, 8, 7, 6, 6, 5, 5, 4, 4, 3, 3",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "1",
+  "ubb_effectdelay": "1",
+  "description": "A senior general who served under the first emperor of Randall. As a commander of the original Randall Guard, he took pride in molding and encouraging young cadets into real soldiers. Zalts was also the one who convinced the emperor to build his own army, as his loyal service had won him his liege's trust. Unfortunately, he would eventually perish on the field after saving the entire army from a great crisis during the war for Elgaia's unification. The influence he had on the emperor as his close associate made it so that the emperor's will declared that his army remain well taken care of after his death.",
+  "summon": "Hmm...<br>You've got a ways to go, but you show potential. All right, I'll teach you how to fight.",
+  "fusion": "You're still reckless and green!<br>Power is a double edged sword.<br>Did you not know that?",
+  "evolution": "",
+  "hp_base": "4886",
+  "atk_base": "2102",
+  "def_base": "1861",
+  "rec_base": "1563",
+  "hp_lord": "7356",
+  "atk_lord": "2912",
+  "def_lord": "2311",
+  "rec_lord": "2243",
+  "hp_anima": "8248",
+  "rec_anima": "2005",
+  "atk_breaker": "3150",
+  "def_breaker": "2073",
+  "def_guardian": "2549",
+  "rec_guardian": "2124",
+  "def_oracle": "2192",
+  "rec_oracle": "2600",
+  "hp_bonus": "1100",
+  "atk_bonus": "440",
+  "def_bonus": "440",
+  "rec_bonus": "440",
+  "lordonly": "",
+  "combo_hits": "5",
+  "normaldc": "35",
+  "ls": "Formidable Loyalty",
+  "lsdescription": "40% boost to Atk and max HP, enormously boosts BB Atk & enormously boosts Spark damage for 2 turns when BC collected has exceeded certain amount",
+  "lsnote": "200% BB Atk & 100% Spark boost after 20 BC",
+  "bbdescription": "11 combo Water attack on all foes, considerably boosts BB Atk for 3 turns, considerably boosts BC, HC drop rate for 3 turns & hugely boosts BC efficacy for 3 turns",
+  "bbnote": "200% BB Atk, 50% BC efficacy & 30% BC/HC drop rate",
+  "bbtype": "Offense",
+  "bbhits": "11",
+  "bbaoe": "A",
+  "bbgauge": "28",
+  "bbdc": "11",
+  "bbmultiplier": "350",
+  "sbbdescription": "15 combo powerful Water attack on all foes (damage relative to HP remaining), slightly boosts OD gauge, hugely boosts BB Atk for 3 turns & considerably boosts BC, HC drop rate for 3 turns",
+  "sbbnote": "200% + 520% x current HP / base max HP, 250% BB Atk, 30% BC/HC & 8% OD fill",
+  "sbbtype": "Offense",
+  "sbbhits": "15",
+  "sbbaoe": "A",
+  "sbbgauge": "29",
+  "sbbdc": "15",
+  "sbbmultiplier": "200",
+  "sbb_hpscale": "true",
   "ubbdescription": "19 combo massive Water attack on all foes (damage relative to HP remaining), enormous 2 turn Atk, Def reduction, inflicts enormous Spark vulnerability for 3 turns, hugely boosts BB Atk for 3 turns & enormously boosts critical hit rate for 3 turns",
   "ubbnote": "1200% + 800% x current HP / base max HP, 80% reduction, 100% chance for 100% vulnerability, 450% BB Atk & 60% Crit rate",
   "ubbtype": "Offense",
@@ -1231,8 +1446,6 @@
   "esitem": "",
   "esdescription": "Considerably boosts BB Atk",
   "esnote": "100% boost",
-  "evofrom": "",
-  "evointo": "20907",
   "evomats1": "Water Mecha God",
   "evomats2": "Water Mecha God",
   "evomats3": "Miracle Totem",
@@ -1241,105 +1454,5 @@
   "evomats6": "Water Idol",
   "evomats7": "Water Idol",
   "evomats8": "Metal Mimic",
-  "evoitem": "",
-  "evozelcost": "3000000",
-  "stats": {
-    "_base": {
-      "atk": 2102,
-      "def": 1861,
-      "hp": 4886,
-      "rec": 1563
-    },
-    "_lord": {
-      "atk": 2912,
-      "def": 2311,
-      "hp": 7356,
-      "rec": 2243
-    },
-    "anima": {
-      "atk": 2912,
-      "def": 2311,
-      "hp max": 8546,
-      "hp min": 7951,
-      "rec max": 2124,
-      "rec min": 1886
-    },
-    "breaker": {
-      "atk max": 3269,
-      "atk min": 3031,
-      "def max": 2192,
-      "def min": 1954,
-      "hp": 7356,
-      "rec": 2243
-    },
-    "guardian": {
-      "atk": 2912,
-      "def max": 2668,
-      "def min": 2430,
-      "hp": 7356,
-      "rec max": 2243,
-      "rec min": 2005
-    },
-    "oracle": {
-      "atk": 2912,
-      "def max": 2311,
-      "def min": 2073,
-      "hp": 7356,
-      "rec max": 2719,
-      "rec min": 2481
-    }
-  },
-  "leader_skill": {
-    "desc": "40% boost to Atk and max HP, enormously boosts BB Atk & enormously boosts Spark damage for 2 turns when BC collected has exceeded certain amount",
-    "effects": [
-      {
-        "atk% buff": 40,
-        "hp% buff": 40,
-        "passive id": "1"
-      },
-      {
-        "bb atk% buff": 200,
-        "passive id": "64",
-        "sbb atk% buff": 200,
-        "ubb atk% buff": 200
-      },
-      {
-        "bc receive count buff activation": 30,
-        "buff": {
-          "buff turns (40)": "2",
-          "spark dmg% buff": 100
-        },
-        "passive id": "82"
-      }
-    ],
-    "id": "7470",
-    "name": "Formidable Loyalty"
-  },
-  "extra_skill": {
-    "desc": "Considerably boosts BB Atk",
-    "effects": [
-      {
-        "bb atk% buff": 100,
-        "conditions": [],
-        "passive id": "64",
-        "passive target": "self",
-        "sbb atk% buff": 100,
-        "ubb atk% buff": 100
-      }
-    ],
-    "id": "24100",
-    "name": "Old General's Strike",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "689,46,180,491",
-  "unitDisplayDetailPosition_6z54rgb3": "-345,184,1218,632",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "-70,316,609,316,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-278,-89,1150,597",
-  "unitDisplaySummonPosition_KC3Jk8Br": "-70,316,609,316,0",
-  "unitDisplayHpPosition_3BpHN6VD": "2,19",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "15000",
-  "sellCaution": false,
-  "effectFrames": "16:120:1,22:120:1,40:120:1,46:120:1,52:120:1,0:191:1,22:201091:1,46:200312:1,49:200319:1,52:200312:1,55:200319:1,58:200312:1,61:200319:1"
+  "evoitem": ""
 }

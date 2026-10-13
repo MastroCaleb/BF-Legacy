@@ -1,52 +1,65 @@
 {
   "id": "60165",
-  "unitName": "Soul Vortex Lemia",
-  "no": "476",
-  "element": "Dark",
-  "rarity": "★★★★★★",
-  "cost": "22",
-  "maxlv": "100",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "3",
-  "animation_attack": "131",
-  "animation_idle": "60",
-  "animation_move": "60",
-  "movespeed_attack": "2",
-  "movespeed_skill": "2",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "description": "A sorceress specializing in necromancy. Her hopes of reviving her dead lover were dashed by Dilias. He had consumed the soul of the man she so longed to see. After learning the truth she went mad, cursing the entire world. She dedicated all her magic to seeing that all spirits were returned to a world of nothingness, as she wished to see what would be left after gods, men, the living, and the dead were all destroyed.",
-  "summon": "Why do you appear before me?<br>I've nothing but despair now.<br>Do you still desire to battle?",
-  "fusion": "I will soon break at this rate.<br>I can't forgive anything anymore.<br>Not even myself...",
-  "evolution": "There is no peace here.<br>That is why I must destroy all.<br>All can rest in peace then.",
-  "hp_base": "4046",
-  "atk_base": "1135",
-  "def_base": "1135",
-  "rec_base": "1392",
-  "hp_lord": "5677",
-  "atk_lord": "1600",
-  "def_lord": "1600",
-  "rec_lord": "1799",
-  "hp_anima": "6419",
-  "rec_anima": "1601",
-  "atk_breaker": "1798",
-  "def_breaker": "1402",
-  "atk_guardian": "1402",
-  "def_guardian": "1798",
-  "hp_oracle": "4934",
-  "rec_oracle": "1997",
-  "hp_bonus": "750",
-  "atk_bonus": "300",
-  "def_bonus": "300",
-  "rec_bonus": "300",
-  "lordonly": "",
-  "combo_hits": "9",
-  "ls": "Soul Touch",
-  "lsdescription": "Increase in Karma, HC, and BC produced during Spark",
-  "lstype": "Recovery/Brave Burst/Karma",
+  "stats": {
+    "_base": {
+      "atk": 1135,
+      "def": 1135,
+      "hp": 4046,
+      "rec": 1392
+    },
+    "_lord": {
+      "atk": 1600,
+      "def": 1600,
+      "hp": 5677,
+      "rec": 1799
+    },
+    "anima": {
+      "atk": 1600,
+      "def": 1600,
+      "hp max": 6667,
+      "hp min": 6172,
+      "rec max": 1700,
+      "rec min": 1502
+    },
+    "breaker": {
+      "atk max": 1897,
+      "atk min": 1699,
+      "def max": 1501,
+      "def min": 1303,
+      "hp": 5677,
+      "rec": 1799
+    },
+    "guardian": {
+      "atk": 1600,
+      "def max": 1897,
+      "def min": 1699,
+      "hp": 5677,
+      "rec max": 1799,
+      "rec min": 1601
+    },
+    "oracle": {
+      "atk": 1600,
+      "def max": 1600,
+      "def min": 1402,
+      "hp": 5677,
+      "rec max": 2195,
+      "rec min": 1997
+    }
+  },
+  "leader_skill": {
+    "desc": "Increase in Karma, HC, and BC produced during Spark",
+    "effects": [
+      {
+        "bc drop% for spark": 30,
+        "hc drop% for spark": 20,
+        "karma drop% for spark": 70,
+        "passive id": "31"
+      }
+    ],
+    "id": "1710",
+    "name": "Soul Tourch"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -299,11 +312,6 @@
     ],
     "name": "Asmodeus"
   },
-  "bbdescription": "10 combo Dark elemental attack on all enemies & probable Poison effect",
-  "bbtype": "Offense",
-  "bbhits": "10",
-  "bbaoe": "A",
-  "bbgauge": "25",
   "sbb": {
     "damage frames": [
       {
@@ -682,87 +690,104 @@
     ],
     "name": "Realm of Darkness"
   },
-  "sbbdescription": "12 combo Dark elemental attack on all enemies & chance of inflicting a random status ailment",
-  "sbbtype": "Offense",
-  "sbbhits": "12",
-  "sbbaoe": "A",
-  "sbbgauge": "25",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "60164",
-  "evointo": "",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 1135,
-      "def": 1135,
-      "hp": 4046,
-      "rec": 1392
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1600,
-      "def": 1600,
-      "hp": 5677,
-      "rec": 1799
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1600,
-      "def": 1600,
-      "hp max": 6667,
-      "hp min": 6172,
-      "rec max": 1700,
-      "rec min": 1502
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 1897,
-      "atk min": 1699,
-      "def max": 1501,
-      "def min": 1303,
-      "hp": 5677,
-      "rec": 1799
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 131
     },
-    "guardian": {
-      "atk": 1600,
-      "def max": 1897,
-      "def min": 1699,
-      "hp": 5677,
-      "rec max": 1799,
-      "rec min": 1601
+    "idle": {
+      "total number of frames": 60
     },
-    "oracle": {
-      "atk": 1600,
-      "def max": 1600,
-      "def min": 1402,
-      "hp": 5677,
-      "rec max": 2195,
-      "rec min": 1997
+    "move": {
+      "total number of frames": 60
     }
   },
-  "leader_skill": {
-    "desc": "Increase in Karma, HC, and BC produced during Spark",
-    "effects": [
-      {
-        "bc drop% for spark": 30,
-        "hc drop% for spark": 20,
-        "karma drop% for spark": 70,
-        "passive id": "31"
-      }
+  "category": 60160,
+  "cost": "22",
+  "damage frames": {
+    "frame times": [
+      42,
+      50,
+      58,
+      66,
+      74,
+      82,
+      90,
+      98,
+      116
     ],
-    "id": "1710",
-    "name": "Soul Tourch"
+    "hit dmg% distribution": [
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      16,
+      16,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 9
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "dark",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 476,
+  "imp": {
+    "max atk": "300",
+    "max def": "300",
+    "max hp": "750",
+    "max rec": "300"
+  },
+  "kind": "normal",
+  "lord damage range": "1490~1664",
+  "movement": {
+    "attack": {
+      "move speed": 2,
+      "move speed type": "4",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 2,
+      "move speed type": "4",
+      "move type": "3"
+    }
+  },
+  "name": "Soul Vortex Lemia",
+  "rarity": "6",
+  "sell caution": false,
+  "unitName": "Soul Vortex Lemia",
+  "maxlv": "100",
+  "no": "476",
   "unitDisplayHomePosition_1W9CxaFK": "370,378,190,517",
   "unitDisplayDetailPosition_6z54rgb3": "-42,-198,900,978",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "105,332,480,302,0",
@@ -772,5 +797,92 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "8000",
   "sellCaution": false,
-  "effectFrames": "20:380:1,1:600092:1,108:1101:1,36:126:1,44:126:1,52:126:1,60:126:1,68:126:1,76:126:1,84:126:1,92:126:1,108:126:1"
+  "effectFrames": "20:380:1,1:600092:1,108:1101:1,36:126:1,44:126:1,52:126:1,60:126:1,68:126:1,76:126:1,84:126:1,92:126:1,108:126:1",
+  "evofrom": "60164",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "21",
+  "animation_attack": "131",
+  "animation_idle": "60",
+  "animation_move": "60",
+  "movespeed_attack": "2",
+  "movespeed_skill": "2",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "42, 50, 58, 66, 74, 82, 90, 98, 116",
+  "normal_distribute": "8, 8, 8, 8, 8, 8, 16, 16, 20",
+  "normal_totaldistr": "100",
+  "bb_frames": "42, 50, 58, 66, 74, 82, 90, 98, 106, 130",
+  "bb_distribute": "10, 9, 10, 9, 10, 9, 10, 9, 9, 15",
+  "bb_totaldistr": "100",
+  "sbb_frames": "42, 50, 58, 66, 74, 82, 90, 98, 106, 114, 122, 130",
+  "sbb_distribute": "10, 7, 7, 7, 10, 7, 10, 7, 10, 7, 8, 10",
+  "sbb_totaldistr": "100",
+  "bb_effectdelay": "40",
+  "sbb_effectdelay": "40",
+  "description": "A sorceress specializing in necromancy. Her hopes of reviving her dead lover were dashed by Dilias. He had consumed the soul of the man she so longed to see. After learning the truth she went mad, cursing the entire world. She dedicated all her magic to seeing that all spirits were returned to a world of nothingness, as she wished to see what would be left after gods, men, the living, and the dead were all destroyed.",
+  "summon": "Why do you appear before me?<br>I've nothing but despair now.<br>Do you still desire to battle?",
+  "fusion": "I will soon break at this rate.<br>I can't forgive anything anymore.<br>Not even myself...",
+  "evolution": "There is no peace here.<br>That is why I must destroy all.<br>All can rest in peace then.",
+  "hp_base": "4046",
+  "atk_base": "1135",
+  "def_base": "1135",
+  "rec_base": "1392",
+  "hp_lord": "5677",
+  "atk_lord": "1600",
+  "def_lord": "1600",
+  "rec_lord": "1799",
+  "hp_anima": "6420",
+  "rec_anima": "1601",
+  "atk_breaker": "1798",
+  "def_breaker": "1402",
+  "atk_guardian": "1402",
+  "def_guardian": "1798",
+  "rec_guardian": "1700",
+  "def_oracle": "1501",
+  "hp_oracle": "5380",
+  "rec_oracle": "2096",
+  "hp_bonus": "750",
+  "atk_bonus": "300",
+  "def_bonus": "300",
+  "rec_bonus": "300",
+  "lordonly": "",
+  "combo_hits": "9",
+  "normaldc": "18",
+  "ls": "Soul Tourch",
+  "lsdescription": "Increase in Karma, HC, and BC produced during Spark",
+  "lsnote": "70% boost to Karma, 30% boost to BC, 20% boost to HC drop rates",
+  "lstype": "Recovery/Brave Burst/Karma",
+  "bbdescription": "10 combo Dark elemental attack on all enemies & probable Poison effect",
+  "bbnote": "45% chance to inflict",
+  "bbtype": "Offense",
+  "bbhits": "10",
+  "bbaoe": "A",
+  "bbgauge": "25",
+  "bbdc": "10",
+  "bbmultiplier": "210",
+  "sbbdescription": "12 combo Dark elemental attack on all enemies & chance of inflicting a random status ailment",
+  "sbbnote": "45% chance to inflict",
+  "sbbtype": "Offense",
+  "sbbhits": "12",
+  "sbbaoe": "A",
+  "sbbgauge": "20",
+  "sbbdc": "12",
+  "sbbmultiplier": "400",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "",
+  "evomats2": "",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": ""
 }

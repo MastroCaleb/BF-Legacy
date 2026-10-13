@@ -1,61 +1,53 @@
 {
   "id": "50050",
-  "unitName": "Angel",
-  "no": "75",
-  "element": "Light",
-  "rarity": "★",
-  "cost": "2",
-  "maxlv": "12",
-  "basexp": "10",
-  "gender": "N",
-  "ai": "1",
-  "animation_attack": "68",
-  "animation_idle": "78",
-  "animation_move": "10",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "40",
-  "normal_distribute": "100",
-  "normal_totaldistr": "100",
-  "bb_frames": "40, 46",
-  "bb_distribute": "50, 50",
-  "bb_totaldistr": "100",
-  "description": "A humanoid with pure-white wings on its back. They are so submissive to the gods that they have nearly no individuality. They spend most of their time worshiping the gods, but they're not pure pacifists. They will wield their swords relentlessly against any who are recognized as the gods' enemies. They also devote themselves fully to anyone they consider a friend, making them very loyal allies.",
-  "summon": "Do you need me?<br>I can sense your wish.<br>I will lend you my power.",
-  "fusion": "Let us pray together.<br>My faith is my strength.",
-  "evolution": "",
-  "hp_base": "1050",
-  "atk_base": "350",
-  "def_base": "350",
-  "rec_base": "150",
-  "hp_lord": "1980",
-  "atk_lord": "459",
-  "def_lord": "462",
-  "rec_lord": "233",
-  "hp_anima": "2063",
-  "rec_anima": "211",
-  "atk_breaker": "481",
-  "def_breaker": "440",
-  "atk_guardian": "437",
-  "def_guardian": "484",
-  "rec_guardian": "222",
-  "def_oracle": "451",
-  "hp_oracle": "1947",
-  "rec_oracle": "266",
-  "hp_bonus": "150",
-  "atk_bonus": "80",
-  "def_bonus": "40",
-  "rec_bonus": "60",
-  "lordonly": "",
-  "combo_hits": "1",
-  "normaldc": "2",
-  "ls": "",
-  "lsdescription": "",
-  "lstype": "",
+  "stats": {
+    "_base": {
+      "atk": 350,
+      "def": 350,
+      "hp": 1050,
+      "rec": 150
+    },
+    "_lord": {
+      "atk": 459,
+      "def": 462,
+      "hp": 1980,
+      "rec": 233
+    },
+    "anima": {
+      "atk": 459,
+      "def": 462,
+      "hp max": 2090,
+      "hp min": 2035,
+      "rec max": 222,
+      "rec min": 200
+    },
+    "breaker": {
+      "atk max": 492,
+      "atk min": 470,
+      "def max": 451,
+      "def min": 429,
+      "hp": 1980,
+      "rec": 233
+    },
+    "guardian": {
+      "atk": 459,
+      "def max": 495,
+      "def min": 473,
+      "hp": 1980,
+      "rec max": 233,
+      "rec min": 211
+    },
+    "oracle": {
+      "atk": 459,
+      "def max": 462,
+      "def min": 440,
+      "hp": 1980,
+      "rec max": 277,
+      "rec min": 255
+    }
+  },
+  "leader_skill": {},
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -220,84 +212,83 @@
     ],
     "name": "Light Sword"
   },
-  "bbdescription": "2 combo Light elemental attack on single Enemy & boost to HC drop rate",
-  "bbnote": "40% boost",
-  "bbtype": "Offense",
-  "bbhits": "2",
-  "bbaoe": "1",
-  "bbgauge": "10",
-  "bbdc": "20",
-  "bbmultiplier": "120",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "50051",
-  "evomats1": "60142",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evozelcost": "5000",
-  "stats": {
-    "_base": {
-      "atk": 350,
-      "def": 350,
-      "hp": 1050,
-      "rec": 150
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "party"
     },
-    "_lord": {
-      "atk": 459,
-      "def": 462,
-      "hp": 1980,
-      "rec": 233
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 459,
-      "def": 462,
-      "hp max": 2090,
-      "hp min": 2035,
-      "rec max": 222,
-      "rec min": 200
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 68
     },
-    "breaker": {
-      "atk max": 492,
-      "atk min": 470,
-      "def max": 451,
-      "def min": 429,
-      "hp": 1980,
-      "rec": 233
+    "idle": {
+      "total number of frames": 78
     },
-    "guardian": {
-      "atk": 459,
-      "def max": 495,
-      "def min": 473,
-      "hp": 1980,
-      "rec max": 233,
-      "rec min": 211
-    },
-    "oracle": {
-      "atk": 459,
-      "def max": 462,
-      "def min": 440,
-      "hp": 1980,
-      "rec max": 277,
-      "rec min": 255
+    "move": {
+      "total number of frames": 10
     }
   },
-  "leader_skill": {},
-  "extra_skill": {},
+  "category": 50050,
+  "cost": "2",
+  "damage frames": {
+    "frame times": [
+      40
+    ],
+    "hit dmg% distribution": [
+      100
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 1
+  },
+  "drop check count": 2,
+  "element": "light",
+  "exp_pattern": 10,
+  "gender": "other",
+  "getting type": "not eligible for achievement",
+  "guide_id": 75,
+  "imp": {
+    "max atk": "80",
+    "max def": "40",
+    "max hp": "150",
+    "max rec": "60"
+  },
+  "kind": "normal",
+  "lord damage range": "427~477",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Angel",
+  "rarity": "1",
+  "sell caution": false,
+  "unitName": "Angel",
+  "maxlv": "12",
+  "no": "75",
   "unitDisplayHomePosition_1W9CxaFK": "171,146,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "195,40,672,736",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "187,257,336,368,1",
@@ -307,5 +298,89 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "100",
   "sellCaution": false,
-  "effectFrames": "34:125:1"
+  "effectFrames": "34:125:1",
+  "evofrom": "",
+  "evointo": "50051",
+  "evozelcost": "5000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "60142",
+      "count": 1
+    }
+  ],
+  "basexp": "10",
+  "animation_attack": "68",
+  "animation_idle": "78",
+  "animation_move": "10",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "40",
+  "normal_distribute": "100",
+  "normal_totaldistr": "100",
+  "bb_frames": "40, 46",
+  "bb_distribute": "50, 50",
+  "bb_totaldistr": "100",
+  "description": "A humanoid with pure-white wings on its back. They are so submissive to the gods that they have nearly no individuality. They spend most of their time worshiping the gods, but they're not pure pacifists. They will wield their swords relentlessly against any who are recognized as the gods' enemies. They also devote themselves fully to anyone they consider a friend, making them very loyal allies.",
+  "summon": "Do you need me?<br>I can sense your wish.<br>I will lend you my power.",
+  "fusion": "Let us pray together.<br>My faith is my strength.",
+  "evolution": "",
+  "hp_base": "1050",
+  "atk_base": "350",
+  "def_base": "350",
+  "rec_base": "150",
+  "hp_lord": "1980",
+  "atk_lord": "459",
+  "def_lord": "462",
+  "rec_lord": "233",
+  "hp_anima": "2063",
+  "rec_anima": "211",
+  "atk_breaker": "481",
+  "def_breaker": "440",
+  "atk_guardian": "437",
+  "def_guardian": "484",
+  "rec_guardian": "222",
+  "def_oracle": "451",
+  "hp_oracle": "1947",
+  "rec_oracle": "266",
+  "hp_bonus": "150",
+  "atk_bonus": "80",
+  "def_bonus": "40",
+  "rec_bonus": "60",
+  "lordonly": "",
+  "combo_hits": "1",
+  "normaldc": "2",
+  "ls": "",
+  "lsdescription": "",
+  "lstype": "",
+  "bbdescription": "2 combo Light elemental attack on single Enemy & boost to HC drop rate",
+  "bbnote": "40% boost",
+  "bbtype": "Offense",
+  "bbhits": "2",
+  "bbaoe": "1",
+  "bbgauge": "10",
+  "bbdc": "20",
+  "bbmultiplier": "120",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "60142",
+  "evomats2": "",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": ""
 }

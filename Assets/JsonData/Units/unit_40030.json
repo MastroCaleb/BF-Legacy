@@ -1,61 +1,53 @@
 {
   "id": "40030",
-  "unitName": "Sparky",
-  "no": "49",
-  "element": "Thunder",
-  "rarity": "★",
-  "cost": "1",
-  "maxlv": "10",
-  "basexp": "10",
-  "gender": "N",
-  "ai": "2",
-  "animation_attack": "64",
-  "animation_idle": "46",
-  "animation_move": "35",
-  "movespeed_attack": "0.0041",
-  "movespeed_skill": "0.0041",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "30",
-  "normal_distribute": "100",
-  "normal_totaldistr": "100",
-  "bb_frames": "30",
-  "bb_distribute": "100",
-  "bb_totaldistr": "100",
-  "description": "A liquid-type demon wrapped in electricity, thought to appear when lightning strikes. It has a horn on its head and a black pattern on its body. It is mischievous and laughs with its friends as it electrically shocks humans. They are still weak and very low level, but like so many other slimes they are perfect sparring partners for new Summoners.",
-  "summon": "Zap!<br>Do you want to<br>spark with me?",
-  "fusion": "I'm sparking!<br>Make me spark more!",
-  "evolution": "",
-  "hp_base": "830",
-  "atk_base": "320",
-  "def_base": "280",
-  "rec_base": "210",
-  "hp_lord": "1628",
-  "atk_lord": "432",
-  "def_lord": "367",
-  "rec_lord": "273",
-  "hp_anima": "1696",
-  "rec_anima": "255",
-  "atk_breaker": "450",
-  "def_breaker": "349",
-  "atk_guardian": "414",
-  "def_guardian": "385",
-  "rec_guardian": "264",
-  "def_oracle": "358",
-  "hp_oracle": "1601",
-  "rec_oracle": "300",
-  "hp_bonus": "200",
-  "atk_bonus": "80",
-  "def_bonus": "80",
-  "rec_bonus": "80",
-  "lordonly": "",
-  "combo_hits": "1",
-  "normaldc": "2",
-  "ls": "",
-  "lsdescription": "",
-  "lstype": "",
+  "stats": {
+    "_base": {
+      "atk": 320,
+      "def": 280,
+      "hp": 830,
+      "rec": 210
+    },
+    "_lord": {
+      "atk": 432,
+      "def": 367,
+      "hp": 1628,
+      "rec": 273
+    },
+    "anima": {
+      "atk": 432,
+      "def": 367,
+      "hp max": 1718,
+      "hp min": 1673,
+      "rec max": 264,
+      "rec min": 246
+    },
+    "breaker": {
+      "atk max": 459,
+      "atk min": 441,
+      "def max": 358,
+      "def min": 340,
+      "hp": 1628,
+      "rec": 273
+    },
+    "guardian": {
+      "atk": 432,
+      "def max": 394,
+      "def min": 376,
+      "hp": 1628,
+      "rec max": 273,
+      "rec min": 255
+    },
+    "oracle": {
+      "atk": 432,
+      "def max": 367,
+      "def min": 349,
+      "hp": 1628,
+      "rec max": 309,
+      "rec min": 291
+    }
+  },
+  "leader_skill": {},
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -208,83 +200,83 @@
     ],
     "name": "Gnawing Shock"
   },
-  "bbdescription": "Thunder elemental attack on single Enemy",
-  "bbtype": "Offense",
-  "bbhits": "1",
-  "bbaoe": "1",
-  "bbgauge": "12",
-  "bbdc": "5",
-  "bbmultiplier": "100",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "40031",
-  "evomats1": "40130",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evozelcost": "1000",
-  "stats": {
-    "_base": {
-      "atk": 320,
-      "def": 280,
-      "hp": 830,
-      "rec": 210
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 432,
-      "def": 367,
-      "hp": 1628,
-      "rec": 273
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 432,
-      "def": 367,
-      "hp max": 1718,
-      "hp min": 1673,
-      "rec max": 264,
-      "rec min": 246
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 64
     },
-    "breaker": {
-      "atk max": 459,
-      "atk min": 441,
-      "def max": 358,
-      "def min": 340,
-      "hp": 1628,
-      "rec": 273
+    "idle": {
+      "total number of frames": 46
     },
-    "guardian": {
-      "atk": 432,
-      "def max": 394,
-      "def min": 376,
-      "hp": 1628,
-      "rec max": 273,
-      "rec min": 255
-    },
-    "oracle": {
-      "atk": 432,
-      "def max": 367,
-      "def min": 349,
-      "hp": 1628,
-      "rec max": 309,
-      "rec min": 291
+    "move": {
+      "total number of frames": 35
     }
   },
-  "leader_skill": {},
-  "extra_skill": {},
+  "category": 40030,
+  "cost": "1",
+  "damage frames": {
+    "frame times": [
+      30
+    ],
+    "hit dmg% distribution": [
+      100
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 1
+  },
+  "drop check count": 2,
+  "element": "thunder",
+  "exp_pattern": 10,
+  "gender": "other",
+  "getting type": "not eligible for achievement",
+  "guide_id": 49,
+  "imp": {
+    "max atk": "80",
+    "max def": "80",
+    "max hp": "200",
+    "max rec": "80"
+  },
+  "kind": "normal",
+  "lord damage range": "401~449",
+  "movement": {
+    "attack": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    }
+  },
+  "name": "Sparky",
+  "rarity": "1",
+  "sell caution": false,
+  "unitName": "Sparky",
+  "maxlv": "10",
+  "no": "49",
   "unitDisplayHomePosition_1W9CxaFK": "38,-139,140,382",
   "unitDisplayDetailPosition_6z54rgb3": "205,256,550,440",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "255,494,150,120,0",
@@ -294,5 +286,88 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "100",
   "sellCaution": false,
-  "effectFrames": "24:124:1"
+  "effectFrames": "24:124:1",
+  "evofrom": "",
+  "evointo": "40031",
+  "evozelcost": "1000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "40130",
+      "count": 1
+    }
+  ],
+  "basexp": "10",
+  "animation_attack": "64",
+  "animation_idle": "46",
+  "animation_move": "35",
+  "movespeed_attack": "0.0041",
+  "movespeed_skill": "0.0041",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "30",
+  "normal_distribute": "100",
+  "normal_totaldistr": "100",
+  "bb_frames": "30",
+  "bb_distribute": "100",
+  "bb_totaldistr": "100",
+  "description": "A liquid-type demon wrapped in electricity, thought to appear when lightning strikes. It has a horn on its head and a black pattern on its body. It is mischievous and laughs with its friends as it electrically shocks humans. They are still weak and very low level, but like so many other slimes they are perfect sparring partners for new Summoners.",
+  "summon": "Zap!<br>Do you want to<br>spark with me?",
+  "fusion": "I'm sparking!<br>Make me spark more!",
+  "evolution": "",
+  "hp_base": "830",
+  "atk_base": "320",
+  "def_base": "280",
+  "rec_base": "210",
+  "hp_lord": "1628",
+  "atk_lord": "432",
+  "def_lord": "367",
+  "rec_lord": "273",
+  "hp_anima": "1696",
+  "rec_anima": "255",
+  "atk_breaker": "450",
+  "def_breaker": "349",
+  "atk_guardian": "414",
+  "def_guardian": "385",
+  "rec_guardian": "264",
+  "def_oracle": "358",
+  "hp_oracle": "1601",
+  "rec_oracle": "300",
+  "hp_bonus": "200",
+  "atk_bonus": "80",
+  "def_bonus": "80",
+  "rec_bonus": "80",
+  "lordonly": "",
+  "combo_hits": "1",
+  "normaldc": "2",
+  "ls": "",
+  "lsdescription": "",
+  "lstype": "",
+  "bbdescription": "Thunder elemental attack on single Enemy",
+  "bbtype": "Offense",
+  "bbhits": "1",
+  "bbaoe": "1",
+  "bbgauge": "12",
+  "bbdc": "5",
+  "bbmultiplier": "100",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "40130",
+  "evomats2": "",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": ""
 }

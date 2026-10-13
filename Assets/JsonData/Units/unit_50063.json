@@ -1,62 +1,63 @@
 {
   "id": "50063",
-  "unitName": "Remuihl",
-  "no": "703",
-  "element": "Light",
-  "rarity": "★★★★",
-  "cost": "10",
-  "maxlv": "60",
-  "basexp": "15",
-  "gender": "N",
-  "ai": "1",
-  "animation_attack": "105",
-  "animation_idle": "156",
-  "animation_move": "56",
-  "movespeed_attack": "0.0024",
-  "movespeed_skill": "0.0024",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "1, 12, 23, 34, 45, 56",
-  "normal_distribute": "16, 16, 17, 17, 17, 17",
-  "normal_totaldistr": "100",
-  "bb_frames": "0, 11, 22, 33, 44, 48, 52, 56, 60, 64",
-  "bb_distribute": "9, 9, 9, 9, 9, 11, 11, 11, 11, 11",
-  "bb_totaldistr": "100",
-  "description": "A mythical beast with a virtuous sword attached to its forehead, and rainbow wings covering its back. Said to be the sacred horse which pulled the tanks of the God Army, or a divine beast that can cut through the darkness, this creature is considered the best creation the gods ever made. The blade on its forehead is sharper than any sword humans are capable of producing, and it is said to be particularly effective when cutting down demons. For this reason Remuihl is believed to be a natural enemy of the demon race, and has thus come to adorn the temples of many countries as a charm of protection against evil.",
-  "summon": "My horn will crush all evil.<br>If your heart is untrue,<br>I shall cut you in half.",
-  "fusion": "My wings are shining.<br>This is proof of your noble heart.<br>You should be proud.",
-  "evolution": "You now possess the sword of light.<br>I will destroy anything in your path.",
-  "hp_base": "2268",
-  "atk_base": "779",
-  "def_base": "779",
-  "rec_base": "844",
-  "hp_lord": "3360",
-  "atk_lord": "1024",
-  "def_lord": "1023",
-  "rec_lord": "1154",
-  "hp_anima": "3803",
-  "rec_anima": "1036",
-  "atk_breaker": "1142",
-  "def_breaker": "905",
-  "atk_guardian": "906",
-  "def_guardian": "1141",
-  "rec_guardian": "1095",
-  "def_oracle": "964",
-  "hp_oracle": "3183",
-  "rec_oracle": "1331",
-  "hp_bonus": "400",
-  "atk_bonus": "160",
-  "def_bonus": "160",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "6",
-  "normaldc": "12",
-  "ls": "Pure Shining",
-  "lsdescription": "Boost in Heart Crystals produced during Spark",
-  "lsnote": "35% boost",
-  "lstype": "Recovery",
+  "stats": {
+    "_base": {
+      "atk": 779,
+      "def": 779,
+      "hp": 2268,
+      "rec": 844
+    },
+    "_lord": {
+      "atk": 1024,
+      "def": 1023,
+      "hp": 3360,
+      "rec": 1154
+    },
+    "anima": {
+      "atk": 1024,
+      "def": 1023,
+      "hp max": 3950,
+      "hp min": 3655,
+      "rec max": 1095,
+      "rec min": 977
+    },
+    "breaker": {
+      "atk max": 1201,
+      "atk min": 1083,
+      "def max": 964,
+      "def min": 846,
+      "hp": 3360,
+      "rec": 1154
+    },
+    "guardian": {
+      "atk": 1024,
+      "def max": 1200,
+      "def min": 1082,
+      "hp": 3360,
+      "rec max": 1154,
+      "rec min": 1036
+    },
+    "oracle": {
+      "atk": 1024,
+      "def max": 1023,
+      "def min": 905,
+      "hp": 3360,
+      "rec max": 1390,
+      "rec min": 1272
+    }
+  },
+  "leader_skill": {
+    "desc": "Boost in Heart Crystals produced during Spark",
+    "effects": [
+      {
+        "hc drop% for spark": 35,
+        "passive id": "31"
+      }
+    ],
+    "id": "1501",
+    "name": "Pure Shining"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -237,94 +238,93 @@
     ],
     "name": "Skyward Glave"
   },
-  "bbdescription": "10 combo Light elemental attack on single enemy & boost to BC drop rate",
-  "bbnote": "50% boost",
-  "bbtype": "Offense",
-  "bbhits": "10",
-  "bbaoe": "1",
-  "bbgauge": "15",
-  "bbdc": "20",
-  "bbmultiplier": "280",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "50061",
-  "evointo": "",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 779,
-      "def": 779,
-      "hp": 2268,
-      "rec": 844
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "party"
     },
-    "_lord": {
-      "atk": 1024,
-      "def": 1023,
-      "hp": 3360,
-      "rec": 1154
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1024,
-      "def": 1023,
-      "hp max": 3950,
-      "hp min": 3655,
-      "rec max": 1095,
-      "rec min": 977
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 105
     },
-    "breaker": {
-      "atk max": 1201,
-      "atk min": 1083,
-      "def max": 964,
-      "def min": 846,
-      "hp": 3360,
-      "rec": 1154
+    "idle": {
+      "total number of frames": 156
     },
-    "guardian": {
-      "atk": 1024,
-      "def max": 1200,
-      "def min": 1082,
-      "hp": 3360,
-      "rec max": 1154,
-      "rec min": 1036
-    },
-    "oracle": {
-      "atk": 1024,
-      "def max": 1023,
-      "def min": 905,
-      "hp": 3360,
-      "rec max": 1390,
-      "rec min": 1272
+    "move": {
+      "total number of frames": 56
     }
   },
-  "leader_skill": {
-    "desc": "Boost in Heart Crystals produced during Spark",
-    "effects": [
-      {
-        "hc drop% for spark": 35,
-        "passive id": "31"
-      }
+  "category": 50060,
+  "cost": "10",
+  "damage frames": {
+    "frame times": [
+      1,
+      12,
+      23,
+      34,
+      45,
+      56
     ],
-    "id": "1501",
-    "name": "Pure Shining"
+    "hit dmg% distribution": [
+      16,
+      16,
+      17,
+      17,
+      17,
+      17
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 6
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "light",
+  "exp_pattern": 15,
+  "gender": "other",
+  "getting type": "farmable",
+  "guide_id": 703,
+  "imp": {
+    "max atk": "160",
+    "max def": "160",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "953~1064",
+  "movement": {
+    "attack": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    }
+  },
+  "name": "Remuihl",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Remuihl",
+  "maxlv": "60",
+  "no": "703",
   "unitDisplayHomePosition_1W9CxaFK": "427,346,200,544",
   "unitDisplayDetailPosition_6z54rgb3": "-180,-60,1300,843",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "-55,159,713,463,0",
@@ -334,5 +334,84 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "0:135:1,0:500033:1,11:135:1,22:135:1,33:135:1,44:135:1,55:135:1"
+  "effectFrames": "0:135:1,0:500033:1,11:135:1,22:135:1,33:135:1,44:135:1,55:135:1",
+  "evofrom": "50061",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "15",
+  "animation_attack": "105",
+  "animation_idle": "156",
+  "animation_move": "56",
+  "movespeed_attack": "0.0024",
+  "movespeed_skill": "0.0024",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "1, 12, 23, 34, 45, 56",
+  "normal_distribute": "16, 16, 17, 17, 17, 17",
+  "normal_totaldistr": "100",
+  "bb_frames": "0, 11, 22, 33, 44, 48, 52, 56, 60, 64",
+  "bb_distribute": "9, 9, 9, 9, 9, 11, 11, 11, 11, 11",
+  "bb_totaldistr": "100",
+  "description": "A mythical beast with a virtuous sword attached to its forehead, and rainbow wings covering its back. Said to be the sacred horse which pulled the tanks of the God Army, or a divine beast that can cut through the darkness, this creature is considered the best creation the gods ever made. The blade on its forehead is sharper than any sword humans are capable of producing, and it is said to be particularly effective when cutting down demons. For this reason Remuihl is believed to be a natural enemy of the demon race, and has thus come to adorn the temples of many countries as a charm of protection against evil.",
+  "summon": "My horn will crush all evil.<br>If your heart is untrue,<br>I shall cut you in half.",
+  "fusion": "My wings are shining.<br>This is proof of your noble heart.<br>You should be proud.",
+  "evolution": "You now possess the sword of light.<br>I will destroy anything in your path.",
+  "hp_base": "2268",
+  "atk_base": "779",
+  "def_base": "779",
+  "rec_base": "844",
+  "hp_lord": "3360",
+  "atk_lord": "1024",
+  "def_lord": "1023",
+  "rec_lord": "1154",
+  "hp_anima": "3803",
+  "rec_anima": "1036",
+  "atk_breaker": "1142",
+  "def_breaker": "905",
+  "atk_guardian": "906",
+  "def_guardian": "1141",
+  "rec_guardian": "1095",
+  "def_oracle": "964",
+  "hp_oracle": "3183",
+  "rec_oracle": "1331",
+  "hp_bonus": "400",
+  "atk_bonus": "160",
+  "def_bonus": "160",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "6",
+  "normaldc": "12",
+  "ls": "Pure Shining",
+  "lsdescription": "Boost in Heart Crystals produced during Spark",
+  "lsnote": "35% boost",
+  "lstype": "Recovery",
+  "bbdescription": "10 combo Light elemental attack on single enemy & boost to BC drop rate",
+  "bbnote": "50% boost",
+  "bbtype": "Offense",
+  "bbhits": "10",
+  "bbaoe": "1",
+  "bbgauge": "15",
+  "bbdc": "20",
+  "bbmultiplier": "280",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "",
+  "evomats2": "",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": ""
 }

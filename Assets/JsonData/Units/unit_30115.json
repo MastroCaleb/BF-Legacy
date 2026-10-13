@@ -1,59 +1,63 @@
 {
   "id": "30115",
-  "unitName": "Alpha Tree Altri",
-  "no": "372",
-  "element": "Earth",
-  "rarity": "★★★★★★",
-  "cost": "22",
-  "maxlv": "100",
-  "basexp": "21",
-  "gender": "N",
-  "ai": "5",
-  "animation_attack": "285",
-  "animation_idle": "200",
-  "animation_move": "200",
-  "movespeed_attack": "6",
-  "movespeed_skill": "6",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "90, 98, 106, 112, 120, 128, 136",
-  "normal_distribute": "10, 10, 10, 10, 10, 20, 30",
-  "normal_totaldistr": "100",
-  "description": "The father of all trees, Eltri, after acquiring the knowledge of countless years came to hold a multitude of personalities. It's thought he separated his personalities so that he could debate between them, increasing the precision of his thinking. There is an unconfirmed theory that states that his multiple personalities reside within his fort-like exterior. It appears that the faces that can be seen on him now represent his main personalities, with all important conversations going through them.",
-  "summon": "We confirm your strong spirit.<br>We will help pursue your hopes.<br>Let us seek truth for the future.",
-  "fusion": "Our power comes not from <br>fighting but from knowledge.<br>What drives you to find power?",
-  "evolution": "A world isolated by the gods.<br>Would you like to see into it?<br>If so, let us show you the way.",
-  "hp_base": "4277",
-  "atk_base": "944",
-  "def_base": "1419",
-  "rec_base": "840",
-  "hp_lord": "6082",
-  "atk_lord": "1303",
-  "def_lord": "1705",
-  "rec_lord": "1320",
-  "hp_anima": "6825",
-  "rec_anima": "1122",
-  "atk_breaker": "1501",
-  "def_breaker": "1507",
-  "atk_guardian": "1105",
-  "def_guardian": "1903",
-  "rec_guardian": "1221",
-  "def_oracle": "1606",
-  "hp_oracle": "5785",
-  "rec_oracle": "1617",
-  "hp_bonus": "750",
-  "atk_bonus": "200",
-  "def_bonus": "400",
-  "rec_bonus": "300",
-  "lordonly": "",
-  "combo_hits": "7",
-  "normaldc": "21",
-  "ls": "Sincere Affection",
-  "lsdescription": "Huge boost in effectiveness of Heart Crystals",
-  "lsnote": "75% boost",
-  "lstype": "Recovery",
+  "stats": {
+    "_base": {
+      "atk": 944,
+      "def": 1419,
+      "hp": 4277,
+      "rec": 840
+    },
+    "_lord": {
+      "atk": 1303,
+      "def": 1705,
+      "hp": 6082,
+      "rec": 1320
+    },
+    "anima": {
+      "atk": 1303,
+      "def": 1705,
+      "hp max": 7072,
+      "hp min": 6577,
+      "rec max": 1221,
+      "rec min": 1023
+    },
+    "breaker": {
+      "atk max": 1600,
+      "atk min": 1402,
+      "def max": 1606,
+      "def min": 1408,
+      "hp": 6082,
+      "rec": 1320
+    },
+    "guardian": {
+      "atk": 1303,
+      "def max": 2002,
+      "def min": 1804,
+      "hp": 6082,
+      "rec max": 1320,
+      "rec min": 1122
+    },
+    "oracle": {
+      "atk": 1303,
+      "def max": 1705,
+      "def min": 1507,
+      "hp": 6082,
+      "rec max": 1716,
+      "rec min": 1518
+    }
+  },
+  "leader_skill": {
+    "desc": "Huge boost in effectiveness of Heart Crystals",
+    "effects": [
+      {
+        "hc effectiveness%": 75,
+        "passive id": "10"
+      }
+    ],
+    "id": "1102",
+    "name": "Sincere Affection"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -398,12 +402,6 @@
     ],
     "name": "Spectral Purge"
   },
-  "bbdescription": "Greatly recovers HP & removes all status ailments for all allies",
-  "bbnote": "Heals (2300~2600 + 22.5% of healer Rec) HP",
-  "bbtype": "Heal/Support",
-  "bbhits": "0",
-  "bbaoe": "0",
-  "bbgauge": "20",
   "sbb": {
     "damage frames": [
       {
@@ -890,87 +888,94 @@
     ],
     "name": "Cosmic Radius"
   },
-  "sbbdescription": "Greatly recovers HP & removes status ailments and negates them for all allies for 3 turns",
-  "sbbnote": "Heals (4000~4500 + 22.5% of healer Rec) HP",
-  "sbbtype": "Heal/Support",
-  "sbbhits": "0",
-  "sbbaoe": "0",
-  "sbbgauge": "17",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "30114",
-  "evointo": "30116",
-  "evomats1": "30334",
-  "evomats2": "50354",
-  "evomats3": "30133",
-  "evomats4": "30191",
-  "evomats5": "",
-  "evoitem": "Legend Stone",
-  "evozelcost": "1500000",
-  "stats": {
-    "_base": {
-      "atk": 944,
-      "def": 1419,
-      "hp": 4277,
-      "rec": 840
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 80.0,
+      "target conditions": "hp_50pr_under",
+      "target type": "party"
     },
-    "_lord": {
-      "atk": 1303,
-      "def": 1705,
-      "hp": 6082,
-      "rec": 1320
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "hp_min",
+      "target type": "party"
     },
-    "anima": {
-      "atk": 1303,
-      "def": 1705,
-      "hp max": 7072,
-      "hp min": 6577,
-      "rec max": 1221,
-      "rec min": 1023
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 285
     },
-    "breaker": {
-      "atk max": 1600,
-      "atk min": 1402,
-      "def max": 1606,
-      "def min": 1408,
-      "hp": 6082,
-      "rec": 1320
+    "idle": {
+      "total number of frames": 200
     },
-    "guardian": {
-      "atk": 1303,
-      "def max": 2002,
-      "def min": 1804,
-      "hp": 6082,
-      "rec max": 1320,
-      "rec min": 1122
-    },
-    "oracle": {
-      "atk": 1303,
-      "def max": 1705,
-      "def min": 1507,
-      "hp": 6082,
-      "rec max": 1716,
-      "rec min": 1518
+    "move": {
+      "total number of frames": 200
     }
   },
-  "leader_skill": {
-    "desc": "Huge boost in effectiveness of Heart Crystals",
-    "effects": [
-      {
-        "hc effectiveness%": 75,
-        "passive id": "10"
-      }
+  "category": 30110,
+  "cost": "22",
+  "damage frames": {
+    "frame times": [
+      90,
+      98,
+      106,
+      112,
+      120,
+      128,
+      136
     ],
-    "id": "1102",
-    "name": "Sincere Affection"
+    "hit dmg% distribution": [
+      10,
+      10,
+      10,
+      10,
+      10,
+      20,
+      30
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 7
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "earth",
+  "exp_pattern": 20,
+  "gender": "other",
+  "getting type": "rare summon",
+  "guide_id": 372,
+  "imp": {
+    "max atk": "200",
+    "max def": "400",
+    "max hp": "750",
+    "max rec": "300"
+  },
+  "kind": "normal",
+  "lord damage range": "1212~1355",
+  "movement": {
+    "attack": {
+      "move speed": 6,
+      "move speed type": "2",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 6,
+      "move speed type": "2",
+      "move type": "3"
+    }
+  },
+  "name": "Alpha Tree Altri",
+  "rarity": "6",
+  "sell caution": false,
+  "unitName": "Alpha Tree Altri",
+  "maxlv": "100",
+  "no": "372",
   "unitDisplayHomePosition_1W9CxaFK": "379,-2,220,601",
   "unitDisplayDetailPosition_6z54rgb3": "-73,98,1024,983",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "1,180,650,558,1",
@@ -980,5 +985,107 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "8000",
   "sellCaution": false,
-  "effectFrames": "90:250:1,100:300260:1,115:300260:1,130:300260:1"
+  "effectFrames": "90:250:1,100:300260:1,115:300260:1,130:300260:1",
+  "evofrom": "30114",
+  "evointo": "30116",
+  "evozelcost": "1500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "30334",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30191",
+      "count": 1
+    },
+    {
+      "type": "2",
+      "id": "110100",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "285",
+  "animation_idle": "200",
+  "animation_move": "200",
+  "movespeed_attack": "6",
+  "movespeed_skill": "6",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "90, 98, 106, 112, 120, 128, 136",
+  "normal_distribute": "10, 10, 10, 10, 10, 20, 30",
+  "normal_totaldistr": "100",
+  "description": "The father of all trees, Eltri, after acquiring the knowledge of countless years came to hold a multitude of personalities. It's thought he separated his personalities so that he could debate between them, increasing the precision of his thinking. There is an unconfirmed theory that states that his multiple personalities reside within his fort-like exterior. It appears that the faces that can be seen on him now represent his main personalities, with all important conversations going through them.",
+  "summon": "We confirm your strong spirit.<br>We will help pursue your hopes.<br>Let us seek truth for the future.",
+  "fusion": "Our power comes not from <br>fighting but from knowledge.<br>What drives you to find power?",
+  "evolution": "A world isolated by the gods.<br>Would you like to see into it?<br>If so, let us show you the way.",
+  "hp_base": "4277",
+  "atk_base": "944",
+  "def_base": "1419",
+  "rec_base": "840",
+  "hp_lord": "6082",
+  "atk_lord": "1303",
+  "def_lord": "1705",
+  "rec_lord": "1320",
+  "hp_anima": "6825",
+  "rec_anima": "1122",
+  "atk_breaker": "1501",
+  "def_breaker": "1507",
+  "atk_guardian": "1105",
+  "def_guardian": "1903",
+  "rec_guardian": "1221",
+  "def_oracle": "1606",
+  "hp_oracle": "5785",
+  "rec_oracle": "1617",
+  "hp_bonus": "750",
+  "atk_bonus": "200",
+  "def_bonus": "400",
+  "rec_bonus": "300",
+  "lordonly": "",
+  "combo_hits": "7",
+  "normaldc": "21",
+  "ls": "Sincere Affection",
+  "lsdescription": "Huge boost in effectiveness of Heart Crystals",
+  "lsnote": "75% boost",
+  "lstype": "Recovery",
+  "bbdescription": "Greatly recovers HP & removes all status ailments for all allies",
+  "bbnote": "Heals (2300~2600 + 22.5% of healer Rec) HP",
+  "bbtype": "Heal/Support",
+  "bbhits": "0",
+  "bbaoe": "0",
+  "bbgauge": "20",
+  "sbbdescription": "Greatly recovers HP & removes status ailments and negates them for all allies for 3 turns",
+  "sbbnote": "Heals (4000~4500 + 22.5% of healer Rec) HP",
+  "sbbtype": "Heal/Support",
+  "sbbhits": "0",
+  "sbbaoe": "0",
+  "sbbgauge": "17",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "30334",
+  "evomats2": "50354",
+  "evomats3": "30133",
+  "evomats4": "30191",
+  "evomats5": "",
+  "evoitem": "Legend Stone"
 }

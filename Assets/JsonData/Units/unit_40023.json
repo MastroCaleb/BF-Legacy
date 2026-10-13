@@ -1,59 +1,63 @@
 {
   "id": "40023",
-  "unitName": "Commander Weiss",
-  "no": "36",
-  "element": "Thunder",
-  "rarity": "★★★★",
-  "cost": "9",
-  "maxlv": "60",
-  "basexp": "15",
-  "gender": "M",
-  "ai": "3",
-  "animation_attack": "77",
-  "animation_idle": "52",
-  "animation_move": "52",
-  "movespeed_attack": "6",
-  "movespeed_skill": "6",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "38, 43, 48, 53, 58, 63",
-  "normal_distribute": "17, 16, 17, 16, 17, 17",
-  "normal_totaldistr": "100",
-  "description": "A tactician from the ruined Atharva Republic. His strong eye for strategy not only saw his imminent defeat, but also that there were still some gods willing to save humanity. Due to this foresight he focused on surviving instead of winning. Many soldiers called him weak, but the result was that many people were saved by him.",
-  "summon": "With my help, you'll<br>surely transcend boundries.<br>Would you like that?",
-  "fusion": "Battles aren't won simply<br>by strengthening leaders. You <br>must also empower your troops.",
-  "evolution": "Battles end before they start.<br>Don't be a fool and rush into<br>battle without a plan!",
-  "hp_base": "2997",
-  "atk_base": "742",
-  "def_base": "644",
-  "rec_base": "1283",
-  "hp_lord": "4326",
-  "atk_lord": "925",
-  "def_lord": "826",
-  "rec_lord": "1740",
-  "hp_anima": "4769",
-  "rec_anima": "1622",
-  "atk_breaker": "1043",
-  "def_breaker": "708",
-  "atk_guardian": "807",
-  "def_guardian": "944",
-  "rec_guardian": "1681",
-  "def_oracle": "767",
-  "hp_oracle": "4149",
-  "rec_oracle": "1917",
-  "hp_bonus": "500",
-  "atk_bonus": "140",
-  "def_bonus": "260",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "6",
-  "normaldc": "12",
-  "ls": "Fighting Strobe",
-  "lsdescription": "Large boost in Battle Crystals produced during Spark",
-  "lsnote": "70% boost",
-  "lstype": "Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 742,
+      "def": 644,
+      "hp": 2997,
+      "rec": 1283
+    },
+    "_lord": {
+      "atk": 925,
+      "def": 826,
+      "hp": 4326,
+      "rec": 1740
+    },
+    "anima": {
+      "atk": 925,
+      "def": 826,
+      "hp max": 4916,
+      "hp min": 4621,
+      "rec max": 1681,
+      "rec min": 1563
+    },
+    "breaker": {
+      "atk max": 1102,
+      "atk min": 984,
+      "def max": 767,
+      "def min": 649,
+      "hp": 4326,
+      "rec": 1740
+    },
+    "guardian": {
+      "atk": 925,
+      "def max": 1003,
+      "def min": 885,
+      "hp": 4326,
+      "rec max": 1740,
+      "rec min": 1622
+    },
+    "oracle": {
+      "atk": 925,
+      "def max": 826,
+      "def min": 708,
+      "hp": 4326,
+      "rec max": 1976,
+      "rec min": 1858
+    }
+  },
+  "leader_skill": {
+    "desc": "Large boost in Battle Crystals produced during Spark",
+    "effects": [
+      {
+        "bc drop% for spark": 70,
+        "passive id": "31"
+      }
+    ],
+    "id": "1402",
+    "name": "Fighting Strobe"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -216,92 +220,99 @@
     ],
     "name": "Thunder's Reign"
   },
-  "bbdescription": "Great boost to all allies' ATK for 3 turns",
-  "bbnote": "60% boost",
-  "bbtype": "Support",
-  "bbhits": "",
-  "bbaoe": "0",
-  "bbgauge": "20",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "40022",
-  "evointo": "40024",
-  "evomats1": "40133",
-  "evomats2": "40191",
-  "evomats3": "40132",
-  "evomats4": "40132",
-  "evomats5": "40130",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 742,
-      "def": 644,
-      "hp": 2997,
-      "rec": 1283
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 925,
-      "def": 826,
-      "hp": 4326,
-      "rec": 1740
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 925,
-      "def": 826,
-      "hp max": 4916,
-      "hp min": 4621,
-      "rec max": 1681,
-      "rec min": 1563
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 1102,
-      "atk min": 984,
-      "def max": 767,
-      "def min": 649,
-      "hp": 4326,
-      "rec": 1740
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 77
     },
-    "guardian": {
-      "atk": 925,
-      "def max": 1003,
-      "def min": 885,
-      "hp": 4326,
-      "rec max": 1740,
-      "rec min": 1622
+    "idle": {
+      "total number of frames": 52
     },
-    "oracle": {
-      "atk": 925,
-      "def max": 826,
-      "def min": 708,
-      "hp": 4326,
-      "rec max": 1976,
-      "rec min": 1858
+    "move": {
+      "total number of frames": 52
     }
   },
-  "leader_skill": {
-    "desc": "Large boost in Battle Crystals produced during Spark",
-    "effects": [
-      {
-        "bc drop% for spark": 70,
-        "passive id": "31"
-      }
+  "category": 40020,
+  "cost": "9",
+  "damage frames": {
+    "frame times": [
+      38,
+      43,
+      48,
+      53,
+      58,
+      63
     ],
-    "id": "1402",
-    "name": "Fighting Strobe"
+    "hit dmg% distribution": [
+      17,
+      16,
+      17,
+      16,
+      17,
+      17
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 6
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "thunder",
+  "exp_pattern": 15,
+  "gender": "male",
+  "getting type": "farmable",
+  "guide_id": 36,
+  "imp": {
+    "max atk": "140",
+    "max def": "260",
+    "max hp": "500",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "860~962",
+  "movement": {
+    "attack": {
+      "move speed": 6,
+      "move speed type": "2",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 6,
+      "move speed type": "2",
+      "move type": "3"
+    }
+  },
+  "name": "Commander Weiss",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Commander Weiss",
+  "maxlv": "60",
+  "no": "36",
   "unitDisplayHomePosition_1W9CxaFK": "149,14,200,544",
   "unitDisplayDetailPosition_6z54rgb3": "209,117,588,652",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "196,295,294,326,0",
@@ -311,5 +322,100 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "37:300:1"
+  "effectFrames": "37:300:1",
+  "evofrom": "40022",
+  "evointo": "40024",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "40133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40132",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "40130",
+      "count": 1
+    }
+  ],
+  "basexp": "15",
+  "animation_attack": "77",
+  "animation_idle": "52",
+  "animation_move": "52",
+  "movespeed_attack": "6",
+  "movespeed_skill": "6",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "38, 43, 48, 53, 58, 63",
+  "normal_distribute": "17, 16, 17, 16, 17, 17",
+  "normal_totaldistr": "100",
+  "description": "A tactician from the ruined Atharva Republic. His strong eye for strategy not only saw his imminent defeat, but also that there were still some gods willing to save humanity. Due to this foresight he focused on surviving instead of winning. Many soldiers called him weak, but the result was that many people were saved by him.",
+  "summon": "With my help, you'll<br>surely transcend boundries.<br>Would you like that?",
+  "fusion": "Battles aren't won simply<br>by strengthening leaders. You <br>must also empower your troops.",
+  "evolution": "Battles end before they start.<br>Don't be a fool and rush into<br>battle without a plan!",
+  "hp_base": "2997",
+  "atk_base": "742",
+  "def_base": "644",
+  "rec_base": "1283",
+  "hp_lord": "4326",
+  "atk_lord": "925",
+  "def_lord": "826",
+  "rec_lord": "1740",
+  "hp_anima": "4769",
+  "rec_anima": "1622",
+  "atk_breaker": "1043",
+  "def_breaker": "708",
+  "atk_guardian": "807",
+  "def_guardian": "944",
+  "rec_guardian": "1681",
+  "def_oracle": "767",
+  "hp_oracle": "4149",
+  "rec_oracle": "1917",
+  "hp_bonus": "500",
+  "atk_bonus": "140",
+  "def_bonus": "260",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "6",
+  "normaldc": "12",
+  "ls": "Fighting Strobe",
+  "lsdescription": "Large boost in Battle Crystals produced during Spark",
+  "lsnote": "70% boost",
+  "lstype": "Brave Burst",
+  "bbdescription": "Great boost to all allies' ATK for 3 turns",
+  "bbnote": "60% boost",
+  "bbtype": "Support",
+  "bbhits": "",
+  "bbaoe": "0",
+  "bbgauge": "20",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "40133",
+  "evomats2": "40191",
+  "evomats3": "40132",
+  "evomats4": "40132",
+  "evomats5": "40130"
 }

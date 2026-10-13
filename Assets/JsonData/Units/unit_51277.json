@@ -1,68 +1,106 @@
 {
   "id": "51277",
-  "unitName": "Virtuous Paladin Segrud",
-  "no": "1693",
-  "element": "Light",
-  "rarity": "Omni",
-  "cost": "50",
-  "maxlv": "150",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "1",
-  "animation_attack": "141",
-  "animation_idle": "84",
-  "animation_move": "4",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "25, 33, 49, 57, 73, 77, 81, 85",
-  "normal_distribute": "15, 10, 8, 4, 27, 18, 15, 3",
-  "normal_totaldistr": "100",
-  "bb_frames": "25, 28, 31, 34, 37, 49, 52, 55, 58, 61, 73, 76, 79, 82, 85, 88",
-  "bb_distribute": "9, 6, 5, 5, 4, 7, 4, 4, 3, 3, 15, 9, 8, 7, 6, 5",
-  "bb_totaldistr": "100",
-  "sbb_frames": "25, 28, 31, 34, 37, 49, 52, 55, 58, 61, 73, 76, 79, 82, 85, 88, 91, 94",
-  "sbb_distribute": "7, 6, 4, 5, 4, 6, 4, 3, 4, 3, 15, 8, 7, 6, 6, 5, 4, 3",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "25, 28, 31, 34, 37, 49, 52, 55, 58, 61, 73, 76, 79, 82, 85, 88, 91, 94, 97, 100",
-  "ubb_distribute": "6, 5, 4, 3, 3, 4, 5, 3, 4, 3, 15, 8, 7, 6, 5, 5, 4, 3, 4, 3",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "1",
-  "ubb_effectdelay": "1",
-  "description": "From a young age, Segrud had no tolerance for injustice. Anyone he saw engaging in acts he saw as evil faced defeat at his hands. However, he eventually sustained a major facial scar in one deadly battle, causing him to reflect on his life and vow to cease the public use of his skills. Had he participated in the sacred La Vedan tournament, Segrud likely would have been victorious. In doing so, he might have been the one to declare \"La Veda Fencing\" the national standard. Though events followed a different route, Segrud's spirit did live on. Even now, La Veda-style fencing is taught with a focus on swords as a means of protecting people.",
-  "summon": "I will leave swords for protection, and hearts to wield them, for the future. All under the name of Zelban!",
-  "fusion": "I will not make another mistake. I will only use my power and my sword to save lives.",
-  "evolution": "I have already passed on my true spirit. I am ready to meet my end at any moment!",
-  "hp_base": "6448",
-  "atk_base": "2713",
-  "def_base": "2568",
-  "rec_base": "2023",
-  "hp_lord": "8378",
-  "atk_lord": "3402",
-  "def_lord": "3195",
-  "rec_lord": "2525",
-  "hp_anima": "9495",
-  "rec_anima": "2227",
-  "atk_breaker": "3700",
-  "def_breaker": "2897",
-  "def_guardian": "3493",
-  "rec_guardian": "2376",
-  "def_oracle": "3046",
-  "rec_oracle": "2972",
-  "hp_bonus": "1250",
-  "atk_bonus": "400",
-  "def_bonus": "800",
-  "rec_bonus": "500",
-  "lordonly": "",
-  "combo_hits": "8",
-  "normaldc": "48",
-  "ls": "Bladelord's Fortress",
-  "lsdescription": "60% boost to all parameters, boosts Atk, Def, Rec relative to remaining HP, boosts damage reduction when guarding & negates Def ignoring effects",
-  "lsnote": "0.6% parameter boost per 1% HP remaining & 10% guard mitigation increase",
+  "stats": {
+    "_base": {
+      "atk": 2713,
+      "def": 2568,
+      "hp": 6448,
+      "rec": 2023
+    },
+    "_lord": {
+      "atk": 3402,
+      "def": 3195,
+      "hp": 8378,
+      "rec": 2525
+    },
+    "anima": {
+      "atk": 3402,
+      "def": 3195,
+      "hp max": 9868,
+      "hp min": 9123,
+      "rec max": 2376,
+      "rec min": 2078
+    },
+    "breaker": {
+      "atk max": 3849,
+      "atk min": 3551,
+      "def max": 3046,
+      "def min": 2748,
+      "hp": 8378,
+      "rec": 2525
+    },
+    "guardian": {
+      "atk": 3402,
+      "def max": 3642,
+      "def min": 3344,
+      "hp": 8378,
+      "rec max": 2525,
+      "rec min": 2227
+    },
+    "oracle": {
+      "atk": 3402,
+      "def max": 3195,
+      "def min": 2897,
+      "hp": 8378,
+      "rec max": 3121,
+      "rec min": 2823
+    }
+  },
+  "leader_skill": {
+    "desc": "60% boost to all parameters, boosts Atk, Def, Rec relative to remaining HP, boosts damage reduction when guarding & negates Def ignoring effects",
+    "effects": [
+      {
+        "atk% buff": 60,
+        "def% buff": 60,
+        "hp% buff": 60,
+        "passive id": "1",
+        "rec% buff": 60
+      },
+      {
+        "atk% base buff": 0,
+        "atk% extra buff based on hp": 60,
+        "buff proportional to hp": "remaining",
+        "def% base buff": 0,
+        "def% extra buff based on hp": 60,
+        "passive id": "46",
+        "rec% base buff": 0,
+        "rec% extra buff based on hp": 60
+      },
+      {
+        "guard increase mitigation%": 10,
+        "passive id": "58"
+      },
+      {
+        "ignore def resist chance%": 100,
+        "passive id": "92"
+      }
+    ],
+    "id": "10154",
+    "name": "Bladelord's Fortress"
+  },
+  "extra_skill": {
+    "desc": "Boosts Def each turn for up to 5 turns & negates Def ignoring effects",
+    "effects": [
+      {
+        "conditions": [],
+        "def% max buff": 100,
+        "increase from min to max": 1,
+        "passive id": "105",
+        "passive target": "self",
+        "turn count": 5
+      },
+      {
+        "conditions": [],
+        "ignore def resist chance%": 100,
+        "passive id": "92",
+        "passive target": "self"
+      }
+    ],
+    "id": "41100",
+    "name": "Rescuer's Sword",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -469,15 +507,6 @@
     ],
     "name": "La Veda: Kiria"
   },
-  "bbdescription": "16 combo powerful Light attack on all foes, negates critical and elemental damage for 1 turn, Spark damage reduction for 1 turn & slight additional damage reduction for 1 turn",
-  "bbnote": "25% spark mitigation & 10% DoT mitigation",
-  "bbtype": "Offense",
-  "bbhits": "16",
-  "bbaoe": "A",
-  "bbgauge": "28",
-  "bbdc": "16",
-  "bbmultiplier": "420",
-  "bb_hpscale": "",
   "sbb": {
     "damage frames": [
       {
@@ -1030,15 +1059,6 @@
     ],
     "name": "La Veda: Regulum"
   },
-  "sbbdescription": "18 combo powerful Light attack on all foes, negates all status ailments for 3 turns, negates critical and elemental damage for 1 turn, Spark damage reduction for 1 turn & slight additional damage reduction for 1 turn",
-  "sbbnote": "25% spark mitigation & 10% DoT mitigation",
-  "sbbtype": "Offense",
-  "sbbhits": "18",
-  "sbbaoe": "A",
-  "sbbgauge": "30",
-  "sbbdc": "18",
-  "sbbmultiplier": "620",
-  "sbb_hpscale": "",
   "ubb": {
     "damage frames": [
       {
@@ -1182,6 +1202,188 @@
     ],
     "name": "The Zelban Name"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "party"
+    },
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 141
+    },
+    "idle": {
+      "total number of frames": 84
+    },
+    "move": {
+      "total number of frames": 4
+    }
+  },
+  "category": 51270,
+  "cost": "50",
+  "damage frames": {
+    "frame times": [
+      25,
+      33,
+      49,
+      57,
+      73,
+      77,
+      81,
+      85
+    ],
+    "hit dmg% distribution": [
+      15,
+      10,
+      8,
+      4,
+      27,
+      18,
+      15,
+      3
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 8
+  },
+  "drop check count": 6,
+  "element": "light",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 1693,
+  "imp": {
+    "max atk": "400",
+    "max def": "800",
+    "max hp": "1250",
+    "max rec": "500"
+  },
+  "kind": "normal",
+  "lord damage range": "3167~3538",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Virtuous Paladin Segrud",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "8",
+  "sell caution": false,
+  "unitName": "Virtuous Paladin Segrud",
+  "maxlv": "150",
+  "no": "1693",
+  "unitDisplayHomePosition_1W9CxaFK": "650,569,150,409",
+  "unitDisplayDetailPosition_6z54rgb3": "-337,-398,1530,1289",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "-66,2,790,666,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-321,-605,1500,1264",
+  "unitDisplaySummonPosition_KC3Jk8Br": "-66,2,790,666,0",
+  "unitDisplayHpPosition_3BpHN6VD": "-1,86",
+  "unitDisplayCursorPosition": "0,20",
+  "sellPrice": "50000",
+  "sellCaution": false,
+  "effectFrames": "19:120:1,23:120:1,27:120:1,43:120:1,47:120:1,51:120:1,67:120:1,71:120:1,75:120:1,26:501416:1,86:200962:1,25:400474:1,50:400474:1,49:400571:1,73:500246:1,77:401090:1",
+  "evofrom": "51276",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "21",
+  "animation_attack": "141",
+  "animation_idle": "84",
+  "animation_move": "4",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "25, 33, 49, 57, 73, 77, 81, 85",
+  "normal_distribute": "15, 10, 8, 4, 27, 18, 15, 3",
+  "normal_totaldistr": "100",
+  "bb_frames": "25, 28, 31, 34, 37, 49, 52, 55, 58, 61, 73, 76, 79, 82, 85, 88",
+  "bb_distribute": "9, 6, 5, 5, 4, 7, 4, 4, 3, 3, 15, 9, 8, 7, 6, 5",
+  "bb_totaldistr": "100",
+  "sbb_frames": "25, 28, 31, 34, 37, 49, 52, 55, 58, 61, 73, 76, 79, 82, 85, 88, 91, 94",
+  "sbb_distribute": "7, 6, 4, 5, 4, 6, 4, 3, 4, 3, 15, 8, 7, 6, 6, 5, 4, 3",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "25, 28, 31, 34, 37, 49, 52, 55, 58, 61, 73, 76, 79, 82, 85, 88, 91, 94, 97, 100",
+  "ubb_distribute": "6, 5, 4, 3, 3, 4, 5, 3, 4, 3, 15, 8, 7, 6, 5, 5, 4, 3, 4, 3",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "1",
+  "ubb_effectdelay": "1",
+  "description": "From a young age, Segrud had no tolerance for injustice. Anyone he saw engaging in acts he saw as evil faced defeat at his hands. However, he eventually sustained a major facial scar in one deadly battle, causing him to reflect on his life and vow to cease the public use of his skills. Had he participated in the sacred La Vedan tournament, Segrud likely would have been victorious. In doing so, he might have been the one to declare \"La Veda Fencing\" the national standard. Though events followed a different route, Segrud's spirit did live on. Even now, La Veda-style fencing is taught with a focus on swords as a means of protecting people.",
+  "summon": "I will leave swords for protection, and hearts to wield them, for the future. All under the name of Zelban!",
+  "fusion": "I will not make another mistake. I will only use my power and my sword to save lives.",
+  "evolution": "I have already passed on my true spirit. I am ready to meet my end at any moment!",
+  "hp_base": "6448",
+  "atk_base": "2713",
+  "def_base": "2568",
+  "rec_base": "2023",
+  "hp_lord": "8378",
+  "atk_lord": "3402",
+  "def_lord": "3195",
+  "rec_lord": "2525",
+  "hp_anima": "9495",
+  "rec_anima": "2227",
+  "atk_breaker": "3700",
+  "def_breaker": "2897",
+  "def_guardian": "3493",
+  "rec_guardian": "2376",
+  "def_oracle": "3046",
+  "rec_oracle": "2972",
+  "hp_bonus": "1250",
+  "atk_bonus": "400",
+  "def_bonus": "800",
+  "rec_bonus": "500",
+  "lordonly": "",
+  "combo_hits": "8",
+  "normaldc": "48",
+  "ls": "Bladelord's Fortress",
+  "lsdescription": "60% boost to all parameters, boosts Atk, Def, Rec relative to remaining HP, boosts damage reduction when guarding & negates Def ignoring effects",
+  "lsnote": "0.6% parameter boost per 1% HP remaining & 10% guard mitigation increase",
+  "bbdescription": "16 combo powerful Light attack on all foes, negates critical and elemental damage for 1 turn, Spark damage reduction for 1 turn & slight additional damage reduction for 1 turn",
+  "bbnote": "25% spark mitigation & 10% DoT mitigation",
+  "bbtype": "Offense",
+  "bbhits": "16",
+  "bbaoe": "A",
+  "bbgauge": "28",
+  "bbdc": "16",
+  "bbmultiplier": "420",
+  "bb_hpscale": "",
+  "sbbdescription": "18 combo powerful Light attack on all foes, negates all status ailments for 3 turns, negates critical and elemental damage for 1 turn, Spark damage reduction for 1 turn & slight additional damage reduction for 1 turn",
+  "sbbnote": "25% spark mitigation & 10% DoT mitigation",
+  "sbbtype": "Offense",
+  "sbbhits": "18",
+  "sbbaoe": "A",
+  "sbbgauge": "30",
+  "sbbdc": "18",
+  "sbbmultiplier": "620",
+  "sbb_hpscale": "",
   "ubbdescription": "20 combo massive Light attack on all foes, negates critical and elemental damage for 5 turn, 50% Spark and additional damage reduction for 5 turns & enormous damage reduction from all types for 3 turns",
   "ubbnote": "100% elemental mitigation",
   "ubbtype": "Offense",
@@ -1194,7 +1396,6 @@
   "es": "Rescuer's Sword",
   "esdescription": "Boosts Def each turn for up to 5 turns & negates Def ignoring effects",
   "esnote": "20% boost per turn (100% max)",
-  "evofrom": "51276",
   "omniskill1_cat": "Parameter Boost",
   "omniskill1_1_sp": "10",
   "omniskill1_1_desc": "40% boost to all parameters",
@@ -1233,116 +1434,5 @@
   "notes": "",
   "addcat": "Zelban, Hero of La Veda",
   "addcatname": "Segrud2",
-  "bottomtext": "",
-  "stats": {
-    "_base": {
-      "atk": 2713,
-      "def": 2568,
-      "hp": 6448,
-      "rec": 2023
-    },
-    "_lord": {
-      "atk": 3402,
-      "def": 3195,
-      "hp": 8378,
-      "rec": 2525
-    },
-    "anima": {
-      "atk": 3402,
-      "def": 3195,
-      "hp max": 9868,
-      "hp min": 9123,
-      "rec max": 2376,
-      "rec min": 2078
-    },
-    "breaker": {
-      "atk max": 3849,
-      "atk min": 3551,
-      "def max": 3046,
-      "def min": 2748,
-      "hp": 8378,
-      "rec": 2525
-    },
-    "guardian": {
-      "atk": 3402,
-      "def max": 3642,
-      "def min": 3344,
-      "hp": 8378,
-      "rec max": 2525,
-      "rec min": 2227
-    },
-    "oracle": {
-      "atk": 3402,
-      "def max": 3195,
-      "def min": 2897,
-      "hp": 8378,
-      "rec max": 3121,
-      "rec min": 2823
-    }
-  },
-  "leader_skill": {
-    "desc": "60% boost to all parameters, boosts Atk, Def, Rec relative to remaining HP, boosts damage reduction when guarding & negates Def ignoring effects",
-    "effects": [
-      {
-        "atk% buff": 60,
-        "def% buff": 60,
-        "hp% buff": 60,
-        "passive id": "1",
-        "rec% buff": 60
-      },
-      {
-        "atk% base buff": 0,
-        "atk% extra buff based on hp": 60,
-        "buff proportional to hp": "remaining",
-        "def% base buff": 0,
-        "def% extra buff based on hp": 60,
-        "passive id": "46",
-        "rec% base buff": 0,
-        "rec% extra buff based on hp": 60
-      },
-      {
-        "guard increase mitigation%": 10,
-        "passive id": "58"
-      },
-      {
-        "ignore def resist chance%": 100,
-        "passive id": "92"
-      }
-    ],
-    "id": "10154",
-    "name": "Bladelord's Fortress"
-  },
-  "extra_skill": {
-    "desc": "Boosts Def each turn for up to 5 turns & negates Def ignoring effects",
-    "effects": [
-      {
-        "conditions": [],
-        "def% max buff": 100,
-        "increase from min to max": 1,
-        "passive id": "105",
-        "passive target": "self",
-        "turn count": 5
-      },
-      {
-        "conditions": [],
-        "ignore def resist chance%": 100,
-        "passive id": "92",
-        "passive target": "self"
-      }
-    ],
-    "id": "41100",
-    "name": "Rescuer's Sword",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "650,569,150,409",
-  "unitDisplayDetailPosition_6z54rgb3": "-337,-398,1530,1289",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "-66,2,790,666,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-321,-605,1500,1264",
-  "unitDisplaySummonPosition_KC3Jk8Br": "-66,2,790,666,0",
-  "unitDisplayHpPosition_3BpHN6VD": "-1,86",
-  "unitDisplayCursorPosition": "0,20",
-  "sellPrice": "50000",
-  "sellCaution": false,
-  "effectFrames": "19:120:1,23:120:1,27:120:1,43:120:1,47:120:1,51:120:1,67:120:1,71:120:1,75:120:1,26:501416:1,86:200962:1,25:400474:1,50:400474:1,49:400571:1,73:500246:1,77:401090:1"
+  "bottomtext": ""
 }

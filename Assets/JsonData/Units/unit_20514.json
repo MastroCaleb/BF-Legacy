@@ -1,62 +1,63 @@
 {
   "id": "20514",
-  "unitName": "Pirate Empress Eve",
-  "no": "719",
-  "element": "Water",
-  "rarity": "★★★★★",
-  "cost": "18",
-  "maxlv": "80",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "4",
-  "animation_attack": "107",
-  "animation_idle": "52",
-  "animation_move": "13",
-  "movespeed_attack": "0.0041",
-  "movespeed_skill": "0.0041",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "13, 16, 19, 32, 36, 40, 44, 62, 66, 70",
-  "normal_distribute": "1, 1, 1, 12, 9, 8, 8, 20, 20, 20",
-  "normal_totaldistr": "100",
-  "bb_frames": "13, 16, 19, 22, 32, 36, 40, 44, 48, 66, 71, 76, 81",
-  "bb_distribute": "4, 4, 4, 4, 10, 8, 8, 8, 8, 15, 9, 9, 9",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "description": "An ancient Pirate Queen of Legend. Most of her wild exploits took place in the Palmyna Archipelago, but she was forced to move her headquarters to Agni when the decline of the Amdahl empire seemed imminent. Many legends tell of her pastime of toying with the Agni Knights, who were not used to sea battles. It is also said that her ship sailed without oar nor wind, with rumors stating that behind her stood gigantic tentacles at all times. This may be a strong indication that even squid were terrified of her.",
-  "summon": "Are you my new crew member?<br>I leave my old crew mates<br>in your capable hands!",
-  "fusion": "Tsk, pathetic.<br>Put your back into it!<br>I won't let you rest<br>until I'm satisfied with your work!",
-  "evolution": "Not bad! Well done.<br>Guess that's why you're my<br>newest crew member!",
-  "hp_base": "3683",
-  "atk_base": "1206",
-  "def_base": "1198",
-  "rec_base": "1198",
-  "hp_lord": "5286",
-  "atk_lord": "1599",
-  "def_lord": "1589",
-  "rec_lord": "1589",
-  "hp_anima": "5879",
-  "rec_anima": "1431",
-  "atk_breaker": "1757",
-  "def_breaker": "1431",
-  "atk_guardian": "1441",
-  "def_guardian": "1747",
-  "rec_guardian": "1510",
-  "def_oracle": "1510",
-  "hp_oracle": "5049",
-  "rec_oracle": "1826",
-  "hp_bonus": "500",
-  "atk_bonus": "260",
-  "def_bonus": "140",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "10",
-  "normaldc": "20",
-  "ls": "Supreme Oracle",
-  "lsdescription": "30% boost to HP of all Units",
-  "lstype": "Hit Points",
+  "stats": {
+    "_base": {
+      "atk": 1206,
+      "def": 1198,
+      "hp": 3683,
+      "rec": 1198
+    },
+    "_lord": {
+      "atk": 1599,
+      "def": 1589,
+      "hp": 5286,
+      "rec": 1589
+    },
+    "anima": {
+      "atk": 1599,
+      "def": 1589,
+      "hp max": 6076,
+      "hp min": 5681,
+      "rec max": 1510,
+      "rec min": 1352
+    },
+    "breaker": {
+      "atk max": 1836,
+      "atk min": 1678,
+      "def max": 1510,
+      "def min": 1352,
+      "hp": 5286,
+      "rec": 1589
+    },
+    "guardian": {
+      "atk": 1599,
+      "def max": 1826,
+      "def min": 1668,
+      "hp": 5286,
+      "rec max": 1589,
+      "rec min": 1431
+    },
+    "oracle": {
+      "atk": 1599,
+      "def max": 1589,
+      "def min": 1431,
+      "hp": 5286,
+      "rec max": 1905,
+      "rec min": 1747
+    }
+  },
+  "leader_skill": {
+    "desc": "30% boost to max HP",
+    "effects": [
+      {
+        "hp% buff": 30,
+        "passive id": "1"
+      }
+    ],
+    "id": "5501",
+    "name": "Supreme Oracle"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -355,93 +356,113 @@
     ],
     "name": "Blue Storm"
   },
-  "bbdescription": "13 combo powerful Water attack on all enemies & adds Water and Earth elements to attack for all allies for 3 turns",
-  "bbtype": "Support/Offense",
-  "bbhits": "13",
-  "bbaoe": "A",
-  "bbgauge": "25",
-  "bbdc": "13",
-  "bbmultiplier": "220",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "20513",
-  "evointo": "20515",
-  "evomats1": "50354",
-  "evomats2": "20133",
-  "evomats3": "30133",
-  "evomats4": "20191",
-  "evomats5": "60224",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 1206,
-      "def": 1198,
-      "hp": 3683,
-      "rec": 1198
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_under",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1599,
-      "def": 1589,
-      "hp": 5286,
-      "rec": 1589
+    {
+      "action": "skill",
+      "chance%": 30.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1599,
-      "def": 1589,
-      "hp max": 6076,
-      "hp min": 5681,
-      "rec max": 1510,
-      "rec min": 1352
+    {
+      "action": "attack",
+      "chance%": 70.0,
+      "target conditions": "hp_max",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 1836,
-      "atk min": 1678,
-      "def max": 1510,
-      "def min": 1352,
-      "hp": 5286,
-      "rec": 1589
+    {
+      "action": "attack",
+      "chance%": 50.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "guardian": {
-      "atk": 1599,
-      "def max": 1826,
-      "def min": 1668,
-      "hp": 5286,
-      "rec max": 1589,
-      "rec min": 1431
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 107
     },
-    "oracle": {
-      "atk": 1599,
-      "def max": 1589,
-      "def min": 1431,
-      "hp": 5286,
-      "rec max": 1905,
-      "rec min": 1747
+    "idle": {
+      "total number of frames": 52
+    },
+    "move": {
+      "total number of frames": 13
     }
   },
-  "leader_skill": {
-    "desc": "30% boost to max HP",
-    "effects": [
-      {
-        "hp% buff": 30,
-        "passive id": "1"
-      }
+  "category": 20510,
+  "cost": "18",
+  "damage frames": {
+    "frame times": [
+      13,
+      16,
+      19,
+      32,
+      36,
+      40,
+      44,
+      62,
+      66,
+      70
     ],
-    "id": "5501",
-    "name": "Supreme Oracle"
+    "hit dmg% distribution": [
+      1,
+      1,
+      1,
+      12,
+      9,
+      8,
+      8,
+      20,
+      20,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 10
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "water",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 719,
+  "imp": {
+    "max atk": "260",
+    "max def": "140",
+    "max hp": "500",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "1488~1662",
+  "movement": {
+    "attack": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    }
+  },
+  "name": "Pirate Empress Eve",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Pirate Empress Eve",
+  "maxlv": "80",
+  "no": "719",
   "unitDisplayHomePosition_1W9CxaFK": "461,419,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-162,-211,1240,1076",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "96,234,495,397,0",
@@ -451,5 +472,109 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "13:130:1,16:130:1,19:130:1,26:122:1,26:200406:1,30:122:1,34:122:1,38:122:1,56:122:1,56:500094:1,56:200163:1,70:200030:1,60:122:1,64:122:1,64:500094:1,67:200080:1"
+  "effectFrames": "13:130:1,16:130:1,19:130:1,26:122:1,26:200406:1,30:122:1,34:122:1,38:122:1,56:122:1,56:500094:1,56:200163:1,70:200030:1,60:122:1,64:122:1,64:500094:1,67:200080:1",
+  "evofrom": "20513",
+  "evointo": "20515",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "107",
+  "animation_idle": "52",
+  "animation_move": "13",
+  "movespeed_attack": "0.0041",
+  "movespeed_skill": "0.0041",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "13, 16, 19, 32, 36, 40, 44, 62, 66, 70",
+  "normal_distribute": "1, 1, 1, 12, 9, 8, 8, 20, 20, 20",
+  "normal_totaldistr": "100",
+  "bb_frames": "13, 16, 19, 22, 32, 36, 40, 44, 48, 66, 71, 76, 81",
+  "bb_distribute": "4, 4, 4, 4, 10, 8, 8, 8, 8, 15, 9, 9, 9",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "description": "An ancient Pirate Queen of Legend. Most of her wild exploits took place in the Palmyna Archipelago, but she was forced to move her headquarters to Agni when the decline of the Amdahl empire seemed imminent. Many legends tell of her pastime of toying with the Agni Knights, who were not used to sea battles. It is also said that her ship sailed without oar nor wind, with rumors stating that behind her stood gigantic tentacles at all times. This may be a strong indication that even squid were terrified of her.",
+  "summon": "Are you my new crew member?<br>I leave my old crew mates<br>in your capable hands!",
+  "fusion": "Tsk, pathetic.<br>Put your back into it!<br>I won't let you rest<br>until I'm satisfied with your work!",
+  "evolution": "Not bad! Well done.<br>Guess that's why you're my<br>newest crew member!",
+  "hp_base": "3683",
+  "atk_base": "1206",
+  "def_base": "1198",
+  "rec_base": "1198",
+  "hp_lord": "5286",
+  "atk_lord": "1599",
+  "def_lord": "1589",
+  "rec_lord": "1589",
+  "hp_anima": "5879",
+  "rec_anima": "1431",
+  "atk_breaker": "1757",
+  "def_breaker": "1431",
+  "atk_guardian": "1441",
+  "def_guardian": "1747",
+  "rec_guardian": "1510",
+  "def_oracle": "1510",
+  "hp_oracle": "5049",
+  "rec_oracle": "1826",
+  "hp_bonus": "500",
+  "atk_bonus": "260",
+  "def_bonus": "140",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "10",
+  "normaldc": "20",
+  "ls": "Supreme Oracle",
+  "lsdescription": "30% boost to HP of all Units",
+  "lstype": "Hit Points",
+  "bbdescription": "13 combo powerful Water attack on all enemies & adds Water and Earth elements to attack for all allies for 3 turns",
+  "bbtype": "Support/Offense",
+  "bbhits": "13",
+  "bbaoe": "A",
+  "bbgauge": "25",
+  "bbdc": "13",
+  "bbmultiplier": "220",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "20133",
+  "evomats3": "30133",
+  "evomats4": "20191",
+  "evomats5": "60224"
 }

@@ -1,52 +1,66 @@
 {
   "id": "10333",
-  "unitName": "Red Slash Farlon",
-  "no": "447",
-  "element": "Fire",
-  "rarity": "★★★★",
-  "cost": "12",
-  "maxlv": "60",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "95",
-  "animation_idle": "52",
-  "animation_move": "6",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "description": "The 12 Guardians of the Gods, made up of the most talented people from across every country. Farlon, one of the them, had absolute confidence in his abilities. As a young man he was usually very polite, but he was very competitive when it came to his comrades, and it's said he refused to open up to any of the other Guardians other than his sweetheart. It has also been told that he held strong ill will against the leader of the Guardians.",
-  "summon": "Swordsman of the 12 Guardians!<br>That is who I am!<br>Be sure not to forget it!",
-  "fusion": "Give me more magic power.<br>I'll prove to you that I am<br>the strongest around.",
-  "evolution": "",
-  "hp_base": "3000",
-  "atk_base": "950",
-  "def_base": "950",
-  "rec_base": "950",
-  "hp_lord": "4230",
-  "atk_lord": "1340",
-  "def_lord": "1340",
-  "rec_lord": "1340",
-  "hp_anima": "4672",
-  "rec_anima": "1222",
-  "atk_breaker": "1458",
-  "def_breaker": "1222",
-  "atk_guardian": "1222",
-  "def_guardian": "1458",
-  "hp_oracle": "3787",
-  "rec_oracle": "1458",
-  "hp_bonus": "400",
-  "atk_bonus": "160",
-  "def_bonus": "160",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "5",
-  "ls": "Fire Spirit's Power",
-  "lsdescription": "25% boost to Atk Power of Fire Types",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 950,
+      "def": 950,
+      "hp": 3000,
+      "rec": 950
+    },
+    "_lord": {
+      "atk": 1340,
+      "def": 1340,
+      "hp": 4230,
+      "rec": 1340
+    },
+    "anima": {
+      "atk": 1340,
+      "def": 1340,
+      "hp max": 4820,
+      "hp min": 4525,
+      "rec max": 1281,
+      "rec min": 1163
+    },
+    "breaker": {
+      "atk max": 1517,
+      "atk min": 1399,
+      "def max": 1281,
+      "def min": 1163,
+      "hp": 4230,
+      "rec": 1340
+    },
+    "guardian": {
+      "atk": 1340,
+      "def max": 1517,
+      "def min": 1399,
+      "hp": 4230,
+      "rec max": 1340,
+      "rec min": 1222
+    },
+    "oracle": {
+      "atk": 1340,
+      "def max": 1340,
+      "def min": 1222,
+      "hp": 4230,
+      "rec max": 1576,
+      "rec min": 1458
+    }
+  },
+  "leader_skill": {
+    "desc": "25% boost to Atk Power of Fire Types",
+    "effects": [
+      {
+        "atk% buff": 25,
+        "elements buffed": [
+          "fire"
+        ],
+        "passive id": "2"
+      }
+    ],
+    "id": "100",
+    "name": "Fire Spirit's Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -209,95 +223,91 @@
     ],
     "name": "Agressor Funnel"
   },
-  "bbdescription": "6 combo Fire elemental attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "6",
-  "bbaoe": "A",
-  "bbgauge": "14",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "10334",
-  "evomats1": "10133",
-  "evomats2": "10132",
-  "evomats3": "10132",
-  "evomats4": "10191",
-  "evomats5": "10191",
-  "evoitem": "",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 950,
-      "def": 950,
-      "hp": 3000,
-      "rec": 950
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1340,
-      "def": 1340,
-      "hp": 4230,
-      "rec": 1340
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1340,
-      "def": 1340,
-      "hp max": 4820,
-      "hp min": 4525,
-      "rec max": 1281,
-      "rec min": 1163
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 95
     },
-    "breaker": {
-      "atk max": 1517,
-      "atk min": 1399,
-      "def max": 1281,
-      "def min": 1163,
-      "hp": 4230,
-      "rec": 1340
+    "idle": {
+      "total number of frames": 52
     },
-    "guardian": {
-      "atk": 1340,
-      "def max": 1517,
-      "def min": 1399,
-      "hp": 4230,
-      "rec max": 1340,
-      "rec min": 1222
-    },
-    "oracle": {
-      "atk": 1340,
-      "def max": 1340,
-      "def min": 1222,
-      "hp": 4230,
-      "rec max": 1576,
-      "rec min": 1458
+    "move": {
+      "total number of frames": 6
     }
   },
-  "leader_skill": {
-    "desc": "25% boost to Atk Power of Fire Types",
-    "effects": [
-      {
-        "atk% buff": 25,
-        "elements buffed": [
-          "fire"
-        ],
-        "passive id": "2"
-      }
+  "category": 10330,
+  "cost": "12",
+  "damage frames": {
+    "frame times": [
+      18,
+      45,
+      50,
+      55,
+      60
     ],
-    "id": "100",
-    "name": "Fire Spirit's Power"
+    "hit dmg% distribution": [
+      60,
+      10,
+      10,
+      10,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 5
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "fire",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 447,
+  "imp": {
+    "max atk": "160",
+    "max def": "160",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "1247~1393",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Red Slash Farlon",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Red Slash Farlon",
+  "maxlv": "60",
+  "no": "447",
   "unitDisplayHomePosition_1W9CxaFK": "350,282,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-50,-141,1372,958",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "110,359,332,261,0",
@@ -307,5 +317,99 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "12:121:1,39:121:1,44:121:1,49:121:1,54:121:1,18:650:1,40:650:1,18:100010:1,60:100081:1"
+  "effectFrames": "12:121:1,39:121:1,44:121:1,49:121:1,54:121:1,18:650:1,40:650:1,18:100010:1,60:100081:1",
+  "evofrom": "",
+  "evointo": "10334",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "10133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10132",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "10191",
+      "count": 2
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "95",
+  "animation_idle": "52",
+  "animation_move": "6",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "18, 45, 50, 55, 60",
+  "normal_distribute": "60, 10, 10, 10, 10",
+  "normal_totaldistr": "100",
+  "bb_frames": "18, 45, 50, 55, 60, 65",
+  "bb_distribute": "50, 10, 10, 10, 10, 10",
+  "bb_totaldistr": "100",
+  "description": "The 12 Guardians of the Gods, made up of the most talented people from across every country. Farlon, one of the them, had absolute confidence in his abilities. As a young man he was usually very polite, but he was very competitive when it came to his comrades, and it's said he refused to open up to any of the other Guardians other than his sweetheart. It has also been told that he held strong ill will against the leader of the Guardians.",
+  "summon": "Swordsman of the 12 Guardians!<br>That is who I am!<br>Be sure not to forget it!",
+  "fusion": "Give me more magic power.<br>I'll prove to you that I am<br>the strongest around.",
+  "evolution": "",
+  "hp_base": "3000",
+  "atk_base": "950",
+  "def_base": "950",
+  "rec_base": "950",
+  "hp_lord": "4230",
+  "atk_lord": "1340",
+  "def_lord": "1340",
+  "rec_lord": "1340",
+  "hp_anima": "4673",
+  "rec_anima": "1222",
+  "atk_breaker": "1458",
+  "def_breaker": "1222",
+  "atk_guardian": "1222",
+  "def_guardian": "1458",
+  "rec_guardian": "1281",
+  "def_oracle": "1281",
+  "hp_oracle": "4053",
+  "rec_oracle": "1517",
+  "hp_bonus": "400",
+  "atk_bonus": "160",
+  "def_bonus": "160",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "5",
+  "normaldc": "15",
+  "ls": "Fire Spirit's Power",
+  "lsdescription": "25% boost to Atk Power of Fire Types",
+  "lstype": "Attack",
+  "bbdescription": "6 combo Fire elemental attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "6",
+  "bbaoe": "A",
+  "bbgauge": "14",
+  "bbdc": "6",
+  "bbmultiplier": "130",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "10133",
+  "evomats2": "10132",
+  "evomats3": "10132",
+  "evomats4": "10191",
+  "evomats5": "10191",
+  "evoitem": ""
 }

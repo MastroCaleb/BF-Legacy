@@ -1,62 +1,63 @@
 {
   "id": "10022",
-  "unitName": "Rage Beast Zegar",
-  "no": "26",
-  "element": "Fire",
-  "rarity": "★★★",
-  "cost": "5",
-  "maxlv": "40",
-  "basexp": "15",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "96",
-  "animation_idle": "52",
-  "animation_move": "13",
-  "movespeed_attack": "0.0024",
-  "movespeed_skill": "0.0024",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "13, 18, 46, 51",
-  "normal_distribute": "25, 15, 40, 20",
-  "normal_totaldistr": "100",
-  "bb_frames": "13, 18, 46, 51",
-  "bb_distribute": "25, 15, 40, 20",
-  "bb_totaldistr": "100",
-  "description": "A boy found in a huge jungle in the territory of the devastated Agni Empire. After being taken in by the Agni Empire, from within himself awoke the ability to control beasts. Also, his unique claws grew in power and became strong enough to rip through armor. There are many rumors as to why he followed the Agni Empire, but the truth is unknown.",
-  "summon": "Me, Zegar.<br>You need me claws?<br>We friend.",
-  "fusion": "Roar! Roar!<br>Power get hot!<br>I get strong!",
-  "evolution": "My body hot!<br>I feel power here!",
-  "hp_base": "2088",
-  "atk_base": "743",
-  "def_base": "353",
-  "rec_base": "284",
-  "hp_lord": "3260",
-  "atk_lord": "1013",
-  "def_lord": "634",
-  "rec_lord": "538",
-  "hp_anima": "3553",
-  "rec_anima": "460",
-  "atk_breaker": "1091",
-  "def_breaker": "556",
-  "atk_guardian": "935",
-  "def_guardian": "712",
-  "rec_guardian": "460",
-  "def_oracle": "556",
-  "hp_oracle": "3143",
-  "rec_oracle": "655",
-  "hp_bonus": "400",
-  "atk_bonus": "120",
-  "def_bonus": "200",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "4",
-  "normaldc": "8",
-  "ls": "Intense Flash",
-  "lsdescription": "Boost in damage dealt during Spark",
-  "lsnote": "30% boost",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 743,
+      "def": 353,
+      "hp": 2088,
+      "rec": 284
+    },
+    "_lord": {
+      "atk": 1013,
+      "def": 634,
+      "hp": 3260,
+      "rec": 538
+    },
+    "anima": {
+      "atk": 1013,
+      "def": 634,
+      "hp max": 3650,
+      "hp min": 3455,
+      "rec max": 499,
+      "rec min": 421
+    },
+    "breaker": {
+      "atk max": 1130,
+      "atk min": 1052,
+      "def max": 595,
+      "def min": 517,
+      "hp": 3260,
+      "rec": 538
+    },
+    "guardian": {
+      "atk": 1013,
+      "def max": 751,
+      "def min": 673,
+      "hp": 3260,
+      "rec max": 538,
+      "rec min": 460
+    },
+    "oracle": {
+      "atk": 1013,
+      "def max": 634,
+      "def min": 556,
+      "hp": 3260,
+      "rec max": 694,
+      "rec min": 616
+    }
+  },
+  "leader_skill": {
+    "desc": "Boost in damage dealt during Spark",
+    "effects": [
+      {
+        "damage% for spark": 30,
+        "passive id": "31"
+      }
+    ],
+    "id": "1301",
+    "name": "Intense Flash"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -297,95 +298,89 @@
     ],
     "name": "Fire Spring Attack"
   },
-  "bbdescription": "4 combo Fire elemental power attack on single Enemy & probable Injury effect",
-  "bbnote": "80% chance",
-  "bbtype": "Offense",
-  "bbhits": "4",
-  "bbaoe": "1",
-  "bbgauge": "20",
-  "bbdc": "4",
-  "bbmultiplier": "280",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "10021",
-  "evointo": "10023",
-  "evomats1": "10132",
-  "evomats2": "10131",
-  "evomats3": "10130",
-  "evomats4": "10130",
-  "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "100000",
-  "stats": {
-    "_base": {
-      "atk": 743,
-      "def": 353,
-      "hp": 2088,
-      "rec": 284
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1013,
-      "def": 634,
-      "hp": 3260,
-      "rec": 538
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1013,
-      "def": 634,
-      "hp max": 3650,
-      "hp min": 3455,
-      "rec max": 499,
-      "rec min": 421
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 96
     },
-    "breaker": {
-      "atk max": 1130,
-      "atk min": 1052,
-      "def max": 595,
-      "def min": 517,
-      "hp": 3260,
-      "rec": 538
+    "idle": {
+      "total number of frames": 52
     },
-    "guardian": {
-      "atk": 1013,
-      "def max": 751,
-      "def min": 673,
-      "hp": 3260,
-      "rec max": 538,
-      "rec min": 460
-    },
-    "oracle": {
-      "atk": 1013,
-      "def max": 634,
-      "def min": 556,
-      "hp": 3260,
-      "rec max": 694,
-      "rec min": 616
+    "move": {
+      "total number of frames": 13
     }
   },
-  "leader_skill": {
-    "desc": "Boost in damage dealt during Spark",
-    "effects": [
-      {
-        "damage% for spark": 30,
-        "passive id": "31"
-      }
+  "category": 10020,
+  "cost": "5",
+  "damage frames": {
+    "frame times": [
+      13,
+      18,
+      46,
+      51
     ],
-    "id": "1301",
-    "name": "Intense Flash"
+    "hit dmg% distribution": [
+      25,
+      15,
+      40,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 4
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "fire",
+  "exp_pattern": 15,
+  "gender": "male",
+  "getting type": "farmable",
+  "guide_id": 26,
+  "imp": {
+    "max atk": "120",
+    "max def": "200",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "942~1053",
+  "movement": {
+    "attack": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    }
+  },
+  "name": "Rage Beast Zegar",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "Rage Beast Zegar",
+  "maxlv": "40",
+  "no": "26",
   "unitDisplayHomePosition_1W9CxaFK": "104,-85,200,545",
   "unitDisplayDetailPosition_6z54rgb3": "98,193,650,604",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "171,383,260,242,0",
@@ -395,5 +390,101 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "1000",
   "sellCaution": false,
-  "effectFrames": "8:121:1,12:121:1,40:121:1,45:121:1"
+  "effectFrames": "8:121:1,12:121:1,40:121:1,45:121:1",
+  "evofrom": "10021",
+  "evointo": "10023",
+  "evozelcost": "100000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "10132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10131",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10130",
+      "count": 2
+    }
+  ],
+  "basexp": "15",
+  "animation_attack": "96",
+  "animation_idle": "52",
+  "animation_move": "13",
+  "movespeed_attack": "0.0024",
+  "movespeed_skill": "0.0024",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "13, 18, 46, 51",
+  "normal_distribute": "25, 15, 40, 20",
+  "normal_totaldistr": "100",
+  "bb_frames": "13, 18, 46, 51",
+  "bb_distribute": "25, 15, 40, 20",
+  "bb_totaldistr": "100",
+  "description": "A boy found in a huge jungle in the territory of the devastated Agni Empire. After being taken in by the Agni Empire, from within himself awoke the ability to control beasts. Also, his unique claws grew in power and became strong enough to rip through armor. There are many rumors as to why he followed the Agni Empire, but the truth is unknown.",
+  "summon": "Me, Zegar.<br>You need me claws?<br>We friend.",
+  "fusion": "Roar! Roar!<br>Power get hot!<br>I get strong!",
+  "evolution": "My body hot!<br>I feel power here!",
+  "hp_base": "2088",
+  "atk_base": "743",
+  "def_base": "353",
+  "rec_base": "284",
+  "hp_lord": "3260",
+  "atk_lord": "1013",
+  "def_lord": "634",
+  "rec_lord": "538",
+  "hp_anima": "3553",
+  "rec_anima": "460",
+  "atk_breaker": "1091",
+  "def_breaker": "556",
+  "atk_guardian": "935",
+  "def_guardian": "712",
+  "rec_guardian": "460",
+  "def_oracle": "556",
+  "hp_oracle": "3143",
+  "rec_oracle": "655",
+  "hp_bonus": "400",
+  "atk_bonus": "120",
+  "def_bonus": "200",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "4",
+  "normaldc": "8",
+  "ls": "Intense Flash",
+  "lsdescription": "Boost in damage dealt during Spark",
+  "lsnote": "30% boost",
+  "lstype": "Attack",
+  "bbdescription": "4 combo Fire elemental power attack on single Enemy & probable Injury effect",
+  "bbnote": "80% chance",
+  "bbtype": "Offense",
+  "bbhits": "4",
+  "bbaoe": "1",
+  "bbgauge": "20",
+  "bbdc": "4",
+  "bbmultiplier": "280",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "10132",
+  "evomats2": "10131",
+  "evomats3": "10130",
+  "evomats4": "10130",
+  "evomats5": "",
+  "evoitem": ""
 }

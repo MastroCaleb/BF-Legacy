@@ -1,59 +1,53 @@
 {
   "id": "60181",
-  "unitName": "Imp",
-  "freetext": ":''For other uses, see Imp (disambiguation)''",
-  "no": "279",
-  "element": "Dark",
-  "rarity": "★★",
-  "cost": "3",
-  "maxlv": "30",
-  "basexp": "10",
-  "gender": "N",
-  "ai": "3",
-  "animation_attack": "75",
-  "animation_idle": "40",
-  "animation_move": "9",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "4",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "3",
-  "normal_frames": "27",
-  "normal_distribute": "100",
-  "normal_totaldistr": "100",
-  "description": "Vulgar monsters that prefer living in ruins. Their abilities as demons are weak, but they have a warlike disposition. The 3 prong spear they have is given to them when their born and it grows as they do. It is often critiqued that they are mischievous, though there are many humans who have been caught in fiendish traps who've been quoted as saying, \"This goes a bit beyond what one might consider mischievous.\"",
-  "summon": "Hya ha ha ha!!<br>Let's do something fun!<br>I know! Let me skewer you!",
-  "fusion": "Ha ha ha!!<br>How wonderful!<br>I love it when this happens!",
-  "evolution": "",
-  "hp_base": "1250",
-  "atk_base": "550",
-  "def_base": "250",
-  "rec_base": "100",
-  "hp_lord": "2125",
-  "atk_lord": "770",
-  "def_lord": "325",
-  "rec_lord": "190",
-  "hp_anima": "2343",
-  "rec_anima": "132",
-  "atk_breaker": "828",
-  "def_breaker": "267",
-  "atk_guardian": "712",
-  "def_guardian": "383",
-  "rec_guardian": "161",
-  "def_oracle": "296",
-  "hp_oracle": "2038",
-  "rec_oracle": "277",
-  "hp_bonus": "250",
-  "atk_bonus": "100",
-  "def_bonus": "100",
-  "rec_bonus": "100",
-  "lordonly": "",
-  "combo_hits": "1",
-  "normaldc": "2",
-  "ls": "",
-  "lsdescription": "",
-  "lstype": "",
+  "stats": {
+    "_base": {
+      "atk": 550,
+      "def": 250,
+      "hp": 1250,
+      "rec": 100
+    },
+    "_lord": {
+      "atk": 770,
+      "def": 325,
+      "hp": 2125,
+      "rec": 190
+    },
+    "anima": {
+      "atk": 770,
+      "def": 325,
+      "hp max": 2415,
+      "hp min": 2270,
+      "rec max": 161,
+      "rec min": 103
+    },
+    "breaker": {
+      "atk max": 857,
+      "atk min": 799,
+      "def max": 296,
+      "def min": 238,
+      "hp": 2125,
+      "rec": 190
+    },
+    "guardian": {
+      "atk": 770,
+      "def max": 412,
+      "def min": 354,
+      "hp": 2125,
+      "rec max": 190,
+      "rec min": 132
+    },
+    "oracle": {
+      "atk": 770,
+      "def max": 325,
+      "def min": 267,
+      "hp": 2125,
+      "rec max": 306,
+      "rec min": 248
+    }
+  },
+  "leader_skill": {},
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -216,82 +210,89 @@
     ],
     "name": "Demon Barrier"
   },
-  "bbdescription": "Boosts all allies' Def for 3 turns",
-  "bbnote": "40% boost",
-  "bbtype": "Support",
-  "bbhits": "",
-  "bbaoe": "0",
-  "bbgauge": "12",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "60182",
-  "evomats1": "60121",
-  "evomats2": "60142",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evozelcost": "50000",
-  "stats": {
-    "_base": {
-      "atk": 550,
-      "def": 250,
-      "hp": 1250,
-      "rec": 100
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 770,
-      "def": 325,
-      "hp": 2125,
-      "rec": 190
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 770,
-      "def": 325,
-      "hp max": 2415,
-      "hp min": 2270,
-      "rec max": 161,
-      "rec min": 103
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 857,
-      "atk min": 799,
-      "def max": 296,
-      "def min": 238,
-      "hp": 2125,
-      "rec": 190
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 75
     },
-    "guardian": {
-      "atk": 770,
-      "def max": 412,
-      "def min": 354,
-      "hp": 2125,
-      "rec max": 190,
-      "rec min": 132
+    "idle": {
+      "total number of frames": 40
     },
-    "oracle": {
-      "atk": 770,
-      "def max": 325,
-      "def min": 267,
-      "hp": 2125,
-      "rec max": 306,
-      "rec min": 248
+    "move": {
+      "total number of frames": 9
     }
   },
-  "leader_skill": {},
-  "extra_skill": {},
+  "category": 60180,
+  "cost": "3",
+  "damage frames": {
+    "frame times": [
+      27
+    ],
+    "hit dmg% distribution": [
+      100
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 1
+  },
+  "drop check count": 2,
+  "element": "dark",
+  "exp_pattern": 10,
+  "gender": "other",
+  "getting type": "not eligible for achievement",
+  "guide_id": 279,
+  "imp": {
+    "max atk": "100",
+    "max def": "100",
+    "max hp": "250",
+    "max rec": "100"
+  },
+  "kind": "normal",
+  "lord damage range": "717~800",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    }
+  },
+  "name": "Imp",
+  "rarity": "2",
+  "sell caution": false,
+  "unitName": "Imp",
+  "maxlv": "30",
+  "no": "279",
   "unitDisplayHomePosition_1W9CxaFK": "215,78,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "92,170,554,562",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "130,408,303,232,1",
@@ -301,5 +302,90 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "300",
   "sellCaution": false,
-  "effectFrames": "21:126:1"
+  "effectFrames": "21:126:1",
+  "evofrom": "",
+  "evointo": "60182",
+  "evozelcost": "50000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "60121",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60142",
+      "count": 1
+    }
+  ],
+  "freetext": ":''For other uses, see Imp (disambiguation)''",
+  "basexp": "10",
+  "animation_attack": "75",
+  "animation_idle": "40",
+  "animation_move": "9",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "4",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "3",
+  "normal_frames": "27",
+  "normal_distribute": "100",
+  "normal_totaldistr": "100",
+  "description": "Vulgar monsters that prefer living in ruins. Their abilities as demons are weak, but they have a warlike disposition. The 3 prong spear they have is given to them when their born and it grows as they do. It is often critiqued that they are mischievous, though there are many humans who have been caught in fiendish traps who've been quoted as saying, \"This goes a bit beyond what one might consider mischievous.\"",
+  "summon": "Hya ha ha ha!!<br>Let's do something fun!<br>I know! Let me skewer you!",
+  "fusion": "Ha ha ha!!<br>How wonderful!<br>I love it when this happens!",
+  "evolution": "",
+  "hp_base": "1250",
+  "atk_base": "550",
+  "def_base": "250",
+  "rec_base": "100",
+  "hp_lord": "2125",
+  "atk_lord": "770",
+  "def_lord": "325",
+  "rec_lord": "190",
+  "hp_anima": "2343",
+  "rec_anima": "132",
+  "atk_breaker": "828",
+  "def_breaker": "267",
+  "atk_guardian": "712",
+  "def_guardian": "383",
+  "rec_guardian": "161",
+  "def_oracle": "296",
+  "hp_oracle": "2038",
+  "rec_oracle": "277",
+  "hp_bonus": "250",
+  "atk_bonus": "100",
+  "def_bonus": "100",
+  "rec_bonus": "100",
+  "lordonly": "",
+  "combo_hits": "1",
+  "normaldc": "2",
+  "ls": "",
+  "lsdescription": "",
+  "lstype": "",
+  "bbdescription": "Boosts all allies' Def for 3 turns",
+  "bbnote": "40% boost",
+  "bbtype": "Support",
+  "bbhits": "",
+  "bbaoe": "0",
+  "bbgauge": "12",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "60121",
+  "evomats2": "60142",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": ""
 }

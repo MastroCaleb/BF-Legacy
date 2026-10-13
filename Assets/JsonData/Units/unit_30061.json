@@ -1,62 +1,63 @@
 {
   "id": "30061",
-  "unitName": "Bandit Zaza",
-  "no": "83",
-  "element": "Earth",
-  "rarity": "★★",
-  "cost": "3",
-  "maxlv": "30",
-  "basexp": "10",
-  "gender": "M",
-  "ai": "4",
-  "animation_attack": "64",
-  "animation_idle": "42",
-  "animation_move": "6",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "36, 38, 40",
-  "normal_distribute": "40, 35, 25",
-  "normal_totaldistr": "100",
-  "bb_frames": "36, 38, 40, 42",
-  "bb_distribute": "30, 20, 30, 20",
-  "bb_totaldistr": "100",
-  "description": "A bandit from the forested mountain bordering the ruined Vriksha Duchy. A useless man that the people of Vriksha called rude, vulgar and mean. However, his power with an axe was explosive, and they said he could level a large tree in a single swing. When he came to town the many people who admired him would bring him food stolen from the rich.",
-  "summon": "I don't fight for<br>anyone but myself.<br>Still, I'll help you.",
-  "fusion": "Oh, how nice.<br>Guess I can live off you<br>a bit longer.",
-  "evolution": "",
-  "hp_base": "1100",
-  "atk_base": "530",
-  "def_base": "480",
-  "rec_base": "100",
-  "hp_lord": "2170",
-  "atk_lord": "806",
-  "def_lord": "701",
-  "rec_lord": "190",
-  "hp_anima": "2388",
-  "rec_anima": "132",
-  "atk_breaker": "864",
-  "def_breaker": "643",
-  "atk_guardian": "748",
-  "def_guardian": "759",
-  "rec_guardian": "161",
-  "def_oracle": "672",
-  "hp_oracle": "2083",
-  "rec_oracle": "277",
-  "hp_bonus": "250",
-  "atk_bonus": "120",
-  "def_bonus": "80",
-  "rec_bonus": "100",
-  "lordonly": "",
-  "combo_hits": "3",
-  "normaldc": "6",
-  "ls": "Intense Light",
-  "lsdescription": "Small boost in damage dealt during Spark",
-  "lsnote": "15% boost",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 530,
+      "def": 480,
+      "hp": 1100,
+      "rec": 100
+    },
+    "_lord": {
+      "atk": 806,
+      "def": 701,
+      "hp": 2170,
+      "rec": 190
+    },
+    "anima": {
+      "atk": 806,
+      "def": 701,
+      "hp max": 2460,
+      "hp min": 2315,
+      "rec max": 161,
+      "rec min": 103
+    },
+    "breaker": {
+      "atk max": 893,
+      "atk min": 835,
+      "def max": 672,
+      "def min": 614,
+      "hp": 2170,
+      "rec": 190
+    },
+    "guardian": {
+      "atk": 806,
+      "def max": 788,
+      "def min": 730,
+      "hp": 2170,
+      "rec max": 190,
+      "rec min": 132
+    },
+    "oracle": {
+      "atk": 806,
+      "def max": 701,
+      "def min": 643,
+      "hp": 2170,
+      "rec max": 306,
+      "rec min": 248
+    }
+  },
+  "leader_skill": {
+    "desc": "Small boost in damage dealt during Spark",
+    "effects": [
+      {
+        "damage% for spark": 15,
+        "passive id": "31"
+      }
+    ],
+    "id": "1300",
+    "name": "Intense Light"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -287,94 +288,99 @@
     ],
     "name": "Great Beheading"
   },
-  "bbdescription": "4 combo Earth elemental attack on single Enemy & probable Injury effect",
-  "bbnote": "80% chance",
-  "bbtype": "Offense",
-  "bbhits": "4",
-  "bbaoe": "1",
-  "bbgauge": "15",
-  "bbdc": "4",
-  "bbmultiplier": "200",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "30062",
-  "evomats1": "30130",
-  "evomats2": "30130",
-  "evomats3": "30131",
-  "evomats4": "",
-  "evomats5": "",
-  "evozelcost": "50000",
-  "stats": {
-    "_base": {
-      "atk": 530,
-      "def": 480,
-      "hp": 1100,
-      "rec": 100
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_under",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 806,
-      "def": 701,
-      "hp": 2170,
-      "rec": 190
+    {
+      "action": "skill",
+      "chance%": 30.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 806,
-      "def": 701,
-      "hp max": 2460,
-      "hp min": 2315,
-      "rec max": 161,
-      "rec min": 103
+    {
+      "action": "attack",
+      "chance%": 70.0,
+      "target conditions": "hp_max",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 893,
-      "atk min": 835,
-      "def max": 672,
-      "def min": 614,
-      "hp": 2170,
-      "rec": 190
+    {
+      "action": "attack",
+      "chance%": 50.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "guardian": {
-      "atk": 806,
-      "def max": 788,
-      "def min": 730,
-      "hp": 2170,
-      "rec max": 190,
-      "rec min": 132
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 64
     },
-    "oracle": {
-      "atk": 806,
-      "def max": 701,
-      "def min": 643,
-      "hp": 2170,
-      "rec max": 306,
-      "rec min": 248
+    "idle": {
+      "total number of frames": 42
+    },
+    "move": {
+      "total number of frames": 6
     }
   },
-  "leader_skill": {
-    "desc": "Small boost in damage dealt during Spark",
-    "effects": [
-      {
-        "damage% for spark": 15,
-        "passive id": "31"
-      }
+  "category": 30060,
+  "cost": "3",
+  "damage frames": {
+    "frame times": [
+      36,
+      38,
+      40
     ],
-    "id": "1300",
-    "name": "Intense Light"
+    "hit dmg% distribution": [
+      40,
+      35,
+      25
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 3
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "earth",
+  "exp_pattern": 10,
+  "gender": "male",
+  "getting type": "not eligible for achievement",
+  "guide_id": 83,
+  "imp": {
+    "max atk": "120",
+    "max def": "80",
+    "max hp": "250",
+    "max rec": "100"
+  },
+  "kind": "normal",
+  "lord damage range": "750~838",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Bandit Zaza",
+  "rarity": "2",
+  "sell caution": false,
+  "unitName": "Bandit Zaza",
+  "maxlv": "30",
+  "no": "83",
   "unitDisplayHomePosition_1W9CxaFK": "161,-16,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "198,177,580,629",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "199,334,265,288,0",
@@ -384,5 +390,95 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "300",
   "sellCaution": false,
-  "effectFrames": "30:123:1,32:123:1,34:123:1"
+  "effectFrames": "30:123:1,32:123:1,34:123:1",
+  "evofrom": "",
+  "evointo": "30062",
+  "evozelcost": "50000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "30130",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "30131",
+      "count": 1
+    }
+  ],
+  "basexp": "10",
+  "animation_attack": "64",
+  "animation_idle": "42",
+  "animation_move": "6",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "36, 38, 40",
+  "normal_distribute": "40, 35, 25",
+  "normal_totaldistr": "100",
+  "bb_frames": "36, 38, 40, 42",
+  "bb_distribute": "30, 20, 30, 20",
+  "bb_totaldistr": "100",
+  "description": "A bandit from the forested mountain bordering the ruined Vriksha Duchy. A useless man that the people of Vriksha called rude, vulgar and mean. However, his power with an axe was explosive, and they said he could level a large tree in a single swing. When he came to town the many people who admired him would bring him food stolen from the rich.",
+  "summon": "I don't fight for<br>anyone but myself.<br>Still, I'll help you.",
+  "fusion": "Oh, how nice.<br>Guess I can live off you<br>a bit longer.",
+  "evolution": "",
+  "hp_base": "1100",
+  "atk_base": "530",
+  "def_base": "480",
+  "rec_base": "100",
+  "hp_lord": "2170",
+  "atk_lord": "806",
+  "def_lord": "701",
+  "rec_lord": "190",
+  "hp_anima": "2388",
+  "rec_anima": "132",
+  "atk_breaker": "864",
+  "def_breaker": "643",
+  "atk_guardian": "748",
+  "def_guardian": "759",
+  "rec_guardian": "161",
+  "def_oracle": "672",
+  "hp_oracle": "2083",
+  "rec_oracle": "277",
+  "hp_bonus": "250",
+  "atk_bonus": "120",
+  "def_bonus": "80",
+  "rec_bonus": "100",
+  "lordonly": "",
+  "combo_hits": "3",
+  "normaldc": "6",
+  "ls": "Intense Light",
+  "lsdescription": "Small boost in damage dealt during Spark",
+  "lsnote": "15% boost",
+  "lstype": "Attack",
+  "bbdescription": "4 combo Earth elemental attack on single Enemy & probable Injury effect",
+  "bbnote": "80% chance",
+  "bbtype": "Offense",
+  "bbhits": "4",
+  "bbaoe": "1",
+  "bbgauge": "15",
+  "bbdc": "4",
+  "bbmultiplier": "200",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "30130",
+  "evomats2": "30130",
+  "evomats3": "30131",
+  "evomats4": "",
+  "evomats5": ""
 }

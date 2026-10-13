@@ -1,52 +1,68 @@
 {
   "id": "30165",
-  "unitName": "Gaia Armor Edea",
-  "no": "479",
-  "element": "Earth",
-  "rarity": "★★★★★★",
-  "cost": "22",
-  "maxlv": "100",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "69",
-  "animation_idle": "76",
-  "animation_move": "7",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "description": "One of the four legendary warriors who fought to save the Kingdom of Palmyna. She felt her life coming to an end during her battle with Cardes, commander of the gods. However, she never regretted what she did to protect her beloved comrades. With the last of her life force she unlocked the hidden power in her sparkling armor Laphdronya, saving her comrades from the dire crisis they faced. She then fell into a deep sleep. Her armor held her tight as she slept, as if it had a will of its own.",
-  "summon": "How do I appear to you?<br>I no longer feel like myself.<br>Do you still need my help?",
-  "fusion": "I can feel power flowing.<br>But is this my own power?<br>I just can't tell...",
-  "evolution": "I will never regret my actions.<br>Even if I find myself without aid,<br>I choose to walk my own path.",
-  "hp_base": "4244",
-  "atk_base": "1424",
-  "def_base": "1490",
-  "rec_base": "1264",
-  "hp_lord": "5578",
-  "atk_lord": "1806",
-  "def_lord": "1806",
-  "rec_lord": "1543",
-  "hp_anima": "6320",
-  "rec_anima": "1345",
-  "atk_breaker": "2004",
-  "def_breaker": "1608",
-  "atk_guardian": "1608",
-  "def_guardian": "2004",
-  "hp_oracle": "4835",
-  "rec_oracle": "1741",
-  "hp_bonus": "1000",
-  "atk_bonus": "200",
-  "def_bonus": "200",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "10",
-  "ls": "Earth Master's Power",
-  "lsdescription": "50% boost to Atk power and 10% boost to Def and Rec of Earth types",
-  "lstype": "Attack/Defense/Recovery",
+  "stats": {
+    "_base": {
+      "atk": 1424,
+      "def": 1490,
+      "hp": 4244,
+      "rec": 1264
+    },
+    "_lord": {
+      "atk": 1806,
+      "def": 1806,
+      "hp": 5578,
+      "rec": 1543
+    },
+    "anima": {
+      "atk": 1806,
+      "def": 1806,
+      "hp max": 6568,
+      "hp min": 6073,
+      "rec max": 1444,
+      "rec min": 1246
+    },
+    "breaker": {
+      "atk max": 2103,
+      "atk min": 1905,
+      "def max": 1707,
+      "def min": 1509,
+      "hp": 5578,
+      "rec": 1543
+    },
+    "guardian": {
+      "atk": 1806,
+      "def max": 2103,
+      "def min": 1905,
+      "hp": 5578,
+      "rec max": 1543,
+      "rec min": 1345
+    },
+    "oracle": {
+      "atk": 1806,
+      "def max": 1806,
+      "def min": 1608,
+      "hp": 5578,
+      "rec max": 1939,
+      "rec min": 1741
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to Atk power and 10% boost to Def and Rec of Earth types",
+    "effects": [
+      {
+        "atk% buff": 50,
+        "def% buff": 10,
+        "elements buffed": [
+          "earth"
+        ],
+        "passive id": "2",
+        "rec% buff": 10
+      }
+    ],
+    "id": "124",
+    "name": "Earth Master's Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -311,11 +327,6 @@
     ],
     "name": "Grand Gale"
   },
-  "bbdescription": "11 combo Earth elemental attack on single enemy & probable Poison and Sickness effect",
-  "bbtype": "Offense",
-  "bbhits": "11",
-  "bbaoe": "1",
-  "bbgauge": "18",
   "sbb": {
     "damage frames": [
       {
@@ -674,90 +685,100 @@
     ],
     "name": "Rioting Winds"
   },
-  "sbbdescription": "12 combo Earth elemental attack on single enemy, probable Poison and Sickness effect, and decreases damage taken for 1 turn for all allies",
-  "sbbtype": "Support/Offense",
-  "sbbhits": "12",
-  "sbbaoe": "1",
-  "sbbgauge": "20",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "30164",
-  "evointo": "30166",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 1424,
-      "def": 1490,
-      "hp": 4244,
-      "rec": 1264
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1806,
-      "def": 1806,
-      "hp": 5578,
-      "rec": 1543
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1806,
-      "def": 1806,
-      "hp max": 6568,
-      "hp min": 6073,
-      "rec max": 1444,
-      "rec min": 1246
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 69
     },
-    "breaker": {
-      "atk max": 2103,
-      "atk min": 1905,
-      "def max": 1707,
-      "def min": 1509,
-      "hp": 5578,
-      "rec": 1543
+    "idle": {
+      "total number of frames": 76
     },
-    "guardian": {
-      "atk": 1806,
-      "def max": 2103,
-      "def min": 1905,
-      "hp": 5578,
-      "rec max": 1543,
-      "rec min": 1345
-    },
-    "oracle": {
-      "atk": 1806,
-      "def max": 1806,
-      "def min": 1608,
-      "hp": 5578,
-      "rec max": 1939,
-      "rec min": 1741
+    "move": {
+      "total number of frames": 7
     }
   },
-  "leader_skill": {
-    "desc": "50% boost to Atk power and 10% boost to Def and Rec of Earth types",
-    "effects": [
-      {
-        "atk% buff": 50,
-        "def% buff": 10,
-        "elements buffed": [
-          "earth"
-        ],
-        "passive id": "2",
-        "rec% buff": 10
-      }
+  "category": 30160,
+  "cost": "22",
+  "damage frames": {
+    "frame times": [
+      20,
+      24,
+      28,
+      31,
+      34,
+      37,
+      39,
+      41,
+      43,
+      45
     ],
-    "id": "124",
-    "name": "Earth Master's Power"
+    "hit dmg% distribution": [
+      55,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 10
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "earth",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 479,
+  "imp": {
+    "max atk": "200",
+    "max def": "200",
+    "max hp": "1000",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "1681~1878",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Gaia Armor Edea",
+  "rarity": "6",
+  "sell caution": false,
+  "unitName": "Gaia Armor Edea",
+  "maxlv": "100",
+  "no": "479",
   "unitDisplayHomePosition_1W9CxaFK": "246,262,154,420",
   "unitDisplayDetailPosition_6z54rgb3": "89,-4,730,788",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "96,234,495,397,0",
@@ -767,5 +788,116 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "8000",
   "sellCaution": false,
-  "effectFrames": "14:123:1,18:123:1,22:123:1,25:123:1,28:123:1,31:123:1,33:123:1,35:123:1,37:123:1,39:123:1,4:60024:1,14:330402:1"
+  "effectFrames": "14:123:1,18:123:1,22:123:1,25:123:1,28:123:1,31:123:1,33:123:1,35:123:1,37:123:1,39:123:1,4:60024:1,14:330402:1",
+  "evofrom": "30164",
+  "evointo": "30166",
+  "evozelcost": "1500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "30334",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    },
+    {
+      "type": "2",
+      "id": "110100",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "69",
+  "animation_idle": "76",
+  "animation_move": "7",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "20, 24, 28, 31, 34, 37, 39, 41, 43, 45",
+  "normal_distribute": "55, 5, 5, 5, 5, 5, 5, 5, 5, 5",
+  "normal_totaldistr": "100",
+  "bb_frames": "20, 24, 28, 31, 34, 37, 39, 41, 43, 45, 47",
+  "bb_distribute": "50, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5",
+  "bb_totaldistr": "100",
+  "sbb_frames": "20, 24, 28, 31, 34, 37, 39, 41, 43, 45, 47, 49",
+  "sbb_distribute": "50, 5, 4, 5, 4, 5, 4, 5, 4, 5, 4, 5",
+  "sbb_totaldistr": "100",
+  "description": "One of the four legendary warriors who fought to save the Kingdom of Palmyna. She felt her life coming to an end during her battle with Cardes, commander of the gods. However, she never regretted what she did to protect her beloved comrades. With the last of her life force she unlocked the hidden power in her sparkling armor Lafdranya, saving her comrades from the dire crisis they faced. She then fell into a deep sleep. Her armor held her tight as she slept, as if it had a will of its own.",
+  "summon": "How do I appear to you?<br>I no longer feel like myself.<br>Do you still need my help?",
+  "fusion": "I can feel power flowing.<br>But is this my own power?<br>I just can't tell...",
+  "evolution": "I will never regret my actions.<br>Even if I find myself without aid,<br>I choose to walk my own path.",
+  "hp_base": "4244",
+  "atk_base": "1424",
+  "def_base": "1490",
+  "rec_base": "1264",
+  "hp_lord": "5578",
+  "atk_lord": "1806",
+  "def_lord": "1806",
+  "rec_lord": "1543",
+  "hp_anima": "6321",
+  "rec_anima": "1345",
+  "atk_breaker": "2004",
+  "def_breaker": "1608",
+  "atk_guardian": "1608",
+  "def_guardian": "2004",
+  "rec_guardian": "1444",
+  "def_oracle": "1707",
+  "hp_oracle": "5281",
+  "rec_oracle": "1840",
+  "hp_bonus": "1000",
+  "atk_bonus": "200",
+  "def_bonus": "200",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "10",
+  "normaldc": "30",
+  "ls": "Earth Master's Power",
+  "lsdescription": "50% boost to Atk power and 10% boost to Def and Rec of Earth types",
+  "lstype": "Attack/Defense/Recovery",
+  "bbdescription": "11 combo Earth elemental attack on single enemy & probable Poison and Sickness effect",
+  "bbnote": "80% chance to inflict",
+  "bbtype": "Offense",
+  "bbhits": "11",
+  "bbaoe": "1",
+  "bbgauge": "18",
+  "bbdc": "11",
+  "bbmultiplier": "450",
+  "sbbdescription": "12 combo Earth elemental attack on single enemy, probable Poison and Sickness effect, and decreases damage taken for 1 turn for all allies",
+  "sbbnote": "90% chance to inflict Poison and Weakness, 25% damage reduction",
+  "sbbtype": "Support/Offense",
+  "sbbhits": "12",
+  "sbbaoe": "1",
+  "sbbgauge": "20",
+  "sbbdc": "24",
+  "sbbmultiplier": "640",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "30334",
+  "evomats2": "50354",
+  "evomats3": "30133",
+  "evomats4": "60224",
+  "evomats5": "",
+  "evoitem": "Legend Stone"
 }

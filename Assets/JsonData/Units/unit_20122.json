@@ -1,61 +1,66 @@
 {
   "id": "20122",
-  "unitName": "Captain Mega",
-  "no": "156",
-  "element": "Water",
-  "rarity": "★★★",
-  "cost": "5",
-  "maxlv": "40",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "147",
-  "animation_idle": "64",
-  "animation_move": "10",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "38, 67, 96",
-  "normal_distribute": "34, 33, 33",
-  "normal_totaldistr": "100",
-  "bb_frames": "38, 67, 96, 100",
-  "bb_distribute": "25, 25, 25, 25",
-  "bb_totaldistr": "100",
-  "description": "A pirate captain from the seas near the ruined Sama Kingdom.He was raised by Verica after being found in a shipwreck of which he was the only survivor. When Mega inherited the captain's chair from Verica he gained the trust of his crew as well as the local pirates due to his good humored nature and incredible skill with an axe. He became known as the Captain.",
-  "summon": "I am the axe captain!<br>I see you've been waiting for me. You will not be disappointed!",
-  "fusion": "Well, isn't this fun!<br>The sea roars at my strength!",
-  "evolution": "",
-  "hp_base": "1800",
-  "atk_base": "770",
-  "def_base": "500",
-  "rec_base": "800",
-  "hp_lord": "2820",
-  "atk_lord": "1055",
-  "def_lord": "660",
-  "rec_lord": "1360",
-  "hp_anima": "3113",
-  "rec_anima": "1282",
-  "atk_breaker": "1133",
-  "def_breaker": "582",
-  "atk_guardian": "977",
-  "def_guardian": "738",
-  "rec_guardian": "1321",
-  "def_oracle": "621",
-  "hp_oracle": "2703",
-  "rec_oracle": "1477",
-  "hp_bonus": "400",
-  "atk_bonus": "100",
-  "def_bonus": "100",
-  "rec_bonus": "100",
-  "lordonly": "",
-  "combo_hits": "3",
-  "normaldc": "9",
-  "ls": "Water Spirit's Power",
-  "lsdescription": "25% boost to Atk Power of Water Types",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 770,
+      "def": 500,
+      "hp": 1800,
+      "rec": 800
+    },
+    "_lord": {
+      "atk": 1055,
+      "def": 660,
+      "hp": 2820,
+      "rec": 1360
+    },
+    "anima": {
+      "atk": 1055,
+      "def": 660,
+      "hp max": 3210,
+      "hp min": 3015,
+      "rec max": 1321,
+      "rec min": 1243
+    },
+    "breaker": {
+      "atk max": 1172,
+      "atk min": 1094,
+      "def max": 621,
+      "def min": 543,
+      "hp": 2820,
+      "rec": 1360
+    },
+    "guardian": {
+      "atk": 1055,
+      "def max": 777,
+      "def min": 699,
+      "hp": 2820,
+      "rec max": 1360,
+      "rec min": 1282
+    },
+    "oracle": {
+      "atk": 1055,
+      "def max": 660,
+      "def min": 582,
+      "hp": 2820,
+      "rec max": 1516,
+      "rec min": 1438
+    }
+  },
+  "leader_skill": {
+    "desc": "25% boost to Atk Power of Water Types",
+    "effects": [
+      {
+        "atk% buff": 25,
+        "elements buffed": [
+          "water"
+        ],
+        "passive id": "2"
+      }
+    ],
+    "id": "110",
+    "name": "Water Spirit's Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -214,97 +219,87 @@
     ],
     "name": "Ocean Whirlpool"
   },
-  "bbdescription": "4 combo Water elemental attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "4",
-  "bbaoe": "A",
-  "bbgauge": "25",
-  "bbdc": "4",
-  "bbmultiplier": "160",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "20123",
-  "evomats1": "20132",
-  "evomats2": "20131",
-  "evomats3": "20131",
-  "evomats4": "20131",
-  "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "100000",
-  "stats": {
-    "_base": {
-      "atk": 770,
-      "def": 500,
-      "hp": 1800,
-      "rec": 800
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1055,
-      "def": 660,
-      "hp": 2820,
-      "rec": 1360
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1055,
-      "def": 660,
-      "hp max": 3210,
-      "hp min": 3015,
-      "rec max": 1321,
-      "rec min": 1243
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 147
     },
-    "breaker": {
-      "atk max": 1172,
-      "atk min": 1094,
-      "def max": 621,
-      "def min": 543,
-      "hp": 2820,
-      "rec": 1360
+    "idle": {
+      "total number of frames": 64
     },
-    "guardian": {
-      "atk": 1055,
-      "def max": 777,
-      "def min": 699,
-      "hp": 2820,
-      "rec max": 1360,
-      "rec min": 1282
-    },
-    "oracle": {
-      "atk": 1055,
-      "def max": 660,
-      "def min": 582,
-      "hp": 2820,
-      "rec max": 1516,
-      "rec min": 1438
+    "move": {
+      "total number of frames": 10
     }
   },
-  "leader_skill": {
-    "desc": "25% boost to Atk Power of Water Types",
-    "effects": [
-      {
-        "atk% buff": 25,
-        "elements buffed": [
-          "water"
-        ],
-        "passive id": "2"
-      }
+  "category": 20120,
+  "cost": "5",
+  "damage frames": {
+    "frame times": [
+      38,
+      67,
+      96
     ],
-    "id": "110",
-    "name": "Water Spirit's Power"
+    "hit dmg% distribution": [
+      34,
+      33,
+      33
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 3
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "water",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 156,
+  "imp": {
+    "max atk": "100",
+    "max def": "100",
+    "max hp": "400",
+    "max rec": "100"
+  },
+  "kind": "normal",
+  "lord damage range": "981~1097",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Captain Mega",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "Captain Mega",
+  "maxlv": "40",
+  "no": "156",
   "unitDisplayHomePosition_1W9CxaFK": "329,4,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "59,180,680,606",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "111,326,328,293,0",
@@ -314,5 +309,94 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "1000",
   "sellCaution": false,
-  "effectFrames": "32:122:1,61:122:1,90:122:1"
+  "effectFrames": "32:122:1,61:122:1,90:122:1",
+  "evofrom": "",
+  "evointo": "20123",
+  "evozelcost": "100000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "20132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20131",
+      "count": 3
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "147",
+  "animation_idle": "64",
+  "animation_move": "10",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "38, 67, 96",
+  "normal_distribute": "34, 33, 33",
+  "normal_totaldistr": "100",
+  "bb_frames": "38, 67, 96, 100",
+  "bb_distribute": "25, 25, 25, 25",
+  "bb_totaldistr": "100",
+  "description": "A pirate captain from the seas near the ruined Sama Kingdom.He was raised by Verica after being found in a shipwreck of which he was the only survivor. When Mega inherited the captain's chair from Verica he gained the trust of his crew as well as the local pirates due to his good humored nature and incredible skill with an axe. He became known as the Captain.",
+  "summon": "I am the axe captain!<br>I see you've been waiting for me. You will not be disappointed!",
+  "fusion": "Well, isn't this fun!<br>The sea roars at my strength!",
+  "evolution": "",
+  "hp_base": "1800",
+  "atk_base": "770",
+  "def_base": "500",
+  "rec_base": "800",
+  "hp_lord": "2820",
+  "atk_lord": "1055",
+  "def_lord": "660",
+  "rec_lord": "1360",
+  "hp_anima": "3113",
+  "rec_anima": "1282",
+  "atk_breaker": "1133",
+  "def_breaker": "582",
+  "atk_guardian": "977",
+  "def_guardian": "738",
+  "rec_guardian": "1321",
+  "def_oracle": "621",
+  "hp_oracle": "2703",
+  "rec_oracle": "1477",
+  "hp_bonus": "400",
+  "atk_bonus": "100",
+  "def_bonus": "100",
+  "rec_bonus": "100",
+  "lordonly": "",
+  "combo_hits": "3",
+  "normaldc": "9",
+  "ls": "Water Spirit's Power",
+  "lsdescription": "25% boost to Atk Power of Water Types",
+  "lstype": "Attack",
+  "bbdescription": "4 combo Water elemental attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "4",
+  "bbaoe": "A",
+  "bbgauge": "25",
+  "bbdc": "4",
+  "bbmultiplier": "160",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "20132",
+  "evomats2": "20131",
+  "evomats3": "20131",
+  "evomats4": "20131",
+  "evomats5": "",
+  "evoitem": ""
 }

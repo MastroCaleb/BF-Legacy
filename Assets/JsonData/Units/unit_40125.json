@@ -1,52 +1,70 @@
 {
   "id": "40125",
-  "unitName": "Holy Shock Emilia",
-  "no": "444",
-  "element": "Thunder",
-  "rarity": "★★★★★★",
-  "cost": "22",
-  "maxlv": "100",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "4",
-  "animation_attack": "262",
-  "animation_idle": "128",
-  "animation_move": "16",
-  "movespeed_attack": "0.0024",
-  "movespeed_skill": "0.0024",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "description": "A female general reportedly from the Atharva Republic. She was saved by Eze after finding herself in trouble fighting the gods. Afterwards, she became obsessed with power, and, inheriting equipment from a former ally procured from the otherworld, poured all she had into strengthening herself. In the end there would be rumors of her relationships with Weiss, Eze, former allies and so forth, despite her being recorded as saying, \"It's pathetic only being able to see human relationships from an emotional standpoint.\"",
-  "summon": "Are you searching for <br>power just as I am?<br>I will follow your will then!",
-  "fusion": "This is a Summoner's power?<br>I accept your offering!<br>I will use it to grow stronger!",
-  "evolution": "I desire the greatest of power!<br>Summoner, what do you need<br>from my evolved form?",
-  "hp_base": "3966",
-  "atk_base": "1207",
-  "def_base": "1178",
-  "rec_base": "1174",
-  "hp_lord": "5749",
-  "atk_lord": "1620",
-  "def_lord": "1582",
-  "rec_lord": "1582",
-  "hp_anima": "6491",
-  "rec_anima": "1384",
-  "atk_breaker": "1818",
-  "def_breaker": "1384",
-  "atk_guardian": "1422",
-  "def_guardian": "1780",
-  "hp_oracle": "5006",
-  "rec_oracle": "1780",
-  "hp_bonus": "750",
-  "atk_bonus": "300",
-  "def_bonus": "300",
-  "rec_bonus": "300",
-  "lordonly": "",
-  "combo_hits": "10",
-  "ls": "Thunder Lord's Power",
-  "lsdescription": "50% boost to Atk power of Thunder types and fills BB gauge after each turn",
-  "lstype": "Attack/Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 1207,
+      "def": 1178,
+      "hp": 3966,
+      "rec": 1174
+    },
+    "_lord": {
+      "atk": 1620,
+      "def": 1582,
+      "hp": 5749,
+      "rec": 1582
+    },
+    "anima": {
+      "atk": 1620,
+      "def": 1582,
+      "hp max": 6739,
+      "hp min": 6244,
+      "rec max": 1483,
+      "rec min": 1285
+    },
+    "breaker": {
+      "atk max": 1917,
+      "atk min": 1719,
+      "def max": 1483,
+      "def min": 1285,
+      "hp": 5749,
+      "rec": 1582
+    },
+    "guardian": {
+      "atk": 1620,
+      "def max": 1879,
+      "def min": 1681,
+      "hp": 5749,
+      "rec max": 1582,
+      "rec min": 1384
+    },
+    "oracle": {
+      "atk": 1620,
+      "def max": 1582,
+      "def min": 1384,
+      "hp": 5749,
+      "rec max": 1978,
+      "rec min": 1780
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to Atk power of Thunder types and fills BB gauge after each turn",
+    "effects": [
+      {
+        "atk% buff": 50,
+        "elements buffed": [
+          "thunder"
+        ],
+        "passive id": "2"
+      },
+      {
+        "bc fill per turn": 2,
+        "passive id": "9"
+      }
+    ],
+    "id": "133",
+    "name": "Thunder Lord's Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -301,11 +319,6 @@
     ],
     "name": "Empire of Thunder"
   },
-  "bbdescription": "11 combo powerful Thunder attack on single enemy & probable Paralysis effect",
-  "bbtype": "Offense",
-  "bbhits": "11",
-  "bbaoe": "1",
-  "bbgauge": "18",
   "sbb": {
     "damage frames": [
       {
@@ -574,92 +587,112 @@
     ],
     "name": "Perkunas Saber"
   },
-  "sbbdescription": "13 combo powerful Thunder attack on all enemies & probable Paralysis and Weakness effect",
-  "sbbtype": "Offense",
-  "sbbhits": "13",
-  "sbbaoe": "A",
-  "sbbgauge": "25",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "40124",
-  "evointo": "",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 1207,
-      "def": 1178,
-      "hp": 3966,
-      "rec": 1174
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_under",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1620,
-      "def": 1582,
-      "hp": 5749,
-      "rec": 1582
+    {
+      "action": "skill",
+      "chance%": 30.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1620,
-      "def": 1582,
-      "hp max": 6739,
-      "hp min": 6244,
-      "rec max": 1483,
-      "rec min": 1285
+    {
+      "action": "attack",
+      "chance%": 70.0,
+      "target conditions": "hp_max",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 1917,
-      "atk min": 1719,
-      "def max": 1483,
-      "def min": 1285,
-      "hp": 5749,
-      "rec": 1582
+    {
+      "action": "attack",
+      "chance%": 50.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "guardian": {
-      "atk": 1620,
-      "def max": 1879,
-      "def min": 1681,
-      "hp": 5749,
-      "rec max": 1582,
-      "rec min": 1384
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 262
     },
-    "oracle": {
-      "atk": 1620,
-      "def max": 1582,
-      "def min": 1384,
-      "hp": 5749,
-      "rec max": 1978,
-      "rec min": 1780
+    "idle": {
+      "total number of frames": 128
+    },
+    "move": {
+      "total number of frames": 16
     }
   },
-  "leader_skill": {
-    "desc": "50% boost to Atk power of Thunder types and fills BB gauge after each turn",
-    "effects": [
-      {
-        "atk% buff": 50,
-        "elements buffed": [
-          "thunder"
-        ],
-        "passive id": "2"
-      },
-      {
-        "bc fill per turn": 2,
-        "passive id": "9"
-      }
+  "category": 40120,
+  "cost": "22",
+  "damage frames": {
+    "frame times": [
+      24,
+      30,
+      56,
+      62,
+      102,
+      116,
+      130,
+      144,
+      158,
+      172
     ],
-    "id": "133",
-    "name": "Thunder Lord's Power"
+    "hit dmg% distribution": [
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 10
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "thunder",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 444,
+  "imp": {
+    "max atk": "300",
+    "max def": "300",
+    "max hp": "750",
+    "max rec": "300"
+  },
+  "kind": "normal",
+  "lord damage range": "1508~1684",
+  "movement": {
+    "attack": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    }
+  },
+  "name": "Holy Shock Emilia",
+  "rarity": "6",
+  "sell caution": false,
+  "unitName": "Holy Shock Emilia",
+  "maxlv": "100",
+  "no": "444",
   "unitDisplayHomePosition_1W9CxaFK": "492,380,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-153,-175,1280,1008",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "108,219,479,392,0",
@@ -669,5 +702,90 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "8000",
   "sellCaution": false,
-  "effectFrames": "20:124:1,24:400231:1,52:124:1,56:400231:1,80:400070:1,96:200252:1,96:400231:1,110:400231:1,124:400221:1,124:400231:1,138:400231:1,138:200252:1,152:400231:1,166:400231:1,174:400070:1"
+  "effectFrames": "20:124:1,24:400231:1,52:124:1,56:400231:1,80:400070:1,96:200252:1,96:400231:1,110:400231:1,124:400221:1,124:400231:1,138:400231:1,138:200252:1,152:400231:1,166:400231:1,174:400070:1",
+  "evofrom": "40124",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "21",
+  "animation_attack": "262",
+  "animation_idle": "128",
+  "animation_move": "16",
+  "movespeed_attack": "0.0024",
+  "movespeed_skill": "0.0024",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "24, 30, 56, 62, 102, 116, 130, 144, 158, 172",
+  "normal_distribute": "10, 10, 10, 10, 10, 10, 10, 10, 10, 10",
+  "normal_totaldistr": "100",
+  "bb_frames": "24, 30, 56, 62, 102, 116, 130, 144, 158, 172, 178",
+  "bb_distribute": "10, 10, 10, 10, 10, 10, 8, 8, 8, 8, 8",
+  "bb_totaldistr": "100",
+  "sbb_frames": "24, 30, 56, 62, 102, 114, 128, 140, 150, 160, 170, 180, 190",
+  "sbb_distribute": "10, 9, 10, 8, 7, 7, 7, 7, 7, 7, 7, 7, 7",
+  "sbb_totaldistr": "100",
+  "description": "A female general reportedly from the Atharva Republic. She was saved by Eze after finding herself in trouble fighting the gods. Afterwards, she became obsessed with power, and, inheriting equipment from a former ally procured from the otherworld, poured all she had into strengthening herself. In the end there would be rumors of her relationships with Weiss, Eze, former allies and so forth, despite her being recorded as saying, \"It's pathetic only being able to see human relationships from an emotional standpoint.\"",
+  "summon": "Are you searching for <br>power just as I am?<br>I will follow your will then!",
+  "fusion": "This is a Summoner's power?<br>I accept your offering!<br>I will use it to grow stronger!",
+  "evolution": "I desire the greatest of power!<br>Summoner, what do you need<br>from my evolved form?",
+  "hp_base": "3966",
+  "atk_base": "1207",
+  "def_base": "1178",
+  "rec_base": "1174",
+  "hp_lord": "5749",
+  "atk_lord": "1620",
+  "def_lord": "1582",
+  "rec_lord": "1582",
+  "hp_anima": "6492",
+  "rec_anima": "1384",
+  "atk_breaker": "1818",
+  "def_breaker": "1384",
+  "atk_guardian": "1422",
+  "def_guardian": "1780",
+  "rec_guardian": "1483",
+  "def_oracle": "1483",
+  "hp_oracle": "5452",
+  "rec_oracle": "1879",
+  "hp_bonus": "750",
+  "atk_bonus": "300",
+  "def_bonus": "300",
+  "rec_bonus": "300",
+  "lordonly": "",
+  "combo_hits": "10",
+  "normaldc": "30",
+  "ls": "Thunder Lord's Power",
+  "lsdescription": "50% boost to Atk power of Thunder types and fills BB gauge after each turn",
+  "lsnote": "2 BC fill per turn",
+  "lstype": "Attack/Brave Burst",
+  "bbdescription": "11 combo powerful Thunder attack on single enemy & probable Paralysis effect",
+  "bbnote": "80% chance",
+  "bbtype": "Offense",
+  "bbhits": "11",
+  "bbaoe": "1",
+  "bbgauge": "16",
+  "bbdc": "11",
+  "bbmultiplier": "480",
+  "sbbdescription": "13 combo powerful Thunder attack on all enemies & probable Paralysis and Weakness effect",
+  "sbbnote": "80% chance",
+  "sbbtype": "Offense",
+  "sbbhits": "13",
+  "sbbaoe": "A",
+  "sbbgauge": "25",
+  "sbbdc": "13",
+  "sbbmultiplier": "400",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "",
+  "evomats2": "",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": ""
 }

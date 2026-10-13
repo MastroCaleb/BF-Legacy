@@ -1,61 +1,63 @@
 {
   "id": "60084",
-  "unitName": "Legion",
-  "no": "369",
-  "element": "Dark",
-  "rarity": "★★★★★",
-  "cost": "12",
-  "maxlv": "80",
-  "basexp": "15",
-  "gender": "N",
-  "ai": "2",
-  "animation_attack": "150",
-  "animation_idle": "52",
-  "animation_move": "32",
-  "movespeed_attack": "8",
-  "movespeed_skill": "8",
-  "speedtype_attack": "1",
-  "speedtype_skill": "1",
-  "movetype_attack": "2",
-  "movetype_skill": "2",
-  "normal_frames": "66, 69, 72, 80, 92, 104",
-  "normal_distribute": "20, 10, 20, 10, 20, 20",
-  "normal_totaldistr": "100",
-  "bb_frames": "66, 69, 72, 80, 92, 104, 110",
-  "bb_distribute": "20, 10, 20, 10, 20, 10, 10",
-  "bb_totaldistr": "100",
-  "description": "The immortal king of magical beings whose magical powers are beyond those of even Lich. However, to humans this Legion is little more than a shell created according to the legend of the undying Lich, and Legion's true body is said to exist somewhere else. There also exists a forbidden book which foretells that should his true body and soul be reunited, the power born from that would surpass even the gods and the ensuing massacre would be enough to fill the entire world with bodies.",
-  "summon": "Summoner of the demon lord,<br>what is it that you desire of me?<br>To rule the world? Or to destroy it?",
-  "fusion": "Why should a demon lord<br>grant his power for your sake?<br>Summoners are so arrogant.",
-  "evolution": "Are you pleased by the<br>sight of my temporal form?<br>Ha ha, how foolish of you, human.",
-  "hp_base": "3200",
-  "atk_base": "873",
-  "def_base": "910",
-  "rec_base": "912",
-  "hp_lord": "4637",
-  "atk_lord": "1325",
-  "def_lord": "1404",
-  "rec_lord": "1409",
-  "hp_anima": "5230",
-  "rec_anima": "1251",
-  "atk_breaker": "1483",
-  "def_breaker": "1246",
-  "atk_guardian": "1167",
-  "def_guardian": "1562",
-  "rec_guardian": "1330",
-  "def_oracle": "1325",
-  "hp_oracle": "4400",
-  "rec_oracle": "1646",
-  "hp_bonus": "500",
-  "atk_bonus": "200",
-  "def_bonus": "200",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "6",
-  "normaldc": "12",
-  "ls": "Dark Barrier",
-  "lsdescription": "15% reduction in damage from Dark Types",
-  "lstype": "Defense",
+  "stats": {
+    "_base": {
+      "atk": 873,
+      "def": 910,
+      "hp": 3200,
+      "rec": 912
+    },
+    "_lord": {
+      "atk": 1325,
+      "def": 1404,
+      "hp": 4637,
+      "rec": 1409
+    },
+    "anima": {
+      "atk": 1325,
+      "def": 1404,
+      "hp max": 5427,
+      "hp min": 5032,
+      "rec max": 1330,
+      "rec min": 1172
+    },
+    "breaker": {
+      "atk max": 1562,
+      "atk min": 1404,
+      "def max": 1325,
+      "def min": 1167,
+      "hp": 4637,
+      "rec": 1409
+    },
+    "guardian": {
+      "atk": 1325,
+      "def max": 1641,
+      "def min": 1483,
+      "hp": 4637,
+      "rec max": 1409,
+      "rec min": 1251
+    },
+    "oracle": {
+      "atk": 1325,
+      "def max": 1404,
+      "def min": 1246,
+      "hp": 4637,
+      "rec max": 1725,
+      "rec min": 1567
+    }
+  },
+  "leader_skill": {
+    "desc": "15% reduction in damage from Dark Types",
+    "effects": [
+      {
+        "dark resist%": 15,
+        "passive id": "5"
+      }
+    ],
+    "id": "511",
+    "name": "Dark Barrier"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -220,93 +222,93 @@
     ],
     "name": "Demented Hole"
   },
-  "bbdescription": "7 combo Dark elemental attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "7",
-  "bbaoe": "A",
-  "bbgauge": "20",
-  "bbdc": "7",
-  "bbmultiplier": "170",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "60083",
-  "evointo": "60085",
-  "evomats1": "50354",
-  "evomats2": "60123",
-  "evomats3": "60201",
-  "evomats4": "60122",
-  "evomats5": "60224",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 873,
-      "def": 910,
-      "hp": 3200,
-      "rec": 912
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1325,
-      "def": 1404,
-      "hp": 4637,
-      "rec": 1409
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1325,
-      "def": 1404,
-      "hp max": 5427,
-      "hp min": 5032,
-      "rec max": 1330,
-      "rec min": 1172
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 150
     },
-    "breaker": {
-      "atk max": 1562,
-      "atk min": 1404,
-      "def max": 1325,
-      "def min": 1167,
-      "hp": 4637,
-      "rec": 1409
+    "idle": {
+      "total number of frames": 52
     },
-    "guardian": {
-      "atk": 1325,
-      "def max": 1641,
-      "def min": 1483,
-      "hp": 4637,
-      "rec max": 1409,
-      "rec min": 1251
-    },
-    "oracle": {
-      "atk": 1325,
-      "def max": 1404,
-      "def min": 1246,
-      "hp": 4637,
-      "rec max": 1725,
-      "rec min": 1567
+    "move": {
+      "total number of frames": 32
     }
   },
-  "leader_skill": {
-    "desc": "15% reduction in damage from Dark Types",
-    "effects": [
-      {
-        "dark resist%": 15,
-        "passive id": "5"
-      }
+  "category": 60080,
+  "cost": "12",
+  "damage frames": {
+    "frame times": [
+      66,
+      69,
+      72,
+      80,
+      92,
+      104
     ],
-    "id": "511",
-    "name": "Dark Barrier"
+    "hit dmg% distribution": [
+      20,
+      10,
+      20,
+      10,
+      20,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 6
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "dark",
+  "exp_pattern": 15,
+  "gender": "other",
+  "getting type": "rare summon",
+  "guide_id": 369,
+  "imp": {
+    "max atk": "200",
+    "max def": "200",
+    "max hp": "500",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "1233~1378",
+  "movement": {
+    "attack": {
+      "move speed": 8,
+      "move speed type": "1",
+      "move type": "2"
+    },
+    "skill": {
+      "move speed": 8,
+      "move speed type": "1",
+      "move type": "2"
+    }
+  },
+  "name": "Legion",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Legion",
+  "maxlv": "80",
+  "no": "369",
   "unitDisplayHomePosition_1W9CxaFK": "359,143,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-5,30,994,822",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "209,308,283,312,0",
@@ -316,5 +318,108 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "65:360:1,46:600121:1,69:360:1,73:360:1,80:100010:1,90:200030:1"
+  "effectFrames": "65:360:1,46:600121:1,69:360:1,73:360:1,80:100010:1,90:200030:1",
+  "evofrom": "60083",
+  "evointo": "60085",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60123",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60201",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60122",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    }
+  ],
+  "basexp": "15",
+  "animation_attack": "150",
+  "animation_idle": "52",
+  "animation_move": "32",
+  "movespeed_attack": "8",
+  "movespeed_skill": "8",
+  "speedtype_attack": "1",
+  "speedtype_skill": "1",
+  "movetype_attack": "2",
+  "movetype_skill": "2",
+  "normal_frames": "66, 69, 72, 80, 92, 104",
+  "normal_distribute": "20, 10, 20, 10, 20, 20",
+  "normal_totaldistr": "100",
+  "bb_frames": "66, 69, 72, 80, 92, 104, 110",
+  "bb_distribute": "20, 10, 20, 10, 20, 10, 10",
+  "bb_totaldistr": "100",
+  "description": "The immortal king of magical beings whose magical powers are beyond those of even Lich. However, to humans this Legion is little more than a shell created according to the legend of the undying Lich, and Legion's true body is said to exist somewhere else. There also exists a forbidden book which foretells that should his true body and soul be reunited, the power born from that would surpass even the gods and the ensuing massacre would be enough to fill the entire world with bodies.",
+  "summon": "Summoner of the demon lord,<br>what is it that you desire of me?<br>To rule the world? Or to destroy it?",
+  "fusion": "Why should a demon lord<br>grant his power for your sake?<br>Summoners are so arrogant.",
+  "evolution": "Are you pleased by the<br>sight of my temporal form?<br>Ha ha, how foolish of you, human.",
+  "hp_base": "3200",
+  "atk_base": "873",
+  "def_base": "910",
+  "rec_base": "912",
+  "hp_lord": "4637",
+  "atk_lord": "1325",
+  "def_lord": "1404",
+  "rec_lord": "1409",
+  "hp_anima": "5230",
+  "rec_anima": "1251",
+  "atk_breaker": "1483",
+  "def_breaker": "1246",
+  "atk_guardian": "1167",
+  "def_guardian": "1562",
+  "rec_guardian": "1330",
+  "def_oracle": "1325",
+  "hp_oracle": "4400",
+  "rec_oracle": "1646",
+  "hp_bonus": "500",
+  "atk_bonus": "200",
+  "def_bonus": "200",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "6",
+  "normaldc": "12",
+  "ls": "Dark Barrier",
+  "lsdescription": "15% reduction in damage from Dark Types",
+  "lstype": "Defense",
+  "bbdescription": "7 combo Dark elemental attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "7",
+  "bbaoe": "A",
+  "bbgauge": "20",
+  "bbdc": "7",
+  "bbmultiplier": "170",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "60123",
+  "evomats3": "60201",
+  "evomats4": "60122",
+  "evomats5": "60224"
 }

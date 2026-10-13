@@ -1,58 +1,63 @@
 {
   "id": "40040",
-  "unitName": "Dancer May",
-  "no": "61",
-  "element": "Thunder",
-  "rarity": "★",
-  "cost": "2",
-  "maxlv": "15",
-  "basexp": "10",
-  "gender": "F",
-  "ai": "6",
-  "animation_attack": "81",
-  "animation_idle": "52",
-  "animation_move": "7",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "4",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "3",
-  "normal_frames": "8, 44, 50",
-  "normal_distribute": "60, 20, 20",
-  "normal_totaldistr": "100",
-  "description": "A beautiful dancer, extremely popular in the ruined Atharva Republic. Her dancing fascinates many people, sometimes violent, sometimes bewitching. There are many accounts of people gladly having their bodies, and their minds, healed by her dancing. Although it was later made public that her magic power was the result of her dance's demonic nature, her popularity never declined.",
-  "summon": "You wanna watch me dance?<br>Alright, then let me knock<br>your socks off with this one!",
-  "fusion": "Are you enjoying yourself?<br>OK then, give me something <br>new to dance to!",
-  "evolution": "",
-  "hp_base": "980",
-  "atk_base": "320",
-  "def_base": "290",
-  "rec_base": "340",
-  "hp_lord": "1672",
-  "atk_lord": "480",
-  "def_lord": "435",
-  "rec_lord": "472",
-  "hp_anima": "1777",
-  "rec_anima": "444",
-  "atk_breaker": "508",
-  "def_breaker": "407",
-  "atk_guardian": "452",
-  "def_guardian": "463",
-  "rec_guardian": "458",
-  "def_oracle": "421",
-  "hp_oracle": "1630",
-  "rec_oracle": "514",
-  "hp_bonus": "200",
-  "atk_bonus": "40",
-  "def_bonus": "40",
-  "rec_bonus": "40",
-  "lordonly": "",
-  "combo_hits": "3",
-  "normaldc": "6",
-  "ls": "Thunder's Protection",
-  "lsdescription": "10% reduction in damage from Thunder Types",
-  "lstype": "Defense",
+  "stats": {
+    "_base": {
+      "atk": 320,
+      "def": 290,
+      "hp": 980,
+      "rec": 340
+    },
+    "_lord": {
+      "atk": 480,
+      "def": 435,
+      "hp": 1672,
+      "rec": 472
+    },
+    "anima": {
+      "atk": 480,
+      "def": 435,
+      "hp max": 1812,
+      "hp min": 1742,
+      "rec max": 458,
+      "rec min": 430
+    },
+    "breaker": {
+      "atk max": 522,
+      "atk min": 494,
+      "def max": 421,
+      "def min": 393,
+      "hp": 1672,
+      "rec": 472
+    },
+    "guardian": {
+      "atk": 480,
+      "def max": 477,
+      "def min": 449,
+      "hp": 1672,
+      "rec max": 472,
+      "rec min": 444
+    },
+    "oracle": {
+      "atk": 480,
+      "def max": 435,
+      "def min": 407,
+      "hp": 1672,
+      "rec max": 528,
+      "rec min": 500
+    }
+  },
+  "leader_skill": {
+    "desc": "10% reduction in damage from Thunder Types",
+    "effects": [
+      {
+        "passive id": "5",
+        "thunder resist%": 10
+      }
+    ],
+    "id": "506",
+    "name": "Thunder's Protection"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -215,92 +220,87 @@
     ],
     "name": "Thunder Dance"
   },
-  "bbdescription": "Recovery of all allies' HP",
-  "bbnote": "Heals (580~780 + 22.5% of healer Rec) HP",
-  "bbtype": "Heal",
-  "bbhits": "",
-  "bbaoe": "0",
-  "bbgauge": "15",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "40041",
-  "evomats1": "40130",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evozelcost": "5000",
-  "stats": {
-    "_base": {
-      "atk": 320,
-      "def": 290,
-      "hp": 980,
-      "rec": 340
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 100.0,
+      "target conditions": "hp_25pr_under",
+      "target type": "party"
     },
-    "_lord": {
-      "atk": 480,
-      "def": 435,
-      "hp": 1672,
-      "rec": 472
+    {
+      "action": "attack",
+      "chance%": 50.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 480,
-      "def": 435,
-      "hp max": 1812,
-      "hp min": 1742,
-      "rec max": 458,
-      "rec min": 430
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 81
     },
-    "breaker": {
-      "atk max": 522,
-      "atk min": 494,
-      "def max": 421,
-      "def min": 393,
-      "hp": 1672,
-      "rec": 472
+    "idle": {
+      "total number of frames": 52
     },
-    "guardian": {
-      "atk": 480,
-      "def max": 477,
-      "def min": 449,
-      "hp": 1672,
-      "rec max": 472,
-      "rec min": 444
-    },
-    "oracle": {
-      "atk": 480,
-      "def max": 435,
-      "def min": 407,
-      "hp": 1672,
-      "rec max": 528,
-      "rec min": 500
+    "move": {
+      "total number of frames": 7
     }
   },
-  "leader_skill": {
-    "desc": "10% reduction in damage from Thunder Types",
-    "effects": [
-      {
-        "passive id": "5",
-        "thunder resist%": 10
-      }
+  "category": 40040,
+  "cost": "2",
+  "damage frames": {
+    "frame times": [
+      8,
+      44,
+      50
     ],
-    "id": "506",
-    "name": "Thunder's Protection"
+    "hit dmg% distribution": [
+      60,
+      20,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 3
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "thunder",
+  "exp_pattern": 10,
+  "gender": "female",
+  "getting type": "not eligible for achievement",
+  "guide_id": 61,
+  "imp": {
+    "max atk": "40",
+    "max def": "40",
+    "max hp": "200",
+    "max rec": "40"
+  },
+  "kind": "normal",
+  "lord damage range": "447~499",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    }
+  },
+  "name": "Dancer May",
+  "rarity": "1",
+  "sell caution": false,
+  "unitName": "Dancer May",
+  "maxlv": "15",
+  "no": "61",
   "unitDisplayHomePosition_1W9CxaFK": "126,10,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "229,156,450,626",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "214,324,207,288,0",
@@ -310,5 +310,84 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "100",
   "sellCaution": false,
-  "effectFrames": "2:124:1,38:124:1,44:124:1"
+  "effectFrames": "2:124:1,38:124:1,44:124:1",
+  "evofrom": "",
+  "evointo": "40041",
+  "evozelcost": "5000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "40130",
+      "count": 1
+    }
+  ],
+  "basexp": "10",
+  "animation_attack": "81",
+  "animation_idle": "52",
+  "animation_move": "7",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "4",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "3",
+  "normal_frames": "8, 44, 50",
+  "normal_distribute": "60, 20, 20",
+  "normal_totaldistr": "100",
+  "description": "A beautiful dancer, extremely popular in the ruined Atharva Republic. Her dancing fascinates many people, sometimes violent, sometimes bewitching. There are many accounts of people gladly having their bodies, and their minds, healed by her dancing. Although it was later made public that her magic power was the result of her dance's demonic nature, her popularity never declined.",
+  "summon": "You wanna watch me dance?<br>Alright, then let me knock<br>your socks off with this one!",
+  "fusion": "Are you enjoying yourself?<br>OK then, give me something <br>new to dance to!",
+  "evolution": "",
+  "hp_base": "980",
+  "atk_base": "320",
+  "def_base": "290",
+  "rec_base": "340",
+  "hp_lord": "1672",
+  "atk_lord": "480",
+  "def_lord": "435",
+  "rec_lord": "472",
+  "hp_anima": "1777",
+  "rec_anima": "444",
+  "atk_breaker": "508",
+  "def_breaker": "407",
+  "atk_guardian": "452",
+  "def_guardian": "463",
+  "rec_guardian": "458",
+  "def_oracle": "421",
+  "hp_oracle": "1630",
+  "rec_oracle": "514",
+  "hp_bonus": "200",
+  "atk_bonus": "40",
+  "def_bonus": "40",
+  "rec_bonus": "40",
+  "lordonly": "",
+  "combo_hits": "3",
+  "normaldc": "6",
+  "ls": "Thunder's Protection",
+  "lsdescription": "10% reduction in damage from Thunder Types",
+  "lstype": "Defense",
+  "bbdescription": "Recovery of all allies' HP",
+  "bbnote": "Heals (580~780 + 22.5% of healer Rec) HP",
+  "bbtype": "Heal",
+  "bbhits": "",
+  "bbaoe": "0",
+  "bbgauge": "15",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "40130",
+  "evomats2": "",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": ""
 }

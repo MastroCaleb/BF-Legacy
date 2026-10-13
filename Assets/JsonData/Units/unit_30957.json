@@ -1,68 +1,112 @@
 {
   "id": "30957",
-  "unitName": "Boundless Peaks Daros",
-  "no": "1627",
-  "element": "Earth",
-  "rarity": "Omni",
-  "cost": "50",
-  "maxlv": "150",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "1",
-  "animation_attack": "159",
-  "animation_idle": "68",
-  "animation_move": "5",
-  "movespeed_attack": "0.0041",
-  "movespeed_skill": "0.0041",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "12, 62, 92, 96, 100, 104",
-  "normal_distribute": "20, 25, 35, 8, 7, 5",
-  "normal_totaldistr": "100",
-  "bb_frames": "12, 15, 18, 62, 65, 68, 92, 96, 100, 104",
-  "bb_distribute": "11, 10, 8, 11, 10, 8, 15, 10, 8, 9",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_frames": "12, 15, 18, 21, 62, 65, 68, 71, 92, 96, 100, 104, 108, 112, 116",
-  "sbb_distribute": "9, 7, 6, 5, 9, 7, 6, 5, 12, 9, 7, 6, 5, 4, 3",
-  "sbb_totaldistr": "100",
-  "sbb_effectdelay": "1",
-  "ubb_frames": "12, 15, 18, 21, 24, 62, 65, 68, 71, 74, 92, 96, 100, 104, 108, 112, 115, 118, 121, 124",
-  "ubb_distribute": "9, 6, 5, 4, 9, 6, 5, 4, 4, 3, 12, 6, 5, 4, 3, 3, 3, 3, 3, 3",
-  "ubb_totaldistr": "100",
-  "ubb_effectdelay": "1",
-  "description": "As the oldest of the Imperial Gods and the bearer of profound wisdom, he likely could have deduced and eliminated the instigator behind the conflict amongst his brethren had they only heeded his warning. However, the root of the problem would have remained insoluble. Undoubtedly, Daros would have eventually acted to address this root cause, and felled the other Imperial Gods with his daughter's aid. But in doing so, he would have also stolen the blessings of fire and water from humanity. Indeed, humanity's development might have lagged behind its current pace considerably under the Verdant Emperor.",
-  "summon": "So long as I still draw breath, I will not permit any sort of conflict. When conflicts sprout, I pull them out by the roots!",
-  "fusion": "Thrive where I sow you, young seeds! Grow, and cover this world in green! Fire and water only lead to strife.",
-  "evolution": "Frail little humans, you need not worry. Just allow me to keep you safe.",
-  "hp_base": "6657",
-  "atk_base": "2513",
-  "def_base": "2505",
-  "rec_base": "2077",
-  "hp_lord": "8638",
-  "atk_lord": "3152",
-  "def_lord": "3117",
-  "rec_lord": "2593",
-  "hp_anima": "9755",
-  "rec_anima": "2295",
-  "atk_breaker": "3450",
-  "def_breaker": "2819",
-  "def_guardian": "3415",
-  "rec_guardian": "2444",
-  "def_oracle": "2968",
-  "rec_oracle": "3040",
-  "hp_bonus": "2000",
-  "atk_bonus": "400",
-  "def_bonus": "400",
-  "rec_bonus": "400",
-  "lordonly": "",
-  "combo_hits": "6",
-  "normaldc": "48",
-  "ls": "Verdant Lord's Calamity",
-  "lsdescription": "60% boost to Atk, Def, max HP, negates Def ignoring effects, enormously boosts BB Atk when HP is over 50% & slight damage reduction for 2 turns when HP is below 50%",
-  "lsnote": "250% BB Atk & 20% reduction",
+  "stats": {
+    "_base": {
+      "atk": 2513,
+      "def": 2505,
+      "hp": 6657,
+      "rec": 2077
+    },
+    "_lord": {
+      "atk": 3152,
+      "def": 3117,
+      "hp": 8638,
+      "rec": 2593
+    },
+    "anima": {
+      "atk": 3152,
+      "def": 3117,
+      "hp max": 10128,
+      "hp min": 9383,
+      "rec max": 2444,
+      "rec min": 2146
+    },
+    "breaker": {
+      "atk max": 3599,
+      "atk min": 3301,
+      "def max": 2968,
+      "def min": 2670,
+      "hp": 8638,
+      "rec": 2593
+    },
+    "guardian": {
+      "atk": 3152,
+      "def max": 3564,
+      "def min": 3266,
+      "hp": 8638,
+      "rec max": 2593,
+      "rec min": 2295
+    },
+    "oracle": {
+      "atk": 3152,
+      "def max": 3117,
+      "def min": 2819,
+      "hp": 8638,
+      "rec max": 3189,
+      "rec min": 2891
+    }
+  },
+  "leader_skill": {
+    "desc": "60% boost to Atk, Def, max HP, negates Def ignoring effects, enormously boosts BB Atk when HP is over 50% & slight damage reduction for 2 turns when HP is below 50%",
+    "effects": [
+      {
+        "atk% buff": 60,
+        "def% buff": 60,
+        "hp% buff": 60,
+        "passive id": "1"
+      },
+      {
+        "bb atk% add": 250,
+        "hp threshold": 50,
+        "passive id": "103",
+        "sbb atk% add": 250,
+        "triggered when hp": "higher",
+        "ubb atk% add": 250
+      },
+      {
+        "buff": {
+          "buff turns (36)": "1",
+          "dmg reduction% buff": 20
+        },
+        "hp below % buff activation": 50,
+        "passive id": "55"
+      },
+      {
+        "ignore def resist chance%": 100,
+        "passive id": "92"
+      }
+    ],
+    "id": "12515",
+    "name": "Verdant Lord's Calamity"
+  },
+  "extra_skill": {
+    "desc": "Boosts Atk, Def when BB gauge is over 50% & negates all status ailments",
+    "effects": [
+      {
+        "atk% buff": 50,
+        "bb gauge above % buff requirement": 50,
+        "conditions": [],
+        "def% buff": 50,
+        "passive id": "30",
+        "passive target": "self"
+      },
+      {
+        "conditions": [],
+        "curse resist%": 100,
+        "injury resist%": 100,
+        "paralysis resist%": 100,
+        "passive id": "4",
+        "passive target": "self",
+        "poison resist%": 100,
+        "sick resist%": 100,
+        "weaken resist%": 100
+      }
+    ],
+    "id": "35600",
+    "name": "Fruitful Life",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -375,14 +419,6 @@
     ],
     "name": "Monolith Crusher"
   },
-  "bbdescription": "10 combo powerful Earth attack on all foes, negates critical, elemental damage for 2 turns & slight Spark damage reduction for 2 turns",
-  "bbnote": "25% Spark reduction",
-  "bbtype": "Offense",
-  "bbhits": "10",
-  "bbaoe": "A",
-  "bbgauge": "30",
-  "bbdc": "10",
-  "bbmultiplier": "420",
   "sbb": {
     "damage frames": [
       {
@@ -1001,14 +1037,6 @@
     ],
     "name": "Earthen Blade: Algebd"
   },
-  "sbbdescription": "15 combo powerful Earth attack on all foes (damage relative to remaining HP), boosts max HP, hugely boosts Atk for 3 turns, hugely boosts Atk, Def, Rec relative to max HP for 3 turns & hugely boosts BB Atk for 3 turns",
-  "sbbnote": "200% + 700% * current HP / max base HP, 15% HP, 180% Atk, 30% HP to Atk, Def, Rec & 350% BB Atk",
-  "sbbtype": "Offense",
-  "sbbhits": "15",
-  "sbbaoe": "A",
-  "sbbgauge": "32",
-  "sbbdc": "15",
-  "sbbmultiplier": "540",
   "ubb": {
     "damage frames": [
       {
@@ -1168,6 +1196,182 @@
     ],
     "name": "Ultimate Foundation"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "party"
+    },
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 159
+    },
+    "idle": {
+      "total number of frames": 68
+    },
+    "move": {
+      "total number of frames": 5
+    }
+  },
+  "category": 30950,
+  "cost": "50",
+  "damage frames": {
+    "frame times": [
+      12,
+      62,
+      92,
+      96,
+      100,
+      104
+    ],
+    "hit dmg% distribution": [
+      20,
+      25,
+      35,
+      8,
+      7,
+      5
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 6
+  },
+  "drop check count": 8,
+  "element": "earth",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 1627,
+  "imp": {
+    "max atk": "400",
+    "max def": "400",
+    "max hp": "2000",
+    "max rec": "400"
+  },
+  "kind": "normal",
+  "lord damage range": "2934~3278",
+  "movement": {
+    "attack": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    }
+  },
+  "name": "Boundless Peaks Daros",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "8",
+  "sell caution": false,
+  "unitName": "Boundless Peaks Daros",
+  "maxlv": "150",
+  "no": "1627",
+  "unitDisplayHomePosition_1W9CxaFK": "760,370,160,437",
+  "unitDisplayDetailPosition_6z54rgb3": "-370,-120,1420,1185",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "-124,100,779,650,1",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-411,-405,1558,1300",
+  "unitDisplaySummonPosition_KC3Jk8Br": "-124,100,779,650,1",
+  "unitDisplayHpPosition_3BpHN6VD": "-2,38",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "50000",
+  "sellCaution": false,
+  "effectFrames": "6:120:1,56:120:1,86:120:1,90:120:1,94:120:1,98:120:1,12:330540:1,18:1330:1,11:400574:1,62:331056:1,63:330721:1,90:500112:1,92:330594:1,94:400574:1,103:1340:1",
+  "evofrom": "30956",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "21",
+  "animation_attack": "159",
+  "animation_idle": "68",
+  "animation_move": "5",
+  "movespeed_attack": "0.0041",
+  "movespeed_skill": "0.0041",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "12, 62, 92, 96, 100, 104",
+  "normal_distribute": "20, 25, 35, 8, 7, 5",
+  "normal_totaldistr": "100",
+  "bb_frames": "12, 15, 18, 62, 65, 68, 92, 96, 100, 104",
+  "bb_distribute": "11, 10, 8, 11, 10, 8, 15, 10, 8, 9",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_frames": "12, 15, 18, 21, 62, 65, 68, 71, 92, 96, 100, 104, 108, 112, 116",
+  "sbb_distribute": "9, 7, 6, 5, 9, 7, 6, 5, 12, 9, 7, 6, 5, 4, 3",
+  "sbb_totaldistr": "100",
+  "sbb_effectdelay": "1",
+  "ubb_frames": "12, 15, 18, 21, 24, 62, 65, 68, 71, 74, 92, 96, 100, 104, 108, 112, 115, 118, 121, 124",
+  "ubb_distribute": "9, 6, 5, 4, 9, 6, 5, 4, 4, 3, 12, 6, 5, 4, 3, 3, 3, 3, 3, 3",
+  "ubb_totaldistr": "100",
+  "ubb_effectdelay": "1",
+  "description": "As the oldest of the Imperial Gods and the bearer of profound wisdom, he likely could have deduced and eliminated the instigator behind the conflict amongst his brethren had they only heeded his warning. However, the root of the problem would have remained insoluble. Undoubtedly, Daros would have eventually acted to address this root cause, and felled the other Imperial Gods with his daughter's aid. But in doing so, he would have also stolen the blessings of fire and water from humanity. Indeed, humanity's development might have lagged behind its current pace considerably under the Verdant Emperor.",
+  "summon": "So long as I still draw breath, I will not permit any sort of conflict. When conflicts sprout, I pull them out by the roots!",
+  "fusion": "Thrive where I sow you, young seeds! Grow, and cover this world in green! Fire and water only lead to strife.",
+  "evolution": "Frail little humans, you need not worry. Just allow me to keep you safe.",
+  "hp_base": "6657",
+  "atk_base": "2513",
+  "def_base": "2505",
+  "rec_base": "2077",
+  "hp_lord": "8638",
+  "atk_lord": "3152",
+  "def_lord": "3117",
+  "rec_lord": "2593",
+  "hp_anima": "9755",
+  "rec_anima": "2295",
+  "atk_breaker": "3450",
+  "def_breaker": "2819",
+  "def_guardian": "3415",
+  "rec_guardian": "2444",
+  "def_oracle": "2968",
+  "rec_oracle": "3040",
+  "hp_bonus": "2000",
+  "atk_bonus": "400",
+  "def_bonus": "400",
+  "rec_bonus": "400",
+  "lordonly": "",
+  "combo_hits": "6",
+  "normaldc": "48",
+  "ls": "Verdant Lord's Calamity",
+  "lsdescription": "60% boost to Atk, Def, max HP, negates Def ignoring effects, enormously boosts BB Atk when HP is over 50% & slight damage reduction for 2 turns when HP is below 50%",
+  "lsnote": "250% BB Atk & 20% reduction",
+  "bbdescription": "10 combo powerful Earth attack on all foes, negates critical, elemental damage for 2 turns & slight Spark damage reduction for 2 turns",
+  "bbnote": "25% Spark reduction",
+  "bbtype": "Offense",
+  "bbhits": "10",
+  "bbaoe": "A",
+  "bbgauge": "30",
+  "bbdc": "10",
+  "bbmultiplier": "420",
+  "sbbdescription": "15 combo powerful Earth attack on all foes (damage relative to remaining HP), boosts max HP, hugely boosts Atk for 3 turns, hugely boosts Atk, Def, Rec relative to max HP for 3 turns & hugely boosts BB Atk for 3 turns",
+  "sbbnote": "200% + 700% * current HP / max base HP, 15% HP, 180% Atk, 30% HP to Atk, Def, Rec & 350% BB Atk",
+  "sbbtype": "Offense",
+  "sbbhits": "15",
+  "sbbaoe": "A",
+  "sbbgauge": "32",
+  "sbbdc": "15",
+  "sbbmultiplier": "540",
   "sbb_hpscale": "true",
   "ubbdescription": "20 combo massive Earth attack on all foes (damage relative to remaining HP), hugely boosts max HP, enormously boosts Atk, Def, Rec relative to max HP for 3 turns, enormously boosts BB Atk for 3 turns & 75% damage reduction for 3 turns",
   "ubbnote": "1500% + 1300% * current HP / max base HP, 35% HP, 50% HP to Atk, Def, Rec & 600% BB Atk",
@@ -1182,8 +1386,6 @@
   "esitem": "",
   "esdescription": "Boosts Atk, Def when BB gauge is over 50% & negates all status ailments",
   "esnote": "50% boost",
-  "evofrom": "30956",
-  "evointo": "",
   "evomats1": "",
   "evomats2": "",
   "evomats3": "",
@@ -1192,123 +1394,5 @@
   "evomats6": "",
   "evomats7": "",
   "evomats8": "",
-  "evoitem": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 2513,
-      "def": 2505,
-      "hp": 6657,
-      "rec": 2077
-    },
-    "_lord": {
-      "atk": 3152,
-      "def": 3117,
-      "hp": 8638,
-      "rec": 2593
-    },
-    "anima": {
-      "atk": 3152,
-      "def": 3117,
-      "hp max": 10128,
-      "hp min": 9383,
-      "rec max": 2444,
-      "rec min": 2146
-    },
-    "breaker": {
-      "atk max": 3599,
-      "atk min": 3301,
-      "def max": 2968,
-      "def min": 2670,
-      "hp": 8638,
-      "rec": 2593
-    },
-    "guardian": {
-      "atk": 3152,
-      "def max": 3564,
-      "def min": 3266,
-      "hp": 8638,
-      "rec max": 2593,
-      "rec min": 2295
-    },
-    "oracle": {
-      "atk": 3152,
-      "def max": 3117,
-      "def min": 2819,
-      "hp": 8638,
-      "rec max": 3189,
-      "rec min": 2891
-    }
-  },
-  "leader_skill": {
-    "desc": "60% boost to Atk, Def, max HP, negates Def ignoring effects, enormously boosts BB Atk when HP is over 50% & slight damage reduction for 2 turns when HP is below 50%",
-    "effects": [
-      {
-        "atk% buff": 60,
-        "def% buff": 60,
-        "hp% buff": 60,
-        "passive id": "1"
-      },
-      {
-        "bb atk% add": 250,
-        "hp threshold": 50,
-        "passive id": "103",
-        "sbb atk% add": 250,
-        "triggered when hp": "higher",
-        "ubb atk% add": 250
-      },
-      {
-        "buff": {
-          "buff turns (36)": "1",
-          "dmg reduction% buff": 20
-        },
-        "hp below % buff activation": 50,
-        "passive id": "55"
-      },
-      {
-        "ignore def resist chance%": 100,
-        "passive id": "92"
-      }
-    ],
-    "id": "12515",
-    "name": "Verdant Lord's Calamity"
-  },
-  "extra_skill": {
-    "desc": "Boosts Atk, Def when BB gauge is over 50% & negates all status ailments",
-    "effects": [
-      {
-        "atk% buff": 50,
-        "bb gauge above % buff requirement": 50,
-        "conditions": [],
-        "def% buff": 50,
-        "passive id": "30",
-        "passive target": "self"
-      },
-      {
-        "conditions": [],
-        "curse resist%": 100,
-        "injury resist%": 100,
-        "paralysis resist%": 100,
-        "passive id": "4",
-        "passive target": "self",
-        "poison resist%": 100,
-        "sick resist%": 100,
-        "weaken resist%": 100
-      }
-    ],
-    "id": "35600",
-    "name": "Fruitful Life",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "760,370,160,437",
-  "unitDisplayDetailPosition_6z54rgb3": "-370,-120,1420,1185",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "-124,100,779,650,1",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-411,-405,1558,1300",
-  "unitDisplaySummonPosition_KC3Jk8Br": "-124,100,779,650,1",
-  "unitDisplayHpPosition_3BpHN6VD": "-2,38",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "50000",
-  "sellCaution": false,
-  "effectFrames": "6:120:1,56:120:1,86:120:1,90:120:1,94:120:1,98:120:1,12:330540:1,18:1330:1,11:400574:1,62:331056:1,63:330721:1,90:500112:1,92:330594:1,94:400574:1,103:1340:1"
+  "evoitem": ""
 }

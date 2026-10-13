@@ -1,68 +1,123 @@
 {
   "id": "760226",
-  "unitName": "Corporal Lancelot",
-  "no": "8290",
-  "element": "Dark",
-  "rarity": "★★★★★★★",
-  "cost": "46",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "3",
-  "animation_attack": "173",
-  "animation_idle": "54",
-  "animation_move": "8",
-  "movespeed_attack": "0.0024",
-  "movespeed_skill": "0.0024",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "55, 59, 65, 69, 70, 73, 76, 79, 82, 85, 87, 89",
-  "normal_distribute": "10, 10, 10, 10, 10, 10, 10, 10, 10, 6, 2, 2",
-  "normal_totaldistr": "100",
-  "bb_frames": "55, 57, 59, 61, 63, 65, 68, 70, 73, 76, 79, 82, 85, 88, 91, 93, 95, 97, 99, 101, 103, 105",
-  "bb_distribute": "7, 2, 2, 3, 3, 4, 6, 10, 4, 5, 6, 7, 8, 9, 10, 2, 2, 2, 2, 2, 2, 2",
-  "bb_totaldistr": "100",
-  "sbb_frames": "55, 57, 59, 61, 63, 65, 67, 69, 71, 72, 73, 76, 79, 82, 85, 88, 91, 94, 96, 98, 100, 102, 104, 106, 108, 112, 114",
-  "sbb_distribute": "2, 3, 3, 2, 2, 3, 3, 4, 6, 10, 4, 4, 4, 5, 5, 6, 6, 10, 2, 2, 2, 2, 2, 2, 2, 2, 2",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "55, 57, 59, 61, 63, 65, 67, 69, 71, 73, 75, 76, 79, 82, 85, 88, 91, 94, 97, 100, 102, 104, 106, 108, 110, 112, 114, 116, 118, 120, 122, 124",
-  "ubb_distribute": "2, 3, 3, 2, 2, 3, 3, 2, 2, 6, 3, 3, 4, 4, 4, 5, 5, 6, 6, 8, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "1",
-  "ubb_effectdelay": "1",
-  "description": "A mechanized army corporal. Although the right-hand man of the Mechanized Division General, he always appeared as someone who was predominantly concerned about his own interests. He didn’t take part in the attempt to overthrow the King of Avalon, which brought him into disgrace after the conflict ended. He subsequently entered the close-knit guard of King Perceval and received the highest honors for his role in the Photon Bot Revolt. According to the legend, he was convinced by a young woman to stay behind in order for a greater destiny to unfold for himself.",
-  "summon": "My shield is yours, my King!",
-  "fusion": "I want to use my power for myself but for now...",
-  "evolution": "",
-  "hp_base": "5308",
-  "atk_base": "1930",
-  "def_base": "2132",
-  "rec_base": "1809",
-  "hp_lord": "7582",
-  "atk_lord": "2757",
-  "def_lord": "3046",
-  "rec_lord": "2585",
-  "hp_anima": "8474",
-  "rec_anima": "2347",
-  "atk_breaker": "2995",
-  "def_breaker": "2808",
-  "def_guardian": "3284",
-  "rec_guardian": "2466",
-  "def_oracle": "2927",
-  "rec_oracle": "2942",
-  "hp_bonus": "1100",
-  "atk_bonus": "440",
-  "def_bonus": "440",
-  "rec_bonus": "440",
-  "lordonly": "",
-  "combo_hits": "12",
-  "normaldc": "36",
-  "ls": "Ironclad Defense",
-  "lsdescription": "50% boost to max HP, 100% boost to Spark damage & boosts Atk, Def, Rec relative to remaining HP",
-  "lsnote": "20% boost + 0.3% boost per 1% HP remaining",
+  "stats": {
+    "_base": {
+      "atk": 1930,
+      "def": 2132,
+      "hp": 5308,
+      "rec": 1809
+    },
+    "_lord": {
+      "atk": 2757,
+      "def": 3046,
+      "hp": 7582,
+      "rec": 2585
+    },
+    "anima": {
+      "atk": 2757,
+      "def": 3046,
+      "hp max": 8772,
+      "hp min": 8177,
+      "rec max": 2466,
+      "rec min": 2228
+    },
+    "breaker": {
+      "atk max": 3114,
+      "atk min": 2876,
+      "def max": 2927,
+      "def min": 2689,
+      "hp": 7582,
+      "rec": 2585
+    },
+    "guardian": {
+      "atk": 2757,
+      "def max": 3403,
+      "def min": 3165,
+      "hp": 7582,
+      "rec max": 2585,
+      "rec min": 2347
+    },
+    "oracle": {
+      "atk": 2757,
+      "def max": 3046,
+      "def min": 2808,
+      "hp": 7582,
+      "rec max": 3061,
+      "rec min": 2823
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to max HP, 100% boost to Spark damage & boosts Atk, Def, Rec relative to remaining HP",
+    "effects": [
+      {
+        "hp% buff": 50,
+        "passive id": "1"
+      },
+      {
+        "atk% base buff": 20,
+        "atk% extra buff based on hp": 30,
+        "buff proportional to hp": "remaining",
+        "def% base buff": 20,
+        "def% extra buff based on hp": 30,
+        "passive id": "46",
+        "rec% base buff": 20,
+        "rec% extra buff based on hp": 30
+      },
+      {
+        "damage% for spark": 100,
+        "passive id": "31"
+      }
+    ],
+    "id": "760226",
+    "name": "Ironclad Defense"
+  },
+  "extra_skill": {
+    "desc": "Adds status ailment removal effect to BB/SBB when Arondight is equipped & 50% boost to Spark damage",
+    "effects": [
+      {
+        "conditions": [],
+        "damage% for spark": 50,
+        "passive id": "31",
+        "passive target": "self"
+      },
+      {
+        "conditions": [
+          {
+            "item required": [
+              "88700004"
+            ]
+          }
+        ],
+        "passive id": "66",
+        "passive target": "self",
+        "trigger on bb": true,
+        "trigger on sbb": true,
+        "triggered effect": [
+          {
+            "ailments cured": [
+              "poison",
+              "weaken",
+              "sick",
+              "injury",
+              "curse",
+              "paralysis",
+              "atk down",
+              "def down",
+              "rec down"
+            ],
+            "effect delay time(ms)/frame": "0.0/0",
+            "proc id": "38",
+            "target area": "aoe",
+            "target type": "party"
+          }
+        ]
+      }
+    ],
+    "id": "760226",
+    "name": "Obedient Soldier",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -553,14 +608,6 @@
     ],
     "name": "Mechanical Shield"
   },
-  "bbdescription": "22 combo powerful Dark attack on all foes, 50% damage reduction for 1 turn, considerably boosts Def relative to Atk for 3 turns & negates critical damage for 1 turn",
-  "bbnote": "50% Atk to Def",
-  "bbtype": "Offense",
-  "bbhits": "22",
-  "bbaoe": "A",
-  "bbgauge": "29",
-  "bbdc": "22",
-  "bbmultiplier": "340",
   "sbb": {
     "damage frames": [
       {
@@ -1163,14 +1210,6 @@
     ],
     "name": "Spear of Devotion"
   },
-  "sbbdescription": "27 combo powerful Dark attack on all foes, 50% damage reduction for 1 turn, Spark damage boosts BB gauge for 3 turns, enormously boosts Spark damage for 3 turns & considerably boosts Atk relative to Def for 3 turns",
-  "sbbnote": "Fills 2-3 BC, 100% Spark & 60% Def to Atk",
-  "sbbtype": "Offense",
-  "sbbhits": "27",
-  "sbbaoe": "A",
-  "sbbgauge": "30",
-  "sbbdc": "27",
-  "sbbmultiplier": "420",
   "ubb": {
     "damage frames": [
       {
@@ -1352,6 +1391,226 @@
     ],
     "name": "Shield of the Army"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 173
+    },
+    "idle": {
+      "total number of frames": 54
+    },
+    "move": {
+      "total number of frames": 8
+    }
+  },
+  "category": 760220,
+  "cost": "46",
+  "damage frames": {
+    "frame times": [
+      55,
+      59,
+      65,
+      69,
+      70,
+      73,
+      76,
+      79,
+      82,
+      85,
+      87,
+      89
+    ],
+    "hit dmg% distribution": [
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      6,
+      2,
+      2
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 12
+  },
+  "drop check count": 3,
+  "element": "dark",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 8290,
+  "imp": {
+    "max atk": "440",
+    "max def": "440",
+    "max hp": "1100",
+    "max rec": "440"
+  },
+  "kind": "normal",
+  "lord damage range": "2567~2867",
+  "movement": {
+    "attack": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    }
+  },
+  "name": "Corporal Lancelot",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Corporal Lancelot",
+  "maxlv": "120",
+  "no": "8290",
+  "unitDisplayHomePosition_1W9CxaFK": "940,130,250,681",
+  "unitDisplayDetailPosition_6z54rgb3": "-210,160,999,600",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "0,198,650,471,1",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-140,-60,999,600",
+  "unitDisplaySummonPosition_KC3Jk8Br": "10,310,499,300,0",
+  "unitDisplayHpPosition_3BpHN6VD": "0,30",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "15000",
+  "sellCaution": false,
+  "effectFrames": "55:681:1,59:100191:1,65:140:1,65:600040:1,69:600321:1,69:600210:1,82:200032:1",
+  "evofrom": "",
+  "evointo": "760227",
+  "evozelcost": "3000000",
+  "evokarmacost": "1000000",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "60344",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "860034",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    },
+    {
+      "type": "2",
+      "id": "110100",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "173",
+  "animation_idle": "54",
+  "animation_move": "8",
+  "movespeed_attack": "0.0024",
+  "movespeed_skill": "0.0024",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "55, 59, 65, 69, 70, 73, 76, 79, 82, 85, 87, 89",
+  "normal_distribute": "10, 10, 10, 10, 10, 10, 10, 10, 10, 6, 2, 2",
+  "normal_totaldistr": "100",
+  "bb_frames": "55, 57, 59, 61, 63, 65, 68, 70, 73, 76, 79, 82, 85, 88, 91, 93, 95, 97, 99, 101, 103, 105",
+  "bb_distribute": "7, 2, 2, 3, 3, 4, 6, 10, 4, 5, 6, 7, 8, 9, 10, 2, 2, 2, 2, 2, 2, 2",
+  "bb_totaldistr": "100",
+  "sbb_frames": "55, 57, 59, 61, 63, 65, 67, 69, 71, 72, 73, 76, 79, 82, 85, 88, 91, 94, 96, 98, 100, 102, 104, 106, 108, 112, 114",
+  "sbb_distribute": "2, 3, 3, 2, 2, 3, 3, 4, 6, 10, 4, 4, 4, 5, 5, 6, 6, 10, 2, 2, 2, 2, 2, 2, 2, 2, 2",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "55, 57, 59, 61, 63, 65, 67, 69, 71, 73, 75, 76, 79, 82, 85, 88, 91, 94, 97, 100, 102, 104, 106, 108, 110, 112, 114, 116, 118, 120, 122, 124",
+  "ubb_distribute": "2, 3, 3, 2, 2, 3, 3, 2, 2, 6, 3, 3, 4, 4, 4, 5, 5, 6, 6, 8, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "1",
+  "ubb_effectdelay": "1",
+  "description": "A mechanized army corporal. Although the right-hand man of the Mechanized Division General, he always appeared as someone who was predominantly concerned about his own interests. He didn’t take part in the attempt to overthrow the King of Avalon, which brought him into disgrace after the conflict ended. He subsequently entered the close-knit guard of King Perceval and received the highest honors for his role in the Photon Bot Revolt. According to the legend, he was convinced by a young woman to stay behind in order for a greater destiny to unfold for himself.",
+  "summon": "My shield is yours, my King!",
+  "fusion": "I want to use my power for myself but for now...",
+  "evolution": "",
+  "hp_base": "5308",
+  "atk_base": "1930",
+  "def_base": "2132",
+  "rec_base": "1809",
+  "hp_lord": "7582",
+  "atk_lord": "2757",
+  "def_lord": "3046",
+  "rec_lord": "2585",
+  "hp_anima": "8474",
+  "rec_anima": "2347",
+  "atk_breaker": "2995",
+  "def_breaker": "2808",
+  "def_guardian": "3284",
+  "rec_guardian": "2466",
+  "def_oracle": "2927",
+  "rec_oracle": "2942",
+  "hp_bonus": "1100",
+  "atk_bonus": "440",
+  "def_bonus": "440",
+  "rec_bonus": "440",
+  "lordonly": "",
+  "combo_hits": "12",
+  "normaldc": "36",
+  "ls": "Ironclad Defense",
+  "lsdescription": "50% boost to max HP, 100% boost to Spark damage & boosts Atk, Def, Rec relative to remaining HP",
+  "lsnote": "20% boost + 0.3% boost per 1% HP remaining",
+  "bbdescription": "22 combo powerful Dark attack on all foes, 50% damage reduction for 1 turn, considerably boosts Def relative to Atk for 3 turns & negates critical damage for 1 turn",
+  "bbnote": "50% Atk to Def",
+  "bbtype": "Offense",
+  "bbhits": "22",
+  "bbaoe": "A",
+  "bbgauge": "29",
+  "bbdc": "22",
+  "bbmultiplier": "340",
+  "sbbdescription": "27 combo powerful Dark attack on all foes, 50% damage reduction for 1 turn, Spark damage boosts BB gauge for 3 turns, enormously boosts Spark damage for 3 turns & considerably boosts Atk relative to Def for 3 turns",
+  "sbbnote": "Fills 2-3 BC, 100% Spark & 60% Def to Atk",
+  "sbbtype": "Offense",
+  "sbbhits": "27",
+  "sbbaoe": "A",
+  "sbbgauge": "30",
+  "sbbdc": "27",
+  "sbbmultiplier": "420",
   "ubbdescription": "32 combo massive Dark attack on all foes, 75% damage reduction for 3 turns, enormously boosts Spark damage for 3 turns, activates Dark barrier & enormously boosts Atk, Def for 3 turns",
   "ubbnote": "300% Spark, Atk, Def & 25000 HP barrier",
   "ubbtype": "Offense",
@@ -1364,8 +1623,6 @@
   "esitem": "Arondight",
   "esdescription": "Adds status ailment removal effect to BB/SBB when Arondight is equipped & 50% boost to Spark damage",
   "esnote": "",
-  "evofrom": "",
-  "evointo": "760227",
   "evomats1": "Dark Mecha God",
   "evomats2": "Dark Mecha God",
   "evomats3": "Miracle Totem",
@@ -1373,134 +1630,5 @@
   "evomats5": "Dark Bulb",
   "evomats6": "Dark Bulb",
   "evomats7": "Metal Mimic",
-  "evoitem": "Legend Stone",
-  "evozelcost": "3000000",
-  "stats": {
-    "_base": {
-      "atk": 1930,
-      "def": 2132,
-      "hp": 5308,
-      "rec": 1809
-    },
-    "_lord": {
-      "atk": 2757,
-      "def": 3046,
-      "hp": 7582,
-      "rec": 2585
-    },
-    "anima": {
-      "atk": 2757,
-      "def": 3046,
-      "hp max": 8772,
-      "hp min": 8177,
-      "rec max": 2466,
-      "rec min": 2228
-    },
-    "breaker": {
-      "atk max": 3114,
-      "atk min": 2876,
-      "def max": 2927,
-      "def min": 2689,
-      "hp": 7582,
-      "rec": 2585
-    },
-    "guardian": {
-      "atk": 2757,
-      "def max": 3403,
-      "def min": 3165,
-      "hp": 7582,
-      "rec max": 2585,
-      "rec min": 2347
-    },
-    "oracle": {
-      "atk": 2757,
-      "def max": 3046,
-      "def min": 2808,
-      "hp": 7582,
-      "rec max": 3061,
-      "rec min": 2823
-    }
-  },
-  "leader_skill": {
-    "desc": "50% boost to max HP, 100% boost to Spark damage & boosts Atk, Def, Rec relative to remaining HP",
-    "effects": [
-      {
-        "hp% buff": 50,
-        "passive id": "1"
-      },
-      {
-        "atk% base buff": 20,
-        "atk% extra buff based on hp": 30,
-        "buff proportional to hp": "remaining",
-        "def% base buff": 20,
-        "def% extra buff based on hp": 30,
-        "passive id": "46",
-        "rec% base buff": 20,
-        "rec% extra buff based on hp": 30
-      },
-      {
-        "damage% for spark": 100,
-        "passive id": "31"
-      }
-    ],
-    "id": "760226",
-    "name": "Ironclad Defense"
-  },
-  "extra_skill": {
-    "desc": "Adds status ailment removal effect to BB/SBB when Arondight is equipped & 50% boost to Spark damage",
-    "effects": [
-      {
-        "conditions": [],
-        "damage% for spark": 50,
-        "passive id": "31",
-        "passive target": "self"
-      },
-      {
-        "conditions": [
-          {
-            "item required": [
-              "88700004"
-            ]
-          }
-        ],
-        "passive id": "66",
-        "passive target": "self",
-        "trigger on bb": true,
-        "trigger on sbb": true,
-        "triggered effect": [
-          {
-            "ailments cured": [
-              "poison",
-              "weaken",
-              "sick",
-              "injury",
-              "curse",
-              "paralysis",
-              "atk down",
-              "def down",
-              "rec down"
-            ],
-            "effect delay time(ms)/frame": "0.0/0",
-            "proc id": "38",
-            "target area": "aoe",
-            "target type": "party"
-          }
-        ]
-      }
-    ],
-    "id": "760226",
-    "name": "Obedient Soldier",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "940,130,250,681",
-  "unitDisplayDetailPosition_6z54rgb3": "-210,160,999,600",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "0,198,650,471,1",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-140,-60,999,600",
-  "unitDisplaySummonPosition_KC3Jk8Br": "10,310,499,300,0",
-  "unitDisplayHpPosition_3BpHN6VD": "0,30",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "15000",
-  "sellCaution": false,
-  "effectFrames": "55:681:1,59:100191:1,65:140:1,65:600040:1,69:600321:1,69:600210:1,82:200032:1"
+  "evoitem": "Legend Stone"
 }

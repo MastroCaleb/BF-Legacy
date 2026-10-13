@@ -1,61 +1,67 @@
 {
   "id": "50484",
-  "unitName": "Wisdom Angel Azael",
-  "no": "623",
-  "element": "Light",
-  "rarity": "★★★★★",
-  "cost": "17",
-  "maxlv": "80",
-  "basexp": "21",
-  "gender": "N",
-  "ai": "3",
-  "animation_attack": "210",
-  "animation_idle": "120",
-  "animation_move": "9",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "114, 117, 120, 123, 126, 166, 186, 206",
-  "normal_distribute": "10, 10, 10, 10, 10, 20, 15, 15",
-  "normal_totaldistr": "100",
-  "bb_frames": "114, 118, 122, 126, 130, 134, 138, 142, 146, 150",
-  "bb_distribute": "10, 10, 10, 10, 10, 10, 10, 10, 10, 10",
-  "bb_totaldistr": "100",
-  "description": "Long before the battle between the humans and the gods, there was an abominable angel who administered judgment. He cared for nothing but his trials, leaving him without feelings nor thoughts, but continued to pass judgment fairly, regardless of whether the prosecuted was human or not. The Great God Emperor acknowledged this god's power, and appointed him to a new role befitting of his abilities. A young servant would inherit this role later on, but this is only a speculation. He also gained the responsibility of judging those angels who had turned against the gods.",
-  "summon": "I judge both men and gods equally.<br>I shall carry out my own mission.",
-  "fusion": "I have confirmed thy power.<br>Let us punish all of those<br>who have sinned.",
-  "evolution": "I have received new power<br>in order to pass judgment once again.<br>Let us begin the trials!",
-  "hp_base": "3452",
-  "atk_base": "1326",
-  "def_base": "1232",
-  "rec_base": "989",
-  "hp_lord": "5043",
-  "atk_lord": "1764",
-  "def_lord": "1640",
-  "rec_lord": "1315",
-  "hp_anima": "5636",
-  "rec_anima": "1157",
-  "atk_breaker": "1922",
-  "def_breaker": "1482",
-  "atk_guardian": "1606",
-  "def_guardian": "1798",
-  "rec_guardian": "1236",
-  "def_oracle": "1561",
-  "hp_oracle": "4806",
-  "rec_oracle": "1552",
-  "hp_bonus": "500",
-  "atk_bonus": "160",
-  "def_bonus": "160",
-  "rec_bonus": "280",
-  "lordonly": "",
-  "combo_hits": "8",
-  "normaldc": "16",
-  "ls": "Fallen God's Power",
-  "lsdescription": "50% boost to Atk of all Light and Dark Units",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 1326,
+      "def": 1232,
+      "hp": 3452,
+      "rec": 989
+    },
+    "_lord": {
+      "atk": 1764,
+      "def": 1640,
+      "hp": 5043,
+      "rec": 1315
+    },
+    "anima": {
+      "atk": 1764,
+      "def": 1640,
+      "hp max": 5833,
+      "hp min": 5438,
+      "rec max": 1236,
+      "rec min": 1078
+    },
+    "breaker": {
+      "atk max": 2001,
+      "atk min": 1843,
+      "def max": 1561,
+      "def min": 1403,
+      "hp": 5043,
+      "rec": 1315
+    },
+    "guardian": {
+      "atk": 1764,
+      "def max": 1877,
+      "def min": 1719,
+      "hp": 5043,
+      "rec max": 1315,
+      "rec min": 1157
+    },
+    "oracle": {
+      "atk": 1764,
+      "def max": 1640,
+      "def min": 1482,
+      "hp": 5043,
+      "rec max": 1631,
+      "rec min": 1473
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to Atk of all Light and Dark Units",
+    "effects": [
+      {
+        "atk% buff": 50,
+        "elements buffed": [
+          "light",
+          "dark"
+        ],
+        "passive id": "2"
+      }
+    ],
+    "id": "5601",
+    "name": "Fallen God's Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -266,97 +272,103 @@
     ],
     "name": "Rofocale"
   },
-  "bbdescription": "10 combo Light and Dark elemental attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "10",
-  "bbaoe": "A",
-  "bbgauge": "25",
-  "bbdc": "10",
-  "bbmultiplier": "220",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "50483",
-  "evointo": "50485",
-  "evomats1": "50354",
-  "evomats2": "50123",
-  "evomats3": "60144",
-  "evomats4": "60144",
-  "evomats5": "60224",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 1326,
-      "def": 1232,
-      "hp": 3452,
-      "rec": 989
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1764,
-      "def": 1640,
-      "hp": 5043,
-      "rec": 1315
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1764,
-      "def": 1640,
-      "hp max": 5833,
-      "hp min": 5438,
-      "rec max": 1236,
-      "rec min": 1078
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 2001,
-      "atk min": 1843,
-      "def max": 1561,
-      "def min": 1403,
-      "hp": 5043,
-      "rec": 1315
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 210
     },
-    "guardian": {
-      "atk": 1764,
-      "def max": 1877,
-      "def min": 1719,
-      "hp": 5043,
-      "rec max": 1315,
-      "rec min": 1157
+    "idle": {
+      "total number of frames": 120
     },
-    "oracle": {
-      "atk": 1764,
-      "def max": 1640,
-      "def min": 1482,
-      "hp": 5043,
-      "rec max": 1631,
-      "rec min": 1473
+    "move": {
+      "total number of frames": 9
     }
   },
-  "leader_skill": {
-    "desc": "50% boost to Atk of all Light and Dark Units",
-    "effects": [
-      {
-        "atk% buff": 50,
-        "elements buffed": [
-          "light",
-          "dark"
-        ],
-        "passive id": "2"
-      }
+  "category": 50480,
+  "cost": "17",
+  "damage frames": {
+    "frame times": [
+      114,
+      117,
+      120,
+      123,
+      126,
+      166,
+      186,
+      206
     ],
-    "id": "5601",
-    "name": "Fallen God's Power"
+    "hit dmg% distribution": [
+      10,
+      10,
+      10,
+      10,
+      10,
+      20,
+      15,
+      15
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 8
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "light",
+  "exp_pattern": 20,
+  "gender": "other",
+  "getting type": "rare summon",
+  "guide_id": 623,
+  "imp": {
+    "max atk": "160",
+    "max def": "160",
+    "max hp": "500",
+    "max rec": "280"
+  },
+  "kind": "normal",
+  "lord damage range": "1642~1834",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Wisdom Angel Azael",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Wisdom Angel Azael",
+  "maxlv": "80",
+  "no": "623",
   "unitDisplayHomePosition_1W9CxaFK": "410,71,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-103,121,1128,784",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "157,355,319,277,0",
@@ -366,5 +378,103 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "114:500314:2,114:500315:1"
+  "effectFrames": "114:500314:2,114:500315:1",
+  "evofrom": "50483",
+  "evointo": "50485",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50123",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "210",
+  "animation_idle": "120",
+  "animation_move": "9",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "114, 117, 120, 123, 126, 166, 186, 206",
+  "normal_distribute": "10, 10, 10, 10, 10, 20, 15, 15",
+  "normal_totaldistr": "100",
+  "bb_frames": "114, 118, 122, 126, 130, 134, 138, 142, 146, 150",
+  "bb_distribute": "10, 10, 10, 10, 10, 10, 10, 10, 10, 10",
+  "bb_totaldistr": "100",
+  "description": "Long before the battle between the humans and the gods, there was an abominable angel who administered judgment. He cared for nothing but his trials, leaving him without feelings nor thoughts, but continued to pass judgment fairly, regardless of whether the prosecuted was human or not. The Great God Emperor acknowledged this god's power, and appointed him to a new role befitting of his abilities. A young servant would inherit this role later on, but this is only a speculation. He also gained the responsibility of judging those angels who had turned against the gods.",
+  "summon": "I judge both men and gods equally.<br>I shall carry out my own mission.",
+  "fusion": "I have confirmed thy power.<br>Let us punish all of those<br>who have sinned.",
+  "evolution": "I have received new power<br>in order to pass judgment once again.<br>Let us begin the trials!",
+  "hp_base": "3452",
+  "atk_base": "1326",
+  "def_base": "1232",
+  "rec_base": "989",
+  "hp_lord": "5043",
+  "atk_lord": "1764",
+  "def_lord": "1640",
+  "rec_lord": "1315",
+  "hp_anima": "5636",
+  "rec_anima": "1157",
+  "atk_breaker": "1922",
+  "def_breaker": "1482",
+  "atk_guardian": "1606",
+  "def_guardian": "1798",
+  "rec_guardian": "1236",
+  "def_oracle": "1561",
+  "hp_oracle": "4806",
+  "rec_oracle": "1552",
+  "hp_bonus": "500",
+  "atk_bonus": "160",
+  "def_bonus": "160",
+  "rec_bonus": "280",
+  "lordonly": "",
+  "combo_hits": "8",
+  "normaldc": "16",
+  "ls": "Fallen God's Power",
+  "lsdescription": "50% boost to Atk of all Light and Dark Units",
+  "lstype": "Attack",
+  "bbdescription": "10 combo Light and Dark elemental attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "10",
+  "bbaoe": "A",
+  "bbgauge": "25",
+  "bbdc": "10",
+  "bbmultiplier": "220",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "50123",
+  "evomats3": "60144",
+  "evomats4": "60144",
+  "evomats5": "60224"
 }

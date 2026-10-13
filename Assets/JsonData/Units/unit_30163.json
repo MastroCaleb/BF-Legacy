@@ -1,61 +1,66 @@
 {
   "id": "30163",
-  "unitName": "Earth Knight Edea",
-  "no": "246",
-  "element": "Earth",
-  "rarity": "★★★★",
-  "cost": "10",
-  "maxlv": "60",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "65",
-  "animation_idle": "52",
-  "animation_move": "13",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "18, 24, 28, 30, 32, 34",
-  "normal_distribute": "50, 10, 10, 10, 10, 10",
-  "normal_totaldistr": "100",
-  "bb_frames": "18, 24, 28, 30, 32, 34",
-  "bb_distribute": "50, 10, 10, 10, 10, 10",
-  "bb_totaldistr": "100",
-  "description": "One of the four legendary warriors who fought to save the Kingdom of Palmyna, and commonly thought to have been Palmyna’s princess in disguise. The bond she shared with her comrades in arms awakened the true potential within her. Her legendary emerald armor was actually a broadsword which turned into full body armor with a magical incantation. It is said to have drawn its powers from the earth.",
-  "summon": "Onwards to our destiny!<br>There is no turning back.<br>May you cleave a path to greatness!",
-  "fusion": "The land’s power is flowing into me.<br>H-Hey, cut it out!<br>You know I don’t like showing my face!",
-  "evolution": "I’m feeling great!<br>I really lucked out getting to be<br>your companion, huh?",
-  "hp_base": "2875",
-  "atk_base": "972",
-  "def_base": "950",
-  "rec_base": "872",
-  "hp_lord": "4275",
-  "atk_lord": "1350",
-  "def_lord": "1400",
-  "rec_lord": "1116",
-  "hp_anima": "4718",
-  "rec_anima": "998",
-  "atk_breaker": "1468",
-  "def_breaker": "1282",
-  "atk_guardian": "1232",
-  "def_guardian": "1518",
-  "rec_guardian": "1057",
-  "def_oracle": "1341",
-  "hp_oracle": "4098",
-  "rec_oracle": "1293",
-  "hp_bonus": "600",
-  "atk_bonus": "120",
-  "def_bonus": "120",
-  "rec_bonus": "120",
-  "lordonly": "",
-  "combo_hits": "6",
-  "normaldc": "12",
-  "ls": "Earth God's Power",
-  "lsdescription": "50% boost to Atk Power of Earth Types",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 972,
+      "def": 950,
+      "hp": 2875,
+      "rec": 872
+    },
+    "_lord": {
+      "atk": 1350,
+      "def": 1400,
+      "hp": 4275,
+      "rec": 1116
+    },
+    "anima": {
+      "atk": 1350,
+      "def": 1400,
+      "hp max": 4865,
+      "hp min": 4570,
+      "rec max": 1057,
+      "rec min": 939
+    },
+    "breaker": {
+      "atk max": 1527,
+      "atk min": 1409,
+      "def max": 1341,
+      "def min": 1223,
+      "hp": 4275,
+      "rec": 1116
+    },
+    "guardian": {
+      "atk": 1350,
+      "def max": 1577,
+      "def min": 1459,
+      "hp": 4275,
+      "rec max": 1116,
+      "rec min": 998
+    },
+    "oracle": {
+      "atk": 1350,
+      "def max": 1400,
+      "def min": 1282,
+      "hp": 4275,
+      "rec max": 1352,
+      "rec min": 1234
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to Atk Power of Earth Types",
+    "effects": [
+      {
+        "atk% buff": 50,
+        "elements buffed": [
+          "earth"
+        ],
+        "passive id": "2"
+      }
+    ],
+    "id": "121",
+    "name": "Earth God's Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -310,97 +315,93 @@
     ],
     "name": "Astro Bash"
   },
-  "bbdescription": "6 Combo Earth Elemental Attack on Single Enemy & Probable Poison & Sickness Effect",
-  "bbnote": "80% chance",
-  "bbtype": "Offense",
-  "bbhits": "6",
-  "bbaoe": "1",
-  "bbgauge": "18",
-  "bbdc": "6",
-  "bbmultiplier": "370",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "30162",
-  "evointo": "30164",
-  "evomats1": "30133",
-  "evomats2": "30132",
-  "evomats3": "30132",
-  "evomats4": "60143",
-  "evomats5": "60143",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 972,
-      "def": 950,
-      "hp": 2875,
-      "rec": 872
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1350,
-      "def": 1400,
-      "hp": 4275,
-      "rec": 1116
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1350,
-      "def": 1400,
-      "hp max": 4865,
-      "hp min": 4570,
-      "rec max": 1057,
-      "rec min": 939
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 65
     },
-    "breaker": {
-      "atk max": 1527,
-      "atk min": 1409,
-      "def max": 1341,
-      "def min": 1223,
-      "hp": 4275,
-      "rec": 1116
+    "idle": {
+      "total number of frames": 52
     },
-    "guardian": {
-      "atk": 1350,
-      "def max": 1577,
-      "def min": 1459,
-      "hp": 4275,
-      "rec max": 1116,
-      "rec min": 998
-    },
-    "oracle": {
-      "atk": 1350,
-      "def max": 1400,
-      "def min": 1282,
-      "hp": 4275,
-      "rec max": 1352,
-      "rec min": 1234
+    "move": {
+      "total number of frames": 13
     }
   },
-  "leader_skill": {
-    "desc": "50% boost to Atk Power of Earth Types",
-    "effects": [
-      {
-        "atk% buff": 50,
-        "elements buffed": [
-          "earth"
-        ],
-        "passive id": "2"
-      }
+  "category": 30160,
+  "cost": "10",
+  "damage frames": {
+    "frame times": [
+      18,
+      24,
+      28,
+      30,
+      32,
+      34
     ],
-    "id": "121",
-    "name": "Earth God's Power"
+    "hit dmg% distribution": [
+      50,
+      10,
+      10,
+      10,
+      10,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 6
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "earth",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 246,
+  "imp": {
+    "max atk": "120",
+    "max def": "120",
+    "max hp": "600",
+    "max rec": "120"
+  },
+  "kind": "normal",
+  "lord damage range": "1257~1404",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Earth Knight Edea",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Earth Knight Edea",
+  "maxlv": "60",
+  "no": "246",
   "unitDisplayHomePosition_1W9CxaFK": "260,120,147,403",
   "unitDisplayDetailPosition_6z54rgb3": "65,100,745,638",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "215,387,216,240,0",
@@ -410,5 +411,99 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "12:123:1,18:123:1,22:123:1,24:123:1,26:123:1,28:123:1"
+  "effectFrames": "12:123:1,18:123:1,22:123:1,24:123:1,26:123:1,28:123:1",
+  "evofrom": "30162",
+  "evointo": "30164",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "30133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30132",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 2
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "65",
+  "animation_idle": "52",
+  "animation_move": "13",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "18, 24, 28, 30, 32, 34",
+  "normal_distribute": "50, 10, 10, 10, 10, 10",
+  "normal_totaldistr": "100",
+  "bb_frames": "18, 24, 28, 30, 32, 34",
+  "bb_distribute": "50, 10, 10, 10, 10, 10",
+  "bb_totaldistr": "100",
+  "description": "One of the four legendary warriors who fought to save the Kingdom of Palmyna, and commonly thought to have been Palmyna’s princess in disguise. The bond she shared with her comrades in arms awakened the true potential within her. Her legendary emerald armor was actually a broadsword which turned into full body armor with a magical incantation. It is said to have drawn its powers from the earth.",
+  "summon": "Onwards to our destiny!<br>There is no turning back.<br>May you cleave a path to greatness!",
+  "fusion": "The land’s power is flowing into me.<br>H-Hey, cut it out!<br>You know I don’t like showing my face!",
+  "evolution": "I’m feeling great!<br>I really lucked out getting to be<br>your companion, huh?",
+  "hp_base": "2875",
+  "atk_base": "972",
+  "def_base": "950",
+  "rec_base": "872",
+  "hp_lord": "4275",
+  "atk_lord": "1350",
+  "def_lord": "1400",
+  "rec_lord": "1116",
+  "hp_anima": "4718",
+  "rec_anima": "998",
+  "atk_breaker": "1468",
+  "def_breaker": "1282",
+  "atk_guardian": "1232",
+  "def_guardian": "1518",
+  "rec_guardian": "1057",
+  "def_oracle": "1341",
+  "hp_oracle": "4098",
+  "rec_oracle": "1293",
+  "hp_bonus": "600",
+  "atk_bonus": "120",
+  "def_bonus": "120",
+  "rec_bonus": "120",
+  "lordonly": "",
+  "combo_hits": "6",
+  "normaldc": "12",
+  "ls": "Earth God's Power",
+  "lsdescription": "50% boost to Atk Power of Earth Types",
+  "lstype": "Attack",
+  "bbdescription": "6 Combo Earth Elemental Attack on Single Enemy & Probable Poison & Sickness Effect",
+  "bbnote": "80% chance",
+  "bbtype": "Offense",
+  "bbhits": "6",
+  "bbaoe": "1",
+  "bbgauge": "18",
+  "bbdc": "6",
+  "bbmultiplier": "370",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "30133",
+  "evomats2": "30132",
+  "evomats3": "30132",
+  "evomats4": "60143",
+  "evomats5": "60143"
 }

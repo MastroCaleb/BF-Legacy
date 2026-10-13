@@ -1,61 +1,66 @@
 {
   "id": "20123",
-  "unitName": "War Captain Mega",
-  "no": "157",
-  "element": "Water",
-  "rarity": "★★★★",
-  "cost": "8",
-  "maxlv": "60",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "151",
-  "animation_idle": "64",
-  "animation_move": "10",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "38, 67, 96",
-  "normal_distribute": "34, 33, 33",
-  "normal_totaldistr": "100",
-  "bb_frames": "38, 61, 67, 90, 96",
-  "bb_distribute": "20, 20, 20, 20, 20",
-  "bb_totaldistr": "100",
-  "description": "A pirate captain from the seas near the ruined Sama Kingdom. Mega masterfully commanded his pirate crew until one day the Sama Kingdom Navy appeared. They requested he join them as their new admiral and help reorganize their forces. He had always hated the corrupt navy, but agreed to their terms and did his best to improve their reputation.",
-  "summon": "Champion of the seas?<br>That's an understatement.<br>My axe is invincible!",
-  "fusion": "Argh, aha!<br>I have an entire Navy at <br>my command!",
-  "evolution": "Can you feel the waves, too?<br>It would be a waste not to <br>ride them!",
-  "hp_base": "2268",
-  "atk_base": "949",
-  "def_base": "594",
-  "rec_base": "1224",
-  "hp_lord": "3666",
-  "atk_lord": "1319",
-  "def_lord": "910",
-  "rec_lord": "1550",
-  "hp_anima": "4109",
-  "rec_anima": "1432",
-  "atk_breaker": "1437",
-  "def_breaker": "792",
-  "atk_guardian": "1201",
-  "def_guardian": "1028",
-  "rec_guardian": "1491",
-  "def_oracle": "851",
-  "hp_oracle": "3489",
-  "rec_oracle": "1727",
-  "hp_bonus": "600",
-  "atk_bonus": "120",
-  "def_bonus": "120",
-  "rec_bonus": "120",
-  "lordonly": "",
-  "combo_hits": "3",
-  "normaldc": "12",
-  "ls": "Water God's Power",
-  "lsdescription": "50% boost to Atk Power of Water Types",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 949,
+      "def": 594,
+      "hp": 2268,
+      "rec": 1224
+    },
+    "_lord": {
+      "atk": 1319,
+      "def": 910,
+      "hp": 3666,
+      "rec": 1550
+    },
+    "anima": {
+      "atk": 1319,
+      "def": 910,
+      "hp max": 4256,
+      "hp min": 3961,
+      "rec max": 1491,
+      "rec min": 1373
+    },
+    "breaker": {
+      "atk max": 1496,
+      "atk min": 1378,
+      "def max": 851,
+      "def min": 733,
+      "hp": 3666,
+      "rec": 1550
+    },
+    "guardian": {
+      "atk": 1319,
+      "def max": 1087,
+      "def min": 969,
+      "hp": 3666,
+      "rec max": 1550,
+      "rec min": 1432
+    },
+    "oracle": {
+      "atk": 1319,
+      "def max": 910,
+      "def min": 792,
+      "hp": 3666,
+      "rec max": 1786,
+      "rec min": 1668
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to Atk Power of Water Types",
+    "effects": [
+      {
+        "atk% buff": 50,
+        "elements buffed": [
+          "water"
+        ],
+        "passive id": "2"
+      }
+    ],
+    "id": "111",
+    "name": "Water God's Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -216,97 +221,87 @@
     ],
     "name": "Tempest Gallows"
   },
-  "bbdescription": "5 combo Water elemental power attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "5",
-  "bbaoe": "A",
-  "bbgauge": "25",
-  "bbdc": "5",
-  "bbmultiplier": "170",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "20122",
-  "evointo": "20124",
-  "evomats1": "20133",
-  "evomats2": "20132",
-  "evomats3": "60143",
-  "evomats4": "20130",
-  "evomats5": "20130",
-  "evoitem": "",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 949,
-      "def": 594,
-      "hp": 2268,
-      "rec": 1224
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1319,
-      "def": 910,
-      "hp": 3666,
-      "rec": 1550
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1319,
-      "def": 910,
-      "hp max": 4256,
-      "hp min": 3961,
-      "rec max": 1491,
-      "rec min": 1373
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 151
     },
-    "breaker": {
-      "atk max": 1496,
-      "atk min": 1378,
-      "def max": 851,
-      "def min": 733,
-      "hp": 3666,
-      "rec": 1550
+    "idle": {
+      "total number of frames": 64
     },
-    "guardian": {
-      "atk": 1319,
-      "def max": 1087,
-      "def min": 969,
-      "hp": 3666,
-      "rec max": 1550,
-      "rec min": 1432
-    },
-    "oracle": {
-      "atk": 1319,
-      "def max": 910,
-      "def min": 792,
-      "hp": 3666,
-      "rec max": 1786,
-      "rec min": 1668
+    "move": {
+      "total number of frames": 10
     }
   },
-  "leader_skill": {
-    "desc": "50% boost to Atk Power of Water Types",
-    "effects": [
-      {
-        "atk% buff": 50,
-        "elements buffed": [
-          "water"
-        ],
-        "passive id": "2"
-      }
+  "category": 20120,
+  "cost": "8",
+  "damage frames": {
+    "frame times": [
+      38,
+      67,
+      96
     ],
-    "id": "111",
-    "name": "Water God's Power"
+    "hit dmg% distribution": [
+      34,
+      33,
+      33
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 3
   },
-  "extra_skill": {},
+  "drop check count": 4,
+  "element": "water",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 157,
+  "imp": {
+    "max atk": "120",
+    "max def": "120",
+    "max hp": "600",
+    "max rec": "120"
+  },
+  "kind": "normal",
+  "lord damage range": "1228~1371",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "War Captain Mega",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "War Captain Mega",
+  "maxlv": "60",
+  "no": "157",
   "unitDisplayHomePosition_1W9CxaFK": "329,24,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "54,152,690,632",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "109,314,334,306,0",
@@ -316,5 +311,104 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "32:122:1,61:122:1,90:122:1"
+  "effectFrames": "32:122:1,61:122:1,90:122:1",
+  "evofrom": "20122",
+  "evointo": "20124",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "20133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20130",
+      "count": 2
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "151",
+  "animation_idle": "64",
+  "animation_move": "10",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "38, 67, 96",
+  "normal_distribute": "34, 33, 33",
+  "normal_totaldistr": "100",
+  "bb_frames": "38, 61, 67, 90, 96",
+  "bb_distribute": "20, 20, 20, 20, 20",
+  "bb_totaldistr": "100",
+  "description": "A pirate captain from the seas near the ruined Sama Kingdom. Mega masterfully commanded his pirate crew until one day the Sama Kingdom Navy appeared. They requested he join them as their new admiral and help reorganize their forces. He had always hated the corrupt navy, but agreed to their terms and did his best to improve their reputation.",
+  "summon": "Champion of the seas?<br>That's an understatement.<br>My axe is invincible!",
+  "fusion": "Argh, aha!<br>I have an entire Navy at <br>my command!",
+  "evolution": "Can you feel the waves, too?<br>It would be a waste not to <br>ride them!",
+  "hp_base": "2268",
+  "atk_base": "949",
+  "def_base": "594",
+  "rec_base": "1224",
+  "hp_lord": "3666",
+  "atk_lord": "1319",
+  "def_lord": "910",
+  "rec_lord": "1550",
+  "hp_anima": "4109",
+  "rec_anima": "1432",
+  "atk_breaker": "1437",
+  "def_breaker": "792",
+  "atk_guardian": "1201",
+  "def_guardian": "1028",
+  "rec_guardian": "1491",
+  "def_oracle": "851",
+  "hp_oracle": "3489",
+  "rec_oracle": "1727",
+  "hp_bonus": "600",
+  "atk_bonus": "120",
+  "def_bonus": "120",
+  "rec_bonus": "120",
+  "lordonly": "",
+  "combo_hits": "3",
+  "normaldc": "12",
+  "ls": "Water God's Power",
+  "lsdescription": "50% boost to Atk Power of Water Types",
+  "lstype": "Attack",
+  "bbdescription": "5 combo Water elemental power attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "5",
+  "bbaoe": "A",
+  "bbgauge": "25",
+  "bbdc": "5",
+  "bbmultiplier": "170",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "20133",
+  "evomats2": "20132",
+  "evomats3": "60143",
+  "evomats4": "20130",
+  "evomats5": "20130",
+  "evoitem": ""
 }

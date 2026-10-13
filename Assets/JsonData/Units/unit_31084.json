@@ -1,63 +1,68 @@
 {
   "id": "31084",
-  "unitName": "ダルタニャン",
-  "unreleased": "true",
-  "untranslated": "true",
-  "disam": "",
-  "altname": "ダルタニャン",
-  "idalt": "",
-  "has_altart": "",
-  "doenter": "true",
-  "no": "1802",
-  "element": "Earth",
-  "rarity": "★★★★★",
-  "cost": "12",
-  "maxlv": "80",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "",
-  "animation_idle": "",
-  "animation_move": "",
-  "movespeed_attack": "0.0024",
-  "speedtype_attack": "4",
-  "movetype_attack": "1",
-  "movespeed_skill": "0.0024",
-  "speedtype_skill": "4",
-  "movetype_skill": "1",
-  "description": "",
-  "summon": "",
-  "fusion": "",
-  "evolution": "",
-  "hp_base": "3600",
-  "atk_base": "1200",
-  "def_base": "1200",
-  "rec_base": "1300",
-  "hp_lord": "5400",
-  "atk_lord": "1800",
-  "def_lord": "1800",
-  "rec_lord": "2000",
-  "hp_anima": "5992",
-  "rec_anima": "1842",
-  "atk_breaker": "1958",
-  "def_breaker": "1642",
-  "def_guardian": "1958",
-  "rec_guardian": "1921",
-  "def_oracle": "1721",
-  "rec_oracle": "2237",
-  "hp_bonus": "500",
-  "atk_bonus": "200",
-  "def_bonus": "200",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "normal_frames": "69, 72, 83, 86, 97, 100, 143, 146, 150",
-  "normal_distribute": "10, 10, 10, 10, 10, 10, 20, 10, 10",
-  "normal_totaldistr": "100",
-  "combo_hits": "9",
-  "normaldc": "27",
-  "ls": "銃士の覚書",
-  "lsdescription": "全てのユニットの攻撃力・防御力を２０％アップ＆ＢＣ獲得時の増加量をかなりアップ",
-  "lsnote": "20% boost to Atk/Def & 50% boost to BC efficacy",
+  "stats": {
+    "_base": {
+      "atk": 1200,
+      "def": 1200,
+      "hp": 3600,
+      "rec": 1300
+    },
+    "_lord": {
+      "atk": 1800,
+      "def": 1800,
+      "hp": 5400,
+      "rec": 2000
+    },
+    "anima": {
+      "atk": 1800,
+      "def": 1800,
+      "hp max": 6190,
+      "hp min": 5795,
+      "rec max": 1921,
+      "rec min": 1763
+    },
+    "breaker": {
+      "atk max": 2037,
+      "atk min": 1879,
+      "def max": 1721,
+      "def min": 1563,
+      "hp": 5400,
+      "rec": 2000
+    },
+    "guardian": {
+      "atk": 1800,
+      "def max": 2037,
+      "def min": 1879,
+      "hp": 5400,
+      "rec max": 2000,
+      "rec min": 1842
+    },
+    "oracle": {
+      "atk": 1800,
+      "def max": 1800,
+      "def min": 1642,
+      "hp": 5400,
+      "rec max": 2316,
+      "rec min": 2158
+    }
+  },
+  "leader_skill": {
+    "desc": "全てのユニットの攻撃力・防御力を２０％アップ＆ＢＣ獲得時の増加量をかなりアップ",
+    "effects": [
+      {
+        "atk% buff": 20,
+        "def% buff": 20,
+        "passive id": "1"
+      },
+      {
+        "bb gauge fill rate%": 50,
+        "passive id": "32"
+      }
+    ],
+    "id": "12541",
+    "name": "銃士の覚書"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -434,6 +439,156 @@
     ],
     "name": "一人はみんなのために"
   },
+  "sbb": {},
+  "ubb": {},
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "error": "data missing"
+  },
+  "category": 31080,
+  "cost": "12",
+  "damage frames": {
+    "frame times": [
+      69,
+      72,
+      83,
+      86,
+      97,
+      100,
+      143,
+      146,
+      150
+    ],
+    "hit dmg% distribution": [
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      20,
+      10,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 9
+  },
+  "drop check count": 3,
+  "element": "earth",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "farmable",
+  "guide_id": 1802,
+  "imp": {
+    "max atk": "200",
+    "max def": "200",
+    "max hp": "500",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "1676~1872",
+  "movement": {
+    "attack": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    }
+  },
+  "name": "ダルタニャン",
+  "rarity": "5",
+  "sell caution": true,
+  "unitName": "ダルタニャン",
+  "maxlv": "80",
+  "no": "1802",
+  "unitDisplayHomePosition_1W9CxaFK": null,
+  "unitDisplayDetailPosition_6z54rgb3": null,
+  "unitDisplayConfirmImagePosition_MYK1fq6c": null,
+  "unitDisplayCutInImagePosition_7hLR6pDN": null,
+  "unitDisplaySummonPosition_KC3Jk8Br": null,
+  "unitDisplayHpPosition_3BpHN6VD": null,
+  "unitDisplayCursorPosition": null,
+  "sellPrice": "",
+  "sellCaution": false,
+  "effectFrames": "",
+  "evofrom": "",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "unreleased": "true",
+  "untranslated": "true",
+  "disam": "",
+  "altname": "ダルタニャン",
+  "idalt": "",
+  "has_altart": "",
+  "doenter": "true",
+  "basexp": "21",
+  "animation_attack": "",
+  "animation_idle": "",
+  "animation_move": "",
+  "movespeed_attack": "0.0024",
+  "speedtype_attack": "4",
+  "movetype_attack": "1",
+  "movespeed_skill": "0.0024",
+  "speedtype_skill": "4",
+  "movetype_skill": "1",
+  "description": "",
+  "summon": "",
+  "fusion": "",
+  "evolution": "",
+  "hp_base": "3600",
+  "atk_base": "1200",
+  "def_base": "1200",
+  "rec_base": "1300",
+  "hp_lord": "5400",
+  "atk_lord": "1800",
+  "def_lord": "1800",
+  "rec_lord": "2000",
+  "hp_anima": "5992",
+  "rec_anima": "1842",
+  "atk_breaker": "1958",
+  "def_breaker": "1642",
+  "def_guardian": "1958",
+  "rec_guardian": "1921",
+  "def_oracle": "1721",
+  "rec_oracle": "2237",
+  "hp_bonus": "500",
+  "atk_bonus": "200",
+  "def_bonus": "200",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "normal_frames": "69, 72, 83, 86, 97, 100, 143, 146, 150",
+  "normal_distribute": "10, 10, 10, 10, 10, 10, 20, 10, 10",
+  "normal_totaldistr": "100",
+  "combo_hits": "9",
+  "normaldc": "27",
+  "ls": "銃士の覚書",
+  "lsdescription": "全てのユニットの攻撃力・防御力を２０％アップ＆ＢＣ獲得時の増加量をかなりアップ",
+  "lsnote": "20% boost to Atk/Def & 50% boost to BC efficacy",
   "bbdescription": "敵全体に樹属性１１連ダメージ＆味方全体に３ターン、スパーク時、確率でＢＢゲージを少し増加＆３ターン、ターン毎にＢＢゲージを増加",
   "bbnote": "{{UnitBuffList",
   "buff_1_proc": "1",
@@ -463,80 +618,5 @@
   "notes": "",
   "incorrectinfo": "",
   "addcat": "",
-  "addcatname": "",
-  "stats": {
-    "_base": {
-      "atk": 1200,
-      "def": 1200,
-      "hp": 3600,
-      "rec": 1300
-    },
-    "_lord": {
-      "atk": 1800,
-      "def": 1800,
-      "hp": 5400,
-      "rec": 2000
-    },
-    "anima": {
-      "atk": 1800,
-      "def": 1800,
-      "hp max": 6190,
-      "hp min": 5795,
-      "rec max": 1921,
-      "rec min": 1763
-    },
-    "breaker": {
-      "atk max": 2037,
-      "atk min": 1879,
-      "def max": 1721,
-      "def min": 1563,
-      "hp": 5400,
-      "rec": 2000
-    },
-    "guardian": {
-      "atk": 1800,
-      "def max": 2037,
-      "def min": 1879,
-      "hp": 5400,
-      "rec max": 2000,
-      "rec min": 1842
-    },
-    "oracle": {
-      "atk": 1800,
-      "def max": 1800,
-      "def min": 1642,
-      "hp": 5400,
-      "rec max": 2316,
-      "rec min": 2158
-    }
-  },
-  "leader_skill": {
-    "desc": "全てのユニットの攻撃力・防御力を２０％アップ＆ＢＣ獲得時の増加量をかなりアップ",
-    "effects": [
-      {
-        "atk% buff": 20,
-        "def% buff": 20,
-        "passive id": "1"
-      },
-      {
-        "bb gauge fill rate%": 50,
-        "passive id": "32"
-      }
-    ],
-    "id": "12541",
-    "name": "銃士の覚書"
-  },
-  "extra_skill": {},
-  "sbb": {},
-  "ubb": {},
-  "unitDisplayHomePosition_1W9CxaFK": null,
-  "unitDisplayDetailPosition_6z54rgb3": null,
-  "unitDisplayConfirmImagePosition_MYK1fq6c": null,
-  "unitDisplayCutInImagePosition_7hLR6pDN": null,
-  "unitDisplaySummonPosition_KC3Jk8Br": null,
-  "unitDisplayHpPosition_3BpHN6VD": null,
-  "unitDisplayCursorPosition": null,
-  "sellPrice": "",
-  "sellCaution": false,
-  "effectFrames": ""
+  "addcatname": ""
 }

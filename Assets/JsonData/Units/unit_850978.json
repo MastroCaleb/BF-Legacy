@@ -1,70 +1,119 @@
 {
   "id": "850978",
-  "unitName": "Logi (Omni)",
-  "no": "8365",
-  "altname": "Logi",
-  "doenter": "true",
-  "element": "Light",
-  "rarity": "Omni",
-  "cost": "45",
-  "maxlv": "150",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "116",
-  "animation_idle": "68",
-  "animation_move": "6",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "10, 11, 13, 14, 16, 17, 19, 20, 40, 43, 46, 49, 52",
-  "normal_distribute": "13, 1, 10, 1, 7, 1, 5, 1, 16, 15, 12, 10, 8",
-  "normal_totaldistr": "100",
-  "bb_frames": "10, 13, 16, 17, 40, 50, 51, 60, 70, 80, 83, 86, 89, 92",
-  "bb_distribute": "8, 7, 6, 1, 8, 7, 1, 8, 7, 10, 9, 9, 10, 9",
-  "bb_totaldistr": "100",
-  "sbb_frames": "10, 13, 16, 80, 87, 94, 95, 101, 108, 115, 122, 129, 136, 137, 143, 150, 157, 164, 171",
-  "sbb_distribute": "3, 4, 3, 7, 6, 6, 1, 6, 5, 7, 6, 7, 4, 1, 6, 7, 6, 5, 10",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "10, 16, 22, 28, 34, 100, 105, 110, 115, 116, 120, 125, 126, 130, 135, 140, 145, 150, 155, 160, 165, 170, 175",
-  "ubb_distribute": "9, 8, 7, 6, 5, 6, 4, 5, 3, 1, 5, 3, 1, 5, 4, 3, 4, 3, 4, 3, 4, 3, 4",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "1",
-  "ubb_effectdelay": "1",
-  "description": "A knight from the distant world of Envylia. Logi tried to quell a rebellion planned by the remnants of Wratharis, a neighbouring country that was ruined some 20 years ago. Curiously, amidst his efforts to quench the rebellion alongside his friend Dias, he experienced a most unexpected encounter with the enemy. Cornered by the rebels who seem to wield the forbidden power of Alchemy, Logi somehow gains this power himself upon a fateful meeting with a strange young girl. With this taboo ability now at his disposal, Logi plans to continue fighting to protect the world.",
-  "summon": "I wonder if you and I will ever<br>share an unbreakable bond...<br>No, I'm sure we will!",
-  "fusion": "I want power...<br>Power to protect this world!",
-  "evolution": "I wonder if it's too much to ask for a world where we can understand each other...",
-  "hp_base": "5841",
-  "atk_base": "2153",
-  "def_base": "2181",
-  "rec_base": "1792",
-  "hp_lord": "8344",
-  "atk_lord": "3075",
-  "def_lord": "3115",
-  "rec_lord": "2560",
-  "hp_anima": "",
-  "rec_anima": "",
-  "atk_breaker": "",
-  "def_breaker": "",
-  "def_guardian": "",
-  "rec_guardian": "",
-  "def_oracle": "",
-  "rec_oracle": "",
-  "hp_bonus": "1250",
-  "atk_bonus": "400",
-  "def_bonus": "800",
-  "rec_bonus": "500",
-  "lordonly": "Y",
-  "combo_hits": "13",
-  "normaldc": "52",
-  "ls": "Light of Dawn's Boon",
-  "lsdescription": "50% boost to max HP, considerably boosts Atk relative to how high remaining HP is, considerably boosts Def relative to how low remaining HP is & 20% damage reduction for 2 turns when damage taken has exceeded certain amount",
-  "lsnote": "1% Atk per 1% HP remaining, 1% Def per 1% HP lost & reduces damage after 5,000 damage taken",
+  "stats": {
+    "_base": {
+      "atk": 2153,
+      "def": 2181,
+      "hp": 5841,
+      "rec": 1792
+    },
+    "_lord": {
+      "atk": 3075,
+      "def": 3115,
+      "hp": 8344,
+      "rec": 2560
+    },
+    "anima": {
+      "atk": 3075,
+      "def": 3115,
+      "hp max": 9834,
+      "hp min": 9089,
+      "rec max": 2411,
+      "rec min": 2113
+    },
+    "breaker": {
+      "atk max": 3522,
+      "atk min": 3224,
+      "def max": 2966,
+      "def min": 2668,
+      "hp": 8344,
+      "rec": 2560
+    },
+    "guardian": {
+      "atk": 3075,
+      "def max": 3562,
+      "def min": 3264,
+      "hp": 8344,
+      "rec max": 2560,
+      "rec min": 2262
+    },
+    "oracle": {
+      "atk": 3075,
+      "def max": 3115,
+      "def min": 2817,
+      "hp": 8344,
+      "rec max": 3156,
+      "rec min": 2858
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to max HP, considerably boosts Atk relative to how high remaining HP is, considerably boosts Def relative to how low remaining HP is & 20% damage reduction for 2 turns when damage taken has exceeded certain amount",
+    "effects": [
+      {
+        "hp% buff": 50,
+        "passive id": "1"
+      },
+      {
+        "atk% base buff": 0,
+        "atk% extra buff based on hp": 100,
+        "buff proportional to hp": "remaining",
+        "passive id": "46"
+      },
+      {
+        "buff proportional to hp": "lost",
+        "def% base buff": 0,
+        "def% extra buff based on hp": 100,
+        "passive id": "46"
+      },
+      {
+        "buff": {
+          "buff turns (36)": "1",
+          "dmg reduction% buff": 20
+        },
+        "damage threshold buff activation": 5000,
+        "passive id": "78"
+      }
+    ],
+    "id": "850978",
+    "name": "Light of Dawn's Boon"
+  },
+  "extra_skill": {
+    "desc": "30% boost to all parameters when Sacred Shield is equipped & negates critical damage and Def ignoring effects",
+    "effects": [
+      {
+        "conditions": [],
+        "ignore def resist chance%": 100,
+        "passive id": "92",
+        "passive target": "self"
+      },
+      {
+        "base crit% resist": 100,
+        "buff crit% resist": 999,
+        "conditions": [],
+        "passive id": "45",
+        "passive target": "self"
+      },
+      {
+        "atk% buff": 30,
+        "conditions": [
+          {
+            "item required": [
+              "819138"
+            ]
+          }
+        ],
+        "def% buff": 30,
+        "hp% buff": 30,
+        "passive id": "1",
+        "passive target": "self",
+        "rec% buff": 30
+      }
+    ],
+    "id": "850978",
+    "name": "Divine Warrior's Prayer",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -559,30 +608,6 @@
     ],
     "name": "Holy Saber"
   },
-  "bbdescription": "14 combo Light attack on all foes, greatly restores HP, negates Atk, Def, Rec reduction effects for 1 turn & hugely boosts Def for 3 turns",
-  "bbnote": "{{UnitBuffList",
-  "buff_1_proc": "1",
-  "buff_1_potency": "1500% damage modifier",
-  "buff_1_duration": "—",
-  "buff_1_target": "All enemies",
-  "buff_2_proc": "5_def",
-  "buff_2_potency": "350% boost to Def",
-  "buff_2_duration": "3 turns",
-  "buff_2_target": "All allies",
-  "buff_3_proc": "24_atk",
-  "buff_3_potency": "Boosts Atk relative to 250% of Defense",
-  "buff_3_duration": "3 turns",
-  "buff_3_target": "All allies",
-  "buff_4_proc": "17",
-  "buff_4_potency": "Negates all status ailments",
-  "buff_4_duration": "3 turns",
-  "buff_4_target": "All allies",
-  "bbtype": "Heal/Offense",
-  "bbhits": "14",
-  "bbaoe": "A",
-  "bbgauge": "27",
-  "bbdc": "14",
-  "bbmultiplier": "370",
   "sbb": {
     "damage frames": [
       {
@@ -1219,26 +1244,6 @@
     ],
     "name": "Brave Heart"
   },
-  "sbbdescription": "19 combo powerful Light attack on all foes, damage taken may restore HP for 3 turns, hugely boosts Atk relative to Def for 3 turns, activates Light barrier & considerably boosts Atk, Def, Rec of Light types for 3 turns",
-  "sbbnote": "{{UnitBuffList",
-  "buff_5_proc": "73",
-  "buff_5_potency": "Negates Atk, Def, and Rec reduction effects",
-  "buff_5_duration": "3 turns",
-  "buff_5_target": "All allies",
-  "buff_6_proc": "5_light_def",
-  "buff_6_potency": "100% boost to Def of Light units",
-  "buff_6_duration": "3 turns",
-  "buff_6_target": "All allies",
-  "buff_7_proc": "5_light_rec",
-  "buff_7_potency": "100% boost to Rec of Light units",
-  "buff_7_duration": "3 turns",
-  "buff_7_target": "All allies",
-  "sbbtype": "Heal/Offense",
-  "sbbhits": "19",
-  "sbbaoe": "A",
-  "sbbgauge": "28",
-  "sbbdc": "19",
-  "sbbmultiplier": "580",
   "ubb": {
     "damage frames": [
       {
@@ -1407,6 +1412,226 @@
     ],
     "name": "Shining Cross"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 116
+    },
+    "idle": {
+      "total number of frames": 68
+    },
+    "move": {
+      "total number of frames": 6
+    }
+  },
+  "category": 850970,
+  "cost": "45",
+  "damage frames": {
+    "frame times": [
+      10,
+      11,
+      13,
+      14,
+      16,
+      17,
+      19,
+      20,
+      40,
+      43,
+      46,
+      49,
+      52
+    ],
+    "hit dmg% distribution": [
+      13,
+      1,
+      10,
+      1,
+      7,
+      1,
+      5,
+      1,
+      16,
+      15,
+      12,
+      10,
+      8
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 13
+  },
+  "drop check count": 4,
+  "element": "light",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "farmable",
+  "guide_id": 8365,
+  "imp": {
+    "max atk": "400",
+    "max def": "800",
+    "max hp": "1250",
+    "max rec": "500"
+  },
+  "kind": "normal",
+  "lord damage range": "2863~3198",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Logi",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "8",
+  "sell caution": false,
+  "unitName": "Logi",
+  "maxlv": "150",
+  "no": "8365",
+  "unitDisplayHomePosition_1W9CxaFK": "414,136,180,491",
+  "unitDisplayDetailPosition_6z54rgb3": "-39,70,928,746",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "68,238,485,390,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-5,-195,928,746",
+  "unitDisplaySummonPosition_KC3Jk8Br": "68,238,485,390,0",
+  "unitDisplayHpPosition_3BpHN6VD": "0,31",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "50000",
+  "sellCaution": false,
+  "effectFrames": "4:120:1,7:120:1,10:120:1,13:120:1,34:120:1,37:120:1,40:120:1,43:120:1,46:120:1,10:200741:1,10:201070:1,15:661:1,0:1510:1,40:200963:1,45:400793:1,43:500798:1,45:500798:1,47:500798:1",
+  "evofrom": "850977",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "altname": "Logi",
+  "doenter": "true",
+  "basexp": "21",
+  "animation_attack": "116",
+  "animation_idle": "68",
+  "animation_move": "6",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "10, 11, 13, 14, 16, 17, 19, 20, 40, 43, 46, 49, 52",
+  "normal_distribute": "13, 1, 10, 1, 7, 1, 5, 1, 16, 15, 12, 10, 8",
+  "normal_totaldistr": "100",
+  "bb_frames": "10, 13, 16, 17, 40, 50, 51, 60, 70, 80, 83, 86, 89, 92",
+  "bb_distribute": "8, 7, 6, 1, 8, 7, 1, 8, 7, 10, 9, 9, 10, 9",
+  "bb_totaldistr": "100",
+  "sbb_frames": "10, 13, 16, 80, 87, 94, 95, 101, 108, 115, 122, 129, 136, 137, 143, 150, 157, 164, 171",
+  "sbb_distribute": "3, 4, 3, 7, 6, 6, 1, 6, 5, 7, 6, 7, 4, 1, 6, 7, 6, 5, 10",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "10, 16, 22, 28, 34, 100, 105, 110, 115, 116, 120, 125, 126, 130, 135, 140, 145, 150, 155, 160, 165, 170, 175",
+  "ubb_distribute": "9, 8, 7, 6, 5, 6, 4, 5, 3, 1, 5, 3, 1, 5, 4, 3, 4, 3, 4, 3, 4, 3, 4",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "1",
+  "ubb_effectdelay": "1",
+  "description": "A knight from the distant world of Envylia. Logi tried to quell a rebellion planned by the remnants of Wratharis, a neighbouring country that was ruined some 20 years ago. Curiously, amidst his efforts to quench the rebellion alongside his friend Dias, he experienced a most unexpected encounter with the enemy. Cornered by the rebels who seem to wield the forbidden power of Alchemy, Logi somehow gains this power himself upon a fateful meeting with a strange young girl. With this taboo ability now at his disposal, Logi plans to continue fighting to protect the world.",
+  "summon": "I wonder if you and I will ever<br>share an unbreakable bond...<br>No, I'm sure we will!",
+  "fusion": "I want power...<br>Power to protect this world!",
+  "evolution": "I wonder if it's too much to ask for a world where we can understand each other...",
+  "hp_base": "5841",
+  "atk_base": "2153",
+  "def_base": "2181",
+  "rec_base": "1792",
+  "hp_lord": "8344",
+  "atk_lord": "3075",
+  "def_lord": "3115",
+  "rec_lord": "2560",
+  "hp_anima": "",
+  "rec_anima": "",
+  "atk_breaker": "",
+  "def_breaker": "",
+  "def_guardian": "",
+  "rec_guardian": "",
+  "def_oracle": "",
+  "rec_oracle": "",
+  "hp_bonus": "1250",
+  "atk_bonus": "400",
+  "def_bonus": "800",
+  "rec_bonus": "500",
+  "lordonly": "Y",
+  "combo_hits": "13",
+  "normaldc": "52",
+  "ls": "Light of Dawn's Boon",
+  "lsdescription": "50% boost to max HP, considerably boosts Atk relative to how high remaining HP is, considerably boosts Def relative to how low remaining HP is & 20% damage reduction for 2 turns when damage taken has exceeded certain amount",
+  "lsnote": "1% Atk per 1% HP remaining, 1% Def per 1% HP lost & reduces damage after 5,000 damage taken",
+  "bbdescription": "14 combo Light attack on all foes, greatly restores HP, negates Atk, Def, Rec reduction effects for 1 turn & hugely boosts Def for 3 turns",
+  "bbnote": "{{UnitBuffList",
+  "buff_1_proc": "1",
+  "buff_1_potency": "1500% damage modifier",
+  "buff_1_duration": "—",
+  "buff_1_target": "All enemies",
+  "buff_2_proc": "5_def",
+  "buff_2_potency": "350% boost to Def",
+  "buff_2_duration": "3 turns",
+  "buff_2_target": "All allies",
+  "buff_3_proc": "24_atk",
+  "buff_3_potency": "Boosts Atk relative to 250% of Defense",
+  "buff_3_duration": "3 turns",
+  "buff_3_target": "All allies",
+  "buff_4_proc": "17",
+  "buff_4_potency": "Negates all status ailments",
+  "buff_4_duration": "3 turns",
+  "buff_4_target": "All allies",
+  "bbtype": "Heal/Offense",
+  "bbhits": "14",
+  "bbaoe": "A",
+  "bbgauge": "27",
+  "bbdc": "14",
+  "bbmultiplier": "370",
+  "sbbdescription": "19 combo powerful Light attack on all foes, damage taken may restore HP for 3 turns, hugely boosts Atk relative to Def for 3 turns, activates Light barrier & considerably boosts Atk, Def, Rec of Light types for 3 turns",
+  "sbbnote": "{{UnitBuffList",
+  "buff_5_proc": "73",
+  "buff_5_potency": "Negates Atk, Def, and Rec reduction effects",
+  "buff_5_duration": "3 turns",
+  "buff_5_target": "All allies",
+  "buff_6_proc": "5_light_def",
+  "buff_6_potency": "100% boost to Def of Light units",
+  "buff_6_duration": "3 turns",
+  "buff_6_target": "All allies",
+  "buff_7_proc": "5_light_rec",
+  "buff_7_potency": "100% boost to Rec of Light units",
+  "buff_7_duration": "3 turns",
+  "buff_7_target": "All allies",
+  "sbbtype": "Heal/Offense",
+  "sbbhits": "19",
+  "sbbaoe": "A",
+  "sbbgauge": "28",
+  "sbbdc": "19",
+  "sbbmultiplier": "580",
   "ubbdescription": "23 combo massive Light attack on all foes, negates all status ailments for 3 turns, negates Atk, Def, Rec reduction effects for 3 turns, enormously boosts Def for 3 turns & enormously boosts Atk relative to Def for 3 turns",
   "ubbnote": "{{UnitBuffList",
   "ubbtype": "Offense",
@@ -1419,8 +1644,6 @@
   "esitem": "Sacred Shield",
   "esdescription": "30% boost to all parameters when Sacred Shield is equipped & negates critical damage and Def ignoring effects",
   "esnote": "",
-  "evofrom": "850977",
-  "evointo": "",
   "evomats1": "",
   "evomats2": "",
   "evomats3": "",
@@ -1429,130 +1652,5 @@
   "evomats6": "",
   "evomats7": "",
   "evomats8": "",
-  "evoitem": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 2153,
-      "def": 2181,
-      "hp": 5841,
-      "rec": 1792
-    },
-    "_lord": {
-      "atk": 3075,
-      "def": 3115,
-      "hp": 8344,
-      "rec": 2560
-    },
-    "anima": {
-      "atk": 3075,
-      "def": 3115,
-      "hp max": 9834,
-      "hp min": 9089,
-      "rec max": 2411,
-      "rec min": 2113
-    },
-    "breaker": {
-      "atk max": 3522,
-      "atk min": 3224,
-      "def max": 2966,
-      "def min": 2668,
-      "hp": 8344,
-      "rec": 2560
-    },
-    "guardian": {
-      "atk": 3075,
-      "def max": 3562,
-      "def min": 3264,
-      "hp": 8344,
-      "rec max": 2560,
-      "rec min": 2262
-    },
-    "oracle": {
-      "atk": 3075,
-      "def max": 3115,
-      "def min": 2817,
-      "hp": 8344,
-      "rec max": 3156,
-      "rec min": 2858
-    }
-  },
-  "leader_skill": {
-    "desc": "50% boost to max HP, considerably boosts Atk relative to how high remaining HP is, considerably boosts Def relative to how low remaining HP is & 20% damage reduction for 2 turns when damage taken has exceeded certain amount",
-    "effects": [
-      {
-        "hp% buff": 50,
-        "passive id": "1"
-      },
-      {
-        "atk% base buff": 0,
-        "atk% extra buff based on hp": 100,
-        "buff proportional to hp": "remaining",
-        "passive id": "46"
-      },
-      {
-        "buff proportional to hp": "lost",
-        "def% base buff": 0,
-        "def% extra buff based on hp": 100,
-        "passive id": "46"
-      },
-      {
-        "buff": {
-          "buff turns (36)": "1",
-          "dmg reduction% buff": 20
-        },
-        "damage threshold buff activation": 5000,
-        "passive id": "78"
-      }
-    ],
-    "id": "850978",
-    "name": "Light of Dawn's Boon"
-  },
-  "extra_skill": {
-    "desc": "30% boost to all parameters when Sacred Shield is equipped & negates critical damage and Def ignoring effects",
-    "effects": [
-      {
-        "conditions": [],
-        "ignore def resist chance%": 100,
-        "passive id": "92",
-        "passive target": "self"
-      },
-      {
-        "base crit% resist": 100,
-        "buff crit% resist": 999,
-        "conditions": [],
-        "passive id": "45",
-        "passive target": "self"
-      },
-      {
-        "atk% buff": 30,
-        "conditions": [
-          {
-            "item required": [
-              "819138"
-            ]
-          }
-        ],
-        "def% buff": 30,
-        "hp% buff": 30,
-        "passive id": "1",
-        "passive target": "self",
-        "rec% buff": 30
-      }
-    ],
-    "id": "850978",
-    "name": "Divine Warrior's Prayer",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "414,136,180,491",
-  "unitDisplayDetailPosition_6z54rgb3": "-39,70,928,746",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "68,238,485,390,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-5,-195,928,746",
-  "unitDisplaySummonPosition_KC3Jk8Br": "68,238,485,390,0",
-  "unitDisplayHpPosition_3BpHN6VD": "0,31",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "50000",
-  "sellCaution": false,
-  "effectFrames": "4:120:1,7:120:1,10:120:1,13:120:1,34:120:1,37:120:1,40:120:1,43:120:1,46:120:1,10:200741:1,10:201070:1,15:661:1,0:1510:1,40:200963:1,45:400793:1,43:500798:1,45:500798:1,47:500798:1"
+  "evoitem": ""
 }

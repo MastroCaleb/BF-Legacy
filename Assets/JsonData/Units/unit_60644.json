@@ -1,62 +1,63 @@
 {
   "id": "60644",
-  "unitName": "Penta Blade Zergel",
-  "no": "831",
-  "element": "Dark",
-  "rarity": "★★★★★",
-  "cost": "18",
-  "maxlv": "80",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "3",
-  "animation_attack": "173",
-  "animation_idle": "60",
-  "animation_move": "20",
-  "movespeed_attack": "2",
-  "movespeed_skill": "2",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "2",
-  "movetype_skill": "2",
-  "normal_frames": "16, 20, 36, 40, 86, 94, 102",
-  "normal_distribute": "20, 10, 15, 10, 20, 15, 10",
-  "normal_totaldistr": "100",
-  "bb_frames": "16, 20, 24, 36, 40, 44, 86, 90, 94, 98, 102",
-  "bb_distribute": "10, 8, 5, 10, 8, 5, 12, 6, 10, 6, 20",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "description": "A sword blacksmith from the Agni Empire. It is said that once the war with the gods began, he lost his family to the God Army. His mentality completely changed after this, leading him to research divine weapons in order to create ones capable of slaying the gods. Being a swordsman as well, he tested his countless blades by fighting in the frontlines of the battlefield. It is said that those who witnessed this battle-hungry demon fight believed he was neither Zergel the blacksmith, nor Zergel the swordsman.",
-  "summon": "I will slay all the gods.<br>That is my only wish!",
-  "fusion": "I can never erase<br>that image from my mind...<br>Curse you, gods!",
-  "evolution": "This technique...<br>All right, I'll light the furnace.<br>It's time to make a better sword.",
-  "hp_base": "3620",
-  "atk_base": "1382",
-  "def_base": "1211",
-  "rec_base": "1177",
-  "hp_lord": "5139",
-  "atk_lord": "1821",
-  "def_lord": "1611",
-  "rec_lord": "1545",
-  "hp_anima": "5732",
-  "rec_anima": "1387",
-  "atk_breaker": "1979",
-  "def_breaker": "1453",
-  "atk_guardian": "1663",
-  "def_guardian": "1769",
-  "rec_guardian": "1466",
-  "def_oracle": "1532",
-  "hp_oracle": "4902",
-  "rec_oracle": "1782",
-  "hp_bonus": "500",
-  "atk_bonus": "260",
-  "def_bonus": "140",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "7",
-  "normaldc": "14",
-  "ls": "Dynasty Power",
-  "lsdescription": "20% boost to Atk Power of all types",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 1382,
+      "def": 1211,
+      "hp": 3620,
+      "rec": 1177
+    },
+    "_lord": {
+      "atk": 1821,
+      "def": 1611,
+      "hp": 5139,
+      "rec": 1545
+    },
+    "anima": {
+      "atk": 1821,
+      "def": 1611,
+      "hp max": 5929,
+      "hp min": 5534,
+      "rec max": 1466,
+      "rec min": 1308
+    },
+    "breaker": {
+      "atk max": 2058,
+      "atk min": 1900,
+      "def max": 1532,
+      "def min": 1374,
+      "hp": 5139,
+      "rec": 1545
+    },
+    "guardian": {
+      "atk": 1821,
+      "def max": 1848,
+      "def min": 1690,
+      "hp": 5139,
+      "rec max": 1545,
+      "rec min": 1387
+    },
+    "oracle": {
+      "atk": 1821,
+      "def max": 1611,
+      "def min": 1453,
+      "hp": 5139,
+      "rec max": 1861,
+      "rec min": 1703
+    }
+  },
+  "leader_skill": {
+    "desc": "20% boost to Atk",
+    "effects": [
+      {
+        "atk% buff": 20,
+        "passive id": "1"
+      }
+    ],
+    "id": "1902",
+    "name": "Dynasty Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -311,94 +312,101 @@
     ],
     "name": "Imperial Blade: Victory Song"
   },
-  "bbdescription": "11 combo powerful Dark attack on all enemies & boosts all allies' BB gauge",
-  "bbnote": "7 BC fill",
-  "bbtype": "Support/Offense",
-  "bbhits": "11",
-  "bbaoe": "A",
-  "bbgauge": "26",
-  "bbdc": "11",
-  "bbmultiplier": "240",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "60643",
-  "evointo": "60645",
-  "evomats1": "50354",
-  "evomats2": "60123",
-  "evomats3": "60123",
-  "evomats4": "60201",
-  "evomats5": "60224",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 1382,
-      "def": 1211,
-      "hp": 3620,
-      "rec": 1177
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1821,
-      "def": 1611,
-      "hp": 5139,
-      "rec": 1545
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1821,
-      "def": 1611,
-      "hp max": 5929,
-      "hp min": 5534,
-      "rec max": 1466,
-      "rec min": 1308
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 2058,
-      "atk min": 1900,
-      "def max": 1532,
-      "def min": 1374,
-      "hp": 5139,
-      "rec": 1545
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 173
     },
-    "guardian": {
-      "atk": 1821,
-      "def max": 1848,
-      "def min": 1690,
-      "hp": 5139,
-      "rec max": 1545,
-      "rec min": 1387
+    "idle": {
+      "total number of frames": 60
     },
-    "oracle": {
-      "atk": 1821,
-      "def max": 1611,
-      "def min": 1453,
-      "hp": 5139,
-      "rec max": 1861,
-      "rec min": 1703
+    "move": {
+      "total number of frames": 20
     }
   },
-  "leader_skill": {
-    "desc": "20% boost to Atk",
-    "effects": [
-      {
-        "atk% buff": 20,
-        "passive id": "1"
-      }
+  "category": 60640,
+  "cost": "18",
+  "damage frames": {
+    "frame times": [
+      16,
+      20,
+      36,
+      40,
+      86,
+      94,
+      102
     ],
-    "id": "1902",
-    "name": "Dynasty Power"
+    "hit dmg% distribution": [
+      20,
+      10,
+      15,
+      10,
+      20,
+      15,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 7
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "dark",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 831,
+  "imp": {
+    "max atk": "260",
+    "max def": "140",
+    "max hp": "500",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "1694~1893",
+  "movement": {
+    "attack": {
+      "move speed": 2,
+      "move speed type": "4",
+      "move type": "2"
+    },
+    "skill": {
+      "move speed": 2,
+      "move speed type": "4",
+      "move type": "2"
+    }
+  },
+  "name": "Penta Blade Zergel",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Penta Blade Zergel",
+  "maxlv": "80",
+  "no": "831",
   "unitDisplayHomePosition_1W9CxaFK": "300,125,190,519",
   "unitDisplayDetailPosition_6z54rgb3": "-5,83,850,718",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "50,-16,684,639,0",
@@ -408,5 +416,105 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "10:126:1,14:126:1,30:126:1,34:126:1,80:127:1,88:127:1,96:127:1,36:600264:1,86:600273:1,94:600321:1,20:360:1,102:100010:1,86:200032:1,40:362:1"
+  "effectFrames": "10:126:1,14:126:1,30:126:1,34:126:1,80:127:1,88:127:1,96:127:1,36:600264:1,86:600273:1,94:600321:1,20:360:1,102:100010:1,86:200032:1,40:362:1",
+  "evofrom": "60643",
+  "evointo": "60645",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60123",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60201",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "173",
+  "animation_idle": "60",
+  "animation_move": "20",
+  "movespeed_attack": "2",
+  "movespeed_skill": "2",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "2",
+  "movetype_skill": "2",
+  "normal_frames": "16, 20, 36, 40, 86, 94, 102",
+  "normal_distribute": "20, 10, 15, 10, 20, 15, 10",
+  "normal_totaldistr": "100",
+  "bb_frames": "16, 20, 24, 36, 40, 44, 86, 90, 94, 98, 102",
+  "bb_distribute": "10, 8, 5, 10, 8, 5, 12, 6, 10, 6, 20",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "description": "A sword blacksmith from the Agni Empire. It is said that once the war with the gods began, he lost his family to the God Army. His mentality completely changed after this, leading him to research divine weapons in order to create ones capable of slaying the gods. Being a swordsman as well, he tested his countless blades by fighting in the frontlines of the battlefield. It is said that those who witnessed this battle-hungry demon fight believed he was neither Zergel the blacksmith, nor Zergel the swordsman.",
+  "summon": "I will slay all the gods.<br>That is my only wish!",
+  "fusion": "I can never erase<br>that image from my mind...<br>Curse you, gods!",
+  "evolution": "This technique...<br>All right, I'll light the furnace.<br>It's time to make a better sword.",
+  "hp_base": "3620",
+  "atk_base": "1382",
+  "def_base": "1211",
+  "rec_base": "1177",
+  "hp_lord": "5139",
+  "atk_lord": "1821",
+  "def_lord": "1611",
+  "rec_lord": "1545",
+  "hp_anima": "5732",
+  "rec_anima": "1387",
+  "atk_breaker": "1979",
+  "def_breaker": "1453",
+  "atk_guardian": "1663",
+  "def_guardian": "1769",
+  "rec_guardian": "1466",
+  "def_oracle": "1532",
+  "hp_oracle": "4902",
+  "rec_oracle": "1782",
+  "hp_bonus": "500",
+  "atk_bonus": "260",
+  "def_bonus": "140",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "7",
+  "normaldc": "14",
+  "ls": "Dynasty Power",
+  "lsdescription": "20% boost to Atk Power of all types",
+  "lstype": "Attack",
+  "bbdescription": "11 combo powerful Dark attack on all enemies & boosts all allies' BB gauge",
+  "bbnote": "7 BC fill",
+  "bbtype": "Support/Offense",
+  "bbhits": "11",
+  "bbaoe": "A",
+  "bbgauge": "26",
+  "bbdc": "11",
+  "bbmultiplier": "240",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "60123",
+  "evomats3": "60123",
+  "evomats4": "60201",
+  "evomats5": "60224"
 }

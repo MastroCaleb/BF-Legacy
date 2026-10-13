@@ -1,52 +1,63 @@
 {
   "id": "50144",
-  "unitName": "Brave Hero Alma",
-  "no": "439",
-  "element": "Light",
-  "rarity": "★★★★★",
-  "cost": "15",
-  "maxlv": "80",
-  "basexp": "15",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "102",
-  "animation_idle": "65",
-  "animation_move": "13",
-  "movespeed_attack": "0.0024",
-  "movespeed_skill": "0.0024",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "description": "A swordswoman from the La Veda Republic. After her travels ended and she'd saved her parents, they all went back to their hometown for the first time in a long time. However, their peaceful days were brought to an end by the invasion of the gods, at which time they left as a family to protect the people. During the intense battle Alma's mastered her sword technique, though her parents displayed even greater mastery and strength. At first Alma was surprised to see this, but eventually she just smiled as she continued her piercing attack.",
-  "summon": "What do you think?<br>I'm a quick learner, eh?<br>Are you surprised?",
-  "fusion": "It's time to train.<br>I want to be able to surprise<br>my mother and father.",
-  "evolution": "A new adventure!<br>Alright, let's get going!<br>I'm waiting!",
-  "hp_base": "2700",
-  "atk_base": "913",
-  "def_base": "870",
-  "rec_base": "1035",
-  "hp_lord": "4527",
-  "atk_lord": "1350",
-  "def_lord": "1284",
-  "rec_lord": "1536",
-  "hp_anima": "5119",
-  "rec_anima": "1378",
-  "atk_breaker": "1508",
-  "def_breaker": "1126",
-  "atk_guardian": "1192",
-  "def_guardian": "1442",
-  "hp_oracle": "3934",
-  "rec_oracle": "1694",
-  "hp_bonus": "500",
-  "atk_bonus": "260",
-  "def_bonus": "140",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "6",
-  "ls": "Pulsating Retribution",
-  "lsdescription": "BB Gauge greatly fills after each turn",
-  "lstype": "Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 913,
+      "def": 870,
+      "hp": 2700,
+      "rec": 1035
+    },
+    "_lord": {
+      "atk": 1350,
+      "def": 1284,
+      "hp": 4527,
+      "rec": 1536
+    },
+    "anima": {
+      "atk": 1350,
+      "def": 1284,
+      "hp max": 5317,
+      "hp min": 4922,
+      "rec max": 1457,
+      "rec min": 1299
+    },
+    "breaker": {
+      "atk max": 1587,
+      "atk min": 1429,
+      "def max": 1205,
+      "def min": 1047,
+      "hp": 4527,
+      "rec": 1536
+    },
+    "guardian": {
+      "atk": 1350,
+      "def max": 1521,
+      "def min": 1363,
+      "hp": 4527,
+      "rec max": 1536,
+      "rec min": 1378
+    },
+    "oracle": {
+      "atk": 1350,
+      "def max": 1284,
+      "def min": 1126,
+      "hp": 4527,
+      "rec max": 1852,
+      "rec min": 1694
+    }
+  },
+  "leader_skill": {
+    "desc": "BB Gauge greatly fills after each turn",
+    "effects": [
+      {
+        "bc fill per turn": 2,
+        "passive id": "9"
+      }
+    ],
+    "id": "1201",
+    "name": "Pulsating Retribution"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -213,91 +224,93 @@
     ],
     "name": "White Esperanza"
   },
-  "bbdescription": "8 combo Light attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "8",
-  "bbaoe": "A",
-  "bbgauge": "14",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "50143",
-  "evointo": "50145",
-  "evomats1": "50354",
-  "evomats2": "50123",
-  "evomats3": "50191",
-  "evomats4": "60144",
-  "evomats5": "60144",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 913,
-      "def": 870,
-      "hp": 2700,
-      "rec": 1035
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1350,
-      "def": 1284,
-      "hp": 4527,
-      "rec": 1536
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1350,
-      "def": 1284,
-      "hp max": 5317,
-      "hp min": 4922,
-      "rec max": 1457,
-      "rec min": 1299
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 102
     },
-    "breaker": {
-      "atk max": 1587,
-      "atk min": 1429,
-      "def max": 1205,
-      "def min": 1047,
-      "hp": 4527,
-      "rec": 1536
+    "idle": {
+      "total number of frames": 65
     },
-    "guardian": {
-      "atk": 1350,
-      "def max": 1521,
-      "def min": 1363,
-      "hp": 4527,
-      "rec max": 1536,
-      "rec min": 1378
-    },
-    "oracle": {
-      "atk": 1350,
-      "def max": 1284,
-      "def min": 1126,
-      "hp": 4527,
-      "rec max": 1852,
-      "rec min": 1694
+    "move": {
+      "total number of frames": 13
     }
   },
-  "leader_skill": {
-    "desc": "BB Gauge greatly fills after each turn",
-    "effects": [
-      {
-        "bc fill per turn": 2,
-        "passive id": "9"
-      }
+  "category": 50140,
+  "cost": "15",
+  "damage frames": {
+    "frame times": [
+      15,
+      30,
+      57,
+      60,
+      63,
+      66
     ],
-    "id": "1201",
-    "name": "Pulsating Retribution"
+    "hit dmg% distribution": [
+      15,
+      10,
+      50,
+      10,
+      10,
+      5
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 6
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "light",
+  "exp_pattern": 15,
+  "gender": "female",
+  "getting type": "farmable",
+  "guide_id": 439,
+  "imp": {
+    "max atk": "260",
+    "max def": "140",
+    "max hp": "500",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "1257~1404",
+  "movement": {
+    "attack": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    }
+  },
+  "name": "Brave Hero Alma",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Brave Hero Alma",
+  "maxlv": "80",
+  "no": "439",
   "unitDisplayHomePosition_1W9CxaFK": "160,404,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "213,-160,483,891",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "96,234,495,397,0",
@@ -307,5 +320,104 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "9:125:1,24:125:1,51:125:1,54:125:1,57:125:1,60:125:1,57:500090:1,15:500170:1"
+  "effectFrames": "9:125:1,24:125:1,51:125:1,54:125:1,57:125:1,60:125:1,57:500090:1,15:500170:1",
+  "evofrom": "50143",
+  "evointo": "50145",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50123",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 2
+    }
+  ],
+  "basexp": "15",
+  "animation_attack": "102",
+  "animation_idle": "65",
+  "animation_move": "13",
+  "movespeed_attack": "0.0024",
+  "movespeed_skill": "0.0024",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "15, 30, 57, 60, 63, 66",
+  "normal_distribute": "15, 10, 50, 10, 10, 5",
+  "normal_totaldistr": "100",
+  "bb_frames": "9, 12, 24, 25, 51, 54, 57, 60",
+  "bb_distribute": "15, 15, 10, 10, 20, 10, 10, 10",
+  "bb_totaldistr": "100",
+  "description": "A swordswoman from the La Veda Republic. After her travels ended and she'd saved her parents, they all went back to their hometown for the first time in a long time. However, their peaceful days were brought to an end by the invasion of the gods, at which time they left as a family to protect the people. During the intense battle Alma's mastered her sword technique, though her parents displayed even greater mastery and strength. At first Alma was surprised to see this, but eventually she just smiled as she continued her piercing attack.",
+  "summon": "What do you think?<br>I'm a quick learner, eh?<br>Are you surprised?",
+  "fusion": "It's time to train.<br>I want to be able to surprise<br>my mother and father.",
+  "evolution": "A new adventure!<br>Alright, let's get going!<br>I'm waiting!",
+  "hp_base": "2700",
+  "atk_base": "913",
+  "def_base": "870",
+  "rec_base": "1035",
+  "hp_lord": "4527",
+  "atk_lord": "1350",
+  "def_lord": "1284",
+  "rec_lord": "1536",
+  "hp_anima": "5120",
+  "rec_anima": "1378",
+  "atk_breaker": "1508",
+  "def_breaker": "1126",
+  "atk_guardian": "1192",
+  "def_guardian": "1442",
+  "rec_guardian": "1457",
+  "def_oracle": "1205",
+  "hp_oracle": "4290",
+  "rec_oracle": "1773",
+  "hp_bonus": "500",
+  "atk_bonus": "260",
+  "def_bonus": "140",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "6",
+  "normaldc": "18",
+  "ls": "Pulsating Retribution",
+  "lsdescription": "BB Gauge greatly fills after each turn",
+  "lsnote": "2 BC fill per turn",
+  "lstype": "Brave Burst",
+  "bbdescription": "8 combo Light attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "8",
+  "bbaoe": "A",
+  "bbgauge": "14",
+  "bbdc": "8",
+  "bbmultiplier": "110",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "50123",
+  "evomats3": "50191",
+  "evomats4": "60144",
+  "evomats5": "60144"
 }

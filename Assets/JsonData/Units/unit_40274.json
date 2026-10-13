@@ -1,52 +1,68 @@
 {
   "id": "40274",
-  "unitName": "Rebel Angel Elsel",
-  "no": "422",
-  "element": "Thunder",
-  "rarity": "★★★★★",
-  "cost": "16",
-  "maxlv": "80",
-  "basexp": "21",
-  "gender": "N",
-  "ai": "3",
-  "animation_attack": "106",
-  "animation_idle": "76",
-  "animation_move": "11",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "description": "The angel who once judged those who defied the gods. She questioned the Fiery Beast as it struggled having had its power sealed away. How the beast answered isn't precisely known, but on that day the angel decided to rebel. Having released the disastrous beast it's said that the angel was then confronted by a white beast that she then defeated, though from that point forward there is no record of the angel who was now free.",
-  "summon": "You can't control me.<br>I choose to lend you my power.<br>However, that is all I will do.",
-  "fusion": "Those with power are free.<br>Hehe, nothing feels better than<br>to fly through the sky at will.",
-  "evolution": "I know now I am free.<br>I decide myself where I land.<br>I am here because it is my will.",
-  "hp_base": "3535",
-  "atk_base": "1075",
-  "def_base": "1085",
-  "rec_base": "1110",
-  "hp_lord": "5392",
-  "atk_lord": "1519",
-  "def_lord": "1519",
-  "rec_lord": "1568",
-  "hp_anima": "5984",
-  "rec_anima": "1410",
-  "atk_breaker": "1677",
-  "def_breaker": "1361",
-  "atk_guardian": "1361",
-  "def_guardian": "1677",
-  "hp_oracle": "4799",
-  "rec_oracle": "1726",
-  "hp_bonus": "500",
-  "atk_bonus": "200",
-  "def_bonus": "200",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "7",
-  "ls": "Divine Gale",
-  "lsdescription": "Nullifies all status ailments",
-  "lstype": "Defense",
+  "stats": {
+    "_base": {
+      "atk": 1075,
+      "def": 1085,
+      "hp": 3535,
+      "rec": 1110
+    },
+    "_lord": {
+      "atk": 1519,
+      "def": 1519,
+      "hp": 5392,
+      "rec": 1568
+    },
+    "anima": {
+      "atk": 1519,
+      "def": 1519,
+      "hp max": 6182,
+      "hp min": 5787,
+      "rec max": 1489,
+      "rec min": 1331
+    },
+    "breaker": {
+      "atk max": 1756,
+      "atk min": 1598,
+      "def max": 1440,
+      "def min": 1282,
+      "hp": 5392,
+      "rec": 1568
+    },
+    "guardian": {
+      "atk": 1519,
+      "def max": 1756,
+      "def min": 1598,
+      "hp": 5392,
+      "rec max": 1568,
+      "rec min": 1410
+    },
+    "oracle": {
+      "atk": 1519,
+      "def max": 1519,
+      "def min": 1361,
+      "hp": 5392,
+      "rec max": 1884,
+      "rec min": 1726
+    }
+  },
+  "leader_skill": {
+    "desc": "Nullifies all status ailments",
+    "effects": [
+      {
+        "curse resist%": 100,
+        "injury resist%": 100,
+        "paralysis resist%": 100,
+        "passive id": "4",
+        "poison resist%": 100,
+        "sick resist%": 100,
+        "weaken resist%": 100
+      }
+    ],
+    "id": "2102",
+    "name": "Divine Gale"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -309,96 +325,101 @@
     ],
     "name": "Lost Cloud"
   },
-  "bbdescription": "10 combo powerful Thunder attack on all enemies & boost to BC drop rate for 3 turns",
-  "bbtype": "Offense",
-  "bbhits": "10",
-  "bbaoe": "A",
-  "bbgauge": "34",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "40273",
-  "evointo": "40275",
-  "evomats1": "50354",
-  "evomats2": "40133",
-  "evomats3": "60224",
-  "evomats4": "40132",
-  "evomats5": "40191",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 1075,
-      "def": 1085,
-      "hp": 3535,
-      "rec": 1110
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1519,
-      "def": 1519,
-      "hp": 5392,
-      "rec": 1568
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1519,
-      "def": 1519,
-      "hp max": 6182,
-      "hp min": 5787,
-      "rec max": 1489,
-      "rec min": 1331
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 1756,
-      "atk min": 1598,
-      "def max": 1440,
-      "def min": 1282,
-      "hp": 5392,
-      "rec": 1568
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 106
     },
-    "guardian": {
-      "atk": 1519,
-      "def max": 1756,
-      "def min": 1598,
-      "hp": 5392,
-      "rec max": 1568,
-      "rec min": 1410
+    "idle": {
+      "total number of frames": 76
     },
-    "oracle": {
-      "atk": 1519,
-      "def max": 1519,
-      "def min": 1361,
-      "hp": 5392,
-      "rec max": 1884,
-      "rec min": 1726
+    "move": {
+      "total number of frames": 11
     }
   },
-  "leader_skill": {
-    "desc": "Nullifies all status ailments",
-    "effects": [
-      {
-        "curse resist%": 100,
-        "injury resist%": 100,
-        "paralysis resist%": 100,
-        "passive id": "4",
-        "poison resist%": 100,
-        "sick resist%": 100,
-        "weaken resist%": 100
-      }
+  "category": 40270,
+  "cost": "16",
+  "damage frames": {
+    "frame times": [
+      20,
+      23,
+      62,
+      66,
+      70,
+      74,
+      78
     ],
-    "id": "2102",
-    "name": "Divine Gale"
+    "hit dmg% distribution": [
+      10,
+      10,
+      20,
+      10,
+      10,
+      20,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 7
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "thunder",
+  "exp_pattern": 20,
+  "gender": "other",
+  "getting type": "rare summon",
+  "guide_id": 422,
+  "imp": {
+    "max atk": "200",
+    "max def": "200",
+    "max hp": "500",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "1414~1579",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Rebel Angel Elsel",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Rebel Angel Elsel",
+  "maxlv": "80",
+  "no": "422",
   "unitDisplayHomePosition_1W9CxaFK": "466,162,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-125,20,940,807",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "133,183,470,460,0",
@@ -408,5 +429,110 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "14:400231:1,17:400231:1,17:400130:1,57:124:1,60:400231:1,64:400231:1,68:400231:1,38:200401:1,70:400071:1,76:290:1"
+  "effectFrames": "14:400231:1,17:400231:1,17:400130:1,57:124:1,60:400231:1,64:400231:1,68:400231:1,38:200401:1,70:400071:1,76:290:1",
+  "evofrom": "40273",
+  "evointo": "40275",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40191",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "106",
+  "animation_idle": "76",
+  "animation_move": "11",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "20, 23, 62, 66, 70, 74, 78",
+  "normal_distribute": "10, 10, 20, 10, 10, 20, 20",
+  "normal_totaldistr": "100",
+  "bb_frames": "19, 22, 53, 57, 61, 69, 77, 85, 89, 93",
+  "bb_distribute": "10, 10, 10, 10, 10, 10, 10, 10, 10, 10",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "description": "The angel who once judged those who defied the gods. She questioned the Fiery Beast as it struggled having had its power sealed away. How the beast answered isn't precisely known, but on that day the angel decided to rebel. Having released the disastrous beast it's said that the angel was then confronted by a white beast that she then defeated, though from that point forward there is no record of the angel who was now free.",
+  "summon": "You can't control me.<br>I choose to lend you my power.<br>However, that is all I will do.",
+  "fusion": "Those with power are free.<br>Hehe, nothing feels better than<br>to fly through the sky at will.",
+  "evolution": "I know now I am free.<br>I decide myself where I land.<br>I am here because it is my will.",
+  "hp_base": "3535",
+  "atk_base": "1075",
+  "def_base": "1085",
+  "rec_base": "1110",
+  "hp_lord": "5392",
+  "atk_lord": "1519",
+  "def_lord": "1519",
+  "rec_lord": "1568",
+  "hp_anima": "5985",
+  "rec_anima": "1410",
+  "atk_breaker": "1677",
+  "def_breaker": "1361",
+  "atk_guardian": "1361",
+  "def_guardian": "1677",
+  "rec_guardian": "1489",
+  "def_oracle": "1440",
+  "hp_oracle": "5155",
+  "rec_oracle": "1805",
+  "hp_bonus": "500",
+  "atk_bonus": "200",
+  "def_bonus": "200",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "7",
+  "normaldc": "14",
+  "ls": "Divine Gale",
+  "lsdescription": "Nullifies all status ailments",
+  "lstype": "Defense",
+  "bbdescription": "10 combo powerful Thunder attack on all enemies & boost to BC drop rate for 3 turns",
+  "bbnote": "22% boost",
+  "bbtype": "Offense",
+  "bbhits": "10",
+  "bbaoe": "A",
+  "bbgauge": "28",
+  "bbdc": "10",
+  "bbmultiplier": "220",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "40133",
+  "evomats3": "60224",
+  "evomats4": "40132",
+  "evomats5": "40191"
 }

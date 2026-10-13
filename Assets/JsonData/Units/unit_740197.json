@@ -1,67 +1,124 @@
 {
   "id": "740197",
-  "unitName": "Benimaru Nikaido (EU, Dream)",
-  "disam": "Benimaru Nikaido",
-  "altname": "Benimaru Nikaido",
-  "idalt": "",
-  "has_altart": "",
-  "doenter": "true",
-  "no": "7191",
-  "element": "Thunder",
-  "rarity": "Dream",
-  "cost": "48",
-  "maxlv": "150",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "238",
-  "animation_idle": "113",
-  "animation_move": "8",
-  "movespeed_attack": "0.0033",
-  "speedtype_attack": "3",
-  "movetype_attack": "1",
-  "movespeed_skill": "0.0033",
-  "speedtype_skill": "3",
-  "movetype_skill": "1",
-  "description": "",
-  "summon": "",
-  "fusion": "",
-  "evolution": "",
-  "hp_base": "5084",
-  "atk_base": "2038",
-  "def_base": "2038",
-  "rec_base": "2038",
-  "hp_lord": "7263",
-  "atk_lord": "2912",
-  "def_lord": "2912",
-  "rec_lord": "2912",
-  "hp_anima": "8380",
-  "rec_anima": "2614",
-  "atk_breaker": "3210",
-  "def_breaker": "2614",
-  "def_guardian": "3210",
-  "rec_guardian": "2912",
-  "def_oracle": "2912",
-  "rec_oracle": "3210",
-  "hp_bonus": "1500",
-  "atk_bonus": "600",
-  "def_bonus": "600",
-  "rec_bonus": "600",
-  "lordonly": "",
-  "evofrom": "740196",
-  "evointo": "",
-  "normal_frames": "30, 32, 34, 90, 92, 94, 96, 98",
-  "normal_distribute": "20, 20, 10, 10, 10, 10, 10, 10",
-  "normal_totaldistr": "100",
-  "combo_hits": "8",
-  "normaldc": "56",
-  "ls": "Lightning Mayhem",
-  "lsdescription": "Boosts all parameters (40%) & raises normal hit amount (100% & -50% DMG) & reduce BB Cost by 25% & adds chance of normal attacks hitting all foes (30%, 50% penalty)",
-  "lsnote": "",
-  "es": "Iaigeri",
-  "esdescription": "Raises normal hit amount (100% & 100% DMG) & boosts OD gauge fill rate (200%) for 1 turn when damage taken has exceeded certain amount (5000) & adds Thunder element to attack for 3 turns to BB/SBB",
-  "esitem": "",
-  "esnote": "",
+  "stats": {
+    "_base": {
+      "atk": 2038,
+      "def": 2038,
+      "hp": 5084,
+      "rec": 2038
+    },
+    "_lord": {
+      "atk": 2912,
+      "def": 2912,
+      "hp": 7263,
+      "rec": 2912
+    },
+    "anima": {
+      "atk": 2912,
+      "def": 2912,
+      "hp max": 8753,
+      "hp min": 8008,
+      "rec max": 2763,
+      "rec min": 2465
+    },
+    "breaker": {
+      "atk max": 3359,
+      "atk min": 3061,
+      "def max": 2763,
+      "def min": 2465,
+      "hp": 7263,
+      "rec": 2912
+    },
+    "guardian": {
+      "atk max": 2763,
+      "atk min": 2465,
+      "def max": 3359,
+      "def min": 3061,
+      "hp": 7263,
+      "rec": 2912
+    },
+    "oracle": {
+      "atk": 2912,
+      "def": 2912,
+      "hp max": 6518,
+      "hp min": 5773,
+      "rec max": 3359,
+      "rec min": 3061
+    }
+  },
+  "leader_skill": {
+    "desc": "Boosts all parameters (40%) & raises normal hit amount (100% & -50% DMG) & reduce BB Cost by 25% & adds chance of normal attacks hitting all foes (30%, 50% penalty)",
+    "effects": [
+      {
+        "atk% buff": 40,
+        "def% buff": 40,
+        "hp% buff": 40,
+        "passive id": "1",
+        "rec% buff": 40
+      },
+      {
+        "extra hits dmg%": -50,
+        "hit increase/hit": 1,
+        "passive id": "37"
+      },
+      {
+        "passive id": "48",
+        "reduced bb bc cost%": 25
+      },
+      {
+        "aoe atk inc%": -50,
+        "chance to aoe": 30,
+        "passive id": "96"
+      }
+    ],
+    "id": "740197",
+    "name": "Lightning Mayhem"
+  },
+  "extra_skill": {
+    "desc": "Raises normal hit amount (100% & 100% DMG) & boosts OD gauge fill rate (200%) for 1 turn when damage taken has exceeded certain amount (5000) & adds Thunder element to attack for 3 turns to BB/SBB",
+    "effects": [
+      {
+        "conditions": [],
+        "hit increase/hit": 1,
+        "passive id": "37",
+        "passive target": "self"
+      },
+      {
+        "buff": {
+          "buff turns (132)": "1",
+          "unknown buff id": "132",
+          "unknown buff params": "200&1&0"
+        },
+        "conditions": [],
+        "damage threshold buff activation": 5000,
+        "passive id": "78",
+        "passive target": "self"
+      },
+      {
+        "conditions": [],
+        "passive id": "66",
+        "passive target": "self",
+        "trigger on bb": true,
+        "trigger on sbb": true,
+        "triggered effect": [
+          {
+            "effect delay time(ms)/frame": "0.0/0",
+            "elements added": [
+              "thunder"
+            ],
+            "elements added turns": 3,
+            "proc id": "30",
+            "target area": "aoe",
+            "target type": "party"
+          }
+        ]
+      }
+    ],
+    "id": "740197",
+    "name": "Iaigeri",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -540,43 +597,6 @@
     ],
     "name": "SDM: Rai-Kou Ken I"
   },
-  "bbdescription": "16 combo powerful Thunder attack on all foes & raises normal hit amount (100% & 100% DMG) for 3 turns & boosts own ATK (200%) for 3 turns & chance of inflicting injury, weakness and paralysis (85%)",
-  "bbnote": "{{UnitBuffList",
-  "buff_1_proc": "1",
-  "buff_1_potency": "1400% damage modifier",
-  "buff_1_duration": "—",
-  "buff_1_target": "All enemies",
-  "buff_2_proc": "26",
-  "buff_2_potency": "+3 to each normal hit (200% extra hit damage modifier)",
-  "buff_2_duration": "3 turns",
-  "buff_2_target": "All allies",
-  "buff_3_proc": "5_atk",
-  "buff_3_potency": "300% boost to Atk",
-  "buff_3_duration": "3 turns",
-  "buff_3_target": "All allies",
-  "buff_4_proc": "43",
-  "buff_4_potency": "Fills 50% of the OD gauge",
-  "buff_4_duration": "—",
-  "buff_4_target": "—",
-  "buff_5_proc": "94",
-  "buff_5_potency": "100% chance of attacking all enemies with normal attack (-50% AoE damage modifier)",
-  "buff_5_duration": "3 turns",
-  "buff_5_target": "All allies",
-  "buff_6_proc": "11_weaken",
-  "buff_6_potency": "85% chance of inflicting Weak",
-  "buff_6_duration": "3 turns",
-  "buff_6_target": "All enemies",
-  "bbtype": "Offense",
-  "bbgauge": "21",
-  "bb_frames": "30, 32, 34, 36, 38, 40, 42, 90, 92, 94, 96, 98, 100, 102, 104, 106",
-  "bb_distribute": "5, 5, 5, 10, 10, 5, 5, 10, 10, 5, 5, 5, 5, 5, 5, 5",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "3",
-  "bbhits": "16",
-  "bbaoe": "A",
-  "bbdc": "16",
-  "bbmultiplier": "400",
-  "bb_hpscale": "",
   "sbb": {
     "damage frames": [
       {
@@ -1157,19 +1177,6 @@
     ],
     "name": "SDM: Rai-Kou Ken II"
   },
-  "sbbdescription": "21 combo Thunder attack on all foes & Raises normal hit amount (200% & 100% DMG) for 3 turns & Boosts BB gauge when attacked (4-7 BC) for 3 turns & Boosts OD gauge (8%) & Normal attacks hit all foes (50% penalty) for 3 turns",
-  "sbbnote": "{{UnitBuffList",
-  "sbbtype": "Offense",
-  "sbbgauge": "26",
-  "sbb_frames": "30, 32, 34, 36, 38, 40, 42, 44, 46, 90, 92, 94, 96, 98, 100, 102, 104, 106, 108, 110, 112",
-  "sbb_distribute": "5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 3, 2",
-  "sbb_totaldistr": "100",
-  "sbb_effectdelay": "3",
-  "sbbhits": "21",
-  "sbbaoe": "A",
-  "sbbdc": "21",
-  "sbbmultiplier": "600",
-  "sbb_hpscale": "",
   "ubb": {
     "damage frames": [
       {
@@ -1336,6 +1343,211 @@
     ],
     "name": "SDM: Rai-Kou Ken MAX"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 238
+    },
+    "idle": {
+      "total number of frames": 113
+    },
+    "move": {
+      "total number of frames": 8
+    }
+  },
+  "cost": "48",
+  "damage frames": {
+    "frame times": [
+      30,
+      32,
+      34,
+      90,
+      92,
+      94,
+      96,
+      98
+    ],
+    "hit dmg% distribution": [
+      20,
+      20,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 8
+  },
+  "drop check count": 7,
+  "element": "thunder",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 7191,
+  "imp": {
+    "max atk": "600",
+    "max def": "600",
+    "max hp": "1500",
+    "max rec": "600"
+  },
+  "kind": "normal",
+  "lord damage range": "2711~3028",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Benimaru Nikaido",
+  "rarity": "8",
+  "sell caution": false,
+  "unitName": "Benimaru Nikaido",
+  "maxlv": "150",
+  "no": "7191",
+  "unitDisplayHomePosition_1W9CxaFK": null,
+  "unitDisplayDetailPosition_6z54rgb3": null,
+  "unitDisplayConfirmImagePosition_MYK1fq6c": null,
+  "unitDisplayCutInImagePosition_7hLR6pDN": null,
+  "unitDisplaySummonPosition_KC3Jk8Br": null,
+  "unitDisplayHpPosition_3BpHN6VD": null,
+  "unitDisplayCursorPosition": null,
+  "sellPrice": "",
+  "sellCaution": false,
+  "effectFrames": "",
+  "evofrom": "740196",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "disam": "Benimaru Nikaido",
+  "altname": "Benimaru Nikaido",
+  "idalt": "",
+  "has_altart": "",
+  "doenter": "true",
+  "basexp": "21",
+  "animation_attack": "238",
+  "animation_idle": "113",
+  "animation_move": "8",
+  "movespeed_attack": "0.0033",
+  "speedtype_attack": "3",
+  "movetype_attack": "1",
+  "movespeed_skill": "0.0033",
+  "speedtype_skill": "3",
+  "movetype_skill": "1",
+  "description": "",
+  "summon": "",
+  "fusion": "",
+  "evolution": "",
+  "hp_base": "5084",
+  "atk_base": "2038",
+  "def_base": "2038",
+  "rec_base": "2038",
+  "hp_lord": "7263",
+  "atk_lord": "2912",
+  "def_lord": "2912",
+  "rec_lord": "2912",
+  "hp_anima": "8380",
+  "rec_anima": "2614",
+  "atk_breaker": "3210",
+  "def_breaker": "2614",
+  "def_guardian": "3210",
+  "rec_guardian": "2912",
+  "def_oracle": "2912",
+  "rec_oracle": "3210",
+  "hp_bonus": "1500",
+  "atk_bonus": "600",
+  "def_bonus": "600",
+  "rec_bonus": "600",
+  "lordonly": "",
+  "normal_frames": "30, 32, 34, 90, 92, 94, 96, 98",
+  "normal_distribute": "20, 20, 10, 10, 10, 10, 10, 10",
+  "normal_totaldistr": "100",
+  "combo_hits": "8",
+  "normaldc": "56",
+  "ls": "Lightning Mayhem",
+  "lsdescription": "Boosts all parameters (40%) & raises normal hit amount (100% & -50% DMG) & reduce BB Cost by 25% & adds chance of normal attacks hitting all foes (30%, 50% penalty)",
+  "lsnote": "",
+  "es": "Iaigeri",
+  "esdescription": "Raises normal hit amount (100% & 100% DMG) & boosts OD gauge fill rate (200%) for 1 turn when damage taken has exceeded certain amount (5000) & adds Thunder element to attack for 3 turns to BB/SBB",
+  "esitem": "",
+  "esnote": "",
+  "bbdescription": "16 combo powerful Thunder attack on all foes & raises normal hit amount (100% & 100% DMG) for 3 turns & boosts own ATK (200%) for 3 turns & chance of inflicting injury, weakness and paralysis (85%)",
+  "bbnote": "{{UnitBuffList",
+  "buff_1_proc": "1",
+  "buff_1_potency": "1400% damage modifier",
+  "buff_1_duration": "—",
+  "buff_1_target": "All enemies",
+  "buff_2_proc": "26",
+  "buff_2_potency": "+3 to each normal hit (200% extra hit damage modifier)",
+  "buff_2_duration": "3 turns",
+  "buff_2_target": "All allies",
+  "buff_3_proc": "5_atk",
+  "buff_3_potency": "300% boost to Atk",
+  "buff_3_duration": "3 turns",
+  "buff_3_target": "All allies",
+  "buff_4_proc": "43",
+  "buff_4_potency": "Fills 50% of the OD gauge",
+  "buff_4_duration": "—",
+  "buff_4_target": "—",
+  "buff_5_proc": "94",
+  "buff_5_potency": "100% chance of attacking all enemies with normal attack (-50% AoE damage modifier)",
+  "buff_5_duration": "3 turns",
+  "buff_5_target": "All allies",
+  "buff_6_proc": "11_weaken",
+  "buff_6_potency": "85% chance of inflicting Weak",
+  "buff_6_duration": "3 turns",
+  "buff_6_target": "All enemies",
+  "bbtype": "Offense",
+  "bbgauge": "21",
+  "bb_frames": "30, 32, 34, 36, 38, 40, 42, 90, 92, 94, 96, 98, 100, 102, 104, 106",
+  "bb_distribute": "5, 5, 5, 10, 10, 5, 5, 10, 10, 5, 5, 5, 5, 5, 5, 5",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "3",
+  "bbhits": "16",
+  "bbaoe": "A",
+  "bbdc": "16",
+  "bbmultiplier": "400",
+  "bb_hpscale": "",
+  "sbbdescription": "21 combo Thunder attack on all foes & Raises normal hit amount (200% & 100% DMG) for 3 turns & Boosts BB gauge when attacked (4-7 BC) for 3 turns & Boosts OD gauge (8%) & Normal attacks hit all foes (50% penalty) for 3 turns",
+  "sbbnote": "{{UnitBuffList",
+  "sbbtype": "Offense",
+  "sbbgauge": "26",
+  "sbb_frames": "30, 32, 34, 36, 38, 40, 42, 44, 46, 90, 92, 94, 96, 98, 100, 102, 104, 106, 108, 110, 112",
+  "sbb_distribute": "5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 3, 2",
+  "sbb_totaldistr": "100",
+  "sbb_effectdelay": "3",
+  "sbbhits": "21",
+  "sbbaoe": "A",
+  "sbbdc": "21",
+  "sbbmultiplier": "600",
+  "sbb_hpscale": "",
   "ubbdescription": "26 combo Thunder attack on all foes & Raises normal hit amount (300% & 100% DMG) for 3 turns & Boosts ATK (300%) for 3 turns & Boosts OD gauge (50%) & Normal attacks hit all foes (50% penalty) for 3 turns",
   "ubbnote": "{{UnitBuffList",
   "ubbtype": "Offense",
@@ -1387,134 +1599,5 @@
   "notes": "",
   "incorrectinfo": "",
   "addcat": "",
-  "addcatname": "",
-  "stats": {
-    "_base": {
-      "atk": 2038,
-      "def": 2038,
-      "hp": 5084,
-      "rec": 2038
-    },
-    "_lord": {
-      "atk": 2912,
-      "def": 2912,
-      "hp": 7263,
-      "rec": 2912
-    },
-    "anima": {
-      "atk": 2912,
-      "def": 2912,
-      "hp max": 8753,
-      "hp min": 8008,
-      "rec max": 2763,
-      "rec min": 2465
-    },
-    "breaker": {
-      "atk max": 3359,
-      "atk min": 3061,
-      "def max": 2763,
-      "def min": 2465,
-      "hp": 7263,
-      "rec": 2912
-    },
-    "guardian": {
-      "atk max": 2763,
-      "atk min": 2465,
-      "def max": 3359,
-      "def min": 3061,
-      "hp": 7263,
-      "rec": 2912
-    },
-    "oracle": {
-      "atk": 2912,
-      "def": 2912,
-      "hp max": 6518,
-      "hp min": 5773,
-      "rec max": 3359,
-      "rec min": 3061
-    }
-  },
-  "leader_skill": {
-    "desc": "Boosts all parameters (40%) & raises normal hit amount (100% & -50% DMG) & reduce BB Cost by 25% & adds chance of normal attacks hitting all foes (30%, 50% penalty)",
-    "effects": [
-      {
-        "atk% buff": 40,
-        "def% buff": 40,
-        "hp% buff": 40,
-        "passive id": "1",
-        "rec% buff": 40
-      },
-      {
-        "extra hits dmg%": -50,
-        "hit increase/hit": 1,
-        "passive id": "37"
-      },
-      {
-        "passive id": "48",
-        "reduced bb bc cost%": 25
-      },
-      {
-        "aoe atk inc%": -50,
-        "chance to aoe": 30,
-        "passive id": "96"
-      }
-    ],
-    "id": "740197",
-    "name": "Lightning Mayhem"
-  },
-  "extra_skill": {
-    "desc": "Raises normal hit amount (100% & 100% DMG) & boosts OD gauge fill rate (200%) for 1 turn when damage taken has exceeded certain amount (5000) & adds Thunder element to attack for 3 turns to BB/SBB",
-    "effects": [
-      {
-        "conditions": [],
-        "hit increase/hit": 1,
-        "passive id": "37",
-        "passive target": "self"
-      },
-      {
-        "buff": {
-          "buff turns (132)": "1",
-          "unknown buff id": "132",
-          "unknown buff params": "200&1&0"
-        },
-        "conditions": [],
-        "damage threshold buff activation": 5000,
-        "passive id": "78",
-        "passive target": "self"
-      },
-      {
-        "conditions": [],
-        "passive id": "66",
-        "passive target": "self",
-        "trigger on bb": true,
-        "trigger on sbb": true,
-        "triggered effect": [
-          {
-            "effect delay time(ms)/frame": "0.0/0",
-            "elements added": [
-              "thunder"
-            ],
-            "elements added turns": 3,
-            "proc id": "30",
-            "target area": "aoe",
-            "target type": "party"
-          }
-        ]
-      }
-    ],
-    "id": "740197",
-    "name": "Iaigeri",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": null,
-  "unitDisplayDetailPosition_6z54rgb3": null,
-  "unitDisplayConfirmImagePosition_MYK1fq6c": null,
-  "unitDisplayCutInImagePosition_7hLR6pDN": null,
-  "unitDisplaySummonPosition_KC3Jk8Br": null,
-  "unitDisplayHpPosition_3BpHN6VD": null,
-  "unitDisplayCursorPosition": null,
-  "sellPrice": "",
-  "sellCaution": false,
-  "effectFrames": ""
+  "addcatname": ""
 }

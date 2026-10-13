@@ -1,52 +1,63 @@
 {
   "id": "10215",
-  "unitName": "Drake Angel Aisha",
-  "no": "482",
-  "element": "Fire",
-  "rarity": "★★★★★★",
-  "cost": "24",
-  "maxlv": "100",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "232",
-  "animation_idle": "67",
-  "animation_move": "13",
-  "movespeed_attack": "0.0015",
-  "movespeed_skill": "0.0015",
-  "speedtype_attack": "5",
-  "speedtype_skill": "5",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "description": "A dragoon from Julep Village located in Amdahl, she went back to her village to protect it from the gods' attack, only to find it half destroyed. Challenging the gods by herself, she soon reached her limits, and came to the realization that her life was over. However, just then a single fire dragon flew down from the sky. It placed her on its back as it laid waste to the god army with its flames. It's said that as she was crying, Aisha smiled at the dragon, with which she released an immense amount of power.",
-  "summon": "There's nothing to fear!<br>My friend and I are <br>here to help!",
-  "fusion": "Effort is never wasted!<br>Even when you fail, <br>it always turns into something!",
-  "evolution": "Let's flap our wings!<br>The sky is ours!<br>You can have some, too!",
-  "hp_base": "4510",
-  "atk_base": "1399",
-  "def_base": "1340",
-  "rec_base": "1379",
-  "hp_lord": "6071",
-  "atk_lord": "1825",
-  "def_lord": "1602",
-  "rec_lord": "1688",
-  "hp_anima": "6813",
-  "rec_anima": "1490",
-  "atk_breaker": "2023",
-  "def_breaker": "1404",
-  "atk_guardian": "1627",
-  "def_guardian": "1800",
-  "hp_oracle": "5328",
-  "rec_oracle": "1886",
-  "hp_bonus": "750",
-  "atk_bonus": "300",
-  "def_bonus": "300",
-  "rec_bonus": "300",
-  "lordonly": "",
-  "combo_hits": "6",
-  "ls": "Pulsating Ascension",
-  "lsdescription": "BB gauge fills hugely after each turn",
-  "lstype": "Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 1399,
+      "def": 1340,
+      "hp": 4510,
+      "rec": 1379
+    },
+    "_lord": {
+      "atk": 1825,
+      "def": 1602,
+      "hp": 6071,
+      "rec": 1688
+    },
+    "anima": {
+      "atk": 1825,
+      "def": 1602,
+      "hp max": 7061,
+      "hp min": 6566,
+      "rec max": 1589,
+      "rec min": 1391
+    },
+    "breaker": {
+      "atk max": 2122,
+      "atk min": 1924,
+      "def max": 1503,
+      "def min": 1305,
+      "hp": 6071,
+      "rec": 1688
+    },
+    "guardian": {
+      "atk": 1825,
+      "def max": 1899,
+      "def min": 1701,
+      "hp": 6071,
+      "rec max": 1688,
+      "rec min": 1490
+    },
+    "oracle": {
+      "atk": 1825,
+      "def max": 1602,
+      "def min": 1404,
+      "hp": 6071,
+      "rec max": 2084,
+      "rec min": 1886
+    }
+  },
+  "leader_skill": {
+    "desc": "BB gauge fills hugely after each turn",
+    "effects": [
+      {
+        "bc fill per turn": 4,
+        "passive id": "9"
+      }
+    ],
+    "id": "1202",
+    "name": "Pulsating Ascension"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -221,11 +232,6 @@
     ],
     "name": "Dragon Fall"
   },
-  "bbdescription": "12 combo powerful Fire attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "12",
-  "bbaoe": "A",
-  "bbgauge": "28",
   "sbb": {
     "damage frames": [
       {
@@ -508,86 +514,92 @@
     ],
     "name": "Dragon Wake"
   },
-  "sbbdescription": "15 combo powerful Fire attack on all enemies & boosts critical hit rate for 3 turns",
-  "sbbtype": "Support/Offense",
-  "sbbhits": "15",
-  "sbbaoe": "A",
-  "sbbgauge": "20",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "10214",
-  "evointo": "",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 1399,
-      "def": 1340,
-      "hp": 4510,
-      "rec": 1379
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1825,
-      "def": 1602,
-      "hp": 6071,
-      "rec": 1688
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1825,
-      "def": 1602,
-      "hp max": 7061,
-      "hp min": 6566,
-      "rec max": 1589,
-      "rec min": 1391
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 232
     },
-    "breaker": {
-      "atk max": 2122,
-      "atk min": 1924,
-      "def max": 1503,
-      "def min": 1305,
-      "hp": 6071,
-      "rec": 1688
+    "idle": {
+      "total number of frames": 67
     },
-    "guardian": {
-      "atk": 1825,
-      "def max": 1899,
-      "def min": 1701,
-      "hp": 6071,
-      "rec max": 1688,
-      "rec min": 1490
-    },
-    "oracle": {
-      "atk": 1825,
-      "def max": 1602,
-      "def min": 1404,
-      "hp": 6071,
-      "rec max": 2084,
-      "rec min": 1886
+    "move": {
+      "total number of frames": 13
     }
   },
-  "leader_skill": {
-    "desc": "BB gauge fills hugely after each turn",
-    "effects": [
-      {
-        "bc fill per turn": 4,
-        "passive id": "9"
-      }
+  "category": 10210,
+  "cost": "24",
+  "damage frames": {
+    "frame times": [
+      57,
+      61,
+      65,
+      69,
+      73,
+      108
     ],
-    "id": "1202",
-    "name": "Pulsating Ascension"
+    "hit dmg% distribution": [
+      10,
+      10,
+      10,
+      10,
+      10,
+      50
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 6
   },
-  "extra_skill": {},
+  "drop check count": 4,
+  "element": "fire",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 482,
+  "imp": {
+    "max atk": "300",
+    "max def": "300",
+    "max hp": "750",
+    "max rec": "300"
+  },
+  "kind": "normal",
+  "lord damage range": "1699~1898",
+  "movement": {
+    "attack": {
+      "move speed": 0.0015,
+      "move speed type": "5",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0015,
+      "move speed type": "5",
+      "move type": "1"
+    }
+  },
+  "name": "Drake Angel Aisha",
+  "rarity": "6",
+  "sell caution": false,
+  "unitName": "Drake Angel Aisha",
+  "maxlv": "100",
+  "no": "482",
   "unitDisplayHomePosition_1W9CxaFK": "430,283,148,404",
   "unitDisplayDetailPosition_6z54rgb3": "5,-14,1053,1063",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "96,234,495,397,0",
@@ -597,5 +609,91 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "8000",
   "sellCaution": false,
-  "effectFrames": "57:150:1,65:150:1,55:600311:2,102:127:1,108:150:2,90:100011:1,108:100192:1,115:100010:1"
+  "effectFrames": "57:150:1,65:150:1,55:600311:2,102:127:1,108:150:2,90:100011:1,108:100192:1,115:100010:1",
+  "evofrom": "10214",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "21",
+  "animation_attack": "232",
+  "animation_idle": "67",
+  "animation_move": "13",
+  "movespeed_attack": "0.0015",
+  "movespeed_skill": "0.0015",
+  "speedtype_attack": "5",
+  "speedtype_skill": "5",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "57, 61, 65, 69, 73, 108",
+  "normal_distribute": "10, 10, 10, 10, 10, 50",
+  "normal_totaldistr": "100",
+  "bb_frames": "57, 61, 65, 69, 73, 77, 81, 85, 89, 93, 108, 112",
+  "bb_distribute": "5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 30, 20",
+  "bb_totaldistr": "100",
+  "sbb_frames": "56, 60, 64, 68, 72, 76, 80, 84, 88, 92, 107, 113, 119, 125, 129",
+  "sbb_distribute": "5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 30, 10, 10, 10, 10",
+  "sbb_totaldistr": "120",
+  "sbb_effectdelay": "1",
+  "description": "A dragoon from Julep Village located in Amdahl, she went back to her village to protect it from the gods' attack, only to find it half destroyed. Challenging the gods by herself, she soon reached her limits, and came to the realization that her life was over. However, just then a single fire dragon flew down from the sky. It placed her on its back as it laid waste to the god army with its flames. It's said that as she was crying, Aisha smiled at the dragon, with which she released an immense amount of power.",
+  "summon": "There's nothing to fear!<br>My friend and I are <br>here to help!",
+  "fusion": "Effort is never wasted!<br>Even when you fail, <br>it always turns into something!",
+  "evolution": "Let's flap our wings!<br>The sky is ours!<br>You can have some, too!",
+  "hp_base": "4510",
+  "atk_base": "1399",
+  "def_base": "1340",
+  "rec_base": "1379",
+  "hp_lord": "6071",
+  "atk_lord": "1825",
+  "def_lord": "1602",
+  "rec_lord": "1688",
+  "hp_anima": "6814",
+  "rec_anima": "1490",
+  "atk_breaker": "2023",
+  "def_breaker": "1404",
+  "atk_guardian": "1627",
+  "def_guardian": "1800",
+  "rec_guardian": "1589",
+  "def_oracle": "1503",
+  "hp_oracle": "5774",
+  "rec_oracle": "1985",
+  "hp_bonus": "750",
+  "atk_bonus": "300",
+  "def_bonus": "300",
+  "rec_bonus": "300",
+  "lordonly": "",
+  "combo_hits": "6",
+  "normaldc": "24",
+  "ls": "Pulsating Ascension",
+  "lsdescription": "BB gauge fills hugely after each turn",
+  "lsnote": "4 BC fill per turn",
+  "lstype": "Brave Burst",
+  "bbdescription": "12 combo powerful Fire attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "12",
+  "bbaoe": "A",
+  "bbgauge": "26",
+  "bbdc": "12",
+  "bbmultiplier": "230",
+  "sbbdescription": "15 combo powerful Fire attack on all enemies & boosts critical hit rate for 3 turns",
+  "sbbnote": "45% boost",
+  "sbbtype": "Support/Offense",
+  "sbbhits": "15",
+  "sbbaoe": "A",
+  "sbbgauge": "20",
+  "sbbdc": "15",
+  "sbbmultiplier": "440",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "",
+  "evomats2": "",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": "",
+  "evoitem": ""
 }

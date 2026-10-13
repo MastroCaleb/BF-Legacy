@@ -1,60 +1,63 @@
 {
   "id": "10152",
-  "unitName": "Lancia",
-  "freetext": ":''For other uses, see Lancia (disambiguation)''",
-  "no": "221",
-  "element": "Fire",
-  "rarity": "★★★",
-  "cost": "5",
-  "maxlv": "40",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "5",
-  "animation_attack": "120",
-  "animation_idle": "44",
-  "animation_move": "13",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "4",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "3",
-  "normal_frames": "35, 75",
-  "normal_distribute": "40, 60",
-  "normal_totaldistr": "100",
-  "description": "Young girl and owner of Lan-Lan, a famous diner in the Agni Empire. Boasting plentiful portions and dishes cooked to perfection, Lan-Lan was an instant hit with customers. Never one to rest on her laurels, however, Lancia set out on a trip in search for new and exotic ingredients to add to her repertoire. It’s said that whenever she came across monsters on her travels, she could be heard humming as she calmly fired up her frying pan.",
-  "summon": "Succulent, mouth-watering vegetables!<br>Make lunchtime, Lan-Lan Time!<br>...Hmm? No advertising, you say!?",
-  "fusion": "There’s nothing like a slap-up meal<br>to keep the body in tip-top shape!<br>Who’s for seconds?",
-  "evolution": "",
-  "hp_base": "2050",
-  "atk_base": "500",
-  "def_base": "620",
-  "rec_base": "730",
-  "hp_lord": "3170",
-  "atk_lord": "650",
-  "def_lord": "880",
-  "rec_lord": "1241",
-  "hp_anima": "3463",
-  "rec_anima": "1163",
-  "atk_breaker": "728",
-  "def_breaker": "802",
-  "atk_guardian": "572",
-  "def_guardian": "958",
-  "rec_guardian": "1202",
-  "def_oracle": "841",
-  "hp_oracle": "3053",
-  "rec_oracle": "1358",
-  "hp_bonus": "300",
-  "atk_bonus": "120",
-  "def_bonus": "120",
-  "rec_bonus": "120",
-  "lordonly": "",
-  "combo_hits": "2",
-  "normaldc": "10",
-  "ls": "Pure Light",
-  "lsdescription": "Small boost in Heart Crystals produced during Spark",
-  "lsnote": "20% boost",
-  "lstype": "Recovery",
+  "stats": {
+    "_base": {
+      "atk": 500,
+      "def": 620,
+      "hp": 2050,
+      "rec": 730
+    },
+    "_lord": {
+      "atk": 650,
+      "def": 880,
+      "hp": 3170,
+      "rec": 1241
+    },
+    "anima": {
+      "atk": 650,
+      "def": 880,
+      "hp max": 3560,
+      "hp min": 3365,
+      "rec max": 1202,
+      "rec min": 1124
+    },
+    "breaker": {
+      "atk max": 767,
+      "atk min": 689,
+      "def max": 841,
+      "def min": 763,
+      "hp": 3170,
+      "rec": 1241
+    },
+    "guardian": {
+      "atk": 650,
+      "def max": 997,
+      "def min": 919,
+      "hp": 3170,
+      "rec max": 1241,
+      "rec min": 1163
+    },
+    "oracle": {
+      "atk": 650,
+      "def max": 880,
+      "def min": 802,
+      "hp": 3170,
+      "rec max": 1397,
+      "rec min": 1319
+    }
+  },
+  "leader_skill": {
+    "desc": "Small boost in Heart Crystals produced during Spark",
+    "effects": [
+      {
+        "hc drop% for spark": 20,
+        "passive id": "31"
+      }
+    ],
+    "id": "1500",
+    "name": "Pure Light"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -319,93 +322,85 @@
     ],
     "name": "Lovely Cooking"
   },
-  "bbdescription": "Recovers HP for all allies and Boosts ATK for 3 Turns",
-  "bbnote": "Heals (1060~1460 + 25% of healer Rec) HP, 25% boost to Atk",
-  "bbtype": "Heal/Support",
-  "bbhits": "",
-  "bbaoe": "0",
-  "bbgauge": "20",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "10153",
-  "evomats1": "10132",
-  "evomats2": "10131",
-  "evomats3": "10131",
-  "evomats4": "60142",
-  "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "100000",
-  "stats": {
-    "_base": {
-      "atk": 500,
-      "def": 620,
-      "hp": 2050,
-      "rec": 730
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 80.0,
+      "target conditions": "hp_50pr_under",
+      "target type": "party"
     },
-    "_lord": {
-      "atk": 650,
-      "def": 880,
-      "hp": 3170,
-      "rec": 1241
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "hp_min",
+      "target type": "party"
     },
-    "anima": {
-      "atk": 650,
-      "def": 880,
-      "hp max": 3560,
-      "hp min": 3365,
-      "rec max": 1202,
-      "rec min": 1124
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 120
     },
-    "breaker": {
-      "atk max": 767,
-      "atk min": 689,
-      "def max": 841,
-      "def min": 763,
-      "hp": 3170,
-      "rec": 1241
+    "idle": {
+      "total number of frames": 44
     },
-    "guardian": {
-      "atk": 650,
-      "def max": 997,
-      "def min": 919,
-      "hp": 3170,
-      "rec max": 1241,
-      "rec min": 1163
-    },
-    "oracle": {
-      "atk": 650,
-      "def max": 880,
-      "def min": 802,
-      "hp": 3170,
-      "rec max": 1397,
-      "rec min": 1319
+    "move": {
+      "total number of frames": 13
     }
   },
-  "leader_skill": {
-    "desc": "Small boost in Heart Crystals produced during Spark",
-    "effects": [
-      {
-        "hc drop% for spark": 20,
-        "passive id": "31"
-      }
+  "category": 10150,
+  "cost": "5",
+  "damage frames": {
+    "frame times": [
+      35,
+      75
     ],
-    "id": "1500",
-    "name": "Pure Light"
+    "hit dmg% distribution": [
+      40,
+      60
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 2
   },
-  "extra_skill": {},
+  "drop check count": 5,
+  "element": "fire",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 221,
+  "imp": {
+    "max atk": "120",
+    "max def": "120",
+    "max hp": "300",
+    "max rec": "120"
+  },
+  "kind": "normal",
+  "lord damage range": "605~676",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    }
+  },
+  "name": "Lancia",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "Lancia",
+  "maxlv": "40",
+  "no": "221",
   "unitDisplayHomePosition_1W9CxaFK": "500,95,182,498",
   "unitDisplayDetailPosition_6z54rgb3": "-110,90,825,670",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "215,403,265,225,0",
@@ -415,5 +410,97 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "1000",
   "sellCaution": false,
-  "effectFrames": "30:131:1,70:131:1"
+  "effectFrames": "30:131:1,70:131:1",
+  "evofrom": "",
+  "evointo": "10153",
+  "evozelcost": "100000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "10132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10131",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60142",
+      "count": 1
+    }
+  ],
+  "freetext": ":''For other uses, see Lancia (disambiguation)''",
+  "basexp": "21",
+  "animation_attack": "120",
+  "animation_idle": "44",
+  "animation_move": "13",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "4",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "3",
+  "normal_frames": "35, 75",
+  "normal_distribute": "40, 60",
+  "normal_totaldistr": "100",
+  "description": "Young girl and owner of Lan-Lan, a famous diner in the Agni Empire. Boasting plentiful portions and dishes cooked to perfection, Lan-Lan was an instant hit with customers. Never one to rest on her laurels, however, Lancia set out on a trip in search for new and exotic ingredients to add to her repertoire. It’s said that whenever she came across monsters on her travels, she could be heard humming as she calmly fired up her frying pan.",
+  "summon": "Succulent, mouth-watering vegetables!<br>Make lunchtime, Lan-Lan Time!<br>...Hmm? No advertising, you say!?",
+  "fusion": "There’s nothing like a slap-up meal<br>to keep the body in tip-top shape!<br>Who’s for seconds?",
+  "evolution": "",
+  "hp_base": "2050",
+  "atk_base": "500",
+  "def_base": "620",
+  "rec_base": "730",
+  "hp_lord": "3170",
+  "atk_lord": "650",
+  "def_lord": "880",
+  "rec_lord": "1241",
+  "hp_anima": "3463",
+  "rec_anima": "1163",
+  "atk_breaker": "728",
+  "def_breaker": "802",
+  "atk_guardian": "572",
+  "def_guardian": "958",
+  "rec_guardian": "1202",
+  "def_oracle": "841",
+  "hp_oracle": "3053",
+  "rec_oracle": "1358",
+  "hp_bonus": "300",
+  "atk_bonus": "120",
+  "def_bonus": "120",
+  "rec_bonus": "120",
+  "lordonly": "",
+  "combo_hits": "2",
+  "normaldc": "10",
+  "ls": "Pure Light",
+  "lsdescription": "Small boost in Heart Crystals produced during Spark",
+  "lsnote": "20% boost",
+  "lstype": "Recovery",
+  "bbdescription": "Recovers HP for all allies and Boosts ATK for 3 Turns",
+  "bbnote": "Heals (1060~1460 + 25% of healer Rec) HP, 25% boost to Atk",
+  "bbtype": "Heal/Support",
+  "bbhits": "",
+  "bbaoe": "0",
+  "bbgauge": "20",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "10132",
+  "evomats2": "10131",
+  "evomats3": "10131",
+  "evomats4": "60142",
+  "evomats5": "",
+  "evoitem": ""
 }

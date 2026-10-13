@@ -1,63 +1,63 @@
 {
   "id": "30662",
-  "unitName": "Wargloon",
-  "no": "1163",
-  "element": "Earth",
-  "rarity": "★★★",
-  "cost": "4",
-  "maxlv": "40",
-  "basexp": "15",
-  "gender": "N",
-  "ai": "2",
-  "animation_attack": "117",
-  "animation_idle": "86",
-  "animation_move": "51",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "43, 46, 49, 52, 58, 62",
-  "normal_distribute": "25, 25, 10, 10, 15, 15",
-  "normal_totaldistr": "100",
-  "bb_frames": "43, 46, 49, 52, 55, 58, 61, 64, 67",
-  "bb_distribute": "12, 11, 11, 11, 11, 11, 11, 11, 11",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "description": "An insect native to Ishgria. It grows more vicious and agile in maturity, making it more dangerous, but the increase in its powers of perception is even more marked. The Summoners' Hall urges caution regarding surprise attacks from this insect in particular when entering Ishgria's forests. Owing to its appearance, research is underway regarding connections between this insect and the Valmodora variety that has been sighted in Grand Gaia. However, no clear commonalities have been discovered at this time.",
-  "summon": "Buzzz!",
-  "fusion": "Buzz, buzz!",
-  "evolution": "Buzz!",
-  "hp_base": "1973",
-  "atk_base": "869",
-  "def_base": "595",
-  "rec_base": "478",
-  "hp_lord": "3149",
-  "atk_lord": "1280",
-  "def_lord": "734",
-  "rec_lord": "649",
-  "hp_anima": "3441",
-  "rec_anima": "571",
-  "atk_breaker": "1358",
-  "def_breaker": "656",
-  "atk_guardian": "",
-  "def_guardian": "812",
-  "rec_guardian": "610",
-  "def_oracle": "695",
-  "hp_oracle": "",
-  "rec_oracle": "766",
-  "hp_bonus": "400",
-  "atk_bonus": "160",
-  "def_bonus": "160",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "6",
-  "normaldc": "12",
-  "ls": "Destructive Allure",
-  "lsdescription": "Small chance of ignoring an opponent's Def when attacking",
-  "lsnote": "10% chance",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 869,
+      "def": 595,
+      "hp": 1973,
+      "rec": 478
+    },
+    "_lord": {
+      "atk": 1280,
+      "def": 734,
+      "hp": 3149,
+      "rec": 649
+    },
+    "anima": {
+      "atk": 1280,
+      "def": 734,
+      "hp max": 3539,
+      "hp min": 3344,
+      "rec max": 610,
+      "rec min": 532
+    },
+    "breaker": {
+      "atk max": 1397,
+      "atk min": 1319,
+      "def max": 695,
+      "def min": 617,
+      "hp": 3149,
+      "rec": 649
+    },
+    "guardian": {
+      "atk": 1280,
+      "def max": 851,
+      "def min": 773,
+      "hp": 3149,
+      "rec max": 649,
+      "rec min": 571
+    },
+    "oracle": {
+      "atk": 1280,
+      "def max": 734,
+      "def min": 656,
+      "hp": 3149,
+      "rec max": 805,
+      "rec min": 727
+    }
+  },
+  "leader_skill": {
+    "desc": "Small chance of ignoring an opponent's Def when attacking",
+    "effects": [
+      {
+        "ignore def%": 10,
+        "passive id": "29"
+      }
+    ],
+    "id": "2801",
+    "name": "Destructive Allure"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -318,94 +318,93 @@
     ],
     "name": "Razor Sickle"
   },
-  "bbdescription": "9 combo Earth attack on single foe & adds Def ignore effect to attack for 2 turns",
-  "bbtype": "Support/Offense",
-  "bbhits": "9",
-  "bbaoe": "1",
-  "bbgauge": "10",
-  "bbdc": "18",
-  "bbmultiplier": "290",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "30661",
-  "evointo": "",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 869,
-      "def": 595,
-      "hp": 1973,
-      "rec": 478
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1280,
-      "def": 734,
-      "hp": 3149,
-      "rec": 649
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1280,
-      "def": 734,
-      "hp max": 3539,
-      "hp min": 3344,
-      "rec max": 610,
-      "rec min": 532
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 117
     },
-    "breaker": {
-      "atk max": 1397,
-      "atk min": 1319,
-      "def max": 695,
-      "def min": 617,
-      "hp": 3149,
-      "rec": 649
+    "idle": {
+      "total number of frames": 86
     },
-    "guardian": {
-      "atk": 1280,
-      "def max": 851,
-      "def min": 773,
-      "hp": 3149,
-      "rec max": 649,
-      "rec min": 571
-    },
-    "oracle": {
-      "atk": 1280,
-      "def max": 734,
-      "def min": 656,
-      "hp": 3149,
-      "rec max": 805,
-      "rec min": 727
+    "move": {
+      "total number of frames": 51
     }
   },
-  "leader_skill": {
-    "desc": "Small chance of ignoring an opponent's Def when attacking",
-    "effects": [
-      {
-        "ignore def%": 10,
-        "passive id": "29"
-      }
+  "category": 30660,
+  "cost": "6",
+  "damage frames": {
+    "frame times": [
+      43,
+      46,
+      49,
+      52,
+      58,
+      62
     ],
-    "id": "2801",
-    "name": "Destructive Allure"
+    "hit dmg% distribution": [
+      25,
+      25,
+      10,
+      10,
+      15,
+      15
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 6
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "earth",
+  "exp_pattern": 15,
+  "gender": "other",
+  "getting type": "farmable",
+  "guide_id": 1163,
+  "imp": {
+    "max atk": "160",
+    "max def": "160",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "1192~1331",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Wargloon",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "Wargloon",
+  "maxlv": "40",
+  "no": "1163",
   "unitDisplayHomePosition_1W9CxaFK": "316,293,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "68,17,850,783",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "97,179,480,442,0",
@@ -415,5 +414,85 @@
   "unitDisplayCursorPosition": "5,0",
   "sellPrice": "1000",
   "sellCaution": false,
-  "effectFrames": "37:123:1,40:123:1,43:123:1,46:123:1,58:133:1,62:133:1,36:300206:1,58:300261:1,40:300120:1"
+  "effectFrames": "37:123:1,40:123:1,43:123:1,46:123:1,58:133:1,62:133:1,36:300206:1,58:300261:1,40:300120:1",
+  "evofrom": "30661",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "15",
+  "animation_attack": "117",
+  "animation_idle": "86",
+  "animation_move": "51",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "43, 46, 49, 52, 58, 62",
+  "normal_distribute": "25, 25, 10, 10, 15, 15",
+  "normal_totaldistr": "100",
+  "bb_frames": "43, 46, 49, 52, 55, 58, 61, 64, 67",
+  "bb_distribute": "12, 11, 11, 11, 11, 11, 11, 11, 11",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "description": "An insect native to Ishgria. It grows more vicious and agile in maturity, making it more dangerous, but the increase in its powers of perception is even more marked. The Summoners' Hall urges caution regarding surprise attacks from this insect in particular when entering Ishgria's forests. Owing to its appearance, research is underway regarding connections between this insect and the Valmodora variety that has been sighted in Grand Gaia. However, no clear commonalities have been discovered at this time.",
+  "summon": "Buzzz!",
+  "fusion": "Buzz, buzz!",
+  "evolution": "Buzz!",
+  "hp_base": "1973",
+  "atk_base": "869",
+  "def_base": "595",
+  "rec_base": "478",
+  "hp_lord": "3149",
+  "atk_lord": "1280",
+  "def_lord": "734",
+  "rec_lord": "649",
+  "hp_anima": "3441",
+  "rec_anima": "571",
+  "atk_breaker": "1358",
+  "def_breaker": "656",
+  "atk_guardian": "",
+  "def_guardian": "812",
+  "rec_guardian": "610",
+  "def_oracle": "695",
+  "hp_oracle": "",
+  "rec_oracle": "766",
+  "hp_bonus": "400",
+  "atk_bonus": "160",
+  "def_bonus": "160",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "6",
+  "normaldc": "12",
+  "ls": "Destructive Allure",
+  "lsdescription": "Small chance of ignoring an opponent's Def when attacking",
+  "lsnote": "10% chance",
+  "lstype": "Attack",
+  "bbdescription": "9 combo Earth attack on single foe & adds Def ignore effect to attack for 2 turns",
+  "bbtype": "Support/Offense",
+  "bbhits": "9",
+  "bbaoe": "1",
+  "bbgauge": "10",
+  "bbdc": "18",
+  "bbmultiplier": "290",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "",
+  "evomats2": "",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": "",
+  "evoitem": ""
 }

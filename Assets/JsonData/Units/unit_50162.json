@@ -1,61 +1,66 @@
 {
   "id": "50162",
-  "unitName": "Eight Blade Sefia",
-  "no": "299",
-  "element": "Light",
-  "rarity": "★★★",
-  "cost": "7",
-  "maxlv": "40",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "116",
-  "animation_idle": "60",
-  "animation_move": "52",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "44, 54, 64, 66, 74, 76, 84, 86",
-  "normal_distribute": "20, 10, 10, 10, 10, 10, 10, 20",
-  "normal_totaldistr": "100",
-  "bb_frames": "44, 54, 64, 66, 74, 76, 84, 86",
-  "bb_distribute": "20, 10, 10, 10, 10, 10, 10, 20",
-  "bb_totaldistr": "100",
-  "description": "The woman warrior who wore 8 blades on her back. At the time there was no one who knew where she came from, where she was headed, or what she was after. There weren't even many who had the chance to speak with her. However, her actions were witnessed in many lands far and wide as she went from place to place, vanquishing otherworldly beings that were causing havoc. It is said that as mystical as she seemed, she still struck fear in the hearts of any who saw her.",
-  "summon": "What is it you want?<br>I see...<br>OK, I will lend you my power.",
-  "fusion": "My power increases with<br>every ray of light that dwells<br>within my 8 blades.",
-  "evolution": "",
-  "hp_base": "2100",
-  "atk_base": "850",
-  "def_base": "800",
-  "rec_base": "300",
-  "hp_lord": "3345",
-  "atk_lord": "1130",
-  "def_lord": "1088",
-  "rec_lord": "510",
-  "hp_anima": "3638",
-  "rec_anima": "432",
-  "atk_breaker": "1208",
-  "def_breaker": "1010",
-  "atk_guardian": "1052",
-  "def_guardian": "1166",
-  "rec_guardian": "471",
-  "def_oracle": "1049",
-  "hp_oracle": "3228",
-  "rec_oracle": "627",
-  "hp_bonus": "300",
-  "atk_bonus": "100",
-  "def_bonus": "100",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "8",
-  "normaldc": "16",
-  "ls": "Light Spirit's Power",
-  "lsdescription": "25% boost to Atk Power of Light Types",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 850,
+      "def": 800,
+      "hp": 2100,
+      "rec": 300
+    },
+    "_lord": {
+      "atk": 1130,
+      "def": 1088,
+      "hp": 3345,
+      "rec": 510
+    },
+    "anima": {
+      "atk": 1130,
+      "def": 1088,
+      "hp max": 3735,
+      "hp min": 3540,
+      "rec max": 471,
+      "rec min": 393
+    },
+    "breaker": {
+      "atk max": 1247,
+      "atk min": 1169,
+      "def max": 1049,
+      "def min": 971,
+      "hp": 3345,
+      "rec": 510
+    },
+    "guardian": {
+      "atk": 1130,
+      "def max": 1205,
+      "def min": 1127,
+      "hp": 3345,
+      "rec max": 510,
+      "rec min": 432
+    },
+    "oracle": {
+      "atk": 1130,
+      "def max": 1088,
+      "def min": 1010,
+      "hp": 3345,
+      "rec max": 666,
+      "rec min": 588
+    }
+  },
+  "leader_skill": {
+    "desc": "25% boost to Atk Power of Light Types",
+    "effects": [
+      {
+        "atk% buff": 25,
+        "elements buffed": [
+          "light"
+        ],
+        "passive id": "2"
+      }
+    ],
+    "id": "140",
+    "name": "Light Spirit's Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -304,97 +309,97 @@
     ],
     "name": "Halcion Hack"
   },
-  "bbdescription": "8 combo Light elemental attack on all enemies & probable Paralysis effect",
-  "bbnote": "45% chance",
-  "bbtype": "Offense",
-  "bbhits": "8",
-  "bbaoe": "A",
-  "bbgauge": "27",
-  "bbdc": "8",
-  "bbmultiplier": "180",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "50163",
-  "evomats1": "50122",
-  "evomats2": "50121",
-  "evomats3": "50121",
-  "evomats4": "50120",
-  "evomats5": "",
-  "evozelcost": "100000",
-  "stats": {
-    "_base": {
-      "atk": 850,
-      "def": 800,
-      "hp": 2100,
-      "rec": 300
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1130,
-      "def": 1088,
-      "hp": 3345,
-      "rec": 510
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1130,
-      "def": 1088,
-      "hp max": 3735,
-      "hp min": 3540,
-      "rec max": 471,
-      "rec min": 393
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 116
     },
-    "breaker": {
-      "atk max": 1247,
-      "atk min": 1169,
-      "def max": 1049,
-      "def min": 971,
-      "hp": 3345,
-      "rec": 510
+    "idle": {
+      "total number of frames": 60
     },
-    "guardian": {
-      "atk": 1130,
-      "def max": 1205,
-      "def min": 1127,
-      "hp": 3345,
-      "rec max": 510,
-      "rec min": 432
-    },
-    "oracle": {
-      "atk": 1130,
-      "def max": 1088,
-      "def min": 1010,
-      "hp": 3345,
-      "rec max": 666,
-      "rec min": 588
+    "move": {
+      "total number of frames": 52
     }
   },
-  "leader_skill": {
-    "desc": "25% boost to Atk Power of Light Types",
-    "effects": [
-      {
-        "atk% buff": 25,
-        "elements buffed": [
-          "light"
-        ],
-        "passive id": "2"
-      }
+  "category": 50160,
+  "cost": "7",
+  "damage frames": {
+    "frame times": [
+      44,
+      54,
+      64,
+      66,
+      74,
+      76,
+      84,
+      86
     ],
-    "id": "140",
-    "name": "Light Spirit's Power"
+    "hit dmg% distribution": [
+      20,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 8
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "light",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 299,
+  "imp": {
+    "max atk": "100",
+    "max def": "100",
+    "max hp": "300",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "1052~1175",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Eight Blade Sefia",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "Eight Blade Sefia",
+  "maxlv": "40",
+  "no": "299",
   "unitDisplayHomePosition_1W9CxaFK": "420,56,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-84,108,909,675",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "207,332,260,283,0",
@@ -404,5 +409,99 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "1000",
   "sellCaution": false,
-  "effectFrames": "38:125:1,48:125:1,58:125:1,60:125:1,68:125:1,70:125:1,78:125:1,80:125:1"
+  "effectFrames": "38:125:1,48:125:1,58:125:1,60:125:1,68:125:1,70:125:1,78:125:1,80:125:1",
+  "evofrom": "",
+  "evointo": "50163",
+  "evozelcost": "100000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50122",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50121",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "50120",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "116",
+  "animation_idle": "60",
+  "animation_move": "52",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "44, 54, 64, 66, 74, 76, 84, 86",
+  "normal_distribute": "20, 10, 10, 10, 10, 10, 10, 20",
+  "normal_totaldistr": "100",
+  "bb_frames": "44, 54, 64, 66, 74, 76, 84, 86",
+  "bb_distribute": "20, 10, 10, 10, 10, 10, 10, 20",
+  "bb_totaldistr": "100",
+  "description": "The woman warrior who wore 8 blades on her back. At the time there was no one who knew where she came from, where she was headed, or what she was after. There weren't even many who had the chance to speak with her. However, her actions were witnessed in many lands far and wide as she went from place to place, vanquishing otherworldly beings that were causing havoc. It is said that as mystical as she seemed, she still struck fear in the hearts of any who saw her.",
+  "summon": "What is it you want?<br>I see...<br>OK, I will lend you my power.",
+  "fusion": "My power increases with<br>every ray of light that dwells<br>within my 8 blades.",
+  "evolution": "",
+  "hp_base": "2100",
+  "atk_base": "850",
+  "def_base": "800",
+  "rec_base": "300",
+  "hp_lord": "3345",
+  "atk_lord": "1130",
+  "def_lord": "1088",
+  "rec_lord": "510",
+  "hp_anima": "3638",
+  "rec_anima": "432",
+  "atk_breaker": "1208",
+  "def_breaker": "1010",
+  "atk_guardian": "1052",
+  "def_guardian": "1166",
+  "rec_guardian": "471",
+  "def_oracle": "1049",
+  "hp_oracle": "3228",
+  "rec_oracle": "627",
+  "hp_bonus": "300",
+  "atk_bonus": "100",
+  "def_bonus": "100",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "8",
+  "normaldc": "16",
+  "ls": "Light Spirit's Power",
+  "lsdescription": "25% boost to Atk Power of Light Types",
+  "lstype": "Attack",
+  "bbdescription": "8 combo Light elemental attack on all enemies & probable Paralysis effect",
+  "bbnote": "45% chance",
+  "bbtype": "Offense",
+  "bbhits": "8",
+  "bbaoe": "A",
+  "bbgauge": "27",
+  "bbdc": "8",
+  "bbmultiplier": "180",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50122",
+  "evomats2": "50121",
+  "evomats3": "50121",
+  "evomats4": "50120",
+  "evomats5": ""
 }

@@ -1,67 +1,90 @@
 {
   "id": "30346",
-  "unitName": "Cyclonic Heroine Ophelia",
-  "no": "1197",
-  "element": "Earth",
-  "rarity": "★★★★★★★",
-  "cost": "40",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "3",
-  "animation_attack": "93",
-  "animation_idle": "52",
-  "animation_move": "6",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "7, 12, 15, 18, 21, 45, 49, 53, 57",
-  "normal_distribute": "15, 8, 8, 8, 8, 12, 12, 19, 10",
-  "normal_totaldistr": "100",
-  "bb_frames": "7, 10, 13, 16, 18, 21, 24, 45, 48, 51, 54, 57, 60, 63",
-  "bb_distribute": "9, 6, 6, 6, 6, 6, 6, 10, 9, 8, 7, 7, 7, 7",
-  "bb_totaldistr": "100",
-  "sbb_frames": "7, 10, 13, 16, 18, 21, 24, 27, 30, 45, 48, 51, 54, 57, 60, 63, 66, 69, 72",
-  "sbb_distribute": "8, 5, 5, 5, 5, 5, 5, 5, 5, 7, 5, 5, 5, 5, 5, 5, 5, 5, 5",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "7, 10, 13, 16, 18, 21, 24, 27, 30, 33, 45, 48, 51, 54, 57, 60, 63, 66, 69, 72, 75, 78, 81",
-  "ubb_distribute": "7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 9, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4",
-  "ubb_totaldistr": "100",
-  "ubb_effectdelay": "1",
-  "description": "After the battle with Signas, she departed towards sacred territory. Having overcome her doubts, her powers are believed to have been sufficient to crush the gods that stood in her way. However, all traces of her vanished immediately after her departure, and some say that she was assassinated by an unknown party en route. Furthermore, the diary she left behind indicated that she surpassed each of the 12 Guardians. This led to the theory that her mysterious assassination touched off the internal conflict that brought about their destruction.",
-  "summon": "I do not know what the future holds.<br>I just wanted to leave<br>their true forms behind...",
-  "fusion": "I gratefully accept this power...<br>I must continue to fight, in order<br>to learn the truth about everything.",
-  "evolution": "I knew who my true friends were.<br>Now I only need to clear my name.<br>I will follow my own path!",
-  "hp_base": "5353",
-  "atk_base": "1786",
-  "def_base": "1441",
-  "rec_base": "1550",
-  "hp_lord": "6649",
-  "atk_lord": "2475",
-  "def_lord": "2094",
-  "rec_lord": "2201",
-  "hp_anima": "7541",
-  "rec_anima": "1963",
-  "atk_breaker": "2713",
-  "def_breaker": "1856",
-  "def_guardian": "2332",
-  "rec_guardian": "2082",
-  "def_oracle": "1975",
-  "rec_oracle": "2558",
-  "hp_bonus": "1100",
-  "atk_bonus": "440",
-  "def_bonus": "440",
-  "rec_bonus": "440",
-  "lordonly": "",
-  "combo_hits": "9",
-  "normaldc": "36",
-  "ls": "Divine Nature's Power",
-  "lsdescription": "120% boost to Atk of Earth types, greatly reduces BB gauge required for BB & hugely boosts BB gauge each turn",
-  "lsnote": "25% reduction & fills 4 BC",
-  "lstype": "Attack/Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 1786,
+      "def": 1441,
+      "hp": 5353,
+      "rec": 1550
+    },
+    "_lord": {
+      "atk": 2475,
+      "def": 2094,
+      "hp": 6649,
+      "rec": 2201
+    },
+    "anima": {
+      "atk": 2475,
+      "def": 2094,
+      "hp max": 7839,
+      "hp min": 7244,
+      "rec max": 2082,
+      "rec min": 1844
+    },
+    "breaker": {
+      "atk max": 2832,
+      "atk min": 2594,
+      "def max": 1975,
+      "def min": 1737,
+      "hp": 6649,
+      "rec": 2201
+    },
+    "guardian": {
+      "atk": 2475,
+      "def max": 2451,
+      "def min": 2213,
+      "hp": 6649,
+      "rec max": 2201,
+      "rec min": 1963
+    },
+    "oracle": {
+      "atk": 2475,
+      "def max": 2094,
+      "def min": 1856,
+      "hp": 6649,
+      "rec max": 2677,
+      "rec min": 2439
+    }
+  },
+  "leader_skill": {
+    "desc": "120% boost to Atk of Earth types, greatly reduces BB gauge required for BB & hugely boosts BB gauge each turn",
+    "effects": [
+      {
+        "atk% buff": 120,
+        "elements buffed": [
+          "earth"
+        ],
+        "passive id": "2"
+      },
+      {
+        "passive id": "48",
+        "reduced bb bc cost%": 25
+      },
+      {
+        "bc fill per turn": 4,
+        "passive id": "9"
+      }
+    ],
+    "id": "128",
+    "name": "Divine Nature's Power"
+  },
+  "extra_skill": {
+    "desc": "Damage taken boosts BB gauge",
+    "effects": [
+      {
+        "bc fill when attacked high": 5,
+        "bc fill when attacked low": 3,
+        "bc fill when attacked%": 100,
+        "conditions": [],
+        "passive id": "25",
+        "passive target": "self"
+      }
+    ],
+    "id": "10500",
+    "name": "Days of Glory",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -322,14 +345,6 @@
     ],
     "name": "Infinite Rise"
   },
-  "bbdescription": "14 combo Powerful Earth attack on all foes & greatly boosts BB gauge",
-  "bbnote": "Fills 10 BC",
-  "bbtype": "Support/Offense",
-  "bbhits": "14",
-  "bbaoe": "A",
-  "bbgauge": "13",
-  "bbdc": "14",
-  "bbmultiplier": "210",
   "sbb": {
     "damage frames": [
       {
@@ -784,14 +799,6 @@
     ],
     "name": "Yggdrasil Extension"
   },
-  "sbbdescription": "19 combo powerful Earth attack on all foes, gradually restores BB gauge for 3 turns, greatly boosts BB gauge & boosts BB gauge fill rate for 3 turns",
-  "sbbnote": "Fills 10 BC, fills 7 BC/turn & 30% boost to fill rate",
-  "sbbtype": "Support/Offense",
-  "sbbhits": "19",
-  "sbbaoe": "A",
-  "sbbgauge": "20",
-  "sbbdc": "19",
-  "sbbmultiplier": "450",
   "ubb": {
     "damage frames": [
       {
@@ -933,6 +940,193 @@
     ],
     "name": "Divine Oath: Sephiroth"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 93
+    },
+    "idle": {
+      "total number of frames": 52
+    },
+    "move": {
+      "total number of frames": 6
+    }
+  },
+  "category": 30340,
+  "cost": "40",
+  "damage frames": {
+    "frame times": [
+      7,
+      12,
+      15,
+      18,
+      21,
+      45,
+      49,
+      53,
+      57
+    ],
+    "hit dmg% distribution": [
+      15,
+      8,
+      8,
+      8,
+      8,
+      12,
+      12,
+      19,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 9
+  },
+  "drop check count": 4,
+  "element": "earth",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 1197,
+  "imp": {
+    "max atk": "440",
+    "max def": "440",
+    "max hp": "1100",
+    "max rec": "440"
+  },
+  "kind": "normal",
+  "lord damage range": "2304~2574",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Cyclonic Heroine Ophelia",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Cyclonic Heroine Ophelia",
+  "maxlv": "120",
+  "no": "1197",
+  "unitDisplayHomePosition_1W9CxaFK": "576,358,174,475",
+  "unitDisplayDetailPosition_6z54rgb3": "-255,-99,1216,932",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "-18,172,608,466,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-211,-405,1216,932",
+  "unitDisplaySummonPosition_KC3Jk8Br": "-18,172,608,466,0",
+  "unitDisplayHpPosition_3BpHN6VD": "-6,58",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "15000",
+  "sellCaution": false,
+  "effectFrames": "1:123:1,6:123:1,9:123:1,12:123:1,15:123:1,39:123:1,43:123:1,47:123:1,51:123:1,7:300120:1,42:300110:1,45:300110:1,43:300193:1,6:330501:1,7:230:1,48:300261:1,70:330451:1",
+  "evofrom": "30345",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "21",
+  "animation_attack": "93",
+  "animation_idle": "52",
+  "animation_move": "6",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "7, 12, 15, 18, 21, 45, 49, 53, 57",
+  "normal_distribute": "15, 8, 8, 8, 8, 12, 12, 19, 10",
+  "normal_totaldistr": "100",
+  "bb_frames": "7, 10, 13, 16, 18, 21, 24, 45, 48, 51, 54, 57, 60, 63",
+  "bb_distribute": "9, 6, 6, 6, 6, 6, 6, 10, 9, 8, 7, 7, 7, 7",
+  "bb_totaldistr": "100",
+  "sbb_frames": "7, 10, 13, 16, 18, 21, 24, 27, 30, 45, 48, 51, 54, 57, 60, 63, 66, 69, 72",
+  "sbb_distribute": "8, 5, 5, 5, 5, 5, 5, 5, 5, 7, 5, 5, 5, 5, 5, 5, 5, 5, 5",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "7, 10, 13, 16, 18, 21, 24, 27, 30, 33, 45, 48, 51, 54, 57, 60, 63, 66, 69, 72, 75, 78, 81",
+  "ubb_distribute": "7, 4, 4, 4, 4, 4, 4, 4, 4, 4, 9, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4",
+  "ubb_totaldistr": "100",
+  "ubb_effectdelay": "1",
+  "description": "After the battle with Signas, she departed towards sacred territory. Having overcome her doubts, her powers are believed to have been sufficient to crush the gods that stood in her way. However, all traces of her vanished immediately after her departure, and some say that she was assassinated by an unknown party en route. Furthermore, the diary she left behind indicated that she surpassed each of the 12 Guardians. This led to the theory that her mysterious assassination touched off the internal conflict that brought about their destruction.",
+  "summon": "I do not know what the future holds.<br>I just wanted to leave<br>their true forms behind...",
+  "fusion": "I gratefully accept this power...<br>I must continue to fight, in order<br>to learn the truth about everything.",
+  "evolution": "I knew who my true friends were.<br>Now I only need to clear my name.<br>I will follow my own path!",
+  "hp_base": "5353",
+  "atk_base": "1786",
+  "def_base": "1441",
+  "rec_base": "1550",
+  "hp_lord": "6649",
+  "atk_lord": "2475",
+  "def_lord": "2094",
+  "rec_lord": "2201",
+  "hp_anima": "7541",
+  "rec_anima": "1963",
+  "atk_breaker": "2713",
+  "def_breaker": "1856",
+  "def_guardian": "2332",
+  "rec_guardian": "2082",
+  "def_oracle": "1975",
+  "rec_oracle": "2558",
+  "hp_bonus": "1100",
+  "atk_bonus": "440",
+  "def_bonus": "440",
+  "rec_bonus": "440",
+  "lordonly": "",
+  "combo_hits": "9",
+  "normaldc": "36",
+  "ls": "Divine Nature's Power",
+  "lsdescription": "120% boost to Atk of Earth types, greatly reduces BB gauge required for BB & hugely boosts BB gauge each turn",
+  "lsnote": "25% reduction & fills 4 BC",
+  "lstype": "Attack/Brave Burst",
+  "bbdescription": "14 combo Powerful Earth attack on all foes & greatly boosts BB gauge",
+  "bbnote": "Fills 10 BC",
+  "bbtype": "Support/Offense",
+  "bbhits": "14",
+  "bbaoe": "A",
+  "bbgauge": "13",
+  "bbdc": "14",
+  "bbmultiplier": "210",
+  "sbbdescription": "19 combo powerful Earth attack on all foes, gradually restores BB gauge for 3 turns, greatly boosts BB gauge & boosts BB gauge fill rate for 3 turns",
+  "sbbnote": "Fills 10 BC, fills 7 BC/turn & 30% boost to fill rate",
+  "sbbtype": "Support/Offense",
+  "sbbhits": "19",
+  "sbbaoe": "A",
+  "sbbgauge": "20",
+  "sbbdc": "19",
+  "sbbmultiplier": "450",
   "ubbdescription": "23 combo powerful Earth attack on all foes, greatly boosts max HP & boosts Atk relative to max HP and fully recovers HP for 3 turns",
   "ubbnote": "20% boost to HP & 30% HP to Atk",
   "ubbtype": "Heal/Support/Offense",
@@ -945,108 +1139,10 @@
   "esitem": "",
   "esdescription": "Damage taken boosts BB gauge",
   "esnote": "Fills 3-5 BC",
-  "evofrom": "30345",
-  "evointo": "",
   "evomats1": "",
   "evomats2": "",
   "evomats3": "",
   "evomats4": "",
   "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 1786,
-      "def": 1441,
-      "hp": 5353,
-      "rec": 1550
-    },
-    "_lord": {
-      "atk": 2475,
-      "def": 2094,
-      "hp": 6649,
-      "rec": 2201
-    },
-    "anima": {
-      "atk": 2475,
-      "def": 2094,
-      "hp max": 7839,
-      "hp min": 7244,
-      "rec max": 2082,
-      "rec min": 1844
-    },
-    "breaker": {
-      "atk max": 2832,
-      "atk min": 2594,
-      "def max": 1975,
-      "def min": 1737,
-      "hp": 6649,
-      "rec": 2201
-    },
-    "guardian": {
-      "atk": 2475,
-      "def max": 2451,
-      "def min": 2213,
-      "hp": 6649,
-      "rec max": 2201,
-      "rec min": 1963
-    },
-    "oracle": {
-      "atk": 2475,
-      "def max": 2094,
-      "def min": 1856,
-      "hp": 6649,
-      "rec max": 2677,
-      "rec min": 2439
-    }
-  },
-  "leader_skill": {
-    "desc": "120% boost to Atk of Earth types, greatly reduces BB gauge required for BB & hugely boosts BB gauge each turn",
-    "effects": [
-      {
-        "atk% buff": 120,
-        "elements buffed": [
-          "earth"
-        ],
-        "passive id": "2"
-      },
-      {
-        "passive id": "48",
-        "reduced bb bc cost%": 25
-      },
-      {
-        "bc fill per turn": 4,
-        "passive id": "9"
-      }
-    ],
-    "id": "128",
-    "name": "Divine Nature's Power"
-  },
-  "extra_skill": {
-    "desc": "Damage taken boosts BB gauge",
-    "effects": [
-      {
-        "bc fill when attacked high": 5,
-        "bc fill when attacked low": 3,
-        "bc fill when attacked%": 100,
-        "conditions": [],
-        "passive id": "25",
-        "passive target": "self"
-      }
-    ],
-    "id": "10500",
-    "name": "Days of Glory",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "576,358,174,475",
-  "unitDisplayDetailPosition_6z54rgb3": "-255,-99,1216,932",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "-18,172,608,466,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-211,-405,1216,932",
-  "unitDisplaySummonPosition_KC3Jk8Br": "-18,172,608,466,0",
-  "unitDisplayHpPosition_3BpHN6VD": "-6,58",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "15000",
-  "sellCaution": false,
-  "effectFrames": "1:123:1,6:123:1,9:123:1,12:123:1,15:123:1,39:123:1,43:123:1,47:123:1,51:123:1,7:300120:1,42:300110:1,45:300110:1,43:300193:1,6:330501:1,7:230:1,48:300261:1,70:330451:1"
+  "evoitem": ""
 }

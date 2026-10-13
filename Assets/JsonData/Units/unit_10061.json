@@ -1,62 +1,63 @@
 {
   "id": "10061",
-  "unitName": "Thief Leon",
-  "no": "79",
-  "element": "Fire",
-  "rarity": "★★",
-  "cost": "3",
-  "maxlv": "30",
-  "basexp": "10",
-  "gender": "M",
-  "ai": "3",
-  "animation_attack": "86",
-  "animation_idle": "64",
-  "animation_move": "11",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "15, 23, 30, 36",
-  "normal_distribute": "10, 20, 30, 40",
-  "normal_totaldistr": "100",
-  "bb_frames": "15, 23, 30, 36",
-  "bb_distribute": "10, 20, 30, 40",
-  "bb_totaldistr": "100",
-  "description": "A bandit ruling the territories around the ruined Agni Empire. Raised in an orphanage, he left in a rage knowing that Imperial subsidies were being embezzled by a vicious official. He then made his name as a bandit, targeting detestable government officials, soldiers and merchants. Wielding dual-knives, he's known to hurt, but never kill his targets.",
-  "summon": "You need my help?<br>Alright, but in exchange,<br>I'll be taking a large reward.",
-  "fusion": "So you want more from me?<br>Hah! How's this!",
-  "evolution": "",
-  "hp_base": "1200",
-  "atk_base": "460",
-  "def_base": "460",
-  "rec_base": "350",
-  "hp_lord": "2220",
-  "atk_lord": "635",
-  "def_lord": "635",
-  "rec_lord": "630",
-  "hp_anima": "2438",
-  "rec_anima": "572",
-  "atk_breaker": "693",
-  "def_breaker": "577",
-  "atk_guardian": "577",
-  "def_guardian": "693",
-  "rec_guardian": "601",
-  "def_oracle": "606",
-  "hp_oracle": "2133",
-  "rec_oracle": "717",
-  "hp_bonus": "250",
-  "atk_bonus": "120",
-  "def_bonus": "80",
-  "rec_bonus": "100",
-  "lordonly": "",
-  "combo_hits": "4",
-  "normaldc": "8",
-  "ls": "Abundant Light",
-  "lsdescription": "Small boost in Zel produced during Spark",
-  "lsnote": "50% boost",
-  "lstype": "Zel",
+  "stats": {
+    "_base": {
+      "atk": 460,
+      "def": 460,
+      "hp": 1200,
+      "rec": 350
+    },
+    "_lord": {
+      "atk": 635,
+      "def": 635,
+      "hp": 2220,
+      "rec": 630
+    },
+    "anima": {
+      "atk": 635,
+      "def": 635,
+      "hp max": 2510,
+      "hp min": 2365,
+      "rec max": 601,
+      "rec min": 543
+    },
+    "breaker": {
+      "atk max": 722,
+      "atk min": 664,
+      "def max": 606,
+      "def min": 548,
+      "hp": 2220,
+      "rec": 630
+    },
+    "guardian": {
+      "atk": 635,
+      "def max": 722,
+      "def min": 664,
+      "hp": 2220,
+      "rec max": 630,
+      "rec min": 572
+    },
+    "oracle": {
+      "atk": 635,
+      "def max": 635,
+      "def min": 577,
+      "hp": 2220,
+      "rec max": 746,
+      "rec min": 688
+    }
+  },
+  "leader_skill": {
+    "desc": "Small boost in Zel produced during Spark",
+    "effects": [
+      {
+        "passive id": "31",
+        "zel drop% for spark": 50
+      }
+    ],
+    "id": "1600",
+    "name": "Abundant Light"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -287,95 +288,95 @@
     ],
     "name": "Poison Gale"
   },
-  "bbdescription": "4 combo Fire elemental attack on single Enemy & probable Poison effect",
-  "bbnote": "80% chance",
-  "bbtype": "Offense",
-  "bbhits": "4",
-  "bbaoe": "1",
-  "bbgauge": "15",
-  "bbdc": "4",
-  "bbmultiplier": "200",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "10062",
-  "evomats1": "10130",
-  "evomats2": "10130",
-  "evomats3": "10131",
-  "evomats4": "",
-  "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "50000",
-  "stats": {
-    "_base": {
-      "atk": 460,
-      "def": 460,
-      "hp": 1200,
-      "rec": 350
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 635,
-      "def": 635,
-      "hp": 2220,
-      "rec": 630
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 635,
-      "def": 635,
-      "hp max": 2510,
-      "hp min": 2365,
-      "rec max": 601,
-      "rec min": 543
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 722,
-      "atk min": 664,
-      "def max": 606,
-      "def min": 548,
-      "hp": 2220,
-      "rec": 630
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 86
     },
-    "guardian": {
-      "atk": 635,
-      "def max": 722,
-      "def min": 664,
-      "hp": 2220,
-      "rec max": 630,
-      "rec min": 572
+    "idle": {
+      "total number of frames": 64
     },
-    "oracle": {
-      "atk": 635,
-      "def max": 635,
-      "def min": 577,
-      "hp": 2220,
-      "rec max": 746,
-      "rec min": 688
+    "move": {
+      "total number of frames": 11
     }
   },
-  "leader_skill": {
-    "desc": "Small boost in Zel produced during Spark",
-    "effects": [
-      {
-        "passive id": "31",
-        "zel drop% for spark": 50
-      }
+  "category": 10060,
+  "cost": "3",
+  "damage frames": {
+    "frame times": [
+      15,
+      23,
+      30,
+      36
     ],
-    "id": "1600",
-    "name": "Abundant Light"
+    "hit dmg% distribution": [
+      10,
+      20,
+      30,
+      40
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 4
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "fire",
+  "exp_pattern": 10,
+  "gender": "male",
+  "getting type": "not eligible for achievement",
+  "guide_id": 79,
+  "imp": {
+    "max atk": "120",
+    "max def": "80",
+    "max hp": "250",
+    "max rec": "100"
+  },
+  "kind": "normal",
+  "lord damage range": "590~660",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Thief Leon",
+  "rarity": "2",
+  "sell caution": false,
+  "unitName": "Thief Leon",
+  "maxlv": "30",
+  "no": "79",
   "unitDisplayHomePosition_1W9CxaFK": "110,-99,200,544",
   "unitDisplayDetailPosition_6z54rgb3": "211,252,480,485",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "192,389,230,233,0",
@@ -385,5 +386,96 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "300",
   "sellCaution": false,
-  "effectFrames": "9:121:1,17:121:1,24:121:1,30:121:1"
+  "effectFrames": "9:121:1,17:121:1,24:121:1,30:121:1",
+  "evofrom": "",
+  "evointo": "10062",
+  "evozelcost": "50000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "10130",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "10131",
+      "count": 1
+    }
+  ],
+  "basexp": "10",
+  "animation_attack": "86",
+  "animation_idle": "64",
+  "animation_move": "11",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "15, 23, 30, 36",
+  "normal_distribute": "10, 20, 30, 40",
+  "normal_totaldistr": "100",
+  "bb_frames": "15, 23, 30, 36",
+  "bb_distribute": "10, 20, 30, 40",
+  "bb_totaldistr": "100",
+  "description": "A bandit ruling the territories around the ruined Agni Empire. Raised in an orphanage, he left in a rage knowing that Imperial subsidies were being embezzled by a vicious official. He then made his name as a bandit, targeting detestable government officials, soldiers and merchants. Wielding dual-knives, he's known to hurt, but never kill his targets.",
+  "summon": "You need my help?<br>Alright, but in exchange,<br>I'll be taking a large reward.",
+  "fusion": "So you want more from me?<br>Hah! How's this!",
+  "evolution": "",
+  "hp_base": "1200",
+  "atk_base": "460",
+  "def_base": "460",
+  "rec_base": "350",
+  "hp_lord": "2220",
+  "atk_lord": "635",
+  "def_lord": "635",
+  "rec_lord": "630",
+  "hp_anima": "2438",
+  "rec_anima": "572",
+  "atk_breaker": "693",
+  "def_breaker": "577",
+  "atk_guardian": "577",
+  "def_guardian": "693",
+  "rec_guardian": "601",
+  "def_oracle": "606",
+  "hp_oracle": "2133",
+  "rec_oracle": "717",
+  "hp_bonus": "250",
+  "atk_bonus": "120",
+  "def_bonus": "80",
+  "rec_bonus": "100",
+  "lordonly": "",
+  "combo_hits": "4",
+  "normaldc": "8",
+  "ls": "Abundant Light",
+  "lsdescription": "Small boost in Zel produced during Spark",
+  "lsnote": "50% boost",
+  "lstype": "Zel",
+  "bbdescription": "4 combo Fire elemental attack on single Enemy & probable Poison effect",
+  "bbnote": "80% chance",
+  "bbtype": "Offense",
+  "bbhits": "4",
+  "bbaoe": "1",
+  "bbgauge": "15",
+  "bbdc": "4",
+  "bbmultiplier": "200",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "10130",
+  "evomats2": "10130",
+  "evomats3": "10131",
+  "evomats4": "",
+  "evomats5": "",
+  "evoitem": ""
 }

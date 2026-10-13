@@ -1,62 +1,63 @@
 {
   "id": "10024",
-  "unitName": "Beast King Zegar",
-  "no": "320",
-  "element": "Fire",
-  "rarity": "★★★★★",
-  "cost": "14",
-  "maxlv": "80",
-  "basexp": "15",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "200",
-  "animation_idle": "52",
-  "animation_move": "13",
-  "movespeed_attack": "0.0015",
-  "movespeed_skill": "0.0015",
-  "speedtype_attack": "5",
-  "speedtype_skill": "5",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "18, 36, 53, 74, 126, 132, 138, 144",
-  "normal_distribute": "15, 15, 15, 15, 20, 5, 5, 10",
-  "normal_totaldistr": "100",
-  "bb_frames": "14, 32, 52, 72, 122, 128, 134, 140, 144",
-  "bb_distribute": "10, 10, 10, 10, 20, 10, 10, 10, 10",
-  "bb_totaldistr": "100",
-  "description": "The boy once found in a jungle in the Agni Empire territory grew up. Rumors say that during the fierce battle with the gods, Zegar's powers grew stronger, producing claws of flames on his back. His incomparable strength that surpasses humans and beasts made him popular within the Agni Empire. Encouraged by the people's voices, Zegar strived to fight harder.",
-  "summon": "You call me?<br>Me stronger than human and beast!<br>Me show you!",
-  "fusion": "Burn more!<br>Use me claws to<br>burn everything!",
-  "evolution": "What you do to me!?<br>Why this burning feeling?<br>My claws are on fire!",
-  "hp_base": "3151",
-  "atk_base": "1057",
-  "def_base": "643",
-  "rec_base": "575",
-  "hp_lord": "4761",
-  "atk_lord": "1522",
-  "def_lord": "1001",
-  "rec_lord": "956",
-  "hp_anima": "5354",
-  "rec_anima": "798",
-  "atk_breaker": "1680",
-  "def_breaker": "843",
-  "atk_guardian": "1364",
-  "def_guardian": "1159",
-  "rec_guardian": "877",
-  "def_oracle": "922",
-  "hp_oracle": "4524",
-  "rec_oracle": "1193",
-  "hp_bonus": "750",
-  "atk_bonus": "200",
-  "def_bonus": "400",
-  "rec_bonus": "300",
-  "lordonly": "",
-  "combo_hits": "8",
-  "normaldc": "16",
-  "ls": "Intense Strobe",
-  "lsdescription": "Large boost in damage dealt during Spark",
-  "lsnote": "50% boost",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 1057,
+      "def": 643,
+      "hp": 3151,
+      "rec": 575
+    },
+    "_lord": {
+      "atk": 1522,
+      "def": 1001,
+      "hp": 4761,
+      "rec": 956
+    },
+    "anima": {
+      "atk": 1522,
+      "def": 1001,
+      "hp max": 5551,
+      "hp min": 5156,
+      "rec max": 877,
+      "rec min": 719
+    },
+    "breaker": {
+      "atk max": 1759,
+      "atk min": 1601,
+      "def max": 922,
+      "def min": 764,
+      "hp": 4761,
+      "rec": 956
+    },
+    "guardian": {
+      "atk": 1522,
+      "def max": 1238,
+      "def min": 1080,
+      "hp": 4761,
+      "rec max": 956,
+      "rec min": 798
+    },
+    "oracle": {
+      "atk": 1522,
+      "def max": 1001,
+      "def min": 843,
+      "hp": 4761,
+      "rec max": 1272,
+      "rec min": 1114
+    }
+  },
+  "leader_skill": {
+    "desc": "Large boost in damage dealt during Spark",
+    "effects": [
+      {
+        "damage% for spark": 50,
+        "passive id": "31"
+      }
+    ],
+    "id": "1302",
+    "name": "Intense Strobe"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -307,95 +308,97 @@
     ],
     "name": "Twin Dragon Slash"
   },
-  "bbdescription": "9 combo powerful Fire attack on single enemy & probable Injury effect",
-  "bbnote": "80% chance",
-  "bbtype": "Offense",
-  "bbhits": "9",
-  "bbaoe": "1",
-  "bbgauge": "16",
-  "bbdc": "9",
-  "bbmultiplier": "380",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "10023",
-  "evointo": "10025",
-  "evomats1": "50354",
-  "evomats2": "10133",
-  "evomats3": "10132",
-  "evomats4": "60144",
-  "evomats5": "60224",
-  "evoitem": "",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 1057,
-      "def": 643,
-      "hp": 3151,
-      "rec": 575
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1522,
-      "def": 1001,
-      "hp": 4761,
-      "rec": 956
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1522,
-      "def": 1001,
-      "hp max": 5551,
-      "hp min": 5156,
-      "rec max": 877,
-      "rec min": 719
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 200
     },
-    "breaker": {
-      "atk max": 1759,
-      "atk min": 1601,
-      "def max": 922,
-      "def min": 764,
-      "hp": 4761,
-      "rec": 956
+    "idle": {
+      "total number of frames": 52
     },
-    "guardian": {
-      "atk": 1522,
-      "def max": 1238,
-      "def min": 1080,
-      "hp": 4761,
-      "rec max": 956,
-      "rec min": 798
-    },
-    "oracle": {
-      "atk": 1522,
-      "def max": 1001,
-      "def min": 843,
-      "hp": 4761,
-      "rec max": 1272,
-      "rec min": 1114
+    "move": {
+      "total number of frames": 13
     }
   },
-  "leader_skill": {
-    "desc": "Large boost in damage dealt during Spark",
-    "effects": [
-      {
-        "damage% for spark": 50,
-        "passive id": "31"
-      }
+  "category": 10020,
+  "cost": "14",
+  "damage frames": {
+    "frame times": [
+      18,
+      36,
+      53,
+      74,
+      126,
+      132,
+      138,
+      144
     ],
-    "id": "1302",
-    "name": "Intense Strobe"
+    "hit dmg% distribution": [
+      15,
+      15,
+      15,
+      15,
+      20,
+      5,
+      5,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 8
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "fire",
+  "exp_pattern": 15,
+  "gender": "male",
+  "getting type": "farmable",
+  "guide_id": 320,
+  "imp": {
+    "max atk": "200",
+    "max def": "400",
+    "max hp": "750",
+    "max rec": "300"
+  },
+  "kind": "normal",
+  "lord damage range": "1416~1582",
+  "movement": {
+    "attack": {
+      "move speed": 0.0015,
+      "move speed type": "5",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0015,
+      "move speed type": "5",
+      "move type": "1"
+    }
+  },
+  "name": "Beast King Zegar",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Beast King Zegar",
+  "maxlv": "80",
+  "no": "320",
   "unitDisplayHomePosition_1W9CxaFK": "245,196,200,545",
   "unitDisplayDetailPosition_6z54rgb3": "-66,-147,1126,974",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "160,336,297,293,0",
@@ -405,5 +408,111 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "12:121:1,30:121:1,47:121:1,68:121:1,120:121:1,120:650:1,126:121:1,132:121:1,138:121:1,138:100010:1"
+  "effectFrames": "12:121:1,30:121:1,47:121:1,68:121:1,120:121:1,120:650:1,126:121:1,132:121:1,138:121:1,138:100010:1",
+  "evofrom": "10023",
+  "evointo": "10025",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    }
+  ],
+  "basexp": "15",
+  "animation_attack": "200",
+  "animation_idle": "52",
+  "animation_move": "13",
+  "movespeed_attack": "0.0015",
+  "movespeed_skill": "0.0015",
+  "speedtype_attack": "5",
+  "speedtype_skill": "5",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "18, 36, 53, 74, 126, 132, 138, 144",
+  "normal_distribute": "15, 15, 15, 15, 20, 5, 5, 10",
+  "normal_totaldistr": "100",
+  "bb_frames": "14, 32, 52, 72, 122, 128, 134, 140, 144",
+  "bb_distribute": "10, 10, 10, 10, 20, 10, 10, 10, 10",
+  "bb_totaldistr": "100",
+  "description": "The boy once found in a jungle in the Agni Empire territory grew up. Rumors say that during the fierce battle with the gods, Zegar's powers grew stronger, producing claws of flames on his back. His incomparable strength that surpasses humans and beasts made him popular within the Agni Empire. Encouraged by the people's voices, Zegar strived to fight harder.",
+  "summon": "You call me?<br>Me stronger than human and beast!<br>Me show you!",
+  "fusion": "Burn more!<br>Use me claws to<br>burn everything!",
+  "evolution": "What you do to me!?<br>Why this burning feeling?<br>My claws are on fire!",
+  "hp_base": "3151",
+  "atk_base": "1057",
+  "def_base": "643",
+  "rec_base": "575",
+  "hp_lord": "4761",
+  "atk_lord": "1522",
+  "def_lord": "1001",
+  "rec_lord": "956",
+  "hp_anima": "5354",
+  "rec_anima": "798",
+  "atk_breaker": "1680",
+  "def_breaker": "843",
+  "atk_guardian": "1364",
+  "def_guardian": "1159",
+  "rec_guardian": "877",
+  "def_oracle": "922",
+  "hp_oracle": "4524",
+  "rec_oracle": "1193",
+  "hp_bonus": "750",
+  "atk_bonus": "200",
+  "def_bonus": "400",
+  "rec_bonus": "300",
+  "lordonly": "",
+  "combo_hits": "8",
+  "normaldc": "16",
+  "ls": "Intense Strobe",
+  "lsdescription": "Large boost in damage dealt during Spark",
+  "lsnote": "50% boost",
+  "lstype": "Attack",
+  "bbdescription": "9 combo powerful Fire attack on single enemy & probable Injury effect",
+  "bbnote": "80% chance",
+  "bbtype": "Offense",
+  "bbhits": "9",
+  "bbaoe": "1",
+  "bbgauge": "16",
+  "bbdc": "9",
+  "bbmultiplier": "380",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "10133",
+  "evomats3": "10132",
+  "evomats4": "60144",
+  "evomats5": "60224",
+  "evoitem": ""
 }

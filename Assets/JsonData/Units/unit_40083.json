@@ -1,59 +1,63 @@
 {
   "id": "40083",
-  "unitName": "Crow Tengu",
-  "no": "361",
-  "element": "Thunder",
-  "rarity": "★★★★",
-  "cost": "8",
-  "maxlv": "60",
-  "basexp": "15",
-  "gender": "N",
-  "ai": "1",
-  "animation_attack": "144",
-  "animation_idle": "36",
-  "animation_move": "36",
-  "movespeed_attack": "6",
-  "movespeed_skill": "6",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "88, 95, 102, 109, 116, 120",
-  "normal_distribute": "20, 20, 20, 10, 10, 20",
-  "normal_totaldistr": "100",
-  "description": "A mutated spirit that can control the wind. Not originally from Grand Gaia, one is born when a Djin and a spirit that sometimes ventures in from another world fuse together. Unlike the carefree Djin, they are interested in strengthening themselves and hold great magical power. Seemingly as if memories still remain from the other world from which they came, they often speak and act very maturely for their age. Also, as they like lecturing others, there are few they dislike.",
-  "summon": "It was you who summoned me?<br>You're the first human I've met<br>in a while worth training with.",
-  "fusion": "Forget strengthening me,<br>you should power up yourself!",
-  "evolution": "So this is the real me?<br>Not bad, I must say.",
-  "hp_base": "1800",
-  "atk_base": "718",
-  "def_base": "821",
-  "rec_base": "570",
-  "hp_lord": "3020",
-  "atk_lord": "1008",
-  "def_lord": "1130",
-  "rec_lord": "764",
-  "hp_anima": "3463",
-  "rec_anima": "646",
-  "atk_breaker": "1126",
-  "def_breaker": "1012",
-  "atk_guardian": "890",
-  "def_guardian": "1248",
-  "rec_guardian": "705",
-  "def_oracle": "1071",
-  "hp_oracle": "2843",
-  "rec_oracle": "941",
-  "hp_bonus": "600",
-  "atk_bonus": "120",
-  "def_bonus": "120",
-  "rec_bonus": "120",
-  "lordonly": "",
-  "combo_hits": "6",
-  "normaldc": "12",
-  "ls": "Fighting Flash",
-  "lsdescription": "Boost in Battle Crystals produced during Spark",
-  "lsnote": "50% boost",
-  "lstype": "Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 718,
+      "def": 821,
+      "hp": 1800,
+      "rec": 570
+    },
+    "_lord": {
+      "atk": 1008,
+      "def": 1130,
+      "hp": 3020,
+      "rec": 764
+    },
+    "anima": {
+      "atk": 1008,
+      "def": 1130,
+      "hp max": 3610,
+      "hp min": 3315,
+      "rec max": 705,
+      "rec min": 587
+    },
+    "breaker": {
+      "atk max": 1185,
+      "atk min": 1067,
+      "def max": 1071,
+      "def min": 953,
+      "hp": 3020,
+      "rec": 764
+    },
+    "guardian": {
+      "atk": 1008,
+      "def max": 1307,
+      "def min": 1189,
+      "hp": 3020,
+      "rec max": 764,
+      "rec min": 646
+    },
+    "oracle": {
+      "atk": 1008,
+      "def max": 1130,
+      "def min": 1012,
+      "hp": 3020,
+      "rec max": 1000,
+      "rec min": 882
+    }
+  },
+  "leader_skill": {
+    "desc": "Boost in Battle Crystals produced during Spark",
+    "effects": [
+      {
+        "bc drop% for spark": 50,
+        "passive id": "31"
+      }
+    ],
+    "id": "1401",
+    "name": "Fighting Flash"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -216,92 +220,93 @@
     ],
     "name": "Wind of Kalra"
   },
-  "bbdescription": "Boost to BC and HC drop rate for all allies for 3 turns",
-  "bbnote": "38% boost to BC drop rate, 33% boost to HC drop rate",
-  "bbtype": "Support",
-  "bbhits": "",
-  "bbaoe": "0",
-  "bbgauge": "15",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "40082",
-  "evointo": "",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 718,
-      "def": 821,
-      "hp": 1800,
-      "rec": 570
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "party"
     },
-    "_lord": {
-      "atk": 1008,
-      "def": 1130,
-      "hp": 3020,
-      "rec": 764
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1008,
-      "def": 1130,
-      "hp max": 3610,
-      "hp min": 3315,
-      "rec max": 705,
-      "rec min": 587
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 144
     },
-    "breaker": {
-      "atk max": 1185,
-      "atk min": 1067,
-      "def max": 1071,
-      "def min": 953,
-      "hp": 3020,
-      "rec": 764
+    "idle": {
+      "total number of frames": 36
     },
-    "guardian": {
-      "atk": 1008,
-      "def max": 1307,
-      "def min": 1189,
-      "hp": 3020,
-      "rec max": 764,
-      "rec min": 646
-    },
-    "oracle": {
-      "atk": 1008,
-      "def max": 1130,
-      "def min": 1012,
-      "hp": 3020,
-      "rec max": 1000,
-      "rec min": 882
+    "move": {
+      "total number of frames": 36
     }
   },
-  "leader_skill": {
-    "desc": "Boost in Battle Crystals produced during Spark",
-    "effects": [
-      {
-        "bc drop% for spark": 50,
-        "passive id": "31"
-      }
+  "category": 40080,
+  "cost": "8",
+  "damage frames": {
+    "frame times": [
+      88,
+      95,
+      102,
+      109,
+      116,
+      120
     ],
-    "id": "1401",
-    "name": "Fighting Flash"
+    "hit dmg% distribution": [
+      20,
+      20,
+      20,
+      10,
+      10,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 6
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "thunder",
+  "exp_pattern": 15,
+  "gender": "other",
+  "getting type": "farmable",
+  "guide_id": 361,
+  "imp": {
+    "max atk": "120",
+    "max def": "120",
+    "max hp": "600",
+    "max rec": "120"
+  },
+  "kind": "normal",
+  "lord damage range": "938~1048",
+  "movement": {
+    "attack": {
+      "move speed": 6,
+      "move speed type": "2",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 6,
+      "move speed type": "2",
+      "move type": "3"
+    }
+  },
+  "name": "Crow Tengu",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Crow Tengu",
+  "maxlv": "60",
+  "no": "361",
   "unitDisplayHomePosition_1W9CxaFK": "147,138,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "159,128,743,780",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "143,260,471,407,1",
@@ -311,5 +316,79 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "87:290:1,100:400061:1"
+  "effectFrames": "87:290:1,100:400061:1",
+  "evofrom": "40082",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "15",
+  "animation_attack": "144",
+  "animation_idle": "36",
+  "animation_move": "36",
+  "movespeed_attack": "6",
+  "movespeed_skill": "6",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "88, 95, 102, 109, 116, 120",
+  "normal_distribute": "20, 20, 20, 10, 10, 20",
+  "normal_totaldistr": "100",
+  "description": "A mutated spirit that can control the wind. Not originally from Grand Gaia, one is born when a Djin and a spirit that sometimes ventures in from another world fuse together. Unlike the carefree Djin, they are interested in strengthening themselves and hold great magical power. Seemingly as if memories still remain from the other world from which they came, they often speak and act very maturely for their age. Also, as they like lecturing others, there are few they dislike.",
+  "summon": "It was you who summoned me?<br>You're the first human I've met<br>in a while worth training with.",
+  "fusion": "Forget strengthening me,<br>you should power up yourself!",
+  "evolution": "So this is the real me?<br>Not bad, I must say.",
+  "hp_base": "1800",
+  "atk_base": "718",
+  "def_base": "821",
+  "rec_base": "570",
+  "hp_lord": "3020",
+  "atk_lord": "1008",
+  "def_lord": "1130",
+  "rec_lord": "764",
+  "hp_anima": "3463",
+  "rec_anima": "646",
+  "atk_breaker": "1126",
+  "def_breaker": "1012",
+  "atk_guardian": "890",
+  "def_guardian": "1248",
+  "rec_guardian": "705",
+  "def_oracle": "1071",
+  "hp_oracle": "2843",
+  "rec_oracle": "941",
+  "hp_bonus": "600",
+  "atk_bonus": "120",
+  "def_bonus": "120",
+  "rec_bonus": "120",
+  "lordonly": "",
+  "combo_hits": "6",
+  "normaldc": "12",
+  "ls": "Fighting Flash",
+  "lsdescription": "Boost in Battle Crystals produced during Spark",
+  "lsnote": "50% boost",
+  "lstype": "Brave Burst",
+  "bbdescription": "Boost to BC and HC drop rate for all allies for 3 turns",
+  "bbnote": "38% boost to BC drop rate, 33% boost to HC drop rate",
+  "bbtype": "Support",
+  "bbhits": "",
+  "bbaoe": "0",
+  "bbgauge": "15",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "",
+  "evomats2": "",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": ""
 }

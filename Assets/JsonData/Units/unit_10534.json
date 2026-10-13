@@ -1,69 +1,67 @@
 {
   "id": "10534",
-  "unitName": "Randi (5★)",
-  "unreleased": "true",
-  "untranslated": "true",
-  "doenter": "true",
-  "no": "734",
-  "altname": "ランディ",
-  "element": "Fire",
-  "rarity": "★★★★★",
-  "cost": "16",
-  "maxlv": "80",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "179",
-  "animation_idle": "60",
-  "animation_move": "9",
-  "movespeed_attack": "0.0024",
-  "movespeed_skill": "0.0024",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "14, 28, 44, 79, 83, 102, 106, 110",
-  "normal_distribute": "10, 10, 10, 12, 12, 13, 13, 20",
-  "normal_totaldistr": "100",
-  "bb_frames": "15, 30, 45, 60, 75, 90, 105, 120, 135, 150, 165, 180",
-  "bb_distribute": "12, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "2",
-  "description": "異界において、大樹の力を宿す聖剣を引き抜き勇者となった青年。村から追い出されたことで途方に暮れていたランディは、仲間との出会いをきっかけに、聖剣の力を取り戻す旅に出た。様々な人たちとの出会いと数々の戦いは、彼の心の底に秘められた勇気を目覚めさせてゆく。勇者に相応しい強さを身に付けた彼は、力の均衡を欠き破滅に向かい続ける世界を救うため、聖剣の力を解き放った。",
-  "summon": "僕はランディ。<br>父さんと母さんのためにも<br>必ず使命を果たす！",
-  "fusion": "聖剣の力を解放して<br>マナの力の暴走を止めてみせる！",
-  "evolution": "僕はマナの一族として<br>聖剣の力を正しく使うんだ！<br>これからもよろしく！",
-  "hp_base": "3560",
-  "atk_base": "1140",
-  "def_base": "1010",
-  "rec_base": "950",
-  "hp_lord": "5300",
-  "atk_lord": "1650",
-  "def_lord": "1400",
-  "rec_lord": "1350",
-  "hp_anima": "5892",
-  "rec_anima": "1192",
-  "atk_breaker": "1808",
-  "def_breaker": "1242",
-  "def_guardian": "1558",
-  "rec_guardian": "1271",
-  "def_oracle": "1321",
-  "rec_oracle": "1587",
-  "hp_bonus": "750",
-  "atk_bonus": "300",
-  "def_bonus": "300",
-  "rec_bonus": "300",
-  "lordonly": "",
-  "combo_hits": "8",
-  "normaldc": "16",
-  "ls": "聖剣の勇者",
-  "lsdescription": "リティカルダメージをアップ＆スパークダメージを３０％アップ",
-  "lsnote": "{{PassiveList",
-  "passive_1_proc": "34",
-  "passive_1_potency": "50% boost to critical damage",
-  "passive_2_proc": "31",
-  "passive_2_potency": "30% boost to spark damage",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 1140,
+      "def": 1010,
+      "hp": 3560,
+      "rec": 950
+    },
+    "_lord": {
+      "atk": 1650,
+      "def": 1400,
+      "hp": 5300,
+      "rec": 1350
+    },
+    "anima": {
+      "atk": 1650,
+      "def": 1400,
+      "hp max": 6090,
+      "hp min": 5695,
+      "rec max": 1271,
+      "rec min": 1113
+    },
+    "breaker": {
+      "atk max": 1887,
+      "atk min": 1729,
+      "def max": 1321,
+      "def min": 1163,
+      "hp": 5300,
+      "rec": 1350
+    },
+    "guardian": {
+      "atk": 1650,
+      "def max": 1637,
+      "def min": 1479,
+      "hp": 5300,
+      "rec max": 1350,
+      "rec min": 1192
+    },
+    "oracle": {
+      "atk": 1650,
+      "def max": 1400,
+      "def min": 1242,
+      "hp": 5300,
+      "rec max": 1666,
+      "rec min": 1508
+    }
+  },
+  "leader_skill": {
+    "desc": "クリティカルダメージをアップ＆スパークダメージを３０％アップ",
+    "effects": [
+      {
+        "crit multiplier%": 50.0,
+        "passive id": "34"
+      },
+      {
+        "damage% for spark": 30,
+        "passive id": "31"
+      }
+    ],
+    "id": "6700",
+    "name": "聖剣の勇者"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -442,6 +440,168 @@
     ],
     "name": "魚雷旋風斬り"
   },
+  "sbb": {},
+  "ubb": {},
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 179
+    },
+    "idle": {
+      "total number of frames": 60
+    },
+    "move": {
+      "total number of frames": 9
+    }
+  },
+  "category": 10530,
+  "cost": "16",
+  "damage frames": {
+    "frame times": [
+      14,
+      28,
+      44,
+      79,
+      83,
+      102,
+      106,
+      110
+    ],
+    "hit dmg% distribution": [
+      10,
+      10,
+      10,
+      12,
+      12,
+      13,
+      13,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 8
+  },
+  "drop check count": 2,
+  "element": "fire",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "farmable",
+  "guide_id": 734,
+  "imp": {
+    "max atk": "300",
+    "max def": "300",
+    "max hp": "750",
+    "max rec": "300"
+  },
+  "kind": "normal",
+  "lord damage range": "1536~1716",
+  "movement": {
+    "attack": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    }
+  },
+  "name": "ランディ",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "ランディ",
+  "maxlv": "80",
+  "no": "734",
+  "unitDisplayHomePosition_1W9CxaFK": null,
+  "unitDisplayDetailPosition_6z54rgb3": null,
+  "unitDisplayConfirmImagePosition_MYK1fq6c": null,
+  "unitDisplayCutInImagePosition_7hLR6pDN": null,
+  "unitDisplaySummonPosition_KC3Jk8Br": null,
+  "unitDisplayHpPosition_3BpHN6VD": null,
+  "unitDisplayCursorPosition": null,
+  "sellPrice": "",
+  "sellCaution": false,
+  "effectFrames": "",
+  "evofrom": "10533",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "unreleased": "true",
+  "untranslated": "true",
+  "doenter": "true",
+  "altname": "ランディ",
+  "basexp": "21",
+  "animation_attack": "179",
+  "animation_idle": "60",
+  "animation_move": "9",
+  "movespeed_attack": "0.0024",
+  "movespeed_skill": "0.0024",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "14, 28, 44, 79, 83, 102, 106, 110",
+  "normal_distribute": "10, 10, 10, 12, 12, 13, 13, 20",
+  "normal_totaldistr": "100",
+  "bb_frames": "15, 30, 45, 60, 75, 90, 105, 120, 135, 150, 165, 180",
+  "bb_distribute": "12, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "2",
+  "description": "異界において、大樹の力を宿す聖剣を引き抜き勇者となった青年。村から追い出されたことで途方に暮れていたランディは、仲間との出会いをきっかけに、聖剣の力を取り戻す旅に出た。様々な人たちとの出会いと数々の戦いは、彼の心の底に秘められた勇気を目覚めさせてゆく。勇者に相応しい強さを身に付けた彼は、力の均衡を欠き破滅に向かい続ける世界を救うため、聖剣の力を解き放った。",
+  "summon": "僕はランディ。<br>父さんと母さんのためにも<br>必ず使命を果たす！",
+  "fusion": "聖剣の力を解放して<br>マナの力の暴走を止めてみせる！",
+  "evolution": "僕はマナの一族として<br>聖剣の力を正しく使うんだ！<br>これからもよろしく！",
+  "hp_base": "3560",
+  "atk_base": "1140",
+  "def_base": "1010",
+  "rec_base": "950",
+  "hp_lord": "5300",
+  "atk_lord": "1650",
+  "def_lord": "1400",
+  "rec_lord": "1350",
+  "hp_anima": "5892",
+  "rec_anima": "1192",
+  "atk_breaker": "1808",
+  "def_breaker": "1242",
+  "def_guardian": "1558",
+  "rec_guardian": "1271",
+  "def_oracle": "1321",
+  "rec_oracle": "1587",
+  "hp_bonus": "750",
+  "atk_bonus": "300",
+  "def_bonus": "300",
+  "rec_bonus": "300",
+  "lordonly": "",
+  "combo_hits": "8",
+  "normaldc": "16",
+  "ls": "聖剣の勇者",
+  "lsdescription": "リティカルダメージをアップ＆スパークダメージを３０％アップ",
+  "lsnote": "{{PassiveList",
+  "passive_1_proc": "34",
+  "passive_1_potency": "50% boost to critical damage",
+  "passive_2_proc": "31",
+  "passive_2_potency": "30% boost to spark damage",
+  "lstype": "Attack",
   "bbdescription": "敵全体に炎属性１２連ダメージ＆味方全体に３ターン、攻撃力をアップ・クリティカル率をかなりアップ・スパークダメージをアップ",
   "bbnote": "{{UnitBuffList",
   "buff_1_proc": "1",
@@ -466,87 +626,10 @@
   "bbgauge": "25",
   "bbdc": "12",
   "bbmultiplier": "190",
-  "evofrom": "10533",
-  "evointo": "",
   "evomats1": "",
   "evomats2": "",
   "evomats3": "",
   "evomats4": "",
   "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 1140,
-      "def": 1010,
-      "hp": 3560,
-      "rec": 950
-    },
-    "_lord": {
-      "atk": 1650,
-      "def": 1400,
-      "hp": 5300,
-      "rec": 1350
-    },
-    "anima": {
-      "atk": 1650,
-      "def": 1400,
-      "hp max": 6090,
-      "hp min": 5695,
-      "rec max": 1271,
-      "rec min": 1113
-    },
-    "breaker": {
-      "atk max": 1887,
-      "atk min": 1729,
-      "def max": 1321,
-      "def min": 1163,
-      "hp": 5300,
-      "rec": 1350
-    },
-    "guardian": {
-      "atk": 1650,
-      "def max": 1637,
-      "def min": 1479,
-      "hp": 5300,
-      "rec max": 1350,
-      "rec min": 1192
-    },
-    "oracle": {
-      "atk": 1650,
-      "def max": 1400,
-      "def min": 1242,
-      "hp": 5300,
-      "rec max": 1666,
-      "rec min": 1508
-    }
-  },
-  "leader_skill": {
-    "desc": "クリティカルダメージをアップ＆スパークダメージを３０％アップ",
-    "effects": [
-      {
-        "crit multiplier%": 50.0,
-        "passive id": "34"
-      },
-      {
-        "damage% for spark": 30,
-        "passive id": "31"
-      }
-    ],
-    "id": "6700",
-    "name": "聖剣の勇者"
-  },
-  "extra_skill": {},
-  "sbb": {},
-  "ubb": {},
-  "unitDisplayHomePosition_1W9CxaFK": null,
-  "unitDisplayDetailPosition_6z54rgb3": null,
-  "unitDisplayConfirmImagePosition_MYK1fq6c": null,
-  "unitDisplayCutInImagePosition_7hLR6pDN": null,
-  "unitDisplaySummonPosition_KC3Jk8Br": null,
-  "unitDisplayHpPosition_3BpHN6VD": null,
-  "unitDisplayCursorPosition": null,
-  "sellPrice": "",
-  "sellCaution": false,
-  "effectFrames": ""
+  "evoitem": ""
 }

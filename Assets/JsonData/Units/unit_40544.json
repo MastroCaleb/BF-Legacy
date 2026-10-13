@@ -1,59 +1,65 @@
 {
   "id": "40544",
-  "unitName": "Voltage Cutlass Diana",
-  "no": "892",
-  "element": "Thunder",
-  "rarity": "★★★★★",
-  "cost": "19",
-  "maxlv": "80",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "143",
-  "animation_idle": "52",
-  "animation_move": "12",
-  "movespeed_attack": "0.0024",
-  "movespeed_skill": "0.0024",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "33, 37, 45, 49, 57, 61, 65",
-  "normal_distribute": "20, 8, 20, 8, 25, 10, 9",
-  "normal_totaldistr": "100",
-  "description": "One of the sacred Guardians of Meirith, who worshipped the Holy Emperor Karna Masta in the La Veda Republic. Diana was gifted with a sabre of thunder by the Holy Emperor when she had been unexpectedly appointed as a Guardian, regardless of her humble origins as fisherman's daughter. She gained confidence in the swordsmanship she had developed despite her father's opposition, and her faith grew stronger with it, though this only caused her to become unsure of her place in the world. Trapped in her own emotional struggle, it is said that Quaid came to irritate her with his easygoing and happy-go-lucky demeanor.",
-  "summon": "Oh, no...seriously?<br>Are you sure you want me with you?<br>You won't get mad if I'm useless?",
-  "fusion": "You shouldn't expect that much of me.<br>I'm not like everyone else,<br>I'm only human.",
-  "evolution": "",
-  "hp_base": "3200",
-  "atk_base": "1200",
-  "def_base": "1250",
-  "rec_base": "1300",
-  "hp_lord": "4640",
-  "atk_lord": "1620",
-  "def_lord": "1650",
-  "rec_lord": "1690",
-  "hp_anima": "5232",
-  "rec_anima": "1532",
-  "atk_breaker": "1778",
-  "def_breaker": "1492",
-  "atk_guardian": "1462",
-  "def_guardian": "1808",
-  "rec_guardian": "1611",
-  "def_oracle": "1571",
-  "hp_oracle": "4403",
-  "rec_oracle": "1927",
-  "hp_bonus": "500",
-  "atk_bonus": "200",
-  "def_bonus": "200",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "7",
-  "normaldc": "14",
-  "ls": "Ares' Rage",
-  "lsdescription": "Boost in the BB gauge when attacked",
-  "lsnote": "Fills 2-5 BC",
-  "lstype": "Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 1200,
+      "def": 1250,
+      "hp": 3200,
+      "rec": 1300
+    },
+    "_lord": {
+      "atk": 1620,
+      "def": 1650,
+      "hp": 4640,
+      "rec": 1690
+    },
+    "anima": {
+      "atk": 1620,
+      "def": 1650,
+      "hp max": 5430,
+      "hp min": 5035,
+      "rec max": 1611,
+      "rec min": 1453
+    },
+    "breaker": {
+      "atk max": 1857,
+      "atk min": 1699,
+      "def max": 1571,
+      "def min": 1413,
+      "hp": 4640,
+      "rec": 1690
+    },
+    "guardian": {
+      "atk": 1620,
+      "def max": 1887,
+      "def min": 1729,
+      "hp": 4640,
+      "rec max": 1690,
+      "rec min": 1532
+    },
+    "oracle": {
+      "atk": 1620,
+      "def max": 1650,
+      "def min": 1492,
+      "hp": 4640,
+      "rec max": 2006,
+      "rec min": 1848
+    }
+  },
+  "leader_skill": {
+    "desc": "Boost in the BB gauge when attacked",
+    "effects": [
+      {
+        "bc fill when attacked high": 5,
+        "bc fill when attacked low": 2,
+        "bc fill when attacked%": 100,
+        "passive id": "25"
+      }
+    ],
+    "id": "5701",
+    "name": "Ares' Rage"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -410,96 +416,95 @@
     ],
     "name": "Growling Arrows"
   },
-  "bbdescription": "Gradually recovers BB gauge for all allies for 3 turns, increases BB gauge when damage is taken & boosts HC drop rate",
-  "bbnote": "Fills 4 BC/turn, fills 3-5 BC when hit & 15% boost",
-  "bbtype": "Support",
-  "bbhits": "0",
-  "bbaoe": "0",
-  "bbgauge": "23",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "es": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "40545",
-  "evomats1": "50354",
-  "evomats2": "40133",
-  "evomats3": "60144",
-  "evomats4": "60224",
-  "evomats5": "40191",
-  "evoitem": "",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 1200,
-      "def": 1250,
-      "hp": 3200,
-      "rec": 1300
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1620,
-      "def": 1650,
-      "hp": 4640,
-      "rec": 1690
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1620,
-      "def": 1650,
-      "hp max": 5430,
-      "hp min": 5035,
-      "rec max": 1611,
-      "rec min": 1453
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 143
     },
-    "breaker": {
-      "atk max": 1857,
-      "atk min": 1699,
-      "def max": 1571,
-      "def min": 1413,
-      "hp": 4640,
-      "rec": 1690
+    "idle": {
+      "total number of frames": 52
     },
-    "guardian": {
-      "atk": 1620,
-      "def max": 1887,
-      "def min": 1729,
-      "hp": 4640,
-      "rec max": 1690,
-      "rec min": 1532
-    },
-    "oracle": {
-      "atk": 1620,
-      "def max": 1650,
-      "def min": 1492,
-      "hp": 4640,
-      "rec max": 2006,
-      "rec min": 1848
+    "move": {
+      "total number of frames": 12
     }
   },
-  "leader_skill": {
-    "desc": "Boost in the BB gauge when attacked",
-    "effects": [
-      {
-        "bc fill when attacked high": 5,
-        "bc fill when attacked low": 2,
-        "bc fill when attacked%": 100,
-        "passive id": "25"
-      }
+  "category": 40540,
+  "cost": "19",
+  "damage frames": {
+    "frame times": [
+      33,
+      37,
+      45,
+      49,
+      57,
+      61,
+      65
     ],
-    "id": "5701",
-    "name": "Ares' Rage"
+    "hit dmg% distribution": [
+      20,
+      8,
+      20,
+      8,
+      25,
+      10,
+      9
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 7
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "thunder",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 892,
+  "imp": {
+    "max atk": "200",
+    "max def": "200",
+    "max hp": "500",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "1508~1684",
+  "movement": {
+    "attack": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    }
+  },
+  "name": "Voltage Cutlass Diana",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Voltage Cutlass Diana",
+  "maxlv": "80",
+  "no": "892",
   "unitDisplayHomePosition_1W9CxaFK": "458,58,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-77,165,1020,681",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "48,287,541,361,0",
@@ -509,5 +514,107 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "27:400231:1,31:120:1,39:400231:1,43:120:1,51:400231:1,55:120:1,59:120:1,33:200081:1,50:200081:1"
+  "effectFrames": "27:400231:1,31:120:1,39:400231:1,43:120:1,51:400231:1,55:120:1,59:120:1,33:200081:1,50:200081:1",
+  "evofrom": "",
+  "evointo": "40545",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40191",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "143",
+  "animation_idle": "52",
+  "animation_move": "12",
+  "movespeed_attack": "0.0024",
+  "movespeed_skill": "0.0024",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "33, 37, 45, 49, 57, 61, 65",
+  "normal_distribute": "20, 8, 20, 8, 25, 10, 9",
+  "normal_totaldistr": "100",
+  "description": "One of the sacred Guardians of Meirith, who worshipped the Holy Emperor Karna Masta in the La Veda Republic. Diana was gifted with a sabre of thunder by the Holy Emperor when she had been unexpectedly appointed as a Guardian, regardless of her humble origins as fisherman's daughter. She gained confidence in the swordsmanship she had developed despite her father's opposition, and her faith grew stronger with it, though this only caused her to become unsure of her place in the world. Trapped in her own emotional struggle, it is said that Quaid came to irritate her with his easygoing and happy-go-lucky demeanor.",
+  "summon": "Oh, no...seriously?<br>Are you sure you want me with you?<br>You won't get mad if I'm useless?",
+  "fusion": "You shouldn't expect that much of me.<br>I'm not like everyone else,<br>I'm only human.",
+  "evolution": "",
+  "hp_base": "3200",
+  "atk_base": "1200",
+  "def_base": "1250",
+  "rec_base": "1300",
+  "hp_lord": "4640",
+  "atk_lord": "1620",
+  "def_lord": "1650",
+  "rec_lord": "1690",
+  "hp_anima": "5232",
+  "rec_anima": "1532",
+  "atk_breaker": "1778",
+  "def_breaker": "1492",
+  "atk_guardian": "1462",
+  "def_guardian": "1808",
+  "rec_guardian": "1611",
+  "def_oracle": "1571",
+  "hp_oracle": "4403",
+  "rec_oracle": "1927",
+  "hp_bonus": "500",
+  "atk_bonus": "200",
+  "def_bonus": "200",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "7",
+  "normaldc": "14",
+  "ls": "Ares' Rage",
+  "lsdescription": "Boost in the BB gauge when attacked",
+  "lsnote": "Fills 2-5 BC",
+  "lstype": "Brave Burst",
+  "bbdescription": "Gradually recovers BB gauge for all allies for 3 turns, increases BB gauge when damage is taken & boosts HC drop rate",
+  "bbnote": "Fills 4 BC/turn, fills 3-5 BC when hit & 15% boost",
+  "bbtype": "Support",
+  "bbhits": "0",
+  "bbaoe": "0",
+  "bbgauge": "23",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "es": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "40133",
+  "evomats3": "60144",
+  "evomats4": "60224",
+  "evomats5": "40191",
+  "evoitem": ""
 }

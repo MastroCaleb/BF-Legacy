@@ -1,59 +1,63 @@
 {
   "id": "10153",
-  "unitName": "Hot Chef Lancia",
-  "no": "222",
-  "element": "Fire",
-  "rarity": "★★★★",
-  "cost": "8",
-  "maxlv": "60",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "5",
-  "animation_attack": "112",
-  "animation_idle": "54",
-  "animation_move": "13",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "4",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "3",
-  "normal_frames": "35, 55",
-  "normal_distribute": "40, 60",
-  "normal_totaldistr": "100",
-  "description": "Young girl and owner of Lan-Lan, a famous diner in the Agni Empire. On her travels to discover new ingredients, Lancia stumbled across a coastal village that was being terrorized by the water dragon Legtos. Sympathizing with the starving villagers’ plight, Lancia challenged and defeated Legtos in a breathtaking fight. Her celebratory dish, Grilled Legtos, is said to have gone down well with the famished villagers.",
-  "summon": "There’s nothing my fry pan<br>can’t fry.<br>That includes you, by the way!",
-  "fusion": "The tastier the dish, the better it is for you,<br>that’s what I always say.<br>Fusion’s a hungry business!",
-  "evolution": "Food knows no barriers!<br>Any ingredient can be tasty with<br>the right preparation and care.",
-  "hp_base": "2583",
-  "atk_base": "585",
-  "def_base": "792",
-  "rec_base": "1116",
-  "hp_lord": "4097",
-  "atk_lord": "910",
-  "def_lord": "1148",
-  "rec_lord": "1534",
-  "hp_anima": "4540",
-  "rec_anima": "1416",
-  "atk_breaker": "1028",
-  "def_breaker": "1030",
-  "atk_guardian": "792",
-  "def_guardian": "1266",
-  "rec_guardian": "1475",
-  "def_oracle": "1089",
-  "hp_oracle": "3920",
-  "rec_oracle": "1711",
-  "hp_bonus": "400",
-  "atk_bonus": "160",
-  "def_bonus": "160",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "2",
-  "normaldc": "10",
-  "ls": "Pure Shining",
-  "lsdescription": "Boost in Heart Crystals produced during Spark",
-  "lsnote": "35% boost",
-  "lstype": "Recovery",
+  "stats": {
+    "_base": {
+      "atk": 585,
+      "def": 792,
+      "hp": 2583,
+      "rec": 1116
+    },
+    "_lord": {
+      "atk": 910,
+      "def": 1148,
+      "hp": 4097,
+      "rec": 1534
+    },
+    "anima": {
+      "atk": 910,
+      "def": 1148,
+      "hp max": 4687,
+      "hp min": 4392,
+      "rec max": 1475,
+      "rec min": 1357
+    },
+    "breaker": {
+      "atk max": 1087,
+      "atk min": 969,
+      "def max": 1089,
+      "def min": 971,
+      "hp": 4097,
+      "rec": 1534
+    },
+    "guardian": {
+      "atk": 910,
+      "def max": 1325,
+      "def min": 1207,
+      "hp": 4097,
+      "rec max": 1534,
+      "rec min": 1416
+    },
+    "oracle": {
+      "atk": 910,
+      "def max": 1148,
+      "def min": 1030,
+      "hp": 4097,
+      "rec max": 1770,
+      "rec min": 1652
+    }
+  },
+  "leader_skill": {
+    "desc": "Boost in Heart Crystals produced during Spark",
+    "effects": [
+      {
+        "hc drop% for spark": 35,
+        "passive id": "31"
+      }
+    ],
+    "id": "1501",
+    "name": "Pure Shining"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -318,93 +322,85 @@
     ],
     "name": "Hearty Dish"
   },
-  "bbdescription": "Greatly Recovers HP for All allies and Boosts ATK for 3 Turns",
-  "bbnote": "Heals (1260~1660 + 25% of healer Rec) HP, 30% boost to Atk",
-  "bbtype": "Heal/Support",
-  "bbhits": "",
-  "bbaoe": "0",
-  "bbgauge": "20",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "10152",
-  "evointo": "10154",
-  "evomats1": "10133",
-  "evomats2": "10132",
-  "evomats3": "10131",
-  "evomats4": "60143",
-  "evomats5": "60142",
-  "evoitem": "",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 585,
-      "def": 792,
-      "hp": 2583,
-      "rec": 1116
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 80.0,
+      "target conditions": "hp_50pr_under",
+      "target type": "party"
     },
-    "_lord": {
-      "atk": 910,
-      "def": 1148,
-      "hp": 4097,
-      "rec": 1534
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "hp_min",
+      "target type": "party"
     },
-    "anima": {
-      "atk": 910,
-      "def": 1148,
-      "hp max": 4687,
-      "hp min": 4392,
-      "rec max": 1475,
-      "rec min": 1357
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 112
     },
-    "breaker": {
-      "atk max": 1087,
-      "atk min": 969,
-      "def max": 1089,
-      "def min": 971,
-      "hp": 4097,
-      "rec": 1534
+    "idle": {
+      "total number of frames": 54
     },
-    "guardian": {
-      "atk": 910,
-      "def max": 1325,
-      "def min": 1207,
-      "hp": 4097,
-      "rec max": 1534,
-      "rec min": 1416
-    },
-    "oracle": {
-      "atk": 910,
-      "def max": 1148,
-      "def min": 1030,
-      "hp": 4097,
-      "rec max": 1770,
-      "rec min": 1652
+    "move": {
+      "total number of frames": 13
     }
   },
-  "leader_skill": {
-    "desc": "Boost in Heart Crystals produced during Spark",
-    "effects": [
-      {
-        "hc drop% for spark": 35,
-        "passive id": "31"
-      }
+  "category": 10150,
+  "cost": "8",
+  "damage frames": {
+    "frame times": [
+      35,
+      55
     ],
-    "id": "1501",
-    "name": "Pure Shining"
+    "hit dmg% distribution": [
+      40,
+      60
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 2
   },
-  "extra_skill": {},
+  "drop check count": 5,
+  "element": "fire",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 222,
+  "imp": {
+    "max atk": "160",
+    "max def": "160",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "847~946",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    }
+  },
+  "name": "Hot Chef Lancia",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Hot Chef Lancia",
+  "maxlv": "60",
+  "no": "222",
   "unitDisplayHomePosition_1W9CxaFK": "510,95,182,498",
   "unitDisplayDetailPosition_6z54rgb3": "-110,90,825,670",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "215,387,216,240,0",
@@ -414,5 +410,106 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "33:131:1,37:140:1,55:131:1,70:140:1"
+  "effectFrames": "33:131:1,37:140:1,55:131:1,70:140:1",
+  "evofrom": "10152",
+  "evointo": "10154",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "10133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10131",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60142",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "112",
+  "animation_idle": "54",
+  "animation_move": "13",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "4",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "3",
+  "normal_frames": "35, 55",
+  "normal_distribute": "40, 60",
+  "normal_totaldistr": "100",
+  "description": "Young girl and owner of Lan-Lan, a famous diner in the Agni Empire. On her travels to discover new ingredients, Lancia stumbled across a coastal village that was being terrorized by the water dragon Legtos. Sympathizing with the starving villagers’ plight, Lancia challenged and defeated Legtos in a breathtaking fight. Her celebratory dish, Grilled Legtos, is said to have gone down well with the famished villagers.",
+  "summon": "There’s nothing my fry pan<br>can’t fry.<br>That includes you, by the way!",
+  "fusion": "The tastier the dish, the better it is for you,<br>that’s what I always say.<br>Fusion’s a hungry business!",
+  "evolution": "Food knows no barriers!<br>Any ingredient can be tasty with<br>the right preparation and care.",
+  "hp_base": "2583",
+  "atk_base": "585",
+  "def_base": "792",
+  "rec_base": "1116",
+  "hp_lord": "4097",
+  "atk_lord": "910",
+  "def_lord": "1148",
+  "rec_lord": "1534",
+  "hp_anima": "4540",
+  "rec_anima": "1416",
+  "atk_breaker": "1028",
+  "def_breaker": "1030",
+  "atk_guardian": "792",
+  "def_guardian": "1266",
+  "rec_guardian": "1475",
+  "def_oracle": "1089",
+  "hp_oracle": "3920",
+  "rec_oracle": "1711",
+  "hp_bonus": "400",
+  "atk_bonus": "160",
+  "def_bonus": "160",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "2",
+  "normaldc": "10",
+  "ls": "Pure Shining",
+  "lsdescription": "Boost in Heart Crystals produced during Spark",
+  "lsnote": "35% boost",
+  "lstype": "Recovery",
+  "bbdescription": "Greatly Recovers HP for All allies and Boosts ATK for 3 Turns",
+  "bbnote": "Heals (1260~1660 + 25% of healer Rec) HP, 30% boost to Atk",
+  "bbtype": "Heal/Support",
+  "bbhits": "",
+  "bbaoe": "0",
+  "bbgauge": "20",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "10133",
+  "evomats2": "10132",
+  "evomats3": "10131",
+  "evomats4": "60143",
+  "evomats5": "60142",
+  "evoitem": ""
 }

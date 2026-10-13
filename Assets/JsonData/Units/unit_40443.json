@@ -1,58 +1,63 @@
 {
   "id": "40443",
-  "unitName": "Thunder Beast Ahvel",
-  "no": "619",
-  "element": "Thunder",
-  "rarity": "★★★★",
-  "cost": "13",
-  "maxlv": "60",
-  "basexp": "21",
-  "gender": "N",
-  "ai": "2",
-  "animation_attack": "178",
-  "animation_idle": "72",
-  "animation_move": "44",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "4",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "3",
-  "normal_frames": "41, 44, 56, 59, 78, 81, 84",
-  "normal_distribute": "20, 10, 20, 10, 20, 10, 10",
-  "normal_totaldistr": "100",
-  "description": "Appearing in front of those who bear a destiny with a great burden, legends say this phantom beast will gift them with a revelation. Since not many common people can claim to have seen it, many doubt its existence. However, the heroes and great people that have laid down history who have witnessed this creature aren't just a few. The location and time in which it appears are not constant, but there is thunder along with its strong presence. It is said that beings from another world who have witnessed this beast have called it a \"giraffe.\"",
-  "summon": "Is it thou who hast awoken me?<br>Dost thou think that our meeting was also destined?",
-  "fusion": "Child.<br>I should already know well<br>what thou innocently wishest from me.",
-  "evolution": "",
-  "hp_base": "2848",
-  "atk_base": "1034",
-  "def_base": "924",
-  "rec_base": "1130",
-  "hp_lord": "4097",
-  "atk_lord": "1378",
-  "def_lord": "1231",
-  "rec_lord": "1507",
-  "hp_anima": "4540",
-  "rec_anima": "1389",
-  "atk_breaker": "1496",
-  "def_breaker": "1113",
-  "atk_guardian": "1260",
-  "def_guardian": "1349",
-  "rec_guardian": "1448",
-  "def_oracle": "1172",
-  "hp_oracle": "3920",
-  "rec_oracle": "1684",
-  "hp_bonus": "400",
-  "atk_bonus": "120",
-  "def_bonus": "200",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "7",
-  "normaldc": "14",
-  "ls": "Royal Oracle",
-  "lsdescription": "15% boost to HP of all Units",
-  "lstype": "Hit Points",
+  "stats": {
+    "_base": {
+      "atk": 1034,
+      "def": 924,
+      "hp": 2848,
+      "rec": 1130
+    },
+    "_lord": {
+      "atk": 1378,
+      "def": 1231,
+      "hp": 4097,
+      "rec": 1507
+    },
+    "anima": {
+      "atk": 1378,
+      "def": 1231,
+      "hp max": 4687,
+      "hp min": 4392,
+      "rec max": 1448,
+      "rec min": 1330
+    },
+    "breaker": {
+      "atk max": 1555,
+      "atk min": 1437,
+      "def max": 1172,
+      "def min": 1054,
+      "hp": 4097,
+      "rec": 1507
+    },
+    "guardian": {
+      "atk": 1378,
+      "def max": 1408,
+      "def min": 1290,
+      "hp": 4097,
+      "rec max": 1507,
+      "rec min": 1389
+    },
+    "oracle": {
+      "atk": 1378,
+      "def max": 1231,
+      "def min": 1113,
+      "hp": 4097,
+      "rec max": 1743,
+      "rec min": 1625
+    }
+  },
+  "leader_skill": {
+    "desc": "15% boost to max HP",
+    "effects": [
+      {
+        "hp% buff": 15,
+        "passive id": "1"
+      }
+    ],
+    "id": "5500",
+    "name": "Royal Oracle"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -437,91 +442,95 @@
     ],
     "name": "Cure Levin"
   },
-  "bbdescription": "All status ailments removed and nullified for all allies for 3 turns",
-  "bbtype": "Support",
-  "bbhits": "0",
-  "bbaoe": "0",
-  "bbgauge": "15",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "40444",
-  "evomats1": "40133",
-  "evomats2": "40191",
-  "evomats3": "40132",
-  "evomats4": "60144",
-  "evomats5": "60143",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 1034,
-      "def": 924,
-      "hp": 2848,
-      "rec": 1130
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1378,
-      "def": 1231,
-      "hp": 4097,
-      "rec": 1507
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1378,
-      "def": 1231,
-      "hp max": 4687,
-      "hp min": 4392,
-      "rec max": 1448,
-      "rec min": 1330
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 178
     },
-    "breaker": {
-      "atk max": 1555,
-      "atk min": 1437,
-      "def max": 1172,
-      "def min": 1054,
-      "hp": 4097,
-      "rec": 1507
+    "idle": {
+      "total number of frames": 72
     },
-    "guardian": {
-      "atk": 1378,
-      "def max": 1408,
-      "def min": 1290,
-      "hp": 4097,
-      "rec max": 1507,
-      "rec min": 1389
-    },
-    "oracle": {
-      "atk": 1378,
-      "def max": 1231,
-      "def min": 1113,
-      "hp": 4097,
-      "rec max": 1743,
-      "rec min": 1625
+    "move": {
+      "total number of frames": 44
     }
   },
-  "leader_skill": {
-    "desc": "15% boost to max HP",
-    "effects": [
-      {
-        "hp% buff": 15,
-        "passive id": "1"
-      }
+  "category": 40440,
+  "cost": "13",
+  "damage frames": {
+    "frame times": [
+      41,
+      44,
+      56,
+      59,
+      78,
+      81,
+      84
     ],
-    "id": "5500",
-    "name": "Royal Oracle"
+    "hit dmg% distribution": [
+      20,
+      10,
+      20,
+      10,
+      20,
+      10,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 7
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "thunder",
+  "exp_pattern": 20,
+  "gender": "other",
+  "getting type": "rare summon",
+  "guide_id": 619,
+  "imp": {
+    "max atk": "120",
+    "max def": "200",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "1283~1433",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    }
+  },
+  "name": "Thunder Beast Ahvel",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Thunder Beast Ahvel",
+  "maxlv": "60",
+  "no": "619",
   "unitDisplayHomePosition_1W9CxaFK": "75,34,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "150,162,789,621",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "157,355,319,277,0",
@@ -531,5 +540,103 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "41:400104:1"
+  "effectFrames": "41:400104:1",
+  "evofrom": "",
+  "evointo": "40444",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "40133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "178",
+  "animation_idle": "72",
+  "animation_move": "44",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "4",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "3",
+  "normal_frames": "41, 44, 56, 59, 78, 81, 84",
+  "normal_distribute": "20, 10, 20, 10, 20, 10, 10",
+  "normal_totaldistr": "100",
+  "description": "Appearing in front of those who bear a destiny with a great burden, legends say this phantom beast will gift them with a revelation. Since not many common people can claim to have seen it, many doubt its existence. However, the heroes and great people that have laid down history who have witnessed this creature aren't just a few. The location and time in which it appears are not constant, but there is thunder along with its strong presence. It is said that beings from another world who have witnessed this beast have called it a \"giraffe.\"",
+  "summon": "Is it thou who hast awoken me?<br>Dost thou think that our meeting was also destined?",
+  "fusion": "Child.<br>I should already know well<br>what thou innocently wishest from me.",
+  "evolution": "",
+  "hp_base": "2848",
+  "atk_base": "1034",
+  "def_base": "924",
+  "rec_base": "1130",
+  "hp_lord": "4097",
+  "atk_lord": "1378",
+  "def_lord": "1231",
+  "rec_lord": "1507",
+  "hp_anima": "4540",
+  "rec_anima": "1389",
+  "atk_breaker": "1496",
+  "def_breaker": "1113",
+  "atk_guardian": "1260",
+  "def_guardian": "1349",
+  "rec_guardian": "1448",
+  "def_oracle": "1172",
+  "hp_oracle": "3920",
+  "rec_oracle": "1684",
+  "hp_bonus": "400",
+  "atk_bonus": "120",
+  "def_bonus": "200",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "7",
+  "normaldc": "14",
+  "ls": "Royal Oracle",
+  "lsdescription": "15% boost to HP of all Units",
+  "lstype": "Hit Points",
+  "bbdescription": "All status ailments removed and nullified for all allies for 3 turns",
+  "bbtype": "Support",
+  "bbhits": "0",
+  "bbaoe": "0",
+  "bbgauge": "15",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "40133",
+  "evomats2": "40191",
+  "evomats3": "40132",
+  "evomats4": "60144",
+  "evomats5": "60143"
 }

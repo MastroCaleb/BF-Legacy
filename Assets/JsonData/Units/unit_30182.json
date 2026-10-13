@@ -1,53 +1,64 @@
 {
   "id": "30182",
-  "unitName": "Bard Elton",
-  "no": "464",
-  "element": "Earth",
-  "rarity": "★★★",
-  "cost": "7",
-  "maxlv": "40",
-  "basexp": "15",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "104",
-  "animation_idle": "52",
-  "animation_move": "52",
-  "movespeed_attack": "6",
-  "movespeed_skill": "6",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "description": "A wandering bard who travelled all around the La Veda Republic. His songs held power to charm not only humans but monsters as well. Entrapping many with his beautiful voice, a young lady from an aristocratic family confined him to a tower prison where he was forced to sing only for himself. It's said that he was secretly released by a guard who was moved by his songs, then saved by some fairies from the forest.",
-  "summon": "I've come with song.<br>If possible, I'd like to assure<br>where you go, music follows.",
-  "fusion": "The power of a heroes spirit.<br>Continuing even after death,<br>that is the hymn of life.",
-  "evolution": "To you, who understand me.<br>I would like to sing for you a<br>song of heroes.",
-  "hp_base": "1945",
-  "atk_base": "595",
-  "def_base": "871",
-  "rec_base": "753",
-  "hp_lord": "3229",
-  "atk_lord": "804",
-  "def_lord": "1226",
-  "rec_lord": "1076",
-  "hp_anima": "3521",
-  "rec_anima": "998",
-  "atk_breaker": "882",
-  "def_breaker": "1148",
-  "atk_guardian": "726",
-  "def_guardian": "1304",
-  "hp_oracle": "2936",
-  "rec_oracle": "1154",
-  "hp_bonus": "300",
-  "atk_bonus": "80",
-  "def_bonus": "160",
-  "rec_bonus": "120",
-  "lordonly": "",
-  "combo_hits": "4",
-  "normaldc": "8",
-  "ls": "Brave Power",
-  "lsdescription": "25% boost to Atk power of male Units",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 595,
+      "def": 871,
+      "hp": 1945,
+      "rec": 753
+    },
+    "_lord": {
+      "atk": 804,
+      "def": 1226,
+      "hp": 3229,
+      "rec": 1076
+    },
+    "anima": {
+      "atk": 804,
+      "def": 1226,
+      "hp max": 3619,
+      "hp min": 3424,
+      "rec max": 1037,
+      "rec min": 959
+    },
+    "breaker": {
+      "atk max": 921,
+      "atk min": 843,
+      "def max": 1187,
+      "def min": 1109,
+      "hp": 3229,
+      "rec": 1076
+    },
+    "guardian": {
+      "atk": 804,
+      "def max": 1343,
+      "def min": 1265,
+      "hp": 3229,
+      "rec max": 1076,
+      "rec min": 998
+    },
+    "oracle": {
+      "atk": 804,
+      "def max": 1226,
+      "def min": 1148,
+      "hp": 3229,
+      "rec max": 1232,
+      "rec min": 1154
+    }
+  },
+  "leader_skill": {
+    "desc": "25% boost to Atk power of male Units",
+    "effects": [
+      {
+        "atk% buff": 25,
+        "gender required": "male",
+        "passive id": "42"
+      }
+    ],
+    "id": "4500",
+    "name": "Brave Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -220,93 +231,89 @@
     ],
     "name": "Ares' Requiem"
   },
-  "bbdescription": "Boosts Atk and Def for all allies for 3 turns",
-  "bbnote": "30% boost",
-  "bbtype": "Support",
-  "bbhits": "",
-  "bbaoe": "0",
-  "bbgauge": "14",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "30181",
-  "evointo": "",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 595,
-      "def": 871,
-      "hp": 1945,
-      "rec": 753
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 804,
-      "def": 1226,
-      "hp": 3229,
-      "rec": 1076
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 804,
-      "def": 1226,
-      "hp max": 3619,
-      "hp min": 3424,
-      "rec max": 1037,
-      "rec min": 959
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 104
     },
-    "breaker": {
-      "atk max": 921,
-      "atk min": 843,
-      "def max": 1187,
-      "def min": 1109,
-      "hp": 3229,
-      "rec": 1076
+    "idle": {
+      "total number of frames": 52
     },
-    "guardian": {
-      "atk": 804,
-      "def max": 1343,
-      "def min": 1265,
-      "hp": 3229,
-      "rec max": 1076,
-      "rec min": 998
-    },
-    "oracle": {
-      "atk": 804,
-      "def max": 1226,
-      "def min": 1148,
-      "hp": 3229,
-      "rec max": 1232,
-      "rec min": 1154
+    "move": {
+      "total number of frames": 52
     }
   },
-  "leader_skill": {
-    "desc": "25% boost to Atk power of male Units",
-    "effects": [
-      {
-        "atk% buff": 25,
-        "gender required": "male",
-        "passive id": "42"
-      }
+  "category": 30180,
+  "cost": "7",
+  "damage frames": {
+    "frame times": [
+      35,
+      50,
+      65,
+      80
     ],
-    "id": "4500",
-    "name": "Brave Power"
+    "hit dmg% distribution": [
+      25,
+      25,
+      25,
+      25
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 4
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "earth",
+  "exp_pattern": 15,
+  "gender": "male",
+  "getting type": "farmable",
+  "guide_id": 464,
+  "imp": {
+    "max atk": "80",
+    "max def": "160",
+    "max hp": "300",
+    "max rec": "120"
+  },
+  "kind": "normal",
+  "lord damage range": "748~836",
+  "movement": {
+    "attack": {
+      "move speed": 6,
+      "move speed type": "2",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 6,
+      "move speed type": "2",
+      "move type": "3"
+    }
+  },
+  "name": "Bard Elton",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "Bard Elton",
+  "maxlv": "40",
+  "no": "464",
   "unitDisplayHomePosition_1W9CxaFK": "94,30,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "229,150,442,631",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "160,336,297,293,0",
@@ -316,5 +323,78 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "1000",
   "sellCaution": false,
-  "effectFrames": "35:230:1,50:230:1,65:230:1,80:230:1,80:690:1,90:300261:1"
+  "effectFrames": "35:230:1,50:230:1,65:230:1,80:230:1,80:690:1,90:300261:1",
+  "evofrom": "30181",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "15",
+  "animation_attack": "104",
+  "animation_idle": "52",
+  "animation_move": "52",
+  "movespeed_attack": "6",
+  "movespeed_skill": "6",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "35, 50, 65, 80",
+  "normal_distribute": "25, 25, 25, 25",
+  "normal_totaldistr": "100",
+  "description": "A wandering bard who travelled all around the La Veda Republic. His songs held power to charm not only humans but monsters as well. Entrapping many with his beautiful voice, a young lady from an aristocratic family confined him to a tower prison where he was forced to sing only for himself. It's said that he was secretly released by a guard who was moved by his songs, then saved by some fairies from the forest.",
+  "summon": "I've come with song.<br>If possible, I'd like to assure<br>where you go, music follows.",
+  "fusion": "The power of a heroes spirit.<br>Continuing even after death,<br>that is the hymn of life.",
+  "evolution": "To you, who understand me.<br>I would like to sing for you a<br>song of heroes.",
+  "hp_base": "1945",
+  "atk_base": "595",
+  "def_base": "871",
+  "rec_base": "753",
+  "hp_lord": "3229",
+  "atk_lord": "804",
+  "def_lord": "1226",
+  "rec_lord": "1076",
+  "hp_anima": "3522",
+  "rec_anima": "998",
+  "atk_breaker": "882",
+  "def_breaker": "1148",
+  "atk_guardian": "726",
+  "def_guardian": "1304",
+  "rec_guardian": "1037",
+  "def_oracle": "1187",
+  "hp_oracle": "3112",
+  "rec_oracle": "1193",
+  "hp_bonus": "300",
+  "atk_bonus": "80",
+  "def_bonus": "160",
+  "rec_bonus": "120",
+  "lordonly": "",
+  "combo_hits": "4",
+  "normaldc": "8",
+  "ls": "Brave Power",
+  "lsdescription": "25% boost to Atk power of male Units",
+  "lstype": "Attack",
+  "bbdescription": "Boosts Atk and Def for all allies for 3 turns",
+  "bbnote": "30% boost",
+  "bbtype": "Support",
+  "bbhits": "",
+  "bbaoe": "0",
+  "bbgauge": "14",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "",
+  "evomats2": "",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": ""
 }

@@ -1,80 +1,106 @@
 {
   "id": "31037",
-  "unitName": "Booming Charge Gandrei",
-  "no": "1718",
-  "element": "Earth",
-  "rarity": "Omni",
-  "cost": "50",
-  "maxlv": "150",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "3",
-  "animation_attack": "245",
-  "animation_idle": "60",
-  "animation_move": "5",
-  "movespeed_attack": "0.0041",
-  "movespeed_skill": "0.0041",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "89, 142",
-  "normal_distribute": "30, 70",
-  "normal_totaldistr": "100",
-  "bb_frames": "89",
-  "bb_distribute": "100",
-  "bb_totaldistr": "100",
-  "bb2_frames": "142",
-  "bb2_distribute": "100",
-  "bb2_totaldistr": "100",
-  "sbb_frames": "89",
-  "sbb_distribute": "100",
-  "sbb_totaldistr": "100",
-  "sbb2_frames": "142",
-  "sbb2_distribute": "100",
-  "sbb2_totaldistr": "100",
-  "ubb_frames": "89",
-  "ubb_distribute": "100",
-  "ubb_totaldistr": "100",
-  "ubb2_frames": "142",
-  "ubb2_distribute": "100",
-  "ubb2_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "bb2_effectdelay": "2",
-  "sbb_effectdelay": "1",
-  "sbb2_effectdelay": "2",
-  "ubb_effectdelay": "1",
-  "ubb2_effectdelay": "2",
-  "description": "Gandrei is known for having devoted his life to forging weapons, and there are no other records of him in battle save for his one fight against the enchanted puppet. Had he chosen the path of the warrior and not that of the blacksmith, he would've most likely continued to use his own weapons in battle, and then enhanced them further according to their performance on the field. Some speculate that the reason why he disappeared following his only battle against the enchanted puppet was precisely to suppress his subsequent urge to fight.",
-  "summon": "This maul still has room for improvement. I think...<br>No, I should just put it to the test before doubting its skill.",
-  "fusion": "I will push all limits...<br>Those of my maul, and my own too.<br>I want to witness the ultimate confines of power.",
-  "evolution": "The most powerful weapons require the most powerful wielders. If you can't find someone worthy, I shall step in...",
-  "hp_base": "6551",
-  "atk_base": "3187",
-  "def_base": "2137",
-  "rec_base": "1996",
-  "hp_lord": "8497",
-  "atk_lord": "3948",
-  "def_lord": "2671",
-  "rec_lord": "2484",
-  "hp_anima": "9614",
-  "rec_anima": "2186",
-  "atk_breaker": "4246",
-  "def_breaker": "2373",
-  "def_guardian": "2969",
-  "rec_guardian": "2335",
-  "def_oracle": "2522",
-  "rec_oracle": "2931",
-  "hp_bonus": "1250",
-  "atk_bonus": "800",
-  "def_bonus": "400",
-  "rec_bonus": "500",
-  "lordonly": "",
-  "combo_hits": "2",
-  "normaldc": "52",
-  "ls": "Sacred Maul of Destruction",
-  "lsdescription": "150% boost to Atk, 60% boost to max HP, 130% boost to Spark damage, hugely boosts critical damage & critical damage boosts Atk for 2 turns",
-  "lsnote": "150% crit damage & 80% Atk when dealing crit damage",
+  "stats": {
+    "_base": {
+      "atk": 3187,
+      "def": 2137,
+      "hp": 6551,
+      "rec": 1996
+    },
+    "_lord": {
+      "atk": 3948,
+      "def": 2671,
+      "hp": 8497,
+      "rec": 2484
+    },
+    "anima": {
+      "atk": 3948,
+      "def": 2671,
+      "hp max": 9987,
+      "hp min": 9242,
+      "rec max": 2335,
+      "rec min": 2037
+    },
+    "breaker": {
+      "atk max": 4395,
+      "atk min": 4097,
+      "def max": 2522,
+      "def min": 2224,
+      "hp": 8497,
+      "rec": 2484
+    },
+    "guardian": {
+      "atk": 3948,
+      "def max": 3118,
+      "def min": 2820,
+      "hp": 8497,
+      "rec max": 2484,
+      "rec min": 2186
+    },
+    "oracle": {
+      "atk": 3948,
+      "def max": 2671,
+      "def min": 2373,
+      "hp": 8497,
+      "rec max": 3080,
+      "rec min": 2782
+    }
+  },
+  "leader_skill": {
+    "desc": "150% boost to Atk, 60% boost to max HP, 130% boost to Spark damage, hugely boosts critical damage & critical damage boosts Atk for 2 turns",
+    "effects": [
+      {
+        "atk% buff": 150,
+        "hp% buff": 60,
+        "passive id": "1"
+      },
+      {
+        "damage% for spark": 130,
+        "passive id": "31"
+      },
+      {
+        "crit multiplier%": 150.0,
+        "passive id": "34"
+      },
+      {
+        "buff": {
+          "atk% buff (1)": 80,
+          "buff turns (1)": "2"
+        },
+        "on crit activation chance%": 100,
+        "passive id": "89"
+      }
+    ],
+    "id": "1967",
+    "name": "Sacred Maul of Destruction"
+  },
+  "extra_skill": {
+    "desc": "Considerably boosts critical damage, 60% boost to Spark damage & raises max Atk value from 99999 to 130000",
+    "effects": [
+      {
+        "conditions": [],
+        "crit multiplier%": 100.0,
+        "passive id": "34",
+        "passive target": "self"
+      },
+      {
+        "conditions": [],
+        "damage% for spark": 60,
+        "passive id": "31",
+        "passive target": "self"
+      },
+      {
+        "conditions": [],
+        "increase atk cap": 130000,
+        "passive id": "143",
+        "passive target": "self"
+      }
+    ],
+    "id": "43600",
+    "name": "My Body is a Weapon",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -615,20 +641,6 @@
     ],
     "name": "Steelwrecker"
   },
-  "bbdescription": "Powerful Earth attack on single foe, powerful Earth attack, probable Spark vulnerability infliction on all foes for 2 turns, enormously boosts critical hit rate for 3 turns & boosts critical damage for 3 turns",
-  "bbnote": "30% chance of 30% Spark vulnerability, 60% crit rate & 50% crit damage",
-  "bbtype": "Offense",
-  "bbhits": "1",
-  "bbaoe": "1",
-  "bbgauge": "28",
-  "bbdc": "18",
-  "bbmultiplier": "600",
-  "bb_hpscale": "",
-  "bbhits2": "1",
-  "bbaoe2": "1",
-  "bbdc2": "18",
-  "bbmultiplier2": "850",
-  "bb_hpscale2": "",
   "sbb": {
     "damage frames": [
       {
@@ -1271,20 +1283,6 @@
     ],
     "name": "Demolition Calamity"
   },
-  "sbbdescription": "Powerful Earth attack on single foe, powerful Earth attack, probable Spark vulnerability infliction on all foes for 2 turns, enormously boosts critical hit rate for 3 turns, boosts critical damage for 3 turns & adds probable Spark critical for 3 turns",
-  "sbbnote": "30% chance of 30% Spark vulnerability, 30% chance of 60% Spark Critical & 60% crit rate & 50% crit damage",
-  "sbbtype": "Offense",
-  "sbbhits": "1",
-  "sbbaoe": "1",
-  "sbbgauge": "30",
-  "sbbdc": "23",
-  "sbbmultiplier": "700",
-  "sbb_hpscale": "",
-  "sbbhits2": "1",
-  "sbbaoe2": "1",
-  "sbbdc2": "23",
-  "sbbmultiplier2": "950",
-  "sbb_hpscale2": "",
   "ubb": {
     "damage frames": [
       {
@@ -1425,6 +1423,204 @@
     ],
     "name": "Electrifying Gandrex"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 245
+    },
+    "idle": {
+      "total number of frames": 60
+    },
+    "move": {
+      "total number of frames": 5
+    }
+  },
+  "category": 31030,
+  "cost": "50",
+  "damage frames": {
+    "frame times": [
+      89,
+      142
+    ],
+    "hit dmg% distribution": [
+      30,
+      70
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 2
+  },
+  "drop check count": 26,
+  "element": "earth",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 1718,
+  "imp": {
+    "max atk": "800",
+    "max def": "400",
+    "max hp": "1250",
+    "max rec": "500"
+  },
+  "kind": "normal",
+  "lord damage range": "3676~4105",
+  "movement": {
+    "attack": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    }
+  },
+  "name": "Booming Charge Gandrei",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "8",
+  "sell caution": false,
+  "unitName": "Booming Charge Gandrei",
+  "maxlv": "150",
+  "no": "1718",
+  "unitDisplayHomePosition_1W9CxaFK": "543,513,174,475",
+  "unitDisplayDetailPosition_6z54rgb3": "-229,-307,1346,1212",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "-7,29,700,630,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-214,-567,1346,1212",
+  "unitDisplaySummonPosition_KC3Jk8Br": "-7,29,700,630,0",
+  "unitDisplayHpPosition_3BpHN6VD": "-1,90",
+  "unitDisplayCursorPosition": "1,7",
+  "sellPrice": "50000",
+  "sellCaution": false,
+  "effectFrames": "89:331340:1,89:330960:1,89:11055:1,89:331272:1,90:330677:1,138:330677:1,139:300122:1,141:331051:1,141:300196:1,142:330965:1,140:11056:1,143:330396:1",
+  "evofrom": "31036",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "21",
+  "animation_attack": "245",
+  "animation_idle": "60",
+  "animation_move": "5",
+  "movespeed_attack": "0.0041",
+  "movespeed_skill": "0.0041",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "89, 142",
+  "normal_distribute": "30, 70",
+  "normal_totaldistr": "100",
+  "bb_frames": "89",
+  "bb_distribute": "100",
+  "bb_totaldistr": "100",
+  "bb2_frames": "142",
+  "bb2_distribute": "100",
+  "bb2_totaldistr": "100",
+  "sbb_frames": "89",
+  "sbb_distribute": "100",
+  "sbb_totaldistr": "100",
+  "sbb2_frames": "142",
+  "sbb2_distribute": "100",
+  "sbb2_totaldistr": "100",
+  "ubb_frames": "89",
+  "ubb_distribute": "100",
+  "ubb_totaldistr": "100",
+  "ubb2_frames": "142",
+  "ubb2_distribute": "100",
+  "ubb2_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "bb2_effectdelay": "2",
+  "sbb_effectdelay": "1",
+  "sbb2_effectdelay": "2",
+  "ubb_effectdelay": "1",
+  "ubb2_effectdelay": "2",
+  "description": "Gandrei is known for having devoted his life to forging weapons, and there are no other records of him in battle save for his one fight against the enchanted puppet. Had he chosen the path of the warrior and not that of the blacksmith, he would've most likely continued to use his own weapons in battle, and then enhanced them further according to their performance on the field. Some speculate that the reason why he disappeared following his only battle against the enchanted puppet was precisely to suppress his subsequent urge to fight.",
+  "summon": "This maul still has room for improvement. I think...<br>No, I should just put it to the test before doubting its skill.",
+  "fusion": "I will push all limits...<br>Those of my maul, and my own too.<br>I want to witness the ultimate confines of power.",
+  "evolution": "The most powerful weapons require the most powerful wielders. If you can't find someone worthy, I shall step in...",
+  "hp_base": "6551",
+  "atk_base": "3187",
+  "def_base": "2137",
+  "rec_base": "1996",
+  "hp_lord": "8497",
+  "atk_lord": "3948",
+  "def_lord": "2671",
+  "rec_lord": "2484",
+  "hp_anima": "9614",
+  "rec_anima": "2186",
+  "atk_breaker": "4246",
+  "def_breaker": "2373",
+  "def_guardian": "2969",
+  "rec_guardian": "2335",
+  "def_oracle": "2522",
+  "rec_oracle": "2931",
+  "hp_bonus": "1250",
+  "atk_bonus": "800",
+  "def_bonus": "400",
+  "rec_bonus": "500",
+  "lordonly": "",
+  "combo_hits": "2",
+  "normaldc": "52",
+  "ls": "Sacred Maul of Destruction",
+  "lsdescription": "150% boost to Atk, 60% boost to max HP, 130% boost to Spark damage, hugely boosts critical damage & critical damage boosts Atk for 2 turns",
+  "lsnote": "150% crit damage & 80% Atk when dealing crit damage",
+  "bbdescription": "Powerful Earth attack on single foe, powerful Earth attack, probable Spark vulnerability infliction on all foes for 2 turns, enormously boosts critical hit rate for 3 turns & boosts critical damage for 3 turns",
+  "bbnote": "30% chance of 30% Spark vulnerability, 60% crit rate & 50% crit damage",
+  "bbtype": "Offense",
+  "bbhits": "1",
+  "bbaoe": "1",
+  "bbgauge": "28",
+  "bbdc": "18",
+  "bbmultiplier": "600",
+  "bb_hpscale": "",
+  "bbhits2": "1",
+  "bbaoe2": "1",
+  "bbdc2": "18",
+  "bbmultiplier2": "850",
+  "bb_hpscale2": "",
+  "sbbdescription": "Powerful Earth attack on single foe, powerful Earth attack, probable Spark vulnerability infliction on all foes for 2 turns, enormously boosts critical hit rate for 3 turns, boosts critical damage for 3 turns & adds probable Spark critical for 3 turns",
+  "sbbnote": "30% chance of 30% Spark vulnerability, 30% chance of 60% Spark Critical & 60% crit rate & 50% crit damage",
+  "sbbtype": "Offense",
+  "sbbhits": "1",
+  "sbbaoe": "1",
+  "sbbgauge": "30",
+  "sbbdc": "23",
+  "sbbmultiplier": "700",
+  "sbb_hpscale": "",
+  "sbbhits2": "1",
+  "sbbaoe2": "1",
+  "sbbdc2": "23",
+  "sbbmultiplier2": "950",
+  "sbb_hpscale2": "",
   "ubbdescription": "Massive Earth attack on all foes (damage relative to remaining HP), massive Earth attack on single foe, huge Spark vulnerability infliction for 3 turns, boosts critical hit rate for 3 turns, enormously boosts critical damage for 3 turns & adds probable powerful Spark critical for 3 turns",
   "ubbnote": "100% Spark vulnerability, 50% chance of 120% Spark Critical, 60% crit rate & 350% crit damage",
   "ubbtype": "Offense",
@@ -1442,7 +1638,6 @@
   "es": "My Body is a Weapon",
   "esdescription": "Considerably boosts critical damage, 60% boost to Spark damage & raises max Atk value from 99999 to 130000",
   "esnote": "100% crit damage",
-  "evofrom": "31036",
   "omniskill1_cat": "Parameter Boost",
   "omniskill1_1_sp": "10",
   "omniskill1_1_desc": "30% boost to Atk, max HP",
@@ -1481,116 +1676,5 @@
   "notes": "",
   "addcat": "Summoner Weapon Origins",
   "addcatname": "Gandrei2",
-  "bottomtext": "",
-  "stats": {
-    "_base": {
-      "atk": 3187,
-      "def": 2137,
-      "hp": 6551,
-      "rec": 1996
-    },
-    "_lord": {
-      "atk": 3948,
-      "def": 2671,
-      "hp": 8497,
-      "rec": 2484
-    },
-    "anima": {
-      "atk": 3948,
-      "def": 2671,
-      "hp max": 9987,
-      "hp min": 9242,
-      "rec max": 2335,
-      "rec min": 2037
-    },
-    "breaker": {
-      "atk max": 4395,
-      "atk min": 4097,
-      "def max": 2522,
-      "def min": 2224,
-      "hp": 8497,
-      "rec": 2484
-    },
-    "guardian": {
-      "atk": 3948,
-      "def max": 3118,
-      "def min": 2820,
-      "hp": 8497,
-      "rec max": 2484,
-      "rec min": 2186
-    },
-    "oracle": {
-      "atk": 3948,
-      "def max": 2671,
-      "def min": 2373,
-      "hp": 8497,
-      "rec max": 3080,
-      "rec min": 2782
-    }
-  },
-  "leader_skill": {
-    "desc": "150% boost to Atk, 60% boost to max HP, 130% boost to Spark damage, hugely boosts critical damage & critical damage boosts Atk for 2 turns",
-    "effects": [
-      {
-        "atk% buff": 150,
-        "hp% buff": 60,
-        "passive id": "1"
-      },
-      {
-        "damage% for spark": 130,
-        "passive id": "31"
-      },
-      {
-        "crit multiplier%": 150.0,
-        "passive id": "34"
-      },
-      {
-        "buff": {
-          "atk% buff (1)": 80,
-          "buff turns (1)": "2"
-        },
-        "on crit activation chance%": 100,
-        "passive id": "89"
-      }
-    ],
-    "id": "1967",
-    "name": "Sacred Maul of Destruction"
-  },
-  "extra_skill": {
-    "desc": "Considerably boosts critical damage, 60% boost to Spark damage & raises max Atk value from 99999 to 130000",
-    "effects": [
-      {
-        "conditions": [],
-        "crit multiplier%": 100.0,
-        "passive id": "34",
-        "passive target": "self"
-      },
-      {
-        "conditions": [],
-        "damage% for spark": 60,
-        "passive id": "31",
-        "passive target": "self"
-      },
-      {
-        "conditions": [],
-        "increase atk cap": 130000,
-        "passive id": "143",
-        "passive target": "self"
-      }
-    ],
-    "id": "43600",
-    "name": "My Body is a Weapon",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "543,513,174,475",
-  "unitDisplayDetailPosition_6z54rgb3": "-229,-307,1346,1212",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "-7,29,700,630,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-214,-567,1346,1212",
-  "unitDisplaySummonPosition_KC3Jk8Br": "-7,29,700,630,0",
-  "unitDisplayHpPosition_3BpHN6VD": "-1,90",
-  "unitDisplayCursorPosition": "1,7",
-  "sellPrice": "50000",
-  "sellCaution": false,
-  "effectFrames": "89:331340:1,89:330960:1,89:11055:1,89:331272:1,90:330677:1,138:330677:1,139:300122:1,141:331051:1,141:300196:1,142:330965:1,140:11056:1,143:330396:1"
+  "bottomtext": ""
 }

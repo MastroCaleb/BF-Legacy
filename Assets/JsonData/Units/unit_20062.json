@@ -1,62 +1,63 @@
 {
   "id": "20062",
-  "unitName": "Plunderer Verica",
-  "no": "82",
-  "element": "Water",
-  "rarity": "★★★",
-  "cost": "6",
-  "maxlv": "40",
-  "basexp": "10",
-  "gender": "M",
-  "ai": "4",
-  "animation_attack": "92",
-  "animation_idle": "44",
-  "animation_move": "44",
-  "movespeed_attack": "0.0041",
-  "movespeed_skill": "0.0041",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "50, 55, 60, 65",
-  "normal_distribute": "60, 15, 15, 10",
-  "normal_totaldistr": "100",
-  "bb_frames": "50, 55, 60, 65",
-  "bb_distribute": "25, 25, 25, 25",
-  "bb_totaldistr": "100",
-  "description": "A pirate captain active in the seas near the ruined Sama Kingdom. His huge body and handsome beard awed those who stood before him. He spoke much softer than he looked, and his navigation log states that he maintained a peaceful ship. However, he was a demon in battle. He was so strong that whole navies would flee when they saw his flag.",
-  "summon": "Freedom is the pirate's motto!<br>I'm free to help you, too!<br>On we go to treasure isle!",
-  "fusion": "I am a pirate captain!<br>Behold, my burly strength!",
-  "evolution": "Even as captain, I am me!<br>I'll cut foes in half while I sing and dance!",
-  "hp_base": "2035",
-  "atk_base": "675",
-  "def_base": "479",
-  "rec_base": "270",
-  "hp_lord": "3155",
-  "atk_lord": "959",
-  "def_lord": "800",
-  "rec_lord": "552",
-  "hp_anima": "3448",
-  "rec_anima": "474",
-  "atk_breaker": "1037",
-  "def_breaker": "722",
-  "atk_guardian": "881",
-  "def_guardian": "878",
-  "rec_guardian": "513",
-  "def_oracle": "761",
-  "hp_oracle": "3038",
-  "rec_oracle": "669",
-  "hp_bonus": "300",
-  "atk_bonus": "160",
-  "def_bonus": "80",
-  "rec_bonus": "120",
-  "lordonly": "",
-  "combo_hits": "4",
-  "normaldc": "8",
-  "ls": "Pure Shining",
-  "lsdescription": "Boost in Heart Crystals produced during Spark",
-  "lsnote": "35% boost",
-  "lstype": "Recovery",
+  "stats": {
+    "_base": {
+      "atk": 675,
+      "def": 479,
+      "hp": 2035,
+      "rec": 270
+    },
+    "_lord": {
+      "atk": 959,
+      "def": 800,
+      "hp": 3155,
+      "rec": 552
+    },
+    "anima": {
+      "atk": 959,
+      "def": 800,
+      "hp max": 3545,
+      "hp min": 3350,
+      "rec max": 513,
+      "rec min": 435
+    },
+    "breaker": {
+      "atk max": 1076,
+      "atk min": 998,
+      "def max": 761,
+      "def min": 683,
+      "hp": 3155,
+      "rec": 552
+    },
+    "guardian": {
+      "atk": 959,
+      "def max": 917,
+      "def min": 839,
+      "hp": 3155,
+      "rec max": 552,
+      "rec min": 474
+    },
+    "oracle": {
+      "atk": 959,
+      "def max": 800,
+      "def min": 722,
+      "hp": 3155,
+      "rec max": 708,
+      "rec min": 630
+    }
+  },
+  "leader_skill": {
+    "desc": "Boost in Heart Crystals produced during Spark",
+    "effects": [
+      {
+        "hc drop% for spark": 35,
+        "passive id": "31"
+      }
+    ],
+    "id": "1501",
+    "name": "Pure Shining"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -297,95 +298,101 @@
     ],
     "name": "Maximum Vice"
   },
-  "bbdescription": "4 combo Water elemental attack on single Enemy & probable Weakness effect",
-  "bbnote": "80% chance",
-  "bbtype": "Offense",
-  "bbhits": "4",
-  "bbaoe": "1",
-  "bbgauge": "15",
-  "bbdc": "4",
-  "bbmultiplier": "220",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "20061",
-  "evointo": "20063",
-  "evomats1": "20132",
-  "evomats2": "20130",
-  "evomats3": "60142",
-  "evomats4": "60142",
-  "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "100000",
-  "stats": {
-    "_base": {
-      "atk": 675,
-      "def": 479,
-      "hp": 2035,
-      "rec": 270
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_under",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 959,
-      "def": 800,
-      "hp": 3155,
-      "rec": 552
+    {
+      "action": "skill",
+      "chance%": 30.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 959,
-      "def": 800,
-      "hp max": 3545,
-      "hp min": 3350,
-      "rec max": 513,
-      "rec min": 435
+    {
+      "action": "attack",
+      "chance%": 70.0,
+      "target conditions": "hp_max",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 1076,
-      "atk min": 998,
-      "def max": 761,
-      "def min": 683,
-      "hp": 3155,
-      "rec": 552
+    {
+      "action": "attack",
+      "chance%": 50.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "guardian": {
-      "atk": 959,
-      "def max": 917,
-      "def min": 839,
-      "hp": 3155,
-      "rec max": 552,
-      "rec min": 474
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 92
     },
-    "oracle": {
-      "atk": 959,
-      "def max": 800,
-      "def min": 722,
-      "hp": 3155,
-      "rec max": 708,
-      "rec min": 630
+    "idle": {
+      "total number of frames": 44
+    },
+    "move": {
+      "total number of frames": 44
     }
   },
-  "leader_skill": {
-    "desc": "Boost in Heart Crystals produced during Spark",
-    "effects": [
-      {
-        "hc drop% for spark": 35,
-        "passive id": "31"
-      }
+  "category": 20060,
+  "cost": "6",
+  "damage frames": {
+    "frame times": [
+      50,
+      55,
+      60,
+      65
     ],
-    "id": "1501",
-    "name": "Pure Shining"
+    "hit dmg% distribution": [
+      60,
+      15,
+      15,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 4
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "water",
+  "exp_pattern": 10,
+  "gender": "male",
+  "getting type": "farmable",
+  "guide_id": 82,
+  "imp": {
+    "max atk": "160",
+    "max def": "80",
+    "max hp": "300",
+    "max rec": "120"
+  },
+  "kind": "normal",
+  "lord damage range": "892~997",
+  "movement": {
+    "attack": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    }
+  },
+  "name": "Plunderer Verica",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "Plunderer Verica",
+  "maxlv": "40",
+  "no": "82",
   "unitDisplayHomePosition_1W9CxaFK": "202,84,200,544",
   "unitDisplayDetailPosition_6z54rgb3": "167,58,500,700",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "165,266,250,350,0",
@@ -395,5 +402,101 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "1000",
   "sellCaution": false,
-  "effectFrames": "44:122:1,49:122:1,54:122:1,59:122:1"
+  "effectFrames": "44:122:1,49:122:1,54:122:1,59:122:1",
+  "evofrom": "20061",
+  "evointo": "20063",
+  "evozelcost": "100000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "20132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20130",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60142",
+      "count": 2
+    }
+  ],
+  "basexp": "10",
+  "animation_attack": "92",
+  "animation_idle": "44",
+  "animation_move": "44",
+  "movespeed_attack": "0.0041",
+  "movespeed_skill": "0.0041",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "50, 55, 60, 65",
+  "normal_distribute": "60, 15, 15, 10",
+  "normal_totaldistr": "100",
+  "bb_frames": "50, 55, 60, 65",
+  "bb_distribute": "25, 25, 25, 25",
+  "bb_totaldistr": "100",
+  "description": "A pirate captain active in the seas near the ruined Sama Kingdom. His huge body and handsome beard awed those who stood before him. He spoke much softer than he looked, and his navigation log states that he maintained a peaceful ship. However, he was a demon in battle. He was so strong that whole navies would flee when they saw his flag.",
+  "summon": "Freedom is the pirate's motto!<br>I'm free to help you, too!<br>On we go to treasure isle!",
+  "fusion": "I am a pirate captain!<br>Behold, my burly strength!",
+  "evolution": "Even as captain, I am me!<br>I'll cut foes in half while I sing and dance!",
+  "hp_base": "2035",
+  "atk_base": "675",
+  "def_base": "479",
+  "rec_base": "270",
+  "hp_lord": "3155",
+  "atk_lord": "959",
+  "def_lord": "800",
+  "rec_lord": "552",
+  "hp_anima": "3448",
+  "rec_anima": "474",
+  "atk_breaker": "1037",
+  "def_breaker": "722",
+  "atk_guardian": "881",
+  "def_guardian": "878",
+  "rec_guardian": "513",
+  "def_oracle": "761",
+  "hp_oracle": "3038",
+  "rec_oracle": "669",
+  "hp_bonus": "300",
+  "atk_bonus": "160",
+  "def_bonus": "80",
+  "rec_bonus": "120",
+  "lordonly": "",
+  "combo_hits": "4",
+  "normaldc": "8",
+  "ls": "Pure Shining",
+  "lsdescription": "Boost in Heart Crystals produced during Spark",
+  "lsnote": "35% boost",
+  "lstype": "Recovery",
+  "bbdescription": "4 combo Water elemental attack on single Enemy & probable Weakness effect",
+  "bbnote": "80% chance",
+  "bbtype": "Offense",
+  "bbhits": "4",
+  "bbaoe": "1",
+  "bbgauge": "15",
+  "bbdc": "4",
+  "bbmultiplier": "220",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "20132",
+  "evomats2": "20130",
+  "evomats3": "60142",
+  "evomats4": "60142",
+  "evomats5": "",
+  "evoitem": ""
 }

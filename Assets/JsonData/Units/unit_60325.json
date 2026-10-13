@@ -1,64 +1,74 @@
 {
   "id": "60325",
-  "unitName": "Twilight God Grahdens",
-  "no": "837",
-  "element": "Dark",
-  "rarity": "★★★★★★",
-  "cost": "30",
-  "maxlv": "100",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "217",
-  "animation_idle": "64",
-  "animation_move": "3",
-  "movespeed_attack": "0.0024",
-  "movespeed_skill": "0.0024",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "21, 26, 60, 63, 66, 69, 72, 75, 126, 131, 136, 141, 146",
-  "normal_distribute": "10, 5, 15, 8, 7, 6, 5, 5, 11, 7, 7, 7, 7",
-  "normal_totaldistr": "100",
-  "bb_frames": "21, 25, 29, 60, 64, 68, 72, 126, 132, 138, 144, 150, 156, 162, 168, 174",
-  "bb_distribute": "7, 5, 5, 7, 5, 5, 5, 7, 7, 6, 7, 7, 6, 7, 7, 7",
-  "bb_totaldistr": "100",
-  "sbb_frames": "21, 24, 27, 30, 33, 60, 64, 68, 72, 76, 80, 126, 131, 136, 141, 146, 151, 156, 161, 166, 171, 176, 181, 186, 191",
-  "sbb_distribute": "5, 4, 3, 3, 3, 5, 4, 4, 4, 4, 4, 5, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4",
-  "sbb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "1",
-  "description": "A mock Unit modeled after Grahdens, one of the Summoner Elders. After a certain Summoner defeated the god Lucius, Summoners' Hall was finally able to realize its goal of becoming completely independent from the gods. However, this action caused demons to appear in both Grand Gaia and Elgaia. Thus, Grahdens resigned from his position in Summoners' Hall to face this crisis, and went to fight on the frontlines as a common Summoner. His powers immensely exceeded those of the young Summoners around him though.",
-  "summon": "Growing weaker because of age<br>is just a lousy excuse.<br>I just reached my prime!",
-  "fusion": "Never be satisfied with your current<br>condition, or you'll stop growing.<br>Wouldn't that be boring?",
-  "evolution": "Ho ho ho.<br>To think my body could get this light.<br>I need to sharpen up!",
-  "hp_base": "4050",
-  "atk_base": "1450",
-  "def_base": "1350",
-  "rec_base": "1200",
-  "hp_lord": "6200",
-  "atk_lord": "2250",
-  "def_lord": "2000",
-  "rec_lord": "1800",
-  "hp_anima": "6942",
-  "rec_anima": "1602",
-  "atk_breaker": "2448",
-  "def_breaker": "1802",
-  "atk_guardian": "2052",
-  "def_guardian": "2198",
-  "hp_oracle": "5903",
-  "rec_oracle": "2097",
-  "hp_bonus": "500",
-  "atk_bonus": "200",
-  "def_bonus": "200",
-  "rec_bonus": "200",
-  "lordonly": "true",
-  "combo_hits": "13",
-  "normaldc": "26",
-  "ls": "Ancient Aura",
-  "lsdescription": "35% boost to all parameters & 15% reduction in damage from Light and Dark Types",
-  "lstype": "Hit Points/Attack/Defense/Recovery",
+  "stats": {
+    "_base": {
+      "atk": 1450,
+      "def": 1350,
+      "hp": 4050,
+      "rec": 1200
+    },
+    "_lord": {
+      "atk": 2250,
+      "def": 2000,
+      "hp": 6200,
+      "rec": 1800
+    },
+    "anima": {
+      "atk": 2250,
+      "def": 2000,
+      "hp max": 7190,
+      "hp min": 6695,
+      "rec max": 1701,
+      "rec min": 1503
+    },
+    "breaker": {
+      "atk max": 2547,
+      "atk min": 2349,
+      "def max": 1901,
+      "def min": 1703,
+      "hp": 6200,
+      "rec": 1800
+    },
+    "guardian": {
+      "atk": 2250,
+      "def max": 2297,
+      "def min": 2099,
+      "hp": 6200,
+      "rec max": 1800,
+      "rec min": 1602
+    },
+    "oracle": {
+      "atk": 2250,
+      "def max": 2000,
+      "def min": 1802,
+      "hp": 6200,
+      "rec max": 2196,
+      "rec min": 1998
+    }
+  },
+  "leader_skill": {
+    "desc": "35% boost to all parameters & 15% reduction in damage from Light and Dark Types",
+    "effects": [
+      {
+        "atk% buff": 35,
+        "def% buff": 35,
+        "hp% buff": 35,
+        "passive id": "1",
+        "rec% buff": 35
+      },
+      {
+        "light resist%": 15,
+        "passive id": "5"
+      },
+      {
+        "dark resist%": 15,
+        "passive id": "5"
+      }
+    ],
+    "id": "1905",
+    "name": "Ancient Aura"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -393,13 +403,6 @@
     ],
     "name": "Jupiter Rising"
   },
-  "bbdescription": "16 combo powerful Dark and Light attack on all enemies & adds Dark and Light elements to attack for all allies for 3 turns",
-  "bbtype": "Support/Offense",
-  "bbhits": "16",
-  "bbaoe": "A",
-  "bbgauge": "20",
-  "bbdc": "16",
-  "bbmultiplier": "200",
   "sbb": {
     "damage frames": [
       {
@@ -844,101 +847,106 @@
     ],
     "name": "Chrono Ultimatum"
   },
-  "sbbdescription": "25 combo massive Dark and Light attack on all enemies, adds Dark and Light elements to attack & refills BB gauge for all allies for 3 turns",
-  "sbbnote": "6 BC fill",
-  "sbbtype": "Support/Offense",
-  "sbbhits": "25",
-  "sbbaoe": "A",
-  "sbbgauge": "32",
-  "sbbdc": "25",
-  "sbbmultiplier": "660",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "es": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "60324",
-  "evointo": "60326",
-  "evomats1": "Dark Mecha God",
-  "evomats2": "Miracle Totem",
-  "evomats3": "Dark Totem",
-  "evomats4": "Light Totem",
-  "evomats5": "",
-  "evoitem": "Grand Amethyst",
-  "evozelcost": "1500000",
-  "stats": {
-    "_base": {
-      "atk": 1450,
-      "def": 1350,
-      "hp": 4050,
-      "rec": 1200
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 2250,
-      "def": 2000,
-      "hp": 6200,
-      "rec": 1800
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 2250,
-      "def": 2000,
-      "hp max": 7190,
-      "hp min": 6695,
-      "rec max": 1701,
-      "rec min": 1503
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 217
     },
-    "breaker": {
-      "atk max": 2547,
-      "atk min": 2349,
-      "def max": 1901,
-      "def min": 1703,
-      "hp": 6200,
-      "rec": 1800
+    "idle": {
+      "total number of frames": 64
     },
-    "guardian": {
-      "atk": 2250,
-      "def max": 2297,
-      "def min": 2099,
-      "hp": 6200,
-      "rec max": 1800,
-      "rec min": 1602
-    },
-    "oracle": {
-      "atk": 2250,
-      "def max": 2000,
-      "def min": 1802,
-      "hp": 6200,
-      "rec max": 2196,
-      "rec min": 1998
+    "move": {
+      "total number of frames": 3
     }
   },
-  "leader_skill": {
-    "desc": "35% boost to all parameters & 15% reduction in damage from Light and Dark Types",
-    "effects": [
-      {
-        "atk% buff": 35,
-        "def% buff": 35,
-        "hp% buff": 35,
-        "passive id": "1",
-        "rec% buff": 35
-      },
-      {
-        "light resist%": 15,
-        "passive id": "5"
-      },
-      {
-        "dark resist%": 15,
-        "passive id": "5"
-      }
+  "category": 60320,
+  "cost": "30",
+  "damage frames": {
+    "frame times": [
+      21,
+      26,
+      60,
+      63,
+      66,
+      69,
+      72,
+      75,
+      126,
+      131,
+      136,
+      141,
+      146
     ],
-    "id": "1905",
-    "name": "Ancient Aura"
+    "hit dmg% distribution": [
+      10,
+      5,
+      15,
+      8,
+      7,
+      6,
+      5,
+      5,
+      11,
+      7,
+      7,
+      7,
+      7
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 13
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "dark",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "farmable",
+  "guide_id": 837,
+  "imp": {
+    "max atk": "200",
+    "max def": "200",
+    "max hp": "500",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "2095~2340",
+  "movement": {
+    "attack": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    }
+  },
+  "name": "Twilight God Grahdens",
+  "rarity": "6",
+  "sell caution": true,
+  "unitName": "Twilight God Grahdens",
+  "maxlv": "100",
+  "no": "837",
   "unitDisplayHomePosition_1W9CxaFK": "381,181,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-94,57,1024,750",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "156,234,315,495,0",
@@ -948,5 +956,116 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "8000",
   "sellCaution": true,
-  "effectFrames": "19:600170:2,60:600064:1,100:600171:2,21:200033:1,15:125:1,20:126:1,54:126:1,57:126:1,60:126:1,63:126:1,66:126:1,69:126:1,126:130:1,131:130:1,136:130:1,141:130:1,146:130:1,120:600173:2,85:500192:1"
+  "effectFrames": "19:600170:2,60:600064:1,100:600171:2,21:200033:1,15:125:1,20:126:1,54:126:1,57:126:1,60:126:1,63:126:1,66:126:1,69:126:1,126:130:1,131:130:1,136:130:1,141:130:1,146:130:1,120:600173:2,85:500192:1",
+  "evofrom": "60324",
+  "evointo": "60326",
+  "evozelcost": "1500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "60344",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60123",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50123",
+      "count": 1
+    },
+    {
+      "type": "2",
+      "id": "110051",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "217",
+  "animation_idle": "64",
+  "animation_move": "3",
+  "movespeed_attack": "0.0024",
+  "movespeed_skill": "0.0024",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "21, 26, 60, 63, 66, 69, 72, 75, 126, 131, 136, 141, 146",
+  "normal_distribute": "10, 5, 15, 8, 7, 6, 5, 5, 11, 7, 7, 7, 7",
+  "normal_totaldistr": "100",
+  "bb_frames": "21, 25, 29, 60, 64, 68, 72, 126, 132, 138, 144, 150, 156, 162, 168, 174",
+  "bb_distribute": "7, 5, 5, 7, 5, 5, 5, 7, 7, 6, 7, 7, 6, 7, 7, 7",
+  "bb_totaldistr": "100",
+  "sbb_frames": "21, 24, 27, 30, 33, 60, 64, 68, 72, 76, 80, 126, 131, 136, 141, 146, 151, 156, 161, 166, 171, 176, 181, 186, 191",
+  "sbb_distribute": "5, 4, 3, 3, 3, 5, 4, 4, 4, 4, 4, 5, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4",
+  "sbb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "1",
+  "description": "A mock Unit modeled after Grahdens, one of the Summoner Elders. After a certain Summoner defeated the god Lucius, Summoners' Hall was finally able to realize its goal of becoming completely independent from the gods. However, this action caused demons to appear in both Grand Gaia and Elgaia. Thus, Grahdens resigned from his position in Summoners' Hall to face this crisis, and went to fight on the frontlines as a common Summoner. His powers immensely exceeded those of the young Summoners around him though.",
+  "summon": "Growing weaker because of age<br>is just a lousy excuse.<br>I just reached my prime!",
+  "fusion": "Never be satisfied with your current<br>condition, or you'll stop growing.<br>Wouldn't that be boring?",
+  "evolution": "Ho ho ho.<br>To think my body could get this light.<br>I need to sharpen up!",
+  "hp_base": "4050",
+  "atk_base": "1450",
+  "def_base": "1350",
+  "rec_base": "1200",
+  "hp_lord": "6200",
+  "atk_lord": "2250",
+  "def_lord": "2000",
+  "rec_lord": "1800",
+  "hp_anima": "6942",
+  "rec_anima": "1602",
+  "atk_breaker": "2448",
+  "def_breaker": "1802",
+  "atk_guardian": "2052",
+  "def_guardian": "2198",
+  "hp_oracle": "5903",
+  "rec_oracle": "2097",
+  "hp_bonus": "500",
+  "atk_bonus": "200",
+  "def_bonus": "200",
+  "rec_bonus": "200",
+  "lordonly": "true",
+  "combo_hits": "13",
+  "normaldc": "26",
+  "ls": "Ancient Aura",
+  "lsdescription": "35% boost to all parameters & 15% reduction in damage from Light and Dark Types",
+  "lstype": "Hit Points/Attack/Defense/Recovery",
+  "bbdescription": "16 combo powerful Dark and Light attack on all enemies & adds Dark and Light elements to attack for all allies for 3 turns",
+  "bbtype": "Support/Offense",
+  "bbhits": "16",
+  "bbaoe": "A",
+  "bbgauge": "20",
+  "bbdc": "16",
+  "bbmultiplier": "200",
+  "sbbdescription": "25 combo massive Dark and Light attack on all enemies, adds Dark and Light elements to attack & refills BB gauge for all allies for 3 turns",
+  "sbbnote": "6 BC fill",
+  "sbbtype": "Support/Offense",
+  "sbbhits": "25",
+  "sbbaoe": "A",
+  "sbbgauge": "32",
+  "sbbdc": "25",
+  "sbbmultiplier": "660",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "es": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "Dark Mecha God",
+  "evomats2": "Miracle Totem",
+  "evomats3": "Dark Totem",
+  "evomats4": "Light Totem",
+  "evomats5": "",
+  "evoitem": "Grand Amethyst"
 }

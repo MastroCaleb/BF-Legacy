@@ -1,68 +1,110 @@
 {
   "id": "41016",
-  "unitName": "Sealed Thunder Ordine",
-  "no": "1725",
-  "element": "Thunder",
-  "rarity": "★★★★★★★",
-  "cost": "46",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "3",
-  "animation_attack": "205",
-  "animation_idle": "52",
-  "animation_move": "5",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "78, 81, 123, 126",
-  "normal_distribute": "30, 15, 30, 25",
-  "normal_totaldistr": "100",
-  "bb_frames": "78, 81, 84, 123, 126, 129, 132, 135, 138, 141",
-  "bb_distribute": "18, 14, 12, 23, 6, 5, 6, 5, 6, 5",
-  "bb_totaldistr": "100",
-  "sbb_frames": "78, 81, 84, 123, 126, 129, 132, 135, 138, 141, 144, 147, 150",
-  "sbb_distribute": "12, 10, 8, 20, 6, 5, 6, 5, 6, 5, 6, 5, 6",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "78, 81, 84, 123, 126, 129, 132, 135, 138, 141, 144, 147, 150, 153, 156, 159",
-  "ubb_distribute": "12, 10, 8, 16, 4, 5, 4, 5, 4, 5, 4, 5, 4, 5, 4, 5",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "1",
-  "ubb_effectdelay": "1",
-  "description": "The demon that sealed away a battleaxe that appeared in Ishgria. Ordine originally witnessed a certain low-level demon slaying mighty demons one after the other. The low-level demon was wielding a battleaxe that unleashed enormously powerful attacks drawn from the user's willpower. Realizing the danger this power posed, she seized the axe when an opportunity arose. Worried that its presence would only inspire more pointless conflict, she concealed its existence and sealed it away.",
-  "summon": "I'll prove how strong I am on my own. I am an Ishgrian demon, after all. I don't need any help!",
-  "fusion": "It's not that I don't want power. It's just that I only want to put my trust in things that deserve it.",
-  "evolution": "",
-  "hp_base": "5323",
-  "atk_base": "2454",
-  "def_base": "1710",
-  "rec_base": "1705",
-  "hp_lord": "7634",
-  "atk_lord": "3375",
-  "def_lord": "2332",
-  "rec_lord": "2325",
-  "hp_anima": "8526",
-  "rec_anima": "2087",
-  "atk_breaker": "3613",
-  "def_breaker": "2094",
-  "def_guardian": "2570",
-  "rec_guardian": "2206",
-  "def_oracle": "2213",
-  "rec_oracle": "2682",
-  "hp_bonus": "1000",
-  "atk_bonus": "600",
-  "def_bonus": "300",
-  "rec_bonus": "400",
-  "lordonly": "",
-  "combo_hits": "4",
-  "normaldc": "36",
-  "ls": "Slayer's Axe Seal",
-  "lsdescription": "50% boost to Atk, Def, max HP, considerably boosts critical damage, adds probable Spark critical & enormously boosts BB Atk when HP is over 50%",
-  "lsnote": "125% Crit, 5% chance Sparks deal 50% extra damage & 250% BB Atk",
+  "stats": {
+    "_base": {
+      "atk": 2454,
+      "def": 1710,
+      "hp": 5323,
+      "rec": 1705
+    },
+    "_lord": {
+      "atk": 3375,
+      "def": 2332,
+      "hp": 7634,
+      "rec": 2325
+    },
+    "anima": {
+      "atk": 3375,
+      "def": 2332,
+      "hp max": 8824,
+      "hp min": 8229,
+      "rec max": 2206,
+      "rec min": 1968
+    },
+    "breaker": {
+      "atk max": 3732,
+      "atk min": 3494,
+      "def max": 2213,
+      "def min": 1975,
+      "hp": 7634,
+      "rec": 2325
+    },
+    "guardian": {
+      "atk": 3375,
+      "def max": 2689,
+      "def min": 2451,
+      "hp": 7634,
+      "rec max": 2325,
+      "rec min": 2087
+    },
+    "oracle": {
+      "atk": 3375,
+      "def max": 2332,
+      "def min": 2094,
+      "hp": 7634,
+      "rec max": 2801,
+      "rec min": 2563
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to Atk, Def, max HP, considerably boosts critical damage, adds probable Spark critical & enormously boosts BB Atk when HP is over 50%",
+    "effects": [
+      {
+        "atk% buff": 50,
+        "def% buff": 50,
+        "hp% buff": 50,
+        "passive id": "1"
+      },
+      {
+        "crit multiplier%": 125.0,
+        "passive id": "34"
+      },
+      {
+        "passive id": "100",
+        "spark crit chance%": 5,
+        "spark crit dmg%": 50
+      },
+      {
+        "bb atk% add": 250,
+        "hp threshold": 50,
+        "passive id": "103",
+        "sbb atk% add": 250,
+        "triggered when hp": "higher",
+        "ubb atk% add": 250
+      }
+    ],
+    "id": "1970",
+    "name": "Slayer's Axe Seal"
+  },
+  "extra_skill": {
+    "desc": "70% boost to Spark damage, raises max Atk value from 99999 to 130000 & critical damage hugely boosts BB gauge",
+    "effects": [
+      {
+        "bc fill on crit max": 6,
+        "bc fill on crit min": 6,
+        "bc fill on crit%": 100.0,
+        "conditions": [],
+        "passive id": "65",
+        "passive target": "self"
+      },
+      {
+        "conditions": [],
+        "damage% for spark": 70,
+        "passive id": "31",
+        "passive target": "self"
+      },
+      {
+        "conditions": [],
+        "increase atk cap": 130000,
+        "passive id": "143",
+        "passive target": "self"
+      }
+    ],
+    "id": "44300",
+    "name": "Demon's Pride",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -681,14 +723,6 @@
     ],
     "name": "Grand Destruction"
   },
-  "bbdescription": "10 combo powerful Thunder attack on all foes, probable huge 1 turn Atk reduction, hugely boosts Atk and BB Atk for 3 turns & enormously boosts critical hit rate and boosts critical damage for 3 turns",
-  "bbnote": "160% Atk, 60% Crit, 350% BB Atk, 50% Crit damage & 20% chance to reduce enemy Atk by 50%",
-  "bbtype": "Offense",
-  "bbhits": "10",
-  "bbaoe": "A",
-  "bbgauge": "29",
-  "bbdc": "10",
-  "bbmultiplier": "430",
   "sbb": {
     "damage frames": [
       {
@@ -1385,15 +1419,6 @@
     ],
     "name": "Earth-Shaker Wave"
   },
-  "sbbdescription": "13 combo powerful Thunder attack on all foes (damage relative to remaining HP), boosts max HP, hugely boosts Atk and BB Atk for 3 turns, hugely boosts Atk relative to max HP for 3 turns & enormously boosts critical hit rate and boosts critical damage for 3 turns",
-  "sbbnote": "200% + 550% * current HP / max HP, 160% Atk, 60% Crit, 10% HP, 35% HP to Atk, 350% BB Atk & 50% Crit damage",
-  "sbbtype": "Offense",
-  "sbbhits": "13",
-  "sbbaoe": "A",
-  "sbbgauge": "31",
-  "sbbdc": "13",
-  "sbbmultiplier": "200",
-  "sbb_hpscale": "true",
   "ubb": {
     "damage frames": [
       {
@@ -1565,6 +1590,211 @@
     ],
     "name": "Catastrophe Bringer"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 205
+    },
+    "idle": {
+      "total number of frames": 52
+    },
+    "move": {
+      "total number of frames": 5
+    }
+  },
+  "category": 41010,
+  "cost": "46",
+  "damage frames": {
+    "frame times": [
+      78,
+      81,
+      123,
+      126
+    ],
+    "hit dmg% distribution": [
+      30,
+      15,
+      30,
+      25
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 4
+  },
+  "drop check count": 9,
+  "element": "thunder",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 1725,
+  "imp": {
+    "max atk": "600",
+    "max def": "300",
+    "max hp": "1000",
+    "max rec": "400"
+  },
+  "kind": "normal",
+  "lord damage range": "3142~3510",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Sealed Thunder Ordine",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Sealed Thunder Ordine",
+  "maxlv": "120",
+  "no": "1725",
+  "unitDisplayHomePosition_1W9CxaFK": "171,63,165,450",
+  "unitDisplayDetailPosition_6z54rgb3": "129,148,894,683",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "154,274,485,371,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "140,-130,894,683",
+  "unitDisplaySummonPosition_KC3Jk8Br": "154,274,485,371,0",
+  "unitDisplayHpPosition_3BpHN6VD": "-5,51",
+  "unitDisplayCursorPosition": "-1,13",
+  "sellPrice": "15000",
+  "sellCaution": false,
+  "effectFrames": "72:401500:1,72:401480:1,78:401160:1,117:401481:1,124:401482:1,132:400147:1,132:200088:1",
+  "evofrom": "",
+  "evointo": "41017",
+  "evozelcost": "3000000",
+  "evokarmacost": "1000000",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "40334",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40191",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 2
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "205",
+  "animation_idle": "52",
+  "animation_move": "5",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "78, 81, 123, 126",
+  "normal_distribute": "30, 15, 30, 25",
+  "normal_totaldistr": "100",
+  "bb_frames": "78, 81, 84, 123, 126, 129, 132, 135, 138, 141",
+  "bb_distribute": "18, 14, 12, 23, 6, 5, 6, 5, 6, 5",
+  "bb_totaldistr": "100",
+  "sbb_frames": "78, 81, 84, 123, 126, 129, 132, 135, 138, 141, 144, 147, 150",
+  "sbb_distribute": "12, 10, 8, 20, 6, 5, 6, 5, 6, 5, 6, 5, 6",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "78, 81, 84, 123, 126, 129, 132, 135, 138, 141, 144, 147, 150, 153, 156, 159",
+  "ubb_distribute": "12, 10, 8, 16, 4, 5, 4, 5, 4, 5, 4, 5, 4, 5, 4, 5",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "1",
+  "ubb_effectdelay": "1",
+  "description": "The demon that sealed away a battleaxe that appeared in Ishgria. Ordine originally witnessed a certain low-level demon slaying mighty demons one after the other. The low-level demon was wielding a battleaxe that unleashed enormously powerful attacks drawn from the user's willpower. Realizing the danger this power posed, she seized the axe when an opportunity arose. Worried that its presence would only inspire more pointless conflict, she concealed its existence and sealed it away.",
+  "summon": "I'll prove how strong I am on my own. I am an Ishgrian demon, after all. I don't need any help!",
+  "fusion": "It's not that I don't want power. It's just that I only want to put my trust in things that deserve it.",
+  "evolution": "",
+  "hp_base": "5323",
+  "atk_base": "2454",
+  "def_base": "1710",
+  "rec_base": "1705",
+  "hp_lord": "7634",
+  "atk_lord": "3375",
+  "def_lord": "2332",
+  "rec_lord": "2325",
+  "hp_anima": "8526",
+  "rec_anima": "2087",
+  "atk_breaker": "3613",
+  "def_breaker": "2094",
+  "def_guardian": "2570",
+  "rec_guardian": "2206",
+  "def_oracle": "2213",
+  "rec_oracle": "2682",
+  "hp_bonus": "1000",
+  "atk_bonus": "600",
+  "def_bonus": "300",
+  "rec_bonus": "400",
+  "lordonly": "",
+  "combo_hits": "4",
+  "normaldc": "36",
+  "ls": "Slayer's Axe Seal",
+  "lsdescription": "50% boost to Atk, Def, max HP, considerably boosts critical damage, adds probable Spark critical & enormously boosts BB Atk when HP is over 50%",
+  "lsnote": "125% Crit, 5% chance Sparks deal 50% extra damage & 250% BB Atk",
+  "bbdescription": "10 combo powerful Thunder attack on all foes, probable huge 1 turn Atk reduction, hugely boosts Atk and BB Atk for 3 turns & enormously boosts critical hit rate and boosts critical damage for 3 turns",
+  "bbnote": "160% Atk, 60% Crit, 350% BB Atk, 50% Crit damage & 20% chance to reduce enemy Atk by 50%",
+  "bbtype": "Offense",
+  "bbhits": "10",
+  "bbaoe": "A",
+  "bbgauge": "29",
+  "bbdc": "10",
+  "bbmultiplier": "430",
+  "sbbdescription": "13 combo powerful Thunder attack on all foes (damage relative to remaining HP), boosts max HP, hugely boosts Atk and BB Atk for 3 turns, hugely boosts Atk relative to max HP for 3 turns & enormously boosts critical hit rate and boosts critical damage for 3 turns",
+  "sbbnote": "200% + 550% * current HP / max HP, 160% Atk, 60% Crit, 10% HP, 35% HP to Atk, 350% BB Atk & 50% Crit damage",
+  "sbbtype": "Offense",
+  "sbbhits": "13",
+  "sbbaoe": "A",
+  "sbbgauge": "31",
+  "sbbdc": "13",
+  "sbbmultiplier": "200",
+  "sbb_hpscale": "true",
   "ubbdescription": "16 combo massive Thunder attack on all foes (damage relative to remaining HP), hugely boosts max HP, enormously boosts Atk and BB Atk for 3 turns, enormously boosts critical hit rate and critical damage for 3 turns & adds probable powerful Spark critical for 3 turns",
   "ubbnote": "1500% + 1000% * current HP / max HP, 300% Atk, 60% Crit, 30% HP, 600% BB Atk, 300% Crit damage & 50% chance Sparks deal 100% extra damage",
   "ubbtype": "Offense",
@@ -1578,8 +1808,6 @@
   "esitem": "",
   "esdescription": "70% boost to Spark damage, raises max Atk value from 99999 to 130000 & critical damage hugely boosts BB gauge",
   "esnote": "Fills 6 BC",
-  "evofrom": "",
-  "evointo": "41017",
   "evomats1": "Thunder Mecha God",
   "evomats2": "Thunder Mecha God",
   "evomats3": "Miracle Totem",
@@ -1588,121 +1816,5 @@
   "evomats6": "Thunder Pot",
   "evomats7": "Metal Mimic",
   "evomats8": "Metal Mimic",
-  "evoitem": "",
-  "evozelcost": "3000000",
-  "stats": {
-    "_base": {
-      "atk": 2454,
-      "def": 1710,
-      "hp": 5323,
-      "rec": 1705
-    },
-    "_lord": {
-      "atk": 3375,
-      "def": 2332,
-      "hp": 7634,
-      "rec": 2325
-    },
-    "anima": {
-      "atk": 3375,
-      "def": 2332,
-      "hp max": 8824,
-      "hp min": 8229,
-      "rec max": 2206,
-      "rec min": 1968
-    },
-    "breaker": {
-      "atk max": 3732,
-      "atk min": 3494,
-      "def max": 2213,
-      "def min": 1975,
-      "hp": 7634,
-      "rec": 2325
-    },
-    "guardian": {
-      "atk": 3375,
-      "def max": 2689,
-      "def min": 2451,
-      "hp": 7634,
-      "rec max": 2325,
-      "rec min": 2087
-    },
-    "oracle": {
-      "atk": 3375,
-      "def max": 2332,
-      "def min": 2094,
-      "hp": 7634,
-      "rec max": 2801,
-      "rec min": 2563
-    }
-  },
-  "leader_skill": {
-    "desc": "50% boost to Atk, Def, max HP, considerably boosts critical damage, adds probable Spark critical & enormously boosts BB Atk when HP is over 50%",
-    "effects": [
-      {
-        "atk% buff": 50,
-        "def% buff": 50,
-        "hp% buff": 50,
-        "passive id": "1"
-      },
-      {
-        "crit multiplier%": 125.0,
-        "passive id": "34"
-      },
-      {
-        "passive id": "100",
-        "spark crit chance%": 5,
-        "spark crit dmg%": 50
-      },
-      {
-        "bb atk% add": 250,
-        "hp threshold": 50,
-        "passive id": "103",
-        "sbb atk% add": 250,
-        "triggered when hp": "higher",
-        "ubb atk% add": 250
-      }
-    ],
-    "id": "1970",
-    "name": "Slayer's Axe Seal"
-  },
-  "extra_skill": {
-    "desc": "70% boost to Spark damage, raises max Atk value from 99999 to 130000 & critical damage hugely boosts BB gauge",
-    "effects": [
-      {
-        "bc fill on crit max": 6,
-        "bc fill on crit min": 6,
-        "bc fill on crit%": 100.0,
-        "conditions": [],
-        "passive id": "65",
-        "passive target": "self"
-      },
-      {
-        "conditions": [],
-        "damage% for spark": 70,
-        "passive id": "31",
-        "passive target": "self"
-      },
-      {
-        "conditions": [],
-        "increase atk cap": 130000,
-        "passive id": "143",
-        "passive target": "self"
-      }
-    ],
-    "id": "44300",
-    "name": "Demon's Pride",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "171,63,165,450",
-  "unitDisplayDetailPosition_6z54rgb3": "129,148,894,683",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "154,274,485,371,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "140,-130,894,683",
-  "unitDisplaySummonPosition_KC3Jk8Br": "154,274,485,371,0",
-  "unitDisplayHpPosition_3BpHN6VD": "-5,51",
-  "unitDisplayCursorPosition": "-1,13",
-  "sellPrice": "15000",
-  "sellCaution": false,
-  "effectFrames": "72:401500:1,72:401480:1,78:401160:1,117:401481:1,124:401482:1,132:400147:1,132:200088:1"
+  "evoitem": ""
 }

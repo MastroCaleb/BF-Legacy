@@ -1,61 +1,63 @@
 {
   "id": "50094",
-  "unitName": "Pistol God Heidt",
-  "no": "330",
-  "element": "Light",
-  "rarity": "★★★★★",
-  "cost": "13",
-  "maxlv": "80",
-  "basexp": "15",
-  "gender": "M",
-  "ai": "4",
-  "animation_attack": "177",
-  "animation_idle": "64",
-  "animation_move": "64",
-  "movespeed_attack": "8",
-  "movespeed_skill": "8",
-  "speedtype_attack": "1",
-  "speedtype_skill": "1",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "90, 94, 101, 105, 108, 111, 113, 115, 118, 121",
-  "normal_distribute": "10, 10, 10, 10, 10, 10, 10, 10, 10, 10",
-  "normal_totaldistr": "100",
-  "bb_frames": "92, 94, 103, 105, 114, 116, 125, 117, 136, 138, 142",
-  "bb_distribute": "10, 10, 10, 10, 10, 10, 10, 10, 7, 7, 6",
-  "bb_totaldistr": "100",
-  "description": "A pistoleer from another world active on the outskirts of the ruined La Veda Republic. As the war grew in intensity, Heidt disappeared for a period of time. He eventually returned, brandishing a massive gun, and with a confident devil-may-care smile on his face he said, \"Ha ha ha. I was scolded for not having properly finished what I came here to do!\" It's said that no one since has been able to match his superior shooting skills.",
-  "summon": "Guns can be used for different reasons.<br>Some are good and some are bad.<br>How do you plan to use mine?",
-  "fusion": "Hey now!<br>Is that all you've got?<br>Let's give it a little more!",
-  "evolution": "Evolution is easy, you know. <br>All it takes is a kind word from a girl<br>to motivate a man to improve himself.",
-  "hp_base": "3370",
-  "atk_base": "1108",
-  "def_base": "995",
-  "rec_base": "607",
-  "hp_lord": "4869",
-  "atk_lord": "1555",
-  "def_lord": "1359",
-  "rec_lord": "905",
-  "hp_anima": "5462",
-  "rec_anima": "747",
-  "atk_breaker": "1713",
-  "def_breaker": "1201",
-  "atk_guardian": "1397",
-  "def_guardian": "1517",
-  "rec_guardian": "826",
-  "def_oracle": "1280",
-  "hp_oracle": "4632",
-  "rec_oracle": "1142",
-  "hp_bonus": "500",
-  "atk_bonus": "200",
-  "def_bonus": "200",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "10",
-  "normaldc": "20",
-  "ls": "Dynasty Power",
-  "lsdescription": "20% boost to Atk Power of all types",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 1108,
+      "def": 995,
+      "hp": 3370,
+      "rec": 607
+    },
+    "_lord": {
+      "atk": 1555,
+      "def": 1359,
+      "hp": 4869,
+      "rec": 905
+    },
+    "anima": {
+      "atk": 1555,
+      "def": 1359,
+      "hp max": 5659,
+      "hp min": 5264,
+      "rec max": 826,
+      "rec min": 668
+    },
+    "breaker": {
+      "atk max": 1792,
+      "atk min": 1634,
+      "def max": 1280,
+      "def min": 1122,
+      "hp": 4869,
+      "rec": 905
+    },
+    "guardian": {
+      "atk": 1555,
+      "def max": 1596,
+      "def min": 1438,
+      "hp": 4869,
+      "rec max": 905,
+      "rec min": 747
+    },
+    "oracle": {
+      "atk": 1555,
+      "def max": 1359,
+      "def min": 1201,
+      "hp": 4869,
+      "rec max": 1221,
+      "rec min": 1063
+    }
+  },
+  "leader_skill": {
+    "desc": "20% boost to Atk",
+    "effects": [
+      {
+        "atk% buff": 20,
+        "passive id": "1"
+      }
+    ],
+    "id": "1902",
+    "name": "Dynasty Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -248,94 +250,113 @@
     ],
     "name": "Star Buster"
   },
-  "bbdescription": "11 combo Light elemental attack on single enemy & boost to BC and HC drop rate",
-  "bbnote": "50% boost to BC drop rate, 30% boost to HC drop rate to self only",
-  "bbtype": "Offense",
-  "bbhits": "11",
-  "bbaoe": "1",
-  "bbgauge": "15",
-  "bbdc": "22",
-  "bbmultiplier": "350",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "50093",
-  "evointo": "50095",
-  "evomats1": "50354",
-  "evomats2": "50123",
-  "evomats3": "50191",
-  "evomats4": "50122",
-  "evomats5": "60224",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 1108,
-      "def": 995,
-      "hp": 3370,
-      "rec": 607
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_under",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1555,
-      "def": 1359,
-      "hp": 4869,
-      "rec": 905
+    {
+      "action": "skill",
+      "chance%": 30.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1555,
-      "def": 1359,
-      "hp max": 5659,
-      "hp min": 5264,
-      "rec max": 826,
-      "rec min": 668
+    {
+      "action": "attack",
+      "chance%": 70.0,
+      "target conditions": "hp_max",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 1792,
-      "atk min": 1634,
-      "def max": 1280,
-      "def min": 1122,
-      "hp": 4869,
-      "rec": 905
+    {
+      "action": "attack",
+      "chance%": 50.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "guardian": {
-      "atk": 1555,
-      "def max": 1596,
-      "def min": 1438,
-      "hp": 4869,
-      "rec max": 905,
-      "rec min": 747
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 177
     },
-    "oracle": {
-      "atk": 1555,
-      "def max": 1359,
-      "def min": 1201,
-      "hp": 4869,
-      "rec max": 1221,
-      "rec min": 1063
+    "idle": {
+      "total number of frames": 64
+    },
+    "move": {
+      "total number of frames": 64
     }
   },
-  "leader_skill": {
-    "desc": "20% boost to Atk",
-    "effects": [
-      {
-        "atk% buff": 20,
-        "passive id": "1"
-      }
+  "category": 50090,
+  "cost": "13",
+  "damage frames": {
+    "frame times": [
+      90,
+      94,
+      101,
+      105,
+      108,
+      111,
+      113,
+      115,
+      118,
+      121
     ],
-    "id": "1902",
-    "name": "Dynasty Power"
+    "hit dmg% distribution": [
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 10
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "light",
+  "exp_pattern": 15,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 330,
+  "imp": {
+    "max atk": "200",
+    "max def": "200",
+    "max hp": "500",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "1447~1617",
+  "movement": {
+    "attack": {
+      "move speed": 8,
+      "move speed type": "1",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 8,
+      "move speed type": "1",
+      "move type": "3"
+    }
+  },
+  "name": "Pistol God Heidt",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Pistol God Heidt",
+  "maxlv": "80",
+  "no": "330",
   "unitDisplayHomePosition_1W9CxaFK": "340,149,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-14,3,813,771",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "204,311,280,310,0",
@@ -345,5 +366,109 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "90:700:1,90:114:1,94:114:1,101:114:1,105:114:1,108:700:1,108:114:1,111:114:1,113:114:1,115:114:1,118:700:1,118:114:1,121:114:1"
+  "effectFrames": "90:700:1,90:114:1,94:114:1,101:114:1,105:114:1,108:700:1,108:114:1,111:114:1,113:114:1,115:114:1,118:700:1,118:114:1,121:114:1",
+  "evofrom": "50093",
+  "evointo": "50095",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50123",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50122",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    }
+  ],
+  "basexp": "15",
+  "animation_attack": "177",
+  "animation_idle": "64",
+  "animation_move": "64",
+  "movespeed_attack": "8",
+  "movespeed_skill": "8",
+  "speedtype_attack": "1",
+  "speedtype_skill": "1",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "90, 94, 101, 105, 108, 111, 113, 115, 118, 121",
+  "normal_distribute": "10, 10, 10, 10, 10, 10, 10, 10, 10, 10",
+  "normal_totaldistr": "100",
+  "bb_frames": "92, 94, 103, 105, 114, 116, 125, 117, 136, 138, 142",
+  "bb_distribute": "10, 10, 10, 10, 10, 10, 10, 10, 7, 7, 6",
+  "bb_totaldistr": "100",
+  "description": "A pistoleer from another world active on the outskirts of the ruined La Veda Republic. As the war grew in intensity, Heidt disappeared for a period of time. He eventually returned, brandishing a massive gun, and with a confident devil-may-care smile on his face he said, \"Ha ha ha. I was scolded for not having properly finished what I came here to do!\" It's said that no one since has been able to match his superior shooting skills.",
+  "summon": "Guns can be used for different reasons.<br>Some are good and some are bad.<br>How do you plan to use mine?",
+  "fusion": "Hey now!<br>Is that all you've got?<br>Let's give it a little more!",
+  "evolution": "Evolution is easy, you know. <br>All it takes is a kind word from a girl<br>to motivate a man to improve himself.",
+  "hp_base": "3370",
+  "atk_base": "1108",
+  "def_base": "995",
+  "rec_base": "607",
+  "hp_lord": "4869",
+  "atk_lord": "1555",
+  "def_lord": "1359",
+  "rec_lord": "905",
+  "hp_anima": "5462",
+  "rec_anima": "747",
+  "atk_breaker": "1713",
+  "def_breaker": "1201",
+  "atk_guardian": "1397",
+  "def_guardian": "1517",
+  "rec_guardian": "826",
+  "def_oracle": "1280",
+  "hp_oracle": "4632",
+  "rec_oracle": "1142",
+  "hp_bonus": "500",
+  "atk_bonus": "200",
+  "def_bonus": "200",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "10",
+  "normaldc": "20",
+  "ls": "Dynasty Power",
+  "lsdescription": "20% boost to Atk Power of all types",
+  "lstype": "Attack",
+  "bbdescription": "11 combo Light elemental attack on single enemy & boost to BC and HC drop rate",
+  "bbnote": "50% boost to BC drop rate, 30% boost to HC drop rate to self only",
+  "bbtype": "Offense",
+  "bbhits": "11",
+  "bbaoe": "1",
+  "bbgauge": "15",
+  "bbdc": "22",
+  "bbmultiplier": "350",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "50123",
+  "evomats3": "50191",
+  "evomats4": "50122",
+  "evomats5": "60224"
 }

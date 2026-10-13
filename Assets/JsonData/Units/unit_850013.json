@@ -1,63 +1,66 @@
 {
   "id": "850013",
-  "unitName": "Estia",
-  "freetext": ":''For other uses, see Estia (disambiguation).''",
-  "no": "8021",
-  "element": "Light",
-  "rarity": "★★★",
-  "cost": "6",
-  "maxlv": "40",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "115",
-  "animation_idle": "150",
-  "animation_move": "150",
-  "movespeed_attack": "4",
-  "movespeed_skill": "4",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "25, 27, 35, 38, 76, 83",
-  "normal_distribute": "15, 15, 15, 15, 15, 25",
-  "normal_totaldistr": "100",
-  "bb_frames": "24, 26, 28, 80, 90, 100",
-  "bb_distribute": "15, 20, 20, 15, 10, 20",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "description": "Princess of the ruined Elysian Kingdom. Estia lost her mother soon after she was born, and her father dedicated himself to military matters. The people around her were kind to her and always let her have her way, but she never had a true friend. This was until a young boy about the same age as her was introduced to her and made her pageboy.",
-  "summon": "The only people I trust are<br>my father and Xenon.<br>You might be the third person.",
-  "fusion": "What did you just give me?<br>It felt wonderful!<br>Do you have more?",
-  "evolution": "",
-  "hp_base": "2095",
-  "atk_base": "882",
-  "def_base": "705",
-  "rec_base": "792",
-  "hp_lord": "2985",
-  "atk_lord": "975",
-  "def_lord": "1000",
-  "rec_lord": "1130",
-  "hp_anima": "3278",
-  "rec_anima": "1052",
-  "atk_breaker": "1053",
-  "def_breaker": "922",
-  "atk_guardian": "897",
-  "def_guardian": "1078",
-  "rec_guardian": "1091",
-  "def_oracle": "961",
-  "hp_oracle": "2868",
-  "rec_oracle": "1247",
-  "hp_bonus": "400",
-  "atk_bonus": "140",
-  "def_bonus": "140",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "6",
-  "normaldc": "12",
-  "ls": "Regal Ray",
-  "lsdescription": "25% boost to Rec of Light units",
-  "lstype": "Recovery",
+  "stats": {
+    "_base": {
+      "atk": 882,
+      "def": 705,
+      "hp": 2095,
+      "rec": 792
+    },
+    "_lord": {
+      "atk": 975,
+      "def": 1000,
+      "hp": 2985,
+      "rec": 1130
+    },
+    "anima": {
+      "atk": 975,
+      "def": 1000,
+      "hp max": 3375,
+      "hp min": 3180,
+      "rec max": 1091,
+      "rec min": 1013
+    },
+    "breaker": {
+      "atk max": 1092,
+      "atk min": 1014,
+      "def max": 961,
+      "def min": 883,
+      "hp": 2985,
+      "rec": 1130
+    },
+    "guardian": {
+      "atk": 975,
+      "def max": 1117,
+      "def min": 1039,
+      "hp": 2985,
+      "rec max": 1130,
+      "rec min": 1052
+    },
+    "oracle": {
+      "atk": 975,
+      "def max": 1000,
+      "def min": 922,
+      "hp": 2985,
+      "rec max": 1286,
+      "rec min": 1208
+    }
+  },
+  "leader_skill": {
+    "desc": "25% boost to Rec of Light units",
+    "effects": [
+      {
+        "elements buffed": [
+          "light"
+        ],
+        "passive id": "2",
+        "rec% buff": 25
+      }
+    ],
+    "id": "800103",
+    "name": "Regal Ray"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -308,97 +311,93 @@
     ],
     "name": "Royal Starlight"
   },
-  "bbdescription": "6 combo Light elemental attack on all enemies & boosts all allies' Def for 2 turns",
-  "bbnote": "29% boost",
-  "bbtype": "Support/Offense",
-  "bbhits": "6",
-  "bbaoe": "A",
-  "bbgauge": "21",
-  "bbdc": "6",
-  "bbmultiplier": "121",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "850014",
-  "evomats1": "50122",
-  "evomats2": "50121",
-  "evomats3": "50120",
-  "evomats4": "50191",
-  "evomats5": "60142",
-  "evozelcost": "100000",
-  "stats": {
-    "_base": {
-      "atk": 882,
-      "def": 705,
-      "hp": 2095,
-      "rec": 792
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 975,
-      "def": 1000,
-      "hp": 2985,
-      "rec": 1130
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 975,
-      "def": 1000,
-      "hp max": 3375,
-      "hp min": 3180,
-      "rec max": 1091,
-      "rec min": 1013
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 115
     },
-    "breaker": {
-      "atk max": 1092,
-      "atk min": 1014,
-      "def max": 961,
-      "def min": 883,
-      "hp": 2985,
-      "rec": 1130
+    "idle": {
+      "total number of frames": 150
     },
-    "guardian": {
-      "atk": 975,
-      "def max": 1117,
-      "def min": 1039,
-      "hp": 2985,
-      "rec max": 1130,
-      "rec min": 1052
-    },
-    "oracle": {
-      "atk": 975,
-      "def max": 1000,
-      "def min": 922,
-      "hp": 2985,
-      "rec max": 1286,
-      "rec min": 1208
+    "move": {
+      "total number of frames": 150
     }
   },
-  "leader_skill": {
-    "desc": "25% boost to Rec of Light units",
-    "effects": [
-      {
-        "elements buffed": [
-          "light"
-        ],
-        "passive id": "2",
-        "rec% buff": 25
-      }
+  "category": 850010,
+  "cost": "6",
+  "damage frames": {
+    "frame times": [
+      25,
+      27,
+      35,
+      38,
+      76,
+      83
     ],
-    "id": "800103",
-    "name": "Regal Ray"
+    "hit dmg% distribution": [
+      15,
+      15,
+      15,
+      15,
+      15,
+      25
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 6
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "light",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 8021,
+  "imp": {
+    "max atk": "140",
+    "max def": "140",
+    "max hp": "400",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "907~1014",
+  "movement": {
+    "attack": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    }
+  },
+  "name": "Estia",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "Estia",
+  "maxlv": "40",
+  "no": "8021",
   "unitDisplayHomePosition_1W9CxaFK": "442,216,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-134,-95,1310,873",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "30,187,649,432,0",
@@ -408,5 +407,111 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "1000",
   "sellCaution": false,
-  "effectFrames": "22:500:1,23:500:1"
+  "effectFrames": "22:500:1,23:500:1",
+  "evofrom": "",
+  "evointo": "850014",
+  "evozelcost": "100000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50122",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50121",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50120",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60142",
+      "count": 1
+    }
+  ],
+  "freetext": ":''For other uses, see Estia (disambiguation).''",
+  "basexp": "21",
+  "animation_attack": "115",
+  "animation_idle": "150",
+  "animation_move": "150",
+  "movespeed_attack": "4",
+  "movespeed_skill": "4",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "25, 27, 35, 38, 76, 83",
+  "normal_distribute": "15, 15, 15, 15, 15, 25",
+  "normal_totaldistr": "100",
+  "bb_frames": "24, 26, 28, 80, 90, 100",
+  "bb_distribute": "15, 20, 20, 15, 10, 20",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "description": "Princess of the ruined Elysian Kingdom. Estia lost her mother soon after she was born, and her father dedicated himself to military matters. The people around her were kind to her and always let her have her way, but she never had a true friend. This was until a young boy about the same age as her was introduced to her and made her pageboy.",
+  "summon": "The only people I trust are<br>my father and Xenon.<br>You might be the third person.",
+  "fusion": "What did you just give me?<br>It felt wonderful!<br>Do you have more?",
+  "evolution": "",
+  "hp_base": "2095",
+  "atk_base": "882",
+  "def_base": "705",
+  "rec_base": "792",
+  "hp_lord": "2985",
+  "atk_lord": "975",
+  "def_lord": "1000",
+  "rec_lord": "1130",
+  "hp_anima": "3278",
+  "rec_anima": "1052",
+  "atk_breaker": "1053",
+  "def_breaker": "922",
+  "atk_guardian": "897",
+  "def_guardian": "1078",
+  "rec_guardian": "1091",
+  "def_oracle": "961",
+  "hp_oracle": "2868",
+  "rec_oracle": "1247",
+  "hp_bonus": "400",
+  "atk_bonus": "140",
+  "def_bonus": "140",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "6",
+  "normaldc": "12",
+  "ls": "Regal Ray",
+  "lsdescription": "25% boost to Rec of Light units",
+  "lstype": "Recovery",
+  "bbdescription": "6 combo Light elemental attack on all enemies & boosts all allies' Def for 2 turns",
+  "bbnote": "29% boost",
+  "bbtype": "Support/Offense",
+  "bbhits": "6",
+  "bbaoe": "A",
+  "bbgauge": "21",
+  "bbdc": "6",
+  "bbmultiplier": "121",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50122",
+  "evomats2": "50121",
+  "evomats3": "50120",
+  "evomats4": "50191",
+  "evomats5": "60142"
 }

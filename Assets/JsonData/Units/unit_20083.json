@@ -1,59 +1,63 @@
 {
   "id": "20083",
-  "unitName": "Legnaura",
-  "no": "359",
-  "element": "Water",
-  "rarity": "★★★★",
-  "cost": "8",
-  "maxlv": "60",
-  "basexp": "15",
-  "gender": "N",
-  "ai": "1",
-  "animation_attack": "187",
-  "animation_idle": "104",
-  "animation_move": "104",
-  "movespeed_attack": "6",
-  "movespeed_skill": "6",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "75, 95, 115, 135, 155, 160",
-  "normal_distribute": "20, 10, 20, 10, 20, 20",
-  "normal_totaldistr": "100",
-  "description": "A water dragon that is said to have appeared only to cleanse the sea after it had been polluted. The clean water that poured from its body was said to have the power to heal all kinds of sicknesses. However, with every appearance it made its body grew weak and its life short. The main theory is that this was due to the toxins that had built up in its body, though others say it was because of its continuous fighting against the source of the sea pollution.",
-  "summon": "It's useless to cleanse something<br>without attacking the impurity's source.<br>Let end the cause of this evil.",
-  "fusion": "Pure hearted Summoner. <br>I will receive this power<br>you've bestowed to me.",
-  "evolution": "This isn't just water.<br>It has the power to <br>cleanse the world.",
-  "hp_base": "1872",
-  "atk_base": "567",
-  "def_base": "785",
-  "rec_base": "904",
-  "hp_lord": "3163",
-  "atk_lord": "834",
-  "def_lord": "1102",
-  "rec_lord": "1118",
-  "hp_anima": "3606",
-  "rec_anima": "1000",
-  "atk_breaker": "952",
-  "def_breaker": "984",
-  "atk_guardian": "716",
-  "def_guardian": "1220",
-  "rec_guardian": "1059",
-  "def_oracle": "1043",
-  "hp_oracle": "2986",
-  "rec_oracle": "1295",
-  "hp_bonus": "600",
-  "atk_bonus": "120",
-  "def_bonus": "120",
-  "rec_bonus": "120",
-  "lordonly": "",
-  "combo_hits": "6",
-  "normaldc": "12",
-  "ls": "Pure Shining",
-  "lsdescription": "Boost in Heart Crystals produced during Spark",
-  "lsnote": "35% boost",
-  "lstype": "Recovery",
+  "stats": {
+    "_base": {
+      "atk": 567,
+      "def": 785,
+      "hp": 1872,
+      "rec": 904
+    },
+    "_lord": {
+      "atk": 834,
+      "def": 1102,
+      "hp": 3163,
+      "rec": 1118
+    },
+    "anima": {
+      "atk": 834,
+      "def": 1102,
+      "hp max": 3753,
+      "hp min": 3458,
+      "rec max": 1059,
+      "rec min": 941
+    },
+    "breaker": {
+      "atk max": 1011,
+      "atk min": 893,
+      "def max": 1043,
+      "def min": 925,
+      "hp": 3163,
+      "rec": 1118
+    },
+    "guardian": {
+      "atk": 834,
+      "def max": 1279,
+      "def min": 1161,
+      "hp": 3163,
+      "rec max": 1118,
+      "rec min": 1000
+    },
+    "oracle": {
+      "atk": 834,
+      "def max": 1102,
+      "def min": 984,
+      "hp": 3163,
+      "rec max": 1354,
+      "rec min": 1236
+    }
+  },
+  "leader_skill": {
+    "desc": "Boost in Heart Crystals produced during Spark",
+    "effects": [
+      {
+        "hc drop% for spark": 35,
+        "passive id": "31"
+      }
+    ],
+    "id": "1501",
+    "name": "Pure Shining"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -226,93 +230,93 @@
     ],
     "name": "Water of Rebirth"
   },
-  "bbdescription": "Gradually recovers HP for all allies' over 3 turns",
-  "bbnote": "Heals (900~1100 + 10% of target Rec) HP",
-  "bbtype": "Heal",
-  "bbhits": "",
-  "bbaoe": "0",
-  "bbgauge": "15",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "20082",
-  "evointo": "",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 567,
-      "def": 785,
-      "hp": 1872,
-      "rec": 904
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "party"
     },
-    "_lord": {
-      "atk": 834,
-      "def": 1102,
-      "hp": 3163,
-      "rec": 1118
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 834,
-      "def": 1102,
-      "hp max": 3753,
-      "hp min": 3458,
-      "rec max": 1059,
-      "rec min": 941
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 187
     },
-    "breaker": {
-      "atk max": 1011,
-      "atk min": 893,
-      "def max": 1043,
-      "def min": 925,
-      "hp": 3163,
-      "rec": 1118
+    "idle": {
+      "total number of frames": 104
     },
-    "guardian": {
-      "atk": 834,
-      "def max": 1279,
-      "def min": 1161,
-      "hp": 3163,
-      "rec max": 1118,
-      "rec min": 1000
-    },
-    "oracle": {
-      "atk": 834,
-      "def max": 1102,
-      "def min": 984,
-      "hp": 3163,
-      "rec max": 1354,
-      "rec min": 1236
+    "move": {
+      "total number of frames": 104
     }
   },
-  "leader_skill": {
-    "desc": "Boost in Heart Crystals produced during Spark",
-    "effects": [
-      {
-        "hc drop% for spark": 35,
-        "passive id": "31"
-      }
+  "category": 20080,
+  "cost": "8",
+  "damage frames": {
+    "frame times": [
+      75,
+      95,
+      115,
+      135,
+      155,
+      160
     ],
-    "id": "1501",
-    "name": "Pure Shining"
+    "hit dmg% distribution": [
+      20,
+      10,
+      20,
+      10,
+      20,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 6
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "water",
+  "exp_pattern": 15,
+  "gender": "other",
+  "getting type": "farmable",
+  "guide_id": 359,
+  "imp": {
+    "max atk": "120",
+    "max def": "120",
+    "max hp": "600",
+    "max rec": "120"
+  },
+  "kind": "normal",
+  "lord damage range": "776~867",
+  "movement": {
+    "attack": {
+      "move speed": 6,
+      "move speed type": "2",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 6,
+      "move speed type": "2",
+      "move type": "3"
+    }
+  },
+  "name": "Legnaura",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Legnaura",
+  "maxlv": "60",
+  "no": "359",
   "unitDisplayHomePosition_1W9CxaFK": "194,-16,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "125,213,678,654",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "142,268,380,409,0",
@@ -322,5 +326,80 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "50:190:1,70:200230:1,90:190:1,110:200230:1,120:190:1,130:200230:1,145:190:1"
+  "effectFrames": "50:190:1,70:200230:1,90:190:1,110:200230:1,120:190:1,130:200230:1,145:190:1",
+  "evofrom": "20082",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "15",
+  "animation_attack": "187",
+  "animation_idle": "104",
+  "animation_move": "104",
+  "movespeed_attack": "6",
+  "movespeed_skill": "6",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "75, 95, 115, 135, 155, 160",
+  "normal_distribute": "20, 10, 20, 10, 20, 20",
+  "normal_totaldistr": "100",
+  "description": "A water dragon that is said to have appeared only to cleanse the sea after it had been polluted. The clean water that poured from its body was said to have the power to heal all kinds of sicknesses. However, with every appearance it made its body grew weak and its life short. The main theory is that this was due to the toxins that had built up in its body, though others say it was because of its continuous fighting against the source of the sea pollution.",
+  "summon": "It's useless to cleanse something<br>without attacking the impurity's source.<br>Let end the cause of this evil.",
+  "fusion": "Pure hearted Summoner. <br>I will receive this power<br>you've bestowed to me.",
+  "evolution": "This isn't just water.<br>It has the power to <br>cleanse the world.",
+  "hp_base": "1872",
+  "atk_base": "567",
+  "def_base": "785",
+  "rec_base": "904",
+  "hp_lord": "3163",
+  "atk_lord": "834",
+  "def_lord": "1102",
+  "rec_lord": "1118",
+  "hp_anima": "3606",
+  "rec_anima": "1000",
+  "atk_breaker": "952",
+  "def_breaker": "984",
+  "atk_guardian": "716",
+  "def_guardian": "1220",
+  "rec_guardian": "1059",
+  "def_oracle": "1043",
+  "hp_oracle": "2986",
+  "rec_oracle": "1295",
+  "hp_bonus": "600",
+  "atk_bonus": "120",
+  "def_bonus": "120",
+  "rec_bonus": "120",
+  "lordonly": "",
+  "combo_hits": "6",
+  "normaldc": "12",
+  "ls": "Pure Shining",
+  "lsdescription": "Boost in Heart Crystals produced during Spark",
+  "lsnote": "35% boost",
+  "lstype": "Recovery",
+  "bbdescription": "Gradually recovers HP for all allies' over 3 turns",
+  "bbnote": "Heals (900~1100 + 10% of target Rec) HP",
+  "bbtype": "Heal",
+  "bbhits": "",
+  "bbaoe": "0",
+  "bbgauge": "15",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "",
+  "evomats2": "",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": "",
+  "evoitem": ""
 }

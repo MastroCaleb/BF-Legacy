@@ -1,59 +1,63 @@
 {
   "id": "10113",
-  "unitName": "Lava Phoenix",
-  "no": "136",
-  "element": "Fire",
-  "rarity": "★★★★",
-  "cost": "8",
-  "maxlv": "60",
-  "basexp": "21",
-  "gender": "N",
-  "ai": "1",
-  "animation_attack": "94",
-  "animation_idle": "76",
-  "animation_move": "10",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "30, 35, 40, 45",
-  "normal_distribute": "25, 25, 25, 25",
-  "normal_totaldistr": "100",
-  "description": "A holy bird born from a volcano once every few millennia.It is a phoenix that has matured over the span of many years but still attacks by turning into a fireball. It allies with and defends those with ambition and a love of justice. History books speak of a Lava Phoenix appearing at the start of revolutions or coup d'états and aiding those who fight for justice.",
-  "summon": "You, Summoner who fights <br>with virtue and ambition...<br>Accept my protection.",
-  "fusion": "This newfound power...<br>I will use it to <br>protect you.",
-  "evolution": "Summoner, you have a <br>good, stout heart.<br>I promise to defend you.",
-  "hp_base": "2709",
-  "atk_base": "659",
-  "def_base": "958",
-  "rec_base": "479",
-  "hp_lord": "4202",
-  "atk_lord": "983",
-  "def_lord": "1320",
-  "rec_lord": "810",
-  "hp_anima": "4645",
-  "rec_anima": "692",
-  "atk_breaker": "1101",
-  "def_breaker": "1202",
-  "atk_guardian": "865",
-  "def_guardian": "1438",
-  "rec_guardian": "751",
-  "def_oracle": "1261",
-  "hp_oracle": "4025",
-  "rec_oracle": "987",
-  "hp_bonus": "400",
-  "atk_bonus": "200",
-  "def_bonus": "120",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "4",
-  "normaldc": "8",
-  "ls": "Loving Spirit",
-  "lsdescription": "Boost in effectiveness of Heart Crystals",
-  "lsnote": "25% boost",
-  "lstype": "Recovery",
+  "stats": {
+    "_base": {
+      "atk": 659,
+      "def": 958,
+      "hp": 2709,
+      "rec": 479
+    },
+    "_lord": {
+      "atk": 983,
+      "def": 1320,
+      "hp": 4202,
+      "rec": 810
+    },
+    "anima": {
+      "atk": 983,
+      "def": 1320,
+      "hp max": 4792,
+      "hp min": 4497,
+      "rec max": 751,
+      "rec min": 633
+    },
+    "breaker": {
+      "atk max": 1160,
+      "atk min": 1042,
+      "def max": 1261,
+      "def min": 1143,
+      "hp": 4202,
+      "rec": 810
+    },
+    "guardian": {
+      "atk": 983,
+      "def max": 1497,
+      "def min": 1379,
+      "hp": 4202,
+      "rec max": 810,
+      "rec min": 692
+    },
+    "oracle": {
+      "atk": 983,
+      "def max": 1320,
+      "def min": 1202,
+      "hp": 4202,
+      "rec max": 1046,
+      "rec min": 928
+    }
+  },
+  "leader_skill": {
+    "desc": "Boost in effectiveness of Heart Crystals",
+    "effects": [
+      {
+        "hc effectiveness%": 25,
+        "passive id": "10"
+      }
+    ],
+    "id": "1100",
+    "name": "Loving Spirit"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -226,93 +230,89 @@
     ],
     "name": "Ignited Feather"
   },
-  "bbdescription": "Gradual recovery to all allies' HP for 3 turns",
-  "bbnote": "Heals (670~870 + 10% of target Rec) HP",
-  "bbtype": "Heal",
-  "bbhits": "",
-  "bbaoe": "0",
-  "bbgauge": "15",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "10112",
-  "evointo": "10114",
-  "evomats1": "10133",
-  "evomats2": "60143",
-  "evomats3": "60142",
-  "evomats4": "10131",
-  "evomats5": "10130",
-  "evoitem": "",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 659,
-      "def": 958,
-      "hp": 2709,
-      "rec": 479
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "party"
     },
-    "_lord": {
-      "atk": 983,
-      "def": 1320,
-      "hp": 4202,
-      "rec": 810
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 983,
-      "def": 1320,
-      "hp max": 4792,
-      "hp min": 4497,
-      "rec max": 751,
-      "rec min": 633
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 94
     },
-    "breaker": {
-      "atk max": 1160,
-      "atk min": 1042,
-      "def max": 1261,
-      "def min": 1143,
-      "hp": 4202,
-      "rec": 810
+    "idle": {
+      "total number of frames": 76
     },
-    "guardian": {
-      "atk": 983,
-      "def max": 1497,
-      "def min": 1379,
-      "hp": 4202,
-      "rec max": 810,
-      "rec min": 692
-    },
-    "oracle": {
-      "atk": 983,
-      "def max": 1320,
-      "def min": 1202,
-      "hp": 4202,
-      "rec max": 1046,
-      "rec min": 928
+    "move": {
+      "total number of frames": 10
     }
   },
-  "leader_skill": {
-    "desc": "Boost in effectiveness of Heart Crystals",
-    "effects": [
-      {
-        "hc effectiveness%": 25,
-        "passive id": "10"
-      }
+  "category": 10110,
+  "cost": "8",
+  "damage frames": {
+    "frame times": [
+      30,
+      35,
+      40,
+      45
     ],
-    "id": "1100",
-    "name": "Loving Spirit"
+    "hit dmg% distribution": [
+      25,
+      25,
+      25,
+      25
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 4
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "fire",
+  "exp_pattern": 20,
+  "gender": "other",
+  "getting type": "rare summon",
+  "guide_id": 136,
+  "imp": {
+    "max atk": "200",
+    "max def": "120",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "914~1022",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Lava Phoenix",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Lava Phoenix",
+  "maxlv": "60",
+  "no": "136",
   "unitDisplayHomePosition_1W9CxaFK": "311,246,140,382",
   "unitDisplayDetailPosition_6z54rgb3": "44,8,822,832",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "117,193,450,454,1",
@@ -322,5 +322,106 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "29:150:1"
+  "effectFrames": "29:150:1",
+  "evofrom": "10112",
+  "evointo": "10114",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "10133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60142",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10131",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10130",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "94",
+  "animation_idle": "76",
+  "animation_move": "10",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "30, 35, 40, 45",
+  "normal_distribute": "25, 25, 25, 25",
+  "normal_totaldistr": "100",
+  "description": "A holy bird born from a volcano once every few millennia.It is a phoenix that has matured over the span of many years but still attacks by turning into a fireball. It allies with and defends those with ambition and a love of justice. History books speak of a Lava Phoenix appearing at the start of revolutions or coup d'états and aiding those who fight for justice.",
+  "summon": "You, Summoner who fights <br>with virtue and ambition...<br>Accept my protection.",
+  "fusion": "This newfound power...<br>I will use it to <br>protect you.",
+  "evolution": "Summoner, you have a <br>good, stout heart.<br>I promise to defend you.",
+  "hp_base": "2709",
+  "atk_base": "659",
+  "def_base": "958",
+  "rec_base": "479",
+  "hp_lord": "4202",
+  "atk_lord": "983",
+  "def_lord": "1320",
+  "rec_lord": "810",
+  "hp_anima": "4645",
+  "rec_anima": "692",
+  "atk_breaker": "1101",
+  "def_breaker": "1202",
+  "atk_guardian": "865",
+  "def_guardian": "1438",
+  "rec_guardian": "751",
+  "def_oracle": "1261",
+  "hp_oracle": "4025",
+  "rec_oracle": "987",
+  "hp_bonus": "400",
+  "atk_bonus": "200",
+  "def_bonus": "120",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "4",
+  "normaldc": "8",
+  "ls": "Loving Spirit",
+  "lsdescription": "Boost in effectiveness of Heart Crystals",
+  "lsnote": "25% boost",
+  "lstype": "Recovery",
+  "bbdescription": "Gradual recovery to all allies' HP for 3 turns",
+  "bbnote": "Heals (670~870 + 10% of target Rec) HP",
+  "bbtype": "Heal",
+  "bbhits": "",
+  "bbaoe": "0",
+  "bbgauge": "15",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "10133",
+  "evomats2": "60143",
+  "evomats3": "60142",
+  "evomats4": "10131",
+  "evomats5": "10130",
+  "evoitem": ""
 }

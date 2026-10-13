@@ -1,52 +1,68 @@
 {
   "id": "30315",
-  "unitName": "Havoc God Luly",
-  "no": "496",
-  "element": "Earth",
-  "rarity": "★★★★★★",
-  "cost": "26",
-  "maxlv": "100",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "3",
-  "animation_attack": "161",
-  "animation_idle": "64",
-  "animation_move": "64",
-  "movespeed_attack": "4",
-  "movespeed_skill": "4",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "description": "A destructive earth magic wielding former Guardian who rebelled against the gods. Having sided with Sodis as a traitor against the gods, she battled fiercely with their pursuers. Declaring she was bored, she put the rest of her magic power into one final attack completely blowing away all of Alyut's followers. With only the 12 Guardians left, Luly sank to the ground with a discouraged look on her face where she gazed on as the others fought on.",
-  "summon": "I found a strong Summoner!<br>I wanna fight lots too, so pretty<br>please take me with you!",
-  "fusion": "I'm bored.<br>Let's do something fun!<br>Mmm, I'm kind of hungry.",
-  "evolution": "What's this? Evolution?<br>Forget that, let's go somewhere<br>else and have some fun!",
-  "hp_base": "4511",
-  "atk_base": "1458",
-  "def_base": "1244",
-  "rec_base": "1575",
-  "hp_lord": "5905",
-  "atk_lord": "1925",
-  "def_lord": "1502",
-  "rec_lord": "2100",
-  "hp_anima": "6647",
-  "rec_anima": "1902",
-  "atk_breaker": "2123",
-  "def_breaker": "1304",
-  "atk_guardian": "1727",
-  "def_guardian": "1700",
-  "hp_oracle": "5162",
-  "rec_oracle": "2298",
-  "hp_bonus": "750",
-  "atk_bonus": "200",
-  "def_bonus": "400",
-  "rec_bonus": "300",
-  "lordonly": "",
-  "combo_hits": "8",
-  "ls": "Thunder's Conviction",
-  "lsdescription": "15% reduction in damage from Thunder types & boost to damage dealt to Thunder types from Earth types",
-  "lstype": "Attack/Defense",
+  "stats": {
+    "_base": {
+      "atk": 1458,
+      "def": 1244,
+      "hp": 4511,
+      "rec": 1575
+    },
+    "_lord": {
+      "atk": 1925,
+      "def": 1502,
+      "hp": 5905,
+      "rec": 2100
+    },
+    "anima": {
+      "atk": 1925,
+      "def": 1502,
+      "hp max": 6895,
+      "hp min": 6400,
+      "rec max": 2001,
+      "rec min": 1803
+    },
+    "breaker": {
+      "atk max": 2222,
+      "atk min": 2024,
+      "def max": 1403,
+      "def min": 1205,
+      "hp": 5905,
+      "rec": 2100
+    },
+    "guardian": {
+      "atk": 1925,
+      "def max": 1799,
+      "def min": 1601,
+      "hp": 5905,
+      "rec max": 2100,
+      "rec min": 1902
+    },
+    "oracle": {
+      "atk": 1925,
+      "def max": 1502,
+      "def min": 1304,
+      "hp": 5905,
+      "rec max": 2496,
+      "rec min": 2298
+    }
+  },
+  "leader_skill": {
+    "desc": "15% reduction in damage from Thunder types & boost to damage dealt to Thunder types from Earth types",
+    "effects": [
+      {
+        "passive id": "5",
+        "thunder resist%": 15
+      },
+      {
+        "earth units do extra elemental weakness dmg": true,
+        "elemental weakness multiplier%": 50.0,
+        "passive id": "50"
+      }
+    ],
+    "id": "515",
+    "name": "Thunder's Conviction"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -309,11 +325,6 @@
     ],
     "name": "World's Power"
   },
-  "bbdescription": "10 combo powerful Earth attack on all enemies & boost to HC drop rate for 3 turns",
-  "bbtype": "Support/Offense",
-  "bbhits": "10",
-  "bbaoe": "A",
-  "bbgauge": "28",
   "sbb": {
     "damage frames": [
       {
@@ -682,90 +693,102 @@
     ],
     "name": "Land of Origin"
   },
-  "sbbdescription": "12 combo powerful Earth attack on all enemies & boost to HC drop rate and Atk for Earth types for 3 turns",
-  "sbbtype": "Support/Offense",
-  "sbbhits": "12",
-  "sbbaoe": "A",
-  "sbbgauge": "24",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "30314",
-  "evointo": "",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 1458,
-      "def": 1244,
-      "hp": 4511,
-      "rec": 1575
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1925,
-      "def": 1502,
-      "hp": 5905,
-      "rec": 2100
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1925,
-      "def": 1502,
-      "hp max": 6895,
-      "hp min": 6400,
-      "rec max": 2001,
-      "rec min": 1803
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 2222,
-      "atk min": 2024,
-      "def max": 1403,
-      "def min": 1205,
-      "hp": 5905,
-      "rec": 2100
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 161
     },
-    "guardian": {
-      "atk": 1925,
-      "def max": 1799,
-      "def min": 1601,
-      "hp": 5905,
-      "rec max": 2100,
-      "rec min": 1902
+    "idle": {
+      "total number of frames": 64
     },
-    "oracle": {
-      "atk": 1925,
-      "def max": 1502,
-      "def min": 1304,
-      "hp": 5905,
-      "rec max": 2496,
-      "rec min": 2298
+    "move": {
+      "total number of frames": 64
     }
   },
-  "leader_skill": {
-    "desc": "15% reduction in damage from Thunder types & boost to damage dealt to Thunder types from Earth types",
-    "effects": [
-      {
-        "passive id": "5",
-        "thunder resist%": 15
-      },
-      {
-        "earth units do extra elemental weakness dmg": true,
-        "elemental weakness multiplier%": 50.0,
-        "passive id": "50"
-      }
+  "category": 30310,
+  "cost": "26",
+  "damage frames": {
+    "frame times": [
+      102,
+      117,
+      132,
+      147,
+      162,
+      177,
+      192,
+      207
     ],
-    "id": "515",
-    "name": "Thunder's Conviction"
+    "hit dmg% distribution": [
+      13,
+      12,
+      13,
+      12,
+      13,
+      12,
+      13,
+      12
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 8
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "earth",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 496,
+  "imp": {
+    "max atk": "200",
+    "max def": "400",
+    "max hp": "750",
+    "max rec": "300"
+  },
+  "kind": "normal",
+  "lord damage range": "1792~2002",
+  "movement": {
+    "attack": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    }
+  },
+  "name": "Havoc God Luly",
+  "rarity": "6",
+  "sell caution": false,
+  "unitName": "Havoc God Luly",
+  "maxlv": "100",
+  "no": "496",
   "unitDisplayHomePosition_1W9CxaFK": "431,148,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-70,56,883,726",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "164,343,310,286,0",
@@ -775,5 +798,119 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "8000",
   "sellCaution": false,
-  "effectFrames": "102:680:1,157:330401:1,207:300230:1,102:300261:1,132:300261:1,162:300261:1,96:274:1,102:274:1,110:274:1,162:251:1"
+  "effectFrames": "102:680:1,157:330401:1,207:300230:1,102:300261:1,132:300261:1,162:300261:1,96:274:1,102:274:1,110:274:1,162:251:1",
+  "evofrom": "30314",
+  "evointo": "30316",
+  "evozelcost": "1500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "30334",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 1
+    },
+    {
+      "type": "2",
+      "id": "110100",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "161",
+  "animation_idle": "64",
+  "animation_move": "64",
+  "movespeed_attack": "4",
+  "movespeed_skill": "4",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "102, 117, 132, 147, 162, 177, 192, 207",
+  "normal_distribute": "13, 12, 13, 12, 13, 12, 13, 12",
+  "normal_totaldistr": "100",
+  "bb_frames": "101, 116, 131, 146, 161, 176, 191, 206, 221, 236",
+  "bb_distribute": "10, 10, 10, 10, 10, 10, 10, 10, 10, 10",
+  "bb_totaldistr": "100",
+  "sbb_frames": "100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210",
+  "sbb_distribute": "10, 10, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8",
+  "sbb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "2",
+  "description": "A destructive earth magic wielding former Guardian who rebelled against the gods. Having sided with Sodis as a traitor against the gods, she battled fiercely with their pursuers. Declaring she was bored, she put the rest of her magic power into one final attack completely blowing away all of Alyut's followers. With only the 12 Guardians left, Luly sank to the ground with a discouraged look on her face where she gazed on as the others fought on.",
+  "summon": "I found a strong Summoner!<br>I wanna fight lots too, so pretty<br>please take me with you!",
+  "fusion": "I'm bored.<br>Let's do something fun!<br>Mmm, I'm kind of hungry.",
+  "evolution": "What's this? Evolution?<br>Forget that, let's go somewhere<br>else and have some fun!",
+  "hp_base": "4511",
+  "atk_base": "1458",
+  "def_base": "1244",
+  "rec_base": "1575",
+  "hp_lord": "5905",
+  "atk_lord": "1925",
+  "def_lord": "1502",
+  "rec_lord": "2100",
+  "hp_anima": "6648",
+  "rec_anima": "1902",
+  "atk_breaker": "2123",
+  "def_breaker": "1304",
+  "atk_guardian": "1727",
+  "def_guardian": "1700",
+  "rec_guardian": "2001",
+  "def_oracle": "1403",
+  "hp_oracle": "5608",
+  "rec_oracle": "2397",
+  "hp_bonus": "750",
+  "atk_bonus": "200",
+  "def_bonus": "400",
+  "rec_bonus": "300",
+  "lordonly": "",
+  "combo_hits": "8",
+  "normaldc": "16",
+  "ls": "Thunder's Conviction",
+  "lsdescription": "15% reduction in damage from Thunder types & boost to damage dealt to Thunder types from Earth types",
+  "lsnote": "50% boost",
+  "lstype": "Attack/Defense",
+  "bbdescription": "10 combo powerful Earth attack on all enemies & boost to HC drop rate for 3 turns",
+  "bbnote": "22% boost",
+  "bbtype": "Support/Offense",
+  "bbhits": "10",
+  "bbaoe": "A",
+  "bbgauge": "25",
+  "bbdc": "10",
+  "bbmultiplier": "240",
+  "sbbdescription": "12 combo powerful Earth attack on all enemies & boost to HC drop rate and Atk for Earth types for 3 turns",
+  "sbbnote": "25% boost to HC drop rate, 50% boost to Earth damage",
+  "sbbtype": "Support/Offense",
+  "sbbhits": "12",
+  "sbbaoe": "A",
+  "sbbgauge": "20",
+  "sbbdc": "12",
+  "sbbmultiplier": "430",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "30334",
+  "evomats2": "50354",
+  "evomats3": "30133",
+  "evomats4": "60144",
+  "evomats5": "",
+  "evoitem": "Legend Stone"
 }

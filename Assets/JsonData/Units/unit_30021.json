@@ -1,62 +1,63 @@
 {
   "id": "30021",
-  "unitName": "Archer Lario",
-  "no": "31",
-  "element": "Earth",
-  "rarity": "★★",
-  "cost": "3",
-  "maxlv": "30",
-  "basexp": "15",
-  "gender": "M",
-  "ai": "3",
-  "animation_attack": "96",
-  "animation_idle": "52",
-  "animation_move": "52",
-  "movespeed_attack": "8",
-  "movespeed_skill": "8",
-  "speedtype_attack": "1",
-  "speedtype_skill": "1",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "28, 42, 56",
-  "normal_distribute": "33, 33, 34",
-  "normal_totaldistr": "100",
-  "bb_frames": "28, 42, 56",
-  "bb_distribute": "33, 33, 34",
-  "bb_totaldistr": "100",
-  "description": "A hunter living in the forest on the outskirts of the Principality of Vriksha. As he was locally famous as an expert bowman, many visited from afar to witness his skills. He also liked to show off, and was always happy to demonstrate his abilities. One day he was invited to the palace of the Principality. it is said this incident changed his fate.",
-  "summon": "Ah! A Summoner!<br>I'll be your friend.<br>I'll also lend you my bow!",
-  "fusion": "Watch this!<br>My abilities have improved!",
-  "evolution": "",
-  "hp_base": "1480",
-  "atk_base": "450",
-  "def_base": "380",
-  "rec_base": "560",
-  "hp_lord": "2742",
-  "atk_lord": "594",
-  "def_lord": "502",
-  "rec_lord": "952",
-  "hp_anima": "2960",
-  "rec_anima": "894",
-  "atk_breaker": "652",
-  "def_breaker": "444",
-  "atk_guardian": "536",
-  "def_guardian": "560",
-  "rec_guardian": "894",
-  "def_oracle": "444",
-  "hp_oracle": "2655",
-  "rec_oracle": "1039",
-  "hp_bonus": "300",
-  "atk_bonus": "120",
-  "def_bonus": "120",
-  "rec_bonus": "120",
-  "lordonly": "",
-  "combo_hits": "3",
-  "normaldc": "6",
-  "ls": "Fighting Light",
-  "lsdescription": "Small boost in Battle Crystals produced during Spark",
-  "lsnote": "30% boost",
-  "lstype": "Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 450,
+      "def": 380,
+      "hp": 1480,
+      "rec": 560
+    },
+    "_lord": {
+      "atk": 594,
+      "def": 502,
+      "hp": 2742,
+      "rec": 952
+    },
+    "anima": {
+      "atk": 594,
+      "def": 502,
+      "hp max": 3032,
+      "hp min": 2887,
+      "rec max": 923,
+      "rec min": 865
+    },
+    "breaker": {
+      "atk max": 681,
+      "atk min": 623,
+      "def max": 473,
+      "def min": 415,
+      "hp": 2742,
+      "rec": 952
+    },
+    "guardian": {
+      "atk": 594,
+      "def max": 589,
+      "def min": 531,
+      "hp": 2742,
+      "rec max": 952,
+      "rec min": 894
+    },
+    "oracle": {
+      "atk": 594,
+      "def max": 502,
+      "def min": 444,
+      "hp": 2742,
+      "rec max": 1068,
+      "rec min": 1010
+    }
+  },
+  "leader_skill": {
+    "desc": "Small boost in Battle Crystals produced during Spark",
+    "effects": [
+      {
+        "bc drop% for spark": 30,
+        "passive id": "31"
+      }
+    ],
+    "id": "1400",
+    "name": "Fighting Light"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -213,93 +214,93 @@
     ],
     "name": "Carnage Sky"
   },
-  "bbdescription": "3 combo Earth elemental attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "3",
-  "bbaoe": "A",
-  "bbgauge": "15",
-  "bbdc": "3",
-  "bbmultiplier": "90",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "30022",
-  "evomats1": "30130",
-  "evomats2": "30130",
-  "evomats3": "30131",
-  "evomats4": "",
-  "evomats5": "",
-  "evozelcost": "50000",
-  "stats": {
-    "_base": {
-      "atk": 450,
-      "def": 380,
-      "hp": 1480,
-      "rec": 560
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 594,
-      "def": 502,
-      "hp": 2742,
-      "rec": 952
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 594,
-      "def": 502,
-      "hp max": 3032,
-      "hp min": 2887,
-      "rec max": 923,
-      "rec min": 865
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 681,
-      "atk min": 623,
-      "def max": 473,
-      "def min": 415,
-      "hp": 2742,
-      "rec": 952
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 96
     },
-    "guardian": {
-      "atk": 594,
-      "def max": 589,
-      "def min": 531,
-      "hp": 2742,
-      "rec max": 952,
-      "rec min": 894
+    "idle": {
+      "total number of frames": 52
     },
-    "oracle": {
-      "atk": 594,
-      "def max": 502,
-      "def min": 444,
-      "hp": 2742,
-      "rec max": 1068,
-      "rec min": 1010
+    "move": {
+      "total number of frames": 52
     }
   },
-  "leader_skill": {
-    "desc": "Small boost in Battle Crystals produced during Spark",
-    "effects": [
-      {
-        "bc drop% for spark": 30,
-        "passive id": "31"
-      }
+  "category": 30020,
+  "cost": "3",
+  "damage frames": {
+    "frame times": [
+      28,
+      42,
+      56
     ],
-    "id": "1400",
-    "name": "Fighting Light"
+    "hit dmg% distribution": [
+      33,
+      33,
+      34
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 3
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "earth",
+  "exp_pattern": 15,
+  "gender": "male",
+  "getting type": "not eligible for achievement",
+  "guide_id": 31,
+  "imp": {
+    "max atk": "120",
+    "max def": "120",
+    "max hp": "300",
+    "max rec": "120"
+  },
+  "kind": "normal",
+  "lord damage range": "552~617",
+  "movement": {
+    "attack": {
+      "move speed": 8,
+      "move speed type": "1",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 8,
+      "move speed type": "1",
+      "move type": "3"
+    }
+  },
+  "name": "Archer Lario",
+  "rarity": "2",
+  "sell caution": false,
+  "unitName": "Archer Lario",
+  "maxlv": "30",
+  "no": "31",
   "unitDisplayHomePosition_1W9CxaFK": "223,5,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "135,169,660,608",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "164,343,310,286,0",
@@ -309,5 +310,94 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "300",
   "sellCaution": false,
-  "effectFrames": "28:112:1,42:112:1,56:112:1"
+  "effectFrames": "28:112:1,42:112:1,56:112:1",
+  "evofrom": "",
+  "evointo": "30022",
+  "evozelcost": "50000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "30130",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "30131",
+      "count": 1
+    }
+  ],
+  "basexp": "15",
+  "animation_attack": "96",
+  "animation_idle": "52",
+  "animation_move": "52",
+  "movespeed_attack": "8",
+  "movespeed_skill": "8",
+  "speedtype_attack": "1",
+  "speedtype_skill": "1",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "28, 42, 56",
+  "normal_distribute": "33, 33, 34",
+  "normal_totaldistr": "100",
+  "bb_frames": "28, 42, 56",
+  "bb_distribute": "33, 33, 34",
+  "bb_totaldistr": "100",
+  "description": "A hunter living in the forest on the outskirts of the Principality of Vriksha. As he was locally famous as an expert bowman, many visited from afar to witness his skills. He also liked to show off, and was always happy to demonstrate his abilities. One day he was invited to the palace of the Principality. it is said this incident changed his fate.",
+  "summon": "Ah! A Summoner!<br>I'll be your friend.<br>I'll also lend you my bow!",
+  "fusion": "Watch this!<br>My abilities have improved!",
+  "evolution": "",
+  "hp_base": "1480",
+  "atk_base": "450",
+  "def_base": "380",
+  "rec_base": "560",
+  "hp_lord": "2742",
+  "atk_lord": "594",
+  "def_lord": "502",
+  "rec_lord": "952",
+  "hp_anima": "2960",
+  "rec_anima": "894",
+  "atk_breaker": "652",
+  "def_breaker": "444",
+  "atk_guardian": "536",
+  "def_guardian": "560",
+  "rec_guardian": "894",
+  "def_oracle": "444",
+  "hp_oracle": "2655",
+  "rec_oracle": "1039",
+  "hp_bonus": "300",
+  "atk_bonus": "120",
+  "def_bonus": "120",
+  "rec_bonus": "120",
+  "lordonly": "",
+  "combo_hits": "3",
+  "normaldc": "6",
+  "ls": "Fighting Light",
+  "lsdescription": "Small boost in Battle Crystals produced during Spark",
+  "lsnote": "30% boost",
+  "lstype": "Brave Burst",
+  "bbdescription": "3 combo Earth elemental attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "3",
+  "bbaoe": "A",
+  "bbgauge": "15",
+  "bbdc": "3",
+  "bbmultiplier": "90",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "30130",
+  "evomats2": "30130",
+  "evomats3": "30131",
+  "evomats4": "",
+  "evomats5": ""
 }

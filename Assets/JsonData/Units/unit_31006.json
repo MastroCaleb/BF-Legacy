@@ -1,68 +1,112 @@
 {
   "id": "31006",
-  "unitName": "Justice Blade Nagid",
-  "no": "1699",
-  "element": "Earth",
-  "rarity": "★★★★★★★",
-  "cost": "46",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "1",
-  "animation_attack": "166",
-  "animation_idle": "84",
-  "animation_move": "4",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "35, 38, 41, 64, 67, 70, 96, 99, 102",
-  "normal_distribute": "15, 10, 8, 15, 10, 8, 15, 10, 9",
-  "normal_totaldistr": "100",
-  "bb_frames": "35, 38, 41, 64, 67, 70, 73, 96, 99, 102, 105, 108",
-  "bb_distribute": "15, 10, 8, 13, 9, 6, 4, 13, 10, 6, 4, 2",
-  "bb_totaldistr": "100",
-  "sbb_frames": "35, 38, 41, 44, 64, 67, 70, 73, 96, 99, 102, 105, 108, 111",
-  "sbb_distribute": "14, 9, 6, 4, 12, 8, 6, 4, 14, 8, 7, 5, 2, 1",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "35, 38, 41, 44, 64, 67, 70, 73, 76, 96, 99, 102, 105, 108, 111, 114",
-  "ubb_distribute": "11, 8, 6, 4, 10, 8, 6, 4, 1, 12, 10, 7, 6, 4, 2, 1",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "1",
-  "ubb_effectdelay": "1",
-  "description": "Nagid was a student of the progenitor of La Veda fencing. He went on to become the third Zelban. Nagid lost both his master and elder brother to the master of a rival fencing sect. His master's daughter entered into the sacred La Vedan tournament to avenge her father, but also fell victim to a cowardly assassination the night before the final bout. Deeply saddened, Nagid took his fellow student's place in the final bout and defeated the rival master in a breathtaking battle. Afterwards, he took up his master's family name of \"Zelban,\" and carried on teaching his style as the nationally-recognized La Veda fencing.",
-  "summon": "I have to end this chain of tragedies... I will, by my master's name, Zelban!",
-  "fusion": "My master's conviction, my brother's passion, and the justice the second Zelban believed in. All of you, guide my sword!",
-  "evolution": "",
-  "hp_base": "5173",
-  "atk_base": "2073",
-  "def_base": "2294",
-  "rec_base": "1711",
-  "hp_lord": "7385",
-  "atk_lord": "2806",
-  "def_lord": "3120",
-  "rec_lord": "2308",
-  "hp_anima": "8277",
-  "rec_anima": "2070",
-  "atk_breaker": "3044",
-  "def_breaker": "2882",
-  "def_guardian": "3358",
-  "rec_guardian": "2189",
-  "def_oracle": "3001",
-  "rec_oracle": "2665",
-  "hp_bonus": "1000",
-  "atk_bonus": "300",
-  "def_bonus": "600",
-  "rec_bonus": "400",
-  "lordonly": "",
-  "combo_hits": "9",
-  "normaldc": "36",
-  "ls": "Mighty Legacy",
-  "lsdescription": "50% boost to Def, max HP, greatly restores HP for 2 turns when HP is below 50% & damage taken boosts BB gauge",
-  "lsnote": "Heals 2000-2500 HP & fills 2-4 BC",
+  "stats": {
+    "_base": {
+      "atk": 2073,
+      "def": 2294,
+      "hp": 5173,
+      "rec": 1711
+    },
+    "_lord": {
+      "atk": 2806,
+      "def": 3120,
+      "hp": 7385,
+      "rec": 2308
+    },
+    "anima": {
+      "atk": 2806,
+      "def": 3120,
+      "hp max": 8575,
+      "hp min": 7980,
+      "rec max": 2189,
+      "rec min": 1951
+    },
+    "breaker": {
+      "atk max": 3163,
+      "atk min": 2925,
+      "def max": 3001,
+      "def min": 2763,
+      "hp": 7385,
+      "rec": 2308
+    },
+    "guardian": {
+      "atk": 2806,
+      "def max": 3477,
+      "def min": 3239,
+      "hp": 7385,
+      "rec max": 2308,
+      "rec min": 2070
+    },
+    "oracle": {
+      "atk": 2806,
+      "def max": 3120,
+      "def min": 2882,
+      "hp": 7385,
+      "rec max": 2784,
+      "rec min": 2546
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to Def, max HP, greatly restores HP for 2 turns when HP is below 50% & damage taken boosts BB gauge",
+    "effects": [
+      {
+        "def% buff": 50,
+        "hp% buff": 50,
+        "passive id": "1"
+      },
+      {
+        "buff": {
+          "buff turns (8)": "2",
+          "gradual heal high": 2500,
+          "gradual heal low": 2000
+        },
+        "hp below % buff activation": 50,
+        "passive id": "55"
+      },
+      {
+        "bc fill when attacked high": 4,
+        "bc fill when attacked low": 2,
+        "bc fill when attacked%": 100,
+        "passive id": "25"
+      }
+    ],
+    "id": "4388",
+    "name": "Mighty Legacy"
+  },
+  "extra_skill": {
+    "desc": "20% boost to all parameters when a Damage Reducing type Sphere is equipped & negates all status ailments",
+    "effects": [
+      {
+        "atk% buff": 20,
+        "conditions": [
+          {
+            "sphere category required": "Damage Reducing",
+            "sphere category required (raw)": "10"
+          }
+        ],
+        "def% buff": 20,
+        "hp% buff": 20,
+        "passive id": "1",
+        "passive target": "self",
+        "rec% buff": 20
+      },
+      {
+        "conditions": [],
+        "curse resist%": 100,
+        "injury resist%": 100,
+        "paralysis resist%": 100,
+        "passive id": "4",
+        "passive target": "self",
+        "poison resist%": 100,
+        "sick resist%": 100,
+        "weaken resist%": 100
+      }
+    ],
+    "id": "41700",
+    "name": "Protector Blade's Heir",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -655,15 +699,6 @@
     ],
     "name": "La Veda: Jura"
   },
-  "bbdescription": "12 combo Earth attack on all foes, hugely boosts Def for 3 turns, damage taken boosts BB gauge and may slightly restore HP for 3 turns & 50% damage reduction for 1 turn",
-  "bbnote": "160% Def, fills 3-6 BC & 20% chance of 15-20% heal when hit",
-  "bbtype": "Offense",
-  "bbhits": "12",
-  "bbaoe": "A",
-  "bbgauge": "29",
-  "bbdc": "12",
-  "bbmultiplier": "320",
-  "bb_hpscale": "",
   "sbb": {
     "damage frames": [
       {
@@ -1332,15 +1367,6 @@
     ],
     "name": "La Veda: Sickle"
   },
-  "sbbdescription": "14 combo powerful Earth attack on all foes, hugely boosts Def for 3 turns, greatly restores HP for 3 turns, hugely boosts BB gauge for 3 turns, considerably boosts BC efficacy for 3 turns & 50% damage reduction for 1 turn",
-  "sbbnote": "160% Def, fills 7 BC & 30% BB gauge fill rate boost",
-  "sbbtype": "Offense",
-  "sbbhits": "14",
-  "sbbaoe": "A",
-  "sbbgauge": "31",
-  "sbbdc": "14",
-  "sbbmultiplier": "520",
-  "sbb_hpscale": "",
   "ubb": {
     "damage frames": [
       {
@@ -1510,6 +1536,216 @@
     ],
     "name": "Verdure Blade"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "party"
+    },
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 166
+    },
+    "idle": {
+      "total number of frames": 84
+    },
+    "move": {
+      "total number of frames": 4
+    }
+  },
+  "category": 31000,
+  "cost": "46",
+  "damage frames": {
+    "frame times": [
+      35,
+      38,
+      41,
+      64,
+      67,
+      70,
+      96,
+      99,
+      102
+    ],
+    "hit dmg% distribution": [
+      15,
+      10,
+      8,
+      15,
+      10,
+      8,
+      15,
+      10,
+      9
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 9
+  },
+  "drop check count": 4,
+  "element": "earth",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 1699,
+  "imp": {
+    "max atk": "300",
+    "max def": "600",
+    "max hp": "1000",
+    "max rec": "400"
+  },
+  "kind": "normal",
+  "lord damage range": "2612~2918",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Justice Blade Nagid",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Justice Blade Nagid",
+  "maxlv": "120",
+  "no": "1699",
+  "unitDisplayHomePosition_1W9CxaFK": "242,-7,174,475",
+  "unitDisplayDetailPosition_6z54rgb3": "113,195,720,628",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "147,300,376,328,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "89,-25,720,628",
+  "unitDisplaySummonPosition_KC3Jk8Br": "147,300,376,328,0",
+  "unitDisplayHpPosition_3BpHN6VD": "-2,30",
+  "unitDisplayCursorPosition": "-1,11",
+  "sellPrice": "15000",
+  "sellCaution": false,
+  "effectFrames": "29:331310:1,29:330720:1,30:331221:1,59:330391:1,64:330401:1,90:331050:1,90:331221:1",
+  "evofrom": "",
+  "evointo": "31007",
+  "evozelcost": "3000000",
+  "evokarmacost": "1000000",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "30334",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30191",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 2
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "166",
+  "animation_idle": "84",
+  "animation_move": "4",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "35, 38, 41, 64, 67, 70, 96, 99, 102",
+  "normal_distribute": "15, 10, 8, 15, 10, 8, 15, 10, 9",
+  "normal_totaldistr": "100",
+  "bb_frames": "35, 38, 41, 64, 67, 70, 73, 96, 99, 102, 105, 108",
+  "bb_distribute": "15, 10, 8, 13, 9, 6, 4, 13, 10, 6, 4, 2",
+  "bb_totaldistr": "100",
+  "sbb_frames": "35, 38, 41, 44, 64, 67, 70, 73, 96, 99, 102, 105, 108, 111",
+  "sbb_distribute": "14, 9, 6, 4, 12, 8, 6, 4, 14, 8, 7, 5, 2, 1",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "35, 38, 41, 44, 64, 67, 70, 73, 76, 96, 99, 102, 105, 108, 111, 114",
+  "ubb_distribute": "11, 8, 6, 4, 10, 8, 6, 4, 1, 12, 10, 7, 6, 4, 2, 1",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "1",
+  "ubb_effectdelay": "1",
+  "description": "Nagid was a student of the progenitor of La Veda fencing. He went on to become the third Zelban. Nagid lost both his master and elder brother to the master of a rival fencing sect. His master's daughter entered into the sacred La Vedan tournament to avenge her father, but also fell victim to a cowardly assassination the night before the final bout. Deeply saddened, Nagid took his fellow student's place in the final bout and defeated the rival master in a breathtaking battle. Afterwards, he took up his master's family name of \"Zelban,\" and carried on teaching his style as the nationally-recognized La Veda fencing.",
+  "summon": "I have to end this chain of tragedies... I will, by my master's name, Zelban!",
+  "fusion": "My master's conviction, my brother's passion, and the justice the second Zelban believed in. All of you, guide my sword!",
+  "evolution": "",
+  "hp_base": "5173",
+  "atk_base": "2073",
+  "def_base": "2294",
+  "rec_base": "1711",
+  "hp_lord": "7385",
+  "atk_lord": "2806",
+  "def_lord": "3120",
+  "rec_lord": "2308",
+  "hp_anima": "8277",
+  "rec_anima": "2070",
+  "atk_breaker": "3044",
+  "def_breaker": "2882",
+  "def_guardian": "3358",
+  "rec_guardian": "2189",
+  "def_oracle": "3001",
+  "rec_oracle": "2665",
+  "hp_bonus": "1000",
+  "atk_bonus": "300",
+  "def_bonus": "600",
+  "rec_bonus": "400",
+  "lordonly": "",
+  "combo_hits": "9",
+  "normaldc": "36",
+  "ls": "Mighty Legacy",
+  "lsdescription": "50% boost to Def, max HP, greatly restores HP for 2 turns when HP is below 50% & damage taken boosts BB gauge",
+  "lsnote": "Heals 2000-2500 HP & fills 2-4 BC",
+  "bbdescription": "12 combo Earth attack on all foes, hugely boosts Def for 3 turns, damage taken boosts BB gauge and may slightly restore HP for 3 turns & 50% damage reduction for 1 turn",
+  "bbnote": "160% Def, fills 3-6 BC & 20% chance of 15-20% heal when hit",
+  "bbtype": "Offense",
+  "bbhits": "12",
+  "bbaoe": "A",
+  "bbgauge": "29",
+  "bbdc": "12",
+  "bbmultiplier": "320",
+  "bb_hpscale": "",
+  "sbbdescription": "14 combo powerful Earth attack on all foes, hugely boosts Def for 3 turns, greatly restores HP for 3 turns, hugely boosts BB gauge for 3 turns, considerably boosts BC efficacy for 3 turns & 50% damage reduction for 1 turn",
+  "sbbnote": "160% Def, fills 7 BC & 30% BB gauge fill rate boost",
+  "sbbtype": "Offense",
+  "sbbhits": "14",
+  "sbbaoe": "A",
+  "sbbgauge": "31",
+  "sbbdc": "14",
+  "sbbmultiplier": "520",
+  "sbb_hpscale": "",
   "ubbdescription": "16 combo massive Earth attack on all foes, high probability of resistance against 1 KO attack, enormously boosts Def for 3 turns, fully restores HP for 3 turns, enormously boosts BB gauge for 3 turns & 75% damage reduction for 3 turns",
   "ubbnote": "80% chance of KO resistance, 300% Def & fills 50 BC",
   "ubbtype": "Offense",
@@ -1523,7 +1759,6 @@
   "esitem": "Damage Reducing Sphere",
   "esdescription": "20% boost to all parameters when a Damage Reducing type Sphere is equipped & negates all status ailments",
   "esnote": "",
-  "evointo": "31007",
   "evomats1": "30334",
   "evomats2": "30334",
   "evomats3": "50354",
@@ -1531,123 +1766,5 @@
   "evomats5": "30191",
   "evomats6": "30191",
   "evomats7": "60224",
-  "evomats8": "60224",
-  "evozelcost": "3000000",
-  "stats": {
-    "_base": {
-      "atk": 2073,
-      "def": 2294,
-      "hp": 5173,
-      "rec": 1711
-    },
-    "_lord": {
-      "atk": 2806,
-      "def": 3120,
-      "hp": 7385,
-      "rec": 2308
-    },
-    "anima": {
-      "atk": 2806,
-      "def": 3120,
-      "hp max": 8575,
-      "hp min": 7980,
-      "rec max": 2189,
-      "rec min": 1951
-    },
-    "breaker": {
-      "atk max": 3163,
-      "atk min": 2925,
-      "def max": 3001,
-      "def min": 2763,
-      "hp": 7385,
-      "rec": 2308
-    },
-    "guardian": {
-      "atk": 2806,
-      "def max": 3477,
-      "def min": 3239,
-      "hp": 7385,
-      "rec max": 2308,
-      "rec min": 2070
-    },
-    "oracle": {
-      "atk": 2806,
-      "def max": 3120,
-      "def min": 2882,
-      "hp": 7385,
-      "rec max": 2784,
-      "rec min": 2546
-    }
-  },
-  "leader_skill": {
-    "desc": "50% boost to Def, max HP, greatly restores HP for 2 turns when HP is below 50% & damage taken boosts BB gauge",
-    "effects": [
-      {
-        "def% buff": 50,
-        "hp% buff": 50,
-        "passive id": "1"
-      },
-      {
-        "buff": {
-          "buff turns (8)": "2",
-          "gradual heal high": 2500,
-          "gradual heal low": 2000
-        },
-        "hp below % buff activation": 50,
-        "passive id": "55"
-      },
-      {
-        "bc fill when attacked high": 4,
-        "bc fill when attacked low": 2,
-        "bc fill when attacked%": 100,
-        "passive id": "25"
-      }
-    ],
-    "id": "4388",
-    "name": "Mighty Legacy"
-  },
-  "extra_skill": {
-    "desc": "20% boost to all parameters when a Damage Reducing type Sphere is equipped & negates all status ailments",
-    "effects": [
-      {
-        "atk% buff": 20,
-        "conditions": [
-          {
-            "sphere category required": "Damage Reducing",
-            "sphere category required (raw)": "10"
-          }
-        ],
-        "def% buff": 20,
-        "hp% buff": 20,
-        "passive id": "1",
-        "passive target": "self",
-        "rec% buff": 20
-      },
-      {
-        "conditions": [],
-        "curse resist%": 100,
-        "injury resist%": 100,
-        "paralysis resist%": 100,
-        "passive id": "4",
-        "passive target": "self",
-        "poison resist%": 100,
-        "sick resist%": 100,
-        "weaken resist%": 100
-      }
-    ],
-    "id": "41700",
-    "name": "Protector Blade's Heir",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "242,-7,174,475",
-  "unitDisplayDetailPosition_6z54rgb3": "113,195,720,628",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "147,300,376,328,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "89,-25,720,628",
-  "unitDisplaySummonPosition_KC3Jk8Br": "147,300,376,328,0",
-  "unitDisplayHpPosition_3BpHN6VD": "-2,30",
-  "unitDisplayCursorPosition": "-1,11",
-  "sellPrice": "15000",
-  "sellCaution": false,
-  "effectFrames": "29:331310:1,29:330720:1,30:331221:1,59:330391:1,64:330401:1,90:331050:1,90:331221:1"
+  "evomats8": "60224"
 }

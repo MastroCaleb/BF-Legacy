@@ -1,62 +1,63 @@
 {
   "id": "60354",
-  "unitName": "Dark Warrior Zephyr",
-  "no": "516",
-  "element": "Dark",
-  "rarity": "★★★★★",
-  "cost": "16",
-  "maxlv": "80",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "3",
-  "animation_attack": "82",
-  "animation_idle": "44",
-  "animation_move": "11",
-  "movespeed_attack": "0.0024",
-  "movespeed_skill": "0.0024",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "30, 38, 45, 49, 53, 56, 59",
-  "normal_distribute": "20, 15, 15, 15, 10, 15, 10",
-  "normal_totaldistr": "100",
-  "bb_frames": "29, 37, 44, 48, 52, 55, 58, 61, 64, 67",
-  "bb_distribute": "18, 18, 8, 8, 8, 8, 8, 8, 8, 8",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "description": "A former Guardian who rebelled against the gods. Hearing of Sodis' betrayal he immediately began looking for him, hoping to meet him face to face to hear his reasoning. Coming to believe in the righteousness of Sodis' cause, Zephyr left his side to collect information. Upon returning, Zephyr saw that more of his Guardians friends had joined him in believing in Sodis. He smiled in realizing that he had chosen the correct path.",
-  "summon": "Can you predict what your<br>enemies will do next?<br>If so, I will assist you.",
-  "fusion": "Half the battle lies in preparation.<br>You mustn't neglect this.<br>Do you understand what I mean?",
-  "evolution": "My power has rapidly increased.<br>Don't be an incompitent Summoner<br>who relies only on power.",
-  "hp_base": "3831",
-  "atk_base": "1199",
-  "def_base": "1164",
-  "rec_base": "1006",
-  "hp_lord": "5621",
-  "atk_lord": "1588",
-  "def_lord": "1587",
-  "rec_lord": "1361",
-  "hp_anima": "6214",
-  "rec_anima": "1203",
-  "atk_breaker": "1746",
-  "def_breaker": "1429",
-  "atk_guardian": "1430",
-  "def_guardian": "1745",
-  "rec_guardian": "1282",
-  "def_oracle": "1508",
-  "hp_oracle": "5384",
-  "rec_oracle": "1598",
-  "hp_bonus": "500",
-  "atk_bonus": "200",
-  "def_bonus": "200",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "7",
-  "normaldc": "14",
-  "ls": "Light Barrier",
-  "lsdescription": "15% reduction in damage from Light Types",
-  "lstype": "Defense",
+  "stats": {
+    "_base": {
+      "atk": 1199,
+      "def": 1164,
+      "hp": 3831,
+      "rec": 1006
+    },
+    "_lord": {
+      "atk": 1588,
+      "def": 1587,
+      "hp": 5621,
+      "rec": 1361
+    },
+    "anima": {
+      "atk": 1588,
+      "def": 1587,
+      "hp max": 6411,
+      "hp min": 6016,
+      "rec max": 1282,
+      "rec min": 1124
+    },
+    "breaker": {
+      "atk max": 1825,
+      "atk min": 1667,
+      "def max": 1508,
+      "def min": 1350,
+      "hp": 5621,
+      "rec": 1361
+    },
+    "guardian": {
+      "atk": 1588,
+      "def max": 1824,
+      "def min": 1666,
+      "hp": 5621,
+      "rec max": 1361,
+      "rec min": 1203
+    },
+    "oracle": {
+      "atk": 1588,
+      "def max": 1587,
+      "def min": 1429,
+      "hp": 5621,
+      "rec max": 1677,
+      "rec min": 1519
+    }
+  },
+  "leader_skill": {
+    "desc": "15% reduction in damage from Light Types",
+    "effects": [
+      {
+        "light resist%": 15,
+        "passive id": "5"
+      }
+    ],
+    "id": "509",
+    "name": "Light Barrier"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -319,93 +320,101 @@
     ],
     "name": "Dark Hack"
   },
-  "bbdescription": "10 combo powerful Dark attack on all enemies & adds defense ignoring effect to all allies' attack for 2 turns",
-  "bbtype": "Offense",
-  "bbhits": "10",
-  "bbaoe": "A",
-  "bbgauge": "25",
-  "bbdc": "10",
-  "bbmultiplier": "220",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "60353",
-  "evointo": "60355",
-  "evomats1": "50354",
-  "evomats2": "60123",
-  "evomats3": "60201",
-  "evomats4": "60201",
-  "evomats5": "60224",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 1199,
-      "def": 1164,
-      "hp": 3831,
-      "rec": 1006
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1588,
-      "def": 1587,
-      "hp": 5621,
-      "rec": 1361
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1588,
-      "def": 1587,
-      "hp max": 6411,
-      "hp min": 6016,
-      "rec max": 1282,
-      "rec min": 1124
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 1825,
-      "atk min": 1667,
-      "def max": 1508,
-      "def min": 1350,
-      "hp": 5621,
-      "rec": 1361
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 82
     },
-    "guardian": {
-      "atk": 1588,
-      "def max": 1824,
-      "def min": 1666,
-      "hp": 5621,
-      "rec max": 1361,
-      "rec min": 1203
+    "idle": {
+      "total number of frames": 44
     },
-    "oracle": {
-      "atk": 1588,
-      "def max": 1587,
-      "def min": 1429,
-      "hp": 5621,
-      "rec max": 1677,
-      "rec min": 1519
+    "move": {
+      "total number of frames": 11
     }
   },
-  "leader_skill": {
-    "desc": "15% reduction in damage from Light Types",
-    "effects": [
-      {
-        "light resist%": 15,
-        "passive id": "5"
-      }
+  "category": 60350,
+  "cost": "16",
+  "damage frames": {
+    "frame times": [
+      30,
+      38,
+      45,
+      49,
+      53,
+      56,
+      59
     ],
-    "id": "509",
-    "name": "Light Barrier"
+    "hit dmg% distribution": [
+      20,
+      15,
+      15,
+      15,
+      10,
+      15,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 7
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "dark",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 516,
+  "imp": {
+    "max atk": "200",
+    "max def": "200",
+    "max hp": "500",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "1478~1651",
+  "movement": {
+    "attack": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    }
+  },
+  "name": "Dark Warrior Zephyr",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Dark Warrior Zephyr",
+  "maxlv": "80",
+  "no": "516",
   "unitDisplayHomePosition_1W9CxaFK": "396,314,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-76,-103,979,915",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "142,268,380,409,0",
@@ -415,5 +424,104 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "24:126:1,30:400130:1,32:126:1,39:126:1,43:126:1,47:126:1,50:126:1,53:126:1,25:600262:1,62:1103:1"
+  "effectFrames": "24:126:1,30:400130:1,32:126:1,39:126:1,43:126:1,47:126:1,50:126:1,53:126:1,25:600262:1,62:1103:1",
+  "evofrom": "60353",
+  "evointo": "60355",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60123",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60201",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "82",
+  "animation_idle": "44",
+  "animation_move": "11",
+  "movespeed_attack": "0.0024",
+  "movespeed_skill": "0.0024",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "30, 38, 45, 49, 53, 56, 59",
+  "normal_distribute": "20, 15, 15, 15, 10, 15, 10",
+  "normal_totaldistr": "100",
+  "bb_frames": "29, 37, 44, 48, 52, 55, 58, 61, 64, 67",
+  "bb_distribute": "18, 18, 8, 8, 8, 8, 8, 8, 8, 8",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "description": "A former Guardian who rebelled against the gods. Hearing of Sodis' betrayal he immediately began looking for him, hoping to meet him face to face to hear his reasoning. Coming to believe in the righteousness of Sodis' cause, Zephyr left his side to collect information. Upon returning, Zephyr saw that more of his Guardians friends had joined him in believing in Sodis. He smiled in realizing that he had chosen the correct path.",
+  "summon": "Can you predict what your<br>enemies will do next?<br>If so, I will assist you.",
+  "fusion": "Half the battle lies in preparation.<br>You mustn't neglect this.<br>Do you understand what I mean?",
+  "evolution": "My power has rapidly increased.<br>Don't be an incompitent Summoner<br>who relies only on power.",
+  "hp_base": "3831",
+  "atk_base": "1199",
+  "def_base": "1164",
+  "rec_base": "1006",
+  "hp_lord": "5621",
+  "atk_lord": "1588",
+  "def_lord": "1587",
+  "rec_lord": "1361",
+  "hp_anima": "6214",
+  "rec_anima": "1203",
+  "atk_breaker": "1746",
+  "def_breaker": "1429",
+  "atk_guardian": "1430",
+  "def_guardian": "1745",
+  "rec_guardian": "1282",
+  "def_oracle": "1508",
+  "hp_oracle": "5384",
+  "rec_oracle": "1598",
+  "hp_bonus": "500",
+  "atk_bonus": "200",
+  "def_bonus": "200",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "7",
+  "normaldc": "14",
+  "ls": "Light Barrier",
+  "lsdescription": "15% reduction in damage from Light Types",
+  "lstype": "Defense",
+  "bbdescription": "10 combo powerful Dark attack on all enemies & adds defense ignoring effect to all allies' attack for 2 turns",
+  "bbtype": "Offense",
+  "bbhits": "10",
+  "bbaoe": "A",
+  "bbgauge": "25",
+  "bbdc": "10",
+  "bbmultiplier": "220",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "60123",
+  "evomats3": "60201",
+  "evomats4": "60201",
+  "evomats5": "60224"
 }

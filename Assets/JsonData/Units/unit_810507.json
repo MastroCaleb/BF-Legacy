@@ -1,65 +1,108 @@
 {
   "id": "810507",
-  "unitName": "Ardent Soul Feng",
-  "idalt": "",
-  "no": "8268",
-  "element": "Fire",
-  "rarity": "★★★★★★★",
-  "cost": "46",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "148",
-  "animation_idle": "48",
-  "animation_move": "12",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "21, 33, 36, 39, 69, 75, 81, 90, 99",
-  "normal_distribute": "10, 10, 5, 5, 25, 15, 10, 10, 10",
-  "normal_totaldistr": "100",
-  "bb_frames": "21, 24, 27, 33, 36, 39, 69, 72, 75, 81, 87, 93, 99, 105",
-  "bb_distribute": "7, 3, 3, 7, 3, 3, 20, 10, 8, 7, 8, 7, 8, 6",
-  "bb_totaldistr": "100",
-  "sbb_frames": "21, 24, 27, 30, 33, 36, 39, 45, 51, 69, 72, 75, 78, 81, 87, 93, 99, 105",
-  "sbb_distribute": "6, 3, 3, 2, 6, 3, 3, 2, 2, 20, 10, 7, 5, 7, 5, 6, 5, 5",
-  "sbb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "1",
-  "description": "At the break of dawn, when the sky burnt red like fire, the child of Fei and Fang was born. She was named Feng, after the mythical fire bird that soars through the skies, becoming the sun that brings forth the light of day. Like her mother, Feng was wild, fierce, and independent. There was no telling what mischief she would get herself into the moment her parents took their eyes off her. Once, she was dragged back home by the village authorities for beating up a group of boys who teased her a little too much. Despite her temperament, Feng also had a much softer side. She would spend hours alone playing in the forest. Even as a child, Feng already had a connection with nature other humans could only dream to have. Animals seem to gather around the child as if she was a part of them, and the plants around her seemed to glow, as if calling out to her. There are times when Fei and Fang would find their daughter silently staring into the horizon. They knew that their baby girl would one day grow up and leave to find her own path.",
-  "summon": "Who said girls are weak?<br>Hehe! Take that! And that!<br>Bow before the mighty Feng<br>of Krung-go!",
-  "fusion": "Eat silently, speak softly...<br>Walk slowly, sit properly... Gosh!<br>What am I? A princess?",
-  "evolution": "",
-  "hp_base": "5306",
-  "atk_base": "2088",
-  "def_base": "1809",
-  "rec_base": "1991",
-  "hp_lord": "7581",
-  "atk_lord": "2948",
-  "def_lord": "2585",
-  "rec_lord": "2845",
-  "hp_anima": "8473",
-  "rec_anima": "2607",
-  "atk_breaker": "3186",
-  "def_breaker": "2347",
-  "def_guardian": "2823",
-  "rec_guardian": "2726",
-  "def_oracle": "2466",
-  "rec_oracle": "3202",
-  "hp_bonus": "1100",
-  "atk_bonus": "440",
-  "def_bonus": "440",
-  "rec_bonus": "440",
-  "lordonly": "",
-  "combo_hits": "9",
-  "normaldc": "36",
-  "ls": "Child of the Sun",
-  "lsdescription": "40% boost to max HP, boosts Atk, Def, Rec relative to remaining HP & 10% reduction to Fire, Water, Earth, Thunder elemental damage",
-  "lsnote": "",
+  "stats": {
+    "_base": {
+      "atk": 2088,
+      "def": 1809,
+      "hp": 5306,
+      "rec": 1991
+    },
+    "_lord": {
+      "atk": 2948,
+      "def": 2585,
+      "hp": 7581,
+      "rec": 2845
+    },
+    "anima": {
+      "atk": 2948,
+      "def": 2585,
+      "hp max": 8771,
+      "hp min": 8176,
+      "rec max": 2726,
+      "rec min": 2488
+    },
+    "breaker": {
+      "atk max": 3305,
+      "atk min": 3067,
+      "def max": 2466,
+      "def min": 2228,
+      "hp": 7581,
+      "rec": 2845
+    },
+    "guardian": {
+      "atk": 2948,
+      "def max": 2942,
+      "def min": 2704,
+      "hp": 7581,
+      "rec max": 2845,
+      "rec min": 2607
+    },
+    "oracle": {
+      "atk": 2948,
+      "def max": 2585,
+      "def min": 2347,
+      "hp": 7581,
+      "rec max": 3321,
+      "rec min": 3083
+    }
+  },
+  "leader_skill": {
+    "desc": "40% boost to max HP, boosts Atk, Def, Rec relative to remaining HP & 10% reduction to Fire, Water, Earth, Thunder elemental damage",
+    "effects": [
+      {
+        "hp% buff": 40,
+        "passive id": "1"
+      },
+      {
+        "atk% base buff": 0,
+        "atk% extra buff based on hp": 40,
+        "buff proportional to hp": "remaining",
+        "def% base buff": 0,
+        "def% extra buff based on hp": 40,
+        "passive id": "46",
+        "rec% base buff": 0,
+        "rec% extra buff based on hp": 40
+      },
+      {
+        "dmg% mitigation for elemental attacks": 10.0,
+        "mitigate earth attacks": true,
+        "mitigate fire attacks": true,
+        "mitigate thunder attacks": true,
+        "mitigate water attacks": true,
+        "passive id": "62"
+      }
+    ],
+    "id": "801291",
+    "name": "Child of the Sun"
+  },
+  "extra_skill": {
+    "desc": "Damage taken may restore HP & adds resistance against 1 KO attack when HP is below 20%",
+    "effects": [
+      {
+        "conditions": [],
+        "dmg% to hp% when attacked chance%": 20,
+        "dmg% to hp% when attacked high": 25,
+        "dmg% to hp% when attacked low": 20,
+        "passive id": "24",
+        "passive target": "self"
+      },
+      {
+        "buff": {
+          "angel idol buff (12)": true,
+          "angel idol recover hp%": 100,
+          "buff turns (12)": "-1"
+        },
+        "conditions": [],
+        "hp below % buff activation": 20,
+        "passive id": "55",
+        "passive target": "self"
+      }
+    ],
+    "id": "810507",
+    "name": "Fervent Spirit",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -534,18 +577,6 @@
     ],
     "name": "Brilliant Ember"
   },
-  "bbdescription": "14 combo powerful Fire attack on all foes, boosts max HP, considerably boosts Def relative to max HP for 3 turns & damage taken may restore HP for 3 turns",
-  "bbnote": "15% boost to max HP, 30% boost to Def, 25% chance to heal 20~25% HP from damage taken",
-  "bbtype": "Offense",
-  "bbhits": "14",
-  "bbaoe": "A",
-  "bbgauge": "28",
-  "bbdc": "14",
-  "bbmultiplier": "380",
-  "bbhits2": "",
-  "bbaoe2": "",
-  "bbdc2": "",
-  "bbmultiplier2": "",
   "sbb": {
     "damage frames": [
       {
@@ -1068,19 +1099,6 @@
     ],
     "name": "Flaming Blitz"
   },
-  "sbbdescription": "18 combo powerful Fire attack on all foes, hugely boosts BB Atk for 3 turns, considerably boosts Atk relative to max HP for 3 turns & greatly restores HP",
-  "sbbnote": "'''200% + 550% x current HP / base max HP''', 350% boost to BB Atk, 30% boost to Atk, heals (3000~3500 + 40% of healer's Rec) HP",
-  "sbbtype": "Offense",
-  "sbbhits": "18",
-  "sbbaoe": "A",
-  "sbbgauge": "30",
-  "sbbdc": "18",
-  "sbbmultiplier": "200",
-  "sbb_hpscale": "true",
-  "sbbhits2": "",
-  "sbbaoe2": "",
-  "sbbdc2": "",
-  "sbbmultiplier2": "",
   "ubb": {
     "damage frames": [
       {
@@ -1198,6 +1216,225 @@
     ],
     "name": "Luminent Phoenix"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 148
+    },
+    "idle": {
+      "total number of frames": 48
+    },
+    "move": {
+      "total number of frames": 12
+    }
+  },
+  "category": 810500,
+  "cost": "46",
+  "damage frames": {
+    "frame times": [
+      21,
+      33,
+      36,
+      39,
+      69,
+      75,
+      81,
+      90,
+      99
+    ],
+    "hit dmg% distribution": [
+      10,
+      10,
+      5,
+      5,
+      25,
+      15,
+      10,
+      10,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 9
+  },
+  "drop check count": 4,
+  "element": "fire",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 8268,
+  "imp": {
+    "max atk": "440",
+    "max def": "440",
+    "max hp": "1100",
+    "max rec": "440"
+  },
+  "kind": "normal",
+  "lord damage range": "2745~3065",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Ardent Soul Feng",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Ardent Soul Feng",
+  "maxlv": "120",
+  "no": "8268",
+  "unitDisplayHomePosition_1W9CxaFK": "245,133,140,382",
+  "unitDisplayDetailPosition_6z54rgb3": "39,33,826,912",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "135,214,392,433,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "54,-174,826,912",
+  "unitDisplaySummonPosition_KC3Jk8Br": "135,214,392,433,0",
+  "unitDisplayHpPosition_3BpHN6VD": "0,30",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "15000",
+  "sellCaution": false,
+  "effectFrames": "21:121:1,33:121:1,36:121:1,39:121:1,20:8001442:1,33:1103:1,69:121:1,75:121:1,81:121:1,90:121:1,69:10096:1,74:10070:1,68:300185:1,77:300185:1",
+  "evofrom": "",
+  "evointo": "810508",
+  "evozelcost": "3000000",
+  "evokarmacost": "1000000",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "10354",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "810034",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    },
+    {
+      "type": "2",
+      "id": "110100",
+      "count": 1
+    }
+  ],
+  "idalt": "",
+  "basexp": "21",
+  "animation_attack": "148",
+  "animation_idle": "48",
+  "animation_move": "12",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "21, 33, 36, 39, 69, 75, 81, 90, 99",
+  "normal_distribute": "10, 10, 5, 5, 25, 15, 10, 10, 10",
+  "normal_totaldistr": "100",
+  "bb_frames": "21, 24, 27, 33, 36, 39, 69, 72, 75, 81, 87, 93, 99, 105",
+  "bb_distribute": "7, 3, 3, 7, 3, 3, 20, 10, 8, 7, 8, 7, 8, 6",
+  "bb_totaldistr": "100",
+  "sbb_frames": "21, 24, 27, 30, 33, 36, 39, 45, 51, 69, 72, 75, 78, 81, 87, 93, 99, 105",
+  "sbb_distribute": "6, 3, 3, 2, 6, 3, 3, 2, 2, 20, 10, 7, 5, 7, 5, 6, 5, 5",
+  "sbb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "1",
+  "description": "At the break of dawn, when the sky burnt red like fire, the child of Fei and Fang was born. She was named Feng, after the mythical fire bird that soars through the skies, becoming the sun that brings forth the light of day. Like her mother, Feng was wild, fierce, and independent. There was no telling what mischief she would get herself into the moment her parents took their eyes off her. Once, she was dragged back home by the village authorities for beating up a group of boys who teased her a little too much. Despite her temperament, Feng also had a much softer side. She would spend hours alone playing in the forest. Even as a child, Feng already had a connection with nature other humans could only dream to have. Animals seem to gather around the child as if she was a part of them, and the plants around her seemed to glow, as if calling out to her. There are times when Fei and Fang would find their daughter silently staring into the horizon. They knew that their baby girl would one day grow up and leave to find her own path.",
+  "summon": "Who said girls are weak?<br>Hehe! Take that! And that!<br>Bow before the mighty Feng<br>of Krung-go!",
+  "fusion": "Eat silently, speak softly...<br>Walk slowly, sit properly... Gosh!<br>What am I? A princess?",
+  "evolution": "",
+  "hp_base": "5306",
+  "atk_base": "2088",
+  "def_base": "1809",
+  "rec_base": "1991",
+  "hp_lord": "7581",
+  "atk_lord": "2948",
+  "def_lord": "2585",
+  "rec_lord": "2845",
+  "hp_anima": "8473",
+  "rec_anima": "2607",
+  "atk_breaker": "3186",
+  "def_breaker": "2347",
+  "def_guardian": "2823",
+  "rec_guardian": "2726",
+  "def_oracle": "2466",
+  "rec_oracle": "3202",
+  "hp_bonus": "1100",
+  "atk_bonus": "440",
+  "def_bonus": "440",
+  "rec_bonus": "440",
+  "lordonly": "",
+  "combo_hits": "9",
+  "normaldc": "36",
+  "ls": "Child of the Sun",
+  "lsdescription": "40% boost to max HP, boosts Atk, Def, Rec relative to remaining HP & 10% reduction to Fire, Water, Earth, Thunder elemental damage",
+  "lsnote": "",
+  "bbdescription": "14 combo powerful Fire attack on all foes, boosts max HP, considerably boosts Def relative to max HP for 3 turns & damage taken may restore HP for 3 turns",
+  "bbnote": "15% boost to max HP, 30% boost to Def, 25% chance to heal 20~25% HP from damage taken",
+  "bbtype": "Offense",
+  "bbhits": "14",
+  "bbaoe": "A",
+  "bbgauge": "28",
+  "bbdc": "14",
+  "bbmultiplier": "380",
+  "bbhits2": "",
+  "bbaoe2": "",
+  "bbdc2": "",
+  "bbmultiplier2": "",
+  "sbbdescription": "18 combo powerful Fire attack on all foes, hugely boosts BB Atk for 3 turns, considerably boosts Atk relative to max HP for 3 turns & greatly restores HP",
+  "sbbnote": "'''200% + 550% x current HP / base max HP''', 350% boost to BB Atk, 30% boost to Atk, heals (3000~3500 + 40% of healer's Rec) HP",
+  "sbbtype": "Offense",
+  "sbbhits": "18",
+  "sbbaoe": "A",
+  "sbbgauge": "30",
+  "sbbdc": "18",
+  "sbbmultiplier": "200",
+  "sbb_hpscale": "true",
+  "sbbhits2": "",
+  "sbbaoe2": "",
+  "sbbdc2": "",
+  "sbbmultiplier2": "",
   "ubbdescription": "Enormously reduces damage taken for 1 turn, hugely boosts max HP, hugely boosts Atk relative to max HP for 3 turns, fully restores HP for 3 turns & raises allies",
   "ubbnote": "100% damage reduction, 30% boost to max HP, 50% boost to Atk, 100% chance to revive with 10% HP",
   "ubbtype": "Support",
@@ -1214,8 +1451,6 @@
   "esitem": "",
   "esdescription": "Damage taken may restore HP & adds resistance against 1 KO attack when HP is below 20%",
   "esnote": "20% chance to heal 20~25% HP from damage taken",
-  "evofrom": "",
-  "evointo": "810508",
   "evomats1": "10354",
   "evomats2": "10354",
   "evomats3": "50354",
@@ -1226,119 +1461,5 @@
   "evomats8": "",
   "evomats9": "",
   "evoitem": "Legend Stone",
-  "evoitem2": "",
-  "evozelcost": "3000000",
-  "stats": {
-    "_base": {
-      "atk": 2088,
-      "def": 1809,
-      "hp": 5306,
-      "rec": 1991
-    },
-    "_lord": {
-      "atk": 2948,
-      "def": 2585,
-      "hp": 7581,
-      "rec": 2845
-    },
-    "anima": {
-      "atk": 2948,
-      "def": 2585,
-      "hp max": 8771,
-      "hp min": 8176,
-      "rec max": 2726,
-      "rec min": 2488
-    },
-    "breaker": {
-      "atk max": 3305,
-      "atk min": 3067,
-      "def max": 2466,
-      "def min": 2228,
-      "hp": 7581,
-      "rec": 2845
-    },
-    "guardian": {
-      "atk": 2948,
-      "def max": 2942,
-      "def min": 2704,
-      "hp": 7581,
-      "rec max": 2845,
-      "rec min": 2607
-    },
-    "oracle": {
-      "atk": 2948,
-      "def max": 2585,
-      "def min": 2347,
-      "hp": 7581,
-      "rec max": 3321,
-      "rec min": 3083
-    }
-  },
-  "leader_skill": {
-    "desc": "40% boost to max HP, boosts Atk, Def, Rec relative to remaining HP & 10% reduction to Fire, Water, Earth, Thunder elemental damage",
-    "effects": [
-      {
-        "hp% buff": 40,
-        "passive id": "1"
-      },
-      {
-        "atk% base buff": 0,
-        "atk% extra buff based on hp": 40,
-        "buff proportional to hp": "remaining",
-        "def% base buff": 0,
-        "def% extra buff based on hp": 40,
-        "passive id": "46",
-        "rec% base buff": 0,
-        "rec% extra buff based on hp": 40
-      },
-      {
-        "dmg% mitigation for elemental attacks": 10.0,
-        "mitigate earth attacks": true,
-        "mitigate fire attacks": true,
-        "mitigate thunder attacks": true,
-        "mitigate water attacks": true,
-        "passive id": "62"
-      }
-    ],
-    "id": "801291",
-    "name": "Child of the Sun"
-  },
-  "extra_skill": {
-    "desc": "Damage taken may restore HP & adds resistance against 1 KO attack when HP is below 20%",
-    "effects": [
-      {
-        "conditions": [],
-        "dmg% to hp% when attacked chance%": 20,
-        "dmg% to hp% when attacked high": 25,
-        "dmg% to hp% when attacked low": 20,
-        "passive id": "24",
-        "passive target": "self"
-      },
-      {
-        "buff": {
-          "angel idol buff (12)": true,
-          "angel idol recover hp%": 100,
-          "buff turns (12)": "-1"
-        },
-        "conditions": [],
-        "hp below % buff activation": 20,
-        "passive id": "55",
-        "passive target": "self"
-      }
-    ],
-    "id": "810507",
-    "name": "Fervent Spirit",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "245,133,140,382",
-  "unitDisplayDetailPosition_6z54rgb3": "39,33,826,912",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "135,214,392,433,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "54,-174,826,912",
-  "unitDisplaySummonPosition_KC3Jk8Br": "135,214,392,433,0",
-  "unitDisplayHpPosition_3BpHN6VD": "0,30",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "15000",
-  "sellCaution": false,
-  "effectFrames": "21:121:1,33:121:1,36:121:1,39:121:1,20:8001442:1,33:1103:1,69:121:1,75:121:1,81:121:1,90:121:1,69:10096:1,74:10070:1,68:300185:1,77:300185:1"
+  "evoitem2": ""
 }

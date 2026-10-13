@@ -1,59 +1,73 @@
 {
   "id": "850134",
-  "unitName": "Aurelia",
-  "freetext": ":''For other uses, see Aurelia (disambiguation)''",
-  "no": "8069",
-  "element": "Light",
-  "rarity": "★★★★",
-  "cost": "12",
-  "maxlv": "60",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "6",
-  "animation_attack": "Unsupported",
-  "animation_idle": "Unsupported",
-  "animation_move": "Unsupported",
-  "movespeed_attack": "4",
-  "movespeed_skill": "4",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "12, 22, 32, 42, 62, 70, 78",
-  "normal_distribute": "14, 13, 14, 14, 15, 16, 14",
-  "normal_totaldistr": "100",
-  "description": "Aurelia of the Light, as some called her. A demi-god born on the first light of the first day. Aurelia encompassed the kindness and humanity that Athensphere so sorely needed. There were those who wielded power, might, and intellect for the sake of the lands, but she held a gentleness that charmed every warrior's soul, bringing them in touch with their own humanity. She was the 'mother' that all young-demi-gods went to in times of need for comfort and advice.",
-  "summon": "Come to me, dear child...",
-  "fusion": "My life for your well-being my children...",
-  "evolution": "",
-  "hp_base": "2957",
-  "atk_base": "857",
-  "def_base": "934",
-  "rec_base": "1011",
-  "hp_lord": "4225",
-  "atk_lord": "1225",
-  "def_lord": "1335",
-  "rec_lord": "1445",
-  "hp_anima": "4667",
-  "rec_anima": "1327",
-  "atk_breaker": "1343",
-  "def_breaker": "1217",
-  "atk_guardian": "1107",
-  "def_guardian": "1453",
-  "rec_guardian": "1386",
-  "def_oracle": "1276",
-  "hp_oracle": "4048",
-  "rec_oracle": "1622",
-  "hp_bonus": "400",
-  "atk_bonus": "160",
-  "def_bonus": "160",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "7",
-  "normaldc": "14",
-  "ls": "Noble Soul",
-  "lsdescription": "Negates all status ailments & 10% boost to max Def and Rec for all Units",
-  "lstype": "Defense/Recovery",
+  "stats": {
+    "_base": {
+      "atk": 857,
+      "def": 934,
+      "hp": 2957,
+      "rec": 1011
+    },
+    "_lord": {
+      "atk": 1225,
+      "def": 1335,
+      "hp": 4225,
+      "rec": 1445
+    },
+    "anima": {
+      "atk": 1225,
+      "def": 1335,
+      "hp max": 4815,
+      "hp min": 4520,
+      "rec max": 1386,
+      "rec min": 1268
+    },
+    "breaker": {
+      "atk max": 1402,
+      "atk min": 1284,
+      "def max": 1276,
+      "def min": 1158,
+      "hp": 4225,
+      "rec": 1445
+    },
+    "guardian": {
+      "atk": 1225,
+      "def max": 1512,
+      "def min": 1394,
+      "hp": 4225,
+      "rec max": 1445,
+      "rec min": 1327
+    },
+    "oracle": {
+      "atk": 1225,
+      "def max": 1335,
+      "def min": 1217,
+      "hp": 4225,
+      "rec max": 1681,
+      "rec min": 1563
+    }
+  },
+  "leader_skill": {
+    "desc": "Negates all status ailments & 10% boost to max Def and Rec for all Units",
+    "effects": [
+      {
+        "curse resist%": 100,
+        "injury resist%": 100,
+        "paralysis resist%": 100,
+        "passive id": "4",
+        "poison resist%": 100,
+        "sick resist%": 100,
+        "weaken resist%": 100
+      },
+      {
+        "def% buff": 10,
+        "passive id": "1",
+        "rec% buff": 10
+      }
+    ],
+    "id": "801061",
+    "name": "Noble Soul"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -550,104 +564,87 @@
     ],
     "name": "Tune of Rejuvenation"
   },
-  "bbdescription": "Gradually recovers HP for 3 turns & all status ailments removed and negated for 3 turns",
-  "bbnote": "Heals (1500~1600 + 10% of target's Rec) HP",
-  "bbtype": "Heal/Support",
-  "bbhits": "",
-  "bbaoe": "0",
-  "bbgauge": "21",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "es": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "850135",
-  "evomats1": "50123",
-  "evomats2": "850034",
-  "evomats3": "870034",
-  "evomats4": "50122",
-  "evomats5": "60143",
-  "evoitem": "",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 857,
-      "def": 934,
-      "hp": 2957,
-      "rec": 1011
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 100.0,
+      "target conditions": "hp_25pr_under",
+      "target type": "party"
     },
-    "_lord": {
-      "atk": 1225,
-      "def": 1335,
-      "hp": 4225,
-      "rec": 1445
+    {
+      "action": "attack",
+      "chance%": 50.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1225,
-      "def": 1335,
-      "hp max": 4815,
-      "hp min": 4520,
-      "rec max": 1386,
-      "rec min": 1268
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "error": "sam file not supported"
+  },
+  "category": 850130,
+  "cost": "13",
+  "damage frames": {
+    "frame times": [
+      12,
+      22,
+      32,
+      42,
+      62,
+      70,
+      78
+    ],
+    "hit dmg% distribution": [
+      14,
+      13,
+      14,
+      14,
+      15,
+      16,
+      14
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 7
+  },
+  "drop check count": 2,
+  "element": "light",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 8069,
+  "imp": {
+    "max atk": "160",
+    "max def": "160",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "1140~1274",
+  "movement": {
+    "attack": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
     },
-    "breaker": {
-      "atk max": 1402,
-      "atk min": 1284,
-      "def max": 1276,
-      "def min": 1158,
-      "hp": 4225,
-      "rec": 1445
-    },
-    "guardian": {
-      "atk": 1225,
-      "def max": 1512,
-      "def min": 1394,
-      "hp": 4225,
-      "rec max": 1445,
-      "rec min": 1327
-    },
-    "oracle": {
-      "atk": 1225,
-      "def max": 1335,
-      "def min": 1217,
-      "hp": 4225,
-      "rec max": 1681,
-      "rec min": 1563
+    "skill": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
     }
   },
-  "leader_skill": {
-    "desc": "Negates all status ailments & 10% boost to max Def and Rec for all Units",
-    "effects": [
-      {
-        "curse resist%": 100,
-        "injury resist%": 100,
-        "paralysis resist%": 100,
-        "passive id": "4",
-        "poison resist%": 100,
-        "sick resist%": 100,
-        "weaken resist%": 100
-      },
-      {
-        "def% buff": 10,
-        "passive id": "1",
-        "rec% buff": 10
-      }
-    ],
-    "id": "801061",
-    "name": "Noble Soul"
-  },
-  "extra_skill": {},
+  "name": "Aurelia",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Aurelia",
+  "maxlv": "60",
+  "no": "8069",
   "unitDisplayHomePosition_1W9CxaFK": "262,35,140,382",
   "unitDisplayDetailPosition_6z54rgb3": "16,88,842,677",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "65,175,512,411,1",
@@ -657,5 +654,107 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "10:700241:1,12:8000294:1,22:8000294:1,30:700240:1,32:8000294:1,42:8000294:1,60:700241:1,62:8000294:1,70:8000294:1,78:8000294:1"
+  "effectFrames": "10:700241:1,12:8000294:1,22:8000294:1,30:700240:1,32:8000294:1,42:8000294:1,60:700241:1,62:8000294:1,70:8000294:1,78:8000294:1",
+  "evofrom": "",
+  "evointo": "850135",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50123",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "850034",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "870034",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50122",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 1
+    }
+  ],
+  "freetext": ":''For other uses, see Aurelia (disambiguation)''",
+  "basexp": "21",
+  "animation_attack": "Unsupported",
+  "animation_idle": "Unsupported",
+  "animation_move": "Unsupported",
+  "movespeed_attack": "4",
+  "movespeed_skill": "4",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "12, 22, 32, 42, 62, 70, 78",
+  "normal_distribute": "14, 13, 14, 14, 15, 16, 14",
+  "normal_totaldistr": "100",
+  "description": "Aurelia of the Light, as some called her. A demi-god born on the first light of the first day. Aurelia encompassed the kindness and humanity that Athensphere so sorely needed. There were those who wielded power, might, and intellect for the sake of the lands, but she held a gentleness that charmed every warrior's soul, bringing them in touch with their own humanity. She was the 'mother' that all young-demi-gods went to in times of need for comfort and advice.",
+  "summon": "Come to me, dear child...",
+  "fusion": "My life for your well-being my children...",
+  "evolution": "",
+  "hp_base": "2957",
+  "atk_base": "857",
+  "def_base": "934",
+  "rec_base": "1011",
+  "hp_lord": "4225",
+  "atk_lord": "1225",
+  "def_lord": "1335",
+  "rec_lord": "1445",
+  "hp_anima": "4667",
+  "rec_anima": "1327",
+  "atk_breaker": "1343",
+  "def_breaker": "1217",
+  "atk_guardian": "1107",
+  "def_guardian": "1453",
+  "rec_guardian": "1386",
+  "def_oracle": "1276",
+  "hp_oracle": "4048",
+  "rec_oracle": "1622",
+  "hp_bonus": "400",
+  "atk_bonus": "160",
+  "def_bonus": "160",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "7",
+  "normaldc": "14",
+  "ls": "Noble Soul",
+  "lsdescription": "Negates all status ailments & 10% boost to max Def and Rec for all Units",
+  "lstype": "Defense/Recovery",
+  "bbdescription": "Gradually recovers HP for 3 turns & all status ailments removed and negated for 3 turns",
+  "bbnote": "Heals (1500~1600 + 10% of target's Rec) HP",
+  "bbtype": "Heal/Support",
+  "bbhits": "",
+  "bbaoe": "0",
+  "bbgauge": "21",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "es": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50123",
+  "evomats2": "850034",
+  "evomats3": "870034",
+  "evomats4": "50122",
+  "evomats5": "60143",
+  "evoitem": ""
 }

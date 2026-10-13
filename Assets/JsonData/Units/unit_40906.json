@@ -1,68 +1,104 @@
 {
   "id": "40906",
-  "unitName": "Tech Armor Beiorg",
-  "no": "1603",
-  "element": "Thunder",
-  "rarity": "★★★★★★★",
-  "cost": "46",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "N",
-  "ai": "4",
-  "animation_attack": "192",
-  "animation_idle": "52",
-  "animation_move": "7",
-  "movespeed_attack": "0.0024",
-  "movespeed_skill": "0.0024",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "83, 86, 89, 92, 95, 98",
-  "normal_distribute": "27, 21, 16, 14, 12, 10",
-  "normal_totaldistr": "100",
-  "bb_frames": "83, 86, 89, 92, 95, 98, 101, 104, 107, 110",
-  "bb_distribute": "14, 11, 11, 10, 10, 10, 10, 10, 8, 6",
-  "bb_totaldistr": "100",
-  "sbb_frames": "83, 86, 89, 92, 95, 98, 101, 104, 107, 110, 113, 116, 119",
-  "sbb_distribute": "12, 10, 10, 10, 10, 8, 8, 8, 6, 6, 4, 4, 4",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "83, 86, 89, 92, 95, 98, 101, 104, 107, 110, 113, 116, 119, 122, 125, 128, 131",
-  "ubb_distribute": "11, 9, 8, 7, 7, 6, 6, 6, 6, 5, 5, 5, 4, 4, 4, 4, 3",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "1",
-  "ubb_effectdelay": "1",
-  "description": "A mock Unit made in an attempt to replicate the powers of Tech Armor Beiorg. Beiorg once ruled over a region of Ishgria, and was equipped with a self-enhancement function that heightened his abilities to surpass opponents after suffering a defeat. This function apparently led Beiorg's developer to label the armor as his greatest invention. Beiorg is believed to have been destroyed by a Summoner during an exploration of Ishgria. Even so, that Summoner told scholars that the armor continued to evolve until the very end, as though attempting to grant its developer's wishes.",
-  "summon": "POWERFUL ENERGY SOURCE DETECTED.<br>POSSIBILITY OF DEFEAT PRESENT.<br>SELF-ENHANCEMENT FUNCTION SET.",
-  "fusion": "SELF-ENHANCEMENT COMPLETE.<br>POWER INCREASE CONFIRMED.<br>RESUMING COMBAT.",
-  "evolution": "",
-  "hp_base": "5267",
-  "atk_base": "1886",
-  "def_base": "2126",
-  "rec_base": "1857",
-  "hp_lord": "7558",
-  "atk_lord": "2593",
-  "def_lord": "2899",
-  "rec_lord": "2531",
-  "hp_anima": "8450",
-  "rec_anima": "2293",
-  "atk_breaker": "2831",
-  "def_breaker": "2661",
-  "def_guardian": "3137",
-  "rec_guardian": "2412",
-  "def_oracle": "2780",
-  "rec_oracle": "2888",
-  "hp_bonus": "1000",
-  "atk_bonus": "300",
-  "def_bonus": "600",
-  "rec_bonus": "400",
-  "lordonly": "",
-  "combo_hits": "6",
-  "normaldc": "36",
-  "ls": "Annihilation Zone",
-  "lsdescription": "45% boost to all parameters, slight Spark damage reduction & damage taken may restore HP",
-  "lsnote": "20% reduction & 25% chance to heal 20% damage",
+  "stats": {
+    "_base": {
+      "atk": 1886,
+      "def": 2126,
+      "hp": 5267,
+      "rec": 1857
+    },
+    "_lord": {
+      "atk": 2593,
+      "def": 2899,
+      "hp": 7558,
+      "rec": 2531
+    },
+    "anima": {
+      "atk": 2593,
+      "def": 2899,
+      "hp max": 8748,
+      "hp min": 8153,
+      "rec max": 2412,
+      "rec min": 2174
+    },
+    "breaker": {
+      "atk max": 2950,
+      "atk min": 2712,
+      "def max": 2780,
+      "def min": 2542,
+      "hp": 7558,
+      "rec": 2531
+    },
+    "guardian": {
+      "atk": 2593,
+      "def max": 3256,
+      "def min": 3018,
+      "hp": 7558,
+      "rec max": 2531,
+      "rec min": 2293
+    },
+    "oracle": {
+      "atk": 2593,
+      "def max": 2899,
+      "def min": 2661,
+      "hp": 7558,
+      "rec max": 3007,
+      "rec min": 2769
+    }
+  },
+  "leader_skill": {
+    "desc": "45% boost to all parameters, slight Spark damage reduction & damage taken may restore HP",
+    "effects": [
+      {
+        "atk% buff": 45,
+        "def% buff": 45,
+        "hp% buff": 45,
+        "passive id": "1",
+        "rec% buff": 45
+      },
+      {
+        "dmg% to hp% when attacked chance%": 25,
+        "dmg% to hp% when attacked high": 20,
+        "dmg% to hp% when attacked low": 20,
+        "passive id": "24"
+      },
+      {
+        "base spark dmg% resist": 20,
+        "buff spark dmg% resist": 20,
+        "passive id": "77"
+      }
+    ],
+    "id": "10141",
+    "name": "Annihilation Zone"
+  },
+  "extra_skill": {
+    "desc": "Boosts Atk, Def, Rec each turn (for up to 5 turns) & probable resistance against 1 KO attack",
+    "effects": [
+      {
+        "atk% max buff": 30,
+        "conditions": [],
+        "def% max buff": 30,
+        "increase from min to max": 1,
+        "passive id": "105",
+        "passive target": "self",
+        "rec% max buff": 30,
+        "turn count": 5
+      },
+      {
+        "angel idol chance% condition": 0,
+        "angel idol recover chance% high": 40,
+        "angel idol recover chance% low": 40,
+        "angel idol recover counts": 1,
+        "conditions": [],
+        "passive id": "69",
+        "passive target": "self"
+      }
+    ],
+    "id": "33300",
+    "name": "Self-Enhancement Function",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -569,14 +605,6 @@
     ],
     "name": "Prodigious Ray"
   },
-  "bbdescription": "10 combo powerful Thunder attack on all foes, hugely boosts Atk, Def for 3 turns, considerably boosts Def, Rec relative to Atk for 3 turns & damage taken may slightly restore HP for 3 turns",
-  "bbnote": "150% parameter boost, 50% Atk to Def, Rec & 15% chance to heal 15-20% damage",
-  "bbtype": "Heal/Offense",
-  "bbhits": "10",
-  "bbaoe": "A",
-  "bbgauge": "31",
-  "bbdc": "10",
-  "bbmultiplier": "380",
   "sbb": {
     "damage frames": [
       {
@@ -1191,14 +1219,6 @@
     ],
     "name": "Bio Expansion"
   },
-  "sbbdescription": "13 combo powerful Thunder attack on all foes (consecutive uses boost damage), fills own BB gauge to max, hugely boosts Atk, Def for 3 turns, damage taken may slightly restore HP for 3 turns & damage taken boosts BB gauge for 3 turns",
-  "sbbnote": "200% boost to multiplier per use up to 3x, 150% parameter boost, 15% chance to heal 15-20% damage & fills 3-6 BC",
-  "sbbtype": "Heal/Offense",
-  "sbbhits": "13",
-  "sbbaoe": "A",
-  "sbbgauge": "33",
-  "sbbdc": "13",
-  "sbbmultiplier": "480~1080",
   "ubb": {
     "damage frames": [
       {
@@ -1352,6 +1372,220 @@
     ],
     "name": "Crowning Work"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_under",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 30.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 70.0,
+      "target conditions": "hp_max",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 50.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 192
+    },
+    "idle": {
+      "total number of frames": 52
+    },
+    "move": {
+      "total number of frames": 7
+    }
+  },
+  "category": 40900,
+  "cost": "46",
+  "damage frames": {
+    "frame times": [
+      83,
+      86,
+      89,
+      92,
+      95,
+      98
+    ],
+    "hit dmg% distribution": [
+      27,
+      21,
+      16,
+      14,
+      12,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 6
+  },
+  "drop check count": 6,
+  "element": "thunder",
+  "exp_pattern": 20,
+  "gender": "other",
+  "getting type": "rare summon",
+  "guide_id": 1603,
+  "imp": {
+    "max atk": "300",
+    "max def": "600",
+    "max hp": "1000",
+    "max rec": "400"
+  },
+  "kind": "normal",
+  "lord damage range": "2414~2696",
+  "movement": {
+    "attack": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    }
+  },
+  "name": "Tech Armor Beiorg",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Tech Armor Beiorg",
+  "maxlv": "120",
+  "no": "1603",
+  "unitDisplayHomePosition_1W9CxaFK": "441,195,174,475",
+  "unitDisplayDetailPosition_6z54rgb3": "-120,4,1150,1162",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "94,131,500,505,1",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-124,-207,1070,1081",
+  "unitDisplaySummonPosition_KC3Jk8Br": "94,131,500,505,1",
+  "unitDisplayHpPosition_3BpHN6VD": "-3,37",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "15000",
+  "sellCaution": false,
+  "effectFrames": "77:120:1,80:120:1,83:120:1,86:120:1,89:120:1,92:120:1,83:400839:1,91:400839:1,76:400538:1,89:601971:1",
+  "evofrom": "",
+  "evointo": "40907",
+  "evozelcost": "3000000",
+  "evokarmacost": "1000000",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "40334",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 2
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "192",
+  "animation_idle": "52",
+  "animation_move": "7",
+  "movespeed_attack": "0.0024",
+  "movespeed_skill": "0.0024",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "83, 86, 89, 92, 95, 98",
+  "normal_distribute": "27, 21, 16, 14, 12, 10",
+  "normal_totaldistr": "100",
+  "bb_frames": "83, 86, 89, 92, 95, 98, 101, 104, 107, 110",
+  "bb_distribute": "14, 11, 11, 10, 10, 10, 10, 10, 8, 6",
+  "bb_totaldistr": "100",
+  "sbb_frames": "83, 86, 89, 92, 95, 98, 101, 104, 107, 110, 113, 116, 119",
+  "sbb_distribute": "12, 10, 10, 10, 10, 8, 8, 8, 6, 6, 4, 4, 4",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "83, 86, 89, 92, 95, 98, 101, 104, 107, 110, 113, 116, 119, 122, 125, 128, 131",
+  "ubb_distribute": "11, 9, 8, 7, 7, 6, 6, 6, 6, 5, 5, 5, 4, 4, 4, 4, 3",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "1",
+  "ubb_effectdelay": "1",
+  "description": "A mock Unit made in an attempt to replicate the powers of Tech Armor Beiorg. Beiorg once ruled over a region of Ishgria, and was equipped with a self-enhancement function that heightened his abilities to surpass opponents after suffering a defeat. This function apparently led Beiorg's developer to label the armor as his greatest invention. Beiorg is believed to have been destroyed by a Summoner during an exploration of Ishgria. Even so, that Summoner told scholars that the armor continued to evolve until the very end, as though attempting to grant its developer's wishes.",
+  "summon": "POWERFUL ENERGY SOURCE DETECTED.<br>POSSIBILITY OF DEFEAT PRESENT.<br>SELF-ENHANCEMENT FUNCTION SET.",
+  "fusion": "SELF-ENHANCEMENT COMPLETE.<br>POWER INCREASE CONFIRMED.<br>RESUMING COMBAT.",
+  "evolution": "",
+  "hp_base": "5267",
+  "atk_base": "1886",
+  "def_base": "2126",
+  "rec_base": "1857",
+  "hp_lord": "7558",
+  "atk_lord": "2593",
+  "def_lord": "2899",
+  "rec_lord": "2531",
+  "hp_anima": "8450",
+  "rec_anima": "2293",
+  "atk_breaker": "2831",
+  "def_breaker": "2661",
+  "def_guardian": "3137",
+  "rec_guardian": "2412",
+  "def_oracle": "2780",
+  "rec_oracle": "2888",
+  "hp_bonus": "1000",
+  "atk_bonus": "300",
+  "def_bonus": "600",
+  "rec_bonus": "400",
+  "lordonly": "",
+  "combo_hits": "6",
+  "normaldc": "36",
+  "ls": "Annihilation Zone",
+  "lsdescription": "45% boost to all parameters, slight Spark damage reduction & damage taken may restore HP",
+  "lsnote": "20% reduction & 25% chance to heal 20% damage",
+  "bbdescription": "10 combo powerful Thunder attack on all foes, hugely boosts Atk, Def for 3 turns, considerably boosts Def, Rec relative to Atk for 3 turns & damage taken may slightly restore HP for 3 turns",
+  "bbnote": "150% parameter boost, 50% Atk to Def, Rec & 15% chance to heal 15-20% damage",
+  "bbtype": "Heal/Offense",
+  "bbhits": "10",
+  "bbaoe": "A",
+  "bbgauge": "31",
+  "bbdc": "10",
+  "bbmultiplier": "380",
+  "sbbdescription": "13 combo powerful Thunder attack on all foes (consecutive uses boost damage), fills own BB gauge to max, hugely boosts Atk, Def for 3 turns, damage taken may slightly restore HP for 3 turns & damage taken boosts BB gauge for 3 turns",
+  "sbbnote": "200% boost to multiplier per use up to 3x, 150% parameter boost, 15% chance to heal 15-20% damage & fills 3-6 BC",
+  "sbbtype": "Heal/Offense",
+  "sbbhits": "13",
+  "sbbaoe": "A",
+  "sbbgauge": "33",
+  "sbbdc": "13",
+  "sbbmultiplier": "480~1080",
   "ubbdescription": "17 combo massive Thunder attack on all foes, high probability of resistance against 1 KO attack, enormously boosts Atk, Def for 3 turns, probable powerful Spark critical for 3 turns & damage taken enormously restores HP for 3 turns",
   "ubbnote": "80% chance to resist KO attack, 300% parameter boost, 50% chance Sparks deal 100% extra damage & heals 100% damage taken",
   "ubbtype": "Heal/Offense",
@@ -1364,8 +1598,6 @@
   "esitem": "",
   "esdescription": "Boosts Atk, Def, Rec each turn (for up to 5 turns) & probable resistance against 1 KO attack",
   "esnote": "6% boost per turn - 30% total after turn 5 & 40% chance to resist 1 KO attack",
-  "evofrom": "",
-  "evointo": "40907",
   "evomats1": "Thunder Mecha God",
   "evomats2": "Thunder Mecha God",
   "evomats3": "Miracle Totem",
@@ -1374,115 +1606,5 @@
   "evomats6": "Dragon Mimic",
   "evomats7": "Metal Mimic",
   "evomats8": "Metal Mimic",
-  "evoitem": "",
-  "evozelcost": "3000000",
-  "stats": {
-    "_base": {
-      "atk": 1886,
-      "def": 2126,
-      "hp": 5267,
-      "rec": 1857
-    },
-    "_lord": {
-      "atk": 2593,
-      "def": 2899,
-      "hp": 7558,
-      "rec": 2531
-    },
-    "anima": {
-      "atk": 2593,
-      "def": 2899,
-      "hp max": 8748,
-      "hp min": 8153,
-      "rec max": 2412,
-      "rec min": 2174
-    },
-    "breaker": {
-      "atk max": 2950,
-      "atk min": 2712,
-      "def max": 2780,
-      "def min": 2542,
-      "hp": 7558,
-      "rec": 2531
-    },
-    "guardian": {
-      "atk": 2593,
-      "def max": 3256,
-      "def min": 3018,
-      "hp": 7558,
-      "rec max": 2531,
-      "rec min": 2293
-    },
-    "oracle": {
-      "atk": 2593,
-      "def max": 2899,
-      "def min": 2661,
-      "hp": 7558,
-      "rec max": 3007,
-      "rec min": 2769
-    }
-  },
-  "leader_skill": {
-    "desc": "45% boost to all parameters, slight Spark damage reduction & damage taken may restore HP",
-    "effects": [
-      {
-        "atk% buff": 45,
-        "def% buff": 45,
-        "hp% buff": 45,
-        "passive id": "1",
-        "rec% buff": 45
-      },
-      {
-        "dmg% to hp% when attacked chance%": 25,
-        "dmg% to hp% when attacked high": 20,
-        "dmg% to hp% when attacked low": 20,
-        "passive id": "24"
-      },
-      {
-        "base spark dmg% resist": 20,
-        "buff spark dmg% resist": 20,
-        "passive id": "77"
-      }
-    ],
-    "id": "10141",
-    "name": "Annihilation Zone"
-  },
-  "extra_skill": {
-    "desc": "Boosts Atk, Def, Rec each turn (for up to 5 turns) & probable resistance against 1 KO attack",
-    "effects": [
-      {
-        "atk% max buff": 30,
-        "conditions": [],
-        "def% max buff": 30,
-        "increase from min to max": 1,
-        "passive id": "105",
-        "passive target": "self",
-        "rec% max buff": 30,
-        "turn count": 5
-      },
-      {
-        "angel idol chance% condition": 0,
-        "angel idol recover chance% high": 40,
-        "angel idol recover chance% low": 40,
-        "angel idol recover counts": 1,
-        "conditions": [],
-        "passive id": "69",
-        "passive target": "self"
-      }
-    ],
-    "id": "33300",
-    "name": "Self-Enhancement Function",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "441,195,174,475",
-  "unitDisplayDetailPosition_6z54rgb3": "-120,4,1150,1162",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "94,131,500,505,1",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-124,-207,1070,1081",
-  "unitDisplaySummonPosition_KC3Jk8Br": "94,131,500,505,1",
-  "unitDisplayHpPosition_3BpHN6VD": "-3,37",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "15000",
-  "sellCaution": false,
-  "effectFrames": "77:120:1,80:120:1,83:120:1,86:120:1,89:120:1,92:120:1,83:400839:1,91:400839:1,76:400538:1,89:601971:1"
+  "evoitem": ""
 }

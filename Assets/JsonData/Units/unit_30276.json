@@ -1,69 +1,111 @@
 {
   "id": "30276",
-  "unitName": "Colossal Vars",
-  "no": "1174",
-  "element": "Earth",
-  "rarity": "★★★★★★★",
-  "cost": "40",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "N",
-  "ai": "2",
-  "animation_attack": "252",
-  "animation_idle": "98",
-  "animation_move": "164",
-  "movespeed_attack": "0.005",
-  "movespeed_skill": "0.005",
-  "speedtype_attack": "1",
-  "speedtype_skill": "1",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "60, 68, 95, 103, 173, 178, 183, 188, 193, 198",
-  "normal_distribute": "17, 5, 17, 5, 11, 9, 9, 9, 9, 9",
-  "normal_totaldistr": "100",
-  "bb_frames": "60, 68, 95, 103, 173, 177, 181, 185, 189, 193, 197, 201, 205",
-  "bb_distribute": "10, 5, 10, 5, 10, 8, 7, 8, 7, 8, 7, 8, 7",
-  "bb_totaldistr": "100",
-  "sbb_frames": "60, 68, 95, 103, 173, 176, 179, 182, 185, 188, 191, 194, 197, 200, 203, 206, 209",
-  "sbb_distribute": "9, 4, 9, 4, 11, 6, 5, 6, 4, 6, 5, 6, 4, 6, 5, 6, 4",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "60, 65, 70, 95, 100, 105, 173, 176, 179, 182, 185, 188, 191, 194, 197, 200, 203, 206, 209, 212",
-  "ubb_distribute": "9, 4, 3, 9, 4, 3, 9, 5, 4, 5, 4, 5, 4, 5, 4, 5, 4, 5, 4, 5",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "2",
-  "ubb_effectdelay": "2",
-  "description": "An enchanted puppet who saved the half-human and half-demon girl Lira. After its main body was destroyed, Lira transfused its soul into another vessel, in which Vars continued fighting for her until its very end. Afterwards, Lira took a piece of Vars with her and left the rest of its body to fall apart elsewhere. However, there is a legend that claims that when Lira was being helped by some air pirates to escape towards the new promised land, a colossal enchanted puppet came to her rescue. Some believe that this wasn't the work of the soul that had been originally infused to the enchanted puppet's body, but the will of Vars itself.",
-  "summon": "Lira...protect...mission...<br>All...systems...<br>My...reason...for...",
-  "fusion": "Must protect...demon...girl...<br>Reinitializing systems...<br>Launching code 5...",
-  "evolution": "I...always...<br>He...did...<br>I...protect...you...too!",
-  "hp_base": "5206",
-  "atk_base": "1964",
-  "def_base": "1652",
-  "rec_base": "1121",
-  "hp_lord": "7000",
-  "atk_lord": "2601",
-  "def_lord": "2153",
-  "rec_lord": "1602",
-  "hp_anima": "7893",
-  "rec_anima": "1364",
-  "atk_breaker": "2839",
-  "def_breaker": "1915",
-  "def_guardian": "2391",
-  "rec_guardian": "1483",
-  "def_oracle": "2034",
-  "rec_oracle": "1959",
-  "hp_bonus": "1000",
-  "atk_bonus": "600",
-  "def_bonus": "300",
-  "rec_bonus": "400",
-  "lordonly": "",
-  "combo_hits": "10",
-  "normaldc": "40",
-  "ls": "Stone God's Sanctuary",
-  "lsdescription": "40% boost to max HP, Def & probable damage reduction",
-  "lsnote": "15% chance to reduce damage by 25%",
-  "lstype": "Hit Points/Defense",
+  "stats": {
+    "_base": {
+      "atk": 1964,
+      "def": 1652,
+      "hp": 5286,
+      "rec": 1121
+    },
+    "_lord": {
+      "atk": 2601,
+      "def": 2153,
+      "hp": 7000,
+      "rec": 1602
+    },
+    "anima": {
+      "atk": 2601,
+      "def": 2153,
+      "hp max": 8190,
+      "hp min": 7595,
+      "rec max": 1483,
+      "rec min": 1245
+    },
+    "breaker": {
+      "atk max": 2958,
+      "atk min": 2720,
+      "def max": 2034,
+      "def min": 1796,
+      "hp": 7000,
+      "rec": 1602
+    },
+    "guardian": {
+      "atk": 2601,
+      "def max": 2510,
+      "def min": 2272,
+      "hp": 7000,
+      "rec max": 1602,
+      "rec min": 1364
+    },
+    "oracle": {
+      "atk": 2601,
+      "def max": 2153,
+      "def min": 1915,
+      "hp": 7000,
+      "rec max": 2078,
+      "rec min": 1840
+    }
+  },
+  "leader_skill": {
+    "desc": "40% boost to max HP, Def & probable damage reduction",
+    "effects": [
+      {
+        "def% buff": 40,
+        "hp% buff": 40,
+        "passive id": "1"
+      },
+      {
+        "dmg reduction chance%": 15,
+        "dmg reduction%": 25,
+        "passive id": "14"
+      }
+    ],
+    "id": "4303",
+    "name": "Stone God's Sanctuary"
+  },
+  "extra_skill": {
+    "desc": "Probable 20% damage reduction, 20% boost to all parameters when Golem Core is equipped & reduces BB gauge required for BB",
+    "effects": [
+      {
+        "conditions": [],
+        "dmg reduction chance%": 20,
+        "dmg reduction%": 20,
+        "passive id": "14",
+        "passive target": "self"
+      },
+      {
+        "conditions": [
+          {
+            "item required": [
+              "47202"
+            ]
+          }
+        ],
+        "passive id": "48",
+        "passive target": "self",
+        "reduced bb bc cost%": 20
+      },
+      {
+        "atk% buff": 20,
+        "conditions": [
+          {
+            "item required": [
+              "47202"
+            ]
+          }
+        ],
+        "def% buff": 20,
+        "hp% buff": 20,
+        "passive id": "1",
+        "passive target": "self",
+        "rec% buff": 20
+      }
+    ],
+    "id": "9500",
+    "name": "Another Soul",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -434,14 +476,6 @@
     ],
     "name": "Gravion Fault"
   },
-  "bbdescription": "13 combo powerful Earth attack on all foes, enormously boosts own BB gauge fill rate for 1 turn & boosts critical damage for 3 turns",
-  "bbnote": "80% BC efficacy & 60% crit rate (not damage)",
-  "bbtype": "Support/Offense",
-  "bbhits": "13",
-  "bbaoe": "A",
-  "bbgauge": "35",
-  "bbdc": "13",
-  "bbmultiplier": "400",
   "sbb": {
     "damage frames": [
       {
@@ -942,14 +976,6 @@
     ],
     "name": "Magneid Rejector"
   },
-  "sbbdescription": "17 combo massive Earth attack on all foes, probable huge 1 turn Atk reduction, enormously boosts own BB gauge fill rate for 1 turn & boosts critical damage for 3 turns",
-  "sbbnote": "70% chance to reduce enemy Atk by 50%, 100% BC efficacy & 50% critical damage",
-  "sbbtype": "Support/Offense",
-  "sbbhits": "17",
-  "sbbaoe": "A",
-  "sbbgauge": "40",
-  "sbbdc": "17",
-  "sbbmultiplier": "1000",
   "ubb": {
     "damage frames": [
       {
@@ -1069,6 +1095,191 @@
     ],
     "name": "At the Limit"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 252
+    },
+    "idle": {
+      "total number of frames": 98
+    },
+    "move": {
+      "total number of frames": 164
+    }
+  },
+  "category": 30270,
+  "cost": "40",
+  "damage frames": {
+    "frame times": [
+      60,
+      68,
+      95,
+      103,
+      173,
+      178,
+      183,
+      188,
+      193,
+      198
+    ],
+    "hit dmg% distribution": [
+      17,
+      5,
+      17,
+      5,
+      11,
+      9,
+      9,
+      9,
+      9,
+      9
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 10
+  },
+  "drop check count": 4,
+  "element": "earth",
+  "exp_pattern": 20,
+  "gender": "other",
+  "getting type": "rare summon",
+  "guide_id": 1174,
+  "imp": {
+    "max atk": "600",
+    "max def": "300",
+    "max hp": "1000",
+    "max rec": "400"
+  },
+  "kind": "normal",
+  "lord damage range": "2421~2705",
+  "movement": {
+    "attack": {
+      "move speed": 0.005,
+      "move speed type": "1",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.005,
+      "move speed type": "1",
+      "move type": "1"
+    }
+  },
+  "name": "Colossal Vars",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Colossal Vars",
+  "maxlv": "120",
+  "no": "1174",
+  "unitDisplayHomePosition_1W9CxaFK": "288,280,174,475",
+  "unitDisplayDetailPosition_6z54rgb3": "-15,-73,1134,934",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "40,184,567,467,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "13,-327,1134,934",
+  "unitDisplaySummonPosition_KC3Jk8Br": "40,184,567,467,0",
+  "unitDisplayHpPosition_3BpHN6VD": "-23,57",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "15000",
+  "sellCaution": false,
+  "effectFrames": "60:330365:1,95:330365:1,65:300110:1,100:300110:1,68:138:1,103:138:1,170:330377:1,140:600381:1,190:300230:1",
+  "evofrom": "30275",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "21",
+  "animation_attack": "252",
+  "animation_idle": "98",
+  "animation_move": "164",
+  "movespeed_attack": "0.005",
+  "movespeed_skill": "0.005",
+  "speedtype_attack": "1",
+  "speedtype_skill": "1",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "60, 68, 95, 103, 173, 178, 183, 188, 193, 198",
+  "normal_distribute": "17, 5, 17, 5, 11, 9, 9, 9, 9, 9",
+  "normal_totaldistr": "100",
+  "bb_frames": "60, 68, 95, 103, 173, 177, 181, 185, 189, 193, 197, 201, 205",
+  "bb_distribute": "10, 5, 10, 5, 10, 8, 7, 8, 7, 8, 7, 8, 7",
+  "bb_totaldistr": "100",
+  "sbb_frames": "60, 68, 95, 103, 173, 176, 179, 182, 185, 188, 191, 194, 197, 200, 203, 206, 209",
+  "sbb_distribute": "9, 4, 9, 4, 11, 6, 5, 6, 4, 6, 5, 6, 4, 6, 5, 6, 4",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "60, 65, 70, 95, 100, 105, 173, 176, 179, 182, 185, 188, 191, 194, 197, 200, 203, 206, 209, 212",
+  "ubb_distribute": "9, 4, 3, 9, 4, 3, 9, 5, 4, 5, 4, 5, 4, 5, 4, 5, 4, 5, 4, 5",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "2",
+  "ubb_effectdelay": "2",
+  "description": "An enchanted puppet who saved the half-human and half-demon girl Lira. After its main body was destroyed, Lira transfused its soul into another vessel, in which Vars continued fighting for her until its very end. Afterwards, Lira took a piece of Vars with her and left the rest of its body to fall apart elsewhere. However, there is a legend that claims that when Lira was being helped by some air pirates to escape towards the new promised land, a colossal enchanted puppet came to her rescue. Some believe that this wasn't the work of the soul that had been originally infused to the enchanted puppet's body, but the will of Vars itself.",
+  "summon": "Lira...protect...mission...<br>All...systems...<br>My...reason...for...",
+  "fusion": "Must protect...demon...girl...<br>Reinitializing systems...<br>Launching code 5...",
+  "evolution": "I...always...<br>He...did...<br>I...protect...you...too!",
+  "hp_base": "5206",
+  "atk_base": "1964",
+  "def_base": "1652",
+  "rec_base": "1121",
+  "hp_lord": "7000",
+  "atk_lord": "2601",
+  "def_lord": "2153",
+  "rec_lord": "1602",
+  "hp_anima": "7893",
+  "rec_anima": "1364",
+  "atk_breaker": "2839",
+  "def_breaker": "1915",
+  "def_guardian": "2391",
+  "rec_guardian": "1483",
+  "def_oracle": "2034",
+  "rec_oracle": "1959",
+  "hp_bonus": "1000",
+  "atk_bonus": "600",
+  "def_bonus": "300",
+  "rec_bonus": "400",
+  "lordonly": "",
+  "combo_hits": "10",
+  "normaldc": "40",
+  "ls": "Stone God's Sanctuary",
+  "lsdescription": "40% boost to max HP, Def & probable damage reduction",
+  "lsnote": "15% chance to reduce damage by 25%",
+  "lstype": "Hit Points/Defense",
+  "bbdescription": "13 combo powerful Earth attack on all foes, enormously boosts own BB gauge fill rate for 1 turn & boosts critical damage for 3 turns",
+  "bbnote": "80% BC efficacy & 60% crit rate (not damage)",
+  "bbtype": "Support/Offense",
+  "bbhits": "13",
+  "bbaoe": "A",
+  "bbgauge": "35",
+  "bbdc": "13",
+  "bbmultiplier": "400",
+  "sbbdescription": "17 combo massive Earth attack on all foes, probable huge 1 turn Atk reduction, enormously boosts own BB gauge fill rate for 1 turn & boosts critical damage for 3 turns",
+  "sbbnote": "70% chance to reduce enemy Atk by 50%, 100% BC efficacy & 50% critical damage",
+  "sbbtype": "Support/Offense",
+  "sbbhits": "17",
+  "sbbaoe": "A",
+  "sbbgauge": "40",
+  "sbbdc": "17",
+  "sbbmultiplier": "1000",
   "ubbdescription": "20 combo massive Earth attack on all foes, probable huge Atk reduction for 2 turns & boosts BB Atk for 2 turns",
   "ubbnote": "80% reduction & 500% BB Atk",
   "ubbtype": "Support/Offense",
@@ -1081,129 +1292,10 @@
   "esitem": "Golem Core",
   "esdescription": "Probable 20% damage reduction, 20% boost to all parameters when Golem Core is equipped & reduces BB gauge required for BB",
   "esnote": "20% chance & 20% BB gauge reduction",
-  "evofrom": "30275",
-  "evointo": "",
   "evomats1": "",
   "evomats2": "",
   "evomats3": "",
   "evomats4": "",
   "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 1964,
-      "def": 1652,
-      "hp": 5286,
-      "rec": 1121
-    },
-    "_lord": {
-      "atk": 2601,
-      "def": 2153,
-      "hp": 7000,
-      "rec": 1602
-    },
-    "anima": {
-      "atk": 2601,
-      "def": 2153,
-      "hp max": 8190,
-      "hp min": 7595,
-      "rec max": 1483,
-      "rec min": 1245
-    },
-    "breaker": {
-      "atk max": 2958,
-      "atk min": 2720,
-      "def max": 2034,
-      "def min": 1796,
-      "hp": 7000,
-      "rec": 1602
-    },
-    "guardian": {
-      "atk": 2601,
-      "def max": 2510,
-      "def min": 2272,
-      "hp": 7000,
-      "rec max": 1602,
-      "rec min": 1364
-    },
-    "oracle": {
-      "atk": 2601,
-      "def max": 2153,
-      "def min": 1915,
-      "hp": 7000,
-      "rec max": 2078,
-      "rec min": 1840
-    }
-  },
-  "leader_skill": {
-    "desc": "40% boost to max HP, Def & probable damage reduction",
-    "effects": [
-      {
-        "def% buff": 40,
-        "hp% buff": 40,
-        "passive id": "1"
-      },
-      {
-        "dmg reduction chance%": 15,
-        "dmg reduction%": 25,
-        "passive id": "14"
-      }
-    ],
-    "id": "4303",
-    "name": "Stone God's Sanctuary"
-  },
-  "extra_skill": {
-    "desc": "Probable 20% damage reduction, 20% boost to all parameters when Golem Core is equipped & reduces BB gauge required for BB",
-    "effects": [
-      {
-        "conditions": [],
-        "dmg reduction chance%": 20,
-        "dmg reduction%": 20,
-        "passive id": "14",
-        "passive target": "self"
-      },
-      {
-        "conditions": [
-          {
-            "item required": [
-              "47202"
-            ]
-          }
-        ],
-        "passive id": "48",
-        "passive target": "self",
-        "reduced bb bc cost%": 20
-      },
-      {
-        "atk% buff": 20,
-        "conditions": [
-          {
-            "item required": [
-              "47202"
-            ]
-          }
-        ],
-        "def% buff": 20,
-        "hp% buff": 20,
-        "passive id": "1",
-        "passive target": "self",
-        "rec% buff": 20
-      }
-    ],
-    "id": "9500",
-    "name": "Another Soul",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "288,280,174,475",
-  "unitDisplayDetailPosition_6z54rgb3": "-15,-73,1134,934",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "40,184,567,467,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "13,-327,1134,934",
-  "unitDisplaySummonPosition_KC3Jk8Br": "40,184,567,467,0",
-  "unitDisplayHpPosition_3BpHN6VD": "-23,57",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "15000",
-  "sellCaution": false,
-  "effectFrames": "60:330365:1,95:330365:1,65:300110:1,100:300110:1,68:138:1,103:138:1,170:330377:1,140:600381:1,190:300230:1"
+  "evoitem": ""
 }

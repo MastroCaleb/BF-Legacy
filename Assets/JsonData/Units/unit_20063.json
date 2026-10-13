@@ -1,62 +1,63 @@
 {
   "id": "20063",
-  "unitName": "Sea Prince Verica",
-  "no": "313",
-  "element": "Water",
-  "rarity": "★★★★",
-  "cost": "9",
-  "maxlv": "60",
-  "basexp": "10",
-  "gender": "M",
-  "ai": "4",
-  "animation_attack": "89",
-  "animation_idle": "44",
-  "animation_move": "44",
-  "movespeed_attack": "0.0041",
-  "movespeed_skill": "0.0041",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "54, 58, 62, 66, 73",
-  "normal_distribute": "55, 10, 10, 10, 15",
-  "normal_totaldistr": "100",
-  "bb_frames": "55, 59, 63, 67, 70, 74",
-  "bb_distribute": "20, 15, 15, 20, 15, 15",
-  "bb_totaldistr": "100",
-  "description": "A pirate commander that led a group of pirates in the seas near the ruined Sama Kingdom. Though he lived much of his life carefree and without aim, once he started caring for Mega, the boy who would come to be known as the Commander, he began gathering pirates from all around. Taking lead over most of the other pirates around him, Verica came to be known as the Sea Prince. However, he seemed much more focused on the development of the child Mega.",
-  "summon": "Do you know what I want?<br>I, as Sea Prince, will conquer<br>the seas for him!",
-  "fusion": "Who's my strength for?<br>Why it's for you, my treasure!<br>That's why I must get stronger!",
-  "evolution": "Changing, faster than ever!<br>From captain to sea royalty!<br>Or maybe to a loving father!",
-  "hp_base": "2426",
-  "atk_base": "815",
-  "def_base": "679",
-  "rec_base": "469",
-  "hp_lord": "3701",
-  "atk_lord": "1163",
-  "def_lord": "950",
-  "rec_lord": "705",
-  "hp_anima": "4144",
-  "rec_anima": "587",
-  "atk_breaker": "1281",
-  "def_breaker": "832",
-  "atk_guardian": "1045",
-  "def_guardian": "1068",
-  "rec_guardian": "646",
-  "def_oracle": "891",
-  "hp_oracle": "3524",
-  "rec_oracle": "882",
-  "hp_bonus": "400",
-  "atk_bonus": "200",
-  "def_bonus": "120",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "5",
-  "normaldc": "10",
-  "ls": "Pure Shining",
-  "lsdescription": "Boost in Heart Crystals produced during Spark",
-  "lsnote": "35% boost",
-  "lstype": "Recovery",
+  "stats": {
+    "_base": {
+      "atk": 815,
+      "def": 679,
+      "hp": 2426,
+      "rec": 469
+    },
+    "_lord": {
+      "atk": 1163,
+      "def": 950,
+      "hp": 3701,
+      "rec": 705
+    },
+    "anima": {
+      "atk": 1163,
+      "def": 950,
+      "hp max": 4291,
+      "hp min": 3996,
+      "rec max": 646,
+      "rec min": 528
+    },
+    "breaker": {
+      "atk max": 1340,
+      "atk min": 1222,
+      "def max": 891,
+      "def min": 773,
+      "hp": 3701,
+      "rec": 705
+    },
+    "guardian": {
+      "atk": 1163,
+      "def max": 1127,
+      "def min": 1009,
+      "hp": 3701,
+      "rec max": 705,
+      "rec min": 587
+    },
+    "oracle": {
+      "atk": 1163,
+      "def max": 950,
+      "def min": 832,
+      "hp": 3701,
+      "rec max": 941,
+      "rec min": 823
+    }
+  },
+  "leader_skill": {
+    "desc": "Boost in Heart Crystals produced during Spark",
+    "effects": [
+      {
+        "hc drop% for spark": 35,
+        "passive id": "31"
+      }
+    ],
+    "id": "1501",
+    "name": "Pure Shining"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -301,95 +302,103 @@
     ],
     "name": "Poseidon Axe"
   },
-  "bbdescription": "6 combo Water elemental attack on single enemy & probable Weakness effect",
-  "bbnote": "80% chance",
-  "bbtype": "Offense",
-  "bbhits": "6",
-  "bbaoe": "1",
-  "bbgauge": "15",
-  "bbdc": "6",
-  "bbmultiplier": "280",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "20062",
-  "evointo": "",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 815,
-      "def": 679,
-      "hp": 2426,
-      "rec": 469
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_under",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1163,
-      "def": 950,
-      "hp": 3701,
-      "rec": 705
+    {
+      "action": "skill",
+      "chance%": 30.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1163,
-      "def": 950,
-      "hp max": 4291,
-      "hp min": 3996,
-      "rec max": 646,
-      "rec min": 528
+    {
+      "action": "attack",
+      "chance%": 70.0,
+      "target conditions": "hp_max",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 1340,
-      "atk min": 1222,
-      "def max": 891,
-      "def min": 773,
-      "hp": 3701,
-      "rec": 705
+    {
+      "action": "attack",
+      "chance%": 50.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "guardian": {
-      "atk": 1163,
-      "def max": 1127,
-      "def min": 1009,
-      "hp": 3701,
-      "rec max": 705,
-      "rec min": 587
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 89
     },
-    "oracle": {
-      "atk": 1163,
-      "def max": 950,
-      "def min": 832,
-      "hp": 3701,
-      "rec max": 941,
-      "rec min": 823
+    "idle": {
+      "total number of frames": 44
+    },
+    "move": {
+      "total number of frames": 44
     }
   },
-  "leader_skill": {
-    "desc": "Boost in Heart Crystals produced during Spark",
-    "effects": [
-      {
-        "hc drop% for spark": 35,
-        "passive id": "31"
-      }
+  "category": 20060,
+  "cost": "9",
+  "damage frames": {
+    "frame times": [
+      54,
+      58,
+      62,
+      66,
+      73
     ],
-    "id": "1501",
-    "name": "Pure Shining"
+    "hit dmg% distribution": [
+      55,
+      10,
+      10,
+      10,
+      15
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 5
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "water",
+  "exp_pattern": 10,
+  "gender": "male",
+  "getting type": "farmable",
+  "guide_id": 313,
+  "imp": {
+    "max atk": "200",
+    "max def": "120",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "1082~1209",
+  "movement": {
+    "attack": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    }
+  },
+  "name": "Sea Prince Verica",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Sea Prince Verica",
+  "maxlv": "60",
+  "no": "313",
   "unitDisplayHomePosition_1W9CxaFK": "217,95,200,544",
   "unitDisplayDetailPosition_6z54rgb3": "167,58,500,700",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "165,266,250,350,0",
@@ -399,5 +408,85 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "48:122:1,52:122:1,56:122:1,60:122:1,67:180:1"
+  "effectFrames": "48:122:1,52:122:1,56:122:1,60:122:1,67:180:1",
+  "evofrom": "20062",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "10",
+  "animation_attack": "89",
+  "animation_idle": "44",
+  "animation_move": "44",
+  "movespeed_attack": "0.0041",
+  "movespeed_skill": "0.0041",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "54, 58, 62, 66, 73",
+  "normal_distribute": "55, 10, 10, 10, 15",
+  "normal_totaldistr": "100",
+  "bb_frames": "55, 59, 63, 67, 70, 74",
+  "bb_distribute": "20, 15, 15, 20, 15, 15",
+  "bb_totaldistr": "100",
+  "description": "A pirate commander that led a group of pirates in the seas near the ruined Sama Kingdom. Though he lived much of his life carefree and without aim, once he started caring for Mega, the boy who would come to be known as the Commander, he began gathering pirates from all around. Taking lead over most of the other pirates around him, Verica came to be known as the Sea Prince. However, he seemed much more focused on the development of the child Mega.",
+  "summon": "Do you know what I want?<br>I, as Sea Prince, will conquer<br>the seas for him!",
+  "fusion": "Who's my strength for?<br>Why it's for you, my treasure!<br>That's why I must get stronger!",
+  "evolution": "Changing, faster than ever!<br>From captain to sea royalty!<br>Or maybe to a loving father!",
+  "hp_base": "2426",
+  "atk_base": "815",
+  "def_base": "679",
+  "rec_base": "469",
+  "hp_lord": "3701",
+  "atk_lord": "1163",
+  "def_lord": "950",
+  "rec_lord": "705",
+  "hp_anima": "4144",
+  "rec_anima": "587",
+  "atk_breaker": "1281",
+  "def_breaker": "832",
+  "atk_guardian": "1045",
+  "def_guardian": "1068",
+  "rec_guardian": "646",
+  "def_oracle": "891",
+  "hp_oracle": "3524",
+  "rec_oracle": "882",
+  "hp_bonus": "400",
+  "atk_bonus": "200",
+  "def_bonus": "120",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "5",
+  "normaldc": "10",
+  "ls": "Pure Shining",
+  "lsdescription": "Boost in Heart Crystals produced during Spark",
+  "lsnote": "35% boost",
+  "lstype": "Recovery",
+  "bbdescription": "6 combo Water elemental attack on single enemy & probable Weakness effect",
+  "bbnote": "80% chance",
+  "bbtype": "Offense",
+  "bbhits": "6",
+  "bbaoe": "1",
+  "bbgauge": "15",
+  "bbdc": "6",
+  "bbmultiplier": "280",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "",
+  "evomats2": "",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": "",
+  "evoitem": ""
 }

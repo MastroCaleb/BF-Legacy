@@ -1,62 +1,63 @@
 {
   "id": "50143",
-  "unitName": "Hero Alma",
-  "no": "217",
-  "element": "Light",
-  "rarity": "★★★★",
-  "cost": "10",
-  "maxlv": "60",
-  "basexp": "15",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "80",
-  "animation_idle": "65",
-  "animation_move": "66",
-  "movespeed_attack": "0.0024",
-  "movespeed_skill": "0.0024",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "15, 30, 57, 60, 63",
-  "normal_distribute": "15, 10, 60, 10, 5",
-  "normal_totaldistr": "100",
-  "bb_frames": "9, 12, 24, 25, 51, 54, 57",
-  "bb_distribute": "15, 15, 10, 10, 30, 10, 10",
-  "bb_totaldistr": "100",
-  "description": "A swordswoman from the ruined La Veda Republic. She found her parents at some ancient ruins, but her joy was short lived. They had blocked the ruins' destructive power by binding themselves to them. Ignoring their pleas to be allowed to suppress the power with their lives, Alma defeated it herself. Her adventures ended, and she was known so forth as a hero for both preventing a catastrophe and for saving her parents.",
-  "summon": "I've been waiting for you!<br>Let's start our adventure<br>to save the world!",
-  "fusion": "My power is overflowing!<br>My strength has returned along<br>with all my memories!",
-  "evolution": "Come with me!<br>With my strength we can go<br>anywhere you want to!",
-  "hp_base": "2232",
-  "atk_base": "814",
-  "def_base": "760",
-  "rec_base": "856",
-  "hp_lord": "3477",
-  "atk_lord": "1074",
-  "def_lord": "1023",
-  "rec_lord": "1218",
-  "hp_anima": "3920",
-  "rec_anima": "1100",
-  "atk_breaker": "1192",
-  "def_breaker": "905",
-  "atk_guardian": "956",
-  "def_guardian": "1141",
-  "rec_guardian": "1159",
-  "def_oracle": "964",
-  "hp_oracle": "3300",
-  "rec_oracle": "1395",
-  "hp_bonus": "400",
-  "atk_bonus": "200",
-  "def_bonus": "120",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "5",
-  "normaldc": "15",
-  "ls": "Pulsating Energy",
-  "lsdescription": "BB Gauge fills after each turn",
-  "lsnote": "Fills 1 BC",
-  "lstype": "Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 814,
+      "def": 760,
+      "hp": 2232,
+      "rec": 856
+    },
+    "_lord": {
+      "atk": 1074,
+      "def": 1023,
+      "hp": 3477,
+      "rec": 1218
+    },
+    "anima": {
+      "atk": 1074,
+      "def": 1023,
+      "hp max": 4067,
+      "hp min": 3772,
+      "rec max": 1159,
+      "rec min": 1041
+    },
+    "breaker": {
+      "atk max": 1251,
+      "atk min": 1133,
+      "def max": 964,
+      "def min": 846,
+      "hp": 3477,
+      "rec": 1218
+    },
+    "guardian": {
+      "atk": 1074,
+      "def max": 1200,
+      "def min": 1082,
+      "hp": 3477,
+      "rec max": 1218,
+      "rec min": 1100
+    },
+    "oracle": {
+      "atk": 1074,
+      "def max": 1023,
+      "def min": 905,
+      "hp": 3477,
+      "rec max": 1454,
+      "rec min": 1336
+    }
+  },
+  "leader_skill": {
+    "desc": "BB Gauge fills after each turn",
+    "effects": [
+      {
+        "bc fill per turn": 1,
+        "passive id": "9"
+      }
+    ],
+    "id": "1200",
+    "name": "Pulsating Energy"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -221,93 +222,91 @@
     ],
     "name": "Star Dust Fall"
   },
-  "bbdescription": "7 combo Light elemental attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "7",
-  "bbaoe": "A",
-  "bbgauge": "14",
-  "bbdc": "7",
-  "bbmultiplier": "100",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "50142",
-  "evointo": "50144",
-  "evomats1": "50123",
-  "evomats2": "50191",
-  "evomats3": "60143",
-  "evomats4": "50121",
-  "evomats5": "50120",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 814,
-      "def": 760,
-      "hp": 2232,
-      "rec": 856
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1074,
-      "def": 1023,
-      "hp": 3477,
-      "rec": 1218
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1074,
-      "def": 1023,
-      "hp max": 4067,
-      "hp min": 3772,
-      "rec max": 1159,
-      "rec min": 1041
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 80
     },
-    "breaker": {
-      "atk max": 1251,
-      "atk min": 1133,
-      "def max": 964,
-      "def min": 846,
-      "hp": 3477,
-      "rec": 1218
+    "idle": {
+      "total number of frames": 65
     },
-    "guardian": {
-      "atk": 1074,
-      "def max": 1200,
-      "def min": 1082,
-      "hp": 3477,
-      "rec max": 1218,
-      "rec min": 1100
-    },
-    "oracle": {
-      "atk": 1074,
-      "def max": 1023,
-      "def min": 905,
-      "hp": 3477,
-      "rec max": 1454,
-      "rec min": 1336
+    "move": {
+      "total number of frames": 66
     }
   },
-  "leader_skill": {
-    "desc": "BB Gauge fills after each turn",
-    "effects": [
-      {
-        "bc fill per turn": 1,
-        "passive id": "9"
-      }
+  "category": 50140,
+  "cost": "10",
+  "damage frames": {
+    "frame times": [
+      15,
+      30,
+      57,
+      60,
+      63
     ],
-    "id": "1200",
-    "name": "Pulsating Energy"
+    "hit dmg% distribution": [
+      15,
+      10,
+      60,
+      10,
+      5
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 5
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "light",
+  "exp_pattern": 15,
+  "gender": "female",
+  "getting type": "farmable",
+  "guide_id": 217,
+  "imp": {
+    "max atk": "200",
+    "max def": "120",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "999~1116",
+  "movement": {
+    "attack": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    }
+  },
+  "name": "Hero Alma",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Hero Alma",
+  "maxlv": "60",
+  "no": "217",
   "unitDisplayHomePosition_1W9CxaFK": "92,253,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "270,-32,416,764",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "96,234,495,397,0",
@@ -317,5 +316,109 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "9:125:1,24:125:1,51:125:1,54:125:1,57:125:1"
+  "effectFrames": "9:125:1,24:125:1,51:125:1,54:125:1,57:125:1",
+  "evofrom": "50142",
+  "evointo": "50144",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50123",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50121",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50120",
+      "count": 1
+    }
+  ],
+  "basexp": "15",
+  "animation_attack": "80",
+  "animation_idle": "65",
+  "animation_move": "66",
+  "movespeed_attack": "0.0024",
+  "movespeed_skill": "0.0024",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "15, 30, 57, 60, 63",
+  "normal_distribute": "15, 10, 60, 10, 5",
+  "normal_totaldistr": "100",
+  "bb_frames": "9, 12, 24, 25, 51, 54, 57",
+  "bb_distribute": "15, 15, 10, 10, 30, 10, 10",
+  "bb_totaldistr": "100",
+  "description": "A swordswoman from the ruined La Veda Republic. She found her parents at some ancient ruins, but her joy was short lived. They had blocked the ruins' destructive power by binding themselves to them. Ignoring their pleas to be allowed to suppress the power with their lives, Alma defeated it herself. Her adventures ended, and she was known so forth as a hero for both preventing a catastrophe and for saving her parents.",
+  "summon": "I've been waiting for you!<br>Let's start our adventure<br>to save the world!",
+  "fusion": "My power is overflowing!<br>My strength has returned along<br>with all my memories!",
+  "evolution": "Come with me!<br>With my strength we can go<br>anywhere you want to!",
+  "hp_base": "2232",
+  "atk_base": "814",
+  "def_base": "760",
+  "rec_base": "856",
+  "hp_lord": "3477",
+  "atk_lord": "1074",
+  "def_lord": "1023",
+  "rec_lord": "1218",
+  "hp_anima": "3920",
+  "rec_anima": "1100",
+  "atk_breaker": "1192",
+  "def_breaker": "905",
+  "atk_guardian": "956",
+  "def_guardian": "1141",
+  "rec_guardian": "1159",
+  "def_oracle": "964",
+  "hp_oracle": "3300",
+  "rec_oracle": "1395",
+  "hp_bonus": "400",
+  "atk_bonus": "200",
+  "def_bonus": "120",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "5",
+  "normaldc": "15",
+  "ls": "Pulsating Energy",
+  "lsdescription": "BB Gauge fills after each turn",
+  "lsnote": "Fills 1 BC",
+  "lstype": "Brave Burst",
+  "bbdescription": "7 combo Light elemental attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "7",
+  "bbaoe": "A",
+  "bbgauge": "14",
+  "bbdc": "7",
+  "bbmultiplier": "100",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50123",
+  "evomats2": "50191",
+  "evomats3": "60143",
+  "evomats4": "50121",
+  "evomats5": "50120"
 }

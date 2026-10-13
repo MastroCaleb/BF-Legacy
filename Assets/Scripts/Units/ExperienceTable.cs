@@ -11,7 +11,7 @@ public static class ExperienceTable
     {
         { 10, "ExpTables/exp_base_10" },
         { 15, "ExpTables/exp_base_15" },
-        { 21, "ExpTables/exp_base_21" }
+        { 20, "ExpTables/exp_base_20" }
     };
 
     // Call this once at startup (e.g. from a GameManager Awake)

@@ -1,67 +1,124 @@
 {
   "id": "710237",
-  "unitName": "Living Phoenix Migina (EU)",
-  "disam": "",
-  "altname": "Living Phoenix Migina",
-  "idalt": "",
-  "has_altart": "",
-  "doenter": "true",
-  "no": "7229",
-  "element": "Fire",
-  "rarity": "Dream",
-  "cost": "50",
-  "maxlv": "150",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "3",
-  "animation_attack": "327",
-  "animation_idle": "50",
-  "animation_move": "50",
-  "movespeed_attack": "6",
-  "speedtype_attack": "2",
-  "movetype_attack": "3",
-  "movespeed_skill": "6",
-  "speedtype_skill": "2",
-  "movetype_skill": "3",
-  "description": "If Migina had survived the attack on her village, her destiny would have been quite different. She would have supported and protected her sister in her quest for vengeance against Cornelius. The aid that she would have provided would have surely prevented her sister from being murdered...",
-  "summon": "",
-  "fusion": "I will use this strength to protect my sister!",
-  "evolution": "Don’t worry, big sis. We’ll find Cornelius!",
-  "hp_base": "6844",
-  "atk_base": "2410",
-  "def_base": "2262",
-  "rec_base": "2811",
-  "hp_lord": "8350",
-  "atk_lord": "2940",
-  "def_lord": "2760",
-  "rec_lord": "3430",
-  "hp_anima": "9467",
-  "rec_anima": "3132",
-  "atk_breaker": "3238",
-  "def_breaker": "2462",
-  "def_guardian": "3058",
-  "rec_guardian": "3430",
-  "def_oracle": "2760",
-  "rec_oracle": "3728",
-  "hp_bonus": "1500",
-  "atk_bonus": "600",
-  "def_bonus": "600",
-  "rec_bonus": "600",
-  "lordonly": "",
-  "evofrom": "710234",
-  "evointo": "",
-  "normal_frames": "100, 101, 102, 103, 104, 105, 106",
-  "normal_distribute": "15, 15, 15, 15, 15, 15, 10",
-  "normal_totaldistr": "100",
-  "combo_hits": "7",
-  "normaldc": "28",
-  "ls": "Protective Sister",
-  "lsdescription": "Boosts all parameters (50%) & negates status ailments & Spark damage reduction (25%) & boosts EXP gained (10%)",
-  "lsnote": "",
-  "es": "Defensive Wings",
-  "esdescription": "Boosts REC and HP (40%) & if Pure Noblesse Title is equipped, adds Fire Barrier for all allies effect (3500 HP) to BB/SBB",
-  "esitem": "Pure Noblesse Title",
-  "esnote": "",
+  "stats": {
+    "_base": {
+      "atk": 2410,
+      "def": 2262,
+      "hp": 6844,
+      "rec": 2811
+    },
+    "_lord": {
+      "atk": 2940,
+      "def": 2760,
+      "hp": 8350,
+      "rec": 3430
+    },
+    "anima": {
+      "atk": 2940,
+      "def": 2760,
+      "hp max": 9840,
+      "hp min": 9095,
+      "rec max": 3281,
+      "rec min": 2983
+    },
+    "breaker": {
+      "atk max": 3387,
+      "atk min": 3089,
+      "def max": 2611,
+      "def min": 2313,
+      "hp": 8350,
+      "rec": 3430
+    },
+    "guardian": {
+      "atk max": 2791,
+      "atk min": 2493,
+      "def max": 3207,
+      "def min": 2909,
+      "hp": 8350,
+      "rec": 3430
+    },
+    "oracle": {
+      "atk": 2940,
+      "def": 2760,
+      "hp max": 7605,
+      "hp min": 6860,
+      "rec max": 3877,
+      "rec min": 3579
+    }
+  },
+  "leader_skill": {
+    "desc": "Boosts all parameters (50%) & negates status ailments & Spark damage reduction (25%) & boosts EXP gained (10%)",
+    "effects": [
+      {
+        "atk% buff": 50,
+        "def% buff": 50,
+        "hp% buff": 50,
+        "passive id": "1",
+        "rec% buff": 50
+      },
+      {
+        "curse resist%": 100,
+        "injury resist%": 100,
+        "paralysis resist%": 100,
+        "passive id": "4",
+        "poison resist%": 100,
+        "sick resist%": 100,
+        "weaken resist%": 100
+      },
+      {
+        "base spark dmg% resist": 25,
+        "buff spark dmg% resist": 0,
+        "passive id": "77"
+      },
+      {
+        "passive id": "97",
+        "xp gained increase%": 10
+      }
+    ],
+    "id": "710237",
+    "name": "Protective Sister"
+  },
+  "extra_skill": {
+    "desc": "Boosts REC and HP (40%) & if Pure Noblesse Title is equipped, adds Fire Barrier for all allies effect (3500 HP) to BB/SBB",
+    "effects": [
+      {
+        "conditions": [],
+        "hp% buff": 40,
+        "passive id": "1",
+        "passive target": "self",
+        "rec% buff": 40
+      },
+      {
+        "conditions": [
+          {
+            "item required": [
+              "701047"
+            ]
+          }
+        ],
+        "passive id": "66",
+        "passive target": "self",
+        "trigger on bb": true,
+        "trigger on sbb": true,
+        "triggered effect": [
+          {
+            "effect delay time(ms)/frame": "0.0/0",
+            "elemental barrier absorb dmg%": 100,
+            "elemental barrier def": 0,
+            "elemental barrier element": "fire",
+            "elemental barrier hp": 3500,
+            "proc id": "62",
+            "target area": "aoe",
+            "target type": "party"
+          }
+        ]
+      }
+    ],
+    "id": "710237",
+    "name": "Defensive Wings",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -516,39 +573,6 @@
     ],
     "name": "Gentle Heat"
   },
-  "bbdescription": "17 combo Fire attack on all foes & restores HP & boosts DEF and REC (160%) for 3 turns & chance of raising allies from KO (15%)",
-  "bbnote": "{{UnitBuffList",
-  "buff_1_proc": "1",
-  "buff_1_potency": "1800% damage modifier",
-  "buff_1_duration": "—",
-  "buff_1_target": "All enemies",
-  "buff_2_proc": "5_atk",
-  "buff_2_potency": "350% boost to Atk",
-  "buff_2_duration": "3 turns",
-  "buff_2_target": "All allies",
-  "buff_3_proc": "5_def",
-  "buff_3_potency": "350% boost to Def",
-  "buff_3_duration": "3 turns",
-  "buff_3_target": "All allies",
-  "buff_4_proc": "5_rec",
-  "buff_4_potency": "350% boost to Rec",
-  "buff_4_duration": "3 turns",
-  "buff_4_target": "All allies",
-  "buff_5_proc": "3",
-  "buff_5_potency": "Heals 98999~99999 + 10% Rec of HP each turn",
-  "buff_5_duration": "3 turns",
-  "buff_5_target": "All allies",
-  "bbtype": "Offense",
-  "bbgauge": "26",
-  "bb_frames": "100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116",
-  "bb_distribute": "5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 10, 10, 10",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "3",
-  "bbhits": "17",
-  "bbaoe": "A",
-  "bbdc": "17",
-  "bbmultiplier": "420",
-  "bb_hpscale": "",
   "sbb": {
     "damage frames": [
       {
@@ -1120,23 +1144,6 @@
     ],
     "name": "Rise of the Phoenix"
   },
-  "sbbdescription": "19 combo Fire attack on all foes & restores HP for 3 turns & boosts DEF for Fire and Light units (110%) for 3 turns & reduces Spark damage (25%) for 1 turn & chance of raising allies from KO (15%)",
-  "sbbnote": "",
-  "sbbtype": "Offense",
-  "sbbgauge": "22",
-  "sbb_frames": "100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118",
-  "sbb_distribute": "5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 10",
-  "sbb_totaldistr": "100",
-  "sbb_effectdelay": "3",
-  "sbbhits": "19",
-  "sbbaoe": "A",
-  "sbbdc": "19",
-  "sbbmultiplier": "620",
-  "sbb_hpscale": "{{UnitBuffList",
-  "buff_6_proc": "18",
-  "buff_6_potency": "Reduces damage taken by 75%",
-  "buff_6_duration": "3 turns",
-  "buff_6_target": "All allies",
   "ubb": {
     "damage frames": [
       {
@@ -1249,6 +1256,215 @@
     ],
     "name": "Feathers of Immortality"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 327
+    },
+    "idle": {
+      "total number of frames": 50
+    },
+    "move": {
+      "total number of frames": 50
+    }
+  },
+  "cost": "50",
+  "damage frames": {
+    "frame times": [
+      100,
+      101,
+      102,
+      103,
+      104,
+      105,
+      106
+    ],
+    "hit dmg% distribution": [
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 7
+  },
+  "drop check count": 4,
+  "element": "fire",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 7229,
+  "imp": {
+    "max atk": "600",
+    "max def": "600",
+    "max hp": "1500",
+    "max rec": "600"
+  },
+  "kind": "normal",
+  "lord damage range": "2737~3057",
+  "movement": {
+    "attack": {
+      "move speed": 6,
+      "move speed type": "2",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 6,
+      "move speed type": "2",
+      "move type": "3"
+    }
+  },
+  "name": "Living Phoenix Migina",
+  "rarity": "8",
+  "sell caution": false,
+  "unitName": "Living Phoenix Migina",
+  "maxlv": "150",
+  "no": "7229",
+  "unitDisplayHomePosition_1W9CxaFK": null,
+  "unitDisplayDetailPosition_6z54rgb3": null,
+  "unitDisplayConfirmImagePosition_MYK1fq6c": null,
+  "unitDisplayCutInImagePosition_7hLR6pDN": null,
+  "unitDisplaySummonPosition_KC3Jk8Br": null,
+  "unitDisplayHpPosition_3BpHN6VD": null,
+  "unitDisplayCursorPosition": null,
+  "sellPrice": "",
+  "sellCaution": false,
+  "effectFrames": "",
+  "evofrom": "710234",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "disam": "",
+  "altname": "Living Phoenix Migina",
+  "idalt": "",
+  "has_altart": "",
+  "doenter": "true",
+  "basexp": "21",
+  "animation_attack": "327",
+  "animation_idle": "50",
+  "animation_move": "50",
+  "movespeed_attack": "6",
+  "speedtype_attack": "2",
+  "movetype_attack": "3",
+  "movespeed_skill": "6",
+  "speedtype_skill": "2",
+  "movetype_skill": "3",
+  "description": "If Migina had survived the attack on her village, her destiny would have been quite different. She would have supported and protected her sister in her quest for vengeance against Cornelius. The aid that she would have provided would have surely prevented her sister from being murdered...",
+  "summon": "",
+  "fusion": "I will use this strength to protect my sister!",
+  "evolution": "Don’t worry, big sis. We’ll find Cornelius!",
+  "hp_base": "6844",
+  "atk_base": "2410",
+  "def_base": "2262",
+  "rec_base": "2811",
+  "hp_lord": "8350",
+  "atk_lord": "2940",
+  "def_lord": "2760",
+  "rec_lord": "3430",
+  "hp_anima": "9467",
+  "rec_anima": "3132",
+  "atk_breaker": "3238",
+  "def_breaker": "2462",
+  "def_guardian": "3058",
+  "rec_guardian": "3430",
+  "def_oracle": "2760",
+  "rec_oracle": "3728",
+  "hp_bonus": "1500",
+  "atk_bonus": "600",
+  "def_bonus": "600",
+  "rec_bonus": "600",
+  "lordonly": "",
+  "normal_frames": "100, 101, 102, 103, 104, 105, 106",
+  "normal_distribute": "15, 15, 15, 15, 15, 15, 10",
+  "normal_totaldistr": "100",
+  "combo_hits": "7",
+  "normaldc": "28",
+  "ls": "Protective Sister",
+  "lsdescription": "Boosts all parameters (50%) & negates status ailments & Spark damage reduction (25%) & boosts EXP gained (10%)",
+  "lsnote": "",
+  "es": "Defensive Wings",
+  "esdescription": "Boosts REC and HP (40%) & if Pure Noblesse Title is equipped, adds Fire Barrier for all allies effect (3500 HP) to BB/SBB",
+  "esitem": "Pure Noblesse Title",
+  "esnote": "",
+  "bbdescription": "17 combo Fire attack on all foes & restores HP & boosts DEF and REC (160%) for 3 turns & chance of raising allies from KO (15%)",
+  "bbnote": "{{UnitBuffList",
+  "buff_1_proc": "1",
+  "buff_1_potency": "1800% damage modifier",
+  "buff_1_duration": "—",
+  "buff_1_target": "All enemies",
+  "buff_2_proc": "5_atk",
+  "buff_2_potency": "350% boost to Atk",
+  "buff_2_duration": "3 turns",
+  "buff_2_target": "All allies",
+  "buff_3_proc": "5_def",
+  "buff_3_potency": "350% boost to Def",
+  "buff_3_duration": "3 turns",
+  "buff_3_target": "All allies",
+  "buff_4_proc": "5_rec",
+  "buff_4_potency": "350% boost to Rec",
+  "buff_4_duration": "3 turns",
+  "buff_4_target": "All allies",
+  "buff_5_proc": "3",
+  "buff_5_potency": "Heals 98999~99999 + 10% Rec of HP each turn",
+  "buff_5_duration": "3 turns",
+  "buff_5_target": "All allies",
+  "bbtype": "Offense",
+  "bbgauge": "26",
+  "bb_frames": "100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116",
+  "bb_distribute": "5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 10, 10, 10",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "3",
+  "bbhits": "17",
+  "bbaoe": "A",
+  "bbdc": "17",
+  "bbmultiplier": "420",
+  "bb_hpscale": "",
+  "sbbdescription": "19 combo Fire attack on all foes & restores HP for 3 turns & boosts DEF for Fire and Light units (110%) for 3 turns & reduces Spark damage (25%) for 1 turn & chance of raising allies from KO (15%)",
+  "sbbnote": "",
+  "sbbtype": "Offense",
+  "sbbgauge": "22",
+  "sbb_frames": "100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118",
+  "sbb_distribute": "5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 10",
+  "sbb_totaldistr": "100",
+  "sbb_effectdelay": "3",
+  "sbbhits": "19",
+  "sbbaoe": "A",
+  "sbbdc": "19",
+  "sbbmultiplier": "620",
+  "sbb_hpscale": "{{UnitBuffList",
+  "buff_6_proc": "18",
+  "buff_6_potency": "Reduces damage taken by 75%",
+  "buff_6_duration": "3 turns",
+  "buff_6_target": "All allies",
   "ubbdescription": "21 combo Fire attack on all foes & boosts ATK, DEF, REC (350%) for 3 turns & fully restores HP for 3 turns & damage reduction (75%) for 3 turns & raises allies from KO (75% chance)",
   "ubbnote": "{{UnitBuffList",
   "buff_7_proc": "66",
@@ -1302,134 +1518,5 @@
   "notes": "",
   "incorrectinfo": "",
   "addcat": "",
-  "addcatname": "",
-  "stats": {
-    "_base": {
-      "atk": 2410,
-      "def": 2262,
-      "hp": 6844,
-      "rec": 2811
-    },
-    "_lord": {
-      "atk": 2940,
-      "def": 2760,
-      "hp": 8350,
-      "rec": 3430
-    },
-    "anima": {
-      "atk": 2940,
-      "def": 2760,
-      "hp max": 9840,
-      "hp min": 9095,
-      "rec max": 3281,
-      "rec min": 2983
-    },
-    "breaker": {
-      "atk max": 3387,
-      "atk min": 3089,
-      "def max": 2611,
-      "def min": 2313,
-      "hp": 8350,
-      "rec": 3430
-    },
-    "guardian": {
-      "atk max": 2791,
-      "atk min": 2493,
-      "def max": 3207,
-      "def min": 2909,
-      "hp": 8350,
-      "rec": 3430
-    },
-    "oracle": {
-      "atk": 2940,
-      "def": 2760,
-      "hp max": 7605,
-      "hp min": 6860,
-      "rec max": 3877,
-      "rec min": 3579
-    }
-  },
-  "leader_skill": {
-    "desc": "Boosts all parameters (50%) & negates status ailments & Spark damage reduction (25%) & boosts EXP gained (10%)",
-    "effects": [
-      {
-        "atk% buff": 50,
-        "def% buff": 50,
-        "hp% buff": 50,
-        "passive id": "1",
-        "rec% buff": 50
-      },
-      {
-        "curse resist%": 100,
-        "injury resist%": 100,
-        "paralysis resist%": 100,
-        "passive id": "4",
-        "poison resist%": 100,
-        "sick resist%": 100,
-        "weaken resist%": 100
-      },
-      {
-        "base spark dmg% resist": 25,
-        "buff spark dmg% resist": 0,
-        "passive id": "77"
-      },
-      {
-        "passive id": "97",
-        "xp gained increase%": 10
-      }
-    ],
-    "id": "710237",
-    "name": "Protective Sister"
-  },
-  "extra_skill": {
-    "desc": "Boosts REC and HP (40%) & if Pure Noblesse Title is equipped, adds Fire Barrier for all allies effect (3500 HP) to BB/SBB",
-    "effects": [
-      {
-        "conditions": [],
-        "hp% buff": 40,
-        "passive id": "1",
-        "passive target": "self",
-        "rec% buff": 40
-      },
-      {
-        "conditions": [
-          {
-            "item required": [
-              "701047"
-            ]
-          }
-        ],
-        "passive id": "66",
-        "passive target": "self",
-        "trigger on bb": true,
-        "trigger on sbb": true,
-        "triggered effect": [
-          {
-            "effect delay time(ms)/frame": "0.0/0",
-            "elemental barrier absorb dmg%": 100,
-            "elemental barrier def": 0,
-            "elemental barrier element": "fire",
-            "elemental barrier hp": 3500,
-            "proc id": "62",
-            "target area": "aoe",
-            "target type": "party"
-          }
-        ]
-      }
-    ],
-    "id": "710237",
-    "name": "Defensive Wings",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": null,
-  "unitDisplayDetailPosition_6z54rgb3": null,
-  "unitDisplayConfirmImagePosition_MYK1fq6c": null,
-  "unitDisplayCutInImagePosition_7hLR6pDN": null,
-  "unitDisplaySummonPosition_KC3Jk8Br": null,
-  "unitDisplayHpPosition_3BpHN6VD": null,
-  "unitDisplayCursorPosition": null,
-  "sellPrice": "",
-  "sellCaution": false,
-  "effectFrames": ""
+  "addcatname": ""
 }

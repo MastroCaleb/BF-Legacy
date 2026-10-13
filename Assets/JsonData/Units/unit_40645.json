@@ -1,64 +1,69 @@
 {
   "id": "40645",
-  "unitName": "Lightning Rain Zoldark",
-  "no": "1100",
-  "element": "Thunder",
-  "rarity": "★★★★★★",
-  "cost": "30",
-  "maxlv": "100",
-  "basexp": "21",
-  "gender": "N",
-  "ai": "2",
-  "animation_attack": "110",
-  "animation_idle": "64",
-  "animation_move": "6",
-  "movespeed_attack": "0.0041",
-  "movespeed_skill": "0.0041",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "45, 49, 53, 57, 61, 65, 69, 73",
-  "normal_distribute": "30, 20, 15, 11, 8, 6, 5, 5",
-  "normal_totaldistr": "100",
-  "bb_frames": "45, 49, 53, 57, 61, 65, 69, 73, 77, 81, 85, 89",
-  "bb_distribute": "20, 15, 9, 8, 8, 7, 7, 6, 5, 5, 5, 5",
-  "bb_totaldistr": "100",
-  "sbb_frames": "45, 48, 51, 54, 57, 60, 63, 66, 69, 72, 75, 78, 81, 84, 87, 90",
-  "sbb_distribute": "13, 10, 9, 8, 8, 7, 6, 5, 5, 5, 4, 4, 4, 4, 4, 4",
-  "sbb_totaldistr": "100",
-  "bb_effectdelay": "2",
-  "sbb_effectdelay": "2",
-  "description": "An ancient dragon which joined the demon nation of Mildran in its cause. Though Zoldark hated the idea of being part of any organization, the dragon agreed to this in consideration of his friend Jed. After some time, Jed fell into a terrible predicament when Mildran and Estoria became allies. Zoldark would then be the one to rescue him, using a terrifying amount of force to defend Jed. However, other historical records claim that the ancient dragon had separated itself from Jed's master by that time.",
-  "summon": "Jed, my friend...<br>You are much too forward...<br>This trait of yours worries me...",
-  "fusion": "Do not be afraid...<br>I have taken a liking to you.",
-  "evolution": "You justify evolution<br>because your lives are short.<br>I cannot comprehend this.",
-  "hp_base": "4325",
-  "atk_base": "1689",
-  "def_base": "1523",
-  "rec_base": "1398",
-  "hp_lord": "6211",
-  "atk_lord": "2278",
-  "def_lord": "2059",
-  "rec_lord": "1873",
-  "hp_anima": "6953",
-  "rec_anima": "1675",
-  "atk_breaker": "2476",
-  "def_breaker": "1861",
-  "def_guardian": "2257",
-  "rec_guardian": "1774",
-  "def_oracle": "1960",
-  "rec_oracle": "2170",
-  "hp_bonus": "1000",
-  "atk_bonus": "200",
-  "def_bonus": "200",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "8",
-  "normaldc": "24",
-  "ls": "Electrical Water Barrier",
-  "lsdescription": "15% damage reduction from Thunder, Water types & 30% boost to max HP",
-  "lstype": "Hit Points/Defense",
+  "stats": {
+    "_base": {
+      "atk": 1689,
+      "def": 1523,
+      "hp": 4325,
+      "rec": 1398
+    },
+    "_lord": {
+      "atk": 2278,
+      "def": 2059,
+      "hp": 6211,
+      "rec": 1873
+    },
+    "anima": {
+      "atk": 2278,
+      "def": 2059,
+      "hp max": 7201,
+      "hp min": 6706,
+      "rec max": 1774,
+      "rec min": 1576
+    },
+    "breaker": {
+      "atk max": 2575,
+      "atk min": 2377,
+      "def max": 1960,
+      "def min": 1762,
+      "hp": 6211,
+      "rec": 1873
+    },
+    "guardian": {
+      "atk": 2278,
+      "def max": 2356,
+      "def min": 2158,
+      "hp": 6211,
+      "rec max": 1873,
+      "rec min": 1675
+    },
+    "oracle": {
+      "atk": 2278,
+      "def max": 2059,
+      "def min": 1861,
+      "hp": 6211,
+      "rec max": 2269,
+      "rec min": 2071
+    }
+  },
+  "leader_skill": {
+    "desc": "15% damage reduction from Thunder, Water types & 30% boost to max HP",
+    "effects": [
+      {
+        "dmg% mitigation for elemental attacks": 15.0,
+        "mitigate thunder attacks": true,
+        "mitigate water attacks": true,
+        "passive id": "62"
+      },
+      {
+        "hp% buff": 30,
+        "passive id": "1"
+      }
+    ],
+    "id": "8704",
+    "name": "Electric Water Barrier"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -417,14 +422,6 @@
     ],
     "name": "Thunder Charge"
   },
-  "bbdescription": "12 combo powerful Thunder attack on all foes, boosts critical hit rate for 3 turns & boosts BB gauge",
-  "bbnote": "30% boost & fills 8 BC",
-  "bbtype": "Support/Offense",
-  "bbhits": "12",
-  "bbaoe": "A",
-  "bbgauge": "27",
-  "bbdc": "12",
-  "bbmultiplier": "270",
   "sbb": {
     "damage frames": [
       {
@@ -883,6 +880,196 @@
     ],
     "name": "Chrysaor"
   },
+  "ubb": {},
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 110
+    },
+    "idle": {
+      "total number of frames": 64
+    },
+    "move": {
+      "total number of frames": 6
+    }
+  },
+  "category": 40640,
+  "cost": "30",
+  "damage frames": {
+    "frame times": [
+      45,
+      49,
+      53,
+      57,
+      61,
+      65,
+      69,
+      73
+    ],
+    "hit dmg% distribution": [
+      30,
+      20,
+      15,
+      11,
+      8,
+      6,
+      5,
+      5
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 8
+  },
+  "drop check count": 3,
+  "element": "thunder",
+  "exp_pattern": 20,
+  "gender": "other",
+  "getting type": "rare summon",
+  "guide_id": 1100,
+  "imp": {
+    "max atk": "200",
+    "max def": "200",
+    "max hp": "1000",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "2121~2369",
+  "movement": {
+    "attack": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    }
+  },
+  "name": "Lightning Rain Zoldark",
+  "rarity": "6",
+  "sell caution": false,
+  "unitName": "Lightning Rain Zoldark",
+  "maxlv": "100",
+  "no": "1100",
+  "unitDisplayHomePosition_1W9CxaFK": "153,292,190,519",
+  "unitDisplayDetailPosition_6z54rgb3": "98,-97,1050,1001",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "64,124,575,548,1",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "106,-318,1050,1001",
+  "unitDisplaySummonPosition_KC3Jk8Br": "64,124,575,548,1",
+  "unitDisplayHpPosition_3BpHN6VD": "-10,30",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "8000",
+  "sellCaution": false,
+  "effectFrames": "61:130:1,49:130:1,53:130:1,57:130:1,45:400080:1,65:130:1,69:130:1,73:130:1,40:400152:1,66:400152:1,42:200094:1,58:400152:1,67:400143:1",
+  "evofrom": "40644",
+  "evointo": "40646",
+  "evozelcost": "1500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "40334",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "110",
+  "animation_idle": "64",
+  "animation_move": "6",
+  "movespeed_attack": "0.0041",
+  "movespeed_skill": "0.0041",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "45, 49, 53, 57, 61, 65, 69, 73",
+  "normal_distribute": "30, 20, 15, 11, 8, 6, 5, 5",
+  "normal_totaldistr": "100",
+  "bb_frames": "45, 49, 53, 57, 61, 65, 69, 73, 77, 81, 85, 89",
+  "bb_distribute": "20, 15, 9, 8, 8, 7, 7, 6, 5, 5, 5, 5",
+  "bb_totaldistr": "100",
+  "sbb_frames": "45, 48, 51, 54, 57, 60, 63, 66, 69, 72, 75, 78, 81, 84, 87, 90",
+  "sbb_distribute": "13, 10, 9, 8, 8, 7, 6, 5, 5, 5, 4, 4, 4, 4, 4, 4",
+  "sbb_totaldistr": "100",
+  "bb_effectdelay": "2",
+  "sbb_effectdelay": "2",
+  "description": "An ancient dragon which joined the demon nation of Mildran in its cause. Though Zoldark hated the idea of being part of any organization, the dragon agreed to this in consideration of his friend Jed. After some time, Jed fell into a terrible predicament when Mildran and Estoria became allies. Zoldark would then be the one to rescue him, using a terrifying amount of force to defend Jed. However, other historical records claim that the ancient dragon had separated itself from Jed's master by that time.",
+  "summon": "Jed, my friend...<br>You are much too forward...<br>This trait of yours worries me...",
+  "fusion": "Do not be afraid...<br>I have taken a liking to you.",
+  "evolution": "You justify evolution<br>because your lives are short.<br>I cannot comprehend this.",
+  "hp_base": "4325",
+  "atk_base": "1689",
+  "def_base": "1523",
+  "rec_base": "1398",
+  "hp_lord": "6211",
+  "atk_lord": "2278",
+  "def_lord": "2059",
+  "rec_lord": "1873",
+  "hp_anima": "6953",
+  "rec_anima": "1675",
+  "atk_breaker": "2476",
+  "def_breaker": "1861",
+  "def_guardian": "2257",
+  "rec_guardian": "1774",
+  "def_oracle": "1960",
+  "rec_oracle": "2170",
+  "hp_bonus": "1000",
+  "atk_bonus": "200",
+  "def_bonus": "200",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "8",
+  "normaldc": "24",
+  "ls": "Electrical Water Barrier",
+  "lsdescription": "15% damage reduction from Thunder, Water types & 30% boost to max HP",
+  "lstype": "Hit Points/Defense",
+  "bbdescription": "12 combo powerful Thunder attack on all foes, boosts critical hit rate for 3 turns & boosts BB gauge",
+  "bbnote": "30% boost & fills 8 BC",
+  "bbtype": "Support/Offense",
+  "bbhits": "12",
+  "bbaoe": "A",
+  "bbgauge": "27",
+  "bbdc": "12",
+  "bbmultiplier": "270",
   "sbbdescription": "16 combo powerful Thunder attack on all foes, boosts critical hit rate and damage for 3 turns & boosts BB gauge",
   "sbbnote": "50% crit rate and damage & fills 8 BC",
   "sbbtype": "Support/Offense",
@@ -891,7 +1078,6 @@
   "sbbgauge": "24",
   "sbbdc": "16",
   "sbbmultiplier": "480",
-  "ubb": {},
   "ubbdescription": "",
   "ubbtype": "",
   "ubbhits": "",
@@ -902,87 +1088,10 @@
   "es": "",
   "esitem": "",
   "esdescription": "",
-  "evofrom": "40644",
-  "evointo": "40646",
   "evomats1": "40334",
   "evomats2": "50354",
   "evomats3": "40133",
   "evomats4": "40134",
   "evomats5": "60224",
-  "evoitem": "",
-  "evozelcost": "1500000",
-  "stats": {
-    "_base": {
-      "atk": 1689,
-      "def": 1523,
-      "hp": 4325,
-      "rec": 1398
-    },
-    "_lord": {
-      "atk": 2278,
-      "def": 2059,
-      "hp": 6211,
-      "rec": 1873
-    },
-    "anima": {
-      "atk": 2278,
-      "def": 2059,
-      "hp max": 7201,
-      "hp min": 6706,
-      "rec max": 1774,
-      "rec min": 1576
-    },
-    "breaker": {
-      "atk max": 2575,
-      "atk min": 2377,
-      "def max": 1960,
-      "def min": 1762,
-      "hp": 6211,
-      "rec": 1873
-    },
-    "guardian": {
-      "atk": 2278,
-      "def max": 2356,
-      "def min": 2158,
-      "hp": 6211,
-      "rec max": 1873,
-      "rec min": 1675
-    },
-    "oracle": {
-      "atk": 2278,
-      "def max": 2059,
-      "def min": 1861,
-      "hp": 6211,
-      "rec max": 2269,
-      "rec min": 2071
-    }
-  },
-  "leader_skill": {
-    "desc": "15% damage reduction from Thunder, Water types & 30% boost to max HP",
-    "effects": [
-      {
-        "dmg% mitigation for elemental attacks": 15.0,
-        "mitigate thunder attacks": true,
-        "mitigate water attacks": true,
-        "passive id": "62"
-      },
-      {
-        "hp% buff": 30,
-        "passive id": "1"
-      }
-    ],
-    "id": "8704",
-    "name": "Electric Water Barrier"
-  },
-  "extra_skill": {},
-  "unitDisplayHomePosition_1W9CxaFK": "153,292,190,519",
-  "unitDisplayDetailPosition_6z54rgb3": "98,-97,1050,1001",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "64,124,575,548,1",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "106,-318,1050,1001",
-  "unitDisplaySummonPosition_KC3Jk8Br": "64,124,575,548,1",
-  "unitDisplayHpPosition_3BpHN6VD": "-10,30",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "8000",
-  "sellCaution": false,
-  "effectFrames": "61:130:1,49:130:1,53:130:1,57:130:1,45:400080:1,65:130:1,69:130:1,73:130:1,40:400152:1,66:400152:1,42:200094:1,58:400152:1,67:400143:1"
+  "evoitem": ""
 }

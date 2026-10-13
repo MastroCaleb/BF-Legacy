@@ -1,59 +1,63 @@
 {
   "id": "60182",
-  "unitName": "Incubus",
-  "no": "280",
-  "element": "Dark",
-  "rarity": "★★★",
-  "cost": "5",
-  "maxlv": "40",
-  "basexp": "10",
-  "gender": "N",
-  "ai": "3",
-  "animation_attack": "81",
-  "animation_idle": "38",
-  "animation_move": "9",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "4",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "3",
-  "normal_frames": "35",
-  "normal_distribute": "100",
-  "normal_totaldistr": "100",
-  "description": "Monsters that prefer living in ruins. Once an Imp grows up it becomes an Incubus. They have the reputation of having mean and vulgar personalities, and since they relentlessly pester human women they are considered their natural enemy. However, women aren't the only ones that an Incubus bothers. They also direct their mean acts towards demons like themselves, which has made them hated even among their own species.",
-  "summon": "You have some cute <br>girls with you, right?<br>I'll help you with them!",
-  "fusion": "The ladies won't be able to <br>resist this new power of mine!<br>Ah ha ha!",
-  "evolution": "Oh, so that's how it is!<br>Alright then, let me show you<br>one way grown-ups have fun!",
-  "hp_base": "1912",
-  "atk_base": "693",
-  "def_base": "292",
-  "rec_base": "171",
-  "hp_lord": "2722",
-  "atk_lord": "975",
-  "def_lord": "585",
-  "rec_lord": "396",
-  "hp_anima": "3015",
-  "rec_anima": "318",
-  "atk_breaker": "1053",
-  "def_breaker": "507",
-  "atk_guardian": "897",
-  "def_guardian": "663",
-  "rec_guardian": "357",
-  "def_oracle": "546",
-  "hp_oracle": "2605",
-  "rec_oracle": "513",
-  "hp_bonus": "300",
-  "atk_bonus": "120",
-  "def_bonus": "120",
-  "rec_bonus": "120",
-  "lordonly": "",
-  "combo_hits": "1",
-  "normaldc": "2",
-  "ls": "Soul Light",
-  "lsdescription": "Small boost in Karma produced during Spark",
-  "lsnote": "30% boost",
-  "lstype": "Karma",
+  "stats": {
+    "_base": {
+      "atk": 693,
+      "def": 292,
+      "hp": 1912,
+      "rec": 171
+    },
+    "_lord": {
+      "atk": 975,
+      "def": 585,
+      "hp": 2722,
+      "rec": 396
+    },
+    "anima": {
+      "atk": 975,
+      "def": 585,
+      "hp max": 3112,
+      "hp min": 2917,
+      "rec max": 357,
+      "rec min": 279
+    },
+    "breaker": {
+      "atk max": 1092,
+      "atk min": 1014,
+      "def max": 546,
+      "def min": 468,
+      "hp": 2722,
+      "rec": 396
+    },
+    "guardian": {
+      "atk": 975,
+      "def max": 702,
+      "def min": 624,
+      "hp": 2722,
+      "rec max": 396,
+      "rec min": 318
+    },
+    "oracle": {
+      "atk": 975,
+      "def max": 585,
+      "def min": 507,
+      "hp": 2722,
+      "rec max": 552,
+      "rec min": 474
+    }
+  },
+  "leader_skill": {
+    "desc": "Small boost in Karma produced during Spark",
+    "effects": [
+      {
+        "karma drop% for spark": 30,
+        "passive id": "31"
+      }
+    ],
+    "id": "1700",
+    "name": "Soul Light"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -216,92 +220,89 @@
     ],
     "name": "Darkness Barrier"
   },
-  "bbdescription": "Greatly boosts all allies' Def for 4 turns",
-  "bbnote": "50% boost",
-  "bbtype": "Support",
-  "bbhits": "",
-  "bbaoe": "0",
-  "bbgauge": "12",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "60181",
-  "evointo": "",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 693,
-      "def": 292,
-      "hp": 1912,
-      "rec": 171
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 975,
-      "def": 585,
-      "hp": 2722,
-      "rec": 396
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 975,
-      "def": 585,
-      "hp max": 3112,
-      "hp min": 2917,
-      "rec max": 357,
-      "rec min": 279
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 1092,
-      "atk min": 1014,
-      "def max": 546,
-      "def min": 468,
-      "hp": 2722,
-      "rec": 396
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 81
     },
-    "guardian": {
-      "atk": 975,
-      "def max": 702,
-      "def min": 624,
-      "hp": 2722,
-      "rec max": 396,
-      "rec min": 318
+    "idle": {
+      "total number of frames": 38
     },
-    "oracle": {
-      "atk": 975,
-      "def max": 585,
-      "def min": 507,
-      "hp": 2722,
-      "rec max": 552,
-      "rec min": 474
+    "move": {
+      "total number of frames": 9
     }
   },
-  "leader_skill": {
-    "desc": "Small boost in Karma produced during Spark",
-    "effects": [
-      {
-        "karma drop% for spark": 30,
-        "passive id": "31"
-      }
+  "category": 60180,
+  "cost": "5",
+  "damage frames": {
+    "frame times": [
+      35
     ],
-    "id": "1700",
-    "name": "Soul Light"
+    "hit dmg% distribution": [
+      100
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 1
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "dark",
+  "exp_pattern": 10,
+  "gender": "other",
+  "getting type": "farmable",
+  "guide_id": 280,
+  "imp": {
+    "max atk": "120",
+    "max def": "120",
+    "max hp": "300",
+    "max rec": "120"
+  },
+  "kind": "normal",
+  "lord damage range": "907~1014",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    }
+  },
+  "name": "Incubus",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "Incubus",
+  "maxlv": "40",
+  "no": "280",
   "unitDisplayHomePosition_1W9CxaFK": "204,174,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "35,106,624,664",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "130,408,303,232,0",
@@ -311,5 +312,79 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "1000",
   "sellCaution": false,
-  "effectFrames": "29:126:1,29:360:1"
+  "effectFrames": "29:126:1,29:360:1",
+  "evofrom": "60181",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "10",
+  "animation_attack": "81",
+  "animation_idle": "38",
+  "animation_move": "9",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "4",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "3",
+  "normal_frames": "35",
+  "normal_distribute": "100",
+  "normal_totaldistr": "100",
+  "description": "Monsters that prefer living in ruins. Once an Imp grows up it becomes an Incubus. They have the reputation of having mean and vulgar personalities, and since they relentlessly pester human women they are considered their natural enemy. However, women aren't the only ones that an Incubus bothers. They also direct their mean acts towards demons like themselves, which has made them hated even among their own species.",
+  "summon": "You have some cute <br>girls with you, right?<br>I'll help you with them!",
+  "fusion": "The ladies won't be able to <br>resist this new power of mine!<br>Ah ha ha!",
+  "evolution": "Oh, so that's how it is!<br>Alright then, let me show you<br>one way grown-ups have fun!",
+  "hp_base": "1912",
+  "atk_base": "693",
+  "def_base": "292",
+  "rec_base": "171",
+  "hp_lord": "2722",
+  "atk_lord": "975",
+  "def_lord": "585",
+  "rec_lord": "396",
+  "hp_anima": "3015",
+  "rec_anima": "318",
+  "atk_breaker": "1053",
+  "def_breaker": "507",
+  "atk_guardian": "897",
+  "def_guardian": "663",
+  "rec_guardian": "357",
+  "def_oracle": "546",
+  "hp_oracle": "2605",
+  "rec_oracle": "513",
+  "hp_bonus": "300",
+  "atk_bonus": "120",
+  "def_bonus": "120",
+  "rec_bonus": "120",
+  "lordonly": "",
+  "combo_hits": "1",
+  "normaldc": "2",
+  "ls": "Soul Light",
+  "lsdescription": "Small boost in Karma produced during Spark",
+  "lsnote": "30% boost",
+  "lstype": "Karma",
+  "bbdescription": "Greatly boosts all allies' Def for 4 turns",
+  "bbnote": "50% boost",
+  "bbtype": "Support",
+  "bbhits": "",
+  "bbaoe": "0",
+  "bbgauge": "12",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "",
+  "evomats2": "",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": ""
 }

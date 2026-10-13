@@ -1,59 +1,63 @@
 {
   "id": "10083",
-  "unitName": "Malvan",
-  "no": "358",
-  "element": "Fire",
-  "rarity": "★★★★",
-  "cost": "8",
-  "maxlv": "60",
-  "basexp": "15",
-  "gender": "N",
-  "ai": "1",
-  "animation_attack": "166",
-  "animation_idle": "104",
-  "animation_move": "104",
-  "movespeed_attack": "8",
-  "movespeed_skill": "8",
-  "speedtype_attack": "1",
-  "speedtype_skill": "1",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "76, 92, 108, 124, 140, 156, 172",
-  "normal_distribute": "15, 15, 15, 15, 15, 15, 10",
-  "normal_totaldistr": "100",
-  "description": "A new species of dragon born when the great Ifrit granted his protection to some lower class dragons. Unlike other dragons they're born with incredible physical strength and the ability to manipulate fire. However since their intelligence develops slowly they're often quick to brutally attack other creatures around them. Additionally, it is also very difficult to tell how old they are as their physical appearance matures so quickly.",
-  "summon": "Oh ho ho ho ho.<br>You have summoned me.<br>Well, let me have a sniff.",
-  "fusion": "Ha ha ha ha.<br>How interesting you are.<br>You please me.",
-  "evolution": "Behold my new form!<br>This is a combination of <br>both dragon and spirit!",
-  "hp_base": "2302",
-  "atk_base": "661",
-  "def_base": "751",
-  "rec_base": "427",
-  "hp_lord": "3649",
-  "atk_lord": "966",
-  "def_lord": "1067",
-  "rec_lord": "615",
-  "hp_anima": "4092",
-  "rec_anima": "497",
-  "atk_breaker": "1084",
-  "def_breaker": "949",
-  "atk_guardian": "848",
-  "def_guardian": "1185",
-  "rec_guardian": "556",
-  "def_oracle": "1008",
-  "hp_oracle": "3472",
-  "rec_oracle": "792",
-  "hp_bonus": "400",
-  "atk_bonus": "120",
-  "def_bonus": "200",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "7",
-  "normaldc": "14",
-  "ls": "Fighting Flash",
-  "lsdescription": "Boost in Battle Crystals produced during Spark",
-  "lsnote": "50% boost to Critical Hit rate",
-  "lstype": "Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 661,
+      "def": 751,
+      "hp": 2302,
+      "rec": 427
+    },
+    "_lord": {
+      "atk": 966,
+      "def": 1067,
+      "hp": 3649,
+      "rec": 615
+    },
+    "anima": {
+      "atk": 966,
+      "def": 1067,
+      "hp max": 4239,
+      "hp min": 3944,
+      "rec max": 556,
+      "rec min": 438
+    },
+    "breaker": {
+      "atk max": 1143,
+      "atk min": 1025,
+      "def max": 1008,
+      "def min": 890,
+      "hp": 3649,
+      "rec": 615
+    },
+    "guardian": {
+      "atk": 966,
+      "def max": 1244,
+      "def min": 1126,
+      "hp": 3649,
+      "rec max": 615,
+      "rec min": 497
+    },
+    "oracle": {
+      "atk": 966,
+      "def max": 1067,
+      "def min": 949,
+      "hp": 3649,
+      "rec max": 851,
+      "rec min": 733
+    }
+  },
+  "leader_skill": {
+    "desc": "Boost in Battle Crystals produced during Spark",
+    "effects": [
+      {
+        "bc drop% for spark": 50,
+        "passive id": "31"
+      }
+    ],
+    "id": "1401",
+    "name": "Fighting Flash"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -216,93 +220,95 @@
     ],
     "name": "Dragon Blaze"
   },
-  "bbdescription": "Boosts all allies' Atk for 3 turns",
-  "bbnote": "76% boost to Atk",
-  "bbtype": "Support",
-  "bbhits": "",
-  "bbaoe": "0",
-  "bbgauge": "15",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "10082",
-  "evointo": "",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 661,
-      "def": 751,
-      "hp": 2302,
-      "rec": 427
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "party"
     },
-    "_lord": {
-      "atk": 966,
-      "def": 1067,
-      "hp": 3649,
-      "rec": 615
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 966,
-      "def": 1067,
-      "hp max": 4239,
-      "hp min": 3944,
-      "rec max": 556,
-      "rec min": 438
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 166
     },
-    "breaker": {
-      "atk max": 1143,
-      "atk min": 1025,
-      "def max": 1008,
-      "def min": 890,
-      "hp": 3649,
-      "rec": 615
+    "idle": {
+      "total number of frames": 104
     },
-    "guardian": {
-      "atk": 966,
-      "def max": 1244,
-      "def min": 1126,
-      "hp": 3649,
-      "rec max": 615,
-      "rec min": 497
-    },
-    "oracle": {
-      "atk": 966,
-      "def max": 1067,
-      "def min": 949,
-      "hp": 3649,
-      "rec max": 851,
-      "rec min": 733
+    "move": {
+      "total number of frames": 104
     }
   },
-  "leader_skill": {
-    "desc": "Boost in Battle Crystals produced during Spark",
-    "effects": [
-      {
-        "bc drop% for spark": 50,
-        "passive id": "31"
-      }
+  "category": 10080,
+  "cost": "8",
+  "damage frames": {
+    "frame times": [
+      76,
+      92,
+      108,
+      124,
+      140,
+      156,
+      172
     ],
-    "id": "1401",
-    "name": "Fighting Flash"
+    "hit dmg% distribution": [
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 7
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "fire",
+  "exp_pattern": 15,
+  "gender": "other",
+  "getting type": "farmable",
+  "guide_id": 358,
+  "imp": {
+    "max atk": "120",
+    "max def": "200",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "899~1004",
+  "movement": {
+    "attack": {
+      "move speed": 8,
+      "move speed type": "1",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 8,
+      "move speed type": "1",
+      "move type": "3"
+    }
+  },
+  "name": "Malvan",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Malvan",
+  "maxlv": "60",
+  "no": "358",
   "unitDisplayHomePosition_1W9CxaFK": "273,68,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "75,147,702,671",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "144,312,350,323,0",
@@ -312,5 +318,80 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "75:150:1,96:150:1,96:100181:1,117:150:1,139:150:1,139:100181:1,148:100181:1"
+  "effectFrames": "75:150:1,96:150:1,96:100181:1,117:150:1,139:150:1,139:100181:1,148:100181:1",
+  "evofrom": "10082",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "15",
+  "animation_attack": "166",
+  "animation_idle": "104",
+  "animation_move": "104",
+  "movespeed_attack": "8",
+  "movespeed_skill": "8",
+  "speedtype_attack": "1",
+  "speedtype_skill": "1",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "76, 92, 108, 124, 140, 156, 172",
+  "normal_distribute": "15, 15, 15, 15, 15, 15, 10",
+  "normal_totaldistr": "100",
+  "description": "A new species of dragon born when the great Ifrit granted his protection to some lower class dragons. Unlike other dragons they're born with incredible physical strength and the ability to manipulate fire. However since their intelligence develops slowly they're often quick to brutally attack other creatures around them. Additionally, it is also very difficult to tell how old they are as their physical appearance matures so quickly.",
+  "summon": "Oh ho ho ho ho.<br>You have summoned me.<br>Well, let me have a sniff.",
+  "fusion": "Ha ha ha ha.<br>How interesting you are.<br>You please me.",
+  "evolution": "Behold my new form!<br>This is a combination of <br>both dragon and spirit!",
+  "hp_base": "2302",
+  "atk_base": "661",
+  "def_base": "751",
+  "rec_base": "427",
+  "hp_lord": "3649",
+  "atk_lord": "966",
+  "def_lord": "1067",
+  "rec_lord": "615",
+  "hp_anima": "4092",
+  "rec_anima": "497",
+  "atk_breaker": "1084",
+  "def_breaker": "949",
+  "atk_guardian": "848",
+  "def_guardian": "1185",
+  "rec_guardian": "556",
+  "def_oracle": "1008",
+  "hp_oracle": "3472",
+  "rec_oracle": "792",
+  "hp_bonus": "400",
+  "atk_bonus": "120",
+  "def_bonus": "200",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "7",
+  "normaldc": "14",
+  "ls": "Fighting Flash",
+  "lsdescription": "Boost in Battle Crystals produced during Spark",
+  "lsnote": "50% boost to Critical Hit rate",
+  "lstype": "Brave Burst",
+  "bbdescription": "Boosts all allies' Atk for 3 turns",
+  "bbnote": "76% boost to Atk",
+  "bbtype": "Support",
+  "bbhits": "",
+  "bbaoe": "0",
+  "bbgauge": "15",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "",
+  "evomats2": "",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": "",
+  "evoitem": ""
 }

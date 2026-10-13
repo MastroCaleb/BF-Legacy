@@ -1,68 +1,95 @@
 {
   "id": "61066",
-  "unitName": "Battle Fanatic Zeek",
-  "no": "1523",
-  "element": "Dark",
-  "rarity": "★★★★★★★",
-  "cost": "46",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "151",
-  "animation_idle": "54",
-  "animation_move": "3",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "20, 31, 47, 50, 53, 88, 91, 94, 97",
-  "normal_distribute": "10, 10, 12, 11, 9, 15, 13, 11, 9",
-  "normal_totaldistr": "100",
-  "bb_frames": "20, 24, 31, 35, 47, 50, 53, 56, 59, 88, 91, 94, 97",
-  "bb_distribute": "9, 5, 9, 5, 10, 8, 7, 6, 5, 12, 9, 8, 7",
-  "bb_totaldistr": "100",
-  "sbb_frames": "20, 24, 31, 35, 47, 50, 53, 56, 59, 88, 91, 94, 97, 100, 103, 106",
-  "sbb_distribute": "8, 4, 8, 4, 9, 7, 6, 5, 4, 10, 8, 7, 6, 5, 5, 4",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "20, 24, 31, 35, 47, 50, 53, 56, 59, 62, 65, 68, 71, 88, 91, 94, 97, 100, 103, 106",
-  "ubb_distribute": "7, 4, 7, 4, 9, 6, 5, 4, 3, 3, 3, 3, 3, 10, 8, 6, 5, 4, 3, 3",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "1",
-  "ubb_effectdelay": "1",
-  "description": "A berserker who belonged to the ten-strong band of outlaws called the \"Ten Vile Disnomians\" during the early days of the empire. Originally an outlaw from the frontier, he joined the Disnomians after a battle with their leader. He is said to have joined in order to satisfy his personal lust for battle, and that he joyfully fought in countless battles. He is believed to have died dramatically when the Disnomians' base was attacked by the Imperial Guard. The Guard were pursuing a certain individual, and Zeek took many foes with him charging into the enemy's ranks.",
-  "summon": "I'm glad you called me up.<br>After all, this means that I get to fight again to my heart's content!",
-  "fusion": "Thanks, I feel more powerful! So who do you want me to kill to pay you back?",
-  "evolution": "",
-  "hp_base": "5154",
-  "atk_base": "2365",
-  "def_base": "1744",
-  "rec_base": "1934",
-  "hp_lord": "7341",
-  "atk_lord": "3200",
-  "def_lord": "2363",
-  "rec_lord": "2612",
-  "hp_anima": "8233",
-  "rec_anima": "2374",
-  "atk_breaker": "3438",
-  "def_breaker": "2125",
-  "def_guardian": "2601",
-  "rec_guardian": "2493",
-  "def_oracle": "2244",
-  "rec_oracle": "2969",
-  "hp_bonus": "1000",
-  "atk_bonus": "600",
-  "def_bonus": "300",
-  "rec_bonus": "400",
-  "lordonly": "",
-  "combo_hits": "9",
-  "normaldc": "36",
-  "ls": "Ravenous Decree",
-  "lsdescription": "60% boost to Atk, 30% boost to max HP, considerably boosts critical damage & hugely boosts BB Atk",
-  "lsnote": "100% Crit & 150% BB Atk",
+  "stats": {
+    "_base": {
+      "atk": 2365,
+      "def": 1744,
+      "hp": 5154,
+      "rec": 1934
+    },
+    "_lord": {
+      "atk": 3200,
+      "def": 2363,
+      "hp": 7341,
+      "rec": 2612
+    },
+    "anima": {
+      "atk": 3200,
+      "def": 2363,
+      "hp max": 8531,
+      "hp min": 7936,
+      "rec max": 2493,
+      "rec min": 2255
+    },
+    "breaker": {
+      "atk max": 3557,
+      "atk min": 3319,
+      "def max": 2244,
+      "def min": 2006,
+      "hp": 7341,
+      "rec": 2612
+    },
+    "guardian": {
+      "atk": 3200,
+      "def max": 2720,
+      "def min": 2482,
+      "hp": 7341,
+      "rec max": 2612,
+      "rec min": 2374
+    },
+    "oracle": {
+      "atk": 3200,
+      "def max": 2363,
+      "def min": 2125,
+      "hp": 7341,
+      "rec max": 3088,
+      "rec min": 2850
+    }
+  },
+  "leader_skill": {
+    "desc": "60% boost to Atk, 30% boost to max HP, considerably boosts critical damage & hugely boosts BB Atk",
+    "effects": [
+      {
+        "atk% buff": 60,
+        "hp% buff": 30,
+        "passive id": "1"
+      },
+      {
+        "crit multiplier%": 100.0,
+        "passive id": "34"
+      },
+      {
+        "bb atk% buff": 150,
+        "passive id": "64",
+        "sbb atk% buff": 150,
+        "ubb atk% buff": 150
+      }
+    ],
+    "id": "1950",
+    "name": "Ravenous Decree"
+  },
+  "extra_skill": {
+    "desc": "Considerably boosts Atk when BB gauge is full & 30% boost to Spark damage",
+    "effects": [
+      {
+        "atk% buff": 80,
+        "bb gauge above % buff requirement": 100,
+        "conditions": [],
+        "passive id": "30",
+        "passive target": "self"
+      },
+      {
+        "conditions": [],
+        "damage% for spark": 30,
+        "passive id": "31",
+        "passive target": "self"
+      }
+    ],
+    "id": "27900",
+    "name": "Inexhaustible Will",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -555,14 +582,6 @@
     ],
     "name": "Purple Rending"
   },
-  "bbdescription": "13 combo Dark attack on all foes, considerably boosts Atk for 3 turns, considerably boosts Atk relative to Def for 3 turns & boosts Atk, Def for Dark types for 3 turns",
-  "bbnote": "140% Atk, 60% Def to Atk & 80% Atk, Def of Dark types",
-  "bbtype": "Offense",
-  "bbhits": "13",
-  "bbaoe": "A",
-  "bbgauge": "30",
-  "bbdc": "13",
-  "bbmultiplier": "380",
   "sbb": {
     "damage frames": [
       {
@@ -1255,14 +1274,6 @@
     ],
     "name": "Fallen Rending"
   },
-  "sbbdescription": "16 combo powerful Dark attack on all foes (consecutive uses boost damage), fills own BB gauge to max, slightly boosts own Spark damage for 3 turns, considerably boosts Atk for 3 turns, considerably boosts Atk relative to Def for 3 turns & boosts Atk, Def for Dark types for 3 turns",
-  "sbbnote": "200% boost to multiplier per use up to 3x, 140% Atk, 80% Atk, Def of Dark types, 60% Def to Atk & 30% Spark",
-  "sbbtype": "Offense",
-  "sbbhits": "16",
-  "sbbaoe": "A",
-  "sbbgauge": "32",
-  "sbbdc": "16",
-  "sbbmultiplier": "480~1080",
   "ubb": {
     "damage frames": [
       {
@@ -1437,6 +1448,219 @@
     ],
     "name": "Thirsty Greed"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 151
+    },
+    "idle": {
+      "total number of frames": 54
+    },
+    "move": {
+      "total number of frames": 3
+    }
+  },
+  "category": 61060,
+  "cost": "46",
+  "damage frames": {
+    "frame times": [
+      20,
+      31,
+      47,
+      50,
+      53,
+      88,
+      91,
+      94,
+      97
+    ],
+    "hit dmg% distribution": [
+      10,
+      10,
+      12,
+      11,
+      9,
+      15,
+      13,
+      11,
+      9
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 9
+  },
+  "drop check count": 4,
+  "element": "dark",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 1523,
+  "imp": {
+    "max atk": "600",
+    "max def": "300",
+    "max hp": "1000",
+    "max rec": "400"
+  },
+  "kind": "normal",
+  "lord damage range": "2980~3328",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Battle Fanatic Zeek",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Battle Fanatic Zeek",
+  "maxlv": "120",
+  "no": "1523",
+  "unitDisplayHomePosition_1W9CxaFK": "366,17,174,475",
+  "unitDisplayDetailPosition_6z54rgb3": "25,181,920,672",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "113,294,490,358,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "27,-69,920,672",
+  "unitDisplaySummonPosition_KC3Jk8Br": "113,294,490,358,0",
+  "unitDisplayHpPosition_3BpHN6VD": "1,9",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "15000",
+  "sellCaution": false,
+  "effectFrames": "14:120:1,25:120:1,41:120:1,44:120:1,47:120:1,88:130:1,91:130:1,94:130:1,97:130:1,20:601634:1,31:601634:1,18:600351:1,47:600609:1,89:601636:1,85:600882:1",
+  "evofrom": "",
+  "evointo": "61067",
+  "evozelcost": "3000000",
+  "evokarmacost": "1000000",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "60344",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60123",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60201",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 2
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "151",
+  "animation_idle": "54",
+  "animation_move": "3",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "20, 31, 47, 50, 53, 88, 91, 94, 97",
+  "normal_distribute": "10, 10, 12, 11, 9, 15, 13, 11, 9",
+  "normal_totaldistr": "100",
+  "bb_frames": "20, 24, 31, 35, 47, 50, 53, 56, 59, 88, 91, 94, 97",
+  "bb_distribute": "9, 5, 9, 5, 10, 8, 7, 6, 5, 12, 9, 8, 7",
+  "bb_totaldistr": "100",
+  "sbb_frames": "20, 24, 31, 35, 47, 50, 53, 56, 59, 88, 91, 94, 97, 100, 103, 106",
+  "sbb_distribute": "8, 4, 8, 4, 9, 7, 6, 5, 4, 10, 8, 7, 6, 5, 5, 4",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "20, 24, 31, 35, 47, 50, 53, 56, 59, 62, 65, 68, 71, 88, 91, 94, 97, 100, 103, 106",
+  "ubb_distribute": "7, 4, 7, 4, 9, 6, 5, 4, 3, 3, 3, 3, 3, 10, 8, 6, 5, 4, 3, 3",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "1",
+  "ubb_effectdelay": "1",
+  "description": "A berserker who belonged to the ten-strong band of outlaws called the \"Ten Vile Disnomians\" during the early days of the empire. Originally an outlaw from the frontier, he joined the Disnomians after a battle with their leader. He is said to have joined in order to satisfy his personal lust for battle, and that he joyfully fought in countless battles. He is believed to have died dramatically when the Disnomians' base was attacked by the Imperial Guard. The Guard were pursuing a certain individual, and Zeek took many foes with him charging into the enemy's ranks.",
+  "summon": "I'm glad you called me up.<br>After all, this means that I get to fight again to my heart's content!",
+  "fusion": "Thanks, I feel more powerful! So who do you want me to kill to pay you back?",
+  "evolution": "",
+  "hp_base": "5154",
+  "atk_base": "2365",
+  "def_base": "1744",
+  "rec_base": "1934",
+  "hp_lord": "7341",
+  "atk_lord": "3200",
+  "def_lord": "2363",
+  "rec_lord": "2612",
+  "hp_anima": "8233",
+  "rec_anima": "2374",
+  "atk_breaker": "3438",
+  "def_breaker": "2125",
+  "def_guardian": "2601",
+  "rec_guardian": "2493",
+  "def_oracle": "2244",
+  "rec_oracle": "2969",
+  "hp_bonus": "1000",
+  "atk_bonus": "600",
+  "def_bonus": "300",
+  "rec_bonus": "400",
+  "lordonly": "",
+  "combo_hits": "9",
+  "normaldc": "36",
+  "ls": "Ravenous Decree",
+  "lsdescription": "60% boost to Atk, 30% boost to max HP, considerably boosts critical damage & hugely boosts BB Atk",
+  "lsnote": "100% Crit & 150% BB Atk",
+  "bbdescription": "13 combo Dark attack on all foes, considerably boosts Atk for 3 turns, considerably boosts Atk relative to Def for 3 turns & boosts Atk, Def for Dark types for 3 turns",
+  "bbnote": "140% Atk, 60% Def to Atk & 80% Atk, Def of Dark types",
+  "bbtype": "Offense",
+  "bbhits": "13",
+  "bbaoe": "A",
+  "bbgauge": "30",
+  "bbdc": "13",
+  "bbmultiplier": "380",
+  "sbbdescription": "16 combo powerful Dark attack on all foes (consecutive uses boost damage), fills own BB gauge to max, slightly boosts own Spark damage for 3 turns, considerably boosts Atk for 3 turns, considerably boosts Atk relative to Def for 3 turns & boosts Atk, Def for Dark types for 3 turns",
+  "sbbnote": "200% boost to multiplier per use up to 3x, 140% Atk, 80% Atk, Def of Dark types, 60% Def to Atk & 30% Spark",
+  "sbbtype": "Offense",
+  "sbbhits": "16",
+  "sbbaoe": "A",
+  "sbbgauge": "32",
+  "sbbdc": "16",
+  "sbbmultiplier": "480~1080",
   "ubbdescription": "20 combo massive Dark attack on single foe, fills own BB gauge to max, considerably boosts own Spark damage for 3 turns, enormously boosts critical hit rate for 3 turns, enormously boosts Atk for 3 turns & enormously boosts Atk relative to Def for 3 turns",
   "ubbnote": "300% Atk, 200% Def to Atk, 60% Self Crit & 50% Spark",
   "ubbtype": "Offense",
@@ -1449,8 +1673,6 @@
   "esitem": "",
   "esdescription": "Considerably boosts Atk when BB gauge is full & 30% boost to Spark damage",
   "esnote": "80% boost",
-  "evofrom": "",
-  "evointo": "61067",
   "evomats1": "Dark Mecha God",
   "evomats2": "Dark Mecha God",
   "evomats3": "Miracle Totem",
@@ -1459,106 +1681,5 @@
   "evomats6": "Dragon Mimic",
   "evomats7": "Metal Mimic",
   "evomats8": "Metal Mimic",
-  "evoitem": "",
-  "evozelcost": "3000000",
-  "stats": {
-    "_base": {
-      "atk": 2365,
-      "def": 1744,
-      "hp": 5154,
-      "rec": 1934
-    },
-    "_lord": {
-      "atk": 3200,
-      "def": 2363,
-      "hp": 7341,
-      "rec": 2612
-    },
-    "anima": {
-      "atk": 3200,
-      "def": 2363,
-      "hp max": 8531,
-      "hp min": 7936,
-      "rec max": 2493,
-      "rec min": 2255
-    },
-    "breaker": {
-      "atk max": 3557,
-      "atk min": 3319,
-      "def max": 2244,
-      "def min": 2006,
-      "hp": 7341,
-      "rec": 2612
-    },
-    "guardian": {
-      "atk": 3200,
-      "def max": 2720,
-      "def min": 2482,
-      "hp": 7341,
-      "rec max": 2612,
-      "rec min": 2374
-    },
-    "oracle": {
-      "atk": 3200,
-      "def max": 2363,
-      "def min": 2125,
-      "hp": 7341,
-      "rec max": 3088,
-      "rec min": 2850
-    }
-  },
-  "leader_skill": {
-    "desc": "60% boost to Atk, 30% boost to max HP, considerably boosts critical damage & hugely boosts BB Atk",
-    "effects": [
-      {
-        "atk% buff": 60,
-        "hp% buff": 30,
-        "passive id": "1"
-      },
-      {
-        "crit multiplier%": 100.0,
-        "passive id": "34"
-      },
-      {
-        "bb atk% buff": 150,
-        "passive id": "64",
-        "sbb atk% buff": 150,
-        "ubb atk% buff": 150
-      }
-    ],
-    "id": "1950",
-    "name": "Ravenous Decree"
-  },
-  "extra_skill": {
-    "desc": "Considerably boosts Atk when BB gauge is full & 30% boost to Spark damage",
-    "effects": [
-      {
-        "atk% buff": 80,
-        "bb gauge above % buff requirement": 100,
-        "conditions": [],
-        "passive id": "30",
-        "passive target": "self"
-      },
-      {
-        "conditions": [],
-        "damage% for spark": 30,
-        "passive id": "31",
-        "passive target": "self"
-      }
-    ],
-    "id": "27900",
-    "name": "Inexhaustible Will",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "366,17,174,475",
-  "unitDisplayDetailPosition_6z54rgb3": "25,181,920,672",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "113,294,490,358,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "27,-69,920,672",
-  "unitDisplaySummonPosition_KC3Jk8Br": "113,294,490,358,0",
-  "unitDisplayHpPosition_3BpHN6VD": "1,9",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "15000",
-  "sellCaution": false,
-  "effectFrames": "14:120:1,25:120:1,41:120:1,44:120:1,47:120:1,88:130:1,91:130:1,94:130:1,97:130:1,20:601634:1,31:601634:1,18:600351:1,47:600609:1,89:601636:1,85:600882:1"
+  "evoitem": ""
 }

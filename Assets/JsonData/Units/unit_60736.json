@@ -1,69 +1,84 @@
 {
   "id": "60736",
-  "unitName": "Grand Malediction Yuura",
-  "no": "968",
-  "element": "Dark",
-  "rarity": "★★★★★★★",
-  "cost": "40",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "6",
-  "animation_attack": "187",
-  "animation_idle": "68",
-  "animation_move": "13",
-  "movespeed_attack": "0.0041",
-  "movespeed_skill": "0.0041",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "82, 87, 92, 97, 102, 107, 112, 117, 122, 127",
-  "normal_distribute": "20, 15, 10, 10, 10, 10, 10, 5, 5, 5",
-  "normal_totaldistr": "100",
-  "bb_frames": "82, 86, 90, 94, 98, 102, 106, 110, 114, 118, 122, 126, 130, 134, 138",
-  "bb_distribute": "16, 12, 10, 9, 8, 7, 7, 6, 5, 4, 4, 3, 3, 3, 3",
-  "bb_totaldistr": "100",
-  "sbb_frames": "82, 87, 92, 97, 102, 107, 112, 117, 122, 127, 132, 137, 142, 147, 152, 157, 162, 167, 172, 177",
-  "sbb_distribute": "12, 9, 8, 7, 6, 6, 5, 5, 5, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "82, 87, 92, 97, 102, 107, 112, 117, 122, 127, 132, 137, 142, 147, 152, 157, 162, 167, 172, 177, 182, 187, 192, 197",
-  "ubb_distribute": "9, 8, 8, 7, 7, 6, 6, 5, 5, 4, 4, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 2, 2, 2",
-  "ubb_totaldistr": "100",
-  "ubb_effectdelay": "1",
-  "description": "In the midst of the fight against the gods, Yuura fell in battle, losing his life whilst trying to protect one of his comrades. The reason why this course of action of his has not been studied in greater detail is perhaps due to the great amount of people who attested to seeing him rise again from the dead, fighting until his body had disintegrated. Yuura, who transcended death even if for a brief moment, revealed to the Oracle Knight that he had once been entrusted to kill him. Simultaneously, he also created an opening to land a fatal blow against the god who meant to destroy humanity.",
-  "summon": "Even though she was so full of doubt<br>she still did her best for her<br>friends. What a piece of work.",
-  "fusion": "Ha ha ha! Your face is so funny!<br>No, that was a compliment!<br>Don't get mad! I'm serious!",
-  "evolution": "Hey, you sure hung in there.<br>Now leave the rest to me.<br>I'll beat your enemies for you.",
-  "hp_base": "4981",
-  "atk_base": "2031",
-  "def_base": "1843",
-  "rec_base": "1715",
-  "hp_lord": "6541",
-  "atk_lord": "2527",
-  "def_lord": "2290",
-  "rec_lord": "2143",
-  "hp_anima": "7433",
-  "rec_anima": "1905",
-  "atk_breaker": "2765",
-  "def_breaker": "2052",
-  "atk_guardian": "2289",
-  "def_guardian": "2528",
-  "rec_guardian": "2024",
-  "def_oracle": "2171",
-  "hp_oracle": "6184",
-  "rec_oracle": "2500",
-  "hp_bonus": "1000",
-  "atk_bonus": "600",
-  "def_bonus": "300",
-  "rec_bonus": "400",
-  "lordonly": "",
-  "combo_hits": "10",
-  "normaldc": "20",
-  "ls": "Artemis' Force",
-  "lsdescription": "80% boost to Atk power & slightly absorbs HP when attacking",
-  "lsnote": "Drain 3-8% damage",
-  "lstype": "Attack/Recovery",
+  "stats": {
+    "_base": {
+      "atk": 2031,
+      "def": 1843,
+      "hp": 4981,
+      "rec": 1715
+    },
+    "_lord": {
+      "atk": 2527,
+      "def": 2290,
+      "hp": 6541,
+      "rec": 2143
+    },
+    "anima": {
+      "atk": 2527,
+      "def": 2290,
+      "hp max": 7731,
+      "hp min": 7136,
+      "rec max": 2024,
+      "rec min": 1786
+    },
+    "breaker": {
+      "atk max": 2884,
+      "atk min": 2646,
+      "def max": 2171,
+      "def min": 1933,
+      "hp": 6541,
+      "rec": 2143
+    },
+    "guardian": {
+      "atk": 2527,
+      "def max": 2647,
+      "def min": 2409,
+      "hp": 6541,
+      "rec max": 2143,
+      "rec min": 1905
+    },
+    "oracle": {
+      "atk": 2527,
+      "def max": 2290,
+      "def min": 2052,
+      "hp": 6541,
+      "rec max": 2619,
+      "rec min": 2381
+    }
+  },
+  "leader_skill": {
+    "desc": "80% boost to Atk for all Units & slightly absorbs HP when attacking",
+    "effects": [
+      {
+        "atk% buff": 80,
+        "passive id": "1"
+      },
+      {
+        "hp drain chance%": 100,
+        "hp drain% high": 8,
+        "hp drain% low": 3,
+        "passive id": "17"
+      }
+    ],
+    "id": "1909",
+    "name": "Artemis's Force"
+  },
+  "extra_skill": {
+    "desc": "Hugely boosts Atk when BB gauge is full",
+    "effects": [
+      {
+        "atk% buff": 80,
+        "bb gauge above % buff requirement": 100,
+        "conditions": [],
+        "passive id": "30",
+        "passive target": "self"
+      }
+    ],
+    "id": "2601",
+    "name": "Will Beyond Death",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -356,14 +371,6 @@
     ],
     "name": "Vicious Revenant"
   },
-  "bbdescription": "15 combo powerful Dark attack on all enemies & boosts BB gauge when attacked for 3 turns",
-  "bbnote": "Fills 3-6 BC",
-  "bbtype": "Support/Offense",
-  "bbhits": "15",
-  "bbaoe": "A",
-  "bbgauge": "22",
-  "bbdc": "15",
-  "bbmultiplier": "480",
   "sbb": {
     "damage frames": [
       {
@@ -758,13 +765,6 @@
     ],
     "name": "Necromancy: Eldorobe"
   },
-  "sbbdescription": "20 combo powerful Dark attack on single enemy, fills own BB gauge to max & additional attack at end of turn for 3 turns",
-  "sbbtype": "Support/Offense",
-  "sbbhits": "20",
-  "sbbaoe": "1",
-  "sbbgauge": "27",
-  "sbbdc": "40",
-  "sbbmultiplier": "640",
   "ubb": {
     "damage frames": [
       {
@@ -866,6 +866,221 @@
     ],
     "name": "Abyssal Depletion"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 100.0,
+      "target conditions": "hp_25pr_under",
+      "target type": "party"
+    },
+    {
+      "action": "attack",
+      "chance%": 50.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 187
+    },
+    "idle": {
+      "total number of frames": 68
+    },
+    "move": {
+      "total number of frames": 13
+    }
+  },
+  "category": 60730,
+  "cost": "40",
+  "damage frames": {
+    "frame times": [
+      82,
+      87,
+      92,
+      97,
+      102,
+      107,
+      112,
+      117,
+      122,
+      127
+    ],
+    "hit dmg% distribution": [
+      20,
+      15,
+      10,
+      10,
+      10,
+      10,
+      10,
+      5,
+      5,
+      5
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 10
+  },
+  "drop check count": 2,
+  "element": "dark",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 968,
+  "imp": {
+    "max atk": "600",
+    "max def": "300",
+    "max hp": "1000",
+    "max rec": "400"
+  },
+  "kind": "normal",
+  "lord damage range": "2352~2628",
+  "movement": {
+    "attack": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    }
+  },
+  "name": "Grand Malediction Yuura",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Grand Malediction Yuura",
+  "maxlv": "120",
+  "no": "968",
+  "unitDisplayHomePosition_1W9CxaFK": "368,329,140,382",
+  "unitDisplayDetailPosition_6z54rgb3": "-97,-110,1300,940",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "23,154,680,492,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-67,-411,1300,940",
+  "unitDisplaySummonPosition_KC3Jk8Br": "23,154,680,492,0",
+  "unitDisplayHpPosition_3BpHN6VD": "1,47",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "15000",
+  "sellCaution": false,
+  "effectFrames": "32:600381:1,83:600103:1,87:374:1,92:600170:1,93:600170:1,111:600404:1,112:681:1,117:600214:1,122:600214:1,115:600351:1",
+  "evofrom": "60735",
+  "evointo": "60737",
+  "evozelcost": "3000000",
+  "evokarmacost": "1000000",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "60344",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60123",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60201",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    },
+    {
+      "type": "2",
+      "id": "110100",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "187",
+  "animation_idle": "68",
+  "animation_move": "13",
+  "movespeed_attack": "0.0041",
+  "movespeed_skill": "0.0041",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "82, 87, 92, 97, 102, 107, 112, 117, 122, 127",
+  "normal_distribute": "20, 15, 10, 10, 10, 10, 10, 5, 5, 5",
+  "normal_totaldistr": "100",
+  "bb_frames": "82, 86, 90, 94, 98, 102, 106, 110, 114, 118, 122, 126, 130, 134, 138",
+  "bb_distribute": "16, 12, 10, 9, 8, 7, 7, 6, 5, 4, 4, 3, 3, 3, 3",
+  "bb_totaldistr": "100",
+  "sbb_frames": "82, 87, 92, 97, 102, 107, 112, 117, 122, 127, 132, 137, 142, 147, 152, 157, 162, 167, 172, 177",
+  "sbb_distribute": "12, 9, 8, 7, 6, 6, 5, 5, 5, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "82, 87, 92, 97, 102, 107, 112, 117, 122, 127, 132, 137, 142, 147, 152, 157, 162, 167, 172, 177, 182, 187, 192, 197",
+  "ubb_distribute": "9, 8, 8, 7, 7, 6, 6, 5, 5, 4, 4, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 2, 2, 2",
+  "ubb_totaldistr": "100",
+  "ubb_effectdelay": "1",
+  "description": "In the midst of the fight against the gods, Yuura fell in battle, losing his life whilst trying to protect one of his comrades. The reason why this course of action of his has not been studied in greater detail is perhaps due to the great amount of people who attested to seeing him rise again from the dead, fighting until his body had disintegrated. Yuura, who transcended death even if for a brief moment, revealed to the Oracle Knight that he had once been entrusted to kill him. Simultaneously, he also created an opening to land a fatal blow against the god who meant to destroy humanity.",
+  "summon": "Even though she was so full of doubt<br>she still did her best for her<br>friends. What a piece of work.",
+  "fusion": "Ha ha ha! Your face is so funny!<br>No, that was a compliment!<br>Don't get mad! I'm serious!",
+  "evolution": "Hey, you sure hung in there.<br>Now leave the rest to me.<br>I'll beat your enemies for you.",
+  "hp_base": "4981",
+  "atk_base": "2031",
+  "def_base": "1843",
+  "rec_base": "1715",
+  "hp_lord": "6541",
+  "atk_lord": "2527",
+  "def_lord": "2290",
+  "rec_lord": "2143",
+  "hp_anima": "7433",
+  "rec_anima": "1905",
+  "atk_breaker": "2765",
+  "def_breaker": "2052",
+  "atk_guardian": "2289",
+  "def_guardian": "2528",
+  "rec_guardian": "2024",
+  "def_oracle": "2171",
+  "hp_oracle": "6184",
+  "rec_oracle": "2500",
+  "hp_bonus": "1000",
+  "atk_bonus": "600",
+  "def_bonus": "300",
+  "rec_bonus": "400",
+  "lordonly": "",
+  "combo_hits": "10",
+  "normaldc": "20",
+  "ls": "Artemis' Force",
+  "lsdescription": "80% boost to Atk power & slightly absorbs HP when attacking",
+  "lsnote": "Drain 3-8% damage",
+  "lstype": "Attack/Recovery",
+  "bbdescription": "15 combo powerful Dark attack on all enemies & boosts BB gauge when attacked for 3 turns",
+  "bbnote": "Fills 3-6 BC",
+  "bbtype": "Support/Offense",
+  "bbhits": "15",
+  "bbaoe": "A",
+  "bbgauge": "22",
+  "bbdc": "15",
+  "bbmultiplier": "480",
+  "sbbdescription": "20 combo powerful Dark attack on single enemy, fills own BB gauge to max & additional attack at end of turn for 3 turns",
+  "sbbtype": "Support/Offense",
+  "sbbhits": "20",
+  "sbbaoe": "1",
+  "sbbgauge": "27",
+  "sbbdc": "40",
+  "sbbmultiplier": "640",
   "ubbdescription": "24 combo massive Dark attack on single enemy & hugely boosts critical hit damage for 3 turns",
   "ubbnote": "450% boost",
   "ubbtype": "Support/Offense",
@@ -878,8 +1093,6 @@
   "esitem": "",
   "esdescription": "Hugely boosts Atk when BB gauge is full",
   "esnote": "80% boost",
-  "evofrom": "60735",
-  "evointo": "60737",
   "evomats1": "Dark Mecha God",
   "evomats2": "Dark Mecha God",
   "evomats3": "Miracle Totem",
@@ -887,95 +1100,5 @@
   "evomats5": "Dark Pot",
   "evomats6": "Dark Pot",
   "evomats7": "Metal Mimic",
-  "evoitem": "Legend Stone",
-  "evozelcost": "3000000",
-  "stats": {
-    "_base": {
-      "atk": 2031,
-      "def": 1843,
-      "hp": 4981,
-      "rec": 1715
-    },
-    "_lord": {
-      "atk": 2527,
-      "def": 2290,
-      "hp": 6541,
-      "rec": 2143
-    },
-    "anima": {
-      "atk": 2527,
-      "def": 2290,
-      "hp max": 7731,
-      "hp min": 7136,
-      "rec max": 2024,
-      "rec min": 1786
-    },
-    "breaker": {
-      "atk max": 2884,
-      "atk min": 2646,
-      "def max": 2171,
-      "def min": 1933,
-      "hp": 6541,
-      "rec": 2143
-    },
-    "guardian": {
-      "atk": 2527,
-      "def max": 2647,
-      "def min": 2409,
-      "hp": 6541,
-      "rec max": 2143,
-      "rec min": 1905
-    },
-    "oracle": {
-      "atk": 2527,
-      "def max": 2290,
-      "def min": 2052,
-      "hp": 6541,
-      "rec max": 2619,
-      "rec min": 2381
-    }
-  },
-  "leader_skill": {
-    "desc": "80% boost to Atk for all Units & slightly absorbs HP when attacking",
-    "effects": [
-      {
-        "atk% buff": 80,
-        "passive id": "1"
-      },
-      {
-        "hp drain chance%": 100,
-        "hp drain% high": 8,
-        "hp drain% low": 3,
-        "passive id": "17"
-      }
-    ],
-    "id": "1909",
-    "name": "Artemis's Force"
-  },
-  "extra_skill": {
-    "desc": "Hugely boosts Atk when BB gauge is full",
-    "effects": [
-      {
-        "atk% buff": 80,
-        "bb gauge above % buff requirement": 100,
-        "conditions": [],
-        "passive id": "30",
-        "passive target": "self"
-      }
-    ],
-    "id": "2601",
-    "name": "Will Beyond Death",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "368,329,140,382",
-  "unitDisplayDetailPosition_6z54rgb3": "-97,-110,1300,940",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "23,154,680,492,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-67,-411,1300,940",
-  "unitDisplaySummonPosition_KC3Jk8Br": "23,154,680,492,0",
-  "unitDisplayHpPosition_3BpHN6VD": "1,47",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "15000",
-  "sellCaution": false,
-  "effectFrames": "32:600381:1,83:600103:1,87:374:1,92:600170:1,93:600170:1,111:600404:1,112:681:1,117:600214:1,122:600214:1,115:600351:1"
+  "evoitem": "Legend Stone"
 }

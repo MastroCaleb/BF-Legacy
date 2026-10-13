@@ -1,71 +1,85 @@
 {
   "id": "10686",
-  "unitName": "Phosphor Crystal Rineth",
-  "no": "1041",
-  "element": "Fire",
-  "rarity": "★★★★★★★",
-  "cost": "42",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "186",
-  "animation_idle": "64",
-  "animation_move": "5",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "99, 102, 105, 108, 111, 114, 117, 120, 123, 126",
-  "normal_distribute": "11, 9, 11, 9, 11, 9, 11, 9, 11, 9",
-  "normal_totaldistr": "100",
-  "bb_frames": "99, 102, 105, 108, 111, 114, 117, 120, 123, 126, 129, 132, 135",
-  "bb_distribute": "15, 10, 9, 5, 9, 5, 9, 5, 9, 5, 9, 5, 5",
-  "bb_totaldistr": "100",
-  "sbb_frames": "50, 65, 80, 99, 102, 105, 108, 111, 114, 117, 120, 123, 126, 129, 132, 135",
-  "sbb_distribute": "3, 5, 7, 12, 10, 8, 4, 8, 4, 8, 4, 8, 4, 8, 4, 3",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "50, 55, 60, 65, 70, 75, 99, 102, 105, 108, 111, 114, 117, 120, 123, 126, 129, 132, 135, 138, 141",
-  "ubb_distribute": "2, 3, 5, 7, 9, 12, 11, 10, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "2",
-  "sbb_effectdelay": "2",
-  "ubb_effectdelay": "2",
-  "description": "Wielder of the Sacred Crystal. Though she was endlessly pursued by the very gods who feared her, Rineth continued fighting for the human cause. As her crystals grew stronger with every fight, the gods finally decided to stop chasing her in vain. However, it was then when a demon, a being which frightened even the gods, began attacking human villages. There is no doubt that Rineth confronted this demon, but curiously all the information left about the encounter only tells of two demons fighting each other.",
-  "summon": "I hate the gods...<br>They try to take power<br>from those who don't even have any...",
-  "fusion": "I've been made a slave<br>by the crystals' beauty...<br>Won't you join me?<br>I'm sure it'd be lovely...",
-  "evolution": "You're not scared<br>to see my evolved form?<br>Wow... Thanks...",
-  "hp_base": "5107",
-  "atk_base": "2046",
-  "def_base": "1912",
-  "rec_base": "1846",
-  "hp_lord": "6705",
-  "atk_lord": "2554",
-  "def_lord": "2398",
-  "rec_lord": "2302",
-  "hp_anima": "7597",
-  "rec_anima": "2064",
-  "atk_breaker": "2792",
-  "def_breaker": "2160",
-  "atk_guardian": "2316",
-  "def_guardian": "2636",
-  "rec_guardian": "2183",
-  "def_oracle": "2279",
-  "hp_oracle": "6348",
-  "rec_oracle": "2659",
-  "hp_bonus": "1100",
-  "atk_bonus": "440",
-  "def_bonus": "440",
-  "rec_bonus": "440",
-  "lordonly": "",
-  "combo_hits": "10",
-  "normaldc": "30",
-  "ls": "Pulsating Charge",
-  "lsdescription": "BB gauge fills enormously after each turn & hugely boosts Fire, Earth elemental damage",
-  "lsnote": "Fills 6 BC & 125% boost",
-  "lstype": "Attack/Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 2046,
+      "def": 1912,
+      "hp": 5107,
+      "rec": 1846
+    },
+    "_lord": {
+      "atk": 2554,
+      "def": 2398,
+      "hp": 6705,
+      "rec": 2302
+    },
+    "anima": {
+      "atk": 2554,
+      "def": 2398,
+      "hp max": 7895,
+      "hp min": 7300,
+      "rec max": 2183,
+      "rec min": 1945
+    },
+    "breaker": {
+      "atk max": 2911,
+      "atk min": 2673,
+      "def max": 2279,
+      "def min": 2041,
+      "hp": 6705,
+      "rec": 2302
+    },
+    "guardian": {
+      "atk": 2554,
+      "def max": 2755,
+      "def min": 2517,
+      "hp": 6705,
+      "rec max": 2302,
+      "rec min": 2064
+    },
+    "oracle": {
+      "atk": 2554,
+      "def max": 2398,
+      "def min": 2160,
+      "hp": 6705,
+      "rec max": 2778,
+      "rec min": 2540
+    }
+  },
+  "leader_skill": {
+    "desc": "BB gauge fills enormously after each turn & hugely boosts Fire, Earth elemental damage",
+    "effects": [
+      {
+        "bc fill per turn": 6,
+        "passive id": "9"
+      },
+      {
+        "earth units do extra elemental weakness dmg": true,
+        "elemental weakness multiplier%": 125.0,
+        "fire units do extra elemental weakness dmg": true,
+        "passive id": "50"
+      }
+    ],
+    "id": "1214",
+    "name": "Pulsating Charge"
+  },
+  "extra_skill": {
+    "desc": "Reduces damage taken from Earth, Thunder types",
+    "effects": [
+      {
+        "conditions": [],
+        "dmg% mitigation for elemental attacks": 10.0,
+        "mitigate earth attacks": true,
+        "mitigate thunder attacks": true,
+        "passive id": "62",
+        "passive target": "self"
+      }
+    ],
+    "id": "6000",
+    "name": "Primeval Crystal",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -446,14 +460,6 @@
     ],
     "name": "Dark Crystal Phosphorescence"
   },
-  "bbdescription": "13 combo powerful Fire attack on all foes, gradually boosts BB gauge for 3 turns & boosts Fire, Earth elemental damage",
-  "bbnote": "Fills 4 BC & 75% boost",
-  "bbtype": "Support/Offense",
-  "bbhits": "13",
-  "bbaoe": "A",
-  "bbgauge": "26",
-  "bbdc": "13",
-  "bbmultiplier": "300",
   "sbb": {
     "damage frames": [
       {
@@ -972,14 +978,6 @@
     ],
     "name": "Spinel Intensity"
   },
-  "sbbdescription": "16 combo powerful Fire attack on all foes, probable 1 turn Def reduction, gradually boosts BB gauge for 3 turns & boosts Fire, Earth elemental damage",
-  "sbbnote": "30% chance to reduce enemy Def by 50%, fills 6 BC & 75% boost",
-  "sbbtype": "Support/Offense",
-  "sbbhits": "16",
-  "sbbaoe": "A",
-  "sbbgauge": "23",
-  "sbbdc": "16",
-  "sbbmultiplier": "540",
   "ubb": {
     "damage frames": [
       {
@@ -1119,6 +1117,193 @@
     ],
     "name": "Treasure: Sacred Crystal"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 186
+    },
+    "idle": {
+      "total number of frames": 64
+    },
+    "move": {
+      "total number of frames": 5
+    }
+  },
+  "category": 10680,
+  "cost": "42",
+  "damage frames": {
+    "frame times": [
+      99,
+      102,
+      105,
+      108,
+      111,
+      114,
+      117,
+      120,
+      123,
+      126
+    ],
+    "hit dmg% distribution": [
+      11,
+      9,
+      11,
+      9,
+      11,
+      9,
+      11,
+      9,
+      11,
+      9
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 10
+  },
+  "drop check count": 3,
+  "element": "fire",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 1041,
+  "imp": {
+    "max atk": "440",
+    "max def": "440",
+    "max hp": "1100",
+    "max rec": "440"
+  },
+  "kind": "normal",
+  "lord damage range": "2377~2656",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Phosphor Crystal Rineth",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Phosphor Crystal Rineth",
+  "maxlv": "120",
+  "no": "1041",
+  "unitDisplayHomePosition_1W9CxaFK": "520,380,174,475",
+  "unitDisplayDetailPosition_6z54rgb3": "-148,-107,1150,927",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "9,123,628,506,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-122,-413,1150,927",
+  "unitDisplaySummonPosition_KC3Jk8Br": "9,123,628,506,0",
+  "unitDisplayHpPosition_3BpHN6VD": "1,45",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "15000",
+  "sellCaution": false,
+  "effectFrames": "99:100191:1,102:100112:1,105:151:1,108:100111:1,111:151:1,114:100111:1,117:151:1,120:100112:1,123:151:1,40:1128:1,90:1127:1,99:1121:1,93:200084:1,99:1101:2,108:600491:2",
+  "evofrom": "10685",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "21",
+  "animation_attack": "186",
+  "animation_idle": "64",
+  "animation_move": "5",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "99, 102, 105, 108, 111, 114, 117, 120, 123, 126",
+  "normal_distribute": "11, 9, 11, 9, 11, 9, 11, 9, 11, 9",
+  "normal_totaldistr": "100",
+  "bb_frames": "99, 102, 105, 108, 111, 114, 117, 120, 123, 126, 129, 132, 135",
+  "bb_distribute": "15, 10, 9, 5, 9, 5, 9, 5, 9, 5, 9, 5, 5",
+  "bb_totaldistr": "100",
+  "sbb_frames": "50, 65, 80, 99, 102, 105, 108, 111, 114, 117, 120, 123, 126, 129, 132, 135",
+  "sbb_distribute": "3, 5, 7, 12, 10, 8, 4, 8, 4, 8, 4, 8, 4, 8, 4, 3",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "50, 55, 60, 65, 70, 75, 99, 102, 105, 108, 111, 114, 117, 120, 123, 126, 129, 132, 135, 138, 141",
+  "ubb_distribute": "2, 3, 5, 7, 9, 12, 11, 10, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "2",
+  "sbb_effectdelay": "2",
+  "ubb_effectdelay": "2",
+  "description": "Wielder of the Sacred Crystal. Though she was endlessly pursued by the very gods who feared her, Rineth continued fighting for the human cause. As her crystals grew stronger with every fight, the gods finally decided to stop chasing her in vain. However, it was then when a demon, a being which frightened even the gods, began attacking human villages. There is no doubt that Rineth confronted this demon, but curiously all the information left about the encounter only tells of two demons fighting each other.",
+  "summon": "I hate the gods...<br>They try to take power<br>from those who don't even have any...",
+  "fusion": "I've been made a slave<br>by the crystals' beauty...<br>Won't you join me?<br>I'm sure it'd be lovely...",
+  "evolution": "You're not scared<br>to see my evolved form?<br>Wow... Thanks...",
+  "hp_base": "5107",
+  "atk_base": "2046",
+  "def_base": "1912",
+  "rec_base": "1846",
+  "hp_lord": "6705",
+  "atk_lord": "2554",
+  "def_lord": "2398",
+  "rec_lord": "2302",
+  "hp_anima": "7597",
+  "rec_anima": "2064",
+  "atk_breaker": "2792",
+  "def_breaker": "2160",
+  "atk_guardian": "2316",
+  "def_guardian": "2636",
+  "rec_guardian": "2183",
+  "def_oracle": "2279",
+  "hp_oracle": "6348",
+  "rec_oracle": "2659",
+  "hp_bonus": "1100",
+  "atk_bonus": "440",
+  "def_bonus": "440",
+  "rec_bonus": "440",
+  "lordonly": "",
+  "combo_hits": "10",
+  "normaldc": "30",
+  "ls": "Pulsating Charge",
+  "lsdescription": "BB gauge fills enormously after each turn & hugely boosts Fire, Earth elemental damage",
+  "lsnote": "Fills 6 BC & 125% boost",
+  "lstype": "Attack/Brave Burst",
+  "bbdescription": "13 combo powerful Fire attack on all foes, gradually boosts BB gauge for 3 turns & boosts Fire, Earth elemental damage",
+  "bbnote": "Fills 4 BC & 75% boost",
+  "bbtype": "Support/Offense",
+  "bbhits": "13",
+  "bbaoe": "A",
+  "bbgauge": "26",
+  "bbdc": "13",
+  "bbmultiplier": "300",
+  "sbbdescription": "16 combo powerful Fire attack on all foes, probable 1 turn Def reduction, gradually boosts BB gauge for 3 turns & boosts Fire, Earth elemental damage",
+  "sbbnote": "30% chance to reduce enemy Def by 50%, fills 6 BC & 75% boost",
+  "sbbtype": "Support/Offense",
+  "sbbhits": "16",
+  "sbbaoe": "A",
+  "sbbgauge": "23",
+  "sbbdc": "16",
+  "sbbmultiplier": "540",
   "ubbdescription": "21 combo massive Fire attack on all foes, boosts BB Atk for 3 turns, boosts Fire, Earth elemental damage & enormously boosts BB gauge for 5 turns",
   "ubbnote": "300% BB Atk and elemental damage & fills 50 BC",
   "ubbtype": "Support/Offense",
@@ -1131,103 +1316,10 @@
   "esitem": "",
   "esdescription": "Reduces damage from Earth, Thunder types",
   "esnote": "10% reduction",
-  "evofrom": "10685",
-  "evointo": "",
   "evomats1": "",
   "evomats2": "",
   "evomats3": "",
   "evomats4": "",
   "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 2046,
-      "def": 1912,
-      "hp": 5107,
-      "rec": 1846
-    },
-    "_lord": {
-      "atk": 2554,
-      "def": 2398,
-      "hp": 6705,
-      "rec": 2302
-    },
-    "anima": {
-      "atk": 2554,
-      "def": 2398,
-      "hp max": 7895,
-      "hp min": 7300,
-      "rec max": 2183,
-      "rec min": 1945
-    },
-    "breaker": {
-      "atk max": 2911,
-      "atk min": 2673,
-      "def max": 2279,
-      "def min": 2041,
-      "hp": 6705,
-      "rec": 2302
-    },
-    "guardian": {
-      "atk": 2554,
-      "def max": 2755,
-      "def min": 2517,
-      "hp": 6705,
-      "rec max": 2302,
-      "rec min": 2064
-    },
-    "oracle": {
-      "atk": 2554,
-      "def max": 2398,
-      "def min": 2160,
-      "hp": 6705,
-      "rec max": 2778,
-      "rec min": 2540
-    }
-  },
-  "leader_skill": {
-    "desc": "BB gauge fills enormously after each turn & hugely boosts Fire, Earth elemental damage",
-    "effects": [
-      {
-        "bc fill per turn": 6,
-        "passive id": "9"
-      },
-      {
-        "earth units do extra elemental weakness dmg": true,
-        "elemental weakness multiplier%": 125.0,
-        "fire units do extra elemental weakness dmg": true,
-        "passive id": "50"
-      }
-    ],
-    "id": "1214",
-    "name": "Pulsating Charge"
-  },
-  "extra_skill": {
-    "desc": "Reduces damage taken from Earth, Thunder types",
-    "effects": [
-      {
-        "conditions": [],
-        "dmg% mitigation for elemental attacks": 10.0,
-        "mitigate earth attacks": true,
-        "mitigate thunder attacks": true,
-        "passive id": "62",
-        "passive target": "self"
-      }
-    ],
-    "id": "6000",
-    "name": "Primeval Crystal",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "520,380,174,475",
-  "unitDisplayDetailPosition_6z54rgb3": "-148,-107,1150,927",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "9,123,628,506,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-122,-413,1150,927",
-  "unitDisplaySummonPosition_KC3Jk8Br": "9,123,628,506,0",
-  "unitDisplayHpPosition_3BpHN6VD": "1,45",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "15000",
-  "sellCaution": false,
-  "effectFrames": "99:100191:1,102:100112:1,105:151:1,108:100111:1,111:151:1,114:100111:1,117:151:1,120:100112:1,123:151:1,40:1128:1,90:1127:1,99:1121:1,93:200084:1,99:1101:2,108:600491:2"
+  "evoitem": ""
 }

@@ -1,71 +1,94 @@
 {
   "id": "60776",
-  "unitName": "Soul Covenant Charis",
-  "no": "1056",
-  "element": "Dark",
-  "rarity": "★★★★★★★",
-  "cost": "42",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "180",
-  "animation_idle": "78",
-  "animation_move": "6",
-  "movespeed_attack": "0.005",
-  "movespeed_skill": "0.005",
-  "speedtype_attack": "1",
-  "speedtype_skill": "1",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "77, 80, 83, 87, 91, 96, 101, 107",
-  "normal_distribute": "27, 18, 14, 12, 10, 8, 6, 5",
-  "normal_totaldistr": "100",
-  "bb_frames": "78, 81, 84, 87, 90, 94, 98, 102, 106, 110, 114, 118, 122",
-  "bb_distribute": "19, 15, 10, 9, 7, 5, 5, 5, 5, 5, 5, 5, 5",
-  "bb_totaldistr": "100",
-  "sbb_frames": "30, 37, 44, 51, 78, 81, 84, 87, 90, 94, 98, 102, 106, 110, 114, 118, 122, 126",
-  "sbb_distribute": "5, 5, 5, 5, 15, 8, 7, 7, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "30, 36, 42, 48, 54, 60, 78, 81, 84, 87, 90, 94, 98, 102, 106, 110, 114, 118, 122, 126, 130",
-  "ubb_distribute": "4, 4, 4, 4, 4, 4, 13, 8, 6, 5, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "1",
-  "ubb_effectdelay": "1",
-  "description": "Wielder of the Sacred Dagger. It has been discovered during recent surveys conducted in Ishgria that even a handful of demons knew of the existence of the Sacred Treasures as well. Though there is evidence suggesting that one of these demons sought to collect all the treasures in order to destroy the world, myth has it that a young man bearing the Sacred Dagger prevented this from happening by giving birth to one nightmare after another. However, no information regarding the successors of Charis's family has been unearthed after this occurrence.",
-  "summon": "As the guardian of the Sacred<br>Treasures, I must fulfill my role.<br>That should be enough, right?",
-  "fusion": "Thank you...<br>But when I really think about it,<br>showing my gratitude is embarrassing.",
-  "evolution": "Err... Umm...<br>As a thanks to you,<br>I'll  work even harder...",
-  "hp_base": "5220",
-  "atk_base": "2198",
-  "def_base": "1686",
-  "rec_base": "1796",
-  "hp_lord": "6854",
-  "atk_lord": "2753",
-  "def_lord": "2102",
-  "rec_lord": "2250",
-  "hp_anima": "7746",
-  "rec_anima": "2012",
-  "atk_breaker": "2991",
-  "def_breaker": "1864",
-  "atk_guardian": "2753",
-  "def_guardian": "2340",
-  "rec_guardian": "2131",
-  "hp_oracle": "6854",
-  "def_oracle": "1983",
-  "rec_oracle": "2607",
-  "hp_bonus": "1000",
-  "atk_bonus": "600",
-  "def_bonus": "300",
-  "rec_bonus": "400",
-  "lordonly": "",
-  "combo_hits": "8",
-  "normaldc": "24",
-  "ls": "Shadow God's Anima",
-  "lsdescription": "Raises normal hit amount & greatly boosts BC, HC drop rate",
-  "lsnote": "Adds +1 hit to each hit count with 50% damage penalty & 15% boost",
-  "lstype": "Attack/Recovery/Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 2198,
+      "def": 1686,
+      "hp": 5220,
+      "rec": 1796
+    },
+    "_lord": {
+      "atk": 2753,
+      "def": 2102,
+      "hp": 6854,
+      "rec": 2250
+    },
+    "anima": {
+      "atk": 2753,
+      "def": 2102,
+      "hp max": 8044,
+      "hp min": 7449,
+      "rec max": 2131,
+      "rec min": 1893
+    },
+    "breaker": {
+      "atk max": 3110,
+      "atk min": 2872,
+      "def max": 1983,
+      "def min": 1745,
+      "hp": 6854,
+      "rec": 2250
+    },
+    "guardian": {
+      "atk": 2753,
+      "def max": 2459,
+      "def min": 2221,
+      "hp": 6854,
+      "rec max": 2250,
+      "rec min": 2012
+    },
+    "oracle": {
+      "atk": 2753,
+      "def max": 2102,
+      "def min": 1864,
+      "hp": 6854,
+      "rec max": 2726,
+      "rec min": 2488
+    }
+  },
+  "leader_skill": {
+    "desc": "Raises normal hit amount & greatly boosts BC, HC drop rate",
+    "effects": [
+      {
+        "extra hits dmg%": -50,
+        "hit increase/hit": 1,
+        "passive id": "37"
+      },
+      {
+        "bc drop rate% buff": 15,
+        "hc drop rate% buff": 15,
+        "passive id": "19"
+      }
+    ],
+    "id": "9602",
+    "name": "Shadow God's Anima"
+  },
+  "extra_skill": {
+    "desc": "Boosts BC, HC drop rate & boosts Spark damage when damage dealt has exceeded certain amount for next turn",
+    "effects": [
+      {
+        "bc drop rate% buff": 15,
+        "conditions": [],
+        "hc drop rate% buff": 15,
+        "passive id": "19",
+        "passive target": "self"
+      },
+      {
+        "buff": {
+          "buff turns (40)": "2",
+          "spark dmg% buff": 100
+        },
+        "conditions": [],
+        "damage dealt threshold buff activation": 100000,
+        "passive id": "80",
+        "passive target": "self"
+      }
+    ],
+    "id": "6500",
+    "name": "Bestowed Talent",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -436,14 +459,6 @@
     ],
     "name": "Noble Imperium"
   },
-  "bbdescription": "13 combo powerful Dark attack on all foes, raises normal hit amount for 3 turns & greatly boosts BC, HC drop rate",
-  "bbnote": "Adds +1 hit to each hit count & 30% drop rate",
-  "bbtype": "Support/Offense",
-  "bbhits": "13",
-  "bbaoe": "A",
-  "bbgauge": "25",
-  "bbdc": "13",
-  "bbmultiplier": "300",
   "sbb": {
     "damage frames": [
       {
@@ -824,14 +839,6 @@
     ],
     "name": "Shadow God Oath"
   },
-  "sbbdescription": "18 combo powerful Dark attack on all foes, raises normal hit amount and boosts Atk relative to Def for 3 turns",
-  "sbbnote": "Adds +1 hit to each hit count & 60% Def to Atk",
-  "sbbtype": "Support/Offense",
-  "sbbhits": "18",
-  "sbbaoe": "A",
-  "sbbgauge": "25",
-  "sbbdc": "18",
-  "sbbmultiplier": "540",
   "ubb": {
     "damage frames": [
       {
@@ -949,6 +956,189 @@
     ],
     "name": "Treasure: Sacred Dagger"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 180
+    },
+    "idle": {
+      "total number of frames": 78
+    },
+    "move": {
+      "total number of frames": 6
+    }
+  },
+  "category": 60770,
+  "cost": "42",
+  "damage frames": {
+    "frame times": [
+      77,
+      80,
+      83,
+      87,
+      91,
+      96,
+      101,
+      107
+    ],
+    "hit dmg% distribution": [
+      27,
+      18,
+      14,
+      12,
+      10,
+      8,
+      6,
+      5
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 8
+  },
+  "drop check count": 3,
+  "element": "dark",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 1056,
+  "imp": {
+    "max atk": "600",
+    "max def": "300",
+    "max hp": "1000",
+    "max rec": "400"
+  },
+  "kind": "normal",
+  "lord damage range": "2563~2863",
+  "movement": {
+    "attack": {
+      "move speed": 0.005,
+      "move speed type": "1",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.005,
+      "move speed type": "1",
+      "move type": "1"
+    }
+  },
+  "name": "Soul Covenant Charis",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Soul Covenant Charis",
+  "maxlv": "120",
+  "no": "1056",
+  "unitDisplayHomePosition_1W9CxaFK": "665,302,174,475",
+  "unitDisplayDetailPosition_6z54rgb3": "-203,-51,1100,908",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "-42,101,631,521,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-148,-294,1050,867",
+  "unitDisplaySummonPosition_KC3Jk8Br": "-42,101,631,521,0",
+  "unitDisplayHpPosition_3BpHN6VD": "-1,98",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "15000",
+  "sellCaution": false,
+  "effectFrames": "27:377:1,37:650:1,77:600210:1,79:600321:1,80:600262:1,91:600311:1,115:200084:1,71:120:1,74:120:1,77:120:1,81:120:1,85:120:1,90:120:1,95:120:1,101:120:1",
+  "evofrom": "60775",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "21",
+  "animation_attack": "180",
+  "animation_idle": "78",
+  "animation_move": "6",
+  "movespeed_attack": "0.005",
+  "movespeed_skill": "0.005",
+  "speedtype_attack": "1",
+  "speedtype_skill": "1",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "77, 80, 83, 87, 91, 96, 101, 107",
+  "normal_distribute": "27, 18, 14, 12, 10, 8, 6, 5",
+  "normal_totaldistr": "100",
+  "bb_frames": "78, 81, 84, 87, 90, 94, 98, 102, 106, 110, 114, 118, 122",
+  "bb_distribute": "19, 15, 10, 9, 7, 5, 5, 5, 5, 5, 5, 5, 5",
+  "bb_totaldistr": "100",
+  "sbb_frames": "30, 37, 44, 51, 78, 81, 84, 87, 90, 94, 98, 102, 106, 110, 114, 118, 122, 126",
+  "sbb_distribute": "5, 5, 5, 5, 15, 8, 7, 7, 7, 4, 4, 4, 4, 4, 4, 4, 4, 4",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "30, 36, 42, 48, 54, 60, 78, 81, 84, 87, 90, 94, 98, 102, 106, 110, 114, 118, 122, 126, 130",
+  "ubb_distribute": "4, 4, 4, 4, 4, 4, 13, 8, 6, 5, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "1",
+  "ubb_effectdelay": "1",
+  "description": "Wielder of the Sacred Dagger. It has been discovered during recent surveys conducted in Ishgria that even a handful of demons knew of the existence of the Sacred Treasures as well. Though there is evidence suggesting that one of these demons sought to collect all the treasures in order to destroy the world, myth has it that a young man bearing the Sacred Dagger prevented this from happening by giving birth to one nightmare after another. However, no information regarding the successors of Charis's family has been unearthed after this occurrence.",
+  "summon": "As the guardian of the Sacred<br>Treasures, I must fulfill my role.<br>That should be enough, right?",
+  "fusion": "Thank you...<br>But when I really think about it,<br>showing my gratitude is embarrassing.",
+  "evolution": "Err... Umm...<br>As a thanks to you,<br>I'll  work even harder...",
+  "hp_base": "5220",
+  "atk_base": "2198",
+  "def_base": "1686",
+  "rec_base": "1796",
+  "hp_lord": "6854",
+  "atk_lord": "2753",
+  "def_lord": "2102",
+  "rec_lord": "2250",
+  "hp_anima": "7746",
+  "rec_anima": "2012",
+  "atk_breaker": "2991",
+  "def_breaker": "1864",
+  "atk_guardian": "2753",
+  "def_guardian": "2340",
+  "rec_guardian": "2131",
+  "hp_oracle": "6854",
+  "def_oracle": "1983",
+  "rec_oracle": "2607",
+  "hp_bonus": "1000",
+  "atk_bonus": "600",
+  "def_bonus": "300",
+  "rec_bonus": "400",
+  "lordonly": "",
+  "combo_hits": "8",
+  "normaldc": "24",
+  "ls": "Shadow God's Anima",
+  "lsdescription": "Raises normal hit amount & greatly boosts BC, HC drop rate",
+  "lsnote": "Adds +1 hit to each hit count with 50% damage penalty & 15% boost",
+  "lstype": "Attack/Recovery/Brave Burst",
+  "bbdescription": "13 combo powerful Dark attack on all foes, raises normal hit amount for 3 turns & greatly boosts BC, HC drop rate",
+  "bbnote": "Adds +1 hit to each hit count & 30% drop rate",
+  "bbtype": "Support/Offense",
+  "bbhits": "13",
+  "bbaoe": "A",
+  "bbgauge": "25",
+  "bbdc": "13",
+  "bbmultiplier": "300",
+  "sbbdescription": "18 combo powerful Dark attack on all foes, raises normal hit amount and boosts Atk relative to Def for 3 turns",
+  "sbbnote": "Adds +1 hit to each hit count & 60% Def to Atk",
+  "sbbtype": "Support/Offense",
+  "sbbhits": "18",
+  "sbbaoe": "A",
+  "sbbgauge": "25",
+  "sbbdc": "18",
+  "sbbmultiplier": "540",
   "ubbdescription": "21 combo massive Dark attack on all foes, raises normal hit amount for 3 turns & greatly boosts BC, HC drop rate",
   "ubbnote": "Adds +2 hits to each hit count (+100% extra damage, 200% total) & 100% drop rate",
   "ubbtype": "Support/Offense",
@@ -961,112 +1151,10 @@
   "esitem": "",
   "esdescription": "Boosts BC, HC drop rate & boosts Spark damage when damage dealt has exceeded certain amount for next turn",
   "esnote": "15% BC/HC & 100% Spark after 100,000 damage is dealt",
-  "evofrom": "60775",
-  "evointo": "",
   "evomats1": "",
   "evomats2": "",
   "evomats3": "",
   "evomats4": "",
   "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 2198,
-      "def": 1686,
-      "hp": 5220,
-      "rec": 1796
-    },
-    "_lord": {
-      "atk": 2753,
-      "def": 2102,
-      "hp": 6854,
-      "rec": 2250
-    },
-    "anima": {
-      "atk": 2753,
-      "def": 2102,
-      "hp max": 8044,
-      "hp min": 7449,
-      "rec max": 2131,
-      "rec min": 1893
-    },
-    "breaker": {
-      "atk max": 3110,
-      "atk min": 2872,
-      "def max": 1983,
-      "def min": 1745,
-      "hp": 6854,
-      "rec": 2250
-    },
-    "guardian": {
-      "atk": 2753,
-      "def max": 2459,
-      "def min": 2221,
-      "hp": 6854,
-      "rec max": 2250,
-      "rec min": 2012
-    },
-    "oracle": {
-      "atk": 2753,
-      "def max": 2102,
-      "def min": 1864,
-      "hp": 6854,
-      "rec max": 2726,
-      "rec min": 2488
-    }
-  },
-  "leader_skill": {
-    "desc": "Raises normal hit amount & greatly boosts BC, HC drop rate",
-    "effects": [
-      {
-        "extra hits dmg%": -50,
-        "hit increase/hit": 1,
-        "passive id": "37"
-      },
-      {
-        "bc drop rate% buff": 15,
-        "hc drop rate% buff": 15,
-        "passive id": "19"
-      }
-    ],
-    "id": "9602",
-    "name": "Shadow God's Anima"
-  },
-  "extra_skill": {
-    "desc": "Boosts BC, HC drop rate & boosts Spark damage when damage dealt has exceeded certain amount for next turn",
-    "effects": [
-      {
-        "bc drop rate% buff": 15,
-        "conditions": [],
-        "hc drop rate% buff": 15,
-        "passive id": "19",
-        "passive target": "self"
-      },
-      {
-        "buff": {
-          "buff turns (40)": "2",
-          "spark dmg% buff": 100
-        },
-        "conditions": [],
-        "damage dealt threshold buff activation": 100000,
-        "passive id": "80",
-        "passive target": "self"
-      }
-    ],
-    "id": "6500",
-    "name": "Bestowed Talent",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "665,302,174,475",
-  "unitDisplayDetailPosition_6z54rgb3": "-203,-51,1100,908",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "-42,101,631,521,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-148,-294,1050,867",
-  "unitDisplaySummonPosition_KC3Jk8Br": "-42,101,631,521,0",
-  "unitDisplayHpPosition_3BpHN6VD": "-1,98",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "15000",
-  "sellCaution": false,
-  "effectFrames": "27:377:1,37:650:1,77:600210:1,79:600321:1,80:600262:1,91:600311:1,115:200084:1,71:120:1,74:120:1,77:120:1,81:120:1,85:120:1,90:120:1,95:120:1,101:120:1"
+  "evoitem": ""
 }

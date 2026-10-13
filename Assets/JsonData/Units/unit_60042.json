@@ -1,61 +1,63 @@
 {
   "id": "60042",
-  "unitName": "Dark Arts Lily",
-  "no": "286",
-  "element": "Dark",
-  "rarity": "★★★",
-  "cost": "6",
-  "maxlv": "40",
-  "basexp": "10",
-  "gender": "F",
-  "ai": "6",
-  "animation_attack": "104",
-  "animation_idle": "52",
-  "animation_move": "52",
-  "movespeed_attack": "8",
-  "movespeed_skill": "8",
-  "speedtype_attack": "1",
-  "speedtype_skill": "1",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "74, 79, 84, 89, 94",
-  "normal_distribute": "20, 20, 20, 20, 20",
-  "normal_totaldistr": "100",
-  "bb_frames": "74, 79, 84, 89, 94, 99",
-  "bb_distribute": "15, 15, 15, 15, 20, 20",
-  "bb_totaldistr": "100",
-  "description": "A sorceress from the ruined Bariura Empire. Her powers of sorcery were evolved far beyond any other sorcerer or magician. However, as her power increased, those around her moved farther and farther away, but without pause she continued to devote herself to her research. Her behavior deteriorated as she gave up relationships for power, and soon even within the empire she was seen as an outsider.",
-  "summon": "What a troublesome<br>Summoner to call upon me. <br>Go ahead, just throw me away.",
-  "fusion": "Fusing to me means you<br>want to use me, correct?<br>A rare one, you are.",
-  "evolution": "Evolution, what now?<br>Didn't you have anything <br>better to do with your time?",
-  "hp_base": "2137",
-  "atk_base": "590",
-  "def_base": "663",
-  "rec_base": "718",
-  "hp_lord": "3741",
-  "atk_lord": "716",
-  "def_lord": "958",
-  "rec_lord": "1133",
-  "hp_anima": "4034",
-  "rec_anima": "1055",
-  "atk_breaker": "794",
-  "def_breaker": "880",
-  "atk_guardian": "638",
-  "def_guardian": "1036",
-  "rec_guardian": "1094",
-  "def_oracle": "919",
-  "hp_oracle": "3624",
-  "rec_oracle": "1250",
-  "hp_bonus": "300",
-  "atk_bonus": "160",
-  "def_bonus": "80",
-  "rec_bonus": "120",
-  "lordonly": "",
-  "combo_hits": "5",
-  "normaldc": "10",
-  "ls": "Dark Protection",
-  "lsdescription": "10% reduction in damage from Dark Types",
-  "lstype": "Defense",
+  "stats": {
+    "_base": {
+      "atk": 590,
+      "def": 663,
+      "hp": 2137,
+      "rec": 718
+    },
+    "_lord": {
+      "atk": 716,
+      "def": 958,
+      "hp": 3741,
+      "rec": 1133
+    },
+    "anima": {
+      "atk": 716,
+      "def": 958,
+      "hp max": 4131,
+      "hp min": 3936,
+      "rec max": 1094,
+      "rec min": 1016
+    },
+    "breaker": {
+      "atk max": 833,
+      "atk min": 755,
+      "def max": 919,
+      "def min": 841,
+      "hp": 3741,
+      "rec": 1133
+    },
+    "guardian": {
+      "atk": 716,
+      "def max": 1075,
+      "def min": 997,
+      "hp": 3741,
+      "rec max": 1133,
+      "rec min": 1055
+    },
+    "oracle": {
+      "atk": 716,
+      "def max": 958,
+      "def min": 880,
+      "hp": 3741,
+      "rec max": 1289,
+      "rec min": 1211
+    }
+  },
+  "leader_skill": {
+    "desc": "10% reduction in damage from Dark Types",
+    "effects": [
+      {
+        "dark resist%": 10,
+        "passive id": "5"
+      }
+    ],
+    "id": "510",
+    "name": "Dark Protection"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -300,94 +302,91 @@
     ],
     "name": "Grand Despair"
   },
-  "bbdescription": "6 combo powerful Dark attack on single enemy & probable Curse effect",
-  "bbnote": "80% chance",
-  "bbtype": "Offense",
-  "bbhits": "6",
-  "bbaoe": "1",
-  "bbgauge": "15",
-  "bbdc": "6",
-  "bbmultiplier": "115",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "60041",
-  "evointo": "",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 590,
-      "def": 663,
-      "hp": 2137,
-      "rec": 718
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 100.0,
+      "target conditions": "hp_25pr_under",
+      "target type": "party"
     },
-    "_lord": {
-      "atk": 716,
-      "def": 958,
-      "hp": 3741,
-      "rec": 1133
+    {
+      "action": "attack",
+      "chance%": 50.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 716,
-      "def": 958,
-      "hp max": 4131,
-      "hp min": 3936,
-      "rec max": 1094,
-      "rec min": 1016
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 104
     },
-    "breaker": {
-      "atk max": 833,
-      "atk min": 755,
-      "def max": 919,
-      "def min": 841,
-      "hp": 3741,
-      "rec": 1133
+    "idle": {
+      "total number of frames": 52
     },
-    "guardian": {
-      "atk": 716,
-      "def max": 1075,
-      "def min": 997,
-      "hp": 3741,
-      "rec max": 1133,
-      "rec min": 1055
-    },
-    "oracle": {
-      "atk": 716,
-      "def max": 958,
-      "def min": 880,
-      "hp": 3741,
-      "rec max": 1289,
-      "rec min": 1211
+    "move": {
+      "total number of frames": 52
     }
   },
-  "leader_skill": {
-    "desc": "10% reduction in damage from Dark Types",
-    "effects": [
-      {
-        "dark resist%": 10,
-        "passive id": "5"
-      }
+  "category": 60040,
+  "cost": "6",
+  "damage frames": {
+    "frame times": [
+      74,
+      79,
+      84,
+      89,
+      94
     ],
-    "id": "510",
-    "name": "Dark Protection"
+    "hit dmg% distribution": [
+      20,
+      20,
+      20,
+      20,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 5
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "dark",
+  "exp_pattern": 10,
+  "gender": "female",
+  "getting type": "farmable",
+  "guide_id": 286,
+  "imp": {
+    "max atk": "160",
+    "max def": "80",
+    "max hp": "300",
+    "max rec": "120"
+  },
+  "kind": "normal",
+  "lord damage range": "666~744",
+  "movement": {
+    "attack": {
+      "move speed": 8,
+      "move speed type": "1",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 8,
+      "move speed type": "1",
+      "move type": "3"
+    }
+  },
+  "name": "Dark Arts Lily",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "Dark Arts Lily",
+  "maxlv": "40",
+  "no": "286",
   "unitDisplayHomePosition_1W9CxaFK": "287,160,200,544",
   "unitDisplayDetailPosition_6z54rgb3": "45,-60,930,862",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "166,293,342,324,0",
@@ -397,5 +396,83 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "1000",
   "sellCaution": false,
-  "effectFrames": "29:370:1,83:360:1"
+  "effectFrames": "29:370:1,83:360:1",
+  "evofrom": "60041",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "10",
+  "animation_attack": "104",
+  "animation_idle": "52",
+  "animation_move": "52",
+  "movespeed_attack": "8",
+  "movespeed_skill": "8",
+  "speedtype_attack": "1",
+  "speedtype_skill": "1",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "74, 79, 84, 89, 94",
+  "normal_distribute": "20, 20, 20, 20, 20",
+  "normal_totaldistr": "100",
+  "bb_frames": "74, 79, 84, 89, 94, 99",
+  "bb_distribute": "15, 15, 15, 15, 20, 20",
+  "bb_totaldistr": "100",
+  "description": "A sorceress from the ruined Bariura Empire. Her powers of sorcery were evolved far beyond any other sorcerer or magician. However, as her power increased, those around her moved farther and farther away, but without pause she continued to devote herself to her research. Her behavior deteriorated as she gave up relationships for power, and soon even within the empire she was seen as an outsider.",
+  "summon": "What a troublesome<br>Summoner to call upon me. <br>Go ahead, just throw me away.",
+  "fusion": "Fusing to me means you<br>want to use me, correct?<br>A rare one, you are.",
+  "evolution": "Evolution, what now?<br>Didn't you have anything <br>better to do with your time?",
+  "hp_base": "2137",
+  "atk_base": "590",
+  "def_base": "663",
+  "rec_base": "718",
+  "hp_lord": "3741",
+  "atk_lord": "716",
+  "def_lord": "958",
+  "rec_lord": "1133",
+  "hp_anima": "4034",
+  "rec_anima": "1055",
+  "atk_breaker": "794",
+  "def_breaker": "880",
+  "atk_guardian": "638",
+  "def_guardian": "1036",
+  "rec_guardian": "1094",
+  "def_oracle": "919",
+  "hp_oracle": "3624",
+  "rec_oracle": "1250",
+  "hp_bonus": "300",
+  "atk_bonus": "160",
+  "def_bonus": "80",
+  "rec_bonus": "120",
+  "lordonly": "",
+  "combo_hits": "5",
+  "normaldc": "10",
+  "ls": "Dark Protection",
+  "lsdescription": "10% reduction in damage from Dark Types",
+  "lstype": "Defense",
+  "bbdescription": "6 combo powerful Dark attack on single enemy & probable Curse effect",
+  "bbnote": "80% chance",
+  "bbtype": "Offense",
+  "bbhits": "6",
+  "bbaoe": "1",
+  "bbgauge": "15",
+  "bbdc": "6",
+  "bbmultiplier": "115",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "",
+  "evomats2": "",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": ""
 }

@@ -1,61 +1,70 @@
 {
   "id": "830325",
-  "unitName": "Deranged Pugilist Nyala",
-  "no": "8202",
-  "element": "Earth",
-  "rarity": "★★★★★",
-  "cost": "21",
-  "maxlv": "80",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "3",
-  "animation_attack": "Unsupported",
-  "animation_idle": "Unsupported",
-  "animation_move": "Unsupported",
-  "movespeed_attack": "2",
-  "movespeed_skill": "2",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "2",
-  "movetype_skill": "2",
-  "normal_frames": "17, 78, 84, 158, 167, 173",
-  "normal_distribute": "18, 11, 6, 40, 15, 10",
-  "normal_totaldistr": "100",
-  "bb_frames": "17, 78, 84, 90, 158, 164, 170, 176",
-  "bb_distribute": "15, 10, 6, 4, 40, 10, 8, 7",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "description": "A disciple of the Morokai Overlord Azurai. The ravages of war brought forth great pain and suffering for many. Nyala was one such unfortunate orphan who lost her parents in the endless battles between the Morokai and Deva. Were it not for the beaming smile and the warm touch of her little sister's tiny hands, Nyala would've given in to despair. She had a duty to protect and raise the person who was her last ray of sunshine in a god-forsaken world. Unfortunately for them, fairy tales did not exist in Baldemar, as they lived in a world of strife and anarchy, where the strong fed upon the corpses of the weak. Slavers stormed into their hut one night and seized her. No matter how hard she fought and screamed, she could not resist the slavers. The last memory Nyala had of her little sister was of her sobbing alone and helpless. It was then that her small fragment of hope shattered as her mind and soul plunged into chaos.",
-  "summon": "Have you come to take me away?<br>No...please, leave us be!<br>She's all I have left!",
-  "fusion": "No... Leave me be...<br>You cannot help me...<br>No one can...",
-  "evolution": "",
-  "hp_base": "3396",
-  "atk_base": "1475",
-  "def_base": "1266",
-  "rec_base": "1245",
-  "hp_lord": "4852",
-  "atk_lord": "2108",
-  "def_lord": "1809",
-  "rec_lord": "1778",
-  "hp_anima": "5444",
-  "rec_anima": "1620",
-  "atk_breaker": "2266",
-  "def_breaker": "1651",
-  "def_guardian": "1967",
-  "rec_guardian": "1699",
-  "def_oracle": "1730",
-  "rec_oracle": "2015",
-  "hp_bonus": "500",
-  "atk_bonus": "200",
-  "def_bonus": "260",
-  "rec_bonus": "140",
-  "lordonly": "",
-  "combo_hits": "6",
-  "normaldc": "36",
-  "ls": "Qi Master's Might",
-  "lsdescription": "20% boost to max HP, Atk & boosts BB Atk",
-  "lsnote": "50% boost",
-  "lstype": "Hit Points/Attack",
+  "stats": {
+    "_base": {
+      "atk": 1475,
+      "def": 1266,
+      "hp": 3396,
+      "rec": 1245
+    },
+    "_lord": {
+      "atk": 2108,
+      "def": 1809,
+      "hp": 4852,
+      "rec": 1778
+    },
+    "anima": {
+      "atk": 2108,
+      "def": 1809,
+      "hp max": 5642,
+      "hp min": 5247,
+      "rec max": 1699,
+      "rec min": 1541
+    },
+    "breaker": {
+      "atk max": 2345,
+      "atk min": 2187,
+      "def max": 1730,
+      "def min": 1572,
+      "hp": 4852,
+      "rec": 1778
+    },
+    "guardian": {
+      "atk": 2108,
+      "def max": 2046,
+      "def min": 1888,
+      "hp": 4852,
+      "rec max": 1778,
+      "rec min": 1620
+    },
+    "oracle": {
+      "atk": 2108,
+      "def max": 1809,
+      "def min": 1651,
+      "hp": 4852,
+      "rec max": 2094,
+      "rec min": 1936
+    }
+  },
+  "leader_skill": {
+    "desc": "20% boost to max HP, Atk & boosts BB Atk",
+    "effects": [
+      {
+        "atk% buff": 20,
+        "hp% buff": 20,
+        "passive id": "1"
+      },
+      {
+        "bb atk% buff": 50,
+        "passive id": "64",
+        "sbb atk% buff": 50,
+        "ubb atk% buff": 50
+      }
+    ],
+    "id": "801237",
+    "name": "Qi Master's Might"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -426,6 +435,175 @@
     ],
     "name": "Surging Tiger Fist"
   },
+  "sbb": {},
+  "ubb": {},
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "error": "sam file not supported"
+  },
+  "category": 830320,
+  "cost": "21",
+  "damage frames": {
+    "frame times": [
+      17,
+      78,
+      84,
+      158,
+      167,
+      173
+    ],
+    "hit dmg% distribution": [
+      18,
+      11,
+      6,
+      40,
+      15,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 6
+  },
+  "drop check count": 6,
+  "element": "earth",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 8202,
+  "imp": {
+    "max atk": "200",
+    "max def": "260",
+    "max hp": "500",
+    "max rec": "140"
+  },
+  "kind": "normal",
+  "lord damage range": "1962~2192",
+  "movement": {
+    "attack": {
+      "move speed": 2,
+      "move speed type": "4",
+      "move type": "2"
+    },
+    "skill": {
+      "move speed": 2,
+      "move speed type": "4",
+      "move type": "2"
+    }
+  },
+  "name": "Deranged Pugilist Nyala",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Deranged Pugilist Nyala",
+  "maxlv": "80",
+  "no": "8202",
+  "unitDisplayHomePosition_1W9CxaFK": "311,64,140,382",
+  "unitDisplayDetailPosition_6z54rgb3": "-38,129,978,756",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "64,248,508,393,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-26,-84,978,756",
+  "unitDisplaySummonPosition_KC3Jk8Br": "64,248,508,393,0",
+  "unitDisplayHpPosition_3BpHN6VD": "0,-25",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "5000",
+  "sellCaution": false,
+  "effectFrames": "17:8000656:1,18:330455:1,82:330446:1,76:330451:1,66:300206:1,82:300254:1,89:300254:1,146:330540:1,151:330540:1,155:330672:1,160:330672:1,158:330411:1,163:330581:1",
+  "evofrom": "",
+  "evointo": "830326",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "830034",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "Unsupported",
+  "animation_idle": "Unsupported",
+  "animation_move": "Unsupported",
+  "movespeed_attack": "2",
+  "movespeed_skill": "2",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "2",
+  "movetype_skill": "2",
+  "normal_frames": "17, 78, 84, 158, 167, 173",
+  "normal_distribute": "18, 11, 6, 40, 15, 10",
+  "normal_totaldistr": "100",
+  "bb_frames": "17, 78, 84, 90, 158, 164, 170, 176",
+  "bb_distribute": "15, 10, 6, 4, 40, 10, 8, 7",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "description": "A disciple of the Morokai Overlord Azurai. The ravages of war brought forth great pain and suffering for many. Nyala was one such unfortunate orphan who lost her parents in the endless battles between the Morokai and Deva. Were it not for the beaming smile and the warm touch of her little sister's tiny hands, Nyala would've given in to despair. She had a duty to protect and raise the person who was her last ray of sunshine in a god-forsaken world. Unfortunately for them, fairy tales did not exist in Baldemar, as they lived in a world of strife and anarchy, where the strong fed upon the corpses of the weak. Slavers stormed into their hut one night and seized her. No matter how hard she fought and screamed, she could not resist the slavers. The last memory Nyala had of her little sister was of her sobbing alone and helpless. It was then that her small fragment of hope shattered as her mind and soul plunged into chaos.",
+  "summon": "Have you come to take me away?<br>No...please, leave us be!<br>She's all I have left!",
+  "fusion": "No... Leave me be...<br>You cannot help me...<br>No one can...",
+  "evolution": "",
+  "hp_base": "3396",
+  "atk_base": "1475",
+  "def_base": "1266",
+  "rec_base": "1245",
+  "hp_lord": "4852",
+  "atk_lord": "2108",
+  "def_lord": "1809",
+  "rec_lord": "1778",
+  "hp_anima": "5444",
+  "rec_anima": "1620",
+  "atk_breaker": "2266",
+  "def_breaker": "1651",
+  "def_guardian": "1967",
+  "rec_guardian": "1699",
+  "def_oracle": "1730",
+  "rec_oracle": "2015",
+  "hp_bonus": "500",
+  "atk_bonus": "200",
+  "def_bonus": "260",
+  "rec_bonus": "140",
+  "lordonly": "",
+  "combo_hits": "6",
+  "normaldc": "36",
+  "ls": "Qi Master's Might",
+  "lsdescription": "20% boost to max HP, Atk & boosts BB Atk",
+  "lsnote": "50% boost",
+  "lstype": "Hit Points/Attack",
   "bbdescription": "8 combo powerful Earth attack on single foe, probable Injury, Paralysis & boosts BB Atk",
   "bbnote": "70% chance to inflict status ailments, 150% boost to BB Atk",
   "bbtype": "Support/Offense",
@@ -438,7 +616,6 @@
   "bbaoe2": "",
   "bbdc2": "",
   "bbmultiplier2": "",
-  "sbb": {},
   "sbbdescription": "",
   "sbbnote": "",
   "sbbtype": "",
@@ -451,7 +628,6 @@
   "sbbaoe2": "",
   "sbbdc2": "",
   "sbbmultiplier2": "",
-  "ubb": {},
   "ubbdescription": "",
   "ubbnote": "",
   "ubbtype": "",
@@ -468,8 +644,6 @@
   "esitem": "",
   "esdescription": "",
   "esnote": "",
-  "evofrom": "",
-  "evointo": "830326",
   "evomats1": "50354",
   "evomats2": "30133",
   "evomats3": "60144",
@@ -479,81 +653,5 @@
   "evomats7": "",
   "evomats8": "",
   "evomats9": "",
-  "evoitem": "",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 1475,
-      "def": 1266,
-      "hp": 3396,
-      "rec": 1245
-    },
-    "_lord": {
-      "atk": 2108,
-      "def": 1809,
-      "hp": 4852,
-      "rec": 1778
-    },
-    "anima": {
-      "atk": 2108,
-      "def": 1809,
-      "hp max": 5642,
-      "hp min": 5247,
-      "rec max": 1699,
-      "rec min": 1541
-    },
-    "breaker": {
-      "atk max": 2345,
-      "atk min": 2187,
-      "def max": 1730,
-      "def min": 1572,
-      "hp": 4852,
-      "rec": 1778
-    },
-    "guardian": {
-      "atk": 2108,
-      "def max": 2046,
-      "def min": 1888,
-      "hp": 4852,
-      "rec max": 1778,
-      "rec min": 1620
-    },
-    "oracle": {
-      "atk": 2108,
-      "def max": 1809,
-      "def min": 1651,
-      "hp": 4852,
-      "rec max": 2094,
-      "rec min": 1936
-    }
-  },
-  "leader_skill": {
-    "desc": "20% boost to max HP, Atk & boosts BB Atk",
-    "effects": [
-      {
-        "atk% buff": 20,
-        "hp% buff": 20,
-        "passive id": "1"
-      },
-      {
-        "bb atk% buff": 50,
-        "passive id": "64",
-        "sbb atk% buff": 50,
-        "ubb atk% buff": 50
-      }
-    ],
-    "id": "801237",
-    "name": "Qi Master's Might"
-  },
-  "extra_skill": {},
-  "unitDisplayHomePosition_1W9CxaFK": "311,64,140,382",
-  "unitDisplayDetailPosition_6z54rgb3": "-38,129,978,756",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "64,248,508,393,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-26,-84,978,756",
-  "unitDisplaySummonPosition_KC3Jk8Br": "64,248,508,393,0",
-  "unitDisplayHpPosition_3BpHN6VD": "0,-25",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "5000",
-  "sellCaution": false,
-  "effectFrames": "17:8000656:1,18:330455:1,82:330446:1,76:330451:1,66:300206:1,82:300254:1,89:300254:1,146:330540:1,151:330540:1,155:330672:1,160:330672:1,158:330411:1,163:330581:1"
+  "evoitem": ""
 }

@@ -1,52 +1,69 @@
 {
   "id": "30275",
-  "unitName": "Gravion",
-  "no": "490",
-  "element": "Earth",
-  "rarity": "★★★★★★",
-  "cost": "25",
-  "maxlv": "100",
-  "basexp": "21",
-  "gender": "N",
-  "ai": "2",
-  "animation_attack": "223",
-  "animation_idle": "96",
-  "animation_move": "112",
-  "movespeed_attack": "0.005",
-  "movespeed_skill": "0.005",
-  "speedtype_attack": "1",
-  "speedtype_skill": "1",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "description": "An enchanted puppet with immense magical power. Predicting the disastrous beast would come back, Lira, the puppet's master, studied her father's cherished book of magic and quickly began upgrading the puppet. However, these upgrades weren't to be used against the disastrous beast, but against the god army which had invaded in an attempt to destroy the humans. The fearsome stone giant protected the humans from the gods' attack and came to be known as one of humanity's saviors, though there are few who know who commanded it to protect the people.",
-  "summon": "Lira...command...<br>Awaiting...input...instructions.<br>Command...recognized.",
-  "fusion": "New...circuit...<br>Magic...supply. Confirmed.<br>Output...increased.",
-  "evolution": "Upgrade...complete.<br>...position. Activate...<br>Vitality...input...",
-  "hp_base": "4676",
-  "atk_base": "1620",
-  "def_base": "1463",
-  "rec_base": "704",
-  "hp_lord": "6173",
-  "atk_lord": "2182",
-  "def_lord": "1836",
-  "rec_lord": "1245",
-  "hp_anima": "6915",
-  "rec_anima": "1047",
-  "atk_breaker": "2380",
-  "def_breaker": "1638",
-  "atk_guardian": "1984",
-  "def_guardian": "2034",
-  "hp_oracle": "5430",
-  "rec_oracle": "1443",
-  "hp_bonus": "750",
-  "atk_bonus": "400",
-  "def_bonus": "200",
-  "rec_bonus": "300",
-  "lordonly": "",
-  "combo_hits": "7",
-  "ls": "Immersing Holiness",
-  "lsdescription": "20% boost to Def and HP & chance of small reduction in damage taken",
-  "lstype": "Hit Points/Defense",
+  "stats": {
+    "_base": {
+      "atk": 1620,
+      "def": 1463,
+      "hp": 4676,
+      "rec": 704
+    },
+    "_lord": {
+      "atk": 2182,
+      "def": 1836,
+      "hp": 6173,
+      "rec": 1245
+    },
+    "anima": {
+      "atk": 2182,
+      "def": 1836,
+      "hp max": 7163,
+      "hp min": 6668,
+      "rec max": 1146,
+      "rec min": 948
+    },
+    "breaker": {
+      "atk max": 2479,
+      "atk min": 2281,
+      "def max": 1737,
+      "def min": 1539,
+      "hp": 6173,
+      "rec": 1245
+    },
+    "guardian": {
+      "atk": 2182,
+      "def max": 2133,
+      "def min": 1935,
+      "hp": 6173,
+      "rec max": 1245,
+      "rec min": 1047
+    },
+    "oracle": {
+      "atk": 2182,
+      "def max": 1836,
+      "def min": 1638,
+      "hp": 6173,
+      "rec max": 1641,
+      "rec min": 1443
+    }
+  },
+  "leader_skill": {
+    "desc": "20% boost to Def and HP & chance of small reduction in damage taken",
+    "effects": [
+      {
+        "def% buff": 20,
+        "hp% buff": 20,
+        "passive id": "1"
+      },
+      {
+        "dmg reduction chance%": 10,
+        "dmg reduction%": 20,
+        "passive id": "14"
+      }
+    ],
+    "id": "4302",
+    "name": "Immersing Holiness"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -207,11 +224,6 @@
     ],
     "name": "Gravion Arm"
   },
-  "bbdescription": "10 combo powerful Earth attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "10",
-  "bbaoe": "A",
-  "bbgauge": "45~36",
   "sbb": {
     "damage frames": [
       {
@@ -376,91 +388,94 @@
     ],
     "name": "Geo Canon"
   },
-  "sbbdescription": "12 combo massive Earth attack on all enemies",
-  "sbbtype": "Offense",
-  "sbbhits": "12",
-  "sbbaoe": "A",
-  "sbbgauge": "55~43",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "30274",
-  "evointo": "",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 1620,
-      "def": 1463,
-      "hp": 4676,
-      "rec": 704
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 2182,
-      "def": 1836,
-      "hp": 6173,
-      "rec": 1245
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 2182,
-      "def": 1836,
-      "hp max": 7163,
-      "hp min": 6668,
-      "rec max": 1146,
-      "rec min": 948
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 223
     },
-    "breaker": {
-      "atk max": 2479,
-      "atk min": 2281,
-      "def max": 1737,
-      "def min": 1539,
-      "hp": 6173,
-      "rec": 1245
+    "idle": {
+      "total number of frames": 96
     },
-    "guardian": {
-      "atk": 2182,
-      "def max": 2133,
-      "def min": 1935,
-      "hp": 6173,
-      "rec max": 1245,
-      "rec min": 1047
-    },
-    "oracle": {
-      "atk": 2182,
-      "def max": 1836,
-      "def min": 1638,
-      "hp": 6173,
-      "rec max": 1641,
-      "rec min": 1443
+    "move": {
+      "total number of frames": 112
     }
   },
-  "leader_skill": {
-    "desc": "20% boost to Def and HP & chance of small reduction in damage taken",
-    "effects": [
-      {
-        "def% buff": 20,
-        "hp% buff": 20,
-        "passive id": "1"
-      },
-      {
-        "dmg reduction chance%": 10,
-        "dmg reduction%": 20,
-        "passive id": "14"
-      }
+  "category": 30270,
+  "cost": "25",
+  "damage frames": {
+    "frame times": [
+      49,
+      79,
+      145,
+      150,
+      155,
+      160,
+      165
     ],
-    "id": "4302",
-    "name": "Immersing Holiness"
+    "hit dmg% distribution": [
+      25,
+      25,
+      10,
+      10,
+      10,
+      10,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 7
   },
-  "extra_skill": {},
+  "drop check count": 4,
+  "element": "earth",
+  "exp_pattern": 20,
+  "gender": "other",
+  "getting type": "rare summon",
+  "guide_id": 490,
+  "imp": {
+    "max atk": "400",
+    "max def": "200",
+    "max hp": "750",
+    "max rec": "300"
+  },
+  "kind": "normal",
+  "lord damage range": "2031~2269",
+  "movement": {
+    "attack": {
+      "move speed": 0.005,
+      "move speed type": "1",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.005,
+      "move speed type": "1",
+      "move type": "1"
+    }
+  },
+  "name": "Gravion",
+  "rarity": "6",
+  "sell caution": false,
+  "unitName": "Gravion",
+  "maxlv": "100",
+  "no": "490",
   "unitDisplayHomePosition_1W9CxaFK": "239,168,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "63,44,865,790",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "164,293,318,324,0",
@@ -470,5 +485,115 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "8000",
   "sellCaution": false,
-  "effectFrames": "43:138:1,73:138:1,49:300110:1,79:300110:1,139:330371:1,150:300121:1,155:600220:1,160:300121:1,165:600220:1,43:680:1,130:600381:1"
+  "effectFrames": "43:138:1,73:138:1,49:300110:1,79:300110:1,139:330371:1,150:300121:1,155:600220:1,160:300121:1,165:600220:1,43:680:1,130:600381:1",
+  "evofrom": "30274",
+  "evointo": "30276",
+  "evozelcost": "1500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "30334",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30191",
+      "count": 1
+    },
+    {
+      "type": "2",
+      "id": "110100",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "223",
+  "animation_idle": "96",
+  "animation_move": "112",
+  "movespeed_attack": "0.005",
+  "movespeed_skill": "0.005",
+  "speedtype_attack": "1",
+  "speedtype_skill": "1",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "49, 79, 145, 150, 155, 160, 165",
+  "normal_distribute": "25, 25, 10, 10, 10, 10, 10",
+  "normal_totaldistr": "100",
+  "bb_frames": "49, 79, 145, 150, 155, 160, 165, 175, 185, 195",
+  "bb_distribute": "18, 18, 8, 8, 8, 8, 8, 8, 8, 8",
+  "bb_totaldistr": "100",
+  "sbb_frames": "49, 53, 79, 83, 145, 155, 165, 175, 185, 195, 205, 215",
+  "sbb_distribute": "15, 15, 15, 15, 5, 5, 5, 5, 5, 5, 5, 5",
+  "sbb_totaldistr": "100",
+  "description": "An enchanted puppet with immense magical power. Predicting the disastrous beast would come back, Lira, the puppet's master, studied her father's cherished book of magic and quickly began upgrading the puppet. However, these upgrades weren't to be used against the disastrous beast, but against the god army which had invaded in an attempt to destroy the humans. The fearsome stone giant protected the humans from the gods' attack and came to be known as one of humanity's saviors, though there are few who know who commanded it to protect the people.",
+  "summon": "Lira...command...<br>Awaiting...input...instructions.<br>Command...recognized.",
+  "fusion": "New...circuit...<br>Magic...supply. Confirmed.<br>Output...increased.",
+  "evolution": "Upgrade...complete.<br>...position. Activate...<br>Vitality...input...",
+  "hp_base": "4676",
+  "atk_base": "1620",
+  "def_base": "1463",
+  "rec_base": "704",
+  "hp_lord": "6173",
+  "atk_lord": "2182",
+  "def_lord": "1836",
+  "rec_lord": "1245",
+  "hp_anima": "6916",
+  "rec_anima": "1047",
+  "atk_breaker": "2380",
+  "def_breaker": "1638",
+  "atk_guardian": "1984",
+  "def_guardian": "2034",
+  "rec_guardian": "1146",
+  "def_oracle": "1737",
+  "hp_oracle": "5876",
+  "rec_oracle": "1542",
+  "hp_bonus": "750",
+  "atk_bonus": "400",
+  "def_bonus": "200",
+  "rec_bonus": "300",
+  "lordonly": "",
+  "combo_hits": "7",
+  "normaldc": "28",
+  "ls": "Immersing Holiness",
+  "lsdescription": "20% boost to Def and HP & chance of small reduction in damage taken",
+  "lsnote": "10% chance to reduce 20% of damage taken",
+  "lstype": "Hit Points/Defense",
+  "bbdescription": "10 combo powerful Earth attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "10",
+  "bbaoe": "A",
+  "bbgauge": "35",
+  "bbdc": "20",
+  "bbmultiplier": "380",
+  "sbbdescription": "12 combo massive Earth attack on all enemies",
+  "sbbtype": "Offense",
+  "sbbhits": "12",
+  "sbbaoe": "A",
+  "sbbgauge": "31",
+  "sbbdc": "24",
+  "sbbmultiplier": "950",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "30334",
+  "evomats2": "50354",
+  "evomats3": "30133",
+  "evomats4": "30191",
+  "evomats5": "",
+  "evoitem": "Legend Stone"
 }

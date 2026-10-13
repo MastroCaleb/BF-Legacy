@@ -1,68 +1,68 @@
 {
   "id": "10805",
-  "unitName": "Scalding Iron Gildorf",
-  "no": "1237",
-  "element": "Fire",
-  "rarity": "★★★★★★",
-  "cost": "30",
-  "maxlv": "100",
-  "basexp": "21",
-  "gender": "N",
-  "ai": "2",
-  "animation_attack": "79",
-  "animation_idle": "64",
-  "animation_move": "5",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "11, 14, 17, 31, 34, 37, 40, 43",
-  "normal_distribute": "14, 12, 10, 18, 15, 12, 10, 9",
-  "normal_totaldistr": "100",
-  "bb_frames": "11, 14, 17, 20, 23, 31, 34, 37, 40, 43, 46",
-  "bb_distribute": "10, 9, 7, 7, 5, 15, 13, 10, 10, 8, 6",
-  "bb_totaldistr": "100",
-  "sbb_frames": "31",
-  "sbb_distribute": "100",
-  "sbb_totaldistr": "100",
-  "sbb2_frames": "11",
-  "sbb2_distribute": "100",
-  "sbb2_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "1",
-  "sbb2_effectdelay": "1",
-  "description": "A weapon of mass destruction created by an otherworldly deity. On learning that Klaus and Isterio were being resurrected in another world after being slain by Gildorf, his master followed them to Elgaia, accompanied by Gildorf. The two primary gods awaited them there, having been resurrected by humans. However, the two were changed, having been transformed by otherworldly technologies. A scientist attempted to upgrade Gildorf with Elgaian technology when he struggled to stop the rampaging deities.",
-  "summon": "I am a god-slaying weapon.<br>I destroy the indestructible.<br>Destruction is a part of me.",
-  "fusion": "Energy source confirmed.<br>Firepower upgrade confirmed.<br>Maximum capacity not achieved.",
-  "evolution": "New device confirmed.<br>This power will<br>allow greater destruction.",
-  "hp_base": "4161",
-  "atk_base": "1808",
-  "def_base": "1603",
-  "rec_base": "1342",
-  "hp_lord": "5996",
-  "atk_lord": "2450",
-  "def_lord": "2166",
-  "rec_lord": "1866",
-  "hp_anima": "6738",
-  "rec_anima": "1618",
-  "atk_breaker": "2648",
-  "def_breaker": "1968",
-  "def_guardian": "2364",
-  "rec_guardian": "1717",
-  "def_oracle": "2067",
-  "rec_oracle": "2113",
-  "hp_bonus": "750",
-  "atk_bonus": "400",
-  "def_bonus": "200",
-  "rec_bonus": "300",
-  "lordonly": "",
-  "combo_hits": "8",
-  "normaldc": "32",
-  "ls": "Divine Steel's Power",
-  "lsdescription": "30% boost to Atk, max HP & 50% boost to Spark damage",
-  "lstype": "Attack/Hit Points",
+  "stats": {
+    "_base": {
+      "atk": 1808,
+      "def": 1603,
+      "hp": 4161,
+      "rec": 1342
+    },
+    "_lord": {
+      "atk": 2450,
+      "def": 2166,
+      "hp": 5996,
+      "rec": 1816
+    },
+    "anima": {
+      "atk": 2450,
+      "def": 2166,
+      "hp max": 6986,
+      "hp min": 6491,
+      "rec max": 1717,
+      "rec min": 1519
+    },
+    "breaker": {
+      "atk max": 2747,
+      "atk min": 2549,
+      "def max": 2067,
+      "def min": 1869,
+      "hp": 5996,
+      "rec": 1816
+    },
+    "guardian": {
+      "atk": 2450,
+      "def max": 2463,
+      "def min": 2265,
+      "hp": 5996,
+      "rec max": 1816,
+      "rec min": 1618
+    },
+    "oracle": {
+      "atk": 2450,
+      "def max": 2166,
+      "def min": 1968,
+      "hp": 5996,
+      "rec max": 2212,
+      "rec min": 2014
+    }
+  },
+  "leader_skill": {
+    "desc": "30% boost to Atk, max HP & 50% boost to Spark damage",
+    "effects": [
+      {
+        "atk% buff": 30,
+        "hp% buff": 30,
+        "passive id": "1"
+      },
+      {
+        "damage% for spark": 50,
+        "passive id": "31"
+      }
+    ],
+    "id": "7414",
+    "name": "Divine Steel's Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -429,14 +429,6 @@
     ],
     "name": "Rigid Engulf"
   },
-  "bbdescription": "11 combo Fire attack on all foes & boosts BC, HC drop rate and greatly boosts Spark damage for 3 turns",
-  "bbnote": "25% boost to BC, HC & 70% boost to Spark damage",
-  "bbtype": "Support/Offense",
-  "bbhits": "11",
-  "bbaoe": "A",
-  "bbgauge": "24",
-  "bbdc": "11",
-  "bbmultiplier": "270",
   "sbb": {
     "damage frames": [
       {
@@ -845,6 +837,200 @@
     ],
     "name": "Gildorf's Destroyer Arm"
   },
+  "ubb": {},
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 79
+    },
+    "idle": {
+      "total number of frames": 64
+    },
+    "move": {
+      "total number of frames": 5
+    }
+  },
+  "category": 10800,
+  "cost": "30",
+  "damage frames": {
+    "frame times": [
+      11,
+      14,
+      17,
+      31,
+      34,
+      37,
+      40,
+      43
+    ],
+    "hit dmg% distribution": [
+      14,
+      12,
+      10,
+      18,
+      15,
+      12,
+      10,
+      9
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 8
+  },
+  "drop check count": 4,
+  "element": "fire",
+  "exp_pattern": 20,
+  "gender": "other",
+  "getting type": "rare summon",
+  "guide_id": 1237,
+  "imp": {
+    "max atk": "400",
+    "max def": "200",
+    "max hp": "750",
+    "max rec": "300"
+  },
+  "kind": "normal",
+  "lord damage range": "2281~2548",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Scalding Iron Gildorf",
+  "rarity": "6",
+  "sell caution": false,
+  "unitName": "Scalding Iron Gildorf",
+  "maxlv": "100",
+  "no": "1237",
+  "unitDisplayHomePosition_1W9CxaFK": "346,120,200,546",
+  "unitDisplayDetailPosition_6z54rgb3": "0,115,950,694",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "89,287,450,329,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "22,-193,950,694",
+  "unitDisplaySummonPosition_KC3Jk8Br": "89,287,450,329,0",
+  "unitDisplayHpPosition_3BpHN6VD": "-9,25",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "8000",
+  "sellCaution": false,
+  "effectFrames": "11:131:1,14:131:1,17:131:1,31:131:1,34:131:1,37:131:1,40:131:1,43:131:1,10:1141:1,30:1141:1,35:1130:1,11:100111:1",
+  "evofrom": "10804",
+  "evointo": "10806",
+  "evozelcost": "1500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "10354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "79",
+  "animation_idle": "64",
+  "animation_move": "5",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "11, 14, 17, 31, 34, 37, 40, 43",
+  "normal_distribute": "14, 12, 10, 18, 15, 12, 10, 9",
+  "normal_totaldistr": "100",
+  "bb_frames": "11, 14, 17, 20, 23, 31, 34, 37, 40, 43, 46",
+  "bb_distribute": "10, 9, 7, 7, 5, 15, 13, 10, 10, 8, 6",
+  "bb_totaldistr": "100",
+  "sbb_frames": "31",
+  "sbb_distribute": "100",
+  "sbb_totaldistr": "100",
+  "sbb2_frames": "11",
+  "sbb2_distribute": "100",
+  "sbb2_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "1",
+  "sbb2_effectdelay": "1",
+  "description": "A weapon of mass destruction created by an otherworldly deity. On learning that Klaus and Isterio were being resurrected in another world after being slain by Gildorf, his master followed them to Elgaia, accompanied by Gildorf. The two primary gods awaited them there, having been resurrected by humans. However, the two were changed, having been transformed by otherworldly technologies. A scientist attempted to upgrade Gildorf with Elgaian technology when he struggled to stop the rampaging deities.",
+  "summon": "I am a god-slaying weapon.<br>I destroy the indestructible.<br>Destruction is a part of me.",
+  "fusion": "Energy source confirmed.<br>Firepower upgrade confirmed.<br>Maximum capacity not achieved.",
+  "evolution": "New device confirmed.<br>This power will<br>allow greater destruction.",
+  "hp_base": "4161",
+  "atk_base": "1808",
+  "def_base": "1603",
+  "rec_base": "1342",
+  "hp_lord": "5996",
+  "atk_lord": "2450",
+  "def_lord": "2166",
+  "rec_lord": "1866",
+  "hp_anima": "6738",
+  "rec_anima": "1618",
+  "atk_breaker": "2648",
+  "def_breaker": "1968",
+  "def_guardian": "2364",
+  "rec_guardian": "1717",
+  "def_oracle": "2067",
+  "rec_oracle": "2113",
+  "hp_bonus": "750",
+  "atk_bonus": "400",
+  "def_bonus": "200",
+  "rec_bonus": "300",
+  "lordonly": "",
+  "combo_hits": "8",
+  "normaldc": "32",
+  "ls": "Divine Steel's Power",
+  "lsdescription": "30% boost to Atk, max HP & 50% boost to Spark damage",
+  "lstype": "Attack/Hit Points",
+  "bbdescription": "11 combo Fire attack on all foes & boosts BC, HC drop rate and greatly boosts Spark damage for 3 turns",
+  "bbnote": "25% boost to BC, HC & 70% boost to Spark damage",
+  "bbtype": "Support/Offense",
+  "bbhits": "11",
+  "bbaoe": "A",
+  "bbgauge": "24",
+  "bbdc": "11",
+  "bbmultiplier": "270",
   "sbbdescription": "Powerful Fire attack on all foes, powerful Fire attack on single foe, greatly boosts own Spark damage for 3 turns & fills own BB gauge to max",
   "sbbnote": "100% boost",
   "sbbtype": "Support/Offense",
@@ -857,87 +1043,10 @@
   "sbbaoe2": "1",
   "sbbdc2": "20",
   "sbbmultiplier2": "600",
-  "evofrom": "10804",
-  "evointo": "10806",
   "evomats1": "10354",
   "evomats2": "50354",
   "evomats3": "10133",
   "evomats4": "60144",
   "evomats5": "60224",
-  "evoitem": "",
-  "evozelcost": "1500000",
-  "stats": {
-    "_base": {
-      "atk": 1808,
-      "def": 1603,
-      "hp": 4161,
-      "rec": 1342
-    },
-    "_lord": {
-      "atk": 2450,
-      "def": 2166,
-      "hp": 5996,
-      "rec": 1816
-    },
-    "anima": {
-      "atk": 2450,
-      "def": 2166,
-      "hp max": 6986,
-      "hp min": 6491,
-      "rec max": 1717,
-      "rec min": 1519
-    },
-    "breaker": {
-      "atk max": 2747,
-      "atk min": 2549,
-      "def max": 2067,
-      "def min": 1869,
-      "hp": 5996,
-      "rec": 1816
-    },
-    "guardian": {
-      "atk": 2450,
-      "def max": 2463,
-      "def min": 2265,
-      "hp": 5996,
-      "rec max": 1816,
-      "rec min": 1618
-    },
-    "oracle": {
-      "atk": 2450,
-      "def max": 2166,
-      "def min": 1968,
-      "hp": 5996,
-      "rec max": 2212,
-      "rec min": 2014
-    }
-  },
-  "leader_skill": {
-    "desc": "30% boost to Atk, max HP & 50% boost to Spark damage",
-    "effects": [
-      {
-        "atk% buff": 30,
-        "hp% buff": 30,
-        "passive id": "1"
-      },
-      {
-        "damage% for spark": 50,
-        "passive id": "31"
-      }
-    ],
-    "id": "7414",
-    "name": "Divine Steel's Power"
-  },
-  "extra_skill": {},
-  "ubb": {},
-  "unitDisplayHomePosition_1W9CxaFK": "346,120,200,546",
-  "unitDisplayDetailPosition_6z54rgb3": "0,115,950,694",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "89,287,450,329,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "22,-193,950,694",
-  "unitDisplaySummonPosition_KC3Jk8Br": "89,287,450,329,0",
-  "unitDisplayHpPosition_3BpHN6VD": "-9,25",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "8000",
-  "sellCaution": false,
-  "effectFrames": "11:131:1,14:131:1,17:131:1,31:131:1,34:131:1,37:131:1,40:131:1,43:131:1,10:1141:1,30:1141:1,35:1130:1,11:100111:1"
+  "evoitem": ""
 }

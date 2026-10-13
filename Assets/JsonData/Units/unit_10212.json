@@ -1,62 +1,63 @@
 {
   "id": "10212",
-  "unitName": "Drake Chief Aisha",
-  "no": "287",
-  "element": "Fire",
-  "rarity": "★★★",
-  "cost": "7",
-  "maxlv": "40",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "112",
-  "animation_idle": "52",
-  "animation_move": "13",
-  "movespeed_attack": "0.0015",
-  "movespeed_skill": "0.0015",
-  "speedtype_attack": "5",
-  "speedtype_skill": "5",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "33, 69",
-  "normal_distribute": "50, 50",
-  "normal_totaldistr": "100",
-  "bb_frames": "69, 79, 89, 99, 109",
-  "bb_distribute": "40, 15, 15, 15, 15",
-  "bb_totaldistr": "100",
-  "description": "A dragoon from Julep Village located in Amdahl, she found an injured fire dragon in a cave near her house at a young age, and gained its trust by sheltering it until its wounds were healed. She found out later that the fire dragon had escaped from the dragoons of Palmyna, she then decided she'd learn dragoon techniques herself so she could protect the dragon. At first, afraid of exposing her to danger, the dragon refused her, but eventually he gave in to her enthusiasm and granted her the entirety of his knowledge.",
-  "summon": "You need my help?<br>I'll help if you do.<br>That's why I came to you.",
-  "fusion": "I humbly receive this<br>token of good will.",
-  "evolution": "",
-  "hp_base": "2300",
-  "atk_base": "790",
-  "def_base": "740",
-  "rec_base": "640",
-  "hp_lord": "3543",
-  "atk_lord": "1066",
-  "def_lord": "977",
-  "rec_lord": "1088",
-  "hp_anima": "3836",
-  "rec_anima": "1010",
-  "atk_breaker": "1144",
-  "def_breaker": "899",
-  "atk_guardian": "988",
-  "def_guardian": "1055",
-  "rec_guardian": "1049",
-  "def_oracle": "938",
-  "hp_oracle": "3426",
-  "rec_oracle": "1205",
-  "hp_bonus": "300",
-  "atk_bonus": "120",
-  "def_bonus": "120",
-  "rec_bonus": "120",
-  "lordonly": "",
-  "combo_hits": "2",
-  "normaldc": "10",
-  "ls": "Pulsating Energy",
-  "lsdescription": "BB Gauge fills after each turn",
-  "lsnote": "1 BC fill each turn",
-  "lstype": "Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 790,
+      "def": 740,
+      "hp": 2300,
+      "rec": 640
+    },
+    "_lord": {
+      "atk": 1066,
+      "def": 977,
+      "hp": 3543,
+      "rec": 1088
+    },
+    "anima": {
+      "atk": 1066,
+      "def": 977,
+      "hp max": 3933,
+      "hp min": 3738,
+      "rec max": 1049,
+      "rec min": 971
+    },
+    "breaker": {
+      "atk max": 1183,
+      "atk min": 1105,
+      "def max": 938,
+      "def min": 860,
+      "hp": 3543,
+      "rec": 1088
+    },
+    "guardian": {
+      "atk": 1066,
+      "def max": 1094,
+      "def min": 1016,
+      "hp": 3543,
+      "rec max": 1088,
+      "rec min": 1010
+    },
+    "oracle": {
+      "atk": 1066,
+      "def max": 977,
+      "def min": 899,
+      "hp": 3543,
+      "rec max": 1244,
+      "rec min": 1166
+    }
+  },
+  "leader_skill": {
+    "desc": "BB Gauge fills after each turn",
+    "effects": [
+      {
+        "bc fill per turn": 1,
+        "passive id": "9"
+      }
+    ],
+    "id": "1200",
+    "name": "Pulsating Energy"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -217,94 +218,85 @@
     ],
     "name": "Dragon Shout"
   },
-  "bbdescription": "5 combo Fire elemental attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "5",
-  "bbaoe": "A",
-  "bbgauge": "26",
-  "bbdc": "5",
-  "bbmultiplier": "180",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "10213",
-  "evomats1": "10132",
-  "evomats2": "10131",
-  "evomats3": "10131",
-  "evomats4": "10130",
-  "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "100000",
-  "stats": {
-    "_base": {
-      "atk": 790,
-      "def": 740,
-      "hp": 2300,
-      "rec": 640
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1066,
-      "def": 977,
-      "hp": 3543,
-      "rec": 1088
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1066,
-      "def": 977,
-      "hp max": 3933,
-      "hp min": 3738,
-      "rec max": 1049,
-      "rec min": 971
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 112
     },
-    "breaker": {
-      "atk max": 1183,
-      "atk min": 1105,
-      "def max": 938,
-      "def min": 860,
-      "hp": 3543,
-      "rec": 1088
+    "idle": {
+      "total number of frames": 52
     },
-    "guardian": {
-      "atk": 1066,
-      "def max": 1094,
-      "def min": 1016,
-      "hp": 3543,
-      "rec max": 1088,
-      "rec min": 1010
-    },
-    "oracle": {
-      "atk": 1066,
-      "def max": 977,
-      "def min": 899,
-      "hp": 3543,
-      "rec max": 1244,
-      "rec min": 1166
+    "move": {
+      "total number of frames": 13
     }
   },
-  "leader_skill": {
-    "desc": "BB Gauge fills after each turn",
-    "effects": [
-      {
-        "bc fill per turn": 1,
-        "passive id": "9"
-      }
+  "category": 10210,
+  "cost": "7",
+  "damage frames": {
+    "frame times": [
+      33,
+      69
     ],
-    "id": "1200",
-    "name": "Pulsating Energy"
+    "hit dmg% distribution": [
+      50,
+      50
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 2
   },
-  "extra_skill": {},
+  "drop check count": 5,
+  "element": "fire",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 287,
+  "imp": {
+    "max atk": "120",
+    "max def": "120",
+    "max hp": "300",
+    "max rec": "120"
+  },
+  "kind": "normal",
+  "lord damage range": "992~1108",
+  "movement": {
+    "attack": {
+      "move speed": 0.0015,
+      "move speed type": "5",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0015,
+      "move speed type": "5",
+      "move type": "1"
+    }
+  },
+  "name": "Drake Chief Aisha",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "Drake Chief Aisha",
+  "maxlv": "40",
+  "no": "287",
   "unitDisplayHomePosition_1W9CxaFK": "219,227,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "51,-85,939,865",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "215,403,265,225,0",
@@ -314,5 +306,100 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "1000",
   "sellCaution": false,
-  "effectFrames": "27:121:1,29:100010:1,63:121:1,65:100010:1"
+  "effectFrames": "27:121:1,29:100010:1,63:121:1,65:100010:1",
+  "evofrom": "",
+  "evointo": "10213",
+  "evozelcost": "100000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "10132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10131",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "10130",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "112",
+  "animation_idle": "52",
+  "animation_move": "13",
+  "movespeed_attack": "0.0015",
+  "movespeed_skill": "0.0015",
+  "speedtype_attack": "5",
+  "speedtype_skill": "5",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "33, 69",
+  "normal_distribute": "50, 50",
+  "normal_totaldistr": "100",
+  "bb_frames": "69, 79, 89, 99, 109",
+  "bb_distribute": "40, 15, 15, 15, 15",
+  "bb_totaldistr": "100",
+  "description": "A dragoon from Julep Village located in Amdahl, she found an injured fire dragon in a cave near her house at a young age, and gained its trust by sheltering it until its wounds were healed. She found out later that the fire dragon had escaped from the dragoons of Palmyna, she then decided she'd learn dragoon techniques herself so she could protect the dragon. At first, afraid of exposing her to danger, the dragon refused her, but eventually he gave in to her enthusiasm and granted her the entirety of his knowledge.",
+  "summon": "You need my help?<br>I'll help if you do.<br>That's why I came to you.",
+  "fusion": "I humbly receive this<br>token of good will.",
+  "evolution": "",
+  "hp_base": "2300",
+  "atk_base": "790",
+  "def_base": "740",
+  "rec_base": "640",
+  "hp_lord": "3543",
+  "atk_lord": "1066",
+  "def_lord": "977",
+  "rec_lord": "1088",
+  "hp_anima": "3836",
+  "rec_anima": "1010",
+  "atk_breaker": "1144",
+  "def_breaker": "899",
+  "atk_guardian": "988",
+  "def_guardian": "1055",
+  "rec_guardian": "1049",
+  "def_oracle": "938",
+  "hp_oracle": "3426",
+  "rec_oracle": "1205",
+  "hp_bonus": "300",
+  "atk_bonus": "120",
+  "def_bonus": "120",
+  "rec_bonus": "120",
+  "lordonly": "",
+  "combo_hits": "2",
+  "normaldc": "10",
+  "ls": "Pulsating Energy",
+  "lsdescription": "BB Gauge fills after each turn",
+  "lsnote": "1 BC fill each turn",
+  "lstype": "Brave Burst",
+  "bbdescription": "5 combo Fire elemental attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "5",
+  "bbaoe": "A",
+  "bbgauge": "26",
+  "bbdc": "5",
+  "bbmultiplier": "180",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "10132",
+  "evomats2": "10131",
+  "evomats3": "10131",
+  "evomats4": "10130",
+  "evomats5": "",
+  "evoitem": ""
 }

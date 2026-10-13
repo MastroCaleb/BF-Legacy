@@ -1,62 +1,66 @@
 {
   "id": "850014",
-  "unitName": "Damsel Estia",
-  "no": "8022",
-  "element": "Light",
-  "rarity": "★★★★",
-  "cost": "10",
-  "maxlv": "60",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "106",
-  "animation_idle": "133",
-  "animation_move": "133",
-  "movespeed_attack": "4",
-  "movespeed_skill": "4",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "25, 27, 35, 38, 76, 83, 85, 87",
-  "normal_distribute": "10, 10, 10, 10, 10, 10, 10, 30",
-  "normal_totaldistr": "100",
-  "bb_frames": "24, 26, 28, 72, 80, 90, 100, 110",
-  "bb_distribute": "15, 20, 10, 10, 5, 10, 10, 20",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "description": "Princess of the ruined Elysian Kingdom. Unlike her overachieving elder brother Gortius, Estia showed no interest in the throne, immersing herself in magic studies instead. However, a twist of fate saw Gortius losing his life in a historic battle with the Northern Pirates, leaving her as the sole heiress to the throne. However, before the kingdom was able to recover in wake of the war, the gods unleashed their fury on Grand Gaia...",
-  "summon": "You can't be a bad guy<br>since Xenon trusts you!<br>I'll help, too!",
-  "fusion": "Xenon says he'll protect me,<br>but I think I ought to<br>strengthen up, too.",
-  "evolution": "I never knew the lands were so vast<br>beyond the boundaries of Elysia.",
-  "hp_base": "2794",
-  "atk_base": "968",
-  "def_base": "878",
-  "rec_base": "966",
-  "hp_lord": "3954",
-  "atk_lord": "1307",
-  "def_lord": "1175",
-  "rec_lord": "1300",
-  "hp_anima": "4397",
-  "rec_anima": "1182",
-  "atk_breaker": "1425",
-  "def_breaker": "1057",
-  "atk_guardian": "1189",
-  "def_guardian": "1293",
-  "rec_guardian": "1241",
-  "def_oracle": "1116",
-  "hp_oracle": "3777",
-  "rec_oracle": "1477",
-  "hp_bonus": "500",
-  "atk_bonus": "160",
-  "def_bonus": "160",
-  "rec_bonus": "280",
-  "lordonly": "",
-  "combo_hits": "8",
-  "normaldc": "16",
-  "ls": "Golden Glimmer",
-  "lsdescription": "50% boost to Rec of Light units",
-  "lstype": "Recovery",
+  "stats": {
+    "_base": {
+      "atk": 968,
+      "def": 878,
+      "hp": 2794,
+      "rec": 966
+    },
+    "_lord": {
+      "atk": 1307,
+      "def": 1175,
+      "hp": 3954,
+      "rec": 1300
+    },
+    "anima": {
+      "atk": 1307,
+      "def": 1175,
+      "hp max": 4544,
+      "hp min": 4249,
+      "rec max": 1241,
+      "rec min": 1123
+    },
+    "breaker": {
+      "atk max": 1484,
+      "atk min": 1366,
+      "def max": 1116,
+      "def min": 998,
+      "hp": 3954,
+      "rec": 1300
+    },
+    "guardian": {
+      "atk": 1307,
+      "def max": 1352,
+      "def min": 1234,
+      "hp": 3954,
+      "rec max": 1300,
+      "rec min": 1182
+    },
+    "oracle": {
+      "atk": 1307,
+      "def max": 1175,
+      "def min": 1057,
+      "hp": 3954,
+      "rec max": 1536,
+      "rec min": 1418
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to Rec of Light units",
+    "effects": [
+      {
+        "elements buffed": [
+          "light"
+        ],
+        "passive id": "2",
+        "rec% buff": 50
+      }
+    ],
+    "id": "800104",
+    "name": "Golden Glimmer"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -311,97 +315,97 @@
     ],
     "name": "Golden Star Strike"
   },
-  "bbdescription": "8 combo Light elemental attack on all enemies & boosts all allies' Def for 3 turns",
-  "bbnote": "34% boost",
-  "bbtype": "Support/Offense",
-  "bbhits": "8",
-  "bbaoe": "A",
-  "bbgauge": "22",
-  "bbdc": "8",
-  "bbmultiplier": "129",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "850013",
-  "evointo": "850015",
-  "evomats1": "50123",
-  "evomats2": "50122",
-  "evomats3": "870034",
-  "evomats4": "50191",
-  "evomats5": "60143",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 968,
-      "def": 878,
-      "hp": 2794,
-      "rec": 966
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1307,
-      "def": 1175,
-      "hp": 3954,
-      "rec": 1300
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1307,
-      "def": 1175,
-      "hp max": 4544,
-      "hp min": 4249,
-      "rec max": 1241,
-      "rec min": 1123
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 106
     },
-    "breaker": {
-      "atk max": 1484,
-      "atk min": 1366,
-      "def max": 1116,
-      "def min": 998,
-      "hp": 3954,
-      "rec": 1300
+    "idle": {
+      "total number of frames": 133
     },
-    "guardian": {
-      "atk": 1307,
-      "def max": 1352,
-      "def min": 1234,
-      "hp": 3954,
-      "rec max": 1300,
-      "rec min": 1182
-    },
-    "oracle": {
-      "atk": 1307,
-      "def max": 1175,
-      "def min": 1057,
-      "hp": 3954,
-      "rec max": 1536,
-      "rec min": 1418
+    "move": {
+      "total number of frames": 133
     }
   },
-  "leader_skill": {
-    "desc": "50% boost to Rec of Light units",
-    "effects": [
-      {
-        "elements buffed": [
-          "light"
-        ],
-        "passive id": "2",
-        "rec% buff": 50
-      }
+  "category": 850010,
+  "cost": "10",
+  "damage frames": {
+    "frame times": [
+      25,
+      27,
+      35,
+      38,
+      76,
+      83,
+      85,
+      87
     ],
-    "id": "800104",
-    "name": "Golden Glimmer"
+    "hit dmg% distribution": [
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      30
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 8
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "light",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 8022,
+  "imp": {
+    "max atk": "160",
+    "max def": "160",
+    "max hp": "500",
+    "max rec": "280"
+  },
+  "kind": "normal",
+  "lord damage range": "1216~1359",
+  "movement": {
+    "attack": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    }
+  },
+  "name": "Damsel Estia",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Damsel Estia",
+  "maxlv": "60",
+  "no": "8022",
   "unitDisplayHomePosition_1W9CxaFK": "442,216,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-134,-95,1310,873",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "30,187,649,432,0",
@@ -411,5 +415,110 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "22:500:1,23:500:1"
+  "effectFrames": "22:500:1,23:500:1",
+  "evofrom": "850013",
+  "evointo": "850015",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50123",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50122",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "870034",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "106",
+  "animation_idle": "133",
+  "animation_move": "133",
+  "movespeed_attack": "4",
+  "movespeed_skill": "4",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "25, 27, 35, 38, 76, 83, 85, 87",
+  "normal_distribute": "10, 10, 10, 10, 10, 10, 10, 30",
+  "normal_totaldistr": "100",
+  "bb_frames": "24, 26, 28, 72, 80, 90, 100, 110",
+  "bb_distribute": "15, 20, 10, 10, 5, 10, 10, 20",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "description": "Princess of the ruined Elysian Kingdom. Unlike her overachieving elder brother Gortius, Estia showed no interest in the throne, immersing herself in magic studies instead. However, a twist of fate saw Gortius losing his life in a historic battle with the Northern Pirates, leaving her as the sole heiress to the throne. However, before the kingdom was able to recover in wake of the war, the gods unleashed their fury on Grand Gaia...",
+  "summon": "You can't be a bad guy<br>since Xenon trusts you!<br>I'll help, too!",
+  "fusion": "Xenon says he'll protect me,<br>but I think I ought to<br>strengthen up, too.",
+  "evolution": "I never knew the lands were so vast<br>beyond the boundaries of Elysia.",
+  "hp_base": "2794",
+  "atk_base": "968",
+  "def_base": "878",
+  "rec_base": "966",
+  "hp_lord": "3954",
+  "atk_lord": "1307",
+  "def_lord": "1175",
+  "rec_lord": "1300",
+  "hp_anima": "4397",
+  "rec_anima": "1182",
+  "atk_breaker": "1425",
+  "def_breaker": "1057",
+  "atk_guardian": "1189",
+  "def_guardian": "1293",
+  "rec_guardian": "1241",
+  "def_oracle": "1116",
+  "hp_oracle": "3777",
+  "rec_oracle": "1477",
+  "hp_bonus": "500",
+  "atk_bonus": "160",
+  "def_bonus": "160",
+  "rec_bonus": "280",
+  "lordonly": "",
+  "combo_hits": "8",
+  "normaldc": "16",
+  "ls": "Golden Glimmer",
+  "lsdescription": "50% boost to Rec of Light units",
+  "lstype": "Recovery",
+  "bbdescription": "8 combo Light elemental attack on all enemies & boosts all allies' Def for 3 turns",
+  "bbnote": "34% boost",
+  "bbtype": "Support/Offense",
+  "bbhits": "8",
+  "bbaoe": "A",
+  "bbgauge": "22",
+  "bbdc": "8",
+  "bbmultiplier": "129",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50123",
+  "evomats2": "50122",
+  "evomats3": "870034",
+  "evomats4": "50191",
+  "evomats5": "60143"
 }

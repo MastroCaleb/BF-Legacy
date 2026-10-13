@@ -1,65 +1,145 @@
 {
   "id": "730137",
-  "unitName": "Fearless God Sotnarg (EU)",
-  "disam": "Sotnarg (disambiguation)",
-  "altname": "Fearless God Sotnarg",
-  "idalt": "",
-  "has_altart": "",
-  "doenter": "true",
-  "no": "7252",
-  "element": "Earth",
-  "rarity": "Dream",
-  "cost": "60",
-  "maxlv": "150",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "3",
-  "animation_attack": "132",
-  "animation_idle": "90",
-  "animation_move": "8",
-  "movespeed_attack": "0.0033",
-  "speedtype_attack": "3",
-  "movetype_attack": "1",
-  "movespeed_skill": "0.0033",
-  "speedtype_skill": "3",
-  "movetype_skill": "1",
-  "description": "",
-  "summon": "",
-  "fusion": "",
-  "evolution": "",
-  "hp_base": "7787",
-  "atk_base": "3689",
-  "def_base": "1639",
-  "rec_base": "820",
-  "hp_lord": "9500",
-  "atk_lord": "4500",
-  "def_lord": "2000",
-  "rec_lord": "1000",
-  "hp_anima": "10617",
-  "rec_anima": "702",
-  "atk_breaker": "4798",
-  "def_breaker": "1702",
-  "def_guardian": "2298",
-  "rec_guardian": "1000",
-  "def_oracle": "2000",
-  "rec_oracle": "1298",
-  "hp_bonus": "1500",
-  "atk_bonus": "600",
-  "def_bonus": "600",
-  "rec_bonus": "600",
-  "lordonly": "",
-  "normal_frames": "40, 41, 42, 43, 44, 45, 46, 48, 49, 50, 52, 53, 54, 55",
-  "normal_distribute": "9, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7",
-  "normal_totaldistr": "100",
-  "combo_hits": "14",
-  "normaldc": "42",
-  "ls": "Feeling the Power of the Earth",
-  "lsdescription": "Boosts ATK (200%) and max HP (100%) & negates all status ailments and ATK, DEF, REC reduction effects & reduces BB gauge required for BB (30%) & boosts critical and Spark damage (200%)",
-  "lsnote": "",
-  "es": "Divine Berserker",
-  "esdescription": "Increase damage received (20%, all) & boosts critical, Spark and elemental damage (30%, all) & adds critical hit rate boost (60%) for 3 turns effect to BB/SBB/UBB",
-  "esitem": "",
-  "esnote": "",
+  "stats": {
+    "_base": {
+      "atk": 3689,
+      "def": 1639,
+      "hp": 7787,
+      "rec": 820
+    },
+    "_lord": {
+      "atk": 4500,
+      "def": 2000,
+      "hp": 9500,
+      "rec": 1000
+    },
+    "anima": {
+      "atk": 4500,
+      "def": 2000,
+      "hp max": 10990,
+      "hp min": 10245,
+      "rec max": 851,
+      "rec min": 553
+    },
+    "breaker": {
+      "atk max": 4947,
+      "atk min": 4649,
+      "def max": 1851,
+      "def min": 1553,
+      "hp": 9500,
+      "rec": 1000
+    },
+    "guardian": {
+      "atk max": 4351,
+      "atk min": 4053,
+      "def max": 2447,
+      "def min": 2149,
+      "hp": 9500,
+      "rec": 1000
+    },
+    "oracle": {
+      "atk": 4500,
+      "def": 2000,
+      "hp max": 8755,
+      "hp min": 8010,
+      "rec max": 1447,
+      "rec min": 1149
+    }
+  },
+  "leader_skill": {
+    "desc": "Boosts ATK (200%) and max HP (100%) & negates all status ailments and ATK, DEF, REC reduction effects & reduces BB gauge required for BB (30%) & boosts critical and Spark damage (200%)",
+    "effects": [
+      {
+        "atk% buff": 200,
+        "hp% buff": 100,
+        "passive id": "1"
+      },
+      {
+        "atk down resist%": 100,
+        "curse resist%": 100,
+        "def down resist%": 100,
+        "injury resist%": 100,
+        "paralysis resist%": 100,
+        "passive id": "73",
+        "poison resist%": 100,
+        "rec down resist%": 100,
+        "sick resist%": 100,
+        "weaken resist%": 100
+      },
+      {
+        "passive id": "48",
+        "reduced bb bc cost%": 30
+      },
+      {
+        "crit multiplier%": 200.0,
+        "passive id": "34"
+      },
+      {
+        "damage% for spark": 200,
+        "passive id": "31"
+      }
+    ],
+    "id": "730137",
+    "name": "Feeling the Power of the Earth"
+  },
+  "extra_skill": {
+    "desc": "Increase damage received (20%, all) & boosts critical, Spark and elemental damage (30%, all) & adds critical hit rate boost (60%) for 3 turns effect to BB/SBB/UBB",
+    "effects": [
+      {
+        "conditions": [],
+        "dmg% mitigation": 20,
+        "passive id": "8",
+        "passive target": "self"
+      },
+      {
+        "conditions": [],
+        "crit multiplier%": 30.0,
+        "passive id": "34",
+        "passive target": "party"
+      },
+      {
+        "conditions": [],
+        "damage% for spark": 30,
+        "passive id": "31",
+        "passive target": "party"
+      },
+      {
+        "conditions": [],
+        "dark units do extra elemental weakness dmg": true,
+        "earth units do extra elemental weakness dmg": true,
+        "elemental weakness multiplier%": 30.0,
+        "fire units do extra elemental weakness dmg": true,
+        "light units do extra elemental weakness dmg": true,
+        "passive id": "50",
+        "passive target": "party",
+        "thunder units do extra elemental weakness dmg": true,
+        "water units do extra elemental weakness dmg": true
+      },
+      {
+        "conditions": [],
+        "passive id": "66",
+        "passive target": "self",
+        "trigger on bb": true,
+        "trigger on sbb": true,
+        "trigger on ubb": true,
+        "triggered effect": [
+          {
+            "buff turns": 3,
+            "crit% buff (7)": 60,
+            "effect delay time(ms)/frame": "0.0/0",
+            "element buffed": "all",
+            "proc id": "5",
+            "target area": "aoe",
+            "target type": "party"
+          }
+        ]
+      }
+    ],
+    "id": "730137",
+    "name": "Divine Berserker",
+    "rarity": "0",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -722,19 +802,6 @@
     ],
     "name": "Rock Blessing"
   },
-  "bbdescription": "12 combo Earth attack on all foes & negates elemental and critical for 2 turns & inflicts Spark vulnerability (20%) for 2 turns & adds all elements to attack & adds 1 extra action within the same turn (self)",
-  "bbnote": "",
-  "bbtype": "Offense",
-  "bbgauge": "50",
-  "bb_frames": "40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62",
-  "bb_distribute": "10, 10, 10, 10, 10, 10, 10, 10, 10, 5, 3, 2",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "bbhits": "12",
-  "bbaoe": "A",
-  "bbdc": "12",
-  "bbmultiplier": "420",
-  "bb_hpscale": "",
   "sbb": {
     "damage frames": [
       {
@@ -1407,37 +1474,6 @@
     ],
     "name": "Celestial Earthquake"
   },
-  "sbbdescription": "5 combo Earth attack on single foe, 12 combo Earth attack on all foes, 6 combo Earth attack on all foes (damage based on remaining HP) & boosts own ATK (200%) for 3 turns & boosts critical damage (150%) and Spark damage (200%) for 3 turns",
-  "sbbnote": "",
-  "sbbtype": "Offense",
-  "sbbgauge": "1",
-  "sbb_frames": "41, 43, 45, 47, 49",
-  "sbb_distribute": "20, 20, 20, 20, 20",
-  "sbb_totaldistr": "100",
-  "sbb_effectdelay": "1",
-  "sbbhits": "5",
-  "sbbaoe": "1",
-  "sbbdc": "5",
-  "sbbmultiplier": "650",
-  "sbb_hpscale": "",
-  "sbb2_frames": "40, 42, 44, 46, 48, 50, 52, 54, 58, 60, 64, 68",
-  "sbb2_distribute": "8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 12",
-  "sbb2_totaldistr": "100",
-  "sbb2_effectdelay": "1",
-  "sbbhits2": "12",
-  "sbbaoe2": "A",
-  "sbbdc2": "12",
-  "sbbmultiplier2": "650",
-  "sbb2_hpscale": "",
-  "sbb3_frames": "53, 55, 59, 61, 65, 69",
-  "sbb3_distribute": "20, 20, 20, 20, 10, 10",
-  "sbb3_totaldistr": "100",
-  "sbb3_effectdelay": "1",
-  "sbbhits3": "6",
-  "sbbaoe3": "A",
-  "sbbdc3": "6",
-  "sbbmultiplier3": "200",
-  "sbb3_hpscale": "true",
   "ubb": {
     "damage frames": [
       {
@@ -1596,6 +1632,223 @@
     ],
     "name": "Godslayer Impact"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 132
+    },
+    "idle": {
+      "total number of frames": 90
+    },
+    "move": {
+      "total number of frames": 8
+    }
+  },
+  "cost": "60",
+  "damage frames": {
+    "frame times": [
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      48,
+      49,
+      50,
+      52,
+      53,
+      54,
+      55
+    ],
+    "hit dmg% distribution": [
+      9,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 14
+  },
+  "drop check count": 3,
+  "element": "earth",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 7252,
+  "imp": {
+    "max atk": "600",
+    "max def": "600",
+    "max hp": "1500",
+    "max rec": "600"
+  },
+  "kind": "normal",
+  "lord damage range": "4190~4680",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Fearless God Sotnarg",
+  "rarity": "8",
+  "sell caution": false,
+  "unitName": "Fearless God Sotnarg",
+  "maxlv": "150",
+  "no": "7252",
+  "unitDisplayHomePosition_1W9CxaFK": null,
+  "unitDisplayDetailPosition_6z54rgb3": null,
+  "unitDisplayConfirmImagePosition_MYK1fq6c": null,
+  "unitDisplayCutInImagePosition_7hLR6pDN": null,
+  "unitDisplaySummonPosition_KC3Jk8Br": null,
+  "unitDisplayHpPosition_3BpHN6VD": null,
+  "unitDisplayCursorPosition": null,
+  "sellPrice": "",
+  "sellCaution": false,
+  "effectFrames": "",
+  "evofrom": "",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "disam": "Sotnarg (disambiguation)",
+  "altname": "Fearless God Sotnarg",
+  "idalt": "",
+  "has_altart": "",
+  "doenter": "true",
+  "basexp": "21",
+  "animation_attack": "132",
+  "animation_idle": "90",
+  "animation_move": "8",
+  "movespeed_attack": "0.0033",
+  "speedtype_attack": "3",
+  "movetype_attack": "1",
+  "movespeed_skill": "0.0033",
+  "speedtype_skill": "3",
+  "movetype_skill": "1",
+  "description": "",
+  "summon": "",
+  "fusion": "",
+  "evolution": "",
+  "hp_base": "7787",
+  "atk_base": "3689",
+  "def_base": "1639",
+  "rec_base": "820",
+  "hp_lord": "9500",
+  "atk_lord": "4500",
+  "def_lord": "2000",
+  "rec_lord": "1000",
+  "hp_anima": "10617",
+  "rec_anima": "702",
+  "atk_breaker": "4798",
+  "def_breaker": "1702",
+  "def_guardian": "2298",
+  "rec_guardian": "1000",
+  "def_oracle": "2000",
+  "rec_oracle": "1298",
+  "hp_bonus": "1500",
+  "atk_bonus": "600",
+  "def_bonus": "600",
+  "rec_bonus": "600",
+  "lordonly": "",
+  "normal_frames": "40, 41, 42, 43, 44, 45, 46, 48, 49, 50, 52, 53, 54, 55",
+  "normal_distribute": "9, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7",
+  "normal_totaldistr": "100",
+  "combo_hits": "14",
+  "normaldc": "42",
+  "ls": "Feeling the Power of the Earth",
+  "lsdescription": "Boosts ATK (200%) and max HP (100%) & negates all status ailments and ATK, DEF, REC reduction effects & reduces BB gauge required for BB (30%) & boosts critical and Spark damage (200%)",
+  "lsnote": "",
+  "es": "Divine Berserker",
+  "esdescription": "Increase damage received (20%, all) & boosts critical, Spark and elemental damage (30%, all) & adds critical hit rate boost (60%) for 3 turns effect to BB/SBB/UBB",
+  "esitem": "",
+  "esnote": "",
+  "bbdescription": "12 combo Earth attack on all foes & negates elemental and critical for 2 turns & inflicts Spark vulnerability (20%) for 2 turns & adds all elements to attack & adds 1 extra action within the same turn (self)",
+  "bbnote": "",
+  "bbtype": "Offense",
+  "bbgauge": "50",
+  "bb_frames": "40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62",
+  "bb_distribute": "10, 10, 10, 10, 10, 10, 10, 10, 10, 5, 3, 2",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "bbhits": "12",
+  "bbaoe": "A",
+  "bbdc": "12",
+  "bbmultiplier": "420",
+  "bb_hpscale": "",
+  "sbbdescription": "5 combo Earth attack on single foe, 12 combo Earth attack on all foes, 6 combo Earth attack on all foes (damage based on remaining HP) & boosts own ATK (200%) for 3 turns & boosts critical damage (150%) and Spark damage (200%) for 3 turns",
+  "sbbnote": "",
+  "sbbtype": "Offense",
+  "sbbgauge": "1",
+  "sbb_frames": "41, 43, 45, 47, 49",
+  "sbb_distribute": "20, 20, 20, 20, 20",
+  "sbb_totaldistr": "100",
+  "sbb_effectdelay": "1",
+  "sbbhits": "5",
+  "sbbaoe": "1",
+  "sbbdc": "5",
+  "sbbmultiplier": "650",
+  "sbb_hpscale": "",
+  "sbb2_frames": "40, 42, 44, 46, 48, 50, 52, 54, 58, 60, 64, 68",
+  "sbb2_distribute": "8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 12",
+  "sbb2_totaldistr": "100",
+  "sbb2_effectdelay": "1",
+  "sbbhits2": "12",
+  "sbbaoe2": "A",
+  "sbbdc2": "12",
+  "sbbmultiplier2": "650",
+  "sbb2_hpscale": "",
+  "sbb3_frames": "53, 55, 59, 61, 65, 69",
+  "sbb3_distribute": "20, 20, 20, 20, 10, 10",
+  "sbb3_totaldistr": "100",
+  "sbb3_effectdelay": "1",
+  "sbbhits3": "6",
+  "sbbaoe3": "A",
+  "sbbdc3": "6",
+  "sbbmultiplier3": "200",
+  "sbb3_hpscale": "true",
   "ubbdescription": "3 combo Earth attack on single foe, 4 combo Earth attack on all foes, 6 combo Earth attack on all foes (damage based on remaining HP) & boosts ATK, Spark damage, critical damage and elemental damage (400%) for 3 turns",
   "ubbnote": "",
   "ubbtype": "Offense",
@@ -1672,155 +1925,5 @@
   "notes": "",
   "incorrectinfo": "",
   "addcat": "",
-  "addcatname": "",
-  "stats": {
-    "_base": {
-      "atk": 3689,
-      "def": 1639,
-      "hp": 7787,
-      "rec": 820
-    },
-    "_lord": {
-      "atk": 4500,
-      "def": 2000,
-      "hp": 9500,
-      "rec": 1000
-    },
-    "anima": {
-      "atk": 4500,
-      "def": 2000,
-      "hp max": 10990,
-      "hp min": 10245,
-      "rec max": 851,
-      "rec min": 553
-    },
-    "breaker": {
-      "atk max": 4947,
-      "atk min": 4649,
-      "def max": 1851,
-      "def min": 1553,
-      "hp": 9500,
-      "rec": 1000
-    },
-    "guardian": {
-      "atk max": 4351,
-      "atk min": 4053,
-      "def max": 2447,
-      "def min": 2149,
-      "hp": 9500,
-      "rec": 1000
-    },
-    "oracle": {
-      "atk": 4500,
-      "def": 2000,
-      "hp max": 8755,
-      "hp min": 8010,
-      "rec max": 1447,
-      "rec min": 1149
-    }
-  },
-  "leader_skill": {
-    "desc": "Boosts ATK (200%) and max HP (100%) & negates all status ailments and ATK, DEF, REC reduction effects & reduces BB gauge required for BB (30%) & boosts critical and Spark damage (200%)",
-    "effects": [
-      {
-        "atk% buff": 200,
-        "hp% buff": 100,
-        "passive id": "1"
-      },
-      {
-        "atk down resist%": 100,
-        "curse resist%": 100,
-        "def down resist%": 100,
-        "injury resist%": 100,
-        "paralysis resist%": 100,
-        "passive id": "73",
-        "poison resist%": 100,
-        "rec down resist%": 100,
-        "sick resist%": 100,
-        "weaken resist%": 100
-      },
-      {
-        "passive id": "48",
-        "reduced bb bc cost%": 30
-      },
-      {
-        "crit multiplier%": 200.0,
-        "passive id": "34"
-      },
-      {
-        "damage% for spark": 200,
-        "passive id": "31"
-      }
-    ],
-    "id": "730137",
-    "name": "Feeling the Power of the Earth"
-  },
-  "extra_skill": {
-    "desc": "Increase damage received (20%, all) & boosts critical, Spark and elemental damage (30%, all) & adds critical hit rate boost (60%) for 3 turns effect to BB/SBB/UBB",
-    "effects": [
-      {
-        "conditions": [],
-        "dmg% mitigation": 20,
-        "passive id": "8",
-        "passive target": "self"
-      },
-      {
-        "conditions": [],
-        "crit multiplier%": 30.0,
-        "passive id": "34",
-        "passive target": "party"
-      },
-      {
-        "conditions": [],
-        "damage% for spark": 30,
-        "passive id": "31",
-        "passive target": "party"
-      },
-      {
-        "conditions": [],
-        "dark units do extra elemental weakness dmg": true,
-        "earth units do extra elemental weakness dmg": true,
-        "elemental weakness multiplier%": 30.0,
-        "fire units do extra elemental weakness dmg": true,
-        "light units do extra elemental weakness dmg": true,
-        "passive id": "50",
-        "passive target": "party",
-        "thunder units do extra elemental weakness dmg": true,
-        "water units do extra elemental weakness dmg": true
-      },
-      {
-        "conditions": [],
-        "passive id": "66",
-        "passive target": "self",
-        "trigger on bb": true,
-        "trigger on sbb": true,
-        "trigger on ubb": true,
-        "triggered effect": [
-          {
-            "buff turns": 3,
-            "crit% buff (7)": 60,
-            "effect delay time(ms)/frame": "0.0/0",
-            "element buffed": "all",
-            "proc id": "5",
-            "target area": "aoe",
-            "target type": "party"
-          }
-        ]
-      }
-    ],
-    "id": "730137",
-    "name": "Divine Berserker",
-    "rarity": "0",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": null,
-  "unitDisplayDetailPosition_6z54rgb3": null,
-  "unitDisplayConfirmImagePosition_MYK1fq6c": null,
-  "unitDisplayCutInImagePosition_7hLR6pDN": null,
-  "unitDisplaySummonPosition_KC3Jk8Br": null,
-  "unitDisplayHpPosition_3BpHN6VD": null,
-  "unitDisplayCursorPosition": null,
-  "sellPrice": "",
-  "sellCaution": false,
-  "effectFrames": ""
+  "addcatname": ""
 }

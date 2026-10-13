@@ -1,69 +1,106 @@
 {
   "id": "20726",
-  "unitName": "Frozen Typhoon Farzen",
-  "no": "1205",
-  "element": "Water",
-  "rarity": "★★★★★★★",
-  "cost": "42",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "146",
-  "animation_idle": "48",
-  "animation_move": "6",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "29, 33, 37, 49, 53, 57, 70, 74, 78, 82",
-  "normal_distribute": "13, 10, 9, 11, 8, 6, 15, 11, 9, 8",
-  "normal_totaldistr": "100",
-  "bb_frames": "29, 32, 35, 53, 56, 59, 70, 74, 78, 82, 86, 90, 94",
-  "bb_distribute": "14, 4, 4, 10, 4, 4, 19, 12, 9, 7, 5, 4, 4",
-  "bb_totaldistr": "100",
-  "sbb_frames": "29, 32, 35, 38, 53, 56, 59, 52, 70, 74, 78, 82, 86, 90, 94, 98, 102, 106",
-  "sbb_distribute": "12, 4, 3, 3, 10, 4, 3, 3, 16, 8, 6, 5, 5, 4, 4, 4, 3, 3",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "29, 32, 35, 38, 53, 56, 59, 52, 70, 74, 78, 82, 86, 90, 94, 98, 102, 106, 110, 114, 118, 122",
-  "ubb_distribute": "10, 4, 3, 3, 9, 4, 3, 3, 11, 6, 5, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "2",
-  "sbb_effectdelay": "3",
-  "ubb_effectdelay": "3",
-  "description": "When a terrible demon appeared in Randall, Farzen was given intel about it by the priests from the great shrine, and then ordered to protect them. However, after he shared the same information with his comrades of the Guard, and Rouche thanked him for his help, Farzen chose to fight with his friends instead. The role the tactician gave him would be that of buying time for the sorceress to gather enough power to land the final blow on the demon. They were then attacked by their foe in no time, but Farzen was able to wisely repel everyone of its strikes until the very end.",
-  "summon": "Our appearances and hearts change.<br>But I wanted to stay just like this.<br>I bear both his hopes and crimes...",
-  "fusion": "Envy, jealousy, animosity, regret...<br>I shall change these into strength.<br>Which emotions strengthen you?",
-  "evolution": "Your regrets cannot change the past.<br>So I shall look forward.<br>That was his wish too!",
-  "hp_base": "4942",
-  "atk_base": "2182",
-  "def_base": "1987",
-  "rec_base": "1781",
-  "hp_lord": "6551",
-  "atk_lord": "2754",
-  "def_lord": "2486",
-  "rec_lord": "2221",
-  "hp_anima": "7443",
-  "rec_anima": "1983",
-  "atk_breaker": "2992",
-  "def_breaker": "2248",
-  "def_guardian": "2724",
-  "rec_guardian": "2102",
-  "def_oracle": "2367",
-  "rec_oracle": "2578",
-  "hp_bonus": "1000",
-  "atk_bonus": "600",
-  "def_bonus": "300",
-  "rec_bonus": "400",
-  "lordonly": "",
-  "combo_hits": "10",
-  "normaldc": "40",
-  "ls": "Frozen Shadow's Creation",
-  "lsdescription": "80% boost to Atk, critical hits greatly boost damage and hugely boost BB gauge & boosts next turn's damage relative to critical damage dealt",
-  "lsnote": "150% Crit, fills 6-8 BC & 50% Atk for 2 turns",
-  "lstype": "Attack/Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 2181,
+      "def": 1987,
+      "hp": 4942,
+      "rec": 1781
+    },
+    "_lord": {
+      "atk": 2754,
+      "def": 2486,
+      "hp": 6551,
+      "rec": 2221
+    },
+    "anima": {
+      "atk": 2754,
+      "def": 2486,
+      "hp max": 7741,
+      "hp min": 7146,
+      "rec max": 2102,
+      "rec min": 1864
+    },
+    "breaker": {
+      "atk max": 3111,
+      "atk min": 2873,
+      "def max": 2367,
+      "def min": 2129,
+      "hp": 6551,
+      "rec": 2221
+    },
+    "guardian": {
+      "atk": 2754,
+      "def max": 2843,
+      "def min": 2605,
+      "hp": 6551,
+      "rec max": 2221,
+      "rec min": 1983
+    },
+    "oracle": {
+      "atk": 2754,
+      "def max": 2486,
+      "def min": 2248,
+      "hp": 6551,
+      "rec max": 2697,
+      "rec min": 2459
+    }
+  },
+  "leader_skill": {
+    "desc": "80% boost to Atk, critical hits hugely boost both BB gauge and critical damage & critical hits landed activate Atk boost for 2 turns",
+    "effects": [
+      {
+        "atk% buff": 80,
+        "passive id": "1"
+      },
+      {
+        "crit multiplier%": 150.0,
+        "passive id": "34"
+      },
+      {
+        "bc fill on crit max": 8,
+        "bc fill on crit min": 6,
+        "bc fill on crit%": 100.0,
+        "passive id": "65"
+      },
+      {
+        "buff": {
+          "atk% buff (1)": 50,
+          "buff turns (1)": "2"
+        },
+        "on crit activation chance%": 100,
+        "passive id": "89"
+      }
+    ],
+    "id": "1921",
+    "name": "Frozen Shadow's Creation"
+  },
+  "extra_skill": {
+    "desc": "Adds Spark damage boost to BB/SBB for 3 turns",
+    "effects": [
+      {
+        "conditions": [],
+        "passive id": "66",
+        "passive target": "self",
+        "trigger on bb": true,
+        "trigger on sbb": true,
+        "triggered effect": [
+          {
+            "buff turns": 3,
+            "effect delay time(ms)/frame": "0.0/0",
+            "proc id": "23",
+            "spark dmg% buff (40)": 90,
+            "target area": "aoe",
+            "target type": "party"
+          }
+        ]
+      }
+    ],
+    "id": "10900",
+    "name": "Regrets and Repentance",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -434,14 +471,6 @@
     ],
     "name": "Demon Frost Slash"
   },
-  "bbdescription": "13 combo powerful Water attack on all foes & boosts critical hit rate and critical damage for 3 turns",
-  "bbnote": "60% Crit rate & 50% Crit damage",
-  "bbtype": "Support/Offense",
-  "bbhits": "13",
-  "bbaoe": "A",
-  "bbgauge": "26",
-  "bbdc": "13",
-  "bbmultiplier": "300",
   "sbb": {
     "damage frames": [
       {
@@ -924,14 +953,6 @@
     ],
     "name": "Selion Afirarda"
   },
-  "sbbdescription": "18 combo powerful Water attack on all foes, slightly boosts enemies' probable Spark vulnerability for 2 turns & boosts critical hit rate and critical damage for 3 turns",
-  "sbbnote": "25% chance to boost vulnerability by 25%, 60% Crit & 50% Crit damage",
-  "sbbtype": "Support/Offense",
-  "sbbhits": "18",
-  "sbbaoe": "A",
-  "sbbgauge": "24",
-  "sbbdc": "18",
-  "sbbmultiplier": "540",
   "ubb": {
     "damage frames": [
       {
@@ -1072,6 +1093,191 @@
     ],
     "name": "Demon Frost: Exkaiser"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 146
+    },
+    "idle": {
+      "total number of frames": 48
+    },
+    "move": {
+      "total number of frames": 6
+    }
+  },
+  "category": 20720,
+  "cost": "42",
+  "damage frames": {
+    "frame times": [
+      29,
+      33,
+      37,
+      49,
+      53,
+      57,
+      70,
+      74,
+      78,
+      82
+    ],
+    "hit dmg% distribution": [
+      13,
+      10,
+      9,
+      11,
+      8,
+      6,
+      15,
+      11,
+      9,
+      8
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 10
+  },
+  "drop check count": 4,
+  "element": "water",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 1205,
+  "imp": {
+    "max atk": "600",
+    "max def": "300",
+    "max hp": "1000",
+    "max rec": "400"
+  },
+  "kind": "normal",
+  "lord damage range": "2564~2864",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Frozen Typhoon Farzen",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Frozen Typhoon Farzen",
+  "maxlv": "120",
+  "no": "1205",
+  "unitDisplayHomePosition_1W9CxaFK": "488,207,190,519",
+  "unitDisplayDetailPosition_6z54rgb3": "-110,34,1170,904",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "27,168,620,479,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-55,-225,1100,850",
+  "unitDisplaySummonPosition_KC3Jk8Br": "27,168,620,479,0",
+  "unitDisplayHpPosition_3BpHN6VD": "-5,23",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "15000",
+  "sellCaution": false,
+  "effectFrames": "23:122:1,27:122:1,31:122:1,43:122:1,47:122:1,51:122:1,64:122:1,68:122:1,72:122:1,76:122:1,29:200245:1,60:200256:1,0:200232:1,28:188:1,52:188:1,79:190:1,75:188:1,80:189:1,81:200120:1,125:600751:1,126:600751:1,127:600751:1",
+  "evofrom": "20725",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "21",
+  "animation_attack": "146",
+  "animation_idle": "48",
+  "animation_move": "6",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "29, 33, 37, 49, 53, 57, 70, 74, 78, 82",
+  "normal_distribute": "13, 10, 9, 11, 8, 6, 15, 11, 9, 8",
+  "normal_totaldistr": "100",
+  "bb_frames": "29, 32, 35, 53, 56, 59, 70, 74, 78, 82, 86, 90, 94",
+  "bb_distribute": "14, 4, 4, 10, 4, 4, 19, 12, 9, 7, 5, 4, 4",
+  "bb_totaldistr": "100",
+  "sbb_frames": "29, 32, 35, 38, 53, 56, 59, 52, 70, 74, 78, 82, 86, 90, 94, 98, 102, 106",
+  "sbb_distribute": "12, 4, 3, 3, 10, 4, 3, 3, 16, 8, 6, 5, 5, 4, 4, 4, 3, 3",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "29, 32, 35, 38, 53, 56, 59, 52, 70, 74, 78, 82, 86, 90, 94, 98, 102, 106, 110, 114, 118, 122",
+  "ubb_distribute": "10, 4, 3, 3, 9, 4, 3, 3, 11, 6, 5, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "2",
+  "sbb_effectdelay": "3",
+  "ubb_effectdelay": "3",
+  "description": "When a terrible demon appeared in Randall, Farzen was given intel about it by the priests from the great shrine, and then ordered to protect them. However, after he shared the same information with his comrades of the Guard, and Rouche thanked him for his help, Farzen chose to fight with his friends instead. The role the tactician gave him would be that of buying time for the sorceress to gather enough power to land the final blow on the demon. They were then attacked by their foe in no time, but Farzen was able to wisely repel everyone of its strikes until the very end.",
+  "summon": "Our appearances and hearts change.<br>But I wanted to stay just like this.<br>I bear both his hopes and crimes...",
+  "fusion": "Envy, jealousy, animosity, regret...<br>I shall change these into strength.<br>Which emotions strengthen you?",
+  "evolution": "Your regrets cannot change the past.<br>So I shall look forward.<br>That was his wish too!",
+  "hp_base": "4942",
+  "atk_base": "2182",
+  "def_base": "1987",
+  "rec_base": "1781",
+  "hp_lord": "6551",
+  "atk_lord": "2754",
+  "def_lord": "2486",
+  "rec_lord": "2221",
+  "hp_anima": "7443",
+  "rec_anima": "1983",
+  "atk_breaker": "2992",
+  "def_breaker": "2248",
+  "def_guardian": "2724",
+  "rec_guardian": "2102",
+  "def_oracle": "2367",
+  "rec_oracle": "2578",
+  "hp_bonus": "1000",
+  "atk_bonus": "600",
+  "def_bonus": "300",
+  "rec_bonus": "400",
+  "lordonly": "",
+  "combo_hits": "10",
+  "normaldc": "40",
+  "ls": "Frozen Shadow's Creation",
+  "lsdescription": "80% boost to Atk, critical hits greatly boost damage and hugely boost BB gauge & boosts next turn's damage relative to critical damage dealt",
+  "lsnote": "150% Crit, fills 6-8 BC & 50% Atk for 2 turns",
+  "lstype": "Attack/Brave Burst",
+  "bbdescription": "13 combo powerful Water attack on all foes & boosts critical hit rate and critical damage for 3 turns",
+  "bbnote": "60% Crit rate & 50% Crit damage",
+  "bbtype": "Support/Offense",
+  "bbhits": "13",
+  "bbaoe": "A",
+  "bbgauge": "26",
+  "bbdc": "13",
+  "bbmultiplier": "300",
+  "sbbdescription": "18 combo powerful Water attack on all foes, slightly boosts enemies' probable Spark vulnerability for 2 turns & boosts critical hit rate and critical damage for 3 turns",
+  "sbbnote": "25% chance to boost vulnerability by 25%, 60% Crit & 50% Crit damage",
+  "sbbtype": "Support/Offense",
+  "sbbhits": "18",
+  "sbbaoe": "A",
+  "sbbgauge": "24",
+  "sbbdc": "18",
+  "sbbmultiplier": "540",
   "ubbdescription": "22 combo massive Water attack on all foes, slightly boosts enemies' Spark vulnerability for 2 turns & boosts critical damage and BB Atk for 3 turns",
   "ubbnote": "100% vulnerability boost & 300% boost",
   "ubbtype": "Support/Offense",
@@ -1084,124 +1290,10 @@
   "esitem": "",
   "esdescription": "Adds Spark damage boost to BB/SBB for 3 turns",
   "esnote": "90% boost",
-  "evofrom": "20725",
-  "evointo": "",
   "evomats1": "",
   "evomats2": "",
   "evomats3": "",
   "evomats4": "",
   "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 2181,
-      "def": 1987,
-      "hp": 4942,
-      "rec": 1781
-    },
-    "_lord": {
-      "atk": 2754,
-      "def": 2486,
-      "hp": 6551,
-      "rec": 2221
-    },
-    "anima": {
-      "atk": 2754,
-      "def": 2486,
-      "hp max": 7741,
-      "hp min": 7146,
-      "rec max": 2102,
-      "rec min": 1864
-    },
-    "breaker": {
-      "atk max": 3111,
-      "atk min": 2873,
-      "def max": 2367,
-      "def min": 2129,
-      "hp": 6551,
-      "rec": 2221
-    },
-    "guardian": {
-      "atk": 2754,
-      "def max": 2843,
-      "def min": 2605,
-      "hp": 6551,
-      "rec max": 2221,
-      "rec min": 1983
-    },
-    "oracle": {
-      "atk": 2754,
-      "def max": 2486,
-      "def min": 2248,
-      "hp": 6551,
-      "rec max": 2697,
-      "rec min": 2459
-    }
-  },
-  "leader_skill": {
-    "desc": "80% boost to Atk, critical hits hugely boost both BB gauge and critical damage & critical hits landed activate Atk boost for 2 turns",
-    "effects": [
-      {
-        "atk% buff": 80,
-        "passive id": "1"
-      },
-      {
-        "crit multiplier%": 150.0,
-        "passive id": "34"
-      },
-      {
-        "bc fill on crit max": 8,
-        "bc fill on crit min": 6,
-        "bc fill on crit%": 100.0,
-        "passive id": "65"
-      },
-      {
-        "buff": {
-          "atk% buff (1)": 50,
-          "buff turns (1)": "2"
-        },
-        "on crit activation chance%": 100,
-        "passive id": "89"
-      }
-    ],
-    "id": "1921",
-    "name": "Frozen Shadow's Creation"
-  },
-  "extra_skill": {
-    "desc": "Adds Spark damage boost to BB/SBB for 3 turns",
-    "effects": [
-      {
-        "conditions": [],
-        "passive id": "66",
-        "passive target": "self",
-        "trigger on bb": true,
-        "trigger on sbb": true,
-        "triggered effect": [
-          {
-            "buff turns": 3,
-            "effect delay time(ms)/frame": "0.0/0",
-            "proc id": "23",
-            "spark dmg% buff (40)": 90,
-            "target area": "aoe",
-            "target type": "party"
-          }
-        ]
-      }
-    ],
-    "id": "10900",
-    "name": "Regrets and Repentance",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "488,207,190,519",
-  "unitDisplayDetailPosition_6z54rgb3": "-110,34,1170,904",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "27,168,620,479,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-55,-225,1100,850",
-  "unitDisplaySummonPosition_KC3Jk8Br": "27,168,620,479,0",
-  "unitDisplayHpPosition_3BpHN6VD": "-5,23",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "15000",
-  "sellCaution": false,
-  "effectFrames": "23:122:1,27:122:1,31:122:1,43:122:1,47:122:1,51:122:1,64:122:1,68:122:1,72:122:1,76:122:1,29:200245:1,60:200256:1,0:200232:1,28:188:1,52:188:1,79:190:1,75:188:1,80:189:1,81:200120:1,125:600751:1,126:600751:1,127:600751:1"
+  "evoitem": ""
 }

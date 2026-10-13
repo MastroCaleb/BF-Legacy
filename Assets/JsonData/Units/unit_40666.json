@@ -1,71 +1,105 @@
 {
   "id": "40666",
-  "unitName": "Thunder Champion Rahgan",
-  "no": "1149",
-  "element": "Thunder",
-  "rarity": "★★★★★★★",
-  "cost": "42",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "218",
-  "animation_idle": "54",
-  "animation_move": "6",
-  "movespeed_attack": "0.0024",
-  "movespeed_skill": "0.0024",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "5, 19, 32, 54, 110, 114, 118, 122",
-  "normal_distribute": "13, 13, 13, 13, 19, 13, 10, 6",
-  "normal_totaldistr": "100",
-  "bb_frames": "5, 19, 32, 54, 110, 113, 116, 119, 122, 125, 128, 131",
-  "bb_distribute": "11, 11, 11, 11, 16, 10, 9, 6, 5, 4, 3, 3",
-  "bb_totaldistr": "100",
-  "sbb_frames": "5, 8, 19, 22, 32, 54, 57, 110, 113, 116, 119, 122, 125, 128, 131",
-  "sbb_distribute": "10, 3, 10, 3, 10, 10, 3, 14, 9, 7, 6, 5, 4, 3, 3",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "5, 8, 19, 22, 32, 35, 54, 57, 110, 113, 116, 119, 122, 125, 128, 131, 134, 137, 140, 143",
-  "ubb_distribute": "9, 3, 8, 3, 8, 3, 9, 3, 12, 7, 5, 4, 4, 4, 3, 3, 3, 3, 3, 3",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "1",
-  "ubb_effectdelay": "1",
-  "description": "An instructor of the Toltya School of Martial Arts. The last time Rahgan ever fought was against the God Army troops which sought to destroy those fleeing towards the new promised land. He had grown so powerful after his recovery that his pupils thought he had beaten death itself. However, when he vomited blood on the battlefield, they soon realized otherwise. The God Army saw this as an opening to attack him full force, but Rahgan's strength was such that he stood right back up and did not stop fighting until every god around him had been pulverized.",
-  "summon": "I do not fear death.<br>I just want to protect<br>those precious to me.<br>That's what really scares me.",
-  "fusion": "*Cough* *cough* *gasp*<br>What...?<br>Don't make such a fuss<br>over a little blood!",
-  "evolution": "My time is here!<br>Curse this short life of mine!<br>You shall hear the Thunderbird roar!",
-  "hp_base": "5117",
-  "atk_base": "2229",
-  "def_base": "1840",
-  "rec_base": "1773",
-  "hp_lord": "6703",
-  "atk_lord": "2777",
-  "def_lord": "2305",
-  "rec_lord": "2231",
-  "hp_anima": "7595",
-  "rec_anima": "1993",
-  "atk_breaker": "3015",
-  "def_breaker": "2067",
-  "atk_guardian": "2539",
-  "def_guardian": "2543",
-  "rec_guardian": "2112",
-  "def_oracle": "2186",
-  "hp_oracle": "6346",
-  "rec_oracle": "2588",
-  "hp_bonus": "1100",
-  "atk_bonus": "440",
-  "def_bonus": "440",
-  "rec_bonus": "440",
-  "lordonly": "",
-  "combo_hits": "8",
-  "normaldc": "32",
-  "ls": "Martial Artist's Fists",
-  "lsdescription": "80% boost to Atk, hugely boosts BB gauge when attacking normally & raises normal hit amount",
-  "lsnote": "Fills 7 BC & adds +1 hit to each hit count with 50% damage penalty",
-  "lstype": "Attack/Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 2229,
+      "def": 1840,
+      "hp": 5117,
+      "rec": 1773
+    },
+    "_lord": {
+      "atk": 2777,
+      "def": 2305,
+      "hp": 6703,
+      "rec": 2231
+    },
+    "anima": {
+      "atk": 2777,
+      "def": 2305,
+      "hp max": 7893,
+      "hp min": 7298,
+      "rec max": 2112,
+      "rec min": 1874
+    },
+    "breaker": {
+      "atk max": 3134,
+      "atk min": 2896,
+      "def max": 2186,
+      "def min": 1948,
+      "hp": 6703,
+      "rec": 2231
+    },
+    "guardian": {
+      "atk": 2777,
+      "def max": 2662,
+      "def min": 2424,
+      "hp": 6703,
+      "rec max": 2231,
+      "rec min": 1993
+    },
+    "oracle": {
+      "atk": 2777,
+      "def max": 2305,
+      "def min": 2067,
+      "hp": 6703,
+      "rec max": 2707,
+      "rec min": 2469
+    }
+  },
+  "leader_skill": {
+    "desc": "80% boost to Atk, hugely boosts BB gauge when attacking normally & raises normal hit amount",
+    "effects": [
+      {
+        "atk% buff": 80,
+        "passive id": "1"
+      },
+      {
+        "bc fill when attacking high": 7,
+        "bc fill when attacking low": 7,
+        "bc fill when attacking%": 100,
+        "passive id": "35"
+      },
+      {
+        "extra hits dmg%": -50,
+        "hit increase/hit": 1,
+        "passive id": "37"
+      }
+    ],
+    "id": "1919",
+    "name": "Martial Artist's Fists"
+  },
+  "extra_skill": {
+    "desc": "Adds Def ignoring effect to BB/SBB for 2 turns & raises normal hit amount",
+    "effects": [
+      {
+        "conditions": [],
+        "hit increase/hit": 1,
+        "passive id": "37",
+        "passive target": "self"
+      },
+      {
+        "conditions": [],
+        "passive id": "66",
+        "passive target": "self",
+        "trigger on bb": true,
+        "trigger on sbb": true,
+        "triggered effect": [
+          {
+            "defense% ignore": 100,
+            "defense% ignore turns (39)": 2,
+            "effect delay time(ms)/frame": "0.0/0",
+            "proc id": "22",
+            "target area": "aoe",
+            "target type": "party"
+          }
+        ]
+      }
+    ],
+    "id": "8900",
+    "name": "Discipline Beyond Death",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -454,14 +488,6 @@
     ],
     "name": "Royal Thunder Chain Punch"
   },
-  "bbdescription": "12 combo powerful Thunder attack on all foes, additional attack at turn's end and raises normal hit amount for 3 turns",
-  "bbnote": "300% attack multiplier & adds +1 hit to each hit count",
-  "bbtype": "Support/Offense",
-  "bbhits": "12",
-  "bbaoe": "A",
-  "bbgauge": "24",
-  "bbdc": "12",
-  "bbmultiplier": "300",
   "sbb": {
     "damage frames": [
       {
@@ -978,14 +1004,6 @@
     ],
     "name": "Sky Breaker: Royal Haze"
   },
-  "sbbdescription": "15 combo powerful Thunder attack on all foes (consecutive uses boost damage) & additional attack at turn's end, raises normal hit amount and boosts Atk relative to Def for 3 turns",
-  "sbbnote": "100% boost to multiplier per use up to 3x, 300% DoT multiplier, adds +1 hit to each hit count & 60% Def to Atk",
-  "sbbtype": "Support/Offense",
-  "sbbhits": "15",
-  "sbbaoe": "A",
-  "sbbgauge": "26",
-  "sbbdc": "15",
-  "sbbmultiplier": "500~800",
   "ubb": {
     "damage frames": [
       {
@@ -1124,6 +1142,189 @@
     ],
     "name": "Thunder Demon's Zenith"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 218
+    },
+    "idle": {
+      "total number of frames": 54
+    },
+    "move": {
+      "total number of frames": 6
+    }
+  },
+  "category": 40660,
+  "cost": "42",
+  "damage frames": {
+    "frame times": [
+      5,
+      19,
+      32,
+      54,
+      110,
+      114,
+      118,
+      122
+    ],
+    "hit dmg% distribution": [
+      13,
+      13,
+      13,
+      13,
+      19,
+      13,
+      10,
+      6
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 8
+  },
+  "drop check count": 4,
+  "element": "thunder",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 1149,
+  "imp": {
+    "max atk": "440",
+    "max def": "440",
+    "max hp": "1100",
+    "max rec": "440"
+  },
+  "kind": "normal",
+  "lord damage range": "2585~2888",
+  "movement": {
+    "attack": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    }
+  },
+  "name": "Thunder Champion Rahgan",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Thunder Champion Rahgan",
+  "maxlv": "120",
+  "no": "1149",
+  "unitDisplayHomePosition_1W9CxaFK": "354,223,190,519",
+  "unitDisplayDetailPosition_6z54rgb3": "27,34,1030,791",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "72,204,560,430,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "51,-251,1000,768",
+  "unitDisplaySummonPosition_KC3Jk8Br": "72,204,560,430,0",
+  "unitDisplayHpPosition_3BpHN6VD": "-7,20",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "15000",
+  "sellCaution": false,
+  "effectFrames": "5:400560:1,19:400560:1,32:400560:1,54:400560:1,110:400560:1,114:130:1,118:130:1,122:130:1,4:100174:1,109:100174:1,25:400130:1,40:400130:1,60:400130:1,111:330464:1",
+  "evofrom": "40665",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "21",
+  "animation_attack": "218",
+  "animation_idle": "54",
+  "animation_move": "6",
+  "movespeed_attack": "0.0024",
+  "movespeed_skill": "0.0024",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "5, 19, 32, 54, 110, 114, 118, 122",
+  "normal_distribute": "13, 13, 13, 13, 19, 13, 10, 6",
+  "normal_totaldistr": "100",
+  "bb_frames": "5, 19, 32, 54, 110, 113, 116, 119, 122, 125, 128, 131",
+  "bb_distribute": "11, 11, 11, 11, 16, 10, 9, 6, 5, 4, 3, 3",
+  "bb_totaldistr": "100",
+  "sbb_frames": "5, 8, 19, 22, 32, 54, 57, 110, 113, 116, 119, 122, 125, 128, 131",
+  "sbb_distribute": "10, 3, 10, 3, 10, 10, 3, 14, 9, 7, 6, 5, 4, 3, 3",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "5, 8, 19, 22, 32, 35, 54, 57, 110, 113, 116, 119, 122, 125, 128, 131, 134, 137, 140, 143",
+  "ubb_distribute": "9, 3, 8, 3, 8, 3, 9, 3, 12, 7, 5, 4, 4, 4, 3, 3, 3, 3, 3, 3",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "1",
+  "ubb_effectdelay": "1",
+  "description": "An instructor of the Toltya School of Martial Arts. The last time Rahgan ever fought was against the God Army troops which sought to destroy those fleeing towards the new promised land. He had grown so powerful after his recovery that his pupils thought he had beaten death itself. However, when he vomited blood on the battlefield, they soon realized otherwise. The God Army saw this as an opening to attack him full force, but Rahgan's strength was such that he stood right back up and did not stop fighting until every god around him had been pulverized.",
+  "summon": "I do not fear death.<br>I just want to protect<br>those precious to me.<br>That's what really scares me.",
+  "fusion": "*Cough* *cough* *gasp*<br>What...?<br>Don't make such a fuss<br>over a little blood!",
+  "evolution": "My time is here!<br>Curse this short life of mine!<br>You shall hear the Thunderbird roar!",
+  "hp_base": "5117",
+  "atk_base": "2229",
+  "def_base": "1840",
+  "rec_base": "1773",
+  "hp_lord": "6703",
+  "atk_lord": "2777",
+  "def_lord": "2305",
+  "rec_lord": "2231",
+  "hp_anima": "7595",
+  "rec_anima": "1993",
+  "atk_breaker": "3015",
+  "def_breaker": "2067",
+  "atk_guardian": "2539",
+  "def_guardian": "2543",
+  "rec_guardian": "2112",
+  "def_oracle": "2186",
+  "hp_oracle": "6346",
+  "rec_oracle": "2588",
+  "hp_bonus": "1100",
+  "atk_bonus": "440",
+  "def_bonus": "440",
+  "rec_bonus": "440",
+  "lordonly": "",
+  "combo_hits": "8",
+  "normaldc": "32",
+  "ls": "Martial Artist's Fists",
+  "lsdescription": "80% boost to Atk, hugely boosts BB gauge when attacking normally & raises normal hit amount",
+  "lsnote": "Fills 7 BC & adds +1 hit to each hit count with 50% damage penalty",
+  "lstype": "Attack/Brave Burst",
+  "bbdescription": "12 combo powerful Thunder attack on all foes, additional attack at turn's end and raises normal hit amount for 3 turns",
+  "bbnote": "300% attack multiplier & adds +1 hit to each hit count",
+  "bbtype": "Support/Offense",
+  "bbhits": "12",
+  "bbaoe": "A",
+  "bbgauge": "24",
+  "bbdc": "12",
+  "bbmultiplier": "300",
+  "sbbdescription": "15 combo powerful Thunder attack on all foes (consecutive uses boost damage) & additional attack at turn's end, raises normal hit amount and boosts Atk relative to Def for 3 turns",
+  "sbbnote": "100% boost to multiplier per use up to 3x, 300% DoT multiplier, adds +1 hit to each hit count & 60% Def to Atk",
+  "sbbtype": "Support/Offense",
+  "sbbhits": "15",
+  "sbbaoe": "A",
+  "sbbgauge": "26",
+  "sbbdc": "15",
+  "sbbmultiplier": "500~800",
   "ubbdescription": "20 combo massive Thunder attack on all foes, additional powerful attack at turn's end for 3 turns & raises normal hit amount and greatly boosts Atk for 3 turns",
   "ubbnote": "800% DoT multiplier, adds +2 hits to each hit count (+100% extra damage, 200% total) & 200% Atk",
   "ubbtype": "Support/Offense",
@@ -1136,123 +1337,10 @@
   "esitem": "",
   "esdescription": "Adds Def ignoring effect to BB/SBB for 2 turns & raises normal hit amount",
   "esnote": "Adds +1 hit to each hit count",
-  "evofrom": "40665",
-  "evointo": "",
   "evomats1": "",
   "evomats2": "",
   "evomats3": "",
   "evomats4": "",
   "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 2229,
-      "def": 1840,
-      "hp": 5117,
-      "rec": 1773
-    },
-    "_lord": {
-      "atk": 2777,
-      "def": 2305,
-      "hp": 6703,
-      "rec": 2231
-    },
-    "anima": {
-      "atk": 2777,
-      "def": 2305,
-      "hp max": 7893,
-      "hp min": 7298,
-      "rec max": 2112,
-      "rec min": 1874
-    },
-    "breaker": {
-      "atk max": 3134,
-      "atk min": 2896,
-      "def max": 2186,
-      "def min": 1948,
-      "hp": 6703,
-      "rec": 2231
-    },
-    "guardian": {
-      "atk": 2777,
-      "def max": 2662,
-      "def min": 2424,
-      "hp": 6703,
-      "rec max": 2231,
-      "rec min": 1993
-    },
-    "oracle": {
-      "atk": 2777,
-      "def max": 2305,
-      "def min": 2067,
-      "hp": 6703,
-      "rec max": 2707,
-      "rec min": 2469
-    }
-  },
-  "leader_skill": {
-    "desc": "80% boost to Atk, hugely boosts BB gauge when attacking normally & raises normal hit amount",
-    "effects": [
-      {
-        "atk% buff": 80,
-        "passive id": "1"
-      },
-      {
-        "bc fill when attacking high": 7,
-        "bc fill when attacking low": 7,
-        "bc fill when attacking%": 100,
-        "passive id": "35"
-      },
-      {
-        "extra hits dmg%": -50,
-        "hit increase/hit": 1,
-        "passive id": "37"
-      }
-    ],
-    "id": "1919",
-    "name": "Martial Artist's Fists"
-  },
-  "extra_skill": {
-    "desc": "Adds Def ignoring effect to BB/SBB for 2 turns & raises normal hit amount",
-    "effects": [
-      {
-        "conditions": [],
-        "hit increase/hit": 1,
-        "passive id": "37",
-        "passive target": "self"
-      },
-      {
-        "conditions": [],
-        "passive id": "66",
-        "passive target": "self",
-        "trigger on bb": true,
-        "trigger on sbb": true,
-        "triggered effect": [
-          {
-            "defense% ignore": 100,
-            "defense% ignore turns (39)": 2,
-            "effect delay time(ms)/frame": "0.0/0",
-            "proc id": "22",
-            "target area": "aoe",
-            "target type": "party"
-          }
-        ]
-      }
-    ],
-    "id": "8900",
-    "name": "Discipline Beyond Death",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "354,223,190,519",
-  "unitDisplayDetailPosition_6z54rgb3": "27,34,1030,791",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "72,204,560,430,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "51,-251,1000,768",
-  "unitDisplaySummonPosition_KC3Jk8Br": "72,204,560,430,0",
-  "unitDisplayHpPosition_3BpHN6VD": "-7,20",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "15000",
-  "sellCaution": false,
-  "effectFrames": "5:400560:1,19:400560:1,32:400560:1,54:400560:1,110:400560:1,114:130:1,118:130:1,122:130:1,4:100174:1,109:100174:1,25:400130:1,40:400130:1,60:400130:1,111:330464:1"
+  "evoitem": ""
 }

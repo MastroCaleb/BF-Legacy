@@ -1,68 +1,102 @@
 {
   "id": "30836",
-  "unitName": "Cursed Princess Rozalia",
-  "no": "1442",
-  "element": "Earth",
-  "rarity": "★★★★★★★",
-  "cost": "44",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "112",
-  "animation_idle": "56",
-  "animation_move": "13",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "63, 67, 71, 75, 79, 83",
-  "normal_distribute": "17, 17, 17, 17, 16, 16",
-  "normal_totaldistr": "100",
-  "bb_frames": "63, 67, 71, 75, 79, 83, 87, 91, 95",
-  "bb_distribute": "13, 11, 10, 9, 10, 11, 13, 11, 12",
-  "bb_totaldistr": "100",
-  "sbb_frames": "63, 67, 71, 75, 79, 83, 87, 91, 95, 99, 103, 107, 111, 115, 119",
-  "sbb_distribute": "9, 6, 7, 6, 7, 6, 8, 6, 8, 6, 5, 6, 7, 6, 7",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "63, 66, 69, 72, 75, 78, 81, 84, 87, 90, 93, 96, 99, 102, 105, 108, 111, 114, 117",
-  "ubb_distribute": "9, 5, 4, 3, 6, 5, 6, 4, 6, 3, 4, 5, 6, 7, 4, 3, 5, 6, 9",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "2",
-  "sbb_effectdelay": "3",
-  "ubb_effectdelay": "4",
-  "description": "Known as the \"Princess of the Wind,\" Rozalia was the princess of a small nation. She came to rule after her father's passing, and subsequently inherited the family jewel that had been passed down her bloodline for generations. When an evil sorcerer sought to claim the treasure for himself, a gallant thief came to Rozalia's rescue. She ultimately managed to use the powers hidden within the jewel to protect her people from the attacks carried out by the sorcerer's army. However, she paid the price by relinquishing her beauty to a dreadful curse. Rumor has it she never presented herself in public henceforth.",
-  "summon": "Why did you summon me?<br>Please, do not look upon me...<br>I beg of you...",
-  "fusion": "Do you seek power as well?<br>Too much of it will break you.<br>My current appearance proves this.",
-  "evolution": "",
-  "hp_base": "4998",
-  "atk_base": "1805",
-  "def_base": "1887",
-  "rec_base": "1975",
-  "hp_lord": "7147",
-  "atk_lord": "2443",
-  "def_lord": "2566",
-  "rec_lord": "2664",
-  "hp_anima": "8039",
-  "rec_anima": "2426",
-  "atk_breaker": "2681",
-  "def_breaker": "2328",
-  "def_guardian": "2804",
-  "rec_guardian": "2545",
-  "def_oracle": "2447",
-  "rec_oracle": "3021",
-  "hp_bonus": "1100",
-  "atk_bonus": "440",
-  "def_bonus": "440",
-  "rec_bonus": "440",
-  "lordonly": "",
-  "combo_hits": "6",
-  "normaldc": "36",
-  "ls": "The Curse of Sacrifice",
-  "lsdescription": "40% boost to Def and max HP, hugely boosts BB Atk & negates Def ignoring effects",
-  "lsnote": "150% boost",
+  "stats": {
+    "_base": {
+      "atk": 1805,
+      "def": 1887,
+      "hp": 4998,
+      "rec": 1975
+    },
+    "_lord": {
+      "atk": 2443,
+      "def": 2566,
+      "hp": 7147,
+      "rec": 2664
+    },
+    "anima": {
+      "atk": 2443,
+      "def": 2566,
+      "hp max": 8337,
+      "hp min": 7742,
+      "rec max": 2545,
+      "rec min": 2307
+    },
+    "breaker": {
+      "atk max": 2800,
+      "atk min": 2562,
+      "def max": 2447,
+      "def min": 2209,
+      "hp": 7147,
+      "rec": 2664
+    },
+    "guardian": {
+      "atk": 2443,
+      "def max": 2923,
+      "def min": 2685,
+      "hp": 7147,
+      "rec max": 2664,
+      "rec min": 2426
+    },
+    "oracle": {
+      "atk": 2443,
+      "def max": 2566,
+      "def min": 2328,
+      "hp": 7147,
+      "rec max": 3140,
+      "rec min": 2902
+    }
+  },
+  "leader_skill": {
+    "desc": "40% boost to Def and max HP, hugely boosts BB Atk & negates Def ignoring effects",
+    "effects": [
+      {
+        "atk% buff": 40,
+        "hp% buff": 40,
+        "passive id": "1"
+      },
+      {
+        "bb atk% buff": 150,
+        "passive id": "64",
+        "sbb atk% buff": 150,
+        "ubb atk% buff": 150
+      },
+      {
+        "ignore def resist chance%": 100,
+        "passive id": "92"
+      }
+    ],
+    "id": "7452",
+    "name": "The Curse of Sacrifice"
+  },
+  "extra_skill": {
+    "desc": "Considerably boosts damage against status afflicted foes & slightly restores HP each turn",
+    "effects": [
+      {
+        "atk% buff when enemy has ailment": 80,
+        "atk% buff when enemy has curse": true,
+        "atk% buff when enemy has injury": true,
+        "atk% buff when enemy has paralysis": true,
+        "atk% buff when enemy has poison": true,
+        "atk% buff when enemy has sick": true,
+        "atk% buff when enemy has weaken": true,
+        "conditions": [],
+        "passive id": "74",
+        "passive target": "self"
+      },
+      {
+        "conditions": [],
+        "passive id": "33",
+        "passive target": "self",
+        "rec% added (turn heal)": 10.0,
+        "turn heal high": 600,
+        "turn heal low": 400
+      }
+    ],
+    "id": "21500",
+    "name": "Miracle of Indemnification",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -547,14 +581,6 @@
     ],
     "name": "Sinister Dark Winds"
   },
-  "bbdescription": "9 combo Earth attack on all foes, probable random status ailment infliction & considerably boosts BB Atk for 3 turns",
-  "bbnote": "65% chance & 200% BB Atk",
-  "bbtype": "Offense",
-  "bbhits": "9",
-  "bbaoe": "A",
-  "bbgauge": "26",
-  "bbdc": "9",
-  "bbmultiplier": "350",
   "sbb": {
     "damage frames": [
       {
@@ -1275,14 +1301,6 @@
     ],
     "name": "Abominable Demon Jewel"
   },
-  "sbbdescription": "15 combo powerful Earth attack on all foes, probable random status ailment infliction, adds probable random status ailment infliction effect to attack for 3 turns & considerably boosts BB Atk for 3 turns",
-  "sbbnote": "65% chance for instant infliction, 10% chance to inflict Injury, Weak, Sick, 8% chance to inflict Curse, Poison, Paralysis & 250% BB Atk",
-  "sbbtype": "Offense",
-  "sbbhits": "15",
-  "sbbaoe": "A",
-  "sbbgauge": "28",
-  "sbbdc": "15",
-  "sbbmultiplier": "560",
   "ubb": {
     "damage frames": [
       {
@@ -1438,6 +1456,213 @@
     ],
     "name": "Lament of Euros"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 112
+    },
+    "idle": {
+      "total number of frames": 56
+    },
+    "move": {
+      "total number of frames": 13
+    }
+  },
+  "category": 30830,
+  "cost": "44",
+  "damage frames": {
+    "frame times": [
+      63,
+      67,
+      71,
+      75,
+      79,
+      83
+    ],
+    "hit dmg% distribution": [
+      17,
+      17,
+      17,
+      17,
+      16,
+      16
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 6
+  },
+  "drop check count": 6,
+  "element": "earth",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 1442,
+  "imp": {
+    "max atk": "440",
+    "max def": "440",
+    "max hp": "1100",
+    "max rec": "440"
+  },
+  "kind": "normal",
+  "lord damage range": "2274~2540",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Cursed Princess Rozalia",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Cursed Princess Rozalia",
+  "maxlv": "120",
+  "no": "1442",
+  "unitDisplayHomePosition_1W9CxaFK": "424,137,174,475",
+  "unitDisplayDetailPosition_6z54rgb3": "-106,72,1026,808",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "69,246,513,404,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-41,-162,960,756",
+  "unitDisplaySummonPosition_KC3Jk8Br": "69,246,513,404,0",
+  "unitDisplayHpPosition_3BpHN6VD": "0,40",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "15000",
+  "sellCaution": false,
+  "effectFrames": "60:330507:1,61:330872:1,63:400766:1,65:600904:1,80:600904:1,95:600904:1",
+  "evofrom": "",
+  "evointo": "30837",
+  "evozelcost": "3000000",
+  "evokarmacost": "1000000",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "30334",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30191",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "30132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "112",
+  "animation_idle": "56",
+  "animation_move": "13",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "63, 67, 71, 75, 79, 83",
+  "normal_distribute": "17, 17, 17, 17, 16, 16",
+  "normal_totaldistr": "100",
+  "bb_frames": "63, 67, 71, 75, 79, 83, 87, 91, 95",
+  "bb_distribute": "13, 11, 10, 9, 10, 11, 13, 11, 12",
+  "bb_totaldistr": "100",
+  "sbb_frames": "63, 67, 71, 75, 79, 83, 87, 91, 95, 99, 103, 107, 111, 115, 119",
+  "sbb_distribute": "9, 6, 7, 6, 7, 6, 8, 6, 8, 6, 5, 6, 7, 6, 7",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "63, 66, 69, 72, 75, 78, 81, 84, 87, 90, 93, 96, 99, 102, 105, 108, 111, 114, 117",
+  "ubb_distribute": "9, 5, 4, 3, 6, 5, 6, 4, 6, 3, 4, 5, 6, 7, 4, 3, 5, 6, 9",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "2",
+  "sbb_effectdelay": "3",
+  "ubb_effectdelay": "4",
+  "description": "Known as the \"Princess of the Wind,\" Rozalia was the princess of a small nation. She came to rule after her father's passing, and subsequently inherited the family jewel that had been passed down her bloodline for generations. When an evil sorcerer sought to claim the treasure for himself, a gallant thief came to Rozalia's rescue. She ultimately managed to use the powers hidden within the jewel to protect her people from the attacks carried out by the sorcerer's army. However, she paid the price by relinquishing her beauty to a dreadful curse. Rumor has it she never presented herself in public henceforth.",
+  "summon": "Why did you summon me?<br>Please, do not look upon me...<br>I beg of you...",
+  "fusion": "Do you seek power as well?<br>Too much of it will break you.<br>My current appearance proves this.",
+  "evolution": "",
+  "hp_base": "4998",
+  "atk_base": "1805",
+  "def_base": "1887",
+  "rec_base": "1975",
+  "hp_lord": "7147",
+  "atk_lord": "2443",
+  "def_lord": "2566",
+  "rec_lord": "2664",
+  "hp_anima": "8039",
+  "rec_anima": "2426",
+  "atk_breaker": "2681",
+  "def_breaker": "2328",
+  "def_guardian": "2804",
+  "rec_guardian": "2545",
+  "def_oracle": "2447",
+  "rec_oracle": "3021",
+  "hp_bonus": "1100",
+  "atk_bonus": "440",
+  "def_bonus": "440",
+  "rec_bonus": "440",
+  "lordonly": "",
+  "combo_hits": "6",
+  "normaldc": "36",
+  "ls": "The Curse of Sacrifice",
+  "lsdescription": "40% boost to Def and max HP, hugely boosts BB Atk & negates Def ignoring effects",
+  "lsnote": "150% boost",
+  "bbdescription": "9 combo Earth attack on all foes, probable random status ailment infliction & considerably boosts BB Atk for 3 turns",
+  "bbnote": "65% chance & 200% BB Atk",
+  "bbtype": "Offense",
+  "bbhits": "9",
+  "bbaoe": "A",
+  "bbgauge": "26",
+  "bbdc": "9",
+  "bbmultiplier": "350",
+  "sbbdescription": "15 combo powerful Earth attack on all foes, probable random status ailment infliction, adds probable random status ailment infliction effect to attack for 3 turns & considerably boosts BB Atk for 3 turns",
+  "sbbnote": "65% chance for instant infliction, 10% chance to inflict Injury, Weak, Sick, 8% chance to inflict Curse, Poison, Paralysis & 250% BB Atk",
+  "sbbtype": "Offense",
+  "sbbhits": "15",
+  "sbbaoe": "A",
+  "sbbgauge": "28",
+  "sbbdc": "15",
+  "sbbmultiplier": "560",
   "ubbdescription": "19 combo massive Earth attack on all foes, random status ailment infliction, enormously boosts BB Atk for 3 turns & enormously boosts damage against status afflicted foes for 3 turns",
   "ubbnote": "500% BB Atk & 250% damage boost",
   "ubbtype": "Offense",
@@ -1450,8 +1675,6 @@
   "esitem": "",
   "esdescription": "Considerably boosts damage against status afflicted foes & slightly restores HP each turn",
   "esnote": "80% boost & heals 400-600 + 10% Rec HP",
-  "evofrom": "",
-  "evointo": "30837",
   "evomats1": "Earth Mecha God",
   "evomats2": "Earth Mecha God",
   "evomats3": "Miracle Totem",
@@ -1460,113 +1683,5 @@
   "evomats6": "Earth Pot",
   "evomats7": "Earth Idol",
   "evomats8": "Metal Mimic",
-  "evoitem": "",
-  "evozelcost": "3000000",
-  "stats": {
-    "_base": {
-      "atk": 1805,
-      "def": 1887,
-      "hp": 4998,
-      "rec": 1975
-    },
-    "_lord": {
-      "atk": 2443,
-      "def": 2566,
-      "hp": 7147,
-      "rec": 2664
-    },
-    "anima": {
-      "atk": 2443,
-      "def": 2566,
-      "hp max": 8337,
-      "hp min": 7742,
-      "rec max": 2545,
-      "rec min": 2307
-    },
-    "breaker": {
-      "atk max": 2800,
-      "atk min": 2562,
-      "def max": 2447,
-      "def min": 2209,
-      "hp": 7147,
-      "rec": 2664
-    },
-    "guardian": {
-      "atk": 2443,
-      "def max": 2923,
-      "def min": 2685,
-      "hp": 7147,
-      "rec max": 2664,
-      "rec min": 2426
-    },
-    "oracle": {
-      "atk": 2443,
-      "def max": 2566,
-      "def min": 2328,
-      "hp": 7147,
-      "rec max": 3140,
-      "rec min": 2902
-    }
-  },
-  "leader_skill": {
-    "desc": "40% boost to Def and max HP, hugely boosts BB Atk & negates Def ignoring effects",
-    "effects": [
-      {
-        "atk% buff": 40,
-        "hp% buff": 40,
-        "passive id": "1"
-      },
-      {
-        "bb atk% buff": 150,
-        "passive id": "64",
-        "sbb atk% buff": 150,
-        "ubb atk% buff": 150
-      },
-      {
-        "ignore def resist chance%": 100,
-        "passive id": "92"
-      }
-    ],
-    "id": "7452",
-    "name": "The Curse of Sacrifice"
-  },
-  "extra_skill": {
-    "desc": "Considerably boosts damage against status afflicted foes & slightly restores HP each turn",
-    "effects": [
-      {
-        "atk% buff when enemy has ailment": 80,
-        "atk% buff when enemy has curse": true,
-        "atk% buff when enemy has injury": true,
-        "atk% buff when enemy has paralysis": true,
-        "atk% buff when enemy has poison": true,
-        "atk% buff when enemy has sick": true,
-        "atk% buff when enemy has weaken": true,
-        "conditions": [],
-        "passive id": "74",
-        "passive target": "self"
-      },
-      {
-        "conditions": [],
-        "passive id": "33",
-        "passive target": "self",
-        "rec% added (turn heal)": 10.0,
-        "turn heal high": 600,
-        "turn heal low": 400
-      }
-    ],
-    "id": "21500",
-    "name": "Miracle of Indemnification",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "424,137,174,475",
-  "unitDisplayDetailPosition_6z54rgb3": "-106,72,1026,808",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "69,246,513,404,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-41,-162,960,756",
-  "unitDisplaySummonPosition_KC3Jk8Br": "69,246,513,404,0",
-  "unitDisplayHpPosition_3BpHN6VD": "0,40",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "15000",
-  "sellCaution": false,
-  "effectFrames": "60:330507:1,61:330872:1,63:400766:1,65:600904:1,80:600904:1,95:600904:1"
+  "evoitem": ""
 }

@@ -1,62 +1,63 @@
 {
   "id": "30082",
-  "unitName": "Ent",
-  "no": "104",
-  "element": "Earth",
-  "rarity": "★★★",
-  "cost": "4",
-  "maxlv": "40",
-  "basexp": "15",
-  "gender": "N",
-  "ai": "2",
-  "animation_attack": "182",
-  "animation_idle": "32",
-  "animation_move": "36",
-  "movespeed_attack": "8",
-  "movespeed_skill": "8",
-  "speedtype_attack": "1",
-  "speedtype_skill": "1",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "58, 63, 68, 73, 78",
-  "normal_distribute": "20, 20, 20, 20, 20",
-  "normal_totaldistr": "100",
-  "bb_frames": "58, 63, 68, 73, 78",
-  "bb_distribute": "20, 20, 20, 20, 20",
-  "bb_totaldistr": "100",
-  "description": "A tree monster that's over 1000 years old. Trents evolves into an Ents after bathing in magic for many centuries. They are completely self-centered and wouldn't care even if their forest was burned down and all their kind was wiped out. All it wishes to do is get bigger. It will attack of anyone who tries to get in its way.",
-  "summon": "I am an ancient Ent.<br>I'm reluctant to, but <br>I'll follow you...",
-  "fusion": "Hehe, not even this will<br>keep me with the likes of you...",
-  "evolution": "I should probably be<br>a bit more serious now that<br>I've evolved...",
-  "hp_base": "1755",
-  "atk_base": "351",
-  "def_base": "618",
-  "rec_base": "804",
-  "hp_lord": "2430",
-  "atk_lord": "655",
-  "def_lord": "960",
-  "rec_lord": "1082",
-  "hp_anima": "2723",
-  "rec_anima": "1004",
-  "atk_breaker": "733",
-  "def_breaker": "882",
-  "atk_guardian": "577",
-  "def_guardian": "1038",
-  "rec_guardian": "1043",
-  "def_oracle": "921",
-  "hp_oracle": "2313",
-  "rec_oracle": "1199",
-  "hp_bonus": "300",
-  "atk_bonus": "80",
-  "def_bonus": "160",
-  "rec_bonus": "120",
-  "lordonly": "",
-  "combo_hits": "5",
-  "normaldc": "10",
-  "ls": "Soul Light",
-  "lsdescription": "Small boost in Karma produced during Spark",
-  "lsnote": "30% boost",
-  "lstype": "Karma",
+  "stats": {
+    "_base": {
+      "atk": 351,
+      "def": 618,
+      "hp": 1755,
+      "rec": 804
+    },
+    "_lord": {
+      "atk": 655,
+      "def": 960,
+      "hp": 2430,
+      "rec": 1082
+    },
+    "anima": {
+      "atk": 655,
+      "def": 960,
+      "hp max": 2820,
+      "hp min": 2625,
+      "rec max": 1043,
+      "rec min": 965
+    },
+    "breaker": {
+      "atk max": 772,
+      "atk min": 694,
+      "def max": 921,
+      "def min": 843,
+      "hp": 2430,
+      "rec": 1082
+    },
+    "guardian": {
+      "atk": 655,
+      "def max": 1077,
+      "def min": 999,
+      "hp": 2430,
+      "rec max": 1082,
+      "rec min": 1004
+    },
+    "oracle": {
+      "atk": 655,
+      "def max": 960,
+      "def min": 882,
+      "hp": 2430,
+      "rec max": 1238,
+      "rec min": 1160
+    }
+  },
+  "leader_skill": {
+    "desc": "Small boost in Karma produced during Spark",
+    "effects": [
+      {
+        "karma drop% for spark": 30,
+        "passive id": "31"
+      }
+    ],
+    "id": "1700",
+    "name": "Soul Light"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -207,93 +208,91 @@
     ],
     "name": "Grand Storm"
   },
-  "bbdescription": "5 combo Earth elemental attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "5",
-  "bbaoe": "A",
-  "bbgauge": "20",
-  "bbdc": "5",
-  "bbmultiplier": "95",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "30081",
-  "evointo": "30083",
-  "evomats1": "30132",
-  "evomats2": "30131",
-  "evomats3": "30130",
-  "evomats4": "60142",
-  "evomats5": "",
-  "evozelcost": "100000",
-  "stats": {
-    "_base": {
-      "atk": 351,
-      "def": 618,
-      "hp": 1755,
-      "rec": 804
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 655,
-      "def": 960,
-      "hp": 2430,
-      "rec": 1082
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 655,
-      "def": 960,
-      "hp max": 2820,
-      "hp min": 2625,
-      "rec max": 1043,
-      "rec min": 965
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 182
     },
-    "breaker": {
-      "atk max": 772,
-      "atk min": 694,
-      "def max": 921,
-      "def min": 843,
-      "hp": 2430,
-      "rec": 1082
+    "idle": {
+      "total number of frames": 32
     },
-    "guardian": {
-      "atk": 655,
-      "def max": 1077,
-      "def min": 999,
-      "hp": 2430,
-      "rec max": 1082,
-      "rec min": 1004
-    },
-    "oracle": {
-      "atk": 655,
-      "def max": 960,
-      "def min": 882,
-      "hp": 2430,
-      "rec max": 1238,
-      "rec min": 1160
+    "move": {
+      "total number of frames": 36
     }
   },
-  "leader_skill": {
-    "desc": "Small boost in Karma produced during Spark",
-    "effects": [
-      {
-        "karma drop% for spark": 30,
-        "passive id": "31"
-      }
+  "category": 30080,
+  "cost": "4",
+  "damage frames": {
+    "frame times": [
+      58,
+      63,
+      68,
+      73,
+      78
     ],
-    "id": "1700",
-    "name": "Soul Light"
+    "hit dmg% distribution": [
+      20,
+      20,
+      20,
+      20,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 5
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "earth",
+  "exp_pattern": 15,
+  "gender": "other",
+  "getting type": "farmable",
+  "guide_id": 104,
+  "imp": {
+    "max atk": "80",
+    "max def": "160",
+    "max hp": "300",
+    "max rec": "120"
+  },
+  "kind": "normal",
+  "lord damage range": "609~681",
+  "movement": {
+    "attack": {
+      "move speed": 8,
+      "move speed type": "1",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 8,
+      "move speed type": "1",
+      "move type": "3"
+    }
+  },
+  "name": "Ent",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "Ent",
+  "maxlv": "40",
+  "no": "104",
   "unitDisplayHomePosition_1W9CxaFK": "278,37,200,544",
   "unitDisplayDetailPosition_6z54rgb3": "78,154,760,631",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "73,260,450,373,0",
@@ -303,5 +302,104 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "1000",
   "sellCaution": false,
-  "effectFrames": "57:240:1"
+  "effectFrames": "57:240:1",
+  "evofrom": "30081",
+  "evointo": "30083",
+  "evozelcost": "100000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "30132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30131",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30130",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60142",
+      "count": 1
+    }
+  ],
+  "basexp": "15",
+  "animation_attack": "182",
+  "animation_idle": "32",
+  "animation_move": "36",
+  "movespeed_attack": "8",
+  "movespeed_skill": "8",
+  "speedtype_attack": "1",
+  "speedtype_skill": "1",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "58, 63, 68, 73, 78",
+  "normal_distribute": "20, 20, 20, 20, 20",
+  "normal_totaldistr": "100",
+  "bb_frames": "58, 63, 68, 73, 78",
+  "bb_distribute": "20, 20, 20, 20, 20",
+  "bb_totaldistr": "100",
+  "description": "A tree monster that's over 1000 years old. Trents evolves into an Ents after bathing in magic for many centuries. They are completely self-centered and wouldn't care even if their forest was burned down and all their kind was wiped out. All it wishes to do is get bigger. It will attack of anyone who tries to get in its way.",
+  "summon": "I am an ancient Ent.<br>I'm reluctant to, but <br>I'll follow you...",
+  "fusion": "Hehe, not even this will<br>keep me with the likes of you...",
+  "evolution": "I should probably be<br>a bit more serious now that<br>I've evolved...",
+  "hp_base": "1755",
+  "atk_base": "351",
+  "def_base": "618",
+  "rec_base": "804",
+  "hp_lord": "2430",
+  "atk_lord": "655",
+  "def_lord": "960",
+  "rec_lord": "1082",
+  "hp_anima": "2723",
+  "rec_anima": "1004",
+  "atk_breaker": "733",
+  "def_breaker": "882",
+  "atk_guardian": "577",
+  "def_guardian": "1038",
+  "rec_guardian": "1043",
+  "def_oracle": "921",
+  "hp_oracle": "2313",
+  "rec_oracle": "1199",
+  "hp_bonus": "300",
+  "atk_bonus": "80",
+  "def_bonus": "160",
+  "rec_bonus": "120",
+  "lordonly": "",
+  "combo_hits": "5",
+  "normaldc": "10",
+  "ls": "Soul Light",
+  "lsdescription": "Small boost in Karma produced during Spark",
+  "lsnote": "30% boost",
+  "lstype": "Karma",
+  "bbdescription": "5 combo Earth elemental attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "5",
+  "bbaoe": "A",
+  "bbgauge": "20",
+  "bbdc": "5",
+  "bbmultiplier": "95",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "30132",
+  "evomats2": "30131",
+  "evomats3": "30130",
+  "evomats4": "60142",
+  "evomats5": ""
 }

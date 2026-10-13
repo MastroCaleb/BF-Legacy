@@ -1,76 +1,105 @@
 {
   "id": "61216",
-  "unitName": "Dark Swordsman Neviro",
-  "no": "1694",
-  "element": "Dark",
-  "rarity": "★★★★★★★",
-  "cost": "46",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "3",
-  "animation_attack": "164",
-  "animation_idle": "52",
-  "animation_move": "5",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "27, 30, 33, 52, 59, 66, 73, 91, 94, 97",
-  "normal_distribute": "18, 12, 10, 7, 6, 7, 6, 16, 10, 8",
-  "normal_totaldistr": "100",
-  "bb_frames": "27, 30, 33, 36, 52, 59, 66, 73, 91, 94, 97, 100, 103",
-  "bb_distribute": "15, 10, 8, 6, 7, 6, 7, 6, 14, 9, 6, 4, 2",
-  "bb_totaldistr": "100",
-  "sbb_frames": "27, 30, 33, 36, 52, 55, 59, 62, 66, 69, 73",
-  "sbb_distribute": "20, 18, 15, 11, 6, 4, 6, 4, 6, 4, 6",
-  "sbb_totaldistr": "100",
-  "sbb2_frames": "91, 94, 97, 100, 103",
-  "sbb2_distribute": "25, 22, 20, 18, 15",
-  "sbb2_totaldistr": "100",
-  "ubb_frames": "27, 30, 33, 36, 39, 52, 55, 59, 62, 66, 69, 73, 76",
-  "ubb_distribute": "20, 16, 14, 10, 8, 5, 3, 5, 3, 5, 3, 5, 3",
-  "ubb_totaldistr": "100",
-  "ubb2_frames": "91, 94, 97, 100, 103, 106",
-  "ubb2_distribute": "24, 20, 18, 14, 13, 11",
-  "ubb2_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "1",
-  "sbb2_effectdelay": "2",
-  "ubb_effectdelay": "1",
-  "ubb2_effectdelay": "2",
-  "description": "Neviro was a master of a sect of martial fencing with many students. In search of fame and glorious victories, Neviro did not hesitate to use unsavory means in absorbing one rival faction after another. When one renowned sect made a public declaration that it would not participate in a holy La Vedan tournament, Neviro carried out a campaign of disrespectful challenges against its master. In the end, he had the sect's master and his pupil murdered. Later, the night before the final bout of tournament, Neviro also assassinated the rival master's daughter. Accordingly, he then was killed by the surviving student from that school. Neviro's sect of martial arts crumbled afterwards, and even its name has been lost over time.",
-  "summon": "Do you want to be my student? Then cast off your emotions, and focus on victory. That, and that alone, brings strength.",
-  "fusion": "The strong rule over the fallen...<br>That's even true in my swordplay. Your technique is quite intriguing, too.",
-  "evolution": "",
-  "hp_base": "5146",
-  "atk_base": "2456",
-  "def_base": "1945",
-  "rec_base": "1651",
-  "hp_lord": "7330",
-  "atk_lord": "3324",
-  "def_lord": "2636",
-  "rec_lord": "2229",
-  "hp_anima": "8222",
-  "rec_anima": "1991",
-  "atk_breaker": "3562",
-  "def_breaker": "2398",
-  "def_guardian": "2874",
-  "rec_guardian": "2110",
-  "def_oracle": "2517",
-  "rec_oracle": "2586",
-  "hp_bonus": "1000",
-  "atk_bonus": "600",
-  "def_bonus": "300",
-  "rec_bonus": "400",
-  "lordonly": "",
-  "combo_hits": "10",
-  "normaldc": "40",
-  "ls": "Bloodthirsty Reaper",
-  "lsdescription": "50% boost to Atk, max HP, 110% boost to Spark damage & hugely boosts all elemental damage",
-  "lsnote": "110% spark dmg & 100% elemental weakness damage",
+  "stats": {
+    "_base": {
+      "atk": 2456,
+      "def": 1945,
+      "hp": 5146,
+      "rec": 1651
+    },
+    "_lord": {
+      "atk": 3324,
+      "def": 2636,
+      "hp": 7330,
+      "rec": 2229
+    },
+    "anima": {
+      "atk": 3324,
+      "def": 2636,
+      "hp max": 8520,
+      "hp min": 7925,
+      "rec max": 2110,
+      "rec min": 1872
+    },
+    "breaker": {
+      "atk max": 3681,
+      "atk min": 3443,
+      "def max": 2517,
+      "def min": 2279,
+      "hp": 7330,
+      "rec": 2229
+    },
+    "guardian": {
+      "atk": 3324,
+      "def max": 2993,
+      "def min": 2755,
+      "hp": 7330,
+      "rec max": 2229,
+      "rec min": 1991
+    },
+    "oracle": {
+      "atk": 3324,
+      "def max": 2636,
+      "def min": 2398,
+      "hp": 7330,
+      "rec max": 2705,
+      "rec min": 2467
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to Atk, max HP, 110% boost to Spark damage & hugely boosts all elemental damage",
+    "effects": [
+      {
+        "atk% buff": 50,
+        "hp% buff": 50,
+        "passive id": "1"
+      },
+      {
+        "damage% for spark": 110,
+        "passive id": "31"
+      },
+      {
+        "dark units do extra elemental weakness dmg": true,
+        "earth units do extra elemental weakness dmg": true,
+        "elemental weakness multiplier%": 100.0,
+        "fire units do extra elemental weakness dmg": true,
+        "light units do extra elemental weakness dmg": true,
+        "passive id": "50",
+        "thunder units do extra elemental weakness dmg": true,
+        "water units do extra elemental weakness dmg": true
+      }
+    ],
+    "id": "7533",
+    "name": "Bloodthirsty Reaper"
+  },
+  "extra_skill": {
+    "desc": "Boosts elemental damage & considerably boosts damage against status afflicted foes",
+    "effects": [
+      {
+        "conditions": [],
+        "dark units do extra elemental weakness dmg": true,
+        "elemental weakness multiplier%": 50.0,
+        "passive id": "50",
+        "passive target": "self"
+      },
+      {
+        "atk% buff when enemy has ailment": 80,
+        "atk% buff when enemy has curse": true,
+        "atk% buff when enemy has injury": true,
+        "atk% buff when enemy has paralysis": true,
+        "atk% buff when enemy has poison": true,
+        "atk% buff when enemy has sick": true,
+        "atk% buff when enemy has weaken": true,
+        "conditions": [],
+        "passive id": "74",
+        "passive target": "self"
+      }
+    ],
+    "id": "41200",
+    "name": "Forgotten Savagery",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -715,15 +744,6 @@
     ],
     "name": "Brutal Reave"
   },
-  "bbdescription": "13 combo powerful Dark attack on all foes, probable huge 1 turn Atk, Def reduction, hugely boosts Atk for 3 turns, considerably boosts Atk relative to Def for 3 turns & enormously boosts Spark damage for 3 turns",
-  "bbnote": "30% chance to reduce 50% Atk/Def, 160% Atk, 60% Def to Atk, 110% Spark",
-  "bbtype": "Offense",
-  "bbhits": "13",
-  "bbaoe": "A",
-  "bbgauge": "30",
-  "bbdc": "13",
-  "bbmultiplier": "430",
-  "bb_hpscale": "",
   "sbb": {
     "damage frames": [
       {
@@ -1464,20 +1484,6 @@
     ],
     "name": "Brutal Fall"
   },
-  "sbbdescription": "11 combo powerful Dark attack on all foes, additional 5 combo powerful Dark attack on single foe, probable huge 1 turn Atk, Def reduction, hugely boosts Atk for 3 turns, considerably boosts Atk relative to Def for 3 turns & enormously boosts Spark damage for 3 turns",
-  "sbbnote": "30% chance to reduce 50% Atk/Def, 160% Atk, 60% Def to Atk & 110% Spark",
-  "sbbtype": "Offense",
-  "sbbhits": "11",
-  "sbbaoe": "A",
-  "sbbgauge": "29",
-  "sbbdc": "11",
-  "sbbmultiplier": "800",
-  "sbb_hpscale": "",
-  "sbbhits2": "5",
-  "sbbaoe2": "1",
-  "sbbdc2": "5",
-  "sbbmultiplier2": "550",
-  "sbb_hpscale2": "",
   "ubb": {
     "damage frames": [
       {
@@ -1657,6 +1663,237 @@
     ],
     "name": "Brutal Blade Age"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 164
+    },
+    "idle": {
+      "total number of frames": 52
+    },
+    "move": {
+      "total number of frames": 5
+    }
+  },
+  "category": 61210,
+  "cost": "46",
+  "damage frames": {
+    "frame times": [
+      27,
+      30,
+      33,
+      52,
+      59,
+      66,
+      73,
+      91,
+      94,
+      97
+    ],
+    "hit dmg% distribution": [
+      18,
+      12,
+      10,
+      7,
+      6,
+      7,
+      6,
+      16,
+      10,
+      8
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 10
+  },
+  "drop check count": 4,
+  "element": "dark",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 1694,
+  "imp": {
+    "max atk": "600",
+    "max def": "300",
+    "max hp": "1000",
+    "max rec": "400"
+  },
+  "kind": "normal",
+  "lord damage range": "3094~3456",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Dark Swordsman Neviro",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Dark Swordsman Neviro",
+  "maxlv": "120",
+  "no": "1694",
+  "unitDisplayHomePosition_1W9CxaFK": "283,164,174,475",
+  "unitDisplayDetailPosition_6z54rgb3": "64,48,942,730",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "136,235,485,376,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "74,-219,942,730",
+  "unitDisplaySummonPosition_KC3Jk8Br": "136,235,485,376,0",
+  "unitDisplayHpPosition_3BpHN6VD": "1,44",
+  "unitDisplayCursorPosition": "0,10",
+  "sellPrice": "15000",
+  "sellCaution": false,
+  "effectFrames": "21:120:1,24:120:1,27:120:1,46:126:1,53:126:1,60:126:1,67:126:1,85:126:1,88:120:1,91:120:1,27:600491:1,52:600763:1,59:600763:1,66:600763:1,73:600763:1,91:600963:1",
+  "evofrom": "",
+  "evointo": "61217",
+  "evozelcost": "3000000",
+  "evokarmacost": "1000000",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "60344",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60123",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 2
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "164",
+  "animation_idle": "52",
+  "animation_move": "5",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "27, 30, 33, 52, 59, 66, 73, 91, 94, 97",
+  "normal_distribute": "18, 12, 10, 7, 6, 7, 6, 16, 10, 8",
+  "normal_totaldistr": "100",
+  "bb_frames": "27, 30, 33, 36, 52, 59, 66, 73, 91, 94, 97, 100, 103",
+  "bb_distribute": "15, 10, 8, 6, 7, 6, 7, 6, 14, 9, 6, 4, 2",
+  "bb_totaldistr": "100",
+  "sbb_frames": "27, 30, 33, 36, 52, 55, 59, 62, 66, 69, 73",
+  "sbb_distribute": "20, 18, 15, 11, 6, 4, 6, 4, 6, 4, 6",
+  "sbb_totaldistr": "100",
+  "sbb2_frames": "91, 94, 97, 100, 103",
+  "sbb2_distribute": "25, 22, 20, 18, 15",
+  "sbb2_totaldistr": "100",
+  "ubb_frames": "27, 30, 33, 36, 39, 52, 55, 59, 62, 66, 69, 73, 76",
+  "ubb_distribute": "20, 16, 14, 10, 8, 5, 3, 5, 3, 5, 3, 5, 3",
+  "ubb_totaldistr": "100",
+  "ubb2_frames": "91, 94, 97, 100, 103, 106",
+  "ubb2_distribute": "24, 20, 18, 14, 13, 11",
+  "ubb2_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "1",
+  "sbb2_effectdelay": "2",
+  "ubb_effectdelay": "1",
+  "ubb2_effectdelay": "2",
+  "description": "Neviro was a master of a sect of martial fencing with many students. In search of fame and glorious victories, Neviro did not hesitate to use unsavory means in absorbing one rival faction after another. When one renowned sect made a public declaration that it would not participate in a holy La Vedan tournament, Neviro carried out a campaign of disrespectful challenges against its master. In the end, he had the sect's master and his pupil murdered. Later, the night before the final bout of tournament, Neviro also assassinated the rival master's daughter. Accordingly, he then was killed by the surviving student from that school. Neviro's sect of martial arts crumbled afterwards, and even its name has been lost over time.",
+  "summon": "Do you want to be my student? Then cast off your emotions, and focus on victory. That, and that alone, brings strength.",
+  "fusion": "The strong rule over the fallen...<br>That's even true in my swordplay. Your technique is quite intriguing, too.",
+  "evolution": "",
+  "hp_base": "5146",
+  "atk_base": "2456",
+  "def_base": "1945",
+  "rec_base": "1651",
+  "hp_lord": "7330",
+  "atk_lord": "3324",
+  "def_lord": "2636",
+  "rec_lord": "2229",
+  "hp_anima": "8222",
+  "rec_anima": "1991",
+  "atk_breaker": "3562",
+  "def_breaker": "2398",
+  "def_guardian": "2874",
+  "rec_guardian": "2110",
+  "def_oracle": "2517",
+  "rec_oracle": "2586",
+  "hp_bonus": "1000",
+  "atk_bonus": "600",
+  "def_bonus": "300",
+  "rec_bonus": "400",
+  "lordonly": "",
+  "combo_hits": "10",
+  "normaldc": "40",
+  "ls": "Bloodthirsty Reaper",
+  "lsdescription": "50% boost to Atk, max HP, 110% boost to Spark damage & hugely boosts all elemental damage",
+  "lsnote": "110% spark dmg & 100% elemental weakness damage",
+  "bbdescription": "13 combo powerful Dark attack on all foes, probable huge 1 turn Atk, Def reduction, hugely boosts Atk for 3 turns, considerably boosts Atk relative to Def for 3 turns & enormously boosts Spark damage for 3 turns",
+  "bbnote": "30% chance to reduce 50% Atk/Def, 160% Atk, 60% Def to Atk, 110% Spark",
+  "bbtype": "Offense",
+  "bbhits": "13",
+  "bbaoe": "A",
+  "bbgauge": "30",
+  "bbdc": "13",
+  "bbmultiplier": "430",
+  "bb_hpscale": "",
+  "sbbdescription": "11 combo powerful Dark attack on all foes, additional 5 combo powerful Dark attack on single foe, probable huge 1 turn Atk, Def reduction, hugely boosts Atk for 3 turns, considerably boosts Atk relative to Def for 3 turns & enormously boosts Spark damage for 3 turns",
+  "sbbnote": "30% chance to reduce 50% Atk/Def, 160% Atk, 60% Def to Atk & 110% Spark",
+  "sbbtype": "Offense",
+  "sbbhits": "11",
+  "sbbaoe": "A",
+  "sbbgauge": "29",
+  "sbbdc": "11",
+  "sbbmultiplier": "800",
+  "sbb_hpscale": "",
+  "sbbhits2": "5",
+  "sbbaoe2": "1",
+  "sbbdc2": "5",
+  "sbbmultiplier2": "550",
+  "sbb_hpscale2": "",
   "ubbdescription": "13 combo massive Dark attack on all foes, additional 6 combo massive Dark attack on single foe, enormous 2 turn Atk, Def reduction, enormously boosts Atk for 3 turns, enormously boosts Atk relative to Def for 3 turns & enormously boosts Spark damage for 3 turns",
   "ubbnote": "80% Atk/Def reduction, 300% Atk, 200% Def to Atk & 300% Spark",
   "ubbtype": "Offense",
@@ -1674,7 +1911,6 @@
   "es": "Forgotten Savagery",
   "esdescription": "Boosts elemental damage & considerably boosts damage against status afflicted foes",
   "esnote": "50% elemental weakness damage & 80% Atk against status inflicted enemies",
-  "evointo": "61217",
   "evomats1": "60344",
   "evomats2": "60344",
   "evomats3": "50354",
@@ -1682,116 +1918,5 @@
   "evomats5": "60144",
   "evomats6": "60144",
   "evomats7": "60224",
-  "evomats8": "60224",
-  "evozelcost": "3000000",
-  "stats": {
-    "_base": {
-      "atk": 2456,
-      "def": 1945,
-      "hp": 5146,
-      "rec": 1651
-    },
-    "_lord": {
-      "atk": 3324,
-      "def": 2636,
-      "hp": 7330,
-      "rec": 2229
-    },
-    "anima": {
-      "atk": 3324,
-      "def": 2636,
-      "hp max": 8520,
-      "hp min": 7925,
-      "rec max": 2110,
-      "rec min": 1872
-    },
-    "breaker": {
-      "atk max": 3681,
-      "atk min": 3443,
-      "def max": 2517,
-      "def min": 2279,
-      "hp": 7330,
-      "rec": 2229
-    },
-    "guardian": {
-      "atk": 3324,
-      "def max": 2993,
-      "def min": 2755,
-      "hp": 7330,
-      "rec max": 2229,
-      "rec min": 1991
-    },
-    "oracle": {
-      "atk": 3324,
-      "def max": 2636,
-      "def min": 2398,
-      "hp": 7330,
-      "rec max": 2705,
-      "rec min": 2467
-    }
-  },
-  "leader_skill": {
-    "desc": "50% boost to Atk, max HP, 110% boost to Spark damage & hugely boosts all elemental damage",
-    "effects": [
-      {
-        "atk% buff": 50,
-        "hp% buff": 50,
-        "passive id": "1"
-      },
-      {
-        "damage% for spark": 110,
-        "passive id": "31"
-      },
-      {
-        "dark units do extra elemental weakness dmg": true,
-        "earth units do extra elemental weakness dmg": true,
-        "elemental weakness multiplier%": 100.0,
-        "fire units do extra elemental weakness dmg": true,
-        "light units do extra elemental weakness dmg": true,
-        "passive id": "50",
-        "thunder units do extra elemental weakness dmg": true,
-        "water units do extra elemental weakness dmg": true
-      }
-    ],
-    "id": "7533",
-    "name": "Bloodthirsty Reaper"
-  },
-  "extra_skill": {
-    "desc": "Boosts elemental damage & considerably boosts damage against status afflicted foes",
-    "effects": [
-      {
-        "conditions": [],
-        "dark units do extra elemental weakness dmg": true,
-        "elemental weakness multiplier%": 50.0,
-        "passive id": "50",
-        "passive target": "self"
-      },
-      {
-        "atk% buff when enemy has ailment": 80,
-        "atk% buff when enemy has curse": true,
-        "atk% buff when enemy has injury": true,
-        "atk% buff when enemy has paralysis": true,
-        "atk% buff when enemy has poison": true,
-        "atk% buff when enemy has sick": true,
-        "atk% buff when enemy has weaken": true,
-        "conditions": [],
-        "passive id": "74",
-        "passive target": "self"
-      }
-    ],
-    "id": "41200",
-    "name": "Forgotten Savagery",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "283,164,174,475",
-  "unitDisplayDetailPosition_6z54rgb3": "64,48,942,730",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "136,235,485,376,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "74,-219,942,730",
-  "unitDisplaySummonPosition_KC3Jk8Br": "136,235,485,376,0",
-  "unitDisplayHpPosition_3BpHN6VD": "1,44",
-  "unitDisplayCursorPosition": "0,10",
-  "sellPrice": "15000",
-  "sellCaution": false,
-  "effectFrames": "21:120:1,24:120:1,27:120:1,46:126:1,53:126:1,60:126:1,67:126:1,85:126:1,88:120:1,91:120:1,27:600491:1,52:600763:1,59:600763:1,66:600763:1,73:600763:1,91:600963:1"
+  "evomats8": "60224"
 }

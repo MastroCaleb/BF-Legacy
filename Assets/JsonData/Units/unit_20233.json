@@ -1,60 +1,65 @@
 {
   "id": "20233",
-  "unitName": "Brave Knight Karl",
-  "no": "334",
-  "element": "Water",
-  "rarity": "★★★★",
-  "cost": "12",
-  "maxlv": "60",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "62",
-  "animation_idle": "52",
-  "animation_move": "13",
-  "movespeed_attack": "0.0024",
-  "movespeed_skill": "0.0024",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "22, 25, 28",
-  "normal_distribute": "40, 30, 30",
-  "normal_totaldistr": "100",
-  "bb_frames": "22, 25, 28, 65, 85, 105",
-  "bb_distribute": "30, 20, 20, 10, 10, 10",
-  "bb_totaldistr": "100",
-  "description": "A mock Unit modeled after Karl, a Summoner belonging to the Akras Summoners' Hall. Head of the 24th Demon Slayers Division \"Rebel Lance,\" also known as \"Nyonne.\" Considered to be one of the strongest Demon Slayers regiments, Nyonne was often counted upon by the Summoners' Hall's upper echelon. Karl's strength was well known, and he became famous in Elgaia for vanquishing the Wicked Drake Zagamlung. It's also been rumored an old friend of his has been active lately as well.",
-  "summon": "You have summoned me.<br>I always believed that<br>this day would come!",
-  "fusion": "Fusion, eh? How wonderful!<br>I want to become even stronger<br>so I can be of assistance to you!",
-  "evolution": "",
-  "hp_base": "3327",
-  "atk_base": "1083",
-  "def_base": "952",
-  "rec_base": "868",
-  "hp_lord": "4565",
-  "atk_lord": "1491",
-  "def_lord": "1356",
-  "rec_lord": "1082",
-  "hp_anima": "5008",
-  "rec_anima": "964",
-  "atk_breaker": "1609",
-  "def_breaker": "1238",
-  "atk_guardian": "1373",
-  "def_guardian": "1474",
-  "hp_oracle": "4388",
-  "rec_oracle": "1259",
-  "hp_bonus": "400",
-  "atk_bonus": "200",
-  "def_bonus": "120",
-  "rec_bonus": "160",
-  "lordonly": "true",
-  "combo_hits": "3",
-  "normaldc": "9",
-  "ls": "Warrior's Order",
-  "lsdescription": "Chance of BB gauge filling when attacking",
-  "lsnote": "50% chance to fill 3~5 BC",
-  "lstype": "Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 1083,
+      "def": 952,
+      "hp": 3327,
+      "rec": 868
+    },
+    "_lord": {
+      "atk": 1491,
+      "def": 1356,
+      "hp": 4565,
+      "rec": 1082
+    },
+    "anima": {
+      "atk": 1491,
+      "def": 1356,
+      "hp max": 5155,
+      "hp min": 4860,
+      "rec max": 1023,
+      "rec min": 905
+    },
+    "breaker": {
+      "atk max": 1668,
+      "atk min": 1550,
+      "def max": 1297,
+      "def min": 1179,
+      "hp": 4565,
+      "rec": 1082
+    },
+    "guardian": {
+      "atk": 1491,
+      "def max": 1533,
+      "def min": 1415,
+      "hp": 4565,
+      "rec max": 1082,
+      "rec min": 964
+    },
+    "oracle": {
+      "atk": 1491,
+      "def max": 1356,
+      "def min": 1238,
+      "hp": 4565,
+      "rec max": 1318,
+      "rec min": 1200
+    }
+  },
+  "leader_skill": {
+    "desc": "Chance of BB gauge filling when attacking",
+    "effects": [
+      {
+        "bc fill when attacking high": 5,
+        "bc fill when attacking low": 5,
+        "bc fill when attacking%": 50,
+        "passive id": "35"
+      }
+    ],
+    "id": "2600",
+    "name": "Warrior's Order"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -217,96 +222,87 @@
     ],
     "name": "Frozen Axe"
   },
-  "bbdescription": "6 combo powerful Water attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "6",
-  "bbaoe": "A",
-  "bbgauge": "17",
-  "bbdc": "6",
-  "bbmultiplier": "160",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "20234",
-  "evomats1": "20133",
-  "evomats2": "20132",
-  "evomats3": "20132",
-  "evomats4": "20191",
-  "evomats5": "20191",
-  "evoitem": "",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 1083,
-      "def": 952,
-      "hp": 3327,
-      "rec": 868
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1491,
-      "def": 1356,
-      "hp": 4565,
-      "rec": 1082
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1491,
-      "def": 1356,
-      "hp max": 5155,
-      "hp min": 4860,
-      "rec max": 1023,
-      "rec min": 905
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 62
     },
-    "breaker": {
-      "atk max": 1668,
-      "atk min": 1550,
-      "def max": 1297,
-      "def min": 1179,
-      "hp": 4565,
-      "rec": 1082
+    "idle": {
+      "total number of frames": 52
     },
-    "guardian": {
-      "atk": 1491,
-      "def max": 1533,
-      "def min": 1415,
-      "hp": 4565,
-      "rec max": 1082,
-      "rec min": 964
-    },
-    "oracle": {
-      "atk": 1491,
-      "def max": 1356,
-      "def min": 1238,
-      "hp": 4565,
-      "rec max": 1318,
-      "rec min": 1200
+    "move": {
+      "total number of frames": 13
     }
   },
-  "leader_skill": {
-    "desc": "Chance of BB gauge filling when attacking",
-    "effects": [
-      {
-        "bc fill when attacking high": 5,
-        "bc fill when attacking low": 5,
-        "bc fill when attacking%": 50,
-        "passive id": "35"
-      }
+  "category": 20230,
+  "cost": "12",
+  "damage frames": {
+    "frame times": [
+      22,
+      25,
+      28
     ],
-    "id": "2600",
-    "name": "Warrior's Order"
+    "hit dmg% distribution": [
+      40,
+      30,
+      30
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 3
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "water",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "farmable",
+  "guide_id": 334,
+  "imp": {
+    "max atk": "200",
+    "max def": "120",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "1387~1550",
+  "movement": {
+    "attack": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    }
+  },
+  "name": "Brave Knight Karl",
+  "rarity": "4",
+  "sell caution": true,
+  "unitName": "Brave Knight Karl",
+  "maxlv": "60",
+  "no": "334",
   "unitDisplayHomePosition_1W9CxaFK": "690,-27,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-325,206,1103,573",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "160,336,297,293,0",
@@ -316,5 +312,98 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": true,
-  "effectFrames": "16:122:1,16:660:1,19:122:1,19:190:1,22:122:1,22:190:1,22:200030:1"
+  "effectFrames": "16:122:1,16:660:1,19:122:1,19:190:1,22:122:1,22:190:1,22:200030:1",
+  "evofrom": "",
+  "evointo": "20234",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "20133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20132",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "20191",
+      "count": 2
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "62",
+  "animation_idle": "52",
+  "animation_move": "13",
+  "movespeed_attack": "0.0024",
+  "movespeed_skill": "0.0024",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "22, 25, 28",
+  "normal_distribute": "40, 30, 30",
+  "normal_totaldistr": "100",
+  "bb_frames": "22, 25, 28, 65, 85, 105",
+  "bb_distribute": "30, 20, 20, 10, 10, 10",
+  "bb_totaldistr": "100",
+  "description": "A mock Unit modeled after Karl, a Summoner belonging to the Akras Summoners' Hall. Head of the 24th Demon Slayers Division \"Rebel Lance,\" also known as \"Nyonne.\" Considered to be one of the strongest Demon Slayers regiments, Nyonne was often counted upon by the Summoners' Hall's upper echelon. Karl's strength was well known, and he became famous in Elgaia for vanquishing the Wicked Drake Zagamlung. It's also been rumored an old friend of his has been active lately as well.",
+  "summon": "You have summoned me.<br>I always believed that<br>this day would come!",
+  "fusion": "Fusion, eh? How wonderful!<br>I want to become even stronger<br>so I can be of assistance to you!",
+  "evolution": "",
+  "hp_base": "3327",
+  "atk_base": "1083",
+  "def_base": "952",
+  "rec_base": "868",
+  "hp_lord": "4565",
+  "atk_lord": "1491",
+  "def_lord": "1356",
+  "rec_lord": "1082",
+  "hp_anima": "5008",
+  "rec_anima": "964",
+  "atk_breaker": "1609",
+  "def_breaker": "1238",
+  "atk_guardian": "1373",
+  "def_guardian": "1474",
+  "hp_oracle": "4388",
+  "rec_oracle": "1259",
+  "hp_bonus": "400",
+  "atk_bonus": "200",
+  "def_bonus": "120",
+  "rec_bonus": "160",
+  "lordonly": "true",
+  "combo_hits": "3",
+  "normaldc": "9",
+  "ls": "Warrior's Order",
+  "lsdescription": "Chance of BB gauge filling when attacking",
+  "lsnote": "50% chance to fill 3~5 BC",
+  "lstype": "Brave Burst",
+  "bbdescription": "6 combo powerful Water attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "6",
+  "bbaoe": "A",
+  "bbgauge": "17",
+  "bbdc": "6",
+  "bbmultiplier": "160",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "20133",
+  "evomats2": "20132",
+  "evomats3": "20132",
+  "evomats4": "20191",
+  "evomats5": "20191",
+  "evoitem": ""
 }

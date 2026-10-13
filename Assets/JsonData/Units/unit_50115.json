@@ -1,52 +1,70 @@
 {
   "id": "50115",
-  "unitName": "Holy Guard Will",
-  "no": "445",
-  "element": "Light",
-  "rarity": "★★★★★★",
-  "cost": "22",
-  "maxlv": "100",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "113",
-  "animation_idle": "84",
-  "animation_move": "59",
-  "movespeed_attack": "0",
-  "movespeed_skill": "0",
-  "speedtype_attack": "5",
-  "speedtype_skill": "5",
-  "movetype_attack": "2",
-  "movetype_skill": "2",
-  "description": "A knight of the La Veda Republic that fought against the world's destruction until the very end. Charged by Lucius with saving the world, he decided to give up command and return to being a lone knight. Informing his subordinates to follow Lucius' commands, he equipped himself with various sacred items before taking on the gods by himself. Free from the responsibility of command, Will, and the soldiers who decided to follow him anyway, cut down countless gods.",
-  "summon": "You who dare defy fate.<br>Let us fight together!<br>We can decide the future!",
-  "fusion": "I don't know if there's anything<br>left to protect anymore.<br>Still, I will never give up!",
-  "evolution": "How vain a form.<br>Power should exist as a means<br>to carry out one's will.",
-  "hp_base": "4445",
-  "atk_base": "1116",
-  "def_base": "1231",
-  "rec_base": "762",
-  "hp_lord": "6211",
-  "atk_lord": "1535",
-  "def_lord": "1674",
-  "rec_lord": "1241",
-  "hp_anima": "6953",
-  "rec_anima": "1043",
-  "atk_breaker": "1733",
-  "def_breaker": "1476",
-  "atk_guardian": "1337",
-  "def_guardian": "1872",
-  "hp_oracle": "5468",
-  "rec_oracle": "1439",
-  "hp_bonus": "750",
-  "atk_bonus": "200",
-  "def_bonus": "400",
-  "rec_bonus": "300",
-  "lordonly": "",
-  "combo_hits": "6",
-  "ls": "Light Lord's Power",
-  "lsdescription": "50% boost to Atk power of Light types and fills BB gauge after each turn",
-  "lstype": "Attack/Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 1116,
+      "def": 1231,
+      "hp": 4445,
+      "rec": 762
+    },
+    "_lord": {
+      "atk": 1535,
+      "def": 1674,
+      "hp": 6211,
+      "rec": 1241
+    },
+    "anima": {
+      "atk": 1535,
+      "def": 1674,
+      "hp max": 7201,
+      "hp min": 6706,
+      "rec max": 1142,
+      "rec min": 944
+    },
+    "breaker": {
+      "atk max": 1832,
+      "atk min": 1634,
+      "def max": 1575,
+      "def min": 1377,
+      "hp": 6211,
+      "rec": 1241
+    },
+    "guardian": {
+      "atk": 1535,
+      "def max": 1971,
+      "def min": 1773,
+      "hp": 6211,
+      "rec max": 1241,
+      "rec min": 1043
+    },
+    "oracle": {
+      "atk": 1535,
+      "def max": 1674,
+      "def min": 1476,
+      "hp": 6211,
+      "rec max": 1637,
+      "rec min": 1439
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to Atk power of Light types and fills BB gauge after each turn",
+    "effects": [
+      {
+        "atk% buff": 50,
+        "elements buffed": [
+          "light"
+        ],
+        "passive id": "2"
+      },
+      {
+        "bc fill per turn": 2,
+        "passive id": "9"
+      }
+    ],
+    "id": "143",
+    "name": "Light Lord's Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -211,11 +229,6 @@
     ],
     "name": "Ishtar Burn"
   },
-  "bbdescription": "7 combo powerful Light attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "7",
-  "bbaoe": "A",
-  "bbgauge": "28",
   "sbb": {
     "damage frames": [
       {
@@ -396,93 +409,92 @@
     ],
     "name": "Avalon"
   },
-  "sbbdescription": "10 combo powerful Light attack on all enemies & large boost to HC drop rate",
-  "sbbtype": "Support/Offense",
-  "sbbhits": "10",
-  "sbbaoe": "A",
-  "sbbgauge": "18",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "50114",
-  "evointo": "50116",
-  "evomats1": "50394",
-  "evomats2": "50354",
-  "evomats3": "50123",
-  "evomats4": "50191",
-  "evomats5": "",
-  "evoitem": "Legend Stone",
-  "evozelcost": "1500000",
-  "stats": {
-    "_base": {
-      "atk": 1116,
-      "def": 1231,
-      "hp": 4445,
-      "rec": 762
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1535,
-      "def": 1674,
-      "hp": 6211,
-      "rec": 1241
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1535,
-      "def": 1674,
-      "hp max": 7201,
-      "hp min": 6706,
-      "rec max": 1142,
-      "rec min": 944
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 113
     },
-    "breaker": {
-      "atk max": 1832,
-      "atk min": 1634,
-      "def max": 1575,
-      "def min": 1377,
-      "hp": 6211,
-      "rec": 1241
+    "idle": {
+      "total number of frames": 84
     },
-    "guardian": {
-      "atk": 1535,
-      "def max": 1971,
-      "def min": 1773,
-      "hp": 6211,
-      "rec max": 1241,
-      "rec min": 1043
-    },
-    "oracle": {
-      "atk": 1535,
-      "def max": 1674,
-      "def min": 1476,
-      "hp": 6211,
-      "rec max": 1637,
-      "rec min": 1439
+    "move": {
+      "total number of frames": 59
     }
   },
-  "leader_skill": {
-    "desc": "50% boost to Atk power of Light types and fills BB gauge after each turn",
-    "effects": [
-      {
-        "atk% buff": 50,
-        "elements buffed": [
-          "light"
-        ],
-        "passive id": "2"
-      },
-      {
-        "bc fill per turn": 2,
-        "passive id": "9"
-      }
+  "category": 50110,
+  "cost": "22",
+  "damage frames": {
+    "frame times": [
+      33,
+      39,
+      45,
+      51,
+      57,
+      63
     ],
-    "id": "143",
-    "name": "Light Lord's Power"
+    "hit dmg% distribution": [
+      50,
+      10,
+      10,
+      10,
+      10,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 6
   },
-  "extra_skill": {},
+  "drop check count": 4,
+  "element": "light",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 445,
+  "imp": {
+    "max atk": "200",
+    "max def": "400",
+    "max hp": "750",
+    "max rec": "300"
+  },
+  "kind": "normal",
+  "lord damage range": "1428~1596",
+  "movement": {
+    "attack": {
+      "move speed": 0,
+      "move speed type": "5",
+      "move type": "2"
+    },
+    "skill": {
+      "move speed": 0,
+      "move speed type": "5",
+      "move type": "2"
+    }
+  },
+  "name": "Holy Guard Will",
+  "rarity": "6",
+  "sell caution": false,
+  "unitName": "Holy Guard Will",
+  "maxlv": "100",
+  "no": "445",
   "unitDisplayHomePosition_1W9CxaFK": "472,355,200,544",
   "unitDisplayDetailPosition_6z54rgb3": "-138,-122,1190,942",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "95,235,505,385,0",
@@ -492,5 +504,116 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "8000",
   "sellCaution": false,
-  "effectFrames": "27:125:1,27:500170:1,33:125:1,39:125:1,39:400130:1,46:125:1,51:125:1,51:500170:1,57:125:1,27:500211:1,57:200081:0"
+  "effectFrames": "27:125:1,27:500170:1,33:125:1,39:125:1,39:400130:1,46:125:1,51:125:1,51:500170:1,57:125:1,27:500211:1,57:200081:0",
+  "evofrom": "50114",
+  "evointo": "50116",
+  "evozelcost": "1500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50394",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50123",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50191",
+      "count": 1
+    },
+    {
+      "type": "2",
+      "id": "110100",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "113",
+  "animation_idle": "84",
+  "animation_move": "59",
+  "movespeed_attack": "0",
+  "movespeed_skill": "0",
+  "speedtype_attack": "5",
+  "speedtype_skill": "5",
+  "movetype_attack": "2",
+  "movetype_skill": "2",
+  "normal_frames": "33, 39, 45, 51, 57, 63",
+  "normal_distribute": "50, 10, 10, 10, 10, 10",
+  "normal_totaldistr": "100",
+  "bb_frames": "33, 39, 45, 51, 57, 63, 69",
+  "bb_distribute": "15, 10, 15, 10, 15, 15, 20",
+  "bb_totaldistr": "100",
+  "sbb_frames": "33, 50, 67, 90, 100, 110, 120, 130, 140, 150",
+  "sbb_distribute": "20, 15, 15, 8, 7, 7, 7, 7, 7, 7",
+  "sbb_totaldistr": "100",
+  "description": "A knight of the La Veda Republic that fought against the world's destruction until the very end. Charged by Lucius with saving the world, he decided to give up command and return to being a lone knight. Informing his subordinates to follow Lucius' commands, he equipped himself with various sacred items before taking on the gods by himself. Free from the responsibility of command, Will, and the soldiers who decided to follow him anyway, cut down countless gods.",
+  "summon": "You who dare defy fate.<br>Let us fight together!<br>We can decide the future!",
+  "fusion": "I don't know if there's anything<br>left to protect anymore.<br>Still, I will never give up!",
+  "evolution": "How vain a form.<br>Power should exist as a means<br>to carry out one's will.",
+  "hp_base": "4445",
+  "atk_base": "1116",
+  "def_base": "1231",
+  "rec_base": "762",
+  "hp_lord": "6211",
+  "atk_lord": "1535",
+  "def_lord": "1674",
+  "rec_lord": "1241",
+  "hp_anima": "6954",
+  "rec_anima": "1043",
+  "atk_breaker": "1733",
+  "def_breaker": "1476",
+  "atk_guardian": "1337",
+  "def_guardian": "1872",
+  "rec_guardian": "1142",
+  "def_oracle": "1575",
+  "hp_oracle": "5914",
+  "rec_oracle": "1538",
+  "hp_bonus": "750",
+  "atk_bonus": "200",
+  "def_bonus": "400",
+  "rec_bonus": "300",
+  "lordonly": "",
+  "combo_hits": "6",
+  "normaldc": "24",
+  "ls": "Light Lord's Power",
+  "lsdescription": "50% boost to Atk power of Light types and fills BB gauge after each turn",
+  "lsnote": "2 BC fill per turn",
+  "lstype": "Attack/Brave Burst",
+  "bbdescription": "7 combo powerful Light attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "7",
+  "bbaoe": "A",
+  "bbgauge": "25",
+  "bbdc": "7",
+  "bbmultiplier": "220",
+  "sbbdescription": "10 combo powerful Light attack on all enemies & large boost to HC drop rate",
+  "sbbnote": "85% boost",
+  "sbbtype": "Support/Offense",
+  "sbbhits": "10",
+  "sbbaoe": "A",
+  "sbbgauge": "10",
+  "sbbdc": "30",
+  "sbbmultiplier": "420",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50394",
+  "evomats2": "50354",
+  "evomats3": "50123",
+  "evomats4": "50191",
+  "evomats5": "",
+  "evoitem": "Legend Stone"
 }

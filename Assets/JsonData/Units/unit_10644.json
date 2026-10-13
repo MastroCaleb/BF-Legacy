@@ -1,63 +1,63 @@
 {
   "id": "10644",
-  "unitName": "Pyro Spin Ruby",
-  "no": "951",
-  "element": "Fire",
-  "rarity": "★★★★★",
-  "cost": "19",
-  "maxlv": "80",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "152",
-  "animation_idle": "52",
-  "animation_move": "5",
-  "movespeed_attack": "0.0024",
-  "movespeed_skill": "0.0024",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "13, 17, 65, 69, 104, 108, 112, 116",
-  "normal_distribute": "15, 15, 12, 8, 20, 15, 10, 5",
-  "normal_totaldistr": "100",
-  "bb_frames": "13, 16, 19, 22, 65, 68, 71, 74, 104, 107, 110, 113, 116, 119, 122",
-  "bb_distribute": "10, 5, 5, 5, 12, 5, 5, 5, 15, 8, 5, 5, 5, 5, 5",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "description": "A fox-girl and skilled sword fighter who once fought alongside the Oracle Knight against the gods who sought to destroy humankind. Belonging to a tribe of fox-people in the area surrounding the Agni Region, Ruby was bitten by curiosity while still young, setting off on a journey in which she saved numerous humans from the clutches of demons. Dancing in battle with the treasured weapon of her village, which had been handed down from generation to generation, she is said to have charmed the hearts of many.",
-  "summon": "Huh? Where am I?! Well, I guess as long as it looks fun it doesn't matter where I end up!",
-  "fusion": "I can feel power surging through me! Yeah, this isn't too bad! Not bad at all!!",
-  "evolution": "",
-  "hp_base": "3360",
-  "atk_base": "1396",
-  "def_base": "1141",
-  "rec_base": "1269",
-  "hp_lord": "4781",
-  "atk_lord": "1862",
-  "def_lord": "1521",
-  "rec_lord": "1692",
-  "hp_anima": "5373",
-  "rec_anima": "1534",
-  "atk_breaker": "2020",
-  "def_breaker": "1363",
-  "atk_guardian": "1704",
-  "def_guardian": "1679",
-  "rec_guardian": "1613",
-  "def_oracle": "1442",
-  "hp_oracle": "4544",
-  "rec_oracle": "1929",
-  "hp_bonus": "500",
-  "atk_bonus": "260",
-  "def_bonus": "140",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "8",
-  "normaldc": "24",
-  "ls": "Fighting Flash",
-  "lsdescription": "Boost in Battle Crystals produced during Spark",
-  "lsnote": "50% boost",
-  "lstype": "Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 1396,
+      "def": 1141,
+      "hp": 3360,
+      "rec": 1269
+    },
+    "_lord": {
+      "atk": 1862,
+      "def": 1521,
+      "hp": 4781,
+      "rec": 1692
+    },
+    "anima": {
+      "atk": 1862,
+      "def": 1521,
+      "hp max": 5571,
+      "hp min": 5176,
+      "rec max": 1613,
+      "rec min": 1455
+    },
+    "breaker": {
+      "atk max": 2099,
+      "atk min": 1941,
+      "def max": 1442,
+      "def min": 1284,
+      "hp": 4781,
+      "rec": 1692
+    },
+    "guardian": {
+      "atk": 1862,
+      "def max": 1758,
+      "def min": 1600,
+      "hp": 4781,
+      "rec max": 1692,
+      "rec min": 1534
+    },
+    "oracle": {
+      "atk": 1862,
+      "def max": 1521,
+      "def min": 1363,
+      "hp": 4781,
+      "rec max": 2008,
+      "rec min": 1850
+    }
+  },
+  "leader_skill": {
+    "desc": "Boost in Battle Crystals produced during Spark",
+    "effects": [
+      {
+        "bc drop% for spark": 50,
+        "passive id": "31"
+      }
+    ],
+    "id": "1401",
+    "name": "Fighting Flash"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -350,96 +350,97 @@
     ],
     "name": "Furitto Calore"
   },
-  "bbdescription": "15 combo powerful Fire attack on all enemies & 1 turn Atk reduction effect added to attack for 3 turns",
-  "bbnote": "10% chance to reduce enemy Atk by 20%",
-  "bbtype": "Support/Offense",
-  "bbhits": "15",
-  "bbaoe": "A",
-  "bbgauge": "24",
-  "bbdc": "15",
-  "bbmultiplier": "240",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "es": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "10645",
-  "evomats1": "50354",
-  "evomats2": "10133",
-  "evomats3": "10133",
-  "evomats4": "10191",
-  "evomats5": "60224",
-  "evoitem": "",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 1396,
-      "def": 1141,
-      "hp": 3360,
-      "rec": 1269
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1862,
-      "def": 1521,
-      "hp": 4781,
-      "rec": 1692
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1862,
-      "def": 1521,
-      "hp max": 5571,
-      "hp min": 5176,
-      "rec max": 1613,
-      "rec min": 1455
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 152
     },
-    "breaker": {
-      "atk max": 2099,
-      "atk min": 1941,
-      "def max": 1442,
-      "def min": 1284,
-      "hp": 4781,
-      "rec": 1692
+    "idle": {
+      "total number of frames": 52
     },
-    "guardian": {
-      "atk": 1862,
-      "def max": 1758,
-      "def min": 1600,
-      "hp": 4781,
-      "rec max": 1692,
-      "rec min": 1534
-    },
-    "oracle": {
-      "atk": 1862,
-      "def max": 1521,
-      "def min": 1363,
-      "hp": 4781,
-      "rec max": 2008,
-      "rec min": 1850
+    "move": {
+      "total number of frames": 5
     }
   },
-  "leader_skill": {
-    "desc": "Boost in Battle Crystals produced during Spark",
-    "effects": [
-      {
-        "bc drop% for spark": 50,
-        "passive id": "31"
-      }
+  "category": 10640,
+  "cost": "19",
+  "damage frames": {
+    "frame times": [
+      13,
+      17,
+      65,
+      69,
+      104,
+      108,
+      112,
+      116
     ],
-    "id": "1401",
-    "name": "Fighting Flash"
+    "hit dmg% distribution": [
+      15,
+      15,
+      12,
+      8,
+      20,
+      15,
+      10,
+      5
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 8
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "fire",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 951,
+  "imp": {
+    "max atk": "260",
+    "max def": "140",
+    "max hp": "500",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "1733~1936",
+  "movement": {
+    "attack": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    }
+  },
+  "name": "Pyro Spin Ruby",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Pyro Spin Ruby",
+  "maxlv": "80",
+  "no": "951",
   "unitDisplayHomePosition_1W9CxaFK": "515,235,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-186,-11,1198,843",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "9,211,599,422,0",
@@ -449,5 +450,108 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "12:1146:1,13:121:1,17:121:1,18:100081:1,64:1146:1,65:121:1,69:121:1,104:121:1,105:1130:1,108:1141:1,112:121:1,116:121:1,117:100081:1"
+  "effectFrames": "12:1146:1,13:121:1,17:121:1,18:100081:1,64:1146:1,65:121:1,69:121:1,104:121:1,105:1130:1,108:1141:1,112:121:1,116:121:1,117:100081:1",
+  "evofrom": "",
+  "evointo": "10645",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10133",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "10191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "152",
+  "animation_idle": "52",
+  "animation_move": "5",
+  "movespeed_attack": "0.0024",
+  "movespeed_skill": "0.0024",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "13, 17, 65, 69, 104, 108, 112, 116",
+  "normal_distribute": "15, 15, 12, 8, 20, 15, 10, 5",
+  "normal_totaldistr": "100",
+  "bb_frames": "13, 16, 19, 22, 65, 68, 71, 74, 104, 107, 110, 113, 116, 119, 122",
+  "bb_distribute": "10, 5, 5, 5, 12, 5, 5, 5, 15, 8, 5, 5, 5, 5, 5",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "description": "A fox-girl and skilled sword fighter who once fought alongside the Oracle Knight against the gods who sought to destroy humankind. Belonging to a tribe of fox-people in the area surrounding the Agni Region, Ruby was bitten by curiosity while still young, setting off on a journey in which she saved numerous humans from the clutches of demons. Dancing in battle with the treasured weapon of her village, which had been handed down from generation to generation, she is said to have charmed the hearts of many.",
+  "summon": "Huh? Where am I?! Well, I guess as long as it looks fun it doesn't matter where I end up!",
+  "fusion": "I can feel power surging through me! Yeah, this isn't too bad! Not bad at all!!",
+  "evolution": "",
+  "hp_base": "3360",
+  "atk_base": "1396",
+  "def_base": "1141",
+  "rec_base": "1269",
+  "hp_lord": "4781",
+  "atk_lord": "1862",
+  "def_lord": "1521",
+  "rec_lord": "1692",
+  "hp_anima": "5373",
+  "rec_anima": "1534",
+  "atk_breaker": "2020",
+  "def_breaker": "1363",
+  "atk_guardian": "1704",
+  "def_guardian": "1679",
+  "rec_guardian": "1613",
+  "def_oracle": "1442",
+  "hp_oracle": "4544",
+  "rec_oracle": "1929",
+  "hp_bonus": "500",
+  "atk_bonus": "260",
+  "def_bonus": "140",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "8",
+  "normaldc": "24",
+  "ls": "Fighting Flash",
+  "lsdescription": "Boost in Battle Crystals produced during Spark",
+  "lsnote": "50% boost",
+  "lstype": "Brave Burst",
+  "bbdescription": "15 combo powerful Fire attack on all enemies & 1 turn Atk reduction effect added to attack for 3 turns",
+  "bbnote": "10% chance to reduce enemy Atk by 20%",
+  "bbtype": "Support/Offense",
+  "bbhits": "15",
+  "bbaoe": "A",
+  "bbgauge": "24",
+  "bbdc": "15",
+  "bbmultiplier": "240",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "es": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "10133",
+  "evomats3": "10133",
+  "evomats4": "10191",
+  "evomats5": "60224",
+  "evoitem": ""
 }

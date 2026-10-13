@@ -1,52 +1,64 @@
 {
   "id": "30274",
-  "unitName": "Great Golem",
-  "no": "420",
-  "element": "Earth",
-  "rarity": "★★★★★",
-  "cost": "16",
-  "maxlv": "80",
-  "basexp": "21",
-  "gender": "N",
-  "ai": "2",
-  "animation_attack": "225",
-  "animation_idle": "105",
-  "animation_move": "104",
-  "movespeed_attack": "0.005",
-  "movespeed_skill": "0.005",
-  "speedtype_attack": "1",
-  "speedtype_skill": "1",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "description": "An enchanted puppet with immense magical power. It was created to protect Lira, the girl with both human and magical blood. Golem watched over Lira from the time she was a baby, protecting her from the disastrous beast's fiery attacks. However, one day a bright light beamed out from inside of him, and with it a new power was born within him. There are many explanations concerning the light, with the most prominent one stating that it came from Lira's father whose spirit was still alive inside Golem.",
-  "summon": "I...in...complete.<br>My...beta...development.<br>...mode...integration.",
-  "fusion": "Power...con...confirmed.<br>[[Half Blood Lira|Lira]]...located...<br>Confirmed...",
-  "evolution": "[[Half Blood Lira|Lira]]...danger. Confirm...<br>Emergency protocol...active.<br>",
-  "hp_base": "3691",
-  "atk_base": "1291",
-  "def_base": "1154",
-  "rec_base": "543",
-  "hp_lord": "5496",
-  "atk_lord": "1800",
-  "def_lord": "1625",
-  "rec_lord": "782",
-  "hp_anima": "6088",
-  "rec_anima": "624",
-  "atk_breaker": "1958",
-  "def_breaker": "1467",
-  "atk_guardian": "1642",
-  "def_guardian": "1783",
-  "hp_oracle": "4903",
-  "rec_oracle": "940",
-  "hp_bonus": "500",
-  "atk_bonus": "260",
-  "def_bonus": "140",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "6",
-  "ls": "Supreme Sanctuary",
-  "lsdescription": "10% boost to Def and HP for all types",
-  "lstype": "Hit Points/Defense",
+  "stats": {
+    "_base": {
+      "atk": 1291,
+      "def": 1154,
+      "hp": 3691,
+      "rec": 543
+    },
+    "_lord": {
+      "atk": 1800,
+      "def": 1625,
+      "hp": 5496,
+      "rec": 782
+    },
+    "anima": {
+      "atk": 1800,
+      "def": 1625,
+      "hp max": 6286,
+      "hp min": 5891,
+      "rec max": 703,
+      "rec min": 545
+    },
+    "breaker": {
+      "atk max": 2037,
+      "atk min": 1879,
+      "def max": 1546,
+      "def min": 1388,
+      "hp": 5496,
+      "rec": 782
+    },
+    "guardian": {
+      "atk": 1800,
+      "def max": 1862,
+      "def min": 1704,
+      "hp": 5496,
+      "rec max": 782,
+      "rec min": 624
+    },
+    "oracle": {
+      "atk": 1800,
+      "def max": 1625,
+      "def min": 1467,
+      "hp": 5496,
+      "rec max": 1098,
+      "rec min": 940
+    }
+  },
+  "leader_skill": {
+    "desc": "10% boost to Def and HP for all types",
+    "effects": [
+      {
+        "def% buff": 10,
+        "hp% buff": 10,
+        "passive id": "1"
+      }
+    ],
+    "id": "4301",
+    "name": "Supreme Sanctuary"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -205,92 +217,93 @@
     ],
     "name": "Bing Bang Blast"
   },
-  "bbdescription": "9 combo massive Earth attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "9",
-  "bbaoe": "A",
-  "bbgauge": "45",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "30273",
-  "evointo": "30275",
-  "evomats1": "50354",
-  "evomats2": "30133",
-  "evomats3": "60224",
-  "evomats4": "30132",
-  "evomats5": "30191",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 1291,
-      "def": 1154,
-      "hp": 3691,
-      "rec": 543
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1800,
-      "def": 1625,
-      "hp": 5496,
-      "rec": 782
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1800,
-      "def": 1625,
-      "hp max": 6286,
-      "hp min": 5891,
-      "rec max": 703,
-      "rec min": 545
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 225
     },
-    "breaker": {
-      "atk max": 2037,
-      "atk min": 1879,
-      "def max": 1546,
-      "def min": 1388,
-      "hp": 5496,
-      "rec": 782
+    "idle": {
+      "total number of frames": 105
     },
-    "guardian": {
-      "atk": 1800,
-      "def max": 1862,
-      "def min": 1704,
-      "hp": 5496,
-      "rec max": 782,
-      "rec min": 624
-    },
-    "oracle": {
-      "atk": 1800,
-      "def max": 1625,
-      "def min": 1467,
-      "hp": 5496,
-      "rec max": 1098,
-      "rec min": 940
+    "move": {
+      "total number of frames": 104
     }
   },
-  "leader_skill": {
-    "desc": "10% boost to Def and HP for all types",
-    "effects": [
-      {
-        "def% buff": 10,
-        "hp% buff": 10,
-        "passive id": "1"
-      }
+  "category": 30270,
+  "cost": "16",
+  "damage frames": {
+    "frame times": [
+      49,
+      81,
+      140,
+      148,
+      156,
+      164
     ],
-    "id": "4301",
-    "name": "Supreme Sanctuary"
+    "hit dmg% distribution": [
+      30,
+      30,
+      10,
+      10,
+      10,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 6
   },
-  "extra_skill": {},
+  "drop check count": 4,
+  "element": "earth",
+  "exp_pattern": 20,
+  "gender": "other",
+  "getting type": "rare summon",
+  "guide_id": 420,
+  "imp": {
+    "max atk": "260",
+    "max def": "140",
+    "max hp": "500",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "1676~1872",
+  "movement": {
+    "attack": {
+      "move speed": 0.005,
+      "move speed type": "1",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.005,
+      "move speed type": "1",
+      "move type": "1"
+    }
+  },
+  "name": "Great Golem",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Great Golem",
+  "maxlv": "80",
+  "no": "420",
   "unitDisplayHomePosition_1W9CxaFK": "413,110,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-69,91,900,748",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "164,293,318,324,0",
@@ -300,5 +313,108 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "43:138:1,75:138:1,49:300110:1,81:300110:1,136:330371:1,144:300121:1,152:400130:1,160:300121:1"
+  "effectFrames": "43:138:1,75:138:1,49:300110:1,81:300110:1,136:330371:1,144:300121:1,152:400130:1,160:300121:1",
+  "evofrom": "30273",
+  "evointo": "30275",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30191",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "225",
+  "animation_idle": "105",
+  "animation_move": "104",
+  "movespeed_attack": "0.005",
+  "movespeed_skill": "0.005",
+  "speedtype_attack": "1",
+  "speedtype_skill": "1",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "49, 81, 140, 148, 156, 164",
+  "normal_distribute": "30, 30, 10, 10, 10, 10",
+  "normal_totaldistr": "100",
+  "bb_frames": "49, 81, 144, 154, 164, 174, 184, 194, 204",
+  "bb_distribute": "15, 15, 10, 10, 10, 10, 10, 10, 10",
+  "bb_totaldistr": "100",
+  "description": "An enchanted puppet with immense magical power. It was created to protect Lira, the girl with both human and magical blood. Golem watched over Lira from the time she was a baby, protecting her from the disastrous beast's fiery attacks. However, one day a bright light beamed out from inside of him, and with it a new power was born within him. There are many explanations concerning the light, with the most prominent one stating that it came from Lira's father whose spirit was still alive inside Golem.",
+  "summon": "I...in...complete.<br>My...beta...development.<br>...mode...integration.",
+  "fusion": "Power...con...confirmed.<br>[[Half Blood Lira|Lira]]...located...<br>Confirmed...",
+  "evolution": "[[Half Blood Lira|Lira]]...danger. Confirm...<br>Emergency protocol...active.<br>",
+  "hp_base": "3691",
+  "atk_base": "1291",
+  "def_base": "1154",
+  "rec_base": "543",
+  "hp_lord": "5496",
+  "atk_lord": "1800",
+  "def_lord": "1625",
+  "rec_lord": "782",
+  "hp_anima": "6089",
+  "rec_anima": "624",
+  "atk_breaker": "1958",
+  "def_breaker": "1467",
+  "atk_guardian": "1642",
+  "def_guardian": "1783",
+  "rec_guardian": "703",
+  "def_oracle": "1546",
+  "hp_oracle": "5259",
+  "rec_oracle": "1019",
+  "hp_bonus": "500",
+  "atk_bonus": "260",
+  "def_bonus": "140",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "6",
+  "normaldc": "24",
+  "ls": "Supreme Sanctuary",
+  "lsdescription": "10% boost to Def and HP for all types",
+  "lstype": "Hit Points/Defense",
+  "bbdescription": "9 combo massive Earth attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "9",
+  "bbaoe": "A",
+  "bbgauge": "40",
+  "bbdc": "9",
+  "bbmultiplier": "350",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "30133",
+  "evomats3": "60224",
+  "evomats4": "30132",
+  "evomats5": "30191"
 }

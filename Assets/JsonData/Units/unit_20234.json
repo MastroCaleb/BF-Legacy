@@ -1,60 +1,65 @@
 {
   "id": "20234",
-  "unitName": "Ice Warrior Karl",
-  "no": "335",
-  "element": "Water",
-  "rarity": "★★★★★",
-  "cost": "20",
-  "maxlv": "80",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "85",
-  "animation_idle": "52",
-  "animation_move": "13",
-  "movespeed_attack": "0.0024",
-  "movespeed_skill": "0.0024",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "22, 25, 28, 54, 66, 78",
-  "normal_distribute": "30, 20, 10, 20, 10, 10",
-  "normal_totaldistr": "100",
-  "bb_frames": "22, 25, 28, 54, 66, 90, 115, 135",
-  "bb_distribute": "25, 10, 10, 15, 10, 10, 10, 10",
-  "bb_totaldistr": "100",
-  "description": "A mock Unit modeled after Karl, a Summoner belonging to the Akras Summoners' Hall. Though already considered to be one of the strongest around, it is said his hidden power is even more outstanding. Karl's birth is clouded in mystery so much so that even he doesn't know anything himself, but there are some who believe he has ties to the Summoners' Hall's upper echelon, rumoring that \"He's descended from kings,\" \"His blood is that of a god's,\" and \"He was born in Grand Gaia.\" Karl neither confirmed nor denied these claims, instead simply smiling in response.",
-  "summon": "Hey there, my friend!<br>This is my ascended form.<br>I look forward to battle with you!",
-  "fusion": "I must get stronger so that<br>I can fight alongside you!<br>I will always have your back!",
-  "evolution": "What's this power!?<br>I can feel something strange<br>burning inside of me!",
-  "hp_base": "3880",
-  "atk_base": "1267",
-  "def_base": "1153",
-  "rec_base": "920",
-  "hp_lord": "5323",
-  "atk_lord": "1733",
-  "def_lord": "1523",
-  "rec_lord": "1389",
-  "hp_anima": "5916",
-  "rec_anima": "1231",
-  "atk_breaker": "1891",
-  "def_breaker": "1365",
-  "atk_guardian": "1575",
-  "def_guardian": "1681",
-  "hp_oracle": "5086",
-  "rec_oracle": "1626",
-  "hp_bonus": "500",
-  "atk_bonus": "260",
-  "def_bonus": "140",
-  "rec_bonus": "200",
-  "lordonly": "true",
-  "combo_hits": "6",
-  "normaldc": "18",
-  "ls": "Hero's Order",
-  "lsdescription": "Chance of BB gauge greatly filling when attacking",
-  "lsnote": "50% chance to fill 7 BC",
-  "lstype": "Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 1267,
+      "def": 1153,
+      "hp": 3880,
+      "rec": 920
+    },
+    "_lord": {
+      "atk": 1733,
+      "def": 1523,
+      "hp": 5323,
+      "rec": 1389
+    },
+    "anima": {
+      "atk": 1733,
+      "def": 1523,
+      "hp max": 6113,
+      "hp min": 5718,
+      "rec max": 1310,
+      "rec min": 1152
+    },
+    "breaker": {
+      "atk max": 1970,
+      "atk min": 1812,
+      "def max": 1444,
+      "def min": 1286,
+      "hp": 5323,
+      "rec": 1389
+    },
+    "guardian": {
+      "atk": 1733,
+      "def max": 1760,
+      "def min": 1602,
+      "hp": 5323,
+      "rec max": 1389,
+      "rec min": 1231
+    },
+    "oracle": {
+      "atk": 1733,
+      "def max": 1523,
+      "def min": 1365,
+      "hp": 5323,
+      "rec max": 1705,
+      "rec min": 1547
+    }
+  },
+  "leader_skill": {
+    "desc": "Chance of BB gauge greatly filling when attacking",
+    "effects": [
+      {
+        "bc fill when attacking high": 7,
+        "bc fill when attacking low": 7,
+        "bc fill when attacking%": 50,
+        "passive id": "35"
+      }
+    ],
+    "id": "2601",
+    "name": "Hero's Order"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -221,96 +226,93 @@
     ],
     "name": "Cursed Blue Slash"
   },
-  "bbdescription": "8 combo powerful Water attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "8",
-  "bbaoe": "A",
-  "bbgauge": "20",
-  "bbdc": "8",
-  "bbmultiplier": "200",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "20233",
-  "evointo": "20235",
-  "evomats1": "50354",
-  "evomats2": "20133",
-  "evomats3": "20133",
-  "evomats4": "60224",
-  "evomats5": "",
-  "evoitem": "Sapphire",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 1267,
-      "def": 1153,
-      "hp": 3880,
-      "rec": 920
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1733,
-      "def": 1523,
-      "hp": 5323,
-      "rec": 1389
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1733,
-      "def": 1523,
-      "hp max": 6113,
-      "hp min": 5718,
-      "rec max": 1310,
-      "rec min": 1152
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 85
     },
-    "breaker": {
-      "atk max": 1970,
-      "atk min": 1812,
-      "def max": 1444,
-      "def min": 1286,
-      "hp": 5323,
-      "rec": 1389
+    "idle": {
+      "total number of frames": 52
     },
-    "guardian": {
-      "atk": 1733,
-      "def max": 1760,
-      "def min": 1602,
-      "hp": 5323,
-      "rec max": 1389,
-      "rec min": 1231
-    },
-    "oracle": {
-      "atk": 1733,
-      "def max": 1523,
-      "def min": 1365,
-      "hp": 5323,
-      "rec max": 1705,
-      "rec min": 1547
+    "move": {
+      "total number of frames": 13
     }
   },
-  "leader_skill": {
-    "desc": "Chance of BB gauge greatly filling when attacking",
-    "effects": [
-      {
-        "bc fill when attacking high": 7,
-        "bc fill when attacking low": 7,
-        "bc fill when attacking%": 50,
-        "passive id": "35"
-      }
+  "category": 20230,
+  "cost": "20",
+  "damage frames": {
+    "frame times": [
+      22,
+      25,
+      28,
+      54,
+      66,
+      78
     ],
-    "id": "2601",
-    "name": "Hero's Order"
+    "hit dmg% distribution": [
+      30,
+      20,
+      10,
+      20,
+      10,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 6
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "water",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "farmable",
+  "guide_id": 335,
+  "imp": {
+    "max atk": "260",
+    "max def": "140",
+    "max hp": "500",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "1613~1802",
+  "movement": {
+    "attack": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    }
+  },
+  "name": "Ice Warrior Karl",
+  "rarity": "5",
+  "sell caution": true,
+  "unitName": "Ice Warrior Karl",
+  "maxlv": "80",
+  "no": "335",
   "unitDisplayHomePosition_1W9CxaFK": "801,466,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-435,-293,1481,1073",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "160,336,297,293,0",
@@ -320,5 +322,103 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": true,
-  "effectFrames": "16:122:1,16:660:1,19:122:1,19:190:1,22:122:1,38:190:1,38:660:1,42:200230:1,42:200030:1,56:200230:1,56:200030:1"
+  "effectFrames": "16:122:1,16:660:1,19:122:1,19:190:1,22:122:1,38:190:1,38:660:1,42:200230:1,42:200030:1,56:200230:1,56:200030:1",
+  "evofrom": "20233",
+  "evointo": "20235",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20133",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    },
+    {
+      "type": "2",
+      "id": "110010",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "85",
+  "animation_idle": "52",
+  "animation_move": "13",
+  "movespeed_attack": "0.0024",
+  "movespeed_skill": "0.0024",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "22, 25, 28, 54, 66, 78",
+  "normal_distribute": "30, 20, 10, 20, 10, 10",
+  "normal_totaldistr": "100",
+  "bb_frames": "22, 25, 28, 54, 66, 90, 115, 135",
+  "bb_distribute": "25, 10, 10, 15, 10, 10, 10, 10",
+  "bb_totaldistr": "100",
+  "description": "A mock Unit modeled after Karl, a Summoner belonging to the Akras Summoners' Hall. Though already considered to be one of the strongest around, it is said his hidden power is even more outstanding. Karl's birth is clouded in mystery so much so that even he doesn't know anything himself, but there are some who believe he has ties to the Summoners' Hall's upper echelon, rumoring that \"He's descended from kings,\" \"His blood is that of a god's,\" and \"He was born in Grand Gaia.\" Karl neither confirmed nor denied these claims, instead simply smiling in response.",
+  "summon": "Hey there, my friend!<br>This is my ascended form.<br>I look forward to battle with you!",
+  "fusion": "I must get stronger so that<br>I can fight alongside you!<br>I will always have your back!",
+  "evolution": "What's this power!?<br>I can feel something strange<br>burning inside of me!",
+  "hp_base": "3880",
+  "atk_base": "1267",
+  "def_base": "1153",
+  "rec_base": "920",
+  "hp_lord": "5323",
+  "atk_lord": "1733",
+  "def_lord": "1523",
+  "rec_lord": "1389",
+  "hp_anima": "5916",
+  "rec_anima": "1231",
+  "atk_breaker": "1891",
+  "def_breaker": "1365",
+  "atk_guardian": "1575",
+  "def_guardian": "1681",
+  "hp_oracle": "5086",
+  "rec_oracle": "1626",
+  "hp_bonus": "500",
+  "atk_bonus": "260",
+  "def_bonus": "140",
+  "rec_bonus": "200",
+  "lordonly": "true",
+  "combo_hits": "6",
+  "normaldc": "18",
+  "ls": "Hero's Order",
+  "lsdescription": "Chance of BB gauge greatly filling when attacking",
+  "lsnote": "50% chance to fill 7 BC",
+  "lstype": "Brave Burst",
+  "bbdescription": "8 combo powerful Water attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "8",
+  "bbaoe": "A",
+  "bbgauge": "20",
+  "bbdc": "8",
+  "bbmultiplier": "200",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "20133",
+  "evomats3": "20133",
+  "evomats4": "60224",
+  "evomats5": "",
+  "evoitem": "Sapphire"
 }

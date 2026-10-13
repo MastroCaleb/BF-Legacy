@@ -1,59 +1,63 @@
 {
   "id": "40024",
-  "unitName": "General Weiss",
-  "no": "323",
-  "element": "Thunder",
-  "rarity": "★★★★★",
-  "cost": "14",
-  "maxlv": "80",
-  "basexp": "15",
-  "gender": "M",
-  "ai": "3",
-  "animation_attack": "82",
-  "animation_idle": "52",
-  "animation_move": "52",
-  "movespeed_attack": "6",
-  "movespeed_skill": "6",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "38, 43, 48, 52, 58, 61, 64",
-  "normal_distribute": "17, 16, 17, 15, 15, 10, 10",
-  "normal_totaldistr": "100",
-  "description": "A tactician from the ruined Atharva Republic. Just as Lucius was reaching out to help, Weiss enacted his final end strategy. He used himself as a decoy so that others could escape. Despite there being no hope for reinforcements, with renewed morale his men followed his every word. Just as his people had escaped and he and his men were on the verge of defeat, legend has it that he said, \"In the end, I guess we won.\"",
-  "summon": "Meeting me changes how people think.<br>Surely this power will benefit you<br>more than me, will it not?",
-  "fusion": "There's no room in war for a<br>general who neglects resources.<br>Soldiers require support.",
-  "evolution": "You mustn't have fear.<br>Plans hatched out of fear are<br>easily read by the enemy.",
-  "hp_base": "3421",
-  "atk_base": "785",
-  "def_base": "701",
-  "rec_base": "1478",
-  "hp_lord": "5157",
-  "atk_lord": "1223",
-  "def_lord": "1130",
-  "rec_lord": "1926",
-  "hp_anima": "5750",
-  "rec_anima": "1768",
-  "atk_breaker": "1381",
-  "def_breaker": "972",
-  "atk_guardian": "1065",
-  "def_guardian": "1288",
-  "rec_guardian": "1847",
-  "def_oracle": "1051",
-  "hp_oracle": "4920",
-  "rec_oracle": "2163",
-  "hp_bonus": "750",
-  "atk_bonus": "200",
-  "def_bonus": "400",
-  "rec_bonus": "300",
-  "lordonly": "",
-  "combo_hits": "7",
-  "normaldc": "14",
-  "ls": "Fighting Strobe",
-  "lsdescription": "Large boost in Battle Crystals produced during Spark",
-  "lsnote": "70% boost",
-  "lstype": "Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 785,
+      "def": 701,
+      "hp": 3421,
+      "rec": 1478
+    },
+    "_lord": {
+      "atk": 1223,
+      "def": 1130,
+      "hp": 5157,
+      "rec": 1926
+    },
+    "anima": {
+      "atk": 1223,
+      "def": 1130,
+      "hp max": 5947,
+      "hp min": 5552,
+      "rec max": 1847,
+      "rec min": 1689
+    },
+    "breaker": {
+      "atk max": 1460,
+      "atk min": 1302,
+      "def max": 1051,
+      "def min": 893,
+      "hp": 5157,
+      "rec": 1926
+    },
+    "guardian": {
+      "atk": 1223,
+      "def max": 1367,
+      "def min": 1209,
+      "hp": 5157,
+      "rec max": 1926,
+      "rec min": 1768
+    },
+    "oracle": {
+      "atk": 1223,
+      "def max": 1130,
+      "def min": 972,
+      "hp": 5157,
+      "rec max": 2242,
+      "rec min": 2084
+    }
+  },
+  "leader_skill": {
+    "desc": "Large boost in Battle Crystals produced during Spark",
+    "effects": [
+      {
+        "bc drop% for spark": 70,
+        "passive id": "31"
+      }
+    ],
+    "id": "1402",
+    "name": "Fighting Strobe"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -216,92 +220,101 @@
     ],
     "name": "Thunder's Order"
   },
-  "bbdescription": "Greatly boosts all allies' Atk for 3 turns",
-  "bbnote": "100% boost",
-  "bbtype": "Support",
-  "bbhits": "",
-  "bbaoe": "0",
-  "bbgauge": "25",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "40023",
-  "evointo": "40025",
-  "evomats1": "50354",
-  "evomats2": "40133",
-  "evomats3": "40132",
-  "evomats4": "60144",
-  "evomats5": "60224",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 785,
-      "def": 701,
-      "hp": 3421,
-      "rec": 1478
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1223,
-      "def": 1130,
-      "hp": 5157,
-      "rec": 1926
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1223,
-      "def": 1130,
-      "hp max": 5947,
-      "hp min": 5552,
-      "rec max": 1847,
-      "rec min": 1689
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 1460,
-      "atk min": 1302,
-      "def max": 1051,
-      "def min": 893,
-      "hp": 5157,
-      "rec": 1926
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 82
     },
-    "guardian": {
-      "atk": 1223,
-      "def max": 1367,
-      "def min": 1209,
-      "hp": 5157,
-      "rec max": 1926,
-      "rec min": 1768
+    "idle": {
+      "total number of frames": 52
     },
-    "oracle": {
-      "atk": 1223,
-      "def max": 1130,
-      "def min": 972,
-      "hp": 5157,
-      "rec max": 2242,
-      "rec min": 2084
+    "move": {
+      "total number of frames": 52
     }
   },
-  "leader_skill": {
-    "desc": "Large boost in Battle Crystals produced during Spark",
-    "effects": [
-      {
-        "bc drop% for spark": 70,
-        "passive id": "31"
-      }
+  "category": 40020,
+  "cost": "14",
+  "damage frames": {
+    "frame times": [
+      38,
+      43,
+      48,
+      52,
+      58,
+      61,
+      64
     ],
-    "id": "1402",
-    "name": "Fighting Strobe"
+    "hit dmg% distribution": [
+      17,
+      16,
+      17,
+      15,
+      15,
+      10,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 7
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "thunder",
+  "exp_pattern": 15,
+  "gender": "male",
+  "getting type": "farmable",
+  "guide_id": 323,
+  "imp": {
+    "max atk": "200",
+    "max def": "400",
+    "max hp": "750",
+    "max rec": "300"
+  },
+  "kind": "normal",
+  "lord damage range": "1138~1271",
+  "movement": {
+    "attack": {
+      "move speed": 6,
+      "move speed type": "2",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 6,
+      "move speed type": "2",
+      "move type": "3"
+    }
+  },
+  "name": "General Weiss",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "General Weiss",
+  "maxlv": "80",
+  "no": "323",
   "unitDisplayHomePosition_1W9CxaFK": "299,153,200,544",
   "unitDisplayDetailPosition_6z54rgb3": "59,-21,820,806",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "196,295,294,326,0",
@@ -311,5 +324,105 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "37:300:1,48:400090:1,58:400061:1"
+  "effectFrames": "37:300:1,48:400090:1,58:400061:1",
+  "evofrom": "40023",
+  "evointo": "40025",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    }
+  ],
+  "basexp": "15",
+  "animation_attack": "82",
+  "animation_idle": "52",
+  "animation_move": "52",
+  "movespeed_attack": "6",
+  "movespeed_skill": "6",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "38, 43, 48, 52, 58, 61, 64",
+  "normal_distribute": "17, 16, 17, 15, 15, 10, 10",
+  "normal_totaldistr": "100",
+  "description": "A tactician from the ruined Atharva Republic. Just as Lucius was reaching out to help, Weiss enacted his final end strategy. He used himself as a decoy so that others could escape. Despite there being no hope for reinforcements, with renewed morale his men followed his every word. Just as his people had escaped and he and his men were on the verge of defeat, legend has it that he said, \"In the end, I guess we won.\"",
+  "summon": "Meeting me changes how people think.<br>Surely this power will benefit you<br>more than me, will it not?",
+  "fusion": "There's no room in war for a<br>general who neglects resources.<br>Soldiers require support.",
+  "evolution": "You mustn't have fear.<br>Plans hatched out of fear are<br>easily read by the enemy.",
+  "hp_base": "3421",
+  "atk_base": "785",
+  "def_base": "701",
+  "rec_base": "1478",
+  "hp_lord": "5157",
+  "atk_lord": "1223",
+  "def_lord": "1130",
+  "rec_lord": "1926",
+  "hp_anima": "5750",
+  "rec_anima": "1768",
+  "atk_breaker": "1381",
+  "def_breaker": "972",
+  "atk_guardian": "1065",
+  "def_guardian": "1288",
+  "rec_guardian": "1847",
+  "def_oracle": "1051",
+  "hp_oracle": "4920",
+  "rec_oracle": "2163",
+  "hp_bonus": "750",
+  "atk_bonus": "200",
+  "def_bonus": "400",
+  "rec_bonus": "300",
+  "lordonly": "",
+  "combo_hits": "7",
+  "normaldc": "14",
+  "ls": "Fighting Strobe",
+  "lsdescription": "Large boost in Battle Crystals produced during Spark",
+  "lsnote": "70% boost",
+  "lstype": "Brave Burst",
+  "bbdescription": "Greatly boosts all allies' Atk for 3 turns",
+  "bbnote": "100% boost",
+  "bbtype": "Support",
+  "bbhits": "",
+  "bbaoe": "0",
+  "bbgauge": "25",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "40133",
+  "evomats3": "40132",
+  "evomats4": "60144",
+  "evomats5": "60224"
 }

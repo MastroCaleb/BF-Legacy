@@ -1,61 +1,63 @@
 {
   "id": "10103",
-  "unitName": "Fire Knight Agni",
-  "no": "124",
-  "element": "Fire",
-  "rarity": "★★★★",
-  "cost": "8",
-  "maxlv": "60",
-  "basexp": "15",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "132",
-  "animation_idle": "84",
-  "animation_move": "31",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "12, 17, 22, 54, 60, 66, 72, 78, 84",
-  "normal_distribute": "25, 25, 20, 5, 5, 5, 5, 5, 5",
-  "normal_totaldistr": "100",
-  "bb_frames": "12, 17, 22, 54, 60, 66, 72, 78, 84",
-  "bb_distribute": "25, 25, 20, 5, 5, 5, 5, 5, 5",
-  "bb_totaldistr": "100",
-  "description": "The Agni Imperial Army imperator and brother of the emperor.It's said that he stood at the front lines when the gods invaded. As one of the two most popular people in the Empire, there are many plays based on him. However, rumors surround his death, such as he was assassinated by the emperor, who feared him, or that he was killed during a failed coup d'état.",
-  "summon": "You want my help?<br>Hmm, alright.<br>I will lead your vanguard.",
-  "fusion": "A disciplined body and soul<br>will never betray you.<br>Never forget this.",
-  "evolution": "You should follow me!<br>I will cut open a path!",
-  "hp_base": "3078",
-  "atk_base": "932",
-  "def_base": "653",
-  "rec_base": "441",
-  "hp_lord": "4346",
-  "atk_lord": "1260",
-  "def_lord": "937",
-  "rec_lord": "687",
-  "hp_anima": "4789",
-  "rec_anima": "569",
-  "atk_breaker": "1378",
-  "def_breaker": "819",
-  "atk_guardian": "1142",
-  "def_guardian": "1055",
-  "rec_guardian": "628",
-  "def_oracle": "878",
-  "hp_oracle": "4169",
-  "rec_oracle": "864",
-  "hp_bonus": "400",
-  "atk_bonus": "160",
-  "def_bonus": "160",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "9",
-  "normaldc": "18",
-  "ls": "Royal Power",
-  "lsdescription": "15% boost to Atk Power of all types",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 932,
+      "def": 653,
+      "hp": 3078,
+      "rec": 441
+    },
+    "_lord": {
+      "atk": 1260,
+      "def": 937,
+      "hp": 4346,
+      "rec": 687
+    },
+    "anima": {
+      "atk": 1260,
+      "def": 937,
+      "hp max": 4936,
+      "hp min": 4641,
+      "rec max": 628,
+      "rec min": 510
+    },
+    "breaker": {
+      "atk max": 1437,
+      "atk min": 1319,
+      "def max": 878,
+      "def min": 760,
+      "hp": 4346,
+      "rec": 687
+    },
+    "guardian": {
+      "atk": 1260,
+      "def max": 1114,
+      "def min": 996,
+      "hp": 4346,
+      "rec max": 687,
+      "rec min": 569
+    },
+    "oracle": {
+      "atk": 1260,
+      "def max": 937,
+      "def min": 819,
+      "hp": 4346,
+      "rec max": 923,
+      "rec min": 805
+    }
+  },
+  "leader_skill": {
+    "desc": "15% boost to Atk",
+    "effects": [
+      {
+        "atk% buff": 15,
+        "passive id": "1"
+      }
+    ],
+    "id": "1901",
+    "name": "Royal Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -296,95 +298,99 @@
     ],
     "name": "Dragon's Execution"
   },
-  "bbdescription": "9 combo Fire elemental power attack on single Enemy & probable Injury effect",
-  "bbnote": "80% chance",
-  "bbtype": "Offense",
-  "bbhits": "9",
-  "bbaoe": "1",
-  "bbgauge": "15",
-  "bbdc": "9",
-  "bbmultiplier": "300",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "10102",
-  "evointo": "10104",
-  "evomats1": "10133",
-  "evomats2": "10191",
-  "evomats3": "10132",
-  "evomats4": "10130",
-  "evomats5": "10130",
-  "evoitem": "",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 932,
-      "def": 653,
-      "hp": 3078,
-      "rec": 441
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1260,
-      "def": 937,
-      "hp": 4346,
-      "rec": 687
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1260,
-      "def": 937,
-      "hp max": 4936,
-      "hp min": 4641,
-      "rec max": 628,
-      "rec min": 510
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 132
     },
-    "breaker": {
-      "atk max": 1437,
-      "atk min": 1319,
-      "def max": 878,
-      "def min": 760,
-      "hp": 4346,
-      "rec": 687
+    "idle": {
+      "total number of frames": 84
     },
-    "guardian": {
-      "atk": 1260,
-      "def max": 1114,
-      "def min": 996,
-      "hp": 4346,
-      "rec max": 687,
-      "rec min": 569
-    },
-    "oracle": {
-      "atk": 1260,
-      "def max": 937,
-      "def min": 819,
-      "hp": 4346,
-      "rec max": 923,
-      "rec min": 805
+    "move": {
+      "total number of frames": 31
     }
   },
-  "leader_skill": {
-    "desc": "15% boost to Atk",
-    "effects": [
-      {
-        "atk% buff": 15,
-        "passive id": "1"
-      }
+  "category": 10100,
+  "cost": "8",
+  "damage frames": {
+    "frame times": [
+      12,
+      17,
+      22,
+      54,
+      60,
+      66,
+      72,
+      78,
+      84
     ],
-    "id": "1901",
-    "name": "Royal Power"
+    "hit dmg% distribution": [
+      25,
+      25,
+      20,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 9
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "fire",
+  "exp_pattern": 15,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 124,
+  "imp": {
+    "max atk": "160",
+    "max def": "160",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "1173~1310",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Fire Knight Agni",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Fire Knight Agni",
+  "maxlv": "60",
+  "no": "124",
   "unitDisplayHomePosition_1W9CxaFK": "145,8,174,473",
   "unitDisplayDetailPosition_6z54rgb3": "187,125,500,675",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "203,305,227,307,0",
@@ -394,5 +400,105 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "6:121:1,11:121:1,16:121:1,48:121:1,54:121:1,60:121:1,66:121:1,72:121:1,78:121:1"
+  "effectFrames": "6:121:1,11:121:1,16:121:1,48:121:1,54:121:1,60:121:1,66:121:1,72:121:1,78:121:1",
+  "evofrom": "10102",
+  "evointo": "10104",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "10133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10130",
+      "count": 2
+    }
+  ],
+  "basexp": "15",
+  "animation_attack": "132",
+  "animation_idle": "84",
+  "animation_move": "31",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "12, 17, 22, 54, 60, 66, 72, 78, 84",
+  "normal_distribute": "25, 25, 20, 5, 5, 5, 5, 5, 5",
+  "normal_totaldistr": "100",
+  "bb_frames": "12, 17, 22, 54, 60, 66, 72, 78, 84",
+  "bb_distribute": "25, 25, 20, 5, 5, 5, 5, 5, 5",
+  "bb_totaldistr": "100",
+  "description": "The Agni Imperial Army imperator and brother of the emperor.It's said that he stood at the front lines when the gods invaded. As one of the two most popular people in the Empire, there are many plays based on him. However, rumors surround his death, such as he was assassinated by the emperor, who feared him, or that he was killed during a failed coup d'état.",
+  "summon": "You want my help?<br>Hmm, alright.<br>I will lead your vanguard.",
+  "fusion": "A disciplined body and soul<br>will never betray you.<br>Never forget this.",
+  "evolution": "You should follow me!<br>I will cut open a path!",
+  "hp_base": "3078",
+  "atk_base": "932",
+  "def_base": "653",
+  "rec_base": "441",
+  "hp_lord": "4346",
+  "atk_lord": "1260",
+  "def_lord": "937",
+  "rec_lord": "687",
+  "hp_anima": "4789",
+  "rec_anima": "569",
+  "atk_breaker": "1378",
+  "def_breaker": "819",
+  "atk_guardian": "1142",
+  "def_guardian": "1055",
+  "rec_guardian": "628",
+  "def_oracle": "878",
+  "hp_oracle": "4169",
+  "rec_oracle": "864",
+  "hp_bonus": "400",
+  "atk_bonus": "160",
+  "def_bonus": "160",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "9",
+  "normaldc": "18",
+  "ls": "Royal Power",
+  "lsdescription": "15% boost to Atk Power of all types",
+  "lstype": "Attack",
+  "bbdescription": "9 combo Fire elemental power attack on single Enemy & probable Injury effect",
+  "bbnote": "80% chance",
+  "bbtype": "Offense",
+  "bbhits": "9",
+  "bbaoe": "1",
+  "bbgauge": "15",
+  "bbdc": "9",
+  "bbmultiplier": "300",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "10133",
+  "evomats2": "10191",
+  "evomats3": "10132",
+  "evomats4": "10130",
+  "evomats5": "10130",
+  "evoitem": ""
 }

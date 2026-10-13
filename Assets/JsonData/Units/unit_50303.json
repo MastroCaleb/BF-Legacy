@@ -1,52 +1,63 @@
 {
   "id": "50303",
-  "unitName": "White Lebra",
-  "no": "423",
-  "element": "Light",
-  "rarity": "★★★★",
-  "cost": "12",
-  "maxlv": "60",
-  "basexp": "21",
-  "gender": "N",
-  "ai": "1",
-  "animation_attack": "116",
-  "animation_idle": "68",
-  "animation_move": "36",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "4",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "3",
-  "description": "A white beast who served as the keeper of order and helped maintain peace. He was also known for keeping evil beings in order and bringing fair justice to those who deserved it. One day, a half blood girl came to take on the White Beast. Seeing through to her troubled heart, torn between two peoples who wouldn't accept her, the white beast advised her to act on her own behalf. Having opened her heart at these words, the white beast chose then to go along with her and keep watch over her.",
-  "summon": "What is it that you're <br>fighting against, Summoner?<br>Is it worth it for me to join you?<br>",
-  "fusion": "So you wish to strengthen me.<br>How thoughtless of you to think<br>all there is to life is power.",
-  "evolution": "",
-  "hp_base": "2883",
-  "atk_base": "958",
-  "def_base": "867",
-  "rec_base": "1100",
-  "hp_lord": "4408",
-  "atk_lord": "1355",
-  "def_lord": "1233",
-  "rec_lord": "1525",
-  "hp_anima": "4850",
-  "rec_anima": "1407",
-  "atk_breaker": "1473",
-  "def_breaker": "1115",
-  "atk_guardian": "1237",
-  "def_guardian": "1351",
-  "hp_oracle": "3965",
-  "rec_oracle": "1643",
-  "hp_bonus": "400",
-  "atk_bonus": "160",
-  "def_bonus": "160",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "4",
-  "ls": "Intense Flash",
-  "lsdescription": "Boost in damage dealt during Spark",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 958,
+      "def": 867,
+      "hp": 2883,
+      "rec": 1100
+    },
+    "_lord": {
+      "atk": 1355,
+      "def": 1233,
+      "hp": 4408,
+      "rec": 1525
+    },
+    "anima": {
+      "atk": 1355,
+      "def": 1233,
+      "hp max": 4998,
+      "hp min": 4703,
+      "rec max": 1466,
+      "rec min": 1348
+    },
+    "breaker": {
+      "atk max": 1532,
+      "atk min": 1414,
+      "def max": 1174,
+      "def min": 1056,
+      "hp": 4408,
+      "rec": 1525
+    },
+    "guardian": {
+      "atk": 1355,
+      "def max": 1410,
+      "def min": 1292,
+      "hp": 4408,
+      "rec max": 1525,
+      "rec min": 1407
+    },
+    "oracle": {
+      "atk": 1355,
+      "def max": 1233,
+      "def min": 1115,
+      "hp": 4408,
+      "rec max": 1761,
+      "rec min": 1643
+    }
+  },
+  "leader_skill": {
+    "desc": "Boost in damage dealt during Spark",
+    "effects": [
+      {
+        "damage% for spark": 30,
+        "passive id": "31"
+      }
+    ],
+    "id": "1301",
+    "name": "Intense Flash"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -229,91 +240,89 @@
     ],
     "name": "Beast's Growl"
   },
-  "bbdescription": "Boosts Atk, Def, and Rec for all allies for 3 turns",
-  "bbtype": "Support",
-  "bbhits": "0",
-  "bbaoe": "0",
-  "bbgauge": "22",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "50304",
-  "evomats1": "50123",
-  "evomats2": "50122",
-  "evomats3": "50122",
-  "evomats4": "50191",
-  "evomats5": "50191",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 958,
-      "def": 867,
-      "hp": 2883,
-      "rec": 1100
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "party"
     },
-    "_lord": {
-      "atk": 1355,
-      "def": 1233,
-      "hp": 4408,
-      "rec": 1525
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1355,
-      "def": 1233,
-      "hp max": 4998,
-      "hp min": 4703,
-      "rec max": 1466,
-      "rec min": 1348
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 116
     },
-    "breaker": {
-      "atk max": 1532,
-      "atk min": 1414,
-      "def max": 1174,
-      "def min": 1056,
-      "hp": 4408,
-      "rec": 1525
+    "idle": {
+      "total number of frames": 68
     },
-    "guardian": {
-      "atk": 1355,
-      "def max": 1410,
-      "def min": 1292,
-      "hp": 4408,
-      "rec max": 1525,
-      "rec min": 1407
-    },
-    "oracle": {
-      "atk": 1355,
-      "def max": 1233,
-      "def min": 1115,
-      "hp": 4408,
-      "rec max": 1761,
-      "rec min": 1643
+    "move": {
+      "total number of frames": 36
     }
   },
-  "leader_skill": {
-    "desc": "Boost in damage dealt during Spark",
-    "effects": [
-      {
-        "damage% for spark": 30,
-        "passive id": "31"
-      }
+  "category": 50300,
+  "cost": "12",
+  "damage frames": {
+    "frame times": [
+      62,
+      67,
+      72,
+      77
     ],
-    "id": "1301",
-    "name": "Intense Flash"
+    "hit dmg% distribution": [
+      25,
+      25,
+      25,
+      25
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 4
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "light",
+  "exp_pattern": 20,
+  "gender": "other",
+  "getting type": "rare summon",
+  "guide_id": 423,
+  "imp": {
+    "max atk": "160",
+    "max def": "160",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "1261~1409",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    }
+  },
+  "name": "White Lebra",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "White Lebra",
+  "maxlv": "60",
+  "no": "423",
   "unitDisplayHomePosition_1W9CxaFK": "123,195,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "57,25,1000,769",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "175,319,235,292,0",
@@ -323,5 +332,95 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "77:300183:1,56:125:1,61:125:1,66:125:1,71:125:1,56:500131:1,67:400126:1,77:400126:1,77:500170:1"
+  "effectFrames": "77:300183:1,56:125:1,61:125:1,66:125:1,71:125:1,56:500131:1,67:400126:1,77:400126:1,77:500170:1",
+  "evofrom": "",
+  "evointo": "50304",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50123",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50122",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "50191",
+      "count": 2
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "116",
+  "animation_idle": "68",
+  "animation_move": "36",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "4",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "3",
+  "normal_frames": "62, 67, 72, 77",
+  "normal_distribute": "25, 25, 25, 25",
+  "normal_totaldistr": "100",
+  "description": "A white beast who served as the keeper of order and helped maintain peace. He was also known for keeping evil beings in order and bringing fair justice to those who deserved it. One day, a half blood girl came to take on the White Beast. Seeing through to her troubled heart, torn between two peoples who wouldn't accept her, the white beast advised her to act on her own behalf. Having opened her heart at these words, the white beast chose then to go along with her and keep watch over her.",
+  "summon": "What is it that you're <br>fighting against, Summoner?<br>Is it worth it for me to join you?<br>",
+  "fusion": "So you wish to strengthen me.<br>How thoughtless of you to think<br>all there is to life is power.",
+  "evolution": "",
+  "hp_base": "2883",
+  "atk_base": "958",
+  "def_base": "867",
+  "rec_base": "1100",
+  "hp_lord": "4408",
+  "atk_lord": "1355",
+  "def_lord": "1233",
+  "rec_lord": "1525",
+  "hp_anima": "4851",
+  "rec_anima": "1407",
+  "atk_breaker": "1473",
+  "def_breaker": "1115",
+  "atk_guardian": "1237",
+  "def_guardian": "1351",
+  "rec_guardian": "1466",
+  "def_oracle": "1174",
+  "hp_oracle": "4231",
+  "rec_oracle": "1702",
+  "hp_bonus": "400",
+  "atk_bonus": "160",
+  "def_bonus": "160",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "4",
+  "normaldc": "12",
+  "ls": "Intense Flash",
+  "lsdescription": "Boost in damage dealt during Spark",
+  "lsnote": "30% boost",
+  "lstype": "Attack",
+  "bbdescription": "Boosts Atk, Def, and Rec for all allies for 3 turns",
+  "bbnote": "45% boost",
+  "bbtype": "Support",
+  "bbhits": "0",
+  "bbaoe": "0",
+  "bbgauge": "22",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50123",
+  "evomats2": "50122",
+  "evomats3": "50122",
+  "evomats4": "50191",
+  "evomats5": "50191"
 }

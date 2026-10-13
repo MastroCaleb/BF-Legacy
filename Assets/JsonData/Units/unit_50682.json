@@ -1,61 +1,65 @@
 {
   "id": "50682",
-  "unitName": "Mireia",
-  "no": "1031",
-  "element": "Light",
-  "rarity": "★★★",
-  "cost": "6",
-  "maxlv": "40",
-  "basexp": "15",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "88",
-  "animation_idle": "64",
-  "animation_move": "64",
-  "movespeed_attack": "6",
-  "movespeed_skill": "6",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "27, 39",
-  "normal_distribute": "40, 60",
-  "normal_totaldistr": "100",
-  "bb_frames": "27, 30, 39, 42",
-  "bb_distribute": "30, 20, 30, 20",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "description": "A gunner girl from another world. Though no traces of activity related to her can be found in Grand Gaia, information about her exploits can be found in Ishgria. No one knows how she ended up there, but it seems that Mireia didn't land in the demon world willingly, but instead due to some sort of accident. Using her twin guns to fight the fearsome beasts and demons of Ishgria, it is said that she somehow managed to survive the ever-present battles that ensued about her.",
-  "summon": "Hmm... So it was you, huh?<br>The one who summoned me?<br>Well, whatever.<br>As long as I can fight, I guess.",
-  "fusion": "Lock and load!<br>Who's up next?<br>I can still put up a fight!",
-  "evolution": "",
-  "hp_base": "2207",
-  "atk_base": "844",
-  "def_base": "844",
-  "rec_base": "797",
-  "hp_lord": "3243",
-  "atk_lord": "1125",
-  "def_lord": "1125",
-  "rec_lord": "1063",
-  "hp_anima": "3535",
-  "rec_anima": "985",
-  "atk_breaker": "1203",
-  "def_breaker": "1047",
-  "def_guardian": "1203",
-  "rec_guardian": "1024",
-  "def_oracle": "1086",
-  "rec_oracle": "1180",
-  "hp_bonus": "300",
-  "atk_bonus": "120",
-  "def_bonus": "120",
-  "rec_bonus": "120",
-  "lordonly": "",
-  "combo_hits": "2",
-  "normaldc": "4",
-  "ls": "Light Gun's Resonance",
-  "lsdescription": "Probable slight BB gauge boost when attacked",
-  "lsnote": "30% chance to fill 2 BC",
-  "lstype": "Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 844,
+      "def": 844,
+      "hp": 2207,
+      "rec": 797
+    },
+    "_lord": {
+      "atk": 1125,
+      "def": 1125,
+      "hp": 3243,
+      "rec": 1063
+    },
+    "anima": {
+      "atk": 1125,
+      "def": 1125,
+      "hp max": 3633,
+      "hp min": 3438,
+      "rec max": 1024,
+      "rec min": 946
+    },
+    "breaker": {
+      "atk max": 1242,
+      "atk min": 1164,
+      "def max": 1086,
+      "def min": 1008,
+      "hp": 3243,
+      "rec": 1063
+    },
+    "guardian": {
+      "atk": 1125,
+      "def max": 1242,
+      "def min": 1164,
+      "hp": 3243,
+      "rec max": 1063,
+      "rec min": 985
+    },
+    "oracle": {
+      "atk": 1125,
+      "def max": 1125,
+      "def min": 1047,
+      "hp": 3243,
+      "rec max": 1219,
+      "rec min": 1141
+    }
+  },
+  "leader_skill": {
+    "desc": "Probable slight BB gauge boost when attacked",
+    "effects": [
+      {
+        "bc fill when attacked high": 2,
+        "bc fill when attacked low": 2,
+        "bc fill when attacked%": 30,
+        "passive id": "25"
+      }
+    ],
+    "id": "9340",
+    "name": "Light Gun's Resonance"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -296,98 +300,85 @@
     ],
     "name": "Dual Glint"
   },
-  "bbdescription": "4 combo Light attack on all foes & slightly boosts BB gauge",
-  "bbnote": "Fills 3 BC",
-  "bbtype": "Support/Offense",
-  "bbhits": "4",
-  "bbaoe": "A",
-  "bbgauge": "22",
-  "bbdc": "4",
-  "bbmultiplier": "170",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "es": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "50683",
-  "evomats1": "Light Pot",
-  "evomats2": "Light Idol",
-  "evomats3": "Light Spirit",
-  "evomats4": "Bat Mimic",
-  "evomats5": "Mimic",
-  "evoitem": "",
-  "evozelcost": "100000",
-  "stats": {
-    "_base": {
-      "atk": 844,
-      "def": 844,
-      "hp": 2207,
-      "rec": 797
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1125,
-      "def": 1125,
-      "hp": 3243,
-      "rec": 1063
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1125,
-      "def": 1125,
-      "hp max": 3633,
-      "hp min": 3438,
-      "rec max": 1024,
-      "rec min": 946
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 88
     },
-    "breaker": {
-      "atk max": 1242,
-      "atk min": 1164,
-      "def max": 1086,
-      "def min": 1008,
-      "hp": 3243,
-      "rec": 1063
+    "idle": {
+      "total number of frames": 64
     },
-    "guardian": {
-      "atk": 1125,
-      "def max": 1242,
-      "def min": 1164,
-      "hp": 3243,
-      "rec max": 1063,
-      "rec min": 985
-    },
-    "oracle": {
-      "atk": 1125,
-      "def max": 1125,
-      "def min": 1047,
-      "hp": 3243,
-      "rec max": 1219,
-      "rec min": 1141
+    "move": {
+      "total number of frames": 64
     }
   },
-  "leader_skill": {
-    "desc": "Probable slight BB gauge boost when attacked",
-    "effects": [
-      {
-        "bc fill when attacked high": 2,
-        "bc fill when attacked low": 2,
-        "bc fill when attacked%": 30,
-        "passive id": "25"
-      }
+  "category": 50680,
+  "cost": "6",
+  "damage frames": {
+    "frame times": [
+      27,
+      39
     ],
-    "id": "9340",
-    "name": "Light Gun's Resonance"
+    "hit dmg% distribution": [
+      40,
+      60
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 2
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "light",
+  "exp_pattern": 15,
+  "gender": "female",
+  "getting type": "farmable",
+  "guide_id": 1031,
+  "imp": {
+    "max atk": "120",
+    "max def": "120",
+    "max hp": "300",
+    "max rec": "120"
+  },
+  "kind": "normal",
+  "lord damage range": "1047~1170",
+  "movement": {
+    "attack": {
+      "move speed": 6,
+      "move speed type": "2",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 6,
+      "move speed type": "2",
+      "move type": "3"
+    }
+  },
+  "name": "Mireia",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "Mireia",
+  "maxlv": "40",
+  "no": "1031",
   "unitDisplayHomePosition_1W9CxaFK": "130,-80,270,737",
   "unitDisplayDetailPosition_6z54rgb3": "206,262,440,515",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "212,342,230,269,0",
@@ -397,5 +388,111 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "1000",
   "sellCaution": false,
-  "effectFrames": "21:114:1,33:114:1,25:100120:1"
+  "effectFrames": "21:114:1,33:114:1,25:100120:1",
+  "evofrom": "",
+  "evointo": "50683",
+  "evozelcost": "100000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50122",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50121",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60142",
+      "count": 1
+    }
+  ],
+  "basexp": "15",
+  "animation_attack": "88",
+  "animation_idle": "64",
+  "animation_move": "64",
+  "movespeed_attack": "6",
+  "movespeed_skill": "6",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "27, 39",
+  "normal_distribute": "40, 60",
+  "normal_totaldistr": "100",
+  "bb_frames": "27, 30, 39, 42",
+  "bb_distribute": "30, 20, 30, 20",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "description": "A gunner girl from another world. Though no traces of activity related to her can be found in Grand Gaia, information about her exploits can be found in Ishgria. No one knows how she ended up there, but it seems that Mireia didn't land in the demon world willingly, but instead due to some sort of accident. Using her twin guns to fight the fearsome beasts and demons of Ishgria, it is said that she somehow managed to survive the ever-present battles that ensued about her.",
+  "summon": "Hmm... So it was you, huh?<br>The one who summoned me?<br>Well, whatever.<br>As long as I can fight, I guess.",
+  "fusion": "Lock and load!<br>Who's up next?<br>I can still put up a fight!",
+  "evolution": "",
+  "hp_base": "2207",
+  "atk_base": "844",
+  "def_base": "844",
+  "rec_base": "797",
+  "hp_lord": "3243",
+  "atk_lord": "1125",
+  "def_lord": "1125",
+  "rec_lord": "1063",
+  "hp_anima": "3535",
+  "rec_anima": "985",
+  "atk_breaker": "1203",
+  "def_breaker": "1047",
+  "def_guardian": "1203",
+  "rec_guardian": "1024",
+  "def_oracle": "1086",
+  "rec_oracle": "1180",
+  "hp_bonus": "300",
+  "atk_bonus": "120",
+  "def_bonus": "120",
+  "rec_bonus": "120",
+  "lordonly": "",
+  "combo_hits": "2",
+  "normaldc": "4",
+  "ls": "Light Gun's Resonance",
+  "lsdescription": "Probable slight BB gauge boost when attacked",
+  "lsnote": "30% chance to fill 2 BC",
+  "lstype": "Brave Burst",
+  "bbdescription": "4 combo Light attack on all foes & slightly boosts BB gauge",
+  "bbnote": "Fills 3 BC",
+  "bbtype": "Support/Offense",
+  "bbhits": "4",
+  "bbaoe": "A",
+  "bbgauge": "22",
+  "bbdc": "4",
+  "bbmultiplier": "170",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "es": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "Light Pot",
+  "evomats2": "Light Idol",
+  "evomats3": "Light Spirit",
+  "evomats4": "Bat Mimic",
+  "evomats5": "Mimic",
+  "evoitem": ""
 }

@@ -1,73 +1,130 @@
 {
   "id": "830178",
-  "unitName": "Terry Bogard (Omni)",
-  "altname": "Terry Bogard",
-  "no": "8216",
-  "element": "Earth",
-  "rarity": "Omni",
-  "cost": "54",
-  "maxlv": "150",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "132",
-  "animation_idle": "141",
-  "animation_move": "8",
-  "movespeed_attack": "0.0041",
-  "movespeed_skill": "0.0041",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "54, 60, 69, 75",
-  "normal_distribute": "40, 20, 20, 20",
-  "normal_totaldistr": "100",
-  "bb_frames": "54, 60, 69, 75",
-  "bb_distribute": "40, 20, 20, 20",
-  "bb_totaldistr": "100",
-  "sbb_frames": "54, 60, 69, 75, 78",
-  "sbb_distribute": "40, 15, 15, 15, 15",
-  "sbb_totaldistr": "100",
-  "sbb2_frames": "55, 61, 70, 76, 79",
-  "sbb2_distribute": "40, 15, 15, 15, 15",
-  "sbb2_totaldistr": "100",
-  "ubb_frames": "54, 60, 69, 75, 78",
-  "ubb_distribute": "40, 15, 15, 15, 15",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "1",
-  "sbb2_effectdelay": "1",
-  "ubb_effectdelay": "1",
-  "description": "A charismatic street-savvy fighter, Terry's strength of will allowed him to resist the worst of the evil that seemed to invade his soul upon reaching Grand Gaia. After breaking free of its insidious influence, he rejoined his friends and discovered that a familiar face was behind the tournament--an evil soul who he thought had been put away for good. It wasn't going to be easy, and plunging into the heart of an alien world certainly had its risks. But he had no intention of letting a monster get away with his hobbies, especially when they involved innocent lives...",
-  "summon": "My strength is no fluke.<br>That's why I'm here!",
-  "fusion": "This is what makes a legend!<br>Yeah!",
-  "evolution": "Winning's tough,<br>but when you get there...<br>Aw yeah!",
-  "hp_base": "5690",
-  "atk_base": "1970",
-  "def_base": "2040",
-  "rec_base": "1790",
-  "hp_lord": "8125",
-  "atk_lord": "2816",
-  "def_lord": "2911",
-  "rec_lord": "2560",
-  "hp_anima": "9242",
-  "rec_anima": "2262",
-  "atk_breaker": "3114",
-  "def_breaker": "2613",
-  "def_guardian": "3209",
-  "rec_guardian": "2411",
-  "def_oracle": "2762",
-  "rec_oracle": "3007",
-  "hp_bonus": "1750",
-  "atk_bonus": "500",
-  "def_bonus": "800",
-  "rec_bonus": "400",
-  "lordonly": "",
-  "combo_hits": "4",
-  "normaldc": "44",
-  "ls": "Legendary Hungry Wolf",
-  "lsdescription": "100% boost to max HP, probable damage reduction to 1, 150% boost to Atk, Def for first 2 turns, 15% additional damage reduction & 15% damage reduction",
-  "lsnote": "20% chance to reduce damage taken to 1",
+  "stats": {
+    "_base": {
+      "atk": 1970,
+      "def": 2040,
+      "hp": 5690,
+      "rec": 1790
+    },
+    "_lord": {
+      "atk": 2816,
+      "def": 2911,
+      "hp": 8125,
+      "rec": 2560
+    },
+    "anima": {
+      "atk": 2816,
+      "def": 2911,
+      "hp max": 9615,
+      "hp min": 8870,
+      "rec max": 2411,
+      "rec min": 2113
+    },
+    "breaker": {
+      "atk max": 3263,
+      "atk min": 2965,
+      "def max": 2762,
+      "def min": 2464,
+      "hp": 8125,
+      "rec": 2560
+    },
+    "guardian": {
+      "atk": 2816,
+      "def max": 3358,
+      "def min": 3060,
+      "hp": 8125,
+      "rec max": 2560,
+      "rec min": 2262
+    },
+    "oracle": {
+      "atk": 2816,
+      "def max": 2911,
+      "def min": 2613,
+      "hp": 8125,
+      "rec max": 3156,
+      "rec min": 2858
+    }
+  },
+  "leader_skill": {
+    "desc": "100% boost to max HP, probable damage reduction to 1, 150% boost to Atk, Def for first 2 turns, 15% additional damage reduction & 15% damage reduction",
+    "effects": [
+      {
+        "hp% buff": 100,
+        "passive id": "1"
+      },
+      {
+        "first x turns": 2,
+        "first x turns atk% (1)": 150,
+        "first x turns def% (3)": 150,
+        "passive id": "21"
+      },
+      {
+        "passive id": "43",
+        "take 1 dmg%": 20
+      },
+      {
+        "unknown passive id": "127",
+        "unknown passive params": "100,15"
+      },
+      {
+        "dmg% mitigation": 15,
+        "passive id": "8"
+      }
+    ],
+    "id": "801251",
+    "name": "Legendary Hungry Wolf"
+  },
+  "extra_skill": {
+    "desc": "20% boost to all parameters, negates critical and elemental damage for all allies, negates Def ignoring effects, probable resistance against 2 KO attacks & 15% additional damage reduction for all allies",
+    "effects": [
+      {
+        "conditions": [],
+        "crit chance base resist%": 100,
+        "crit chance buffed resist%": 100,
+        "crit dmg base damage resist%": 100,
+        "crit dmg buffed damage resist%": 100,
+        "passive id": "53",
+        "passive target": "party",
+        "strong base element damage resist%": 100,
+        "strong buffed element damage resist%": 100
+      },
+      {
+        "conditions": [],
+        "ignore def resist chance%": 100,
+        "passive id": "92",
+        "passive target": "self"
+      },
+      {
+        "angel idol chance% condition": 0,
+        "angel idol recover chance% high": 40,
+        "angel idol recover chance% low": 40,
+        "angel idol recover counts": 2,
+        "conditions": [],
+        "passive id": "69",
+        "passive target": "self"
+      },
+      {
+        "atk% buff": 20,
+        "conditions": [],
+        "def% buff": 20,
+        "hp% buff": 20,
+        "passive id": "1",
+        "passive target": "self",
+        "rec% buff": 20
+      },
+      {
+        "conditions": [],
+        "passive target": "party",
+        "unknown passive id": "127",
+        "unknown passive params": "100,15"
+      }
+    ],
+    "id": "830178",
+    "name": "Heroic Resilience",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -624,18 +681,6 @@
     ],
     "name": "SDM: Power Geyser I"
   },
-  "bbdescription": "4 combo powerful Fire, Earth attack on all foes, 50% damage reduction for 1 turn, damage taken considerably boosts BB gauge for 3 turns, greatly boosts max HP & activates Earth shield for 3 turns",
-  "bbnote": "Fills 5-8 BC per hit, 30% HP & activates Earth shield (3500 HP, 3500 Def)",
-  "bbtype": "Offense",
-  "bbhits": "4",
-  "bbaoe": "A",
-  "bbgauge": "19",
-  "bbdc": "16",
-  "bbmultiplier": "470",
-  "bbhits2": "",
-  "bbaoe2": "",
-  "bbdc2": "",
-  "bbmultiplier2": "",
   "sbb": {
     "damage frames": [
       {
@@ -1374,19 +1419,6 @@
     ],
     "name": "SDM: Power Geyser II"
   },
-  "sbbdescription": "5 combo powerful Fire, Earth attack on all foes, 5 combo massive Earth attack on single foe (damage relative to remaining HP), 50% damage reduction for 1 turn, enormously boosts Atk, Def, Rec for 3 turns, hugely boosts Atk, Def relative to max HP for 3 turns & resistance against Spark damage for 2 turns",
-  "sbbnote": "200% + 800% * current HP / max HP on single-target attack, 180% parameter boost, 40% HP conversion & 50% Spark reduction",
-  "sbbtype": "Offense",
-  "sbbhits": "5",
-  "sbbaoe": "A",
-  "sbbgauge": "40",
-  "sbbdc": "20",
-  "sbbmultiplier": "950",
-  "sbbhits2": "5",
-  "sbbaoe2": "1",
-  "sbbdc2": "20",
-  "sbbmultiplier2": "200",
-  "sbb2_hpscale": "true",
   "ubb": {
     "damage frames": [
       {
@@ -1536,6 +1568,192 @@
     ],
     "name": "SDM: Power Geyser MAX"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 132
+    },
+    "idle": {
+      "total number of frames": 141
+    },
+    "move": {
+      "total number of frames": 8
+    }
+  },
+  "category": 830170,
+  "cost": "54",
+  "damage frames": {
+    "frame times": [
+      54,
+      60,
+      69,
+      75
+    ],
+    "hit dmg% distribution": [
+      40,
+      20,
+      20,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 4
+  },
+  "drop check count": 11,
+  "element": "earth",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 8216,
+  "imp": {
+    "max atk": "500",
+    "max def": "800",
+    "max hp": "1750",
+    "max rec": "400"
+  },
+  "kind": "normal",
+  "lord damage range": "2622~2928",
+  "movement": {
+    "attack": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    }
+  },
+  "name": "Terry Bogard",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "8",
+  "sell caution": false,
+  "unitName": "Terry Bogard",
+  "maxlv": "150",
+  "no": "8216",
+  "unitDisplayHomePosition_1W9CxaFK": "383,119,140,382",
+  "unitDisplayDetailPosition_6z54rgb3": "-163,77,1189,866",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "-13,208,643,469,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-147,-142,1189,866",
+  "unitDisplaySummonPosition_KC3Jk8Br": "-13,208,643,469,0",
+  "unitDisplayHpPosition_3BpHN6VD": "0,30",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "20000",
+  "sellCaution": false,
+  "effectFrames": "54:110:1,60:110:1,60:251:1,69:110:1,75:110:1",
+  "evofrom": "830177",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "altname": "Terry Bogard",
+  "basexp": "21",
+  "animation_attack": "132",
+  "animation_idle": "141",
+  "animation_move": "8",
+  "movespeed_attack": "0.0041",
+  "movespeed_skill": "0.0041",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "54, 60, 69, 75",
+  "normal_distribute": "40, 20, 20, 20",
+  "normal_totaldistr": "100",
+  "bb_frames": "54, 60, 69, 75",
+  "bb_distribute": "40, 20, 20, 20",
+  "bb_totaldistr": "100",
+  "sbb_frames": "54, 60, 69, 75, 78",
+  "sbb_distribute": "40, 15, 15, 15, 15",
+  "sbb_totaldistr": "100",
+  "sbb2_frames": "55, 61, 70, 76, 79",
+  "sbb2_distribute": "40, 15, 15, 15, 15",
+  "sbb2_totaldistr": "100",
+  "ubb_frames": "54, 60, 69, 75, 78",
+  "ubb_distribute": "40, 15, 15, 15, 15",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "1",
+  "sbb2_effectdelay": "1",
+  "ubb_effectdelay": "1",
+  "description": "A charismatic street-savvy fighter, Terry's strength of will allowed him to resist the worst of the evil that seemed to invade his soul upon reaching Grand Gaia. After breaking free of its insidious influence, he rejoined his friends and discovered that a familiar face was behind the tournament--an evil soul who he thought had been put away for good. It wasn't going to be easy, and plunging into the heart of an alien world certainly had its risks. But he had no intention of letting a monster get away with his hobbies, especially when they involved innocent lives...",
+  "summon": "My strength is no fluke.<br>That's why I'm here!",
+  "fusion": "This is what makes a legend!<br>Yeah!",
+  "evolution": "Winning's tough,<br>but when you get there...<br>Aw yeah!",
+  "hp_base": "5690",
+  "atk_base": "1970",
+  "def_base": "2040",
+  "rec_base": "1790",
+  "hp_lord": "8125",
+  "atk_lord": "2816",
+  "def_lord": "2911",
+  "rec_lord": "2560",
+  "hp_anima": "9242",
+  "rec_anima": "2262",
+  "atk_breaker": "3114",
+  "def_breaker": "2613",
+  "def_guardian": "3209",
+  "rec_guardian": "2411",
+  "def_oracle": "2762",
+  "rec_oracle": "3007",
+  "hp_bonus": "1750",
+  "atk_bonus": "500",
+  "def_bonus": "800",
+  "rec_bonus": "400",
+  "lordonly": "",
+  "combo_hits": "4",
+  "normaldc": "44",
+  "ls": "Legendary Hungry Wolf",
+  "lsdescription": "100% boost to max HP, probable damage reduction to 1, 150% boost to Atk, Def for first 2 turns, 15% additional damage reduction & 15% damage reduction",
+  "lsnote": "20% chance to reduce damage taken to 1",
+  "bbdescription": "4 combo powerful Fire, Earth attack on all foes, 50% damage reduction for 1 turn, damage taken considerably boosts BB gauge for 3 turns, greatly boosts max HP & activates Earth shield for 3 turns",
+  "bbnote": "Fills 5-8 BC per hit, 30% HP & activates Earth shield (3500 HP, 3500 Def)",
+  "bbtype": "Offense",
+  "bbhits": "4",
+  "bbaoe": "A",
+  "bbgauge": "19",
+  "bbdc": "16",
+  "bbmultiplier": "470",
+  "bbhits2": "",
+  "bbaoe2": "",
+  "bbdc2": "",
+  "bbmultiplier2": "",
+  "sbbdescription": "5 combo powerful Fire, Earth attack on all foes, 5 combo massive Earth attack on single foe (damage relative to remaining HP), 50% damage reduction for 1 turn, enormously boosts Atk, Def, Rec for 3 turns, hugely boosts Atk, Def relative to max HP for 3 turns & resistance against Spark damage for 2 turns",
+  "sbbnote": "200% + 800% * current HP / max HP on single-target attack, 180% parameter boost, 40% HP conversion & 50% Spark reduction",
+  "sbbtype": "Offense",
+  "sbbhits": "5",
+  "sbbaoe": "A",
+  "sbbgauge": "40",
+  "sbbdc": "20",
+  "sbbmultiplier": "950",
+  "sbbhits2": "5",
+  "sbbaoe2": "1",
+  "sbbdc2": "20",
+  "sbbmultiplier2": "200",
+  "sbb2_hpscale": "true",
   "ubbdescription": "5 combo massive Fire, Earth attack on all foes, 100% damage reduction for 3 turns, greatly boosts max HP, enormously boosts Atk, Def, Rec for 3 turns, hugely boosts Atk, Def relative to max HP for 3 turns & activates Earth shield for 3 turns",
   "ubbnote": "50% HP, 400% parameter boost, 80% HP to Atk/Def & activates Earth shield (30000 HP, 10000 Def)",
   "ubbtype": "Offense",
@@ -1552,8 +1770,6 @@
   "esitem": "",
   "esdescription": "20% boost to all parameters, negates critical and elemental damage for all allies, negates Def ignoring effects, probable resistance against 2 KO attacks & 15% additional damage reduction for all allies",
   "esnote": "40% chance of resisting KO",
-  "evofrom": "830177",
-  "evointo": "",
   "evomats1": "",
   "evomats2": "",
   "evomats3": "",
@@ -1564,141 +1780,5 @@
   "evomats8": "",
   "evomats9": "",
   "evoitem": "",
-  "evoitem2": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 1970,
-      "def": 2040,
-      "hp": 5690,
-      "rec": 1790
-    },
-    "_lord": {
-      "atk": 2816,
-      "def": 2911,
-      "hp": 8125,
-      "rec": 2560
-    },
-    "anima": {
-      "atk": 2816,
-      "def": 2911,
-      "hp max": 9615,
-      "hp min": 8870,
-      "rec max": 2411,
-      "rec min": 2113
-    },
-    "breaker": {
-      "atk max": 3263,
-      "atk min": 2965,
-      "def max": 2762,
-      "def min": 2464,
-      "hp": 8125,
-      "rec": 2560
-    },
-    "guardian": {
-      "atk": 2816,
-      "def max": 3358,
-      "def min": 3060,
-      "hp": 8125,
-      "rec max": 2560,
-      "rec min": 2262
-    },
-    "oracle": {
-      "atk": 2816,
-      "def max": 2911,
-      "def min": 2613,
-      "hp": 8125,
-      "rec max": 3156,
-      "rec min": 2858
-    }
-  },
-  "leader_skill": {
-    "desc": "100% boost to max HP, probable damage reduction to 1, 150% boost to Atk, Def for first 2 turns, 15% additional damage reduction & 15% damage reduction",
-    "effects": [
-      {
-        "hp% buff": 100,
-        "passive id": "1"
-      },
-      {
-        "first x turns": 2,
-        "first x turns atk% (1)": 150,
-        "first x turns def% (3)": 150,
-        "passive id": "21"
-      },
-      {
-        "passive id": "43",
-        "take 1 dmg%": 20
-      },
-      {
-        "unknown passive id": "127",
-        "unknown passive params": "100,15"
-      },
-      {
-        "dmg% mitigation": 15,
-        "passive id": "8"
-      }
-    ],
-    "id": "801251",
-    "name": "Legendary Hungry Wolf"
-  },
-  "extra_skill": {
-    "desc": "20% boost to all parameters, negates critical and elemental damage for all allies, negates Def ignoring effects, probable resistance against 2 KO attacks & 15% additional damage reduction for all allies",
-    "effects": [
-      {
-        "conditions": [],
-        "crit chance base resist%": 100,
-        "crit chance buffed resist%": 100,
-        "crit dmg base damage resist%": 100,
-        "crit dmg buffed damage resist%": 100,
-        "passive id": "53",
-        "passive target": "party",
-        "strong base element damage resist%": 100,
-        "strong buffed element damage resist%": 100
-      },
-      {
-        "conditions": [],
-        "ignore def resist chance%": 100,
-        "passive id": "92",
-        "passive target": "self"
-      },
-      {
-        "angel idol chance% condition": 0,
-        "angel idol recover chance% high": 40,
-        "angel idol recover chance% low": 40,
-        "angel idol recover counts": 2,
-        "conditions": [],
-        "passive id": "69",
-        "passive target": "self"
-      },
-      {
-        "atk% buff": 20,
-        "conditions": [],
-        "def% buff": 20,
-        "hp% buff": 20,
-        "passive id": "1",
-        "passive target": "self",
-        "rec% buff": 20
-      },
-      {
-        "conditions": [],
-        "passive target": "party",
-        "unknown passive id": "127",
-        "unknown passive params": "100,15"
-      }
-    ],
-    "id": "830178",
-    "name": "Heroic Resilience",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "383,119,140,382",
-  "unitDisplayDetailPosition_6z54rgb3": "-163,77,1189,866",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "-13,208,643,469,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-147,-142,1189,866",
-  "unitDisplaySummonPosition_KC3Jk8Br": "-13,208,643,469,0",
-  "unitDisplayHpPosition_3BpHN6VD": "0,30",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "20000",
-  "sellCaution": false,
-  "effectFrames": "54:110:1,60:110:1,60:251:1,69:110:1,75:110:1"
+  "evoitem2": ""
 }

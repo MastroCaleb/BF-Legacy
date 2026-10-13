@@ -1,61 +1,63 @@
 {
   "id": "10031",
-  "unitName": "King Burny",
-  "no": "44",
-  "element": "Fire",
-  "rarity": "★★",
-  "cost": "3",
-  "maxlv": "30",
-  "basexp": "10",
-  "gender": "N",
-  "ai": "2",
-  "animation_attack": "83",
-  "animation_idle": "44",
-  "animation_move": "48",
-  "movespeed_attack": "0.0041",
-  "movespeed_skill": "0.0041",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "42",
-  "normal_distribute": "100",
-  "normal_totaldistr": "100",
-  "bb_frames": "42, 50",
-  "bb_distribute": "50, 50",
-  "bb_totaldistr": "100",
-  "description": "Only when Burny grows by consuming premium flames can it evolve into King Burny. By opening its mouth wide it can swallow a full-grown human in one bite. An intensely hot liquid is always wriggling around in its body, and sometimes pours out, causing fires. Extremely more powerful than Burny, it is probably the first formidable enemy a Summoner will face.",
-  "summon": "I'm hungry! *Sizzle*<br>I'll go with you,<br>so feed me! *Sizzle*",
-  "fusion": "*Sizzle* My belly's full!<br>But I can still fit more!<br>*Sizzle*",
-  "evolution": "*Sizzle* How am I still hungry?<br>Quick! Give me something!<br>*Sizzle*",
-  "hp_base": "1200",
-  "atk_base": "390",
-  "def_base": "330",
-  "rec_base": "250",
-  "hp_lord": "2268",
-  "atk_lord": "702",
-  "def_lord": "629",
-  "rec_lord": "533",
-  "hp_anima": "2486",
-  "rec_anima": "475",
-  "atk_breaker": "760",
-  "def_breaker": "571",
-  "atk_guardian": "644",
-  "def_guardian": "687",
-  "rec_guardian": "504",
-  "def_oracle": "600",
-  "hp_oracle": "2181",
-  "rec_oracle": "620",
-  "hp_bonus": "300",
-  "atk_bonus": "120",
-  "def_bonus": "120",
-  "rec_bonus": "120",
-  "lordonly": "",
-  "combo_hits": "1",
-  "normaldc": "2",
-  "ls": "Fire's Protection",
-  "lsdescription": "10% reduction in damage from Fire Types",
-  "lstype": "Defense",
+  "stats": {
+    "_base": {
+      "atk": 390,
+      "def": 330,
+      "hp": 1200,
+      "rec": 250
+    },
+    "_lord": {
+      "atk": 702,
+      "def": 629,
+      "hp": 2268,
+      "rec": 533
+    },
+    "anima": {
+      "atk": 702,
+      "def": 629,
+      "hp max": 2558,
+      "hp min": 2413,
+      "rec max": 504,
+      "rec min": 446
+    },
+    "breaker": {
+      "atk max": 789,
+      "atk min": 731,
+      "def max": 600,
+      "def min": 542,
+      "hp": 2268,
+      "rec": 533
+    },
+    "guardian": {
+      "atk": 702,
+      "def max": 716,
+      "def min": 658,
+      "hp": 2268,
+      "rec max": 533,
+      "rec min": 475
+    },
+    "oracle": {
+      "atk": 702,
+      "def max": 629,
+      "def min": 571,
+      "hp": 2268,
+      "rec max": 649,
+      "rec min": 591
+    }
+  },
+  "leader_skill": {
+    "desc": "10% reduction in damage from Fire Types",
+    "effects": [
+      {
+        "fire resist%": 10,
+        "passive id": "5"
+      }
+    ],
+    "id": "500",
+    "name": "Fire's Protection"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -210,94 +212,83 @@
     ],
     "name": "Flame Munch"
   },
-  "bbdescription": "2 combo Fire elemental power attack on single Enemy",
-  "bbtype": "Offense",
-  "bbhits": "2",
-  "bbaoe": "1",
-  "bbgauge": "12",
-  "bbdc": "10",
-  "bbmultiplier": "120",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "10030",
-  "evointo": "10032",
-  "evomats1": "10131",
-  "evomats2": "10130",
-  "evomats3": "60142",
-  "evomats4": "",
-  "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "50000",
-  "stats": {
-    "_base": {
-      "atk": 390,
-      "def": 330,
-      "hp": 1200,
-      "rec": 250
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 702,
-      "def": 629,
-      "hp": 2268,
-      "rec": 533
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 702,
-      "def": 629,
-      "hp max": 2558,
-      "hp min": 2413,
-      "rec max": 504,
-      "rec min": 446
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 83
     },
-    "breaker": {
-      "atk max": 789,
-      "atk min": 731,
-      "def max": 600,
-      "def min": 542,
-      "hp": 2268,
-      "rec": 533
+    "idle": {
+      "total number of frames": 44
     },
-    "guardian": {
-      "atk": 702,
-      "def max": 716,
-      "def min": 658,
-      "hp": 2268,
-      "rec max": 533,
-      "rec min": 475
-    },
-    "oracle": {
-      "atk": 702,
-      "def max": 629,
-      "def min": 571,
-      "hp": 2268,
-      "rec max": 649,
-      "rec min": 591
+    "move": {
+      "total number of frames": 48
     }
   },
-  "leader_skill": {
-    "desc": "10% reduction in damage from Fire Types",
-    "effects": [
-      {
-        "fire resist%": 10,
-        "passive id": "5"
-      }
+  "category": 10030,
+  "cost": "3",
+  "damage frames": {
+    "frame times": [
+      42
     ],
-    "id": "500",
-    "name": "Fire's Protection"
+    "hit dmg% distribution": [
+      100
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 1
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "fire",
+  "exp_pattern": 10,
+  "gender": "other",
+  "getting type": "not eligible for achievement",
+  "guide_id": 44,
+  "imp": {
+    "max atk": "120",
+    "max def": "120",
+    "max hp": "300",
+    "max rec": "120"
+  },
+  "kind": "normal",
+  "lord damage range": "652~730",
+  "movement": {
+    "attack": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    }
+  },
+  "name": "King Burny",
+  "rarity": "2",
+  "sell caution": false,
+  "unitName": "King Burny",
+  "maxlv": "30",
+  "no": "44",
   "unitDisplayHomePosition_1W9CxaFK": "110,-66,200,544",
   "unitDisplayDetailPosition_6z54rgb3": "127,158,700,613",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "189,384,276,242,0",
@@ -307,5 +298,99 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "300",
   "sellCaution": false,
-  "effectFrames": "36:121:1"
+  "effectFrames": "36:121:1",
+  "evofrom": "10030",
+  "evointo": "10032",
+  "evozelcost": "50000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "10131",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10130",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60142",
+      "count": 1
+    }
+  ],
+  "basexp": "10",
+  "animation_attack": "83",
+  "animation_idle": "44",
+  "animation_move": "48",
+  "movespeed_attack": "0.0041",
+  "movespeed_skill": "0.0041",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "42",
+  "normal_distribute": "100",
+  "normal_totaldistr": "100",
+  "bb_frames": "42, 50",
+  "bb_distribute": "50, 50",
+  "bb_totaldistr": "100",
+  "description": "Only when Burny grows by consuming premium flames can it evolve into King Burny. By opening its mouth wide it can swallow a full-grown human in one bite. An intensely hot liquid is always wriggling around in its body, and sometimes pours out, causing fires. Extremely more powerful than Burny, it is probably the first formidable enemy a Summoner will face.",
+  "summon": "I'm hungry! *Sizzle*<br>I'll go with you,<br>so feed me! *Sizzle*",
+  "fusion": "*Sizzle* My belly's full!<br>But I can still fit more!<br>*Sizzle*",
+  "evolution": "*Sizzle* How am I still hungry?<br>Quick! Give me something!<br>*Sizzle*",
+  "hp_base": "1200",
+  "atk_base": "390",
+  "def_base": "330",
+  "rec_base": "250",
+  "hp_lord": "2268",
+  "atk_lord": "702",
+  "def_lord": "629",
+  "rec_lord": "533",
+  "hp_anima": "2486",
+  "rec_anima": "475",
+  "atk_breaker": "760",
+  "def_breaker": "571",
+  "atk_guardian": "644",
+  "def_guardian": "687",
+  "rec_guardian": "504",
+  "def_oracle": "600",
+  "hp_oracle": "2181",
+  "rec_oracle": "620",
+  "hp_bonus": "300",
+  "atk_bonus": "120",
+  "def_bonus": "120",
+  "rec_bonus": "120",
+  "lordonly": "",
+  "combo_hits": "1",
+  "normaldc": "2",
+  "ls": "Fire's Protection",
+  "lsdescription": "10% reduction in damage from Fire Types",
+  "lstype": "Defense",
+  "bbdescription": "2 combo Fire elemental power attack on single Enemy",
+  "bbtype": "Offense",
+  "bbhits": "2",
+  "bbaoe": "1",
+  "bbgauge": "12",
+  "bbdc": "10",
+  "bbmultiplier": "120",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "10131",
+  "evomats2": "10130",
+  "evomats3": "60142",
+  "evomats4": "",
+  "evomats5": "",
+  "evoitem": ""
 }

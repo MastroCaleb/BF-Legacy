@@ -1,68 +1,118 @@
 {
   "id": "810427",
-  "unitName": "Pastel Ellie",
-  "no": "8398",
-  "element": "Fire",
-  "rarity": "★★★★★★★",
-  "cost": "52",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "155",
-  "animation_idle": "104",
-  "animation_move": "104",
-  "movespeed_attack": "4",
-  "movespeed_skill": "4",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "66, 69, 72, 75, 78, 81, 84, 87, 90, 93, 96",
-  "normal_distribute": "7, 9, 10, 11, 12, 12, 11, 10, 8, 6, 4",
-  "normal_totaldistr": "100",
-  "bb_frames": "66, 69, 72, 75, 78, 81, 84, 87, 90, 93, 96, 99, 105, 111",
-  "bb_distribute": "6, 8, 10, 11, 12, 12, 11, 10, 7, 5, 3, 2, 2, 1",
-  "bb_totaldistr": "100",
-  "sbb_frames": "66, 69, 72, 75, 78, 81, 84, 87, 90, 93, 96, 99, 105, 111, 117, 123, 129",
-  "sbb_distribute": "6, 8, 9, 11, 12, 12, 11, 9, 7, 5, 3, 2, 1, 1, 1, 1, 1",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "63, 66, 69, 72, 75, 78, 81, 84, 87, 90, 93, 96, 99, 102, 105, 111, 115, 117, 123, 126, 129",
-  "ubb_distribute": "3, 5, 6, 8, 11, 12, 12, 11, 8, 6, 5, 3, 2, 1, 1, 1, 1, 1, 1, 1, 1",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "1",
-  "ubb_effectdelay": "1",
-  "description": "A trickster spirit with a childlike demeanor, Ellie was created by Paskua's nameless goddess of rebirth as a defender and messenger to its people--whether they liked it or not. Seen traveling by itself along Paskua's borders, it would dole out curatives and sweets to the innocent. Woe, though, came to those with ill intentions. They simply disappeared, with Ellie holding more merry balloons in tow the next day. A week after traveling around Paskua's borders, Ellie found a trail of magical energy leading to another world left behind by some of its denizens. Where did it go? She decided to follow it into the new world--and bring the mischievous children who had gotten themselves lost home, if need be.",
-  "summon": "Hey! Hi! Hiii! What are those? Are those words down there? That's awesome! You're awesome!",
-  "fusion": "Oh thank you! I'd love to add that to my balloon collection! Teehee!",
-  "evolution": "",
-  "hp_base": "5456",
-  "atk_base": "2325",
-  "def_base": "2174",
-  "rec_base": "2029",
-  "hp_lord": "7794",
-  "atk_lord": "3321",
-  "def_lord": "3105",
-  "rec_lord": "2898",
-  "hp_anima": "8686",
-  "rec_anima": "2660",
-  "atk_breaker": "3559",
-  "def_breaker": "2867",
-  "def_guardian": "3343",
-  "rec_guardian": "2779",
-  "def_oracle": "2986",
-  "rec_oracle": "3255",
-  "hp_bonus": "1100",
-  "atk_bonus": "440",
-  "def_bonus": "440",
-  "rec_bonus": "440",
-  "lordonly": "",
-  "combo_hits": "11",
-  "normaldc": "44",
-  "ls": "Delicate Protector",
-  "lsdescription": "150% boost to Atk and 75% boost to Def, Rec when BB gauge is over 50%, 80% boost to max HP, 140% boost to Spark damage & probable resistance against 1 KO attack",
-  "lsnote": "15% chance to resist 1 KO",
+  "stats": {
+    "_base": {
+      "atk": 2325,
+      "def": 2174,
+      "hp": 5456,
+      "rec": 2029
+    },
+    "_lord": {
+      "atk": 3321,
+      "def": 3105,
+      "hp": 7794,
+      "rec": 2898
+    },
+    "anima": {
+      "atk": 3321,
+      "def": 3105,
+      "hp max": 8984,
+      "hp min": 8389,
+      "rec max": 2779,
+      "rec min": 2541
+    },
+    "breaker": {
+      "atk max": 3678,
+      "atk min": 3440,
+      "def max": 2986,
+      "def min": 2748,
+      "hp": 7794,
+      "rec": 2898
+    },
+    "guardian": {
+      "atk": 3321,
+      "def max": 3462,
+      "def min": 3224,
+      "hp": 7794,
+      "rec max": 2898,
+      "rec min": 2660
+    },
+    "oracle": {
+      "atk": 3321,
+      "def max": 3105,
+      "def min": 2867,
+      "hp": 7794,
+      "rec max": 3374,
+      "rec min": 3136
+    }
+  },
+  "leader_skill": {
+    "desc": "150% boost to Atk and 75% boost to Def, Rec when BB gauge is over 50%, 80% boost to max HP, 140% boost to Spark damage & probable resistance against 1 KO attack",
+    "effects": [
+      {
+        "hp% buff": 80,
+        "passive id": "1"
+      },
+      {
+        "atk% buff": 150,
+        "bb gauge above % buff requirement": 50,
+        "def% buff": 75,
+        "passive id": "30",
+        "rec% buff": 75
+      },
+      {
+        "damage% for spark": 140,
+        "passive id": "31"
+      },
+      {
+        "angel idol chance% condition": 0,
+        "angel idol recover chance% high": 15,
+        "angel idol recover chance% low": 15,
+        "angel idol recover counts": 1,
+        "passive id": "69"
+      }
+    ],
+    "id": "810427",
+    "name": "Delicate Protector"
+  },
+  "extra_skill": {
+    "desc": "15% boost to all parameters of Fire types, negates all status ailments for all allies & considerably raises normal hit amount",
+    "effects": [
+      {
+        "conditions": [],
+        "hit increase/hit": 2,
+        "passive id": "37",
+        "passive target": "self"
+      },
+      {
+        "atk% buff": 15,
+        "conditions": [],
+        "def% buff": 15,
+        "elements buffed": [
+          "fire"
+        ],
+        "hp% buff": 15,
+        "passive id": "2",
+        "passive target": "party",
+        "rec% buff": 15
+      },
+      {
+        "conditions": [],
+        "curse resist%": 100,
+        "injury resist%": 100,
+        "paralysis resist%": 100,
+        "passive id": "4",
+        "passive target": "party",
+        "poison resist%": 100,
+        "sick resist%": 100,
+        "weaken resist%": 100
+      }
+    ],
+    "id": "810427",
+    "name": "Cheerful Disposition",
+    "rarity": "7",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -689,15 +739,6 @@
     ],
     "name": "Hop, Skip, Bounce"
   },
-  "bbdescription": "14 combo powerful Fire attack on all foes, adds probability of performing 1 extra action for self within the same turn, enormously boosts BB gauge, greatly boosts OD gauge fill rate for 3 turns & probable huge 1 turn Atk, Def reduction",
-  "bbnote": "70% chance of extra action, fills 12 BC instantly, 40% OD gauge fill rate & 40% chance of 50% Atk/Def reduction",
-  "bbtype": "Offense",
-  "bbhits": "14",
-  "bbaoe": "A",
-  "bbgauge": "28",
-  "bbdc": "14",
-  "bbmultiplier": "490",
-  "bb_hpscale": "",
   "sbb": {
     "damage frames": [
       {
@@ -1270,15 +1311,6 @@
     ],
     "name": "Round and Round We Go"
   },
-  "sbbdescription": "17 combo powerful Fire attack on all foes (damage relative to remaining HP, with enormously boosted critical hit rate), adds probability to perform up to 2 extra actions within the same turn, boosts Spark damage of Fire types for 3 turns, greatly boosts Spark damage for 3 turns & slightly boosts OD gauge",
-  "sbbnote": "200% + 700% x current HP / max base HP, 7% chance of extra action, 50% Spark to Fire types, 130% Spark & 8% instant OD fill",
-  "sbbtype": "Offense",
-  "sbbhits": "17",
-  "sbbaoe": "A",
-  "sbbgauge": "30",
-  "sbbdc": "17",
-  "sbbmultiplier": "200",
-  "sbb_hpscale": "true",
   "ubb": {
     "damage frames": [
       {
@@ -1445,6 +1477,225 @@
     ],
     "name": "Off to the Flying Show"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 155
+    },
+    "idle": {
+      "total number of frames": 104
+    },
+    "move": {
+      "total number of frames": 104
+    }
+  },
+  "category": 750000,
+  "cost": "52",
+  "damage frames": {
+    "frame times": [
+      66,
+      69,
+      72,
+      75,
+      78,
+      81,
+      84,
+      87,
+      90,
+      93,
+      96
+    ],
+    "hit dmg% distribution": [
+      7,
+      9,
+      10,
+      11,
+      12,
+      12,
+      11,
+      10,
+      8,
+      6,
+      4
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 11
+  },
+  "drop check count": 4,
+  "element": "fire",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 8398,
+  "imp": {
+    "max atk": "440",
+    "max def": "440",
+    "max hp": "1100",
+    "max rec": "440"
+  },
+  "kind": "normal",
+  "lord damage range": "3091~3453",
+  "movement": {
+    "attack": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    }
+  },
+  "name": "Pastel Ellie",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Pastel Ellie",
+  "maxlv": "120",
+  "no": "8398",
+  "unitDisplayHomePosition_1W9CxaFK": "306,776,174,475",
+  "unitDisplayDetailPosition_6z54rgb3": "-26,-538,1053,1360",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "43,-73,552,713,1",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "143,-788,1053,1360",
+  "unitDisplaySummonPosition_KC3Jk8Br": "43,-73,552,713,1",
+  "unitDisplayHpPosition_3BpHN6VD": "-10,60",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "15000",
+  "sellCaution": false,
+  "effectFrames": "0:8400341:1",
+  "evofrom": "",
+  "evointo": "810428",
+  "evozelcost": "3000000",
+  "evokarmacost": "1000000",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "10354",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "10133",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    },
+    {
+      "type": "2",
+      "id": "110100",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "810034",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "155",
+  "animation_idle": "104",
+  "animation_move": "104",
+  "movespeed_attack": "4",
+  "movespeed_skill": "4",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "66, 69, 72, 75, 78, 81, 84, 87, 90, 93, 96",
+  "normal_distribute": "7, 9, 10, 11, 12, 12, 11, 10, 8, 6, 4",
+  "normal_totaldistr": "100",
+  "bb_frames": "66, 69, 72, 75, 78, 81, 84, 87, 90, 93, 96, 99, 105, 111",
+  "bb_distribute": "6, 8, 10, 11, 12, 12, 11, 10, 7, 5, 3, 2, 2, 1",
+  "bb_totaldistr": "100",
+  "sbb_frames": "66, 69, 72, 75, 78, 81, 84, 87, 90, 93, 96, 99, 105, 111, 117, 123, 129",
+  "sbb_distribute": "6, 8, 9, 11, 12, 12, 11, 9, 7, 5, 3, 2, 1, 1, 1, 1, 1",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "63, 66, 69, 72, 75, 78, 81, 84, 87, 90, 93, 96, 99, 102, 105, 111, 115, 117, 123, 126, 129",
+  "ubb_distribute": "3, 5, 6, 8, 11, 12, 12, 11, 8, 6, 5, 3, 2, 1, 1, 1, 1, 1, 1, 1, 1",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "1",
+  "ubb_effectdelay": "1",
+  "description": "A trickster spirit with a childlike demeanor, Ellie was created by Paskua's nameless goddess of rebirth as a defender and messenger to its people--whether they liked it or not. Seen traveling by itself along Paskua's borders, it would dole out curatives and sweets to the innocent. Woe, though, came to those with ill intentions. They simply disappeared, with Ellie holding more merry balloons in tow the next day. A week after traveling around Paskua's borders, Ellie found a trail of magical energy leading to another world left behind by some of its denizens. Where did it go? She decided to follow it into the new world--and bring the mischievous children who had gotten themselves lost home, if need be.",
+  "summon": "Hey! Hi! Hiii! What are those? Are those words down there? That's awesome! You're awesome!",
+  "fusion": "Oh thank you! I'd love to add that to my balloon collection! Teehee!",
+  "evolution": "",
+  "hp_base": "5456",
+  "atk_base": "2325",
+  "def_base": "2174",
+  "rec_base": "2029",
+  "hp_lord": "7794",
+  "atk_lord": "3321",
+  "def_lord": "3105",
+  "rec_lord": "2898",
+  "hp_anima": "8686",
+  "rec_anima": "2660",
+  "atk_breaker": "3559",
+  "def_breaker": "2867",
+  "def_guardian": "3343",
+  "rec_guardian": "2779",
+  "def_oracle": "2986",
+  "rec_oracle": "3255",
+  "hp_bonus": "1100",
+  "atk_bonus": "440",
+  "def_bonus": "440",
+  "rec_bonus": "440",
+  "lordonly": "",
+  "combo_hits": "11",
+  "normaldc": "44",
+  "ls": "Delicate Protector",
+  "lsdescription": "150% boost to Atk and 75% boost to Def, Rec when BB gauge is over 50%, 80% boost to max HP, 140% boost to Spark damage & probable resistance against 1 KO attack",
+  "lsnote": "15% chance to resist 1 KO",
+  "bbdescription": "14 combo powerful Fire attack on all foes, adds probability of performing 1 extra action for self within the same turn, enormously boosts BB gauge, greatly boosts OD gauge fill rate for 3 turns & probable huge 1 turn Atk, Def reduction",
+  "bbnote": "70% chance of extra action, fills 12 BC instantly, 40% OD gauge fill rate & 40% chance of 50% Atk/Def reduction",
+  "bbtype": "Offense",
+  "bbhits": "14",
+  "bbaoe": "A",
+  "bbgauge": "28",
+  "bbdc": "14",
+  "bbmultiplier": "490",
+  "bb_hpscale": "",
+  "sbbdescription": "17 combo powerful Fire attack on all foes (damage relative to remaining HP, with enormously boosted critical hit rate), adds probability to perform up to 2 extra actions within the same turn, boosts Spark damage of Fire types for 3 turns, greatly boosts Spark damage for 3 turns & slightly boosts OD gauge",
+  "sbbnote": "200% + 700% x current HP / max base HP, 7% chance of extra action, 50% Spark to Fire types, 130% Spark & 8% instant OD fill",
+  "sbbtype": "Offense",
+  "sbbhits": "17",
+  "sbbaoe": "A",
+  "sbbgauge": "30",
+  "sbbdc": "17",
+  "sbbmultiplier": "200",
+  "sbb_hpscale": "true",
   "ubbdescription": "21 combo massive Fire attack on all foes, adds probability of performing 1 extra action within the same turn, enormous 3 turn Atk, Def reduction, enormously boosts Spark damage for 3 turns & activates Fire barrier",
   "ubbnote": "70% chance of extra action, 80% Atk/Def reduction, 400% Spark & 25000 HP Fire Barrier",
   "ubbtype": "Offense",
@@ -1457,7 +1708,6 @@
   "es": "Cheerful Disposition",
   "esdescription": "15% boost to all parameters of Fire types, negates all status ailments for all allies & considerably raises normal hit amount",
   "esnote": "+2 hit increase",
-  "evointo": "810428",
   "evomats1": "10354",
   "evomats2": "10354",
   "evomats3": "50354",
@@ -1466,129 +1716,5 @@
   "evomats6": "10133",
   "evomats7": "60224",
   "evomats8": "810034",
-  "evoitem": "Legend Stone",
-  "evozelcost": "3000000",
-  "stats": {
-    "_base": {
-      "atk": 2325,
-      "def": 2174,
-      "hp": 5456,
-      "rec": 2029
-    },
-    "_lord": {
-      "atk": 3321,
-      "def": 3105,
-      "hp": 7794,
-      "rec": 2898
-    },
-    "anima": {
-      "atk": 3321,
-      "def": 3105,
-      "hp max": 8984,
-      "hp min": 8389,
-      "rec max": 2779,
-      "rec min": 2541
-    },
-    "breaker": {
-      "atk max": 3678,
-      "atk min": 3440,
-      "def max": 2986,
-      "def min": 2748,
-      "hp": 7794,
-      "rec": 2898
-    },
-    "guardian": {
-      "atk": 3321,
-      "def max": 3462,
-      "def min": 3224,
-      "hp": 7794,
-      "rec max": 2898,
-      "rec min": 2660
-    },
-    "oracle": {
-      "atk": 3321,
-      "def max": 3105,
-      "def min": 2867,
-      "hp": 7794,
-      "rec max": 3374,
-      "rec min": 3136
-    }
-  },
-  "leader_skill": {
-    "desc": "150% boost to Atk and 75% boost to Def, Rec when BB gauge is over 50%, 80% boost to max HP, 140% boost to Spark damage & probable resistance against 1 KO attack",
-    "effects": [
-      {
-        "hp% buff": 80,
-        "passive id": "1"
-      },
-      {
-        "atk% buff": 150,
-        "bb gauge above % buff requirement": 50,
-        "def% buff": 75,
-        "passive id": "30",
-        "rec% buff": 75
-      },
-      {
-        "damage% for spark": 140,
-        "passive id": "31"
-      },
-      {
-        "angel idol chance% condition": 0,
-        "angel idol recover chance% high": 15,
-        "angel idol recover chance% low": 15,
-        "angel idol recover counts": 1,
-        "passive id": "69"
-      }
-    ],
-    "id": "810427",
-    "name": "Delicate Protector"
-  },
-  "extra_skill": {
-    "desc": "15% boost to all parameters of Fire types, negates all status ailments for all allies & considerably raises normal hit amount",
-    "effects": [
-      {
-        "conditions": [],
-        "hit increase/hit": 2,
-        "passive id": "37",
-        "passive target": "self"
-      },
-      {
-        "atk% buff": 15,
-        "conditions": [],
-        "def% buff": 15,
-        "elements buffed": [
-          "fire"
-        ],
-        "hp% buff": 15,
-        "passive id": "2",
-        "passive target": "party",
-        "rec% buff": 15
-      },
-      {
-        "conditions": [],
-        "curse resist%": 100,
-        "injury resist%": 100,
-        "paralysis resist%": 100,
-        "passive id": "4",
-        "passive target": "party",
-        "poison resist%": 100,
-        "sick resist%": 100,
-        "weaken resist%": 100
-      }
-    ],
-    "id": "810427",
-    "name": "Cheerful Disposition",
-    "rarity": "7",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "306,776,174,475",
-  "unitDisplayDetailPosition_6z54rgb3": "-26,-538,1053,1360",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "43,-73,552,713,1",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "143,-788,1053,1360",
-  "unitDisplaySummonPosition_KC3Jk8Br": "43,-73,552,713,1",
-  "unitDisplayHpPosition_3BpHN6VD": "-10,60",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "15000",
-  "sellCaution": false,
-  "effectFrames": "0:8400341:1"
+  "evoitem": "Legend Stone"
 }

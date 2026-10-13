@@ -1,58 +1,64 @@
 {
   "id": "50413",
-  "unitName": "Prodigy Themis",
-  "no": "542",
-  "element": "Light",
-  "rarity": "★★★★",
-  "cost": "12",
-  "maxlv": "60",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "3",
-  "animation_attack": "104",
-  "animation_idle": "52",
-  "animation_move": "16",
-  "movespeed_attack": "4",
-  "movespeed_skill": "4",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "2",
-  "movetype_skill": "2",
-  "normal_frames": "31, 36, 41, 46, 51, 56",
-  "normal_distribute": "20, 10, 10, 10, 20, 30",
-  "normal_totaldistr": "100",
-  "description": "A sorceress from the La Veda Republic, known to be a genius from an early age. Perhaps it was her protective upbringing, but she can be quite selfish, though she has the prowess to act differently in front of those she deems worthy. The cavalry leader Will was the biggest object of her fancy, and he seemed to understand her. It is said that his brother, Aem, despised the sorceress.",
-  "summon": "Thanks for summoning me.<br>But you're not an amateur<br>Summoner... are you?",
-  "fusion": "Hmm...<br>Fusion isn't half bad.<br>Hey, don't stop now!",
-  "evolution": "",
-  "hp_base": "2837",
-  "atk_base": "929",
-  "def_base": "885",
-  "rec_base": "1045",
-  "hp_lord": "4134",
-  "atk_lord": "1222",
-  "def_lord": "1165",
-  "rec_lord": "1452",
-  "hp_anima": "4577",
-  "rec_anima": "1334",
-  "atk_breaker": "1340",
-  "def_breaker": "1047",
-  "atk_guardian": "1104",
-  "def_guardian": "1283",
-  "rec_guardian": "1393",
-  "def_oracle": "1106",
-  "hp_oracle": "3957",
-  "rec_oracle": "1629",
-  "hp_bonus": "400",
-  "atk_bonus": "160",
-  "def_bonus": "160",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "6",
-  "normaldc": "12",
-  "ls": "Five Light's Power",
-  "lsdescription": "25% boost to Atk power of all Units when 5 elements or more are present",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 929,
+      "def": 885,
+      "hp": 2837,
+      "rec": 1045
+    },
+    "_lord": {
+      "atk": 1222,
+      "def": 1165,
+      "hp": 4134,
+      "rec": 1452
+    },
+    "anima": {
+      "atk": 1222,
+      "def": 1165,
+      "hp max": 4724,
+      "hp min": 4429,
+      "rec max": 1393,
+      "rec min": 1275
+    },
+    "breaker": {
+      "atk max": 1399,
+      "atk min": 1281,
+      "def max": 1106,
+      "def min": 988,
+      "hp": 4134,
+      "rec": 1452
+    },
+    "guardian": {
+      "atk": 1222,
+      "def max": 1342,
+      "def min": 1224,
+      "hp": 4134,
+      "rec max": 1452,
+      "rec min": 1334
+    },
+    "oracle": {
+      "atk": 1222,
+      "def max": 1165,
+      "def min": 1047,
+      "hp": 4134,
+      "rec max": 1688,
+      "rec min": 1570
+    }
+  },
+  "leader_skill": {
+    "desc": "25% boost to Atk power of all Units when 5 elements or more are present",
+    "effects": [
+      {
+        "atk% buff": 25,
+        "passive id": "41",
+        "unique elements required": 5
+      }
+    ],
+    "id": "2200",
+    "name": "Five Light's Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -327,93 +333,99 @@
     ],
     "name": "Dark Healing"
   },
-  "bbdescription": "Greatly recovers HP for all allies & adds Dark element to attack for 3 turns",
-  "bbnote": "Heals (1260~1660 + 27% of healer Rec) HP",
-  "bbtype": "Heal",
-  "bbhits": "",
-  "bbaoe": "0",
-  "bbgauge": "20",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "50414",
-  "evomats1": "50123",
-  "evomats2": "50191",
-  "evomats3": "50122",
-  "evomats4": "50122",
-  "evomats5": "60143",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 929,
-      "def": 885,
-      "hp": 2837,
-      "rec": 1045
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1222,
-      "def": 1165,
-      "hp": 4134,
-      "rec": 1452
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1222,
-      "def": 1165,
-      "hp max": 4724,
-      "hp min": 4429,
-      "rec max": 1393,
-      "rec min": 1275
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 1399,
-      "atk min": 1281,
-      "def max": 1106,
-      "def min": 988,
-      "hp": 4134,
-      "rec": 1452
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 104
     },
-    "guardian": {
-      "atk": 1222,
-      "def max": 1342,
-      "def min": 1224,
-      "hp": 4134,
-      "rec max": 1452,
-      "rec min": 1334
+    "idle": {
+      "total number of frames": 52
     },
-    "oracle": {
-      "atk": 1222,
-      "def max": 1165,
-      "def min": 1047,
-      "hp": 4134,
-      "rec max": 1688,
-      "rec min": 1570
+    "move": {
+      "total number of frames": 16
     }
   },
-  "leader_skill": {
-    "desc": "25% boost to Atk power of all Units when 5 elements or more are present",
-    "effects": [
-      {
-        "atk% buff": 25,
-        "passive id": "41",
-        "unique elements required": 5
-      }
+  "category": 50410,
+  "cost": "12",
+  "damage frames": {
+    "frame times": [
+      31,
+      36,
+      41,
+      46,
+      51,
+      56
     ],
-    "id": "2200",
-    "name": "Five Light's Power"
+    "hit dmg% distribution": [
+      20,
+      10,
+      10,
+      10,
+      20,
+      30
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 6
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "light",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 542,
+  "imp": {
+    "max atk": "160",
+    "max def": "160",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "1137~1270",
+  "movement": {
+    "attack": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "2"
+    },
+    "skill": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "2"
+    }
+  },
+  "name": "Prodigy Themis",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Prodigy Themis",
+  "maxlv": "60",
+  "no": "542",
   "unitDisplayHomePosition_1W9CxaFK": "411,-31,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-102,222,821,557",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "160,336,297,293,0",
@@ -423,5 +435,99 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "31:100091:1"
+  "effectFrames": "31:100091:1",
+  "evofrom": "",
+  "evointo": "50414",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50123",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50122",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "104",
+  "animation_idle": "52",
+  "animation_move": "16",
+  "movespeed_attack": "4",
+  "movespeed_skill": "4",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "2",
+  "movetype_skill": "2",
+  "normal_frames": "31, 36, 41, 46, 51, 56",
+  "normal_distribute": "20, 10, 10, 10, 20, 30",
+  "normal_totaldistr": "100",
+  "description": "A sorceress from the La Veda Republic, known to be a genius from an early age. Perhaps it was her protective upbringing, but she can be quite selfish, though she has the prowess to act differently in front of those she deems worthy. The cavalry leader Will was the biggest object of her fancy, and he seemed to understand her. It is said that his brother, Aem, despised the sorceress.",
+  "summon": "Thanks for summoning me.<br>But you're not an amateur<br>Summoner... are you?",
+  "fusion": "Hmm...<br>Fusion isn't half bad.<br>Hey, don't stop now!",
+  "evolution": "",
+  "hp_base": "2837",
+  "atk_base": "929",
+  "def_base": "885",
+  "rec_base": "1045",
+  "hp_lord": "4134",
+  "atk_lord": "1222",
+  "def_lord": "1165",
+  "rec_lord": "1452",
+  "hp_anima": "4577",
+  "rec_anima": "1334",
+  "atk_breaker": "1340",
+  "def_breaker": "1047",
+  "atk_guardian": "1104",
+  "def_guardian": "1283",
+  "rec_guardian": "1393",
+  "def_oracle": "1106",
+  "hp_oracle": "3957",
+  "rec_oracle": "1629",
+  "hp_bonus": "400",
+  "atk_bonus": "160",
+  "def_bonus": "160",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "6",
+  "normaldc": "12",
+  "ls": "Five Light's Power",
+  "lsdescription": "25% boost to Atk power of all Units when 5 elements or more are present",
+  "lstype": "Attack",
+  "bbdescription": "Greatly recovers HP for all allies & adds Dark element to attack for 3 turns",
+  "bbnote": "Heals (1260~1660 + 27% of healer Rec) HP",
+  "bbtype": "Heal",
+  "bbhits": "",
+  "bbaoe": "0",
+  "bbgauge": "20",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50123",
+  "evomats2": "50191",
+  "evomats3": "50122",
+  "evomats4": "50122",
+  "evomats5": "60143"
 }

@@ -1,59 +1,63 @@
 {
   "id": "40283",
-  "unitName": "Shock Mage Rashil",
-  "no": "383",
-  "element": "Thunder",
-  "rarity": "★★★★",
-  "cost": "10",
-  "maxlv": "60",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "162",
-  "animation_idle": "64",
-  "animation_move": "64",
-  "movespeed_attack": "4",
-  "movespeed_skill": "4",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "88, 96, 104, 112",
-  "normal_distribute": "30, 20, 30, 20",
-  "normal_totaldistr": "100",
-  "description": "A wizard who long ago led an army of mages in the Atharva Republic. Inventing a way to use lightning to create recovery magic, it's said that he was even more powerful than his fellow countryman Weiss. However, obsessed only with gaining knowledge he inadvertently caused an accident that greatly damaged his home country. As a result he was banished from his country, but as fate would have it as he was wandering the land he came across a mechanical being from another world.",
-  "summon": "How interesting of you<br>to summon me. <br>Now let me examine you!",
-  "fusion": "Another of your skills, eh?<br>I might like to try this so-called<br>experience granting material.",
-  "evolution": "",
-  "hp_base": "2543",
-  "atk_base": "718",
-  "def_base": "888",
-  "rec_base": "1006",
-  "hp_lord": "3849",
-  "atk_lord": "1025",
-  "def_lord": "1268",
-  "rec_lord": "1343",
-  "hp_anima": "4292",
-  "rec_anima": "1225",
-  "atk_breaker": "1143",
-  "def_breaker": "1150",
-  "atk_guardian": "907",
-  "def_guardian": "1386",
-  "rec_guardian": "1284",
-  "def_oracle": "1209",
-  "hp_oracle": "3672",
-  "rec_oracle": "1520",
-  "hp_bonus": "400",
-  "atk_bonus": "140",
-  "def_bonus": "140",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "4",
-  "normaldc": "8",
-  "ls": "Pulsating Energy",
-  "lsdescription": "BB Gauge fills after each turn",
-  "lsnote": "1 BC fill per turn",
-  "lstype": "Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 718,
+      "def": 888,
+      "hp": 2543,
+      "rec": 1006
+    },
+    "_lord": {
+      "atk": 1025,
+      "def": 1268,
+      "hp": 3849,
+      "rec": 1343
+    },
+    "anima": {
+      "atk": 1025,
+      "def": 1268,
+      "hp max": 4439,
+      "hp min": 4144,
+      "rec max": 1284,
+      "rec min": 1166
+    },
+    "breaker": {
+      "atk max": 1202,
+      "atk min": 1084,
+      "def max": 1209,
+      "def min": 1091,
+      "hp": 3849,
+      "rec": 1343
+    },
+    "guardian": {
+      "atk": 1025,
+      "def max": 1445,
+      "def min": 1327,
+      "hp": 3849,
+      "rec max": 1343,
+      "rec min": 1225
+    },
+    "oracle": {
+      "atk": 1025,
+      "def max": 1268,
+      "def min": 1150,
+      "hp": 3849,
+      "rec max": 1579,
+      "rec min": 1461
+    }
+  },
+  "leader_skill": {
+    "desc": "BB Gauge fills after each turn",
+    "effects": [
+      {
+        "bc fill per turn": 1,
+        "passive id": "9"
+      }
+    ],
+    "id": "1200",
+    "name": "Pulsating Energy"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -318,92 +322,89 @@
     ],
     "name": "Cure Cloud"
   },
-  "bbdescription": "Greatly recovers HP for all allies & slightly boosts critical hit rate for 3 turns",
-  "bbnote": "Heals (1560~1860 + 22.5% of healer Rec) HP, 25% boost to critical hit rate",
-  "bbtype": "Heal",
-  "bbhits": "0",
-  "bbaoe": "0",
-  "bbgauge": "20",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "40284",
-  "evomats1": "40133",
-  "evomats2": "40132",
-  "evomats3": "40191",
-  "evomats4": "40131",
-  "evomats5": "40130",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 718,
-      "def": 888,
-      "hp": 2543,
-      "rec": 1006
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1025,
-      "def": 1268,
-      "hp": 3849,
-      "rec": 1343
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1025,
-      "def": 1268,
-      "hp max": 4439,
-      "hp min": 4144,
-      "rec max": 1284,
-      "rec min": 1166
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 162
     },
-    "breaker": {
-      "atk max": 1202,
-      "atk min": 1084,
-      "def max": 1209,
-      "def min": 1091,
-      "hp": 3849,
-      "rec": 1343
+    "idle": {
+      "total number of frames": 64
     },
-    "guardian": {
-      "atk": 1025,
-      "def max": 1445,
-      "def min": 1327,
-      "hp": 3849,
-      "rec max": 1343,
-      "rec min": 1225
-    },
-    "oracle": {
-      "atk": 1025,
-      "def max": 1268,
-      "def min": 1150,
-      "hp": 3849,
-      "rec max": 1579,
-      "rec min": 1461
+    "move": {
+      "total number of frames": 64
     }
   },
-  "leader_skill": {
-    "desc": "BB Gauge fills after each turn",
-    "effects": [
-      {
-        "bc fill per turn": 1,
-        "passive id": "9"
-      }
+  "category": 40280,
+  "cost": "10",
+  "damage frames": {
+    "frame times": [
+      88,
+      96,
+      104,
+      112
     ],
-    "id": "1200",
-    "name": "Pulsating Energy"
+    "hit dmg% distribution": [
+      30,
+      20,
+      30,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 4
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "thunder",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 383,
+  "imp": {
+    "max atk": "140",
+    "max def": "140",
+    "max hp": "400",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "954~1066",
+  "movement": {
+    "attack": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    }
+  },
+  "name": "Shock Mage Rashil",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Shock Mage Rashil",
+  "maxlv": "60",
+  "no": "383",
   "unitDisplayHomePosition_1W9CxaFK": "487,228,139,380",
   "unitDisplayDetailPosition_6z54rgb3": "-312,-100,1350,921",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "203,305,227,307,0",
@@ -413,5 +414,105 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "87:280:1,89:400090:1,90:400061:1,96:300121:1,100:400090:1,104:300121:1,112:300121:1,115:300121:1"
+  "effectFrames": "87:280:1,89:400090:1,90:400061:1,96:300121:1,100:400090:1,104:300121:1,112:300121:1,115:300121:1",
+  "evofrom": "",
+  "evointo": "40284",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "40133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40131",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40130",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "162",
+  "animation_idle": "64",
+  "animation_move": "64",
+  "movespeed_attack": "4",
+  "movespeed_skill": "4",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "88, 96, 104, 112",
+  "normal_distribute": "30, 20, 30, 20",
+  "normal_totaldistr": "100",
+  "description": "A wizard who long ago led an army of mages in the Atharva Republic. Inventing a way to use lightning to create recovery magic, it's said that he was even more powerful than his fellow countryman Weiss. However, obsessed only with gaining knowledge he inadvertently caused an accident that greatly damaged his home country. As a result he was banished from his country, but as fate would have it as he was wandering the land he came across a mechanical being from another world.",
+  "summon": "How interesting of you<br>to summon me. <br>Now let me examine you!",
+  "fusion": "Another of your skills, eh?<br>I might like to try this so-called<br>experience granting material.",
+  "evolution": "",
+  "hp_base": "2543",
+  "atk_base": "718",
+  "def_base": "888",
+  "rec_base": "1006",
+  "hp_lord": "3849",
+  "atk_lord": "1025",
+  "def_lord": "1268",
+  "rec_lord": "1343",
+  "hp_anima": "4292",
+  "rec_anima": "1225",
+  "atk_breaker": "1143",
+  "def_breaker": "1150",
+  "atk_guardian": "907",
+  "def_guardian": "1386",
+  "rec_guardian": "1284",
+  "def_oracle": "1209",
+  "hp_oracle": "3672",
+  "rec_oracle": "1520",
+  "hp_bonus": "400",
+  "atk_bonus": "140",
+  "def_bonus": "140",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "4",
+  "normaldc": "8",
+  "ls": "Pulsating Energy",
+  "lsdescription": "BB Gauge fills after each turn",
+  "lsnote": "1 BC fill per turn",
+  "lstype": "Brave Burst",
+  "bbdescription": "Greatly recovers HP for all allies & slightly boosts critical hit rate for 3 turns",
+  "bbnote": "Heals (1560~1860 + 22.5% of healer Rec) HP, 25% boost to critical hit rate",
+  "bbtype": "Heal",
+  "bbhits": "0",
+  "bbaoe": "0",
+  "bbgauge": "20",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "40133",
+  "evomats2": "40132",
+  "evomats3": "40191",
+  "evomats4": "40131",
+  "evomats5": "40130"
 }

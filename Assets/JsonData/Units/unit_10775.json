@@ -1,63 +1,71 @@
 {
   "id": "10775",
-  "unitName": "Fiend Master Vermilion",
-  "no": "1177",
-  "element": "Fire",
-  "rarity": "★★★★★★",
-  "cost": "30",
-  "maxlv": "100",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "173",
-  "animation_idle": "52",
-  "animation_move": "5",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "15, 19, 52, 56, 60, 64, 68, 72",
-  "normal_distribute": "16, 12, 20, 20, 10, 10, 6, 6",
-  "normal_totaldistr": "100",
-  "bb_frames": "15, 19, 23, 27, 52, 56, 60, 64, 68, 72, 76",
-  "bb_distribute": "7, 4, 4, 4, 18, 16, 15, 14, 6, 6, 6",
-  "bb_totaldistr": "100",
-  "sbb_frames": "15, 19, 23, 27, 31, 35, 52, 56, 60, 64, 68, 72, 76, 80",
-  "sbb_distribute": "7, 4, 4, 4, 4, 4, 17, 13, 10, 8, 7, 6, 6, 6",
-  "sbb_totaldistr": "100",
-  "description": "The empress of the rising Agni Empire. The following year after ancient Vriksha suffered from a terrible plague, Vermilion built an army to search for fertile land in which to grow crops for her empire. However, her troops encountered a demon during one of their marches and were crushed by its immense power, along with the hopes of the empress. It is said that Vermilion ordered her forces to retreat while she remained behind, fighting the demon until every single one of her men had escaped.",
-  "summon": "Your enemies are demons?<br>Then I shall help you...<br>I will turn them to ashes!",
-  "fusion": "So you've gotten used to serving me.<br>Well, I dare say that you are now<br>my third most trusted servant.",
-  "evolution": "This is like preparation for battle.<br>I can feel my blood boiling.<br>I'm quite excited, you know.",
-  "hp_base": "4308",
-  "atk_base": "1778",
-  "def_base": "1486",
-  "rec_base": "1373",
-  "hp_lord": "6234",
-  "atk_lord": "2406",
-  "def_lord": "1996",
-  "rec_lord": "1864",
-  "hp_anima": "6976",
-  "rec_anima": "1666",
-  "atk_breaker": "2604",
-  "def_breaker": "1798",
-  "def_guardian": "2194",
-  "rec_guardian": "1765",
-  "def_oracle": "1897",
-  "rec_oracle": "2161",
-  "hp_bonus": "750",
-  "atk_bonus": "300",
-  "def_bonus": "300",
-  "rec_bonus": "300",
-  "lordonly": "",
-  "combo_hits": "8",
-  "normaldc": "32",
-  "ls": "Divine Phoenix's Waking",
-  "lsdescription": "Damage taken boosts BB gauge and may restore HP",
-  "lsnote": "Fills 3-5 BC & 40% chance to heal 20% damage",
-  "lstype": "Recovery/Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 1778,
+      "def": 1486,
+      "hp": 4308,
+      "rec": 1373
+    },
+    "_lord": {
+      "atk": 2406,
+      "def": 1996,
+      "hp": 6234,
+      "rec": 1864
+    },
+    "anima": {
+      "atk": 2406,
+      "def": 1996,
+      "hp max": 7224,
+      "hp min": 6729,
+      "rec max": 1765,
+      "rec min": 1567
+    },
+    "breaker": {
+      "atk max": 2703,
+      "atk min": 2505,
+      "def max": 1897,
+      "def min": 1699,
+      "hp": 6234,
+      "rec": 1864
+    },
+    "guardian": {
+      "atk": 2406,
+      "def max": 2293,
+      "def min": 2095,
+      "hp": 6234,
+      "rec max": 1864,
+      "rec min": 1666
+    },
+    "oracle": {
+      "atk": 2406,
+      "def max": 1996,
+      "def min": 1798,
+      "hp": 6234,
+      "rec max": 2260,
+      "rec min": 2062
+    }
+  },
+  "leader_skill": {
+    "desc": "Damage taken boosts BB gauge and may restore HP",
+    "effects": [
+      {
+        "dmg% to hp% when attacked chance%": 40,
+        "dmg% to hp% when attacked high": 20,
+        "dmg% to hp% when attacked low": 20,
+        "passive id": "24"
+      },
+      {
+        "bc fill when attacked high": 5,
+        "bc fill when attacked low": 3,
+        "bc fill when attacked%": 100,
+        "passive id": "25"
+      }
+    ],
+    "id": "10601",
+    "name": "Divine Phoenix's Waking"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -516,14 +524,6 @@
     ],
     "name": "Lava Beast: Steel Claw"
   },
-  "bbdescription": "11 combo powerful Fire attack on all foes, gradually restores HP and BB gauge for 3 turns & slightly boosts BB gauge",
-  "bbnote": "Heals (1800 - 2200 + 10% Rec) HP, fills 5 BC/turn & fills 6 BC",
-  "bbtype": "Heal/Support/Offense",
-  "bbhits": "11",
-  "bbaoe": "A",
-  "bbgauge": "27",
-  "bbdc": "11",
-  "bbmultiplier": "270",
   "sbb": {
     "damage frames": [
       {
@@ -1038,91 +1038,96 @@
     ],
     "name": "Cross Crime"
   },
-  "sbbdescription": "14 combo powerful Fire attack on all foes (damage relative to remaining HP), gradually restores HP and BB gauge for 3 turns & boosts BB gauge",
-  "sbbnote": "180% + 500% x current HP / max base HP, heal (2300 - 2800 + 15% Rec) HP, fills 6 BC & fills 4-6 BC when hit",
-  "sbbtype": "Heal/Support/Offense",
-  "sbbhits": "14",
-  "sbbaoe": "A",
-  "sbbgauge": "30",
-  "sbbdc": "14",
-  "sbbmultiplier": "180",
-  "sbb_hpscale": "true",
-  "evofrom": "10774",
-  "evointo": "10776",
-  "evomats1": "10354",
-  "evomats2": "50354",
-  "evomats3": "10133",
-  "evomats4": "60224",
-  "evomats5": "60224",
-  "evoitem": "",
-  "evozelcost": "1500000",
-  "stats": {
-    "_base": {
-      "atk": 1778,
-      "def": 1486,
-      "hp": 4308,
-      "rec": 1373
+  "ubb": {},
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 2406,
-      "def": 1996,
-      "hp": 6234,
-      "rec": 1864
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 2406,
-      "def": 1996,
-      "hp max": 7224,
-      "hp min": 6729,
-      "rec max": 1765,
-      "rec min": 1567
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 173
     },
-    "breaker": {
-      "atk max": 2703,
-      "atk min": 2505,
-      "def max": 1897,
-      "def min": 1699,
-      "hp": 6234,
-      "rec": 1864
+    "idle": {
+      "total number of frames": 52
     },
-    "guardian": {
-      "atk": 2406,
-      "def max": 2293,
-      "def min": 2095,
-      "hp": 6234,
-      "rec max": 1864,
-      "rec min": 1666
-    },
-    "oracle": {
-      "atk": 2406,
-      "def max": 1996,
-      "def min": 1798,
-      "hp": 6234,
-      "rec max": 2260,
-      "rec min": 2062
+    "move": {
+      "total number of frames": 5
     }
   },
-  "leader_skill": {
-    "desc": "Damage taken boosts BB gauge and may restore HP",
-    "effects": [
-      {
-        "dmg% to hp% when attacked chance%": 40,
-        "dmg% to hp% when attacked high": 20,
-        "dmg% to hp% when attacked low": 20,
-        "passive id": "24"
-      },
-      {
-        "bc fill when attacked high": 5,
-        "bc fill when attacked low": 3,
-        "bc fill when attacked%": 100,
-        "passive id": "25"
-      }
+  "category": 10770,
+  "cost": "30",
+  "damage frames": {
+    "frame times": [
+      15,
+      19,
+      52,
+      56,
+      60,
+      64,
+      68,
+      72
     ],
-    "id": "10601",
-    "name": "Divine Phoenix's Waking"
+    "hit dmg% distribution": [
+      16,
+      12,
+      20,
+      20,
+      10,
+      10,
+      6,
+      6
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 8
   },
-  "extra_skill": {},
-  "ubb": {},
+  "drop check count": 4,
+  "element": "fire",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 1177,
+  "imp": {
+    "max atk": "300",
+    "max def": "300",
+    "max hp": "750",
+    "max rec": "300"
+  },
+  "kind": "normal",
+  "lord damage range": "2240~2502",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Fiend Master Vermilion",
+  "rarity": "6",
+  "sell caution": false,
+  "unitName": "Fiend Master Vermilion",
+  "maxlv": "100",
+  "no": "1177",
   "unitDisplayHomePosition_1W9CxaFK": "377,297,180,491",
   "unitDisplayDetailPosition_6z54rgb3": "-24,-49,1000,830",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "72,194,549,434,0",
@@ -1132,5 +1137,104 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "8000",
   "sellCaution": false,
-  "effectFrames": "15:131:1,23:131:1,46:121:1,50:121:1,54:121:1,58:121:1,62:121:1,66:121:1,70:121:1,18:1052:1,56:1101:1,52:100111:1,15:100082:1,14:1603:1,18:140:1"
+  "effectFrames": "15:131:1,23:131:1,46:121:1,50:121:1,54:121:1,58:121:1,62:121:1,66:121:1,70:121:1,18:1052:1,56:1101:1,52:100111:1,15:100082:1,14:1603:1,18:140:1",
+  "evofrom": "10774",
+  "evointo": "10776",
+  "evozelcost": "1500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "10354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 2
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "173",
+  "animation_idle": "52",
+  "animation_move": "5",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "15, 19, 52, 56, 60, 64, 68, 72",
+  "normal_distribute": "16, 12, 20, 20, 10, 10, 6, 6",
+  "normal_totaldistr": "100",
+  "bb_frames": "15, 19, 23, 27, 52, 56, 60, 64, 68, 72, 76",
+  "bb_distribute": "7, 4, 4, 4, 18, 16, 15, 14, 6, 6, 6",
+  "bb_totaldistr": "100",
+  "sbb_frames": "15, 19, 23, 27, 31, 35, 52, 56, 60, 64, 68, 72, 76, 80",
+  "sbb_distribute": "7, 4, 4, 4, 4, 4, 17, 13, 10, 8, 7, 6, 6, 6",
+  "sbb_totaldistr": "100",
+  "description": "The empress of the rising Agni Empire. The following year after ancient Vriksha suffered from a terrible plague, Vermilion built an army to search for fertile land in which to grow crops for her empire. However, her troops encountered a demon during one of their marches and were crushed by its immense power, along with the hopes of the empress. It is said that Vermilion ordered her forces to retreat while she remained behind, fighting the demon until every single one of her men had escaped.",
+  "summon": "Your enemies are demons?<br>Then I shall help you...<br>I will turn them to ashes!",
+  "fusion": "So you've gotten used to serving me.<br>Well, I dare say that you are now<br>my third most trusted servant.",
+  "evolution": "This is like preparation for battle.<br>I can feel my blood boiling.<br>I'm quite excited, you know.",
+  "hp_base": "4308",
+  "atk_base": "1778",
+  "def_base": "1486",
+  "rec_base": "1373",
+  "hp_lord": "6234",
+  "atk_lord": "2406",
+  "def_lord": "1996",
+  "rec_lord": "1864",
+  "hp_anima": "6976",
+  "rec_anima": "1666",
+  "atk_breaker": "2604",
+  "def_breaker": "1798",
+  "def_guardian": "2194",
+  "rec_guardian": "1765",
+  "def_oracle": "1897",
+  "rec_oracle": "2161",
+  "hp_bonus": "750",
+  "atk_bonus": "300",
+  "def_bonus": "300",
+  "rec_bonus": "300",
+  "lordonly": "",
+  "combo_hits": "8",
+  "normaldc": "32",
+  "ls": "Divine Phoenix's Waking",
+  "lsdescription": "Damage taken boosts BB gauge and may restore HP",
+  "lsnote": "Fills 3-5 BC & 40% chance to heal 20% damage",
+  "lstype": "Recovery/Brave Burst",
+  "bbdescription": "11 combo powerful Fire attack on all foes, gradually restores HP and BB gauge for 3 turns & slightly boosts BB gauge",
+  "bbnote": "Heals (1800 - 2200 + 10% Rec) HP, fills 5 BC/turn & fills 6 BC",
+  "bbtype": "Heal/Support/Offense",
+  "bbhits": "11",
+  "bbaoe": "A",
+  "bbgauge": "27",
+  "bbdc": "11",
+  "bbmultiplier": "270",
+  "sbbdescription": "14 combo powerful Fire attack on all foes (damage relative to remaining HP), gradually restores HP and BB gauge for 3 turns & boosts BB gauge",
+  "sbbnote": "180% + 500% x current HP / max base HP, heal (2300 - 2800 + 15% Rec) HP, fills 6 BC & fills 4-6 BC when hit",
+  "sbbtype": "Heal/Support/Offense",
+  "sbbhits": "14",
+  "sbbaoe": "A",
+  "sbbgauge": "30",
+  "sbbdc": "14",
+  "sbbmultiplier": "180",
+  "sbb_hpscale": "true",
+  "evomats1": "10354",
+  "evomats2": "50354",
+  "evomats3": "10133",
+  "evomats4": "60224",
+  "evomats5": "60224",
+  "evoitem": ""
 }

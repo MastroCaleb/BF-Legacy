@@ -1,61 +1,67 @@
 {
   "id": "50483",
-  "unitName": "Dark Angel Azael",
-  "no": "622",
-  "element": "Light",
-  "rarity": "★★★★",
-  "cost": "13",
-  "maxlv": "60",
-  "basexp": "21",
-  "gender": "N",
-  "ai": "3",
-  "animation_attack": "160",
-  "animation_idle": "120",
-  "animation_move": "9",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "114, 117, 120, 150, 173, 196",
-  "normal_distribute": "25, 25, 25, 8, 9, 8",
-  "normal_totaldistr": "100",
-  "bb_frames": "114, 120, 126, 132, 138, 144, 150",
-  "bb_distribute": "16, 14, 14, 14, 14, 14, 14",
-  "bb_totaldistr": "100",
-  "description": "Long before the battle between the humans and the gods, there was an abominable angel who passed judgment. Not discriminating between gods nor humans, he would appear before sinners with his three faces and pass his sentence. His right face represents crimes, and his left represents a defense. It is said that the last face in the middle passes the final sentence, and if the prosecuted is found guilty, it is judged by a merciless attack. Though fair, judging trespassers without a chance of salvation made him feared by the humans, as well as by the gods. He was called the \"Black Angel.\"",
-  "summon": "I only care about passing my judgment.<br>It is my only purpose.<br>Dost thou object against it?",
-  "fusion": "Thou sacrificest others<br>to strengthen others as well.<br>Thy judgment is...",
-  "evolution": "",
-  "hp_base": "2877",
-  "atk_base": "1105",
-  "def_base": "1027",
-  "rec_base": "824",
-  "hp_lord": "4136",
-  "atk_lord": "1473",
-  "def_lord": "1369",
-  "rec_lord": "1098",
-  "hp_anima": "4579",
-  "rec_anima": "980",
-  "atk_breaker": "1591",
-  "def_breaker": "1251",
-  "atk_guardian": "1355",
-  "def_guardian": "1487",
-  "rec_guardian": "1039",
-  "def_oracle": "1310",
-  "hp_oracle": "3959",
-  "rec_oracle": "1275",
-  "hp_bonus": "400",
-  "atk_bonus": "140",
-  "def_bonus": "140",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "6",
-  "normaldc": "12",
-  "ls": "Fallen Emperor's Power",
-  "lsdescription": "25% boost to Atk of all Light and Dark Units",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 1105,
+      "def": 1027,
+      "hp": 2877,
+      "rec": 824
+    },
+    "_lord": {
+      "atk": 1473,
+      "def": 1369,
+      "hp": 4136,
+      "rec": 1098
+    },
+    "anima": {
+      "atk": 1473,
+      "def": 1369,
+      "hp max": 4726,
+      "hp min": 4431,
+      "rec max": 1039,
+      "rec min": 921
+    },
+    "breaker": {
+      "atk max": 1650,
+      "atk min": 1532,
+      "def max": 1310,
+      "def min": 1192,
+      "hp": 4136,
+      "rec": 1098
+    },
+    "guardian": {
+      "atk": 1473,
+      "def max": 1546,
+      "def min": 1428,
+      "hp": 4136,
+      "rec max": 1098,
+      "rec min": 980
+    },
+    "oracle": {
+      "atk": 1473,
+      "def max": 1369,
+      "def min": 1251,
+      "hp": 4136,
+      "rec max": 1334,
+      "rec min": 1216
+    }
+  },
+  "leader_skill": {
+    "desc": "25% boost to Atk of all Light and Dark Units",
+    "effects": [
+      {
+        "atk% buff": 25,
+        "elements buffed": [
+          "light",
+          "dark"
+        ],
+        "passive id": "2"
+      }
+    ],
+    "id": "5600",
+    "name": "Fallen Emperor's Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -260,97 +266,99 @@
     ],
     "name": "Ibelize"
   },
-  "bbdescription": "7 combo Light and Dark elemental attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "7",
-  "bbaoe": "A",
-  "bbgauge": "25",
-  "bbdc": "7",
-  "bbmultiplier": "200",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "50484",
-  "evomats1": "50123",
-  "evomats2": "50191",
-  "evomats3": "50122",
-  "evomats4": "60144",
-  "evomats5": "60143",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 1105,
-      "def": 1027,
-      "hp": 2877,
-      "rec": 824
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1473,
-      "def": 1369,
-      "hp": 4136,
-      "rec": 1098
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1473,
-      "def": 1369,
-      "hp max": 4726,
-      "hp min": 4431,
-      "rec max": 1039,
-      "rec min": 921
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 1650,
-      "atk min": 1532,
-      "def max": 1310,
-      "def min": 1192,
-      "hp": 4136,
-      "rec": 1098
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 160
     },
-    "guardian": {
-      "atk": 1473,
-      "def max": 1546,
-      "def min": 1428,
-      "hp": 4136,
-      "rec max": 1098,
-      "rec min": 980
+    "idle": {
+      "total number of frames": 120
     },
-    "oracle": {
-      "atk": 1473,
-      "def max": 1369,
-      "def min": 1251,
-      "hp": 4136,
-      "rec max": 1334,
-      "rec min": 1216
+    "move": {
+      "total number of frames": 9
     }
   },
-  "leader_skill": {
-    "desc": "25% boost to Atk of all Light and Dark Units",
-    "effects": [
-      {
-        "atk% buff": 25,
-        "elements buffed": [
-          "light",
-          "dark"
-        ],
-        "passive id": "2"
-      }
+  "category": 50480,
+  "cost": "13",
+  "damage frames": {
+    "frame times": [
+      114,
+      117,
+      120,
+      150,
+      173,
+      196
     ],
-    "id": "5600",
-    "name": "Fallen Emperor's Power"
+    "hit dmg% distribution": [
+      25,
+      25,
+      25,
+      8,
+      9,
+      8
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 6
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "light",
+  "exp_pattern": 20,
+  "gender": "other",
+  "getting type": "rare summon",
+  "guide_id": 622,
+  "imp": {
+    "max atk": "140",
+    "max def": "140",
+    "max hp": "400",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "1371~1531",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Dark Angel Azael",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Dark Angel Azael",
+  "maxlv": "60",
+  "no": "622",
   "unitDisplayHomePosition_1W9CxaFK": "291,42,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "15,149,908,685",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "157,355,319,277,0",
@@ -360,5 +368,108 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "114:500314:2,114:500313:1"
+  "effectFrames": "114:500314:2,114:500313:1",
+  "evofrom": "",
+  "evointo": "50484",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50123",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50122",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "160",
+  "animation_idle": "120",
+  "animation_move": "9",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "114, 117, 120, 150, 173, 196",
+  "normal_distribute": "25, 25, 25, 8, 9, 8",
+  "normal_totaldistr": "100",
+  "bb_frames": "114, 120, 126, 132, 138, 144, 150",
+  "bb_distribute": "16, 14, 14, 14, 14, 14, 14",
+  "bb_totaldistr": "100",
+  "description": "Long before the battle between the humans and the gods, there was an abominable angel who passed judgment. Not discriminating between gods nor humans, he would appear before sinners with his three faces and pass his sentence. His right face represents crimes, and his left represents a defense. It is said that the last face in the middle passes the final sentence, and if the prosecuted is found guilty, it is judged by a merciless attack. Though fair, judging trespassers without a chance of salvation made him feared by the humans, as well as by the gods. He was called the \"Black Angel.\"",
+  "summon": "I only care about passing my judgment.<br>It is my only purpose.<br>Dost thou object against it?",
+  "fusion": "Thou sacrificest others<br>to strengthen others as well.<br>Thy judgment is...",
+  "evolution": "",
+  "hp_base": "2877",
+  "atk_base": "1105",
+  "def_base": "1027",
+  "rec_base": "824",
+  "hp_lord": "4136",
+  "atk_lord": "1473",
+  "def_lord": "1369",
+  "rec_lord": "1098",
+  "hp_anima": "4579",
+  "rec_anima": "980",
+  "atk_breaker": "1591",
+  "def_breaker": "1251",
+  "atk_guardian": "1355",
+  "def_guardian": "1487",
+  "rec_guardian": "1039",
+  "def_oracle": "1310",
+  "hp_oracle": "3959",
+  "rec_oracle": "1275",
+  "hp_bonus": "400",
+  "atk_bonus": "140",
+  "def_bonus": "140",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "6",
+  "normaldc": "12",
+  "ls": "Fallen Emperor's Power",
+  "lsdescription": "25% boost to Atk of all Light and Dark Units",
+  "lstype": "Attack",
+  "bbdescription": "7 combo Light and Dark elemental attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "7",
+  "bbaoe": "A",
+  "bbgauge": "25",
+  "bbdc": "7",
+  "bbmultiplier": "200",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50123",
+  "evomats2": "50191",
+  "evomats3": "50122",
+  "evomats4": "60144",
+  "evomats5": "60143"
 }

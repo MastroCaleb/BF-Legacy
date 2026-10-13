@@ -1,63 +1,69 @@
 {
   "id": "760115",
-  "unitName": "Goddess Geirdriful (EU)",
-  "disam": "",
-  "altname": "Goddess Geirdriful",
-  "idalt": "",
-  "has_altart": "",
-  "doenter": "true",
-  "no": "7037",
-  "element": "Dark",
-  "rarity": "★★★★★★",
-  "cost": "24",
-  "maxlv": "100",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "3",
-  "animation_attack": "209",
-  "animation_idle": "",
-  "animation_move": "8",
-  "movespeed_attack": "0.0033",
-  "speedtype_attack": "3",
-  "movetype_attack": "1",
-  "movespeed_skill": "0.0033",
-  "speedtype_skill": "3",
-  "movetype_skill": "1",
-  "description": "Part of the pantheon of fierce warriors coming from the coldest territories of Grand Gaia. Their legend tells us that 6 exceptional semi-goddesses select among the best of dying combatants, whom would be granted the right to enter their heaven and fight side by side with the gods. Geirdriful, in a moment of insanity, has drunk Skalmold's blood on the day she has been slayed. The heroes came back and killed her too. But is a goddess of the dark art so easy to slay? People dream of mad crows searching for strange flames...",
-  "summon": "",
-  "fusion": "My crows will feast tonight.",
-  "evolution": "Crows and Death! Crows and death! More souls to bring to heavens... Did you meet my sister?",
-  "hp_base": "4704",
-  "atk_base": "1509",
-  "def_base": "1391",
-  "rec_base": "1451",
-  "hp_lord": "6000",
-  "atk_lord": "1940",
-  "def_lord": "1650",
-  "rec_lord": "1800",
-  "hp_anima": "6742",
-  "rec_anima": "1602",
-  "atk_breaker": "2138",
-  "def_breaker": "1452",
-  "def_guardian": "1848",
-  "rec_guardian": "1800",
-  "def_oracle": "1650",
-  "rec_oracle": "1998",
-  "hp_bonus": "800",
-  "atk_bonus": "400",
-  "def_bonus": "340",
-  "rec_bonus": "400",
-  "lordonly": "",
-  "evofrom": "760114",
-  "evointo": "",
-  "normal_frames": "8, 23, 29, 38, 44, 48, 56, 66, 76, 86, 92, 96, 99",
-  "normal_distribute": "7, 7, 7, 7, 7, 16, 7, 7, 7, 7, 7, 7, 7",
-  "normal_totaldistr": "100",
-  "combo_hits": "13",
-  "normaldc": "26",
-  "ls": "Torch of Valhalla",
-  "lsdescription": "35% boost to Atk Power of Female Units. Additional 30% when 5 elements or more are present",
-  "lsnote": "",
+  "stats": {
+    "_base": {
+      "atk": 1509,
+      "def": 1391,
+      "hp": 4704,
+      "rec": 1451
+    },
+    "_lord": {
+      "atk": 1940,
+      "def": 1650,
+      "hp": 6000,
+      "rec": 1800
+    },
+    "anima": {
+      "atk": 1940,
+      "def": 1650,
+      "hp max": 6990,
+      "hp min": 6495,
+      "rec max": 1701,
+      "rec min": 1503
+    },
+    "breaker": {
+      "atk max": 2237,
+      "atk min": 2039,
+      "def max": 1551,
+      "def min": 1353,
+      "hp": 6000,
+      "rec": 1800
+    },
+    "guardian": {
+      "atk max": 1841,
+      "atk min": 1643,
+      "def max": 1947,
+      "def min": 1749,
+      "hp": 6000,
+      "rec": 1800
+    },
+    "oracle": {
+      "atk": 1940,
+      "def": 1650,
+      "hp max": 5505,
+      "hp min": 5010,
+      "rec max": 2097,
+      "rec min": 1899
+    }
+  },
+  "leader_skill": {
+    "desc": "35% boost to Atk Power of Female Units. Additional 30% when 5 elements or more are present",
+    "effects": [
+      {
+        "atk% buff": 35,
+        "gender required": "female",
+        "passive id": "42"
+      },
+      {
+        "atk% buff": 30,
+        "passive id": "41",
+        "unique elements required": 5
+      }
+    ],
+    "id": "760115",
+    "name": "Torch of Valhalla"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -326,27 +332,6 @@
     ],
     "name": "Insane Dark Spell"
   },
-  "bbdescription": "13 combo Dark elemental attack on all enemies & probable Curse and Paralysis effect",
-  "bbnote": "{{UnitBuffList",
-  "buff_1_proc": "29",
-  "buff_1_potency": "360% damage modifier",
-  "buff_1_duration": "—",
-  "buff_1_target": "All enemies",
-  "buff_2_proc": "4",
-  "buff_2_potency": "Refills BB gauge to 62%",
-  "buff_2_duration": "—",
-  "buff_2_target": "To self",
-  "bbtype": "Offense",
-  "bbgauge": "28",
-  "bb_frames": "56, 62, 68, 74, 80, 86, 94, 102, 110, 118, 123, 127, 130",
-  "bb_distribute": "7, 7, 7, 7, 7, 7, 7, 7, 16, 7, 7, 7, 7",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "0",
-  "bbhits": "13",
-  "bbaoe": "A",
-  "bbdc": "13",
-  "bbmultiplier": "220",
-  "bb_hpscale": "",
   "sbb": {
     "damage frames": [
       {
@@ -731,6 +716,193 @@
     ],
     "name": "Demented Dark hex"
   },
+  "ubb": {},
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 209
+    },
+    "idle": "missing data",
+    "move": {
+      "total number of frames": 8
+    }
+  },
+  "cost": "24",
+  "damage frames": {
+    "frame times": [
+      8,
+      23,
+      29,
+      38,
+      44,
+      48,
+      56,
+      66,
+      76,
+      86,
+      92,
+      96,
+      99
+    ],
+    "hit dmg% distribution": [
+      7,
+      7,
+      7,
+      7,
+      7,
+      16,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 13
+  },
+  "drop check count": 2,
+  "element": "dark",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 7037,
+  "imp": {
+    "max atk": "400",
+    "max def": "340",
+    "max hp": "800",
+    "max rec": "400"
+  },
+  "kind": "normal",
+  "lord damage range": "1806~2017",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Goddess Geirdriful",
+  "rarity": "6",
+  "sell caution": false,
+  "unitName": "Goddess Geirdriful",
+  "maxlv": "100",
+  "no": "7037",
+  "unitDisplayHomePosition_1W9CxaFK": null,
+  "unitDisplayDetailPosition_6z54rgb3": null,
+  "unitDisplayConfirmImagePosition_MYK1fq6c": null,
+  "unitDisplayCutInImagePosition_7hLR6pDN": null,
+  "unitDisplaySummonPosition_KC3Jk8Br": null,
+  "unitDisplayHpPosition_3BpHN6VD": null,
+  "unitDisplayCursorPosition": null,
+  "sellPrice": "",
+  "sellCaution": false,
+  "effectFrames": "",
+  "evofrom": "760114",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "disam": "",
+  "altname": "Goddess Geirdriful",
+  "idalt": "",
+  "has_altart": "",
+  "doenter": "true",
+  "basexp": "21",
+  "animation_attack": "209",
+  "animation_idle": "",
+  "animation_move": "8",
+  "movespeed_attack": "0.0033",
+  "speedtype_attack": "3",
+  "movetype_attack": "1",
+  "movespeed_skill": "0.0033",
+  "speedtype_skill": "3",
+  "movetype_skill": "1",
+  "description": "Part of the pantheon of fierce warriors coming from the coldest territories of Grand Gaia. Their legend tells us that 6 exceptional semi-goddesses select among the best of dying combatants, whom would be granted the right to enter their heaven and fight side by side with the gods. Geirdriful, in a moment of insanity, has drunk Skalmold's blood on the day she has been slayed. The heroes came back and killed her too. But is a goddess of the dark art so easy to slay? People dream of mad crows searching for strange flames...",
+  "summon": "",
+  "fusion": "My crows will feast tonight.",
+  "evolution": "Crows and Death! Crows and death! More souls to bring to heavens... Did you meet my sister?",
+  "hp_base": "4704",
+  "atk_base": "1509",
+  "def_base": "1391",
+  "rec_base": "1451",
+  "hp_lord": "6000",
+  "atk_lord": "1940",
+  "def_lord": "1650",
+  "rec_lord": "1800",
+  "hp_anima": "6742",
+  "rec_anima": "1602",
+  "atk_breaker": "2138",
+  "def_breaker": "1452",
+  "def_guardian": "1848",
+  "rec_guardian": "1800",
+  "def_oracle": "1650",
+  "rec_oracle": "1998",
+  "hp_bonus": "800",
+  "atk_bonus": "400",
+  "def_bonus": "340",
+  "rec_bonus": "400",
+  "lordonly": "",
+  "normal_frames": "8, 23, 29, 38, 44, 48, 56, 66, 76, 86, 92, 96, 99",
+  "normal_distribute": "7, 7, 7, 7, 7, 16, 7, 7, 7, 7, 7, 7, 7",
+  "normal_totaldistr": "100",
+  "combo_hits": "13",
+  "normaldc": "26",
+  "ls": "Torch of Valhalla",
+  "lsdescription": "35% boost to Atk Power of Female Units. Additional 30% when 5 elements or more are present",
+  "lsnote": "",
+  "bbdescription": "13 combo Dark elemental attack on all enemies & probable Curse and Paralysis effect",
+  "bbnote": "{{UnitBuffList",
+  "buff_1_proc": "29",
+  "buff_1_potency": "360% damage modifier",
+  "buff_1_duration": "—",
+  "buff_1_target": "All enemies",
+  "buff_2_proc": "4",
+  "buff_2_potency": "Refills BB gauge to 62%",
+  "buff_2_duration": "—",
+  "buff_2_target": "To self",
+  "bbtype": "Offense",
+  "bbgauge": "28",
+  "bb_frames": "56, 62, 68, 74, 80, 86, 94, 102, 110, 118, 123, 127, 130",
+  "bb_distribute": "7, 7, 7, 7, 7, 7, 7, 7, 16, 7, 7, 7, 7",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "0",
+  "bbhits": "13",
+  "bbaoe": "A",
+  "bbdc": "13",
+  "bbmultiplier": "220",
+  "bb_hpscale": "",
   "sbbdescription": "15 combo Dark elemental attack on all enemies & increases BB gauge fill rate and adds Dark element to attack for 3 turns",
   "sbbnote": "{{UnitBuffList",
   "buff_3_proc": "6_bc",
@@ -752,80 +924,5 @@
   "notes": "",
   "incorrectinfo": "",
   "addcat": "",
-  "addcatname": "",
-  "stats": {
-    "_base": {
-      "atk": 1509,
-      "def": 1391,
-      "hp": 4704,
-      "rec": 1451
-    },
-    "_lord": {
-      "atk": 1940,
-      "def": 1650,
-      "hp": 6000,
-      "rec": 1800
-    },
-    "anima": {
-      "atk": 1940,
-      "def": 1650,
-      "hp max": 6990,
-      "hp min": 6495,
-      "rec max": 1701,
-      "rec min": 1503
-    },
-    "breaker": {
-      "atk max": 2237,
-      "atk min": 2039,
-      "def max": 1551,
-      "def min": 1353,
-      "hp": 6000,
-      "rec": 1800
-    },
-    "guardian": {
-      "atk max": 1841,
-      "atk min": 1643,
-      "def max": 1947,
-      "def min": 1749,
-      "hp": 6000,
-      "rec": 1800
-    },
-    "oracle": {
-      "atk": 1940,
-      "def": 1650,
-      "hp max": 5505,
-      "hp min": 5010,
-      "rec max": 2097,
-      "rec min": 1899
-    }
-  },
-  "leader_skill": {
-    "desc": "35% boost to Atk Power of Female Units. Additional 30% when 5 elements or more are present",
-    "effects": [
-      {
-        "atk% buff": 35,
-        "gender required": "female",
-        "passive id": "42"
-      },
-      {
-        "atk% buff": 30,
-        "passive id": "41",
-        "unique elements required": 5
-      }
-    ],
-    "id": "760115",
-    "name": "Torch of Valhalla"
-  },
-  "extra_skill": {},
-  "ubb": {},
-  "unitDisplayHomePosition_1W9CxaFK": null,
-  "unitDisplayDetailPosition_6z54rgb3": null,
-  "unitDisplayConfirmImagePosition_MYK1fq6c": null,
-  "unitDisplayCutInImagePosition_7hLR6pDN": null,
-  "unitDisplaySummonPosition_KC3Jk8Br": null,
-  "unitDisplayHpPosition_3BpHN6VD": null,
-  "unitDisplayCursorPosition": null,
-  "sellPrice": "",
-  "sellCaution": false,
-  "effectFrames": ""
+  "addcatname": ""
 }

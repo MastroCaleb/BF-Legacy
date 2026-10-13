@@ -1,61 +1,64 @@
 {
   "id": "10374",
-  "unitName": "Dark Princess Dia",
-  "no": "531",
-  "element": "Fire",
-  "rarity": "★★★★★",
-  "cost": "16",
-  "maxlv": "80",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "3",
-  "animation_attack": "98",
-  "animation_idle": "52",
-  "animation_move": "52",
-  "movespeed_attack": "4",
-  "movespeed_skill": "4",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "28, 34, 40, 46, 52, 58, 64",
-  "normal_distribute": "20, 10, 10, 15, 15, 10, 20",
-  "normal_totaldistr": "100",
-  "bb_frames": "10",
-  "bb_distribute": "100",
-  "bb_totaldistr": "100",
-  "description": "A mage raised in the outskirts of the Agni Empire. One day, a letter of summons arrived from the Atharva Republic, claiming her late grandmother had leaked imperial secrets. Hoping to clear her grandmother's name, she headed to the capital along with her faithful dragon Grazool. There, she had the shocking realization that her grandmother had been a famous Atharvaian sorceress. Through fighting off the gods' attacks in this complex emotional state, she realized she was far superior to any normal human mage.",
-  "summon": "I call the shots around here.<br>You didn't summon me...<br>I summoned you!",
-  "fusion": "It feels stuffy in here...<br>Either 'cause Grazool got bigger...<br>Or my outfit got tighter...<br>",
-  "evolution": "Think I'm pretty tough?<br>That means my grandma was<br>incredible!",
-  "hp_base": "3266",
-  "atk_base": "1362",
-  "def_base": "911",
-  "rec_base": "1287",
-  "hp_lord": "4812",
-  "atk_lord": "1811",
-  "def_lord": "1213",
-  "rec_lord": "1710",
-  "hp_anima": "5405",
-  "rec_anima": "1552",
-  "atk_breaker": "1969",
-  "def_breaker": "1055",
-  "atk_guardian": "1653",
-  "def_guardian": "1371",
-  "rec_guardian": "1631",
-  "def_oracle": "1134",
-  "hp_oracle": "4575",
-  "rec_oracle": "1947",
-  "hp_bonus": "500",
-  "atk_bonus": "140",
-  "def_bonus": "260",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "7",
-  "normaldc": "14",
-  "ls": "Five Light's Force",
-  "lsdescription": "50% boost to Atk power of all Units when 5 elements or more are present",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 1362,
+      "def": 911,
+      "hp": 3266,
+      "rec": 1287
+    },
+    "_lord": {
+      "atk": 1811,
+      "def": 1213,
+      "hp": 4812,
+      "rec": 1710
+    },
+    "anima": {
+      "atk": 1811,
+      "def": 1213,
+      "hp max": 5602,
+      "hp min": 5207,
+      "rec max": 1631,
+      "rec min": 1473
+    },
+    "breaker": {
+      "atk max": 2048,
+      "atk min": 1890,
+      "def max": 1134,
+      "def min": 976,
+      "hp": 4812,
+      "rec": 1710
+    },
+    "guardian": {
+      "atk": 1811,
+      "def max": 1450,
+      "def min": 1292,
+      "hp": 4812,
+      "rec max": 1710,
+      "rec min": 1552
+    },
+    "oracle": {
+      "atk": 1811,
+      "def max": 1213,
+      "def min": 1055,
+      "hp": 4812,
+      "rec max": 2026,
+      "rec min": 1868
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to Atk power of all Units when 5 elements or more are present",
+    "effects": [
+      {
+        "atk% buff": 50,
+        "passive id": "41",
+        "unique elements required": 5
+      }
+    ],
+    "id": "2201",
+    "name": "Five Light's Force"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -340,95 +343,101 @@
     ],
     "name": "Curse Two: Lugana"
   },
-  "bbdescription": "11 combo random Fire elemental attack on all enemies & adds Thunder element to attack for 3 turns",
-  "bbtype": "Support/Offense",
-  "bbhits": "11",
-  "bbaoe": "1",
-  "bbgauge": "21",
-  "bbdc": "11",
-  "bbmultiplier": "400",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "10373",
-  "evointo": "10375",
-  "evomats1": "50354",
-  "evomats2": "10133",
-  "evomats3": "10191",
-  "evomats4": "10191",
-  "evomats5": "60224",
-  "evoitem": "",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 1362,
-      "def": 911,
-      "hp": 3266,
-      "rec": 1287
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1811,
-      "def": 1213,
-      "hp": 4812,
-      "rec": 1710
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1811,
-      "def": 1213,
-      "hp max": 5602,
-      "hp min": 5207,
-      "rec max": 1631,
-      "rec min": 1473
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 2048,
-      "atk min": 1890,
-      "def max": 1134,
-      "def min": 976,
-      "hp": 4812,
-      "rec": 1710
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 98
     },
-    "guardian": {
-      "atk": 1811,
-      "def max": 1450,
-      "def min": 1292,
-      "hp": 4812,
-      "rec max": 1710,
-      "rec min": 1552
+    "idle": {
+      "total number of frames": 52
     },
-    "oracle": {
-      "atk": 1811,
-      "def max": 1213,
-      "def min": 1055,
-      "hp": 4812,
-      "rec max": 2026,
-      "rec min": 1868
+    "move": {
+      "total number of frames": 52
     }
   },
-  "leader_skill": {
-    "desc": "50% boost to Atk power of all Units when 5 elements or more are present",
-    "effects": [
-      {
-        "atk% buff": 50,
-        "passive id": "41",
-        "unique elements required": 5
-      }
+  "category": 10370,
+  "cost": "16",
+  "damage frames": {
+    "frame times": [
+      28,
+      34,
+      40,
+      46,
+      52,
+      58,
+      64
     ],
-    "id": "2201",
-    "name": "Five Light's Force"
+    "hit dmg% distribution": [
+      20,
+      10,
+      10,
+      15,
+      15,
+      10,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 7
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "fire",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 531,
+  "imp": {
+    "max atk": "140",
+    "max def": "260",
+    "max hp": "500",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "1685~1883",
+  "movement": {
+    "attack": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    }
+  },
+  "name": "Dark Princess Dia",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Dark Princess Dia",
+  "maxlv": "80",
+  "no": "531",
   "unitDisplayHomePosition_1W9CxaFK": "418,180,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-133,4,1103,777",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "196,295,294,326,0",
@@ -438,5 +447,104 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "28:100111:1,34:140:1,46:100081:1,52:140:1,65:100192:1,70:100192:1"
+  "effectFrames": "28:100111:1,34:140:1,46:100081:1,52:140:1,65:100192:1,70:100192:1",
+  "evofrom": "10373",
+  "evointo": "10375",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10191",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "98",
+  "animation_idle": "52",
+  "animation_move": "52",
+  "movespeed_attack": "4",
+  "movespeed_skill": "4",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "28, 34, 40, 46, 52, 58, 64",
+  "normal_distribute": "20, 10, 10, 15, 15, 10, 20",
+  "normal_totaldistr": "100",
+  "bb_frames": "10",
+  "bb_distribute": "100",
+  "bb_totaldistr": "100",
+  "description": "A mage raised in the outskirts of the Agni Empire. One day, a letter of summons arrived from the Atharva Republic, claiming her late grandmother had leaked imperial secrets. Hoping to clear her grandmother's name, she headed to the capital along with her faithful dragon Grazool. There, she had the shocking realization that her grandmother had been a famous Atharvaian sorceress. Through fighting off the gods' attacks in this complex emotional state, she realized she was far superior to any normal human mage.",
+  "summon": "I call the shots around here.<br>You didn't summon me...<br>I summoned you!",
+  "fusion": "It feels stuffy in here...<br>Either 'cause Grazool got bigger...<br>Or my outfit got tighter...<br>",
+  "evolution": "Think I'm pretty tough?<br>That means my grandma was<br>incredible!",
+  "hp_base": "3266",
+  "atk_base": "1362",
+  "def_base": "911",
+  "rec_base": "1287",
+  "hp_lord": "4812",
+  "atk_lord": "1811",
+  "def_lord": "1213",
+  "rec_lord": "1710",
+  "hp_anima": "5405",
+  "rec_anima": "1552",
+  "atk_breaker": "1969",
+  "def_breaker": "1055",
+  "atk_guardian": "1653",
+  "def_guardian": "1371",
+  "rec_guardian": "1631",
+  "def_oracle": "1134",
+  "hp_oracle": "4575",
+  "rec_oracle": "1947",
+  "hp_bonus": "500",
+  "atk_bonus": "140",
+  "def_bonus": "260",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "7",
+  "normaldc": "14",
+  "ls": "Five Light's Force",
+  "lsdescription": "50% boost to Atk power of all Units when 5 elements or more are present",
+  "lstype": "Attack",
+  "bbdescription": "11 combo random Fire elemental attack on all enemies & adds Thunder element to attack for 3 turns",
+  "bbtype": "Support/Offense",
+  "bbhits": "11",
+  "bbaoe": "1",
+  "bbgauge": "21",
+  "bbdc": "11",
+  "bbmultiplier": "400",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "10133",
+  "evomats3": "10191",
+  "evomats4": "10191",
+  "evomats5": "60224",
+  "evoitem": ""
 }

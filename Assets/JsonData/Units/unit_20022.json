@@ -1,62 +1,63 @@
 {
   "id": "20022",
-  "unitName": "Knight Zephu",
-  "no": "29",
-  "element": "Water",
-  "rarity": "★★★",
-  "cost": "5",
-  "maxlv": "40",
-  "basexp": "15",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "78",
-  "animation_idle": "52",
-  "animation_move": "13",
-  "movespeed_attack": "0.0041",
-  "movespeed_skill": "0.0041",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "8, 15, 21, 27",
-  "normal_distribute": "30, 20, 30, 20",
-  "normal_totaldistr": "100",
-  "bb_frames": "9, 18, 27, 36, 45",
-  "bb_distribute": "25, 15, 25, 15, 20",
-  "bb_totaldistr": "100",
-  "description": "A dragon rider from the ruined Sama Kingdom. His hopes of becoming the next dragon knight commander were lost when he mistakingly took orders which he thought were from the king. Even under house arrest, his loyalty didn't falter. Instead, he continued to hone his skills. He was known as the Ice Dragon Knight, wielding his spear made from his kingdom's unique ice.",
-  "summon": "What need have you <br>for my insufficient power?<br>Some Summoner you are...",
-  "fusion": "I can feel it flowing inside me.<br>My time to return is near!",
-  "evolution": "The Ice Dragon Knight <br>offers you his spear...<br>Use it wisely.",
-  "hp_base": "2160",
-  "atk_base": "716",
-  "def_base": "378",
-  "rec_base": "179",
-  "hp_lord": "3435",
-  "atk_lord": "1095",
-  "def_lord": "660",
-  "rec_lord": "419",
-  "hp_anima": "3728",
-  "rec_anima": "341",
-  "atk_breaker": "1173",
-  "def_breaker": "582",
-  "atk_guardian": "1017",
-  "def_guardian": "738",
-  "rec_guardian": "341",
-  "def_oracle": "582",
-  "hp_oracle": "3318",
-  "rec_oracle": "536",
-  "hp_bonus": "400",
-  "atk_bonus": "140",
-  "def_bonus": "140",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "4",
-  "normaldc": "8",
-  "ls": "Intense Flash",
-  "lsdescription": "Boost in damage dealt during Spark",
-  "lsnote": "30% boost",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 716,
+      "def": 378,
+      "hp": 2160,
+      "rec": 179
+    },
+    "_lord": {
+      "atk": 1095,
+      "def": 660,
+      "hp": 3435,
+      "rec": 419
+    },
+    "anima": {
+      "atk": 1095,
+      "def": 660,
+      "hp max": 3825,
+      "hp min": 3630,
+      "rec max": 380,
+      "rec min": 302
+    },
+    "breaker": {
+      "atk max": 1212,
+      "atk min": 1134,
+      "def max": 621,
+      "def min": 543,
+      "hp": 3435,
+      "rec": 419
+    },
+    "guardian": {
+      "atk": 1095,
+      "def max": 777,
+      "def min": 699,
+      "hp": 3435,
+      "rec max": 419,
+      "rec min": 341
+    },
+    "oracle": {
+      "atk": 1095,
+      "def max": 660,
+      "def min": 582,
+      "hp": 3435,
+      "rec max": 575,
+      "rec min": 497
+    }
+  },
+  "leader_skill": {
+    "desc": "Boost in damage dealt during Spark",
+    "effects": [
+      {
+        "damage% for spark": 30,
+        "passive id": "31"
+      }
+    ],
+    "id": "1301",
+    "name": "Intense Flash"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -299,95 +300,89 @@
     ],
     "name": "Raging Ballad"
   },
-  "bbdescription": "5 combo Water elemental power attack on single Enemy & probable Weakness effect",
-  "bbnote": "80% chance",
-  "bbtype": "Offense",
-  "bbhits": "5",
-  "bbaoe": "1",
-  "bbgauge": "15",
-  "bbdc": "5",
-  "bbmultiplier": "280",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "20021",
-  "evointo": "20023",
-  "evomats1": "20132",
-  "evomats2": "20131",
-  "evomats3": "20130",
-  "evomats4": "20130",
-  "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "100000",
-  "stats": {
-    "_base": {
-      "atk": 716,
-      "def": 378,
-      "hp": 2160,
-      "rec": 179
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1095,
-      "def": 660,
-      "hp": 3435,
-      "rec": 419
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1095,
-      "def": 660,
-      "hp max": 3825,
-      "hp min": 3630,
-      "rec max": 380,
-      "rec min": 302
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 78
     },
-    "breaker": {
-      "atk max": 1212,
-      "atk min": 1134,
-      "def max": 621,
-      "def min": 543,
-      "hp": 3435,
-      "rec": 419
+    "idle": {
+      "total number of frames": 52
     },
-    "guardian": {
-      "atk": 1095,
-      "def max": 777,
-      "def min": 699,
-      "hp": 3435,
-      "rec max": 419,
-      "rec min": 341
-    },
-    "oracle": {
-      "atk": 1095,
-      "def max": 660,
-      "def min": 582,
-      "hp": 3435,
-      "rec max": 575,
-      "rec min": 497
+    "move": {
+      "total number of frames": 13
     }
   },
-  "leader_skill": {
-    "desc": "Boost in damage dealt during Spark",
-    "effects": [
-      {
-        "damage% for spark": 30,
-        "passive id": "31"
-      }
+  "category": 20020,
+  "cost": "5",
+  "damage frames": {
+    "frame times": [
+      8,
+      15,
+      21,
+      27
     ],
-    "id": "1301",
-    "name": "Intense Flash"
+    "hit dmg% distribution": [
+      30,
+      20,
+      30,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 4
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "water",
+  "exp_pattern": 15,
+  "gender": "male",
+  "getting type": "farmable",
+  "guide_id": 29,
+  "imp": {
+    "max atk": "140",
+    "max def": "140",
+    "max hp": "400",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "1019~1138",
+  "movement": {
+    "attack": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    }
+  },
+  "name": "Knight Zephu",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "Knight Zephu",
+  "maxlv": "40",
+  "no": "29",
   "unitDisplayHomePosition_1W9CxaFK": "331,-20,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "14,195,800,549",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "114,361,383,263,0",
@@ -397,5 +392,101 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "1000",
   "sellCaution": false,
-  "effectFrames": "2:122:1,9:122:1,15:122:1,21:122:1"
+  "effectFrames": "2:122:1,9:122:1,15:122:1,21:122:1",
+  "evofrom": "20021",
+  "evointo": "20023",
+  "evozelcost": "100000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "20132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20131",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20130",
+      "count": 2
+    }
+  ],
+  "basexp": "15",
+  "animation_attack": "78",
+  "animation_idle": "52",
+  "animation_move": "13",
+  "movespeed_attack": "0.0041",
+  "movespeed_skill": "0.0041",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "8, 15, 21, 27",
+  "normal_distribute": "30, 20, 30, 20",
+  "normal_totaldistr": "100",
+  "bb_frames": "9, 18, 27, 36, 45",
+  "bb_distribute": "25, 15, 25, 15, 20",
+  "bb_totaldistr": "100",
+  "description": "A dragon rider from the ruined Sama Kingdom. His hopes of becoming the next dragon knight commander were lost when he mistakingly took orders which he thought were from the king. Even under house arrest, his loyalty didn't falter. Instead, he continued to hone his skills. He was known as the Ice Dragon Knight, wielding his spear made from his kingdom's unique ice.",
+  "summon": "What need have you <br>for my insufficient power?<br>Some Summoner you are...",
+  "fusion": "I can feel it flowing inside me.<br>My time to return is near!",
+  "evolution": "The Ice Dragon Knight <br>offers you his spear...<br>Use it wisely.",
+  "hp_base": "2160",
+  "atk_base": "716",
+  "def_base": "378",
+  "rec_base": "179",
+  "hp_lord": "3435",
+  "atk_lord": "1095",
+  "def_lord": "660",
+  "rec_lord": "419",
+  "hp_anima": "3728",
+  "rec_anima": "341",
+  "atk_breaker": "1173",
+  "def_breaker": "582",
+  "atk_guardian": "1017",
+  "def_guardian": "738",
+  "rec_guardian": "341",
+  "def_oracle": "582",
+  "hp_oracle": "3318",
+  "rec_oracle": "536",
+  "hp_bonus": "400",
+  "atk_bonus": "140",
+  "def_bonus": "140",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "4",
+  "normaldc": "8",
+  "ls": "Intense Flash",
+  "lsdescription": "Boost in damage dealt during Spark",
+  "lsnote": "30% boost",
+  "lstype": "Attack",
+  "bbdescription": "5 combo Water elemental power attack on single Enemy & probable Weakness effect",
+  "bbnote": "80% chance",
+  "bbtype": "Offense",
+  "bbhits": "5",
+  "bbaoe": "1",
+  "bbgauge": "15",
+  "bbdc": "5",
+  "bbmultiplier": "280",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "20132",
+  "evomats2": "20131",
+  "evomats3": "20130",
+  "evomats4": "20130",
+  "evomats5": "",
+  "evoitem": ""
 }

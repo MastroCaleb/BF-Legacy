@@ -1,59 +1,63 @@
 {
   "id": "30073",
-  "unitName": "Finkell",
-  "no": "701",
-  "element": "Earth",
-  "rarity": "★★★★",
-  "cost": "9",
-  "maxlv": "60",
-  "basexp": "15",
-  "gender": "N",
-  "ai": "3",
-  "animation_attack": "159",
-  "animation_idle": "76",
-  "animation_move": "76",
-  "movespeed_attack": "4",
-  "movespeed_skill": "4",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "32, 53, 74, 95, 116",
-  "normal_distribute": "18, 18, 18, 18, 28",
-  "normal_totaldistr": "100",
-  "description": "A fairy said to have existed since the beginning of the world. Believed to be the founder of the fairy grove, she has lived for such a long time that apparently even Finkell herself cannot remember who she really is. She is known best for her patience and superb generosity, which she kindly offers to gods and demons likewise. It is said that her healing magic is filled with so much warmth that even the most vile creatures show a calm and gentle side before her.",
-  "summon": "Hello!<br>I will be your healer from now on.<br>Be nice to me, okay?",
-  "fusion": "Hey, thanks a lot!<br>Next time I'll heal you instead!",
-  "evolution": "Huh? This warm power...<br>Did you awaken me?<br>I'll take good care of you!",
-  "hp_base": "1903",
-  "atk_base": "819",
-  "def_base": "571",
-  "rec_base": "945",
-  "hp_lord": "2984",
-  "atk_lord": "1169",
-  "def_lord": "882",
-  "rec_lord": "1241",
-  "hp_anima": "3427",
-  "rec_anima": "1123",
-  "atk_breaker": "1287",
-  "def_breaker": "764",
-  "atk_guardian": "1051",
-  "def_guardian": "1000",
-  "rec_guardian": "1182",
-  "def_oracle": "823",
-  "hp_oracle": "2807",
-  "rec_oracle": "1418",
-  "hp_bonus": "400",
-  "atk_bonus": "160",
-  "def_bonus": "160",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "5",
-  "normaldc": "10",
-  "ls": "Loving Devotion",
-  "lsdescription": "Large boost in effectiveness of Heart Crystals",
-  "lsnote": "50% boost",
-  "lstype": "Recovery",
+  "stats": {
+    "_base": {
+      "atk": 819,
+      "def": 571,
+      "hp": 1903,
+      "rec": 945
+    },
+    "_lord": {
+      "atk": 1169,
+      "def": 882,
+      "hp": 2984,
+      "rec": 1241
+    },
+    "anima": {
+      "atk": 1169,
+      "def": 882,
+      "hp max": 3574,
+      "hp min": 3279,
+      "rec max": 1182,
+      "rec min": 1064
+    },
+    "breaker": {
+      "atk max": 1346,
+      "atk min": 1228,
+      "def max": 823,
+      "def min": 705,
+      "hp": 2984,
+      "rec": 1241
+    },
+    "guardian": {
+      "atk": 1169,
+      "def max": 1059,
+      "def min": 941,
+      "hp": 2984,
+      "rec max": 1241,
+      "rec min": 1123
+    },
+    "oracle": {
+      "atk": 1169,
+      "def max": 882,
+      "def min": 764,
+      "hp": 2984,
+      "rec max": 1477,
+      "rec min": 1359
+    }
+  },
+  "leader_skill": {
+    "desc": "Large boost in effectiveness of Heart Crystals",
+    "effects": [
+      {
+        "hc effectiveness%": 50,
+        "passive id": "10"
+      }
+    ],
+    "id": "1101",
+    "name": "Loving Devotion"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -398,92 +402,97 @@
     ],
     "name": "Loving Rhythm"
   },
-  "bbdescription": "Recovers HP & removes all status ailments for all allies",
-  "bbnote": "Heals (900~1100 + 22.5% of healer Rec) HP",
-  "bbtype": "Heal/Support",
-  "bbhits": "",
-  "bbaoe": "0",
-  "bbgauge": "15",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "30072",
-  "evointo": "",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 819,
-      "def": 571,
-      "hp": 1903,
-      "rec": 945
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1169,
-      "def": 882,
-      "hp": 2984,
-      "rec": 1241
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1169,
-      "def": 882,
-      "hp max": 3574,
-      "hp min": 3279,
-      "rec max": 1182,
-      "rec min": 1064
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 1346,
-      "atk min": 1228,
-      "def max": 823,
-      "def min": 705,
-      "hp": 2984,
-      "rec": 1241
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 159
     },
-    "guardian": {
-      "atk": 1169,
-      "def max": 1059,
-      "def min": 941,
-      "hp": 2984,
-      "rec max": 1241,
-      "rec min": 1123
+    "idle": {
+      "total number of frames": 76
     },
-    "oracle": {
-      "atk": 1169,
-      "def max": 882,
-      "def min": 764,
-      "hp": 2984,
-      "rec max": 1477,
-      "rec min": 1359
+    "move": {
+      "total number of frames": 76
     }
   },
-  "leader_skill": {
-    "desc": "Large boost in effectiveness of Heart Crystals",
-    "effects": [
-      {
-        "hc effectiveness%": 50,
-        "passive id": "10"
-      }
+  "category": 30070,
+  "cost": "9",
+  "damage frames": {
+    "frame times": [
+      32,
+      53,
+      74,
+      95,
+      116
     ],
-    "id": "1101",
-    "name": "Loving Devotion"
+    "hit dmg% distribution": [
+      18,
+      18,
+      18,
+      18,
+      28
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 5
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "earth",
+  "exp_pattern": 15,
+  "gender": "other",
+  "getting type": "farmable",
+  "guide_id": 701,
+  "imp": {
+    "max atk": "160",
+    "max def": "160",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "1088~1215",
+  "movement": {
+    "attack": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    }
+  },
+  "name": "Finkell",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Finkell",
+  "maxlv": "60",
+  "no": "701",
   "unitDisplayHomePosition_1W9CxaFK": "284,210,200,544",
   "unitDisplayDetailPosition_6z54rgb3": "40,-28,900,815",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "87,160,477,432,1",
@@ -493,5 +502,79 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "32:240:1,70:240:1,116:330391:1,118:330401:1"
+  "effectFrames": "32:240:1,70:240:1,116:330391:1,118:330401:1",
+  "evofrom": "30072",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "15",
+  "animation_attack": "159",
+  "animation_idle": "76",
+  "animation_move": "76",
+  "movespeed_attack": "4",
+  "movespeed_skill": "4",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "32, 53, 74, 95, 116",
+  "normal_distribute": "18, 18, 18, 18, 28",
+  "normal_totaldistr": "100",
+  "description": "A fairy said to have existed since the beginning of the world. Believed to be the founder of the fairy grove, she has lived for such a long time that apparently even Finkell herself cannot remember who she really is. She is known best for her patience and superb generosity, which she kindly offers to gods and demons likewise. It is said that her healing magic is filled with so much warmth that even the most vile creatures show a calm and gentle side before her.",
+  "summon": "Hello!<br>I will be your healer from now on.<br>Be nice to me, okay?",
+  "fusion": "Hey, thanks a lot!<br>Next time I'll heal you instead!",
+  "evolution": "Huh? This warm power...<br>Did you awaken me?<br>I'll take good care of you!",
+  "hp_base": "1903",
+  "atk_base": "819",
+  "def_base": "571",
+  "rec_base": "945",
+  "hp_lord": "2984",
+  "atk_lord": "1169",
+  "def_lord": "882",
+  "rec_lord": "1241",
+  "hp_anima": "3427",
+  "rec_anima": "1123",
+  "atk_breaker": "1287",
+  "def_breaker": "764",
+  "atk_guardian": "1051",
+  "def_guardian": "1000",
+  "rec_guardian": "1182",
+  "def_oracle": "823",
+  "hp_oracle": "2807",
+  "rec_oracle": "1418",
+  "hp_bonus": "400",
+  "atk_bonus": "160",
+  "def_bonus": "160",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "5",
+  "normaldc": "10",
+  "ls": "Loving Devotion",
+  "lsdescription": "Large boost in effectiveness of Heart Crystals",
+  "lsnote": "50% boost",
+  "lstype": "Recovery",
+  "bbdescription": "Recovers HP & removes all status ailments for all allies",
+  "bbnote": "Heals (900~1100 + 22.5% of healer Rec) HP",
+  "bbtype": "Heal/Support",
+  "bbhits": "",
+  "bbaoe": "0",
+  "bbgauge": "15",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "",
+  "evomats2": "",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": ""
 }

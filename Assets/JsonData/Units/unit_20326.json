@@ -1,71 +1,88 @@
 {
   "id": "20326",
-  "unitName": "Blizzard Fang Signas",
-  "no": "1036",
-  "element": "Water",
-  "rarity": "★★★★★★★",
-  "cost": "40",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "3",
-  "animation_attack": "126",
-  "animation_idle": "78",
-  "animation_move": "6",
-  "movespeed_attack": "0.0024",
-  "movespeed_skill": "0.0024",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "14, 19, 22, 29, 34, 37, 73, 77, 81, 85, 89",
-  "normal_distribute": "10, 5, 5, 10, 5, 5, 12, 12, 12, 12, 12",
-  "normal_totaldistr": "100",
-  "bb_frames": "14, 19, 22, 29, 34, 37, 73, 76, 79, 82, 85, 88, 91",
-  "bb_distribute": "8, 5, 5, 8, 5, 5, 10, 9, 9, 9, 9, 9, 9",
-  "bb_totaldistr": "100",
-  "sbb_frames": "14, 17, 20, 23, 29, 32, 35, 38, 73, 76, 79, 82, 85, 88, 91, 94",
-  "sbb_distribute": "8, 4, 4, 4, 8, 4, 4, 4, 11, 7, 7, 7, 7, 7, 7, 7",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "14, 17, 20, 23, 29, 32, 35, 38, 41, 44, 73, 76, 79, 82, 85, 88, 91, 94, 97, 100, 103, 106",
-  "ubb_distribute": "8, 4, 3, 2, 8, 4, 3, 3, 2, 2, 11, 5, 4, 5, 4, 5, 4, 5, 4, 5, 4, 5",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "2",
-  "sbb_effectdelay": "3",
-  "ubb_effectdelay": "2",
-  "description": "After losing an eye to the blade of a former comrade, Signas was rescued from certain death by Grybe, who struggled to keep Farlon at bay. Badly injured, Signas tried to make her way towards Sodis only to witness a horrible scene. It was then when Signas erased her name from the history books and began training a secret resistance against the gods. No one knows what became of her afterwards, but some legends claim that she volunteered to take care of the children who had fled from the wrath of the gods, earning her a reputation as the \"One-Eyed Swordswoman.\"",
-  "summon": "Working together is difficult,<br>but it brings out our true powers.<br>If we could all just join forces...",
-  "fusion": "Even if you make me stronger,<br>I still won't be able to save anyone.<br>You're better off helping others.",
-  "evolution": "Losing a battle is not the same<br>as giving up on everything.<br>I'll fight once more, for you.",
-  "hp_base": "5466",
-  "atk_base": "1981",
-  "def_base": "1380",
-  "rec_base": "1289",
-  "hp_lord": "6621",
-  "atk_lord": "2504",
-  "def_lord": "2178",
-  "rec_lord": "2055",
-  "hp_anima": "7513",
-  "rec_anima": "1817",
-  "atk_breaker": "2742",
-  "def_breaker": "1940",
-  "atk_guardian": "2266",
-  "def_guardian": "2416",
-  "rec_guardian": "1936",
-  "def_oracle": "2059",
-  "hp_oracle": "6264",
-  "rec_oracle": "2412",
-  "hp_bonus": "1000",
-  "atk_bonus": "340",
-  "def_bonus": "340",
-  "rec_bonus": "620",
-  "lordonly": "",
-  "combo_hits": "11",
-  "normaldc": "33",
-  "ls": "Strong Conviction",
-  "lsdescription": "15% reduction in damage from Fire types, hugely boosts damage against Water, Fire types & boosts critical damage",
-  "lsnote": "150% elemental damage & 100% crit damage",
-  "lstype": "Attack/Defense",
+  "stats": {
+    "_base": {
+      "atk": 1981,
+      "def": 1380,
+      "hp": 5466,
+      "rec": 1289
+    },
+    "_lord": {
+      "atk": 2504,
+      "def": 2178,
+      "hp": 6621,
+      "rec": 2055
+    },
+    "anima": {
+      "atk": 2504,
+      "def": 2178,
+      "hp max": 7811,
+      "hp min": 7216,
+      "rec max": 1936,
+      "rec min": 1698
+    },
+    "breaker": {
+      "atk max": 2861,
+      "atk min": 2623,
+      "def max": 2059,
+      "def min": 1821,
+      "hp": 6621,
+      "rec": 2055
+    },
+    "guardian": {
+      "atk": 2504,
+      "def max": 2535,
+      "def min": 2297,
+      "hp": 6621,
+      "rec max": 2055,
+      "rec min": 1817
+    },
+    "oracle": {
+      "atk": 2504,
+      "def max": 2178,
+      "def min": 1940,
+      "hp": 6621,
+      "rec max": 2531,
+      "rec min": 2293
+    }
+  },
+  "leader_skill": {
+    "desc": "15% damage reduction from Fire types, hugely boosts damage against Water, Fire types & boosts critical damage",
+    "effects": [
+      {
+        "fire resist%": 15,
+        "passive id": "5"
+      },
+      {
+        "elemental weakness multiplier%": 150.0,
+        "passive id": "50",
+        "water units do extra elemental weakness dmg": true
+      },
+      {
+        "crit multiplier%": 100.0,
+        "passive id": "34"
+      }
+    ],
+    "id": "550",
+    "name": "Strong Conviction"
+  },
+  "extra_skill": {
+    "desc": "Critical damage boosts BB gauge",
+    "effects": [
+      {
+        "bc fill on crit max": 4,
+        "bc fill on crit min": 4,
+        "bc fill on crit%": 100.0,
+        "conditions": [],
+        "passive id": "65",
+        "passive target": "self"
+      }
+    ],
+    "id": "5700",
+    "name": "Wolf's Fang",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -436,14 +453,6 @@
     ],
     "name": "Morte Verto"
   },
-  "bbdescription": "13 combo Water attack on all foes, probable Poison, Injury effects & boosts critical hit rate for 3 turns",
-  "bbnote": "45% chance & 40% boost",
-  "bbtype": "Support/Offense",
-  "bbhits": "13",
-  "bbaoe": "A",
-  "bbgauge": "25",
-  "bbdc": "13",
-  "bbmultiplier": "270",
   "sbb": {
     "damage frames": [
       {
@@ -922,14 +931,6 @@
     ],
     "name": "Congelatio"
   },
-  "sbbdescription": "16 combo Water attack on all foes & boosts Water elemental damage, boosts critical hit rate and critical damage for 3 turns",
-  "sbbnote": "60% elemental damage, 40% critical rate & 50% critical damage",
-  "sbbtype": "Support/Offense",
-  "sbbhits": "16",
-  "sbbaoe": "A",
-  "sbbgauge": "20",
-  "sbbdc": "16",
-  "sbbmultiplier": "520",
   "ubb": {
     "damage frames": [
       {
@@ -1047,6 +1048,232 @@
     ],
     "name": "Gallant Survivor"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 126
+    },
+    "idle": {
+      "total number of frames": 78
+    },
+    "move": {
+      "total number of frames": 6
+    }
+  },
+  "category": 20320,
+  "cost": "40",
+  "damage frames": {
+    "frame times": [
+      14,
+      19,
+      22,
+      29,
+      34,
+      37,
+      73,
+      77,
+      81,
+      85,
+      89
+    ],
+    "hit dmg% distribution": [
+      10,
+      5,
+      5,
+      10,
+      5,
+      5,
+      12,
+      12,
+      12,
+      12,
+      12
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 11
+  },
+  "drop check count": 3,
+  "element": "water",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 1036,
+  "imp": {
+    "max atk": "340",
+    "max def": "340",
+    "max hp": "1000",
+    "max rec": "620"
+  },
+  "kind": "normal",
+  "lord damage range": "2331~2604",
+  "movement": {
+    "attack": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    }
+  },
+  "name": "Blizzard Fang Signas",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Blizzard Fang Signas",
+  "maxlv": "120",
+  "no": "1036",
+  "unitDisplayHomePosition_1W9CxaFK": "444,444,165,450",
+  "unitDisplayDetailPosition_6z54rgb3": "-101,-176,1178,998",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "49,143,589,499,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-68,-469,1178,998",
+  "unitDisplaySummonPosition_KC3Jk8Br": "49,143,589,499,0",
+  "unitDisplayHpPosition_3BpHN6VD": "-2,59",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "15000",
+  "sellCaution": false,
+  "effectFrames": "8:122:1,13:122:1,16:122:1,23:122:1,28:122:1,31:122:1,67:120:1,71:120:1,75:120:1,79:120:1,83:120:1,0:200230:1,0:200265:1,13:200422:1,15:200371:1,74:200314:1,84:200314:1,95:200030:1,90:200141:1",
+  "evofrom": "20325",
+  "evointo": "20327",
+  "evozelcost": "3000000",
+  "evokarmacost": "1000000",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "20344",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20191",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    },
+    {
+      "type": "2",
+      "id": "110100",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "126",
+  "animation_idle": "78",
+  "animation_move": "6",
+  "movespeed_attack": "0.0024",
+  "movespeed_skill": "0.0024",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "14, 19, 22, 29, 34, 37, 73, 77, 81, 85, 89",
+  "normal_distribute": "10, 5, 5, 10, 5, 5, 12, 12, 12, 12, 12",
+  "normal_totaldistr": "100",
+  "bb_frames": "14, 19, 22, 29, 34, 37, 73, 76, 79, 82, 85, 88, 91",
+  "bb_distribute": "8, 5, 5, 8, 5, 5, 10, 9, 9, 9, 9, 9, 9",
+  "bb_totaldistr": "100",
+  "sbb_frames": "14, 17, 20, 23, 29, 32, 35, 38, 73, 76, 79, 82, 85, 88, 91, 94",
+  "sbb_distribute": "8, 4, 4, 4, 8, 4, 4, 4, 11, 7, 7, 7, 7, 7, 7, 7",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "14, 17, 20, 23, 29, 32, 35, 38, 41, 44, 73, 76, 79, 82, 85, 88, 91, 94, 97, 100, 103, 106",
+  "ubb_distribute": "8, 4, 3, 2, 8, 4, 3, 3, 2, 2, 11, 5, 4, 5, 4, 5, 4, 5, 4, 5, 4, 5",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "2",
+  "sbb_effectdelay": "3",
+  "ubb_effectdelay": "2",
+  "description": "After losing an eye to the blade of a former comrade, Signas was rescued from certain death by Grybe, who struggled to keep Farlon at bay. Badly injured, Signas tried to make her way towards Sodis only to witness a horrible scene. It was then when Signas erased her name from the history books and began training a secret resistance against the gods. No one knows what became of her afterwards, but some legends claim that she volunteered to take care of the children who had fled from the wrath of the gods, earning her a reputation as the \"One-Eyed Swordswoman.\"",
+  "summon": "Working together is difficult,<br>but it brings out our true powers.<br>If we could all just join forces...",
+  "fusion": "Even if you make me stronger,<br>I still won't be able to save anyone.<br>You're better off helping others.",
+  "evolution": "Losing a battle is not the same<br>as giving up on everything.<br>I'll fight once more, for you.",
+  "hp_base": "5466",
+  "atk_base": "1981",
+  "def_base": "1380",
+  "rec_base": "1289",
+  "hp_lord": "6621",
+  "atk_lord": "2504",
+  "def_lord": "2178",
+  "rec_lord": "2055",
+  "hp_anima": "7513",
+  "rec_anima": "1817",
+  "atk_breaker": "2742",
+  "def_breaker": "1940",
+  "atk_guardian": "2266",
+  "def_guardian": "2416",
+  "rec_guardian": "1936",
+  "def_oracle": "2059",
+  "hp_oracle": "6264",
+  "rec_oracle": "2412",
+  "hp_bonus": "1000",
+  "atk_bonus": "340",
+  "def_bonus": "340",
+  "rec_bonus": "620",
+  "lordonly": "",
+  "combo_hits": "11",
+  "normaldc": "33",
+  "ls": "Strong Conviction",
+  "lsdescription": "15% reduction in damage from Fire types, hugely boosts damage against Water, Fire types & boosts critical damage",
+  "lsnote": "150% elemental damage & 100% crit damage",
+  "lstype": "Attack/Defense",
+  "bbdescription": "13 combo Water attack on all foes, probable Poison, Injury effects & boosts critical hit rate for 3 turns",
+  "bbnote": "45% chance & 40% boost",
+  "bbtype": "Support/Offense",
+  "bbhits": "13",
+  "bbaoe": "A",
+  "bbgauge": "25",
+  "bbdc": "13",
+  "bbmultiplier": "270",
+  "sbbdescription": "16 combo Water attack on all foes & boosts Water elemental damage, boosts critical hit rate and critical damage for 3 turns",
+  "sbbnote": "60% elemental damage, 40% critical rate & 50% critical damage",
+  "sbbtype": "Support/Offense",
+  "sbbhits": "16",
+  "sbbaoe": "A",
+  "sbbgauge": "20",
+  "sbbdc": "16",
+  "sbbmultiplier": "520",
   "ubbdescription": "22 combo massive Water attack on all foes, hugely boosts critical damage & massively reduces Fire element damage for 2 turns",
   "ubbnote": "300% boost & reduces all Fire damage taken to 1",
   "ubbtype": "Support/Offense",
@@ -1059,8 +1286,6 @@
   "esitem": "",
   "esdescription": "Critical damage boosts BB gauge",
   "esnote": "Fills 4 BC",
-  "evofrom": "20325",
-  "evointo": "20327",
   "evomats1": "Water Mecha God",
   "evomats2": "Water Mecha God",
   "evomats3": "Miracle Totem",
@@ -1068,99 +1293,5 @@
   "evomats5": "Water Pot",
   "evomats6": "Water Pot",
   "evomats7": "Metal Mimic",
-  "evoitem": "Legend Stone",
-  "evozelcost": "3000000",
-  "stats": {
-    "_base": {
-      "atk": 1981,
-      "def": 1380,
-      "hp": 5466,
-      "rec": 1289
-    },
-    "_lord": {
-      "atk": 2504,
-      "def": 2178,
-      "hp": 6621,
-      "rec": 2055
-    },
-    "anima": {
-      "atk": 2504,
-      "def": 2178,
-      "hp max": 7811,
-      "hp min": 7216,
-      "rec max": 1936,
-      "rec min": 1698
-    },
-    "breaker": {
-      "atk max": 2861,
-      "atk min": 2623,
-      "def max": 2059,
-      "def min": 1821,
-      "hp": 6621,
-      "rec": 2055
-    },
-    "guardian": {
-      "atk": 2504,
-      "def max": 2535,
-      "def min": 2297,
-      "hp": 6621,
-      "rec max": 2055,
-      "rec min": 1817
-    },
-    "oracle": {
-      "atk": 2504,
-      "def max": 2178,
-      "def min": 1940,
-      "hp": 6621,
-      "rec max": 2531,
-      "rec min": 2293
-    }
-  },
-  "leader_skill": {
-    "desc": "15% damage reduction from Fire types, hugely boosts damage against Water, Fire types & boosts critical damage",
-    "effects": [
-      {
-        "fire resist%": 15,
-        "passive id": "5"
-      },
-      {
-        "elemental weakness multiplier%": 150.0,
-        "passive id": "50",
-        "water units do extra elemental weakness dmg": true
-      },
-      {
-        "crit multiplier%": 100.0,
-        "passive id": "34"
-      }
-    ],
-    "id": "550",
-    "name": "Strong Conviction"
-  },
-  "extra_skill": {
-    "desc": "Critical damage boosts BB gauge",
-    "effects": [
-      {
-        "bc fill on crit max": 4,
-        "bc fill on crit min": 4,
-        "bc fill on crit%": 100.0,
-        "conditions": [],
-        "passive id": "65",
-        "passive target": "self"
-      }
-    ],
-    "id": "5700",
-    "name": "Wolf's Fang",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "444,444,165,450",
-  "unitDisplayDetailPosition_6z54rgb3": "-101,-176,1178,998",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "49,143,589,499,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-68,-469,1178,998",
-  "unitDisplaySummonPosition_KC3Jk8Br": "49,143,589,499,0",
-  "unitDisplayHpPosition_3BpHN6VD": "-2,59",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "15000",
-  "sellCaution": false,
-  "effectFrames": "8:122:1,13:122:1,16:122:1,23:122:1,28:122:1,31:122:1,67:120:1,71:120:1,75:120:1,79:120:1,83:120:1,0:200230:1,0:200265:1,13:200422:1,15:200371:1,74:200314:1,84:200314:1,95:200030:1,90:200141:1"
+  "evoitem": "Legend Stone"
 }

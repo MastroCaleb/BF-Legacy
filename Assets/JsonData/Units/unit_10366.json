@@ -1,69 +1,111 @@
 {
   "id": "10366",
-  "unitName": "Siva Afi Ramna",
-  "no": "1196",
-  "element": "Fire",
-  "rarity": "★★★★★★★",
-  "cost": "40",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "121",
-  "animation_idle": "68",
-  "animation_move": "4",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "10, 14, 18, 32, 36, 40, 54, 57, 60, 63",
-  "normal_distribute": "10, 9, 8, 10, 9, 8, 16, 10, 10, 10",
-  "normal_totaldistr": "100",
-  "bb_frames": "10, 14, 18, 32, 36, 40, 54, 57, 60, 63, 66, 69, 72",
-  "bb_distribute": "8, 7, 5, 8, 7, 5, 12, 8, 8, 8, 8, 8, 8",
-  "bb_totaldistr": "100",
-  "sbb_frames": "10, 14, 18, 22, 32, 36, 40, 44, 54, 57, 60, 63, 66, 69, 72, 75, 78",
-  "sbb_distribute": "8, 5, 4, 4, 8, 5, 4, 4, 10, 6, 6, 6, 6, 6, 6, 6, 6",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "10, 14, 18, 22, 26, 32, 36, 40, 44, 48, 54, 57, 60, 63, 66, 69, 72, 75, 78, 81, 84, 87",
-  "ubb_distribute": "7, 5, 4, 3, 3, 7, 5, 4, 3, 3, 12, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "2",
-  "ubb_effectdelay": "1",
-  "description": "Her final wish was for the happiness of the one she loved. However, she also understood the tragedy about to unfold. Even so, all she could do was hope. In the end the strength of her love brought about a miracle. The flames that rose from her body devoured everything remaining on the battlefield. Records left by individuals later tell the following of the battle's end: \"Those gentle flames purified the souls of all they touched.\"",
-  "summon": "He's a strong, kind person. Yet frail and sensitive as well. That's why I love him!",
-  "fusion": "I was wrong... Strength is limitless, isn't it? The way you demonstrate it is admirable!",
-  "evolution": "I will accept all of your joy, sadness, regret, rage, and pride. Because you are so dear to me.",
-  "hp_base": "5086",
-  "atk_base": "1850",
-  "def_base": "1382",
-  "rec_base": "1885",
-  "hp_lord": "6454",
-  "atk_lord": "2507",
-  "def_lord": "2032",
-  "rec_lord": "2396",
-  "hp_anima": "7346",
-  "rec_anima": "2158",
-  "atk_breaker": "2745",
-  "def_breaker": "1794",
-  "def_guardian": "2270",
-  "rec_guardian": "2277",
-  "def_oracle": "1913",
-  "rec_oracle": "2753",
-  "hp_bonus": "1000",
-  "atk_bonus": "300",
-  "def_bonus": "600",
-  "rec_bonus": "400",
-  "lordonly": "",
-  "combo_hits": "10",
-  "normaldc": "40",
-  "ls": "Ardent Conviction",
-  "lsdescription": "15% damage reduction from Earth types, hugely boosts Fire elemental damage & nullifies all status ailments",
-  "lsnote": "150% boost",
-  "lstype": "Attack/Defense",
+  "stats": {
+    "_base": {
+      "atk": 1850,
+      "def": 1382,
+      "hp": 5086,
+      "rec": 1885
+    },
+    "_lord": {
+      "atk": 2507,
+      "def": 2032,
+      "hp": 6454,
+      "rec": 2396
+    },
+    "anima": {
+      "atk": 2507,
+      "def": 2032,
+      "hp max": 7644,
+      "hp min": 7049,
+      "rec max": 2277,
+      "rec min": 2039
+    },
+    "breaker": {
+      "atk max": 2864,
+      "atk min": 2626,
+      "def max": 1913,
+      "def min": 1675,
+      "hp": 6454,
+      "rec": 2396
+    },
+    "guardian": {
+      "atk": 2507,
+      "def max": 2389,
+      "def min": 2151,
+      "hp": 6454,
+      "rec max": 2396,
+      "rec min": 2158
+    },
+    "oracle": {
+      "atk": 2507,
+      "def max": 2032,
+      "def min": 1794,
+      "hp": 6454,
+      "rec max": 2872,
+      "rec min": 2634
+    }
+  },
+  "leader_skill": {
+    "desc": "15% damage reduction from Earth types, hugely boosts Fire elemental damage against Earth types & negates all status ailments",
+    "effects": [
+      {
+        "earth resist%": 15,
+        "passive id": "5"
+      },
+      {
+        "elemental weakness multiplier%": 150.0,
+        "fire units do extra elemental weakness dmg": true,
+        "passive id": "50"
+      },
+      {
+        "curse resist%": 100,
+        "injury resist%": 100,
+        "paralysis resist%": 100,
+        "passive id": "4",
+        "poison resist%": 100,
+        "sick resist%": 100,
+        "weaken resist%": 100
+      }
+    ],
+    "id": "553",
+    "name": "Ardent Conviction"
+  },
+  "extra_skill": {
+    "desc": "Adds status ailment removal effect to BB/SBB",
+    "effects": [
+      {
+        "conditions": [],
+        "passive id": "66",
+        "passive target": "self",
+        "trigger on bb": true,
+        "trigger on sbb": true,
+        "triggered effect": [
+          {
+            "ailments cured": [
+              "poison",
+              "weaken",
+              "sick",
+              "injury",
+              "curse",
+              "paralysis",
+              "atk down",
+              "def down",
+              "rec down"
+            ],
+            "effect delay time(ms)/frame": "0.0/0",
+            "proc id": "38",
+            "target area": "aoe",
+            "target type": "party"
+          }
+        ]
+      }
+    ],
+    "id": "10400",
+    "name": "Purifying Flame",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -454,14 +496,6 @@
     ],
     "name": "Climbing Gladius"
   },
-  "bbdescription": "13 combo powerful Fire attack on all foes, greatly restores HP & greatly boosts Def, Rec for 3 turns",
-  "bbnote": "Heals (1400 - 1600 + 22.5% of own Rec) HP & 120% boost",
-  "bbtype": "Heal/Support/Offense",
-  "bbhits": "13",
-  "bbaoe": "A",
-  "bbgauge": "24",
-  "bbdc": "13",
-  "bbmultiplier": "270",
   "sbb": {
     "damage frames": [
       {
@@ -962,14 +996,6 @@
     ],
     "name": "Violet Pyre"
   },
-  "sbbdescription": "17 combo powerful Fire attack on all foes, greatly restores HP & boosts Def, Rec and boosts Fire types' Atk for 3 turns",
-  "sbbnote": "Heals (2100 - 2400 + 22.5% of own Rec) HP, 130% Def/Rec & 120% elemental damage",
-  "sbbtype": "Heal/Support/Offense",
-  "sbbhits": "17",
-  "sbbaoe": "A",
-  "sbbgauge": "22",
-  "sbbdc": "17",
-  "sbbmultiplier": "520",
   "ubb": {
     "damage frames": [
       {
@@ -1088,6 +1114,191 @@
     ],
     "name": "Dragon Dance: Telpshicor"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 121
+    },
+    "idle": {
+      "total number of frames": 68
+    },
+    "move": {
+      "total number of frames": 4
+    }
+  },
+  "category": 10360,
+  "cost": "40",
+  "damage frames": {
+    "frame times": [
+      10,
+      14,
+      18,
+      32,
+      36,
+      40,
+      54,
+      57,
+      60,
+      63
+    ],
+    "hit dmg% distribution": [
+      10,
+      9,
+      8,
+      10,
+      9,
+      8,
+      16,
+      10,
+      10,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 10
+  },
+  "drop check count": 4,
+  "element": "fire",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 1196,
+  "imp": {
+    "max atk": "300",
+    "max def": "600",
+    "max hp": "1000",
+    "max rec": "400"
+  },
+  "kind": "normal",
+  "lord damage range": "2334~2607",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Siva Afi Ramna",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Siva Afi Ramna",
+  "maxlv": "120",
+  "no": "1196",
+  "unitDisplayHomePosition_1W9CxaFK": "607,258,174,475",
+  "unitDisplayDetailPosition_6z54rgb3": "-276,-58,1236,1126",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "-8,144,618,563,1",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-246,-332,1236,1126",
+  "unitDisplaySummonPosition_KC3Jk8Br": "-8,144,618,563,1",
+  "unitDisplayHpPosition_3BpHN6VD": "-3,44",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "15000",
+  "sellCaution": false,
+  "effectFrames": "4:121:1,8:121:1,12:121:1,26:121:1,30:121:1,34:121:1,48:121:1,51:121:1,54:121:1,57:121:1,9:100111:1,31:600763:1,53:600321:1,55:150:1,61:140:1,65:140:1,50:100130:1",
+  "evofrom": "10365",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "21",
+  "animation_attack": "121",
+  "animation_idle": "68",
+  "animation_move": "4",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "10, 14, 18, 32, 36, 40, 54, 57, 60, 63",
+  "normal_distribute": "10, 9, 8, 10, 9, 8, 16, 10, 10, 10",
+  "normal_totaldistr": "100",
+  "bb_frames": "10, 14, 18, 32, 36, 40, 54, 57, 60, 63, 66, 69, 72",
+  "bb_distribute": "8, 7, 5, 8, 7, 5, 12, 8, 8, 8, 8, 8, 8",
+  "bb_totaldistr": "100",
+  "sbb_frames": "10, 14, 18, 22, 32, 36, 40, 44, 54, 57, 60, 63, 66, 69, 72, 75, 78",
+  "sbb_distribute": "8, 5, 4, 4, 8, 5, 4, 4, 10, 6, 6, 6, 6, 6, 6, 6, 6",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "10, 14, 18, 22, 26, 32, 36, 40, 44, 48, 54, 57, 60, 63, 66, 69, 72, 75, 78, 81, 84, 87",
+  "ubb_distribute": "7, 5, 4, 3, 3, 7, 5, 4, 3, 3, 12, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "2",
+  "ubb_effectdelay": "1",
+  "description": "Her final wish was for the happiness of the one she loved. However, she also understood the tragedy about to unfold. Even so, all she could do was hope. In the end the strength of her love brought about a miracle. The flames that rose from her body devoured everything remaining on the battlefield. Records left by individuals later tell the following of the battle's end: \"Those gentle flames purified the souls of all they touched.\"",
+  "summon": "He's a strong, kind person. Yet frail and sensitive as well. That's why I love him!",
+  "fusion": "I was wrong... Strength is limitless, isn't it? The way you demonstrate it is admirable!",
+  "evolution": "I will accept all of your joy, sadness, regret, rage, and pride. Because you are so dear to me.",
+  "hp_base": "5086",
+  "atk_base": "1850",
+  "def_base": "1382",
+  "rec_base": "1885",
+  "hp_lord": "6454",
+  "atk_lord": "2507",
+  "def_lord": "2032",
+  "rec_lord": "2396",
+  "hp_anima": "7346",
+  "rec_anima": "2158",
+  "atk_breaker": "2745",
+  "def_breaker": "1794",
+  "def_guardian": "2270",
+  "rec_guardian": "2277",
+  "def_oracle": "1913",
+  "rec_oracle": "2753",
+  "hp_bonus": "1000",
+  "atk_bonus": "300",
+  "def_bonus": "600",
+  "rec_bonus": "400",
+  "lordonly": "",
+  "combo_hits": "10",
+  "normaldc": "40",
+  "ls": "Ardent Conviction",
+  "lsdescription": "15% damage reduction from Earth types, hugely boosts Fire elemental damage & nullifies all status ailments",
+  "lsnote": "150% boost",
+  "lstype": "Attack/Defense",
+  "bbdescription": "13 combo powerful Fire attack on all foes, greatly restores HP & greatly boosts Def, Rec for 3 turns",
+  "bbnote": "Heals (1400 - 1600 + 22.5% of own Rec) HP & 120% boost",
+  "bbtype": "Heal/Support/Offense",
+  "bbhits": "13",
+  "bbaoe": "A",
+  "bbgauge": "24",
+  "bbdc": "13",
+  "bbmultiplier": "270",
+  "sbbdescription": "17 combo powerful Fire attack on all foes, greatly restores HP & boosts Def, Rec and boosts Fire types' Atk for 3 turns",
+  "sbbnote": "Heals (2100 - 2400 + 22.5% of own Rec) HP, 130% Def/Rec & 120% elemental damage",
+  "sbbtype": "Heal/Support/Offense",
+  "sbbhits": "17",
+  "sbbaoe": "A",
+  "sbbgauge": "22",
+  "sbbdc": "17",
+  "sbbmultiplier": "520",
   "ubbdescription": "22 combo massive Fire attack on all foes & boosts Fire elemental damage and 50% damage reduction for 3 turns",
   "ubbnote": "300% boost",
   "ubbtype": "Support/Offense",
@@ -1099,129 +1310,10 @@
   "es": "Purifying Flame",
   "esitem": "",
   "esdescription": "Adds status ailment removal effect to BB/SBB",
-  "evofrom": "10365",
-  "evointo": "",
   "evomats1": "",
   "evomats2": "",
   "evomats3": "",
   "evomats4": "",
   "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 1850,
-      "def": 1382,
-      "hp": 5086,
-      "rec": 1885
-    },
-    "_lord": {
-      "atk": 2507,
-      "def": 2032,
-      "hp": 6454,
-      "rec": 2396
-    },
-    "anima": {
-      "atk": 2507,
-      "def": 2032,
-      "hp max": 7644,
-      "hp min": 7049,
-      "rec max": 2277,
-      "rec min": 2039
-    },
-    "breaker": {
-      "atk max": 2864,
-      "atk min": 2626,
-      "def max": 1913,
-      "def min": 1675,
-      "hp": 6454,
-      "rec": 2396
-    },
-    "guardian": {
-      "atk": 2507,
-      "def max": 2389,
-      "def min": 2151,
-      "hp": 6454,
-      "rec max": 2396,
-      "rec min": 2158
-    },
-    "oracle": {
-      "atk": 2507,
-      "def max": 2032,
-      "def min": 1794,
-      "hp": 6454,
-      "rec max": 2872,
-      "rec min": 2634
-    }
-  },
-  "leader_skill": {
-    "desc": "15% damage reduction from Earth types, hugely boosts Fire elemental damage against Earth types & negates all status ailments",
-    "effects": [
-      {
-        "earth resist%": 15,
-        "passive id": "5"
-      },
-      {
-        "elemental weakness multiplier%": 150.0,
-        "fire units do extra elemental weakness dmg": true,
-        "passive id": "50"
-      },
-      {
-        "curse resist%": 100,
-        "injury resist%": 100,
-        "paralysis resist%": 100,
-        "passive id": "4",
-        "poison resist%": 100,
-        "sick resist%": 100,
-        "weaken resist%": 100
-      }
-    ],
-    "id": "553",
-    "name": "Ardent Conviction"
-  },
-  "extra_skill": {
-    "desc": "Adds status ailment removal effect to BB/SBB",
-    "effects": [
-      {
-        "conditions": [],
-        "passive id": "66",
-        "passive target": "self",
-        "trigger on bb": true,
-        "trigger on sbb": true,
-        "triggered effect": [
-          {
-            "ailments cured": [
-              "poison",
-              "weaken",
-              "sick",
-              "injury",
-              "curse",
-              "paralysis",
-              "atk down",
-              "def down",
-              "rec down"
-            ],
-            "effect delay time(ms)/frame": "0.0/0",
-            "proc id": "38",
-            "target area": "aoe",
-            "target type": "party"
-          }
-        ]
-      }
-    ],
-    "id": "10400",
-    "name": "Purifying Flame",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "607,258,174,475",
-  "unitDisplayDetailPosition_6z54rgb3": "-276,-58,1236,1126",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "-8,144,618,563,1",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-246,-332,1236,1126",
-  "unitDisplaySummonPosition_KC3Jk8Br": "-8,144,618,563,1",
-  "unitDisplayHpPosition_3BpHN6VD": "-3,44",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "15000",
-  "sellCaution": false,
-  "effectFrames": "4:121:1,8:121:1,12:121:1,26:121:1,30:121:1,34:121:1,48:121:1,51:121:1,54:121:1,57:121:1,9:100111:1,31:600763:1,53:600321:1,55:150:1,61:140:1,65:140:1,50:100130:1"
+  "evoitem": ""
 }

@@ -1,64 +1,114 @@
 {
   "id": "50737",
-  "unitName": "Sublime Divinity Rinon",
-  "no": "1721",
-  "element": "Light",
-  "rarity": "Omni",
-  "cost": "47",
-  "maxlv": "150",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "6",
-  "animation_attack": "182",
-  "animation_idle": "56",
-  "animation_move": "6",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "36, 71, 124, 132, 140, 148, 156, 164, 172, 180, 188",
-  "normal_distribute": "5, 5, 10, 10, 10, 10, 10, 10, 10, 10, 10",
-  "normal_totaldistr": "100",
-  "sbb_frames": "36, 40, 44, 71, 75, 79, 124, 128, 132, 136, 140, 144, 148, 152, 156, 160, 164, 168, 172, 176",
-  "sbb_distribute": "6, 3, 3, 6, 3, 3, 15, 6, 5, 6, 5, 6, 5, 6, 5, 4, 3, 4, 3, 3",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "36, 40, 44, 48, 71, 75, 79, 83, 124, 128, 132, 136, 140, 144, 148, 152, 156, 160, 164, 168, 172, 176, 180, 184",
-  "ubb_distribute": "6, 3, 2, 3, 6, 3, 2, 3, 12, 5, 4, 3, 4, 5, 4, 3, 4, 5, 4, 3, 4, 5, 4, 3",
-  "ubb_totaldistr": "100",
-  "sbb_effectdelay": "1",
-  "ubb_effectdelay": "1",
-  "description": "Though it did not result in an appointment to the role of Oracle Maiden, scholars have concluded that Rinon trained extensively in her homeland of Sacred Mt. Bari. In fact, she lived a life fit for a high-ranking cleric. Had she become Oracle Maiden, the same impressive abilities that made her a candidate might have also made her an ideal intermediary between humanity and the gods. Had she chosen not to participate in the war with the Holy Emperor, she certainly would have been a force for human salvation in the great Grand Gaian war that followed.",
-  "summon": "I was such a child then...<br>But just saying that makes me feel old.",
-  "fusion": "Thank you.<br>I'm sure you're struggling too. Let's both give it our best!",
-  "evolution": "Maybe I was unprepared.<br>But I understand now. I understand my purpose.",
-  "hp_base": "5480",
-  "atk_base": "2213",
-  "def_base": "2434",
-  "rec_base": "2712",
-  "hp_lord": "7163",
-  "atk_lord": "2741",
-  "def_lord": "3042",
-  "rec_lord": "3374",
-  "hp_anima": "8280",
-  "rec_anima": "3076",
-  "atk_breaker": "3039",
-  "def_breaker": "2744",
-  "def_guardian": "3340",
-  "rec_guardian": "3225",
-  "def_oracle": "2893",
-  "rec_oracle": "3821",
-  "hp_bonus": "1250",
-  "atk_bonus": "400",
-  "def_bonus": "800",
-  "rec_bonus": "500",
-  "lordonly": "",
-  "combo_hits": "11",
-  "normaldc": "44",
-  "ls": "Divine Guidance",
-  "lsdescription": "40% boost to Def, Rec, max HP, negates all status ailments, considerably restores HP each turn & damage taken may restore HP",
-  "lsnote": "Heals 1000-1200 + 10% Rec & 25% chance to heal 25% damage",
+  "stats": {
+    "_base": {
+      "atk": 2213,
+      "def": 2434,
+      "hp": 5480,
+      "rec": 2712
+    },
+    "_lord": {
+      "atk": 2741,
+      "def": 3042,
+      "hp": 7163,
+      "rec": 3374
+    },
+    "anima": {
+      "atk": 2741,
+      "def": 3042,
+      "hp max": 8653,
+      "hp min": 7908,
+      "rec max": 3225,
+      "rec min": 2927
+    },
+    "breaker": {
+      "atk max": 3188,
+      "atk min": 2890,
+      "def max": 2893,
+      "def min": 2595,
+      "hp": 7163,
+      "rec": 3374
+    },
+    "guardian": {
+      "atk": 2741,
+      "def max": 3489,
+      "def min": 3191,
+      "hp": 7163,
+      "rec max": 3374,
+      "rec min": 3076
+    },
+    "oracle": {
+      "atk": 2741,
+      "def max": 3042,
+      "def min": 2744,
+      "hp": 7163,
+      "rec max": 3970,
+      "rec min": 3672
+    }
+  },
+  "leader_skill": {
+    "desc": "40% boost to Def, Rec, max HP, negates all status ailments, considerably restores HP each turn & damage taken may restore HP",
+    "effects": [
+      {
+        "def% buff": 40,
+        "hp% buff": 40,
+        "passive id": "1",
+        "rec% buff": 40
+      },
+      {
+        "curse resist%": 100,
+        "injury resist%": 100,
+        "paralysis resist%": 100,
+        "passive id": "4",
+        "poison resist%": 100,
+        "sick resist%": 100,
+        "weaken resist%": 100
+      },
+      {
+        "passive id": "33",
+        "rec% added (turn heal)": 10.0,
+        "turn heal high": 1200,
+        "turn heal low": 1000
+      },
+      {
+        "dmg% to hp% when attacked chance%": 25,
+        "dmg% to hp% when attacked high": 25,
+        "dmg% to hp% when attacked low": 25,
+        "passive id": "24"
+      }
+    ],
+    "id": "12535",
+    "name": "Divine Guidance"
+  },
+  "extra_skill": {
+    "desc": "Considerably boosts BB gauge each turn, negates all status ailments & negates Atk, Def, Rec reduction effects",
+    "effects": [
+      {
+        "bc fill per turn": 4,
+        "conditions": [],
+        "passive id": "9",
+        "passive target": "self"
+      },
+      {
+        "atk down resist%": 100,
+        "conditions": [],
+        "curse resist%": 100,
+        "def down resist%": 100,
+        "injury resist%": 100,
+        "paralysis resist%": 100,
+        "passive id": "73",
+        "passive target": "self",
+        "poison resist%": 100,
+        "rec down resist%": 100,
+        "sick resist%": 100,
+        "weaken resist%": 100
+      }
+    ],
+    "id": "43900",
+    "name": "Benevolent Eyes",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -749,14 +799,6 @@
     ],
     "name": "Orison Veil"
   },
-  "bbdescription": "Greatly restores HP, removes all status ailments, negates all status ailments for 3 turns, negates critical and elemental damage for 2 turns & slight additional damage reduction for 2 turns",
-  "bbnote": "Heals 3500-4000 + 40% of own Rec & 10% DoT mitigation",
-  "bbtype": "Heal/Support",
-  "bbhits": "",
-  "bbaoe": "",
-  "bbgauge": "20",
-  "bbdc": "",
-  "bbmultiplier": "",
   "sbb": {
     "damage frames": [
       {
@@ -1607,14 +1649,6 @@
     ],
     "name": "Asteion Pulsar"
   },
-  "sbbdescription": "20 combo powerful Light attack on all foes, removes all status ailments, considerably boosts BC, HC drop rates for 3 turns, negates all status ailments for 3 turns, adds Dark and Light elements to attack for 3 turns & slight damage reduction from Light and Dark types for 2 turns",
-  "sbbnote": "35% drop rate & 10% reduction",
-  "sbbtype": "Offense",
-  "sbbhits": "20",
-  "sbbaoe": "A",
-  "sbbgauge": "26",
-  "sbbdc": "20",
-  "sbbmultiplier": "580",
   "ubb": {
     "damage frames": [
       {
@@ -1801,6 +1835,188 @@
     ],
     "name": "True Restoration"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 100.0,
+      "target conditions": "hp_25pr_under",
+      "target type": "party"
+    },
+    {
+      "action": "attack",
+      "chance%": 50.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 182
+    },
+    "idle": {
+      "total number of frames": 56
+    },
+    "move": {
+      "total number of frames": 6
+    }
+  },
+  "category": 50730,
+  "cost": "47",
+  "damage frames": {
+    "frame times": [
+      36,
+      71,
+      124,
+      132,
+      140,
+      148,
+      156,
+      164,
+      172,
+      180,
+      188
+    ],
+    "hit dmg% distribution": [
+      5,
+      5,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 11
+  },
+  "drop check count": 4,
+  "element": "light",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 1721,
+  "imp": {
+    "max atk": "400",
+    "max def": "800",
+    "max hp": "1250",
+    "max rec": "500"
+  },
+  "kind": "normal",
+  "lord damage range": "2551~2850",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Sublime Divinity Rinon",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "8",
+  "sell caution": false,
+  "unitName": "Sublime Divinity Rinon",
+  "maxlv": "150",
+  "no": "1721",
+  "unitDisplayHomePosition_1W9CxaFK": "470,313,148,404",
+  "unitDisplayDetailPosition_6z54rgb3": "-155,-130,1280,1082",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "15,90,650,549,1",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-150,-380,1300,1099",
+  "unitDisplaySummonPosition_KC3Jk8Br": "15,90,650,549,1",
+  "unitDisplayHpPosition_3BpHN6VD": "-2,50",
+  "unitDisplayCursorPosition": "-1,5",
+  "sellPrice": "50000",
+  "sellCaution": false,
+  "effectFrames": "36:135:1,36:200570:1,36:500172:1,33:400130:1,35:500094:1,71:135:1,71:200570:1,71:500172:1,68:400130:1,70:500094:1,124:500637:1,124:400227:1,124:500057:1,124:500192:1,161:400221:1,156:500192:1,124:200401:1,192:500217:1,214:201308:1",
+  "evofrom": "50736",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "21",
+  "animation_attack": "182",
+  "animation_idle": "56",
+  "animation_move": "6",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "36, 71, 124, 132, 140, 148, 156, 164, 172, 180, 188",
+  "normal_distribute": "5, 5, 10, 10, 10, 10, 10, 10, 10, 10, 10",
+  "normal_totaldistr": "100",
+  "sbb_frames": "36, 40, 44, 71, 75, 79, 124, 128, 132, 136, 140, 144, 148, 152, 156, 160, 164, 168, 172, 176",
+  "sbb_distribute": "6, 3, 3, 6, 3, 3, 15, 6, 5, 6, 5, 6, 5, 6, 5, 4, 3, 4, 3, 3",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "36, 40, 44, 48, 71, 75, 79, 83, 124, 128, 132, 136, 140, 144, 148, 152, 156, 160, 164, 168, 172, 176, 180, 184",
+  "ubb_distribute": "6, 3, 2, 3, 6, 3, 2, 3, 12, 5, 4, 3, 4, 5, 4, 3, 4, 5, 4, 3, 4, 5, 4, 3",
+  "ubb_totaldistr": "100",
+  "sbb_effectdelay": "1",
+  "ubb_effectdelay": "1",
+  "description": "Though it did not result in an appointment to the role of Oracle Maiden, scholars have concluded that Rinon trained extensively in her homeland of Sacred Mt. Bari. In fact, she lived a life fit for a high-ranking cleric. Had she become Oracle Maiden, the same impressive abilities that made her a candidate might have also made her an ideal intermediary between humanity and the gods. Had she chosen not to participate in the war with the Holy Emperor, she certainly would have been a force for human salvation in the great Grand Gaian war that followed.",
+  "summon": "I was such a child then...<br>But just saying that makes me feel old.",
+  "fusion": "Thank you.<br>I'm sure you're struggling too. Let's both give it our best!",
+  "evolution": "Maybe I was unprepared.<br>But I understand now. I understand my purpose.",
+  "hp_base": "5480",
+  "atk_base": "2213",
+  "def_base": "2434",
+  "rec_base": "2712",
+  "hp_lord": "7163",
+  "atk_lord": "2741",
+  "def_lord": "3042",
+  "rec_lord": "3374",
+  "hp_anima": "8280",
+  "rec_anima": "3076",
+  "atk_breaker": "3039",
+  "def_breaker": "2744",
+  "def_guardian": "3340",
+  "rec_guardian": "3225",
+  "def_oracle": "2893",
+  "rec_oracle": "3821",
+  "hp_bonus": "1250",
+  "atk_bonus": "400",
+  "def_bonus": "800",
+  "rec_bonus": "500",
+  "lordonly": "",
+  "combo_hits": "11",
+  "normaldc": "44",
+  "ls": "Divine Guidance",
+  "lsdescription": "40% boost to Def, Rec, max HP, negates all status ailments, considerably restores HP each turn & damage taken may restore HP",
+  "lsnote": "Heals 1000-1200 + 10% Rec & 25% chance to heal 25% damage",
+  "bbdescription": "Greatly restores HP, removes all status ailments, negates all status ailments for 3 turns, negates critical and elemental damage for 2 turns & slight additional damage reduction for 2 turns",
+  "bbnote": "Heals 3500-4000 + 40% of own Rec & 10% DoT mitigation",
+  "bbtype": "Heal/Support",
+  "bbhits": "",
+  "bbaoe": "",
+  "bbgauge": "20",
+  "bbdc": "",
+  "bbmultiplier": "",
+  "sbbdescription": "20 combo powerful Light attack on all foes, removes all status ailments, considerably boosts BC, HC drop rates for 3 turns, negates all status ailments for 3 turns, adds Dark and Light elements to attack for 3 turns & slight damage reduction from Light and Dark types for 2 turns",
+  "sbbnote": "35% drop rate & 10% reduction",
+  "sbbtype": "Offense",
+  "sbbhits": "20",
+  "sbbaoe": "A",
+  "sbbgauge": "26",
+  "sbbdc": "20",
+  "sbbmultiplier": "580",
   "ubbdescription": "24 combo massive Light attack on all foes, activates Light barrier, enormously boosts Rec for 3 turns, enormously boosts OD gauge fill rate for 3 turns, enormously boosts BB gauge each turn for 3 turns & fully restores HP for 3 turns",
   "ubbnote": "Activates 25000 HP barrier, 300% Rec, 250% OD fill rate & fills 50 BC",
   "ubbtype": "Heal/Offense",
@@ -1813,8 +2029,6 @@
   "esitem": "",
   "esdescription": "Considerably boosts BB gauge each turn, negates all status ailments & negates Atk, Def, Rec reduction effects",
   "esnote": "Fills 4 BC",
-  "evofrom": "50736",
-  "evointo": "",
   "evomats1": "",
   "evomats2": "",
   "evomats3": "",
@@ -1823,125 +2037,5 @@
   "evomats6": "",
   "evomats7": "",
   "evomats8": "",
-  "evoitem": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 2213,
-      "def": 2434,
-      "hp": 5480,
-      "rec": 2712
-    },
-    "_lord": {
-      "atk": 2741,
-      "def": 3042,
-      "hp": 7163,
-      "rec": 3374
-    },
-    "anima": {
-      "atk": 2741,
-      "def": 3042,
-      "hp max": 8653,
-      "hp min": 7908,
-      "rec max": 3225,
-      "rec min": 2927
-    },
-    "breaker": {
-      "atk max": 3188,
-      "atk min": 2890,
-      "def max": 2893,
-      "def min": 2595,
-      "hp": 7163,
-      "rec": 3374
-    },
-    "guardian": {
-      "atk": 2741,
-      "def max": 3489,
-      "def min": 3191,
-      "hp": 7163,
-      "rec max": 3374,
-      "rec min": 3076
-    },
-    "oracle": {
-      "atk": 2741,
-      "def max": 3042,
-      "def min": 2744,
-      "hp": 7163,
-      "rec max": 3970,
-      "rec min": 3672
-    }
-  },
-  "leader_skill": {
-    "desc": "40% boost to Def, Rec, max HP, negates all status ailments, considerably restores HP each turn & damage taken may restore HP",
-    "effects": [
-      {
-        "def% buff": 40,
-        "hp% buff": 40,
-        "passive id": "1",
-        "rec% buff": 40
-      },
-      {
-        "curse resist%": 100,
-        "injury resist%": 100,
-        "paralysis resist%": 100,
-        "passive id": "4",
-        "poison resist%": 100,
-        "sick resist%": 100,
-        "weaken resist%": 100
-      },
-      {
-        "passive id": "33",
-        "rec% added (turn heal)": 10.0,
-        "turn heal high": 1200,
-        "turn heal low": 1000
-      },
-      {
-        "dmg% to hp% when attacked chance%": 25,
-        "dmg% to hp% when attacked high": 25,
-        "dmg% to hp% when attacked low": 25,
-        "passive id": "24"
-      }
-    ],
-    "id": "12535",
-    "name": "Divine Guidance"
-  },
-  "extra_skill": {
-    "desc": "Considerably boosts BB gauge each turn, negates all status ailments & negates Atk, Def, Rec reduction effects",
-    "effects": [
-      {
-        "bc fill per turn": 4,
-        "conditions": [],
-        "passive id": "9",
-        "passive target": "self"
-      },
-      {
-        "atk down resist%": 100,
-        "conditions": [],
-        "curse resist%": 100,
-        "def down resist%": 100,
-        "injury resist%": 100,
-        "paralysis resist%": 100,
-        "passive id": "73",
-        "passive target": "self",
-        "poison resist%": 100,
-        "rec down resist%": 100,
-        "sick resist%": 100,
-        "weaken resist%": 100
-      }
-    ],
-    "id": "43900",
-    "name": "Benevolent Eyes",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "470,313,148,404",
-  "unitDisplayDetailPosition_6z54rgb3": "-155,-130,1280,1082",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "15,90,650,549,1",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-150,-380,1300,1099",
-  "unitDisplaySummonPosition_KC3Jk8Br": "15,90,650,549,1",
-  "unitDisplayHpPosition_3BpHN6VD": "-2,50",
-  "unitDisplayCursorPosition": "-1,5",
-  "sellPrice": "50000",
-  "sellCaution": false,
-  "effectFrames": "36:135:1,36:200570:1,36:500172:1,33:400130:1,35:500094:1,71:135:1,71:200570:1,71:500172:1,68:400130:1,70:500094:1,124:500637:1,124:400227:1,124:500057:1,124:500192:1,161:400221:1,156:500192:1,124:200401:1,192:500217:1,214:201308:1"
+  "evoitem": ""
 }

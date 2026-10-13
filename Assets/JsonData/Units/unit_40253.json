@@ -1,58 +1,64 @@
 {
   "id": "40253",
-  "unitName": "Drakeborn Lodin",
-  "no": "352",
-  "element": "Thunder",
-  "rarity": "★★★★",
-  "cost": "8",
-  "maxlv": "60",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "1",
-  "animation_attack": "132",
-  "animation_idle": "48",
-  "animation_move": "6",
-  "movespeed_attack": "0.0015",
-  "movespeed_skill": "0",
-  "speedtype_attack": "5",
-  "speedtype_skill": "5",
-  "movetype_attack": "1",
-  "movetype_skill": "3",
-  "normal_frames": "40, 90, 96",
-  "normal_distribute": "50, 30, 20",
-  "normal_totaldistr": "100",
-  "description": "Lizeria, capital of the La Veda Republic, was reportedly once home to a mysterious knight. Also known as the \"Drakeborn,\" Lodin wielded his blade with reckless abandon in the law-abiding La Veda. As his second name suggested, he loved battling dragons as he longed to fight the strongest enemies he could find. Though he hated fighting cooperatively, he one day came face to face with a powerful foe that he simply couldn't beat on his own.",
-  "summon": "Hey Summoner. <br>If you want me to follow you,<br>bring me someone to fight!",
-  "fusion": "Hmph, borrowing power just<br>like a puny Summoner...<br>I've still a long way to go.",
-  "evolution": "",
-  "hp_base": "2647",
-  "atk_base": "1058",
-  "def_base": "693",
-  "rec_base": "968",
-  "hp_lord": "3781",
-  "atk_lord": "1511",
-  "def_lord": "990",
-  "rec_lord": "1291",
-  "hp_anima": "4224",
-  "rec_anima": "1173",
-  "atk_breaker": "1629",
-  "def_breaker": "872",
-  "atk_guardian": "1393",
-  "def_guardian": "1108",
-  "rec_guardian": "1232",
-  "def_oracle": "931",
-  "hp_oracle": "3604",
-  "rec_oracle": "1468",
-  "hp_bonus": "600",
-  "atk_bonus": "120",
-  "def_bonus": "120",
-  "rec_bonus": "120",
-  "lordonly": "",
-  "combo_hits": "3",
-  "normaldc": "12",
-  "ls": "Five Light's Power",
-  "lsdescription": "25% boost to Atk power of all Units when 5 elements or more are present",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 1058,
+      "def": 693,
+      "hp": 2647,
+      "rec": 968
+    },
+    "_lord": {
+      "atk": 1511,
+      "def": 990,
+      "hp": 3781,
+      "rec": 1291
+    },
+    "anima": {
+      "atk": 1511,
+      "def": 990,
+      "hp max": 4371,
+      "hp min": 4076,
+      "rec max": 1232,
+      "rec min": 1114
+    },
+    "breaker": {
+      "atk max": 1688,
+      "atk min": 1570,
+      "def max": 931,
+      "def min": 813,
+      "hp": 3781,
+      "rec": 1291
+    },
+    "guardian": {
+      "atk": 1511,
+      "def max": 1167,
+      "def min": 1049,
+      "hp": 3781,
+      "rec max": 1291,
+      "rec min": 1173
+    },
+    "oracle": {
+      "atk": 1511,
+      "def max": 990,
+      "def min": 872,
+      "hp": 3781,
+      "rec max": 1527,
+      "rec min": 1409
+    }
+  },
+  "leader_skill": {
+    "desc": "25% boost to Atk power of all Units when 5 elements or more are present",
+    "effects": [
+      {
+        "atk% buff": 25,
+        "passive id": "41",
+        "unique elements required": 5
+      }
+    ],
+    "id": "2200",
+    "name": "Five Light's Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -307,93 +313,87 @@
     ],
     "name": "Dragon Impulse"
   },
-  "bbdescription": "Slightly increases allies' BB gauge & adds Thunder element to attack for 3 turns",
-  "bbnote": "Fills 5 BC",
-  "bbtype": "Support",
-  "bbhits": "",
-  "bbaoe": "0",
-  "bbgauge": "22",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "40254",
-  "evomats1": "40133",
-  "evomats2": "40132",
-  "evomats3": "40132",
-  "evomats4": "40191",
-  "evomats5": "60143",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 1058,
-      "def": 693,
-      "hp": 2647,
-      "rec": 968
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "party"
     },
-    "_lord": {
-      "atk": 1511,
-      "def": 990,
-      "hp": 3781,
-      "rec": 1291
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1511,
-      "def": 990,
-      "hp max": 4371,
-      "hp min": 4076,
-      "rec max": 1232,
-      "rec min": 1114
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 132
     },
-    "breaker": {
-      "atk max": 1688,
-      "atk min": 1570,
-      "def max": 931,
-      "def min": 813,
-      "hp": 3781,
-      "rec": 1291
+    "idle": {
+      "total number of frames": 48
     },
-    "guardian": {
-      "atk": 1511,
-      "def max": 1167,
-      "def min": 1049,
-      "hp": 3781,
-      "rec max": 1291,
-      "rec min": 1173
-    },
-    "oracle": {
-      "atk": 1511,
-      "def max": 990,
-      "def min": 872,
-      "hp": 3781,
-      "rec max": 1527,
-      "rec min": 1409
+    "move": {
+      "total number of frames": 6
     }
   },
-  "leader_skill": {
-    "desc": "25% boost to Atk power of all Units when 5 elements or more are present",
-    "effects": [
-      {
-        "atk% buff": 25,
-        "passive id": "41",
-        "unique elements required": 5
-      }
+  "category": 40250,
+  "cost": "8",
+  "damage frames": {
+    "frame times": [
+      40,
+      90,
+      96
     ],
-    "id": "2200",
-    "name": "Five Light's Power"
+    "hit dmg% distribution": [
+      50,
+      30,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 3
   },
-  "extra_skill": {},
+  "drop check count": 4,
+  "element": "thunder",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 352,
+  "imp": {
+    "max atk": "120",
+    "max def": "120",
+    "max hp": "600",
+    "max rec": "120"
+  },
+  "kind": "normal",
+  "lord damage range": "1406~1571",
+  "movement": {
+    "attack": {
+      "move speed": 0.0015,
+      "move speed type": "5",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0,
+      "move speed type": "5",
+      "move type": "3"
+    }
+  },
+  "name": "Drakeborn Lodin",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Drakeborn Lodin",
+  "maxlv": "60",
+  "no": "352",
   "unitDisplayHomePosition_1W9CxaFK": "220,134,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "60,125,840,654",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "203,305,227,307,0",
@@ -403,5 +403,99 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "34:124:1,34:400130:1,84:124:1,90:124:1,90:400061:1"
+  "effectFrames": "34:124:1,34:400130:1,84:124:1,90:124:1,90:400061:1",
+  "evofrom": "",
+  "evointo": "40254",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "40133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40132",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "40191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "132",
+  "animation_idle": "48",
+  "animation_move": "6",
+  "movespeed_attack": "0.0015",
+  "movespeed_skill": "0",
+  "speedtype_attack": "5",
+  "speedtype_skill": "5",
+  "movetype_attack": "1",
+  "movetype_skill": "3",
+  "normal_frames": "40, 90, 96",
+  "normal_distribute": "50, 30, 20",
+  "normal_totaldistr": "100",
+  "description": "Lizeria, capital of the La Veda Republic, was reportedly once home to a mysterious knight. Also known as the \"Drakeborn,\" Lodin wielded his blade with reckless abandon in the law-abiding La Veda. As his second name suggested, he loved battling dragons as he longed to fight the strongest enemies he could find. Though he hated fighting cooperatively, he one day came face to face with a powerful foe that he simply couldn't beat on his own.",
+  "summon": "Hey Summoner. <br>If you want me to follow you,<br>bring me someone to fight!",
+  "fusion": "Hmph, borrowing power just<br>like a puny Summoner...<br>I've still a long way to go.",
+  "evolution": "",
+  "hp_base": "2647",
+  "atk_base": "1058",
+  "def_base": "693",
+  "rec_base": "968",
+  "hp_lord": "3781",
+  "atk_lord": "1511",
+  "def_lord": "990",
+  "rec_lord": "1291",
+  "hp_anima": "4224",
+  "rec_anima": "1173",
+  "atk_breaker": "1629",
+  "def_breaker": "872",
+  "atk_guardian": "1393",
+  "def_guardian": "1108",
+  "rec_guardian": "1232",
+  "def_oracle": "931",
+  "hp_oracle": "3604",
+  "rec_oracle": "1468",
+  "hp_bonus": "600",
+  "atk_bonus": "120",
+  "def_bonus": "120",
+  "rec_bonus": "120",
+  "lordonly": "",
+  "combo_hits": "3",
+  "normaldc": "12",
+  "ls": "Five Light's Power",
+  "lsdescription": "25% boost to Atk power of all Units when 5 elements or more are present",
+  "lstype": "Attack",
+  "bbdescription": "Slightly increases allies' BB gauge & adds Thunder element to attack for 3 turns",
+  "bbnote": "Fills 5 BC",
+  "bbtype": "Support",
+  "bbhits": "",
+  "bbaoe": "0",
+  "bbgauge": "22",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "40133",
+  "evomats2": "40132",
+  "evomats3": "40132",
+  "evomats4": "40191",
+  "evomats5": "60143"
 }

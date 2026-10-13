@@ -1,68 +1,102 @@
 {
   "id": "51256",
-  "unitName": "Sparkling Knight Reseus",
-  "no": "1672",
-  "element": "Light",
-  "rarity": "★★★★★★★",
-  "cost": "46",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "1",
-  "animation_attack": "155",
-  "animation_idle": "84",
-  "animation_move": "43",
-  "movespeed_attack": "6",
-  "movespeed_skill": "6",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "2",
-  "movetype_skill": "2",
-  "normal_frames": "93, 96, 99, 102, 105, 108, 111",
-  "normal_distribute": "35, 20, 14, 10, 8, 7, 6",
-  "normal_totaldistr": "100",
-  "bb_frames": "93, 96, 99, 102, 105, 108, 111, 114, 117, 120",
-  "bb_distribute": "30, 17, 11, 9, 8, 7, 6, 5, 4, 3",
-  "bb_totaldistr": "100",
-  "sbb_frames": "93, 96, 99, 102, 105, 108, 111, 114, 117, 120, 123, 126, 129",
-  "sbb_distribute": "25, 14, 10, 9, 8, 7, 6, 5, 4, 3, 3, 3, 3",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "93, 96, 99, 102, 105, 108, 111, 114, 117, 120, 123, 126, 129, 132, 135",
-  "ubb_distribute": "19, 11, 10, 9, 8, 7, 6, 5, 5, 4, 4, 3, 3, 3, 3",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "1",
-  "ubb_effectdelay": "1",
-  "description": "The firstborn prince of the Sama Kingdom, wildly popular and gifted in both battle and the arts. Reseus patiently and exhaustingly talked down the rival factions within the kingdom, unified the fractious ethnic groups, and both restored public order and strengthened the military. When the gods invaded, it was Reseus who slew a troublesome demon to enable contact between his king and the king of all oceanic fauna. Later, he led a unified army of the Sama tribes and oceanic troops to cross blades with the gods themselves. The tales tell us he fought for his subjects until the end, when he fell to a watery grave.",
-  "summon": "I believe in humanity. I believe in you, my friend! Go on, then, use me as much as you need!",
-  "fusion": "If we all come together, we can overcome anything! Belief in that is what gives you strength.",
-  "evolution": "",
-  "hp_base": "5099",
-  "atk_base": "2240",
-  "def_base": "1980",
-  "rec_base": "1812",
-  "hp_lord": "7328",
-  "atk_lord": "3080",
-  "def_lord": "2700",
-  "rec_lord": "2471",
-  "hp_anima": "8220",
-  "rec_anima": "2233",
-  "atk_breaker": "3318",
-  "def_breaker": "2462",
-  "def_guardian": "2938",
-  "rec_guardian": "2352",
-  "def_oracle": "2581",
-  "rec_oracle": "2828",
-  "hp_bonus": "1100",
-  "atk_bonus": "440",
-  "def_bonus": "440",
-  "rec_bonus": "440",
-  "lordonly": "",
-  "combo_hits": "7",
-  "normaldc": "35",
-  "ls": "Righteous Dance",
-  "lsdescription": "50% boost to all parameters, raises normal hit amount & negates elemental damage",
-  "lsnote": "+1 to each normal hit (-50% extra damage, 50% damage total)",
+  "stats": {
+    "_base": {
+      "atk": 2240,
+      "def": 1980,
+      "hp": 5099,
+      "rec": 1812
+    },
+    "_lord": {
+      "atk": 3080,
+      "def": 2700,
+      "hp": 7328,
+      "rec": 2471
+    },
+    "anima": {
+      "atk": 3080,
+      "def": 2700,
+      "hp max": 8518,
+      "hp min": 7923,
+      "rec max": 2352,
+      "rec min": 2114
+    },
+    "breaker": {
+      "atk max": 3437,
+      "atk min": 3199,
+      "def max": 2581,
+      "def min": 2343,
+      "hp": 7328,
+      "rec": 2471
+    },
+    "guardian": {
+      "atk": 3080,
+      "def max": 3057,
+      "def min": 2819,
+      "hp": 7328,
+      "rec max": 2471,
+      "rec min": 2233
+    },
+    "oracle": {
+      "atk": 3080,
+      "def max": 2700,
+      "def min": 2462,
+      "hp": 7328,
+      "rec max": 2947,
+      "rec min": 2709
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to all parameters, raises normal hit amount & negates elemental damage",
+    "effects": [
+      {
+        "atk% buff": 50,
+        "def% buff": 50,
+        "hp% buff": 50,
+        "passive id": "1",
+        "rec% buff": 50
+      },
+      {
+        "extra hits dmg%": -50,
+        "hit increase/hit": 1,
+        "passive id": "37"
+      },
+      {
+        "passive id": "53",
+        "strong base element damage resist%": 100,
+        "strong buffed element damage resist%": 100
+      }
+    ],
+    "id": "10150",
+    "name": "Righteous Dance"
+  },
+  "extra_skill": {
+    "desc": "Slightly boosts Atk, Def, Rec relative to remaining HP & raises normal hit amount",
+    "effects": [
+      {
+        "atk% base buff": 0,
+        "atk% extra buff based on hp": 40,
+        "buff proportional to hp": "remaining",
+        "conditions": [],
+        "def% base buff": 0,
+        "def% extra buff based on hp": 40,
+        "passive id": "46",
+        "passive target": "self",
+        "rec% base buff": 0,
+        "rec% extra buff based on hp": 40
+      },
+      {
+        "conditions": [],
+        "hit increase/hit": 1,
+        "passive id": "37",
+        "passive target": "self"
+      }
+    ],
+    "id": "39000",
+    "name": "Admirable Will",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -519,15 +553,6 @@
     ],
     "name": "Descent Sting"
   },
-  "bbdescription": "10 combo Light attack on all foes, considerably raises normal hit amount for 3 turns, considerably boosts OD gauge fill rate for 3 turns & negates elemental damage for 1 turn",
-  "bbnote": "+2 to each normal hit & 20% OD gauge fill rate",
-  "bbtype": "Offense",
-  "bbhits": "10",
-  "bbaoe": "A",
-  "bbgauge": "28",
-  "bbdc": "10",
-  "bbmultiplier": "380",
-  "bb_hpscale": "",
   "sbb": {
     "damage frames": [
       {
@@ -1234,15 +1259,6 @@
     ],
     "name": "Sacred Wielder"
   },
-  "sbbdescription": "13 combo powerful Light attack on all foes, considerably raises normal hit amount for 3 turns, negates all status ailments for 3 turns, adds probable Spark critical for 3 turns, boosts OD gauge fill rate at turn's end for 3 turns & negates elemental damage for 1 turn",
-  "sbbnote": "+2 to each normal hit, 30% crit chance of 50% extra spark damage & fills 300 OD",
-  "sbbtype": "Offense",
-  "sbbhits": "13",
-  "sbbaoe": "A",
-  "sbbgauge": "27",
-  "sbbdc": "13",
-  "sbbmultiplier": "580",
-  "sbb_hpscale": "",
   "ubb": {
     "damage frames": [
       {
@@ -1412,6 +1428,212 @@
     ],
     "name": "Exaltation"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "party"
+    },
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 155
+    },
+    "idle": {
+      "total number of frames": 84
+    },
+    "move": {
+      "total number of frames": 43
+    }
+  },
+  "category": 51250,
+  "cost": "46",
+  "damage frames": {
+    "frame times": [
+      93,
+      96,
+      99,
+      102,
+      105,
+      108,
+      111
+    ],
+    "hit dmg% distribution": [
+      35,
+      20,
+      14,
+      10,
+      8,
+      7,
+      6
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 7
+  },
+  "drop check count": 5,
+  "element": "light",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 1672,
+  "imp": {
+    "max atk": "440",
+    "max def": "440",
+    "max hp": "1100",
+    "max rec": "440"
+  },
+  "kind": "normal",
+  "lord damage range": "2868~3203",
+  "movement": {
+    "attack": {
+      "move speed": 6,
+      "move speed type": "2",
+      "move type": "2"
+    },
+    "skill": {
+      "move speed": 6,
+      "move speed type": "2",
+      "move type": "2"
+    }
+  },
+  "name": "Sparkling Knight Reseus",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Sparkling Knight Reseus",
+  "maxlv": "120",
+  "no": "1672",
+  "unitDisplayHomePosition_1W9CxaFK": "628,332,174,475",
+  "unitDisplayDetailPosition_6z54rgb3": "-283,-138,1215,940",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "-75,77,700,542,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-302,-396,1272,984",
+  "unitDisplaySummonPosition_KC3Jk8Br": "-75,77,700,542,0",
+  "unitDisplayHpPosition_3BpHN6VD": "0,63",
+  "unitDisplayCursorPosition": "0,7",
+  "sellPrice": "15000",
+  "sellCaution": false,
+  "effectFrames": "87:501487:1,93:500960:1,92:201243:1,100:201063:1,97:200080:1",
+  "evofrom": "",
+  "evointo": "51257",
+  "evozelcost": "3000000",
+  "evokarmacost": "1000000",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50394",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50123",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50191",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 2
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "155",
+  "animation_idle": "84",
+  "animation_move": "43",
+  "movespeed_attack": "6",
+  "movespeed_skill": "6",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "2",
+  "movetype_skill": "2",
+  "normal_frames": "93, 96, 99, 102, 105, 108, 111",
+  "normal_distribute": "35, 20, 14, 10, 8, 7, 6",
+  "normal_totaldistr": "100",
+  "bb_frames": "93, 96, 99, 102, 105, 108, 111, 114, 117, 120",
+  "bb_distribute": "30, 17, 11, 9, 8, 7, 6, 5, 4, 3",
+  "bb_totaldistr": "100",
+  "sbb_frames": "93, 96, 99, 102, 105, 108, 111, 114, 117, 120, 123, 126, 129",
+  "sbb_distribute": "25, 14, 10, 9, 8, 7, 6, 5, 4, 3, 3, 3, 3",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "93, 96, 99, 102, 105, 108, 111, 114, 117, 120, 123, 126, 129, 132, 135",
+  "ubb_distribute": "19, 11, 10, 9, 8, 7, 6, 5, 5, 4, 4, 3, 3, 3, 3",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "1",
+  "ubb_effectdelay": "1",
+  "description": "The firstborn prince of the Sama Kingdom, wildly popular and gifted in both battle and the arts. Reseus patiently and exhaustingly talked down the rival factions within the kingdom, unified the fractious ethnic groups, and both restored public order and strengthened the military. When the gods invaded, it was Reseus who slew a troublesome demon to enable contact between his king and the king of all oceanic fauna. Later, he led a unified army of the Sama tribes and oceanic troops to cross blades with the gods themselves. The tales tell us he fought for his subjects until the end, when he fell to a watery grave.",
+  "summon": "I believe in humanity. I believe in you, my friend! Go on, then, use me as much as you need!",
+  "fusion": "If we all come together, we can overcome anything! Belief in that is what gives you strength.",
+  "evolution": "",
+  "hp_base": "5099",
+  "atk_base": "2240",
+  "def_base": "1980",
+  "rec_base": "1812",
+  "hp_lord": "7328",
+  "atk_lord": "3080",
+  "def_lord": "2700",
+  "rec_lord": "2471",
+  "hp_anima": "8220",
+  "rec_anima": "2233",
+  "atk_breaker": "3318",
+  "def_breaker": "2462",
+  "def_guardian": "2938",
+  "rec_guardian": "2352",
+  "def_oracle": "2581",
+  "rec_oracle": "2828",
+  "hp_bonus": "1100",
+  "atk_bonus": "440",
+  "def_bonus": "440",
+  "rec_bonus": "440",
+  "lordonly": "",
+  "combo_hits": "7",
+  "normaldc": "35",
+  "ls": "Righteous Dance",
+  "lsdescription": "50% boost to all parameters, raises normal hit amount & negates elemental damage",
+  "lsnote": "+1 to each normal hit (-50% extra damage, 50% damage total)",
+  "bbdescription": "10 combo Light attack on all foes, considerably raises normal hit amount for 3 turns, considerably boosts OD gauge fill rate for 3 turns & negates elemental damage for 1 turn",
+  "bbnote": "+2 to each normal hit & 20% OD gauge fill rate",
+  "bbtype": "Offense",
+  "bbhits": "10",
+  "bbaoe": "A",
+  "bbgauge": "28",
+  "bbdc": "10",
+  "bbmultiplier": "380",
+  "bb_hpscale": "",
+  "sbbdescription": "13 combo powerful Light attack on all foes, considerably raises normal hit amount for 3 turns, negates all status ailments for 3 turns, adds probable Spark critical for 3 turns, boosts OD gauge fill rate at turn's end for 3 turns & negates elemental damage for 1 turn",
+  "sbbnote": "+2 to each normal hit, 30% crit chance of 50% extra spark damage & fills 300 OD",
+  "sbbtype": "Offense",
+  "sbbhits": "13",
+  "sbbaoe": "A",
+  "sbbgauge": "27",
+  "sbbdc": "13",
+  "sbbmultiplier": "580",
+  "sbb_hpscale": "",
   "ubbdescription": "15 combo massive Light attack on all foes, enormously boosts Atk for 3 turns, hugely raises normal hit amount for 3 turns, fully restores HP for 3 turns, enormously boosts BB gauge for 3 turns & damage taken enormously restores HP for 3 turns",
   "ubbnote": "300% Atk, +3 hits (+80% extra damage, 180% damage total), fills 50 BC & restores 100% damage when hit",
   "ubbtype": "Offense",
@@ -1424,7 +1646,6 @@
   "es": "Admirable Will",
   "esdescription": "Slightly boosts Atk, Def, Rec relative to remaining HP & raises normal hit amount",
   "esnote": "0.4% boost per 1% HP remaining & +1 to each normal hit",
-  "evointo": "51257",
   "evomats1": "50394",
   "evomats2": "50394",
   "evomats3": "50354",
@@ -1432,113 +1653,5 @@
   "evomats5": "50191",
   "evomats6": "50191",
   "evomats7": "60224",
-  "evomats8": "60224",
-  "evozelcost": "3000000",
-  "stats": {
-    "_base": {
-      "atk": 2240,
-      "def": 1980,
-      "hp": 5099,
-      "rec": 1812
-    },
-    "_lord": {
-      "atk": 3080,
-      "def": 2700,
-      "hp": 7328,
-      "rec": 2471
-    },
-    "anima": {
-      "atk": 3080,
-      "def": 2700,
-      "hp max": 8518,
-      "hp min": 7923,
-      "rec max": 2352,
-      "rec min": 2114
-    },
-    "breaker": {
-      "atk max": 3437,
-      "atk min": 3199,
-      "def max": 2581,
-      "def min": 2343,
-      "hp": 7328,
-      "rec": 2471
-    },
-    "guardian": {
-      "atk": 3080,
-      "def max": 3057,
-      "def min": 2819,
-      "hp": 7328,
-      "rec max": 2471,
-      "rec min": 2233
-    },
-    "oracle": {
-      "atk": 3080,
-      "def max": 2700,
-      "def min": 2462,
-      "hp": 7328,
-      "rec max": 2947,
-      "rec min": 2709
-    }
-  },
-  "leader_skill": {
-    "desc": "50% boost to all parameters, raises normal hit amount & negates elemental damage",
-    "effects": [
-      {
-        "atk% buff": 50,
-        "def% buff": 50,
-        "hp% buff": 50,
-        "passive id": "1",
-        "rec% buff": 50
-      },
-      {
-        "extra hits dmg%": -50,
-        "hit increase/hit": 1,
-        "passive id": "37"
-      },
-      {
-        "passive id": "53",
-        "strong base element damage resist%": 100,
-        "strong buffed element damage resist%": 100
-      }
-    ],
-    "id": "10150",
-    "name": "Righteous Dance"
-  },
-  "extra_skill": {
-    "desc": "Slightly boosts Atk, Def, Rec relative to remaining HP & raises normal hit amount",
-    "effects": [
-      {
-        "atk% base buff": 0,
-        "atk% extra buff based on hp": 40,
-        "buff proportional to hp": "remaining",
-        "conditions": [],
-        "def% base buff": 0,
-        "def% extra buff based on hp": 40,
-        "passive id": "46",
-        "passive target": "self",
-        "rec% base buff": 0,
-        "rec% extra buff based on hp": 40
-      },
-      {
-        "conditions": [],
-        "hit increase/hit": 1,
-        "passive id": "37",
-        "passive target": "self"
-      }
-    ],
-    "id": "39000",
-    "name": "Admirable Will",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "628,332,174,475",
-  "unitDisplayDetailPosition_6z54rgb3": "-283,-138,1215,940",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "-75,77,700,542,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-302,-396,1272,984",
-  "unitDisplaySummonPosition_KC3Jk8Br": "-75,77,700,542,0",
-  "unitDisplayHpPosition_3BpHN6VD": "0,63",
-  "unitDisplayCursorPosition": "0,7",
-  "sellPrice": "15000",
-  "sellCaution": false,
-  "effectFrames": "87:501487:1,93:500960:1,92:201243:1,100:201063:1,97:200080:1"
+  "evomats8": "60224"
 }

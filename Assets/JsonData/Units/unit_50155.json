@@ -1,52 +1,63 @@
 {
   "id": "50155",
-  "unitName": "Ultra Blade Aem",
-  "no": "475",
-  "element": "Light",
-  "rarity": "★★★★★★",
-  "cost": "22",
-  "maxlv": "100",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "3",
-  "animation_attack": "132",
-  "animation_idle": "112",
-  "animation_move": "56",
-  "movespeed_attack": "0.0041",
-  "movespeed_skill": "0.0041",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "description": "A swordsman who became a knight in order to follow in the steps of his hero. After La Veda fell, he chased after Will who had broke off on his own and was about to challenge the gods. After catching up to him Will rebuked him, to which Aem responded, \"It is the hope of all the people to see Sir Will safely through battle with the gods.\" It is said that, as Will smiled cheerfully, Aem stood in front of him and continued to counter the gods' attacks.",
-  "summon": "Your energy is so warm.<br>I swear to become your blade!<br>Allow me to fight alongside you!",
-  "fusion": "Power, fill my blade!<br>Give me the power to <br>destroy my enemies!",
-  "evolution": "I've realized my faults.<br>Devotion doesn't mean <br>blindly following others!",
-  "hp_base": "4380",
-  "atk_base": "1377",
-  "def_base": "900",
-  "rec_base": "913",
-  "hp_lord": "5934",
-  "atk_lord": "1807",
-  "def_lord": "1436",
-  "rec_lord": "1471",
-  "hp_anima": "6676",
-  "rec_anima": "1273",
-  "atk_breaker": "2005",
-  "def_breaker": "1238",
-  "atk_guardian": "1609",
-  "def_guardian": "1634",
-  "hp_oracle": "5191",
-  "rec_oracle": "1669",
-  "hp_bonus": "750",
-  "atk_bonus": "300",
-  "def_bonus": "300",
-  "rec_bonus": "300",
-  "lordonly": "",
-  "combo_hits": "6",
-  "ls": "Pulsating Ascension",
-  "lsdescription": "BB gauge fills hugely after each turn",
-  "lstype": "Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 1377,
+      "def": 900,
+      "hp": 4380,
+      "rec": 913
+    },
+    "_lord": {
+      "atk": 1807,
+      "def": 1436,
+      "hp": 5934,
+      "rec": 1471
+    },
+    "anima": {
+      "atk": 1807,
+      "def": 1436,
+      "hp max": 6924,
+      "hp min": 6429,
+      "rec max": 1372,
+      "rec min": 1174
+    },
+    "breaker": {
+      "atk max": 2104,
+      "atk min": 1906,
+      "def max": 1337,
+      "def min": 1139,
+      "hp": 5934,
+      "rec": 1471
+    },
+    "guardian": {
+      "atk": 1807,
+      "def max": 1733,
+      "def min": 1535,
+      "hp": 5934,
+      "rec max": 1471,
+      "rec min": 1273
+    },
+    "oracle": {
+      "atk": 1807,
+      "def max": 1436,
+      "def min": 1238,
+      "hp": 5934,
+      "rec max": 1867,
+      "rec min": 1669
+    }
+  },
+  "leader_skill": {
+    "desc": "BB gauge fills hugely after each turn",
+    "effects": [
+      {
+        "bc fill per turn": 4,
+        "passive id": "9"
+      }
+    ],
+    "id": "1202",
+    "name": "Pulsating Ascension"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -213,11 +224,6 @@
     ],
     "name": "Orbital Glow"
   },
-  "bbdescription": "8 combo powerful Light attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "8",
-  "bbaoe": "A",
-  "bbgauge": "23",
   "sbb": {
     "damage frames": [
       {
@@ -480,85 +486,98 @@
     ],
     "name": "Sworn Bond"
   },
-  "sbbdescription": "10 combo powerful Light attack on all enemies & boost to BC drop rate for 3 turns",
-  "sbbtype": "Support/Offense",
-  "sbbhits": "10",
-  "sbbaoe": "A",
-  "sbbgauge": "23",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "50154",
-  "evointo": "",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 1377,
-      "def": 900,
-      "hp": 4380,
-      "rec": 913
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1807,
-      "def": 1436,
-      "hp": 5934,
-      "rec": 1471
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1807,
-      "def": 1436,
-      "hp max": 6924,
-      "hp min": 6429,
-      "rec max": 1372,
-      "rec min": 1174
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 2104,
-      "atk min": 1906,
-      "def max": 1337,
-      "def min": 1139,
-      "hp": 5934,
-      "rec": 1471
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 132
     },
-    "guardian": {
-      "atk": 1807,
-      "def max": 1733,
-      "def min": 1535,
-      "hp": 5934,
-      "rec max": 1471,
-      "rec min": 1273
+    "idle": {
+      "total number of frames": 112
     },
-    "oracle": {
-      "atk": 1807,
-      "def max": 1436,
-      "def min": 1238,
-      "hp": 5934,
-      "rec max": 1867,
-      "rec min": 1669
+    "move": {
+      "total number of frames": 56
     }
   },
-  "leader_skill": {
-    "desc": "BB gauge fills hugely after each turn",
-    "effects": [
-      {
-        "bc fill per turn": 4,
-        "passive id": "9"
-      }
+  "category": 50150,
+  "cost": "22",
+  "damage frames": {
+    "frame times": [
+      12,
+      14,
+      17,
+      68,
+      72,
+      76
     ],
-    "id": "1202",
-    "name": "Pulsating Ascension"
+    "hit dmg% distribution": [
+      5,
+      5,
+      5,
+      20,
+      25,
+      40
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 6
   },
-  "extra_skill": {},
+  "drop check count": 4,
+  "element": "light",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 475,
+  "imp": {
+    "max atk": "300",
+    "max def": "300",
+    "max hp": "750",
+    "max rec": "300"
+  },
+  "kind": "normal",
+  "lord damage range": "1682~1879",
+  "movement": {
+    "attack": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    }
+  },
+  "name": "Ultra Blade Aem",
+  "rarity": "6",
+  "sell caution": false,
+  "unitName": "Ultra Blade Aem",
+  "maxlv": "100",
+  "no": "475",
   "unitDisplayHomePosition_1W9CxaFK": "808,242,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-450,7,1284,776",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "96,234,495,397,0",
@@ -568,5 +587,90 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "8000",
   "sellCaution": false,
-  "effectFrames": "6:125:1,8:125:1,11:125:1,62:125:1,66:125:1,70:125:1,14:200251:1,68:700:1,76:500221:1,12:500170:1"
+  "effectFrames": "6:125:1,8:125:1,11:125:1,62:125:1,66:125:1,70:125:1,14:200251:1,68:700:1,76:500221:1,12:500170:1",
+  "evofrom": "50154",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "21",
+  "animation_attack": "132",
+  "animation_idle": "112",
+  "animation_move": "56",
+  "movespeed_attack": "0.0041",
+  "movespeed_skill": "0.0041",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "12, 14, 17, 68, 72, 76",
+  "normal_distribute": "5, 5, 5, 20, 25, 40",
+  "normal_totaldistr": "100",
+  "bb_frames": "12, 14, 17, 68, 72, 76, 84, 92",
+  "bb_distribute": "15, 5, 5, 15, 20, 20, 10, 10",
+  "bb_totaldistr": "100",
+  "sbb_frames": "11, 13, 16, 67, 71, 75, 81, 87, 93, 99",
+  "sbb_distribute": "15, 5, 5, 10, 15, 10, 10, 10, 10, 10",
+  "sbb_totaldistr": "100",
+  "sbb_effectdelay": "1",
+  "description": "A swordsman who became a knight in order to follow in the steps of his hero. After La Veda fell, he chased after Will who had broke off on his own and was about to challenge the gods. After catching up to him Will rebuked him, to which Aem responded, \"It is the hope of all the people to see Sir Will safely through battle with the gods.\" It is said that, as Will smiled cheerfully, Aem stood in front of him and continued to counter the gods' attacks.",
+  "summon": "Your energy is so warm.<br>I swear to become your blade!<br>Allow me to fight alongside you!",
+  "fusion": "Power, fill my blade!<br>Give me the power to <br>destroy my enemies!",
+  "evolution": "I've realized my faults.<br>Devotion doesn't mean <br>blindly following others!",
+  "hp_base": "4380",
+  "atk_base": "1377",
+  "def_base": "900",
+  "rec_base": "913",
+  "hp_lord": "5934",
+  "atk_lord": "1807",
+  "def_lord": "1436",
+  "rec_lord": "1471",
+  "hp_anima": "6677",
+  "rec_anima": "1273",
+  "atk_breaker": "2005",
+  "def_breaker": "1238",
+  "atk_guardian": "1609",
+  "def_guardian": "1634",
+  "rec_guardian": "1372",
+  "def_oracle": "1337",
+  "hp_oracle": "5637",
+  "rec_oracle": "1768",
+  "hp_bonus": "750",
+  "atk_bonus": "300",
+  "def_bonus": "300",
+  "rec_bonus": "300",
+  "lordonly": "",
+  "combo_hits": "6",
+  "normaldc": "24",
+  "ls": "Pulsating Ascension",
+  "lsdescription": "BB gauge fills hugely after each turn",
+  "lsnote": "4 BC fill per turn",
+  "lstype": "Brave Burst",
+  "bbdescription": "8 combo powerful Light attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "8",
+  "bbaoe": "A",
+  "bbgauge": "23",
+  "bbdc": "8",
+  "bbmultiplier": "210",
+  "sbbdescription": "10 combo powerful Light attack on all enemies & boost to BC drop rate for 3 turns",
+  "sbbnote": "30% boost",
+  "sbbtype": "Support/Offense",
+  "sbbhits": "10",
+  "sbbaoe": "A",
+  "sbbgauge": "23",
+  "sbbdc": "10",
+  "sbbmultiplier": "400",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "",
+  "evomats2": "",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": ""
 }

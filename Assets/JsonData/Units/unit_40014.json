@@ -1,59 +1,66 @@
 {
   "id": "40014",
-  "unitName": "Thunder God Eze",
-  "no": "16",
-  "element": "Thunder",
-  "rarity": "★★★★★",
-  "cost": "10",
-  "maxlv": "80",
-  "basexp": "10",
-  "gender": "M",
-  "ai": "4",
-  "animation_attack": "99",
-  "animation_idle": "56",
-  "animation_move": "14",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "30, 40, 45",
-  "normal_distribute": "80, 10, 10",
-  "normal_totaldistr": "100",
-  "bb_frames": "30, 40, 45, 60, 70, 80, 90",
-  "bb_distribute": "20, 20, 20, 10, 10, 10, 10",
-  "bb_totaldistr": "100",
-  "description": "A warrior from the ruined Atharva Republic. One of the Six Heroes and said to have fought the gods wielding Thunder Sword Batootha, during the great war with the gods he decimated his enemies with elusive speed and devastating thunder blows despite the ridiculous odds he was up against. The epic tale of him saving Goddess Emilia is still held as a timeless tale.",
-  "summon": "Lightning! Rain down on me! <br>Fill me with the numbing <br>power to aid this fool!",
-  "fusion": "Wow! I can't be stopped!<br>There's none who can face me!",
-  "evolution": "Sorry to keep you waiting!<br>Now let my thunder attacks <br>destroy everything!",
-  "hp_base": "2728",
-  "atk_base": "1100",
-  "def_base": "712",
-  "rec_base": "480",
-  "hp_lord": "4233",
-  "atk_lord": "1460",
-  "def_lord": "1006",
-  "rec_lord": "770",
-  "hp_anima": "4826",
-  "rec_anima": "612",
-  "atk_breaker": "1618",
-  "def_breaker": "848",
-  "def_guardian": "1164",
-  "rec_guardian": "612",
-  "def_oracle": "848",
-  "rec_oracle": "1007",
-  "hp_bonus": "500",
-  "atk_bonus": "400",
-  "def_bonus": "200",
-  "rec_bonus": "400",
-  "lordonly": "",
-  "combo_hits": "3",
-  "normaldc": "18",
-  "ls": "Thunder God's Power",
-  "lsdescription": "50% boost to Atk Power of Thunder Types",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 1100,
+      "def": 712,
+      "hp": 2728,
+      "rec": 480
+    },
+    "_lord": {
+      "atk": 1460,
+      "def": 1006,
+      "hp": 4233,
+      "rec": 770
+    },
+    "anima": {
+      "atk": 1460,
+      "def": 1006,
+      "hp max": 5023,
+      "hp min": 4628,
+      "rec max": 691,
+      "rec min": 533
+    },
+    "breaker": {
+      "atk max": 1697,
+      "atk min": 1539,
+      "def max": 927,
+      "def min": 769,
+      "hp": 4233,
+      "rec": 770
+    },
+    "guardian": {
+      "atk": 1460,
+      "def max": 1243,
+      "def min": 1085,
+      "hp": 4233,
+      "rec max": 770,
+      "rec min": 612
+    },
+    "oracle": {
+      "atk": 1460,
+      "def max": 1006,
+      "def min": 848,
+      "hp": 4233,
+      "rec max": 1086,
+      "rec min": 928
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to Atk Power of Thunder Types",
+    "effects": [
+      {
+        "atk% buff": 50,
+        "elements buffed": [
+          "thunder"
+        ],
+        "passive id": "2"
+      }
+    ],
+    "id": "131",
+    "name": "Thunder God's Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -218,96 +225,99 @@
     ],
     "name": "Heavenly Thunder"
   },
-  "bbdescription": "7 combo Thunder elemental power attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "7",
-  "bbaoe": "A",
-  "bbgauge": "25",
-  "bbdc": "7",
-  "bbmultiplier": "160",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "40013",
-  "evointo": "40015",
-  "evomats1": "50354",
-  "evomats2": "40133",
-  "evomats3": "40132",
-  "evomats4": "40131",
-  "evomats5": "40130",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 1100,
-      "def": 712,
-      "hp": 2728,
-      "rec": 480
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_under",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1460,
-      "def": 1006,
-      "hp": 4233,
-      "rec": 770
+    {
+      "action": "skill",
+      "chance%": 30.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1460,
-      "def": 1006,
-      "hp max": 5023,
-      "hp min": 4628,
-      "rec max": 691,
-      "rec min": 533
+    {
+      "action": "attack",
+      "chance%": 70.0,
+      "target conditions": "hp_max",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 1697,
-      "atk min": 1539,
-      "def max": 927,
-      "def min": 769,
-      "hp": 4233,
-      "rec": 770
+    {
+      "action": "attack",
+      "chance%": 50.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "guardian": {
-      "atk": 1460,
-      "def max": 1243,
-      "def min": 1085,
-      "hp": 4233,
-      "rec max": 770,
-      "rec min": 612
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 99
     },
-    "oracle": {
-      "atk": 1460,
-      "def max": 1006,
-      "def min": 848,
-      "hp": 4233,
-      "rec max": 1086,
-      "rec min": 928
+    "idle": {
+      "total number of frames": 56
+    },
+    "move": {
+      "total number of frames": 14
     }
   },
-  "leader_skill": {
-    "desc": "50% boost to Atk Power of Thunder Types",
-    "effects": [
-      {
-        "atk% buff": 50,
-        "elements buffed": [
-          "thunder"
-        ],
-        "passive id": "2"
-      }
+  "category": 40010,
+  "cost": "10",
+  "damage frames": {
+    "frame times": [
+      30,
+      40,
+      45
     ],
-    "id": "131",
-    "name": "Thunder God's Power"
+    "hit dmg% distribution": [
+      80,
+      10,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 3
   },
-  "extra_skill": {},
+  "drop check count": 6,
+  "element": "thunder",
+  "exp_pattern": 10,
+  "gender": "male",
+  "getting type": "farmable",
+  "guide_id": 16,
+  "imp": {
+    "max atk": "400",
+    "max def": "200",
+    "max hp": "500",
+    "max rec": "400"
+  },
+  "kind": "normal",
+  "lord damage range": "1359~1518",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Thunder God Eze",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Thunder God Eze",
+  "maxlv": "80",
+  "no": "16",
   "unitDisplayHomePosition_1W9CxaFK": "484,146,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-140,74,1000,690",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "27,284,500,345,0",
@@ -317,5 +327,106 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "24:124:1,34:124:1,39:124:1"
+  "effectFrames": "24:124:1,34:124:1,39:124:1",
+  "evofrom": "40013",
+  "evointo": "40015",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40131",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40130",
+      "count": 1
+    }
+  ],
+  "basexp": "10",
+  "animation_attack": "99",
+  "animation_idle": "56",
+  "animation_move": "14",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "30, 40, 45",
+  "normal_distribute": "80, 10, 10",
+  "normal_totaldistr": "100",
+  "bb_frames": "30, 40, 45, 60, 70, 80, 90",
+  "bb_distribute": "20, 20, 20, 10, 10, 10, 10",
+  "bb_totaldistr": "100",
+  "description": "A warrior from the ruined Atharva Republic. One of the Six Heroes and said to have fought the gods wielding Thunder Sword Batootha, during the great war with the gods he decimated his enemies with elusive speed and devastating thunder blows despite the ridiculous odds he was up against. The epic tale of him saving Goddess Emilia is still held as a timeless tale.",
+  "summon": "Lightning! Rain down on me! <br>Fill me with the numbing <br>power to aid this fool!",
+  "fusion": "Wow! I can't be stopped!<br>There's none who can face me!",
+  "evolution": "Sorry to keep you waiting!<br>Now let my thunder attacks <br>destroy everything!",
+  "hp_base": "2728",
+  "atk_base": "1100",
+  "def_base": "712",
+  "rec_base": "480",
+  "hp_lord": "4233",
+  "atk_lord": "1460",
+  "def_lord": "1006",
+  "rec_lord": "770",
+  "hp_anima": "4826",
+  "rec_anima": "612",
+  "atk_breaker": "1618",
+  "def_breaker": "848",
+  "def_guardian": "1164",
+  "rec_guardian": "612",
+  "def_oracle": "848",
+  "rec_oracle": "1007",
+  "hp_bonus": "500",
+  "atk_bonus": "400",
+  "def_bonus": "200",
+  "rec_bonus": "400",
+  "lordonly": "",
+  "combo_hits": "3",
+  "normaldc": "18",
+  "ls": "Thunder God's Power",
+  "lsdescription": "50% boost to Atk Power of Thunder Types",
+  "lstype": "Attack",
+  "bbdescription": "7 combo Thunder elemental power attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "7",
+  "bbaoe": "A",
+  "bbgauge": "25",
+  "bbdc": "7",
+  "bbmultiplier": "160",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "40133",
+  "evomats3": "40132",
+  "evomats4": "40131",
+  "evomats5": "40130"
 }

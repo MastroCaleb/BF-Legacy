@@ -1,70 +1,68 @@
 {
   "id": "50573",
-  "unitName": "Aria (4★)",
-  "freetext": ":''For other uses, see Aria.''",
-  "unreleased": "true",
-  "untranslated": "true",
-  "doenter": "true",
-  "no": "741",
-  "altname": "アリア",
-  "element": "Light",
-  "rarity": "★★★★",
-  "cost": "12",
-  "maxlv": "60",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "215",
-  "animation_idle": "52",
-  "animation_move": "20",
-  "movespeed_attack": "0.0015",
-  "movespeed_skill": "0.0015",
-  "speedtype_attack": "5",
-  "speedtype_skill": "5",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "6, 22, 32, 48, 66, 135, 139, 143",
-  "normal_distribute": "10, 10, 10, 10, 10, 30, 10, 10",
-  "normal_totaldistr": "100",
-  "bb_frames": "6, 22, 32, 48, 66, 70, 85, 100, 115, 120, 125, 155",
-  "bb_distribute": "10, 8, 5, 5, 5, 5, 5, 5, 20, 10, 5, 17",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "0",
-  "description": "異界に存在する巨大な大樹の光の面ラスタに住む天使。アリアは闇の面に住む悪魔たちと戦う第一天使長として、度重なる激闘に身を投じてきた。その性格は冷静沈着にして思慮深い。一見すると冷たい印象を受けるが、困っている人を見かけると手助けせずにはいられない思いやりに満ちている。宿敵である第一悪魔長との一騎打ちの末に、世界の命運を左右する冒険に巻き込まれていく。",
-  "summon": "召喚術……ですか？驚きました。<br>あ、すみません。<br>よろしくお願いします。",
-  "fusion": "ありがとうございます。<br>私のできる限りのことを<br>精一杯がんばります！",
-  "evolution": "",
-  "hp_base": "2810",
-  "atk_base": "900",
-  "def_base": "920",
-  "rec_base": "1020",
-  "hp_lord": "4040",
-  "atk_lord": "1200",
-  "def_lord": "1230",
-  "rec_lord": "1370",
-  "hp_anima": "4482",
-  "rec_anima": "1252",
-  "atk_breaker": "1318",
-  "def_breaker": "1112",
-  "def_guardian": "1348",
-  "rec_guardian": "1311",
-  "def_oracle": "1171",
-  "rec_oracle": "1547",
-  "hp_bonus": "500",
-  "atk_bonus": "200",
-  "def_bonus": "200",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "8",
-  "normaldc": "16",
-  "ls": "ラスタの天使",
-  "lsdescription": "確率で被ダメージを２０％軽減＆ＨＣ出現率を大幅にアップ",
-  "lsnote": "{{PassiveList",
-  "passive_1_proc": "14",
-  "passive_1_potency": "20% chance of reducing damage taken by 20%",
-  "passive_2_proc": "19",
-  "passive_2_potency": "Boosts HC drop rate by 20%",
-  "lstype": "Support",
+  "stats": {
+    "_base": {
+      "atk": 900,
+      "def": 920,
+      "hp": 2810,
+      "rec": 1020
+    },
+    "_lord": {
+      "atk": 1200,
+      "def": 1230,
+      "hp": 4040,
+      "rec": 1370
+    },
+    "anima": {
+      "atk": 1200,
+      "def": 1230,
+      "hp max": 4630,
+      "hp min": 4335,
+      "rec max": 1311,
+      "rec min": 1193
+    },
+    "breaker": {
+      "atk max": 1377,
+      "atk min": 1259,
+      "def max": 1171,
+      "def min": 1053,
+      "hp": 4040,
+      "rec": 1370
+    },
+    "guardian": {
+      "atk": 1200,
+      "def max": 1407,
+      "def min": 1289,
+      "hp": 4040,
+      "rec max": 1370,
+      "rec min": 1252
+    },
+    "oracle": {
+      "atk": 1200,
+      "def max": 1230,
+      "def min": 1112,
+      "hp": 4040,
+      "rec max": 1606,
+      "rec min": 1488
+    }
+  },
+  "leader_skill": {
+    "desc": "確率で被ダメージを２０％軽減＆ＨＣ出現率を大幅にアップ",
+    "effects": [
+      {
+        "dmg reduction chance%": 20,
+        "dmg reduction%": 20,
+        "passive id": "14"
+      },
+      {
+        "hc drop rate% buff": 20,
+        "passive id": "19"
+      }
+    ],
+    "id": "7100",
+    "name": "ラスタの天使"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -239,6 +237,190 @@
     ],
     "name": "ホーリーソード"
   },
+  "sbb": {},
+  "ubb": {},
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 215
+    },
+    "idle": {
+      "total number of frames": 52
+    },
+    "move": {
+      "total number of frames": 20
+    }
+  },
+  "category": 50570,
+  "cost": "12",
+  "damage frames": {
+    "frame times": [
+      6,
+      22,
+      32,
+      48,
+      66,
+      135,
+      139,
+      143
+    ],
+    "hit dmg% distribution": [
+      10,
+      10,
+      10,
+      10,
+      10,
+      30,
+      10,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 8
+  },
+  "drop check count": 2,
+  "element": "light",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "farmable",
+  "guide_id": 741,
+  "imp": {
+    "max atk": "200",
+    "max def": "200",
+    "max hp": "500",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "1117~1248",
+  "movement": {
+    "attack": {
+      "move speed": 0.0015,
+      "move speed type": "5",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0015,
+      "move speed type": "5",
+      "move type": "1"
+    }
+  },
+  "name": "アリア",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "アリア",
+  "maxlv": "60",
+  "no": "741",
+  "unitDisplayHomePosition_1W9CxaFK": null,
+  "unitDisplayDetailPosition_6z54rgb3": null,
+  "unitDisplayConfirmImagePosition_MYK1fq6c": null,
+  "unitDisplayCutInImagePosition_7hLR6pDN": null,
+  "unitDisplaySummonPosition_KC3Jk8Br": null,
+  "unitDisplayHpPosition_3BpHN6VD": null,
+  "unitDisplayCursorPosition": null,
+  "sellPrice": "",
+  "sellCaution": false,
+  "effectFrames": "",
+  "evofrom": "",
+  "evointo": "50574",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50123",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50122",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 1
+    }
+  ],
+  "freetext": ":''For other uses, see Aria.''",
+  "unreleased": "true",
+  "untranslated": "true",
+  "doenter": "true",
+  "altname": "アリア",
+  "basexp": "21",
+  "animation_attack": "215",
+  "animation_idle": "52",
+  "animation_move": "20",
+  "movespeed_attack": "0.0015",
+  "movespeed_skill": "0.0015",
+  "speedtype_attack": "5",
+  "speedtype_skill": "5",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "6, 22, 32, 48, 66, 135, 139, 143",
+  "normal_distribute": "10, 10, 10, 10, 10, 30, 10, 10",
+  "normal_totaldistr": "100",
+  "bb_frames": "6, 22, 32, 48, 66, 70, 85, 100, 115, 120, 125, 155",
+  "bb_distribute": "10, 8, 5, 5, 5, 5, 5, 5, 20, 10, 5, 17",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "0",
+  "description": "異界に存在する巨大な大樹の光の面ラスタに住む天使。アリアは闇の面に住む悪魔たちと戦う第一天使長として、度重なる激闘に身を投じてきた。その性格は冷静沈着にして思慮深い。一見すると冷たい印象を受けるが、困っている人を見かけると手助けせずにはいられない思いやりに満ちている。宿敵である第一悪魔長との一騎打ちの末に、世界の命運を左右する冒険に巻き込まれていく。",
+  "summon": "召喚術……ですか？驚きました。<br>あ、すみません。<br>よろしくお願いします。",
+  "fusion": "ありがとうございます。<br>私のできる限りのことを<br>精一杯がんばります！",
+  "evolution": "",
+  "hp_base": "2810",
+  "atk_base": "900",
+  "def_base": "920",
+  "rec_base": "1020",
+  "hp_lord": "4040",
+  "atk_lord": "1200",
+  "def_lord": "1230",
+  "rec_lord": "1370",
+  "hp_anima": "4482",
+  "rec_anima": "1252",
+  "atk_breaker": "1318",
+  "def_breaker": "1112",
+  "def_guardian": "1348",
+  "rec_guardian": "1311",
+  "def_oracle": "1171",
+  "rec_oracle": "1547",
+  "hp_bonus": "500",
+  "atk_bonus": "200",
+  "def_bonus": "200",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "8",
+  "normaldc": "16",
+  "ls": "ラスタの天使",
+  "lsdescription": "確率で被ダメージを２０％軽減＆ＨＣ出現率を大幅にアップ",
+  "lsnote": "{{PassiveList",
+  "passive_1_proc": "14",
+  "passive_1_potency": "20% chance of reducing damage taken by 20%",
+  "passive_2_proc": "19",
+  "passive_2_potency": "Boosts HC drop rate by 20%",
+  "lstype": "Support",
   "bbdescription": "敵全体に光属性１２連ダメージ",
   "bbnote": "{{UnitBuffList",
   "buff_1_proc": "1",
@@ -251,88 +433,10 @@
   "bbgauge": "20",
   "bbdc": "12",
   "bbmultiplier": "150",
-  "evofrom": "",
-  "evointo": "50574",
   "evomats1": "50123",
   "evomats2": "50191",
   "evomats3": "50122",
   "evomats4": "50122",
   "evomats5": "60143",
-  "evoitem": "",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 900,
-      "def": 920,
-      "hp": 2810,
-      "rec": 1020
-    },
-    "_lord": {
-      "atk": 1200,
-      "def": 1230,
-      "hp": 4040,
-      "rec": 1370
-    },
-    "anima": {
-      "atk": 1200,
-      "def": 1230,
-      "hp max": 4630,
-      "hp min": 4335,
-      "rec max": 1311,
-      "rec min": 1193
-    },
-    "breaker": {
-      "atk max": 1377,
-      "atk min": 1259,
-      "def max": 1171,
-      "def min": 1053,
-      "hp": 4040,
-      "rec": 1370
-    },
-    "guardian": {
-      "atk": 1200,
-      "def max": 1407,
-      "def min": 1289,
-      "hp": 4040,
-      "rec max": 1370,
-      "rec min": 1252
-    },
-    "oracle": {
-      "atk": 1200,
-      "def max": 1230,
-      "def min": 1112,
-      "hp": 4040,
-      "rec max": 1606,
-      "rec min": 1488
-    }
-  },
-  "leader_skill": {
-    "desc": "確率で被ダメージを２０％軽減＆ＨＣ出現率を大幅にアップ",
-    "effects": [
-      {
-        "dmg reduction chance%": 20,
-        "dmg reduction%": 20,
-        "passive id": "14"
-      },
-      {
-        "hc drop rate% buff": 20,
-        "passive id": "19"
-      }
-    ],
-    "id": "7100",
-    "name": "ラスタの天使"
-  },
-  "extra_skill": {},
-  "sbb": {},
-  "ubb": {},
-  "unitDisplayHomePosition_1W9CxaFK": null,
-  "unitDisplayDetailPosition_6z54rgb3": null,
-  "unitDisplayConfirmImagePosition_MYK1fq6c": null,
-  "unitDisplayCutInImagePosition_7hLR6pDN": null,
-  "unitDisplaySummonPosition_KC3Jk8Br": null,
-  "unitDisplayHpPosition_3BpHN6VD": null,
-  "unitDisplayCursorPosition": null,
-  "sellPrice": "",
-  "sellCaution": false,
-  "effectFrames": ""
+  "evoitem": ""
 }

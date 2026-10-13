@@ -1,61 +1,66 @@
 {
   "id": "60113",
-  "unitName": "Scythe Alice",
-  "no": "169",
-  "element": "Dark",
-  "rarity": "★★★★",
-  "cost": "8",
-  "maxlv": "60",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "171",
-  "animation_idle": "44",
-  "animation_move": "11",
-  "movespeed_attack": "0.0024",
-  "movespeed_skill": "0.0024",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "55, 69, 83",
-  "normal_distribute": "50, 30, 20",
-  "normal_totaldistr": "100",
-  "bb_frames": "55, 69, 83, 91, 130, 140, 150",
-  "bb_distribute": "20, 15, 15, 15, 15, 15, 15",
-  "bb_totaldistr": "110",
-  "description": "The scythe-wielding, eighth princess of the ruined Bariura Empire. She was gradually consumed by madness as she fought with her weapon. She continued killing, but eventually guilt began to pool up inside her. The emperor noticed this and led her deeper into the darkness in hopes of making her into a weapon for the empire.",
-  "summon": "What more do you wish of me?<br>I can't take it anymore.<br>But what else can I do...",
-  "fusion": "Ugh... I-I'm fine.<br>All that energy just<br>got to me a bit...",
-  "evolution": "How am I like this?<br>OK then, you don't have to <br>say anything...",
-  "hp_base": "2142",
-  "atk_base": "922",
-  "def_base": "581",
-  "rec_base": "1260",
-  "hp_lord": "3450",
-  "atk_lord": "1310",
-  "def_lord": "863",
-  "rec_lord": "1610",
-  "hp_anima": "3893",
-  "rec_anima": "1492",
-  "atk_breaker": "1428",
-  "def_breaker": "745",
-  "atk_guardian": "1192",
-  "def_guardian": "981",
-  "rec_guardian": "1551",
-  "def_oracle": "804",
-  "hp_oracle": "3273",
-  "rec_oracle": "1787",
-  "hp_bonus": "600",
-  "atk_bonus": "120",
-  "def_bonus": "120",
-  "rec_bonus": "120",
-  "lordonly": "",
-  "combo_hits": "3",
-  "normaldc": "9",
-  "ls": "Dark God's Power",
-  "lsdescription": "50% boost to Atk Power of Dark Types",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 922,
+      "def": 581,
+      "hp": 2142,
+      "rec": 1260
+    },
+    "_lord": {
+      "atk": 1310,
+      "def": 863,
+      "hp": 3450,
+      "rec": 1610
+    },
+    "anima": {
+      "atk": 1310,
+      "def": 863,
+      "hp max": 4040,
+      "hp min": 3745,
+      "rec max": 1551,
+      "rec min": 1433
+    },
+    "breaker": {
+      "atk max": 1487,
+      "atk min": 1369,
+      "def max": 804,
+      "def min": 686,
+      "hp": 3450,
+      "rec": 1610
+    },
+    "guardian": {
+      "atk": 1310,
+      "def max": 1040,
+      "def min": 922,
+      "hp": 3450,
+      "rec max": 1610,
+      "rec min": 1492
+    },
+    "oracle": {
+      "atk": 1310,
+      "def max": 863,
+      "def min": 745,
+      "hp": 3450,
+      "rec max": 1846,
+      "rec min": 1728
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to Atk Power of Dark Types",
+    "effects": [
+      {
+        "atk% buff": 50,
+        "elements buffed": [
+          "dark"
+        ],
+        "passive id": "2"
+      }
+    ],
+    "id": "151",
+    "name": "Dark God's Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -220,96 +225,87 @@
     ],
     "name": "Crimson Reaper"
   },
-  "bbdescription": "7 combo Dark elemental power attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "7",
-  "bbaoe": "A",
-  "bbgauge": "25",
-  "bbdc": "7",
-  "bbmultiplier": "170",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "60112",
-  "evointo": "60114",
-  "evomats1": "60123",
-  "evomats2": "60122",
-  "evomats3": "60143",
-  "evomats4": "60120",
-  "evomats5": "60120",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 922,
-      "def": 581,
-      "hp": 2142,
-      "rec": 1260
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1310,
-      "def": 863,
-      "hp": 3450,
-      "rec": 1610
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1310,
-      "def": 863,
-      "hp max": 4040,
-      "hp min": 3745,
-      "rec max": 1551,
-      "rec min": 1433
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 171
     },
-    "breaker": {
-      "atk max": 1487,
-      "atk min": 1369,
-      "def max": 804,
-      "def min": 686,
-      "hp": 3450,
-      "rec": 1610
+    "idle": {
+      "total number of frames": 44
     },
-    "guardian": {
-      "atk": 1310,
-      "def max": 1040,
-      "def min": 922,
-      "hp": 3450,
-      "rec max": 1610,
-      "rec min": 1492
-    },
-    "oracle": {
-      "atk": 1310,
-      "def max": 863,
-      "def min": 745,
-      "hp": 3450,
-      "rec max": 1846,
-      "rec min": 1728
+    "move": {
+      "total number of frames": 11
     }
   },
-  "leader_skill": {
-    "desc": "50% boost to Atk Power of Dark Types",
-    "effects": [
-      {
-        "atk% buff": 50,
-        "elements buffed": [
-          "dark"
-        ],
-        "passive id": "2"
-      }
+  "category": 60110,
+  "cost": "8",
+  "damage frames": {
+    "frame times": [
+      55,
+      69,
+      83
     ],
-    "id": "151",
-    "name": "Dark God's Power"
+    "hit dmg% distribution": [
+      50,
+      30,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 3
   },
-  "extra_skill": {},
+  "drop check count": 4,
+  "element": "dark",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 169,
+  "imp": {
+    "max atk": "120",
+    "max def": "120",
+    "max hp": "600",
+    "max rec": "120"
+  },
+  "kind": "normal",
+  "lord damage range": "1219~1362",
+  "movement": {
+    "attack": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    }
+  },
+  "name": "Scythe Alice",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Scythe Alice",
+  "maxlv": "60",
+  "no": "169",
   "unitDisplayHomePosition_1W9CxaFK": "265,9,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "55,160,700,669",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "131,321,340,325,0",
@@ -319,5 +315,103 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "49:126:1,63:126:1,77:126:1"
+  "effectFrames": "49:126:1,63:126:1,77:126:1",
+  "evofrom": "60112",
+  "evointo": "60114",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "60123",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60122",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60120",
+      "count": 2
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "171",
+  "animation_idle": "44",
+  "animation_move": "11",
+  "movespeed_attack": "0.0024",
+  "movespeed_skill": "0.0024",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "55, 69, 83",
+  "normal_distribute": "50, 30, 20",
+  "normal_totaldistr": "100",
+  "bb_frames": "55, 69, 83, 91, 130, 140, 150",
+  "bb_distribute": "20, 15, 15, 15, 15, 15, 15",
+  "bb_totaldistr": "110",
+  "description": "The scythe-wielding, eighth princess of the ruined Bariura Empire. She was gradually consumed by madness as she fought with her weapon. She continued killing, but eventually guilt began to pool up inside her. The emperor noticed this and led her deeper into the darkness in hopes of making her into a weapon for the empire.",
+  "summon": "What more do you wish of me?<br>I can't take it anymore.<br>But what else can I do...",
+  "fusion": "Ugh... I-I'm fine.<br>All that energy just<br>got to me a bit...",
+  "evolution": "How am I like this?<br>OK then, you don't have to <br>say anything...",
+  "hp_base": "2142",
+  "atk_base": "922",
+  "def_base": "581",
+  "rec_base": "1260",
+  "hp_lord": "3450",
+  "atk_lord": "1310",
+  "def_lord": "863",
+  "rec_lord": "1610",
+  "hp_anima": "3893",
+  "rec_anima": "1492",
+  "atk_breaker": "1428",
+  "def_breaker": "745",
+  "atk_guardian": "1192",
+  "def_guardian": "981",
+  "rec_guardian": "1551",
+  "def_oracle": "804",
+  "hp_oracle": "3273",
+  "rec_oracle": "1787",
+  "hp_bonus": "600",
+  "atk_bonus": "120",
+  "def_bonus": "120",
+  "rec_bonus": "120",
+  "lordonly": "",
+  "combo_hits": "3",
+  "normaldc": "9",
+  "ls": "Dark God's Power",
+  "lsdescription": "50% boost to Atk Power of Dark Types",
+  "lstype": "Attack",
+  "bbdescription": "7 combo Dark elemental power attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "7",
+  "bbaoe": "A",
+  "bbgauge": "25",
+  "bbdc": "7",
+  "bbmultiplier": "170",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "60123",
+  "evomats2": "60122",
+  "evomats3": "60143",
+  "evomats4": "60120",
+  "evomats5": "60120"
 }

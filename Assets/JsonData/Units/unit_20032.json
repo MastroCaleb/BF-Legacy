@@ -1,61 +1,70 @@
 {
   "id": "20032",
-  "unitName": "Kaiser Squirty",
-  "no": "1080",
-  "element": "Water",
-  "rarity": "★★★",
-  "cost": "5",
-  "maxlv": "40",
-  "basexp": "10",
-  "gender": "N",
-  "ai": "2",
-  "animation_attack": "71",
-  "animation_idle": "112",
-  "animation_move": "7",
-  "movespeed_attack": "0.0041",
-  "movespeed_skill": "0.0041",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "30, 33, 36",
-  "normal_distribute": "33, 33, 34",
-  "normal_totaldistr": "100",
-  "bb_frames": "30, 34, 38, 42, 45, 49",
-  "bb_distribute": "20, 14, 19, 14, 19, 14",
-  "bb_totaldistr": "100",
-  "description": "The Kaiser Squirty was first discovered under a serene waterfall found in Ishgria. The location of the Kaiser Squirty's core, which it uses to store water, changes according to the purity of the water itself. Luckily, this creature is fairly easy to find, as it leaves a trail of rainbows wherever it passes through. Angering it could prove extremely dangerous though, since the Kaiser Squirty releases its rage by freezing everything in its surroundings within a matter of seconds. Because of this, it has also been dubbed ''\"the ice demon pearl.''\"",
-  "summon": "I feel like the tiniest strike<br>will make me burst! *Splish*<br>Take good care of me, okay? *Splosh*",
-  "fusion": "It tastes okay, I guess. *Splish*<br>But next time you should feed me<br>more things rich in liquid! *Splosh*",
-  "evolution": "You say you're thirsty? *Splish*<br>Then you should drink some of<br>the water on my back! *Splosh*",
-  "hp_base": "1650",
-  "atk_base": "560",
-  "def_base": "570",
-  "rec_base": "620",
-  "hp_lord": "3392",
-  "atk_lord": "860",
-  "def_lord": "886",
-  "rec_lord": "1049",
-  "hp_anima": "3684",
-  "rec_anima": "971",
-  "atk_breaker": "938",
-  "def_breaker": "808",
-  "atk_guardian": "",
-  "def_guardian": "964",
-  "rec_guardian": "1010",
-  "def_oracle": "847",
-  "hp_oracle": "",
-  "rec_oracle": "1166",
-  "hp_bonus": "3000",
-  "atk_bonus": "1200",
-  "def_bonus": "1200",
-  "rec_bonus": "1200",
-  "lordonly": "",
-  "combo_hits": "3",
-  "normaldc": "9",
-  "ls": "Divine Water Crown",
-  "lsdescription": "15% boost to Atk of Water types & 15% damage reduction from Water types",
-  "lstype": "Attack/Defense",
+  "stats": {
+    "_base": {
+      "atk": 560,
+      "def": 570,
+      "hp": 1650,
+      "rec": 620
+    },
+    "_lord": {
+      "atk": 860,
+      "def": 886,
+      "hp": 3392,
+      "rec": 1049
+    },
+    "anima": {
+      "atk": 860,
+      "def": 886,
+      "hp max": 3782,
+      "hp min": 3587,
+      "rec max": 1010,
+      "rec min": 932
+    },
+    "breaker": {
+      "atk max": 977,
+      "atk min": 899,
+      "def max": 847,
+      "def min": 769,
+      "hp": 3392,
+      "rec": 1049
+    },
+    "guardian": {
+      "atk": 860,
+      "def max": 1003,
+      "def min": 925,
+      "hp": 3392,
+      "rec max": 1049,
+      "rec min": 971
+    },
+    "oracle": {
+      "atk": 860,
+      "def max": 886,
+      "def min": 808,
+      "hp": 3392,
+      "rec max": 1205,
+      "rec min": 1127
+    }
+  },
+  "leader_skill": {
+    "desc": "15% boost to Atk of Water types & 15% damage reduction from Water types ",
+    "effects": [
+      {
+        "atk% buff": 15,
+        "elements buffed": [
+          "water"
+        ],
+        "passive id": "2"
+      },
+      {
+        "passive id": "5",
+        "water resist%": 15
+      }
+    ],
+    "id": "9761",
+    "name": "Divine Water Crown"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -218,102 +227,87 @@
     ],
     "name": "Ice Gulp"
   },
-  "bbdescription": "6 combo powerful Water attack on all foes",
-  "bbtype": "Offense",
-  "bbhits": "6",
-  "bbaoe": "A",
-  "bbgauge": "12",
-  "bbdc": "6",
-  "bbmultiplier": "130",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "es": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "20031",
-  "evointo": "",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 560,
-      "def": 570,
-      "hp": 1650,
-      "rec": 620
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 860,
-      "def": 886,
-      "hp": 3392,
-      "rec": 1049
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 860,
-      "def": 886,
-      "hp max": 3782,
-      "hp min": 3587,
-      "rec max": 1010,
-      "rec min": 932
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 71
     },
-    "breaker": {
-      "atk max": 977,
-      "atk min": 899,
-      "def max": 847,
-      "def min": 769,
-      "hp": 3392,
-      "rec": 1049
+    "idle": {
+      "total number of frames": 112
     },
-    "guardian": {
-      "atk": 860,
-      "def max": 1003,
-      "def min": 925,
-      "hp": 3392,
-      "rec max": 1049,
-      "rec min": 971
-    },
-    "oracle": {
-      "atk": 860,
-      "def max": 886,
-      "def min": 808,
-      "hp": 3392,
-      "rec max": 1205,
-      "rec min": 1127
+    "move": {
+      "total number of frames": 7
     }
   },
-  "leader_skill": {
-    "desc": "15% boost to Atk of Water types & 15% damage reduction from Water types ",
-    "effects": [
-      {
-        "atk% buff": 15,
-        "elements buffed": [
-          "water"
-        ],
-        "passive id": "2"
-      },
-      {
-        "passive id": "5",
-        "water resist%": 15
-      }
+  "category": 20030,
+  "cost": "5",
+  "damage frames": {
+    "frame times": [
+      30,
+      33,
+      36
     ],
-    "id": "9761",
-    "name": "Divine Water Crown"
+    "hit dmg% distribution": [
+      33,
+      33,
+      34
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 3
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "water",
+  "exp_pattern": 10,
+  "gender": "other",
+  "getting type": "farmable",
+  "guide_id": 1080,
+  "imp": {
+    "max atk": "1200",
+    "max def": "1200",
+    "max hp": "3000",
+    "max rec": "1200"
+  },
+  "kind": "normal",
+  "lord damage range": "800~894",
+  "movement": {
+    "attack": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    }
+  },
+  "name": "Kaiser Squirty",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "Kaiser Squirty",
+  "maxlv": "40",
+  "no": "1080",
   "unitDisplayHomePosition_1W9CxaFK": "290,96,240,655",
   "unitDisplayDetailPosition_6z54rgb3": "21,84,900,753",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "101,205,493,412,1",
@@ -323,5 +317,84 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "1000",
   "sellCaution": false,
-  "effectFrames": "27:122:1,31:122:1,30:200311:1,31:200030:1,37:200141:1"
+  "effectFrames": "27:122:1,31:122:1,30:200311:1,31:200030:1,37:200141:1",
+  "evofrom": "20031",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "10",
+  "animation_attack": "71",
+  "animation_idle": "112",
+  "animation_move": "7",
+  "movespeed_attack": "0.0041",
+  "movespeed_skill": "0.0041",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "30, 33, 36",
+  "normal_distribute": "33, 33, 34",
+  "normal_totaldistr": "100",
+  "bb_frames": "30, 34, 38, 42, 45, 49",
+  "bb_distribute": "20, 14, 19, 14, 19, 14",
+  "bb_totaldistr": "100",
+  "description": "The Kaiser Squirty was first discovered under a serene waterfall found in Ishgria. The location of the Kaiser Squirty's core, which it uses to store water, changes according to the purity of the water itself. Luckily, this creature is fairly easy to find, as it leaves a trail of rainbows wherever it passes through. Angering it could prove extremely dangerous though, since the Kaiser Squirty releases its rage by freezing everything in its surroundings within a matter of seconds. Because of this, it has also been dubbed ''\"the ice demon pearl.''\"",
+  "summon": "I feel like the tiniest strike<br>will make me burst! *Splish*<br>Take good care of me, okay? *Splosh*",
+  "fusion": "It tastes okay, I guess. *Splish*<br>But next time you should feed me<br>more things rich in liquid! *Splosh*",
+  "evolution": "You say you're thirsty? *Splish*<br>Then you should drink some of<br>the water on my back! *Splosh*",
+  "hp_base": "1650",
+  "atk_base": "560",
+  "def_base": "570",
+  "rec_base": "620",
+  "hp_lord": "3392",
+  "atk_lord": "860",
+  "def_lord": "886",
+  "rec_lord": "1049",
+  "hp_anima": "3684",
+  "rec_anima": "971",
+  "atk_breaker": "938",
+  "def_breaker": "808",
+  "atk_guardian": "",
+  "def_guardian": "964",
+  "rec_guardian": "1010",
+  "def_oracle": "847",
+  "hp_oracle": "",
+  "rec_oracle": "1166",
+  "hp_bonus": "3000",
+  "atk_bonus": "1200",
+  "def_bonus": "1200",
+  "rec_bonus": "1200",
+  "lordonly": "",
+  "combo_hits": "3",
+  "normaldc": "9",
+  "ls": "Divine Water Crown",
+  "lsdescription": "15% boost to Atk of Water types & 15% damage reduction from Water types",
+  "lstype": "Attack/Defense",
+  "bbdescription": "6 combo powerful Water attack on all foes",
+  "bbtype": "Offense",
+  "bbhits": "6",
+  "bbaoe": "A",
+  "bbgauge": "12",
+  "bbdc": "6",
+  "bbmultiplier": "130",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "es": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "",
+  "evomats2": "",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": "",
+  "evoitem": ""
 }

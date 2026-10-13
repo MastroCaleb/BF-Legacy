@@ -1,65 +1,78 @@
 {
   "id": "830326",
-  "unitName": "Black Enforcer Nyala",
-  "no": "8203",
-  "element": "Earth",
-  "rarity": "★★★★★★",
-  "cost": "31",
-  "maxlv": "100",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "3",
-  "animation_attack": "Unsupported",
-  "animation_idle": "Unsupported",
-  "animation_move": "Unsupported",
-  "movespeed_attack": "2",
-  "movespeed_skill": "2",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "2",
-  "movetype_skill": "2",
-  "normal_frames": "17, 78, 84, 90, 158, 167, 176",
-  "normal_distribute": "15, 10, 6, 4, 40, 15, 10",
-  "normal_totaldistr": "100",
-  "bb_frames": "17, 78, 84, 90, 158, 164, 170, 176, 182",
-  "bb_distribute": "15, 10, 5, 4, 40, 10, 6, 5, 5",
-  "bb_totaldistr": "100",
-  "sbb_frames": "17, 78, 84, 90, 96, 158, 162, 166, 172, 178, 184",
-  "sbb_distribute": "13, 9, 4, 4, 4, 40, 8, 6, 4, 4, 4",
-  "sbb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "1",
-  "description": "A disciple of the Morokai Overlord Azurai. As a slave, Nyala was sent to the burning mines deep below Ostagoth to extract precious orihalcum ore. It is said that a particular incident that transpired within the mine drew the attention of the overlord himself. The guards of the mine were all found brutally slaughtered. All but one slave fled the mine, and that slave was Nyala. She was found in her cell covered in blood, cradling a rock and singing a lullaby. While Azurai's officers saw Nyala as a threat, the overlord saw immense potential in her. He offered her two \"choices\": to become his disciple, or forever lose the one thing she held most dear. To Nyala the answer was clear, thus her brutal training began. She went on to exceed all of Azurai's expectations, mastering the art of espionage, assassination, interrogation and torture. Using all the newly acquired skills at her disposal, Nyala finally tracked down her sister's whereabouts. Although she was proud of the young lady her sister had grown into, she did not wish to meet her. She knew any involvement with Azurai's favored assassin would surely bring nothing but trouble for her sister.",
-  "summon": "Trust... sires deceit.<br>Hope... begets despair.<br>The world is my enemy...<br>These words, I'll never forget them.",
-  "fusion": "Yes...yes my lord, it will be done.<br>I will not fail you this time...<br>Please, give me one last chance?!",
-  "evolution": "No wall is too high,<br>and no slope is too steep.<br>I will get what I want...<br>when their bodies lay at my feet.",
-  "hp_base": "4128",
-  "atk_base": "1755",
-  "def_base": "1525",
-  "rec_base": "1500",
-  "hp_lord": "5898",
-  "atk_lord": "2507",
-  "def_lord": "2179",
-  "rec_lord": "2143",
-  "hp_anima": "6640",
-  "rec_anima": "1945",
-  "atk_breaker": "2705",
-  "def_breaker": "1981",
-  "def_guardian": "2377",
-  "rec_guardian": "2044",
-  "def_oracle": "2080",
-  "rec_oracle": "2440",
-  "hp_bonus": "750",
-  "atk_bonus": "300",
-  "def_bonus": "400",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "7",
-  "normaldc": "42",
-  "ls": "Berserker's Furor",
-  "lsdescription": "30% boost to max HP, Atk, greatly boosts BB Atk & large boost to BB Atk if HP is full",
-  "lsnote": "100% boost to BB Atk, 50% boost to BB Atk if HP is full",
-  "lstype": "Hit Points/Attack",
+  "stats": {
+    "_base": {
+      "atk": 1755,
+      "def": 1525,
+      "hp": 4128,
+      "rec": 1500
+    },
+    "_lord": {
+      "atk": 2507,
+      "def": 2179,
+      "hp": 5898,
+      "rec": 2143
+    },
+    "anima": {
+      "atk": 2507,
+      "def": 2179,
+      "hp max": 6888,
+      "hp min": 6393,
+      "rec max": 2044,
+      "rec min": 1846
+    },
+    "breaker": {
+      "atk max": 2804,
+      "atk min": 2606,
+      "def max": 2080,
+      "def min": 1882,
+      "hp": 5898,
+      "rec": 2143
+    },
+    "guardian": {
+      "atk": 2507,
+      "def max": 2476,
+      "def min": 2278,
+      "hp": 5898,
+      "rec max": 2143,
+      "rec min": 1945
+    },
+    "oracle": {
+      "atk": 2507,
+      "def max": 2179,
+      "def min": 1981,
+      "hp": 5898,
+      "rec max": 2539,
+      "rec min": 2341
+    }
+  },
+  "leader_skill": {
+    "desc": "30% boost to max HP, Atk, greatly boosts BB Atk & large boost to BB Atk if HP is full",
+    "effects": [
+      {
+        "atk% buff": 30,
+        "hp% buff": 30,
+        "passive id": "1"
+      },
+      {
+        "bb atk% buff": 100,
+        "passive id": "64",
+        "sbb atk% buff": 100,
+        "ubb atk% buff": 100
+      },
+      {
+        "bb atk% add": 50,
+        "hp threshold": 100,
+        "passive id": "103",
+        "sbb atk% add": 50,
+        "triggered when hp": "higher",
+        "ubb atk% add": 50
+      }
+    ],
+    "id": "801238",
+    "name": "Berserker's Furor"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -432,18 +445,6 @@
     ],
     "name": "Brutal Tiger Fist"
   },
-  "bbdescription": "9 combo powerful Earth attack on single foe, high probability of Injury, Paralysis and largely boosts BB Atk",
-  "bbnote": "80% chance to inflict status ailments, 200% boost to BB Atk",
-  "bbtype": "Support/Offense",
-  "bbhits": "9",
-  "bbaoe": "1",
-  "bbgauge": "21",
-  "bbdc": "36",
-  "bbmultiplier": "600",
-  "bbhits2": "",
-  "bbaoe2": "",
-  "bbdc2": "",
-  "bbmultiplier2": "",
   "sbb": {
     "damage frames": [
       {
@@ -982,6 +983,192 @@
     ],
     "name": "Tigris Shock Wave"
   },
+  "ubb": {},
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "error": "sam file not supported"
+  },
+  "category": 830320,
+  "cost": "31",
+  "damage frames": {
+    "frame times": [
+      17,
+      78,
+      84,
+      90,
+      158,
+      167,
+      176
+    ],
+    "hit dmg% distribution": [
+      15,
+      10,
+      6,
+      4,
+      40,
+      15,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 7
+  },
+  "drop check count": 6,
+  "element": "earth",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 8203,
+  "imp": {
+    "max atk": "300",
+    "max def": "400",
+    "max hp": "750",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "2334~2607",
+  "movement": {
+    "attack": {
+      "move speed": 2,
+      "move speed type": "4",
+      "move type": "2"
+    },
+    "skill": {
+      "move speed": 2,
+      "move speed type": "4",
+      "move type": "2"
+    }
+  },
+  "name": "Black Enforcer Nyala",
+  "rarity": "6",
+  "sell caution": false,
+  "unitName": "Black Enforcer Nyala",
+  "maxlv": "100",
+  "no": "8203",
+  "unitDisplayHomePosition_1W9CxaFK": "311,64,140,382",
+  "unitDisplayDetailPosition_6z54rgb3": "-38,129,978,756",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "64,244,508,393,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-26,-84,978,756",
+  "unitDisplaySummonPosition_KC3Jk8Br": "64,244,508,393,0",
+  "unitDisplayHpPosition_3BpHN6VD": "0,-27",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "8000",
+  "sellCaution": false,
+  "effectFrames": "17:8000657:1,7:330641:1,18:330455:1,82:330446:1,76:330451:1,82:330435:1,66:300206:1,82:300254:1,89:300254:1,146:330540:1,151:330540:1,158:8000659:1,155:330672:1,160:330672:1,158:600491:1,140:330641:1,163:330581:1",
+  "evofrom": "830325",
+  "evointo": "830327",
+  "evozelcost": "1500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "30334",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "830034",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "Unsupported",
+  "animation_idle": "Unsupported",
+  "animation_move": "Unsupported",
+  "movespeed_attack": "2",
+  "movespeed_skill": "2",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "2",
+  "movetype_skill": "2",
+  "normal_frames": "17, 78, 84, 90, 158, 167, 176",
+  "normal_distribute": "15, 10, 6, 4, 40, 15, 10",
+  "normal_totaldistr": "100",
+  "bb_frames": "17, 78, 84, 90, 158, 164, 170, 176, 182",
+  "bb_distribute": "15, 10, 5, 4, 40, 10, 6, 5, 5",
+  "bb_totaldistr": "100",
+  "sbb_frames": "17, 78, 84, 90, 96, 158, 162, 166, 172, 178, 184",
+  "sbb_distribute": "13, 9, 4, 4, 4, 40, 8, 6, 4, 4, 4",
+  "sbb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "1",
+  "description": "A disciple of the Morokai Overlord Azurai. As a slave, Nyala was sent to the burning mines deep below Ostagoth to extract precious orihalcum ore. It is said that a particular incident that transpired within the mine drew the attention of the overlord himself. The guards of the mine were all found brutally slaughtered. All but one slave fled the mine, and that slave was Nyala. She was found in her cell covered in blood, cradling a rock and singing a lullaby. While Azurai's officers saw Nyala as a threat, the overlord saw immense potential in her. He offered her two \"choices\": to become his disciple, or forever lose the one thing she held most dear. To Nyala the answer was clear, thus her brutal training began. She went on to exceed all of Azurai's expectations, mastering the art of espionage, assassination, interrogation and torture. Using all the newly acquired skills at her disposal, Nyala finally tracked down her sister's whereabouts. Although she was proud of the young lady her sister had grown into, she did not wish to meet her. She knew any involvement with Azurai's favored assassin would surely bring nothing but trouble for her sister.",
+  "summon": "Trust... sires deceit.<br>Hope... begets despair.<br>The world is my enemy...<br>These words, I'll never forget them.",
+  "fusion": "Yes...yes my lord, it will be done.<br>I will not fail you this time...<br>Please, give me one last chance?!",
+  "evolution": "No wall is too high,<br>and no slope is too steep.<br>I will get what I want...<br>when their bodies lay at my feet.",
+  "hp_base": "4128",
+  "atk_base": "1755",
+  "def_base": "1525",
+  "rec_base": "1500",
+  "hp_lord": "5898",
+  "atk_lord": "2507",
+  "def_lord": "2179",
+  "rec_lord": "2143",
+  "hp_anima": "6640",
+  "rec_anima": "1945",
+  "atk_breaker": "2705",
+  "def_breaker": "1981",
+  "def_guardian": "2377",
+  "rec_guardian": "2044",
+  "def_oracle": "2080",
+  "rec_oracle": "2440",
+  "hp_bonus": "750",
+  "atk_bonus": "300",
+  "def_bonus": "400",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "7",
+  "normaldc": "42",
+  "ls": "Berserker's Furor",
+  "lsdescription": "30% boost to max HP, Atk, greatly boosts BB Atk & large boost to BB Atk if HP is full",
+  "lsnote": "100% boost to BB Atk, 50% boost to BB Atk if HP is full",
+  "lstype": "Hit Points/Attack",
+  "bbdescription": "9 combo powerful Earth attack on single foe, high probability of Injury, Paralysis and largely boosts BB Atk",
+  "bbnote": "80% chance to inflict status ailments, 200% boost to BB Atk",
+  "bbtype": "Support/Offense",
+  "bbhits": "9",
+  "bbaoe": "1",
+  "bbgauge": "21",
+  "bbdc": "36",
+  "bbmultiplier": "600",
+  "bbhits2": "",
+  "bbaoe2": "",
+  "bbdc2": "",
+  "bbmultiplier2": "",
   "sbbdescription": "11 combo powerful Earth attack on single foe (damage relative to remaining HP), high probability of Injury, Paralysis, probable 1 turn Atk reduction & massive additional attack on all foes at turn's end",
   "sbbnote": "400% + 600% x current HP / base max HP, 80% chance to inflict status ailments, 400% multiplier on additional attack",
   "sbbtype": "Offense",
@@ -995,7 +1182,6 @@
   "sbbaoe2": "",
   "sbbdc2": "",
   "sbbmultiplier2": "",
-  "ubb": {},
   "ubbdescription": "",
   "ubbnote": "",
   "ubbtype": "",
@@ -1012,8 +1198,6 @@
   "esitem": "",
   "esdescription": "",
   "esnote": "",
-  "evofrom": "830325",
-  "evointo": "830327",
   "evomats1": "30334",
   "evomats2": "50354",
   "evomats3": "50354",
@@ -1023,89 +1207,5 @@
   "evomats7": "",
   "evomats8": "",
   "evomats9": "",
-  "evoitem": "",
-  "evozelcost": "1500000",
-  "stats": {
-    "_base": {
-      "atk": 1755,
-      "def": 1525,
-      "hp": 4128,
-      "rec": 1500
-    },
-    "_lord": {
-      "atk": 2507,
-      "def": 2179,
-      "hp": 5898,
-      "rec": 2143
-    },
-    "anima": {
-      "atk": 2507,
-      "def": 2179,
-      "hp max": 6888,
-      "hp min": 6393,
-      "rec max": 2044,
-      "rec min": 1846
-    },
-    "breaker": {
-      "atk max": 2804,
-      "atk min": 2606,
-      "def max": 2080,
-      "def min": 1882,
-      "hp": 5898,
-      "rec": 2143
-    },
-    "guardian": {
-      "atk": 2507,
-      "def max": 2476,
-      "def min": 2278,
-      "hp": 5898,
-      "rec max": 2143,
-      "rec min": 1945
-    },
-    "oracle": {
-      "atk": 2507,
-      "def max": 2179,
-      "def min": 1981,
-      "hp": 5898,
-      "rec max": 2539,
-      "rec min": 2341
-    }
-  },
-  "leader_skill": {
-    "desc": "30% boost to max HP, Atk, greatly boosts BB Atk & large boost to BB Atk if HP is full",
-    "effects": [
-      {
-        "atk% buff": 30,
-        "hp% buff": 30,
-        "passive id": "1"
-      },
-      {
-        "bb atk% buff": 100,
-        "passive id": "64",
-        "sbb atk% buff": 100,
-        "ubb atk% buff": 100
-      },
-      {
-        "bb atk% add": 50,
-        "hp threshold": 100,
-        "passive id": "103",
-        "sbb atk% add": 50,
-        "triggered when hp": "higher",
-        "ubb atk% add": 50
-      }
-    ],
-    "id": "801238",
-    "name": "Berserker's Furor"
-  },
-  "extra_skill": {},
-  "unitDisplayHomePosition_1W9CxaFK": "311,64,140,382",
-  "unitDisplayDetailPosition_6z54rgb3": "-38,129,978,756",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "64,244,508,393,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-26,-84,978,756",
-  "unitDisplaySummonPosition_KC3Jk8Br": "64,244,508,393,0",
-  "unitDisplayHpPosition_3BpHN6VD": "0,-27",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "8000",
-  "sellCaution": false,
-  "effectFrames": "17:8000657:1,7:330641:1,18:330455:1,82:330446:1,76:330451:1,82:330435:1,66:300206:1,82:300254:1,89:300254:1,146:330540:1,151:330540:1,158:8000659:1,155:330672:1,160:330672:1,158:600491:1,140:330641:1,163:330581:1"
+  "evoitem": ""
 }

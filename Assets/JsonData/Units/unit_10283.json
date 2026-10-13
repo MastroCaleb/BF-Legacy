@@ -1,64 +1,71 @@
 {
   "id": "10283",
-  "unitName": "War Demon Vishra",
-  "no": "377",
-  "element": "Fire",
-  "rarity": "★★★★",
-  "cost": "10",
-  "maxlv": "60",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "3",
-  "animation_attack": "80",
-  "animation_idle": "56",
-  "animation_move": "9",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "26, 34, 42, 50, 58",
-  "normal_distribute": "20, 20, 20, 20, 20",
-  "normal_totaldistr": "100",
-  "bb_frames": "26, 34, 42, 50, 58, 64",
-  "bb_distribute": "20, 20, 15, 15, 15, 15",
-  "bb_totaldistr": "100",
-  "description": "A demon who once wielded flames in the Bariura Empire long ago. Having once served the empire himself, his life was changed when he received the armor known as Vishra. In exchange for great power the armor robs its user of their memory, cursing them to fight on endlessly. Though many lived in fear of the armored warrior who had slain countless brave souls, none knew how the man inside the armor was suffering.",
-  "summon": "Summoner, do you know<br>who you've just called upon?<br>I cannot be controlled.",
-  "fusion": "Don't give me more power!<br>You must keep me from <br>causing any more harm!",
-  "evolution": "",
-  "hp_base": "2588",
-  "atk_base": "944",
-  "def_base": "866",
-  "rec_base": "706",
-  "hp_lord": "3872",
-  "atk_lord": "1352",
-  "def_lord": "1235",
-  "rec_lord": "940",
-  "hp_anima": "4315",
-  "rec_anima": "822",
-  "atk_breaker": "1470",
-  "def_breaker": "1117",
-  "atk_guardian": "1234",
-  "def_guardian": "1353",
-  "rec_guardian": "881",
-  "def_oracle": "1176",
-  "hp_oracle": "3695",
-  "rec_oracle": "1117",
-  "hp_bonus": "400",
-  "atk_bonus": "160",
-  "def_bonus": "160",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "5",
-  "normaldc": "10",
-  "bbdc": "6",
-  "bbmultiplier": "190",
-  "ls": "Epidemic Wave",
-  "lsdescription": "Low chance of inflicting a random status ailment when attacking",
-  "lsnote": "3% chance to inflict Curse, Paralysis, Poison, 5% chance to inflict Injury, Sick, Weak",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 944,
+      "def": 866,
+      "hp": 2588,
+      "rec": 706
+    },
+    "_lord": {
+      "atk": 1352,
+      "def": 1235,
+      "hp": 3872,
+      "rec": 940
+    },
+    "anima": {
+      "atk": 1352,
+      "def": 1235,
+      "hp max": 4462,
+      "hp min": 4167,
+      "rec max": 881,
+      "rec min": 763
+    },
+    "breaker": {
+      "atk max": 1529,
+      "atk min": 1411,
+      "def max": 1176,
+      "def min": 1058,
+      "hp": 3872,
+      "rec": 940
+    },
+    "guardian": {
+      "atk": 1352,
+      "def max": 1412,
+      "def min": 1294,
+      "hp": 3872,
+      "rec max": 940,
+      "rec min": 822
+    },
+    "oracle": {
+      "atk": 1352,
+      "def max": 1235,
+      "def min": 1117,
+      "hp": 3872,
+      "rec max": 1176,
+      "rec min": 1058
+    }
+  },
+  "leader_skill": {
+    "desc": "Low chance of inflicting a random status ailment when attacking",
+    "effects": [
+      {
+        "injury%": 5,
+        "passive id": "20",
+        "poison%": 3,
+        "sick%": 5,
+        "weaken%": 5
+      },
+      {
+        "curse%": 3,
+        "paralysis%": 3,
+        "passive id": "20"
+      }
+    ],
+    "id": "3000",
+    "name": "Epidemic Wave"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -303,101 +310,97 @@
     ],
     "name": "Demon Cremation"
   },
-  "bbdescription": "6 combo powerful Fire attack on all enemies & probable Curse effect",
-  "bbnote": "45% chance",
-  "bbtype": "Offense",
-  "bbhits": "6",
-  "bbaoe": "A",
-  "bbgauge": "28",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "10284",
-  "evomats1": "10133",
-  "evomats2": "10132",
-  "evomats3": "10191",
-  "evomats4": "10131",
-  "evomats5": "10130",
-  "evoitem": "",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 944,
-      "def": 866,
-      "hp": 2588,
-      "rec": 706
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1352,
-      "def": 1235,
-      "hp": 3872,
-      "rec": 940
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1352,
-      "def": 1235,
-      "hp max": 4462,
-      "hp min": 4167,
-      "rec max": 881,
-      "rec min": 763
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 1529,
-      "atk min": 1411,
-      "def max": 1176,
-      "def min": 1058,
-      "hp": 3872,
-      "rec": 940
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 80
     },
-    "guardian": {
-      "atk": 1352,
-      "def max": 1412,
-      "def min": 1294,
-      "hp": 3872,
-      "rec max": 940,
-      "rec min": 822
+    "idle": {
+      "total number of frames": 56
     },
-    "oracle": {
-      "atk": 1352,
-      "def max": 1235,
-      "def min": 1117,
-      "hp": 3872,
-      "rec max": 1176,
-      "rec min": 1058
+    "move": {
+      "total number of frames": 9
     }
   },
-  "leader_skill": {
-    "desc": "Low chance of inflicting a random status ailment when attacking",
-    "effects": [
-      {
-        "injury%": 5,
-        "passive id": "20",
-        "poison%": 3,
-        "sick%": 5,
-        "weaken%": 5
-      },
-      {
-        "curse%": 3,
-        "paralysis%": 3,
-        "passive id": "20"
-      }
+  "category": 10280,
+  "cost": "10",
+  "damage frames": {
+    "frame times": [
+      26,
+      34,
+      42,
+      50,
+      58
     ],
-    "id": "3000",
-    "name": "Epidemic Wave"
+    "hit dmg% distribution": [
+      20,
+      20,
+      20,
+      20,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 5
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "fire",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 377,
+  "imp": {
+    "max atk": "160",
+    "max def": "160",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "1258~1406",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "War Demon Vishra",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "War Demon Vishra",
+  "maxlv": "60",
+  "no": "377",
   "unitDisplayHomePosition_1W9CxaFK": "307,25,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-36,193,823,624",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "160,336,297,293,0",
@@ -407,5 +410,111 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "20:127:1,28:127:1,36:127:1,44:127:1,52:127:1,20:650:1,20:100181:1,58:600220:1"
+  "effectFrames": "20:127:1,28:127:1,36:127:1,44:127:1,52:127:1,20:650:1,20:100181:1,58:600220:1",
+  "evofrom": "",
+  "evointo": "10284",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "10133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10131",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10130",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "80",
+  "animation_idle": "56",
+  "animation_move": "9",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "26, 34, 42, 50, 58",
+  "normal_distribute": "20, 20, 20, 20, 20",
+  "normal_totaldistr": "100",
+  "bb_frames": "26, 34, 42, 50, 58, 64",
+  "bb_distribute": "20, 20, 15, 15, 15, 15",
+  "bb_totaldistr": "100",
+  "description": "A demon who once wielded flames in the Bariura Empire long ago. Having once served the empire himself, his life was changed when he received the armor known as Vishra. In exchange for great power the armor robs its user of their memory, cursing them to fight on endlessly. Though many lived in fear of the armored warrior who had slain countless brave souls, none knew how the man inside the armor was suffering.",
+  "summon": "Summoner, do you know<br>who you've just called upon?<br>I cannot be controlled.",
+  "fusion": "Don't give me more power!<br>You must keep me from <br>causing any more harm!",
+  "evolution": "",
+  "hp_base": "2588",
+  "atk_base": "944",
+  "def_base": "866",
+  "rec_base": "706",
+  "hp_lord": "3872",
+  "atk_lord": "1352",
+  "def_lord": "1235",
+  "rec_lord": "940",
+  "hp_anima": "4315",
+  "rec_anima": "822",
+  "atk_breaker": "1470",
+  "def_breaker": "1117",
+  "atk_guardian": "1234",
+  "def_guardian": "1353",
+  "rec_guardian": "881",
+  "def_oracle": "1176",
+  "hp_oracle": "3695",
+  "rec_oracle": "1117",
+  "hp_bonus": "400",
+  "atk_bonus": "160",
+  "def_bonus": "160",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "5",
+  "normaldc": "10",
+  "bbdc": "6",
+  "bbmultiplier": "190",
+  "ls": "Epidemic Wave",
+  "lsdescription": "Low chance of inflicting a random status ailment when attacking",
+  "lsnote": "3% chance to inflict Curse, Paralysis, Poison, 5% chance to inflict Injury, Sick, Weak",
+  "lstype": "Attack",
+  "bbdescription": "6 combo powerful Fire attack on all enemies & probable Curse effect",
+  "bbnote": "45% chance",
+  "bbtype": "Offense",
+  "bbhits": "6",
+  "bbaoe": "A",
+  "bbgauge": "28",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "10133",
+  "evomats2": "10132",
+  "evomats3": "10191",
+  "evomats4": "10131",
+  "evomats5": "10130",
+  "evoitem": ""
 }

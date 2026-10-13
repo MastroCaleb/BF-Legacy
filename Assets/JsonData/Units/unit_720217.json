@@ -1,67 +1,174 @@
 {
   "id": "720217",
-  "unitName": "Bellicose Princess Ninmah (EU)",
-  "disam": "Ninmah",
-  "altname": "Bellicose Princess Ninmah",
-  "idalt": "",
-  "has_altart": "",
-  "doenter": "true",
-  "no": "7225",
-  "element": "Water",
-  "rarity": "Dream",
-  "cost": "50",
-  "maxlv": "150",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "186",
-  "animation_idle": "64",
-  "animation_move": "64",
-  "movespeed_attack": "6",
-  "speedtype_attack": "2",
-  "movetype_attack": "3",
-  "movespeed_skill": "6",
-  "speedtype_skill": "2",
-  "movetype_skill": "3",
-  "description": "After the events with Enki, which led to the death of Gilgamesh, the Princess of Kaiser became the mother of all Shapeshifters by accepting the spirit that clung to her. It was this spirit which later on showed her the tragic destinies of her descendants through a vision. Ninmah could have chosen to refuse the power of the spirit and side with her father. Thus, she would have refused to yield to the devouring passion that the gladiator instilled in her to respect the Kaiser’s will. Enki would have defied Gilgamesh in single combat. The battle would have raged on for days. The invincible Kaiser would have realized that he was going to lose, being too old, before this young and ardent fighter, and he would start to feel a new sensation: fear. However, the Princess would decide to intervene by attacking the gladiator who would have taken a fatal blow. Enki would have managed to survive and barely get away. On his part, Gilgamesh would strive to recognize his daughter as a powerful warrior. Nevertheless, the father and daughter would need to prepare themselves: the ancient gladiator would have decreed the most terrible of vengeances. Many years later, some soldiers would have reported that a strange army composed of soldiers that transform into ferocious beasts was advancing towards the Kingdom of Kaiser...",
-  "summon": "",
-  "fusion": "I possess my own strength! I don’t need the help of any spirit...",
-  "evolution": "Father… I am ready to fight! We’ll kill this wicked Enki!",
-  "hp_base": "6884",
-  "atk_base": "2630",
-  "def_base": "2663",
-  "rec_base": "2001",
-  "hp_lord": "8398",
-  "atk_lord": "3209",
-  "def_lord": "3249",
-  "rec_lord": "2441",
-  "hp_anima": "9515",
-  "rec_anima": "2143",
-  "atk_breaker": "3507",
-  "def_breaker": "2951",
-  "def_guardian": "3547",
-  "rec_guardian": "2441",
-  "def_oracle": "3249",
-  "rec_oracle": "2739",
-  "hp_bonus": "1850",
-  "atk_bonus": "600",
-  "def_bonus": "620",
-  "rec_bonus": "600",
-  "lordonly": "",
-  "evofrom": "720216",
-  "evointo": "",
-  "normal_frames": "70",
-  "normal_distribute": "100",
-  "normal_totaldistr": "100",
-  "combo_hits": "1",
-  "normaldc": "35",
-  "ls": "Monarch Guidance",
-  "lsdescription": "Boosts DEF and HP (60%) & reduces Fire, Water, Earth, Thunder damage (15%) & chance of reducing damage taken to 1 (15%) & damage taken restores HP (10%) for 2 turns when damage taken exceeds certain amount (20000)",
-  "lsnote": "",
-  "es": "Kaiser to Become",
-  "esdescription": "When Gilgamesh Crown or Pure Noblesse Title is equipped, boosts HP (40%), adds HP restoration on BB/SBB, Spark damage boosts BB gauge (self, 10 BC) for 1 turn on SBB and execute 1 more action in the same turn when Sparks have exceeded certain number (3)",
-  "esitem": "Gilgamesh Crown or Pure Noblesse Title",
-  "esnote": "",
+  "stats": {
+    "_base": {
+      "atk": 2630,
+      "def": 2663,
+      "hp": 6884,
+      "rec": 2001
+    },
+    "_lord": {
+      "atk": 3209,
+      "def": 3249,
+      "hp": 8398,
+      "rec": 2441
+    },
+    "anima": {
+      "atk": 3209,
+      "def": 3249,
+      "hp max": 9888,
+      "hp min": 9143,
+      "rec max": 2292,
+      "rec min": 1994
+    },
+    "breaker": {
+      "atk max": 3656,
+      "atk min": 3358,
+      "def max": 3100,
+      "def min": 2802,
+      "hp": 8398,
+      "rec": 2441
+    },
+    "guardian": {
+      "atk max": 3060,
+      "atk min": 2762,
+      "def max": 3696,
+      "def min": 3398,
+      "hp": 8398,
+      "rec": 2441
+    },
+    "oracle": {
+      "atk": 3209,
+      "def": 3249,
+      "hp max": 7653,
+      "hp min": 6908,
+      "rec max": 2888,
+      "rec min": 2590
+    }
+  },
+  "leader_skill": {
+    "desc": "Boosts DEF and HP (60%) & reduces Fire, Water, Earth, Thunder damage (15%) & chance of reducing damage taken to 1 (15%) & damage taken restores HP (10%) for 2 turns when damage taken exceeds certain amount (20000)",
+    "effects": [
+      {
+        "def% buff": 60,
+        "hp% buff": 60,
+        "passive id": "1"
+      },
+      {
+        "dmg% mitigation for elemental attacks": 15.0,
+        "mitigate earth attacks": true,
+        "mitigate fire attacks": true,
+        "mitigate thunder attacks": true,
+        "mitigate water attacks": true,
+        "passive id": "62"
+      },
+      {
+        "passive id": "43",
+        "take 1 dmg%": 15
+      },
+      {
+        "buff": {
+          "buff turns (133)": "2",
+          "unknown buff id": "133",
+          "unknown buff params": "10&10&100"
+        },
+        "damage threshold buff activation": 20000,
+        "passive id": "78"
+      }
+    ],
+    "id": "720217",
+    "name": "Monarch Guidance"
+  },
+  "extra_skill": {
+    "desc": "When Gilgamesh Crown or Pure Noblesse Title is equipped, boosts HP (40%), adds HP restoration on BB/SBB, Spark damage boosts BB gauge (self, 10 BC) for 1 turn on SBB and execute 1 more action in the same turn when Sparks have exceeded certain number (3) ",
+    "effects": [
+      {
+        "conditions": [
+          {
+            "item required": [
+              "701012",
+              "701047"
+            ]
+          }
+        ],
+        "hp% buff": 40,
+        "passive id": "1",
+        "passive target": "self"
+      },
+      {
+        "conditions": [
+          {
+            "item required": [
+              "701012",
+              "701047"
+            ]
+          }
+        ],
+        "passive id": "66",
+        "passive target": "self",
+        "trigger on bb": true,
+        "trigger on sbb": true,
+        "triggered effect": [
+          {
+            "effect delay time(ms)/frame": "0.0/0",
+            "heal high": 4000,
+            "heal low": 3500,
+            "proc id": "2",
+            "rec added% (from healer)": 11.5,
+            "target area": "aoe",
+            "target type": "party"
+          }
+        ]
+      },
+      {
+        "conditions": [
+          {
+            "item required": [
+              "701012",
+              "701047"
+            ]
+          }
+        ],
+        "passive id": "66",
+        "passive target": "self",
+        "trigger on sbb": true,
+        "triggered effect": [
+          {
+            "bc fill on spark buff turns (111)": 1,
+            "bc fill on spark high": 10,
+            "bc fill on spark low": 10,
+            "bc fill on spark%": 100,
+            "effect delay time(ms)/frame": "50.0/3",
+            "proc id": "67",
+            "target area": "single",
+            "target type": "self"
+          }
+        ]
+      },
+      {
+        "buff": {
+          "buff turns (123)": "1",
+          "unknown buff id": "123",
+          "unknown buff params": "1&100"
+        },
+        "conditions": [
+          {
+            "item required": [
+              "701012",
+              "701047"
+            ]
+          }
+        ],
+        "passive id": "86",
+        "passive target": "self",
+        "spark count buff activation": 3
+      }
+    ],
+    "id": "720217",
+    "name": "Kaiser to Become",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -684,58 +791,6 @@
     ],
     "name": "Moon of Battle"
   },
-  "bbdescription": "Damage reduction (50%) for 1 turn & Water, Earth, Light damage reduction (10%) for 1 turn & probable random status ailment infliction (80%) & additional attack at turn's end for 3 turns & boosts damage against status afflicted foes (180%) for 3 turns",
-  "bbnote": "{{UnitBuffList",
-  "buff_1_proc": "66",
-  "buff_1_potency": "100% chance of reviving with 100% HP",
-  "buff_1_duration": "—",
-  "buff_1_target": "All allies",
-  "buff_2_proc": "62_water",
-  "buff_2_potency": "Activates Water barrier with 30000 HP",
-  "buff_2_duration": "—",
-  "buff_2_target": "All allies",
-  "buff_3_proc": "24_atk",
-  "buff_3_potency": "Boosts Atk relative to 50% of HP",
-  "buff_3_duration": "3 turns",
-  "buff_3_target": "All allies",
-  "buff_4_proc": "26",
-  "buff_4_potency": "+3 to each normal hit (120% extra hit damage modifier)",
-  "buff_4_duration": "3 turns",
-  "buff_4_target": "All allies",
-  "buff_5_proc": "18",
-  "buff_5_potency": "Reduces damage taken by 75%",
-  "buff_5_duration": "3 turns",
-  "buff_5_target": "All allies",
-  "buff_6_proc": "62_water",
-  "buff_6_potency": "Activates Water barrier with 3500 HP",
-  "buff_6_duration": "—",
-  "buff_6_target": "All allies",
-  "buff_7_proc": "73",
-  "buff_7_potency": "Negates Atk, Def, and Rec reduction effects",
-  "buff_7_duration": "2 turns",
-  "buff_7_target": "All allies",
-  "buff_8_proc": "11_weaken",
-  "buff_8_potency": "80% chance of inflicting Weak",
-  "buff_8_duration": "3 turns",
-  "buff_8_target": "All enemies",
-  "buff_9_proc": "11_curse",
-  "buff_9_potency": "80% chance of inflicting Curse",
-  "buff_9_duration": "1 turn",
-  "buff_9_target": "All enemies",
-  "buff_10_proc": "11_paralysis",
-  "buff_10_potency": "80% chance of inflicting Paralysis",
-  "buff_10_duration": "1 turn",
-  "buff_10_target": "All enemies",
-  "buff_11_proc": "44",
-  "buff_11_potency": "600% DoT modifier",
-  "buff_11_duration": "3 turns",
-  "buff_11_target": "All enemies",
-  "buff_12_proc": "65",
-  "buff_12_potency": "180% boost to Atk when enemy is status afflicted",
-  "buff_12_duration": "3 turns",
-  "buff_12_target": "All allies",
-  "bbtype": "Support",
-  "bbgauge": "26",
   "sbb": {
     "damage frames": [
       {
@@ -1290,19 +1345,6 @@
     ],
     "name": "Circle of Conflict"
   },
-  "sbbdescription": "2 Water attacks on all enemies & damage reduction (50%) for 1 turn & Fire, Thunder, Dark damage reduction (10%) for 1 turn & activates Water barrier (3500 HP) & negates ATK, DEF, REC reductions for 2 turns",
-  "sbbnote": "{{UnitBuffList",
-  "sbbtype": "Offense",
-  "sbbgauge": "25",
-  "sbb_frames": "69, 72",
-  "sbb_distribute": "50, 50",
-  "sbb_totaldistr": "100",
-  "sbb_effectdelay": "3",
-  "sbbhits": "2",
-  "sbbaoe": "A",
-  "sbbdc": "14",
-  "sbbmultiplier": "620",
-  "sbb_hpscale": "",
   "ubb": {
     "damage frames": [
       {
@@ -1374,6 +1416,212 @@
     ],
     "name": "Vision of a Victorious Future"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 186
+    },
+    "idle": {
+      "total number of frames": 64
+    },
+    "move": {
+      "total number of frames": 64
+    }
+  },
+  "cost": "50",
+  "damage frames": {
+    "frame times": [
+      70
+    ],
+    "hit dmg% distribution": [
+      100
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 1
+  },
+  "drop check count": 35,
+  "element": "water",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 7225,
+  "imp": {
+    "max atk": "600",
+    "max def": "620",
+    "max hp": "1850",
+    "max rec": "600"
+  },
+  "kind": "normal",
+  "lord damage range": "2988~3337",
+  "movement": {
+    "attack": {
+      "move speed": 6,
+      "move speed type": "2",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 6,
+      "move speed type": "2",
+      "move type": "3"
+    }
+  },
+  "name": "Bellicose Princess Ninmah",
+  "rarity": "8",
+  "sell caution": false,
+  "unitName": "Bellicose Princess Ninmah",
+  "maxlv": "150",
+  "no": "7225",
+  "unitDisplayHomePosition_1W9CxaFK": null,
+  "unitDisplayDetailPosition_6z54rgb3": null,
+  "unitDisplayConfirmImagePosition_MYK1fq6c": null,
+  "unitDisplayCutInImagePosition_7hLR6pDN": null,
+  "unitDisplaySummonPosition_KC3Jk8Br": null,
+  "unitDisplayHpPosition_3BpHN6VD": null,
+  "unitDisplayCursorPosition": null,
+  "sellPrice": "",
+  "sellCaution": false,
+  "effectFrames": "",
+  "evofrom": "720216",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "disam": "Ninmah",
+  "altname": "Bellicose Princess Ninmah",
+  "idalt": "",
+  "has_altart": "",
+  "doenter": "true",
+  "basexp": "21",
+  "animation_attack": "186",
+  "animation_idle": "64",
+  "animation_move": "64",
+  "movespeed_attack": "6",
+  "speedtype_attack": "2",
+  "movetype_attack": "3",
+  "movespeed_skill": "6",
+  "speedtype_skill": "2",
+  "movetype_skill": "3",
+  "description": "After the events with Enki, which led to the death of Gilgamesh, the Princess of Kaiser became the mother of all Shapeshifters by accepting the spirit that clung to her. It was this spirit which later on showed her the tragic destinies of her descendants through a vision. Ninmah could have chosen to refuse the power of the spirit and side with her father. Thus, she would have refused to yield to the devouring passion that the gladiator instilled in her to respect the Kaiser’s will. Enki would have defied Gilgamesh in single combat. The battle would have raged on for days. The invincible Kaiser would have realized that he was going to lose, being too old, before this young and ardent fighter, and he would start to feel a new sensation: fear. However, the Princess would decide to intervene by attacking the gladiator who would have taken a fatal blow. Enki would have managed to survive and barely get away. On his part, Gilgamesh would strive to recognize his daughter as a powerful warrior. Nevertheless, the father and daughter would need to prepare themselves: the ancient gladiator would have decreed the most terrible of vengeances. Many years later, some soldiers would have reported that a strange army composed of soldiers that transform into ferocious beasts was advancing towards the Kingdom of Kaiser...",
+  "summon": "",
+  "fusion": "I possess my own strength! I don’t need the help of any spirit...",
+  "evolution": "Father… I am ready to fight! We’ll kill this wicked Enki!",
+  "hp_base": "6884",
+  "atk_base": "2630",
+  "def_base": "2663",
+  "rec_base": "2001",
+  "hp_lord": "8398",
+  "atk_lord": "3209",
+  "def_lord": "3249",
+  "rec_lord": "2441",
+  "hp_anima": "9515",
+  "rec_anima": "2143",
+  "atk_breaker": "3507",
+  "def_breaker": "2951",
+  "def_guardian": "3547",
+  "rec_guardian": "2441",
+  "def_oracle": "3249",
+  "rec_oracle": "2739",
+  "hp_bonus": "1850",
+  "atk_bonus": "600",
+  "def_bonus": "620",
+  "rec_bonus": "600",
+  "lordonly": "",
+  "normal_frames": "70",
+  "normal_distribute": "100",
+  "normal_totaldistr": "100",
+  "combo_hits": "1",
+  "normaldc": "35",
+  "ls": "Monarch Guidance",
+  "lsdescription": "Boosts DEF and HP (60%) & reduces Fire, Water, Earth, Thunder damage (15%) & chance of reducing damage taken to 1 (15%) & damage taken restores HP (10%) for 2 turns when damage taken exceeds certain amount (20000)",
+  "lsnote": "",
+  "es": "Kaiser to Become",
+  "esdescription": "When Gilgamesh Crown or Pure Noblesse Title is equipped, boosts HP (40%), adds HP restoration on BB/SBB, Spark damage boosts BB gauge (self, 10 BC) for 1 turn on SBB and execute 1 more action in the same turn when Sparks have exceeded certain number (3)",
+  "esitem": "Gilgamesh Crown or Pure Noblesse Title",
+  "esnote": "",
+  "bbdescription": "Damage reduction (50%) for 1 turn & Water, Earth, Light damage reduction (10%) for 1 turn & probable random status ailment infliction (80%) & additional attack at turn's end for 3 turns & boosts damage against status afflicted foes (180%) for 3 turns",
+  "bbnote": "{{UnitBuffList",
+  "buff_1_proc": "66",
+  "buff_1_potency": "100% chance of reviving with 100% HP",
+  "buff_1_duration": "—",
+  "buff_1_target": "All allies",
+  "buff_2_proc": "62_water",
+  "buff_2_potency": "Activates Water barrier with 30000 HP",
+  "buff_2_duration": "—",
+  "buff_2_target": "All allies",
+  "buff_3_proc": "24_atk",
+  "buff_3_potency": "Boosts Atk relative to 50% of HP",
+  "buff_3_duration": "3 turns",
+  "buff_3_target": "All allies",
+  "buff_4_proc": "26",
+  "buff_4_potency": "+3 to each normal hit (120% extra hit damage modifier)",
+  "buff_4_duration": "3 turns",
+  "buff_4_target": "All allies",
+  "buff_5_proc": "18",
+  "buff_5_potency": "Reduces damage taken by 75%",
+  "buff_5_duration": "3 turns",
+  "buff_5_target": "All allies",
+  "buff_6_proc": "62_water",
+  "buff_6_potency": "Activates Water barrier with 3500 HP",
+  "buff_6_duration": "—",
+  "buff_6_target": "All allies",
+  "buff_7_proc": "73",
+  "buff_7_potency": "Negates Atk, Def, and Rec reduction effects",
+  "buff_7_duration": "2 turns",
+  "buff_7_target": "All allies",
+  "buff_8_proc": "11_weaken",
+  "buff_8_potency": "80% chance of inflicting Weak",
+  "buff_8_duration": "3 turns",
+  "buff_8_target": "All enemies",
+  "buff_9_proc": "11_curse",
+  "buff_9_potency": "80% chance of inflicting Curse",
+  "buff_9_duration": "1 turn",
+  "buff_9_target": "All enemies",
+  "buff_10_proc": "11_paralysis",
+  "buff_10_potency": "80% chance of inflicting Paralysis",
+  "buff_10_duration": "1 turn",
+  "buff_10_target": "All enemies",
+  "buff_11_proc": "44",
+  "buff_11_potency": "600% DoT modifier",
+  "buff_11_duration": "3 turns",
+  "buff_11_target": "All enemies",
+  "buff_12_proc": "65",
+  "buff_12_potency": "180% boost to Atk when enemy is status afflicted",
+  "buff_12_duration": "3 turns",
+  "buff_12_target": "All allies",
+  "bbtype": "Support",
+  "bbgauge": "26",
+  "sbbdescription": "2 Water attacks on all enemies & damage reduction (50%) for 1 turn & Fire, Thunder, Dark damage reduction (10%) for 1 turn & activates Water barrier (3500 HP) & negates ATK, DEF, REC reductions for 2 turns",
+  "sbbnote": "{{UnitBuffList",
+  "sbbtype": "Offense",
+  "sbbgauge": "25",
+  "sbb_frames": "69, 72",
+  "sbb_distribute": "50, 50",
+  "sbb_totaldistr": "100",
+  "sbb_effectdelay": "3",
+  "sbbhits": "2",
+  "sbbaoe": "A",
+  "sbbdc": "14",
+  "sbbmultiplier": "620",
+  "sbb_hpscale": "",
   "ubbdescription": "Raises allies from KO (100% chance) & activates Water barrier (30000 HP) & boosts ATK relative to HP (50%) & raises normal hit amount (+3, 120%) & damage reduction (75%) for 3 turns",
   "ubbnote": "{{UnitBuffList",
   "ubbtype": "Support",
@@ -1415,184 +1663,5 @@
   "notes": "",
   "incorrectinfo": "",
   "addcat": "",
-  "addcatname": "",
-  "stats": {
-    "_base": {
-      "atk": 2630,
-      "def": 2663,
-      "hp": 6884,
-      "rec": 2001
-    },
-    "_lord": {
-      "atk": 3209,
-      "def": 3249,
-      "hp": 8398,
-      "rec": 2441
-    },
-    "anima": {
-      "atk": 3209,
-      "def": 3249,
-      "hp max": 9888,
-      "hp min": 9143,
-      "rec max": 2292,
-      "rec min": 1994
-    },
-    "breaker": {
-      "atk max": 3656,
-      "atk min": 3358,
-      "def max": 3100,
-      "def min": 2802,
-      "hp": 8398,
-      "rec": 2441
-    },
-    "guardian": {
-      "atk max": 3060,
-      "atk min": 2762,
-      "def max": 3696,
-      "def min": 3398,
-      "hp": 8398,
-      "rec": 2441
-    },
-    "oracle": {
-      "atk": 3209,
-      "def": 3249,
-      "hp max": 7653,
-      "hp min": 6908,
-      "rec max": 2888,
-      "rec min": 2590
-    }
-  },
-  "leader_skill": {
-    "desc": "Boosts DEF and HP (60%) & reduces Fire, Water, Earth, Thunder damage (15%) & chance of reducing damage taken to 1 (15%) & damage taken restores HP (10%) for 2 turns when damage taken exceeds certain amount (20000)",
-    "effects": [
-      {
-        "def% buff": 60,
-        "hp% buff": 60,
-        "passive id": "1"
-      },
-      {
-        "dmg% mitigation for elemental attacks": 15.0,
-        "mitigate earth attacks": true,
-        "mitigate fire attacks": true,
-        "mitigate thunder attacks": true,
-        "mitigate water attacks": true,
-        "passive id": "62"
-      },
-      {
-        "passive id": "43",
-        "take 1 dmg%": 15
-      },
-      {
-        "buff": {
-          "buff turns (133)": "2",
-          "unknown buff id": "133",
-          "unknown buff params": "10&10&100"
-        },
-        "damage threshold buff activation": 20000,
-        "passive id": "78"
-      }
-    ],
-    "id": "720217",
-    "name": "Monarch Guidance"
-  },
-  "extra_skill": {
-    "desc": "When Gilgamesh Crown or Pure Noblesse Title is equipped, boosts HP (40%), adds HP restoration on BB/SBB, Spark damage boosts BB gauge (self, 10 BC) for 1 turn on SBB and execute 1 more action in the same turn when Sparks have exceeded certain number (3) ",
-    "effects": [
-      {
-        "conditions": [
-          {
-            "item required": [
-              "701012",
-              "701047"
-            ]
-          }
-        ],
-        "hp% buff": 40,
-        "passive id": "1",
-        "passive target": "self"
-      },
-      {
-        "conditions": [
-          {
-            "item required": [
-              "701012",
-              "701047"
-            ]
-          }
-        ],
-        "passive id": "66",
-        "passive target": "self",
-        "trigger on bb": true,
-        "trigger on sbb": true,
-        "triggered effect": [
-          {
-            "effect delay time(ms)/frame": "0.0/0",
-            "heal high": 4000,
-            "heal low": 3500,
-            "proc id": "2",
-            "rec added% (from healer)": 11.5,
-            "target area": "aoe",
-            "target type": "party"
-          }
-        ]
-      },
-      {
-        "conditions": [
-          {
-            "item required": [
-              "701012",
-              "701047"
-            ]
-          }
-        ],
-        "passive id": "66",
-        "passive target": "self",
-        "trigger on sbb": true,
-        "triggered effect": [
-          {
-            "bc fill on spark buff turns (111)": 1,
-            "bc fill on spark high": 10,
-            "bc fill on spark low": 10,
-            "bc fill on spark%": 100,
-            "effect delay time(ms)/frame": "50.0/3",
-            "proc id": "67",
-            "target area": "single",
-            "target type": "self"
-          }
-        ]
-      },
-      {
-        "buff": {
-          "buff turns (123)": "1",
-          "unknown buff id": "123",
-          "unknown buff params": "1&100"
-        },
-        "conditions": [
-          {
-            "item required": [
-              "701012",
-              "701047"
-            ]
-          }
-        ],
-        "passive id": "86",
-        "passive target": "self",
-        "spark count buff activation": 3
-      }
-    ],
-    "id": "720217",
-    "name": "Kaiser to Become",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": null,
-  "unitDisplayDetailPosition_6z54rgb3": null,
-  "unitDisplayConfirmImagePosition_MYK1fq6c": null,
-  "unitDisplayCutInImagePosition_7hLR6pDN": null,
-  "unitDisplaySummonPosition_KC3Jk8Br": null,
-  "unitDisplayHpPosition_3BpHN6VD": null,
-  "unitDisplayCursorPosition": null,
-  "sellPrice": "",
-  "sellCaution": false,
-  "effectFrames": ""
+  "addcatname": ""
 }

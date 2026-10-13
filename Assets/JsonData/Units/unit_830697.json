@@ -1,69 +1,124 @@
 {
   "id": "830697",
-  "unitName": "Miell",
-  "freetext": ":''For other uses, see Miell (disambiguation).''",
-  "no": "8504",
-  "element": "Earth",
-  "rarity": "★★★★★★★",
-  "cost": "52",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "5",
-  "animation_attack": "155",
-  "animation_idle": "60",
-  "animation_move": "60",
-  "movespeed_attack": "4",
-  "movespeed_skill": "4",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "82, 91, 100, 109",
-  "normal_distribute": "25, 25, 25, 25",
-  "normal_totaldistr": "100",
-  "bb_frames": "76, 82, 88, 97, 106",
-  "bb_distribute": "20, 20, 20, 20, 20",
-  "bb_totaldistr": "100",
-  "sbb_frames": "76, 82, 88, 94, 100, 106, 112",
-  "sbb_distribute": "12, 16, 13, 18, 12, 17, 12",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "76, 79, 82, 85, 88, 91, 94, 97, 100, 103, 106, 109, 112",
-  "ubb_distribute": "6, 9, 8, 6, 7, 10, 7, 9, 6, 7, 10, 8, 7",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "1",
-  "ubb_effectdelay": "1",
-  "description": "Fauns are well-known throughout Grand Gaia as magical creatures of the northern forests, though the truth of their existence wavers somewhere between reality and folklore. As children of nature, this chimeric blend of a human torso atop a hircine lower body has captured the hearts of many a traveler that wandered into their homes, lured by the fantastic melodies of their flutes. They would guide the lost to well-worn footpaths before returning to their trees. Their joyful natures and love for merrymaking are especially beloved by the spirits of the forests. A faun party held for all their inhabitants to celebrate the changing of the seasons is said to never run out of food and drink.One day, driven by greed, a horde of men destroyed the northern forests for their abundant magical energies. The spirits scattered to the wind, and the forest began to buckle under assaults of fire and blood. Devastated by this show of aggression, the fauns had no choice but to defend their homes themselves. The survivors would use their magical flutes to lure the men one by one into deep caves, where they would trap and leave them to die of starvation.Years passed, and the once peaceful fauns honed and perfected the art of offensive magic. Though their instruments were now replaced with wands and staves, the fauns quietly wished for memories of better days, when their flutes played the cheerful song of life. And that's when one brave faun girl sought to make this wish come true by seeking the guidance of an eternal deity...",
-  "summon": "Hello. Are you...lost?<br><br>Come with me.<br><br>If the others see you, they'll attack you…",
-  "fusion": "Oh! Are these...berries?<br><br>These remind me of when<br><br>I was just a small girl.",
-  "evolution": "",
-  "hp_base": "5548",
-  "atk_base": "2070",
-  "def_base": "2149",
-  "rec_base": "2568",
-  "hp_lord": "7925",
-  "atk_lord": "2957",
-  "def_lord": "3070",
-  "rec_lord": "3668",
-  "hp_anima": "8817",
-  "rec_anima": "3430",
-  "atk_breaker": "3195",
-  "def_breaker": "2832",
-  "def_guardian": "3308",
-  "rec_guardian": "3549",
-  "def_oracle": "2951",
-  "rec_oracle": "4025",
-  "hp_bonus": "1100",
-  "atk_bonus": "440",
-  "def_bonus": "440",
-  "rec_bonus": "440",
-  "lordonly": "",
-  "combo_hits": "4",
-  "normaldc": "44",
-  "ls": "Piper's Gift",
-  "lsdescription": "80% boost to Atk, Def, Rec and 100% boost to max HP, hugely boosts BB gauge each turn, restores HP each turn & negates all status ailments and Atk, Def, Rec reduction effects",
-  "lsnote": "Fills 8 BC each turn & heals 1000~1500 + 10% Rec HP each turn",
+  "stats": {
+    "_base": {
+      "atk": 2070,
+      "def": 2149,
+      "hp": 5548,
+      "rec": 2568
+    },
+    "_lord": {
+      "atk": 2957,
+      "def": 3070,
+      "hp": 7925,
+      "rec": 3668
+    },
+    "anima": {
+      "atk": 2957,
+      "def": 3070,
+      "hp max": 9115,
+      "hp min": 8520,
+      "rec max": 3549,
+      "rec min": 3311
+    },
+    "breaker": {
+      "atk max": 3314,
+      "atk min": 3076,
+      "def max": 2951,
+      "def min": 2713,
+      "hp": 7925,
+      "rec": 3668
+    },
+    "guardian": {
+      "atk": 2957,
+      "def max": 3427,
+      "def min": 3189,
+      "hp": 7925,
+      "rec max": 3668,
+      "rec min": 3430
+    },
+    "oracle": {
+      "atk": 2957,
+      "def max": 3070,
+      "def min": 2832,
+      "hp": 7925,
+      "rec max": 4144,
+      "rec min": 3906
+    }
+  },
+  "leader_skill": {
+    "desc": "80% boost to Atk, Def, Rec and 100% boost to max HP, hugely boosts BB gauge each turn, restores HP each turn & negates all status ailments and Atk, Def, Rec reduction effects",
+    "effects": [
+      {
+        "atk% buff": 80,
+        "def% buff": 80,
+        "hp% buff": 100,
+        "passive id": "1",
+        "rec% buff": 80
+      },
+      {
+        "bc fill per turn": 8,
+        "passive id": "9"
+      },
+      {
+        "passive id": "33",
+        "rec% added (turn heal)": 10.0,
+        "turn heal high": 1500,
+        "turn heal low": 1000
+      },
+      {
+        "atk down resist%": 100,
+        "curse resist%": 100,
+        "def down resist%": 100,
+        "injury resist%": 100,
+        "paralysis resist%": 100,
+        "passive id": "73",
+        "poison resist%": 100,
+        "rec down resist%": 100,
+        "sick resist%": 100,
+        "weaken resist%": 100
+      }
+    ],
+    "id": "830697",
+    "name": "Piper's Gift"
+  },
+  "extra_skill": {
+    "desc": "10% boost to all parameters for all allies, negates critical and elemental damage & restores HP each turn",
+    "effects": [
+      {
+        "atk% buff": 10,
+        "conditions": [],
+        "def% buff": 10,
+        "hp% buff": 10,
+        "passive id": "1",
+        "passive target": "party",
+        "rec% buff": 10
+      },
+      {
+        "conditions": [],
+        "crit chance base resist%": 100,
+        "crit chance buffed resist%": 100,
+        "crit dmg base damage resist%": 100,
+        "crit dmg buffed damage resist%": 100,
+        "passive id": "53",
+        "passive target": "self",
+        "strong base element damage resist%": 100,
+        "strong buffed element damage resist%": 100
+      },
+      {
+        "conditions": [],
+        "passive id": "33",
+        "passive target": "self",
+        "rec% added (turn heal)": 10.0,
+        "turn heal high": 3000,
+        "turn heal low": 2000
+      }
+    ],
+    "id": "830697",
+    "name": "Healing Word",
+    "rarity": "7",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -772,15 +827,6 @@
     ],
     "name": "Earthen Whisper"
   },
-  "bbdescription": "5 combo powerful Earth attack on all foes (partial HP drain), greatly restores HP for 3 turns, greatly boosts max HP, 10% damage reduction from all element types for 3 turns & removes all status ailments and Atk, Def, Rec reduction effects",
-  "bbnote": "Heals 3500~4000 HP + 20% Rec HP each turn & 25% HP buff",
-  "bbtype": "Offense",
-  "bbhits": "5",
-  "bbaoe": "A",
-  "bbgauge": "25",
-  "bbdc": "5",
-  "bbmultiplier": "450",
-  "bb_hpscale": "",
   "sbb": {
     "damage frames": [
       {
@@ -1413,15 +1459,6 @@
     ],
     "name": "Forgotten Waltz"
   },
-  "sbbdescription": "7 combo powerful Earth attack on all foes (partial HP drain), hugely restores HP, activates Earth barrier, 10% damage reduction from all element types for 3 turns & boosts OD gauge",
-  "sbbnote": "Heals 4000~4500 HP + 40% Rec HP, 3500 HP Earth Barrier & 8% OD fill",
-  "sbbtype": "Offense",
-  "sbbhits": "7",
-  "sbbaoe": "A",
-  "sbbgauge": "25",
-  "sbbdc": "7",
-  "sbbmultiplier": "750",
-  "sbb_hpscale": "",
   "ubb": {
     "damage frames": [
       {
@@ -1589,6 +1626,212 @@
     ],
     "name": "Memories of Spring"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 80.0,
+      "target conditions": "hp_50pr_under",
+      "target type": "party"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "hp_min",
+      "target type": "party"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 155
+    },
+    "idle": {
+      "total number of frames": 60
+    },
+    "move": {
+      "total number of frames": 60
+    }
+  },
+  "category": 830690,
+  "cost": "52",
+  "damage frames": {
+    "frame times": [
+      82,
+      91,
+      100,
+      109
+    ],
+    "hit dmg% distribution": [
+      25,
+      25,
+      25,
+      25
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 4
+  },
+  "drop check count": 11,
+  "element": "earth",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 8504,
+  "imp": {
+    "max atk": "440",
+    "max def": "440",
+    "max hp": "1100",
+    "max rec": "440"
+  },
+  "kind": "normal",
+  "lord damage range": "2753~3075",
+  "movement": {
+    "attack": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    }
+  },
+  "name": "Miell",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Miell",
+  "maxlv": "120",
+  "no": "8504",
+  "unitDisplayHomePosition_1W9CxaFK": "341,121,174,475",
+  "unitDisplayDetailPosition_6z54rgb3": "64,-11,834,785",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "113,239,392,370,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "44,-162,890,837",
+  "unitDisplaySummonPosition_KC3Jk8Br": "113,239,392,370,0",
+  "unitDisplayHpPosition_3BpHN6VD": "0,20",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "15000",
+  "sellCaution": false,
+  "effectFrames": "80:330507:1,81:330872:1,83:400061:1,85:330390:1,100:330390:1",
+  "evofrom": "",
+  "evointo": "830698",
+  "evozelcost": "3000000",
+  "evokarmacost": "1000000",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "30334",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "30133",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    },
+    {
+      "type": "2",
+      "id": "110100",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "830034",
+      "count": 1
+    }
+  ],
+  "freetext": ":''For other uses, see Miell (disambiguation).''",
+  "basexp": "21",
+  "animation_attack": "155",
+  "animation_idle": "60",
+  "animation_move": "60",
+  "movespeed_attack": "4",
+  "movespeed_skill": "4",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "82, 91, 100, 109",
+  "normal_distribute": "25, 25, 25, 25",
+  "normal_totaldistr": "100",
+  "bb_frames": "76, 82, 88, 97, 106",
+  "bb_distribute": "20, 20, 20, 20, 20",
+  "bb_totaldistr": "100",
+  "sbb_frames": "76, 82, 88, 94, 100, 106, 112",
+  "sbb_distribute": "12, 16, 13, 18, 12, 17, 12",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "76, 79, 82, 85, 88, 91, 94, 97, 100, 103, 106, 109, 112",
+  "ubb_distribute": "6, 9, 8, 6, 7, 10, 7, 9, 6, 7, 10, 8, 7",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "1",
+  "ubb_effectdelay": "1",
+  "description": "Fauns are well-known throughout Grand Gaia as magical creatures of the northern forests, though the truth of their existence wavers somewhere between reality and folklore. As children of nature, this chimeric blend of a human torso atop a hircine lower body has captured the hearts of many a traveler that wandered into their homes, lured by the fantastic melodies of their flutes. They would guide the lost to well-worn footpaths before returning to their trees. Their joyful natures and love for merrymaking are especially beloved by the spirits of the forests. A faun party held for all their inhabitants to celebrate the changing of the seasons is said to never run out of food and drink.One day, driven by greed, a horde of men destroyed the northern forests for their abundant magical energies. The spirits scattered to the wind, and the forest began to buckle under assaults of fire and blood. Devastated by this show of aggression, the fauns had no choice but to defend their homes themselves. The survivors would use their magical flutes to lure the men one by one into deep caves, where they would trap and leave them to die of starvation.Years passed, and the once peaceful fauns honed and perfected the art of offensive magic. Though their instruments were now replaced with wands and staves, the fauns quietly wished for memories of better days, when their flutes played the cheerful song of life. And that's when one brave faun girl sought to make this wish come true by seeking the guidance of an eternal deity...",
+  "summon": "Hello. Are you...lost?<br><br>Come with me.<br><br>If the others see you, they'll attack you…",
+  "fusion": "Oh! Are these...berries?<br><br>These remind me of when<br><br>I was just a small girl.",
+  "evolution": "",
+  "hp_base": "5548",
+  "atk_base": "2070",
+  "def_base": "2149",
+  "rec_base": "2568",
+  "hp_lord": "7925",
+  "atk_lord": "2957",
+  "def_lord": "3070",
+  "rec_lord": "3668",
+  "hp_anima": "8817",
+  "rec_anima": "3430",
+  "atk_breaker": "3195",
+  "def_breaker": "2832",
+  "def_guardian": "3308",
+  "rec_guardian": "3549",
+  "def_oracle": "2951",
+  "rec_oracle": "4025",
+  "hp_bonus": "1100",
+  "atk_bonus": "440",
+  "def_bonus": "440",
+  "rec_bonus": "440",
+  "lordonly": "",
+  "combo_hits": "4",
+  "normaldc": "44",
+  "ls": "Piper's Gift",
+  "lsdescription": "80% boost to Atk, Def, Rec and 100% boost to max HP, hugely boosts BB gauge each turn, restores HP each turn & negates all status ailments and Atk, Def, Rec reduction effects",
+  "lsnote": "Fills 8 BC each turn & heals 1000~1500 + 10% Rec HP each turn",
+  "bbdescription": "5 combo powerful Earth attack on all foes (partial HP drain), greatly restores HP for 3 turns, greatly boosts max HP, 10% damage reduction from all element types for 3 turns & removes all status ailments and Atk, Def, Rec reduction effects",
+  "bbnote": "Heals 3500~4000 HP + 20% Rec HP each turn & 25% HP buff",
+  "bbtype": "Offense",
+  "bbhits": "5",
+  "bbaoe": "A",
+  "bbgauge": "25",
+  "bbdc": "5",
+  "bbmultiplier": "450",
+  "bb_hpscale": "",
+  "sbbdescription": "7 combo powerful Earth attack on all foes (partial HP drain), hugely restores HP, activates Earth barrier, 10% damage reduction from all element types for 3 turns & boosts OD gauge",
+  "sbbnote": "Heals 4000~4500 HP + 40% Rec HP, 3500 HP Earth Barrier & 8% OD fill",
+  "sbbtype": "Offense",
+  "sbbhits": "7",
+  "sbbaoe": "A",
+  "sbbgauge": "25",
+  "sbbdc": "7",
+  "sbbmultiplier": "750",
+  "sbb_hpscale": "",
   "ubbdescription": "13 combo massive Earth attack on all foes (damage relative to remaining HP), enormously boosts Atk, Def, Rec for 3 turns, enormously boosts max HP, damage taken enormously boosts BB gauge for 3 turns, damage taken enormously restores HP for 3 turns, probability of raising allies from KO",
   "ubbnote": "400% parameter boost, 40% HP buff, 100% chance of 50 BC when hit, heals 100% damage taken & 70% chance to revive to 100% HP",
   "ubbtype": "Offense",
@@ -1601,7 +1844,6 @@
   "es": "Healing Word",
   "esdescription": "10% boost to all parameters for all allies, negates critical and elemental damage & restores HP each turn",
   "esnote": "Heals 2000~3000 + 10% Rec HP each turn",
-  "evointo": "830698",
   "evomats1": "30334",
   "evomats2": "30334",
   "evomats3": "50354",
@@ -1610,135 +1852,5 @@
   "evomats6": "30133",
   "evomats7": "60224",
   "evomats8": "830034",
-  "evoitem": "Legend Stone",
-  "evozelcost": "3000000",
-  "stats": {
-    "_base": {
-      "atk": 2070,
-      "def": 2149,
-      "hp": 5548,
-      "rec": 2568
-    },
-    "_lord": {
-      "atk": 2957,
-      "def": 3070,
-      "hp": 7925,
-      "rec": 3668
-    },
-    "anima": {
-      "atk": 2957,
-      "def": 3070,
-      "hp max": 9115,
-      "hp min": 8520,
-      "rec max": 3549,
-      "rec min": 3311
-    },
-    "breaker": {
-      "atk max": 3314,
-      "atk min": 3076,
-      "def max": 2951,
-      "def min": 2713,
-      "hp": 7925,
-      "rec": 3668
-    },
-    "guardian": {
-      "atk": 2957,
-      "def max": 3427,
-      "def min": 3189,
-      "hp": 7925,
-      "rec max": 3668,
-      "rec min": 3430
-    },
-    "oracle": {
-      "atk": 2957,
-      "def max": 3070,
-      "def min": 2832,
-      "hp": 7925,
-      "rec max": 4144,
-      "rec min": 3906
-    }
-  },
-  "leader_skill": {
-    "desc": "80% boost to Atk, Def, Rec and 100% boost to max HP, hugely boosts BB gauge each turn, restores HP each turn & negates all status ailments and Atk, Def, Rec reduction effects",
-    "effects": [
-      {
-        "atk% buff": 80,
-        "def% buff": 80,
-        "hp% buff": 100,
-        "passive id": "1",
-        "rec% buff": 80
-      },
-      {
-        "bc fill per turn": 8,
-        "passive id": "9"
-      },
-      {
-        "passive id": "33",
-        "rec% added (turn heal)": 10.0,
-        "turn heal high": 1500,
-        "turn heal low": 1000
-      },
-      {
-        "atk down resist%": 100,
-        "curse resist%": 100,
-        "def down resist%": 100,
-        "injury resist%": 100,
-        "paralysis resist%": 100,
-        "passive id": "73",
-        "poison resist%": 100,
-        "rec down resist%": 100,
-        "sick resist%": 100,
-        "weaken resist%": 100
-      }
-    ],
-    "id": "830697",
-    "name": "Piper's Gift"
-  },
-  "extra_skill": {
-    "desc": "10% boost to all parameters for all allies, negates critical and elemental damage & restores HP each turn",
-    "effects": [
-      {
-        "atk% buff": 10,
-        "conditions": [],
-        "def% buff": 10,
-        "hp% buff": 10,
-        "passive id": "1",
-        "passive target": "party",
-        "rec% buff": 10
-      },
-      {
-        "conditions": [],
-        "crit chance base resist%": 100,
-        "crit chance buffed resist%": 100,
-        "crit dmg base damage resist%": 100,
-        "crit dmg buffed damage resist%": 100,
-        "passive id": "53",
-        "passive target": "self",
-        "strong base element damage resist%": 100,
-        "strong buffed element damage resist%": 100
-      },
-      {
-        "conditions": [],
-        "passive id": "33",
-        "passive target": "self",
-        "rec% added (turn heal)": 10.0,
-        "turn heal high": 3000,
-        "turn heal low": 2000
-      }
-    ],
-    "id": "830697",
-    "name": "Healing Word",
-    "rarity": "7",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "341,121,174,475",
-  "unitDisplayDetailPosition_6z54rgb3": "64,-11,834,785",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "113,239,392,370,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "44,-162,890,837",
-  "unitDisplaySummonPosition_KC3Jk8Br": "113,239,392,370,0",
-  "unitDisplayHpPosition_3BpHN6VD": "0,20",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "15000",
-  "sellCaution": false,
-  "effectFrames": "80:330507:1,81:330872:1,83:400061:1,85:330390:1,100:330390:1"
+  "evoitem": "Legend Stone"
 }

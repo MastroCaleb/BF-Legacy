@@ -1,62 +1,64 @@
 {
   "id": "860124",
-  "unitName": "Netherhound",
-  "no": "8072",
-  "element": "Dark",
-  "rarity": "★★★★",
-  "cost": "12",
-  "maxlv": "60",
-  "basexp": "21",
-  "gender": "N",
-  "ai": "2",
-  "animation_attack": "Unsupported",
-  "animation_idle": "Unsupported",
-  "animation_move": "Unsupported",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "10, 12, 14, 60, 70, 80",
-  "normal_distribute": "13, 13, 14, 20, 20, 20",
-  "normal_totaldistr": "100",
-  "bb_frames": "10, 12, 14, 50, 56, 62, 68, 72",
-  "bb_distribute": "13, 13, 14, 12, 12, 12, 12, 12",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "description": "Netherhounds were created by Gazia, a demi-god fallen into his abyss of power and stature during the days of the augmentation wars in Athensphere. They were first used to guard places of importance until the war broke out.",
-  "summon": "Grrrrr…",
-  "fusion": "Grrr.. [Beep.. Beep]",
-  "evolution": "",
-  "hp_base": "3100",
-  "atk_base": "1270",
-  "def_base": "1110",
-  "rec_base": "1085",
-  "hp_lord": "4100",
-  "atk_lord": "1380",
-  "def_lord": "1290",
-  "rec_lord": "1168",
-  "hp_anima": "4543",
-  "rec_anima": "1050",
-  "atk_breaker": "1498",
-  "def_breaker": "1172",
-  "atk_guardian": "1262",
-  "def_guardian": "1408",
-  "rec_guardian": "1109",
-  "def_oracle": "1231",
-  "hp_oracle": "3923",
-  "rec_oracle": "1345",
-  "hp_bonus": "400",
-  "atk_bonus": "160",
-  "def_bonus": "160",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "6",
-  "normaldc": "12",
-  "ls": "Dark Zeal",
-  "lsdescription": "10% boost to critical hit chance and 25% increase in Atk of all Units",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 1270,
+      "def": 1110,
+      "hp": 3100,
+      "rec": 1085
+    },
+    "_lord": {
+      "atk": 1380,
+      "def": 1290,
+      "hp": 4100,
+      "rec": 1168
+    },
+    "anima": {
+      "atk": 1380,
+      "def": 1290,
+      "hp max": 4690,
+      "hp min": 4395,
+      "rec max": 1109,
+      "rec min": 991
+    },
+    "breaker": {
+      "atk max": 1557,
+      "atk min": 1439,
+      "def max": 1231,
+      "def min": 1113,
+      "hp": 4100,
+      "rec": 1168
+    },
+    "guardian": {
+      "atk": 1380,
+      "def max": 1467,
+      "def min": 1349,
+      "hp": 4100,
+      "rec max": 1168,
+      "rec min": 1050
+    },
+    "oracle": {
+      "atk": 1380,
+      "def max": 1290,
+      "def min": 1172,
+      "hp": 4100,
+      "rec max": 1404,
+      "rec min": 1286
+    }
+  },
+  "leader_skill": {
+    "desc": "10% boost to critical hit rate and 25% boost to Atk of all Units",
+    "effects": [
+      {
+        "atk% buff": 25,
+        "crit% buff": 10,
+        "passive id": "1"
+      }
+    ],
+    "id": "801027",
+    "name": "Dark Zeal"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -311,95 +313,85 @@
     ],
     "name": "Infernal Seclusion"
   },
-  "bbdescription": "8 combo Dark attack on single enemy",
-  "bbnote": "'''Also provides Stealth buff to self for 1 turn, with 38% boost to critical hit rate and 5% boost to Atk'''",
-  "bbtype": "Support/Offense",
-  "bbhits": "8",
-  "bbaoe": "1",
-  "bbgauge": "14",
-  "bbdc": "8",
-  "bbmultiplier": "210",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "860125",
-  "evomats1": "60123",
-  "evomats2": "860034",
-  "evomats3": "870034",
-  "evomats4": "60122",
-  "evomats5": "60143",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 1270,
-      "def": 1110,
-      "hp": 3100,
-      "rec": 1085
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1380,
-      "def": 1290,
-      "hp": 4100,
-      "rec": 1168
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1380,
-      "def": 1290,
-      "hp max": 4690,
-      "hp min": 4395,
-      "rec max": 1109,
-      "rec min": 991
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "error": "sam file not supported"
+  },
+  "category": 860120,
+  "cost": "12",
+  "damage frames": {
+    "frame times": [
+      10,
+      12,
+      14,
+      60,
+      70,
+      80
+    ],
+    "hit dmg% distribution": [
+      13,
+      13,
+      14,
+      20,
+      20,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 6
+  },
+  "drop check count": 2,
+  "element": "dark",
+  "exp_pattern": 20,
+  "gender": "other",
+  "getting type": "farmable",
+  "guide_id": 8072,
+  "imp": {
+    "max atk": "160",
+    "max def": "160",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "1285~1435",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
     },
-    "breaker": {
-      "atk max": 1557,
-      "atk min": 1439,
-      "def max": 1231,
-      "def min": 1113,
-      "hp": 4100,
-      "rec": 1168
-    },
-    "guardian": {
-      "atk": 1380,
-      "def max": 1467,
-      "def min": 1349,
-      "hp": 4100,
-      "rec max": 1168,
-      "rec min": 1050
-    },
-    "oracle": {
-      "atk": 1380,
-      "def max": 1290,
-      "def min": 1172,
-      "hp": 4100,
-      "rec max": 1404,
-      "rec min": 1286
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
     }
   },
-  "leader_skill": {
-    "desc": "10% boost to critical hit rate and 25% boost to Atk of all Units",
-    "effects": [
-      {
-        "atk% buff": 25,
-        "crit% buff": 10,
-        "passive id": "1"
-      }
-    ],
-    "id": "801027",
-    "name": "Dark Zeal"
-  },
-  "extra_skill": {},
+  "name": "Netherhound",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Netherhound",
+  "maxlv": "60",
+  "no": "8072",
   "unitDisplayHomePosition_1W9CxaFK": "118,143,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "51,119,1071,760",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "67,315,496,353,0",
@@ -409,5 +401,110 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "10:126:1,12:126:1,14:126:1,10:600401:1,45:600321:1,40:100131:1,44:600220:1,54:600220:1,64:600220:1"
+  "effectFrames": "10:126:1,12:126:1,14:126:1,10:600401:1,45:600321:1,40:100131:1,44:600220:1,54:600220:1,64:600220:1",
+  "evofrom": "",
+  "evointo": "860125",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "60123",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "860034",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "870034",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60122",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "Unsupported",
+  "animation_idle": "Unsupported",
+  "animation_move": "Unsupported",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "10, 12, 14, 60, 70, 80",
+  "normal_distribute": "13, 13, 14, 20, 20, 20",
+  "normal_totaldistr": "100",
+  "bb_frames": "10, 12, 14, 50, 56, 62, 68, 72",
+  "bb_distribute": "13, 13, 14, 12, 12, 12, 12, 12",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "description": "Netherhounds were created by Gazia, a demi-god fallen into his abyss of power and stature during the days of the augmentation wars in Athensphere. They were first used to guard places of importance until the war broke out.",
+  "summon": "Grrrrr…",
+  "fusion": "Grrr.. [Beep.. Beep]",
+  "evolution": "",
+  "hp_base": "3100",
+  "atk_base": "1270",
+  "def_base": "1110",
+  "rec_base": "1085",
+  "hp_lord": "4100",
+  "atk_lord": "1380",
+  "def_lord": "1290",
+  "rec_lord": "1168",
+  "hp_anima": "4543",
+  "rec_anima": "1050",
+  "atk_breaker": "1498",
+  "def_breaker": "1172",
+  "atk_guardian": "1262",
+  "def_guardian": "1408",
+  "rec_guardian": "1109",
+  "def_oracle": "1231",
+  "hp_oracle": "3923",
+  "rec_oracle": "1345",
+  "hp_bonus": "400",
+  "atk_bonus": "160",
+  "def_bonus": "160",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "6",
+  "normaldc": "12",
+  "ls": "Dark Zeal",
+  "lsdescription": "10% boost to critical hit chance and 25% increase in Atk of all Units",
+  "lstype": "Attack",
+  "bbdescription": "8 combo Dark attack on single enemy",
+  "bbnote": "'''Also provides Stealth buff to self for 1 turn, with 38% boost to critical hit rate and 5% boost to Atk'''",
+  "bbtype": "Support/Offense",
+  "bbhits": "8",
+  "bbaoe": "1",
+  "bbgauge": "14",
+  "bbdc": "8",
+  "bbmultiplier": "210",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "60123",
+  "evomats2": "860034",
+  "evomats3": "870034",
+  "evomats4": "60122",
+  "evomats5": "60143"
 }

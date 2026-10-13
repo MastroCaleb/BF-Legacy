@@ -1,62 +1,66 @@
 {
   "id": "20353",
-  "unitName": "Spear Fist Raydn",
-  "no": "503",
-  "element": "Water",
-  "rarity": "★★★★",
-  "cost": "12",
-  "maxlv": "60",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "3",
-  "animation_attack": "129",
-  "animation_idle": "84",
-  "animation_move": "13",
-  "movespeed_attack": "0.0024",
-  "movespeed_skill": "0.0024",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "15, 55, 60",
-  "normal_distribute": "40, 30, 30",
-  "normal_totaldistr": "100",
-  "bb_frames": "14, 19, 54, 57, 60",
-  "bb_distribute": "20, 20, 20, 20, 20",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "description": "A young spearman who had been newly recruited into the 12 Guardians. It's said the dexterous dual spear-wielder was Alyut's closest friend. The prudishly polite Raydn was expected to be lieutenant to the future leader Alyut who was currently second in line to command. He worked hard to live up to these expectations, eventually attaining abilities that rivaled even Sodis.",
-  "summon": "A Summoner.<br>I see how it is.<br>I accept your request.",
-  "fusion": "What an interesting skill you have.<br>However, though it trains the body,<br>it does nothing for the soul.",
-  "evolution": "",
-  "hp_base": "3099",
-  "atk_base": "1021",
-  "def_base": "1037",
-  "rec_base": "881",
-  "hp_lord": "4378",
-  "atk_lord": "1361",
-  "def_lord": "1382",
-  "rec_lord": "1191",
-  "hp_anima": "4821",
-  "rec_anima": "1073",
-  "atk_breaker": "1479",
-  "def_breaker": "1264",
-  "atk_guardian": "1243",
-  "def_guardian": "1500",
-  "rec_guardian": "1132",
-  "def_oracle": "1323",
-  "hp_oracle": "4201",
-  "rec_oracle": "1368",
-  "hp_bonus": "400",
-  "atk_bonus": "160",
-  "def_bonus": "160",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "3",
-  "normaldc": "9",
-  "ls": "Water Spirit's Power",
-  "lsdescription": "25% boost to Atk Power of Water Types",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 1021,
+      "def": 1037,
+      "hp": 3099,
+      "rec": 881
+    },
+    "_lord": {
+      "atk": 1361,
+      "def": 1382,
+      "hp": 4378,
+      "rec": 1191
+    },
+    "anima": {
+      "atk": 1361,
+      "def": 1382,
+      "hp max": 4968,
+      "hp min": 4673,
+      "rec max": 1132,
+      "rec min": 1014
+    },
+    "breaker": {
+      "atk max": 1538,
+      "atk min": 1420,
+      "def max": 1323,
+      "def min": 1205,
+      "hp": 4378,
+      "rec": 1191
+    },
+    "guardian": {
+      "atk": 1361,
+      "def max": 1559,
+      "def min": 1441,
+      "hp": 4378,
+      "rec max": 1191,
+      "rec min": 1073
+    },
+    "oracle": {
+      "atk": 1361,
+      "def max": 1382,
+      "def min": 1264,
+      "hp": 4378,
+      "rec max": 1427,
+      "rec min": 1309
+    }
+  },
+  "leader_skill": {
+    "desc": "25% boost to Atk Power of Water Types",
+    "effects": [
+      {
+        "atk% buff": 25,
+        "elements buffed": [
+          "water"
+        ],
+        "passive id": "2"
+      }
+    ],
+    "id": "110",
+    "name": "Water Spirit's Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -309,98 +313,93 @@
     ],
     "name": "Flood Horn"
   },
-  "bbdescription": "5 combo Water elemental attack on all enemies & boost to Spark damage for 3 turns",
-  "bbnote": "40% boost",
-  "bbtype": "Support/Offense",
-  "bbhits": "5",
-  "bbaoe": "A",
-  "bbgauge": "24",
-  "bbdc": "5",
-  "bbmultiplier": "200",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "20354",
-  "evomats1": "20133",
-  "evomats2": "20132",
-  "evomats3": "20132",
-  "evomats4": "20191",
-  "evomats5": "20191",
-  "evoitem": "",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 1021,
-      "def": 1037,
-      "hp": 3099,
-      "rec": 881
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1361,
-      "def": 1382,
-      "hp": 4378,
-      "rec": 1191
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1361,
-      "def": 1382,
-      "hp max": 4968,
-      "hp min": 4673,
-      "rec max": 1132,
-      "rec min": 1014
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 1538,
-      "atk min": 1420,
-      "def max": 1323,
-      "def min": 1205,
-      "hp": 4378,
-      "rec": 1191
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 129
     },
-    "guardian": {
-      "atk": 1361,
-      "def max": 1559,
-      "def min": 1441,
-      "hp": 4378,
-      "rec max": 1191,
-      "rec min": 1073
+    "idle": {
+      "total number of frames": 84
     },
-    "oracle": {
-      "atk": 1361,
-      "def max": 1382,
-      "def min": 1264,
-      "hp": 4378,
-      "rec max": 1427,
-      "rec min": 1309
+    "move": {
+      "total number of frames": 13
     }
   },
-  "leader_skill": {
-    "desc": "25% boost to Atk Power of Water Types",
-    "effects": [
-      {
-        "atk% buff": 25,
-        "elements buffed": [
-          "water"
-        ],
-        "passive id": "2"
-      }
+  "category": 20350,
+  "cost": "12",
+  "damage frames": {
+    "frame times": [
+      15,
+      55,
+      60
     ],
-    "id": "110",
-    "name": "Water Spirit's Power"
+    "hit dmg% distribution": [
+      40,
+      30,
+      30
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 3
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "water",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 503,
+  "imp": {
+    "max atk": "160",
+    "max def": "160",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "1266~1415",
+  "movement": {
+    "attack": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    }
+  },
+  "name": "Spear Fist Raydn",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Spear Fist Raydn",
+  "maxlv": "60",
+  "no": "503",
   "unitDisplayHomePosition_1W9CxaFK": "602,177,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-270,-11,1262,870",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "96,234,495,397,0",
@@ -410,5 +409,101 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "9:122:1,49:122:1,54:122:1,15:660:1,55:200030:1,60:200140:1,31:190:1,15:200231:1"
+  "effectFrames": "9:122:1,49:122:1,54:122:1,15:660:1,55:200030:1,60:200140:1,31:190:1,15:200231:1",
+  "evofrom": "",
+  "evointo": "20354",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "20133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20132",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "20191",
+      "count": 2
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "129",
+  "animation_idle": "84",
+  "animation_move": "13",
+  "movespeed_attack": "0.0024",
+  "movespeed_skill": "0.0024",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "15, 55, 60",
+  "normal_distribute": "40, 30, 30",
+  "normal_totaldistr": "100",
+  "bb_frames": "14, 19, 54, 57, 60",
+  "bb_distribute": "20, 20, 20, 20, 20",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "description": "A young spearman who had been newly recruited into the 12 Guardians. It's said the dexterous dual spear-wielder was Alyut's closest friend. The prudishly polite Raydn was expected to be lieutenant to the future leader Alyut who was currently second in line to command. He worked hard to live up to these expectations, eventually attaining abilities that rivaled even Sodis.",
+  "summon": "A Summoner.<br>I see how it is.<br>I accept your request.",
+  "fusion": "What an interesting skill you have.<br>However, though it trains the body,<br>it does nothing for the soul.",
+  "evolution": "",
+  "hp_base": "3099",
+  "atk_base": "1021",
+  "def_base": "1037",
+  "rec_base": "881",
+  "hp_lord": "4378",
+  "atk_lord": "1361",
+  "def_lord": "1382",
+  "rec_lord": "1191",
+  "hp_anima": "4821",
+  "rec_anima": "1073",
+  "atk_breaker": "1479",
+  "def_breaker": "1264",
+  "atk_guardian": "1243",
+  "def_guardian": "1500",
+  "rec_guardian": "1132",
+  "def_oracle": "1323",
+  "hp_oracle": "4201",
+  "rec_oracle": "1368",
+  "hp_bonus": "400",
+  "atk_bonus": "160",
+  "def_bonus": "160",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "3",
+  "normaldc": "9",
+  "ls": "Water Spirit's Power",
+  "lsdescription": "25% boost to Atk Power of Water Types",
+  "lstype": "Attack",
+  "bbdescription": "5 combo Water elemental attack on all enemies & boost to Spark damage for 3 turns",
+  "bbnote": "40% boost",
+  "bbtype": "Support/Offense",
+  "bbhits": "5",
+  "bbaoe": "A",
+  "bbgauge": "24",
+  "bbdc": "5",
+  "bbmultiplier": "200",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "20133",
+  "evomats2": "20132",
+  "evomats3": "20132",
+  "evomats4": "20191",
+  "evomats5": "20191",
+  "evoitem": ""
 }

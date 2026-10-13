@@ -1,65 +1,154 @@
 {
   "id": "730277",
-  "unitName": "Cute Medic Daria (EU)",
-  "disam": "Daria",
-  "altname": "Cute Medic Daria",
-  "idalt": "",
-  "has_altart": "",
-  "doenter": "true",
-  "no": "7232",
-  "element": "Earth",
-  "rarity": "Dream",
-  "cost": "54",
-  "maxlv": "150",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "96",
-  "animation_idle": "96",
-  "animation_move": "8",
-  "movespeed_attack": "0.0033",
-  "speedtype_attack": "3",
-  "movetype_attack": "1",
-  "movespeed_skill": "0.0033",
-  "speedtype_skill": "3",
-  "movetype_skill": "1",
-  "description": "Daria knew ever since she was a child what she wanted to do when she was older: join the Siegfried Academy medical corps. Her natural clumsiness could have easily been an obstacle for her. For example, her friends couldn’t count how many times she accidentally knocked over a book. However, when it came to taking care of a patient, she became a completely different person. Her absent-mindedness gave way to surprising dexterity. She was also an enthusiastic girl. She managed to convince a hesitant friend to accompany her to Siegfried Academy. Moreover, rumors say that Daria was a formidable fighter when syringes and bandages weren’t needed. Such a promising student; what could she have to fear in the future?",
-  "summon": "Show me where you’re hurt! What? Of course I know what I’m doing!",
-  "fusion": "Fight? I would like to avoid it, but if it’s necessary...",
-  "evolution": "",
-  "hp_base": "6984",
-  "atk_base": "2820",
-  "def_base": "2626",
-  "rec_base": "2666",
-  "hp_lord": "8520",
-  "atk_lord": "3440",
-  "def_lord": "3204",
-  "rec_lord": "3253",
-  "hp_anima": "9637",
-  "rec_anima": "2955",
-  "atk_breaker": "3738",
-  "def_breaker": "2906",
-  "def_guardian": "3502",
-  "rec_guardian": "3253",
-  "def_oracle": "3204",
-  "rec_oracle": "3551",
-  "hp_bonus": "1500",
-  "atk_bonus": "600",
-  "def_bonus": "600",
-  "rec_bonus": "600",
-  "lordonly": "",
-  "normal_frames": "39",
-  "normal_distribute": "100",
-  "normal_totaldistr": "100",
-  "combo_hits": "1",
-  "normaldc": "48",
-  "ls": "Anatomy Mastery",
-  "lsdescription": "Boosts all parameters of Earth types (85%) & damage reduction from Thunder, Earth types (20%) & boosts Earth elemental damage (250%) & boosts BB ATK (300%) when HP is over 50% & reduces BB gauge required for BB (25%)",
-  "lsnote": "",
-  "es": "Doctor Oath",
-  "esdescription": "Adds chance to cast double BB/SBB/UBB (25%) for 3 turns effect to BB/SBB & when Siegfried sphere is equipped, raises ATK parameter limits to 130000 and boosts DEF and HP of Earth types (20%, all)",
-  "esitem": "Siegfried's Hybrid Weapon, Siegfried's Fanged Gun, Siegfried's Propelled Shield,Siegfried's Doping Spaulder and/or Siegfried Draconic Rage",
-  "esnote": "",
+  "stats": {
+    "_base": {
+      "atk": 2820,
+      "def": 2626,
+      "hp": 6984,
+      "rec": 2666
+    },
+    "_lord": {
+      "atk": 3440,
+      "def": 3204,
+      "hp": 8520,
+      "rec": 3253
+    },
+    "anima": {
+      "atk": 3440,
+      "def": 3204,
+      "hp max": 10010,
+      "hp min": 9265,
+      "rec max": 3104,
+      "rec min": 2806
+    },
+    "breaker": {
+      "atk max": 3887,
+      "atk min": 3589,
+      "def max": 3055,
+      "def min": 2757,
+      "hp": 8520,
+      "rec": 3253
+    },
+    "guardian": {
+      "atk max": 3291,
+      "atk min": 2993,
+      "def max": 3651,
+      "def min": 3353,
+      "hp": 8520,
+      "rec": 3253
+    },
+    "oracle": {
+      "atk": 3440,
+      "def": 3204,
+      "hp max": 7775,
+      "hp min": 7030,
+      "rec max": 3700,
+      "rec min": 3402
+    }
+  },
+  "leader_skill": {
+    "desc": "Boosts all parameters of Earth types (85%) & damage reduction from Thunder, Earth types (20%) & boosts Earth elemental damage (250%) & boosts BB ATK (300%) when HP is over 50% & reduces BB gauge required for BB (25%)",
+    "effects": [
+      {
+        "atk% buff": 85,
+        "def% buff": 85,
+        "elements buffed": [
+          "earth"
+        ],
+        "hp% buff": 85,
+        "passive id": "2",
+        "rec% buff": 85
+      },
+      {
+        "earth resist%": 20,
+        "passive id": "5"
+      },
+      {
+        "passive id": "5",
+        "thunder resist%": 20
+      },
+      {
+        "earth units do extra elemental weakness dmg": true,
+        "elemental weakness multiplier%": 250.0,
+        "passive id": "50"
+      },
+      {
+        "passive id": "48",
+        "reduced bb bc cost%": 25
+      },
+      {
+        "bb atk% add": 300,
+        "hp threshold": 50,
+        "passive id": "103",
+        "sbb atk% add": 300,
+        "triggered when hp": "higher",
+        "ubb atk% add": 300
+      }
+    ],
+    "id": "730277",
+    "name": "Anatomy Mastery"
+  },
+  "extra_skill": {
+    "desc": "Adds chance to cast double BB/SBB/UBB (25%) for 3 turns effect to BB/SBB & when Siegfried sphere is equipped, raises ATK parameter limits to 130000 and boosts DEF and HP of Earth types (20%, all)",
+    "effects": [
+      {
+        "conditions": [],
+        "passive id": "66",
+        "passive target": "self",
+        "trigger on bb": true,
+        "trigger on sbb": true,
+        "triggered effect": [
+          {
+            "effect delay time(ms)/frame": "0.0/0",
+            "target area": "aoe",
+            "target type": "party",
+            "unknown proc id": "70002",
+            "unknown proc param": "0.25,3,0,0,0,0,0,0,0"
+          }
+        ]
+      },
+      {
+        "conditions": [
+          {
+            "item required": [
+              "700065",
+              "700061",
+              "700062",
+              "700063",
+              "700067"
+            ]
+          }
+        ],
+        "def% buff": 20,
+        "elements buffed": [
+          "earth"
+        ],
+        "hp% buff": 20,
+        "passive id": "2",
+        "passive target": "party"
+      },
+      {
+        "conditions": [
+          {
+            "item required": [
+              "700065",
+              "700061",
+              "700062",
+              "700063",
+              "700067"
+            ]
+          }
+        ],
+        "increase atk cap": 130000,
+        "passive id": "143",
+        "passive target": "self"
+      }
+    ],
+    "id": "730277",
+    "name": "Doctor Oath",
+    "rarity": "0",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -752,43 +841,6 @@
     ],
     "name": "Medical Touch"
   },
-  "bbdescription": "Earth attack on all foes & restores HP & restores HP for 3 turns & removes status ailments & negates status ailments for 3 turns & boosts Earth elemental damage (175%) for 3 turns",
-  "bbnote": "{{UnitBuffList",
-  "buff_1_proc": "1",
-  "buff_1_potency": "2200% damage modifier",
-  "buff_1_duration": "—",
-  "buff_1_target": "All enemies",
-  "buff_2_proc": "18",
-  "buff_2_potency": "Reduces damage taken by 75%",
-  "buff_2_duration": "3 turns",
-  "buff_2_target": "All allies",
-  "buff_3_proc": "5_atk",
-  "buff_3_potency": "400% boost to Atk",
-  "buff_3_duration": "3 turns",
-  "buff_3_target": "All allies",
-  "buff_4_proc": "5_def",
-  "buff_4_potency": "400% boost to Def",
-  "buff_4_duration": "3 turns",
-  "buff_4_target": "All allies",
-  "buff_5_proc": "5_rec",
-  "buff_5_potency": "400% boost to Rec",
-  "buff_5_duration": "3 turns",
-  "buff_5_target": "All allies",
-  "buff_6_proc": "70002",
-  "buff_6_potency": "100% chance of recasting BB/SBB/UBB",
-  "buff_6_duration": "1 turn",
-  "buff_6_target": "All allies",
-  "bbtype": "Offense",
-  "bbgauge": "18",
-  "bb_frames": "39",
-  "bb_distribute": "100",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "0",
-  "bbhits": "1",
-  "bbaoe": "A",
-  "bbdc": "20",
-  "bbmultiplier": "470",
-  "bb_hpscale": "",
   "sbb": {
     "damage frames": [
       {
@@ -1461,45 +1513,6 @@
     ],
     "name": "Weak Point Aim"
   },
-  "sbbdescription": "Earth attack on all foes, Earth attack on single foe, Earth attack against Thunder types & boosts ATK, DEF, REC of Earth types (120%) and Earth elemental damage (175%) for 3 turns & probable elemental vulnerability (20% chance 15%) for 1 turn",
-  "sbbnote": "{{UnitBuffList",
-  "buff_7_proc": "55_earth",
-  "buff_7_potency": "500% boost to Earth elemental damage",
-  "buff_7_duration": "3 turns",
-  "buff_7_target": "All allies",
-  "buff_8_proc": "132_ewd",
-  "buff_8_potency": "20% chance of inflicting 15% elemental vulnerability",
-  "buff_8_duration": "1 turn",
-  "buff_8_target": "All enemies",
-  "sbbtype": "Offense",
-  "sbbgauge": "37",
-  "sbb_frames": "39",
-  "sbb_distribute": "100",
-  "sbb_totaldistr": "100",
-  "sbb_effectdelay": "0",
-  "sbbhits": "1",
-  "sbbaoe": "A",
-  "sbbdc": "15",
-  "sbbmultiplier": "950",
-  "sbb_hpscale": "",
-  "sbb2_frames": "40",
-  "sbb2_distribute": "100",
-  "sbb2_totaldistr": "100",
-  "sbb2_effectdelay": "0",
-  "sbbhits2": "1",
-  "sbbaoe2": "1",
-  "sbbdc2": "15",
-  "sbbmultiplier2": "850",
-  "sbb2_hpscale": "",
-  "sbb3_frames": "41",
-  "sbb3_distribute": "100",
-  "sbb3_totaldistr": "100",
-  "sbb3_effectdelay": "0",
-  "sbbhits3": "1",
-  "sbbaoe3": "A",
-  "sbbdc3": "15",
-  "sbbmultiplier3": "620",
-  "sbb3_hpscale": "",
   "ubb": {
     "damage frames": [
       {
@@ -1618,6 +1631,223 @@
     ],
     "name": "Surgical Strike"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 96
+    },
+    "idle": {
+      "total number of frames": 96
+    },
+    "move": {
+      "total number of frames": 8
+    }
+  },
+  "cost": "54",
+  "damage frames": {
+    "frame times": [
+      39
+    ],
+    "hit dmg% distribution": [
+      100
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 1
+  },
+  "drop check count": 48,
+  "element": "earth",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 7232,
+  "imp": {
+    "max atk": "600",
+    "max def": "600",
+    "max hp": "1500",
+    "max rec": "600"
+  },
+  "kind": "normal",
+  "lord damage range": "3203~3577",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Cute Medic Daria",
+  "rarity": "8",
+  "sell caution": false,
+  "unitName": "Cute Medic Daria",
+  "maxlv": "150",
+  "no": "7232",
+  "unitDisplayHomePosition_1W9CxaFK": null,
+  "unitDisplayDetailPosition_6z54rgb3": null,
+  "unitDisplayConfirmImagePosition_MYK1fq6c": null,
+  "unitDisplayCutInImagePosition_7hLR6pDN": null,
+  "unitDisplaySummonPosition_KC3Jk8Br": null,
+  "unitDisplayHpPosition_3BpHN6VD": null,
+  "unitDisplayCursorPosition": null,
+  "sellPrice": "",
+  "sellCaution": false,
+  "effectFrames": "",
+  "evofrom": "",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "disam": "Daria",
+  "altname": "Cute Medic Daria",
+  "idalt": "",
+  "has_altart": "",
+  "doenter": "true",
+  "basexp": "21",
+  "animation_attack": "96",
+  "animation_idle": "96",
+  "animation_move": "8",
+  "movespeed_attack": "0.0033",
+  "speedtype_attack": "3",
+  "movetype_attack": "1",
+  "movespeed_skill": "0.0033",
+  "speedtype_skill": "3",
+  "movetype_skill": "1",
+  "description": "Daria knew ever since she was a child what she wanted to do when she was older: join the Siegfried Academy medical corps. Her natural clumsiness could have easily been an obstacle for her. For example, her friends couldn’t count how many times she accidentally knocked over a book. However, when it came to taking care of a patient, she became a completely different person. Her absent-mindedness gave way to surprising dexterity. She was also an enthusiastic girl. She managed to convince a hesitant friend to accompany her to Siegfried Academy. Moreover, rumors say that Daria was a formidable fighter when syringes and bandages weren’t needed. Such a promising student; what could she have to fear in the future?",
+  "summon": "Show me where you’re hurt! What? Of course I know what I’m doing!",
+  "fusion": "Fight? I would like to avoid it, but if it’s necessary...",
+  "evolution": "",
+  "hp_base": "6984",
+  "atk_base": "2820",
+  "def_base": "2626",
+  "rec_base": "2666",
+  "hp_lord": "8520",
+  "atk_lord": "3440",
+  "def_lord": "3204",
+  "rec_lord": "3253",
+  "hp_anima": "9637",
+  "rec_anima": "2955",
+  "atk_breaker": "3738",
+  "def_breaker": "2906",
+  "def_guardian": "3502",
+  "rec_guardian": "3253",
+  "def_oracle": "3204",
+  "rec_oracle": "3551",
+  "hp_bonus": "1500",
+  "atk_bonus": "600",
+  "def_bonus": "600",
+  "rec_bonus": "600",
+  "lordonly": "",
+  "normal_frames": "39",
+  "normal_distribute": "100",
+  "normal_totaldistr": "100",
+  "combo_hits": "1",
+  "normaldc": "48",
+  "ls": "Anatomy Mastery",
+  "lsdescription": "Boosts all parameters of Earth types (85%) & damage reduction from Thunder, Earth types (20%) & boosts Earth elemental damage (250%) & boosts BB ATK (300%) when HP is over 50% & reduces BB gauge required for BB (25%)",
+  "lsnote": "",
+  "es": "Doctor Oath",
+  "esdescription": "Adds chance to cast double BB/SBB/UBB (25%) for 3 turns effect to BB/SBB & when Siegfried sphere is equipped, raises ATK parameter limits to 130000 and boosts DEF and HP of Earth types (20%, all)",
+  "esitem": "Siegfried's Hybrid Weapon, Siegfried's Fanged Gun, Siegfried's Propelled Shield,Siegfried's Doping Spaulder and/or Siegfried Draconic Rage",
+  "esnote": "",
+  "bbdescription": "Earth attack on all foes & restores HP & restores HP for 3 turns & removes status ailments & negates status ailments for 3 turns & boosts Earth elemental damage (175%) for 3 turns",
+  "bbnote": "{{UnitBuffList",
+  "buff_1_proc": "1",
+  "buff_1_potency": "2200% damage modifier",
+  "buff_1_duration": "—",
+  "buff_1_target": "All enemies",
+  "buff_2_proc": "18",
+  "buff_2_potency": "Reduces damage taken by 75%",
+  "buff_2_duration": "3 turns",
+  "buff_2_target": "All allies",
+  "buff_3_proc": "5_atk",
+  "buff_3_potency": "400% boost to Atk",
+  "buff_3_duration": "3 turns",
+  "buff_3_target": "All allies",
+  "buff_4_proc": "5_def",
+  "buff_4_potency": "400% boost to Def",
+  "buff_4_duration": "3 turns",
+  "buff_4_target": "All allies",
+  "buff_5_proc": "5_rec",
+  "buff_5_potency": "400% boost to Rec",
+  "buff_5_duration": "3 turns",
+  "buff_5_target": "All allies",
+  "buff_6_proc": "70002",
+  "buff_6_potency": "100% chance of recasting BB/SBB/UBB",
+  "buff_6_duration": "1 turn",
+  "buff_6_target": "All allies",
+  "bbtype": "Offense",
+  "bbgauge": "18",
+  "bb_frames": "39",
+  "bb_distribute": "100",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "0",
+  "bbhits": "1",
+  "bbaoe": "A",
+  "bbdc": "20",
+  "bbmultiplier": "470",
+  "bb_hpscale": "",
+  "sbbdescription": "Earth attack on all foes, Earth attack on single foe, Earth attack against Thunder types & boosts ATK, DEF, REC of Earth types (120%) and Earth elemental damage (175%) for 3 turns & probable elemental vulnerability (20% chance 15%) for 1 turn",
+  "sbbnote": "{{UnitBuffList",
+  "buff_7_proc": "55_earth",
+  "buff_7_potency": "500% boost to Earth elemental damage",
+  "buff_7_duration": "3 turns",
+  "buff_7_target": "All allies",
+  "buff_8_proc": "132_ewd",
+  "buff_8_potency": "20% chance of inflicting 15% elemental vulnerability",
+  "buff_8_duration": "1 turn",
+  "buff_8_target": "All enemies",
+  "sbbtype": "Offense",
+  "sbbgauge": "37",
+  "sbb_frames": "39",
+  "sbb_distribute": "100",
+  "sbb_totaldistr": "100",
+  "sbb_effectdelay": "0",
+  "sbbhits": "1",
+  "sbbaoe": "A",
+  "sbbdc": "15",
+  "sbbmultiplier": "950",
+  "sbb_hpscale": "",
+  "sbb2_frames": "40",
+  "sbb2_distribute": "100",
+  "sbb2_totaldistr": "100",
+  "sbb2_effectdelay": "0",
+  "sbbhits2": "1",
+  "sbbaoe2": "1",
+  "sbbdc2": "15",
+  "sbbmultiplier2": "850",
+  "sbb2_hpscale": "",
+  "sbb3_frames": "41",
+  "sbb3_distribute": "100",
+  "sbb3_totaldistr": "100",
+  "sbb3_effectdelay": "0",
+  "sbbhits3": "1",
+  "sbbaoe3": "A",
+  "sbbdc3": "15",
+  "sbbmultiplier3": "620",
+  "sbb3_hpscale": "",
   "ubbdescription": "Earth attack on all foes & damage reduction (75%) for 3 turns & boosts ATK, DEF, REC (400%) for 3 turns & adds cast double BB/SBB/UBB for 1 turn & boosts Earth elemental damage (500%) for 3 turns",
   "ubbnote": "{{UnitBuffList",
   "ubbtype": "Offense",
@@ -1669,164 +1899,5 @@
   "notes": "",
   "incorrectinfo": "",
   "addcat": "",
-  "addcatname": "",
-  "stats": {
-    "_base": {
-      "atk": 2820,
-      "def": 2626,
-      "hp": 6984,
-      "rec": 2666
-    },
-    "_lord": {
-      "atk": 3440,
-      "def": 3204,
-      "hp": 8520,
-      "rec": 3253
-    },
-    "anima": {
-      "atk": 3440,
-      "def": 3204,
-      "hp max": 10010,
-      "hp min": 9265,
-      "rec max": 3104,
-      "rec min": 2806
-    },
-    "breaker": {
-      "atk max": 3887,
-      "atk min": 3589,
-      "def max": 3055,
-      "def min": 2757,
-      "hp": 8520,
-      "rec": 3253
-    },
-    "guardian": {
-      "atk max": 3291,
-      "atk min": 2993,
-      "def max": 3651,
-      "def min": 3353,
-      "hp": 8520,
-      "rec": 3253
-    },
-    "oracle": {
-      "atk": 3440,
-      "def": 3204,
-      "hp max": 7775,
-      "hp min": 7030,
-      "rec max": 3700,
-      "rec min": 3402
-    }
-  },
-  "leader_skill": {
-    "desc": "Boosts all parameters of Earth types (85%) & damage reduction from Thunder, Earth types (20%) & boosts Earth elemental damage (250%) & boosts BB ATK (300%) when HP is over 50% & reduces BB gauge required for BB (25%)",
-    "effects": [
-      {
-        "atk% buff": 85,
-        "def% buff": 85,
-        "elements buffed": [
-          "earth"
-        ],
-        "hp% buff": 85,
-        "passive id": "2",
-        "rec% buff": 85
-      },
-      {
-        "earth resist%": 20,
-        "passive id": "5"
-      },
-      {
-        "passive id": "5",
-        "thunder resist%": 20
-      },
-      {
-        "earth units do extra elemental weakness dmg": true,
-        "elemental weakness multiplier%": 250.0,
-        "passive id": "50"
-      },
-      {
-        "passive id": "48",
-        "reduced bb bc cost%": 25
-      },
-      {
-        "bb atk% add": 300,
-        "hp threshold": 50,
-        "passive id": "103",
-        "sbb atk% add": 300,
-        "triggered when hp": "higher",
-        "ubb atk% add": 300
-      }
-    ],
-    "id": "730277",
-    "name": "Anatomy Mastery"
-  },
-  "extra_skill": {
-    "desc": "Adds chance to cast double BB/SBB/UBB (25%) for 3 turns effect to BB/SBB & when Siegfried sphere is equipped, raises ATK parameter limits to 130000 and boosts DEF and HP of Earth types (20%, all)",
-    "effects": [
-      {
-        "conditions": [],
-        "passive id": "66",
-        "passive target": "self",
-        "trigger on bb": true,
-        "trigger on sbb": true,
-        "triggered effect": [
-          {
-            "effect delay time(ms)/frame": "0.0/0",
-            "target area": "aoe",
-            "target type": "party",
-            "unknown proc id": "70002",
-            "unknown proc param": "0.25,3,0,0,0,0,0,0,0"
-          }
-        ]
-      },
-      {
-        "conditions": [
-          {
-            "item required": [
-              "700065",
-              "700061",
-              "700062",
-              "700063",
-              "700067"
-            ]
-          }
-        ],
-        "def% buff": 20,
-        "elements buffed": [
-          "earth"
-        ],
-        "hp% buff": 20,
-        "passive id": "2",
-        "passive target": "party"
-      },
-      {
-        "conditions": [
-          {
-            "item required": [
-              "700065",
-              "700061",
-              "700062",
-              "700063",
-              "700067"
-            ]
-          }
-        ],
-        "increase atk cap": 130000,
-        "passive id": "143",
-        "passive target": "self"
-      }
-    ],
-    "id": "730277",
-    "name": "Doctor Oath",
-    "rarity": "0",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": null,
-  "unitDisplayDetailPosition_6z54rgb3": null,
-  "unitDisplayConfirmImagePosition_MYK1fq6c": null,
-  "unitDisplayCutInImagePosition_7hLR6pDN": null,
-  "unitDisplaySummonPosition_KC3Jk8Br": null,
-  "unitDisplayHpPosition_3BpHN6VD": null,
-  "unitDisplayCursorPosition": null,
-  "sellPrice": "",
-  "sellCaution": false,
-  "effectFrames": ""
+  "addcatname": ""
 }

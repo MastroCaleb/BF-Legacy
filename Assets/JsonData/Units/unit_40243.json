@@ -1,62 +1,67 @@
 {
   "id": "40243",
-  "unitName": "Zele",
-  "freetext": ":''For other uses, see Zele (disambiguation)''",
-  "no": "397",
-  "element": "Thunder",
-  "rarity": "★★★★",
-  "cost": "10",
-  "maxlv": "60",
-  "basexp": "15",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "128",
-  "animation_idle": "60",
-  "animation_move": "21",
-  "movespeed_attack": "0.0024",
-  "movespeed_skill": "0.0024",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "24, 28, 84, 88, 92",
-  "normal_distribute": "15, 15, 30, 20, 20",
-  "normal_totaldistr": "100",
-  "bb_frames": "24, 28, 84, 88, 92, 96, 100",
-  "bb_distribute": "15, 15, 30, 10, 10, 10, 10",
-  "bb_totaldistr": "100",
-  "description": "The third youngest of the Six Sibyl Sisters who fought against the gods in order to save the humans. Of all the sisters and their unique personalities she took on a coordinating role having one of the more moderate personalities of the lot. She was aware of the sins of the humans when the gods came to destroy them, but she decided to fight with her sisters in protecting them instead of watching them disappear. It's said that after she split from the three of her sisters who defected, Zele continued trying to persuade them not to fight until the very end.",
-  "summon": "I hate the humans who brought<br>harm to my sisters and I.<br>You, however, are an exception.",
-  "fusion": "I know the importance of power.<br>Without strength you cannot <br>convey your will to others.",
-  "evolution": "",
-  "hp_base": "2877",
-  "atk_base": "884",
-  "def_base": "698",
-  "rec_base": "815",
-  "hp_lord": "4028",
-  "atk_lord": "1238",
-  "def_lord": "977",
-  "rec_lord": "1141",
-  "hp_anima": "4471",
-  "rec_anima": "1023",
-  "atk_breaker": "1356",
-  "def_breaker": "859",
-  "atk_guardian": "1120",
-  "def_guardian": "1095",
-  "rec_guardian": "1082",
-  "def_oracle": "918",
-  "hp_oracle": "3851",
-  "rec_oracle": "1318",
-  "hp_bonus": "400",
-  "atk_bonus": "160",
-  "def_bonus": "160",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "5",
-  "normaldc": "10",
-  "ls": "Bursting Light's Power",
-  "lsdescription": "25% boost to Atk power of Thunder and Light types",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 884,
+      "def": 698,
+      "hp": 2877,
+      "rec": 815
+    },
+    "_lord": {
+      "atk": 1238,
+      "def": 977,
+      "hp": 4028,
+      "rec": 1141
+    },
+    "anima": {
+      "atk": 1238,
+      "def": 977,
+      "hp max": 4618,
+      "hp min": 4323,
+      "rec max": 1082,
+      "rec min": 964
+    },
+    "breaker": {
+      "atk max": 1415,
+      "atk min": 1297,
+      "def max": 918,
+      "def min": 800,
+      "hp": 4028,
+      "rec": 1141
+    },
+    "guardian": {
+      "atk": 1238,
+      "def max": 1154,
+      "def min": 1036,
+      "hp": 4028,
+      "rec max": 1141,
+      "rec min": 1023
+    },
+    "oracle": {
+      "atk": 1238,
+      "def max": 977,
+      "def min": 859,
+      "hp": 4028,
+      "rec max": 1377,
+      "rec min": 1259
+    }
+  },
+  "leader_skill": {
+    "desc": "25% boost to Atk power of Thunder and Light types",
+    "effects": [
+      {
+        "atk% buff": 25,
+        "elements buffed": [
+          "thunder",
+          "light"
+        ],
+        "passive id": "2"
+      }
+    ],
+    "id": "3400",
+    "name": "Bursting Light's Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -333,98 +338,91 @@
     ],
     "name": "3rd Shinto Form: Ikazuchi"
   },
-  "bbdescription": "7 combo Thunder and Light elemental attack on all enemies & probable Injury effect",
-  "bbnote": "45% chance",
-  "bbtype": "Offense",
-  "bbhits": "7",
-  "bbaoe": "A",
-  "bbgauge": "25",
-  "bbdc": "7",
-  "bbmultiplier": "160",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "40244",
-  "evomats1": "40133",
-  "evomats2": "40132",
-  "evomats3": "40131",
-  "evomats4": "40191",
-  "evomats5": "50191",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 884,
-      "def": 698,
-      "hp": 2877,
-      "rec": 815
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1238,
-      "def": 977,
-      "hp": 4028,
-      "rec": 1141
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1238,
-      "def": 977,
-      "hp max": 4618,
-      "hp min": 4323,
-      "rec max": 1082,
-      "rec min": 964
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 128
     },
-    "breaker": {
-      "atk max": 1415,
-      "atk min": 1297,
-      "def max": 918,
-      "def min": 800,
-      "hp": 4028,
-      "rec": 1141
+    "idle": {
+      "total number of frames": 60
     },
-    "guardian": {
-      "atk": 1238,
-      "def max": 1154,
-      "def min": 1036,
-      "hp": 4028,
-      "rec max": 1141,
-      "rec min": 1023
-    },
-    "oracle": {
-      "atk": 1238,
-      "def max": 977,
-      "def min": 859,
-      "hp": 4028,
-      "rec max": 1377,
-      "rec min": 1259
+    "move": {
+      "total number of frames": 21
     }
   },
-  "leader_skill": {
-    "desc": "25% boost to Atk power of Thunder and Light types",
-    "effects": [
-      {
-        "atk% buff": 25,
-        "elements buffed": [
-          "thunder",
-          "light"
-        ],
-        "passive id": "2"
-      }
+  "category": 40240,
+  "cost": "10",
+  "damage frames": {
+    "frame times": [
+      24,
+      28,
+      84,
+      88,
+      92
     ],
-    "id": "3400",
-    "name": "Bursting Light's Power"
+    "hit dmg% distribution": [
+      15,
+      15,
+      30,
+      20,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 5
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "thunder",
+  "exp_pattern": 15,
+  "gender": "female",
+  "getting type": "farmable",
+  "guide_id": 397,
+  "imp": {
+    "max atk": "160",
+    "max def": "160",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "1152~1287",
+  "movement": {
+    "attack": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    }
+  },
+  "name": "Zele",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Zele",
+  "maxlv": "60",
+  "no": "397",
   "unitDisplayHomePosition_1W9CxaFK": "556,184,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-250,3,1234,847",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "146,347,343,263,0",
@@ -434,5 +432,110 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "18:124:1,22:124:1,78:124:1,82:400200:1,82:124:1,86:124:1"
+  "effectFrames": "18:124:1,22:124:1,78:124:1,82:400200:1,82:124:1,86:124:1",
+  "evofrom": "",
+  "evointo": "40244",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "40133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40131",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50191",
+      "count": 1
+    }
+  ],
+  "freetext": ":''For other uses, see Zele (disambiguation)''",
+  "basexp": "15",
+  "animation_attack": "128",
+  "animation_idle": "60",
+  "animation_move": "21",
+  "movespeed_attack": "0.0024",
+  "movespeed_skill": "0.0024",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "24, 28, 84, 88, 92",
+  "normal_distribute": "15, 15, 30, 20, 20",
+  "normal_totaldistr": "100",
+  "bb_frames": "24, 28, 84, 88, 92, 96, 100",
+  "bb_distribute": "15, 15, 30, 10, 10, 10, 10",
+  "bb_totaldistr": "100",
+  "description": "The third youngest of the Six Sibyl Sisters who fought against the gods in order to save the humans. Of all the sisters and their unique personalities she took on a coordinating role having one of the more moderate personalities of the lot. She was aware of the sins of the humans when the gods came to destroy them, but she decided to fight with her sisters in protecting them instead of watching them disappear. It's said that after she split from the three of her sisters who defected, Zele continued trying to persuade them not to fight until the very end.",
+  "summon": "I hate the humans who brought<br>harm to my sisters and I.<br>You, however, are an exception.",
+  "fusion": "I know the importance of power.<br>Without strength you cannot <br>convey your will to others.",
+  "evolution": "",
+  "hp_base": "2877",
+  "atk_base": "884",
+  "def_base": "698",
+  "rec_base": "815",
+  "hp_lord": "4028",
+  "atk_lord": "1238",
+  "def_lord": "977",
+  "rec_lord": "1141",
+  "hp_anima": "4471",
+  "rec_anima": "1023",
+  "atk_breaker": "1356",
+  "def_breaker": "859",
+  "atk_guardian": "1120",
+  "def_guardian": "1095",
+  "rec_guardian": "1082",
+  "def_oracle": "918",
+  "hp_oracle": "3851",
+  "rec_oracle": "1318",
+  "hp_bonus": "400",
+  "atk_bonus": "160",
+  "def_bonus": "160",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "5",
+  "normaldc": "10",
+  "ls": "Bursting Light's Power",
+  "lsdescription": "25% boost to Atk power of Thunder and Light types",
+  "lstype": "Attack",
+  "bbdescription": "7 combo Thunder and Light elemental attack on all enemies & probable Injury effect",
+  "bbnote": "45% chance",
+  "bbtype": "Offense",
+  "bbhits": "7",
+  "bbaoe": "A",
+  "bbgauge": "25",
+  "bbdc": "7",
+  "bbmultiplier": "160",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "40133",
+  "evomats2": "40132",
+  "evomats3": "40131",
+  "evomats4": "40191",
+  "evomats5": "50191"
 }

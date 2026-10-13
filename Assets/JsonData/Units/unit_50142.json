@@ -1,62 +1,63 @@
 {
   "id": "50142",
-  "unitName": "Adventurer Alma",
-  "no": "216",
-  "element": "Light",
-  "rarity": "★★★",
-  "cost": "6",
-  "maxlv": "40",
-  "basexp": "15",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "80",
-  "animation_idle": "65",
-  "animation_move": "66",
-  "movespeed_attack": "0.0024",
-  "movespeed_skill": "0.0024",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "15, 30, 57, 60",
-  "normal_distribute": "20, 10, 60, 10",
-  "normal_totaldistr": "100",
-  "bb_frames": "9, 24, 51, 54, 57",
-  "bb_distribute": "20, 20, 30, 15, 15",
-  "bb_totaldistr": "100",
-  "description": "A swordswoman from the ruined La Veda Republic, she was known as an adventurer who traveled around ancient ruins in search of her parents. Her adventures, like when she vanquished an evil spirit, or her times travelling through unexplored jungles, inspired her. More than glory, she just wanted to find her parents.",
-  "summon": "Wanna go on an adventure?<br>Great! Let's have some fun!",
-  "fusion": "Don't think this is<br>all I've got. I have a<br>lot more stored up inside.",
-  "evolution": "Haha, I've gotten stronger!<br>Now take me somewhere<br>more exciting!",
-  "hp_base": "1718",
-  "atk_base": "626",
-  "def_base": "587",
-  "rec_base": "635",
-  "hp_lord": "2780",
-  "atk_lord": "904",
-  "def_lord": "845",
-  "rec_lord": "951",
-  "hp_anima": "3073",
-  "rec_anima": "873",
-  "atk_breaker": "982",
-  "def_breaker": "767",
-  "atk_guardian": "826",
-  "def_guardian": "923",
-  "rec_guardian": "912",
-  "def_oracle": "806",
-  "hp_oracle": "2663",
-  "rec_oracle": "1068",
-  "hp_bonus": "300",
-  "atk_bonus": "160",
-  "def_bonus": "80",
-  "rec_bonus": "120",
-  "lordonly": "",
-  "combo_hits": "4",
-  "normaldc": "12",
-  "ls": "Pulsating Energy",
-  "lsdescription": "BB Gauge fills after each turn",
-  "lsnote": "Fills 1 BC",
-  "lstype": "Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 626,
+      "def": 587,
+      "hp": 1718,
+      "rec": 635
+    },
+    "_lord": {
+      "atk": 904,
+      "def": 845,
+      "hp": 2780,
+      "rec": 951
+    },
+    "anima": {
+      "atk": 904,
+      "def": 845,
+      "hp max": 3170,
+      "hp min": 2975,
+      "rec max": 912,
+      "rec min": 834
+    },
+    "breaker": {
+      "atk max": 1021,
+      "atk min": 943,
+      "def max": 806,
+      "def min": 728,
+      "hp": 2780,
+      "rec": 951
+    },
+    "guardian": {
+      "atk": 904,
+      "def max": 962,
+      "def min": 884,
+      "hp": 2780,
+      "rec max": 951,
+      "rec min": 873
+    },
+    "oracle": {
+      "atk": 904,
+      "def max": 845,
+      "def min": 767,
+      "hp": 2780,
+      "rec max": 1107,
+      "rec min": 1029
+    }
+  },
+  "leader_skill": {
+    "desc": "BB Gauge fills after each turn",
+    "effects": [
+      {
+        "bc fill per turn": 1,
+        "passive id": "9"
+      }
+    ],
+    "id": "1200",
+    "name": "Pulsating Energy"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -217,93 +218,89 @@
     ],
     "name": "Brave Impact"
   },
-  "bbdescription": "5 combo Light elemental attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "5",
-  "bbaoe": "A",
-  "bbgauge": "13",
-  "bbdc": "5",
-  "bbmultiplier": "85",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "50141",
-  "evointo": "50143",
-  "evomats1": "50122",
-  "evomats2": "60143",
-  "evomats3": "50121",
-  "evomats4": "50120",
-  "evomats5": "50120",
-  "evozelcost": "100000",
-  "stats": {
-    "_base": {
-      "atk": 626,
-      "def": 587,
-      "hp": 1718,
-      "rec": 635
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 904,
-      "def": 845,
-      "hp": 2780,
-      "rec": 951
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 904,
-      "def": 845,
-      "hp max": 3170,
-      "hp min": 2975,
-      "rec max": 912,
-      "rec min": 834
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 80
     },
-    "breaker": {
-      "atk max": 1021,
-      "atk min": 943,
-      "def max": 806,
-      "def min": 728,
-      "hp": 2780,
-      "rec": 951
+    "idle": {
+      "total number of frames": 65
     },
-    "guardian": {
-      "atk": 904,
-      "def max": 962,
-      "def min": 884,
-      "hp": 2780,
-      "rec max": 951,
-      "rec min": 873
-    },
-    "oracle": {
-      "atk": 904,
-      "def max": 845,
-      "def min": 767,
-      "hp": 2780,
-      "rec max": 1107,
-      "rec min": 1029
+    "move": {
+      "total number of frames": 66
     }
   },
-  "leader_skill": {
-    "desc": "BB Gauge fills after each turn",
-    "effects": [
-      {
-        "bc fill per turn": 1,
-        "passive id": "9"
-      }
+  "category": 50140,
+  "cost": "6",
+  "damage frames": {
+    "frame times": [
+      15,
+      30,
+      57,
+      60
     ],
-    "id": "1200",
-    "name": "Pulsating Energy"
+    "hit dmg% distribution": [
+      20,
+      10,
+      60,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 4
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "light",
+  "exp_pattern": 15,
+  "gender": "female",
+  "getting type": "farmable",
+  "guide_id": 216,
+  "imp": {
+    "max atk": "160",
+    "max def": "80",
+    "max hp": "300",
+    "max rec": "120"
+  },
+  "kind": "normal",
+  "lord damage range": "841~940",
+  "movement": {
+    "attack": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    }
+  },
+  "name": "Adventurer Alma",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "Adventurer Alma",
+  "maxlv": "40",
+  "no": "216",
   "unitDisplayHomePosition_1W9CxaFK": "77,105,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "278,98,401,636",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "215,387,216,240,0",
@@ -313,5 +310,104 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "1000",
   "sellCaution": false,
-  "effectFrames": "9:125:1,24:125:1,51:125:1,54:125:1"
+  "effectFrames": "9:125:1,24:125:1,51:125:1,54:125:1",
+  "evofrom": "50141",
+  "evointo": "50143",
+  "evozelcost": "100000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50122",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50121",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50120",
+      "count": 2
+    }
+  ],
+  "basexp": "15",
+  "animation_attack": "80",
+  "animation_idle": "65",
+  "animation_move": "66",
+  "movespeed_attack": "0.0024",
+  "movespeed_skill": "0.0024",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "15, 30, 57, 60",
+  "normal_distribute": "20, 10, 60, 10",
+  "normal_totaldistr": "100",
+  "bb_frames": "9, 24, 51, 54, 57",
+  "bb_distribute": "20, 20, 30, 15, 15",
+  "bb_totaldistr": "100",
+  "description": "A swordswoman from the ruined La Veda Republic, she was known as an adventurer who traveled around ancient ruins in search of her parents. Her adventures, like when she vanquished an evil spirit, or her times travelling through unexplored jungles, inspired her. More than glory, she just wanted to find her parents.",
+  "summon": "Wanna go on an adventure?<br>Great! Let's have some fun!",
+  "fusion": "Don't think this is<br>all I've got. I have a<br>lot more stored up inside.",
+  "evolution": "Haha, I've gotten stronger!<br>Now take me somewhere<br>more exciting!",
+  "hp_base": "1718",
+  "atk_base": "626",
+  "def_base": "587",
+  "rec_base": "635",
+  "hp_lord": "2780",
+  "atk_lord": "904",
+  "def_lord": "845",
+  "rec_lord": "951",
+  "hp_anima": "3073",
+  "rec_anima": "873",
+  "atk_breaker": "982",
+  "def_breaker": "767",
+  "atk_guardian": "826",
+  "def_guardian": "923",
+  "rec_guardian": "912",
+  "def_oracle": "806",
+  "hp_oracle": "2663",
+  "rec_oracle": "1068",
+  "hp_bonus": "300",
+  "atk_bonus": "160",
+  "def_bonus": "80",
+  "rec_bonus": "120",
+  "lordonly": "",
+  "combo_hits": "4",
+  "normaldc": "12",
+  "ls": "Pulsating Energy",
+  "lsdescription": "BB Gauge fills after each turn",
+  "lsnote": "Fills 1 BC",
+  "lstype": "Brave Burst",
+  "bbdescription": "5 combo Light elemental attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "5",
+  "bbaoe": "A",
+  "bbgauge": "13",
+  "bbdc": "5",
+  "bbmultiplier": "85",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50122",
+  "evomats2": "60143",
+  "evomats3": "50121",
+  "evomats4": "50120",
+  "evomats5": "50120"
 }

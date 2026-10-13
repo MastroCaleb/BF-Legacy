@@ -1,58 +1,63 @@
 {
   "id": "30040",
-  "unitName": "Geomancer Claris",
-  "no": "59",
-  "element": "Earth",
-  "rarity": "★",
-  "cost": "2",
-  "maxlv": "15",
-  "basexp": "10",
-  "gender": "F",
-  "ai": "5",
-  "animation_attack": "76",
-  "animation_idle": "52",
-  "animation_move": "52",
-  "movespeed_attack": "6",
-  "movespeed_skill": "6",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "48, 53, 58",
-  "normal_distribute": "33, 33, 34",
-  "normal_totaldistr": "100",
-  "description": "A geomancer active from the ruined Vriksha Duchy. As she was from a nomadic tribe, there are few records of her youth. A geomancer deciphers and manipulates nature. Claris was rarely in any one place for very long, but spent 10 years in Vriksha. Her purpose is unclear, but rumors are she was searching for buried treasure or that she had a lover.",
-  "summon": "I've been waiting for you.<br>I will show you the<br>ideal direction in which to head.",
-  "fusion": "Amazing, isn't it?<br>I can feel the flow of <br>righteous energy.",
-  "evolution": "",
-  "hp_base": "1080",
-  "atk_base": "200",
-  "def_base": "400",
-  "rec_base": "390",
-  "hp_lord": "1812",
-  "atk_lord": "260",
-  "def_lord": "600",
-  "rec_lord": "514",
-  "hp_anima": "1917",
-  "rec_anima": "486",
-  "atk_breaker": "288",
-  "def_breaker": "572",
-  "atk_guardian": "232",
-  "def_guardian": "628",
-  "rec_guardian": "500",
-  "def_oracle": "586",
-  "hp_oracle": "1770",
-  "rec_oracle": "556",
-  "hp_bonus": "150",
-  "atk_bonus": "40",
-  "def_bonus": "40",
-  "rec_bonus": "100",
-  "lordonly": "",
-  "combo_hits": "3",
-  "normaldc": "6",
-  "ls": "Earth's Protection",
-  "lsdescription": "10% reduction in damage from Earth Types",
-  "lstype": "Defense",
+  "stats": {
+    "_base": {
+      "atk": 200,
+      "def": 400,
+      "hp": 1080,
+      "rec": 390
+    },
+    "_lord": {
+      "atk": 260,
+      "def": 600,
+      "hp": 1812,
+      "rec": 514
+    },
+    "anima": {
+      "atk": 260,
+      "def": 600,
+      "hp max": 1952,
+      "hp min": 1882,
+      "rec max": 500,
+      "rec min": 472
+    },
+    "breaker": {
+      "atk max": 302,
+      "atk min": 274,
+      "def max": 586,
+      "def min": 558,
+      "hp": 1812,
+      "rec": 514
+    },
+    "guardian": {
+      "atk": 260,
+      "def max": 642,
+      "def min": 614,
+      "hp": 1812,
+      "rec max": 514,
+      "rec min": 486
+    },
+    "oracle": {
+      "atk": 260,
+      "def max": 600,
+      "def min": 572,
+      "hp": 1812,
+      "rec max": 570,
+      "rec min": 542
+    }
+  },
+  "leader_skill": {
+    "desc": "10% reduction in damage from Earth Types",
+    "effects": [
+      {
+        "earth resist%": 10,
+        "passive id": "5"
+      }
+    ],
+    "id": "504",
+    "name": "Earth's Protection"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -215,92 +220,87 @@
     ],
     "name": "Earth's Water"
   },
-  "bbdescription": "Recovery of all allies' HP",
-  "bbnote": "Heals (580~780 + 22.5% healer Rec) HP",
-  "bbtype": "Heal",
-  "bbhits": "",
-  "bbaoe": "0",
-  "bbgauge": "15",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "30041",
-  "evomats1": "30130",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evozelcost": "5000",
-  "stats": {
-    "_base": {
-      "atk": 200,
-      "def": 400,
-      "hp": 1080,
-      "rec": 390
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 80.0,
+      "target conditions": "hp_50pr_under",
+      "target type": "party"
     },
-    "_lord": {
-      "atk": 260,
-      "def": 600,
-      "hp": 1812,
-      "rec": 514
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "hp_min",
+      "target type": "party"
     },
-    "anima": {
-      "atk": 260,
-      "def": 600,
-      "hp max": 1952,
-      "hp min": 1882,
-      "rec max": 500,
-      "rec min": 472
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 76
     },
-    "breaker": {
-      "atk max": 302,
-      "atk min": 274,
-      "def max": 586,
-      "def min": 558,
-      "hp": 1812,
-      "rec": 514
+    "idle": {
+      "total number of frames": 52
     },
-    "guardian": {
-      "atk": 260,
-      "def max": 642,
-      "def min": 614,
-      "hp": 1812,
-      "rec max": 514,
-      "rec min": 486
-    },
-    "oracle": {
-      "atk": 260,
-      "def max": 600,
-      "def min": 572,
-      "hp": 1812,
-      "rec max": 570,
-      "rec min": 542
+    "move": {
+      "total number of frames": 52
     }
   },
-  "leader_skill": {
-    "desc": "10% reduction in damage from Earth Types",
-    "effects": [
-      {
-        "earth resist%": 10,
-        "passive id": "5"
-      }
+  "category": 30040,
+  "cost": "2",
+  "damage frames": {
+    "frame times": [
+      48,
+      53,
+      58
     ],
-    "id": "504",
-    "name": "Earth's Protection"
+    "hit dmg% distribution": [
+      33,
+      33,
+      34
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 3
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "earth",
+  "exp_pattern": 10,
+  "gender": "female",
+  "getting type": "not eligible for achievement",
+  "guide_id": 59,
+  "imp": {
+    "max atk": "40",
+    "max def": "40",
+    "max hp": "150",
+    "max rec": "100"
+  },
+  "kind": "normal",
+  "lord damage range": "242~270",
+  "movement": {
+    "attack": {
+      "move speed": 6,
+      "move speed type": "2",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 6,
+      "move speed type": "2",
+      "move type": "3"
+    }
+  },
+  "name": "Geomancer Claris",
+  "rarity": "1",
+  "sell caution": false,
+  "unitName": "Geomancer Claris",
+  "maxlv": "15",
+  "no": "59",
   "unitDisplayHomePosition_1W9CxaFK": "133,86,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "200,84,500,706",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "207,296,237,335,0",
@@ -310,5 +310,84 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "100",
   "sellCaution": false,
-  "effectFrames": "47:230:1"
+  "effectFrames": "47:230:1",
+  "evofrom": "",
+  "evointo": "30041",
+  "evozelcost": "5000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "30130",
+      "count": 1
+    }
+  ],
+  "basexp": "10",
+  "animation_attack": "76",
+  "animation_idle": "52",
+  "animation_move": "52",
+  "movespeed_attack": "6",
+  "movespeed_skill": "6",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "48, 53, 58",
+  "normal_distribute": "33, 33, 34",
+  "normal_totaldistr": "100",
+  "description": "A geomancer active from the ruined Vriksha Duchy. As she was from a nomadic tribe, there are few records of her youth. A geomancer deciphers and manipulates nature. Claris was rarely in any one place for very long, but spent 10 years in Vriksha. Her purpose is unclear, but rumors are she was searching for buried treasure or that she had a lover.",
+  "summon": "I've been waiting for you.<br>I will show you the<br>ideal direction in which to head.",
+  "fusion": "Amazing, isn't it?<br>I can feel the flow of <br>righteous energy.",
+  "evolution": "",
+  "hp_base": "1080",
+  "atk_base": "200",
+  "def_base": "400",
+  "rec_base": "390",
+  "hp_lord": "1812",
+  "atk_lord": "260",
+  "def_lord": "600",
+  "rec_lord": "514",
+  "hp_anima": "1917",
+  "rec_anima": "486",
+  "atk_breaker": "288",
+  "def_breaker": "572",
+  "atk_guardian": "232",
+  "def_guardian": "628",
+  "rec_guardian": "500",
+  "def_oracle": "586",
+  "hp_oracle": "1770",
+  "rec_oracle": "556",
+  "hp_bonus": "150",
+  "atk_bonus": "40",
+  "def_bonus": "40",
+  "rec_bonus": "100",
+  "lordonly": "",
+  "combo_hits": "3",
+  "normaldc": "6",
+  "ls": "Earth's Protection",
+  "lsdescription": "10% reduction in damage from Earth Types",
+  "lstype": "Defense",
+  "bbdescription": "Recovery of all allies' HP",
+  "bbnote": "Heals (580~780 + 22.5% healer Rec) HP",
+  "bbtype": "Heal",
+  "bbhits": "",
+  "bbaoe": "0",
+  "bbgauge": "15",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "30130",
+  "evomats2": "",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": ""
 }

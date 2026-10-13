@@ -1,59 +1,65 @@
 {
   "id": "30234",
-  "unitName": "Gaia King Lugina",
-  "no": "337",
-  "element": "Earth",
-  "rarity": "★★★★★",
-  "cost": "15",
-  "maxlv": "80",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "123",
-  "animation_idle": "100",
-  "animation_move": "13",
-  "movespeed_attack": "0.0024",
-  "movespeed_skill": "0.0024",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "7, 22, 41, 56, 76, 80, 84",
-  "normal_distribute": "25, 10, 10, 10, 25, 10, 10",
-  "normal_totaldistr": "100",
-  "bb_frames": "7, 22, 41, 56, 78, 90, 102, 110, 118, 126",
-  "bb_distribute": "15, 10, 10, 10, 15, 10, 10, 6, 6, 8",
-  "bb_totaldistr": "100",
-  "description": "A mock Unit modeled after Lugina, a Summoner belonging to the Akras Summoners' Hall. Though his skills are often looked down upon due to his poor conduct, when he releases his true power he becomes one of the strongest in the whole of the Akras Summoners' Hall. He apparently defeated an evil god with an attack so powerful it shook the whole of Grand Gaia, but since no one was around to witness it many say Lugina simply exaggerated the story.",
-  "summon": "It seems you've finally realized<br>just how awesome I really am!<br>Now pay your respects!",
-  "fusion": "Hey, you!<br>......Aha!<br>That's the stuff!",
-  "evolution": "This is my true power!<br>Peel open your eyes and <br>gaze upon my glory!",
-  "hp_base": "3900",
-  "atk_base": "1430",
-  "def_base": "930",
-  "rec_base": "830",
-  "hp_lord": "5430",
-  "atk_lord": "1860",
-  "def_lord": "1300",
-  "rec_lord": "1200",
-  "hp_anima": "6023",
-  "rec_anima": "1042",
-  "atk_breaker": "2018",
-  "def_breaker": "1142",
-  "atk_guardian": "1702",
-  "def_guardian": "1458",
-  "hp_oracle": "5193",
-  "rec_oracle": "1437",
-  "hp_bonus": "500",
-  "atk_bonus": "200",
-  "def_bonus": "200",
-  "rec_bonus": "200",
-  "lordonly": "true",
-  "combo_hits": "7",
-  "normaldc": "14",
-  "ls": "Instant Barrage",
-  "lsdescription": "50% boost to Atk and Def for first 2 turns",
-  "lstype": "Attack/Defense",
+  "stats": {
+    "_base": {
+      "atk": 1430,
+      "def": 930,
+      "hp": 3900,
+      "rec": 830
+    },
+    "_lord": {
+      "atk": 1860,
+      "def": 1300,
+      "hp": 5430,
+      "rec": 1200
+    },
+    "anima": {
+      "atk": 1860,
+      "def": 1300,
+      "hp max": 6220,
+      "hp min": 5825,
+      "rec max": 1121,
+      "rec min": 963
+    },
+    "breaker": {
+      "atk max": 2097,
+      "atk min": 1939,
+      "def max": 1221,
+      "def min": 1063,
+      "hp": 5430,
+      "rec": 1200
+    },
+    "guardian": {
+      "atk": 1860,
+      "def max": 1537,
+      "def min": 1379,
+      "hp": 5430,
+      "rec max": 1200,
+      "rec min": 1042
+    },
+    "oracle": {
+      "atk": 1860,
+      "def max": 1300,
+      "def min": 1142,
+      "hp": 5430,
+      "rec max": 1516,
+      "rec min": 1358
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to Atk and Def for first 2 turns",
+    "effects": [
+      {
+        "first x turns": 2,
+        "first x turns atk% (1)": 50,
+        "first x turns def% (3)": 50,
+        "passive id": "21"
+      }
+    ],
+    "id": "2501",
+    "name": "Instant Barrage"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -224,96 +230,95 @@
     ],
     "name": "Ground Rock"
   },
-  "bbdescription": "10 combo powerful Earth attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "10",
-  "bbaoe": "A",
-  "bbgauge": "18",
-  "bbdc": "10",
-  "bbmultiplier": "130",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "30233",
-  "evointo": "30235",
-  "evomats1": "50354",
-  "evomats2": "30133",
-  "evomats3": "30133",
-  "evomats4": "30191",
-  "evomats5": "",
-  "evoitem": "Emerald",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 1430,
-      "def": 930,
-      "hp": 3900,
-      "rec": 830
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1860,
-      "def": 1300,
-      "hp": 5430,
-      "rec": 1200
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1860,
-      "def": 1300,
-      "hp max": 6220,
-      "hp min": 5825,
-      "rec max": 1121,
-      "rec min": 963
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 123
     },
-    "breaker": {
-      "atk max": 2097,
-      "atk min": 1939,
-      "def max": 1221,
-      "def min": 1063,
-      "hp": 5430,
-      "rec": 1200
+    "idle": {
+      "total number of frames": 100
     },
-    "guardian": {
-      "atk": 1860,
-      "def max": 1537,
-      "def min": 1379,
-      "hp": 5430,
-      "rec max": 1200,
-      "rec min": 1042
-    },
-    "oracle": {
-      "atk": 1860,
-      "def max": 1300,
-      "def min": 1142,
-      "hp": 5430,
-      "rec max": 1516,
-      "rec min": 1358
+    "move": {
+      "total number of frames": 13
     }
   },
-  "leader_skill": {
-    "desc": "50% boost to Atk and Def for first 2 turns",
-    "effects": [
-      {
-        "first x turns": 2,
-        "first x turns atk% (1)": 50,
-        "first x turns def% (3)": 50,
-        "passive id": "21"
-      }
+  "category": 30230,
+  "cost": "15",
+  "damage frames": {
+    "frame times": [
+      7,
+      22,
+      41,
+      56,
+      76,
+      80,
+      84
     ],
-    "id": "2501",
-    "name": "Instant Barrage"
+    "hit dmg% distribution": [
+      25,
+      10,
+      10,
+      10,
+      25,
+      10,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 7
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "earth",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "farmable",
+  "guide_id": 337,
+  "imp": {
+    "max atk": "200",
+    "max def": "200",
+    "max hp": "500",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "1732~1934",
+  "movement": {
+    "attack": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    }
+  },
+  "name": "Gaia King Lugina",
+  "rarity": "5",
+  "sell caution": true,
+  "unitName": "Gaia King Lugina",
+  "maxlv": "80",
+  "no": "337",
   "unitDisplayHomePosition_1W9CxaFK": "418,201,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-94,-22,901,834",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "160,336,297,293,0",
@@ -323,5 +328,102 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": true,
-  "effectFrames": "1:123:1,16:123:1,35:123:1,50:123:1,70:123:1,70:240:1,74:123:1,78:123:1"
+  "effectFrames": "1:123:1,16:123:1,35:123:1,50:123:1,70:123:1,70:240:1,74:123:1,78:123:1",
+  "evofrom": "30233",
+  "evointo": "30235",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30133",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "30191",
+      "count": 1
+    },
+    {
+      "type": "2",
+      "id": "110020",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "123",
+  "animation_idle": "100",
+  "animation_move": "13",
+  "movespeed_attack": "0.0024",
+  "movespeed_skill": "0.0024",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "7, 22, 41, 56, 76, 80, 84",
+  "normal_distribute": "25, 10, 10, 10, 25, 10, 10",
+  "normal_totaldistr": "100",
+  "bb_frames": "7, 22, 41, 56, 78, 90, 102, 110, 118, 126",
+  "bb_distribute": "15, 10, 10, 10, 15, 10, 10, 6, 6, 8",
+  "bb_totaldistr": "100",
+  "description": "A mock Unit modeled after Lugina, a Summoner belonging to the Akras Summoners' Hall. Though his skills are often looked down upon due to his poor conduct, when he releases his true power he becomes one of the strongest in the whole of the Akras Summoners' Hall. He apparently defeated an evil god with an attack so powerful it shook the whole of Grand Gaia, but since no one was around to witness it many say Lugina simply exaggerated the story.",
+  "summon": "It seems you've finally realized<br>just how awesome I really am!<br>Now pay your respects!",
+  "fusion": "Hey, you!<br>......Aha!<br>That's the stuff!",
+  "evolution": "This is my true power!<br>Peel open your eyes and <br>gaze upon my glory!",
+  "hp_base": "3900",
+  "atk_base": "1430",
+  "def_base": "930",
+  "rec_base": "830",
+  "hp_lord": "5430",
+  "atk_lord": "1860",
+  "def_lord": "1300",
+  "rec_lord": "1200",
+  "hp_anima": "6023",
+  "rec_anima": "1042",
+  "atk_breaker": "2018",
+  "def_breaker": "1142",
+  "atk_guardian": "1702",
+  "def_guardian": "1458",
+  "hp_oracle": "5193",
+  "rec_oracle": "1437",
+  "hp_bonus": "500",
+  "atk_bonus": "200",
+  "def_bonus": "200",
+  "rec_bonus": "200",
+  "lordonly": "true",
+  "combo_hits": "7",
+  "normaldc": "14",
+  "ls": "Instant Barrage",
+  "lsdescription": "50% boost to Atk and Def for first 2 turns",
+  "lstype": "Attack/Defense",
+  "bbdescription": "10 combo powerful Earth attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "10",
+  "bbaoe": "A",
+  "bbgauge": "18",
+  "bbdc": "10",
+  "bbmultiplier": "130",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "30133",
+  "evomats3": "30133",
+  "evomats4": "30191",
+  "evomats5": "",
+  "evoitem": "Emerald"
 }

@@ -1,63 +1,69 @@
 {
   "id": "730115",
-  "unitName": "Goddess Eir (EU)",
-  "disam": "Eir (disambiguation)",
-  "altname": "Goddess Eir",
-  "idalt": "",
-  "has_altart": "",
-  "doenter": "true",
-  "no": "7028",
-  "element": "Earth",
-  "rarity": "★★★★★★",
-  "cost": "22",
-  "maxlv": "100",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "3",
-  "animation_attack": "79",
-  "animation_idle": "96",
-  "animation_move": "96",
-  "movespeed_attack": "4",
-  "speedtype_attack": "3",
-  "movetype_attack": "3",
-  "movespeed_skill": "4",
-  "speedtype_skill": "3",
-  "movetype_skill": "3",
-  "description": "Part of the pantheon of fierce warriors coming from the coldest territories of Grand Gaia. Their legend tells us that 6 exceptional semi-goddesses select among the best of dying combatants, whom would be granted the right to enter their heaven and fight side by side with the gods. Eir has now decided to join the war. No longer just a healer, she can now grow monstuous seeds to devour the unfortunate souls who might dare enter their woods.",
-  "summon": "",
-  "fusion": "EVERYBODY HEALED!",
-  "evolution": "I grow dangerous plants now.",
-  "hp_base": "4491",
-  "atk_base": "900",
-  "def_base": "1490",
-  "rec_base": "882",
-  "hp_lord": "6200",
-  "atk_lord": "1500",
-  "def_lord": "2200",
-  "rec_lord": "1650",
-  "hp_anima": "6942",
-  "rec_anima": "1452",
-  "atk_breaker": "1698",
-  "def_breaker": "2002",
-  "def_guardian": "2398",
-  "rec_guardian": "1650",
-  "def_oracle": "2200",
-  "rec_oracle": "1848",
-  "hp_bonus": "900",
-  "atk_bonus": "340",
-  "def_bonus": "360",
-  "rec_bonus": "380",
-  "lordonly": "",
-  "evofrom": "730114",
-  "evointo": "",
-  "normal_frames": "52, 55, 58, 61, 64, 67, 70",
-  "normal_distribute": "14, 15, 15, 14, 14, 14, 14",
-  "normal_totaldistr": "100",
-  "combo_hits": "7",
-  "normaldc": "21",
-  "ls": "Torch of Valhalla",
-  "lsdescription": "35% boost to Atk Power of Female Units. Additional 30% when 5 elements or more are present",
-  "lsnote": "",
+  "stats": {
+    "_base": {
+      "atk": 900,
+      "def": 1490,
+      "hp": 4491,
+      "rec": 882
+    },
+    "_lord": {
+      "atk": 1500,
+      "def": 2200,
+      "hp": 6200,
+      "rec": 1650
+    },
+    "anima": {
+      "atk": 1500,
+      "def": 2200,
+      "hp max": 7190,
+      "hp min": 6695,
+      "rec max": 1551,
+      "rec min": 1353
+    },
+    "breaker": {
+      "atk max": 1797,
+      "atk min": 1599,
+      "def max": 2101,
+      "def min": 1903,
+      "hp": 6200,
+      "rec": 1650
+    },
+    "guardian": {
+      "atk max": 1401,
+      "atk min": 1203,
+      "def max": 2497,
+      "def min": 2299,
+      "hp": 6200,
+      "rec": 1650
+    },
+    "oracle": {
+      "atk": 1500,
+      "def": 2200,
+      "hp max": 5705,
+      "hp min": 5210,
+      "rec max": 1947,
+      "rec min": 1749
+    }
+  },
+  "leader_skill": {
+    "desc": "35% boost to Atk Power of Female Units. Additional 30% when 5 elements or more are present",
+    "effects": [
+      {
+        "atk% buff": 35,
+        "gender required": "female",
+        "passive id": "42"
+      },
+      {
+        "atk% buff": 30,
+        "passive id": "41",
+        "unique elements required": 5
+      }
+    ],
+    "id": "730115",
+    "name": "Torch of Valhalla"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -402,18 +408,6 @@
     ],
     "name": "Blessing of the Nature"
   },
-  "bbdescription": "Greatly recovers HP & removes all status ailments for all allies",
-  "bbnote": "{{UnitBuffList",
-  "buff_1_proc": "1",
-  "buff_1_potency": "300% damage modifier",
-  "buff_1_duration": "—",
-  "buff_1_target": "All enemies",
-  "buff_2_proc": "2",
-  "buff_2_potency": "Heals 4000~4500 + 22% Rec of HP instantly",
-  "buff_2_duration": "—",
-  "buff_2_target": "All allies",
-  "bbtype": "Heal",
-  "bbgauge": "18",
   "sbb": {
     "damage frames": [
       {
@@ -998,6 +992,174 @@
     ],
     "name": "Cruel blessing of the green"
   },
+  "ubb": {},
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 79
+    },
+    "idle": {
+      "total number of frames": 96
+    },
+    "move": {
+      "total number of frames": 96
+    }
+  },
+  "cost": "22",
+  "damage frames": {
+    "frame times": [
+      52,
+      55,
+      58,
+      61,
+      64,
+      67,
+      70
+    ],
+    "hit dmg% distribution": [
+      14,
+      15,
+      15,
+      14,
+      14,
+      14,
+      14
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 7
+  },
+  "drop check count": 3,
+  "element": "earth",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 7028,
+  "imp": {
+    "max atk": "340",
+    "max def": "360",
+    "max hp": "900",
+    "max rec": "380"
+  },
+  "kind": "normal",
+  "lord damage range": "1396~1560",
+  "movement": {
+    "attack": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    }
+  },
+  "name": "Goddess Eir",
+  "rarity": "6",
+  "sell caution": false,
+  "unitName": "Goddess Eir",
+  "maxlv": "100",
+  "no": "7028",
+  "unitDisplayHomePosition_1W9CxaFK": null,
+  "unitDisplayDetailPosition_6z54rgb3": null,
+  "unitDisplayConfirmImagePosition_MYK1fq6c": null,
+  "unitDisplayCutInImagePosition_7hLR6pDN": null,
+  "unitDisplaySummonPosition_KC3Jk8Br": null,
+  "unitDisplayHpPosition_3BpHN6VD": null,
+  "unitDisplayCursorPosition": null,
+  "sellPrice": "",
+  "sellCaution": false,
+  "effectFrames": "",
+  "evofrom": "730114",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "disam": "Eir (disambiguation)",
+  "altname": "Goddess Eir",
+  "idalt": "",
+  "has_altart": "",
+  "doenter": "true",
+  "basexp": "21",
+  "animation_attack": "79",
+  "animation_idle": "96",
+  "animation_move": "96",
+  "movespeed_attack": "4",
+  "speedtype_attack": "3",
+  "movetype_attack": "3",
+  "movespeed_skill": "4",
+  "speedtype_skill": "3",
+  "movetype_skill": "3",
+  "description": "Part of the pantheon of fierce warriors coming from the coldest territories of Grand Gaia. Their legend tells us that 6 exceptional semi-goddesses select among the best of dying combatants, whom would be granted the right to enter their heaven and fight side by side with the gods. Eir has now decided to join the war. No longer just a healer, she can now grow monstuous seeds to devour the unfortunate souls who might dare enter their woods.",
+  "summon": "",
+  "fusion": "EVERYBODY HEALED!",
+  "evolution": "I grow dangerous plants now.",
+  "hp_base": "4491",
+  "atk_base": "900",
+  "def_base": "1490",
+  "rec_base": "882",
+  "hp_lord": "6200",
+  "atk_lord": "1500",
+  "def_lord": "2200",
+  "rec_lord": "1650",
+  "hp_anima": "6942",
+  "rec_anima": "1452",
+  "atk_breaker": "1698",
+  "def_breaker": "2002",
+  "def_guardian": "2398",
+  "rec_guardian": "1650",
+  "def_oracle": "2200",
+  "rec_oracle": "1848",
+  "hp_bonus": "900",
+  "atk_bonus": "340",
+  "def_bonus": "360",
+  "rec_bonus": "380",
+  "lordonly": "",
+  "normal_frames": "52, 55, 58, 61, 64, 67, 70",
+  "normal_distribute": "14, 15, 15, 14, 14, 14, 14",
+  "normal_totaldistr": "100",
+  "combo_hits": "7",
+  "normaldc": "21",
+  "ls": "Torch of Valhalla",
+  "lsdescription": "35% boost to Atk Power of Female Units. Additional 30% when 5 elements or more are present",
+  "lsnote": "",
+  "bbdescription": "Greatly recovers HP & removes all status ailments for all allies",
+  "bbnote": "{{UnitBuffList",
+  "buff_1_proc": "1",
+  "buff_1_potency": "300% damage modifier",
+  "buff_1_duration": "—",
+  "buff_1_target": "All enemies",
+  "buff_2_proc": "2",
+  "buff_2_potency": "Heals 4000~4500 + 22% Rec of HP instantly",
+  "buff_2_duration": "—",
+  "buff_2_target": "All allies",
+  "bbtype": "Heal",
+  "bbgauge": "18",
   "sbbdescription": "9 combo Earth elemental attack on all enemies & Greatly recovers HP & removes status ailments and negates them for all allies for 3 turns",
   "sbbnote": "{{UnitBuffList",
   "buff_3_proc": "38",
@@ -1023,80 +1185,5 @@
   "notes": "",
   "incorrectinfo": "",
   "addcat": "",
-  "addcatname": "",
-  "stats": {
-    "_base": {
-      "atk": 900,
-      "def": 1490,
-      "hp": 4491,
-      "rec": 882
-    },
-    "_lord": {
-      "atk": 1500,
-      "def": 2200,
-      "hp": 6200,
-      "rec": 1650
-    },
-    "anima": {
-      "atk": 1500,
-      "def": 2200,
-      "hp max": 7190,
-      "hp min": 6695,
-      "rec max": 1551,
-      "rec min": 1353
-    },
-    "breaker": {
-      "atk max": 1797,
-      "atk min": 1599,
-      "def max": 2101,
-      "def min": 1903,
-      "hp": 6200,
-      "rec": 1650
-    },
-    "guardian": {
-      "atk max": 1401,
-      "atk min": 1203,
-      "def max": 2497,
-      "def min": 2299,
-      "hp": 6200,
-      "rec": 1650
-    },
-    "oracle": {
-      "atk": 1500,
-      "def": 2200,
-      "hp max": 5705,
-      "hp min": 5210,
-      "rec max": 1947,
-      "rec min": 1749
-    }
-  },
-  "leader_skill": {
-    "desc": "35% boost to Atk Power of Female Units. Additional 30% when 5 elements or more are present",
-    "effects": [
-      {
-        "atk% buff": 35,
-        "gender required": "female",
-        "passive id": "42"
-      },
-      {
-        "atk% buff": 30,
-        "passive id": "41",
-        "unique elements required": 5
-      }
-    ],
-    "id": "730115",
-    "name": "Torch of Valhalla"
-  },
-  "extra_skill": {},
-  "ubb": {},
-  "unitDisplayHomePosition_1W9CxaFK": null,
-  "unitDisplayDetailPosition_6z54rgb3": null,
-  "unitDisplayConfirmImagePosition_MYK1fq6c": null,
-  "unitDisplayCutInImagePosition_7hLR6pDN": null,
-  "unitDisplaySummonPosition_KC3Jk8Br": null,
-  "unitDisplayHpPosition_3BpHN6VD": null,
-  "unitDisplayCursorPosition": null,
-  "sellPrice": "",
-  "sellCaution": false,
-  "effectFrames": ""
+  "addcatname": ""
 }

@@ -1,65 +1,69 @@
 {
   "id": "30523",
-  "unitName": "Bilbo Baggins (4★)",
-  "unreleased": "true",
-  "untranslated": "true",
-  "doenter": "true",
-  "no": "798",
-  "altname": "ビルボ",
-  "element": "Earth",
-  "rarity": "★★★★",
-  "cost": "12",
-  "maxlv": "60",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "101",
-  "animation_idle": "87",
-  "animation_move": "11",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "12, 18, 32, 38, 60, 66",
-  "normal_distribute": "15, 13, 15, 13, 24, 20",
-  "normal_totaldistr": "100",
-  "bb_frames": "12, 16, 20, 32, 39, 60, 64, 68",
-  "bb_distribute": "11, 10, 10, 11, 10, 16, 16, 16",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "0",
-  "description": "異界の地、中つ国のホビット庄に住まう小柄な種族のホビット。彼の一族は平穏な暮らしを愛するのが常であるが、ビルボは魔法使いに誘われ、邪竜から財宝を取り戻す冒険に挑むことになる。怪物から手に入れた“いかなる物も容易く貫いてしまう剣”によって、仲間たちを大蜘蛛から救う活躍も見せた。しかし、彼が冒険で獲た物の中で最も興味深いのは、姿を消せる不思議な指輪であろう。",
-  "summon": "僕は戦士じゃないから、<br>足手まといにならないよう<br>がんばるよ！",
-  "fusion": "やあ、お礼に<br>温かいスープを作ったんだ。<br>一緒にどうだい？",
-  "evolution": "",
-  "hp_base": "2856",
-  "atk_base": "843",
-  "def_base": "1016",
-  "rec_base": "909",
-  "hp_lord": "4108",
-  "atk_lord": "1125",
-  "def_lord": "1354",
-  "rec_lord": "1212",
-  "hp_anima": "",
-  "rec_anima": "",
-  "atk_breaker": "",
-  "def_breaker": "",
-  "def_guardian": "",
-  "rec_guardian": "",
-  "def_oracle": "",
-  "rec_oracle": "",
-  "hp_bonus": "400",
-  "atk_bonus": "160",
-  "def_bonus": "160",
-  "rec_bonus": "160",
-  "lordonly": "Y",
-  "combo_hits": "6",
-  "normaldc": "12",
-  "ls": "銀の鋭光",
-  "lsdescription": "ターン毎にＨＰを少し回復＆低確率で被ダメージを超絶軽減",
-  "lsnote": "Gradually heal 200-400 + 10% Rec's HP each turn & 5% chance to reduce damage taken to 1",
-  "lstype": "Support",
+  "stats": {
+    "_base": {
+      "atk": 843,
+      "def": 1016,
+      "hp": 2856,
+      "rec": 909
+    },
+    "_lord": {
+      "atk": 1125,
+      "def": 1354,
+      "hp": 4108,
+      "rec": 1212
+    },
+    "anima": {
+      "atk": 1125,
+      "def": 1354,
+      "hp max": 4698,
+      "hp min": 4403,
+      "rec max": 1153,
+      "rec min": 1035
+    },
+    "breaker": {
+      "atk max": 1302,
+      "atk min": 1184,
+      "def max": 1295,
+      "def min": 1177,
+      "hp": 4108,
+      "rec": 1212
+    },
+    "guardian": {
+      "atk": 1125,
+      "def max": 1531,
+      "def min": 1413,
+      "hp": 4108,
+      "rec max": 1212,
+      "rec min": 1094
+    },
+    "oracle": {
+      "atk": 1125,
+      "def max": 1354,
+      "def min": 1236,
+      "hp": 4108,
+      "rec max": 1448,
+      "rec min": 1330
+    }
+  },
+  "leader_skill": {
+    "desc": "ターン毎にＨＰを少し回復＆低確率で被ダメージを超絶軽減",
+    "effects": [
+      {
+        "passive id": "33",
+        "rec% added (turn heal)": 10.0,
+        "turn heal high": 400,
+        "turn heal low": 200
+      },
+      {
+        "passive id": "43",
+        "take 1 dmg%": 5
+      }
+    ],
+    "id": "8000",
+    "name": "銀の鋭光"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -308,6 +312,181 @@
     ],
     "name": "ヴァラ・シル"
   },
+  "sbb": {},
+  "ubb": {},
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 101
+    },
+    "idle": {
+      "total number of frames": 87
+    },
+    "move": {
+      "total number of frames": 11
+    }
+  },
+  "category": 30520,
+  "cost": "12",
+  "damage frames": {
+    "frame times": [
+      12,
+      18,
+      32,
+      38,
+      60,
+      66
+    ],
+    "hit dmg% distribution": [
+      15,
+      13,
+      15,
+      13,
+      24,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 6
+  },
+  "drop check count": 2,
+  "element": "earth",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "farmable",
+  "guide_id": 798,
+  "imp": {
+    "max atk": "160",
+    "max def": "160",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "1047~1170",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "ビルボ",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "ビルボ",
+  "maxlv": "60",
+  "no": "798",
+  "unitDisplayHomePosition_1W9CxaFK": null,
+  "unitDisplayDetailPosition_6z54rgb3": null,
+  "unitDisplayConfirmImagePosition_MYK1fq6c": null,
+  "unitDisplayCutInImagePosition_7hLR6pDN": null,
+  "unitDisplaySummonPosition_KC3Jk8Br": null,
+  "unitDisplayHpPosition_3BpHN6VD": null,
+  "unitDisplayCursorPosition": null,
+  "sellPrice": "",
+  "sellCaution": false,
+  "effectFrames": "",
+  "evofrom": "",
+  "evointo": "30524",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "30133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30132",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 1
+    }
+  ],
+  "unreleased": "true",
+  "untranslated": "true",
+  "doenter": "true",
+  "altname": "ビルボ",
+  "basexp": "21",
+  "animation_attack": "101",
+  "animation_idle": "87",
+  "animation_move": "11",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "12, 18, 32, 38, 60, 66",
+  "normal_distribute": "15, 13, 15, 13, 24, 20",
+  "normal_totaldistr": "100",
+  "bb_frames": "12, 16, 20, 32, 39, 60, 64, 68",
+  "bb_distribute": "11, 10, 10, 11, 10, 16, 16, 16",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "0",
+  "description": "異界の地、中つ国のホビット庄に住まう小柄な種族のホビット。彼の一族は平穏な暮らしを愛するのが常であるが、ビルボは魔法使いに誘われ、邪竜から財宝を取り戻す冒険に挑むことになる。怪物から手に入れた“いかなる物も容易く貫いてしまう剣”によって、仲間たちを大蜘蛛から救う活躍も見せた。しかし、彼が冒険で獲た物の中で最も興味深いのは、姿を消せる不思議な指輪であろう。",
+  "summon": "僕は戦士じゃないから、<br>足手まといにならないよう<br>がんばるよ！",
+  "fusion": "やあ、お礼に<br>温かいスープを作ったんだ。<br>一緒にどうだい？",
+  "evolution": "",
+  "hp_base": "2856",
+  "atk_base": "843",
+  "def_base": "1016",
+  "rec_base": "909",
+  "hp_lord": "4108",
+  "atk_lord": "1125",
+  "def_lord": "1354",
+  "rec_lord": "1212",
+  "hp_anima": "",
+  "rec_anima": "",
+  "atk_breaker": "",
+  "def_breaker": "",
+  "def_guardian": "",
+  "rec_guardian": "",
+  "def_oracle": "",
+  "rec_oracle": "",
+  "hp_bonus": "400",
+  "atk_bonus": "160",
+  "def_bonus": "160",
+  "rec_bonus": "160",
+  "lordonly": "Y",
+  "combo_hits": "6",
+  "normaldc": "12",
+  "ls": "銀の鋭光",
+  "lsdescription": "ターン毎にＨＰを少し回復＆低確率で被ダメージを超絶軽減",
+  "lsnote": "Gradually heal 200-400 + 10% Rec's HP each turn & 5% chance to reduce damage taken to 1",
+  "lstype": "Support",
   "bbdescription": "敵全体に樹属性８連ダメージ＆確率で麻痺状態にする",
   "bbnote": "{{UnitBuffList",
   "buff_1_proc": "1",
@@ -324,89 +503,10 @@
   "bbgauge": "20",
   "bbdc": "8",
   "bbmultiplier": "150",
-  "evofrom": "",
-  "evointo": "30524",
   "evomats1": "30133",
   "evomats2": "30191",
   "evomats3": "30132",
   "evomats4": "30132",
   "evomats5": "60143",
-  "evoitem": "",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 843,
-      "def": 1016,
-      "hp": 2856,
-      "rec": 909
-    },
-    "_lord": {
-      "atk": 1125,
-      "def": 1354,
-      "hp": 4108,
-      "rec": 1212
-    },
-    "anima": {
-      "atk": 1125,
-      "def": 1354,
-      "hp max": 4698,
-      "hp min": 4403,
-      "rec max": 1153,
-      "rec min": 1035
-    },
-    "breaker": {
-      "atk max": 1302,
-      "atk min": 1184,
-      "def max": 1295,
-      "def min": 1177,
-      "hp": 4108,
-      "rec": 1212
-    },
-    "guardian": {
-      "atk": 1125,
-      "def max": 1531,
-      "def min": 1413,
-      "hp": 4108,
-      "rec max": 1212,
-      "rec min": 1094
-    },
-    "oracle": {
-      "atk": 1125,
-      "def max": 1354,
-      "def min": 1236,
-      "hp": 4108,
-      "rec max": 1448,
-      "rec min": 1330
-    }
-  },
-  "leader_skill": {
-    "desc": "ターン毎にＨＰを少し回復＆低確率で被ダメージを超絶軽減",
-    "effects": [
-      {
-        "passive id": "33",
-        "rec% added (turn heal)": 10.0,
-        "turn heal high": 400,
-        "turn heal low": 200
-      },
-      {
-        "passive id": "43",
-        "take 1 dmg%": 5
-      }
-    ],
-    "id": "8000",
-    "name": "銀の鋭光"
-  },
-  "extra_skill": {},
-  "sbb": {},
-  "ubb": {},
-  "unitDisplayHomePosition_1W9CxaFK": null,
-  "unitDisplayDetailPosition_6z54rgb3": null,
-  "unitDisplayConfirmImagePosition_MYK1fq6c": null,
-  "unitDisplayCutInImagePosition_7hLR6pDN": null,
-  "unitDisplaySummonPosition_KC3Jk8Br": null,
-  "unitDisplayHpPosition_3BpHN6VD": null,
-  "unitDisplayCursorPosition": null,
-  "sellPrice": "",
-  "sellCaution": false,
-  "effectFrames": ""
+  "evoitem": ""
 }

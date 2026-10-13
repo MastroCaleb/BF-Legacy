@@ -1,65 +1,67 @@
 {
   "id": "20735",
-  "unitName": "Dragon Shell Klaus",
-  "no": "1240",
-  "element": "Water",
-  "rarity": "★★★★★★",
-  "cost": "30",
-  "maxlv": "100",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "152",
-  "animation_idle": "52",
-  "animation_move": "6",
-  "movespeed_attack": "0.0024",
-  "movespeed_skill": "0.0024",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "39, 50, 66, 70, 74, 76, 80",
-  "normal_distribute": "15, 15, 20, 17, 13, 10, 10",
-  "normal_totaldistr": "100",
-  "bb_frames": "39, 43, 50, 54, 66, 69, 72, 75, 78, 81, 84, 87, 90",
-  "bb_distribute": "9, 5, 9, 5, 13, 11, 10, 9, 8, 6, 5, 5, 5",
-  "bb_totaldistr": "100",
-  "sbb_frames": "39, 42, 45, 50, 53, 56, 66, 69, 72, 75, 78, 81, 84, 87, 90",
-  "sbb_distribute": "8, 5, 3, 8, 5, 3, 13, 10, 9, 8, 7, 6, 5, 5, 5",
-  "sbb_totaldistr": "100",
-  "bb_effectdelay": "2",
-  "sbb_effectdelay": "1",
-  "description": "An otherworldly god that was destroyed by a weapon of mass destruction and lived on as a spirit. At the time, the prior head of the Summoners' Hall Research Lab was hard at work in developing a strong soul required for practical applications of a Mock Unit. However, upon gaining information about an otherworldly god's soul from an individual dispatched from another world by a certain organization, work began on developing a \"Mock God\" Unit based around that soul. Experimental tests seemed successful at first, but the deity's soul that was sacrificed in the procedure consumed the device. It fully regained awareness, and began to go on a rampage.",
-  "summon": "I do not believe in fate...<br>If such a thing exists, as a god,<br>I would not have become this...",
-  "fusion": "Do you understand? <br>The stronger you make me,<br>the nearer your end grows...",
-  "evolution": "My body is lost, and my soul<br>is fallen to this false vessel. <br>Laugh at this fallen god's form!",
-  "hp_base": "4031",
-  "atk_base": "1663",
-  "def_base": "1663",
-  "rec_base": "1573",
-  "hp_lord": "5849",
-  "atk_lord": "2253",
-  "def_lord": "2253",
-  "rec_lord": "2123",
-  "hp_anima": "6591",
-  "rec_anima": "1925",
-  "atk_breaker": "2451",
-  "def_breaker": "2055",
-  "def_guardian": "2451",
-  "rec_guardian": "2024",
-  "def_oracle": "2154",
-  "rec_oracle": "2420",
-  "hp_bonus": "750",
-  "atk_bonus": "300",
-  "def_bonus": "300",
-  "rec_bonus": "300",
-  "lordonly": "",
-  "combo_hits": "7",
-  "normaldc": "28",
-  "ls": "Winged Mock God's Technique",
-  "lsdescription": "30% boost to max HP & greatly reduces BB gauge required for BB",
-  "lsnote": "20% reduction",
-  "lstype": "Hit Points/Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 1663,
+      "def": 1663,
+      "hp": 4031,
+      "rec": 1573
+    },
+    "_lord": {
+      "atk": 2253,
+      "def": 2253,
+      "hp": 5849,
+      "rec": 2123
+    },
+    "anima": {
+      "atk": 2253,
+      "def": 2253,
+      "hp max": 6839,
+      "hp min": 6344,
+      "rec max": 2024,
+      "rec min": 1826
+    },
+    "breaker": {
+      "atk max": 2550,
+      "atk min": 2352,
+      "def max": 2154,
+      "def min": 1956,
+      "hp": 5849,
+      "rec": 2123
+    },
+    "guardian": {
+      "atk": 2253,
+      "def max": 2550,
+      "def min": 2352,
+      "hp": 5849,
+      "rec max": 2123,
+      "rec min": 1925
+    },
+    "oracle": {
+      "atk": 2253,
+      "def max": 2253,
+      "def min": 2055,
+      "hp": 5849,
+      "rec max": 2519,
+      "rec min": 2321
+    }
+  },
+  "leader_skill": {
+    "desc": "30% boost to max HP & greatly reduces BB gauge required for BB",
+    "effects": [
+      {
+        "hp% buff": 30,
+        "passive id": "1"
+      },
+      {
+        "passive id": "48",
+        "reduced bb bc cost%": 20
+      }
+    ],
+    "id": "5518",
+    "name": "Winged Mock God's Technique"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -490,14 +492,6 @@
     ],
     "name": "Zwei Raid"
   },
-  "bbdescription": "13 combo Water attack on all foes, probable huge 1 turn Atk, Def reduction & high probability of inflicting Sick",
-  "bbnote": "30% chance to reduce enemy Atk, Def by 50% & 85% chance",
-  "bbtype": "Offense",
-  "bbhits": "13",
-  "bbaoe": "A",
-  "bbgauge": "22",
-  "bbdc": "13",
-  "bbmultiplier": "270",
   "sbb": {
     "damage frames": [
       {
@@ -1014,6 +1008,195 @@
     ],
     "name": "Inundation"
   },
+  "ubb": {},
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 152
+    },
+    "idle": {
+      "total number of frames": 52
+    },
+    "move": {
+      "total number of frames": 6
+    }
+  },
+  "category": 20730,
+  "cost": "30",
+  "damage frames": {
+    "frame times": [
+      39,
+      50,
+      66,
+      70,
+      74,
+      76,
+      80
+    ],
+    "hit dmg% distribution": [
+      15,
+      15,
+      20,
+      17,
+      13,
+      10,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 7
+  },
+  "drop check count": 4,
+  "element": "water",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 1240,
+  "imp": {
+    "max atk": "300",
+    "max def": "300",
+    "max hp": "750",
+    "max rec": "300"
+  },
+  "kind": "normal",
+  "lord damage range": "2097~2343",
+  "movement": {
+    "attack": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    }
+  },
+  "name": "Dragon Shell Klaus",
+  "rarity": "6",
+  "sell caution": false,
+  "unitName": "Dragon Shell Klaus",
+  "maxlv": "100",
+  "no": "1240",
+  "unitDisplayHomePosition_1W9CxaFK": "323,161,174,475",
+  "unitDisplayDetailPosition_6z54rgb3": "25,55,860,819",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "112,216,440,419,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "64,-217,820,781",
+  "unitDisplaySummonPosition_KC3Jk8Br": "112,216,440,419,0",
+  "unitDisplayHpPosition_3BpHN6VD": "-1,25",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "8000",
+  "sellCaution": false,
+  "effectFrames": "33:122:1,44:122:1,60:120:1,64:120:1,68:120:1,72:120:1,38:189:1,49:189:1,43:200030:1,54:200030:1,67:500246:1,75:200783:1",
+  "evofrom": "20734",
+  "evointo": "20736",
+  "evozelcost": "1500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "20344",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "152",
+  "animation_idle": "52",
+  "animation_move": "6",
+  "movespeed_attack": "0.0024",
+  "movespeed_skill": "0.0024",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "39, 50, 66, 70, 74, 76, 80",
+  "normal_distribute": "15, 15, 20, 17, 13, 10, 10",
+  "normal_totaldistr": "100",
+  "bb_frames": "39, 43, 50, 54, 66, 69, 72, 75, 78, 81, 84, 87, 90",
+  "bb_distribute": "9, 5, 9, 5, 13, 11, 10, 9, 8, 6, 5, 5, 5",
+  "bb_totaldistr": "100",
+  "sbb_frames": "39, 42, 45, 50, 53, 56, 66, 69, 72, 75, 78, 81, 84, 87, 90",
+  "sbb_distribute": "8, 5, 3, 8, 5, 3, 13, 10, 9, 8, 7, 6, 5, 5, 5",
+  "sbb_totaldistr": "100",
+  "bb_effectdelay": "2",
+  "sbb_effectdelay": "1",
+  "description": "An otherworldly god that was destroyed by a weapon of mass destruction and lived on as a spirit. At the time, the prior head of the Summoners' Hall Research Lab was hard at work in developing a strong soul required for practical applications of a Mock Unit. However, upon gaining information about an otherworldly god's soul from an individual dispatched from another world by a certain organization, work began on developing a \"Mock God\" Unit based around that soul. Experimental tests seemed successful at first, but the deity's soul that was sacrificed in the procedure consumed the device. It fully regained awareness, and began to go on a rampage.",
+  "summon": "I do not believe in fate...<br>If such a thing exists, as a god,<br>I would not have become this...",
+  "fusion": "Do you understand? <br>The stronger you make me,<br>the nearer your end grows...",
+  "evolution": "My body is lost, and my soul<br>is fallen to this false vessel. <br>Laugh at this fallen god's form!",
+  "hp_base": "4031",
+  "atk_base": "1663",
+  "def_base": "1663",
+  "rec_base": "1573",
+  "hp_lord": "5849",
+  "atk_lord": "2253",
+  "def_lord": "2253",
+  "rec_lord": "2123",
+  "hp_anima": "6591",
+  "rec_anima": "1925",
+  "atk_breaker": "2451",
+  "def_breaker": "2055",
+  "def_guardian": "2451",
+  "rec_guardian": "2024",
+  "def_oracle": "2154",
+  "rec_oracle": "2420",
+  "hp_bonus": "750",
+  "atk_bonus": "300",
+  "def_bonus": "300",
+  "rec_bonus": "300",
+  "lordonly": "",
+  "combo_hits": "7",
+  "normaldc": "28",
+  "ls": "Winged Mock God's Technique",
+  "lsdescription": "30% boost to max HP & greatly reduces BB gauge required for BB",
+  "lsnote": "20% reduction",
+  "lstype": "Hit Points/Brave Burst",
+  "bbdescription": "13 combo Water attack on all foes, probable huge 1 turn Atk, Def reduction & high probability of inflicting Sick",
+  "bbnote": "30% chance to reduce enemy Atk, Def by 50% & 85% chance",
+  "bbtype": "Offense",
+  "bbhits": "13",
+  "bbaoe": "A",
+  "bbgauge": "22",
+  "bbdc": "13",
+  "bbmultiplier": "270",
   "sbbdescription": "15 combo powerful Water attack on all foes, adds probable 1 turn Atk, Def reduction effects to attack and damage taken greatly boosts BB gauge for 3 turns & greatly boosts BB gauge each turn for 3 turns",
   "sbbnote": "10% chance to reduce enemy Atk, Def by 20%, fills 4-6 BC when hit & fills 5 BC",
   "sbbtype": "Support/Offense",
@@ -1022,7 +1205,6 @@
   "sbbgauge": "26",
   "sbbdc": "15",
   "sbbmultiplier": "480",
-  "ubb": {},
   "ubbdescription": "",
   "ubbtype": "",
   "ubbhits": "",
@@ -1033,85 +1215,10 @@
   "es": "",
   "esitem": "",
   "esdescription": "",
-  "evofrom": "20734",
-  "evointo": "20736",
   "evomats1": "Water Mecha God",
   "evomats2": "Miracle Totem",
   "evomats3": "Water Totem",
   "evomats4": "Dragon Mimic",
   "evomats5": "Metal Mimic",
-  "evoitem": "",
-  "evozelcost": "1500000",
-  "stats": {
-    "_base": {
-      "atk": 1663,
-      "def": 1663,
-      "hp": 4031,
-      "rec": 1573
-    },
-    "_lord": {
-      "atk": 2253,
-      "def": 2253,
-      "hp": 5849,
-      "rec": 2123
-    },
-    "anima": {
-      "atk": 2253,
-      "def": 2253,
-      "hp max": 6839,
-      "hp min": 6344,
-      "rec max": 2024,
-      "rec min": 1826
-    },
-    "breaker": {
-      "atk max": 2550,
-      "atk min": 2352,
-      "def max": 2154,
-      "def min": 1956,
-      "hp": 5849,
-      "rec": 2123
-    },
-    "guardian": {
-      "atk": 2253,
-      "def max": 2550,
-      "def min": 2352,
-      "hp": 5849,
-      "rec max": 2123,
-      "rec min": 1925
-    },
-    "oracle": {
-      "atk": 2253,
-      "def max": 2253,
-      "def min": 2055,
-      "hp": 5849,
-      "rec max": 2519,
-      "rec min": 2321
-    }
-  },
-  "leader_skill": {
-    "desc": "30% boost to max HP & greatly reduces BB gauge required for BB",
-    "effects": [
-      {
-        "hp% buff": 30,
-        "passive id": "1"
-      },
-      {
-        "passive id": "48",
-        "reduced bb bc cost%": 20
-      }
-    ],
-    "id": "5518",
-    "name": "Winged Mock God's Technique"
-  },
-  "extra_skill": {},
-  "unitDisplayHomePosition_1W9CxaFK": "323,161,174,475",
-  "unitDisplayDetailPosition_6z54rgb3": "25,55,860,819",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "112,216,440,419,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "64,-217,820,781",
-  "unitDisplaySummonPosition_KC3Jk8Br": "112,216,440,419,0",
-  "unitDisplayHpPosition_3BpHN6VD": "-1,25",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "8000",
-  "sellCaution": false,
-  "effectFrames": "33:122:1,44:122:1,60:120:1,64:120:1,68:120:1,72:120:1,38:189:1,49:189:1,43:200030:1,54:200030:1,67:500246:1,75:200783:1"
+  "evoitem": ""
 }

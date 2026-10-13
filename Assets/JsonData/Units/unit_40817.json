@@ -1,68 +1,120 @@
 {
   "id": "40817",
-  "unitName": "Flashing Thief Fizz",
-  "no": "1445",
-  "element": "Thunder",
-  "rarity": "Omni",
-  "cost": "48",
-  "maxlv": "150",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "162",
-  "animation_idle": "52",
-  "animation_move": "9",
-  "movespeed_attack": "0.0024",
-  "movespeed_skill": "0.0024",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "23, 26, 29, 32, 35, 38, 41, 44, 60, 64, 68, 79, 84, 89",
-  "normal_distribute": "5, 4, 5, 4, 5, 4, 5, 4, 15, 10, 5, 17, 11, 6",
-  "normal_totaldistr": "100",
-  "bb_frames": "23, 26, 29, 32, 35, 38, 41, 44, 60, 63, 66, 69, 79, 83, 87, 91, 95",
-  "bb_distribute": "4, 3, 4, 3, 4, 3, 4, 3, 14, 9, 6, 4, 16, 10, 6, 4, 3",
-  "bb_totaldistr": "100",
-  "sbb_frames": "23, 26, 29, 32, 35, 38, 41, 44, 47, 60, 63, 66, 69, 72, 79, 82, 85, 88, 91, 94",
-  "sbb_distribute": "3, 3, 3, 3, 3, 3, 3, 3, 3, 12, 8, 6, 4, 3, 14, 8, 6, 5, 4, 3",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "23, 26, 29, 32, 35, 38, 41, 44, 47, 50, 60, 63, 66, 69, 72, 75, 79, 82, 85, 88, 91, 94, 97",
-  "ubb_distribute": "3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10, 6, 5, 4, 3, 3, 11, 7, 6, 5, 4, 3, 3",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "4",
-  "sbb_effectdelay": "5",
-  "ubb_effectdelay": "3",
-  "description": "Fizz was forever grateful to Zelnite for having rescued the Princess of the Wind countless times. Some even say she became enamored with the gallant lifestyle the famous thief lead. Had she chosen an alternate career from that of knighthood and protecting the princess, she would have most likely followed in Zelnite's footsteps. Perhaps then there would have been even more tales about the noble thief left, including those that mentioned the exploits of a female thief.",
-  "summon": "Now I understand how he felt.<br>There isn't much difference between a knight and a thief if they both despise evil.",
-  "fusion": "Heh, I must make this up to you.<br>Those who seek to fill their pockets through treachery shall now answer to me!",
-  "evolution": "I will steal as many treasures as there are stars in the sky!<br>The female thief Fizz has made her entrance!",
-  "hp_base": "5967",
-  "atk_base": "2563",
-  "def_base": "2265",
-  "rec_base": "2259",
-  "hp_lord": "7997",
-  "atk_lord": "3153",
-  "def_lord": "2735",
-  "rec_lord": "2739",
-  "hp_anima": "9114",
-  "rec_anima": "2441",
-  "atk_breaker": "3451",
-  "def_breaker": "2437",
-  "def_guardian": "3033",
-  "rec_guardian": "2590",
-  "def_oracle": "2586",
-  "rec_oracle": "3186",
-  "hp_bonus": "1500",
-  "atk_bonus": "600",
-  "def_bonus": "600",
-  "rec_bonus": "600",
-  "lordonly": "",
-  "combo_hits": "14",
-  "normaldc": "42",
-  "ls": "Roaring Heavenly Justice",
-  "lsdescription": "50% boost to Atk and max HP, boosts Atk and Def when BB gauge is over 50%, adds probability of normal attacks hitting all foes & damage dealt enormously boosts BB gauge",
-  "lsnote": "30% chance with 50% damage penalty, fills 10 BC when normal attacking & 50% boost to Atk/Def",
+  "stats": {
+    "_base": {
+      "atk": 2563,
+      "def": 2265,
+      "hp": 5967,
+      "rec": 2259
+    },
+    "_lord": {
+      "atk": 3153,
+      "def": 2735,
+      "hp": 7997,
+      "rec": 2739
+    },
+    "anima": {
+      "atk": 3153,
+      "def": 2735,
+      "hp max": 9487,
+      "hp min": 8742,
+      "rec max": 2590,
+      "rec min": 2292
+    },
+    "breaker": {
+      "atk max": 3600,
+      "atk min": 3302,
+      "def max": 2586,
+      "def min": 2288,
+      "hp": 7997,
+      "rec": 2739
+    },
+    "guardian": {
+      "atk": 3153,
+      "def max": 3182,
+      "def min": 2884,
+      "hp": 7997,
+      "rec max": 2739,
+      "rec min": 2441
+    },
+    "oracle": {
+      "atk": 3153,
+      "def max": 2735,
+      "def min": 2437,
+      "hp": 7997,
+      "rec max": 3335,
+      "rec min": 3037
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to Atk and max HP, boosts Atk and Def when BB gauge is over 50%, adds probability of normal attacks hitting all foes & damage dealt enormously boosts BB gauge",
+    "effects": [
+      {
+        "atk% buff": 50,
+        "hp% buff": 50,
+        "passive id": "1"
+      },
+      {
+        "aoe atk inc%": -50,
+        "chance to aoe": 30,
+        "passive id": "96"
+      },
+      {
+        "bc fill when attacking high": 10,
+        "bc fill when attacking low": 10,
+        "bc fill when attacking%": 100,
+        "passive id": "35"
+      },
+      {
+        "atk% buff": 50,
+        "bb gauge above % buff requirement": 50,
+        "def% buff": 50,
+        "passive id": "30"
+      }
+    ],
+    "id": "7454",
+    "name": "Roaring Heavenly Justice"
+  },
+  "extra_skill": {
+    "desc": "Enormously boosts OD gauge fill rate for 2 turns when damage taken has exceeded a certain amount & considerably boosts Atk and Def for 3 turns when damage taken has exceeded a certain amount",
+    "effects": [
+      {
+        "buff": {
+          "buff turns (132)": "1",
+          "unknown buff id": "132",
+          "unknown buff params": "300&1&0"
+        },
+        "conditions": [],
+        "damage threshold buff activation": 5000,
+        "passive id": "78",
+        "passive target": "self"
+      },
+      {
+        "buff": {
+          "atk% buff (1)": 100,
+          "buff turns (1)": "2"
+        },
+        "conditions": [],
+        "damage threshold buff activation": 5000,
+        "passive id": "78",
+        "passive target": "self"
+      },
+      {
+        "buff": {
+          "buff turns (3)": "2",
+          "def% buff (3)": 100
+        },
+        "conditions": [],
+        "damage threshold buff activation": 5000,
+        "passive id": "78",
+        "passive target": "self"
+      }
+    ],
+    "id": "21800",
+    "name": "The Other Thief",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -625,14 +677,6 @@
     ],
     "name": "Salient Grip"
   },
-  "bbdescription": "17 combo Thunder attack on all foes, considerably boosts OD gauge fill rate for 3 turns, raises normal hit amount and normal attacks hit all foes for 3 turns & hugely boosts BC efficacy for 3 turns",
-  "bbnote": "20% OD gauge fill rate, adds +1 hit to each hit count (+20% extra damage, 120% total) & 50% BC efficacy",
-  "bbtype": "Offense",
-  "bbhits": "17",
-  "bbaoe": "A",
-  "bbgauge": "27",
-  "bbdc": "17",
-  "bbmultiplier": "370",
   "sbb": {
     "damage frames": [
       {
@@ -1191,14 +1235,6 @@
     ],
     "name": "Thief's Furious Gale"
   },
-  "sbbdescription": "20 combo powerful Thunder attack on all foes, slightly boosts OD gauge, considerably boosts OD gauge fill rate for 3 turns & raises normal hit amount and normal attacks hit all foes for 3 turns",
-  "sbbnote": "10% OD fill, 20% OD gauge fill rate & adds +1 hit to each hit count (+20% extra damage, 120 total)",
-  "sbbtype": "Offense",
-  "sbbhits": "20",
-  "sbbaoe": "A",
-  "sbbgauge": "29",
-  "sbbdc": "20",
-  "sbbmultiplier": "580",
   "ubb": {
     "damage frames": [
       {
@@ -1340,6 +1376,198 @@
     ],
     "name": "Twilight's Piercing Light"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 162
+    },
+    "idle": {
+      "total number of frames": 52
+    },
+    "move": {
+      "total number of frames": 9
+    }
+  },
+  "category": 40810,
+  "cost": "48",
+  "damage frames": {
+    "frame times": [
+      23,
+      26,
+      29,
+      32,
+      35,
+      38,
+      41,
+      44,
+      60,
+      64,
+      68,
+      79,
+      84,
+      89
+    ],
+    "hit dmg% distribution": [
+      5,
+      4,
+      5,
+      4,
+      5,
+      4,
+      5,
+      4,
+      15,
+      10,
+      5,
+      17,
+      11,
+      6
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 14
+  },
+  "drop check count": 3,
+  "element": "thunder",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 1445,
+  "imp": {
+    "max atk": "600",
+    "max def": "600",
+    "max hp": "1500",
+    "max rec": "600"
+  },
+  "kind": "normal",
+  "lord damage range": "2935~3279",
+  "movement": {
+    "attack": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    }
+  },
+  "name": "Flashing Thief Fizz",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "8",
+  "sell caution": false,
+  "unitName": "Flashing Thief Fizz",
+  "maxlv": "150",
+  "no": "1445",
+  "unitDisplayHomePosition_1W9CxaFK": "502,230,174,475",
+  "unitDisplayDetailPosition_6z54rgb3": "-163,-20,1248,862",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "12,203,624,431,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-140,-266,1160,801",
+  "unitDisplaySummonPosition_KC3Jk8Br": "12,203,624,431,0",
+  "unitDisplayHpPosition_3BpHN6VD": "-1,46",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "50000",
+  "sellCaution": false,
+  "effectFrames": "17:400231:1,20:120:1,23:400231:1,26:120:1,29:400231:1,32:120:1,35:400231:1,38:120:1,54:127:1,58:127:1,62:127:1,22:400075:1,23:500090:1,60:500663:1,77:300159:1,78:306:1,79:500092:1,88:400147:1",
+  "evofrom": "40816",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "21",
+  "animation_attack": "162",
+  "animation_idle": "52",
+  "animation_move": "9",
+  "movespeed_attack": "0.0024",
+  "movespeed_skill": "0.0024",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "23, 26, 29, 32, 35, 38, 41, 44, 60, 64, 68, 79, 84, 89",
+  "normal_distribute": "5, 4, 5, 4, 5, 4, 5, 4, 15, 10, 5, 17, 11, 6",
+  "normal_totaldistr": "100",
+  "bb_frames": "23, 26, 29, 32, 35, 38, 41, 44, 60, 63, 66, 69, 79, 83, 87, 91, 95",
+  "bb_distribute": "4, 3, 4, 3, 4, 3, 4, 3, 14, 9, 6, 4, 16, 10, 6, 4, 3",
+  "bb_totaldistr": "100",
+  "sbb_frames": "23, 26, 29, 32, 35, 38, 41, 44, 47, 60, 63, 66, 69, 72, 79, 82, 85, 88, 91, 94",
+  "sbb_distribute": "3, 3, 3, 3, 3, 3, 3, 3, 3, 12, 8, 6, 4, 3, 14, 8, 6, 5, 4, 3",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "23, 26, 29, 32, 35, 38, 41, 44, 47, 50, 60, 63, 66, 69, 72, 75, 79, 82, 85, 88, 91, 94, 97",
+  "ubb_distribute": "3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10, 6, 5, 4, 3, 3, 11, 7, 6, 5, 4, 3, 3",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "4",
+  "sbb_effectdelay": "5",
+  "ubb_effectdelay": "3",
+  "description": "Fizz was forever grateful to Zelnite for having rescued the Princess of the Wind countless times. Some even say she became enamored with the gallant lifestyle the famous thief lead. Had she chosen an alternate career from that of knighthood and protecting the princess, she would have most likely followed in Zelnite's footsteps. Perhaps then there would have been even more tales about the noble thief left, including those that mentioned the exploits of a female thief.",
+  "summon": "Now I understand how he felt.<br>There isn't much difference between a knight and a thief if they both despise evil.",
+  "fusion": "Heh, I must make this up to you.<br>Those who seek to fill their pockets through treachery shall now answer to me!",
+  "evolution": "I will steal as many treasures as there are stars in the sky!<br>The female thief Fizz has made her entrance!",
+  "hp_base": "5967",
+  "atk_base": "2563",
+  "def_base": "2265",
+  "rec_base": "2259",
+  "hp_lord": "7997",
+  "atk_lord": "3153",
+  "def_lord": "2735",
+  "rec_lord": "2739",
+  "hp_anima": "9114",
+  "rec_anima": "2441",
+  "atk_breaker": "3451",
+  "def_breaker": "2437",
+  "def_guardian": "3033",
+  "rec_guardian": "2590",
+  "def_oracle": "2586",
+  "rec_oracle": "3186",
+  "hp_bonus": "1500",
+  "atk_bonus": "600",
+  "def_bonus": "600",
+  "rec_bonus": "600",
+  "lordonly": "",
+  "combo_hits": "14",
+  "normaldc": "42",
+  "ls": "Roaring Heavenly Justice",
+  "lsdescription": "50% boost to Atk and max HP, boosts Atk and Def when BB gauge is over 50%, adds probability of normal attacks hitting all foes & damage dealt enormously boosts BB gauge",
+  "lsnote": "30% chance with 50% damage penalty, fills 10 BC when normal attacking & 50% boost to Atk/Def",
+  "bbdescription": "17 combo Thunder attack on all foes, considerably boosts OD gauge fill rate for 3 turns, raises normal hit amount and normal attacks hit all foes for 3 turns & hugely boosts BC efficacy for 3 turns",
+  "bbnote": "20% OD gauge fill rate, adds +1 hit to each hit count (+20% extra damage, 120% total) & 50% BC efficacy",
+  "bbtype": "Offense",
+  "bbhits": "17",
+  "bbaoe": "A",
+  "bbgauge": "27",
+  "bbdc": "17",
+  "bbmultiplier": "370",
+  "sbbdescription": "20 combo powerful Thunder attack on all foes, slightly boosts OD gauge, considerably boosts OD gauge fill rate for 3 turns & raises normal hit amount and normal attacks hit all foes for 3 turns",
+  "sbbnote": "10% OD fill, 20% OD gauge fill rate & adds +1 hit to each hit count (+20% extra damage, 120 total)",
+  "sbbtype": "Offense",
+  "sbbhits": "20",
+  "sbbaoe": "A",
+  "sbbgauge": "29",
+  "sbbdc": "20",
+  "sbbmultiplier": "580",
   "ubbdescription": "23 combo massive Thunder attack on all foes, enormously boosts Atk and Def for 5 turns, enormously boosts OD gauge fill rate for 5 turns & normal attacks hit all foes for 5 turns",
   "ubbnote": "300% Atk/Def & 300% OD fill rate",
   "ubbtype": "Offense",
@@ -1352,7 +1580,6 @@
   "esitem": "",
   "esdescription": "Enormously boosts OD gauge fill rate for 2 turns when damage taken has exceeded a certain amount & considerably boosts Atk and Def for 3 turns",
   "esnote": "100% Atk/Def & 300% boost to OD gauge fill rate after 5000 damage",
-  "evofrom": "40816",
   "howtoget": "",
   "omniskill1_cat": "Parameter Boost",
   "omniskill1_1_sp": "10",
@@ -1393,130 +1620,5 @@
   "notes": "",
   "addcat": "Legend of Zelnite",
   "addcatname": "Fizz2",
-  "bottomtext": "",
-  "stats": {
-    "_base": {
-      "atk": 2563,
-      "def": 2265,
-      "hp": 5967,
-      "rec": 2259
-    },
-    "_lord": {
-      "atk": 3153,
-      "def": 2735,
-      "hp": 7997,
-      "rec": 2739
-    },
-    "anima": {
-      "atk": 3153,
-      "def": 2735,
-      "hp max": 9487,
-      "hp min": 8742,
-      "rec max": 2590,
-      "rec min": 2292
-    },
-    "breaker": {
-      "atk max": 3600,
-      "atk min": 3302,
-      "def max": 2586,
-      "def min": 2288,
-      "hp": 7997,
-      "rec": 2739
-    },
-    "guardian": {
-      "atk": 3153,
-      "def max": 3182,
-      "def min": 2884,
-      "hp": 7997,
-      "rec max": 2739,
-      "rec min": 2441
-    },
-    "oracle": {
-      "atk": 3153,
-      "def max": 2735,
-      "def min": 2437,
-      "hp": 7997,
-      "rec max": 3335,
-      "rec min": 3037
-    }
-  },
-  "leader_skill": {
-    "desc": "50% boost to Atk and max HP, boosts Atk and Def when BB gauge is over 50%, adds probability of normal attacks hitting all foes & damage dealt enormously boosts BB gauge",
-    "effects": [
-      {
-        "atk% buff": 50,
-        "hp% buff": 50,
-        "passive id": "1"
-      },
-      {
-        "aoe atk inc%": -50,
-        "chance to aoe": 30,
-        "passive id": "96"
-      },
-      {
-        "bc fill when attacking high": 10,
-        "bc fill when attacking low": 10,
-        "bc fill when attacking%": 100,
-        "passive id": "35"
-      },
-      {
-        "atk% buff": 50,
-        "bb gauge above % buff requirement": 50,
-        "def% buff": 50,
-        "passive id": "30"
-      }
-    ],
-    "id": "7454",
-    "name": "Roaring Heavenly Justice"
-  },
-  "extra_skill": {
-    "desc": "Enormously boosts OD gauge fill rate for 2 turns when damage taken has exceeded a certain amount & considerably boosts Atk and Def for 3 turns when damage taken has exceeded a certain amount",
-    "effects": [
-      {
-        "buff": {
-          "buff turns (132)": "1",
-          "unknown buff id": "132",
-          "unknown buff params": "300&1&0"
-        },
-        "conditions": [],
-        "damage threshold buff activation": 5000,
-        "passive id": "78",
-        "passive target": "self"
-      },
-      {
-        "buff": {
-          "atk% buff (1)": 100,
-          "buff turns (1)": "2"
-        },
-        "conditions": [],
-        "damage threshold buff activation": 5000,
-        "passive id": "78",
-        "passive target": "self"
-      },
-      {
-        "buff": {
-          "buff turns (3)": "2",
-          "def% buff (3)": 100
-        },
-        "conditions": [],
-        "damage threshold buff activation": 5000,
-        "passive id": "78",
-        "passive target": "self"
-      }
-    ],
-    "id": "21800",
-    "name": "The Other Thief",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "502,230,174,475",
-  "unitDisplayDetailPosition_6z54rgb3": "-163,-20,1248,862",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "12,203,624,431,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-140,-266,1160,801",
-  "unitDisplaySummonPosition_KC3Jk8Br": "12,203,624,431,0",
-  "unitDisplayHpPosition_3BpHN6VD": "-1,46",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "50000",
-  "sellCaution": false,
-  "effectFrames": "17:400231:1,20:120:1,23:400231:1,26:120:1,29:400231:1,32:120:1,35:400231:1,38:120:1,54:127:1,58:127:1,62:127:1,22:400075:1,23:500090:1,60:500663:1,77:300159:1,78:306:1,79:500092:1,88:400147:1"
+  "bottomtext": ""
 }

@@ -1,61 +1,66 @@
 {
   "id": "20124",
-  "unitName": "Commander Mega",
-  "no": "158",
-  "element": "Water",
-  "rarity": "★★★★★",
-  "cost": "12",
-  "maxlv": "80",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "254",
-  "animation_idle": "128",
-  "animation_move": "10",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "100, 106, 134, 140, 168, 174",
-  "normal_distribute": "20, 13, 20, 13, 20, 14",
-  "normal_totaldistr": "100",
-  "bb_frames": "100, 106, 134, 140, 168, 174",
-  "bb_distribute": "20, 13, 20, 13, 20, 14",
-  "bb_totaldistr": "100",
-  "description": "Master Commander of the ruined Sama Kingdom's navy. He first took his job as admiral as a joke, but after learning he was descended from the previous admiral began showing his true fortitude. He took on the gods, liberating the seas, all whilst rebuilding a corrupt navy. For his merits he received the treasured axe Poseidon.",
-  "summon": "You, summoned me!?<br>Guess now there's little left<br>but for you to meet the Sea God.",
-  "fusion": "Is there a limit to my power?<br>How should I know?!",
-  "evolution": "Poseidon shakes with joy...<br>What a great time we'll surely have together!",
-  "hp_base": "2861",
-  "atk_base": "1121",
-  "def_base": "774",
-  "rec_base": "1318",
-  "hp_lord": "4169",
-  "atk_lord": "1517",
-  "def_lord": "1064",
-  "rec_lord": "1851",
-  "hp_anima": "4762",
-  "rec_anima": "1693",
-  "atk_breaker": "1675",
-  "def_breaker": "906",
-  "atk_guardian": "1359",
-  "def_guardian": "1222",
-  "rec_guardian": "1772",
-  "def_oracle": "985",
-  "hp_oracle": "3932",
-  "rec_oracle": "2088",
-  "hp_bonus": "750",
-  "atk_bonus": "140",
-  "def_bonus": "140",
-  "rec_bonus": "140",
-  "lordonly": "",
-  "combo_hits": "6",
-  "normaldc": "18",
-  "ls": "Water God's Power",
-  "lsdescription": "50% boost to Atk Power of Water Types",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 1121,
+      "def": 774,
+      "hp": 2861,
+      "rec": 1318
+    },
+    "_lord": {
+      "atk": 1517,
+      "def": 1064,
+      "hp": 4169,
+      "rec": 1851
+    },
+    "anima": {
+      "atk": 1517,
+      "def": 1064,
+      "hp max": 4959,
+      "hp min": 4564,
+      "rec max": 1772,
+      "rec min": 1614
+    },
+    "breaker": {
+      "atk max": 1754,
+      "atk min": 1596,
+      "def max": 985,
+      "def min": 827,
+      "hp": 4169,
+      "rec": 1851
+    },
+    "guardian": {
+      "atk": 1517,
+      "def max": 1301,
+      "def min": 1143,
+      "hp": 4169,
+      "rec max": 1851,
+      "rec min": 1693
+    },
+    "oracle": {
+      "atk": 1517,
+      "def max": 1064,
+      "def min": 906,
+      "hp": 4169,
+      "rec max": 2167,
+      "rec min": 2009
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to Atk Power of Water Types",
+    "effects": [
+      {
+        "atk% buff": 50,
+        "elements buffed": [
+          "water"
+        ],
+        "passive id": "2"
+      }
+    ],
+    "id": "111",
+    "name": "Water God's Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -218,97 +223,93 @@
     ],
     "name": "Cyclone Disaster"
   },
-  "bbdescription": "6 combo Water elemental power attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "6",
-  "bbaoe": "A",
-  "bbgauge": "28",
-  "bbdc": "6",
-  "bbmultiplier": "190",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "20123",
-  "evointo": "20125",
-  "evomats1": "50354",
-  "evomats2": "20133",
-  "evomats3": "60144",
-  "evomats4": "20132",
-  "evomats5": "20191",
-  "evoitem": "",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 1121,
-      "def": 774,
-      "hp": 2861,
-      "rec": 1318
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1517,
-      "def": 1064,
-      "hp": 4169,
-      "rec": 1851
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1517,
-      "def": 1064,
-      "hp max": 4959,
-      "hp min": 4564,
-      "rec max": 1772,
-      "rec min": 1614
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 254
     },
-    "breaker": {
-      "atk max": 1754,
-      "atk min": 1596,
-      "def max": 985,
-      "def min": 827,
-      "hp": 4169,
-      "rec": 1851
+    "idle": {
+      "total number of frames": 128
     },
-    "guardian": {
-      "atk": 1517,
-      "def max": 1301,
-      "def min": 1143,
-      "hp": 4169,
-      "rec max": 1851,
-      "rec min": 1693
-    },
-    "oracle": {
-      "atk": 1517,
-      "def max": 1064,
-      "def min": 906,
-      "hp": 4169,
-      "rec max": 2167,
-      "rec min": 2009
+    "move": {
+      "total number of frames": 10
     }
   },
-  "leader_skill": {
-    "desc": "50% boost to Atk Power of Water Types",
-    "effects": [
-      {
-        "atk% buff": 50,
-        "elements buffed": [
-          "water"
-        ],
-        "passive id": "2"
-      }
+  "category": 20120,
+  "cost": "12",
+  "damage frames": {
+    "frame times": [
+      100,
+      106,
+      134,
+      140,
+      168,
+      174
     ],
-    "id": "111",
-    "name": "Water God's Power"
+    "hit dmg% distribution": [
+      20,
+      13,
+      20,
+      13,
+      20,
+      14
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 6
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "water",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 158,
+  "imp": {
+    "max atk": "140",
+    "max def": "140",
+    "max hp": "750",
+    "max rec": "140"
+  },
+  "kind": "normal",
+  "lord damage range": "1412~1577",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Commander Mega",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Commander Mega",
+  "maxlv": "80",
+  "no": "158",
   "unitDisplayHomePosition_1W9CxaFK": "396,152,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-29,10,900,783",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "77,249,425,370,0",
@@ -318,5 +319,109 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "94:122:1,100:122:1,128:122:1,134:122:1,162:122:1,168:122:1"
+  "effectFrames": "94:122:1,100:122:1,128:122:1,134:122:1,162:122:1,168:122:1",
+  "evofrom": "20123",
+  "evointo": "20125",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20191",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "254",
+  "animation_idle": "128",
+  "animation_move": "10",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "100, 106, 134, 140, 168, 174",
+  "normal_distribute": "20, 13, 20, 13, 20, 14",
+  "normal_totaldistr": "100",
+  "bb_frames": "100, 106, 134, 140, 168, 174",
+  "bb_distribute": "20, 13, 20, 13, 20, 14",
+  "bb_totaldistr": "100",
+  "description": "Master Commander of the ruined Sama Kingdom's navy. He first took his job as admiral as a joke, but after learning he was descended from the previous admiral began showing his true fortitude. He took on the gods, liberating the seas, all whilst rebuilding a corrupt navy. For his merits he received the treasured axe Poseidon.",
+  "summon": "You, summoned me!?<br>Guess now there's little left<br>but for you to meet the Sea God.",
+  "fusion": "Is there a limit to my power?<br>How should I know?!",
+  "evolution": "Poseidon shakes with joy...<br>What a great time we'll surely have together!",
+  "hp_base": "2861",
+  "atk_base": "1121",
+  "def_base": "774",
+  "rec_base": "1318",
+  "hp_lord": "4169",
+  "atk_lord": "1517",
+  "def_lord": "1064",
+  "rec_lord": "1851",
+  "hp_anima": "4762",
+  "rec_anima": "1693",
+  "atk_breaker": "1675",
+  "def_breaker": "906",
+  "atk_guardian": "1359",
+  "def_guardian": "1222",
+  "rec_guardian": "1772",
+  "def_oracle": "985",
+  "hp_oracle": "3932",
+  "rec_oracle": "2088",
+  "hp_bonus": "750",
+  "atk_bonus": "140",
+  "def_bonus": "140",
+  "rec_bonus": "140",
+  "lordonly": "",
+  "combo_hits": "6",
+  "normaldc": "18",
+  "ls": "Water God's Power",
+  "lsdescription": "50% boost to Atk Power of Water Types",
+  "lstype": "Attack",
+  "bbdescription": "6 combo Water elemental power attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "6",
+  "bbaoe": "A",
+  "bbgauge": "28",
+  "bbdc": "6",
+  "bbmultiplier": "190",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "20133",
+  "evomats3": "60144",
+  "evomats4": "20132",
+  "evomats5": "20191",
+  "evoitem": ""
 }

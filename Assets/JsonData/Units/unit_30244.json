@@ -1,61 +1,67 @@
 {
   "id": "30244",
-  "unitName": "Rose Sibyl Paula",
-  "no": "396",
-  "element": "Earth",
-  "rarity": "★★★★★",
-  "cost": "15",
-  "maxlv": "80",
-  "basexp": "15",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "114",
-  "animation_idle": "74",
-  "animation_move": "21",
-  "movespeed_attack": "0.0041",
-  "movespeed_skill": "0.0041",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "67, 71, 75, 79, 83, 87, 91, 95",
-  "normal_distribute": "20, 10, 15, 10, 15, 10, 10, 10",
-  "normal_totaldistr": "100",
-  "bb_frames": "67, 74, 81, 88, 95, 101, 107, 113, 119",
-  "bb_distribute": "20, 10, 10, 10, 10, 10, 10, 10, 10",
-  "bb_totaldistr": "100",
-  "description": "The youngest of the Six Sibyl Sisters. Seeing how some humans would sacrifice their weaker allies for their own benefit she decided to stop protecting them and instead join the fight against them. She committed the same cruel acts against them that they seemed capable of committing against others. It's recorded that the innocent looking smile she wore as she stained the flowers she commanded red with blood led to her being particularly feared even among the other Fresh Blood Sisters.",
-  "summon": "How conceited of you to<br>go and summon me!<br>I'm gonna tell my sisters!",
-  "fusion": "You remind me of the sun!<br>Are there really good humans?<br>Hmm...who knows!",
-  "evolution": "My flower has turned red.<br>It's the color of human blood.<br>Heh, want to turn red yourself?",
-  "hp_base": "2881",
-  "atk_base": "986",
-  "def_base": "967",
-  "rec_base": "1068",
-  "hp_lord": "4504",
-  "atk_lord": "1400",
-  "def_lord": "1400",
-  "rec_lord": "1400",
-  "hp_anima": "5097",
-  "rec_anima": "1242",
-  "atk_breaker": "1558",
-  "def_breaker": "1242",
-  "atk_guardian": "1242",
-  "def_guardian": "1558",
-  "rec_guardian": "1321",
-  "def_oracle": "1321",
-  "hp_oracle": "4267",
-  "rec_oracle": "1637",
-  "hp_bonus": "500",
-  "atk_bonus": "200",
-  "def_bonus": "200",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "8",
-  "normaldc": "16",
-  "ls": "Lush Darkness' Spirit",
-  "lsdescription": "50% boost to Atk power of Earth and Dark types",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 986,
+      "def": 967,
+      "hp": 2881,
+      "rec": 1068
+    },
+    "_lord": {
+      "atk": 1400,
+      "def": 1400,
+      "hp": 4504,
+      "rec": 1400
+    },
+    "anima": {
+      "atk": 1400,
+      "def": 1400,
+      "hp max": 5294,
+      "hp min": 4899,
+      "rec max": 1321,
+      "rec min": 1163
+    },
+    "breaker": {
+      "atk max": 1637,
+      "atk min": 1479,
+      "def max": 1321,
+      "def min": 1163,
+      "hp": 4504,
+      "rec": 1400
+    },
+    "guardian": {
+      "atk": 1400,
+      "def max": 1637,
+      "def min": 1479,
+      "hp": 4504,
+      "rec max": 1400,
+      "rec min": 1242
+    },
+    "oracle": {
+      "atk": 1400,
+      "def max": 1400,
+      "def min": 1242,
+      "hp": 4504,
+      "rec max": 1716,
+      "rec min": 1558
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to Atk power of Earth and Dark types",
+    "effects": [
+      {
+        "atk% buff": 50,
+        "elements buffed": [
+          "earth",
+          "dark"
+        ],
+        "passive id": "2"
+      }
+    ],
+    "id": "3301",
+    "name": "Lush Darkness' Spirit"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -336,98 +342,97 @@
     ],
     "name": "Mother Earth's Pulse"
   },
-  "bbdescription": "9 combo Earth and Dark elemental attack on all enemies & probable Curse effect",
-  "bbnote": "45% chance",
-  "bbtype": "Offense",
-  "bbhits": "9",
-  "bbaoe": "A",
-  "bbgauge": "30",
-  "bbdc": "9",
-  "bbmultiplier": "180",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "30243",
-  "evointo": "30245",
-  "evomats1": "50354",
-  "evomats2": "30133",
-  "evomats3": "30191",
-  "evomats4": "20191",
-  "evomats5": "60201",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 986,
-      "def": 967,
-      "hp": 2881,
-      "rec": 1068
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1400,
-      "def": 1400,
-      "hp": 4504,
-      "rec": 1400
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1400,
-      "def": 1400,
-      "hp max": 5294,
-      "hp min": 4899,
-      "rec max": 1321,
-      "rec min": 1163
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 114
     },
-    "breaker": {
-      "atk max": 1637,
-      "atk min": 1479,
-      "def max": 1321,
-      "def min": 1163,
-      "hp": 4504,
-      "rec": 1400
+    "idle": {
+      "total number of frames": 74
     },
-    "guardian": {
-      "atk": 1400,
-      "def max": 1637,
-      "def min": 1479,
-      "hp": 4504,
-      "rec max": 1400,
-      "rec min": 1242
-    },
-    "oracle": {
-      "atk": 1400,
-      "def max": 1400,
-      "def min": 1242,
-      "hp": 4504,
-      "rec max": 1716,
-      "rec min": 1558
+    "move": {
+      "total number of frames": 21
     }
   },
-  "leader_skill": {
-    "desc": "50% boost to Atk power of Earth and Dark types",
-    "effects": [
-      {
-        "atk% buff": 50,
-        "elements buffed": [
-          "earth",
-          "dark"
-        ],
-        "passive id": "2"
-      }
+  "category": 30240,
+  "cost": "15",
+  "damage frames": {
+    "frame times": [
+      67,
+      71,
+      75,
+      79,
+      83,
+      87,
+      91,
+      95
     ],
-    "id": "3301",
-    "name": "Lush Darkness' Spirit"
+    "hit dmg% distribution": [
+      20,
+      10,
+      15,
+      10,
+      15,
+      10,
+      10,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 8
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "earth",
+  "exp_pattern": 15,
+  "gender": "female",
+  "getting type": "farmable",
+  "guide_id": 396,
+  "imp": {
+    "max atk": "200",
+    "max def": "200",
+    "max hp": "500",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "1303~1456",
+  "movement": {
+    "attack": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    }
+  },
+  "name": "Rose Sibyl Paula",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Rose Sibyl Paula",
+  "maxlv": "80",
+  "no": "396",
   "unitDisplayHomePosition_1W9CxaFK": "213,42,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "127,159,678,654",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "175,303,359,317,1",
@@ -437,5 +442,109 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "67:240:1,67:680:1,73:230:1,79:230:1,85:230:1,91:230:1,93:300260:1"
+  "effectFrames": "67:240:1,67:680:1,73:230:1,79:230:1,85:230:1,91:230:1,93:300260:1",
+  "evofrom": "30243",
+  "evointo": "30245",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60201",
+      "count": 1
+    }
+  ],
+  "basexp": "15",
+  "animation_attack": "114",
+  "animation_idle": "74",
+  "animation_move": "21",
+  "movespeed_attack": "0.0041",
+  "movespeed_skill": "0.0041",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "67, 71, 75, 79, 83, 87, 91, 95",
+  "normal_distribute": "20, 10, 15, 10, 15, 10, 10, 10",
+  "normal_totaldistr": "100",
+  "bb_frames": "67, 74, 81, 88, 95, 101, 107, 113, 119",
+  "bb_distribute": "20, 10, 10, 10, 10, 10, 10, 10, 10",
+  "bb_totaldistr": "100",
+  "description": "The youngest of the Six Sibyl Sisters. Seeing how some humans would sacrifice their weaker allies for their own benefit she decided to stop protecting them and instead join the fight against them. She committed the same cruel acts against them that they seemed capable of committing against others. It's recorded that the innocent looking smile she wore as she stained the flowers she commanded red with blood led to her being particularly feared even among the other Fresh Blood Sisters.",
+  "summon": "How conceited of you to<br>go and summon me!<br>I'm gonna tell my sisters!",
+  "fusion": "You remind me of the sun!<br>Are there really good humans?<br>Hmm...who knows!",
+  "evolution": "My flower has turned red.<br>It's the color of human blood.<br>Heh, want to turn red yourself?",
+  "hp_base": "2881",
+  "atk_base": "986",
+  "def_base": "967",
+  "rec_base": "1068",
+  "hp_lord": "4504",
+  "atk_lord": "1400",
+  "def_lord": "1400",
+  "rec_lord": "1400",
+  "hp_anima": "5097",
+  "rec_anima": "1242",
+  "atk_breaker": "1558",
+  "def_breaker": "1242",
+  "atk_guardian": "1242",
+  "def_guardian": "1558",
+  "rec_guardian": "1321",
+  "def_oracle": "1321",
+  "hp_oracle": "4267",
+  "rec_oracle": "1637",
+  "hp_bonus": "500",
+  "atk_bonus": "200",
+  "def_bonus": "200",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "8",
+  "normaldc": "16",
+  "ls": "Lush Darkness' Spirit",
+  "lsdescription": "50% boost to Atk power of Earth and Dark types",
+  "lstype": "Attack",
+  "bbdescription": "9 combo Earth and Dark elemental attack on all enemies & probable Curse effect",
+  "bbnote": "45% chance",
+  "bbtype": "Offense",
+  "bbhits": "9",
+  "bbaoe": "A",
+  "bbgauge": "30",
+  "bbdc": "9",
+  "bbmultiplier": "180",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "30133",
+  "evomats3": "30191",
+  "evomats4": "20191",
+  "evomats5": "60201"
 }

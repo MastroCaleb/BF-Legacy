@@ -1,61 +1,63 @@
 {
   "id": "10223",
-  "unitName": "Flame King Goltovah",
-  "no": "580",
-  "element": "Fire",
-  "rarity": "★★★★",
-  "cost": "10",
-  "maxlv": "60",
-  "basexp": "15",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "109",
-  "animation_idle": "64",
-  "animation_move": "64",
-  "movespeed_attack": "6",
-  "movespeed_skill": "6",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "70, 74, 78, 82, 86, 90",
-  "normal_distribute": "15, 15, 15, 15, 15, 25",
-  "normal_totaldistr": "100",
-  "bb_frames": "70, 75, 80, 85, 90, 95, 100, 105",
-  "bb_distribute": "12, 13, 12, 13, 12, 13, 12, 13",
-  "bb_totaldistr": "100",
-  "description": "A self-proclaimed genius magician who works as a strategist for the knights of the Agni Empire. His title as \"the undefeated strategist\" did not come from his own exploits, but it naturally made him even more full of himself. The one to finally put him in his place was Weiss, who was praised as a great army god in the Atharva Republic. Goltovah, having been completely beaten in strategy to the point of tears, ran away unscathed from the battlefield where the Agni forces were located. Using this experience as an opportunity, Goltovah began learning about the things that were truly important in his life.",
-  "summon": "The main star of the Agni Knight's, the undefeated strategist, Goltovah!<br>Hehe, I'll lend you a hand.",
-  "fusion": "Yeah, put more of that over here and...<br>Oh, I don't really know!<br> Just make sure you make my Fusion beautiful.",
-  "evolution": "The undefeated strategist!<br>It's the perfect title for me!<br>Hey, you think so too, right?",
-  "hp_base": "2597",
-  "atk_base": "951",
-  "def_base": "865",
-  "rec_base": "954",
-  "hp_lord": "3896",
-  "atk_lord": "1284",
-  "def_lord": "1167",
-  "rec_lord": "1287",
-  "hp_anima": "4339",
-  "rec_anima": "1169",
-  "atk_breaker": "1402",
-  "def_breaker": "1049",
-  "atk_guardian": "1166",
-  "def_guardian": "1285",
-  "rec_guardian": "1228",
-  "def_oracle": "1108",
-  "hp_oracle": "3719",
-  "rec_oracle": "1464",
-  "hp_bonus": "400",
-  "atk_bonus": "160",
-  "def_bonus": "160",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "6",
-  "normaldc": "12",
-  "ls": "Earth Barrier",
-  "lsdescription": "15% reduction in damage from Earth Types",
-  "lstype": "Defense",
+  "stats": {
+    "_base": {
+      "atk": 951,
+      "def": 865,
+      "hp": 2597,
+      "rec": 954
+    },
+    "_lord": {
+      "atk": 1284,
+      "def": 1167,
+      "hp": 3896,
+      "rec": 1287
+    },
+    "anima": {
+      "atk": 1284,
+      "def": 1167,
+      "hp max": 4486,
+      "hp min": 4191,
+      "rec max": 1228,
+      "rec min": 1110
+    },
+    "breaker": {
+      "atk max": 1461,
+      "atk min": 1343,
+      "def max": 1108,
+      "def min": 990,
+      "hp": 3896,
+      "rec": 1287
+    },
+    "guardian": {
+      "atk": 1284,
+      "def max": 1344,
+      "def min": 1226,
+      "hp": 3896,
+      "rec max": 1287,
+      "rec min": 1169
+    },
+    "oracle": {
+      "atk": 1284,
+      "def max": 1167,
+      "def min": 1049,
+      "hp": 3896,
+      "rec max": 1523,
+      "rec min": 1405
+    }
+  },
+  "leader_skill": {
+    "desc": "15% reduction in damage from Earth Types",
+    "effects": [
+      {
+        "earth resist%": 15,
+        "passive id": "5"
+      }
+    ],
+    "id": "505",
+    "name": "Earth Barrier"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -324,94 +326,93 @@
     ],
     "name": "Sun Flare"
   },
-  "bbdescription": "8 combo Fire elemental attack on single enemy & adds Fire element to attack for 3 turns",
-  "bbtype": "Offense",
-  "bbhits": "8",
-  "bbaoe": "1",
-  "bbgauge": "15",
-  "bbdc": "8",
-  "bbmultiplier": "300",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "10222",
-  "evointo": "",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 951,
-      "def": 865,
-      "hp": 2597,
-      "rec": 954
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1284,
-      "def": 1167,
-      "hp": 3896,
-      "rec": 1287
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1284,
-      "def": 1167,
-      "hp max": 4486,
-      "hp min": 4191,
-      "rec max": 1228,
-      "rec min": 1110
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 109
     },
-    "breaker": {
-      "atk max": 1461,
-      "atk min": 1343,
-      "def max": 1108,
-      "def min": 990,
-      "hp": 3896,
-      "rec": 1287
+    "idle": {
+      "total number of frames": 64
     },
-    "guardian": {
-      "atk": 1284,
-      "def max": 1344,
-      "def min": 1226,
-      "hp": 3896,
-      "rec max": 1287,
-      "rec min": 1169
-    },
-    "oracle": {
-      "atk": 1284,
-      "def max": 1167,
-      "def min": 1049,
-      "hp": 3896,
-      "rec max": 1523,
-      "rec min": 1405
+    "move": {
+      "total number of frames": 64
     }
   },
-  "leader_skill": {
-    "desc": "15% reduction in damage from Earth Types",
-    "effects": [
-      {
-        "earth resist%": 15,
-        "passive id": "5"
-      }
+  "category": 10220,
+  "cost": "10",
+  "damage frames": {
+    "frame times": [
+      70,
+      74,
+      78,
+      82,
+      86,
+      90
     ],
-    "id": "505",
-    "name": "Earth Barrier"
+    "hit dmg% distribution": [
+      15,
+      15,
+      15,
+      15,
+      15,
+      25
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 6
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "fire",
+  "exp_pattern": 15,
+  "gender": "male",
+  "getting type": "farmable",
+  "guide_id": 580,
+  "imp": {
+    "max atk": "160",
+    "max def": "160",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "1195~1335",
+  "movement": {
+    "attack": {
+      "move speed": 6,
+      "move speed type": "2",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 6,
+      "move speed type": "2",
+      "move type": "3"
+    }
+  },
+  "name": "Flame King Goltovah",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Flame King Goltovah",
+  "maxlv": "60",
+  "no": "580",
   "unitDisplayHomePosition_1W9CxaFK": "131,8,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "153,170,620,616",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "160,336,297,293,0",
@@ -421,5 +422,83 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "70:100192:1,90:100010:1,90:140:1,104:150:1,104:100131:1,114:100010:1,120:650:1,124:100010:1,126:100081:1,134:100192:1,130:200081:1"
+  "effectFrames": "70:100192:1,90:100010:1,90:140:1,104:150:1,104:100131:1,114:100010:1,120:650:1,124:100010:1,126:100081:1,134:100192:1,130:200081:1",
+  "evofrom": "10222",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "15",
+  "animation_attack": "109",
+  "animation_idle": "64",
+  "animation_move": "64",
+  "movespeed_attack": "6",
+  "movespeed_skill": "6",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "70, 74, 78, 82, 86, 90",
+  "normal_distribute": "15, 15, 15, 15, 15, 25",
+  "normal_totaldistr": "100",
+  "bb_frames": "70, 75, 80, 85, 90, 95, 100, 105",
+  "bb_distribute": "12, 13, 12, 13, 12, 13, 12, 13",
+  "bb_totaldistr": "100",
+  "description": "A self-proclaimed genius magician who works as a strategist for the knights of the Agni Empire. His title as \"the undefeated strategist\" did not come from his own exploits, but it naturally made him even more full of himself. The one to finally put him in his place was Weiss, who was praised as a great army god in the Atharva Republic. Goltovah, having been completely beaten in strategy to the point of tears, ran away unscathed from the battlefield where the Agni forces were located. Using this experience as an opportunity, Goltovah began learning about the things that were truly important in his life.",
+  "summon": "The main star of the Agni Knight's, the undefeated strategist, Goltovah!<br>Hehe, I'll lend you a hand.",
+  "fusion": "Yeah, put more of that over here and...<br>Oh, I don't really know!<br> Just make sure you make my Fusion beautiful.",
+  "evolution": "The undefeated strategist!<br>It's the perfect title for me!<br>Hey, you think so too, right?",
+  "hp_base": "2597",
+  "atk_base": "951",
+  "def_base": "865",
+  "rec_base": "954",
+  "hp_lord": "3896",
+  "atk_lord": "1284",
+  "def_lord": "1167",
+  "rec_lord": "1287",
+  "hp_anima": "4339",
+  "rec_anima": "1169",
+  "atk_breaker": "1402",
+  "def_breaker": "1049",
+  "atk_guardian": "1166",
+  "def_guardian": "1285",
+  "rec_guardian": "1228",
+  "def_oracle": "1108",
+  "hp_oracle": "3719",
+  "rec_oracle": "1464",
+  "hp_bonus": "400",
+  "atk_bonus": "160",
+  "def_bonus": "160",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "6",
+  "normaldc": "12",
+  "ls": "Earth Barrier",
+  "lsdescription": "15% reduction in damage from Earth Types",
+  "lstype": "Defense",
+  "bbdescription": "8 combo Fire elemental attack on single enemy & adds Fire element to attack for 3 turns",
+  "bbtype": "Offense",
+  "bbhits": "8",
+  "bbaoe": "1",
+  "bbgauge": "15",
+  "bbdc": "8",
+  "bbmultiplier": "300",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "",
+  "evomats2": "",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": "",
+  "evoitem": ""
 }

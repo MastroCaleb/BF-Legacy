@@ -1,65 +1,67 @@
 {
   "id": "60845",
-  "unitName": "Shadow Alloy Chrome",
-  "no": "1154",
-  "element": "Dark",
-  "rarity": "★★★★★★",
-  "cost": "30",
-  "maxlv": "100",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "219",
-  "animation_idle": "60",
-  "animation_move": "6",
-  "movespeed_attack": "0.0024",
-  "movespeed_skill": "0.0024",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "68, 73, 78, 88, 98, 102, 106, 110, 114",
-  "normal_distribute": "13, 9, 13, 9, 13, 9, 13, 8, 13",
-  "normal_totaldistr": "100",
-  "bb_frames": "68, 73, 78, 83, 88, 93, 98, 102, 106, 110, 114, 118",
-  "bb_distribute": "11, 7, 11, 5, 11, 5, 11, 6, 11, 6, 11, 5",
-  "bb_totaldistr": "100",
-  "sbb_frames": "68, 72, 76, 80, 84, 88, 92, 96, 100, 103, 106, 109, 112, 115, 118, 121",
-  "sbb_distribute": "7, 6, 7, 6, 7, 6, 7, 6, 6, 6, 6, 6, 6, 6, 6, 6",
-  "sbb_totaldistr": "100",
-  "bb_effectdelay": "2",
-  "sbb_effectdelay": "3",
-  "description": "The younger brother of the last emperor of Bariura. During the great war with the gods, Chrome was fighting on a battlefield close to his nieces when his younger niece went mad with power, and ultimately met with her own death. It was then when his older niece tried to use a forbidden technique to bring her younger sister back from the dead, prompting Chrome to try stopping her by demanding that she hand over her Demon Scythe. His niece refused, and instead brought her sister back to life by using the power of countless human souls. Having witnessed this, Chrome left towards the Grand Gaia Crater with grief written all over his face.",
-  "summon": "Separating kindred souls is a crime I've yet to pay for...<br>Fate wasn't kind to them either...\"",
-  "fusion": "I've no problem doing the dirty work. As long as I can protect them... But I'm still too weak.",
-  "evolution": "I am eternally grateful. However, I'm still much too weak. Please lend me your power...",
-  "hp_base": "4108",
-  "atk_base": "1693",
-  "def_base": "1652",
-  "rec_base": "1375",
-  "hp_lord": "5962",
-  "atk_lord": "2308",
-  "def_lord": "2252",
-  "rec_lord": "1870",
-  "hp_anima": "6705",
-  "rec_anima": "1672",
-  "atk_breaker": "2506",
-  "def_breaker": "2054",
-  "def_guardian": "2450",
-  "rec_guardian": "1021",
-  "def_oracle": "2153",
-  "rec_oracle": "2167",
-  "hp_bonus": "750",
-  "atk_bonus": "400",
-  "def_bonus": "200",
-  "rec_bonus": "300",
-  "lordonly": "",
-  "combo_hits": "9",
-  "normaldc": "27",
-  "ls": "Supreme Oracle",
-  "lsdescription": "30% boost to max HP & hugely boosts Spark damage",
-  "lsnote": "75% boost",
-  "lstype": "Hit Points/Attack",
+  "stats": {
+    "_base": {
+      "atk": 1693,
+      "def": 1652,
+      "hp": 4108,
+      "rec": 1375
+    },
+    "_lord": {
+      "atk": 2308,
+      "def": 2252,
+      "hp": 5962,
+      "rec": 1870
+    },
+    "anima": {
+      "atk": 2308,
+      "def": 2252,
+      "hp max": 6952,
+      "hp min": 6457,
+      "rec max": 1771,
+      "rec min": 1573
+    },
+    "breaker": {
+      "atk max": 2605,
+      "atk min": 2407,
+      "def max": 2153,
+      "def min": 1955,
+      "hp": 5962,
+      "rec": 1870
+    },
+    "guardian": {
+      "atk": 2308,
+      "def max": 2549,
+      "def min": 2351,
+      "hp": 5962,
+      "rec max": 1870,
+      "rec min": 1672
+    },
+    "oracle": {
+      "atk": 2308,
+      "def max": 2252,
+      "def min": 2054,
+      "hp": 5962,
+      "rec max": 2266,
+      "rec min": 2068
+    }
+  },
+  "leader_skill": {
+    "desc": "30% boost to max HP & hugely boosts Spark damage",
+    "effects": [
+      {
+        "hp% buff": 30,
+        "passive id": "1"
+      },
+      {
+        "damage% for spark": 75,
+        "passive id": "31"
+      }
+    ],
+    "id": "5514",
+    "name": "Shadow Eater's Brandish"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -540,14 +542,6 @@
     ],
     "name": "Infernal Vista"
   },
-  "bbdescription": "12 combo powerful Dark attack on all foes & boosts Spark damage, probable BB gauge boost from Spark damage and boosts Dark elemental damage for 3 turns",
-  "bbnote": "60% Spark, 40% chance to fill 1-2 BC & 50% elemental damage",
-  "bbtype": "Support/Offense",
-  "bbhits": "12",
-  "bbaoe": "A",
-  "bbgauge": "28",
-  "bbdc": "12",
-  "bbmultiplier": "270",
   "sbb": {
     "damage frames": [
       {
@@ -1138,6 +1132,194 @@
     ],
     "name": "Dim Atomos"
   },
+  "ubb": {},
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 219
+    },
+    "idle": {
+      "total number of frames": 60
+    },
+    "move": {
+      "total number of frames": 6
+    }
+  },
+  "category": 60840,
+  "cost": "30",
+  "damage frames": {
+    "frame times": [
+      68,
+      73,
+      78,
+      88,
+      98,
+      102,
+      106,
+      110,
+      114
+    ],
+    "hit dmg% distribution": [
+      13,
+      9,
+      13,
+      9,
+      13,
+      9,
+      13,
+      8,
+      13
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 9
+  },
+  "drop check count": 3,
+  "element": "dark",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 1154,
+  "imp": {
+    "max atk": "400",
+    "max def": "200",
+    "max hp": "750",
+    "max rec": "300"
+  },
+  "kind": "normal",
+  "lord damage range": "2149~2400",
+  "movement": {
+    "attack": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    }
+  },
+  "name": "Shadow Alloy Chrome",
+  "rarity": "6",
+  "sell caution": false,
+  "unitName": "Shadow Alloy Chrome",
+  "maxlv": "100",
+  "no": "1154",
+  "unitDisplayHomePosition_1W9CxaFK": "663,110,180,491",
+  "unitDisplayDetailPosition_6z54rgb3": "-257,114,1150,831",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "-10,288,570,412,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-118,-144,1070,773",
+  "unitDisplaySummonPosition_KC3Jk8Br": "-10,288,570,412,0",
+  "unitDisplayHpPosition_3BpHN6VD": "-2,30",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "8000",
+  "sellCaution": false,
+  "effectFrames": "62:600865:1,69:600262:1,83:600171:1,85:600801:1,71:600210:1,105:600273:1,110:100010:1",
+  "evofrom": "60844",
+  "evointo": "60846",
+  "evozelcost": "1500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "60344",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60123",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 2
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "219",
+  "animation_idle": "60",
+  "animation_move": "6",
+  "movespeed_attack": "0.0024",
+  "movespeed_skill": "0.0024",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "68, 73, 78, 88, 98, 102, 106, 110, 114",
+  "normal_distribute": "13, 9, 13, 9, 13, 9, 13, 8, 13",
+  "normal_totaldistr": "100",
+  "bb_frames": "68, 73, 78, 83, 88, 93, 98, 102, 106, 110, 114, 118",
+  "bb_distribute": "11, 7, 11, 5, 11, 5, 11, 6, 11, 6, 11, 5",
+  "bb_totaldistr": "100",
+  "sbb_frames": "68, 72, 76, 80, 84, 88, 92, 96, 100, 103, 106, 109, 112, 115, 118, 121",
+  "sbb_distribute": "7, 6, 7, 6, 7, 6, 7, 6, 6, 6, 6, 6, 6, 6, 6, 6",
+  "sbb_totaldistr": "100",
+  "bb_effectdelay": "2",
+  "sbb_effectdelay": "3",
+  "description": "The younger brother of the last emperor of Bariura. During the great war with the gods, Chrome was fighting on a battlefield close to his nieces when his younger niece went mad with power, and ultimately met with her own death. It was then when his older niece tried to use a forbidden technique to bring her younger sister back from the dead, prompting Chrome to try stopping her by demanding that she hand over her Demon Scythe. His niece refused, and instead brought her sister back to life by using the power of countless human souls. Having witnessed this, Chrome left towards the Grand Gaia Crater with grief written all over his face.",
+  "summon": "Separating kindred souls is a crime I've yet to pay for...<br>Fate wasn't kind to them either...\"",
+  "fusion": "I've no problem doing the dirty work. As long as I can protect them... But I'm still too weak.",
+  "evolution": "I am eternally grateful. However, I'm still much too weak. Please lend me your power...",
+  "hp_base": "4108",
+  "atk_base": "1693",
+  "def_base": "1652",
+  "rec_base": "1375",
+  "hp_lord": "5962",
+  "atk_lord": "2308",
+  "def_lord": "2252",
+  "rec_lord": "1870",
+  "hp_anima": "6705",
+  "rec_anima": "1672",
+  "atk_breaker": "2506",
+  "def_breaker": "2054",
+  "def_guardian": "2450",
+  "rec_guardian": "1021",
+  "def_oracle": "2153",
+  "rec_oracle": "2167",
+  "hp_bonus": "750",
+  "atk_bonus": "400",
+  "def_bonus": "200",
+  "rec_bonus": "300",
+  "lordonly": "",
+  "combo_hits": "9",
+  "normaldc": "27",
+  "ls": "Supreme Oracle",
+  "lsdescription": "30% boost to max HP & hugely boosts Spark damage",
+  "lsnote": "75% boost",
+  "lstype": "Hit Points/Attack",
+  "bbdescription": "12 combo powerful Dark attack on all foes & boosts Spark damage, probable BB gauge boost from Spark damage and boosts Dark elemental damage for 3 turns",
+  "bbnote": "60% Spark, 40% chance to fill 1-2 BC & 50% elemental damage",
+  "bbtype": "Support/Offense",
+  "bbhits": "12",
+  "bbaoe": "A",
+  "bbgauge": "28",
+  "bbdc": "12",
+  "bbmultiplier": "270",
   "sbbdescription": "16 combo powerful Dark attack on all foes, probable enemy Spark vulnerability boost for 2 turns & boosts Spark damage, probable BB gauge boost and boosts Dark elemental damage for 3 turns",
   "sbbnote": "25% chance for 25% vulnerability, 70% Spark, 40% chance to fill 1-2 BC & 50% elemental damage",
   "sbbtype": "Support/Offense",
@@ -1146,7 +1328,6 @@
   "sbbgauge": "24",
   "sbbdc": "16",
   "sbbmultiplier": "480",
-  "ubb": {},
   "ubbdescription": "",
   "ubbtype": "",
   "ubbhits": "",
@@ -1157,85 +1338,10 @@
   "es": "",
   "esitem": "",
   "esdescription": "",
-  "evofrom": "60844",
-  "evointo": "60846",
   "evomats1": "60344",
   "evomats2": "50354",
   "evomats3": "60123",
   "evomats4": "60224",
   "evomats5": "60224",
-  "evoitem": "",
-  "evozelcost": "1500000",
-  "stats": {
-    "_base": {
-      "atk": 1693,
-      "def": 1652,
-      "hp": 4108,
-      "rec": 1375
-    },
-    "_lord": {
-      "atk": 2308,
-      "def": 2252,
-      "hp": 5962,
-      "rec": 1870
-    },
-    "anima": {
-      "atk": 2308,
-      "def": 2252,
-      "hp max": 6952,
-      "hp min": 6457,
-      "rec max": 1771,
-      "rec min": 1573
-    },
-    "breaker": {
-      "atk max": 2605,
-      "atk min": 2407,
-      "def max": 2153,
-      "def min": 1955,
-      "hp": 5962,
-      "rec": 1870
-    },
-    "guardian": {
-      "atk": 2308,
-      "def max": 2549,
-      "def min": 2351,
-      "hp": 5962,
-      "rec max": 1870,
-      "rec min": 1672
-    },
-    "oracle": {
-      "atk": 2308,
-      "def max": 2252,
-      "def min": 2054,
-      "hp": 5962,
-      "rec max": 2266,
-      "rec min": 2068
-    }
-  },
-  "leader_skill": {
-    "desc": "30% boost to max HP & hugely boosts Spark damage",
-    "effects": [
-      {
-        "hp% buff": 30,
-        "passive id": "1"
-      },
-      {
-        "damage% for spark": 75,
-        "passive id": "31"
-      }
-    ],
-    "id": "5514",
-    "name": "Shadow Eater's Brandish"
-  },
-  "extra_skill": {},
-  "unitDisplayHomePosition_1W9CxaFK": "663,110,180,491",
-  "unitDisplayDetailPosition_6z54rgb3": "-257,114,1150,831",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "-10,288,570,412,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-118,-144,1070,773",
-  "unitDisplaySummonPosition_KC3Jk8Br": "-10,288,570,412,0",
-  "unitDisplayHpPosition_3BpHN6VD": "-2,30",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "8000",
-  "sellCaution": false,
-  "effectFrames": "62:600865:1,69:600262:1,83:600171:1,85:600801:1,71:600210:1,105:600273:1,110:100010:1"
+  "evoitem": ""
 }

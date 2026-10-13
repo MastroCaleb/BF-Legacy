@@ -1,61 +1,53 @@
 {
   "id": "40171",
-  "unitName": "Empusa",
-  "no": "275",
-  "element": "Thunder",
-  "rarity": "★★",
-  "cost": "3",
-  "maxlv": "30",
-  "basexp": "10",
-  "gender": "N",
-  "ai": "4",
-  "animation_attack": "97",
-  "animation_idle": "44",
-  "animation_move": "7",
-  "movespeed_attack": "0.0024",
-  "movespeed_skill": "0.0024",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "42, 60",
-  "normal_distribute": "40, 60",
-  "normal_totaldistr": "100",
-  "bb_frames": "42, 60, 63, 66",
-  "bb_distribute": "50, 20, 20, 10",
-  "bb_totaldistr": "100",
-  "description": "A demon girl wielding brass claws, she used to be of the same species as Lilin, but her love for precious metals and stones was too much and she ended up consuming so much she became a completely new species. She's an easier demon to control given her obedience when awarded jewelry, but since she refuses to give up any of said jewelry that comes into her possession she can become quite a formidable demon should someone have their eyes on her treasure. She also seems to have little if any interest in the opposite sex.",
-  "summon": "I want gems!<br>I don't need a lot.<br>Gimme one?",
-  "fusion": "If that's how it is then<br>I'll gladly fight alongside you!<br>Buy me something nice, OK?",
-  "evolution": "",
-  "hp_base": "1170",
-  "atk_base": "450",
-  "def_base": "450",
-  "rec_base": "450",
-  "hp_lord": "1755",
-  "atk_lord": "630",
-  "def_lord": "585",
-  "rec_lord": "675",
-  "hp_anima": "1973",
-  "rec_anima": "617",
-  "atk_breaker": "688",
-  "def_breaker": "527",
-  "atk_guardian": "572",
-  "def_guardian": "643",
-  "rec_guardian": "646",
-  "def_oracle": "556",
-  "hp_oracle": "1668",
-  "rec_oracle": "762",
-  "hp_bonus": "250",
-  "atk_bonus": "100",
-  "def_bonus": "100",
-  "rec_bonus": "100",
-  "lordonly": "",
-  "combo_hits": "2",
-  "normaldc": "4",
-  "ls": "",
-  "lsdescription": "",
-  "lstype": "",
+  "stats": {
+    "_base": {
+      "atk": 450,
+      "def": 450,
+      "hp": 1170,
+      "rec": 450
+    },
+    "_lord": {
+      "atk": 630,
+      "def": 585,
+      "hp": 1755,
+      "rec": 675
+    },
+    "anima": {
+      "atk": 630,
+      "def": 585,
+      "hp max": 2045,
+      "hp min": 1900,
+      "rec max": 646,
+      "rec min": 588
+    },
+    "breaker": {
+      "atk max": 717,
+      "atk min": 659,
+      "def max": 556,
+      "def min": 498,
+      "hp": 1755,
+      "rec": 675
+    },
+    "guardian": {
+      "atk": 630,
+      "def max": 672,
+      "def min": 614,
+      "hp": 1755,
+      "rec max": 675,
+      "rec min": 617
+    },
+    "oracle": {
+      "atk": 630,
+      "def max": 585,
+      "def min": 527,
+      "hp": 1755,
+      "rec max": 791,
+      "rec min": 733
+    }
+  },
+  "leader_skill": {},
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -286,84 +278,97 @@
     ],
     "name": "Thunder Bolt"
   },
-  "bbdescription": "4 combo Thunder elemental attack on single enemy & probable Weakness effect",
-  "bbnote": "80% chance",
-  "bbtype": "Offense",
-  "bbhits": "4",
-  "bbaoe": "1",
-  "bbgauge": "12",
-  "bbdc": "12",
-  "bbmultiplier": "250",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "40172",
-  "evomats1": "40131",
-  "evomats2": "60142",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evozelcost": "50000",
-  "stats": {
-    "_base": {
-      "atk": 450,
-      "def": 450,
-      "hp": 1170,
-      "rec": 450
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_under",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 630,
-      "def": 585,
-      "hp": 1755,
-      "rec": 675
+    {
+      "action": "skill",
+      "chance%": 30.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 630,
-      "def": 585,
-      "hp max": 2045,
-      "hp min": 1900,
-      "rec max": 646,
-      "rec min": 588
+    {
+      "action": "attack",
+      "chance%": 70.0,
+      "target conditions": "hp_max",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 717,
-      "atk min": 659,
-      "def max": 556,
-      "def min": 498,
-      "hp": 1755,
-      "rec": 675
+    {
+      "action": "attack",
+      "chance%": 50.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "guardian": {
-      "atk": 630,
-      "def max": 672,
-      "def min": 614,
-      "hp": 1755,
-      "rec max": 675,
-      "rec min": 617
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 97
     },
-    "oracle": {
-      "atk": 630,
-      "def max": 585,
-      "def min": 527,
-      "hp": 1755,
-      "rec max": 791,
-      "rec min": 733
+    "idle": {
+      "total number of frames": 44
+    },
+    "move": {
+      "total number of frames": 7
     }
   },
-  "leader_skill": {},
-  "extra_skill": {},
+  "category": 40170,
+  "cost": "3",
+  "damage frames": {
+    "frame times": [
+      42,
+      60
+    ],
+    "hit dmg% distribution": [
+      40,
+      60
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 2
+  },
+  "drop check count": 2,
+  "element": "thunder",
+  "exp_pattern": 10,
+  "gender": "other",
+  "getting type": "not eligible for achievement",
+  "guide_id": 275,
+  "imp": {
+    "max atk": "100",
+    "max def": "100",
+    "max hp": "250",
+    "max rec": "100"
+  },
+  "kind": "normal",
+  "lord damage range": "586~655",
+  "movement": {
+    "attack": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    }
+  },
+  "name": "Empusa",
+  "rarity": "2",
+  "sell caution": false,
+  "unitName": "Empusa",
+  "maxlv": "30",
+  "no": "275",
   "unitDisplayHomePosition_1W9CxaFK": "193,25,174,473",
   "unitDisplayDetailPosition_6z54rgb3": "142,148,571,624",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "130,408,303,232,0",
@@ -373,5 +378,94 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "300",
   "sellCaution": false,
-  "effectFrames": "36:124:1,54:124:1"
+  "effectFrames": "36:124:1,54:124:1",
+  "evofrom": "",
+  "evointo": "40172",
+  "evozelcost": "50000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "40131",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60142",
+      "count": 1
+    }
+  ],
+  "basexp": "10",
+  "animation_attack": "97",
+  "animation_idle": "44",
+  "animation_move": "7",
+  "movespeed_attack": "0.0024",
+  "movespeed_skill": "0.0024",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "42, 60",
+  "normal_distribute": "40, 60",
+  "normal_totaldistr": "100",
+  "bb_frames": "42, 60, 63, 66",
+  "bb_distribute": "50, 20, 20, 10",
+  "bb_totaldistr": "100",
+  "description": "A demon girl wielding brass claws, she used to be of the same species as Lilin, but her love for precious metals and stones was too much and she ended up consuming so much she became a completely new species. She's an easier demon to control given her obedience when awarded jewelry, but since she refuses to give up any of said jewelry that comes into her possession she can become quite a formidable demon should someone have their eyes on her treasure. She also seems to have little if any interest in the opposite sex.",
+  "summon": "I want gems!<br>I don't need a lot.<br>Gimme one?",
+  "fusion": "If that's how it is then<br>I'll gladly fight alongside you!<br>Buy me something nice, OK?",
+  "evolution": "",
+  "hp_base": "1170",
+  "atk_base": "450",
+  "def_base": "450",
+  "rec_base": "450",
+  "hp_lord": "1755",
+  "atk_lord": "630",
+  "def_lord": "585",
+  "rec_lord": "675",
+  "hp_anima": "1973",
+  "rec_anima": "617",
+  "atk_breaker": "688",
+  "def_breaker": "527",
+  "atk_guardian": "572",
+  "def_guardian": "643",
+  "rec_guardian": "646",
+  "def_oracle": "556",
+  "hp_oracle": "1668",
+  "rec_oracle": "762",
+  "hp_bonus": "250",
+  "atk_bonus": "100",
+  "def_bonus": "100",
+  "rec_bonus": "100",
+  "lordonly": "",
+  "combo_hits": "2",
+  "normaldc": "4",
+  "ls": "",
+  "lsdescription": "",
+  "lstype": "",
+  "bbdescription": "4 combo Thunder elemental attack on single enemy & probable Weakness effect",
+  "bbnote": "80% chance",
+  "bbtype": "Offense",
+  "bbhits": "4",
+  "bbaoe": "1",
+  "bbgauge": "12",
+  "bbdc": "12",
+  "bbmultiplier": "250",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "40131",
+  "evomats2": "60142",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": ""
 }

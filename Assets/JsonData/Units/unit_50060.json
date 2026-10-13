@@ -1,62 +1,63 @@
 {
   "id": "50060",
-  "unitName": "Unicorn",
-  "no": "95",
-  "element": "Light",
-  "rarity": "★★",
-  "cost": "3",
-  "maxlv": "30",
-  "basexp": "10",
-  "gender": "N",
-  "ai": "1",
-  "animation_attack": "170",
-  "animation_idle": "44",
-  "animation_move": "28",
-  "movespeed_attack": "0.0024",
-  "movespeed_skill": "0.0024",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "16, 41, 66, 91, 116",
-  "normal_distribute": "20, 20, 20, 20, 20",
-  "normal_totaldistr": "100",
-  "bb_frames": "16, 41, 66, 91, 104, 116",
-  "bb_distribute": "15, 15, 15, 15, 20, 20",
-  "bb_totaldistr": "100",
-  "description": "A mythical creature with a single large horn on its brow. It resembles a beautiful white horse, and rarely gets close to humans. It will only open its heart to those with unstained souls. They can sense ulterior motives immediately thanks to their telepathy. Many try to capture them for the medicine in their horns, but usually end up getting pierced instead.",
-  "summon": "Child who stands before me,<br>heed these words...<br>Beware your impure heart.",
-  "fusion": "You heart is pure.<br>I hope you stay that way.",
-  "evolution": "",
-  "hp_base": "1280",
-  "atk_base": "470",
-  "def_base": "470",
-  "rec_base": "470",
-  "hp_lord": "2246",
-  "atk_lord": "635",
-  "def_lord": "658",
-  "rec_lord": "752",
-  "hp_anima": "2464",
-  "rec_anima": "694",
-  "atk_breaker": "693",
-  "def_breaker": "600",
-  "atk_guardian": "577",
-  "def_guardian": "716",
-  "rec_guardian": "723",
-  "def_oracle": "629",
-  "hp_oracle": "2159",
-  "rec_oracle": "839",
-  "hp_bonus": "250",
-  "atk_bonus": "100",
-  "def_bonus": "100",
-  "rec_bonus": "100",
-  "lordonly": "",
-  "combo_hits": "5",
-  "normaldc": "10",
-  "ls": "Pure Light",
-  "lsdescription": "Small boost in Heart Crystals produced during Spark",
-  "lsnote": "20% boost",
-  "lstype": "Recovery",
+  "stats": {
+    "_base": {
+      "atk": 470,
+      "def": 470,
+      "hp": 1280,
+      "rec": 470
+    },
+    "_lord": {
+      "atk": 635,
+      "def": 658,
+      "hp": 2246,
+      "rec": 752
+    },
+    "anima": {
+      "atk": 635,
+      "def": 658,
+      "hp max": 2536,
+      "hp min": 2391,
+      "rec max": 723,
+      "rec min": 665
+    },
+    "breaker": {
+      "atk max": 722,
+      "atk min": 664,
+      "def max": 629,
+      "def min": 571,
+      "hp": 2246,
+      "rec": 752
+    },
+    "guardian": {
+      "atk": 635,
+      "def max": 745,
+      "def min": 687,
+      "hp": 2246,
+      "rec max": 752,
+      "rec min": 694
+    },
+    "oracle": {
+      "atk": 635,
+      "def max": 658,
+      "def min": 600,
+      "hp": 2246,
+      "rec max": 868,
+      "rec min": 810
+    }
+  },
+  "leader_skill": {
+    "desc": "Small boost in Heart Crystals produced during Spark",
+    "effects": [
+      {
+        "hc drop% for spark": 20,
+        "passive id": "31"
+      }
+    ],
+    "id": "1500",
+    "name": "Pure Light"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -219,94 +220,91 @@
     ],
     "name": "Mirage Horn"
   },
-  "bbdescription": "6 combo Light elemental attack on single Enemy & boost to BC drop rate",
-  "bbnote": "50% boost",
-  "bbtype": "Offense",
-  "bbhits": "6",
-  "bbaoe": "1",
-  "bbgauge": "15",
-  "bbdc": "12",
-  "bbmultiplier": "200",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "50061",
-  "evomats1": "50120",
-  "evomats2": "60142",
-  "evomats3": "60142",
-  "evomats4": "",
-  "evomats5": "",
-  "evozelcost": "50000",
-  "stats": {
-    "_base": {
-      "atk": 470,
-      "def": 470,
-      "hp": 1280,
-      "rec": 470
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "party"
     },
-    "_lord": {
-      "atk": 635,
-      "def": 658,
-      "hp": 2246,
-      "rec": 752
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 635,
-      "def": 658,
-      "hp max": 2536,
-      "hp min": 2391,
-      "rec max": 723,
-      "rec min": 665
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 170
     },
-    "breaker": {
-      "atk max": 722,
-      "atk min": 664,
-      "def max": 629,
-      "def min": 571,
-      "hp": 2246,
-      "rec": 752
+    "idle": {
+      "total number of frames": 44
     },
-    "guardian": {
-      "atk": 635,
-      "def max": 745,
-      "def min": 687,
-      "hp": 2246,
-      "rec max": 752,
-      "rec min": 694
-    },
-    "oracle": {
-      "atk": 635,
-      "def max": 658,
-      "def min": 600,
-      "hp": 2246,
-      "rec max": 868,
-      "rec min": 810
+    "move": {
+      "total number of frames": 28
     }
   },
-  "leader_skill": {
-    "desc": "Small boost in Heart Crystals produced during Spark",
-    "effects": [
-      {
-        "hc drop% for spark": 20,
-        "passive id": "31"
-      }
+  "category": 50060,
+  "cost": "3",
+  "damage frames": {
+    "frame times": [
+      16,
+      41,
+      66,
+      91,
+      116
     ],
-    "id": "1500",
-    "name": "Pure Light"
+    "hit dmg% distribution": [
+      20,
+      20,
+      20,
+      20,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 5
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "light",
+  "exp_pattern": 10,
+  "gender": "other",
+  "getting type": "not eligible for achievement",
+  "guide_id": 95,
+  "imp": {
+    "max atk": "100",
+    "max def": "100",
+    "max hp": "250",
+    "max rec": "100"
+  },
+  "kind": "normal",
+  "lord damage range": "590~660",
+  "movement": {
+    "attack": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    }
+  },
+  "name": "Unicorn",
+  "rarity": "2",
+  "sell caution": false,
+  "unitName": "Unicorn",
+  "maxlv": "30",
+  "no": "95",
   "unitDisplayHomePosition_1W9CxaFK": "108,-9,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "89,241,750,530",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "100,325,430,301,0",
@@ -316,5 +314,95 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "300",
   "sellCaution": false,
-  "effectFrames": "10:135:1,35:135:1,60:135:1,85:135:1,110:135:1"
+  "effectFrames": "10:135:1,35:135:1,60:135:1,85:135:1,110:135:1",
+  "evofrom": "",
+  "evointo": "50061",
+  "evozelcost": "50000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50120",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60142",
+      "count": 2
+    }
+  ],
+  "basexp": "10",
+  "animation_attack": "170",
+  "animation_idle": "44",
+  "animation_move": "28",
+  "movespeed_attack": "0.0024",
+  "movespeed_skill": "0.0024",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "16, 41, 66, 91, 116",
+  "normal_distribute": "20, 20, 20, 20, 20",
+  "normal_totaldistr": "100",
+  "bb_frames": "16, 41, 66, 91, 104, 116",
+  "bb_distribute": "15, 15, 15, 15, 20, 20",
+  "bb_totaldistr": "100",
+  "description": "A mythical creature with a single large horn on its brow. It resembles a beautiful white horse, and rarely gets close to humans. It will only open its heart to those with unstained souls. They can sense ulterior motives immediately thanks to their telepathy. Many try to capture them for the medicine in their horns, but usually end up getting pierced instead.",
+  "summon": "Child who stands before me,<br>heed these words...<br>Beware your impure heart.",
+  "fusion": "You heart is pure.<br>I hope you stay that way.",
+  "evolution": "",
+  "hp_base": "1280",
+  "atk_base": "470",
+  "def_base": "470",
+  "rec_base": "470",
+  "hp_lord": "2246",
+  "atk_lord": "635",
+  "def_lord": "658",
+  "rec_lord": "752",
+  "hp_anima": "2464",
+  "rec_anima": "694",
+  "atk_breaker": "693",
+  "def_breaker": "600",
+  "atk_guardian": "577",
+  "def_guardian": "716",
+  "rec_guardian": "723",
+  "def_oracle": "629",
+  "hp_oracle": "2159",
+  "rec_oracle": "839",
+  "hp_bonus": "250",
+  "atk_bonus": "100",
+  "def_bonus": "100",
+  "rec_bonus": "100",
+  "lordonly": "",
+  "combo_hits": "5",
+  "normaldc": "10",
+  "ls": "Pure Light",
+  "lsdescription": "Small boost in Heart Crystals produced during Spark",
+  "lsnote": "20% boost",
+  "lstype": "Recovery",
+  "bbdescription": "6 combo Light elemental attack on single Enemy & boost to BC drop rate",
+  "bbnote": "50% boost",
+  "bbtype": "Offense",
+  "bbhits": "6",
+  "bbaoe": "1",
+  "bbgauge": "15",
+  "bbdc": "12",
+  "bbmultiplier": "200",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50120",
+  "evomats2": "60142",
+  "evomats3": "60142",
+  "evomats4": "",
+  "evomats5": ""
 }

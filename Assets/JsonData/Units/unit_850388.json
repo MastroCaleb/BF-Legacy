@@ -1,69 +1,112 @@
 {
   "id": "850388",
-  "unitName": "Leo Whitefang (Omni)",
-  "altname": "Leo Whitefang",
-  "no": "8356",
-  "element": "Light",
-  "rarity": "Omni",
-  "cost": "50",
-  "maxlv": "150",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "12",
-  "animation_attack": "173",
-  "animation_idle": "52",
-  "animation_move": "7",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "30, 45, 60, 70, 90",
-  "normal_distribute": "15, 15, 15, 15, 40",
-  "normal_totaldistr": "100",
-  "bb_frames": "30, 45, 60, 70, 90, 96, 102",
-  "bb_distribute": "10, 11, 12, 13, 18, 18, 18",
-  "bb_totaldistr": "100",
-  "sbb_frames": "30, 45, 60, 70, 90, 93, 96, 99, 102",
-  "sbb_distribute": "8, 8, 8, 8, 20, 12, 12, 12, 12",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "30, 45, 60, 70, 90",
-  "ubb_distribute": "15, 15, 15, 15, 40",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "1",
-  "ubb_effectdelay": "1",
-  "description": "A proud king from a faraway land, his intellect and cunning in battle are legendary in their own right. His newfound adventures led him to add more entries to his dictionary for familiar words that he had rediscovered, such as \"Fallen Gods\" and \"Summoners.\" Such marvels! Such wonders! He privately contemplated the fate of his own kingdom if matters were to be the same. Magic, after all, was an uncertain thing. Of course, the wandering king had to get home first, and that would be another story in itself...",
-  "summon": "There is only one entry in my dictionary for \"defeat\": the fate of those who fight me!",
-  "fusion": "Let me see...hmm. I don't have an entry in my dictionary for this \"Fusion\" that you speak of. Yet.",
-  "evolution": "You may live forever, but what of your name? Instead, telling stories of my majesty would be better!",
-  "hp_base": "5782",
-  "atk_base": "2390",
-  "def_base": "2156",
-  "rec_base": "2089",
-  "hp_lord": "8260",
-  "atk_lord": "3415",
-  "def_lord": "3080",
-  "rec_lord": "2985",
-  "hp_anima": "9377",
-  "rec_anima": "2687",
-  "atk_breaker": "3713",
-  "def_breaker": "2782",
-  "def_guardian": "3378",
-  "rec_guardian": "2836",
-  "def_oracle": "2931",
-  "rec_oracle": "3432",
-  "hp_bonus": "1250",
-  "atk_bonus": "800",
-  "def_bonus": "500",
-  "rec_bonus": "400",
-  "lordonly": "",
-  "combo_hits": "5",
-  "normaldc": "50",
-  "ls": "The King's Justice",
-  "lsdescription": "60% boost to Atk, Def, max HP, considerably boosts Atk, Def when HP is over 50%, raises normal hit amount & slight damage reduction for 1 turn when damage dealt exceeds certain amount",
-  "lsnote": "80% boost, Adds +1 hit count to each hit count with 50% damage penalty & 20% reduction after 20,000 damage",
+  "stats": {
+    "_base": {
+      "atk": 2390,
+      "def": 2156,
+      "hp": 5782,
+      "rec": 2089
+    },
+    "_lord": {
+      "atk": 3415,
+      "def": 3080,
+      "hp": 8260,
+      "rec": 2985
+    },
+    "anima": {
+      "atk": 3415,
+      "def": 3080,
+      "hp max": 9750,
+      "hp min": 9005,
+      "rec max": 2836,
+      "rec min": 2538
+    },
+    "breaker": {
+      "atk max": 3862,
+      "atk min": 3564,
+      "def max": 2931,
+      "def min": 2633,
+      "hp": 8260,
+      "rec": 2985
+    },
+    "guardian": {
+      "atk": 3415,
+      "def max": 3527,
+      "def min": 3229,
+      "hp": 8260,
+      "rec max": 2985,
+      "rec min": 2687
+    },
+    "oracle": {
+      "atk": 3415,
+      "def max": 3080,
+      "def min": 2782,
+      "hp": 8260,
+      "rec max": 3581,
+      "rec min": 3283
+    }
+  },
+  "leader_skill": {
+    "desc": "60% boost to Atk, Def, max HP, considerably boosts Atk, Def when HP is over 50%, raises normal hit amount & slight damage reduction for 1 turn when damage dealt exceeds certain amount",
+    "effects": [
+      {
+        "atk% buff": 60,
+        "def% buff": 60,
+        "hp% buff": 60,
+        "passive id": "1"
+      },
+      {
+        "atk% buff": 80,
+        "def% buff": 80,
+        "hp above % buff requirement": 50,
+        "passive id": "11"
+      },
+      {
+        "extra hits dmg%": -50,
+        "hit increase/hit": 1,
+        "passive id": "37"
+      },
+      {
+        "buff": {
+          "buff turns (36)": "1",
+          "dmg reduction% buff": 20
+        },
+        "damage dealt threshold buff activation": 20000,
+        "passive id": "80"
+      }
+    ],
+    "id": "850388",
+    "name": "The King's Justice"
+  },
+  "extra_skill": {
+    "desc": "Boosts Atk, Def when HP is over 50%, boosts critical damage & raises normal hit amount",
+    "effects": [
+      {
+        "atk% buff": 50,
+        "conditions": [],
+        "def% buff": 50,
+        "hp above % buff requirement": 50,
+        "passive id": "11",
+        "passive target": "self"
+      },
+      {
+        "conditions": [],
+        "crit multiplier%": 50.0,
+        "passive id": "34",
+        "passive target": "self"
+      },
+      {
+        "conditions": [],
+        "hit increase/hit": 2,
+        "passive id": "37",
+        "passive target": "self"
+      }
+    ],
+    "id": "850388",
+    "name": "Golden Lion's Charge",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -728,15 +771,6 @@
     ],
     "name": "Graviert Würde"
   },
-  "bbdescription": "7 combo powerful Light attack on single foe (damage relative to remaining HP), considerably raises normal hit amount for 3 turns. hugely boosts Def relative to Atk for 3 turns, hugely boosts Atk relative to Def for 3 turns, considerably boosts OD gauge fill rate for 3 turns & slightly boosts own max HP",
-  "bbnote": "300% + 400% * current HP / max HP, +2 hits to each hit count (+20% extra damage, 120% damage total), 80% Atk to Def, 80% Def to Atk, 20% OD fill rate & 15% HP",
-  "bbtype": "Offense",
-  "bbhits": "7",
-  "bbaoe": "A",
-  "bbgauge": "26",
-  "bbdc": "42",
-  "bbmultiplier": "300",
-  "bb_hpscale": "true",
   "sbb": {
     "damage frames": [
       {
@@ -1404,15 +1438,6 @@
     ],
     "name": "Burst Leidenschaft Dirigent"
   },
-  "sbbdescription": "9 combo massive Light attack on single foe (damage relative to remaining HP), considerably raises normal hit amount for 3 turns. hugely boosts Def relative to Atk for 3 turns, hugely boosts Atk relative to Def for 3 turns, slightly boosts OD gauge & hugely boosts own Atk for 3 turns",
-  "sbbnote": "300% + 900% * current HP / max HP, +2 hits to each hit count (+20% extra damage, 120% damage total), 80% Atk to Def, 80% Def to Atk, 8% OD fill & 200% Atk",
-  "sbbtype": "Offense",
-  "sbbhits": "9",
-  "sbbaoe": "A",
-  "sbbgauge": "26",
-  "sbbdc": "54",
-  "sbbmultiplier": "300",
-  "sbb_hpscale": "true",
   "ubb": {
     "damage frames": [
       {
@@ -1564,6 +1589,164 @@
     ],
     "name": "Windrad des Weltraum"
   },
+  "ai": "12",
+  "animations": {
+    "attack": {
+      "total number of frames": 173
+    },
+    "idle": {
+      "total number of frames": 52
+    },
+    "move": {
+      "total number of frames": 7
+    }
+  },
+  "category": 850380,
+  "cost": "50",
+  "damage frames": {
+    "frame times": [
+      30,
+      45,
+      60,
+      70,
+      90
+    ],
+    "hit dmg% distribution": [
+      15,
+      15,
+      15,
+      15,
+      40
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 5
+  },
+  "drop check count": 10,
+  "element": "light",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 8356,
+  "imp": {
+    "max atk": "800",
+    "max def": "500",
+    "max hp": "1250",
+    "max rec": "400"
+  },
+  "kind": "normal",
+  "lord damage range": "3179~3551",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Leo Whitefang",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "8",
+  "sell caution": false,
+  "unitName": "Leo Whitefang",
+  "maxlv": "150",
+  "no": "8356",
+  "unitDisplayHomePosition_1W9CxaFK": "528,329,174,475",
+  "unitDisplayDetailPosition_6z54rgb3": "-216,-121,1398,1092",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "-11,88,715,559,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-181,-323,1398,1092",
+  "unitDisplaySummonPosition_KC3Jk8Br": "-11,88,715,559,0",
+  "unitDisplayHpPosition_3BpHN6VD": "0,0",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "50000",
+  "sellCaution": false,
+  "effectFrames": "25:600499:1,35:10097:1,50:600499:1,60:10097:1,103:100199:1,103:100110:1,103:10097:1",
+  "evofrom": "850387",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "altname": "Leo Whitefang",
+  "basexp": "21",
+  "animation_attack": "173",
+  "animation_idle": "52",
+  "animation_move": "7",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "30, 45, 60, 70, 90",
+  "normal_distribute": "15, 15, 15, 15, 40",
+  "normal_totaldistr": "100",
+  "bb_frames": "30, 45, 60, 70, 90, 96, 102",
+  "bb_distribute": "10, 11, 12, 13, 18, 18, 18",
+  "bb_totaldistr": "100",
+  "sbb_frames": "30, 45, 60, 70, 90, 93, 96, 99, 102",
+  "sbb_distribute": "8, 8, 8, 8, 20, 12, 12, 12, 12",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "30, 45, 60, 70, 90",
+  "ubb_distribute": "15, 15, 15, 15, 40",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "1",
+  "ubb_effectdelay": "1",
+  "description": "A proud king from a faraway land, his intellect and cunning in battle are legendary in their own right. His newfound adventures led him to add more entries to his dictionary for familiar words that he had rediscovered, such as \"Fallen Gods\" and \"Summoners.\" Such marvels! Such wonders! He privately contemplated the fate of his own kingdom if matters were to be the same. Magic, after all, was an uncertain thing. Of course, the wandering king had to get home first, and that would be another story in itself...",
+  "summon": "There is only one entry in my dictionary for \"defeat\": the fate of those who fight me!",
+  "fusion": "Let me see...hmm. I don't have an entry in my dictionary for this \"Fusion\" that you speak of. Yet.",
+  "evolution": "You may live forever, but what of your name? Instead, telling stories of my majesty would be better!",
+  "hp_base": "5782",
+  "atk_base": "2390",
+  "def_base": "2156",
+  "rec_base": "2089",
+  "hp_lord": "8260",
+  "atk_lord": "3415",
+  "def_lord": "3080",
+  "rec_lord": "2985",
+  "hp_anima": "9377",
+  "rec_anima": "2687",
+  "atk_breaker": "3713",
+  "def_breaker": "2782",
+  "def_guardian": "3378",
+  "rec_guardian": "2836",
+  "def_oracle": "2931",
+  "rec_oracle": "3432",
+  "hp_bonus": "1250",
+  "atk_bonus": "800",
+  "def_bonus": "500",
+  "rec_bonus": "400",
+  "lordonly": "",
+  "combo_hits": "5",
+  "normaldc": "50",
+  "ls": "The King's Justice",
+  "lsdescription": "60% boost to Atk, Def, max HP, considerably boosts Atk, Def when HP is over 50%, raises normal hit amount & slight damage reduction for 1 turn when damage dealt exceeds certain amount",
+  "lsnote": "80% boost, Adds +1 hit count to each hit count with 50% damage penalty & 20% reduction after 20,000 damage",
+  "bbdescription": "7 combo powerful Light attack on single foe (damage relative to remaining HP), considerably raises normal hit amount for 3 turns. hugely boosts Def relative to Atk for 3 turns, hugely boosts Atk relative to Def for 3 turns, considerably boosts OD gauge fill rate for 3 turns & slightly boosts own max HP",
+  "bbnote": "300% + 400% * current HP / max HP, +2 hits to each hit count (+20% extra damage, 120% damage total), 80% Atk to Def, 80% Def to Atk, 20% OD fill rate & 15% HP",
+  "bbtype": "Offense",
+  "bbhits": "7",
+  "bbaoe": "A",
+  "bbgauge": "26",
+  "bbdc": "42",
+  "bbmultiplier": "300",
+  "bb_hpscale": "true",
+  "sbbdescription": "9 combo massive Light attack on single foe (damage relative to remaining HP), considerably raises normal hit amount for 3 turns. hugely boosts Def relative to Atk for 3 turns, hugely boosts Atk relative to Def for 3 turns, slightly boosts OD gauge & hugely boosts own Atk for 3 turns",
+  "sbbnote": "300% + 900% * current HP / max HP, +2 hits to each hit count (+20% extra damage, 120% damage total), 80% Atk to Def, 80% Def to Atk, 8% OD fill & 200% Atk",
+  "sbbtype": "Offense",
+  "sbbhits": "9",
+  "sbbaoe": "A",
+  "sbbgauge": "26",
+  "sbbdc": "54",
+  "sbbmultiplier": "300",
+  "sbb_hpscale": "true",
   "ubbdescription": "5 combo massive Light attack on all foes (damage relative to remaining HP), hugely raises normal hit amount for 3 turns, normal attacks hit all foes for 3 turns, enormously boosts Atk relative to Def for 5 turns, enormously boosts Atk and critical hit rate for 3 turns & hugely boosts own Atk, Def, Rec for 3 turns",
   "ubbnote": "1500% + 1500% * current HP / max HP, +3 hits to each hit count (+120% extra damage, 220% damage total), 250% Def to Atk, 400% Atk, 60% Crit & 200% self parameter boost",
   "ubbtype": "Offense",
@@ -1577,8 +1760,6 @@
   "esitem": "",
   "esdescription": "Boosts Atk, Def when HP is over 50%, boosts critical damage & raises normal hit amount",
   "esnote": "50% parameter boost, 50% Crit & adds +2 hits to each hit count",
-  "evofrom": "850387",
-  "evointo": "",
   "evomats1": "",
   "evomats2": "",
   "evomats3": "",
@@ -1587,123 +1768,5 @@
   "evomats6": "",
   "evomats7": "",
   "evomats8": "",
-  "evoitem": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 2390,
-      "def": 2156,
-      "hp": 5782,
-      "rec": 2089
-    },
-    "_lord": {
-      "atk": 3415,
-      "def": 3080,
-      "hp": 8260,
-      "rec": 2985
-    },
-    "anima": {
-      "atk": 3415,
-      "def": 3080,
-      "hp max": 9750,
-      "hp min": 9005,
-      "rec max": 2836,
-      "rec min": 2538
-    },
-    "breaker": {
-      "atk max": 3862,
-      "atk min": 3564,
-      "def max": 2931,
-      "def min": 2633,
-      "hp": 8260,
-      "rec": 2985
-    },
-    "guardian": {
-      "atk": 3415,
-      "def max": 3527,
-      "def min": 3229,
-      "hp": 8260,
-      "rec max": 2985,
-      "rec min": 2687
-    },
-    "oracle": {
-      "atk": 3415,
-      "def max": 3080,
-      "def min": 2782,
-      "hp": 8260,
-      "rec max": 3581,
-      "rec min": 3283
-    }
-  },
-  "leader_skill": {
-    "desc": "60% boost to Atk, Def, max HP, considerably boosts Atk, Def when HP is over 50%, raises normal hit amount & slight damage reduction for 1 turn when damage dealt exceeds certain amount",
-    "effects": [
-      {
-        "atk% buff": 60,
-        "def% buff": 60,
-        "hp% buff": 60,
-        "passive id": "1"
-      },
-      {
-        "atk% buff": 80,
-        "def% buff": 80,
-        "hp above % buff requirement": 50,
-        "passive id": "11"
-      },
-      {
-        "extra hits dmg%": -50,
-        "hit increase/hit": 1,
-        "passive id": "37"
-      },
-      {
-        "buff": {
-          "buff turns (36)": "1",
-          "dmg reduction% buff": 20
-        },
-        "damage dealt threshold buff activation": 20000,
-        "passive id": "80"
-      }
-    ],
-    "id": "850388",
-    "name": "The King's Justice"
-  },
-  "extra_skill": {
-    "desc": "Boosts Atk, Def when HP is over 50%, boosts critical damage & raises normal hit amount",
-    "effects": [
-      {
-        "atk% buff": 50,
-        "conditions": [],
-        "def% buff": 50,
-        "hp above % buff requirement": 50,
-        "passive id": "11",
-        "passive target": "self"
-      },
-      {
-        "conditions": [],
-        "crit multiplier%": 50.0,
-        "passive id": "34",
-        "passive target": "self"
-      },
-      {
-        "conditions": [],
-        "hit increase/hit": 2,
-        "passive id": "37",
-        "passive target": "self"
-      }
-    ],
-    "id": "850388",
-    "name": "Golden Lion's Charge",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "528,329,174,475",
-  "unitDisplayDetailPosition_6z54rgb3": "-216,-121,1398,1092",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "-11,88,715,559,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-181,-323,1398,1092",
-  "unitDisplaySummonPosition_KC3Jk8Br": "-11,88,715,559,0",
-  "unitDisplayHpPosition_3BpHN6VD": "0,0",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "50000",
-  "sellCaution": false,
-  "effectFrames": "25:600499:1,35:10097:1,50:600499:1,60:10097:1,103:100199:1,103:100110:1,103:10097:1"
+  "evoitem": ""
 }

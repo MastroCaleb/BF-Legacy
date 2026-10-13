@@ -1,61 +1,66 @@
 {
   "id": "40124",
-  "unitName": "Goddess Emilia",
-  "no": "164",
-  "element": "Thunder",
-  "rarity": "★★★★★",
-  "cost": "12",
-  "maxlv": "80",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "4",
-  "animation_attack": "149",
-  "animation_idle": "64",
-  "animation_move": "16",
-  "movespeed_attack": "0.0024",
-  "movespeed_skill": "0.0024",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "26, 28, 60, 66, 82, 88",
-  "normal_distribute": "20, 20, 10, 10, 30, 10",
-  "normal_totaldistr": "100",
-  "bb_frames": "26, 28, 66, 72, 88, 94, 100",
-  "bb_distribute": "10, 10, 15, 15, 15, 15, 20",
-  "bb_totaldistr": "100",
-  "description": "A dual-wielding general mentioned in the records of the ruined Atharva Republic. She fought on the front lines, even during the war with the gods. In Atharva, she reached the same level as the Commander Weiss. Rumor was that they were lovers, but she vehemently denied this when asked. She lived her short life single, saying, \"I live for my sword, not love.\"",
-  "summon": "Only a great warrior could<br>have the power to subdue me!<br>What do you plan to do with me?",
-  "fusion": "How my power overflows!<br>My soul trembles with joy!!",
-  "evolution": "I will transcend and<br>evolve if it is asked of me.<br>Everyone should do the same.",
-  "hp_base": "3121",
-  "atk_base": "995",
-  "def_base": "954",
-  "rec_base": "922",
-  "hp_lord": "4707",
-  "atk_lord": "1341",
-  "def_lord": "1309",
-  "rec_lord": "1304",
-  "hp_anima": "5300",
-  "rec_anima": "1146",
-  "atk_breaker": "1499",
-  "def_breaker": "1151",
-  "atk_guardian": "1183",
-  "def_guardian": "1467",
-  "rec_guardian": "1225",
-  "def_oracle": "1230",
-  "hp_oracle": "4470",
-  "rec_oracle": "1541",
-  "hp_bonus": "500",
-  "atk_bonus": "200",
-  "def_bonus": "200",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "6",
-  "normaldc": "18",
-  "ls": "Thunder God's Power",
-  "lsdescription": "50% boost to Atk Power of Thunder Types",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 995,
+      "def": 954,
+      "hp": 3121,
+      "rec": 922
+    },
+    "_lord": {
+      "atk": 1341,
+      "def": 1309,
+      "hp": 4707,
+      "rec": 1304
+    },
+    "anima": {
+      "atk": 1341,
+      "def": 1309,
+      "hp max": 5497,
+      "hp min": 5102,
+      "rec max": 1225,
+      "rec min": 1067
+    },
+    "breaker": {
+      "atk max": 1578,
+      "atk min": 1420,
+      "def max": 1230,
+      "def min": 1072,
+      "hp": 4707,
+      "rec": 1304
+    },
+    "guardian": {
+      "atk": 1341,
+      "def max": 1546,
+      "def min": 1388,
+      "hp": 4707,
+      "rec max": 1304,
+      "rec min": 1146
+    },
+    "oracle": {
+      "atk": 1341,
+      "def max": 1309,
+      "def min": 1151,
+      "hp": 4707,
+      "rec max": 1620,
+      "rec min": 1462
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to Atk Power of Thunder Types",
+    "effects": [
+      {
+        "atk% buff": 50,
+        "elements buffed": [
+          "thunder"
+        ],
+        "passive id": "2"
+      }
+    ],
+    "id": "131",
+    "name": "Thunder God's Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -302,97 +307,105 @@
     ],
     "name": "Genocide Levin"
   },
-  "bbdescription": "7 combo Thunder elemental power attack on single Enemy & probable Paralysis effect",
-  "bbnote": "80% chance",
-  "bbtype": "Offense",
-  "bbhits": "7",
-  "bbaoe": "1",
-  "bbgauge": "18",
-  "bbdc": "7",
-  "bbmultiplier": "400",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "40123",
-  "evointo": "40125",
-  "evomats1": "50354",
-  "evomats2": "40133",
-  "evomats3": "60144",
-  "evomats4": "40132",
-  "evomats5": "40191",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 995,
-      "def": 954,
-      "hp": 3121,
-      "rec": 922
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_under",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1341,
-      "def": 1309,
-      "hp": 4707,
-      "rec": 1304
+    {
+      "action": "skill",
+      "chance%": 30.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1341,
-      "def": 1309,
-      "hp max": 5497,
-      "hp min": 5102,
-      "rec max": 1225,
-      "rec min": 1067
+    {
+      "action": "attack",
+      "chance%": 70.0,
+      "target conditions": "hp_max",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 1578,
-      "atk min": 1420,
-      "def max": 1230,
-      "def min": 1072,
-      "hp": 4707,
-      "rec": 1304
+    {
+      "action": "attack",
+      "chance%": 50.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "guardian": {
-      "atk": 1341,
-      "def max": 1546,
-      "def min": 1388,
-      "hp": 4707,
-      "rec max": 1304,
-      "rec min": 1146
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 149
     },
-    "oracle": {
-      "atk": 1341,
-      "def max": 1309,
-      "def min": 1151,
-      "hp": 4707,
-      "rec max": 1620,
-      "rec min": 1462
+    "idle": {
+      "total number of frames": 64
+    },
+    "move": {
+      "total number of frames": 16
     }
   },
-  "leader_skill": {
-    "desc": "50% boost to Atk Power of Thunder Types",
-    "effects": [
-      {
-        "atk% buff": 50,
-        "elements buffed": [
-          "thunder"
-        ],
-        "passive id": "2"
-      }
+  "category": 40120,
+  "cost": "12",
+  "damage frames": {
+    "frame times": [
+      26,
+      28,
+      60,
+      66,
+      82,
+      88
     ],
-    "id": "131",
-    "name": "Thunder God's Power"
+    "hit dmg% distribution": [
+      20,
+      20,
+      10,
+      10,
+      30,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 6
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "thunder",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 164,
+  "imp": {
+    "max atk": "200",
+    "max def": "200",
+    "max hp": "500",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "1247~1394",
+  "movement": {
+    "attack": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    }
+  },
+  "name": "Goddess Emilia",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Goddess Emilia",
+  "maxlv": "80",
+  "no": "164",
   "unitDisplayHomePosition_1W9CxaFK": "320,192,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "39,-47,1000,817",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "108,219,479,392,0",
@@ -402,5 +415,109 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "20:124:1,22:124:1,54:124:1,60:124:1,76:124:1,82:124:1"
+  "effectFrames": "20:124:1,22:124:1,54:124:1,60:124:1,76:124:1,82:124:1",
+  "evofrom": "40123",
+  "evointo": "40125",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40191",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "149",
+  "animation_idle": "64",
+  "animation_move": "16",
+  "movespeed_attack": "0.0024",
+  "movespeed_skill": "0.0024",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "26, 28, 60, 66, 82, 88",
+  "normal_distribute": "20, 20, 10, 10, 30, 10",
+  "normal_totaldistr": "100",
+  "bb_frames": "26, 28, 66, 72, 88, 94, 100",
+  "bb_distribute": "10, 10, 15, 15, 15, 15, 20",
+  "bb_totaldistr": "100",
+  "description": "A dual-wielding general mentioned in the records of the ruined Atharva Republic. She fought on the front lines, even during the war with the gods. In Atharva, she reached the same level as the Commander Weiss. Rumor was that they were lovers, but she vehemently denied this when asked. She lived her short life single, saying, \"I live for my sword, not love.\"",
+  "summon": "Only a great warrior could<br>have the power to subdue me!<br>What do you plan to do with me?",
+  "fusion": "How my power overflows!<br>My soul trembles with joy!!",
+  "evolution": "I will transcend and<br>evolve if it is asked of me.<br>Everyone should do the same.",
+  "hp_base": "3121",
+  "atk_base": "995",
+  "def_base": "954",
+  "rec_base": "922",
+  "hp_lord": "4707",
+  "atk_lord": "1341",
+  "def_lord": "1309",
+  "rec_lord": "1304",
+  "hp_anima": "5300",
+  "rec_anima": "1146",
+  "atk_breaker": "1499",
+  "def_breaker": "1151",
+  "atk_guardian": "1183",
+  "def_guardian": "1467",
+  "rec_guardian": "1225",
+  "def_oracle": "1230",
+  "hp_oracle": "4470",
+  "rec_oracle": "1541",
+  "hp_bonus": "500",
+  "atk_bonus": "200",
+  "def_bonus": "200",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "6",
+  "normaldc": "18",
+  "ls": "Thunder God's Power",
+  "lsdescription": "50% boost to Atk Power of Thunder Types",
+  "lstype": "Attack",
+  "bbdescription": "7 combo Thunder elemental power attack on single Enemy & probable Paralysis effect",
+  "bbnote": "80% chance",
+  "bbtype": "Offense",
+  "bbhits": "7",
+  "bbaoe": "1",
+  "bbgauge": "18",
+  "bbdc": "7",
+  "bbmultiplier": "400",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "40133",
+  "evomats3": "60144",
+  "evomats4": "40132",
+  "evomats5": "40191"
 }

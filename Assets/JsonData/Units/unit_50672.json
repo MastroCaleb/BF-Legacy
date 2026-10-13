@@ -1,63 +1,63 @@
 {
   "id": "50672",
-  "unitName": "La Guardo",
-  "no": "942",
-  "element": "Light",
-  "rarity": "★★★",
-  "cost": "6",
-  "maxlv": "40",
-  "basexp": "15",
-  "gender": "N",
-  "ai": "2",
-  "animation_attack": "108",
-  "animation_idle": "68",
-  "animation_move": "68",
-  "movespeed_attack": "6",
-  "movespeed_skill": "6",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "46, 51, 56, 61, 66, 71",
-  "normal_distribute": "16, 16, 17, 17, 17, 17",
-  "normal_totaldistr": "100",
-  "bb_frames": "48, 55, 62, 69, 76, 83",
-  "bb_distribute": "16, 16, 17, 17, 17, 17",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "description": "A machine from another world which somehow ended up in Ishgria. Based on the way its parts were constructed, it is believed that this machine was built for combat, but any details about it remain a mystery. Due to its low level of artificial intelligence, La Guardo is not very smart, though it is said to be capable of serving loyally whomever it deeds its \"master.\" Because many of its essential functions are currently unable to operate, it lacks the ability to respond appropriately to unexpected circumstances.",
-  "summon": "ARE YOU...MY MASTER?<br>IF I CAN BE OF SERVICE...<br>COMMAND AS YOU WILL...",
-  "fusion": "*Beep* *beep* *beep*<br>ENERGY INTAKE...<br>COMPLETE.",
-  "evolution": "",
-  "hp_base": "1850",
-  "atk_base": "930",
-  "def_base": "930",
-  "rec_base": "700",
-  "hp_lord": "3400",
-  "atk_lord": "1200",
-  "def_lord": "1200",
-  "rec_lord": "850",
-  "hp_anima": "3692",
-  "rec_anima": "772",
-  "atk_breaker": "1278",
-  "def_breaker": "1122",
-  "atk_guardian": "1122",
-  "def_guardian": "1278",
-  "rec_guardian": "811",
-  "def_oracle": "1161",
-  "hp_oracle": "3283",
-  "rec_oracle": "967",
-  "hp_bonus": "300",
-  "atk_bonus": "120",
-  "def_bonus": "120",
-  "rec_bonus": "120",
-  "lordonly": "",
-  "combo_hits": "6",
-  "normaldc": "12",
-  "ls": "Destructive Allure",
-  "lsdescription": "Small chance of ignoring an opponents' Def when attacking",
-  "lsnote": "10% chance",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 930,
+      "def": 930,
+      "hp": 1850,
+      "rec": 700
+    },
+    "_lord": {
+      "atk": 1200,
+      "def": 1200,
+      "hp": 3400,
+      "rec": 850
+    },
+    "anima": {
+      "atk": 1200,
+      "def": 1200,
+      "hp max": 3790,
+      "hp min": 3595,
+      "rec max": 811,
+      "rec min": 733
+    },
+    "breaker": {
+      "atk max": 1317,
+      "atk min": 1239,
+      "def max": 1161,
+      "def min": 1083,
+      "hp": 3400,
+      "rec": 850
+    },
+    "guardian": {
+      "atk": 1200,
+      "def max": 1317,
+      "def min": 1239,
+      "hp": 3400,
+      "rec max": 850,
+      "rec min": 772
+    },
+    "oracle": {
+      "atk": 1200,
+      "def max": 1200,
+      "def min": 1122,
+      "hp": 3400,
+      "rec max": 1006,
+      "rec min": 928
+    }
+  },
+  "leader_skill": {
+    "desc": "Small chance of ignoring an opponent's Def when attacking",
+    "effects": [
+      {
+        "ignore def%": 10,
+        "passive id": "29"
+      }
+    ],
+    "id": "2801",
+    "name": "Destructive Allure"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -322,96 +322,93 @@
     ],
     "name": "D-3 Photon Charge"
   },
-  "bbdescription": "6 combo Light attack on single enemy & boosts critical hit rate for 3 turns",
-  "bbnote": "25% boost",
-  "bbtype": "Support/Offense",
-  "bbhits": "6",
-  "bbaoe": "1",
-  "bbgauge": "15",
-  "bbdc": "12",
-  "bbmultiplier": "230",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "es": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "50673",
-  "evomats1": "50122",
-  "evomats2": "50122",
-  "evomats3": "50121",
-  "evomats4": "60143",
-  "evomats5": "60142",
-  "evoitem": "",
-  "evozelcost": "100000",
-  "stats": {
-    "_base": {
-      "atk": 930,
-      "def": 930,
-      "hp": 1850,
-      "rec": 700
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1200,
-      "def": 1200,
-      "hp": 3400,
-      "rec": 850
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1200,
-      "def": 1200,
-      "hp max": 3790,
-      "hp min": 3595,
-      "rec max": 811,
-      "rec min": 733
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 108
     },
-    "breaker": {
-      "atk max": 1317,
-      "atk min": 1239,
-      "def max": 1161,
-      "def min": 1083,
-      "hp": 3400,
-      "rec": 850
+    "idle": {
+      "total number of frames": 68
     },
-    "guardian": {
-      "atk": 1200,
-      "def max": 1317,
-      "def min": 1239,
-      "hp": 3400,
-      "rec max": 850,
-      "rec min": 772
-    },
-    "oracle": {
-      "atk": 1200,
-      "def max": 1200,
-      "def min": 1122,
-      "hp": 3400,
-      "rec max": 1006,
-      "rec min": 928
+    "move": {
+      "total number of frames": 68
     }
   },
-  "leader_skill": {
-    "desc": "Small chance of ignoring an opponent's Def when attacking",
-    "effects": [
-      {
-        "ignore def%": 10,
-        "passive id": "29"
-      }
+  "category": 50670,
+  "cost": "6",
+  "damage frames": {
+    "frame times": [
+      46,
+      51,
+      56,
+      61,
+      66,
+      71
     ],
-    "id": "2801",
-    "name": "Destructive Allure"
+    "hit dmg% distribution": [
+      16,
+      16,
+      17,
+      17,
+      17,
+      17
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 6
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "light",
+  "exp_pattern": 15,
+  "gender": "other",
+  "getting type": "farmable",
+  "guide_id": 942,
+  "imp": {
+    "max atk": "120",
+    "max def": "120",
+    "max hp": "300",
+    "max rec": "120"
+  },
+  "kind": "normal",
+  "lord damage range": "1117~1248",
+  "movement": {
+    "attack": {
+      "move speed": 6,
+      "move speed type": "2",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 6,
+      "move speed type": "2",
+      "move type": "3"
+    }
+  },
+  "name": "La Guardo",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "La Guardo",
+  "maxlv": "40",
+  "no": "942",
   "unitDisplayHomePosition_1W9CxaFK": "347,-25,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "31,202,680,578",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "106,311,380,323,0",
@@ -421,5 +418,108 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "1000",
   "sellCaution": false,
-  "effectFrames": "46:114:1,46:500171:1,51:114:1,51:500171:1,56:114:1,56:500171:1,61:114:1,61:500171:1,66:114:1,66:500171:1,66:500225:1,71:114:1,71:500171:1"
+  "effectFrames": "46:114:1,46:500171:1,51:114:1,51:500171:1,56:114:1,56:500171:1,61:114:1,61:500171:1,66:114:1,66:500171:1,66:500225:1,71:114:1,71:500171:1",
+  "evofrom": "",
+  "evointo": "50673",
+  "evozelcost": "100000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50122",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "50121",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60142",
+      "count": 1
+    }
+  ],
+  "basexp": "15",
+  "animation_attack": "108",
+  "animation_idle": "68",
+  "animation_move": "68",
+  "movespeed_attack": "6",
+  "movespeed_skill": "6",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "46, 51, 56, 61, 66, 71",
+  "normal_distribute": "16, 16, 17, 17, 17, 17",
+  "normal_totaldistr": "100",
+  "bb_frames": "48, 55, 62, 69, 76, 83",
+  "bb_distribute": "16, 16, 17, 17, 17, 17",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "description": "A machine from another world which somehow ended up in Ishgria. Based on the way its parts were constructed, it is believed that this machine was built for combat, but any details about it remain a mystery. Due to its low level of artificial intelligence, La Guardo is not very smart, though it is said to be capable of serving loyally whomever it deeds its \"master.\" Because many of its essential functions are currently unable to operate, it lacks the ability to respond appropriately to unexpected circumstances.",
+  "summon": "ARE YOU...MY MASTER?<br>IF I CAN BE OF SERVICE...<br>COMMAND AS YOU WILL...",
+  "fusion": "*Beep* *beep* *beep*<br>ENERGY INTAKE...<br>COMPLETE.",
+  "evolution": "",
+  "hp_base": "1850",
+  "atk_base": "930",
+  "def_base": "930",
+  "rec_base": "700",
+  "hp_lord": "3400",
+  "atk_lord": "1200",
+  "def_lord": "1200",
+  "rec_lord": "850",
+  "hp_anima": "3692",
+  "rec_anima": "772",
+  "atk_breaker": "1278",
+  "def_breaker": "1122",
+  "atk_guardian": "1122",
+  "def_guardian": "1278",
+  "rec_guardian": "811",
+  "def_oracle": "1161",
+  "hp_oracle": "3283",
+  "rec_oracle": "967",
+  "hp_bonus": "300",
+  "atk_bonus": "120",
+  "def_bonus": "120",
+  "rec_bonus": "120",
+  "lordonly": "",
+  "combo_hits": "6",
+  "normaldc": "12",
+  "ls": "Destructive Allure",
+  "lsdescription": "Small chance of ignoring an opponents' Def when attacking",
+  "lsnote": "10% chance",
+  "lstype": "Attack",
+  "bbdescription": "6 combo Light attack on single enemy & boosts critical hit rate for 3 turns",
+  "bbnote": "25% boost",
+  "bbtype": "Support/Offense",
+  "bbhits": "6",
+  "bbaoe": "1",
+  "bbgauge": "15",
+  "bbdc": "12",
+  "bbmultiplier": "230",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "es": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50122",
+  "evomats2": "50122",
+  "evomats3": "50121",
+  "evomats4": "60143",
+  "evomats5": "60142",
+  "evoitem": ""
 }

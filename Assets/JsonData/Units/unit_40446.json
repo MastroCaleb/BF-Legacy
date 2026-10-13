@@ -1,67 +1,94 @@
 {
   "id": "40446",
-  "unitName": "Immortal Beast Sargavel",
-  "no": "1003",
-  "element": "Thunder",
-  "rarity": "★★★★★★★",
-  "cost": "40",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "N",
-  "ai": "2",
-  "animation_attack": "183",
-  "animation_idle": "72",
-  "animation_move": "44",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "45, 48, 51, 69, 72, 75, 92, 96, 100, 104, 108, 112",
-  "normal_distribute": "12, 7, 5, 12, 7, 5, 16, 10, 8, 7, 6, 5",
-  "normal_totaldistr": "100",
-  "sbb_frames": "45, 47, 49, 51, 53, 55, 58, 60, 62, 64, 69, 71, 73, 75, 77, 79, 81, 83, 85, 87, 92, 95, 98, 101, 104, 107, 110, 113",
-  "sbb_distribute": "7, 3, 2, 3, 2, 3, 2, 3, 2, 3, 7, 3, 2, 3, 2, 3, 2, 3, 2, 3, 12, 8, 6, 4, 3, 3, 2, 2",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "45, 47, 49, 51, 53, 55, 58, 60, 62, 64, 69, 71, 73, 75, 77, 79, 81, 83, 85, 87, 92, 96, 100, 104, 108, 112, 116, 120, 124, 128, 132, 136",
-  "ubb_distribute": "6, 3, 2, 3, 2, 3, 2, 2, 2, 2, 6, 3, 2, 3, 2, 3, 2, 2, 2, 2, 10, 8, 6, 4, 3, 3, 2, 2, 2, 2, 2, 2",
-  "ubb_totaldistr": "100",
-  "sbb_effectdelay": "1",
-  "ubb_effectdelay": "1",
-  "description": "Appearing in front of those who bear a destiny with a great burden, legends say this phantom beast will gift them with a revelation. Some accounts state that Sargavel had been spotted in Ishgria as well. There are many speculations as to why it would appear in the land the gods abandoned, but the most convincing one claims that Ishgria was Sargavel's home. Though its true divinity is still questioned, there is no doubt that Sargavel's guidance of the strongest of Grand Gaia and its overwhelming strength made it closely reminiscent to a demon, but no proof has been found to substantiate this.",
-  "summon": "It is because some refuse<br>to believe in fate that demons<br>think themselves above others.",
-  "fusion": "The course of fate has been altered!<br>I require more power to help you<br>reach the dawn of a new age!",
-  "evolution": "You who sensed my presence in this<br>abyss, I give you my soul as a reward<br>for your great deeds.",
-  "hp_base": "5115",
-  "atk_base": "1769",
-  "def_base": "1599",
-  "rec_base": "1945",
-  "hp_lord": "6752",
-  "atk_lord": "2233",
-  "def_lord": "2000",
-  "rec_lord": "2405",
-  "hp_anima": "7644",
-  "rec_anima": "2167",
-  "atk_breaker": "2471",
-  "def_breaker": "1762",
-  "atk_guardian": "1995",
-  "def_guardian": "2238",
-  "rec_guardian": "2286",
-  "def_oracle": "1881",
-  "hp_oracle": "6395",
-  "rec_oracle": "2762",
-  "hp_bonus": "1000",
-  "atk_bonus": "300",
-  "def_bonus": "600",
-  "rec_bonus": "400",
-  "lordonly": "",
-  "combo_hits": "12",
-  "normaldc": "36",
-  "ls": "Ruling Beast's Commandment",
-  "lsdescription": "40% boost to max HP of all allies, probable HP recovery when attacked & recovers HP each turn",
-  "lsnote": "40% chance to heal 20% of damage & heal 500-1000 + 10% Rec",
-  "lstype": "Hit Points/Recovery",
+  "stats": {
+    "_base": {
+      "atk": 1769,
+      "def": 1599,
+      "hp": 5115,
+      "rec": 1945
+    },
+    "_lord": {
+      "atk": 2233,
+      "def": 2000,
+      "hp": 6752,
+      "rec": 2405
+    },
+    "anima": {
+      "atk": 2233,
+      "def": 2000,
+      "hp max": 7942,
+      "hp min": 7347,
+      "rec max": 2286,
+      "rec min": 2048
+    },
+    "breaker": {
+      "atk max": 2590,
+      "atk min": 2352,
+      "def max": 1881,
+      "def min": 1643,
+      "hp": 6752,
+      "rec": 2405
+    },
+    "guardian": {
+      "atk": 2233,
+      "def max": 2357,
+      "def min": 2119,
+      "hp": 6752,
+      "rec max": 2405,
+      "rec min": 2167
+    },
+    "oracle": {
+      "atk": 2233,
+      "def max": 2000,
+      "def min": 1762,
+      "hp": 6752,
+      "rec max": 2881,
+      "rec min": 2643
+    }
+  },
+  "leader_skill": {
+    "desc": "40% boost to max HP of all allies, probable HP recovery when attacked & recovers HP each turn",
+    "effects": [
+      {
+        "hp% buff": 40,
+        "passive id": "1"
+      },
+      {
+        "passive id": "33",
+        "rec% added (turn heal)": 10.0,
+        "turn heal high": 1000,
+        "turn heal low": 500
+      },
+      {
+        "dmg% to hp% when attacked chance%": 40,
+        "dmg% to hp% when attacked high": 20,
+        "dmg% to hp% when attacked low": 20,
+        "passive id": "24"
+      }
+    ],
+    "id": "5505",
+    "name": "Ruling Beast's Commandment"
+  },
+  "extra_skill": {
+    "desc": "Negates all status ailments",
+    "effects": [
+      {
+        "conditions": [],
+        "curse resist%": 100,
+        "injury resist%": 100,
+        "paralysis resist%": 100,
+        "passive id": "4",
+        "passive target": "self",
+        "poison resist%": 100,
+        "sick resist%": 100,
+        "weaken resist%": 100
+      }
+    ],
+    "id": "4800",
+    "name": "Rota Fortunae",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -630,14 +657,6 @@
     ],
     "name": "Cure Levin Cloud"
   },
-  "bbdescription": "Removes all status ailments and negates them for 3 turns, boosts max HP & slightly recovers HP",
-  "bbnote": "10% boost",
-  "bbtype": "Heal/Support",
-  "bbhits": "0",
-  "bbaoe": "0",
-  "bbgauge": "15",
-  "bbdc": "",
-  "bbmultiplier": "",
   "sbb": {
     "damage frames": [
       {
@@ -1260,14 +1279,6 @@
     ],
     "name": "Dinah Streak"
   },
-  "sbbdescription": "28 combo powerful Thunder attack on all foes, removes all status ailments and negates them for 3 turns & boosts BB gauge fill rate",
-  "sbbnote": "30% boost",
-  "sbbtype": "Support/Offense",
-  "sbbhits": "28",
-  "sbbaoe": "A",
-  "sbbgauge": "30",
-  "sbbdc": "28",
-  "sbbmultiplier": "500",
   "ubb": {
     "damage frames": [
       {
@@ -1407,6 +1418,193 @@
     ],
     "name": "Spark Domination"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 183
+    },
+    "idle": {
+      "total number of frames": 72
+    },
+    "move": {
+      "total number of frames": 44
+    }
+  },
+  "category": 40440,
+  "cost": "40",
+  "damage frames": {
+    "frame times": [
+      45,
+      48,
+      51,
+      69,
+      72,
+      75,
+      92,
+      96,
+      100,
+      104,
+      108,
+      112
+    ],
+    "hit dmg% distribution": [
+      12,
+      7,
+      5,
+      12,
+      7,
+      5,
+      16,
+      10,
+      8,
+      7,
+      6,
+      5
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 12
+  },
+  "drop check count": 3,
+  "element": "thunder",
+  "exp_pattern": 20,
+  "gender": "other",
+  "getting type": "rare summon",
+  "guide_id": 1003,
+  "imp": {
+    "max atk": "300",
+    "max def": "600",
+    "max hp": "1000",
+    "max rec": "400"
+  },
+  "kind": "normal",
+  "lord damage range": "2078~2322",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Immortal Beast Sargavel",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Immortal Beast Sargavel",
+  "maxlv": "120",
+  "no": "1003",
+  "unitDisplayHomePosition_1W9CxaFK": "326,417,120,328",
+  "unitDisplayDetailPosition_6z54rgb3": "-16,-177,1016,1185",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "90,100,508,593,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-5,-448,1016,1185",
+  "unitDisplaySummonPosition_KC3Jk8Br": "90,100,508,593,0",
+  "unitDisplayHpPosition_3BpHN6VD": "-30,65",
+  "unitDisplayCursorPosition": "-5,-17",
+  "sellPrice": "15000",
+  "sellCaution": false,
+  "effectFrames": "44:400106:1,45:400075:1,69:400075:1,92:400071:1,112:500091:1,115:300196:1,110:300273:1",
+  "evofrom": "40445",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "21",
+  "animation_attack": "183",
+  "animation_idle": "72",
+  "animation_move": "44",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "45, 48, 51, 69, 72, 75, 92, 96, 100, 104, 108, 112",
+  "normal_distribute": "12, 7, 5, 12, 7, 5, 16, 10, 8, 7, 6, 5",
+  "normal_totaldistr": "100",
+  "sbb_frames": "45, 47, 49, 51, 53, 55, 58, 60, 62, 64, 69, 71, 73, 75, 77, 79, 81, 83, 85, 87, 92, 95, 98, 101, 104, 107, 110, 113",
+  "sbb_distribute": "7, 3, 2, 3, 2, 3, 2, 3, 2, 3, 7, 3, 2, 3, 2, 3, 2, 3, 2, 3, 12, 8, 6, 4, 3, 3, 2, 2",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "45, 47, 49, 51, 53, 55, 58, 60, 62, 64, 69, 71, 73, 75, 77, 79, 81, 83, 85, 87, 92, 96, 100, 104, 108, 112, 116, 120, 124, 128, 132, 136",
+  "ubb_distribute": "6, 3, 2, 3, 2, 3, 2, 2, 2, 2, 6, 3, 2, 3, 2, 3, 2, 2, 2, 2, 10, 8, 6, 4, 3, 3, 2, 2, 2, 2, 2, 2",
+  "ubb_totaldistr": "100",
+  "sbb_effectdelay": "1",
+  "ubb_effectdelay": "1",
+  "description": "Appearing in front of those who bear a destiny with a great burden, legends say this phantom beast will gift them with a revelation. Some accounts state that Sargavel had been spotted in Ishgria as well. There are many speculations as to why it would appear in the land the gods abandoned, but the most convincing one claims that Ishgria was Sargavel's home. Though its true divinity is still questioned, there is no doubt that Sargavel's guidance of the strongest of Grand Gaia and its overwhelming strength made it closely reminiscent to a demon, but no proof has been found to substantiate this.",
+  "summon": "It is because some refuse<br>to believe in fate that demons<br>think themselves above others.",
+  "fusion": "The course of fate has been altered!<br>I require more power to help you<br>reach the dawn of a new age!",
+  "evolution": "You who sensed my presence in this<br>abyss, I give you my soul as a reward<br>for your great deeds.",
+  "hp_base": "5115",
+  "atk_base": "1769",
+  "def_base": "1599",
+  "rec_base": "1945",
+  "hp_lord": "6752",
+  "atk_lord": "2233",
+  "def_lord": "2000",
+  "rec_lord": "2405",
+  "hp_anima": "7644",
+  "rec_anima": "2167",
+  "atk_breaker": "2471",
+  "def_breaker": "1762",
+  "atk_guardian": "1995",
+  "def_guardian": "2238",
+  "rec_guardian": "2286",
+  "def_oracle": "1881",
+  "hp_oracle": "6395",
+  "rec_oracle": "2762",
+  "hp_bonus": "1000",
+  "atk_bonus": "300",
+  "def_bonus": "600",
+  "rec_bonus": "400",
+  "lordonly": "",
+  "combo_hits": "12",
+  "normaldc": "36",
+  "ls": "Ruling Beast's Commandment",
+  "lsdescription": "40% boost to max HP of all allies, probable HP recovery when attacked & recovers HP each turn",
+  "lsnote": "40% chance to heal 20% of damage & heal 500-1000 + 10% Rec",
+  "lstype": "Hit Points/Recovery",
+  "bbdescription": "Removes all status ailments and negates them for 3 turns, boosts max HP & slightly recovers HP",
+  "bbnote": "10% boost",
+  "bbtype": "Heal/Support",
+  "bbhits": "0",
+  "bbaoe": "0",
+  "bbgauge": "15",
+  "bbdc": "",
+  "bbmultiplier": "",
+  "sbbdescription": "28 combo powerful Thunder attack on all foes, removes all status ailments and negates them for 3 turns & boosts BB gauge fill rate",
+  "sbbnote": "30% boost",
+  "sbbtype": "Support/Offense",
+  "sbbhits": "28",
+  "sbbaoe": "A",
+  "sbbgauge": "30",
+  "sbbdc": "28",
+  "sbbmultiplier": "500",
   "ubbdescription": "32 combo massive Thunder attack on all foes, boosts enemies' Spark vulnerability for 3 turns & boosts Atk relative to max HP for 3 turns",
   "ubbnote": "100% boost & 20% HP to Atk",
   "ubbtype": "Support/Offense",
@@ -1418,112 +1616,10 @@
   "es": "Rota Fortunae",
   "esitem": "",
   "esdescription": "Negates all status ailments",
-  "evofrom": "40445",
-  "evointo": "",
   "evomats1": "",
   "evomats2": "",
   "evomats3": "",
   "evomats4": "",
   "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 1769,
-      "def": 1599,
-      "hp": 5115,
-      "rec": 1945
-    },
-    "_lord": {
-      "atk": 2233,
-      "def": 2000,
-      "hp": 6752,
-      "rec": 2405
-    },
-    "anima": {
-      "atk": 2233,
-      "def": 2000,
-      "hp max": 7942,
-      "hp min": 7347,
-      "rec max": 2286,
-      "rec min": 2048
-    },
-    "breaker": {
-      "atk max": 2590,
-      "atk min": 2352,
-      "def max": 1881,
-      "def min": 1643,
-      "hp": 6752,
-      "rec": 2405
-    },
-    "guardian": {
-      "atk": 2233,
-      "def max": 2357,
-      "def min": 2119,
-      "hp": 6752,
-      "rec max": 2405,
-      "rec min": 2167
-    },
-    "oracle": {
-      "atk": 2233,
-      "def max": 2000,
-      "def min": 1762,
-      "hp": 6752,
-      "rec max": 2881,
-      "rec min": 2643
-    }
-  },
-  "leader_skill": {
-    "desc": "40% boost to max HP of all allies, probable HP recovery when attacked & recovers HP each turn",
-    "effects": [
-      {
-        "hp% buff": 40,
-        "passive id": "1"
-      },
-      {
-        "passive id": "33",
-        "rec% added (turn heal)": 10.0,
-        "turn heal high": 1000,
-        "turn heal low": 500
-      },
-      {
-        "dmg% to hp% when attacked chance%": 40,
-        "dmg% to hp% when attacked high": 20,
-        "dmg% to hp% when attacked low": 20,
-        "passive id": "24"
-      }
-    ],
-    "id": "5505",
-    "name": "Ruling Beast's Commandment"
-  },
-  "extra_skill": {
-    "desc": "Negates all status ailments",
-    "effects": [
-      {
-        "conditions": [],
-        "curse resist%": 100,
-        "injury resist%": 100,
-        "paralysis resist%": 100,
-        "passive id": "4",
-        "passive target": "self",
-        "poison resist%": 100,
-        "sick resist%": 100,
-        "weaken resist%": 100
-      }
-    ],
-    "id": "4800",
-    "name": "Rota Fortunae",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "326,417,120,328",
-  "unitDisplayDetailPosition_6z54rgb3": "-16,-177,1016,1185",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "90,100,508,593,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-5,-448,1016,1185",
-  "unitDisplaySummonPosition_KC3Jk8Br": "90,100,508,593,0",
-  "unitDisplayHpPosition_3BpHN6VD": "-30,65",
-  "unitDisplayCursorPosition": "-5,-17",
-  "sellPrice": "15000",
-  "sellCaution": false,
-  "effectFrames": "44:400106:1,45:400075:1,69:400075:1,92:400071:1,112:500091:1,115:300196:1,110:300273:1"
+  "evoitem": ""
 }

@@ -1,68 +1,96 @@
 {
   "id": "51216",
-  "unitName": "Shining Wisdom Solos",
-  "no": "1645",
-  "element": "Light",
-  "rarity": "★★★★★★★",
-  "cost": "46",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "153",
-  "animation_idle": "52",
-  "animation_move": "5",
-  "movespeed_attack": "0.0041",
-  "movespeed_skill": "0.0041",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "63, 69, 75, 81, 87, 93, 99, 108, 118, 128",
-  "normal_distribute": "19, 15, 9, 9, 9, 9, 9, 8, 7, 6",
-  "normal_totaldistr": "100",
-  "bb_frames": "63, 66, 69, 72, 76, 80, 84, 88, 91, 95, 100, 106, 112, 118, 126",
-  "bb_distribute": "16, 11, 8, 7, 7, 7, 7, 7, 7, 6, 5, 4, 3, 3, 2",
-  "bb_totaldistr": "100",
-  "sbb_frames": "63, 66, 69, 72, 75, 78, 81, 84, 87, 90, 93, 96, 99, 103, 108, 114, 120, 126, 133",
-  "sbb_distribute": "14, 10, 7, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 4, 3, 3, 2, 2",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "63, 66, 69, 72, 75, 78, 81, 84, 87, 90, 93, 96, 99, 102, 105, 108, 111, 114, 119, 124, 129, 135, 141",
-  "ubb_distribute": "13, 9, 6, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 2, 2",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "1",
-  "ubb_effectdelay": "1",
-  "description": "A magician who studied under the great sage Bran. Solos was resolved to use magic for good, and often feared that his classmates were using it for dangerous and malicious purposes. Thus, when he learned that one of them, a man later known as the \"dark magician,\" had succeeded in bringing a corpse back to life, Solos was determined to stop him. However, attacking the corpse resulted in it going berserk, causing massive damage to their surroundings. Feeling responsible for this outcome, Solos challenged the cadaver to a battle to the death, losing his life in the process.",
-  "summon": "Power should be used wisely.<br>Don't you agree?<br>Heh. I have a feeling we will become good friends.",
-  "fusion": "With power comes responsibility...<br>Responsibility to do what is right.<br>I...shall not falter!",
-  "evolution": "",
-  "hp_base": "5106",
-  "atk_base": "1968",
-  "def_base": "2131",
-  "rec_base": "1930",
-  "hp_lord": "7338",
-  "atk_lord": "2707",
-  "def_lord": "2905",
-  "rec_lord": "2631",
-  "hp_anima": "8230",
-  "rec_anima": "2393",
-  "atk_breaker": "2945",
-  "def_breaker": "2667",
-  "def_guardian": "3143",
-  "rec_guardian": "2512",
-  "def_oracle": "2786",
-  "rec_oracle": "2988",
-  "hp_bonus": "1000",
-  "atk_bonus": "300",
-  "def_bonus": "600",
-  "rec_bonus": "400",
-  "lordonly": "",
-  "combo_hits": "10",
-  "normaldc": "4",
-  "ls": "Radiant Wisdom's Majesty",
-  "lsdescription": "50% boost to Def, max HP, reduces BB gauge required for BB & boosts BC efficacy",
-  "lsnote": "15% reduction & 30% BB fill rate",
+  "stats": {
+    "_base": {
+      "atk": 1968,
+      "def": 2131,
+      "hp": 5106,
+      "rec": 1930
+    },
+    "_lord": {
+      "atk": 2707,
+      "def": 2905,
+      "hp": 7338,
+      "rec": 2631
+    },
+    "anima": {
+      "atk": 2707,
+      "def": 2905,
+      "hp max": 8528,
+      "hp min": 7933,
+      "rec max": 2512,
+      "rec min": 2274
+    },
+    "breaker": {
+      "atk max": 3064,
+      "atk min": 2826,
+      "def max": 2786,
+      "def min": 2548,
+      "hp": 7338,
+      "rec": 2631
+    },
+    "guardian": {
+      "atk": 2707,
+      "def max": 3262,
+      "def min": 3024,
+      "hp": 7338,
+      "rec max": 2631,
+      "rec min": 2393
+    },
+    "oracle": {
+      "atk": 2707,
+      "def max": 2905,
+      "def min": 2667,
+      "hp": 7338,
+      "rec max": 3107,
+      "rec min": 2869
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to Def, max HP, reduces BB gauge required for BB & boosts BC efficacy",
+    "effects": [
+      {
+        "def% buff": 50,
+        "hp% buff": 50,
+        "passive id": "1"
+      },
+      {
+        "passive id": "48",
+        "reduced bb bc cost%": 15
+      },
+      {
+        "bb gauge fill rate%": 30,
+        "passive id": "32"
+      }
+    ],
+    "id": "4377",
+    "name": "Radiant Wisdom's Majesty"
+  },
+  "extra_skill": {
+    "desc": "Slightly boosts Def, Rec when BB gauge is over 50% & damage taken boosts BB gauge",
+    "effects": [
+      {
+        "bb gauge above % buff requirement": 50,
+        "conditions": [],
+        "def% buff": 30,
+        "passive id": "30",
+        "passive target": "self",
+        "rec% buff": 30
+      },
+      {
+        "bc fill when attacked high": 3,
+        "bc fill when attacked low": 2,
+        "bc fill when attacked%": 100,
+        "conditions": [],
+        "passive id": "25",
+        "passive target": "self"
+      }
+    ],
+    "id": "37200",
+    "name": "Pure Soul of the Wise",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -559,15 +587,6 @@
     ],
     "name": "Quart Auras"
   },
-  "bbdescription": "15 combo Light attack on all foes, considerably boosts BC efficacy for 3 turns, slightly reduces damage from Fire, Water, Earth, Thunder types for 1 turn & 50% damage reduction for 1 turn",
-  "bbnote": "30% BB fill rate & 10% elemental mitigation",
-  "bbtype": "Offense",
-  "bbhits": "15",
-  "bbaoe": "A",
-  "bbgauge": "29",
-  "bbdc": "15",
-  "bbmultiplier": "320",
-  "bb_hpscale": "false",
   "sbb": {
     "damage frames": [
       {
@@ -1276,15 +1295,6 @@
     ],
     "name": "Weisheit Magus"
   },
-  "sbbdescription": "19 combo powerful Light attack on all foes, hugely boosts Def for 3 turns, considerably boosts Def relative to Atk for 3 turns, damage taken considerably boosts BB gauge for 3 turns, slightly reduces damage from Light, Dark types for 1 turn & 50% damage reduction for 1 turn",
-  "sbbnote": "150% Def, 50% Atk to Def, fills 4-7 BC & 10% elemental mitigation",
-  "sbbtype": "Offense",
-  "sbbhits": "19",
-  "sbbaoe": "A",
-  "sbbgauge": "31",
-  "sbbdc": "19",
-  "sbbmultiplier": "520",
-  "sbb_hpscale": "false",
   "ubb": {
     "damage frames": [
       {
@@ -1452,6 +1462,218 @@
     ],
     "name": "Mitra's Divine Punishment"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 153
+    },
+    "idle": {
+      "total number of frames": 52
+    },
+    "move": {
+      "total number of frames": 5
+    }
+  },
+  "category": 51210,
+  "cost": "46",
+  "damage frames": {
+    "frame times": [
+      63,
+      69,
+      75,
+      81,
+      87,
+      93,
+      99,
+      108,
+      118,
+      128
+    ],
+    "hit dmg% distribution": [
+      19,
+      15,
+      9,
+      9,
+      9,
+      9,
+      9,
+      8,
+      7,
+      6
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 10
+  },
+  "drop check count": 4,
+  "element": "light",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 1645,
+  "imp": {
+    "max atk": "300",
+    "max def": "600",
+    "max hp": "1000",
+    "max rec": "400"
+  },
+  "kind": "normal",
+  "lord damage range": "2520~2815",
+  "movement": {
+    "attack": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    }
+  },
+  "name": "Shining Wisdom Solos",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Shining Wisdom Solos",
+  "maxlv": "120",
+  "no": "1645",
+  "unitDisplayHomePosition_1W9CxaFK": "481,158,174,475",
+  "unitDisplayDetailPosition_6z54rgb3": "-92,42,920,794",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "7,187,530,457,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-136,-229,976,842",
+  "unitDisplaySummonPosition_KC3Jk8Br": "7,187,530,457,0",
+  "unitDisplayHpPosition_3BpHN6VD": "0,53",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "15000",
+  "sellCaution": false,
+  "effectFrames": "24:200978:1,66:500931:1,63:400515:1,64:400991:1",
+  "evofrom": "",
+  "evointo": "51217",
+  "evozelcost": "3000000",
+  "evokarmacost": "1000000",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50394",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50123",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50191",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 2
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "153",
+  "animation_idle": "52",
+  "animation_move": "5",
+  "movespeed_attack": "0.0041",
+  "movespeed_skill": "0.0041",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "63, 69, 75, 81, 87, 93, 99, 108, 118, 128",
+  "normal_distribute": "19, 15, 9, 9, 9, 9, 9, 8, 7, 6",
+  "normal_totaldistr": "100",
+  "bb_frames": "63, 66, 69, 72, 76, 80, 84, 88, 91, 95, 100, 106, 112, 118, 126",
+  "bb_distribute": "16, 11, 8, 7, 7, 7, 7, 7, 7, 6, 5, 4, 3, 3, 2",
+  "bb_totaldistr": "100",
+  "sbb_frames": "63, 66, 69, 72, 75, 78, 81, 84, 87, 90, 93, 96, 99, 103, 108, 114, 120, 126, 133",
+  "sbb_distribute": "14, 10, 7, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 4, 3, 3, 2, 2",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "63, 66, 69, 72, 75, 78, 81, 84, 87, 90, 93, 96, 99, 102, 105, 108, 111, 114, 119, 124, 129, 135, 141",
+  "ubb_distribute": "13, 9, 6, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 2, 2",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "1",
+  "ubb_effectdelay": "1",
+  "description": "A magician who studied under the great sage Bran. Solos was resolved to use magic for good, and often feared that his classmates were using it for dangerous and malicious purposes. Thus, when he learned that one of them, a man later known as the \"dark magician,\" had succeeded in bringing a corpse back to life, Solos was determined to stop him. However, attacking the corpse resulted in it going berserk, causing massive damage to their surroundings. Feeling responsible for this outcome, Solos challenged the cadaver to a battle to the death, losing his life in the process.",
+  "summon": "Power should be used wisely.<br>Don't you agree?<br>Heh. I have a feeling we will become good friends.",
+  "fusion": "With power comes responsibility...<br>Responsibility to do what is right.<br>I...shall not falter!",
+  "evolution": "",
+  "hp_base": "5106",
+  "atk_base": "1968",
+  "def_base": "2131",
+  "rec_base": "1930",
+  "hp_lord": "7338",
+  "atk_lord": "2707",
+  "def_lord": "2905",
+  "rec_lord": "2631",
+  "hp_anima": "8230",
+  "rec_anima": "2393",
+  "atk_breaker": "2945",
+  "def_breaker": "2667",
+  "def_guardian": "3143",
+  "rec_guardian": "2512",
+  "def_oracle": "2786",
+  "rec_oracle": "2988",
+  "hp_bonus": "1000",
+  "atk_bonus": "300",
+  "def_bonus": "600",
+  "rec_bonus": "400",
+  "lordonly": "",
+  "combo_hits": "10",
+  "normaldc": "4",
+  "ls": "Radiant Wisdom's Majesty",
+  "lsdescription": "50% boost to Def, max HP, reduces BB gauge required for BB & boosts BC efficacy",
+  "lsnote": "15% reduction & 30% BB fill rate",
+  "bbdescription": "15 combo Light attack on all foes, considerably boosts BC efficacy for 3 turns, slightly reduces damage from Fire, Water, Earth, Thunder types for 1 turn & 50% damage reduction for 1 turn",
+  "bbnote": "30% BB fill rate & 10% elemental mitigation",
+  "bbtype": "Offense",
+  "bbhits": "15",
+  "bbaoe": "A",
+  "bbgauge": "29",
+  "bbdc": "15",
+  "bbmultiplier": "320",
+  "bb_hpscale": "false",
+  "sbbdescription": "19 combo powerful Light attack on all foes, hugely boosts Def for 3 turns, considerably boosts Def relative to Atk for 3 turns, damage taken considerably boosts BB gauge for 3 turns, slightly reduces damage from Light, Dark types for 1 turn & 50% damage reduction for 1 turn",
+  "sbbnote": "150% Def, 50% Atk to Def, fills 4-7 BC & 10% elemental mitigation",
+  "sbbtype": "Offense",
+  "sbbhits": "19",
+  "sbbaoe": "A",
+  "sbbgauge": "31",
+  "sbbdc": "19",
+  "sbbmultiplier": "520",
+  "sbb_hpscale": "false",
   "ubbdescription": "23 combo massive Light attack on all foes, enormously boosts Def for 3 turns, enormously boosts Def relative to Atk for 3 turns, enormously boosts BB gauge for 3 turns & enormously reduces damage from all element types for 2 turns",
   "ubbnote": "300% Def, 200% Atk to Def, fills 50 BC & 100% damage reduction",
   "ubbtype": "Offense",
@@ -1464,7 +1686,6 @@
   "es": "Pure Soul of the Wise",
   "esdescription": "Slightly boosts Def, Rec when BB gauge is over 50% & damage taken boosts BB gauge",
   "esnote": "30% Def, Rec & fills 2-3 BC",
-  "evointo": "51217",
   "evomats1": "50394",
   "evomats2": "50394",
   "evomats3": "50354",
@@ -1472,107 +1693,5 @@
   "evomats5": "50191",
   "evomats6": "50191",
   "evomats7": "60224",
-  "evomats8": "60224",
-  "evozelcost": "3000000",
-  "stats": {
-    "_base": {
-      "atk": 1968,
-      "def": 2131,
-      "hp": 5106,
-      "rec": 1930
-    },
-    "_lord": {
-      "atk": 2707,
-      "def": 2905,
-      "hp": 7338,
-      "rec": 2631
-    },
-    "anima": {
-      "atk": 2707,
-      "def": 2905,
-      "hp max": 8528,
-      "hp min": 7933,
-      "rec max": 2512,
-      "rec min": 2274
-    },
-    "breaker": {
-      "atk max": 3064,
-      "atk min": 2826,
-      "def max": 2786,
-      "def min": 2548,
-      "hp": 7338,
-      "rec": 2631
-    },
-    "guardian": {
-      "atk": 2707,
-      "def max": 3262,
-      "def min": 3024,
-      "hp": 7338,
-      "rec max": 2631,
-      "rec min": 2393
-    },
-    "oracle": {
-      "atk": 2707,
-      "def max": 2905,
-      "def min": 2667,
-      "hp": 7338,
-      "rec max": 3107,
-      "rec min": 2869
-    }
-  },
-  "leader_skill": {
-    "desc": "50% boost to Def, max HP, reduces BB gauge required for BB & boosts BC efficacy",
-    "effects": [
-      {
-        "def% buff": 50,
-        "hp% buff": 50,
-        "passive id": "1"
-      },
-      {
-        "passive id": "48",
-        "reduced bb bc cost%": 15
-      },
-      {
-        "bb gauge fill rate%": 30,
-        "passive id": "32"
-      }
-    ],
-    "id": "4377",
-    "name": "Radiant Wisdom's Majesty"
-  },
-  "extra_skill": {
-    "desc": "Slightly boosts Def, Rec when BB gauge is over 50% & damage taken boosts BB gauge",
-    "effects": [
-      {
-        "bb gauge above % buff requirement": 50,
-        "conditions": [],
-        "def% buff": 30,
-        "passive id": "30",
-        "passive target": "self",
-        "rec% buff": 30
-      },
-      {
-        "bc fill when attacked high": 3,
-        "bc fill when attacked low": 2,
-        "bc fill when attacked%": 100,
-        "conditions": [],
-        "passive id": "25",
-        "passive target": "self"
-      }
-    ],
-    "id": "37200",
-    "name": "Pure Soul of the Wise",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "481,158,174,475",
-  "unitDisplayDetailPosition_6z54rgb3": "-92,42,920,794",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "7,187,530,457,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-136,-229,976,842",
-  "unitDisplaySummonPosition_KC3Jk8Br": "7,187,530,457,0",
-  "unitDisplayHpPosition_3BpHN6VD": "0,53",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "15000",
-  "sellCaution": false,
-  "effectFrames": "24:200978:1,66:500931:1,63:400515:1,64:400991:1"
+  "evomats8": "60224"
 }

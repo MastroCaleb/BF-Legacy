@@ -1,58 +1,73 @@
 {
   "id": "50324",
-  "unitName": "Heavy God Nevsky",
-  "no": "652",
-  "element": "Light",
-  "rarity": "★★★★★",
-  "cost": "16",
-  "maxlv": "80",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "135",
-  "animation_idle": "128",
-  "animation_move": "5",
-  "movespeed_attack": "0.005",
-  "movespeed_skill": "8",
-  "speedtype_attack": "1",
-  "speedtype_skill": "1",
-  "movetype_attack": "1",
-  "movetype_skill": "3",
-  "normal_frames": "24, 28, 32, 78, 82, 86",
-  "normal_distribute": "20, 15, 15, 20, 15, 15",
-  "normal_totaldistr": "100",
-  "description": "A heavily armored soldier who appears in the tales about the migration of a group of refugees towards El Gaia. Having rescued Reed and his party from danger an innumerable amount of times, everyone acknowledged his ability, though his past and identity remained a total mystery since he never took off his helmet in front of others. Due to some reports left over which state that Eru, a soldier from the Bariura Empire, sometimes gazed at Nevsky as if thinking to himself, many believe they hailed from the same country. However, no conclusive evidence of this has been found.",
-  "summon": "I don't speak about my past.<br>Please focus on the fight at hand.",
-  "fusion": "I will train myself<br>thinking about who I want to become.<br>That is the secret to growth.",
-  "evolution": "Protecting people is my specialty.<br>And when I have to fight for them,<br>I become stronger than ever.",
-  "hp_base": "3604",
-  "atk_base": "1192",
-  "def_base": "1310",
-  "rec_base": "947",
-  "hp_lord": "5211",
-  "atk_lord": "1592",
-  "def_lord": "1764",
-  "rec_lord": "1265",
-  "hp_anima": "5804",
-  "rec_anima": "1107",
-  "atk_breaker": "1750",
-  "def_breaker": "1606",
-  "atk_guardian": "1434",
-  "def_guardian": "1922",
-  "rec_guardian": "1186",
-  "def_oracle": "1685",
-  "hp_oracle": "4974",
-  "rec_oracle": "1502",
-  "hp_bonus": "500",
-  "atk_bonus": "160",
-  "def_bonus": "160",
-  "rec_bonus": "280",
-  "lordonly": "",
-  "combo_hits": "6",
-  "normaldc": "12",
-  "ls": "Eternal Blessing",
-  "lsdescription": "Nullifies all status ailments and critical hits from enemies",
-  "lstype": "Defense",
+  "stats": {
+    "_base": {
+      "atk": 1192,
+      "def": 1310,
+      "hp": 3604,
+      "rec": 947
+    },
+    "_lord": {
+      "atk": 1592,
+      "def": 1764,
+      "hp": 5211,
+      "rec": 1265
+    },
+    "anima": {
+      "atk": 1592,
+      "def": 1764,
+      "hp max": 6001,
+      "hp min": 5606,
+      "rec max": 1186,
+      "rec min": 1028
+    },
+    "breaker": {
+      "atk max": 1829,
+      "atk min": 1671,
+      "def max": 1685,
+      "def min": 1527,
+      "hp": 5211,
+      "rec": 1265
+    },
+    "guardian": {
+      "atk": 1592,
+      "def max": 2001,
+      "def min": 1843,
+      "hp": 5211,
+      "rec max": 1265,
+      "rec min": 1107
+    },
+    "oracle": {
+      "atk": 1592,
+      "def max": 1764,
+      "def min": 1606,
+      "hp": 5211,
+      "rec max": 1581,
+      "rec min": 1423
+    }
+  },
+  "leader_skill": {
+    "desc": "Nullifies all status ailments and critical hits from enemies",
+    "effects": [
+      {
+        "curse resist%": 100,
+        "injury resist%": 100,
+        "paralysis resist%": 100,
+        "passive id": "4",
+        "poison resist%": 100,
+        "sick resist%": 100,
+        "weaken resist%": 100
+      },
+      {
+        "base crit% resist": 100,
+        "buff crit% resist": 100,
+        "passive id": "45"
+      }
+    ],
+    "id": "2107",
+    "name": "Eternal Blessing"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -307,103 +322,93 @@
     ],
     "name": "Divine Barrier"
   },
-  "bbdescription": "Boost to Def for all allies for 3 turns & slightly reduces damage taken",
-  "bbnote": "70% boost to Def, 10% damage reduction '''for 3 turns'''",
-  "bbtype": "Support",
-  "bbhits": "",
-  "bbaoe": "0",
-  "bbgauge": "20",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "50323",
-  "evointo": "50325",
-  "evomats1": "50354",
-  "evomats2": "50123",
-  "evomats3": "50191",
-  "evomats4": "50122",
-  "evomats5": "60224",
-  "evoitem": "",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 1192,
-      "def": 1310,
-      "hp": 3604,
-      "rec": 947
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1592,
-      "def": 1764,
-      "hp": 5211,
-      "rec": 1265
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1592,
-      "def": 1764,
-      "hp max": 6001,
-      "hp min": 5606,
-      "rec max": 1186,
-      "rec min": 1028
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 135
     },
-    "breaker": {
-      "atk max": 1829,
-      "atk min": 1671,
-      "def max": 1685,
-      "def min": 1527,
-      "hp": 5211,
-      "rec": 1265
+    "idle": {
+      "total number of frames": 128
     },
-    "guardian": {
-      "atk": 1592,
-      "def max": 2001,
-      "def min": 1843,
-      "hp": 5211,
-      "rec max": 1265,
-      "rec min": 1107
-    },
-    "oracle": {
-      "atk": 1592,
-      "def max": 1764,
-      "def min": 1606,
-      "hp": 5211,
-      "rec max": 1581,
-      "rec min": 1423
+    "move": {
+      "total number of frames": 5
     }
   },
-  "leader_skill": {
-    "desc": "Nullifies all status ailments and critical hits from enemies",
-    "effects": [
-      {
-        "curse resist%": 100,
-        "injury resist%": 100,
-        "paralysis resist%": 100,
-        "passive id": "4",
-        "poison resist%": 100,
-        "sick resist%": 100,
-        "weaken resist%": 100
-      },
-      {
-        "base crit% resist": 100,
-        "buff crit% resist": 100,
-        "passive id": "45"
-      }
+  "category": 50320,
+  "cost": "16",
+  "damage frames": {
+    "frame times": [
+      24,
+      28,
+      32,
+      78,
+      82,
+      86
     ],
-    "id": "2107",
-    "name": "Eternal Blessing"
+    "hit dmg% distribution": [
+      20,
+      15,
+      15,
+      20,
+      15,
+      15
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 6
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "light",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "farmable",
+  "guide_id": 652,
+  "imp": {
+    "max atk": "160",
+    "max def": "160",
+    "max hp": "500",
+    "max rec": "280"
+  },
+  "kind": "normal",
+  "lord damage range": "1481~1655",
+  "movement": {
+    "attack": {
+      "move speed": 0.005,
+      "move speed type": "1",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 8,
+      "move speed type": "1",
+      "move type": "3"
+    }
+  },
+  "name": "Heavy God Nevsky",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Heavy God Nevsky",
+  "maxlv": "80",
+  "no": "652",
   "unitDisplayHomePosition_1W9CxaFK": "634,228,170,464",
   "unitDisplayDetailPosition_6z54rgb3": "-299,-41,1265,931",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "157,355,319,277,0",
@@ -413,5 +418,105 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "18:125:1,22:125:1,26:125:1,24:300124:1,28:500173:1,32:500218:1,72:125:1,76:125:1,80:125:1,78:200084:1,72:500225:1,76:500225:1,80:500221:1"
+  "effectFrames": "18:125:1,22:125:1,26:125:1,24:300124:1,28:500173:1,32:500218:1,72:125:1,76:125:1,80:125:1,78:200084:1,72:500225:1,76:500225:1,80:500221:1",
+  "evofrom": "50323",
+  "evointo": "50325",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50123",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50122",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "135",
+  "animation_idle": "128",
+  "animation_move": "5",
+  "movespeed_attack": "0.005",
+  "movespeed_skill": "8",
+  "speedtype_attack": "1",
+  "speedtype_skill": "1",
+  "movetype_attack": "1",
+  "movetype_skill": "3",
+  "normal_frames": "24, 28, 32, 78, 82, 86",
+  "normal_distribute": "20, 15, 15, 20, 15, 15",
+  "normal_totaldistr": "100",
+  "description": "A heavily armored soldier who appears in the tales about the migration of a group of refugees towards El Gaia. Having rescued Reed and his party from danger an innumerable amount of times, everyone acknowledged his ability, though his past and identity remained a total mystery since he never took off his helmet in front of others. Due to some reports left over which state that Eru, a soldier from the Bariura Empire, sometimes gazed at Nevsky as if thinking to himself, many believe they hailed from the same country. However, no conclusive evidence of this has been found.",
+  "summon": "I don't speak about my past.<br>Please focus on the fight at hand.",
+  "fusion": "I will train myself<br>thinking about who I want to become.<br>That is the secret to growth.",
+  "evolution": "Protecting people is my specialty.<br>And when I have to fight for them,<br>I become stronger than ever.",
+  "hp_base": "3604",
+  "atk_base": "1192",
+  "def_base": "1310",
+  "rec_base": "947",
+  "hp_lord": "5211",
+  "atk_lord": "1592",
+  "def_lord": "1764",
+  "rec_lord": "1265",
+  "hp_anima": "5804",
+  "rec_anima": "1107",
+  "atk_breaker": "1750",
+  "def_breaker": "1606",
+  "atk_guardian": "1434",
+  "def_guardian": "1922",
+  "rec_guardian": "1186",
+  "def_oracle": "1685",
+  "hp_oracle": "4974",
+  "rec_oracle": "1502",
+  "hp_bonus": "500",
+  "atk_bonus": "160",
+  "def_bonus": "160",
+  "rec_bonus": "280",
+  "lordonly": "",
+  "combo_hits": "6",
+  "normaldc": "12",
+  "ls": "Eternal Blessing",
+  "lsdescription": "Nullifies all status ailments and critical hits from enemies",
+  "lstype": "Defense",
+  "bbdescription": "Boost to Def for all allies for 3 turns & slightly reduces damage taken",
+  "bbnote": "70% boost to Def, 10% damage reduction '''for 3 turns'''",
+  "bbtype": "Support",
+  "bbhits": "",
+  "bbaoe": "0",
+  "bbgauge": "20",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "50123",
+  "evomats3": "50191",
+  "evomats4": "50122",
+  "evomats5": "60224",
+  "evoitem": ""
 }

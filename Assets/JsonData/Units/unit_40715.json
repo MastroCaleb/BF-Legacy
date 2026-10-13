@@ -1,65 +1,73 @@
 {
   "id": "40715",
-  "unitName": "Hades Stun Radia",
-  "no": "1272",
-  "element": "Thunder",
-  "rarity": "★★★★★★",
-  "cost": "30",
-  "maxlv": "100",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "141",
-  "animation_idle": "52",
-  "animation_move": "52",
-  "movespeed_attack": "4",
-  "movespeed_skill": "4",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "43, 58, 73, 83, 86, 89, 92",
-  "normal_distribute": "12, 12, 12, 16, 16, 16, 16",
-  "normal_totaldistr": "100",
-  "bb_frames": "54, 58, 62, 66, 70, 74, 79, 81, 83, 85, 87",
-  "bb_distribute": "7, 7, 7, 7, 7, 7, 14, 11, 11, 11, 11",
-  "bb_totaldistr": "100",
-  "sbb_frames": "55, 59, 63, 67, 71, 74, 80, 82, 84, 86, 88, 90, 92, 94",
-  "sbb_distribute": "6, 6, 6, 6, 6, 6, 11, 8, 8, 8, 8, 8, 7, 6",
-  "sbb_totaldistr": "100",
-  "bb_effectdelay": "2",
-  "sbb_effectdelay": "2",
-  "description": "Radia's obsession with political authority stemmed from her rejection of the policies of her father, the emperor. Some suppose that her eventual devotion to faithfully following her father's orders was due to feeling a need to prove her loyalty. After her change of heart, she became bitter and spiteful, often quarreling with her siblings. However, some historians theorize that her complete dedication to her father was merely a way to hide her true feelings.",
-  "summon": "I can never go against you...<br>Everything shall be as you desire.<br>Please, do not doubt me...",
-  "fusion": "You needn't show me any sympathy.<br>It only makes it more painful...<br>No, please forget what I said.",
-  "evolution": "I shall serve you to the best of my ability. Please...don't hesitate to use all of my power.",
-  "hp_base": "4038",
-  "atk_base": "1794",
-  "def_base": "1609",
-  "rec_base": "1470",
-  "hp_lord": "5844",
-  "atk_lord": "2442",
-  "def_lord": "2194",
-  "rec_lord": "1999",
-  "hp_anima": "6586",
-  "rec_anima": "1801",
-  "atk_breaker": "2640",
-  "def_breaker": "1996",
-  "def_guardian": "2392",
-  "rec_guardian": "1900",
-  "def_oracle": "2095",
-  "rec_oracle": "2296",
-  "hp_bonus": "1000",
-  "atk_bonus": "200",
-  "def_bonus": "200",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "7",
-  "normaldc": "28",
-  "ls": "Scorpio's Sigil",
-  "lsdescription": "30% boost to max HP & boosts damage against status afflicted foes",
-  "lsnote": "50% boost",
-  "lstype": "Hit Points/Attack",
+  "stats": {
+    "_base": {
+      "atk": 1794,
+      "def": 1609,
+      "hp": 4038,
+      "rec": 1470
+    },
+    "_lord": {
+      "atk": 2442,
+      "def": 2194,
+      "hp": 5844,
+      "rec": 1999
+    },
+    "anima": {
+      "atk": 2442,
+      "def": 2194,
+      "hp max": 6834,
+      "hp min": 6339,
+      "rec max": 1900,
+      "rec min": 1702
+    },
+    "breaker": {
+      "atk max": 2739,
+      "atk min": 2541,
+      "def max": 2095,
+      "def min": 1897,
+      "hp": 5844,
+      "rec": 1999
+    },
+    "guardian": {
+      "atk": 2442,
+      "def max": 2491,
+      "def min": 2293,
+      "hp": 5844,
+      "rec max": 1999,
+      "rec min": 1801
+    },
+    "oracle": {
+      "atk": 2442,
+      "def max": 2194,
+      "def min": 1996,
+      "hp": 5844,
+      "rec max": 2395,
+      "rec min": 2197
+    }
+  },
+  "leader_skill": {
+    "desc": "30% boost to max HP & boosts damage against status afflicted foes",
+    "effects": [
+      {
+        "hp% buff": 30,
+        "passive id": "1"
+      },
+      {
+        "atk% buff when enemy has ailment": 50,
+        "atk% buff when enemy has curse": true,
+        "atk% buff when enemy has injury": true,
+        "atk% buff when enemy has paralysis": true,
+        "atk% buff when enemy has poison": true,
+        "atk% buff when enemy has sick": true,
+        "atk% buff when enemy has weaken": true,
+        "passive id": "74"
+      }
+    ],
+    "id": "5522",
+    "name": "Scorpio's Sigil"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -508,14 +516,6 @@
     ],
     "name": "Thunder Comet"
   },
-  "bbdescription": "11 combo Thunder attack on all foes, high probable Weak, Sick effects, adds probable Weak, Sick effects to attack for 3 turns & slightly boosts OD gauge",
-  "bbnote": "80% chance to inflict ailments, adds 18% chance to inflict ailments & fills 6% of OD gauge",
-  "bbtype": "Support/Offense",
-  "bbhits": "11",
-  "bbaoe": "A",
-  "bbgauge": "23",
-  "bbdc": "11",
-  "bbmultiplier": "270",
   "sbb": {
     "damage frames": [
       {
@@ -1020,6 +1020,190 @@
     ],
     "name": "Rigor Vestalia"
   },
+  "ubb": {},
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 141
+    },
+    "idle": {
+      "total number of frames": 52
+    },
+    "move": {
+      "total number of frames": 52
+    }
+  },
+  "category": 40710,
+  "cost": "30",
+  "damage frames": {
+    "frame times": [
+      43,
+      58,
+      73,
+      83,
+      86,
+      89,
+      92
+    ],
+    "hit dmg% distribution": [
+      12,
+      12,
+      12,
+      16,
+      16,
+      16,
+      16
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 7
+  },
+  "drop check count": 4,
+  "element": "thunder",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 1272,
+  "imp": {
+    "max atk": "200",
+    "max def": "200",
+    "max hp": "1000",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "2273~2539",
+  "movement": {
+    "attack": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    }
+  },
+  "name": "Hades Stun Radia",
+  "rarity": "6",
+  "sell caution": false,
+  "unitName": "Hades Stun Radia",
+  "maxlv": "100",
+  "no": "1272",
+  "unitDisplayHomePosition_1W9CxaFK": "434,154,174,475",
+  "unitDisplayDetailPosition_6z54rgb3": "-58,92,810,703",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "79,257,417,362,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-11,-213,810,703",
+  "unitDisplaySummonPosition_KC3Jk8Br": "79,257,417,362,0",
+  "unitDisplayHpPosition_3BpHN6VD": "3,40",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "8000",
+  "sellCaution": false,
+  "effectFrames": "40:400041:1,58:400041:1,78:400075:1,38:500638:1",
+  "evofrom": "40714",
+  "evointo": "40716",
+  "evozelcost": "1500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "40334",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 2
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "141",
+  "animation_idle": "52",
+  "animation_move": "52",
+  "movespeed_attack": "4",
+  "movespeed_skill": "4",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "43, 58, 73, 83, 86, 89, 92",
+  "normal_distribute": "12, 12, 12, 16, 16, 16, 16",
+  "normal_totaldistr": "100",
+  "bb_frames": "54, 58, 62, 66, 70, 74, 79, 81, 83, 85, 87",
+  "bb_distribute": "7, 7, 7, 7, 7, 7, 14, 11, 11, 11, 11",
+  "bb_totaldistr": "100",
+  "sbb_frames": "55, 59, 63, 67, 71, 74, 80, 82, 84, 86, 88, 90, 92, 94",
+  "sbb_distribute": "6, 6, 6, 6, 6, 6, 11, 8, 8, 8, 8, 8, 7, 6",
+  "sbb_totaldistr": "100",
+  "bb_effectdelay": "2",
+  "sbb_effectdelay": "2",
+  "description": "Radia's obsession with political authority stemmed from her rejection of the policies of her father, the emperor. Some suppose that her eventual devotion to faithfully following her father's orders was due to feeling a need to prove her loyalty. After her change of heart, she became bitter and spiteful, often quarreling with her siblings. However, some historians theorize that her complete dedication to her father was merely a way to hide her true feelings.",
+  "summon": "I can never go against you...<br>Everything shall be as you desire.<br>Please, do not doubt me...",
+  "fusion": "You needn't show me any sympathy.<br>It only makes it more painful...<br>No, please forget what I said.",
+  "evolution": "I shall serve you to the best of my ability. Please...don't hesitate to use all of my power.",
+  "hp_base": "4038",
+  "atk_base": "1794",
+  "def_base": "1609",
+  "rec_base": "1470",
+  "hp_lord": "5844",
+  "atk_lord": "2442",
+  "def_lord": "2194",
+  "rec_lord": "1999",
+  "hp_anima": "6586",
+  "rec_anima": "1801",
+  "atk_breaker": "2640",
+  "def_breaker": "1996",
+  "def_guardian": "2392",
+  "rec_guardian": "1900",
+  "def_oracle": "2095",
+  "rec_oracle": "2296",
+  "hp_bonus": "1000",
+  "atk_bonus": "200",
+  "def_bonus": "200",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "7",
+  "normaldc": "28",
+  "ls": "Scorpio's Sigil",
+  "lsdescription": "30% boost to max HP & boosts damage against status afflicted foes",
+  "lsnote": "50% boost",
+  "lstype": "Hit Points/Attack",
+  "bbdescription": "11 combo Thunder attack on all foes, high probable Weak, Sick effects, adds probable Weak, Sick effects to attack for 3 turns & slightly boosts OD gauge",
+  "bbnote": "80% chance to inflict ailments, adds 18% chance to inflict ailments & fills 6% of OD gauge",
+  "bbtype": "Support/Offense",
+  "bbhits": "11",
+  "bbaoe": "A",
+  "bbgauge": "23",
+  "bbdc": "11",
+  "bbmultiplier": "270",
   "sbbdescription": "14 combo powerful Thunder attack on all foes, hugely boosts Spark damage and damage against status afflicted foes for 3 turns & probable status ailment counter when attacked for 3 turns",
   "sbbnote": "80% boost to Spark damage, 150% boost to Atk against afflicted foes, 10% chance to reflect Curse, Poison, Paralysis & 15% chance to reflect Injury, Weak, Sick",
   "sbbtype": "Support/Offense",
@@ -1028,7 +1212,6 @@
   "sbbgauge": "29",
   "sbbdc": "14",
   "sbbmultiplier": "480",
-  "ubb": {},
   "ubbdescription": "",
   "ubbtype": "",
   "ubbhits": "",
@@ -1039,91 +1222,10 @@
   "es": "",
   "esitem": "",
   "esdescription": "",
-  "evofrom": "40714",
-  "evointo": "40716",
   "evomats1": "Thunder Mecha God",
   "evomats2": "Miracle Totem",
   "evomats3": "Thunder Totem",
   "evomats4": "Metal Mimic",
   "evomats5": "Metal Mimic",
-  "evoitem": "",
-  "evozelcost": "1500000",
-  "stats": {
-    "_base": {
-      "atk": 1794,
-      "def": 1609,
-      "hp": 4038,
-      "rec": 1470
-    },
-    "_lord": {
-      "atk": 2442,
-      "def": 2194,
-      "hp": 5844,
-      "rec": 1999
-    },
-    "anima": {
-      "atk": 2442,
-      "def": 2194,
-      "hp max": 6834,
-      "hp min": 6339,
-      "rec max": 1900,
-      "rec min": 1702
-    },
-    "breaker": {
-      "atk max": 2739,
-      "atk min": 2541,
-      "def max": 2095,
-      "def min": 1897,
-      "hp": 5844,
-      "rec": 1999
-    },
-    "guardian": {
-      "atk": 2442,
-      "def max": 2491,
-      "def min": 2293,
-      "hp": 5844,
-      "rec max": 1999,
-      "rec min": 1801
-    },
-    "oracle": {
-      "atk": 2442,
-      "def max": 2194,
-      "def min": 1996,
-      "hp": 5844,
-      "rec max": 2395,
-      "rec min": 2197
-    }
-  },
-  "leader_skill": {
-    "desc": "30% boost to max HP & boosts damage against status afflicted foes",
-    "effects": [
-      {
-        "hp% buff": 30,
-        "passive id": "1"
-      },
-      {
-        "atk% buff when enemy has ailment": 50,
-        "atk% buff when enemy has curse": true,
-        "atk% buff when enemy has injury": true,
-        "atk% buff when enemy has paralysis": true,
-        "atk% buff when enemy has poison": true,
-        "atk% buff when enemy has sick": true,
-        "atk% buff when enemy has weaken": true,
-        "passive id": "74"
-      }
-    ],
-    "id": "5522",
-    "name": "Scorpio's Sigil"
-  },
-  "extra_skill": {},
-  "unitDisplayHomePosition_1W9CxaFK": "434,154,174,475",
-  "unitDisplayDetailPosition_6z54rgb3": "-58,92,810,703",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "79,257,417,362,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-11,-213,810,703",
-  "unitDisplaySummonPosition_KC3Jk8Br": "79,257,417,362,0",
-  "unitDisplayHpPosition_3BpHN6VD": "3,40",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "8000",
-  "sellCaution": false,
-  "effectFrames": "40:400041:1,58:400041:1,78:400075:1,38:500638:1"
+  "evoitem": ""
 }

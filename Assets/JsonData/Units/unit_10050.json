@@ -1,61 +1,53 @@
 {
   "id": "10050",
-  "unitName": "Goblin",
-  "no": "67",
-  "element": "Fire",
-  "rarity": "★",
-  "cost": "2",
-  "maxlv": "12",
-  "basexp": "10",
-  "gender": "N",
-  "ai": "4",
-  "animation_attack": "69",
-  "animation_idle": "44",
-  "animation_move": "44",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "46",
-  "normal_distribute": "100",
-  "normal_totaldistr": "100",
-  "bb_frames": "46, 48, 51, 54",
-  "bb_distribute": "25, 25, 25, 25",
-  "bb_totaldistr": "100",
-  "description": "Goblins are said to be fairies who became hideous demons after being possessed by evil spirits. The mischievous nature of their fairy hearts lead them to cause trouble for humans. Although individually weak, their pack nature, high reproduction ability, and knowledge of weapons allow them to continually trouble folks all over the world.",
-  "summon": "You need me?<br>You need me that bad?<br>Hehe, I'll join you.",
-  "fusion": "Ahaha!<br>I'm overflowing with power!",
-  "evolution": "",
-  "hp_base": "1000",
-  "atk_base": "450",
-  "def_base": "250",
-  "rec_base": "100",
-  "hp_lord": "1860",
-  "atk_lord": "608",
-  "def_lord": "330",
-  "rec_lord": "170",
-  "hp_anima": "1943",
-  "rec_anima": "148",
-  "atk_breaker": "630",
-  "def_breaker": "308",
-  "atk_guardian": "586",
-  "def_guardian": "352",
-  "rec_guardian": "159",
-  "def_oracle": "319",
-  "hp_oracle": "1827",
-  "rec_oracle": "203",
-  "hp_bonus": "150",
-  "atk_bonus": "60",
-  "def_bonus": "60",
-  "rec_bonus": "60",
-  "lordonly": "",
-  "combo_hits": "1",
-  "normaldc": "2",
-  "ls": "",
-  "lsdescription": "",
-  "lstype": "",
+  "stats": {
+    "_base": {
+      "atk": 450,
+      "def": 250,
+      "hp": 1000,
+      "rec": 100
+    },
+    "_lord": {
+      "atk": 608,
+      "def": 330,
+      "hp": 1860,
+      "rec": 170
+    },
+    "anima": {
+      "atk": 608,
+      "def": 330,
+      "hp max": 1970,
+      "hp min": 1915,
+      "rec max": 159,
+      "rec min": 137
+    },
+    "breaker": {
+      "atk max": 641,
+      "atk min": 619,
+      "def max": 319,
+      "def min": 297,
+      "hp": 1860,
+      "rec": 170
+    },
+    "guardian": {
+      "atk": 608,
+      "def max": 363,
+      "def min": 341,
+      "hp": 1860,
+      "rec max": 170,
+      "rec min": 148
+    },
+    "oracle": {
+      "atk": 608,
+      "def max": 330,
+      "def min": 308,
+      "hp": 1860,
+      "rec max": 214,
+      "rec min": 192
+    }
+  },
+  "leader_skill": {},
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -224,85 +216,95 @@
     ],
     "name": "Goblin Attack"
   },
-  "bbdescription": "4 combo Fire elemental attack on single Enemy & boost to BC drop rate",
-  "bbnote": "50% boost",
-  "bbtype": "Offense",
-  "bbhits": "4",
-  "bbaoe": "1",
-  "bbgauge": "10",
-  "bbdc": "20",
-  "bbmultiplier": "120",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "10051",
-  "evomats1": "60142",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "2500",
-  "stats": {
-    "_base": {
-      "atk": 450,
-      "def": 250,
-      "hp": 1000,
-      "rec": 100
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_under",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 608,
-      "def": 330,
-      "hp": 1860,
-      "rec": 170
+    {
+      "action": "skill",
+      "chance%": 30.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 608,
-      "def": 330,
-      "hp max": 1970,
-      "hp min": 1915,
-      "rec max": 159,
-      "rec min": 137
+    {
+      "action": "attack",
+      "chance%": 70.0,
+      "target conditions": "hp_max",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 641,
-      "atk min": 619,
-      "def max": 319,
-      "def min": 297,
-      "hp": 1860,
-      "rec": 170
+    {
+      "action": "attack",
+      "chance%": 50.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "guardian": {
-      "atk": 608,
-      "def max": 363,
-      "def min": 341,
-      "hp": 1860,
-      "rec max": 170,
-      "rec min": 148
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 69
     },
-    "oracle": {
-      "atk": 608,
-      "def max": 330,
-      "def min": 308,
-      "hp": 1860,
-      "rec max": 214,
-      "rec min": 192
+    "idle": {
+      "total number of frames": 44
+    },
+    "move": {
+      "total number of frames": 44
     }
   },
-  "leader_skill": {},
-  "extra_skill": {},
+  "category": 10050,
+  "cost": "2",
+  "damage frames": {
+    "frame times": [
+      46
+    ],
+    "hit dmg% distribution": [
+      100
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 1
+  },
+  "drop check count": 2,
+  "element": "fire",
+  "exp_pattern": 10,
+  "gender": "other",
+  "getting type": "not eligible for achievement",
+  "guide_id": 67,
+  "imp": {
+    "max atk": "60",
+    "max def": "60",
+    "max hp": "150",
+    "max rec": "60"
+  },
+  "kind": "normal",
+  "lord damage range": "566~632",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Goblin",
+  "rarity": "1",
+  "sell caution": false,
+  "unitName": "Goblin",
+  "maxlv": "12",
+  "no": "67",
   "unitDisplayHomePosition_1W9CxaFK": "266,-80,174,473",
   "unitDisplayDetailPosition_6z54rgb3": "49,299,640,440",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "130,408,303,232,0",
@@ -312,5 +314,90 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "100",
   "sellCaution": false,
-  "effectFrames": "40:121:1"
+  "effectFrames": "40:121:1",
+  "evofrom": "",
+  "evointo": "10051",
+  "evozelcost": "2500",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "60142",
+      "count": 1
+    }
+  ],
+  "basexp": "10",
+  "animation_attack": "69",
+  "animation_idle": "44",
+  "animation_move": "44",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "46",
+  "normal_distribute": "100",
+  "normal_totaldistr": "100",
+  "bb_frames": "46, 48, 51, 54",
+  "bb_distribute": "25, 25, 25, 25",
+  "bb_totaldistr": "100",
+  "description": "Goblins are said to be fairies who became hideous demons after being possessed by evil spirits. The mischievous nature of their fairy hearts lead them to cause trouble for humans. Although individually weak, their pack nature, high reproduction ability, and knowledge of weapons allow them to continually trouble folks all over the world.",
+  "summon": "You need me?<br>You need me that bad?<br>Hehe, I'll join you.",
+  "fusion": "Ahaha!<br>I'm overflowing with power!",
+  "evolution": "",
+  "hp_base": "1000",
+  "atk_base": "450",
+  "def_base": "250",
+  "rec_base": "100",
+  "hp_lord": "1860",
+  "atk_lord": "608",
+  "def_lord": "330",
+  "rec_lord": "170",
+  "hp_anima": "1943",
+  "rec_anima": "148",
+  "atk_breaker": "630",
+  "def_breaker": "308",
+  "atk_guardian": "586",
+  "def_guardian": "352",
+  "rec_guardian": "159",
+  "def_oracle": "319",
+  "hp_oracle": "1827",
+  "rec_oracle": "203",
+  "hp_bonus": "150",
+  "atk_bonus": "60",
+  "def_bonus": "60",
+  "rec_bonus": "60",
+  "lordonly": "",
+  "combo_hits": "1",
+  "normaldc": "2",
+  "ls": "",
+  "lsdescription": "",
+  "lstype": "",
+  "bbdescription": "4 combo Fire elemental attack on single Enemy & boost to BC drop rate",
+  "bbnote": "50% boost",
+  "bbtype": "Offense",
+  "bbhits": "4",
+  "bbaoe": "1",
+  "bbgauge": "10",
+  "bbdc": "20",
+  "bbmultiplier": "120",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "60142",
+  "evomats2": "",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": "",
+  "evoitem": ""
 }

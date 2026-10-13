@@ -1,62 +1,68 @@
 {
   "id": "30213",
-  "unitName": "Earthly Il & Mina",
-  "no": "294",
-  "element": "Earth",
-  "rarity": "★★★★",
-  "cost": "10",
-  "maxlv": "60",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "1",
-  "animation_attack": "120",
-  "animation_idle": "48",
-  "animation_move": "28",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "20, 36, 62, 68",
-  "normal_distribute": "25, 25, 30, 20",
-  "normal_totaldistr": "100",
-  "bb_frames": "20, 36, 62, 68, 74, 80",
-  "bb_distribute": "20, 20, 30, 10, 10, 10",
-  "bb_totaldistr": "100",
-  "description": "The twin princesses Il and Mina, daughters of the last emperor of the Amdahl Empire. The skilled swordsman, Il, and the talented magician, Mina, full of resentment toward Palmyna which had destroyed their home nation, hid themselves away as they honed their skills. Often the targets of assassins, it is said they would draw their would-be attackers into the woods where they would then finish them off. They lived to cause trouble for the opposing army from which they fled when they were younger.",
-  "summon": "Is it strange we fight together?<br>Either way, we're sure we <br>can be of use to you.",
-  "fusion": "Aren't you scared, Mina?<br>No, I'm fine, Il...<br>As long as we're together...",
-  "evolution": "We can become stronger<br>because we have each other.<br>Did you know that, Summoner?",
-  "hp_base": "2791",
-  "atk_base": "920",
-  "def_base": "896",
-  "rec_base": "1010",
-  "hp_lord": "4356",
-  "atk_lord": "1323",
-  "def_lord": "1296",
-  "rec_lord": "1333",
-  "hp_anima": "4799",
-  "rec_anima": "1215",
-  "atk_breaker": "1441",
-  "def_breaker": "1178",
-  "atk_guardian": "1205",
-  "def_guardian": "1414",
-  "rec_guardian": "1274",
-  "def_oracle": "1237",
-  "hp_oracle": "4179",
-  "rec_oracle": "1510",
-  "hp_bonus": "400",
-  "atk_bonus": "160",
-  "def_bonus": "160",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "4",
-  "normaldc": "12",
-  "ls": "Cleansing Breeze",
-  "lsdescription": "Large boost to resistance against all status ailments",
-  "lsnote": "80% boost",
-  "lstype": "Defense",
+  "stats": {
+    "_base": {
+      "atk": 920,
+      "def": 896,
+      "hp": 2791,
+      "rec": 1010
+    },
+    "_lord": {
+      "atk": 1323,
+      "def": 1296,
+      "hp": 4356,
+      "rec": 1333
+    },
+    "anima": {
+      "atk": 1323,
+      "def": 1296,
+      "hp max": 4946,
+      "hp min": 4651,
+      "rec max": 1274,
+      "rec min": 1156
+    },
+    "breaker": {
+      "atk max": 1500,
+      "atk min": 1382,
+      "def max": 1237,
+      "def min": 1119,
+      "hp": 4356,
+      "rec": 1333
+    },
+    "guardian": {
+      "atk": 1323,
+      "def max": 1473,
+      "def min": 1355,
+      "hp": 4356,
+      "rec max": 1333,
+      "rec min": 1215
+    },
+    "oracle": {
+      "atk": 1323,
+      "def max": 1296,
+      "def min": 1178,
+      "hp": 4356,
+      "rec max": 1569,
+      "rec min": 1451
+    }
+  },
+  "leader_skill": {
+    "desc": "Large boost to resistance against all status ailments",
+    "effects": [
+      {
+        "curse resist%": 80,
+        "injury resist%": 80,
+        "paralysis resist%": 80,
+        "passive id": "4",
+        "poison resist%": 80,
+        "sick resist%": 80,
+        "weaken resist%": 80
+      }
+    ],
+    "id": "2101",
+    "name": "Cleansing Breeze"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -219,98 +225,89 @@
     ],
     "name": "Twins Radiation"
   },
-  "bbdescription": "6 combo powerful Earth attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "6",
-  "bbaoe": "A",
-  "bbgauge": "26",
-  "bbdc": "6",
-  "bbmultiplier": "190",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "30212",
-  "evointo": "30214",
-  "evomats1": "30133",
-  "evomats2": "30132",
-  "evomats3": "30132",
-  "evomats4": "60143",
-  "evomats5": "60143",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 920,
-      "def": 896,
-      "hp": 2791,
-      "rec": 1010
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "party"
     },
-    "_lord": {
-      "atk": 1323,
-      "def": 1296,
-      "hp": 4356,
-      "rec": 1333
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1323,
-      "def": 1296,
-      "hp max": 4946,
-      "hp min": 4651,
-      "rec max": 1274,
-      "rec min": 1156
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 120
     },
-    "breaker": {
-      "atk max": 1500,
-      "atk min": 1382,
-      "def max": 1237,
-      "def min": 1119,
-      "hp": 4356,
-      "rec": 1333
+    "idle": {
+      "total number of frames": 48
     },
-    "guardian": {
-      "atk": 1323,
-      "def max": 1473,
-      "def min": 1355,
-      "hp": 4356,
-      "rec max": 1333,
-      "rec min": 1215
-    },
-    "oracle": {
-      "atk": 1323,
-      "def max": 1296,
-      "def min": 1178,
-      "hp": 4356,
-      "rec max": 1569,
-      "rec min": 1451
+    "move": {
+      "total number of frames": 28
     }
   },
-  "leader_skill": {
-    "desc": "Large boost to resistance against all status ailments",
-    "effects": [
-      {
-        "curse resist%": 80,
-        "injury resist%": 80,
-        "paralysis resist%": 80,
-        "passive id": "4",
-        "poison resist%": 80,
-        "sick resist%": 80,
-        "weaken resist%": 80
-      }
+  "category": 30210,
+  "cost": "10",
+  "damage frames": {
+    "frame times": [
+      20,
+      36,
+      62,
+      68
     ],
-    "id": "2101",
-    "name": "Cleansing Breeze"
+    "hit dmg% distribution": [
+      25,
+      25,
+      30,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 4
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "earth",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 294,
+  "imp": {
+    "max atk": "160",
+    "max def": "160",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "1231~1375",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Earthly Il & Mina",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Earthly Il & Mina",
+  "maxlv": "60",
+  "no": "294",
   "unitDisplayHomePosition_1W9CxaFK": "496,156,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-207,-9,1097,916",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "215,387,216,240,0",
@@ -320,5 +317,99 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "14:123:1,30:123:1,60:250:1"
+  "effectFrames": "14:123:1,30:123:1,60:250:1",
+  "evofrom": "30212",
+  "evointo": "30214",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "30133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30132",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 2
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "120",
+  "animation_idle": "48",
+  "animation_move": "28",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "20, 36, 62, 68",
+  "normal_distribute": "25, 25, 30, 20",
+  "normal_totaldistr": "100",
+  "bb_frames": "20, 36, 62, 68, 74, 80",
+  "bb_distribute": "20, 20, 30, 10, 10, 10",
+  "bb_totaldistr": "100",
+  "description": "The twin princesses Il and Mina, daughters of the last emperor of the Amdahl Empire. The skilled swordsman, Il, and the talented magician, Mina, full of resentment toward Palmyna which had destroyed their home nation, hid themselves away as they honed their skills. Often the targets of assassins, it is said they would draw their would-be attackers into the woods where they would then finish them off. They lived to cause trouble for the opposing army from which they fled when they were younger.",
+  "summon": "Is it strange we fight together?<br>Either way, we're sure we <br>can be of use to you.",
+  "fusion": "Aren't you scared, Mina?<br>No, I'm fine, Il...<br>As long as we're together...",
+  "evolution": "We can become stronger<br>because we have each other.<br>Did you know that, Summoner?",
+  "hp_base": "2791",
+  "atk_base": "920",
+  "def_base": "896",
+  "rec_base": "1010",
+  "hp_lord": "4356",
+  "atk_lord": "1323",
+  "def_lord": "1296",
+  "rec_lord": "1333",
+  "hp_anima": "4799",
+  "rec_anima": "1215",
+  "atk_breaker": "1441",
+  "def_breaker": "1178",
+  "atk_guardian": "1205",
+  "def_guardian": "1414",
+  "rec_guardian": "1274",
+  "def_oracle": "1237",
+  "hp_oracle": "4179",
+  "rec_oracle": "1510",
+  "hp_bonus": "400",
+  "atk_bonus": "160",
+  "def_bonus": "160",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "4",
+  "normaldc": "12",
+  "ls": "Cleansing Breeze",
+  "lsdescription": "Large boost to resistance against all status ailments",
+  "lsnote": "80% boost",
+  "lstype": "Defense",
+  "bbdescription": "6 combo powerful Earth attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "6",
+  "bbaoe": "A",
+  "bbgauge": "26",
+  "bbdc": "6",
+  "bbmultiplier": "190",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "30133",
+  "evomats2": "30132",
+  "evomats3": "30132",
+  "evomats4": "60143",
+  "evomats5": "60143"
 }

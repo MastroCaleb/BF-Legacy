@@ -1,57 +1,72 @@
 {
   "id": "60565",
-  "unitName": "Dark Lantern Lumie",
-  "unreleased": "true",
-  "no": "998",
-  "element": "Dark",
-  "rarity": "★★★★★★",
-  "cost": "29",
-  "maxlv": "100",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "146",
-  "animation_idle": "88",
-  "animation_move": "21",
-  "movespeed_attack": "0.005",
-  "movespeed_skill": "0.005",
-  "speedtype_attack": "1",
-  "speedtype_skill": "1",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "40, 45, 50, 55, 60, 65, 70, 75",
-  "normal_distribute": "25, 21, 16, 11, 9, 7, 6, 5",
-  "normal_totaldistr": "100",
-  "bb_frames": "40, 45, 50, 55, 60, 65, 70, 75, 80, 85",
-  "bb_distribute": "23, 19, 14, 10, 9, 7, 6, 5, 4, 3",
-  "bb_totaldistr": "100",
-  "sbb_frames": "40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95",
-  "sbb_distribute": "19, 14, 10, 9, 8, 8, 7, 7, 6, 5, 4, 3",
-  "sbb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "1",
-  "description": "A magician from the Bariura Empire belonging to the special military force supervised directly by Shida. Though her personality was gentle, her beloved demonic lantern is said to have held a great amount of dark power. Due to her lantern's ability to absorb and materialize any surrounding chemical elements, Shida took a particular interest in Lumie and had her help him conduct confidential experiments in absolute secrecy. Their research progressed at a faster rate than they had initially expected, but Lumie distanced herself from it all shortly afterwards to conduct her own experiments.",
-  "summon": "Are you keen on my lantern or me? I'll show you lots of spirits to celebrate our meeting.",
-  "fusion": "I can feel my lantern's will... If it keeps absorbing dark power, I don't know what will happen.",
-  "evolution": "",
-  "hp_base": "3852",
-  "atk_base": "1391",
-  "def_base": "1423",
-  "rec_base": "1562",
-  "hp_lord": "5436",
-  "atk_lord": "1855",
-  "def_lord": "1898",
-  "rec_lord": "2082",
-  "hp_bonus": "1000",
-  "atk_bonus": "440",
-  "def_bonus": "400",
-  "rec_bonus": "400",
-  "lordonly": "y",
-  "combo_hits": "8",
-  "normaldc": "16",
-  "ls": "Demon Lantern's Flicker",
-  "lsdescription": "20% boost to max HP and Def of all allies, slightly boosts BB gauge fill rate & boosts efficacy of HC",
-  "lsnote": "20% BB gauge fill rate & 25% boost to HC effectiveness",
+  "stats": {
+    "_base": {
+      "atk": 1391,
+      "def": 1423,
+      "hp": 3852,
+      "rec": 1562
+    },
+    "_lord": {
+      "atk": 1855,
+      "def": 1898,
+      "hp": 5436,
+      "rec": 2082
+    },
+    "anima": {
+      "atk": 1855,
+      "def": 1898,
+      "hp max": 6426,
+      "hp min": 5931,
+      "rec max": 1983,
+      "rec min": 1785
+    },
+    "breaker": {
+      "atk max": 2152,
+      "atk min": 1954,
+      "def max": 1799,
+      "def min": 1601,
+      "hp": 5436,
+      "rec": 2082
+    },
+    "guardian": {
+      "atk": 1855,
+      "def max": 2195,
+      "def min": 1997,
+      "hp": 5436,
+      "rec max": 2082,
+      "rec min": 1884
+    },
+    "oracle": {
+      "atk": 1855,
+      "def max": 1898,
+      "def min": 1700,
+      "hp": 5436,
+      "rec max": 2478,
+      "rec min": 2280
+    }
+  },
+  "leader_skill": {
+    "desc": "20% boost to max HP and Def of all allies, slightly boosts BB gauge fill rate & boosts efficacy of HC",
+    "effects": [
+      {
+        "def% buff": 20,
+        "hp% buff": 20,
+        "passive id": "1"
+      },
+      {
+        "bb gauge fill rate%": 20,
+        "passive id": "32"
+      },
+      {
+        "hc effectiveness%": 25,
+        "passive id": "10"
+      }
+    ],
+    "id": "9130",
+    "name": "Demon Lantern's Flicker"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -354,22 +369,6 @@
     ],
     "name": "Sorcery Wand"
   },
-  "bbdescription": "10 combo powerful Dark attack on all foes & probable 1 turn Atk reduction",
-  "bbnote": "{{UnitBuffList",
-  "buff_1_proc": "1",
-  "buff_1_potency": "420% damage modifier",
-  "buff_1_duration": "—",
-  "buff_1_target": "All enemies",
-  "buff_2_proc": "3",
-  "buff_2_potency": "Heals 1600~1900 + 10% Rec of HP each turn",
-  "buff_2_duration": "3 turns",
-  "buff_2_target": "All allies",
-  "bbtype": "Support/Offense",
-  "bbhits": "10",
-  "bbaoe": "A",
-  "bbgauge": "23",
-  "bbdc": "10",
-  "bbmultiplier": "250",
   "sbb": {
     "damage frames": [
       {
@@ -880,6 +879,197 @@
     ],
     "name": "Sheer Gloom"
   },
+  "ubb": {},
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 146
+    },
+    "idle": {
+      "total number of frames": 88
+    },
+    "move": {
+      "total number of frames": 21
+    }
+  },
+  "category": 60560,
+  "cost": "29",
+  "damage frames": {
+    "frame times": [
+      40,
+      45,
+      50,
+      55,
+      60,
+      65,
+      70,
+      75
+    ],
+    "hit dmg% distribution": [
+      25,
+      21,
+      16,
+      11,
+      9,
+      7,
+      6,
+      5
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 8
+  },
+  "drop check count": 2,
+  "element": "dark",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "farmable",
+  "guide_id": 998,
+  "imp": {
+    "max atk": "400",
+    "max def": "400",
+    "max hp": "1000",
+    "max rec": "400"
+  },
+  "kind": "normal",
+  "lord damage range": "1726~1929",
+  "movement": {
+    "attack": {
+      "move speed": 0.005,
+      "move speed type": "1",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.005,
+      "move speed type": "1",
+      "move type": "1"
+    }
+  },
+  "name": "Dark Lantern Lumie",
+  "rarity": "6",
+  "sell caution": false,
+  "unitName": "Dark Lantern Lumie",
+  "maxlv": "100",
+  "no": "998",
+  "unitDisplayHomePosition_1W9CxaFK": "391,76,200,546",
+  "unitDisplayDetailPosition_6z54rgb3": "-43,139,790,651",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "69,261,427,352,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "34,-160,790,651",
+  "unitDisplaySummonPosition_KC3Jk8Br": "69,261,427,352,0",
+  "unitDisplayHpPosition_3BpHN6VD": "-1,21",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "8000",
+  "sellCaution": false,
+  "effectFrames": "40:600170:1,50:360:1,60:600170:1,70:360:1,75:681:1,25:600255:1",
+  "evofrom": "",
+  "evointo": "60566",
+  "evozelcost": "1500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "60344",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60123",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60201",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    }
+  ],
+  "unreleased": "true",
+  "basexp": "21",
+  "animation_attack": "146",
+  "animation_idle": "88",
+  "animation_move": "21",
+  "movespeed_attack": "0.005",
+  "movespeed_skill": "0.005",
+  "speedtype_attack": "1",
+  "speedtype_skill": "1",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "40, 45, 50, 55, 60, 65, 70, 75",
+  "normal_distribute": "25, 21, 16, 11, 9, 7, 6, 5",
+  "normal_totaldistr": "100",
+  "bb_frames": "40, 45, 50, 55, 60, 65, 70, 75, 80, 85",
+  "bb_distribute": "23, 19, 14, 10, 9, 7, 6, 5, 4, 3",
+  "bb_totaldistr": "100",
+  "sbb_frames": "40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95",
+  "sbb_distribute": "19, 14, 10, 9, 8, 8, 7, 7, 6, 5, 4, 3",
+  "sbb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "1",
+  "description": "A magician from the Bariura Empire belonging to the special military force supervised directly by Shida. Though her personality was gentle, her beloved demonic lantern is said to have held a great amount of dark power. Due to her lantern's ability to absorb and materialize any surrounding chemical elements, Shida took a particular interest in Lumie and had her help him conduct confidential experiments in absolute secrecy. Their research progressed at a faster rate than they had initially expected, but Lumie distanced herself from it all shortly afterwards to conduct her own experiments.",
+  "summon": "Are you keen on my lantern or me? I'll show you lots of spirits to celebrate our meeting.",
+  "fusion": "I can feel my lantern's will... If it keeps absorbing dark power, I don't know what will happen.",
+  "evolution": "",
+  "hp_base": "3852",
+  "atk_base": "1391",
+  "def_base": "1423",
+  "rec_base": "1562",
+  "hp_lord": "5436",
+  "atk_lord": "1855",
+  "def_lord": "1898",
+  "rec_lord": "2082",
+  "hp_bonus": "1000",
+  "atk_bonus": "440",
+  "def_bonus": "400",
+  "rec_bonus": "400",
+  "lordonly": "y",
+  "combo_hits": "8",
+  "normaldc": "16",
+  "ls": "Demon Lantern's Flicker",
+  "lsdescription": "20% boost to max HP and Def of all allies, slightly boosts BB gauge fill rate & boosts efficacy of HC",
+  "lsnote": "20% BB gauge fill rate & 25% boost to HC effectiveness",
+  "bbdescription": "10 combo powerful Dark attack on all foes & probable 1 turn Atk reduction",
+  "bbnote": "{{UnitBuffList",
+  "buff_1_proc": "1",
+  "buff_1_potency": "420% damage modifier",
+  "buff_1_duration": "—",
+  "buff_1_target": "All enemies",
+  "buff_2_proc": "3",
+  "buff_2_potency": "Heals 1600~1900 + 10% Rec of HP each turn",
+  "buff_2_duration": "3 turns",
+  "buff_2_target": "All allies",
+  "bbtype": "Support/Offense",
+  "bbhits": "10",
+  "bbaoe": "A",
+  "bbgauge": "23",
+  "bbdc": "10",
+  "bbmultiplier": "250",
   "sbbdescription": "12 combo powerful Dark attack on all foes, probable 1 turn Atk reduction & gradually recovers HP and boosts BB gauge for 3 turns",
   "sbbnote": "{{UnitBuffList",
   "buff_3_proc": "19",
@@ -896,7 +1086,6 @@
   "sbbgauge": "25",
   "sbbdc": "12",
   "sbbmultiplier": "420",
-  "ubb": {},
   "ubbdescription": "",
   "ubbtype": "",
   "ubbhits": "",
@@ -907,90 +1096,10 @@
   "es": "",
   "esitem": "",
   "esdescription": "",
-  "evofrom": "",
-  "evointo": "60566",
   "evomats1": "60344",
   "evomats2": "50354",
   "evomats3": "60123",
   "evomats4": "60201",
   "evomats5": "60224",
-  "evoitem": "",
-  "evozelcost": "1500000",
-  "stats": {
-    "_base": {
-      "atk": 1391,
-      "def": 1423,
-      "hp": 3852,
-      "rec": 1562
-    },
-    "_lord": {
-      "atk": 1855,
-      "def": 1898,
-      "hp": 5436,
-      "rec": 2082
-    },
-    "anima": {
-      "atk": 1855,
-      "def": 1898,
-      "hp max": 6426,
-      "hp min": 5931,
-      "rec max": 1983,
-      "rec min": 1785
-    },
-    "breaker": {
-      "atk max": 2152,
-      "atk min": 1954,
-      "def max": 1799,
-      "def min": 1601,
-      "hp": 5436,
-      "rec": 2082
-    },
-    "guardian": {
-      "atk": 1855,
-      "def max": 2195,
-      "def min": 1997,
-      "hp": 5436,
-      "rec max": 2082,
-      "rec min": 1884
-    },
-    "oracle": {
-      "atk": 1855,
-      "def max": 1898,
-      "def min": 1700,
-      "hp": 5436,
-      "rec max": 2478,
-      "rec min": 2280
-    }
-  },
-  "leader_skill": {
-    "desc": "20% boost to max HP and Def of all allies, slightly boosts BB gauge fill rate & boosts efficacy of HC",
-    "effects": [
-      {
-        "def% buff": 20,
-        "hp% buff": 20,
-        "passive id": "1"
-      },
-      {
-        "bb gauge fill rate%": 20,
-        "passive id": "32"
-      },
-      {
-        "hc effectiveness%": 25,
-        "passive id": "10"
-      }
-    ],
-    "id": "9130",
-    "name": "Demon Lantern's Flicker"
-  },
-  "extra_skill": {},
-  "unitDisplayHomePosition_1W9CxaFK": "391,76,200,546",
-  "unitDisplayDetailPosition_6z54rgb3": "-43,139,790,651",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "69,261,427,352,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "34,-160,790,651",
-  "unitDisplaySummonPosition_KC3Jk8Br": "69,261,427,352,0",
-  "unitDisplayHpPosition_3BpHN6VD": "-1,21",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "8000",
-  "sellCaution": false,
-  "effectFrames": "40:600170:1,50:360:1,60:600170:1,70:360:1,75:681:1,25:600255:1"
+  "evoitem": ""
 }

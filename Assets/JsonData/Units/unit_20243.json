@@ -1,62 +1,67 @@
 {
   "id": "20243",
-  "unitName": "Eliza",
-  "freetext": ":''For other uses, see Eliza (disambiguation)''",
-  "no": "393",
-  "element": "Water",
-  "rarity": "★★★★",
-  "cost": "10",
-  "maxlv": "60",
-  "basexp": "15",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "114",
-  "animation_idle": "60",
-  "animation_move": "21",
-  "movespeed_attack": "0.0024",
-  "movespeed_skill": "0.0024",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "4, 15, 27, 65, 73",
-  "normal_distribute": "20, 20, 20, 20, 20",
-  "normal_totaldistr": "100",
-  "bb_frames": "4, 15, 27, 47, 57, 59, 63",
-  "bb_distribute": "15, 15, 15, 15, 15, 15, 10",
-  "bb_totaldistr": "100",
-  "description": "The second oldest of the Six Sibyl Sisters who fought against the gods in order to save the humans. Full of pride as a sibyl, it's said she always acted in a just manner. Because of this, it's said that she viewed those with questionable values as wicked, and was comparatively more negative than her other sisters. At the beginning of the great war, she followed her elder sister Sola in saving the humans, but in the midst of that she bore witness to the many evil deeds they were also capable of.",
-  "summon": "Why ally with a human?<br>Don't think you can understand<br>what a goddess is thinking.",
-  "fusion": "Humans are so pitiful.<br>You're not even aware of<br>your own hypocrisy.",
-  "evolution": "",
-  "hp_base": "2682",
-  "atk_base": "875",
-  "def_base": "732",
-  "rec_base": "862",
-  "hp_lord": "3755",
-  "atk_lord": "1225",
-  "def_lord": "1025",
-  "rec_lord": "1207",
-  "hp_anima": "4198",
-  "rec_anima": "1089",
-  "atk_breaker": "1343",
-  "def_breaker": "907",
-  "atk_guardian": "1107",
-  "def_guardian": "1143",
-  "rec_guardian": "1148",
-  "def_oracle": "966",
-  "hp_oracle": "3578",
-  "rec_oracle": "1384",
-  "hp_bonus": "400",
-  "atk_bonus": "160",
-  "def_bonus": "160",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "5",
-  "normaldc": "10",
-  "ls": "Cold Darkness' Power",
-  "lsdescription": "25% boost to Atk power of Water and Dark types",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 875,
+      "def": 732,
+      "hp": 2682,
+      "rec": 862
+    },
+    "_lord": {
+      "atk": 1225,
+      "def": 1025,
+      "hp": 3755,
+      "rec": 1207
+    },
+    "anima": {
+      "atk": 1225,
+      "def": 1025,
+      "hp max": 4345,
+      "hp min": 4050,
+      "rec max": 1148,
+      "rec min": 1030
+    },
+    "breaker": {
+      "atk max": 1402,
+      "atk min": 1284,
+      "def max": 966,
+      "def min": 848,
+      "hp": 3755,
+      "rec": 1207
+    },
+    "guardian": {
+      "atk": 1225,
+      "def max": 1202,
+      "def min": 1084,
+      "hp": 3755,
+      "rec max": 1207,
+      "rec min": 1089
+    },
+    "oracle": {
+      "atk": 1225,
+      "def max": 1025,
+      "def min": 907,
+      "hp": 3755,
+      "rec max": 1443,
+      "rec min": 1325
+    }
+  },
+  "leader_skill": {
+    "desc": "25% boost to Atk power of Water and Dark types",
+    "effects": [
+      {
+        "atk% buff": 25,
+        "elements buffed": [
+          "water",
+          "dark"
+        ],
+        "passive id": "2"
+      }
+    ],
+    "id": "3200",
+    "name": "Cold Darkness' Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -333,99 +338,91 @@
     ],
     "name": "Freezing Point"
   },
-  "bbdescription": "7 combo Water and Dark elemental attack on all enemies & probable Poison effect",
-  "bbnote": "45% chance",
-  "bbtype": "Offense",
-  "bbhits": "7",
-  "bbaoe": "A",
-  "bbgauge": "25",
-  "bbdc": "7",
-  "bbmultiplier": "160",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "20244",
-  "evomats1": "20133",
-  "evomats2": "20132",
-  "evomats3": "20131",
-  "evomats4": "20191",
-  "evomats5": "60201",
-  "evoitem": "",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 875,
-      "def": 732,
-      "hp": 2682,
-      "rec": 862
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1225,
-      "def": 1025,
-      "hp": 3755,
-      "rec": 1207
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1225,
-      "def": 1025,
-      "hp max": 4345,
-      "hp min": 4050,
-      "rec max": 1148,
-      "rec min": 1030
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 114
     },
-    "breaker": {
-      "atk max": 1402,
-      "atk min": 1284,
-      "def max": 966,
-      "def min": 848,
-      "hp": 3755,
-      "rec": 1207
+    "idle": {
+      "total number of frames": 60
     },
-    "guardian": {
-      "atk": 1225,
-      "def max": 1202,
-      "def min": 1084,
-      "hp": 3755,
-      "rec max": 1207,
-      "rec min": 1089
-    },
-    "oracle": {
-      "atk": 1225,
-      "def max": 1025,
-      "def min": 907,
-      "hp": 3755,
-      "rec max": 1443,
-      "rec min": 1325
+    "move": {
+      "total number of frames": 21
     }
   },
-  "leader_skill": {
-    "desc": "25% boost to Atk power of Water and Dark types",
-    "effects": [
-      {
-        "atk% buff": 25,
-        "elements buffed": [
-          "water",
-          "dark"
-        ],
-        "passive id": "2"
-      }
+  "category": 20240,
+  "cost": "10",
+  "damage frames": {
+    "frame times": [
+      4,
+      15,
+      27,
+      65,
+      73
     ],
-    "id": "3200",
-    "name": "Cold Darkness' Power"
+    "hit dmg% distribution": [
+      20,
+      20,
+      20,
+      20,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 5
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "water",
+  "exp_pattern": 15,
+  "gender": "female",
+  "getting type": "farmable",
+  "guide_id": 393,
+  "imp": {
+    "max atk": "160",
+    "max def": "160",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "1140~1274",
+  "movement": {
+    "attack": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    }
+  },
+  "name": "Eliza",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Eliza",
+  "maxlv": "60",
+  "no": "393",
   "unitDisplayHomePosition_1W9CxaFK": "604,-60,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-250,241,1220,540",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "137,270,328,347,0",
@@ -435,5 +432,111 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "0:122:1,9:122:1,21:122:1,21:200030:1,43:190:1,59:122:1,67:122:1,67:200030:1"
+  "effectFrames": "0:122:1,9:122:1,21:122:1,21:200030:1,43:190:1,59:122:1,67:122:1,67:200030:1",
+  "evofrom": "",
+  "evointo": "20244",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "20133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20131",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60201",
+      "count": 1
+    }
+  ],
+  "freetext": ":''For other uses, see Eliza (disambiguation)''",
+  "basexp": "15",
+  "animation_attack": "114",
+  "animation_idle": "60",
+  "animation_move": "21",
+  "movespeed_attack": "0.0024",
+  "movespeed_skill": "0.0024",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "4, 15, 27, 65, 73",
+  "normal_distribute": "20, 20, 20, 20, 20",
+  "normal_totaldistr": "100",
+  "bb_frames": "4, 15, 27, 47, 57, 59, 63",
+  "bb_distribute": "15, 15, 15, 15, 15, 15, 10",
+  "bb_totaldistr": "100",
+  "description": "The second oldest of the Six Sibyl Sisters who fought against the gods in order to save the humans. Full of pride as a sibyl, it's said she always acted in a just manner. Because of this, it's said that she viewed those with questionable values as wicked, and was comparatively more negative than her other sisters. At the beginning of the great war, she followed her elder sister Sola in saving the humans, but in the midst of that she bore witness to the many evil deeds they were also capable of.",
+  "summon": "Why ally with a human?<br>Don't think you can understand<br>what a goddess is thinking.",
+  "fusion": "Humans are so pitiful.<br>You're not even aware of<br>your own hypocrisy.",
+  "evolution": "",
+  "hp_base": "2682",
+  "atk_base": "875",
+  "def_base": "732",
+  "rec_base": "862",
+  "hp_lord": "3755",
+  "atk_lord": "1225",
+  "def_lord": "1025",
+  "rec_lord": "1207",
+  "hp_anima": "4198",
+  "rec_anima": "1089",
+  "atk_breaker": "1343",
+  "def_breaker": "907",
+  "atk_guardian": "1107",
+  "def_guardian": "1143",
+  "rec_guardian": "1148",
+  "def_oracle": "966",
+  "hp_oracle": "3578",
+  "rec_oracle": "1384",
+  "hp_bonus": "400",
+  "atk_bonus": "160",
+  "def_bonus": "160",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "5",
+  "normaldc": "10",
+  "ls": "Cold Darkness' Power",
+  "lsdescription": "25% boost to Atk power of Water and Dark types",
+  "lstype": "Attack",
+  "bbdescription": "7 combo Water and Dark elemental attack on all enemies & probable Poison effect",
+  "bbnote": "45% chance",
+  "bbtype": "Offense",
+  "bbhits": "7",
+  "bbaoe": "A",
+  "bbgauge": "25",
+  "bbdc": "7",
+  "bbmultiplier": "160",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "20133",
+  "evomats2": "20132",
+  "evomats3": "20131",
+  "evomats4": "20191",
+  "evomats5": "60201",
+  "evoitem": ""
 }

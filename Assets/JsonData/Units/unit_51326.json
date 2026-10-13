@@ -1,68 +1,117 @@
 {
   "id": "51326",
-  "unitName": "Sacred Sword Alan",
-  "no": "1736",
-  "element": "Light",
-  "rarity": "★★★★★★★",
-  "cost": "46",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "109",
-  "animation_idle": "84",
-  "animation_move": "4",
-  "movespeed_attack": "0.0024",
-  "movespeed_skill": "0.0024",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "24, 30, 36, 41, 62, 67, 72, 77",
-  "normal_distribute": "8, 10, 9, 7, 16, 20, 17, 13",
-  "normal_totaldistr": "100",
-  "bb_frames": "24, 27, 31, 34, 37, 41, 62, 65, 69, 72, 75, 77",
-  "bb_distribute": "5, 8, 8, 7, 6, 4, 10, 13, 12, 10, 9, 8",
-  "bb_totaldistr": "100",
-  "sbb_frames": "24, 27, 30, 33, 36, 39, 41, 44, 62, 65, 68, 71, 74, 77, 80",
-  "sbb_distribute": "4, 8, 8, 6, 5, 4, 3, 2, 8, 12, 12, 10, 8, 6, 4",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "24, 27, 30, 33, 36, 39, 41, 44, 47, 62, 65, 68, 71, 74, 77, 80, 83, 86",
-  "ubb_distribute": "4, 8, 8, 6, 5, 3, 3, 2, 1, 10, 13, 9, 9, 8, 6, 2, 2, 1",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "1",
-  "ubb_effectdelay": "1",
-  "description": "The legendary king believed to have ended the wars that raged in Grand Gaia. Long before the time of the Six Imperial Gods, Grand Gaia was mired in an era of chaos. It was in this time that Alan had an epiphany; envisioning a world in which all beings could be treated fairly. Calling on the gods and demons that sympathized with this ideal, he forged the holy blade Ex Deus Gladius. Armed with an ultimate weapon that transcended boundaries, Alan traveled the land quelling conflicts. The legends hold that the blade was revered as a national treasure from that point onward.",
-  "summon": "I will never surrender, no matter how harsh the journey is! Not until my goals are reached!",
-  "fusion": "Why do we fight?<br>Regardless of what race we are, we have no reason to feud!",
-  "evolution": "",
-  "hp_base": "5158",
-  "atk_base": "2489",
-  "def_base": "1969",
-  "rec_base": "1839",
-  "hp_lord": "7364",
-  "atk_lord": "3368",
-  "def_lord": "2678",
-  "rec_lord": "2480",
-  "hp_anima": "8256",
-  "rec_anima": "2242",
-  "atk_breaker": "3606",
-  "def_breaker": "2440",
-  "def_guardian": "2916",
-  "rec_guardian": "2361",
-  "def_oracle": "2559",
-  "rec_oracle": "2837",
-  "hp_bonus": "1100",
-  "atk_bonus": "440",
-  "def_bonus": "440",
-  "rec_bonus": "440",
-  "lordonly": "",
-  "combo_hits": "8",
-  "normaldc": "32",
-  "ls": "Radiant Sword's Guidance",
-  "lsdescription": "50% boost to all parameters, 5% damage reduction from all types, restores HP each turn & damage taken boosts BB gauge",
-  "lsnote": "Heals 800-1000 + 10% Rec & fills 2-4 BC",
+  "stats": {
+    "_base": {
+      "atk": 2489,
+      "def": 1969,
+      "hp": 5158,
+      "rec": 1839
+    },
+    "_lord": {
+      "atk": 3368,
+      "def": 2678,
+      "hp": 7364,
+      "rec": 2480
+    },
+    "anima": {
+      "atk": 3368,
+      "def": 2678,
+      "hp max": 8554,
+      "hp min": 7959,
+      "rec max": 2361,
+      "rec min": 2123
+    },
+    "breaker": {
+      "atk max": 3725,
+      "atk min": 3487,
+      "def max": 2559,
+      "def min": 2321,
+      "hp": 7364,
+      "rec": 2480
+    },
+    "guardian": {
+      "atk": 3368,
+      "def max": 3035,
+      "def min": 2797,
+      "hp": 7364,
+      "rec max": 2480,
+      "rec min": 2242
+    },
+    "oracle": {
+      "atk": 3368,
+      "def max": 2678,
+      "def min": 2440,
+      "hp": 7364,
+      "rec max": 2956,
+      "rec min": 2718
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to all parameters, 5% damage reduction from all types, restores HP each turn & damage taken boosts BB gauge",
+    "effects": [
+      {
+        "atk% buff": 50,
+        "def% buff": 50,
+        "hp% buff": 50,
+        "passive id": "1",
+        "rec% buff": 50
+      },
+      {
+        "dmg% mitigation for elemental attacks": 5.0,
+        "mitigate dark attacks": true,
+        "mitigate earth attacks": true,
+        "mitigate fire attacks": true,
+        "mitigate light attacks": true,
+        "mitigate thunder attacks": true,
+        "mitigate water attacks": true,
+        "passive id": "62"
+      },
+      {
+        "passive id": "33",
+        "rec% added (turn heal)": 10.0,
+        "turn heal high": 1000,
+        "turn heal low": 800
+      },
+      {
+        "bc fill when attacked high": 4,
+        "bc fill when attacked low": 2,
+        "bc fill when attacked%": 100,
+        "passive id": "25"
+      }
+    ],
+    "id": "10158",
+    "name": "Radiant Sword's Guidance"
+  },
+  "extra_skill": {
+    "desc": "5% damage reduction from all types & 5% boost to all parameters for all allies",
+    "effects": [
+      {
+        "conditions": [],
+        "dmg% mitigation for elemental attacks": 5.0,
+        "mitigate dark attacks": true,
+        "mitigate earth attacks": true,
+        "mitigate fire attacks": true,
+        "mitigate light attacks": true,
+        "mitigate thunder attacks": true,
+        "mitigate water attacks": true,
+        "passive id": "62",
+        "passive target": "self"
+      },
+      {
+        "atk% buff": 5,
+        "conditions": [],
+        "def% buff": 5,
+        "hp% buff": 5,
+        "passive id": "1",
+        "passive target": "party",
+        "rec% buff": 5
+      }
+    ],
+    "id": "45400",
+    "name": "Prayer-Laden Blade",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -745,14 +794,6 @@
     ],
     "name": "Eternal Heavens"
   },
-  "bbdescription": "12 combo powerful Light attack on all foes, greatly restores HP, hugely boosts Atk, Def, Rec for 3 turns, enormously boosts critical hit rate for 3 turns, negates critical and elemental damage for 1 turn & slight damage reduction from all types for 1 turn",
-  "bbnote": "Heals 3000-3500 + 32.4% healer Rec, 150% parameter boost, 60% Crit & 10% element mitigation",
-  "bbtype": "Heal/Offense",
-  "bbhits": "12",
-  "bbaoe": "A",
-  "bbgauge": "29",
-  "bbdc": "12",
-  "bbmultiplier": "430",
   "sbb": {
     "damage frames": [
       {
@@ -1543,15 +1584,6 @@
     ],
     "name": "Grand Culmination"
   },
-  "sbbdescription": "15 combo powerful Light attack on all foes (damage relative to remaining HP), probable critical vulnerability infliction for 1 turn, hugely boosts Atk, Def, Rec for 3 turns, hugely boosts own Atk, Def, Rec for 3 turns, enormously boosts critical hit rate and BB gauge for 3 turns & slight damage reduction from all types for 1 turn",
-  "sbbnote": "200% + 550% * current HP / max HP, 150% parameter boost, 60% Crit, 150% self parameter boost, 10% element mitigation, fills 8 BC & 20% chance for 10% vulnerability",
-  "sbbtype": "Offense",
-  "sbbhits": "15",
-  "sbbaoe": "A",
-  "sbbgauge": "31",
-  "sbbdc": "15",
-  "sbbmultiplier": "200",
-  "sbb_hpscale": "true",
   "ubb": {
     "damage frames": [
       {
@@ -1734,6 +1766,213 @@
     ],
     "name": "Holy Spectrum Welfreizer"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 109
+    },
+    "idle": {
+      "total number of frames": 84
+    },
+    "move": {
+      "total number of frames": 4
+    }
+  },
+  "category": 51320,
+  "cost": "46",
+  "damage frames": {
+    "frame times": [
+      24,
+      30,
+      36,
+      41,
+      62,
+      67,
+      72,
+      77
+    ],
+    "hit dmg% distribution": [
+      8,
+      10,
+      9,
+      7,
+      16,
+      20,
+      17,
+      13
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 8
+  },
+  "drop check count": 4,
+  "element": "light",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 1736,
+  "imp": {
+    "max atk": "440",
+    "max def": "440",
+    "max hp": "1100",
+    "max rec": "440"
+  },
+  "kind": "normal",
+  "lord damage range": "3136~3502",
+  "movement": {
+    "attack": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    }
+  },
+  "name": "Sacred Sword Alan",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Sacred Sword Alan",
+  "maxlv": "120",
+  "no": "1736",
+  "unitDisplayHomePosition_1W9CxaFK": "533,138,175,478",
+  "unitDisplayDetailPosition_6z54rgb3": "-152,78,950,746",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "0,180,550,432,1",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-106,-166,900,707",
+  "unitDisplaySummonPosition_KC3Jk8Br": "0,180,550,432,1",
+  "unitDisplayHpPosition_3BpHN6VD": "0,55",
+  "unitDisplayCursorPosition": "0,5",
+  "sellPrice": "15000",
+  "sellCaution": false,
+  "effectFrames": "18:501560:1,29:200032:1,34:200084:1,67:501207:1",
+  "evofrom": "",
+  "evointo": "51327",
+  "evozelcost": "3000000",
+  "evokarmacost": "1000000",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50394",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50123",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50191",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 2
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "109",
+  "animation_idle": "84",
+  "animation_move": "4",
+  "movespeed_attack": "0.0024",
+  "movespeed_skill": "0.0024",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "24, 30, 36, 41, 62, 67, 72, 77",
+  "normal_distribute": "8, 10, 9, 7, 16, 20, 17, 13",
+  "normal_totaldistr": "100",
+  "bb_frames": "24, 27, 31, 34, 37, 41, 62, 65, 69, 72, 75, 77",
+  "bb_distribute": "5, 8, 8, 7, 6, 4, 10, 13, 12, 10, 9, 8",
+  "bb_totaldistr": "100",
+  "sbb_frames": "24, 27, 30, 33, 36, 39, 41, 44, 62, 65, 68, 71, 74, 77, 80",
+  "sbb_distribute": "4, 8, 8, 6, 5, 4, 3, 2, 8, 12, 12, 10, 8, 6, 4",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "24, 27, 30, 33, 36, 39, 41, 44, 47, 62, 65, 68, 71, 74, 77, 80, 83, 86",
+  "ubb_distribute": "4, 8, 8, 6, 5, 3, 3, 2, 1, 10, 13, 9, 9, 8, 6, 2, 2, 1",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "1",
+  "ubb_effectdelay": "1",
+  "description": "The legendary king believed to have ended the wars that raged in Grand Gaia. Long before the time of the Six Imperial Gods, Grand Gaia was mired in an era of chaos. It was in this time that Alan had an epiphany; envisioning a world in which all beings could be treated fairly. Calling on the gods and demons that sympathized with this ideal, he forged the holy blade Ex Deus Gladius. Armed with an ultimate weapon that transcended boundaries, Alan traveled the land quelling conflicts. The legends hold that the blade was revered as a national treasure from that point onward.",
+  "summon": "I will never surrender, no matter how harsh the journey is! Not until my goals are reached!",
+  "fusion": "Why do we fight?<br>Regardless of what race we are, we have no reason to feud!",
+  "evolution": "",
+  "hp_base": "5158",
+  "atk_base": "2489",
+  "def_base": "1969",
+  "rec_base": "1839",
+  "hp_lord": "7364",
+  "atk_lord": "3368",
+  "def_lord": "2678",
+  "rec_lord": "2480",
+  "hp_anima": "8256",
+  "rec_anima": "2242",
+  "atk_breaker": "3606",
+  "def_breaker": "2440",
+  "def_guardian": "2916",
+  "rec_guardian": "2361",
+  "def_oracle": "2559",
+  "rec_oracle": "2837",
+  "hp_bonus": "1100",
+  "atk_bonus": "440",
+  "def_bonus": "440",
+  "rec_bonus": "440",
+  "lordonly": "",
+  "combo_hits": "8",
+  "normaldc": "32",
+  "ls": "Radiant Sword's Guidance",
+  "lsdescription": "50% boost to all parameters, 5% damage reduction from all types, restores HP each turn & damage taken boosts BB gauge",
+  "lsnote": "Heals 800-1000 + 10% Rec & fills 2-4 BC",
+  "bbdescription": "12 combo powerful Light attack on all foes, greatly restores HP, hugely boosts Atk, Def, Rec for 3 turns, enormously boosts critical hit rate for 3 turns, negates critical and elemental damage for 1 turn & slight damage reduction from all types for 1 turn",
+  "bbnote": "Heals 3000-3500 + 32.4% healer Rec, 150% parameter boost, 60% Crit & 10% element mitigation",
+  "bbtype": "Heal/Offense",
+  "bbhits": "12",
+  "bbaoe": "A",
+  "bbgauge": "29",
+  "bbdc": "12",
+  "bbmultiplier": "430",
+  "sbbdescription": "15 combo powerful Light attack on all foes (damage relative to remaining HP), probable critical vulnerability infliction for 1 turn, hugely boosts Atk, Def, Rec for 3 turns, hugely boosts own Atk, Def, Rec for 3 turns, enormously boosts critical hit rate and BB gauge for 3 turns & slight damage reduction from all types for 1 turn",
+  "sbbnote": "200% + 550% * current HP / max HP, 150% parameter boost, 60% Crit, 150% self parameter boost, 10% element mitigation, fills 8 BC & 20% chance for 10% vulnerability",
+  "sbbtype": "Offense",
+  "sbbhits": "15",
+  "sbbaoe": "A",
+  "sbbgauge": "31",
+  "sbbdc": "15",
+  "sbbmultiplier": "200",
+  "sbb_hpscale": "true",
   "ubbdescription": "18 combo massive Light attack on all foes (damage relative to remaining HP), adds high probability of resistance against 1 KO attack, enormously boosts Atk, Def, Rec for 3 turns, enormously boosts critical hit rate and OD gauge fill rate for 3 turns, enormous damage reduction from all types for 3 turns & enormously boosts BB gauge for 3 turns",
   "ubbnote": "1500% + 1000% * current HP / max HP, 300% parameter boost, 60% Crit, 100% element mitigation, 80% chance to resist 1 KO attack, 250% OD fill rate & fills 50 BC",
   "ubbtype": "Offense",
@@ -1747,8 +1986,6 @@
   "esitem": "",
   "esdescription": "5% damage reduction from all types & 5% boost to all parameters for all allies",
   "esnote": "Damage reduction only affects self",
-  "evofrom": "",
-  "evointo": "51327",
   "evomats1": "Light Mecha God",
   "evomats2": "Light Mecha God",
   "evomats3": "Miracle Totem",
@@ -1757,128 +1994,5 @@
   "evomats6": "Light Pot",
   "evomats7": "Metal Mimic",
   "evomats8": "Metal Mimic",
-  "evoitem": "",
-  "evozelcost": "3000000",
-  "stats": {
-    "_base": {
-      "atk": 2489,
-      "def": 1969,
-      "hp": 5158,
-      "rec": 1839
-    },
-    "_lord": {
-      "atk": 3368,
-      "def": 2678,
-      "hp": 7364,
-      "rec": 2480
-    },
-    "anima": {
-      "atk": 3368,
-      "def": 2678,
-      "hp max": 8554,
-      "hp min": 7959,
-      "rec max": 2361,
-      "rec min": 2123
-    },
-    "breaker": {
-      "atk max": 3725,
-      "atk min": 3487,
-      "def max": 2559,
-      "def min": 2321,
-      "hp": 7364,
-      "rec": 2480
-    },
-    "guardian": {
-      "atk": 3368,
-      "def max": 3035,
-      "def min": 2797,
-      "hp": 7364,
-      "rec max": 2480,
-      "rec min": 2242
-    },
-    "oracle": {
-      "atk": 3368,
-      "def max": 2678,
-      "def min": 2440,
-      "hp": 7364,
-      "rec max": 2956,
-      "rec min": 2718
-    }
-  },
-  "leader_skill": {
-    "desc": "50% boost to all parameters, 5% damage reduction from all types, restores HP each turn & damage taken boosts BB gauge",
-    "effects": [
-      {
-        "atk% buff": 50,
-        "def% buff": 50,
-        "hp% buff": 50,
-        "passive id": "1",
-        "rec% buff": 50
-      },
-      {
-        "dmg% mitigation for elemental attacks": 5.0,
-        "mitigate dark attacks": true,
-        "mitigate earth attacks": true,
-        "mitigate fire attacks": true,
-        "mitigate light attacks": true,
-        "mitigate thunder attacks": true,
-        "mitigate water attacks": true,
-        "passive id": "62"
-      },
-      {
-        "passive id": "33",
-        "rec% added (turn heal)": 10.0,
-        "turn heal high": 1000,
-        "turn heal low": 800
-      },
-      {
-        "bc fill when attacked high": 4,
-        "bc fill when attacked low": 2,
-        "bc fill when attacked%": 100,
-        "passive id": "25"
-      }
-    ],
-    "id": "10158",
-    "name": "Radiant Sword's Guidance"
-  },
-  "extra_skill": {
-    "desc": "5% damage reduction from all types & 5% boost to all parameters for all allies",
-    "effects": [
-      {
-        "conditions": [],
-        "dmg% mitigation for elemental attacks": 5.0,
-        "mitigate dark attacks": true,
-        "mitigate earth attacks": true,
-        "mitigate fire attacks": true,
-        "mitigate light attacks": true,
-        "mitigate thunder attacks": true,
-        "mitigate water attacks": true,
-        "passive id": "62",
-        "passive target": "self"
-      },
-      {
-        "atk% buff": 5,
-        "conditions": [],
-        "def% buff": 5,
-        "hp% buff": 5,
-        "passive id": "1",
-        "passive target": "party",
-        "rec% buff": 5
-      }
-    ],
-    "id": "45400",
-    "name": "Prayer-Laden Blade",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "533,138,175,478",
-  "unitDisplayDetailPosition_6z54rgb3": "-152,78,950,746",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "0,180,550,432,1",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-106,-166,900,707",
-  "unitDisplaySummonPosition_KC3Jk8Br": "0,180,550,432,1",
-  "unitDisplayHpPosition_3BpHN6VD": "0,55",
-  "unitDisplayCursorPosition": "0,5",
-  "sellPrice": "15000",
-  "sellCaution": false,
-  "effectFrames": "18:501560:1,29:200032:1,34:200084:1,67:501207:1"
+  "evoitem": ""
 }

@@ -1,69 +1,97 @@
 {
   "id": "20736",
-  "unitName": "Wyvern Wings Klaus",
-  "no": "1241",
-  "element": "Water",
-  "rarity": "★★★★★★★",
-  "cost": "42",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "168",
-  "animation_idle": "52",
-  "animation_move": "6",
-  "movespeed_attack": "0.0024",
-  "movespeed_skill": "0.0024",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "37, 45, 59, 65, 78, 82, 86, 90, 94, 98",
-  "normal_distribute": "10, 10, 10, 10, 16, 11, 9, 8, 8, 8",
-  "normal_totaldistr": "100",
-  "bb_frames": "37, 40, 45, 48, 59, 62, 65, 68, 78, 82, 86, 90, 94, 98, 102",
-  "bb_distribute": "6, 5, 6, 5, 6, 5, 6, 5, 11, 10, 9, 8, 7, 6, 5",
-  "bb_totaldistr": "100",
-  "sbb_frames": "37, 40, 45, 48, 59, 62, 65, 68, 78, 82, 85, 88, 91, 94, 97, 100, 103, 106",
-  "sbb_distribute": "6, 4, 6, 4, 6, 4, 6, 4, 11, 9, 8, 6, 5, 5, 4, 4, 4, 4",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "37, 40, 45, 48, 51, 59, 62, 65, 68, 71, 78, 82, 85, 88, 91, 94, 97, 100, 103, 106, 109, 112, 115, 118",
-  "ubb_distribute": "5, 3, 5, 3, 3, 5, 3, 5, 3, 3, 11, 8, 7, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "2",
-  "sbb_effectdelay": "1",
-  "ubb_effectdelay": "1",
-  "description": "An otherworldly god resurrected as a \"Mock God\" prototype Mock Unit. He bent space and time via destruction in order to return to his original world, and in doing so led his sworn enemy and their servants to him. Fighting alongside Isterio, also resurrected as a Mock God, his new powers allowed him to dominate his opponents for a time. However, he was completely destroyed by a weapon of mass destruction upgraded by a mysterious scientist. It is said that in the end, he cursed the one who called him there and the world itself with all his might.",
-  "summon": "That human...must be of my world.<br>Have I lost to the humans<br>of your world, too?<br>All I know is ruin...",
-  "fusion": "I am growing used to this body...<br>Grh... Meaning that my new body<br>and that thing share a common source.",
-  "evolution": "A \"Mock God\"? You insult me...<br>Someday, your arrogance<br>will be the end of you.",
-  "hp_base": "4994",
-  "atk_base": "2028",
-  "def_base": "2028",
-  "rec_base": "1911",
-  "hp_lord": "6572",
-  "atk_lord": "2526",
-  "def_lord": "2526",
-  "rec_lord": "2394",
-  "hp_anima": "7464",
-  "rec_anima": "2156",
-  "atk_breaker": "2764",
-  "def_breaker": "2288",
-  "def_guardian": "2764",
-  "rec_guardian": "2275",
-  "def_oracle": "2407",
-  "rec_oracle": "2751",
-  "hp_bonus": "1100",
-  "atk_bonus": "440",
-  "def_bonus": "440",
-  "rec_bonus": "440",
-  "lordonly": "",
-  "combo_hits": "10",
-  "normaldc": "40",
-  "ls": "Blue Winged God's Purge",
-  "lsdescription": "40% boost to max HP, greatly reduces BB gauge required for BB & greatly boosts BC efficacy",
-  "lsnote": "25% reduction & 50% boost",
-  "lstype": "Hit Points/Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 2028,
+      "def": 2028,
+      "hp": 4994,
+      "rec": 1911
+    },
+    "_lord": {
+      "atk": 2526,
+      "def": 2526,
+      "hp": 6572,
+      "rec": 2394
+    },
+    "anima": {
+      "atk": 2526,
+      "def": 2526,
+      "hp max": 7762,
+      "hp min": 7167,
+      "rec max": 2275,
+      "rec min": 2037
+    },
+    "breaker": {
+      "atk max": 2883,
+      "atk min": 2645,
+      "def max": 2407,
+      "def min": 2169,
+      "hp": 6572,
+      "rec": 2394
+    },
+    "guardian": {
+      "atk": 2526,
+      "def max": 2883,
+      "def min": 2645,
+      "hp": 6572,
+      "rec max": 2394,
+      "rec min": 2156
+    },
+    "oracle": {
+      "atk": 2526,
+      "def max": 2526,
+      "def min": 2288,
+      "hp": 6572,
+      "rec max": 2870,
+      "rec min": 2632
+    }
+  },
+  "leader_skill": {
+    "desc": "40% boost to max HP, greatly reduces BB gauge required for BB & greatly boosts BC efficacy",
+    "effects": [
+      {
+        "hp% buff": 40,
+        "passive id": "1"
+      },
+      {
+        "passive id": "48",
+        "reduced bb bc cost%": 25
+      },
+      {
+        "bb gauge fill rate%": 50,
+        "passive id": "32"
+      }
+    ],
+    "id": "5519",
+    "name": "Blue Winged God's Purge"
+  },
+  "extra_skill": {
+    "desc": "Adds Def boost relative to Atk for 3 turns to BB/SBB",
+    "effects": [
+      {
+        "conditions": [],
+        "passive id": "66",
+        "passive target": "self",
+        "trigger on bb": true,
+        "trigger on sbb": true,
+        "triggered effect": [
+          {
+            "% converted turns": 3,
+            "converted attribute": "attack",
+            "def% buff (47)": 35,
+            "effect delay time(ms)/frame": "0.0/0",
+            "proc id": "24",
+            "target area": "aoe",
+            "target type": "party"
+          }
+        ]
+      }
+    ],
+    "id": "12300",
+    "name": "Mock God's Lament",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -498,14 +526,6 @@
     ],
     "name": "Zwei Force"
   },
-  "bbdescription": "15 combo Water attack on all foes, probable huge 1 turn Atk, Def reduction & high probability of inflicting Sick",
-  "bbnote": "30% chance to reduce enemy Atk, Def by 50% & 85% chance",
-  "bbtype": "Offense",
-  "bbhits": "15",
-  "bbaoe": "A",
-  "bbgauge": "22",
-  "bbdc": "15",
-  "bbmultiplier": "300",
   "sbb": {
     "damage frames": [
       {
@@ -1028,14 +1048,6 @@
     ],
     "name": "Alto Inundation"
   },
-  "sbbdescription": "18 combo powerful Water attack on all foes, adds probable 1 turn Atk, Def reduction effects to attack and damage taken greatly boosts BB gauge for 3 turns & hugely boosts BB gauge each turn for 3 turns",
-  "sbbnote": "10% chance to reduce enemy Atk, Def by 20%, fills 4-7 BC when hit & fills 7 BC",
-  "sbbtype": "Support/Offense",
-  "sbbhits": "18",
-  "sbbaoe": "A",
-  "sbbgauge": "26",
-  "sbbdc": "18",
-  "sbbmultiplier": "540",
   "ubb": {
     "damage frames": [
       {
@@ -1187,6 +1199,191 @@
     ],
     "name": "Indigo Excess: Alluvion"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 168
+    },
+    "idle": {
+      "total number of frames": 52
+    },
+    "move": {
+      "total number of frames": 6
+    }
+  },
+  "category": 20730,
+  "cost": "42",
+  "damage frames": {
+    "frame times": [
+      37,
+      45,
+      59,
+      65,
+      78,
+      82,
+      86,
+      90,
+      94,
+      98
+    ],
+    "hit dmg% distribution": [
+      10,
+      10,
+      10,
+      10,
+      16,
+      11,
+      9,
+      8,
+      8,
+      8
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 10
+  },
+  "drop check count": 4,
+  "element": "water",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 1241,
+  "imp": {
+    "max atk": "440",
+    "max def": "440",
+    "max hp": "1100",
+    "max rec": "440"
+  },
+  "kind": "normal",
+  "lord damage range": "2351~2627",
+  "movement": {
+    "attack": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    }
+  },
+  "name": "Wyvern Wings Klaus",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Wyvern Wings Klaus",
+  "maxlv": "120",
+  "no": "1241",
+  "unitDisplayHomePosition_1W9CxaFK": "428,233,150,409",
+  "unitDisplayDetailPosition_6z54rgb3": "-102,-19,1088,948",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "48,190,544,474,1",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-86,-277,1088,948",
+  "unitDisplaySummonPosition_KC3Jk8Br": "48,190,544,474,1",
+  "unitDisplayHpPosition_3BpHN6VD": "-1,60",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "15000",
+  "sellCaution": false,
+  "effectFrames": "31:122:1,39:122:1,53:122:1,59:122:1,72:120:1,76:120:1,80:120:1,84:120:1,88:120:1,92:120:1,38:189:1,49:189:1,33:500345:1,43:200030:1,54:200030:1,66:500246:1,75:200783:1,89:600725:1",
+  "evofrom": "20735",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "21",
+  "animation_attack": "168",
+  "animation_idle": "52",
+  "animation_move": "6",
+  "movespeed_attack": "0.0024",
+  "movespeed_skill": "0.0024",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "37, 45, 59, 65, 78, 82, 86, 90, 94, 98",
+  "normal_distribute": "10, 10, 10, 10, 16, 11, 9, 8, 8, 8",
+  "normal_totaldistr": "100",
+  "bb_frames": "37, 40, 45, 48, 59, 62, 65, 68, 78, 82, 86, 90, 94, 98, 102",
+  "bb_distribute": "6, 5, 6, 5, 6, 5, 6, 5, 11, 10, 9, 8, 7, 6, 5",
+  "bb_totaldistr": "100",
+  "sbb_frames": "37, 40, 45, 48, 59, 62, 65, 68, 78, 82, 85, 88, 91, 94, 97, 100, 103, 106",
+  "sbb_distribute": "6, 4, 6, 4, 6, 4, 6, 4, 11, 9, 8, 6, 5, 5, 4, 4, 4, 4",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "37, 40, 45, 48, 51, 59, 62, 65, 68, 71, 78, 82, 85, 88, 91, 94, 97, 100, 103, 106, 109, 112, 115, 118",
+  "ubb_distribute": "5, 3, 5, 3, 3, 5, 3, 5, 3, 3, 11, 8, 7, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "2",
+  "sbb_effectdelay": "1",
+  "ubb_effectdelay": "1",
+  "description": "An otherworldly god resurrected as a \"Mock God\" prototype Mock Unit. He bent space and time via destruction in order to return to his original world, and in doing so led his sworn enemy and their servants to him. Fighting alongside Isterio, also resurrected as a Mock God, his new powers allowed him to dominate his opponents for a time. However, he was completely destroyed by a weapon of mass destruction upgraded by a mysterious scientist. It is said that in the end, he cursed the one who called him there and the world itself with all his might.",
+  "summon": "That human...must be of my world.<br>Have I lost to the humans<br>of your world, too?<br>All I know is ruin...",
+  "fusion": "I am growing used to this body...<br>Grh... Meaning that my new body<br>and that thing share a common source.",
+  "evolution": "A \"Mock God\"? You insult me...<br>Someday, your arrogance<br>will be the end of you.",
+  "hp_base": "4994",
+  "atk_base": "2028",
+  "def_base": "2028",
+  "rec_base": "1911",
+  "hp_lord": "6572",
+  "atk_lord": "2526",
+  "def_lord": "2526",
+  "rec_lord": "2394",
+  "hp_anima": "7464",
+  "rec_anima": "2156",
+  "atk_breaker": "2764",
+  "def_breaker": "2288",
+  "def_guardian": "2764",
+  "rec_guardian": "2275",
+  "def_oracle": "2407",
+  "rec_oracle": "2751",
+  "hp_bonus": "1100",
+  "atk_bonus": "440",
+  "def_bonus": "440",
+  "rec_bonus": "440",
+  "lordonly": "",
+  "combo_hits": "10",
+  "normaldc": "40",
+  "ls": "Blue Winged God's Purge",
+  "lsdescription": "40% boost to max HP, greatly reduces BB gauge required for BB & greatly boosts BC efficacy",
+  "lsnote": "25% reduction & 50% boost",
+  "lstype": "Hit Points/Brave Burst",
+  "bbdescription": "15 combo Water attack on all foes, probable huge 1 turn Atk, Def reduction & high probability of inflicting Sick",
+  "bbnote": "30% chance to reduce enemy Atk, Def by 50% & 85% chance",
+  "bbtype": "Offense",
+  "bbhits": "15",
+  "bbaoe": "A",
+  "bbgauge": "22",
+  "bbdc": "15",
+  "bbmultiplier": "300",
+  "sbbdescription": "18 combo powerful Water attack on all foes, adds probable 1 turn Atk, Def reduction effects to attack and damage taken greatly boosts BB gauge for 3 turns & hugely boosts BB gauge each turn for 3 turns",
+  "sbbnote": "10% chance to reduce enemy Atk, Def by 20%, fills 4-7 BC when hit & fills 7 BC",
+  "sbbtype": "Support/Offense",
+  "sbbhits": "18",
+  "sbbaoe": "A",
+  "sbbgauge": "26",
+  "sbbdc": "18",
+  "sbbmultiplier": "540",
   "ubbdescription": "24 combo massive Water attack on all foes, enormous 1 turn Atk, Def reduction for 3 turns, damage taken enormously boosts BB gauge for 3 turns & enormous damage reduction for 1 turn",
   "ubbnote": "80% reduction, fills 50 BC & reduces all damage taken to 1",
   "ubbtype": "Support/Offense",
@@ -1199,115 +1396,10 @@
   "esitem": "",
   "esdescription": "Adds Def boost relative to Atk for 3 turns to BB/SBB",
   "esnote": "35% boost",
-  "evofrom": "20735",
-  "evointo": "",
   "evomats1": "",
   "evomats2": "",
   "evomats3": "",
   "evomats4": "",
   "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 2028,
-      "def": 2028,
-      "hp": 4994,
-      "rec": 1911
-    },
-    "_lord": {
-      "atk": 2526,
-      "def": 2526,
-      "hp": 6572,
-      "rec": 2394
-    },
-    "anima": {
-      "atk": 2526,
-      "def": 2526,
-      "hp max": 7762,
-      "hp min": 7167,
-      "rec max": 2275,
-      "rec min": 2037
-    },
-    "breaker": {
-      "atk max": 2883,
-      "atk min": 2645,
-      "def max": 2407,
-      "def min": 2169,
-      "hp": 6572,
-      "rec": 2394
-    },
-    "guardian": {
-      "atk": 2526,
-      "def max": 2883,
-      "def min": 2645,
-      "hp": 6572,
-      "rec max": 2394,
-      "rec min": 2156
-    },
-    "oracle": {
-      "atk": 2526,
-      "def max": 2526,
-      "def min": 2288,
-      "hp": 6572,
-      "rec max": 2870,
-      "rec min": 2632
-    }
-  },
-  "leader_skill": {
-    "desc": "40% boost to max HP, greatly reduces BB gauge required for BB & greatly boosts BC efficacy",
-    "effects": [
-      {
-        "hp% buff": 40,
-        "passive id": "1"
-      },
-      {
-        "passive id": "48",
-        "reduced bb bc cost%": 25
-      },
-      {
-        "bb gauge fill rate%": 50,
-        "passive id": "32"
-      }
-    ],
-    "id": "5519",
-    "name": "Blue Winged God's Purge"
-  },
-  "extra_skill": {
-    "desc": "Adds Def boost relative to Atk for 3 turns to BB/SBB",
-    "effects": [
-      {
-        "conditions": [],
-        "passive id": "66",
-        "passive target": "self",
-        "trigger on bb": true,
-        "trigger on sbb": true,
-        "triggered effect": [
-          {
-            "% converted turns": 3,
-            "converted attribute": "attack",
-            "def% buff (47)": 35,
-            "effect delay time(ms)/frame": "0.0/0",
-            "proc id": "24",
-            "target area": "aoe",
-            "target type": "party"
-          }
-        ]
-      }
-    ],
-    "id": "12300",
-    "name": "Mock God's Lament",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "428,233,150,409",
-  "unitDisplayDetailPosition_6z54rgb3": "-102,-19,1088,948",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "48,190,544,474,1",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-86,-277,1088,948",
-  "unitDisplaySummonPosition_KC3Jk8Br": "48,190,544,474,1",
-  "unitDisplayHpPosition_3BpHN6VD": "-1,60",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "15000",
-  "sellCaution": false,
-  "effectFrames": "31:122:1,39:122:1,53:122:1,59:122:1,72:120:1,76:120:1,80:120:1,84:120:1,88:120:1,92:120:1,38:189:1,49:189:1,33:500345:1,43:200030:1,54:200030:1,66:500246:1,75:200783:1,89:600725:1"
+  "evoitem": ""
 }

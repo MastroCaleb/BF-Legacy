@@ -1,61 +1,81 @@
 {
   "id": "850316",
-  "unitName": "Chronicler Allanon",
-  "no": "8165",
-  "element": "Light",
-  "rarity": "★★★★★★",
-  "cost": "30",
-  "maxlv": "100",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "147",
-  "animation_idle": "52",
-  "animation_move": "52",
-  "movespeed_attack": "6",
-  "movespeed_skill": "6",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "82, 86, 90, 94, 98, 102, 106, 110",
-  "normal_distribute": "20, 15, 15, 10, 10, 10, 10, 10",
-  "normal_totaldistr": "100",
-  "sbb_frames": "82, 88, 94, 100, 106, 112, 118, 124, 130, 136, 140, 146, 152",
-  "sbb_distribute": "9, 8, 7, 6, 9, 8, 6, 9, 8, 8, 8, 8, 6",
-  "sbb_totaldistr": "100",
-  "sbb_effectdelay": "1",
-  "description": "A former guardian of the sacred Deva Libraries. Having topped the Imperial Exams, Allanon attained the rank of \"Senior Librarian.\" Despite much skepticism about Allanon's suitability, he became the youngest Deva to be offered a seat within the Imperial Senate. This was due in no small part thanks to Paladin Mikael, who advocated Allanon for his invaluable knowledge and insight. Taking advantage of his new power and status, Allanon began his campaign of \"love and peace\", with the aim of ending the war and building friendly ties with the Morokai. Fearing the dissent Allanon would cause, many members of the senate and elders of various other councils banded together to put a stop to his actions. Realizing that his life was at risk and that his ambitions would never come to fruition in Myrrantia, he decided to do what no other Deva had done before. He would seek allies beyond the borders and together fight to bring \"love and peace\" to one and all.",
-  "summon": "What is thy bidding, my master...?<br>No not quite, that won't help any.<br>Only through \"Love and Peace\"<br>will we truly see the light!",
-  "fusion": "WHAT IS LOV--<br>Ouch! Stop it!<br>All right, I get it. I get it.<br>So don't hurt me...NO MORE!",
-  "evolution": "Look at your book,<br>look in the...web?!<br>Knowledge, data! It's all there!<br>But there's so much more to learn...<br>Waiting right outside your door!",
-  "hp_base": "4149",
-  "atk_base": "1600",
-  "def_base": "1512",
-  "rec_base": "1587",
-  "hp_lord": "5928",
-  "atk_lord": "2287",
-  "def_lord": "2160",
-  "rec_lord": "2268",
-  "hp_anima": "6670",
-  "rec_anima": "2070",
-  "atk_breaker": "2485",
-  "def_breaker": "1962",
-  "def_guardian": "2358",
-  "rec_guardian": "2169",
-  "def_oracle": "2061",
-  "rec_oracle": "2565",
-  "hp_bonus": "750",
-  "atk_bonus": "300",
-  "def_bonus": "300",
-  "rec_bonus": "300",
-  "lordonly": "",
-  "combo_hits": "8",
-  "normaldc": "32",
-  "ls": "Passion of the Maverick",
-  "lsdescription": "25% boost to all parameters, negates elemental damage & boosts elemental damage",
-  "lsnote": "75% boost",
-  "lstype": "Hit Points/Attack/Defense/Recovery",
+  "stats": {
+    "_base": {
+      "atk": 1600,
+      "def": 1512,
+      "hp": 4149,
+      "rec": 1587
+    },
+    "_lord": {
+      "atk": 2287,
+      "def": 2160,
+      "hp": 5928,
+      "rec": 2268
+    },
+    "anima": {
+      "atk": 2287,
+      "def": 2160,
+      "hp max": 6918,
+      "hp min": 6423,
+      "rec max": 2169,
+      "rec min": 1971
+    },
+    "breaker": {
+      "atk max": 2584,
+      "atk min": 2386,
+      "def max": 2061,
+      "def min": 1863,
+      "hp": 5928,
+      "rec": 2268
+    },
+    "guardian": {
+      "atk": 2287,
+      "def max": 2457,
+      "def min": 2259,
+      "hp": 5928,
+      "rec max": 2268,
+      "rec min": 2070
+    },
+    "oracle": {
+      "atk": 2287,
+      "def max": 2160,
+      "def min": 1962,
+      "hp": 5928,
+      "rec max": 2664,
+      "rec min": 2466
+    }
+  },
+  "leader_skill": {
+    "desc": "25% boost to all parameters, negates elemental damage & boosts elemental damage",
+    "effects": [
+      {
+        "atk% buff": 25,
+        "def% buff": 25,
+        "hp% buff": 25,
+        "passive id": "1",
+        "rec% buff": 25
+      },
+      {
+        "passive id": "53",
+        "strong base element damage resist%": 100,
+        "strong buffed element damage resist%": 100
+      },
+      {
+        "dark units do extra elemental weakness dmg": true,
+        "earth units do extra elemental weakness dmg": true,
+        "elemental weakness multiplier%": 75.0,
+        "fire units do extra elemental weakness dmg": true,
+        "light units do extra elemental weakness dmg": true,
+        "passive id": "50",
+        "thunder units do extra elemental weakness dmg": true,
+        "water units do extra elemental weakness dmg": true
+      }
+    ],
+    "id": "801213",
+    "name": "Passion of the Maverick"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -462,14 +482,6 @@
     ],
     "name": "Fidem Arcanum"
   },
-  "bbdescription": "Boosts BB gauge on use, reduces all elemental damage for 3 turns & damage taken boosts BB gauge for 3 turns",
-  "bbnote": "10 BC fill, 10% Element reduction, Fills 4~7 BC when hit",
-  "bbtype": "Support",
-  "bbhits": "0",
-  "bbaoe": "0",
-  "bbgauge": "21",
-  "bbdc": "0",
-  "bbmultiplier": "0",
   "sbb": {
     "damage frames": [
       {
@@ -1086,100 +1098,96 @@
     ],
     "name": "Rerum Cataclysmus"
   },
-  "sbbdescription": "13 combo powerful Light attack on all foes, adds all elements to attack and boosts elemental weakness damage for 3 turns & greatly recovers HP",
-  "sbbnote": "50% boost, Heal (2500~2800) + 32.4% of healer's Rec",
-  "sbbtype": "Heal/Support/Offense",
-  "sbbhits": "13",
-  "sbbaoe": "A",
-  "sbbgauge": "28",
-  "sbbdc": "13",
-  "sbbmultiplier": "480",
-  "evofrom": "850315",
-  "evointo": "850317",
-  "evomats1": "50394",
-  "evomats2": "50354",
-  "evomats3": "50354",
-  "evomats4": "60224",
-  "evomats5": "850034",
-  "evoitem": "",
-  "evozelcost": "1500000",
-  "stats": {
-    "_base": {
-      "atk": 1600,
-      "def": 1512,
-      "hp": 4149,
-      "rec": 1587
+  "ubb": {},
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 2287,
-      "def": 2160,
-      "hp": 5928,
-      "rec": 2268
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 2287,
-      "def": 2160,
-      "hp max": 6918,
-      "hp min": 6423,
-      "rec max": 2169,
-      "rec min": 1971
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 147
     },
-    "breaker": {
-      "atk max": 2584,
-      "atk min": 2386,
-      "def max": 2061,
-      "def min": 1863,
-      "hp": 5928,
-      "rec": 2268
+    "idle": {
+      "total number of frames": 52
     },
-    "guardian": {
-      "atk": 2287,
-      "def max": 2457,
-      "def min": 2259,
-      "hp": 5928,
-      "rec max": 2268,
-      "rec min": 2070
-    },
-    "oracle": {
-      "atk": 2287,
-      "def max": 2160,
-      "def min": 1962,
-      "hp": 5928,
-      "rec max": 2664,
-      "rec min": 2466
+    "move": {
+      "total number of frames": 52
     }
   },
-  "leader_skill": {
-    "desc": "25% boost to all parameters, negates elemental damage & boosts elemental damage",
-    "effects": [
-      {
-        "atk% buff": 25,
-        "def% buff": 25,
-        "hp% buff": 25,
-        "passive id": "1",
-        "rec% buff": 25
-      },
-      {
-        "passive id": "53",
-        "strong base element damage resist%": 100,
-        "strong buffed element damage resist%": 100
-      },
-      {
-        "dark units do extra elemental weakness dmg": true,
-        "earth units do extra elemental weakness dmg": true,
-        "elemental weakness multiplier%": 75.0,
-        "fire units do extra elemental weakness dmg": true,
-        "light units do extra elemental weakness dmg": true,
-        "passive id": "50",
-        "thunder units do extra elemental weakness dmg": true,
-        "water units do extra elemental weakness dmg": true
-      }
+  "category": 850310,
+  "cost": "30",
+  "damage frames": {
+    "frame times": [
+      82,
+      86,
+      90,
+      94,
+      98,
+      102,
+      106,
+      110
     ],
-    "id": "801213",
-    "name": "Passion of the Maverick"
+    "hit dmg% distribution": [
+      20,
+      15,
+      15,
+      10,
+      10,
+      10,
+      10,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 8
   },
-  "extra_skill": {},
-  "ubb": {},
+  "drop check count": 4,
+  "element": "light",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 8165,
+  "imp": {
+    "max atk": "300",
+    "max def": "300",
+    "max hp": "750",
+    "max rec": "300"
+  },
+  "kind": "normal",
+  "lord damage range": "2129~2378",
+  "movement": {
+    "attack": {
+      "move speed": 6,
+      "move speed type": "2",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 6,
+      "move speed type": "2",
+      "move type": "3"
+    }
+  },
+  "name": "Chronicler Allanon",
+  "rarity": "6",
+  "sell caution": false,
+  "unitName": "Chronicler Allanon",
+  "maxlv": "100",
+  "no": "8165",
   "unitDisplayHomePosition_1W9CxaFK": "385,142,140,382",
   "unitDisplayDetailPosition_6z54rgb3": "-74,2,1046,844",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "70,242,504,407,0",
@@ -1189,5 +1197,101 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "8000",
   "sellCaution": false,
-  "effectFrames": "82:500086:1,80:601012:1,90:300124:1,107:500173:1,123:400132:1,77:600491:1"
+  "effectFrames": "82:500086:1,80:601012:1,90:300124:1,107:500173:1,123:400132:1,77:600491:1",
+  "evofrom": "850315",
+  "evointo": "850317",
+  "evozelcost": "1500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50394",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "850034",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "147",
+  "animation_idle": "52",
+  "animation_move": "52",
+  "movespeed_attack": "6",
+  "movespeed_skill": "6",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "82, 86, 90, 94, 98, 102, 106, 110",
+  "normal_distribute": "20, 15, 15, 10, 10, 10, 10, 10",
+  "normal_totaldistr": "100",
+  "sbb_frames": "82, 88, 94, 100, 106, 112, 118, 124, 130, 136, 140, 146, 152",
+  "sbb_distribute": "9, 8, 7, 6, 9, 8, 6, 9, 8, 8, 8, 8, 6",
+  "sbb_totaldistr": "100",
+  "sbb_effectdelay": "1",
+  "description": "A former guardian of the sacred Deva Libraries. Having topped the Imperial Exams, Allanon attained the rank of \"Senior Librarian.\" Despite much skepticism about Allanon's suitability, he became the youngest Deva to be offered a seat within the Imperial Senate. This was due in no small part thanks to Paladin Mikael, who advocated Allanon for his invaluable knowledge and insight. Taking advantage of his new power and status, Allanon began his campaign of \"love and peace\", with the aim of ending the war and building friendly ties with the Morokai. Fearing the dissent Allanon would cause, many members of the senate and elders of various other councils banded together to put a stop to his actions. Realizing that his life was at risk and that his ambitions would never come to fruition in Myrrantia, he decided to do what no other Deva had done before. He would seek allies beyond the borders and together fight to bring \"love and peace\" to one and all.",
+  "summon": "What is thy bidding, my master...?<br>No not quite, that won't help any.<br>Only through \"Love and Peace\"<br>will we truly see the light!",
+  "fusion": "WHAT IS LOV--<br>Ouch! Stop it!<br>All right, I get it. I get it.<br>So don't hurt me...NO MORE!",
+  "evolution": "Look at your book,<br>look in the...web?!<br>Knowledge, data! It's all there!<br>But there's so much more to learn...<br>Waiting right outside your door!",
+  "hp_base": "4149",
+  "atk_base": "1600",
+  "def_base": "1512",
+  "rec_base": "1587",
+  "hp_lord": "5928",
+  "atk_lord": "2287",
+  "def_lord": "2160",
+  "rec_lord": "2268",
+  "hp_anima": "6670",
+  "rec_anima": "2070",
+  "atk_breaker": "2485",
+  "def_breaker": "1962",
+  "def_guardian": "2358",
+  "rec_guardian": "2169",
+  "def_oracle": "2061",
+  "rec_oracle": "2565",
+  "hp_bonus": "750",
+  "atk_bonus": "300",
+  "def_bonus": "300",
+  "rec_bonus": "300",
+  "lordonly": "",
+  "combo_hits": "8",
+  "normaldc": "32",
+  "ls": "Passion of the Maverick",
+  "lsdescription": "25% boost to all parameters, negates elemental damage & boosts elemental damage",
+  "lsnote": "75% boost",
+  "lstype": "Hit Points/Attack/Defense/Recovery",
+  "bbdescription": "Boosts BB gauge on use, reduces all elemental damage for 3 turns & damage taken boosts BB gauge for 3 turns",
+  "bbnote": "10 BC fill, 10% Element reduction, Fills 4~7 BC when hit",
+  "bbtype": "Support",
+  "bbhits": "0",
+  "bbaoe": "0",
+  "bbgauge": "21",
+  "bbdc": "0",
+  "bbmultiplier": "0",
+  "sbbdescription": "13 combo powerful Light attack on all foes, adds all elements to attack and boosts elemental weakness damage for 3 turns & greatly recovers HP",
+  "sbbnote": "50% boost, Heal (2500~2800) + 32.4% of healer's Rec",
+  "sbbtype": "Heal/Support/Offense",
+  "sbbhits": "13",
+  "sbbaoe": "A",
+  "sbbgauge": "28",
+  "sbbdc": "13",
+  "sbbmultiplier": "480",
+  "evomats1": "50394",
+  "evomats2": "50354",
+  "evomats3": "50354",
+  "evomats4": "60224",
+  "evomats5": "850034",
+  "evoitem": ""
 }

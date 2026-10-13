@@ -1,61 +1,64 @@
 {
   "id": "50314",
-  "unitName": "Cyborg Lilith II",
-  "no": "386",
-  "element": "Light",
-  "rarity": "★★★★★",
-  "cost": "15",
-  "maxlv": "80",
-  "basexp": "21",
-  "gender": "N",
-  "ai": "2",
-  "animation_attack": "151",
-  "animation_idle": "64",
-  "animation_move": "13",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "16, 59, 67, 75, 83, 91",
-  "normal_distribute": "20, 16, 16, 16, 16, 16",
-  "normal_totaldistr": "100",
-  "bb_frames": "16, 63, 68, 73, 78, 83, 88, 93, 98, 103, 108, 113",
-  "bb_distribute": "12, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8",
-  "bb_totaldistr": "100",
-  "description": "A mechanical weapon in the shape of a person that appeared from another world. Along with her master, she scoured the strange new land for the dangerous weapon that had sent them there. Though accompanied by a lightning wielding man who wanted nothing more than to study her and another whose incomprehensible propositions gave her pause, she somehow managed to complete her mission. Upon requesting orders from her master, she was fitted with a new weapon utilizing Grand Gaian technology.",
-  "summon": "You have been established<br>as my new Master.<br>Standing by for orders.",
-  "fusion": "Energy input from<br>Master confirmed. <br>Rebooting data. <br>",
-  "evolution": "Systems all green.<br>Version upgrade complete.<br>Waiting for orders, Master.",
-  "hp_base": "3222",
-  "atk_base": "1029",
-  "def_base": "1020",
-  "rec_base": "935",
-  "hp_lord": "5002",
-  "atk_lord": "1544",
-  "def_lord": "1521",
-  "rec_lord": "1400",
-  "hp_anima": "5595",
-  "rec_anima": "1242",
-  "atk_breaker": "1702",
-  "def_breaker": "1363",
-  "atk_guardian": "1386",
-  "def_guardian": "1679",
-  "rec_guardian": "1321",
-  "def_oracle": "1442",
-  "hp_oracle": "4765",
-  "rec_oracle": "1637",
-  "hp_bonus": "500",
-  "atk_bonus": "200",
-  "def_bonus": "200",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "6",
-  "normaldc": "18",
-  "ls": "Five Light's Force",
-  "lsdescription": "50% boost to Atk power of all Units when 5 elements or more are present",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 1029,
+      "def": 1020,
+      "hp": 3222,
+      "rec": 935
+    },
+    "_lord": {
+      "atk": 1544,
+      "def": 1521,
+      "hp": 5002,
+      "rec": 1400
+    },
+    "anima": {
+      "atk": 1544,
+      "def": 1521,
+      "hp max": 5792,
+      "hp min": 5397,
+      "rec max": 1321,
+      "rec min": 1163
+    },
+    "breaker": {
+      "atk max": 1781,
+      "atk min": 1623,
+      "def max": 1442,
+      "def min": 1284,
+      "hp": 5002,
+      "rec": 1400
+    },
+    "guardian": {
+      "atk": 1544,
+      "def max": 1758,
+      "def min": 1600,
+      "hp": 5002,
+      "rec max": 1400,
+      "rec min": 1242
+    },
+    "oracle": {
+      "atk": 1544,
+      "def max": 1521,
+      "def min": 1363,
+      "hp": 5002,
+      "rec max": 1716,
+      "rec min": 1558
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to Atk power of all Units when 5 elements or more are present",
+    "effects": [
+      {
+        "atk% buff": 50,
+        "passive id": "41",
+        "unique elements required": 5
+      }
+    ],
+    "id": "2201",
+    "name": "Five Light's Force"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -220,94 +223,93 @@
     ],
     "name": "Divine Blaster"
   },
-  "bbdescription": "12 combo massive Light attack on single enemy",
-  "bbtype": "Offense",
-  "bbhits": "12",
-  "bbaoe": "1",
-  "bbgauge": "13",
-  "bbdc": "24",
-  "bbmultiplier": "520",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "50313",
-  "evointo": "50315",
-  "evomats1": "50354",
-  "evomats2": "50123",
-  "evomats3": "50122",
-  "evomats4": "50122",
-  "evomats5": "60224",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 1029,
-      "def": 1020,
-      "hp": 3222,
-      "rec": 935
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1544,
-      "def": 1521,
-      "hp": 5002,
-      "rec": 1400
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1544,
-      "def": 1521,
-      "hp max": 5792,
-      "hp min": 5397,
-      "rec max": 1321,
-      "rec min": 1163
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 151
     },
-    "breaker": {
-      "atk max": 1781,
-      "atk min": 1623,
-      "def max": 1442,
-      "def min": 1284,
-      "hp": 5002,
-      "rec": 1400
+    "idle": {
+      "total number of frames": 64
     },
-    "guardian": {
-      "atk": 1544,
-      "def max": 1758,
-      "def min": 1600,
-      "hp": 5002,
-      "rec max": 1400,
-      "rec min": 1242
-    },
-    "oracle": {
-      "atk": 1544,
-      "def max": 1521,
-      "def min": 1363,
-      "hp": 5002,
-      "rec max": 1716,
-      "rec min": 1558
+    "move": {
+      "total number of frames": 13
     }
   },
-  "leader_skill": {
-    "desc": "50% boost to Atk power of all Units when 5 elements or more are present",
-    "effects": [
-      {
-        "atk% buff": 50,
-        "passive id": "41",
-        "unique elements required": 5
-      }
+  "category": 50310,
+  "cost": "15",
+  "damage frames": {
+    "frame times": [
+      16,
+      59,
+      67,
+      75,
+      83,
+      91
     ],
-    "id": "2201",
-    "name": "Five Light's Force"
+    "hit dmg% distribution": [
+      20,
+      16,
+      16,
+      16,
+      16,
+      16
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 6
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "light",
+  "exp_pattern": 20,
+  "gender": "other",
+  "getting type": "rare summon",
+  "guide_id": 386,
+  "imp": {
+    "max atk": "200",
+    "max def": "200",
+    "max hp": "500",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "1437~1605",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Cyborg Lilith II",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Cyborg Lilith II",
+  "maxlv": "80",
+  "no": "386",
   "unitDisplayHomePosition_1W9CxaFK": "580,247,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-294,-30,1420,874",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "129,353,394,260,0",
@@ -317,5 +319,103 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "10:125:1,10:320:1,63:500090:1,59:114:1,59:200120:1,60:100120:1,67:114:1,67:200120:1,75:114:1,75:200120:1,70:100120:1,83:114:1,83:200120:1,91:114:1,91:200120:1,80:100120:1,91:500170:1"
+  "effectFrames": "10:125:1,10:320:1,63:500090:1,59:114:1,59:200120:1,60:100120:1,67:114:1,67:200120:1,75:114:1,75:200120:1,70:100120:1,83:114:1,83:200120:1,91:114:1,91:200120:1,80:100120:1,91:500170:1",
+  "evofrom": "50313",
+  "evointo": "50315",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50123",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50122",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "151",
+  "animation_idle": "64",
+  "animation_move": "13",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "16, 59, 67, 75, 83, 91",
+  "normal_distribute": "20, 16, 16, 16, 16, 16",
+  "normal_totaldistr": "100",
+  "bb_frames": "16, 63, 68, 73, 78, 83, 88, 93, 98, 103, 108, 113",
+  "bb_distribute": "12, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8",
+  "bb_totaldistr": "100",
+  "description": "A mechanical weapon in the shape of a person that appeared from another world. Along with her master, she scoured the strange new land for the dangerous weapon that had sent them there. Though accompanied by a lightning wielding man who wanted nothing more than to study her and another whose incomprehensible propositions gave her pause, she somehow managed to complete her mission. Upon requesting orders from her master, she was fitted with a new weapon utilizing Grand Gaian technology.",
+  "summon": "You have been established<br>as my new Master.<br>Standing by for orders.",
+  "fusion": "Energy input from<br>Master confirmed. <br>Rebooting data. <br>",
+  "evolution": "Systems all green.<br>Version upgrade complete.<br>Waiting for orders, Master.",
+  "hp_base": "3222",
+  "atk_base": "1029",
+  "def_base": "1020",
+  "rec_base": "935",
+  "hp_lord": "5002",
+  "atk_lord": "1544",
+  "def_lord": "1521",
+  "rec_lord": "1400",
+  "hp_anima": "5595",
+  "rec_anima": "1242",
+  "atk_breaker": "1702",
+  "def_breaker": "1363",
+  "atk_guardian": "1386",
+  "def_guardian": "1679",
+  "rec_guardian": "1321",
+  "def_oracle": "1442",
+  "hp_oracle": "4765",
+  "rec_oracle": "1637",
+  "hp_bonus": "500",
+  "atk_bonus": "200",
+  "def_bonus": "200",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "6",
+  "normaldc": "18",
+  "ls": "Five Light's Force",
+  "lsdescription": "50% boost to Atk power of all Units when 5 elements or more are present",
+  "lstype": "Attack",
+  "bbdescription": "12 combo massive Light attack on single enemy",
+  "bbtype": "Offense",
+  "bbhits": "12",
+  "bbaoe": "1",
+  "bbgauge": "13",
+  "bbdc": "24",
+  "bbmultiplier": "520",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "50123",
+  "evomats3": "50122",
+  "evomats4": "50122",
+  "evomats5": "60224"
 }

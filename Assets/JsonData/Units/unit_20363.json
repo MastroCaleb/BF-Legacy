@@ -1,62 +1,64 @@
 {
   "id": "20363",
-  "unitName": "Azure Blade Lucina",
-  "no": "533",
-  "element": "Water",
-  "rarity": "★★★★",
-  "cost": "12",
-  "maxlv": "60",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "3",
-  "animation_attack": "89",
-  "animation_idle": "52",
-  "animation_move": "13",
-  "movespeed_attack": "0.0024",
-  "movespeed_skill": "0.0024",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "8, 19, 29, 39, 49, 53, 57",
-  "normal_distribute": "18, 15, 13, 15, 14, 13, 12",
-  "normal_totaldistr": "100",
-  "bb_frames": "7, 18, 24, 30, 36, 42, 48, 52, 56",
-  "bb_distribute": "15, 12, 10, 11, 9, 10, 12, 11, 10",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "description": "A knight sworn to the Sama Kingdom, she was raised alone by her navy general father. At a young age, she was treated as a freak by others for her inability to control her innate magical powers. Though quiet and introverted, thanks to her father's training, her skills with the sword were rumored to eclipse even those of her dear friend Selena. Though she usually accepted Selena and her father's harsh words without a peep, on occasion she is said to have the mouth of a sailor.",
-  "summon": "No need to chit-chat.<br>I'm here to do my job.<br>Not be your pal.",
-  "fusion": "Practice makes perfect.<br>Anybody should know that.<br>But few seem to.",
-  "evolution": "",
-  "hp_base": "2842",
-  "atk_base": "1014",
-  "def_base": "1013",
-  "rec_base": "830",
-  "hp_lord": "4089",
-  "atk_lord": "1352",
-  "def_lord": "1333",
-  "rec_lord": "1078",
-  "hp_anima": "4532",
-  "rec_anima": "960",
-  "atk_breaker": "1470",
-  "def_breaker": "1215",
-  "atk_guardian": "1234",
-  "def_guardian": "1451",
-  "rec_guardian": "1019",
-  "def_oracle": "1274",
-  "hp_oracle": "3912",
-  "rec_oracle": "1255",
-  "hp_bonus": "400",
-  "atk_bonus": "140",
-  "def_bonus": "140",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "7",
-  "normaldc": "21",
-  "ls": "Five Light's Power",
-  "lsdescription": "25% boost to Atk power of all Units when 5 elements or more are present",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 1014,
+      "def": 1013,
+      "hp": 2842,
+      "rec": 830
+    },
+    "_lord": {
+      "atk": 1352,
+      "def": 1333,
+      "hp": 4089,
+      "rec": 1078
+    },
+    "anima": {
+      "atk": 1352,
+      "def": 1333,
+      "hp max": 4679,
+      "hp min": 4384,
+      "rec max": 1019,
+      "rec min": 901
+    },
+    "breaker": {
+      "atk max": 1529,
+      "atk min": 1411,
+      "def max": 1274,
+      "def min": 1156,
+      "hp": 4089,
+      "rec": 1078
+    },
+    "guardian": {
+      "atk": 1352,
+      "def max": 1510,
+      "def min": 1392,
+      "hp": 4089,
+      "rec max": 1078,
+      "rec min": 960
+    },
+    "oracle": {
+      "atk": 1352,
+      "def max": 1333,
+      "def min": 1215,
+      "hp": 4089,
+      "rec max": 1314,
+      "rec min": 1196
+    }
+  },
+  "leader_skill": {
+    "desc": "25% boost to Atk power of all Units when 5 elements or more are present",
+    "effects": [
+      {
+        "atk% buff": 25,
+        "passive id": "41",
+        "unique elements required": 5
+      }
+    ],
+    "id": "2200",
+    "name": "Five Light's Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -337,95 +339,101 @@
     ],
     "name": "Cyclone Oath"
   },
-  "bbdescription": "9 combo Water elemental attack on single enemy & Earth element added to attack for 3 turns",
-  "bbtype": "Support/Offense",
-  "bbhits": "9",
-  "bbaoe": "1",
-  "bbgauge": "15",
-  "bbdc": "9",
-  "bbmultiplier": "350",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "20364",
-  "evomats1": "20133",
-  "evomats2": "20191",
-  "evomats3": "20132",
-  "evomats4": "20132",
-  "evomats5": "60143",
-  "evoitem": "",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 1014,
-      "def": 1013,
-      "hp": 2842,
-      "rec": 830
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1352,
-      "def": 1333,
-      "hp": 4089,
-      "rec": 1078
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1352,
-      "def": 1333,
-      "hp max": 4679,
-      "hp min": 4384,
-      "rec max": 1019,
-      "rec min": 901
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 1529,
-      "atk min": 1411,
-      "def max": 1274,
-      "def min": 1156,
-      "hp": 4089,
-      "rec": 1078
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 89
     },
-    "guardian": {
-      "atk": 1352,
-      "def max": 1510,
-      "def min": 1392,
-      "hp": 4089,
-      "rec max": 1078,
-      "rec min": 960
+    "idle": {
+      "total number of frames": 52
     },
-    "oracle": {
-      "atk": 1352,
-      "def max": 1333,
-      "def min": 1215,
-      "hp": 4089,
-      "rec max": 1314,
-      "rec min": 1196
+    "move": {
+      "total number of frames": 13
     }
   },
-  "leader_skill": {
-    "desc": "25% boost to Atk power of all Units when 5 elements or more are present",
-    "effects": [
-      {
-        "atk% buff": 25,
-        "passive id": "41",
-        "unique elements required": 5
-      }
+  "category": 20360,
+  "cost": "12",
+  "damage frames": {
+    "frame times": [
+      8,
+      19,
+      29,
+      39,
+      49,
+      53,
+      57
     ],
-    "id": "2200",
-    "name": "Five Light's Power"
+    "hit dmg% distribution": [
+      18,
+      15,
+      13,
+      15,
+      14,
+      13,
+      12
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 7
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "water",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 533,
+  "imp": {
+    "max atk": "140",
+    "max def": "140",
+    "max hp": "400",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "1258~1406",
+  "movement": {
+    "attack": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    }
+  },
+  "name": "Azure Blade Lucina",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Azure Blade Lucina",
+  "maxlv": "60",
+  "no": "533",
   "unitDisplayHomePosition_1W9CxaFK": "242,-20,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "98,169,783,612",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "214,352,244,267,0",
@@ -435,5 +443,105 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "2:122:1,13:122:1,23:122:1,33:122:1,43:122:1,47:122:1,51:300183:1,51:200140:1,51:200030:1"
+  "effectFrames": "2:122:1,13:122:1,23:122:1,33:122:1,43:122:1,47:122:1,51:300183:1,51:200140:1,51:200030:1",
+  "evofrom": "",
+  "evointo": "20364",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "20133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20132",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "89",
+  "animation_idle": "52",
+  "animation_move": "13",
+  "movespeed_attack": "0.0024",
+  "movespeed_skill": "0.0024",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "8, 19, 29, 39, 49, 53, 57",
+  "normal_distribute": "18, 15, 13, 15, 14, 13, 12",
+  "normal_totaldistr": "100",
+  "bb_frames": "7, 18, 24, 30, 36, 42, 48, 52, 56",
+  "bb_distribute": "15, 12, 10, 11, 9, 10, 12, 11, 10",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "description": "A knight sworn to the Sama Kingdom, she was raised alone by her navy general father. At a young age, she was treated as a freak by others for her inability to control her innate magical powers. Though quiet and introverted, thanks to her father's training, her skills with the sword were rumored to eclipse even those of her dear friend Selena. Though she usually accepted Selena and her father's harsh words without a peep, on occasion she is said to have the mouth of a sailor.",
+  "summon": "No need to chit-chat.<br>I'm here to do my job.<br>Not be your pal.",
+  "fusion": "Practice makes perfect.<br>Anybody should know that.<br>But few seem to.",
+  "evolution": "",
+  "hp_base": "2842",
+  "atk_base": "1014",
+  "def_base": "1013",
+  "rec_base": "830",
+  "hp_lord": "4089",
+  "atk_lord": "1352",
+  "def_lord": "1333",
+  "rec_lord": "1078",
+  "hp_anima": "4532",
+  "rec_anima": "960",
+  "atk_breaker": "1470",
+  "def_breaker": "1215",
+  "atk_guardian": "1234",
+  "def_guardian": "1451",
+  "rec_guardian": "1019",
+  "def_oracle": "1274",
+  "hp_oracle": "3912",
+  "rec_oracle": "1255",
+  "hp_bonus": "400",
+  "atk_bonus": "140",
+  "def_bonus": "140",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "7",
+  "normaldc": "21",
+  "ls": "Five Light's Power",
+  "lsdescription": "25% boost to Atk power of all Units when 5 elements or more are present",
+  "lstype": "Attack",
+  "bbdescription": "9 combo Water elemental attack on single enemy & Earth element added to attack for 3 turns",
+  "bbtype": "Support/Offense",
+  "bbhits": "9",
+  "bbaoe": "1",
+  "bbgauge": "15",
+  "bbdc": "9",
+  "bbmultiplier": "350",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "20133",
+  "evomats2": "20191",
+  "evomats3": "20132",
+  "evomats4": "20132",
+  "evomats5": "60143",
+  "evoitem": ""
 }

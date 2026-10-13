@@ -1,63 +1,63 @@
 {
   "id": "40504",
-  "unitName": "Thunder Sentry Shera",
-  "no": "766",
-  "element": "Thunder",
-  "rarity": "★★★★★",
-  "cost": "18",
-  "maxlv": "80",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "147",
-  "animation_idle": "60",
-  "animation_move": "15",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "40, 43, 46, 90",
-  "normal_distribute": "10, 10, 10, 70",
-  "normal_totaldistr": "100",
-  "bb_frames": "40, 43, 46, 49, 52, 55, 58, 90",
-  "bb_distribute": "6, 4, 4, 4, 4, 4, 4, 70",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "description": "A knight sworn to serve in a small country around the Bariura region. After saving both the injured queen and swordsman, she succeeded in escaping with them from the ancient dragon. However, she was suddenly attacked by a disciple who claimed Shera had betrayed the gods, as she was a disciple as well. In response, Shera stated that she would not allow for the destruction of the human race. Reaching no real conclusion after their battle, Shera decided simply to protect not only the queen and the swordsman, but the disciple as well.",
-  "summon": "Your wish has reached me.<br>It shall be granted.<br>I will become your shield.",
-  "fusion": "There are many ways to grow stronger.<br>It seems that I need your help<br>in my current state.",
-  "evolution": "Child! Hope with all your might!<br>Because when you do<br>we will be able to advance further!",
-  "hp_base": "3531",
-  "atk_base": "1289",
-  "def_base": "1262",
-  "rec_base": "1198",
-  "hp_lord": "5021",
-  "atk_lord": "1702",
-  "def_lord": "1664",
-  "rec_lord": "1573",
-  "hp_anima": "5614",
-  "rec_anima": "1415",
-  "atk_breaker": "1860",
-  "def_breaker": "1506",
-  "atk_guardian": "1544",
-  "def_guardian": "1822",
-  "rec_guardian": "1494",
-  "def_oracle": "1585",
-  "hp_oracle": "4784",
-  "rec_oracle": "1810",
-  "hp_bonus": "500",
-  "atk_bonus": "200",
-  "def_bonus": "200",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "4",
-  "normaldc": "12",
-  "ls": "High Ruler's Magic",
-  "lsdescription": "Reduction in BB gauge required for BB",
-  "lsnote": "15% reduction",
-  "lstype": "Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 1289,
+      "def": 1262,
+      "hp": 3531,
+      "rec": 1198
+    },
+    "_lord": {
+      "atk": 1702,
+      "def": 1664,
+      "hp": 5021,
+      "rec": 1573
+    },
+    "anima": {
+      "atk": 1702,
+      "def": 1664,
+      "hp max": 5811,
+      "hp min": 5416,
+      "rec max": 1494,
+      "rec min": 1336
+    },
+    "breaker": {
+      "atk max": 1939,
+      "atk min": 1781,
+      "def max": 1585,
+      "def min": 1427,
+      "hp": 5021,
+      "rec": 1573
+    },
+    "guardian": {
+      "atk": 1702,
+      "def max": 1901,
+      "def min": 1743,
+      "hp": 5021,
+      "rec max": 1573,
+      "rec min": 1415
+    },
+    "oracle": {
+      "atk": 1702,
+      "def max": 1664,
+      "def min": 1506,
+      "hp": 5021,
+      "rec max": 1889,
+      "rec min": 1731
+    }
+  },
+  "leader_skill": {
+    "desc": "Reduction in BB gauge required for BB",
+    "effects": [
+      {
+        "passive id": "48",
+        "reduced bb bc cost%": 20
+      }
+    ],
+    "id": "4901",
+    "name": "High Ruler's Magic"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -316,93 +316,89 @@
     ],
     "name": "Vanishing Bolt"
   },
-  "bbdescription": "8 combo powerful Thunder attack on single enemy & reduces damage taken by half for 1 turn",
-  "bbtype": "Support/Offense",
-  "bbhits": "8",
-  "bbaoe": "1",
-  "bbgauge": "23",
-  "bbdc": "8",
-  "bbmultiplier": "390",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "40503",
-  "evointo": "40505",
-  "evomats1": "50354",
-  "evomats2": "40133",
-  "evomats3": "40191",
-  "evomats4": "40191",
-  "evomats5": "60224",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 1289,
-      "def": 1262,
-      "hp": 3531,
-      "rec": 1198
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1702,
-      "def": 1664,
-      "hp": 5021,
-      "rec": 1573
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1702,
-      "def": 1664,
-      "hp max": 5811,
-      "hp min": 5416,
-      "rec max": 1494,
-      "rec min": 1336
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 147
     },
-    "breaker": {
-      "atk max": 1939,
-      "atk min": 1781,
-      "def max": 1585,
-      "def min": 1427,
-      "hp": 5021,
-      "rec": 1573
+    "idle": {
+      "total number of frames": 60
     },
-    "guardian": {
-      "atk": 1702,
-      "def max": 1901,
-      "def min": 1743,
-      "hp": 5021,
-      "rec max": 1573,
-      "rec min": 1415
-    },
-    "oracle": {
-      "atk": 1702,
-      "def max": 1664,
-      "def min": 1506,
-      "hp": 5021,
-      "rec max": 1889,
-      "rec min": 1731
+    "move": {
+      "total number of frames": 15
     }
   },
-  "leader_skill": {
-    "desc": "Reduction in BB gauge required for BB",
-    "effects": [
-      {
-        "passive id": "48",
-        "reduced bb bc cost%": 20
-      }
+  "category": 40500,
+  "cost": "18",
+  "damage frames": {
+    "frame times": [
+      40,
+      43,
+      46,
+      90
     ],
-    "id": "4901",
-    "name": "High Ruler's Magic"
+    "hit dmg% distribution": [
+      10,
+      10,
+      10,
+      70
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 4
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "thunder",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 766,
+  "imp": {
+    "max atk": "200",
+    "max def": "200",
+    "max hp": "500",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "1584~1770",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Thunder Sentry Shera",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Thunder Sentry Shera",
+  "maxlv": "80",
+  "no": "766",
   "unitDisplayHomePosition_1W9CxaFK": "820,400,190,520",
   "unitDisplayDetailPosition_6z54rgb3": "-400,-183,1200,958",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "157,355,319,277,0",
@@ -412,5 +408,105 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "40:280:1,43:280:1,46:280:1,84:400230:1,88:400201:1,92:400201:1,96:400201:1,100:400201:1,84:400130:1,84:290:1,96:600221:1,100:200141:1,84:400094:1,100:600323:1"
+  "effectFrames": "40:280:1,43:280:1,46:280:1,84:400230:1,88:400201:1,92:400201:1,96:400201:1,100:400201:1,84:400130:1,84:290:1,96:600221:1,100:200141:1,84:400094:1,100:600323:1",
+  "evofrom": "40503",
+  "evointo": "40505",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40191",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "147",
+  "animation_idle": "60",
+  "animation_move": "15",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "40, 43, 46, 90",
+  "normal_distribute": "10, 10, 10, 70",
+  "normal_totaldistr": "100",
+  "bb_frames": "40, 43, 46, 49, 52, 55, 58, 90",
+  "bb_distribute": "6, 4, 4, 4, 4, 4, 4, 70",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "description": "A knight sworn to serve in a small country around the Bariura region. After saving both the injured queen and swordsman, she succeeded in escaping with them from the ancient dragon. However, she was suddenly attacked by a disciple who claimed Shera had betrayed the gods, as she was a disciple as well. In response, Shera stated that she would not allow for the destruction of the human race. Reaching no real conclusion after their battle, Shera decided simply to protect not only the queen and the swordsman, but the disciple as well.",
+  "summon": "Your wish has reached me.<br>It shall be granted.<br>I will become your shield.",
+  "fusion": "There are many ways to grow stronger.<br>It seems that I need your help<br>in my current state.",
+  "evolution": "Child! Hope with all your might!<br>Because when you do<br>we will be able to advance further!",
+  "hp_base": "3531",
+  "atk_base": "1289",
+  "def_base": "1262",
+  "rec_base": "1198",
+  "hp_lord": "5021",
+  "atk_lord": "1702",
+  "def_lord": "1664",
+  "rec_lord": "1573",
+  "hp_anima": "5614",
+  "rec_anima": "1415",
+  "atk_breaker": "1860",
+  "def_breaker": "1506",
+  "atk_guardian": "1544",
+  "def_guardian": "1822",
+  "rec_guardian": "1494",
+  "def_oracle": "1585",
+  "hp_oracle": "4784",
+  "rec_oracle": "1810",
+  "hp_bonus": "500",
+  "atk_bonus": "200",
+  "def_bonus": "200",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "4",
+  "normaldc": "12",
+  "ls": "High Ruler's Magic",
+  "lsdescription": "Reduction in BB gauge required for BB",
+  "lsnote": "15% reduction",
+  "lstype": "Brave Burst",
+  "bbdescription": "8 combo powerful Thunder attack on single enemy & reduces damage taken by half for 1 turn",
+  "bbtype": "Support/Offense",
+  "bbhits": "8",
+  "bbaoe": "1",
+  "bbgauge": "23",
+  "bbdc": "8",
+  "bbmultiplier": "390",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "40133",
+  "evomats3": "40191",
+  "evomats4": "40191",
+  "evomats5": "60224"
 }

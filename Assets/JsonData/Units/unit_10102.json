@@ -1,61 +1,63 @@
 {
   "id": "10102",
-  "unitName": "Knight Agni",
-  "no": "123",
-  "element": "Fire",
-  "rarity": "★★★",
-  "cost": "5",
-  "maxlv": "40",
-  "basexp": "15",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "142",
-  "animation_idle": "84",
-  "animation_move": "31",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "19, 28, 37, 65, 70, 77, 84, 90",
-  "normal_distribute": "25, 25, 25, 5, 5, 5, 5, 5",
-  "normal_totaldistr": "100",
-  "bb_frames": "19, 28, 37, 65, 70, 77, 84, 90",
-  "bb_distribute": "25, 25, 25, 5, 5, 5, 5, 5",
-  "bb_totaldistr": "100",
-  "description": "The imperator of the Agni Imperial Army and brother of the emperor. His skill in the literary and military arts and impartial fairness earned him the trust of many soldiers. He was even more popular than his brother. However, he feared this and hid his face in public with an iron mask to show his loyalty. There are still countless more rumors about his face, however.",
-  "summon": "A summoner?<br>I will give you my strength,<br>developed in battle.",
-  "fusion": "Even Summoners need training!<br>I will not forgive laziness!",
-  "evolution": "",
-  "hp_base": "2280",
-  "atk_base": "700",
-  "def_base": "550",
-  "rec_base": "350",
-  "hp_lord": "3720",
-  "atk_lord": "1036",
-  "def_lord": "726",
-  "rec_lord": "490",
-  "hp_anima": "4013",
-  "rec_anima": "412",
-  "atk_breaker": "1114",
-  "def_breaker": "648",
-  "atk_guardian": "958",
-  "def_guardian": "804",
-  "rec_guardian": "451",
-  "def_oracle": "687",
-  "hp_oracle": "3603",
-  "rec_oracle": "607",
-  "hp_bonus": "300",
-  "atk_bonus": "120",
-  "def_bonus": "120",
-  "rec_bonus": "120",
-  "lordonly": "",
-  "combo_hits": "8",
-  "normaldc": "16",
-  "ls": "Valiant Power",
-  "lsdescription": "10% boost to Atk Power of all types",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 700,
+      "def": 550,
+      "hp": 2280,
+      "rec": 350
+    },
+    "_lord": {
+      "atk": 1036,
+      "def": 726,
+      "hp": 3720,
+      "rec": 490
+    },
+    "anima": {
+      "atk": 1036,
+      "def": 726,
+      "hp max": 4110,
+      "hp min": 3915,
+      "rec max": 451,
+      "rec min": 373
+    },
+    "breaker": {
+      "atk max": 1153,
+      "atk min": 1075,
+      "def max": 687,
+      "def min": 609,
+      "hp": 3720,
+      "rec": 490
+    },
+    "guardian": {
+      "atk": 1036,
+      "def max": 843,
+      "def min": 765,
+      "hp": 3720,
+      "rec max": 490,
+      "rec min": 412
+    },
+    "oracle": {
+      "atk": 1036,
+      "def max": 726,
+      "def min": 648,
+      "hp": 3720,
+      "rec max": 646,
+      "rec min": 568
+    }
+  },
+  "leader_skill": {
+    "desc": "10% boost to Atk",
+    "effects": [
+      {
+        "atk% buff": 10,
+        "passive id": "1"
+      }
+    ],
+    "id": "1900",
+    "name": "Valiant Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -294,95 +296,97 @@
     ],
     "name": "Dragon's Expulsion"
   },
-  "bbdescription": "8 combo Fire elemental power attack on single Enemy & probable Injury effect",
-  "bbnote": "80% chance",
-  "bbtype": "Offense",
-  "bbhits": "8",
-  "bbaoe": "1",
-  "bbgauge": "15",
-  "bbdc": "8",
-  "bbmultiplier": "250",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "10103",
-  "evomats1": "60143",
-  "evomats2": "10132",
-  "evomats3": "10131",
-  "evomats4": "",
-  "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "100000",
-  "stats": {
-    "_base": {
-      "atk": 700,
-      "def": 550,
-      "hp": 2280,
-      "rec": 350
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1036,
-      "def": 726,
-      "hp": 3720,
-      "rec": 490
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1036,
-      "def": 726,
-      "hp max": 4110,
-      "hp min": 3915,
-      "rec max": 451,
-      "rec min": 373
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 142
     },
-    "breaker": {
-      "atk max": 1153,
-      "atk min": 1075,
-      "def max": 687,
-      "def min": 609,
-      "hp": 3720,
-      "rec": 490
+    "idle": {
+      "total number of frames": 84
     },
-    "guardian": {
-      "atk": 1036,
-      "def max": 843,
-      "def min": 765,
-      "hp": 3720,
-      "rec max": 490,
-      "rec min": 412
-    },
-    "oracle": {
-      "atk": 1036,
-      "def max": 726,
-      "def min": 648,
-      "hp": 3720,
-      "rec max": 646,
-      "rec min": 568
+    "move": {
+      "total number of frames": 31
     }
   },
-  "leader_skill": {
-    "desc": "10% boost to Atk",
-    "effects": [
-      {
-        "atk% buff": 10,
-        "passive id": "1"
-      }
+  "category": 10100,
+  "cost": "5",
+  "damage frames": {
+    "frame times": [
+      19,
+      28,
+      37,
+      65,
+      70,
+      77,
+      84,
+      90
     ],
-    "id": "1900",
-    "name": "Valiant Power"
+    "hit dmg% distribution": [
+      25,
+      25,
+      25,
+      5,
+      5,
+      5,
+      5,
+      5
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 8
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "fire",
+  "exp_pattern": 15,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 123,
+  "imp": {
+    "max atk": "120",
+    "max def": "120",
+    "max hp": "300",
+    "max rec": "120"
+  },
+  "kind": "normal",
+  "lord damage range": "964~1077",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Knight Agni",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "Knight Agni",
+  "maxlv": "40",
+  "no": "123",
   "unitDisplayHomePosition_1W9CxaFK": "87,8,174,473",
   "unitDisplayDetailPosition_6z54rgb3": "233,106,400,713",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "234,305,172,307,0",
@@ -392,5 +396,100 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "1000",
   "sellCaution": false,
-  "effectFrames": "13:121:1,22:121:1,31:121:1,59:121:1,64:121:1,71:121:1,78:121:1,84:121:1"
+  "effectFrames": "13:121:1,22:121:1,31:121:1,59:121:1,64:121:1,71:121:1,78:121:1,84:121:1",
+  "evofrom": "",
+  "evointo": "10103",
+  "evozelcost": "100000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10131",
+      "count": 1
+    }
+  ],
+  "basexp": "15",
+  "animation_attack": "142",
+  "animation_idle": "84",
+  "animation_move": "31",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "19, 28, 37, 65, 70, 77, 84, 90",
+  "normal_distribute": "25, 25, 25, 5, 5, 5, 5, 5",
+  "normal_totaldistr": "100",
+  "bb_frames": "19, 28, 37, 65, 70, 77, 84, 90",
+  "bb_distribute": "25, 25, 25, 5, 5, 5, 5, 5",
+  "bb_totaldistr": "100",
+  "description": "The imperator of the Agni Imperial Army and brother of the emperor. His skill in the literary and military arts and impartial fairness earned him the trust of many soldiers. He was even more popular than his brother. However, he feared this and hid his face in public with an iron mask to show his loyalty. There are still countless more rumors about his face, however.",
+  "summon": "A summoner?<br>I will give you my strength,<br>developed in battle.",
+  "fusion": "Even Summoners need training!<br>I will not forgive laziness!",
+  "evolution": "",
+  "hp_base": "2280",
+  "atk_base": "700",
+  "def_base": "550",
+  "rec_base": "350",
+  "hp_lord": "3720",
+  "atk_lord": "1036",
+  "def_lord": "726",
+  "rec_lord": "490",
+  "hp_anima": "4013",
+  "rec_anima": "412",
+  "atk_breaker": "1114",
+  "def_breaker": "648",
+  "atk_guardian": "958",
+  "def_guardian": "804",
+  "rec_guardian": "451",
+  "def_oracle": "687",
+  "hp_oracle": "3603",
+  "rec_oracle": "607",
+  "hp_bonus": "300",
+  "atk_bonus": "120",
+  "def_bonus": "120",
+  "rec_bonus": "120",
+  "lordonly": "",
+  "combo_hits": "8",
+  "normaldc": "16",
+  "ls": "Valiant Power",
+  "lsdescription": "10% boost to Atk Power of all types",
+  "lstype": "Attack",
+  "bbdescription": "8 combo Fire elemental power attack on single Enemy & probable Injury effect",
+  "bbnote": "80% chance",
+  "bbtype": "Offense",
+  "bbhits": "8",
+  "bbaoe": "1",
+  "bbgauge": "15",
+  "bbdc": "8",
+  "bbmultiplier": "250",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "60143",
+  "evomats2": "10132",
+  "evomats3": "10131",
+  "evomats4": "",
+  "evomats5": "",
+  "evoitem": ""
 }

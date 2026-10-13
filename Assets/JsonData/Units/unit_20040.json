@@ -1,58 +1,63 @@
 {
   "id": "20040",
-  "unitName": "Priest Merith",
-  "no": "57",
-  "element": "Water",
-  "rarity": "★",
-  "cost": "2",
-  "maxlv": "15",
-  "basexp": "10",
-  "gender": "F",
-  "ai": "7",
-  "animation_attack": "88",
-  "animation_idle": "52",
-  "animation_move": "52",
-  "movespeed_attack": "8",
-  "movespeed_skill": "8",
-  "speedtype_attack": "1",
-  "speedtype_skill": "1",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "48, 53, 58",
-  "normal_distribute": "33, 33, 34",
-  "normal_totaldistr": "100",
-  "description": "A monk from the ruined Sama Kingdom. Much of the kingdom had contact with the sea, so many worshiped the sea god, Salam. From a young age, Merith was also deeply moved by those teachings. She endeavored to become a monk at an early age, formally becoming one at 16. The monks of the Sama Kingdom acquired healing powers to protect the people, and are most accustomed to water magic.",
-  "summon": "I'm Merith, the monk.<br>I look forward to travelling<br>with you.",
-  "fusion": "Faith is my strength.<br>Would you pray with me?",
-  "evolution": "",
-  "hp_base": "1050",
-  "atk_base": "250",
-  "def_base": "350",
-  "rec_base": "430",
-  "hp_lord": "1770",
-  "atk_lord": "325",
-  "def_lord": "525",
-  "rec_lord": "602",
-  "hp_anima": "1875",
-  "rec_anima": "574",
-  "atk_breaker": "353",
-  "def_breaker": "497",
-  "atk_guardian": "297",
-  "def_guardian": "553",
-  "rec_guardian": "588",
-  "def_oracle": "511",
-  "hp_oracle": "1728",
-  "rec_oracle": "644",
-  "hp_bonus": "150",
-  "atk_bonus": "40",
-  "def_bonus": "80",
-  "rec_bonus": "60",
-  "lordonly": "",
-  "combo_hits": "3",
-  "normaldc": "6",
-  "ls": "Water's Protection",
-  "lsdescription": "10% reduction in damage from Water Types",
-  "lstype": "Defense",
+  "stats": {
+    "_base": {
+      "atk": 250,
+      "def": 350,
+      "hp": 1050,
+      "rec": 430
+    },
+    "_lord": {
+      "atk": 325,
+      "def": 525,
+      "hp": 1770,
+      "rec": 602
+    },
+    "anima": {
+      "atk": 325,
+      "def": 525,
+      "hp max": 1910,
+      "hp min": 1840,
+      "rec max": 588,
+      "rec min": 560
+    },
+    "breaker": {
+      "atk max": 367,
+      "atk min": 339,
+      "def max": 511,
+      "def min": 483,
+      "hp": 1770,
+      "rec": 602
+    },
+    "guardian": {
+      "atk": 325,
+      "def max": 567,
+      "def min": 539,
+      "hp": 1770,
+      "rec max": 602,
+      "rec min": 574
+    },
+    "oracle": {
+      "atk": 325,
+      "def max": 525,
+      "def min": 497,
+      "hp": 1770,
+      "rec max": 658,
+      "rec min": 630
+    }
+  },
+  "leader_skill": {
+    "desc": "10% reduction in damage from Water Types",
+    "effects": [
+      {
+        "passive id": "5",
+        "water resist%": 10
+      }
+    ],
+    "id": "502",
+    "name": "Water's Protection"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -215,93 +220,87 @@
     ],
     "name": "Curing"
   },
-  "bbdescription": "Recovery of all allies' HP",
-  "bbnote": "Heals (580~780 + 22.5% healer's Rec) HP",
-  "bbtype": "Heal",
-  "bbhits": "",
-  "bbaoe": "0",
-  "bbgauge": "15",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "20041",
-  "evomats1": "20130",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "5000",
-  "stats": {
-    "_base": {
-      "atk": 250,
-      "def": 350,
-      "hp": 1050,
-      "rec": 430
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 100.0,
+      "target conditions": "hp_75pr_under",
+      "target type": "party"
     },
-    "_lord": {
-      "atk": 325,
-      "def": 525,
-      "hp": 1770,
-      "rec": 602
+    {
+      "action": "attack",
+      "chance%": 50.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 325,
-      "def": 525,
-      "hp max": 1910,
-      "hp min": 1840,
-      "rec max": 588,
-      "rec min": 560
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 88
     },
-    "breaker": {
-      "atk max": 367,
-      "atk min": 339,
-      "def max": 511,
-      "def min": 483,
-      "hp": 1770,
-      "rec": 602
+    "idle": {
+      "total number of frames": 52
     },
-    "guardian": {
-      "atk": 325,
-      "def max": 567,
-      "def min": 539,
-      "hp": 1770,
-      "rec max": 602,
-      "rec min": 574
-    },
-    "oracle": {
-      "atk": 325,
-      "def max": 525,
-      "def min": 497,
-      "hp": 1770,
-      "rec max": 658,
-      "rec min": 630
+    "move": {
+      "total number of frames": 52
     }
   },
-  "leader_skill": {
-    "desc": "10% reduction in damage from Water Types",
-    "effects": [
-      {
-        "passive id": "5",
-        "water resist%": 10
-      }
+  "category": 20040,
+  "cost": "2",
+  "damage frames": {
+    "frame times": [
+      48,
+      53,
+      58
     ],
-    "id": "502",
-    "name": "Water's Protection"
+    "hit dmg% distribution": [
+      33,
+      33,
+      34
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 3
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "water",
+  "exp_pattern": 10,
+  "gender": "female",
+  "getting type": "not eligible for achievement",
+  "guide_id": 57,
+  "imp": {
+    "max atk": "40",
+    "max def": "80",
+    "max hp": "150",
+    "max rec": "60"
+  },
+  "kind": "normal",
+  "lord damage range": "302~338",
+  "movement": {
+    "attack": {
+      "move speed": 8,
+      "move speed type": "1",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 8,
+      "move speed type": "1",
+      "move type": "3"
+    }
+  },
+  "name": "Priest Merith",
+  "rarity": "1",
+  "sell caution": false,
+  "unitName": "Priest Merith",
+  "maxlv": "15",
+  "no": "57",
   "unitDisplayHomePosition_1W9CxaFK": "249,121,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "81,27,650,762",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "156,280,288,338,0",
@@ -311,5 +310,85 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "100",
   "sellCaution": false,
-  "effectFrames": "47:180:1"
+  "effectFrames": "47:180:1",
+  "evofrom": "",
+  "evointo": "20041",
+  "evozelcost": "5000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "20130",
+      "count": 1
+    }
+  ],
+  "basexp": "10",
+  "animation_attack": "88",
+  "animation_idle": "52",
+  "animation_move": "52",
+  "movespeed_attack": "8",
+  "movespeed_skill": "8",
+  "speedtype_attack": "1",
+  "speedtype_skill": "1",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "48, 53, 58",
+  "normal_distribute": "33, 33, 34",
+  "normal_totaldistr": "100",
+  "description": "A monk from the ruined Sama Kingdom. Much of the kingdom had contact with the sea, so many worshiped the sea god, Salam. From a young age, Merith was also deeply moved by those teachings. She endeavored to become a monk at an early age, formally becoming one at 16. The monks of the Sama Kingdom acquired healing powers to protect the people, and are most accustomed to water magic.",
+  "summon": "I'm Merith, the monk.<br>I look forward to travelling<br>with you.",
+  "fusion": "Faith is my strength.<br>Would you pray with me?",
+  "evolution": "",
+  "hp_base": "1050",
+  "atk_base": "250",
+  "def_base": "350",
+  "rec_base": "430",
+  "hp_lord": "1770",
+  "atk_lord": "325",
+  "def_lord": "525",
+  "rec_lord": "602",
+  "hp_anima": "1875",
+  "rec_anima": "574",
+  "atk_breaker": "353",
+  "def_breaker": "497",
+  "atk_guardian": "297",
+  "def_guardian": "553",
+  "rec_guardian": "588",
+  "def_oracle": "511",
+  "hp_oracle": "1728",
+  "rec_oracle": "644",
+  "hp_bonus": "150",
+  "atk_bonus": "40",
+  "def_bonus": "80",
+  "rec_bonus": "60",
+  "lordonly": "",
+  "combo_hits": "3",
+  "normaldc": "6",
+  "ls": "Water's Protection",
+  "lsdescription": "10% reduction in damage from Water Types",
+  "lstype": "Defense",
+  "bbdescription": "Recovery of all allies' HP",
+  "bbnote": "Heals (580~780 + 22.5% healer's Rec) HP",
+  "bbtype": "Heal",
+  "bbhits": "",
+  "bbaoe": "0",
+  "bbgauge": "15",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "20130",
+  "evomats2": "",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": "",
+  "evoitem": ""
 }

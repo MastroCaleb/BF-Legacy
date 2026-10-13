@@ -1,52 +1,71 @@
 {
   "id": "60273",
-  "unitName": "Half Blood Lira",
-  "no": "425",
-  "element": "Dark",
-  "rarity": "★★★★",
-  "cost": "12",
-  "maxlv": "60",
-  "basexp": "21",
-  "gender": "N",
-  "ai": "3",
-  "animation_attack": "166",
-  "animation_idle": "60",
-  "animation_move": "46",
-  "movespeed_attack": "6",
-  "movespeed_skill": "6",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "2",
-  "movetype_skill": "2",
-  "description": "A girl with a human mother and demon father. Having lost both her parents at an early age Lira spent her days living in a demon village even despite the harsh gazes she received from those around her. Doing everything she could as a demon in order to survive, one day she was given a new responsibility. She was to defeat the White Beast. Apathetic as always, Lira headed out with Golem, which she had received from her father, to face the White Beast.",
-  "summon": "I am Lira, a half blood!<br>You should fear me!<br>However, if you don't...",
-  "fusion": "I must become a strong demon.<br>Please, give me more power!",
-  "evolution": "",
-  "hp_base": "2910",
-  "atk_base": "915",
-  "def_base": "933",
-  "rec_base": "927",
-  "hp_lord": "4452",
-  "atk_lord": "1308",
-  "def_lord": "1318",
-  "rec_lord": "1308",
-  "hp_anima": "4894",
-  "rec_anima": "1190",
-  "atk_breaker": "1426",
-  "def_breaker": "1200",
-  "atk_guardian": "1190",
-  "def_guardian": "1436",
-  "hp_oracle": "4009",
-  "rec_oracle": "1426",
-  "hp_bonus": "400",
-  "atk_bonus": "160",
-  "def_bonus": "160",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "4",
-  "ls": "Epidemic Wave",
-  "lsdescription": "Low chance of inflicting a random status ailment when attacking",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 915,
+      "def": 933,
+      "hp": 2910,
+      "rec": 927
+    },
+    "_lord": {
+      "atk": 1308,
+      "def": 1318,
+      "hp": 4452,
+      "rec": 1308
+    },
+    "anima": {
+      "atk": 1308,
+      "def": 1318,
+      "hp max": 5042,
+      "hp min": 4747,
+      "rec max": 1249,
+      "rec min": 1131
+    },
+    "breaker": {
+      "atk max": 1485,
+      "atk min": 1367,
+      "def max": 1259,
+      "def min": 1141,
+      "hp": 4452,
+      "rec": 1308
+    },
+    "guardian": {
+      "atk": 1308,
+      "def max": 1495,
+      "def min": 1377,
+      "hp": 4452,
+      "rec max": 1308,
+      "rec min": 1190
+    },
+    "oracle": {
+      "atk": 1308,
+      "def max": 1318,
+      "def min": 1200,
+      "hp": 4452,
+      "rec max": 1544,
+      "rec min": 1426
+    }
+  },
+  "leader_skill": {
+    "desc": "Low chance of inflicting a random status ailment when attacking",
+    "effects": [
+      {
+        "injury%": 5,
+        "passive id": "20",
+        "poison%": 3,
+        "sick%": 5,
+        "weaken%": 5
+      },
+      {
+        "curse%": 3,
+        "paralysis%": 3,
+        "passive id": "20"
+      }
+    ],
+    "id": "3000",
+    "name": "Epidemic Wave"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -211,99 +230,95 @@
     ],
     "name": "Demon Slash"
   },
-  "bbdescription": "7 combo Dark elemental attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "7",
-  "bbaoe": "A",
-  "bbgauge": "14",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "60274",
-  "evomats1": "60123",
-  "evomats2": "60122",
-  "evomats3": "60122",
-  "evomats4": "60201",
-  "evomats5": "60201",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 915,
-      "def": 933,
-      "hp": 2910,
-      "rec": 927
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1308,
-      "def": 1318,
-      "hp": 4452,
-      "rec": 1308
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1308,
-      "def": 1318,
-      "hp max": 5042,
-      "hp min": 4747,
-      "rec max": 1249,
-      "rec min": 1131
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 1485,
-      "atk min": 1367,
-      "def max": 1259,
-      "def min": 1141,
-      "hp": 4452,
-      "rec": 1308
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 166
     },
-    "guardian": {
-      "atk": 1308,
-      "def max": 1495,
-      "def min": 1377,
-      "hp": 4452,
-      "rec max": 1308,
-      "rec min": 1190
+    "idle": {
+      "total number of frames": 60
     },
-    "oracle": {
-      "atk": 1308,
-      "def max": 1318,
-      "def min": 1200,
-      "hp": 4452,
-      "rec max": 1544,
-      "rec min": 1426
+    "move": {
+      "total number of frames": 46
     }
   },
-  "leader_skill": {
-    "desc": "Low chance of inflicting a random status ailment when attacking",
-    "effects": [
-      {
-        "injury%": 5,
-        "passive id": "20",
-        "poison%": 3,
-        "sick%": 5,
-        "weaken%": 5
-      },
-      {
-        "curse%": 3,
-        "paralysis%": 3,
-        "passive id": "20"
-      }
+  "category": 60270,
+  "cost": "12",
+  "damage frames": {
+    "frame times": [
+      54,
+      64,
+      80,
+      96
     ],
-    "id": "3000",
-    "name": "Epidemic Wave"
+    "hit dmg% distribution": [
+      25,
+      25,
+      25,
+      25
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 4
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "dark",
+  "exp_pattern": 20,
+  "gender": "other",
+  "getting type": "rare summon",
+  "guide_id": 425,
+  "imp": {
+    "max atk": "160",
+    "max def": "160",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "1217~1360",
+  "movement": {
+    "attack": {
+      "move speed": 6,
+      "move speed type": "2",
+      "move type": "2"
+    },
+    "skill": {
+      "move speed": 6,
+      "move speed type": "2",
+      "move type": "2"
+    }
+  },
+  "name": "Half Blood Lira",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Half Blood Lira",
+  "maxlv": "60",
+  "no": "425",
   "unitDisplayHomePosition_1W9CxaFK": "139,185,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "146,21,901,772",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "144,287,352,327,0",
@@ -313,5 +328,98 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "48:600311:1,52:600211:1,78:600220:1,48:126:1,52:126:1"
+  "effectFrames": "48:600311:1,52:600211:1,78:600220:1,48:126:1,52:126:1",
+  "evofrom": "",
+  "evointo": "60274",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "60123",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60122",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60201",
+      "count": 2
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "166",
+  "animation_idle": "60",
+  "animation_move": "46",
+  "movespeed_attack": "6",
+  "movespeed_skill": "6",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "2",
+  "movetype_skill": "2",
+  "normal_frames": "54, 64, 80, 96",
+  "normal_distribute": "25, 25, 25, 25",
+  "normal_totaldistr": "100",
+  "bb_frames": "54, 64, 74, 84, 94, 104, 114",
+  "bb_distribute": "10, 10, 12, 14, 16, 18, 20",
+  "bb_totaldistr": "100",
+  "description": "A girl with a human mother and demon father. Having lost both her parents at an early age Lira spent her days living in a demon village even despite the harsh gazes she received from those around her. Doing everything she could as a demon in order to survive, one day she was given a new responsibility. She was to defeat the White Beast. Apathetic as always, Lira headed out with Golem, which she had received from her father, to face the White Beast.",
+  "summon": "I am Lira, a half blood!<br>You should fear me!<br>However, if you don't...",
+  "fusion": "I must become a strong demon.<br>Please, give me more power!",
+  "evolution": "",
+  "hp_base": "2910",
+  "atk_base": "915",
+  "def_base": "933",
+  "rec_base": "927",
+  "hp_lord": "4452",
+  "atk_lord": "1308",
+  "def_lord": "1318",
+  "rec_lord": "1308",
+  "hp_anima": "4895",
+  "rec_anima": "1190",
+  "atk_breaker": "1426",
+  "def_breaker": "1200",
+  "atk_guardian": "1190",
+  "def_guardian": "1436",
+  "rec_guardian": "1249",
+  "def_oracle": "1259",
+  "hp_oracle": "4275",
+  "rec_oracle": "1485",
+  "hp_bonus": "400",
+  "atk_bonus": "160",
+  "def_bonus": "160",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "4",
+  "normaldc": "12",
+  "ls": "Epidemic Wave",
+  "lsdescription": "Low chance of inflicting a random status ailment when attacking",
+  "lstype": "Attack",
+  "bbdescription": "7 combo Dark elemental attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "7",
+  "bbaoe": "A",
+  "bbgauge": "14",
+  "bbdc": "7",
+  "bbmultiplier": "130",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "60123",
+  "evomats2": "60122",
+  "evomats3": "60122",
+  "evomats4": "60201",
+  "evomats5": "60201"
 }

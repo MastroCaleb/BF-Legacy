@@ -1,62 +1,66 @@
 {
   "id": "20222",
-  "unitName": "Jaegar",
-  "no": "581",
-  "element": "Water",
-  "rarity": "★★★",
-  "cost": "6",
-  "maxlv": "40",
-  "basexp": "15",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "61",
-  "animation_idle": "64",
-  "animation_move": "16",
-  "movespeed_attack": "0.0041",
-  "movespeed_skill": "0.0041",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "37, 43, 50",
-  "normal_distribute": "33, 33, 34",
-  "normal_totaldistr": "100",
-  "bb_frames": "37, 52, 67, 82",
-  "bb_distribute": "25, 25, 25, 25",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "description": "A young general from the Sama Kingdom. The hometown of some of the most memorable generals of the kingdom's forces. Having a friendlier relationship with the Savat people than that of his great-grandfather's time, he is also an old friend of one of the Six Heroes, Selena. Though known as a superficial womanizer of soft features, his power as a soldier and as a commander was very much real, serving as a firefighter during the incessant internal turmoil that took place within his country. He was said to never forget his chivalrous manners, no matter how intense the battle he found himself in was.",
-  "summon": "I'm Jaegar, it's a pleasure. <br>By the way,<br> how many women are in your corps?",
-  "fusion": "Hey!<br> When you're making me stronger next time<br>make sure you use only girls to power me up!",
-  "evolution": "",
-  "hp_base": "2044",
-  "atk_base": "878",
-  "def_base": "659",
-  "rec_base": "702",
-  "hp_lord": "3276",
-  "atk_lord": "1231",
-  "def_lord": "929",
-  "rec_lord": "880",
-  "hp_anima": "3569",
-  "rec_anima": "802",
-  "atk_breaker": "1309",
-  "def_breaker": "851",
-  "atk_guardian": "1153",
-  "def_guardian": "1007",
-  "rec_guardian": "841",
-  "def_oracle": "890",
-  "hp_oracle": "3159",
-  "rec_oracle": "997",
-  "hp_bonus": "300",
-  "atk_bonus": "160",
-  "def_bonus": "80",
-  "rec_bonus": "120",
-  "lordonly": "",
-  "combo_hits": "3",
-  "normaldc": "6",
-  "ls": "Instant Destruction Gale",
-  "lsdescription": "25% boost to Atk, Def, & Rec for first turn",
-  "lstype": "Attack/Defense/Recovery",
+  "stats": {
+    "_base": {
+      "atk": 878,
+      "def": 659,
+      "hp": 2044,
+      "rec": 702
+    },
+    "_lord": {
+      "atk": 1231,
+      "def": 929,
+      "hp": 3276,
+      "rec": 880
+    },
+    "anima": {
+      "atk": 1231,
+      "def": 929,
+      "hp max": 3666,
+      "hp min": 3471,
+      "rec max": 841,
+      "rec min": 763
+    },
+    "breaker": {
+      "atk max": 1348,
+      "atk min": 1270,
+      "def max": 890,
+      "def min": 812,
+      "hp": 3276,
+      "rec": 880
+    },
+    "guardian": {
+      "atk": 1231,
+      "def max": 1046,
+      "def min": 968,
+      "hp": 3276,
+      "rec max": 880,
+      "rec min": 802
+    },
+    "oracle": {
+      "atk": 1231,
+      "def max": 929,
+      "def min": 851,
+      "hp": 3276,
+      "rec max": 1036,
+      "rec min": 958
+    }
+  },
+  "leader_skill": {
+    "desc": "25% boost to Atk, Def, & Rec for first turn",
+    "effects": [
+      {
+        "first x turns": 1,
+        "first x turns atk% (1)": 25,
+        "first x turns def% (3)": 25,
+        "first x turns rec% (5)": 25,
+        "passive id": "21"
+      }
+    ],
+    "id": "2502",
+    "name": "Instant Destruction Gale"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -297,97 +301,87 @@
     ],
     "name": "Frozen Flash"
   },
-  "bbdescription": "4 combo Water elemental attack on all enemies & adds chance of ignoring opponents' Def when attacking for all allies for 2 turns",
-  "bbtype": "Support/Offense",
-  "bbhits": "4",
-  "bbaoe": "A",
-  "bbgauge": "20",
-  "bbdc": "4",
-  "bbmultiplier": "95",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "20223",
-  "evomats1": "20132",
-  "evomats2": "20132",
-  "evomats3": "20131",
-  "evomats4": "60143",
-  "evomats5": "60142",
-  "evoitem": "",
-  "evozelcost": "100000",
-  "stats": {
-    "_base": {
-      "atk": 878,
-      "def": 659,
-      "hp": 2044,
-      "rec": 702
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1231,
-      "def": 929,
-      "hp": 3276,
-      "rec": 880
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1231,
-      "def": 929,
-      "hp max": 3666,
-      "hp min": 3471,
-      "rec max": 841,
-      "rec min": 763
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 61
     },
-    "breaker": {
-      "atk max": 1348,
-      "atk min": 1270,
-      "def max": 890,
-      "def min": 812,
-      "hp": 3276,
-      "rec": 880
+    "idle": {
+      "total number of frames": 64
     },
-    "guardian": {
-      "atk": 1231,
-      "def max": 1046,
-      "def min": 968,
-      "hp": 3276,
-      "rec max": 880,
-      "rec min": 802
-    },
-    "oracle": {
-      "atk": 1231,
-      "def max": 929,
-      "def min": 851,
-      "hp": 3276,
-      "rec max": 1036,
-      "rec min": 958
+    "move": {
+      "total number of frames": 16
     }
   },
-  "leader_skill": {
-    "desc": "25% boost to Atk, Def, & Rec for first turn",
-    "effects": [
-      {
-        "first x turns": 1,
-        "first x turns atk% (1)": 25,
-        "first x turns def% (3)": 25,
-        "first x turns rec% (5)": 25,
-        "passive id": "21"
-      }
+  "category": 20220,
+  "cost": "6",
+  "damage frames": {
+    "frame times": [
+      37,
+      43,
+      50
     ],
-    "id": "2502",
-    "name": "Instant Destruction Gale"
+    "hit dmg% distribution": [
+      33,
+      33,
+      34
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 3
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "water",
+  "exp_pattern": 15,
+  "gender": "male",
+  "getting type": "farmable",
+  "guide_id": 581,
+  "imp": {
+    "max atk": "160",
+    "max def": "80",
+    "max hp": "300",
+    "max rec": "120"
+  },
+  "kind": "normal",
+  "lord damage range": "1145~1280",
+  "movement": {
+    "attack": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    }
+  },
+  "name": "Jaegar",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "Jaegar",
+  "maxlv": "40",
+  "no": "581",
   "unitDisplayHomePosition_1W9CxaFK": "160,-30,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "130,232,820,576",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "160,336,297,293,0",
@@ -397,5 +391,105 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "1000",
   "sellCaution": false,
-  "effectFrames": "37:122:1,40:180:1,43:122:1,50:122:1"
+  "effectFrames": "37:122:1,40:180:1,43:122:1,50:122:1",
+  "evofrom": "",
+  "evointo": "20223",
+  "evozelcost": "100000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "20132",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "20131",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60142",
+      "count": 1
+    }
+  ],
+  "basexp": "15",
+  "animation_attack": "61",
+  "animation_idle": "64",
+  "animation_move": "16",
+  "movespeed_attack": "0.0041",
+  "movespeed_skill": "0.0041",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "37, 43, 50",
+  "normal_distribute": "33, 33, 34",
+  "normal_totaldistr": "100",
+  "bb_frames": "37, 52, 67, 82",
+  "bb_distribute": "25, 25, 25, 25",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "description": "A young general from the Sama Kingdom. The hometown of some of the most memorable generals of the kingdom's forces. Having a friendlier relationship with the Savat people than that of his great-grandfather's time, he is also an old friend of one of the Six Heroes, Selena. Though known as a superficial womanizer of soft features, his power as a soldier and as a commander was very much real, serving as a firefighter during the incessant internal turmoil that took place within his country. He was said to never forget his chivalrous manners, no matter how intense the battle he found himself in was.",
+  "summon": "I'm Jaegar, it's a pleasure. <br>By the way,<br> how many women are in your corps?",
+  "fusion": "Hey!<br> When you're making me stronger next time<br>make sure you use only girls to power me up!",
+  "evolution": "",
+  "hp_base": "2044",
+  "atk_base": "878",
+  "def_base": "659",
+  "rec_base": "702",
+  "hp_lord": "3276",
+  "atk_lord": "1231",
+  "def_lord": "929",
+  "rec_lord": "880",
+  "hp_anima": "3569",
+  "rec_anima": "802",
+  "atk_breaker": "1309",
+  "def_breaker": "851",
+  "atk_guardian": "1153",
+  "def_guardian": "1007",
+  "rec_guardian": "841",
+  "def_oracle": "890",
+  "hp_oracle": "3159",
+  "rec_oracle": "997",
+  "hp_bonus": "300",
+  "atk_bonus": "160",
+  "def_bonus": "80",
+  "rec_bonus": "120",
+  "lordonly": "",
+  "combo_hits": "3",
+  "normaldc": "6",
+  "ls": "Instant Destruction Gale",
+  "lsdescription": "25% boost to Atk, Def, & Rec for first turn",
+  "lstype": "Attack/Defense/Recovery",
+  "bbdescription": "4 combo Water elemental attack on all enemies & adds chance of ignoring opponents' Def when attacking for all allies for 2 turns",
+  "bbtype": "Support/Offense",
+  "bbhits": "4",
+  "bbaoe": "A",
+  "bbgauge": "20",
+  "bbdc": "4",
+  "bbmultiplier": "95",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "20132",
+  "evomats2": "20132",
+  "evomats3": "20131",
+  "evomats4": "60143",
+  "evomats5": "60142",
+  "evoitem": ""
 }

@@ -1,60 +1,69 @@
 {
   "id": "40233",
-  "unitName": "Paladin Paris",
-  "no": "389",
-  "element": "Thunder",
-  "rarity": "★★★★",
-  "cost": "12",
-  "maxlv": "60",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "103",
-  "animation_idle": "64",
-  "animation_move": "13",
-  "movespeed_attack": "4",
-  "movespeed_skill": "4",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "2",
-  "movetype_skill": "2",
-  "normal_frames": "64, 70, 76",
-  "normal_distribute": "50, 30, 20",
-  "normal_totaldistr": "100",
-  "bb_frames": "64, 70, 76, 82, 88",
-  "bb_distribute": "40, 20, 20, 10, 10",
-  "bb_totaldistr": "100",
-  "description": "A mock Unit modeled after Paris, a Summoner who served as one of the \"Imperial Guards,\" bodyguards to the imperial family of the Randall Empire. Part of an elite force rumored to be even more powerful than the Demon Slayers, her abilities were incredibly powerful. As to why a mock Unit was created based on someone not from the Summoners' Hall, theories are coming in from both sides saying everything from \"It was a high-reaching political move\" to \"It was due to an undeniable request from the head of the Development Department.\"",
-  "summon": "So you're the Summoner<br>I've heard so much about.<br>Show me what you're made of.",
-  "fusion": "You're quite attentive for a<br>Summoner from the Hall. <br>I definitely admire that.",
-  "evolution": "",
-  "hp_base": "2740",
-  "atk_base": "990",
-  "def_base": "870",
-  "rec_base": "810",
-  "hp_lord": "4130",
-  "atk_lord": "1470",
-  "def_lord": "1290",
-  "rec_lord": "1110",
-  "hp_anima": "4573",
-  "rec_anima": "992",
-  "atk_breaker": "1588",
-  "def_breaker": "1172",
-  "atk_guardian": "1352",
-  "def_guardian": "1408",
-  "hp_oracle": "3953",
-  "rec_oracle": "1287",
-  "hp_bonus": "400",
-  "atk_bonus": "120",
-  "def_bonus": "200",
-  "rec_bonus": "160",
-  "lordonly": "Yes",
-  "combo_hits": "3",
-  "normaldc": "6",
-  "ls": "Priestess' Guard",
-  "lsdescription": "BB gauge fills and very low chance of taking only 1 damage when attacked",
-  "lsnote": "1 BC fill when attacked & 5% chance of taking only 1 damage",
-  "lstype": "Defense/Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 990,
+      "def": 870,
+      "hp": 2740,
+      "rec": 810
+    },
+    "_lord": {
+      "atk": 1470,
+      "def": 1290,
+      "hp": 4130,
+      "rec": 1110
+    },
+    "anima": {
+      "atk": 1470,
+      "def": 1290,
+      "hp max": 4720,
+      "hp min": 4425,
+      "rec max": 1051,
+      "rec min": 933
+    },
+    "breaker": {
+      "atk max": 1647,
+      "atk min": 1529,
+      "def max": 1231,
+      "def min": 1113,
+      "hp": 4130,
+      "rec": 1110
+    },
+    "guardian": {
+      "atk": 1470,
+      "def max": 1467,
+      "def min": 1349,
+      "hp": 4130,
+      "rec max": 1110,
+      "rec min": 992
+    },
+    "oracle": {
+      "atk": 1470,
+      "def max": 1290,
+      "def min": 1172,
+      "hp": 4130,
+      "rec max": 1346,
+      "rec min": 1228
+    }
+  },
+  "leader_skill": {
+    "desc": "BB gauge fills and very low chance of taking only 1 damage when attacked",
+    "effects": [
+      {
+        "bc fill when attacked high": 1,
+        "bc fill when attacked low": 1,
+        "bc fill when attacked%": 100,
+        "passive id": "25"
+      },
+      {
+        "passive id": "43",
+        "take 1 dmg%": 5
+      }
+    ],
+    "id": "2900",
+    "name": "Priestess' Guard"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -215,99 +224,87 @@
     ],
     "name": "Thunder Tornado"
   },
-  "bbdescription": "5 combo Thunder elemental attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "5",
-  "bbaoe": "A",
-  "bbgauge": "17",
-  "bbdc": "5",
-  "bbmultiplier": "160",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "40234",
-  "evomats1": "40133",
-  "evomats2": "40132",
-  "evomats3": "40132",
-  "evomats4": "40191",
-  "evomats5": "40191",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 990,
-      "def": 870,
-      "hp": 2740,
-      "rec": 810
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1470,
-      "def": 1290,
-      "hp": 4130,
-      "rec": 1110
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1470,
-      "def": 1290,
-      "hp max": 4720,
-      "hp min": 4425,
-      "rec max": 1051,
-      "rec min": 933
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 103
     },
-    "breaker": {
-      "atk max": 1647,
-      "atk min": 1529,
-      "def max": 1231,
-      "def min": 1113,
-      "hp": 4130,
-      "rec": 1110
+    "idle": {
+      "total number of frames": 64
     },
-    "guardian": {
-      "atk": 1470,
-      "def max": 1467,
-      "def min": 1349,
-      "hp": 4130,
-      "rec max": 1110,
-      "rec min": 992
-    },
-    "oracle": {
-      "atk": 1470,
-      "def max": 1290,
-      "def min": 1172,
-      "hp": 4130,
-      "rec max": 1346,
-      "rec min": 1228
+    "move": {
+      "total number of frames": 13
     }
   },
-  "leader_skill": {
-    "desc": "BB gauge fills and very low chance of taking only 1 damage when attacked",
-    "effects": [
-      {
-        "bc fill when attacked high": 1,
-        "bc fill when attacked low": 1,
-        "bc fill when attacked%": 100,
-        "passive id": "25"
-      },
-      {
-        "passive id": "43",
-        "take 1 dmg%": 5
-      }
+  "category": 40230,
+  "cost": "12",
+  "damage frames": {
+    "frame times": [
+      64,
+      70,
+      76
     ],
-    "id": "2900",
-    "name": "Priestess' Guard"
+    "hit dmg% distribution": [
+      50,
+      30,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 3
   },
-  "extra_skill": {},
+  "drop check count": 5,
+  "element": "thunder",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "farmable",
+  "guide_id": 389,
+  "imp": {
+    "max atk": "120",
+    "max def": "200",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "1368~1528",
+  "movement": {
+    "attack": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "2"
+    },
+    "skill": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "2"
+    }
+  },
+  "name": "Paladin Paris",
+  "rarity": "4",
+  "sell caution": true,
+  "unitName": "Paladin Paris",
+  "maxlv": "60",
+  "no": "389",
   "unitDisplayHomePosition_1W9CxaFK": "262,174,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "91,17,820,762",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "215,403,265,225,0",
@@ -317,5 +314,97 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": true,
-  "effectFrames": "58:124:1,58:400201:1,58:100010:1,64:124:1,64:400201:1,64:100010:1,70:124:1,70:400201:1,70:100010:1"
+  "effectFrames": "58:124:1,58:400201:1,58:100010:1,64:124:1,64:400201:1,64:100010:1,70:124:1,70:400201:1,70:100010:1",
+  "evofrom": "",
+  "evointo": "40234",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "40133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40132",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "40191",
+      "count": 2
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "103",
+  "animation_idle": "64",
+  "animation_move": "13",
+  "movespeed_attack": "4",
+  "movespeed_skill": "4",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "2",
+  "movetype_skill": "2",
+  "normal_frames": "64, 70, 76",
+  "normal_distribute": "50, 30, 20",
+  "normal_totaldistr": "100",
+  "bb_frames": "64, 70, 76, 82, 88",
+  "bb_distribute": "40, 20, 20, 10, 10",
+  "bb_totaldistr": "100",
+  "description": "A mock Unit modeled after Paris, a Summoner who served as one of the \"Imperial Guards,\" bodyguards to the imperial family of the Randall Empire. Part of an elite force rumored to be even more powerful than the Demon Slayers, her abilities were incredibly powerful. As to why a mock Unit was created based on someone not from the Summoners' Hall, theories are coming in from both sides saying everything from \"It was a high-reaching political move\" to \"It was due to an undeniable request from the head of the Development Department.\"",
+  "summon": "So you're the Summoner<br>I've heard so much about.<br>Show me what you're made of.",
+  "fusion": "You're quite attentive for a<br>Summoner from the Hall. <br>I definitely admire that.",
+  "evolution": "",
+  "hp_base": "2740",
+  "atk_base": "990",
+  "def_base": "870",
+  "rec_base": "810",
+  "hp_lord": "4130",
+  "atk_lord": "1470",
+  "def_lord": "1290",
+  "rec_lord": "1110",
+  "hp_anima": "4573",
+  "rec_anima": "992",
+  "atk_breaker": "1588",
+  "def_breaker": "1172",
+  "atk_guardian": "1352",
+  "def_guardian": "1408",
+  "hp_oracle": "3953",
+  "rec_oracle": "1287",
+  "hp_bonus": "400",
+  "atk_bonus": "120",
+  "def_bonus": "200",
+  "rec_bonus": "160",
+  "lordonly": "Yes",
+  "combo_hits": "3",
+  "normaldc": "6",
+  "ls": "Priestess' Guard",
+  "lsdescription": "BB gauge fills and very low chance of taking only 1 damage when attacked",
+  "lsnote": "1 BC fill when attacked & 5% chance of taking only 1 damage",
+  "lstype": "Defense/Brave Burst",
+  "bbdescription": "5 combo Thunder elemental attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "5",
+  "bbaoe": "A",
+  "bbgauge": "17",
+  "bbdc": "5",
+  "bbmultiplier": "160",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "40133",
+  "evomats2": "40132",
+  "evomats3": "40132",
+  "evomats4": "40191",
+  "evomats5": "40191"
 }

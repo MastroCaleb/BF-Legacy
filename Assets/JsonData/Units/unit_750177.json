@@ -1,67 +1,158 @@
 {
   "id": "750177",
-  "unitName": "Gemini of Abomination (EU, Dream)",
-  "disam": "Gemini",
-  "altname": "Gemini of Abomination",
-  "idalt": "",
-  "has_altart": "",
-  "doenter": "true",
-  "no": "7242",
-  "element": "Light",
-  "rarity": "Dream",
-  "cost": "54",
-  "maxlv": "150",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "3",
-  "animation_attack": "258",
-  "animation_idle": "54",
-  "animation_move": "8",
-  "movespeed_attack": "0.0033",
-  "speedtype_attack": "3",
-  "movetype_attack": "1",
-  "movespeed_skill": "0.0033",
-  "speedtype_skill": "3",
-  "movetype_skill": "1",
-  "description": "A mock unit based on Gemini, one of the Zodiac’s evil warriors. This mysterious mock unit's abilities transcend those of the original. No one knows where it came from, let alone how it got its upgraded powers.",
-  "summon": "",
-  "fusion": "Amidst the crows and the flames, souls strengthen us",
-  "evolution": "Unknowingly, we were the origin of this disaster",
-  "hp_base": "6487",
-  "atk_base": "2528",
-  "def_base": "2315",
-  "rec_base": "2369",
-  "hp_lord": "7914",
-  "atk_lord": "3084",
-  "def_lord": "2824",
-  "rec_lord": "2914",
-  "hp_anima": "9031",
-  "rec_anima": "2616",
-  "atk_breaker": "3382",
-  "def_breaker": "2526",
-  "def_guardian": "3122",
-  "rec_guardian": "2914",
-  "def_oracle": "2824",
-  "rec_oracle": "3212",
-  "hp_bonus": "1500",
-  "atk_bonus": "640",
-  "def_bonus": "600",
-  "rec_bonus": "600",
-  "lordonly": "",
-  "evofrom": "750176",
-  "evointo": "",
-  "normal_frames": "40, 42, 44, 46, 48, 50, 52, 54, 100, 102, 104, 106, 108, 110, 112, 114",
-  "normal_distribute": "10, 10, 5, 5, 5, 5, 5, 5, 10, 10, 5, 5, 5, 5, 5, 5",
-  "normal_totaldistr": "100",
-  "combo_hits": "16",
-  "normaldc": "32",
-  "ls": "Sisters of Desolation",
-  "lsdescription": "Boosts ATK and max HP (100%) of Female types & boosts ATK, DEF and REC (100%) when 5 elements or more are present & boosts BB ATK (250%) and damage against status afflicted foes (175%) & boosts BB gauge each turn (10 BC)",
-  "lsnote": "",
-  "es": "Firefeathered Ravens",
-  "esdescription": "Boosts all parameters of Female types (15%, all) & boosts damage against afflicted foes (50%, all) & raises normal hit amount (+2, 100%) & adds resistance against 1 KO attack when HP below 20% & adds BB ATK boost for 3 turns (550%) effect to BB/SBB",
-  "esitem": "",
-  "esnote": "",
+  "stats": {
+    "_base": {
+      "atk": 2528,
+      "def": 2315,
+      "hp": 6487,
+      "rec": 2369
+    },
+    "_lord": {
+      "atk": 3084,
+      "def": 2824,
+      "hp": 7914,
+      "rec": 2914
+    },
+    "anima": {
+      "atk": 3084,
+      "def": 2824,
+      "hp max": 9404,
+      "hp min": 8659,
+      "rec max": 2765,
+      "rec min": 2467
+    },
+    "breaker": {
+      "atk max": 3531,
+      "atk min": 3233,
+      "def max": 2675,
+      "def min": 2377,
+      "hp": 7914,
+      "rec": 2914
+    },
+    "guardian": {
+      "atk max": 2935,
+      "atk min": 2637,
+      "def max": 3271,
+      "def min": 2973,
+      "hp": 7914,
+      "rec": 2914
+    },
+    "oracle": {
+      "atk": 3084,
+      "def": 2824,
+      "hp max": 7169,
+      "hp min": 6424,
+      "rec max": 3361,
+      "rec min": 3063
+    }
+  },
+  "leader_skill": {
+    "desc": "Boosts ATK and max HP (100%) of Female types & boosts ATK, DEF and REC (100%) when 5 elements or more are present & boosts BB ATK (250%) and damage against status afflicted foes (175%) & boosts BB gauge each turn (10 BC)",
+    "effects": [
+      {
+        "atk% buff": 100,
+        "gender required": "female",
+        "hp% buff": 100,
+        "passive id": "42"
+      },
+      {
+        "atk% buff": 100,
+        "def% buff": 100,
+        "passive id": "41",
+        "rec% buff": 100,
+        "unique elements required": 5
+      },
+      {
+        "bb atk% buff": 250,
+        "passive id": "64",
+        "sbb atk% buff": 250,
+        "ubb atk% buff": 250
+      },
+      {
+        "atk% buff when enemy has ailment": 175,
+        "atk% buff when enemy has curse": true,
+        "atk% buff when enemy has injury": true,
+        "atk% buff when enemy has paralysis": true,
+        "atk% buff when enemy has poison": true,
+        "atk% buff when enemy has sick": true,
+        "atk% buff when enemy has weaken": true,
+        "passive id": "74"
+      },
+      {
+        "bc fill per turn": 10,
+        "passive id": "9"
+      }
+    ],
+    "id": "750177",
+    "name": "Sisters of Desolation"
+  },
+  "extra_skill": {
+    "desc": "Boosts all parameters of Female types (15%, all) & boosts damage against afflicted foes (50%, all) & raises normal hit amount (+2, 100%) & adds resistance against 1 KO attack when HP below 20% & adds BB ATK boost for 3 turns (550%) effect to BB/SBB",
+    "effects": [
+      {
+        "atk% buff": 15,
+        "conditions": [],
+        "def% buff": 15,
+        "gender required": "female",
+        "hp% buff": 15,
+        "passive id": "42",
+        "passive target": "party",
+        "rec% buff": 15
+      },
+      {
+        "atk% buff when enemy has ailment": 50,
+        "atk% buff when enemy has curse": true,
+        "atk% buff when enemy has injury": true,
+        "atk% buff when enemy has paralysis": true,
+        "atk% buff when enemy has poison": true,
+        "atk% buff when enemy has sick": true,
+        "atk% buff when enemy has weaken": true,
+        "conditions": [],
+        "passive id": "74",
+        "passive target": "party"
+      },
+      {
+        "conditions": [],
+        "hit increase/hit": 2,
+        "passive id": "37",
+        "passive target": "self"
+      },
+      {
+        "buff": {
+          "angel idol buff (12)": true,
+          "angel idol recover hp%": 100,
+          "buff turns (12)": "-1"
+        },
+        "conditions": [],
+        "hp below % buff activation": 20,
+        "passive id": "55",
+        "passive target": "self"
+      },
+      {
+        "conditions": [],
+        "passive id": "66",
+        "passive target": "self",
+        "trigger on bb": true,
+        "trigger on sbb": true,
+        "triggered effect": [
+          {
+            "bb atk% buff": 550,
+            "buff turns (72)": 3,
+            "effect delay time(ms)/frame": "0.0/0",
+            "proc id": "45",
+            "sbb atk% buff": 550,
+            "target area": "aoe",
+            "target type": "party",
+            "ubb atk% buff": 550
+          }
+        ]
+      }
+    ],
+    "id": "750177",
+    "name": "Firefeathered Ravens",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -778,59 +869,6 @@
     ],
     "name": "Light of the Black Fire"
   },
-  "bbdescription": "28 combo Fire, Light and Dark attack on all foes & probable random status ailment infliction (85%) & boosts BB gauge (10 BC) & boosts BB gauge for 3 turns (8 BC) & boosts max HP (25%)",
-  "bbnote": "{{UnitBuffList",
-  "buff_1_proc": "29",
-  "buff_1_potency": "2500% damage modifier",
-  "buff_1_duration": "—",
-  "buff_1_target": "All enemies",
-  "buff_2_proc": "11_poison",
-  "buff_2_potency": "100% chance of inflicting Poison",
-  "buff_2_duration": "3 turns",
-  "buff_2_target": "All enemies",
-  "buff_3_proc": "11_sick",
-  "buff_3_potency": "100% chance of inflicting Sick",
-  "buff_3_duration": "3 turns",
-  "buff_3_target": "All enemies",
-  "buff_4_proc": "11_weaken",
-  "buff_4_potency": "100% chance of inflicting Weak",
-  "buff_4_duration": "3 turns",
-  "buff_4_target": "All enemies",
-  "buff_5_proc": "11_curse",
-  "buff_5_potency": "100% chance of inflicting Curse",
-  "buff_5_duration": "1 turn",
-  "buff_5_target": "All enemies",
-  "buff_6_proc": "11_paralysis",
-  "buff_6_potency": "100% chance of inflicting Paralysis",
-  "buff_6_duration": "1 turn",
-  "buff_6_target": "All enemies",
-  "buff_7_proc": "11_injury",
-  "buff_7_potency": "100% chance of inflicting Injury",
-  "buff_7_duration": "3 turns",
-  "buff_7_target": "All enemies",
-  "buff_8_proc": "70002",
-  "buff_8_potency": "100% chance of recasting BB/SBB/UBB",
-  "buff_8_duration": "1 turn",
-  "buff_8_target": "All allies",
-  "buff_9_proc": "65",
-  "buff_9_potency": "400% boost to Atk when enemy is status afflicted",
-  "buff_9_duration": "3 turns",
-  "buff_9_target": "All allies",
-  "buff_10_proc": "45",
-  "buff_10_potency": "600% boost to BB Atk",
-  "buff_10_duration": "3 turns",
-  "buff_10_target": "All allies",
-  "bbtype": "Offense",
-  "bbgauge": "25",
-  "bb_frames": "40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 100, 102, 104, 106, 108, 110, 112, 114, 116, 118, 120, 122, 124, 126",
-  "bb_distribute": "5, 5, 5, 5, 5, 5, 5, 2, 2, 2, 3, 3, 2, 1, 5, 5, 5, 5, 5, 5, 5, 2, 2, 2, 3, 3, 2, 1",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "3",
-  "bbhits": "28",
-  "bbaoe": "A",
-  "bbdc": "28",
-  "bbmultiplier": "470",
-  "bb_hpscale": "",
   "sbb": {
     "damage frames": [
       {
@@ -1551,19 +1589,6 @@
     ],
     "name": "Heretic Purification"
   },
-  "sbbdescription": "35 combo Light attack on all foes (consecutive uses boosts damage) & probability of activating BB/SBB/UBB twice (25%) for 3 turns & probable random status ailment infliction (85%) & boosts ATK (180%) and damage against afflicted foes (200%) for 3 turns",
-  "sbbnote": "{{UnitBuffList",
-  "sbbtype": "Offense",
-  "sbbgauge": "29",
-  "sbb_frames": "40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 100, 102, 104, 106, 108, 110, 112, 114, 116, 118, 120, 122, 124, 126, 128, 130, 132, 134",
-  "sbb_distribute": "2, 2, 5, 5, 5, 5, 5, 2, 2, 2, 3, 3, 3, 2, 2, 1, 1, 5, 5, 5, 5, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 2, 2, 1, 1",
-  "sbb_totaldistr": "100",
-  "sbb_effectdelay": "3",
-  "sbbhits": "35",
-  "sbbaoe": "A",
-  "sbbdc": "35",
-  "sbbmultiplier": "500",
-  "sbb_hpscale": "",
   "ubb": {
     "damage frames": [
       {
@@ -1777,6 +1802,249 @@
     ],
     "name": "Forbidden Annihilation"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 258
+    },
+    "idle": {
+      "total number of frames": 54
+    },
+    "move": {
+      "total number of frames": 8
+    }
+  },
+  "cost": "54",
+  "damage frames": {
+    "frame times": [
+      40,
+      42,
+      44,
+      46,
+      48,
+      50,
+      52,
+      54,
+      100,
+      102,
+      104,
+      106,
+      108,
+      110,
+      112,
+      114
+    ],
+    "hit dmg% distribution": [
+      10,
+      10,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      10,
+      10,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 16
+  },
+  "drop check count": 2,
+  "element": "light",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 7242,
+  "imp": {
+    "max atk": "640",
+    "max def": "600",
+    "max hp": "1500",
+    "max rec": "600"
+  },
+  "kind": "normal",
+  "lord damage range": "2871~3207",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Gemini of Abomination",
+  "rarity": "8",
+  "sell caution": false,
+  "unitName": "Gemini of Abomination",
+  "maxlv": "150",
+  "no": "7242",
+  "unitDisplayHomePosition_1W9CxaFK": null,
+  "unitDisplayDetailPosition_6z54rgb3": null,
+  "unitDisplayConfirmImagePosition_MYK1fq6c": null,
+  "unitDisplayCutInImagePosition_7hLR6pDN": null,
+  "unitDisplaySummonPosition_KC3Jk8Br": null,
+  "unitDisplayHpPosition_3BpHN6VD": null,
+  "unitDisplayCursorPosition": null,
+  "sellPrice": "",
+  "sellCaution": false,
+  "effectFrames": "",
+  "evofrom": "750176",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "disam": "Gemini",
+  "altname": "Gemini of Abomination",
+  "idalt": "",
+  "has_altart": "",
+  "doenter": "true",
+  "basexp": "21",
+  "animation_attack": "258",
+  "animation_idle": "54",
+  "animation_move": "8",
+  "movespeed_attack": "0.0033",
+  "speedtype_attack": "3",
+  "movetype_attack": "1",
+  "movespeed_skill": "0.0033",
+  "speedtype_skill": "3",
+  "movetype_skill": "1",
+  "description": "A mock unit based on Gemini, one of the Zodiac’s evil warriors. This mysterious mock unit's abilities transcend those of the original. No one knows where it came from, let alone how it got its upgraded powers.",
+  "summon": "",
+  "fusion": "Amidst the crows and the flames, souls strengthen us",
+  "evolution": "Unknowingly, we were the origin of this disaster",
+  "hp_base": "6487",
+  "atk_base": "2528",
+  "def_base": "2315",
+  "rec_base": "2369",
+  "hp_lord": "7914",
+  "atk_lord": "3084",
+  "def_lord": "2824",
+  "rec_lord": "2914",
+  "hp_anima": "9031",
+  "rec_anima": "2616",
+  "atk_breaker": "3382",
+  "def_breaker": "2526",
+  "def_guardian": "3122",
+  "rec_guardian": "2914",
+  "def_oracle": "2824",
+  "rec_oracle": "3212",
+  "hp_bonus": "1500",
+  "atk_bonus": "640",
+  "def_bonus": "600",
+  "rec_bonus": "600",
+  "lordonly": "",
+  "normal_frames": "40, 42, 44, 46, 48, 50, 52, 54, 100, 102, 104, 106, 108, 110, 112, 114",
+  "normal_distribute": "10, 10, 5, 5, 5, 5, 5, 5, 10, 10, 5, 5, 5, 5, 5, 5",
+  "normal_totaldistr": "100",
+  "combo_hits": "16",
+  "normaldc": "32",
+  "ls": "Sisters of Desolation",
+  "lsdescription": "Boosts ATK and max HP (100%) of Female types & boosts ATK, DEF and REC (100%) when 5 elements or more are present & boosts BB ATK (250%) and damage against status afflicted foes (175%) & boosts BB gauge each turn (10 BC)",
+  "lsnote": "",
+  "es": "Firefeathered Ravens",
+  "esdescription": "Boosts all parameters of Female types (15%, all) & boosts damage against afflicted foes (50%, all) & raises normal hit amount (+2, 100%) & adds resistance against 1 KO attack when HP below 20% & adds BB ATK boost for 3 turns (550%) effect to BB/SBB",
+  "esitem": "",
+  "esnote": "",
+  "bbdescription": "28 combo Fire, Light and Dark attack on all foes & probable random status ailment infliction (85%) & boosts BB gauge (10 BC) & boosts BB gauge for 3 turns (8 BC) & boosts max HP (25%)",
+  "bbnote": "{{UnitBuffList",
+  "buff_1_proc": "29",
+  "buff_1_potency": "2500% damage modifier",
+  "buff_1_duration": "—",
+  "buff_1_target": "All enemies",
+  "buff_2_proc": "11_poison",
+  "buff_2_potency": "100% chance of inflicting Poison",
+  "buff_2_duration": "3 turns",
+  "buff_2_target": "All enemies",
+  "buff_3_proc": "11_sick",
+  "buff_3_potency": "100% chance of inflicting Sick",
+  "buff_3_duration": "3 turns",
+  "buff_3_target": "All enemies",
+  "buff_4_proc": "11_weaken",
+  "buff_4_potency": "100% chance of inflicting Weak",
+  "buff_4_duration": "3 turns",
+  "buff_4_target": "All enemies",
+  "buff_5_proc": "11_curse",
+  "buff_5_potency": "100% chance of inflicting Curse",
+  "buff_5_duration": "1 turn",
+  "buff_5_target": "All enemies",
+  "buff_6_proc": "11_paralysis",
+  "buff_6_potency": "100% chance of inflicting Paralysis",
+  "buff_6_duration": "1 turn",
+  "buff_6_target": "All enemies",
+  "buff_7_proc": "11_injury",
+  "buff_7_potency": "100% chance of inflicting Injury",
+  "buff_7_duration": "3 turns",
+  "buff_7_target": "All enemies",
+  "buff_8_proc": "70002",
+  "buff_8_potency": "100% chance of recasting BB/SBB/UBB",
+  "buff_8_duration": "1 turn",
+  "buff_8_target": "All allies",
+  "buff_9_proc": "65",
+  "buff_9_potency": "400% boost to Atk when enemy is status afflicted",
+  "buff_9_duration": "3 turns",
+  "buff_9_target": "All allies",
+  "buff_10_proc": "45",
+  "buff_10_potency": "600% boost to BB Atk",
+  "buff_10_duration": "3 turns",
+  "buff_10_target": "All allies",
+  "bbtype": "Offense",
+  "bbgauge": "25",
+  "bb_frames": "40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 100, 102, 104, 106, 108, 110, 112, 114, 116, 118, 120, 122, 124, 126",
+  "bb_distribute": "5, 5, 5, 5, 5, 5, 5, 2, 2, 2, 3, 3, 2, 1, 5, 5, 5, 5, 5, 5, 5, 2, 2, 2, 3, 3, 2, 1",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "3",
+  "bbhits": "28",
+  "bbaoe": "A",
+  "bbdc": "28",
+  "bbmultiplier": "470",
+  "bb_hpscale": "",
+  "sbbdescription": "35 combo Light attack on all foes (consecutive uses boosts damage) & probability of activating BB/SBB/UBB twice (25%) for 3 turns & probable random status ailment infliction (85%) & boosts ATK (180%) and damage against afflicted foes (200%) for 3 turns",
+  "sbbnote": "{{UnitBuffList",
+  "sbbtype": "Offense",
+  "sbbgauge": "29",
+  "sbb_frames": "40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 100, 102, 104, 106, 108, 110, 112, 114, 116, 118, 120, 122, 124, 126, 128, 130, 132, 134",
+  "sbb_distribute": "2, 2, 5, 5, 5, 5, 5, 2, 2, 2, 3, 3, 3, 2, 2, 1, 1, 5, 5, 5, 5, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 2, 2, 1, 1",
+  "sbb_totaldistr": "100",
+  "sbb_effectdelay": "3",
+  "sbbhits": "35",
+  "sbbaoe": "A",
+  "sbbdc": "35",
+  "sbbmultiplier": "500",
+  "sbb_hpscale": "",
   "ubbdescription": "26 combo Fire, Light, Dark attack on all foes & random status ailment infliction & activates double BB/SBB/UBB for 1 turn & boosts damage against afflicted foes (400%) and BB ATK (600%) for 3 turns & boosts BB gauge (50 BC) for 3 turns",
   "ubbnote": "{{UnitBuffList",
   "buff_11_proc": "19",
@@ -1837,168 +2105,5 @@
   "notes": "",
   "incorrectinfo": "",
   "addcat": "",
-  "addcatname": "",
-  "stats": {
-    "_base": {
-      "atk": 2528,
-      "def": 2315,
-      "hp": 6487,
-      "rec": 2369
-    },
-    "_lord": {
-      "atk": 3084,
-      "def": 2824,
-      "hp": 7914,
-      "rec": 2914
-    },
-    "anima": {
-      "atk": 3084,
-      "def": 2824,
-      "hp max": 9404,
-      "hp min": 8659,
-      "rec max": 2765,
-      "rec min": 2467
-    },
-    "breaker": {
-      "atk max": 3531,
-      "atk min": 3233,
-      "def max": 2675,
-      "def min": 2377,
-      "hp": 7914,
-      "rec": 2914
-    },
-    "guardian": {
-      "atk max": 2935,
-      "atk min": 2637,
-      "def max": 3271,
-      "def min": 2973,
-      "hp": 7914,
-      "rec": 2914
-    },
-    "oracle": {
-      "atk": 3084,
-      "def": 2824,
-      "hp max": 7169,
-      "hp min": 6424,
-      "rec max": 3361,
-      "rec min": 3063
-    }
-  },
-  "leader_skill": {
-    "desc": "Boosts ATK and max HP (100%) of Female types & boosts ATK, DEF and REC (100%) when 5 elements or more are present & boosts BB ATK (250%) and damage against status afflicted foes (175%) & boosts BB gauge each turn (10 BC)",
-    "effects": [
-      {
-        "atk% buff": 100,
-        "gender required": "female",
-        "hp% buff": 100,
-        "passive id": "42"
-      },
-      {
-        "atk% buff": 100,
-        "def% buff": 100,
-        "passive id": "41",
-        "rec% buff": 100,
-        "unique elements required": 5
-      },
-      {
-        "bb atk% buff": 250,
-        "passive id": "64",
-        "sbb atk% buff": 250,
-        "ubb atk% buff": 250
-      },
-      {
-        "atk% buff when enemy has ailment": 175,
-        "atk% buff when enemy has curse": true,
-        "atk% buff when enemy has injury": true,
-        "atk% buff when enemy has paralysis": true,
-        "atk% buff when enemy has poison": true,
-        "atk% buff when enemy has sick": true,
-        "atk% buff when enemy has weaken": true,
-        "passive id": "74"
-      },
-      {
-        "bc fill per turn": 10,
-        "passive id": "9"
-      }
-    ],
-    "id": "750177",
-    "name": "Sisters of Desolation"
-  },
-  "extra_skill": {
-    "desc": "Boosts all parameters of Female types (15%, all) & boosts damage against afflicted foes (50%, all) & raises normal hit amount (+2, 100%) & adds resistance against 1 KO attack when HP below 20% & adds BB ATK boost for 3 turns (550%) effect to BB/SBB",
-    "effects": [
-      {
-        "atk% buff": 15,
-        "conditions": [],
-        "def% buff": 15,
-        "gender required": "female",
-        "hp% buff": 15,
-        "passive id": "42",
-        "passive target": "party",
-        "rec% buff": 15
-      },
-      {
-        "atk% buff when enemy has ailment": 50,
-        "atk% buff when enemy has curse": true,
-        "atk% buff when enemy has injury": true,
-        "atk% buff when enemy has paralysis": true,
-        "atk% buff when enemy has poison": true,
-        "atk% buff when enemy has sick": true,
-        "atk% buff when enemy has weaken": true,
-        "conditions": [],
-        "passive id": "74",
-        "passive target": "party"
-      },
-      {
-        "conditions": [],
-        "hit increase/hit": 2,
-        "passive id": "37",
-        "passive target": "self"
-      },
-      {
-        "buff": {
-          "angel idol buff (12)": true,
-          "angel idol recover hp%": 100,
-          "buff turns (12)": "-1"
-        },
-        "conditions": [],
-        "hp below % buff activation": 20,
-        "passive id": "55",
-        "passive target": "self"
-      },
-      {
-        "conditions": [],
-        "passive id": "66",
-        "passive target": "self",
-        "trigger on bb": true,
-        "trigger on sbb": true,
-        "triggered effect": [
-          {
-            "bb atk% buff": 550,
-            "buff turns (72)": 3,
-            "effect delay time(ms)/frame": "0.0/0",
-            "proc id": "45",
-            "sbb atk% buff": 550,
-            "target area": "aoe",
-            "target type": "party",
-            "ubb atk% buff": 550
-          }
-        ]
-      }
-    ],
-    "id": "750177",
-    "name": "Firefeathered Ravens",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": null,
-  "unitDisplayDetailPosition_6z54rgb3": null,
-  "unitDisplayConfirmImagePosition_MYK1fq6c": null,
-  "unitDisplayCutInImagePosition_7hLR6pDN": null,
-  "unitDisplaySummonPosition_KC3Jk8Br": null,
-  "unitDisplayHpPosition_3BpHN6VD": null,
-  "unitDisplayCursorPosition": null,
-  "sellPrice": "",
-  "sellCaution": false,
-  "effectFrames": ""
+  "addcatname": ""
 }

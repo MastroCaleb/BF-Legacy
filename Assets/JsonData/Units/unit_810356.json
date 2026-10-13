@@ -1,68 +1,96 @@
 {
   "id": "810356",
-  "unitName": "Royal Blade Rahotep",
-  "no": "8261",
-  "element": "Fire",
-  "rarity": "★★★★★★★",
-  "cost": "46",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "3",
-  "animation_attack": "138",
-  "animation_idle": "44",
-  "animation_move": "18",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "20, 25, 31, 38, 50, 53, 62, 65",
-  "normal_distribute": "11, 11, 11, 11, 14, 14, 14, 14",
-  "normal_totaldistr": "100",
-  "bb_frames": "20, 25, 31, 38, 50, 53, 62, 65, 68",
-  "bb_distribute": "9, 9, 9, 9, 13, 13, 13, 13, 12",
-  "bb_totaldistr": "100",
-  "sbb_frames": "20, 23, 26, 32, 35, 38, 50, 53, 56, 59, 62, 65, 68",
-  "sbb_distribute": "6, 6, 6, 6, 6, 6, 10, 9, 8, 10, 10, 9, 8",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "20, 23, 26, 32, 35, 38, 41, 50, 53, 56, 59, 62, 65, 68, 71, 74, 77, 80",
-  "ubb_distribute": "4, 4, 4, 4, 4, 4, 4, 10, 8, 7, 10, 9, 6, 5, 5, 4, 4, 4",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "1",
-  "ubb_effectdelay": "1",
-  "description": "Born from a passionate, yet short-lived union between a god-touched noblewoman and a headstrong soldier, Rahotep found that happiness was not meant to be his. Abandoned at the age of ten after his father died in a distant war, he took what few possessions he had and made his way to the army barracks. Despite their surprise, his prodigious skill with the blade and the mark of divinity on his brow convinced them to write his name into the rolls. He steadily climbed the ranks, and soon he had found himself recruited into the ranks of the royal guards. With his assignment to a kind-hearted priestess of the royal household, he witnessed firsthand the many injustices the nobility carried out, yet his station gave him no right to speak of it. Confiding his fears in the priestess was enough for him, until one day she chose to speak up against the God-King's own decadent son and his excesses. Angered at her temerity, the God-King attempted to cut her down, but Rahotep blocked the blow with his body. His own divine strength barely held his mortal form together, and the world seemed to shake in the strike's wake. Just before his soul was plunged into the underworld, he ripped a piece of the God-King's divinity away and somehow made it his own. Thus did Rahotep die, and was subsequently reborn.",
-  "summon": "Death has a way of teaching us that even the smallest acts make the greatest difference.",
-  "fusion": "Every soul, no matter how small,<br>has a role to play.",
-  "evolution": "",
-  "hp_base": "5355",
-  "atk_base": "2163",
-  "def_base": "1935",
-  "rec_base": "1050",
-  "hp_lord": "7650",
-  "atk_lord": "3090",
-  "def_lord": "2765",
-  "rec_lord": "1500",
-  "hp_anima": "8542",
-  "rec_anima": "1262",
-  "atk_breaker": "3328",
-  "def_breaker": "2527",
-  "def_guardian": "3003",
-  "rec_guardian": "1381",
-  "def_oracle": "2646",
-  "rec_oracle": "1857",
-  "hp_bonus": "1600",
-  "atk_bonus": "560",
-  "def_bonus": "560",
-  "rec_bonus": "0",
-  "lordonly": "",
-  "combo_hits": "8",
-  "normaldc": "40",
-  "ls": "Strike Between Moments",
-  "lsdescription": "80% boost to Atk, Def and 50% boost to max HP of Fire types, greatly boosts Atk when HP is low & damage taken boosts BB gauge",
-  "lsnote": "40% boost to Atk, additional 0.8% boost per 1% HP lost & fills 4-6 BC",
+  "stats": {
+    "_base": {
+      "atk": 2163,
+      "def": 1935,
+      "hp": 5355,
+      "rec": 1050
+    },
+    "_lord": {
+      "atk": 3090,
+      "def": 2765,
+      "hp": 7650,
+      "rec": 1500
+    },
+    "anima": {
+      "atk": 3090,
+      "def": 2765,
+      "hp max": 8840,
+      "hp min": 8245,
+      "rec max": 1381,
+      "rec min": 1143
+    },
+    "breaker": {
+      "atk max": 3447,
+      "atk min": 3209,
+      "def max": 2646,
+      "def min": 2408,
+      "hp": 7650,
+      "rec": 1500
+    },
+    "guardian": {
+      "atk": 3090,
+      "def max": 3122,
+      "def min": 2884,
+      "hp": 7650,
+      "rec max": 1500,
+      "rec min": 1262
+    },
+    "oracle": {
+      "atk": 3090,
+      "def max": 2765,
+      "def min": 2527,
+      "hp": 7650,
+      "rec max": 1976,
+      "rec min": 1738
+    }
+  },
+  "leader_skill": {
+    "desc": "80% boost to Atk, Def and 50% boost to max HP of Fire types, greatly boosts Atk when HP is low & damage taken boosts BB gauge",
+    "effects": [
+      {
+        "atk% buff": 80,
+        "def% buff": 80,
+        "elements buffed": [
+          "fire"
+        ],
+        "hp% buff": 50,
+        "passive id": "2"
+      },
+      {
+        "atk% base buff": 40,
+        "atk% extra buff based on hp": 80,
+        "buff proportional to hp": "lost",
+        "passive id": "46"
+      },
+      {
+        "bc fill when attacked high": 6,
+        "bc fill when attacked low": 4,
+        "bc fill when attacked%": 100,
+        "passive id": "25"
+      }
+    ],
+    "id": "810019",
+    "name": "Strike Between Moments"
+  },
+  "extra_skill": {
+    "desc": "Restores HP each turn",
+    "effects": [
+      {
+        "conditions": [],
+        "passive id": "33",
+        "passive target": "self",
+        "rec% added (turn heal)": 10.0,
+        "turn heal high": 1500,
+        "turn heal low": 1000
+      }
+    ],
+    "id": "810356",
+    "name": "Underworld Communion",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -639,14 +667,6 @@
     ],
     "name": "Bladeweave Strike"
   },
-  "bbdescription": "9 combo powerful Fire attack on all foes, probable random status ailment infliction, greatly boosts damage against status afflicted foes for 3 turns & boosts Atk, Def of Fire types for 3 turns",
-  "bbnote": "65% chance to inflict ailments, 150% damage boost & 80% Atk, Def of Fire types",
-  "bbtype": "Offense",
-  "bbhits": "9",
-  "bbaoe": "A",
-  "bbgauge": "30",
-  "bbdc": "9",
-  "bbmultiplier": "380",
   "sbb": {
     "damage frames": [
       {
@@ -1149,14 +1169,6 @@
     ],
     "name": "Fatecutting Strike"
   },
-  "sbbdescription": "13 combo powerful Fire attack on all foes, boosts own critical hit rate for 3 turns, damage taken considerably boosts BB gauge for 3 turns & boosts Atk, Def of Fire types for 3 turns",
-  "sbbnote": "Fills 4-7 BC, 60% boost & 80% Atk, Def of Fire types",
-  "sbbtype": "Offense",
-  "sbbhits": "13",
-  "sbbaoe": "A",
-  "sbbgauge": "32",
-  "sbbdc": "13",
-  "sbbmultiplier": "580",
   "ubb": {
     "damage frames": [
       {
@@ -1271,6 +1283,218 @@
     ],
     "name": "Sunburst Defiance"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 138
+    },
+    "idle": {
+      "total number of frames": 44
+    },
+    "move": {
+      "total number of frames": 18
+    }
+  },
+  "category": 810350,
+  "cost": "46",
+  "damage frames": {
+    "frame times": [
+      20,
+      25,
+      31,
+      38,
+      50,
+      53,
+      62,
+      65
+    ],
+    "hit dmg% distribution": [
+      11,
+      11,
+      11,
+      11,
+      14,
+      14,
+      14,
+      14
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 8
+  },
+  "drop check count": 5,
+  "element": "fire",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 8261,
+  "imp": {
+    "max atk": "560",
+    "max def": "560",
+    "max hp": "1600",
+    "max rec": "0"
+  },
+  "kind": "normal",
+  "lord damage range": "2877~3213",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Royal Blade Rahotep",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Royal Blade Rahotep",
+  "maxlv": "120",
+  "no": "8261",
+  "unitDisplayHomePosition_1W9CxaFK": "151,93,140,382",
+  "unitDisplayDetailPosition_6z54rgb3": "126,101,849,712",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "98,195,528,443,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "134,-114,849,712",
+  "unitDisplaySummonPosition_KC3Jk8Br": "98,195,528,443,0",
+  "unitDisplayHpPosition_3BpHN6VD": "0,25",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "15000",
+  "sellCaution": false,
+  "effectFrames": "20:121:1,25:121:1,31:121:1,38:121:1,50:121:1,53:121:1,62:121:1,65:121:1",
+  "evofrom": "",
+  "evointo": "810357",
+  "evozelcost": "3000000",
+  "evokarmacost": "1000000",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "10354",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "810034",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    },
+    {
+      "type": "2",
+      "id": "110100",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "138",
+  "animation_idle": "44",
+  "animation_move": "18",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "20, 25, 31, 38, 50, 53, 62, 65",
+  "normal_distribute": "11, 11, 11, 11, 14, 14, 14, 14",
+  "normal_totaldistr": "100",
+  "bb_frames": "20, 25, 31, 38, 50, 53, 62, 65, 68",
+  "bb_distribute": "9, 9, 9, 9, 13, 13, 13, 13, 12",
+  "bb_totaldistr": "100",
+  "sbb_frames": "20, 23, 26, 32, 35, 38, 50, 53, 56, 59, 62, 65, 68",
+  "sbb_distribute": "6, 6, 6, 6, 6, 6, 10, 9, 8, 10, 10, 9, 8",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "20, 23, 26, 32, 35, 38, 41, 50, 53, 56, 59, 62, 65, 68, 71, 74, 77, 80",
+  "ubb_distribute": "4, 4, 4, 4, 4, 4, 4, 10, 8, 7, 10, 9, 6, 5, 5, 4, 4, 4",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "1",
+  "ubb_effectdelay": "1",
+  "description": "Born from a passionate, yet short-lived union between a god-touched noblewoman and a headstrong soldier, Rahotep found that happiness was not meant to be his. Abandoned at the age of ten after his father died in a distant war, he took what few possessions he had and made his way to the army barracks. Despite their surprise, his prodigious skill with the blade and the mark of divinity on his brow convinced them to write his name into the rolls. He steadily climbed the ranks, and soon he had found himself recruited into the ranks of the royal guards. With his assignment to a kind-hearted priestess of the royal household, he witnessed firsthand the many injustices the nobility carried out, yet his station gave him no right to speak of it. Confiding his fears in the priestess was enough for him, until one day she chose to speak up against the God-King's own decadent son and his excesses. Angered at her temerity, the God-King attempted to cut her down, but Rahotep blocked the blow with his body. His own divine strength barely held his mortal form together, and the world seemed to shake in the strike's wake. Just before his soul was plunged into the underworld, he ripped a piece of the God-King's divinity away and somehow made it his own. Thus did Rahotep die, and was subsequently reborn.",
+  "summon": "Death has a way of teaching us that even the smallest acts make the greatest difference.",
+  "fusion": "Every soul, no matter how small,<br>has a role to play.",
+  "evolution": "",
+  "hp_base": "5355",
+  "atk_base": "2163",
+  "def_base": "1935",
+  "rec_base": "1050",
+  "hp_lord": "7650",
+  "atk_lord": "3090",
+  "def_lord": "2765",
+  "rec_lord": "1500",
+  "hp_anima": "8542",
+  "rec_anima": "1262",
+  "atk_breaker": "3328",
+  "def_breaker": "2527",
+  "def_guardian": "3003",
+  "rec_guardian": "1381",
+  "def_oracle": "2646",
+  "rec_oracle": "1857",
+  "hp_bonus": "1600",
+  "atk_bonus": "560",
+  "def_bonus": "560",
+  "rec_bonus": "0",
+  "lordonly": "",
+  "combo_hits": "8",
+  "normaldc": "40",
+  "ls": "Strike Between Moments",
+  "lsdescription": "80% boost to Atk, Def and 50% boost to max HP of Fire types, greatly boosts Atk when HP is low & damage taken boosts BB gauge",
+  "lsnote": "40% boost to Atk, additional 0.8% boost per 1% HP lost & fills 4-6 BC",
+  "bbdescription": "9 combo powerful Fire attack on all foes, probable random status ailment infliction, greatly boosts damage against status afflicted foes for 3 turns & boosts Atk, Def of Fire types for 3 turns",
+  "bbnote": "65% chance to inflict ailments, 150% damage boost & 80% Atk, Def of Fire types",
+  "bbtype": "Offense",
+  "bbhits": "9",
+  "bbaoe": "A",
+  "bbgauge": "30",
+  "bbdc": "9",
+  "bbmultiplier": "380",
+  "sbbdescription": "13 combo powerful Fire attack on all foes, boosts own critical hit rate for 3 turns, damage taken considerably boosts BB gauge for 3 turns & boosts Atk, Def of Fire types for 3 turns",
+  "sbbnote": "Fills 4-7 BC, 60% boost & 80% Atk, Def of Fire types",
+  "sbbtype": "Offense",
+  "sbbhits": "13",
+  "sbbaoe": "A",
+  "sbbgauge": "32",
+  "sbbdc": "13",
+  "sbbmultiplier": "580",
   "ubbdescription": "18 combo massive Fire attack on all foes, enormously boosts Atk, Def of Fire types for 3 turns & additional massive attack at turn's end for 1 turn",
   "ubbnote": "300% Atk, Def of Fire types & 1500% DoT multiplier",
   "ubbtype": "Offense",
@@ -1283,8 +1507,6 @@
   "esitem": "",
   "esdescription": "Restores HP each turn",
   "esnote": "Heal 1000-1500 + 10% Rec",
-  "evofrom": "",
-  "evointo": "810357",
   "evomats1": "Fire Mecha God",
   "evomats2": "Fire Mecha God",
   "evomats3": "Miracle Totem",
@@ -1293,107 +1515,5 @@
   "evomats6": "Fire Bulb",
   "evomats7": "Metal Mimic",
   "evomats8": "",
-  "evoitem": "Legend Stone",
-  "evozelcost": "3000000",
-  "stats": {
-    "_base": {
-      "atk": 2163,
-      "def": 1935,
-      "hp": 5355,
-      "rec": 1050
-    },
-    "_lord": {
-      "atk": 3090,
-      "def": 2765,
-      "hp": 7650,
-      "rec": 1500
-    },
-    "anima": {
-      "atk": 3090,
-      "def": 2765,
-      "hp max": 8840,
-      "hp min": 8245,
-      "rec max": 1381,
-      "rec min": 1143
-    },
-    "breaker": {
-      "atk max": 3447,
-      "atk min": 3209,
-      "def max": 2646,
-      "def min": 2408,
-      "hp": 7650,
-      "rec": 1500
-    },
-    "guardian": {
-      "atk": 3090,
-      "def max": 3122,
-      "def min": 2884,
-      "hp": 7650,
-      "rec max": 1500,
-      "rec min": 1262
-    },
-    "oracle": {
-      "atk": 3090,
-      "def max": 2765,
-      "def min": 2527,
-      "hp": 7650,
-      "rec max": 1976,
-      "rec min": 1738
-    }
-  },
-  "leader_skill": {
-    "desc": "80% boost to Atk, Def and 50% boost to max HP of Fire types, greatly boosts Atk when HP is low & damage taken boosts BB gauge",
-    "effects": [
-      {
-        "atk% buff": 80,
-        "def% buff": 80,
-        "elements buffed": [
-          "fire"
-        ],
-        "hp% buff": 50,
-        "passive id": "2"
-      },
-      {
-        "atk% base buff": 40,
-        "atk% extra buff based on hp": 80,
-        "buff proportional to hp": "lost",
-        "passive id": "46"
-      },
-      {
-        "bc fill when attacked high": 6,
-        "bc fill when attacked low": 4,
-        "bc fill when attacked%": 100,
-        "passive id": "25"
-      }
-    ],
-    "id": "810019",
-    "name": "Strike Between Moments"
-  },
-  "extra_skill": {
-    "desc": "Restores HP each turn",
-    "effects": [
-      {
-        "conditions": [],
-        "passive id": "33",
-        "passive target": "self",
-        "rec% added (turn heal)": 10.0,
-        "turn heal high": 1500,
-        "turn heal low": 1000
-      }
-    ],
-    "id": "810356",
-    "name": "Underworld Communion",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "151,93,140,382",
-  "unitDisplayDetailPosition_6z54rgb3": "126,101,849,712",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "98,195,528,443,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "134,-114,849,712",
-  "unitDisplaySummonPosition_KC3Jk8Br": "98,195,528,443,0",
-  "unitDisplayHpPosition_3BpHN6VD": "0,25",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "15000",
-  "sellCaution": false,
-  "effectFrames": "20:121:1,25:121:1,31:121:1,38:121:1,50:121:1,53:121:1,62:121:1,65:121:1"
+  "evoitem": "Legend Stone"
 }

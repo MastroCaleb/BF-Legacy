@@ -1,61 +1,66 @@
 {
   "id": "50113",
-  "unitName": "Holy Knight Will",
-  "no": "166",
-  "element": "Light",
-  "rarity": "★★★★",
-  "cost": "8",
-  "maxlv": "60",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "134",
-  "animation_idle": "62",
-  "animation_move": "59",
-  "movespeed_attack": "0",
-  "movespeed_skill": "0",
-  "speedtype_attack": "5",
-  "speedtype_skill": "5",
-  "movetype_attack": "2",
-  "movetype_skill": "2",
-  "normal_frames": "60, 66, 72",
-  "normal_distribute": "80, 10, 10",
-  "normal_totaldistr": "100",
-  "bb_frames": "60, 66, 72, 78",
-  "bb_distribute": "25, 25, 25, 25",
-  "bb_totaldistr": "100",
-  "description": "A knight from the ruined La Veda Republic. He resisted the world's destruction until the very end. He is excellent at the sword, and great as a commander. His tactics steadily wore down his enemies. Deeply trusted by his soldiers, after a soldier proclaimed, \"I know not if he's stronger than Atro, but he is most definitely more overwhelming!\" he harshly rebuked that soldier.",
-  "summon": "This light... Who are you?<br>I swear by my sword that I will save the world. Let's go!",
-  "fusion": "We need strength to save<br>the world. I feel very <br>strongly about that.",
-  "evolution": "My sword is full of light!<br>This is evolution!",
-  "hp_base": "2871",
-  "atk_base": "754",
-  "def_base": "844",
-  "rec_base": "428",
-  "hp_lord": "4356",
-  "atk_lord": "1087",
-  "def_lord": "1183",
-  "rec_lord": "702",
-  "hp_anima": "4799",
-  "rec_anima": "584",
-  "atk_breaker": "1205",
-  "def_breaker": "1065",
-  "atk_guardian": "969",
-  "def_guardian": "1301",
-  "rec_guardian": "643",
-  "def_oracle": "1124",
-  "hp_oracle": "4179",
-  "rec_oracle": "879",
-  "hp_bonus": "400",
-  "atk_bonus": "120",
-  "def_bonus": "200",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "3",
-  "normaldc": "12",
-  "ls": "Light God's Power",
-  "lsdescription": "50% boost to Atk Power of Light Types",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 754,
+      "def": 844,
+      "hp": 2871,
+      "rec": 428
+    },
+    "_lord": {
+      "atk": 1087,
+      "def": 1183,
+      "hp": 4356,
+      "rec": 702
+    },
+    "anima": {
+      "atk": 1087,
+      "def": 1183,
+      "hp max": 4946,
+      "hp min": 4651,
+      "rec max": 643,
+      "rec min": 525
+    },
+    "breaker": {
+      "atk max": 1264,
+      "atk min": 1146,
+      "def max": 1124,
+      "def min": 1006,
+      "hp": 4356,
+      "rec": 702
+    },
+    "guardian": {
+      "atk": 1087,
+      "def max": 1360,
+      "def min": 1242,
+      "hp": 4356,
+      "rec max": 702,
+      "rec min": 584
+    },
+    "oracle": {
+      "atk": 1087,
+      "def max": 1183,
+      "def min": 1065,
+      "hp": 4356,
+      "rec max": 938,
+      "rec min": 820
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to Atk Power of Light Types",
+    "effects": [
+      {
+        "atk% buff": 50,
+        "elements buffed": [
+          "light"
+        ],
+        "passive id": "2"
+      }
+    ],
+    "id": "141",
+    "name": "Light God's Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -214,96 +219,87 @@
     ],
     "name": "Sacred Force"
   },
-  "bbdescription": "4 combo Light elemental attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "4",
-  "bbaoe": "A",
-  "bbgauge": "25",
-  "bbdc": "4",
-  "bbmultiplier": "170",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "50112",
-  "evointo": "50114",
-  "evomats1": "50123",
-  "evomats2": "50122",
-  "evomats3": "60143",
-  "evomats4": "50120",
-  "evomats5": "50120",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 754,
-      "def": 844,
-      "hp": 2871,
-      "rec": 428
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1087,
-      "def": 1183,
-      "hp": 4356,
-      "rec": 702
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1087,
-      "def": 1183,
-      "hp max": 4946,
-      "hp min": 4651,
-      "rec max": 643,
-      "rec min": 525
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 134
     },
-    "breaker": {
-      "atk max": 1264,
-      "atk min": 1146,
-      "def max": 1124,
-      "def min": 1006,
-      "hp": 4356,
-      "rec": 702
+    "idle": {
+      "total number of frames": 62
     },
-    "guardian": {
-      "atk": 1087,
-      "def max": 1360,
-      "def min": 1242,
-      "hp": 4356,
-      "rec max": 702,
-      "rec min": 584
-    },
-    "oracle": {
-      "atk": 1087,
-      "def max": 1183,
-      "def min": 1065,
-      "hp": 4356,
-      "rec max": 938,
-      "rec min": 820
+    "move": {
+      "total number of frames": 59
     }
   },
-  "leader_skill": {
-    "desc": "50% boost to Atk Power of Light Types",
-    "effects": [
-      {
-        "atk% buff": 50,
-        "elements buffed": [
-          "light"
-        ],
-        "passive id": "2"
-      }
+  "category": 50110,
+  "cost": "8",
+  "damage frames": {
+    "frame times": [
+      60,
+      66,
+      72
     ],
-    "id": "141",
-    "name": "Light God's Power"
+    "hit dmg% distribution": [
+      80,
+      10,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 3
   },
-  "extra_skill": {},
+  "drop check count": 4,
+  "element": "light",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 166,
+  "imp": {
+    "max atk": "120",
+    "max def": "200",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "1011~1130",
+  "movement": {
+    "attack": {
+      "move speed": 0,
+      "move speed type": "5",
+      "move type": "2"
+    },
+    "skill": {
+      "move speed": 0,
+      "move speed type": "5",
+      "move type": "2"
+    }
+  },
+  "name": "Holy Knight Will",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Holy Knight Will",
+  "maxlv": "60",
+  "no": "166",
   "unitDisplayHomePosition_1W9CxaFK": "333,0,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-4,162,700,589",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "110,331,331,279,0",
@@ -313,5 +309,103 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "54:125:1,60:125:1,66:125:1"
+  "effectFrames": "54:125:1,60:125:1,66:125:1",
+  "evofrom": "50112",
+  "evointo": "50114",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50123",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50122",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50120",
+      "count": 2
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "134",
+  "animation_idle": "62",
+  "animation_move": "59",
+  "movespeed_attack": "0",
+  "movespeed_skill": "0",
+  "speedtype_attack": "5",
+  "speedtype_skill": "5",
+  "movetype_attack": "2",
+  "movetype_skill": "2",
+  "normal_frames": "60, 66, 72",
+  "normal_distribute": "80, 10, 10",
+  "normal_totaldistr": "100",
+  "bb_frames": "60, 66, 72, 78",
+  "bb_distribute": "25, 25, 25, 25",
+  "bb_totaldistr": "100",
+  "description": "A knight from the ruined La Veda Republic. He resisted the world's destruction until the very end. He is excellent at the sword, and great as a commander. His tactics steadily wore down his enemies. Deeply trusted by his soldiers, after a soldier proclaimed, \"I know not if he's stronger than Atro, but he is most definitely more overwhelming!\" he harshly rebuked that soldier.",
+  "summon": "This light... Who are you?<br>I swear by my sword that I will save the world. Let's go!",
+  "fusion": "We need strength to save<br>the world. I feel very <br>strongly about that.",
+  "evolution": "My sword is full of light!<br>This is evolution!",
+  "hp_base": "2871",
+  "atk_base": "754",
+  "def_base": "844",
+  "rec_base": "428",
+  "hp_lord": "4356",
+  "atk_lord": "1087",
+  "def_lord": "1183",
+  "rec_lord": "702",
+  "hp_anima": "4799",
+  "rec_anima": "584",
+  "atk_breaker": "1205",
+  "def_breaker": "1065",
+  "atk_guardian": "969",
+  "def_guardian": "1301",
+  "rec_guardian": "643",
+  "def_oracle": "1124",
+  "hp_oracle": "4179",
+  "rec_oracle": "879",
+  "hp_bonus": "400",
+  "atk_bonus": "120",
+  "def_bonus": "200",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "3",
+  "normaldc": "12",
+  "ls": "Light God's Power",
+  "lsdescription": "50% boost to Atk Power of Light Types",
+  "lstype": "Attack",
+  "bbdescription": "4 combo Light elemental attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "4",
+  "bbaoe": "A",
+  "bbgauge": "25",
+  "bbdc": "4",
+  "bbmultiplier": "170",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50123",
+  "evomats2": "50122",
+  "evomats3": "60143",
+  "evomats4": "50120",
+  "evomats5": "50120"
 }

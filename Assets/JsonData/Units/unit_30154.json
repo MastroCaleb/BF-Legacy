@@ -1,61 +1,63 @@
 {
   "id": "30154",
-  "unitName": "Pixy King Leore",
-  "no": "229",
-  "element": "Earth",
-  "rarity": "★★★★★",
-  "cost": "12",
-  "maxlv": "80",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "154",
-  "animation_idle": "65",
-  "animation_move": "39",
-  "movespeed_attack": "0.0024",
-  "movespeed_skill": "0.0024",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "32, 41, 50, 59, 100, 102, 104",
-  "normal_distribute": "10, 5, 5, 10, 30, 20, 10",
-  "normal_totaldistr": "90",
-  "bb_frames": "32, 36, 41, 45, 50, 55, 59, 100, 102, 104",
-  "bb_distribute": "10, 4, 4, 4, 4, 4, 4, 40, 13, 13",
-  "bb_totaldistr": "100",
-  "description": "A young boy who was raised by Titania as a pixy. Under Leore’s command, the once weak pixy army formed an alliance with human forces, and quickly became a force to be reckoned with. Leore’s rousing rhetoric about the shared plight of pixies and humans raised his forces’ spirits, and the sight of his dashing figure swinging his sword on the battlefield is said to have inspired both armies to feats of greatness.",
-  "summon": "I am both human and pixy.<br>I was put on this planet to unite<br>our two tribes.",
-  "fusion": "Retreat is not an option.<br>Forward is the only way!<br>Fear not, I am by your side.",
-  "evolution": "I pledge to you the goodwill of<br>the pixy race and every living<br>thing in the forest.",
-  "hp_base": "3248",
-  "atk_base": "1017",
-  "def_base": "785",
-  "rec_base": "918",
-  "hp_lord": "4946",
-  "atk_lord": "1386",
-  "def_lord": "1049",
-  "rec_lord": "1348",
-  "hp_anima": "5539",
-  "rec_anima": "1190",
-  "atk_breaker": "1544",
-  "def_breaker": "891",
-  "atk_guardian": "1228",
-  "def_guardian": "1207",
-  "rec_guardian": "1269",
-  "def_oracle": "970",
-  "hp_oracle": "4709",
-  "rec_oracle": "1585",
-  "hp_bonus": "500",
-  "atk_bonus": "200",
-  "def_bonus": "200",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "7",
-  "normaldc": "21",
-  "ls": "Dynasty Power",
-  "lsdescription": "20% boost to Atk Power of all types",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 1017,
+      "def": 785,
+      "hp": 3248,
+      "rec": 918
+    },
+    "_lord": {
+      "atk": 1386,
+      "def": 1049,
+      "hp": 4946,
+      "rec": 1348
+    },
+    "anima": {
+      "atk": 1386,
+      "def": 1049,
+      "hp max": 5736,
+      "hp min": 5341,
+      "rec max": 1269,
+      "rec min": 1111
+    },
+    "breaker": {
+      "atk max": 1623,
+      "atk min": 1465,
+      "def max": 970,
+      "def min": 812,
+      "hp": 4946,
+      "rec": 1348
+    },
+    "guardian": {
+      "atk": 1386,
+      "def max": 1286,
+      "def min": 1128,
+      "hp": 4946,
+      "rec max": 1348,
+      "rec min": 1190
+    },
+    "oracle": {
+      "atk": 1386,
+      "def max": 1049,
+      "def min": 891,
+      "hp": 4946,
+      "rec max": 1664,
+      "rec min": 1506
+    }
+  },
+  "leader_skill": {
+    "desc": "20% boost to Atk",
+    "effects": [
+      {
+        "atk% buff": 20,
+        "passive id": "1"
+      }
+    ],
+    "id": "1902",
+    "name": "Dynasty Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -308,94 +310,95 @@
     ],
     "name": "Heavy Riposte"
   },
-  "bbdescription": "10 Combo Earth Elemental Attack on All enemies & Probable Weakness Effect",
-  "bbnote": "45% chance",
-  "bbtype": "Offense",
-  "bbhits": "10",
-  "bbaoe": "A",
-  "bbgauge": "25",
-  "bbdc": "10",
-  "bbmultiplier": "180",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "30153",
-  "evointo": "30155",
-  "evomats1": "50354",
-  "evomats2": "30133",
-  "evomats3": "60144",
-  "evomats4": "60143",
-  "evomats5": "30191",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 1017,
-      "def": 785,
-      "hp": 3248,
-      "rec": 918
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1386,
-      "def": 1049,
-      "hp": 4946,
-      "rec": 1348
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1386,
-      "def": 1049,
-      "hp max": 5736,
-      "hp min": 5341,
-      "rec max": 1269,
-      "rec min": 1111
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 154
     },
-    "breaker": {
-      "atk max": 1623,
-      "atk min": 1465,
-      "def max": 970,
-      "def min": 812,
-      "hp": 4946,
-      "rec": 1348
+    "idle": {
+      "total number of frames": 65
     },
-    "guardian": {
-      "atk": 1386,
-      "def max": 1286,
-      "def min": 1128,
-      "hp": 4946,
-      "rec max": 1348,
-      "rec min": 1190
-    },
-    "oracle": {
-      "atk": 1386,
-      "def max": 1049,
-      "def min": 891,
-      "hp": 4946,
-      "rec max": 1664,
-      "rec min": 1506
+    "move": {
+      "total number of frames": 39
     }
   },
-  "leader_skill": {
-    "desc": "20% boost to Atk",
-    "effects": [
-      {
-        "atk% buff": 20,
-        "passive id": "1"
-      }
+  "category": 30150,
+  "cost": "12",
+  "damage frames": {
+    "frame times": [
+      32,
+      41,
+      50,
+      59,
+      100,
+      102,
+      104
     ],
-    "id": "1902",
-    "name": "Dynasty Power"
+    "hit dmg% distribution": [
+      10,
+      5,
+      5,
+      10,
+      30,
+      20,
+      10
+    ],
+    "hit dmg% distribution (total)": 90,
+    "hits": 7
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "earth",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 229,
+  "imp": {
+    "max atk": "200",
+    "max def": "200",
+    "max hp": "500",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "1290~1441",
+  "movement": {
+    "attack": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    }
+  },
+  "name": "Pixy King Leore",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Pixy King Leore",
+  "maxlv": "80",
+  "no": "229",
   "unitDisplayHomePosition_1W9CxaFK": "288,166,200,544",
   "unitDisplayDetailPosition_6z54rgb3": "50,67,725,700",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "96,234,495,397,0",
@@ -405,5 +408,109 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "26:123:1,35:123:1,44:123:1,62:123:1,94:123:1,96:123:1,98:123:1"
+  "effectFrames": "26:123:1,35:123:1,44:123:1,62:123:1,94:123:1,96:123:1,98:123:1",
+  "evofrom": "30153",
+  "evointo": "30155",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30191",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "154",
+  "animation_idle": "65",
+  "animation_move": "39",
+  "movespeed_attack": "0.0024",
+  "movespeed_skill": "0.0024",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "32, 41, 50, 59, 100, 102, 104",
+  "normal_distribute": "10, 5, 5, 10, 30, 20, 10",
+  "normal_totaldistr": "90",
+  "bb_frames": "32, 36, 41, 45, 50, 55, 59, 100, 102, 104",
+  "bb_distribute": "10, 4, 4, 4, 4, 4, 4, 40, 13, 13",
+  "bb_totaldistr": "100",
+  "description": "A young boy who was raised by Titania as a pixy. Under Leore’s command, the once weak pixy army formed an alliance with human forces, and quickly became a force to be reckoned with. Leore’s rousing rhetoric about the shared plight of pixies and humans raised his forces’ spirits, and the sight of his dashing figure swinging his sword on the battlefield is said to have inspired both armies to feats of greatness.",
+  "summon": "I am both human and pixy.<br>I was put on this planet to unite<br>our two tribes.",
+  "fusion": "Retreat is not an option.<br>Forward is the only way!<br>Fear not, I am by your side.",
+  "evolution": "I pledge to you the goodwill of<br>the pixy race and every living<br>thing in the forest.",
+  "hp_base": "3248",
+  "atk_base": "1017",
+  "def_base": "785",
+  "rec_base": "918",
+  "hp_lord": "4946",
+  "atk_lord": "1386",
+  "def_lord": "1049",
+  "rec_lord": "1348",
+  "hp_anima": "5539",
+  "rec_anima": "1190",
+  "atk_breaker": "1544",
+  "def_breaker": "891",
+  "atk_guardian": "1228",
+  "def_guardian": "1207",
+  "rec_guardian": "1269",
+  "def_oracle": "970",
+  "hp_oracle": "4709",
+  "rec_oracle": "1585",
+  "hp_bonus": "500",
+  "atk_bonus": "200",
+  "def_bonus": "200",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "7",
+  "normaldc": "21",
+  "ls": "Dynasty Power",
+  "lsdescription": "20% boost to Atk Power of all types",
+  "lstype": "Attack",
+  "bbdescription": "10 Combo Earth Elemental Attack on All enemies & Probable Weakness Effect",
+  "bbnote": "45% chance",
+  "bbtype": "Offense",
+  "bbhits": "10",
+  "bbaoe": "A",
+  "bbgauge": "25",
+  "bbdc": "10",
+  "bbmultiplier": "180",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "30133",
+  "evomats3": "60144",
+  "evomats4": "60143",
+  "evomats5": "30191"
 }

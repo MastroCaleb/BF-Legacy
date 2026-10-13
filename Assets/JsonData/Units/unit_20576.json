@@ -1,71 +1,111 @@
 {
   "id": "20576",
-  "unitName": "Glacier Twin-Blade Colt",
-  "no": "888",
-  "element": "Water",
-  "rarity": "★★★★★★★",
-  "cost": "40",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "4",
-  "animation_attack": "176",
-  "animation_idle": "104",
-  "animation_move": "13",
-  "movespeed_attack": "0.0024",
-  "movespeed_skill": "0.0024",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "64, 68, 72, 76, 80, 84, 88, 92",
-  "normal_distribute": "50, 7, 8, 7, 8, 6, 8, 6",
-  "normal_totaldistr": "100",
-  "bb_frames": "10, 18, 26, 34, 42, 50, 58, 64, 68, 72, 76, 80, 84, 88, 92, 96, 100",
-  "bb_distribute": "5, 5, 5, 5, 5, 5, 5, 16, 6, 5, 6, 5, 6, 5, 6, 5, 5",
-  "bb_totaldistr": "100",
-  "sbb_frames": "10, 18, 26, 34, 42, 50, 58, 64, 68, 72, 76, 80, 84, 88, 92, 96, 100, 104, 108",
-  "sbb_distribute": "4, 4, 4, 4, 4, 4, 4, 16, 6, 5, 5, 5, 5, 5, 6, 5, 5, 4, 5",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "10, 18, 26, 34, 42, 50, 58, 64, 68, 72, 76, 80, 84, 88, 92, 96, 100, 104, 108, 112, 116",
-  "ubb_distribute": "4, 4, 4, 4, 4, 4, 4, 16, 5, 4, 5, 4, 5, 4, 5, 4, 4, 4, 4, 4, 4",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "1",
-  "ubb_effectdelay": "2",
-  "description": "When Colt received word that a group of dissenters sought to destroy the Holy Emperor, he asked his partners to return to Grand Gaia with him. However, the group split up into factions, and only him, his sister, and Fadahl went back. Once home, Colt battled against those who meant to slay Karna Masta, but exhausted from his previous mission, soon found himself unable to release his full power. It is said that Claire fell trying to protect her brother, leaving her last words to him. However, he had already been at peace when he heard them, and never moved again.",
-  "summon": "What do you think of me?<br>I'm neither strong, nor kind.<br>I'm just a weakling...",
-  "fusion": "Now I'll fight for you because<br>you've acknowledged my strength.<br>I'll keep pressing forward too.",
-  "evolution": "I don't need anything else.<br>Power nor kindness.<br>Yet, I still find myself here.",
-  "hp_base": "5447",
-  "atk_base": "1985",
-  "def_base": "1875",
-  "rec_base": "1350",
-  "hp_lord": "6690",
-  "atk_lord": "2515",
-  "def_lord": "2385",
-  "rec_lord": "1783",
-  "hp_anima": "7582",
-  "rec_anima": "1545",
-  "atk_breaker": "2753",
-  "def_breaker": "2147",
-  "atk_guardian": "2277",
-  "def_guardian": "2623",
-  "rec_guardian": "1664",
-  "def_oracle": "2266",
-  "hp_oracle": "6333",
-  "rec_oracle": "2140",
-  "hp_bonus": "1000",
-  "atk_bonus": "600",
-  "def_bonus": "300",
-  "rec_bonus": "400",
-  "lordonly": "",
-  "combo_hits": "8",
-  "normaldc": "24",
-  "ls": "Flashing Divine Grace",
-  "lsdescription": "Greatly boosts critical damage & boosts max HP and Rec by 30%",
-  "lsnote": "150% boost",
-  "lstype": "Attack/Hit Points/Recovery",
+  "stats": {
+    "_base": {
+      "atk": 1985,
+      "def": 1875,
+      "hp": 5447,
+      "rec": 1350
+    },
+    "_lord": {
+      "atk": 2515,
+      "def": 2385,
+      "hp": 6690,
+      "rec": 1783
+    },
+    "anima": {
+      "atk": 2515,
+      "def": 2385,
+      "hp max": 7880,
+      "hp min": 7285,
+      "rec max": 1664,
+      "rec min": 1426
+    },
+    "breaker": {
+      "atk max": 2872,
+      "atk min": 2634,
+      "def max": 2266,
+      "def min": 2028,
+      "hp": 6690,
+      "rec": 1783
+    },
+    "guardian": {
+      "atk": 2515,
+      "def max": 2742,
+      "def min": 2504,
+      "hp": 6690,
+      "rec max": 1783,
+      "rec min": 1545
+    },
+    "oracle": {
+      "atk": 2515,
+      "def max": 2385,
+      "def min": 2147,
+      "hp": 6690,
+      "rec max": 2259,
+      "rec min": 2021
+    }
+  },
+  "leader_skill": {
+    "desc": "Greatly boosts critical damage & boosts max HP and Rec by 30%",
+    "effects": [
+      {
+        "crit multiplier%": 150.0,
+        "passive id": "34"
+      },
+      {
+        "hp% buff": 30,
+        "passive id": "1",
+        "rec% buff": 30
+      }
+    ],
+    "id": "2314",
+    "name": "Flashing Divine Grace"
+  },
+  "extra_skill": {
+    "desc": "30% boost to all parameters when Ice Blade is equipped,or when claire is in the same squad",
+    "effects": [
+      {
+        "atk% buff": 30,
+        "conditions": [
+          {
+            "unit required": [
+              {
+                "id": 10606,
+                "name": "Magma Twin-Pike Claire"
+              },
+              {
+                "id": 10607,
+                "name": "Crimson Knight Claire"
+              },
+              {
+                "id": 10604,
+                "name": "Burning Pike Claire"
+              },
+              {
+                "id": 10605,
+                "name": "Volcanic Pike Claire"
+              }
+            ]
+          },
+          {
+            "item required": [
+              "47301"
+            ]
+          }
+        ],
+        "def% buff": 30,
+        "hp% buff": 30,
+        "passive id": "1",
+        "passive target": "self",
+        "rec% buff": 30
+      }
+    ],
+    "id": "1600",
+    "name": "Bonds of Flame",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -444,14 +484,6 @@
     ],
     "name": "Glace Isberg"
   },
-  "bbdescription": "17 combo powerful Water attack on all enemies, boosts critical hit rate for all allies for 3 turns & gradually recovers BB gauge",
-  "bbnote": "60% boost & fills 5 BC",
-  "bbtype": "Support/Offense",
-  "bbhits": "17",
-  "bbaoe": "A",
-  "bbgauge": "24",
-  "bbdc": "17",
-  "bbmultiplier": "280",
   "sbb": {
     "damage frames": [
       {
@@ -834,14 +866,6 @@
     ],
     "name": "Heilcruseide"
   },
-  "sbbdescription": "19 combo powerful Water attack on all enemies, boosts critical hit rate for 3 turns & gradually recovers BB gauge for 3 turns",
-  "sbbnote": "60% boost & fills 5 BC",
-  "sbbtype": "Support/Offense",
-  "sbbhits": "19",
-  "sbbaoe": "A",
-  "sbbgauge": "25",
-  "sbbdc": "19",
-  "sbbmultiplier": "500",
   "ubb": {
     "damage frames": [
       {
@@ -959,6 +983,232 @@
     ],
     "name": "Luzgrake Ace"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_under",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 30.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 70.0,
+      "target conditions": "hp_max",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 50.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 176
+    },
+    "idle": {
+      "total number of frames": 104
+    },
+    "move": {
+      "total number of frames": 13
+    }
+  },
+  "category": 20570,
+  "cost": "40",
+  "damage frames": {
+    "frame times": [
+      64,
+      68,
+      72,
+      76,
+      80,
+      84,
+      88,
+      92
+    ],
+    "hit dmg% distribution": [
+      50,
+      7,
+      8,
+      7,
+      8,
+      6,
+      8,
+      6
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 8
+  },
+  "drop check count": 3,
+  "element": "water",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 888,
+  "imp": {
+    "max atk": "600",
+    "max def": "300",
+    "max hp": "1000",
+    "max rec": "400"
+  },
+  "kind": "normal",
+  "lord damage range": "2341~2615",
+  "movement": {
+    "attack": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    }
+  },
+  "name": "Glacier Twin-Blade Colt",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Glacier Twin-Blade Colt",
+  "maxlv": "120",
+  "no": "888",
+  "unitDisplayHomePosition_1W9CxaFK": "470,312,174,475",
+  "unitDisplayDetailPosition_6z54rgb3": "-156,-76,1244,952",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "29,184,622,476,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-106,-383,1244,952",
+  "unitDisplaySummonPosition_KC3Jk8Br": "29,184,622,476,0",
+  "unitDisplayHpPosition_3BpHN6VD": "3,55",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "15000",
+  "sellCaution": false,
+  "effectFrames": "58:122:1,62:122:1,66:122:1,70:122:1,74:122:1,78:122:1,82:122:1,86:122:1,10:200232:1,35:191:1,36:191:1,80:183:1,76:185:1,80:183:1,94:200032:1,98:200032:1,10:200084:1,30:200088:1,60:200284:1,64:100121:1,68:100121:1,11:400026:1,65:200177:1,12:400026:1",
+  "evofrom": "20575",
+  "evointo": "20577",
+  "evozelcost": "3000000",
+  "evokarmacost": "1000000",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "20344",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20191",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    },
+    {
+      "type": "2",
+      "id": "110100",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "176",
+  "animation_idle": "104",
+  "animation_move": "13",
+  "movespeed_attack": "0.0024",
+  "movespeed_skill": "0.0024",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "64, 68, 72, 76, 80, 84, 88, 92",
+  "normal_distribute": "50, 7, 8, 7, 8, 6, 8, 6",
+  "normal_totaldistr": "100",
+  "bb_frames": "10, 18, 26, 34, 42, 50, 58, 64, 68, 72, 76, 80, 84, 88, 92, 96, 100",
+  "bb_distribute": "5, 5, 5, 5, 5, 5, 5, 16, 6, 5, 6, 5, 6, 5, 6, 5, 5",
+  "bb_totaldistr": "100",
+  "sbb_frames": "10, 18, 26, 34, 42, 50, 58, 64, 68, 72, 76, 80, 84, 88, 92, 96, 100, 104, 108",
+  "sbb_distribute": "4, 4, 4, 4, 4, 4, 4, 16, 6, 5, 5, 5, 5, 5, 6, 5, 5, 4, 5",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "10, 18, 26, 34, 42, 50, 58, 64, 68, 72, 76, 80, 84, 88, 92, 96, 100, 104, 108, 112, 116",
+  "ubb_distribute": "4, 4, 4, 4, 4, 4, 4, 16, 5, 4, 5, 4, 5, 4, 5, 4, 4, 4, 4, 4, 4",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "1",
+  "ubb_effectdelay": "2",
+  "description": "When Colt received word that a group of dissenters sought to destroy the Holy Emperor, he asked his partners to return to Grand Gaia with him. However, the group split up into factions, and only him, his sister, and Fadahl went back. Once home, Colt battled against those who meant to slay Karna Masta, but exhausted from his previous mission, soon found himself unable to release his full power. It is said that Claire fell trying to protect her brother, leaving her last words to him. However, he had already been at peace when he heard them, and never moved again.",
+  "summon": "What do you think of me?<br>I'm neither strong, nor kind.<br>I'm just a weakling...",
+  "fusion": "Now I'll fight for you because<br>you've acknowledged my strength.<br>I'll keep pressing forward too.",
+  "evolution": "I don't need anything else.<br>Power nor kindness.<br>Yet, I still find myself here.",
+  "hp_base": "5447",
+  "atk_base": "1985",
+  "def_base": "1875",
+  "rec_base": "1350",
+  "hp_lord": "6690",
+  "atk_lord": "2515",
+  "def_lord": "2385",
+  "rec_lord": "1783",
+  "hp_anima": "7582",
+  "rec_anima": "1545",
+  "atk_breaker": "2753",
+  "def_breaker": "2147",
+  "atk_guardian": "2277",
+  "def_guardian": "2623",
+  "rec_guardian": "1664",
+  "def_oracle": "2266",
+  "hp_oracle": "6333",
+  "rec_oracle": "2140",
+  "hp_bonus": "1000",
+  "atk_bonus": "600",
+  "def_bonus": "300",
+  "rec_bonus": "400",
+  "lordonly": "",
+  "combo_hits": "8",
+  "normaldc": "24",
+  "ls": "Flashing Divine Grace",
+  "lsdescription": "Greatly boosts critical damage & boosts max HP and Rec by 30%",
+  "lsnote": "150% boost",
+  "lstype": "Attack/Hit Points/Recovery",
+  "bbdescription": "17 combo powerful Water attack on all enemies, boosts critical hit rate for all allies for 3 turns & gradually recovers BB gauge",
+  "bbnote": "60% boost & fills 5 BC",
+  "bbtype": "Support/Offense",
+  "bbhits": "17",
+  "bbaoe": "A",
+  "bbgauge": "24",
+  "bbdc": "17",
+  "bbmultiplier": "280",
+  "sbbdescription": "19 combo powerful Water attack on all enemies, boosts critical hit rate for 3 turns & gradually recovers BB gauge for 3 turns",
+  "sbbnote": "60% boost & fills 5 BC",
+  "sbbtype": "Support/Offense",
+  "sbbhits": "19",
+  "sbbaoe": "A",
+  "sbbgauge": "25",
+  "sbbdc": "19",
+  "sbbmultiplier": "500",
   "ubbdescription": "21 combo massive Water attack on all enemies, boosts critical hit rate for all allies for 3 turns & greatly boosts Atk",
   "ubbnote": "70% crit & 200% Atk",
   "ubbtype": "Support/Offense",
@@ -970,8 +1220,6 @@
   "es": "Bonds of Flame",
   "esitem": "Ice Blade or Claire",
   "esdescription": "30% boost to all parameters when Ice Blade is equipped, or when Claire is in the same squad",
-  "evofrom": "20575",
-  "evointo": "20577",
   "evomats1": "Water Mecha God",
   "evomats2": "Water Mecha God",
   "evomats3": "Miracle Totem",
@@ -979,122 +1227,5 @@
   "evomats5": "Water Pot",
   "evomats6": "Water Pot",
   "evomats7": "Metal Mimic",
-  "evoitem": "Legend Stone",
-  "evozelcost": "3000000",
-  "stats": {
-    "_base": {
-      "atk": 1985,
-      "def": 1875,
-      "hp": 5447,
-      "rec": 1350
-    },
-    "_lord": {
-      "atk": 2515,
-      "def": 2385,
-      "hp": 6690,
-      "rec": 1783
-    },
-    "anima": {
-      "atk": 2515,
-      "def": 2385,
-      "hp max": 7880,
-      "hp min": 7285,
-      "rec max": 1664,
-      "rec min": 1426
-    },
-    "breaker": {
-      "atk max": 2872,
-      "atk min": 2634,
-      "def max": 2266,
-      "def min": 2028,
-      "hp": 6690,
-      "rec": 1783
-    },
-    "guardian": {
-      "atk": 2515,
-      "def max": 2742,
-      "def min": 2504,
-      "hp": 6690,
-      "rec max": 1783,
-      "rec min": 1545
-    },
-    "oracle": {
-      "atk": 2515,
-      "def max": 2385,
-      "def min": 2147,
-      "hp": 6690,
-      "rec max": 2259,
-      "rec min": 2021
-    }
-  },
-  "leader_skill": {
-    "desc": "Greatly boosts critical damage & boosts max HP and Rec by 30%",
-    "effects": [
-      {
-        "crit multiplier%": 150.0,
-        "passive id": "34"
-      },
-      {
-        "hp% buff": 30,
-        "passive id": "1",
-        "rec% buff": 30
-      }
-    ],
-    "id": "2314",
-    "name": "Flashing Divine Grace"
-  },
-  "extra_skill": {
-    "desc": "30% boost to all parameters when Ice Blade is equipped,or when claire is in the same squad",
-    "effects": [
-      {
-        "atk% buff": 30,
-        "conditions": [
-          {
-            "unit required": [
-              {
-                "id": 10606,
-                "name": "Magma Twin-Pike Claire"
-              },
-              {
-                "id": 10607,
-                "name": "Crimson Knight Claire"
-              },
-              {
-                "id": 10604,
-                "name": "Burning Pike Claire"
-              },
-              {
-                "id": 10605,
-                "name": "Volcanic Pike Claire"
-              }
-            ]
-          },
-          {
-            "item required": [
-              "47301"
-            ]
-          }
-        ],
-        "def% buff": 30,
-        "hp% buff": 30,
-        "passive id": "1",
-        "passive target": "self",
-        "rec% buff": 30
-      }
-    ],
-    "id": "1600",
-    "name": "Bonds of Flame",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "470,312,174,475",
-  "unitDisplayDetailPosition_6z54rgb3": "-156,-76,1244,952",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "29,184,622,476,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-106,-383,1244,952",
-  "unitDisplaySummonPosition_KC3Jk8Br": "29,184,622,476,0",
-  "unitDisplayHpPosition_3BpHN6VD": "3,55",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "15000",
-  "sellCaution": false,
-  "effectFrames": "58:122:1,62:122:1,66:122:1,70:122:1,74:122:1,78:122:1,82:122:1,86:122:1,10:200232:1,35:191:1,36:191:1,80:183:1,76:185:1,80:183:1,94:200032:1,98:200032:1,10:200084:1,30:200088:1,60:200284:1,64:100121:1,68:100121:1,11:400026:1,65:200177:1,12:400026:1"
+  "evoitem": "Legend Stone"
 }

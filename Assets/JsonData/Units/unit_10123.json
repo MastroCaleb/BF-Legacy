@@ -1,61 +1,66 @@
 {
   "id": "10123",
-  "unitName": "Fire Knight Lava",
-  "no": "154",
-  "element": "Fire",
-  "rarity": "★★★★",
-  "cost": "8",
-  "maxlv": "60",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "109",
-  "animation_idle": "64",
-  "animation_move": "10",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "68, 72, 76, 80",
-  "normal_distribute": "40, 20, 20, 20",
-  "normal_totaldistr": "100",
-  "bb_frames": "68, 73, 78, 83, 88",
-  "bb_distribute": "15, 20, 20, 20, 25",
-  "bb_totaldistr": "100",
-  "description": "An elite swordswoman from a top-secret project in the ruined Agni Empire. As a result of her special training, she hates contact with other people. However, the joy she felt from defeating Vargas, a promising new star in the order, spurred her to get closer to those she felt to be strong. Knights of the time were honored to be greeted by her.",
-  "summon": "You must be strong<br>to have summoned me.<br>Let's burn it all!",
-  "fusion": "Give me the strength<br>to take on even stronger foes!",
-  "evolution": "Don't think I've reached<br>my limit just yet!<br>I can and will exceed!",
-  "hp_base": "2520",
-  "atk_base": "844",
-  "def_base": "808",
-  "rec_base": "765",
-  "hp_lord": "3948",
-  "atk_lord": "1188",
-  "def_lord": "1153",
-  "rec_lord": "1085",
-  "hp_anima": "4391",
-  "rec_anima": "967",
-  "atk_breaker": "1306",
-  "def_breaker": "1035",
-  "atk_guardian": "1070",
-  "def_guardian": "1271",
-  "rec_guardian": "1026",
-  "def_oracle": "1094",
-  "hp_oracle": "3771",
-  "rec_oracle": "1262",
-  "hp_bonus": "400",
-  "atk_bonus": "200",
-  "def_bonus": "120",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "4",
-  "normaldc": "12",
-  "ls": "Fire God's Power",
-  "lsdescription": "50% boost to Atk Power of Fire Types",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 844,
+      "def": 808,
+      "hp": 2520,
+      "rec": 765
+    },
+    "_lord": {
+      "atk": 1188,
+      "def": 1153,
+      "hp": 3948,
+      "rec": 1085
+    },
+    "anima": {
+      "atk": 1188,
+      "def": 1153,
+      "hp max": 4538,
+      "hp min": 4243,
+      "rec max": 1026,
+      "rec min": 908
+    },
+    "breaker": {
+      "atk max": 1365,
+      "atk min": 1247,
+      "def max": 1094,
+      "def min": 976,
+      "hp": 3948,
+      "rec": 1085
+    },
+    "guardian": {
+      "atk": 1188,
+      "def max": 1330,
+      "def min": 1212,
+      "hp": 3948,
+      "rec max": 1085,
+      "rec min": 967
+    },
+    "oracle": {
+      "atk": 1188,
+      "def max": 1153,
+      "def min": 1035,
+      "hp": 3948,
+      "rec max": 1321,
+      "rec min": 1203
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to Atk Power of Fire Types",
+    "effects": [
+      {
+        "atk% buff": 50,
+        "elements buffed": [
+          "fire"
+        ],
+        "passive id": "2"
+      }
+    ],
+    "id": "101",
+    "name": "Fire God's Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -216,97 +221,89 @@
     ],
     "name": "Prometheus Burn"
   },
-  "bbdescription": "5 combo Fire elemental power attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "5",
-  "bbaoe": "A",
-  "bbgauge": "25",
-  "bbdc": "5",
-  "bbmultiplier": "170",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "10122",
-  "evointo": "10124",
-  "evomats1": "10133",
-  "evomats2": "10132",
-  "evomats3": "60143",
-  "evomats4": "10130",
-  "evomats5": "10130",
-  "evoitem": "",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 844,
-      "def": 808,
-      "hp": 2520,
-      "rec": 765
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1188,
-      "def": 1153,
-      "hp": 3948,
-      "rec": 1085
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1188,
-      "def": 1153,
-      "hp max": 4538,
-      "hp min": 4243,
-      "rec max": 1026,
-      "rec min": 908
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 109
     },
-    "breaker": {
-      "atk max": 1365,
-      "atk min": 1247,
-      "def max": 1094,
-      "def min": 976,
-      "hp": 3948,
-      "rec": 1085
+    "idle": {
+      "total number of frames": 64
     },
-    "guardian": {
-      "atk": 1188,
-      "def max": 1330,
-      "def min": 1212,
-      "hp": 3948,
-      "rec max": 1085,
-      "rec min": 967
-    },
-    "oracle": {
-      "atk": 1188,
-      "def max": 1153,
-      "def min": 1035,
-      "hp": 3948,
-      "rec max": 1321,
-      "rec min": 1203
+    "move": {
+      "total number of frames": 10
     }
   },
-  "leader_skill": {
-    "desc": "50% boost to Atk Power of Fire Types",
-    "effects": [
-      {
-        "atk% buff": 50,
-        "elements buffed": [
-          "fire"
-        ],
-        "passive id": "2"
-      }
+  "category": 10120,
+  "cost": "8",
+  "damage frames": {
+    "frame times": [
+      68,
+      72,
+      76,
+      80
     ],
-    "id": "101",
-    "name": "Fire God's Power"
+    "hit dmg% distribution": [
+      40,
+      20,
+      20,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 4
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "fire",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 154,
+  "imp": {
+    "max atk": "200",
+    "max def": "120",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "1106~1235",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Fire Knight Lava",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Fire Knight Lava",
+  "maxlv": "60",
+  "no": "154",
   "unitDisplayHomePosition_1W9CxaFK": "252,0,200,544",
   "unitDisplayDetailPosition_6z54rgb3": "119,126,612,646",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "147,286,306,323,0",
@@ -316,5 +313,104 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "62:121:1,62:140:1,66:121:1,66:140:1,70:121:1,70:140:1,74:121:1,74:140:1"
+  "effectFrames": "62:121:1,62:140:1,66:121:1,66:140:1,70:121:1,70:140:1,74:121:1,74:140:1",
+  "evofrom": "10122",
+  "evointo": "10124",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "10133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10130",
+      "count": 2
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "109",
+  "animation_idle": "64",
+  "animation_move": "10",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "68, 72, 76, 80",
+  "normal_distribute": "40, 20, 20, 20",
+  "normal_totaldistr": "100",
+  "bb_frames": "68, 73, 78, 83, 88",
+  "bb_distribute": "15, 20, 20, 20, 25",
+  "bb_totaldistr": "100",
+  "description": "An elite swordswoman from a top-secret project in the ruined Agni Empire. As a result of her special training, she hates contact with other people. However, the joy she felt from defeating Vargas, a promising new star in the order, spurred her to get closer to those she felt to be strong. Knights of the time were honored to be greeted by her.",
+  "summon": "You must be strong<br>to have summoned me.<br>Let's burn it all!",
+  "fusion": "Give me the strength<br>to take on even stronger foes!",
+  "evolution": "Don't think I've reached<br>my limit just yet!<br>I can and will exceed!",
+  "hp_base": "2520",
+  "atk_base": "844",
+  "def_base": "808",
+  "rec_base": "765",
+  "hp_lord": "3948",
+  "atk_lord": "1188",
+  "def_lord": "1153",
+  "rec_lord": "1085",
+  "hp_anima": "4391",
+  "rec_anima": "967",
+  "atk_breaker": "1306",
+  "def_breaker": "1035",
+  "atk_guardian": "1070",
+  "def_guardian": "1271",
+  "rec_guardian": "1026",
+  "def_oracle": "1094",
+  "hp_oracle": "3771",
+  "rec_oracle": "1262",
+  "hp_bonus": "400",
+  "atk_bonus": "200",
+  "def_bonus": "120",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "4",
+  "normaldc": "12",
+  "ls": "Fire God's Power",
+  "lsdescription": "50% boost to Atk Power of Fire Types",
+  "lstype": "Attack",
+  "bbdescription": "5 combo Fire elemental power attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "5",
+  "bbaoe": "A",
+  "bbgauge": "25",
+  "bbdc": "5",
+  "bbmultiplier": "170",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "10133",
+  "evomats2": "10132",
+  "evomats3": "60143",
+  "evomats4": "10130",
+  "evomats5": "10130",
+  "evoitem": ""
 }

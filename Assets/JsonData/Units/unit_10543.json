@@ -1,63 +1,71 @@
 {
   "id": "10543",
-  "unitName": "Ember Elder Fiora",
-  "no": "715",
-  "element": "Fire",
-  "rarity": "★★★★",
-  "cost": "13",
-  "maxlv": "60",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "152",
-  "animation_idle": "82",
-  "animation_move": "6",
-  "movespeed_attack": "0.005",
-  "movespeed_skill": "0.005",
-  "speedtype_attack": "1",
-  "speedtype_skill": "1",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "70, 74, 78, 82",
-  "normal_distribute": "25, 25, 25, 25",
-  "normal_totaldistr": "100",
-  "bb_frames": "70, 73, 76, 79, 82, 85",
-  "bb_distribute": "20, 16, 16, 16, 16, 16",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "description": "A swordswoman that was punished for opposing the gods long before the great war. Imprisoned in a temple, she was cursed by the gods to age physically, but never die. This punishment was supposed to make her taste desolation throughout eternity. However, a certain god remembered the prowess she had demonstrated when defying the gods and released her on parole. She was then made to vanquish evil demons in order to repent for her sins.",
-  "summon": "Summoner, or whatever.<br>Do you plan on using this old woman?<br>You are no different than the gods.",
-  "fusion": "What do you want from this ugly, old<br>lady? I may not do what you ask,<br>but I will hear you out.",
-  "evolution": "",
-  "hp_base": "2904",
-  "atk_base": "1038",
-  "def_base": "891",
-  "rec_base": "1051",
-  "hp_lord": "4172",
-  "atk_lord": "1383",
-  "def_lord": "1187",
-  "rec_lord": "1401",
-  "hp_anima": "4615",
-  "rec_anima": "1283",
-  "atk_breaker": "1501",
-  "def_breaker": "1069",
-  "atk_guardian": "1265",
-  "def_guardian": "1305",
-  "rec_guardian": "1342",
-  "def_oracle": "1128",
-  "hp_oracle": "3995",
-  "rec_oracle": "1578",
-  "hp_bonus": "400",
-  "atk_bonus": "160",
-  "def_bonus": "160",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "4",
-  "normaldc": "12",
-  "ls": "Epidemic Wave",
-  "lsdescription": "Low chance of inflicting a random status ailment when attacking",
-  "lsnote": "3% chance to inflict Curse, Poison, Paralysis, 5% chance to inflict Injury, Weak, Sick",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 1038,
+      "def": 891,
+      "hp": 2904,
+      "rec": 1051
+    },
+    "_lord": {
+      "atk": 1383,
+      "def": 1187,
+      "hp": 4172,
+      "rec": 1401
+    },
+    "anima": {
+      "atk": 1383,
+      "def": 1187,
+      "hp max": 4762,
+      "hp min": 4467,
+      "rec max": 1342,
+      "rec min": 1224
+    },
+    "breaker": {
+      "atk max": 1560,
+      "atk min": 1442,
+      "def max": 1128,
+      "def min": 1010,
+      "hp": 4172,
+      "rec": 1401
+    },
+    "guardian": {
+      "atk": 1383,
+      "def max": 1364,
+      "def min": 1246,
+      "hp": 4172,
+      "rec max": 1401,
+      "rec min": 1283
+    },
+    "oracle": {
+      "atk": 1383,
+      "def max": 1187,
+      "def min": 1069,
+      "hp": 4172,
+      "rec max": 1637,
+      "rec min": 1519
+    }
+  },
+  "leader_skill": {
+    "desc": "Low chance of inflicting a random status ailment when attacking",
+    "effects": [
+      {
+        "injury%": 5,
+        "passive id": "20",
+        "poison%": 3,
+        "sick%": 5,
+        "weaken%": 5
+      },
+      {
+        "curse%": 3,
+        "paralysis%": 3,
+        "passive id": "20"
+      }
+    ],
+    "id": "3000",
+    "name": "Epidemic Wave"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -342,102 +350,89 @@
     ],
     "name": "Flames of Lamentation"
   },
-  "bbdescription": "6 combo elemental Fire attack on all enemies & adds Fire and Thunder elements to attack for all allies for 3 turns",
-  "bbtype": "Support/Offense",
-  "bbhits": "6",
-  "bbaoe": "A",
-  "bbgauge": "23",
-  "bbdc": "6",
-  "bbmultiplier": "200",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "10544",
-  "evomats1": "10133",
-  "evomats2": "10191",
-  "evomats3": "10132",
-  "evomats4": "60144",
-  "evomats5": "60144",
-  "evoitem": "",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 1038,
-      "def": 891,
-      "hp": 2904,
-      "rec": 1051
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1383,
-      "def": 1187,
-      "hp": 4172,
-      "rec": 1401
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1383,
-      "def": 1187,
-      "hp max": 4762,
-      "hp min": 4467,
-      "rec max": 1342,
-      "rec min": 1224
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 152
     },
-    "breaker": {
-      "atk max": 1560,
-      "atk min": 1442,
-      "def max": 1128,
-      "def min": 1010,
-      "hp": 4172,
-      "rec": 1401
+    "idle": {
+      "total number of frames": 82
     },
-    "guardian": {
-      "atk": 1383,
-      "def max": 1364,
-      "def min": 1246,
-      "hp": 4172,
-      "rec max": 1401,
-      "rec min": 1283
-    },
-    "oracle": {
-      "atk": 1383,
-      "def max": 1187,
-      "def min": 1069,
-      "hp": 4172,
-      "rec max": 1637,
-      "rec min": 1519
+    "move": {
+      "total number of frames": 6
     }
   },
-  "leader_skill": {
-    "desc": "Low chance of inflicting a random status ailment when attacking",
-    "effects": [
-      {
-        "injury%": 5,
-        "passive id": "20",
-        "poison%": 3,
-        "sick%": 5,
-        "weaken%": 5
-      },
-      {
-        "curse%": 3,
-        "paralysis%": 3,
-        "passive id": "20"
-      }
+  "category": 10540,
+  "cost": "13",
+  "damage frames": {
+    "frame times": [
+      70,
+      74,
+      78,
+      82
     ],
-    "id": "3000",
-    "name": "Epidemic Wave"
+    "hit dmg% distribution": [
+      25,
+      25,
+      25,
+      25
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 4
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "fire",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 715,
+  "imp": {
+    "max atk": "160",
+    "max def": "160",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "1287~1438",
+  "movement": {
+    "attack": {
+      "move speed": 0.005,
+      "move speed type": "1",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.005,
+      "move speed type": "1",
+      "move type": "1"
+    }
+  },
+  "name": "Ember Elder Fiora",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Ember Elder Fiora",
+  "maxlv": "60",
+  "no": "715",
   "unitDisplayHomePosition_1W9CxaFK": "563,360,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-245,-127,1302,882",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "50,-16,684,639,0",
@@ -447,5 +442,106 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "66:121:1,70:100018:1,70:121:1,74:121:1,78:121:1"
+  "effectFrames": "66:121:1,70:100018:1,70:121:1,74:121:1,78:121:1",
+  "evofrom": "",
+  "evointo": "10544",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "10133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 2
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "152",
+  "animation_idle": "82",
+  "animation_move": "6",
+  "movespeed_attack": "0.005",
+  "movespeed_skill": "0.005",
+  "speedtype_attack": "1",
+  "speedtype_skill": "1",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "70, 74, 78, 82",
+  "normal_distribute": "25, 25, 25, 25",
+  "normal_totaldistr": "100",
+  "bb_frames": "70, 73, 76, 79, 82, 85",
+  "bb_distribute": "20, 16, 16, 16, 16, 16",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "description": "A swordswoman that was punished for opposing the gods long before the great war. Imprisoned in a temple, she was cursed by the gods to age physically, but never die. This punishment was supposed to make her taste desolation throughout eternity. However, a certain god remembered the prowess she had demonstrated when defying the gods and released her on parole. She was then made to vanquish evil demons in order to repent for her sins.",
+  "summon": "Summoner, or whatever.<br>Do you plan on using this old woman?<br>You are no different than the gods.",
+  "fusion": "What do you want from this ugly, old<br>lady? I may not do what you ask,<br>but I will hear you out.",
+  "evolution": "",
+  "hp_base": "2904",
+  "atk_base": "1038",
+  "def_base": "891",
+  "rec_base": "1051",
+  "hp_lord": "4172",
+  "atk_lord": "1383",
+  "def_lord": "1187",
+  "rec_lord": "1401",
+  "hp_anima": "4615",
+  "rec_anima": "1283",
+  "atk_breaker": "1501",
+  "def_breaker": "1069",
+  "atk_guardian": "1265",
+  "def_guardian": "1305",
+  "rec_guardian": "1342",
+  "def_oracle": "1128",
+  "hp_oracle": "3995",
+  "rec_oracle": "1578",
+  "hp_bonus": "400",
+  "atk_bonus": "160",
+  "def_bonus": "160",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "4",
+  "normaldc": "12",
+  "ls": "Epidemic Wave",
+  "lsdescription": "Low chance of inflicting a random status ailment when attacking",
+  "lsnote": "3% chance to inflict Curse, Poison, Paralysis, 5% chance to inflict Injury, Weak, Sick",
+  "lstype": "Attack",
+  "bbdescription": "6 combo elemental Fire attack on all enemies & adds Fire and Thunder elements to attack for all allies for 3 turns",
+  "bbtype": "Support/Offense",
+  "bbhits": "6",
+  "bbaoe": "A",
+  "bbgauge": "23",
+  "bbdc": "6",
+  "bbmultiplier": "200",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "10133",
+  "evomats2": "10191",
+  "evomats3": "10132",
+  "evomats4": "60144",
+  "evomats5": "60144",
+  "evoitem": ""
 }

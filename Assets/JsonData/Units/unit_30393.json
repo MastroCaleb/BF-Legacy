@@ -1,57 +1,63 @@
 {
   "id": "30393",
-  "unitName": "Lin",
-  "freetext": ":''For other uses, see Lin (disambiguation)''",
-  "no": "847",
-  "element": "Earth",
-  "rarity": "★★★★",
-  "cost": "10",
-  "maxlv": "60",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "189",
-  "animation_idle": "80",
-  "animation_move": "80",
-  "movespeed_attack": "4",
-  "movespeed_skill": "4",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "95, 98, 101, 104, 107, 111, 115, 119",
-  "normal_distribute": "20, 15, 12, 12, 11, 10, 10, 10",
-  "normal_totaldistr": "100",
-  "description": "A mock Unit modeled after Lin Merylham, the main operator of the Logistics Support Department in the Grand Gaia Survey Office Bureau of Investigation. Not a natural fighter by any means, her mock Unit was not created to exert brute force. Rather, it is said that she went to see Noel in order to ask him to model a supportive Unit after her. Angered by Lin's interruption, Noel is said to have agreed as long as it meant getting her out of his laboratory for good.",
-  "summon": "Summoner!!<br>I'm here to be of your assistance,<br>so just say the word!",
-  "fusion": "Huh? Oh my!<br>It seems like I've gotten stronger!<br>Thanks a lot, Summoner!",
-  "evolution": "",
-  "hp_base": "2703",
-  "atk_base": "770",
-  "def_base": "865",
-  "rec_base": "1140",
-  "hp_lord": "3905",
-  "atk_lord": "1027",
-  "def_lord": "1154",
-  "rec_lord": "1520",
-  "hp_anima": "",
-  "rec_anima": "",
-  "atk_breaker": "",
-  "def_breaker": "",
-  "atk_guardian": "",
-  "def_guardian": "",
-  "hp_oracle": "",
-  "rec_oracle": "",
-  "hp_bonus": "600",
-  "atk_bonus": "120",
-  "def_bonus": "120",
-  "rec_bonus": "120",
-  "lordonly": "true",
-  "combo_hits": "8",
-  "normaldc": "16",
-  "ls": "Affectionate Support",
-  "lsdescription": "30% boost to max HP for all Units",
-  "lstype": "Hit Points",
+  "stats": {
+    "_base": {
+      "atk": 770,
+      "def": 865,
+      "hp": 2703,
+      "rec": 1140
+    },
+    "_lord": {
+      "atk": 1027,
+      "def": 1154,
+      "hp": 3905,
+      "rec": 1520
+    },
+    "anima": {
+      "atk": 1027,
+      "def": 1154,
+      "hp max": 4495,
+      "hp min": 4200,
+      "rec max": 1461,
+      "rec min": 1343
+    },
+    "breaker": {
+      "atk max": 1204,
+      "atk min": 1086,
+      "def max": 1095,
+      "def min": 977,
+      "hp": 3905,
+      "rec": 1520
+    },
+    "guardian": {
+      "atk": 1027,
+      "def max": 1331,
+      "def min": 1213,
+      "hp": 3905,
+      "rec max": 1520,
+      "rec min": 1402
+    },
+    "oracle": {
+      "atk": 1027,
+      "def max": 1154,
+      "def min": 1036,
+      "hp": 3905,
+      "rec max": 1756,
+      "rec min": 1638
+    }
+  },
+  "leader_skill": {
+    "desc": "30% boost to max HP for all Units",
+    "effects": [
+      {
+        "hp% buff": 30,
+        "passive id": "1"
+      }
+    ],
+    "id": "5510",
+    "name": "Affectionate Support"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -458,94 +464,97 @@
     ],
     "name": "Lin, at your service!"
   },
-  "bbdescription": "Gradually recovers HP and BB gauge for all allies for 3 turns & nullifies all status ailments for 3 turns",
-  "bbnote": "Heals (1500~1800 + 13% of target Rec) HP & 5 BC fill",
-  "bbtype": "Heal/Support",
-  "bbhits": "0",
-  "bbaoe": "0",
-  "bbgauge": "20",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "es": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "30394",
-  "evomats1": "30133",
-  "evomats2": "30191",
-  "evomats3": "30191",
-  "evomats4": "30191",
-  "evomats5": "30132",
-  "evoitem": "",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 770,
-      "def": 865,
-      "hp": 2703,
-      "rec": 1140
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1027,
-      "def": 1154,
-      "hp": 3905,
-      "rec": 1520
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1027,
-      "def": 1154,
-      "hp max": 4495,
-      "hp min": 4200,
-      "rec max": 1461,
-      "rec min": 1343
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 189
     },
-    "breaker": {
-      "atk max": 1204,
-      "atk min": 1086,
-      "def max": 1095,
-      "def min": 977,
-      "hp": 3905,
-      "rec": 1520
+    "idle": {
+      "total number of frames": 80
     },
-    "guardian": {
-      "atk": 1027,
-      "def max": 1331,
-      "def min": 1213,
-      "hp": 3905,
-      "rec max": 1520,
-      "rec min": 1402
-    },
-    "oracle": {
-      "atk": 1027,
-      "def max": 1154,
-      "def min": 1036,
-      "hp": 3905,
-      "rec max": 1756,
-      "rec min": 1638
+    "move": {
+      "total number of frames": 80
     }
   },
-  "leader_skill": {
-    "desc": "30% boost to max HP for all Units",
-    "effects": [
-      {
-        "hp% buff": 30,
-        "passive id": "1"
-      }
+  "category": 30390,
+  "cost": "10",
+  "damage frames": {
+    "frame times": [
+      95,
+      98,
+      101,
+      104,
+      107,
+      111,
+      115,
+      119
     ],
-    "id": "5510",
-    "name": "Affectionate Support"
+    "hit dmg% distribution": [
+      20,
+      15,
+      12,
+      12,
+      11,
+      10,
+      10,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 8
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "earth",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "farmable",
+  "guide_id": 847,
+  "imp": {
+    "max atk": "120",
+    "max def": "120",
+    "max hp": "600",
+    "max rec": "120"
+  },
+  "kind": "normal",
+  "lord damage range": "956~1068",
+  "movement": {
+    "attack": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    }
+  },
+  "name": "Lin",
+  "rarity": "4",
+  "sell caution": true,
+  "unitName": "Lin",
+  "maxlv": "60",
+  "no": "847",
   "unitDisplayHomePosition_1W9CxaFK": "206,-50,200,546",
   "unitDisplayDetailPosition_6z54rgb3": "147,220,560,594",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "164,298,311,330,0",
@@ -555,5 +564,95 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": true,
-  "effectFrames": "95:112:1,98:112:1,101:112:1,104:112:1,107:112:1,111:112:1,115:112:1,119:112:1,90:500381:1,100:300275:1"
+  "effectFrames": "95:112:1,98:112:1,101:112:1,104:112:1,107:112:1,111:112:1,115:112:1,119:112:1,90:500381:1,100:300275:1",
+  "evofrom": "",
+  "evointo": "30394",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "30133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30191",
+      "count": 3
+    },
+    {
+      "type": "1",
+      "id": "30132",
+      "count": 1
+    }
+  ],
+  "freetext": ":''For other uses, see Lin (disambiguation)''",
+  "basexp": "21",
+  "animation_attack": "189",
+  "animation_idle": "80",
+  "animation_move": "80",
+  "movespeed_attack": "4",
+  "movespeed_skill": "4",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "95, 98, 101, 104, 107, 111, 115, 119",
+  "normal_distribute": "20, 15, 12, 12, 11, 10, 10, 10",
+  "normal_totaldistr": "100",
+  "description": "A mock Unit modeled after Lin Merylham, the main operator of the Logistics Support Department in the Grand Gaia Survey Office Bureau of Investigation. Not a natural fighter by any means, her mock Unit was not created to exert brute force. Rather, it is said that she went to see Noel in order to ask him to model a supportive Unit after her. Angered by Lin's interruption, Noel is said to have agreed as long as it meant getting her out of his laboratory for good.",
+  "summon": "Summoner!!<br>I'm here to be of your assistance,<br>so just say the word!",
+  "fusion": "Huh? Oh my!<br>It seems like I've gotten stronger!<br>Thanks a lot, Summoner!",
+  "evolution": "",
+  "hp_base": "2703",
+  "atk_base": "770",
+  "def_base": "865",
+  "rec_base": "1140",
+  "hp_lord": "3905",
+  "atk_lord": "1027",
+  "def_lord": "1154",
+  "rec_lord": "1520",
+  "hp_anima": "",
+  "rec_anima": "",
+  "atk_breaker": "",
+  "def_breaker": "",
+  "atk_guardian": "",
+  "def_guardian": "",
+  "hp_oracle": "",
+  "rec_oracle": "",
+  "hp_bonus": "600",
+  "atk_bonus": "120",
+  "def_bonus": "120",
+  "rec_bonus": "120",
+  "lordonly": "true",
+  "combo_hits": "8",
+  "normaldc": "16",
+  "ls": "Affectionate Support",
+  "lsdescription": "30% boost to max HP for all Units",
+  "lstype": "Hit Points",
+  "bbdescription": "Gradually recovers HP and BB gauge for all allies for 3 turns & nullifies all status ailments for 3 turns",
+  "bbnote": "Heals (1500~1800 + 13% of target Rec) HP & 5 BC fill",
+  "bbtype": "Heal/Support",
+  "bbhits": "0",
+  "bbaoe": "0",
+  "bbgauge": "20",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "es": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "30133",
+  "evomats2": "30191",
+  "evomats3": "30191",
+  "evomats4": "30191",
+  "evomats5": "30132",
+  "evoitem": ""
 }

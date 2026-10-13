@@ -1,59 +1,65 @@
 {
   "id": "60494",
-  "unitName": "Empress Lilly Matah",
-  "no": "626",
-  "element": "Dark",
-  "rarity": "★★★★★",
-  "cost": "17",
-  "maxlv": "80",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "1",
-  "animation_attack": "132",
-  "animation_idle": "76",
-  "animation_move": "14",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "4",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "3",
-  "normal_frames": "33, 37, 41, 69, 73, 77",
-  "normal_distribute": "15, 15, 20, 15, 15, 20",
-  "normal_totaldistr": "100",
-  "description": "Long before the battle between the humans and the gods, there was a fearful empress from the Agni empire whose name was inscribed in history. After some years had passed, her passion for watching slaves fight each other became aberrant. An example of her abnormal obsession: she created a crown which she made her slaves wear. The crown was able to increase the attack power of the wearer, but was also the result of part of her research. Also, at the same time it strengthened her dark powers more than ever before.",
-  "summon": "A human who can manipulate summons...<br>I'm a bit more interested in you now.<br>Kneel before me.",
-  "fusion": "You should make me an offering soon.<br>It will nurture my power.<br>It should be cheap enough.",
-  "evolution": "Take a good look at my evolved form.<br>The passion people feel in the battlefield<br>fuels my power.",
-  "hp_base": "3410",
-  "atk_base": "1234",
-  "def_base": "1234",
-  "rec_base": "1251",
-  "hp_lord": "4956",
-  "atk_lord": "1632",
-  "def_lord": "1633",
-  "rec_lord": "1675",
-  "hp_anima": "5549",
-  "rec_anima": "1517",
-  "atk_breaker": "1790",
-  "def_breaker": "1475",
-  "atk_guardian": "1474",
-  "def_guardian": "1791",
-  "rec_guardian": "1596",
-  "def_oracle": "1554",
-  "hp_oracle": "4719",
-  "rec_oracle": "1912",
-  "hp_bonus": "500",
-  "atk_bonus": "200",
-  "def_bonus": "200",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "6",
-  "normaldc": "12",
-  "ls": "Ares' Rage",
-  "lsdescription": "Boost in the BB gauge when attacked",
-  "lsnote": "2~5 BC fill when attacked",
-  "lstype": "Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 1234,
+      "def": 1234,
+      "hp": 3410,
+      "rec": 1251
+    },
+    "_lord": {
+      "atk": 1632,
+      "def": 1633,
+      "hp": 4956,
+      "rec": 1675
+    },
+    "anima": {
+      "atk": 1632,
+      "def": 1633,
+      "hp max": 5746,
+      "hp min": 5351,
+      "rec max": 1596,
+      "rec min": 1438
+    },
+    "breaker": {
+      "atk max": 1869,
+      "atk min": 1711,
+      "def max": 1554,
+      "def min": 1396,
+      "hp": 4956,
+      "rec": 1675
+    },
+    "guardian": {
+      "atk": 1632,
+      "def max": 1870,
+      "def min": 1712,
+      "hp": 4956,
+      "rec max": 1675,
+      "rec min": 1517
+    },
+    "oracle": {
+      "atk": 1632,
+      "def max": 1633,
+      "def min": 1475,
+      "hp": 4956,
+      "rec max": 1991,
+      "rec min": 1833
+    }
+  },
+  "leader_skill": {
+    "desc": "Boost in the BB gauge when attacked",
+    "effects": [
+      {
+        "bc fill when attacked high": 5,
+        "bc fill when attacked low": 2,
+        "bc fill when attacked%": 100,
+        "passive id": "25"
+      }
+    ],
+    "id": "5701",
+    "name": "Ares' Rage"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -318,94 +324,93 @@
     ],
     "name": "Empress's March"
   },
-  "bbdescription": "Gradually recovers BB gauge for all allies for 3 turns & increases BB gauge when damage is taken",
-  "bbnote": "3 BC fill per turn, 3~5 BC when damage taken",
-  "bbtype": "Support",
-  "bbhits": "0",
-  "bbaoe": "0",
-  "bbgauge": "20",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "60493",
-  "evointo": "60495",
-  "evomats1": "50354",
-  "evomats2": "60123",
-  "evomats3": "60144",
-  "evomats4": "60144",
-  "evomats5": "60224",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 1234,
-      "def": 1234,
-      "hp": 3410,
-      "rec": 1251
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "party"
     },
-    "_lord": {
-      "atk": 1632,
-      "def": 1633,
-      "hp": 4956,
-      "rec": 1675
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1632,
-      "def": 1633,
-      "hp max": 5746,
-      "hp min": 5351,
-      "rec max": 1596,
-      "rec min": 1438
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 132
     },
-    "breaker": {
-      "atk max": 1869,
-      "atk min": 1711,
-      "def max": 1554,
-      "def min": 1396,
-      "hp": 4956,
-      "rec": 1675
+    "idle": {
+      "total number of frames": 76
     },
-    "guardian": {
-      "atk": 1632,
-      "def max": 1870,
-      "def min": 1712,
-      "hp": 4956,
-      "rec max": 1675,
-      "rec min": 1517
-    },
-    "oracle": {
-      "atk": 1632,
-      "def max": 1633,
-      "def min": 1475,
-      "hp": 4956,
-      "rec max": 1991,
-      "rec min": 1833
+    "move": {
+      "total number of frames": 14
     }
   },
-  "leader_skill": {
-    "desc": "Boost in the BB gauge when attacked",
-    "effects": [
-      {
-        "bc fill when attacked high": 5,
-        "bc fill when attacked low": 2,
-        "bc fill when attacked%": 100,
-        "passive id": "25"
-      }
+  "category": 60490,
+  "cost": "17",
+  "damage frames": {
+    "frame times": [
+      33,
+      37,
+      41,
+      69,
+      73,
+      77
     ],
-    "id": "5701",
-    "name": "Ares' Rage"
+    "hit dmg% distribution": [
+      15,
+      15,
+      20,
+      15,
+      15,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 6
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "dark",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 626,
+  "imp": {
+    "max atk": "200",
+    "max def": "200",
+    "max hp": "500",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "1519~1697",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    }
+  },
+  "name": "Empress Lilly Matah",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Empress Lilly Matah",
+  "maxlv": "80",
+  "no": "626",
   "unitDisplayHomePosition_1W9CxaFK": "473,200,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-135,16,1173,937",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "129,353,394,260,0",
@@ -415,5 +420,100 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "33:600221:1,35:600221:1,33:600273:1,27:126:1,31:126:1,35:126:1,40:600322:1,69:600221:1,71:600221:1,69:600273:1,63:126:1,67:126:1,71:126:1,87:600322:1"
+  "effectFrames": "33:600221:1,35:600221:1,33:600273:1,27:126:1,31:126:1,35:126:1,40:600322:1,69:600221:1,71:600221:1,69:600273:1,63:126:1,67:126:1,71:126:1,87:600322:1",
+  "evofrom": "60493",
+  "evointo": "60495",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60123",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "132",
+  "animation_idle": "76",
+  "animation_move": "14",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "4",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "3",
+  "normal_frames": "33, 37, 41, 69, 73, 77",
+  "normal_distribute": "15, 15, 20, 15, 15, 20",
+  "normal_totaldistr": "100",
+  "description": "Long before the battle between the humans and the gods, there was a fearful empress from the Agni empire whose name was inscribed in history. After some years had passed, her passion for watching slaves fight each other became aberrant. An example of her abnormal obsession: she created a crown which she made her slaves wear. The crown was able to increase the attack power of the wearer, but was also the result of part of her research. Also, at the same time it strengthened her dark powers more than ever before.",
+  "summon": "A human who can manipulate summons...<br>I'm a bit more interested in you now.<br>Kneel before me.",
+  "fusion": "You should make me an offering soon.<br>It will nurture my power.<br>It should be cheap enough.",
+  "evolution": "Take a good look at my evolved form.<br>The passion people feel in the battlefield<br>fuels my power.",
+  "hp_base": "3410",
+  "atk_base": "1234",
+  "def_base": "1234",
+  "rec_base": "1251",
+  "hp_lord": "4956",
+  "atk_lord": "1632",
+  "def_lord": "1633",
+  "rec_lord": "1675",
+  "hp_anima": "5549",
+  "rec_anima": "1517",
+  "atk_breaker": "1790",
+  "def_breaker": "1475",
+  "atk_guardian": "1474",
+  "def_guardian": "1791",
+  "rec_guardian": "1596",
+  "def_oracle": "1554",
+  "hp_oracle": "4719",
+  "rec_oracle": "1912",
+  "hp_bonus": "500",
+  "atk_bonus": "200",
+  "def_bonus": "200",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "6",
+  "normaldc": "12",
+  "ls": "Ares' Rage",
+  "lsdescription": "Boost in the BB gauge when attacked",
+  "lsnote": "2~5 BC fill when attacked",
+  "lstype": "Brave Burst",
+  "bbdescription": "Gradually recovers BB gauge for all allies for 3 turns & increases BB gauge when damage is taken",
+  "bbnote": "3 BC fill per turn, 3~5 BC when damage taken",
+  "bbtype": "Support",
+  "bbhits": "0",
+  "bbaoe": "0",
+  "bbgauge": "20",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "60123",
+  "evomats3": "60144",
+  "evomats4": "60144",
+  "evomats5": "60224"
 }

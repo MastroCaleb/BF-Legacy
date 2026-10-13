@@ -1,62 +1,63 @@
 {
   "id": "20513",
-  "unitName": "Sea Pirate Eve",
-  "no": "718",
-  "element": "Water",
-  "rarity": "★★★★",
-  "cost": "13",
-  "maxlv": "60",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "4",
-  "animation_attack": "94",
-  "animation_idle": "68",
-  "animation_move": "7",
-  "movespeed_attack": "0.0041",
-  "movespeed_skill": "0.0041",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "32, 36, 40, 68, 72",
-  "normal_distribute": "20, 15, 15, 25, 25",
-  "normal_totaldistr": "100",
-  "bb_frames": "32, 35, 38, 41, 68, 72, 76, 80",
-  "bb_distribute": "10, 10, 10, 10, 15, 15, 15, 15",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "description": "A pirate that sailed the seas before the prosperity of the Sama pirates, instilling fear in every town near the coast. Said to be originally from the Agni Region, much of her personal life remains unknown. She is said to have been the one to write the Pirate's Code, and to have laid the foundation for the pirate era. Many legends are attributed to her, including one in which she has a life-threatening battle with a gigantic sea creature. This story is so popular that it was made into a motion picture, making it a famous tale even amongst the children of this age.",
-  "summon": "I will acknowledge the courage<br>it took to summon me here.<br>Now you'll have to prove your strength.",
-  "fusion": "This just won't do.<br>You'll have to work harder<br>while you're under my command!",
-  "evolution": "",
-  "hp_base": "3069",
-  "atk_base": "1005",
-  "def_base": "998",
-  "rec_base": "998",
-  "hp_lord": "4392",
-  "atk_lord": "1340",
-  "def_lord": "1331",
-  "rec_lord": "1331",
-  "hp_anima": "4835",
-  "rec_anima": "1213",
-  "atk_breaker": "1458",
-  "def_breaker": "1213",
-  "atk_guardian": "1222",
-  "def_guardian": "1449",
-  "rec_guardian": "1272",
-  "def_oracle": "1272",
-  "hp_oracle": "4215",
-  "rec_oracle": "1508",
-  "hp_bonus": "400",
-  "atk_bonus": "200",
-  "def_bonus": "120",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "5",
-  "normaldc": "10",
-  "ls": "Royal Oracle",
-  "lsdescription": "15% boost to HP of all Units",
-  "lstype": "Hit Points",
+  "stats": {
+    "_base": {
+      "atk": 1005,
+      "def": 998,
+      "hp": 3069,
+      "rec": 998
+    },
+    "_lord": {
+      "atk": 1340,
+      "def": 1331,
+      "hp": 4392,
+      "rec": 1331
+    },
+    "anima": {
+      "atk": 1340,
+      "def": 1331,
+      "hp max": 4982,
+      "hp min": 4687,
+      "rec max": 1272,
+      "rec min": 1154
+    },
+    "breaker": {
+      "atk max": 1517,
+      "atk min": 1399,
+      "def max": 1272,
+      "def min": 1154,
+      "hp": 4392,
+      "rec": 1331
+    },
+    "guardian": {
+      "atk": 1340,
+      "def max": 1508,
+      "def min": 1390,
+      "hp": 4392,
+      "rec max": 1331,
+      "rec min": 1213
+    },
+    "oracle": {
+      "atk": 1340,
+      "def max": 1331,
+      "def min": 1213,
+      "hp": 4392,
+      "rec max": 1567,
+      "rec min": 1449
+    }
+  },
+  "leader_skill": {
+    "desc": "15% boost to max HP",
+    "effects": [
+      {
+        "hp% buff": 15,
+        "passive id": "1"
+      }
+    ],
+    "id": "5500",
+    "name": "Royal Oracle"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -345,93 +346,103 @@
     ],
     "name": "Splash Gale"
   },
-  "bbdescription": "8 combo elemental Water attack on all enemies & adds Water and Earth elements to attack for all allies for 3 turns",
-  "bbtype": "Support/Offense",
-  "bbhits": "8",
-  "bbaoe": "A",
-  "bbgauge": "23",
-  "bbdc": "8",
-  "bbmultiplier": "200",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "20514",
-  "evomats1": "20133",
-  "evomats2": "20191",
-  "evomats3": "20132",
-  "evomats4": "60144",
-  "evomats5": "60144",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 1005,
-      "def": 998,
-      "hp": 3069,
-      "rec": 998
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_under",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1340,
-      "def": 1331,
-      "hp": 4392,
-      "rec": 1331
+    {
+      "action": "skill",
+      "chance%": 30.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1340,
-      "def": 1331,
-      "hp max": 4982,
-      "hp min": 4687,
-      "rec max": 1272,
-      "rec min": 1154
+    {
+      "action": "attack",
+      "chance%": 70.0,
+      "target conditions": "hp_max",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 1517,
-      "atk min": 1399,
-      "def max": 1272,
-      "def min": 1154,
-      "hp": 4392,
-      "rec": 1331
+    {
+      "action": "attack",
+      "chance%": 50.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "guardian": {
-      "atk": 1340,
-      "def max": 1508,
-      "def min": 1390,
-      "hp": 4392,
-      "rec max": 1331,
-      "rec min": 1213
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 94
     },
-    "oracle": {
-      "atk": 1340,
-      "def max": 1331,
-      "def min": 1213,
-      "hp": 4392,
-      "rec max": 1567,
-      "rec min": 1449
+    "idle": {
+      "total number of frames": 68
+    },
+    "move": {
+      "total number of frames": 7
     }
   },
-  "leader_skill": {
-    "desc": "15% boost to max HP",
-    "effects": [
-      {
-        "hp% buff": 15,
-        "passive id": "1"
-      }
+  "category": 20510,
+  "cost": "13",
+  "damage frames": {
+    "frame times": [
+      32,
+      36,
+      40,
+      68,
+      72
     ],
-    "id": "5500",
-    "name": "Royal Oracle"
+    "hit dmg% distribution": [
+      20,
+      15,
+      15,
+      25,
+      25
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 5
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "water",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 718,
+  "imp": {
+    "max atk": "200",
+    "max def": "120",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "1247~1393",
+  "movement": {
+    "attack": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    }
+  },
+  "name": "Sea Pirate Eve",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Sea Pirate Eve",
+  "maxlv": "60",
+  "no": "718",
   "unitDisplayHomePosition_1W9CxaFK": "461,419,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-162,-211,1240,1076",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "215,387,216,240,0",
@@ -441,5 +452,104 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "26:200406:1,26:122:1,30:122:1,34:122:1,62:122:1,68:500094:1,64:200030:1,66:122:1,66:500094:1"
+  "effectFrames": "26:200406:1,26:122:1,30:122:1,34:122:1,62:122:1,68:500094:1,64:200030:1,66:122:1,66:500094:1",
+  "evofrom": "",
+  "evointo": "20514",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "20133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 2
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "94",
+  "animation_idle": "68",
+  "animation_move": "7",
+  "movespeed_attack": "0.0041",
+  "movespeed_skill": "0.0041",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "32, 36, 40, 68, 72",
+  "normal_distribute": "20, 15, 15, 25, 25",
+  "normal_totaldistr": "100",
+  "bb_frames": "32, 35, 38, 41, 68, 72, 76, 80",
+  "bb_distribute": "10, 10, 10, 10, 15, 15, 15, 15",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "description": "A pirate that sailed the seas before the prosperity of the Sama pirates, instilling fear in every town near the coast. Said to be originally from the Agni Region, much of her personal life remains unknown. She is said to have been the one to write the Pirate's Code, and to have laid the foundation for the pirate era. Many legends are attributed to her, including one in which she has a life-threatening battle with a gigantic sea creature. This story is so popular that it was made into a motion picture, making it a famous tale even amongst the children of this age.",
+  "summon": "I will acknowledge the courage<br>it took to summon me here.<br>Now you'll have to prove your strength.",
+  "fusion": "This just won't do.<br>You'll have to work harder<br>while you're under my command!",
+  "evolution": "",
+  "hp_base": "3069",
+  "atk_base": "1005",
+  "def_base": "998",
+  "rec_base": "998",
+  "hp_lord": "4392",
+  "atk_lord": "1340",
+  "def_lord": "1331",
+  "rec_lord": "1331",
+  "hp_anima": "4835",
+  "rec_anima": "1213",
+  "atk_breaker": "1458",
+  "def_breaker": "1213",
+  "atk_guardian": "1222",
+  "def_guardian": "1449",
+  "rec_guardian": "1272",
+  "def_oracle": "1272",
+  "hp_oracle": "4215",
+  "rec_oracle": "1508",
+  "hp_bonus": "400",
+  "atk_bonus": "200",
+  "def_bonus": "120",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "5",
+  "normaldc": "10",
+  "ls": "Royal Oracle",
+  "lsdescription": "15% boost to HP of all Units",
+  "lstype": "Hit Points",
+  "bbdescription": "8 combo elemental Water attack on all enemies & adds Water and Earth elements to attack for all allies for 3 turns",
+  "bbtype": "Support/Offense",
+  "bbhits": "8",
+  "bbaoe": "A",
+  "bbgauge": "23",
+  "bbdc": "8",
+  "bbmultiplier": "200",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "20133",
+  "evomats2": "20191",
+  "evomats3": "20132",
+  "evomats4": "60144",
+  "evomats5": "60144"
 }

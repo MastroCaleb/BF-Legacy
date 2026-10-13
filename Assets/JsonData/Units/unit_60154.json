@@ -1,52 +1,63 @@
 {
   "id": "60154",
-  "unitName": "Red Shadow Oboro",
-  "no": "440",
-  "element": "Dark",
-  "rarity": "★★★★★",
-  "cost": "15",
-  "maxlv": "80",
-  "basexp": "15",
-  "gender": "M",
-  "ai": "3",
-  "animation_attack": "60",
-  "animation_idle": "52",
-  "animation_move": "13",
-  "movespeed_attack": "8",
-  "movespeed_skill": "8",
-  "speedtype_attack": "1",
-  "speedtype_skill": "1",
-  "movetype_attack": "2",
-  "movetype_skill": "2",
-  "description": "A ninja from the Bariura Empire thought to have used secret techniques. There are differing opinions on who his master was because he fought alongside two unique allies, Magress and Shida. One after the emperor's life, while the other was dedicated to protecting it. Fighting alongside both as they fought each other led to much speculation concerning Oboro's master. Both having failed in their assassination attempts, the gods would soon see that the truth was lost forever.",
-  "summon": "Watch my secret techniques.<br>I'll reveal all of my secret <br>ninja arts to my master!",
-  "fusion": "I vow to clean up any<br>obstacle that appears in<br>my master's way.",
-  "evolution": "I'll take the life of anyone<br>my master commands me to.<br>Not even gods can escape me.",
-  "hp_base": "2758",
-  "atk_base": "963",
-  "def_base": "841",
-  "rec_base": "937",
-  "hp_lord": "4615",
-  "atk_lord": "1422",
-  "def_lord": "1186",
-  "rec_lord": "1371",
-  "hp_anima": "5207",
-  "rec_anima": "1213",
-  "atk_breaker": "1580",
-  "def_breaker": "1028",
-  "atk_guardian": "1264",
-  "def_guardian": "1344",
-  "hp_oracle": "4022",
-  "rec_oracle": "1529",
-  "hp_bonus": "500",
-  "atk_bonus": "200",
-  "def_bonus": "200",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "6",
-  "ls": "Ares' Authority",
-  "lsdescription": "Large boost in the BB Gauge fill rate",
-  "lstype": "Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 963,
+      "def": 841,
+      "hp": 2758,
+      "rec": 937
+    },
+    "_lord": {
+      "atk": 1422,
+      "def": 1186,
+      "hp": 4615,
+      "rec": 1371
+    },
+    "anima": {
+      "atk": 1422,
+      "def": 1186,
+      "hp max": 5405,
+      "hp min": 5010,
+      "rec max": 1292,
+      "rec min": 1134
+    },
+    "breaker": {
+      "atk max": 1659,
+      "atk min": 1501,
+      "def max": 1107,
+      "def min": 949,
+      "hp": 4615,
+      "rec": 1371
+    },
+    "guardian": {
+      "atk": 1422,
+      "def max": 1423,
+      "def min": 1265,
+      "hp": 4615,
+      "rec max": 1371,
+      "rec min": 1213
+    },
+    "oracle": {
+      "atk": 1422,
+      "def max": 1186,
+      "def min": 1028,
+      "hp": 4615,
+      "rec max": 1687,
+      "rec min": 1529
+    }
+  },
+  "leader_skill": {
+    "desc": "Large boost in the BB Gauge fill rate",
+    "effects": [
+      {
+        "bb gauge fill rate%": 40,
+        "passive id": "32"
+      }
+    ],
+    "id": "1801",
+    "name": "Ares' Authority"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -283,91 +294,99 @@
     ],
     "name": "Forbidden Demon"
   },
-  "bbdescription": "7 combo Dark elemental attack on all enemies & probable Curse effect",
-  "bbtype": "Offense",
-  "bbhits": "7",
-  "bbaoe": "A",
-  "bbgauge": "20",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "60153",
-  "evointo": "60155",
-  "evomats1": "50354",
-  "evomats2": "60123",
-  "evomats3": "60201",
-  "evomats4": "60144",
-  "evomats5": "60144",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 963,
-      "def": 841,
-      "hp": 2758,
-      "rec": 937
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1422,
-      "def": 1186,
-      "hp": 4615,
-      "rec": 1371
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1422,
-      "def": 1186,
-      "hp max": 5405,
-      "hp min": 5010,
-      "rec max": 1292,
-      "rec min": 1134
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 1659,
-      "atk min": 1501,
-      "def max": 1107,
-      "def min": 949,
-      "hp": 4615,
-      "rec": 1371
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 60
     },
-    "guardian": {
-      "atk": 1422,
-      "def max": 1423,
-      "def min": 1265,
-      "hp": 4615,
-      "rec max": 1371,
-      "rec min": 1213
+    "idle": {
+      "total number of frames": 52
     },
-    "oracle": {
-      "atk": 1422,
-      "def max": 1186,
-      "def min": 1028,
-      "hp": 4615,
-      "rec max": 1687,
-      "rec min": 1529
+    "move": {
+      "total number of frames": 13
     }
   },
-  "leader_skill": {
-    "desc": "Large boost in the BB Gauge fill rate",
-    "effects": [
-      {
-        "bb gauge fill rate%": 40,
-        "passive id": "32"
-      }
+  "category": 60150,
+  "cost": "15",
+  "damage frames": {
+    "frame times": [
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
     ],
-    "id": "1801",
-    "name": "Ares' Authority"
+    "hit dmg% distribution": [
+      30,
+      30,
+      10,
+      10,
+      10,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 6
   },
-  "extra_skill": {},
+  "drop check count": 4,
+  "element": "dark",
+  "exp_pattern": 15,
+  "gender": "male",
+  "getting type": "farmable",
+  "guide_id": 440,
+  "imp": {
+    "max atk": "200",
+    "max def": "200",
+    "max hp": "500",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "1323~1478",
+  "movement": {
+    "attack": {
+      "move speed": 8,
+      "move speed type": "1",
+      "move type": "2"
+    },
+    "skill": {
+      "move speed": 8,
+      "move speed type": "1",
+      "move type": "2"
+    }
+  },
+  "name": "Red Shadow Oboro",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Red Shadow Oboro",
+  "maxlv": "80",
+  "no": "440",
   "unitDisplayHomePosition_1W9CxaFK": "258,186,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "63,37,784,711",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "105,332,480,302,0",
@@ -377,5 +396,105 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "13:126:1,14:126:1,15:126:1,16:126:1,17:126:1,18:126:1,24:100010:1"
+  "effectFrames": "13:126:1,14:126:1,15:126:1,16:126:1,17:126:1,18:126:1,24:100010:1",
+  "evofrom": "60153",
+  "evointo": "60155",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60123",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60201",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 2
+    }
+  ],
+  "basexp": "15",
+  "animation_attack": "60",
+  "animation_idle": "52",
+  "animation_move": "13",
+  "movespeed_attack": "8",
+  "movespeed_skill": "8",
+  "speedtype_attack": "1",
+  "speedtype_skill": "1",
+  "movetype_attack": "2",
+  "movetype_skill": "2",
+  "normal_frames": "19, 20, 21, 22, 23, 24",
+  "normal_distribute": "30, 30, 10, 10, 10, 10",
+  "normal_totaldistr": "100",
+  "bb_frames": "19, 20, 21, 22, 23, 24, 25",
+  "bb_distribute": "20, 20, 20, 10, 10, 10, 10",
+  "bb_totaldistr": "100",
+  "description": "A ninja from the Bariura Empire thought to have used secret techniques. There are differing opinions on who his master was because he fought alongside two unique allies, Magress and Shida. One after the emperor's life, while the other was dedicated to protecting it. Fighting alongside both as they fought each other led to much speculation concerning Oboro's master. Both having failed in their assassination attempts, the gods would soon see that the truth was lost forever.",
+  "summon": "Watch my secret techniques.<br>I'll reveal all of my secret <br>ninja arts to my master!",
+  "fusion": "I vow to clean up any<br>obstacle that appears in<br>my master's way.",
+  "evolution": "I'll take the life of anyone<br>my master commands me to.<br>Not even gods can escape me.",
+  "hp_base": "2758",
+  "atk_base": "963",
+  "def_base": "841",
+  "rec_base": "937",
+  "hp_lord": "4615",
+  "atk_lord": "1422",
+  "def_lord": "1186",
+  "rec_lord": "1371",
+  "hp_anima": "5208",
+  "rec_anima": "1213",
+  "atk_breaker": "1580",
+  "def_breaker": "1028",
+  "atk_guardian": "1264",
+  "def_guardian": "1344",
+  "rec_guardian": "1292",
+  "def_oracle": "1107",
+  "hp_oracle": "4378",
+  "rec_oracle": "1608",
+  "hp_bonus": "500",
+  "atk_bonus": "200",
+  "def_bonus": "200",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "6",
+  "normaldc": "24",
+  "ls": "Ares' Authority",
+  "lsdescription": "Large boost in the BB Gauge fill rate",
+  "lsnote": "40% boost",
+  "lstype": "Brave Burst",
+  "bbdescription": "7 combo Dark elemental attack on all enemies & probable Curse effect",
+  "bbnote": "55% chance",
+  "bbtype": "Offense",
+  "bbhits": "7",
+  "bbaoe": "A",
+  "bbgauge": "20",
+  "bbdc": "7",
+  "bbmultiplier": "115",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "60123",
+  "evomats3": "60201",
+  "evomats4": "60144",
+  "evomats5": "60144"
 }

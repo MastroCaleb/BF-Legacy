@@ -1,60 +1,67 @@
 {
   "id": "810045",
-  "unitName": "Titan Wing Blaze",
-  "no": "8033",
-  "element": "Fire",
-  "rarity": "★★★★★",
-  "cost": "14",
-  "maxlv": "80",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "153",
-  "animation_idle": "192",
-  "animation_move": "18",
-  "movespeed_attack": "0.0024",
-  "movespeed_skill": "0.0024",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "22, 26, 28, 76",
-  "normal_distribute": "10, 10, 20, 60",
-  "normal_totaldistr": "100",
-  "bb_frames": "22, 28, 34, 76, 82, 88, 94, 100",
-  "bb_distribute": "10, 20, 5, 20, 10, 10, 10, 15",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "description": "Born an elemental hybrid, Blaze was granted wings of flame and mastery over all things fire. During his youth, he trained under the famed elemental monks to learn control. During a fiery battle with the Gods, he lost an elemental wing in defense of the temple. Amidst gaining back his lost powers, he sense deeper purpose in himself. Now he travels the world to seek deeper understanding of this purpose.",
-  "summon": "Few I know of can control the primal element of fire. Let me join you and we will set the world ablaze!",
-  "fusion": "The power in my veins surges like boiling lava in a volcano! This is good!",
-  "evolution": "My Titan wing returns! Power burns within me once more. I owe you a debt of graditute, summoner!",
-  "hp_base": "3772",
-  "atk_base": "1305",
-  "def_base": "1058",
-  "rec_base": "1050",
-  "hp_lord": "5360",
-  "atk_lord": "1680",
-  "def_lord": "1345",
-  "rec_lord": "1298",
-  "hp_anima": "5953",
-  "rec_anima": "1140",
-  "atk_breaker": "1838",
-  "def_breaker": "1187",
-  "atk_guardian": "1522",
-  "def_guardian": "1503",
-  "hp_oracle": "5123",
-  "rec_oracle": "1535",
-  "hp_bonus": "550",
-  "atk_bonus": "220",
-  "def_bonus": "220",
-  "rec_bonus": "340",
-  "lordonly": "true",
-  "combo_hits": "4",
-  "normaldc": "8",
-  "ls": "Blazing Heart",
-  "lsdescription": "50% boost to Atk & 5% boost to critical hit rate for Fire types",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 1305,
+      "def": 1058,
+      "hp": 3772,
+      "rec": 1050
+    },
+    "_lord": {
+      "atk": 1680,
+      "def": 1345,
+      "hp": 5360,
+      "rec": 1298
+    },
+    "anima": {
+      "atk": 1680,
+      "def": 1345,
+      "hp max": 6150,
+      "hp min": 5755,
+      "rec max": 1219,
+      "rec min": 1061
+    },
+    "breaker": {
+      "atk max": 1917,
+      "atk min": 1759,
+      "def max": 1266,
+      "def min": 1108,
+      "hp": 5360,
+      "rec": 1298
+    },
+    "guardian": {
+      "atk": 1680,
+      "def max": 1582,
+      "def min": 1424,
+      "hp": 5360,
+      "rec max": 1298,
+      "rec min": 1140
+    },
+    "oracle": {
+      "atk": 1680,
+      "def max": 1345,
+      "def min": 1187,
+      "hp": 5360,
+      "rec max": 1614,
+      "rec min": 1456
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to Atk & 5% boost to critical hit rate for Fire types",
+    "effects": [
+      {
+        "atk% buff": 50,
+        "crit% buff": 5,
+        "elements buffed": [
+          "fire"
+        ],
+        "passive id": "2"
+      }
+    ],
+    "id": "800401",
+    "name": "Blazing Heart"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -319,97 +326,89 @@
     ],
     "name": "Armageddon Destructor"
   },
-  "bbdescription": "8 combo powerful Fire attack on all enemies and boosts all Fire types' Atk by 75% for 2 turns",
-  "bbtype": "Support/Offense",
-  "bbhits": "8",
-  "bbaoe": "A",
-  "bbgauge": "22",
-  "bbdc": "16",
-  "bbmultiplier": "350",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "810044",
-  "evointo": "",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 1305,
-      "def": 1058,
-      "hp": 3772,
-      "rec": 1050
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1680,
-      "def": 1345,
-      "hp": 5360,
-      "rec": 1298
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1680,
-      "def": 1345,
-      "hp max": 6150,
-      "hp min": 5755,
-      "rec max": 1219,
-      "rec min": 1061
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 153
     },
-    "breaker": {
-      "atk max": 1917,
-      "atk min": 1759,
-      "def max": 1266,
-      "def min": 1108,
-      "hp": 5360,
-      "rec": 1298
+    "idle": {
+      "total number of frames": 192
     },
-    "guardian": {
-      "atk": 1680,
-      "def max": 1582,
-      "def min": 1424,
-      "hp": 5360,
-      "rec max": 1298,
-      "rec min": 1140
-    },
-    "oracle": {
-      "atk": 1680,
-      "def max": 1345,
-      "def min": 1187,
-      "hp": 5360,
-      "rec max": 1614,
-      "rec min": 1456
+    "move": {
+      "total number of frames": 18
     }
   },
-  "leader_skill": {
-    "desc": "50% boost to Atk & 5% boost to critical hit rate for Fire types",
-    "effects": [
-      {
-        "atk% buff": 50,
-        "crit% buff": 5,
-        "elements buffed": [
-          "fire"
-        ],
-        "passive id": "2"
-      }
+  "category": 810040,
+  "cost": "14",
+  "damage frames": {
+    "frame times": [
+      22,
+      26,
+      28,
+      76
     ],
-    "id": "800401",
-    "name": "Blazing Heart"
+    "hit dmg% distribution": [
+      10,
+      10,
+      20,
+      60
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 4
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "fire",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "not eligible for achievement",
+  "guide_id": 8033,
+  "imp": {
+    "max atk": "220",
+    "max def": "220",
+    "max hp": "550",
+    "max rec": "340"
+  },
+  "kind": "normal",
+  "lord damage range": "1564~1747",
+  "movement": {
+    "attack": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    }
+  },
+  "name": "Titan Wing Blaze",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Titan Wing Blaze",
+  "maxlv": "80",
+  "no": "8033",
   "unitDisplayHomePosition_1W9CxaFK": "508,357,182,498",
   "unitDisplayDetailPosition_6z54rgb3": "-158,-248,1271,1040",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "36,157,567,464,0",
@@ -419,5 +418,81 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "4:100181:1,14:140:1,20:131:1,24:131:1,28:131:1,50:100191:1,58:100081:1,58:100191:1,64:100192:1,72:150:1,74:131:1,78:100111:1,80:100081:1"
+  "effectFrames": "4:100181:1,14:140:1,20:131:1,24:131:1,28:131:1,50:100191:1,58:100081:1,58:100191:1,64:100192:1,72:150:1,74:131:1,78:100111:1,80:100081:1",
+  "evofrom": "810044",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "21",
+  "animation_attack": "153",
+  "animation_idle": "192",
+  "animation_move": "18",
+  "movespeed_attack": "0.0024",
+  "movespeed_skill": "0.0024",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "22, 26, 28, 76",
+  "normal_distribute": "10, 10, 20, 60",
+  "normal_totaldistr": "100",
+  "bb_frames": "22, 28, 34, 76, 82, 88, 94, 100",
+  "bb_distribute": "10, 20, 5, 20, 10, 10, 10, 15",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "description": "Born an elemental hybrid, Blaze was granted wings of flame and mastery over all things fire. During his youth, he trained under the famed elemental monks to learn control. During a fiery battle with the Gods, he lost an elemental wing in defense of the temple. Amidst gaining back his lost powers, he sense deeper purpose in himself. Now he travels the world to seek deeper understanding of this purpose.",
+  "summon": "Few I know of can control the primal element of fire. Let me join you and we will set the world ablaze!",
+  "fusion": "The power in my veins surges like boiling lava in a volcano! This is good!",
+  "evolution": "My Titan wing returns! Power burns within me once more. I owe you a debt of graditute, summoner!",
+  "hp_base": "3772",
+  "atk_base": "1305",
+  "def_base": "1058",
+  "rec_base": "1050",
+  "hp_lord": "5360",
+  "atk_lord": "1680",
+  "def_lord": "1345",
+  "rec_lord": "1298",
+  "hp_anima": "5953",
+  "rec_anima": "1140",
+  "atk_breaker": "1838",
+  "def_breaker": "1187",
+  "atk_guardian": "1522",
+  "def_guardian": "1503",
+  "hp_oracle": "5123",
+  "rec_oracle": "1535",
+  "hp_bonus": "550",
+  "atk_bonus": "220",
+  "def_bonus": "220",
+  "rec_bonus": "340",
+  "lordonly": "true",
+  "combo_hits": "4",
+  "normaldc": "8",
+  "ls": "Blazing Heart",
+  "lsdescription": "50% boost to Atk & 5% boost to critical hit rate for Fire types",
+  "lstype": "Attack",
+  "bbdescription": "8 combo powerful Fire attack on all enemies and boosts all Fire types' Atk by 75% for 2 turns",
+  "bbtype": "Support/Offense",
+  "bbhits": "8",
+  "bbaoe": "A",
+  "bbgauge": "22",
+  "bbdc": "16",
+  "bbmultiplier": "350",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "",
+  "evomats2": "",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": ""
 }

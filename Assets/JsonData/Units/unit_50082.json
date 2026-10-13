@@ -1,62 +1,63 @@
 {
   "id": "50082",
-  "unitName": "Valkyrie",
-  "freetext": ":''For other uses, see Valkyrie (disambiguation).''",
-  "no": "119",
-  "element": "Light",
-  "rarity": "★★★",
-  "cost": "5",
-  "maxlv": "40",
-  "basexp": "15",
-  "gender": "N",
-  "ai": "3",
-  "animation_attack": "210",
-  "animation_idle": "64",
-  "animation_move": "6",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "20, 126, 132, 138",
-  "normal_distribute": "20, 40, 20, 20",
-  "normal_totaldistr": "100",
-  "bb_frames": "20, 126, 156, 186, 216",
-  "bb_distribute": "20, 20, 20, 20, 20",
-  "bb_totaldistr": "100",
-  "description": "A warrior of light who traverses battlefield after battlefield on a mission from the gods. They're a different species from humans despite their human-with-wings appearance. As there are only females, they are still being studied to see how they maintain their species. Legend has is that the gods left them to defend the world. They have a sword to protect the world from evil.",
-  "summon": "I've waited so very<br>long for this moment.<br>I devote myself to you.",
-  "fusion": "I can feel the light.<br>I will use my blade to <br>share this with the world.",
-  "evolution": "",
-  "hp_base": "1500",
-  "atk_base": "690",
-  "def_base": "700",
-  "rec_base": "300",
-  "hp_lord": "2550",
-  "atk_lord": "897",
-  "def_lord": "924",
-  "rec_lord": "450",
-  "hp_anima": "2843",
-  "rec_anima": "372",
-  "atk_breaker": "975",
-  "def_breaker": "846",
-  "atk_guardian": "819",
-  "def_guardian": "1002",
-  "rec_guardian": "411",
-  "def_oracle": "885",
-  "hp_oracle": "2433",
-  "rec_oracle": "567",
-  "hp_bonus": "400",
-  "atk_bonus": "100",
-  "def_bonus": "100",
-  "rec_bonus": "100",
-  "lordonly": "",
-  "combo_hits": "4",
-  "normaldc": "8",
-  "ls": "Light's Protection",
-  "lsdescription": "10% reduction in damage from Light Types",
-  "lstype": "Defense",
+  "stats": {
+    "_base": {
+      "atk": 690,
+      "def": 700,
+      "hp": 1500,
+      "rec": 300
+    },
+    "_lord": {
+      "atk": 897,
+      "def": 924,
+      "hp": 2550,
+      "rec": 450
+    },
+    "anima": {
+      "atk": 897,
+      "def": 924,
+      "hp max": 2940,
+      "hp min": 2745,
+      "rec max": 411,
+      "rec min": 333
+    },
+    "breaker": {
+      "atk max": 1014,
+      "atk min": 936,
+      "def max": 885,
+      "def min": 807,
+      "hp": 2550,
+      "rec": 450
+    },
+    "guardian": {
+      "atk": 897,
+      "def max": 1041,
+      "def min": 963,
+      "hp": 2550,
+      "rec max": 450,
+      "rec min": 372
+    },
+    "oracle": {
+      "atk": 897,
+      "def max": 924,
+      "def min": 846,
+      "hp": 2550,
+      "rec max": 606,
+      "rec min": 528
+    }
+  },
+  "leader_skill": {
+    "desc": "10% reduction in damage from Light Types",
+    "effects": [
+      {
+        "light resist%": 10,
+        "passive id": "5"
+      }
+    ],
+    "id": "508",
+    "name": "Light's Protection"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -217,93 +218,95 @@
     ],
     "name": "Star Air Raid"
   },
-  "bbdescription": "5 combo Light elemental attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "5",
-  "bbaoe": "A",
-  "bbgauge": "20",
-  "bbdc": "5",
-  "bbmultiplier": "90",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "50083",
-  "evomats1": "60143",
-  "evomats2": "50121",
-  "evomats3": "50121",
-  "evomats4": "50121",
-  "evomats5": "",
-  "evozelcost": "100000",
-  "stats": {
-    "_base": {
-      "atk": 690,
-      "def": 700,
-      "hp": 1500,
-      "rec": 300
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 897,
-      "def": 924,
-      "hp": 2550,
-      "rec": 450
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 897,
-      "def": 924,
-      "hp max": 2940,
-      "hp min": 2745,
-      "rec max": 411,
-      "rec min": 333
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 1014,
-      "atk min": 936,
-      "def max": 885,
-      "def min": 807,
-      "hp": 2550,
-      "rec": 450
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 210
     },
-    "guardian": {
-      "atk": 897,
-      "def max": 1041,
-      "def min": 963,
-      "hp": 2550,
-      "rec max": 450,
-      "rec min": 372
+    "idle": {
+      "total number of frames": 64
     },
-    "oracle": {
-      "atk": 897,
-      "def max": 924,
-      "def min": 846,
-      "hp": 2550,
-      "rec max": 606,
-      "rec min": 528
+    "move": {
+      "total number of frames": 6
     }
   },
-  "leader_skill": {
-    "desc": "10% reduction in damage from Light Types",
-    "effects": [
-      {
-        "light resist%": 10,
-        "passive id": "5"
-      }
+  "category": 50080,
+  "cost": "5",
+  "damage frames": {
+    "frame times": [
+      20,
+      126,
+      132,
+      138
     ],
-    "id": "508",
-    "name": "Light's Protection"
+    "hit dmg% distribution": [
+      20,
+      40,
+      20,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 4
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "light",
+  "exp_pattern": 15,
+  "gender": "other",
+  "getting type": "rare summon",
+  "guide_id": 119,
+  "imp": {
+    "max atk": "100",
+    "max def": "100",
+    "max hp": "400",
+    "max rec": "100"
+  },
+  "kind": "normal",
+  "lord damage range": "835~932",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Valkyrie",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "Valkyrie",
+  "maxlv": "40",
+  "no": "119",
   "unitDisplayHomePosition_1W9CxaFK": "249,0,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "106,173,650,607",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "163,325,310,290,0",
@@ -313,5 +316,94 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "1000",
   "sellCaution": false,
-  "effectFrames": "14:125:1,120:125:1,126:125:1,132:125:1"
+  "effectFrames": "14:125:1,120:125:1,126:125:1,132:125:1",
+  "evofrom": "",
+  "evointo": "50083",
+  "evozelcost": "100000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50121",
+      "count": 3
+    }
+  ],
+  "freetext": ":''For other uses, see Valkyrie (disambiguation).''",
+  "basexp": "15",
+  "animation_attack": "210",
+  "animation_idle": "64",
+  "animation_move": "6",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "20, 126, 132, 138",
+  "normal_distribute": "20, 40, 20, 20",
+  "normal_totaldistr": "100",
+  "bb_frames": "20, 126, 156, 186, 216",
+  "bb_distribute": "20, 20, 20, 20, 20",
+  "bb_totaldistr": "100",
+  "description": "A warrior of light who traverses battlefield after battlefield on a mission from the gods. They're a different species from humans despite their human-with-wings appearance. As there are only females, they are still being studied to see how they maintain their species. Legend has is that the gods left them to defend the world. They have a sword to protect the world from evil.",
+  "summon": "I've waited so very<br>long for this moment.<br>I devote myself to you.",
+  "fusion": "I can feel the light.<br>I will use my blade to <br>share this with the world.",
+  "evolution": "",
+  "hp_base": "1500",
+  "atk_base": "690",
+  "def_base": "700",
+  "rec_base": "300",
+  "hp_lord": "2550",
+  "atk_lord": "897",
+  "def_lord": "924",
+  "rec_lord": "450",
+  "hp_anima": "2843",
+  "rec_anima": "372",
+  "atk_breaker": "975",
+  "def_breaker": "846",
+  "atk_guardian": "819",
+  "def_guardian": "1002",
+  "rec_guardian": "411",
+  "def_oracle": "885",
+  "hp_oracle": "2433",
+  "rec_oracle": "567",
+  "hp_bonus": "400",
+  "atk_bonus": "100",
+  "def_bonus": "100",
+  "rec_bonus": "100",
+  "lordonly": "",
+  "combo_hits": "4",
+  "normaldc": "8",
+  "ls": "Light's Protection",
+  "lsdescription": "10% reduction in damage from Light Types",
+  "lstype": "Defense",
+  "bbdescription": "5 combo Light elemental attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "5",
+  "bbaoe": "A",
+  "bbgauge": "20",
+  "bbdc": "5",
+  "bbmultiplier": "90",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "60143",
+  "evomats2": "50121",
+  "evomats3": "50121",
+  "evomats4": "50121",
+  "evomats5": ""
 }

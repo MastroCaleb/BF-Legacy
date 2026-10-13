@@ -1,57 +1,73 @@
 {
   "id": "30394",
-  "unitName": "Logistics Support Lin",
-  "no": "848",
-  "element": "Earth",
-  "rarity": "★★★★★",
-  "cost": "15",
-  "maxlv": "80",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "286",
-  "animation_idle": "80",
-  "animation_move": "80",
-  "movespeed_attack": "4",
-  "movespeed_skill": "4",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "129, 131, 133, 135, 137, 139, 141, 143, 145, 147, 149, 151, 153, 155, 157",
-  "normal_distribute": "15, 10, 8, 8, 7, 7, 6, 6, 5, 5, 5, 5, 5, 4, 4",
-  "normal_totaldistr": "100",
-  "description": "A mock Unit modeled after Lin Merylham, the main operator of the Logistics Support Department in the Grand Gaia Survey Office Bureau of Investigation. Though originally holding almost no power for purposes of the battlefield, Lin's mock Unit is equipped with a weapon from another world which is currently under research. Holding great destructive power, Lin persuaded Noel to allow her to equip such a weapon in order to be of better use to the Summoners of the Hall. However, Noel was ultimately dissatisfied with many things concerning this particular Unit. It is even rumored that he hid a secret within it.",
-  "summon": "Loading data...<br>Logistics support activated...<br>Ready for launch.",
-  "fusion": "You're giving me power?<br>I'm so happy! He he.<br>All right, I'll do my very best!",
-  "evolution": "I'll do my best for you, okay?<br>That includes support, of course!",
-  "hp_base": "3244",
-  "atk_base": "924",
-  "def_base": "1038",
-  "rec_base": "1368",
-  "hp_lord": "4750",
-  "atk_lord": "1252",
-  "def_lord": "1407",
-  "rec_lord": "1854",
-  "hp_anima": "",
-  "rec_anima": "",
-  "atk_breaker": "",
-  "def_breaker": "",
-  "atk_guardian": "",
-  "def_guardian": "",
-  "hp_oracle": "",
-  "rec_oracle": "",
-  "hp_bonus": "750",
-  "atk_bonus": "140",
-  "def_bonus": "140",
-  "rec_bonus": "140",
-  "lordonly": "true",
-  "combo_hits": "15",
-  "normaldc": "30",
-  "ls": "Benevolent Support",
-  "lsdescription": "30% boost to max HP for all Units, slightly recovers HP each turn & boosts effectiveness of HC",
-  "lsnote": "30% boost",
-  "lstype": "Hit Points/Recovery",
+  "stats": {
+    "_base": {
+      "atk": 924,
+      "def": 1038,
+      "hp": 3244,
+      "rec": 1368
+    },
+    "_lord": {
+      "atk": 1252,
+      "def": 1407,
+      "hp": 4750,
+      "rec": 1854
+    },
+    "anima": {
+      "atk": 1252,
+      "def": 1407,
+      "hp max": 5540,
+      "hp min": 5145,
+      "rec max": 1775,
+      "rec min": 1617
+    },
+    "breaker": {
+      "atk max": 1489,
+      "atk min": 1331,
+      "def max": 1328,
+      "def min": 1170,
+      "hp": 4750,
+      "rec": 1854
+    },
+    "guardian": {
+      "atk": 1252,
+      "def max": 1644,
+      "def min": 1486,
+      "hp": 4750,
+      "rec max": 1854,
+      "rec min": 1696
+    },
+    "oracle": {
+      "atk": 1252,
+      "def max": 1407,
+      "def min": 1249,
+      "hp": 4750,
+      "rec max": 2170,
+      "rec min": 2012
+    }
+  },
+  "leader_skill": {
+    "desc": "30% boost to max HP for all Units, slightly recovers HP each turn & boosts effectiveness of HC",
+    "effects": [
+      {
+        "hp% buff": 30,
+        "passive id": "1"
+      },
+      {
+        "hc effectiveness%": 50,
+        "passive id": "10"
+      },
+      {
+        "passive id": "33",
+        "rec% added (turn heal)": 10.0,
+        "turn heal high": 400,
+        "turn heal low": 200
+      }
+    ],
+    "id": "5511",
+    "name": "Benevolent Support"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -458,104 +474,111 @@
     ],
     "name": "Logistics support is here!"
   },
-  "bbdescription": "Gradually recovers HP and BB gauge for all allies for 3 turns & nullifies all status ailments for 3 turns",
-  "bbnote": "Heals (1800~2100 + 15% of target Rec) HP & 6 BC fill",
-  "bbtype": "Heal/Support",
-  "bbhits": "0",
-  "bbaoe": "0",
-  "bbgauge": "20",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "es": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "30393",
-  "evointo": "",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 924,
-      "def": 1038,
-      "hp": 3244,
-      "rec": 1368
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1252,
-      "def": 1407,
-      "hp": 4750,
-      "rec": 1854
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1252,
-      "def": 1407,
-      "hp max": 5540,
-      "hp min": 5145,
-      "rec max": 1775,
-      "rec min": 1617
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 286
     },
-    "breaker": {
-      "atk max": 1489,
-      "atk min": 1331,
-      "def max": 1328,
-      "def min": 1170,
-      "hp": 4750,
-      "rec": 1854
+    "idle": {
+      "total number of frames": 80
     },
-    "guardian": {
-      "atk": 1252,
-      "def max": 1644,
-      "def min": 1486,
-      "hp": 4750,
-      "rec max": 1854,
-      "rec min": 1696
-    },
-    "oracle": {
-      "atk": 1252,
-      "def max": 1407,
-      "def min": 1249,
-      "hp": 4750,
-      "rec max": 2170,
-      "rec min": 2012
+    "move": {
+      "total number of frames": 80
     }
   },
-  "leader_skill": {
-    "desc": "30% boost to max HP for all Units, slightly recovers HP each turn & boosts effectiveness of HC",
-    "effects": [
-      {
-        "hp% buff": 30,
-        "passive id": "1"
-      },
-      {
-        "hc effectiveness%": 50,
-        "passive id": "10"
-      },
-      {
-        "passive id": "33",
-        "rec% added (turn heal)": 10.0,
-        "turn heal high": 400,
-        "turn heal low": 200
-      }
+  "category": 30390,
+  "cost": "15",
+  "damage frames": {
+    "frame times": [
+      129,
+      131,
+      133,
+      135,
+      137,
+      139,
+      141,
+      143,
+      145,
+      147,
+      149,
+      151,
+      153,
+      155,
+      157
     ],
-    "id": "5511",
-    "name": "Benevolent Support"
+    "hit dmg% distribution": [
+      15,
+      10,
+      8,
+      8,
+      7,
+      7,
+      6,
+      6,
+      5,
+      5,
+      5,
+      5,
+      5,
+      4,
+      4
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 15
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "earth",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "farmable",
+  "guide_id": 848,
+  "imp": {
+    "max atk": "140",
+    "max def": "140",
+    "max hp": "750",
+    "max rec": "140"
+  },
+  "kind": "normal",
+  "lord damage range": "1165~1302",
+  "movement": {
+    "attack": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    }
+  },
+  "name": "Logistics Support Lin",
+  "rarity": "5",
+  "sell caution": true,
+  "unitName": "Logistics Support Lin",
+  "maxlv": "80",
+  "no": "848",
   "unitDisplayHomePosition_1W9CxaFK": "206,-50,200,546",
   "unitDisplayDetailPosition_6z54rgb3": "147,220,560,594",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "164,298,311,330,0",
@@ -565,5 +588,79 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": true,
-  "effectFrames": "129:112:1,131:112:1,133:112:1,135:112:1,137:112:1,139:112:1,141:112:1,143:112:1,145:112:1,147:112:1,149:112:1,151:112:1,153:112:1,155:112:1,157:112:1,120:500381:1,130:300275:1,115:330372:1"
+  "effectFrames": "129:112:1,131:112:1,133:112:1,135:112:1,137:112:1,139:112:1,141:112:1,143:112:1,145:112:1,147:112:1,149:112:1,151:112:1,153:112:1,155:112:1,157:112:1,120:500381:1,130:300275:1,115:330372:1",
+  "evofrom": "30393",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "21",
+  "animation_attack": "286",
+  "animation_idle": "80",
+  "animation_move": "80",
+  "movespeed_attack": "4",
+  "movespeed_skill": "4",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "129, 131, 133, 135, 137, 139, 141, 143, 145, 147, 149, 151, 153, 155, 157",
+  "normal_distribute": "15, 10, 8, 8, 7, 7, 6, 6, 5, 5, 5, 5, 5, 4, 4",
+  "normal_totaldistr": "100",
+  "description": "A mock Unit modeled after Lin Merylham, the main operator of the Logistics Support Department in the Grand Gaia Survey Office Bureau of Investigation. Though originally holding almost no power for purposes of the battlefield, Lin's mock Unit is equipped with a weapon from another world which is currently under research. Holding great destructive power, Lin persuaded Noel to allow her to equip such a weapon in order to be of better use to the Summoners of the Hall. However, Noel was ultimately dissatisfied with many things concerning this particular Unit. It is even rumored that he hid a secret within it.",
+  "summon": "Loading data...<br>Logistics support activated...<br>Ready for launch.",
+  "fusion": "You're giving me power?<br>I'm so happy! He he.<br>All right, I'll do my very best!",
+  "evolution": "I'll do my best for you, okay?<br>That includes support, of course!",
+  "hp_base": "3244",
+  "atk_base": "924",
+  "def_base": "1038",
+  "rec_base": "1368",
+  "hp_lord": "4750",
+  "atk_lord": "1252",
+  "def_lord": "1407",
+  "rec_lord": "1854",
+  "hp_anima": "",
+  "rec_anima": "",
+  "atk_breaker": "",
+  "def_breaker": "",
+  "atk_guardian": "",
+  "def_guardian": "",
+  "hp_oracle": "",
+  "rec_oracle": "",
+  "hp_bonus": "750",
+  "atk_bonus": "140",
+  "def_bonus": "140",
+  "rec_bonus": "140",
+  "lordonly": "true",
+  "combo_hits": "15",
+  "normaldc": "30",
+  "ls": "Benevolent Support",
+  "lsdescription": "30% boost to max HP for all Units, slightly recovers HP each turn & boosts effectiveness of HC",
+  "lsnote": "30% boost",
+  "lstype": "Hit Points/Recovery",
+  "bbdescription": "Gradually recovers HP and BB gauge for all allies for 3 turns & nullifies all status ailments for 3 turns",
+  "bbnote": "Heals (1800~2100 + 15% of target Rec) HP & 6 BC fill",
+  "bbtype": "Heal/Support",
+  "bbhits": "0",
+  "bbaoe": "0",
+  "bbgauge": "20",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "es": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "",
+  "evomats2": "",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": "",
+  "evoitem": ""
 }

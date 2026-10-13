@@ -1,63 +1,70 @@
 {
   "id": "20844",
-  "unitName": "デラックスファイター",
-  "unreleased": "true",
-  "untranslated": "true",
-  "no": "1412",
-  "altname": "Deluxe Fighter",
-  "element": "Water",
-  "rarity": "★★★★★",
-  "cost": "16",
-  "maxlv": "80",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "93",
-  "animation_idle": "78",
-  "animation_move": "3",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "40, 43, 46, 49, 52, 55, 58, 61, 64, 67",
-  "normal_distribute": "11, 9, 11, 9, 11, 9, 11, 9, 11, 9",
-  "normal_totaldistr": "100",
-  "bb_frames": "30, 34, 38, 42, 46, 50, 54, 58, 62, 66, 70, 74, 78, 82, 86",
-  "bb_distribute": "8, 6, 7, 6, 7, 6, 7, 6, 7, 6, 7, 6, 7, 6, 8",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "description": "",
-  "summon": "",
-  "fusion": "",
-  "evolution": "",
-  "hp_base": "3570",
-  "atk_base": "1330",
-  "def_base": "890",
-  "rec_base": "950",
-  "hp_lord": "5360",
-  "atk_lord": "1820",
-  "def_lord": "1430",
-  "rec_lord": "1390",
-  "hp_anima": "5953",
-  "rec_anima": "1232",
-  "atk_breaker": "1978",
-  "def_breaker": "1272",
-  "def_guardian": "1588",
-  "rec_guardian": "1311",
-  "def_oracle": "1351",
-  "rec_oracle": "1627",
-  "hp_bonus": "500",
-  "atk_bonus": "260",
-  "def_bonus": "140",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "10",
-  "normaldc": "20",
-  "ls": "一応正義の味方",
-  "lsdescription": "ＢＢゲージが満タン時、攻撃力をアップ＆攻撃に光属性を付与",
-  "lsnote": "60% boost to Atk when BB gauge is full & adds Light element to attacks",
+  "stats": {
+    "_base": {
+      "atk": 1330,
+      "def": 890,
+      "hp": 3570,
+      "rec": 950
+    },
+    "_lord": {
+      "atk": 1820,
+      "def": 1430,
+      "hp": 5360,
+      "rec": 1390
+    },
+    "anima": {
+      "atk": 1820,
+      "def": 1430,
+      "hp max": 6150,
+      "hp min": 5755,
+      "rec max": 1311,
+      "rec min": 1153
+    },
+    "breaker": {
+      "atk max": 2057,
+      "atk min": 1899,
+      "def max": 1351,
+      "def min": 1193,
+      "hp": 5360,
+      "rec": 1390
+    },
+    "guardian": {
+      "atk": 1820,
+      "def max": 1667,
+      "def min": 1509,
+      "hp": 5360,
+      "rec max": 1390,
+      "rec min": 1232
+    },
+    "oracle": {
+      "atk": 1820,
+      "def max": 1430,
+      "def min": 1272,
+      "hp": 5360,
+      "rec max": 1706,
+      "rec min": 1548
+    }
+  },
+  "leader_skill": {
+    "desc": "ＢＢゲージが満タン時、攻撃力をアップ＆攻撃に光属性を付与",
+    "effects": [
+      {
+        "atk% buff": 60,
+        "bb gauge above % buff requirement": 100,
+        "passive id": "30"
+      },
+      {
+        "elements added": [
+          "light"
+        ],
+        "passive id": "102"
+      }
+    ],
+    "id": "11540",
+    "name": "一応正義の味方"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -350,6 +357,166 @@
     ],
     "name": "デラックスボンバー"
   },
+  "sbb": {},
+  "ubb": {},
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 93
+    },
+    "idle": {
+      "total number of frames": 78
+    },
+    "move": {
+      "total number of frames": 3
+    }
+  },
+  "category": 20840,
+  "cost": "16",
+  "damage frames": {
+    "frame times": [
+      40,
+      43,
+      46,
+      49,
+      52,
+      55,
+      58,
+      61,
+      64,
+      67
+    ],
+    "hit dmg% distribution": [
+      11,
+      9,
+      11,
+      9,
+      11,
+      9,
+      11,
+      9,
+      11,
+      9
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 10
+  },
+  "drop check count": 2,
+  "element": "water",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "farmable",
+  "guide_id": 1412,
+  "imp": {
+    "max atk": "260",
+    "max def": "140",
+    "max hp": "500",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "1694~1892",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "デラックスファイター",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "デラックスファイター",
+  "maxlv": "80",
+  "no": "1412",
+  "unitDisplayHomePosition_1W9CxaFK": "305,12,180,491",
+  "unitDisplayDetailPosition_6z54rgb3": "103,206,550,583",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "155,331,270,286,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "157,-48,500,530",
+  "unitDisplaySummonPosition_KC3Jk8Br": "155,331,270,286,0",
+  "unitDisplayHpPosition_3BpHN6VD": "3,2",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "5000",
+  "sellCaution": false,
+  "effectFrames": "40:501044:1",
+  "evofrom": "",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "unreleased": "true",
+  "untranslated": "true",
+  "altname": "Deluxe Fighter",
+  "basexp": "21",
+  "animation_attack": "93",
+  "animation_idle": "78",
+  "animation_move": "3",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "40, 43, 46, 49, 52, 55, 58, 61, 64, 67",
+  "normal_distribute": "11, 9, 11, 9, 11, 9, 11, 9, 11, 9",
+  "normal_totaldistr": "100",
+  "bb_frames": "30, 34, 38, 42, 46, 50, 54, 58, 62, 66, 70, 74, 78, 82, 86",
+  "bb_distribute": "8, 6, 7, 6, 7, 6, 7, 6, 7, 6, 7, 6, 7, 6, 8",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "description": "",
+  "summon": "",
+  "fusion": "",
+  "evolution": "",
+  "hp_base": "3570",
+  "atk_base": "1330",
+  "def_base": "890",
+  "rec_base": "950",
+  "hp_lord": "5360",
+  "atk_lord": "1820",
+  "def_lord": "1430",
+  "rec_lord": "1390",
+  "hp_anima": "5953",
+  "rec_anima": "1232",
+  "atk_breaker": "1978",
+  "def_breaker": "1272",
+  "def_guardian": "1588",
+  "rec_guardian": "1311",
+  "def_oracle": "1351",
+  "rec_oracle": "1627",
+  "hp_bonus": "500",
+  "atk_bonus": "260",
+  "def_bonus": "140",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "10",
+  "normaldc": "20",
+  "ls": "一応正義の味方",
+  "lsdescription": "ＢＢゲージが満タン時、攻撃力をアップ＆攻撃に光属性を付与",
+  "lsnote": "60% boost to Atk when BB gauge is full & adds Light element to attacks",
   "bbdescription": "敵全体に水属性１５連ダメージ（残りＨＰが多いほど、威力をアップ）＆味方全体に２ターン、防御貫通効果を付与",
   "bbnote": "15 combo Water attack on all foes (40% + 380% x current HP / max base HP), adds defense ignore effect to attack for 2 turns",
   "bbtype": "Offense",
@@ -362,82 +529,5 @@
   "howtoget": "*Complete Silver objective in Grand Quest Collaboration: Takanotsume",
   "notes": "",
   "addcat": "Takanotsume",
-  "addcatname": "デラックスファイター1",
-  "stats": {
-    "_base": {
-      "atk": 1330,
-      "def": 890,
-      "hp": 3570,
-      "rec": 950
-    },
-    "_lord": {
-      "atk": 1820,
-      "def": 1430,
-      "hp": 5360,
-      "rec": 1390
-    },
-    "anima": {
-      "atk": 1820,
-      "def": 1430,
-      "hp max": 6150,
-      "hp min": 5755,
-      "rec max": 1311,
-      "rec min": 1153
-    },
-    "breaker": {
-      "atk max": 2057,
-      "atk min": 1899,
-      "def max": 1351,
-      "def min": 1193,
-      "hp": 5360,
-      "rec": 1390
-    },
-    "guardian": {
-      "atk": 1820,
-      "def max": 1667,
-      "def min": 1509,
-      "hp": 5360,
-      "rec max": 1390,
-      "rec min": 1232
-    },
-    "oracle": {
-      "atk": 1820,
-      "def max": 1430,
-      "def min": 1272,
-      "hp": 5360,
-      "rec max": 1706,
-      "rec min": 1548
-    }
-  },
-  "leader_skill": {
-    "desc": "ＢＢゲージが満タン時、攻撃力をアップ＆攻撃に光属性を付与",
-    "effects": [
-      {
-        "atk% buff": 60,
-        "bb gauge above % buff requirement": 100,
-        "passive id": "30"
-      },
-      {
-        "elements added": [
-          "light"
-        ],
-        "passive id": "102"
-      }
-    ],
-    "id": "11540",
-    "name": "一応正義の味方"
-  },
-  "extra_skill": {},
-  "sbb": {},
-  "ubb": {},
-  "unitDisplayHomePosition_1W9CxaFK": "305,12,180,491",
-  "unitDisplayDetailPosition_6z54rgb3": "103,206,550,583",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "155,331,270,286,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "157,-48,500,530",
-  "unitDisplaySummonPosition_KC3Jk8Br": "155,331,270,286,0",
-  "unitDisplayHpPosition_3BpHN6VD": "3,2",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "5000",
-  "sellCaution": false,
-  "effectFrames": "40:501044:1"
+  "addcatname": "デラックスファイター1"
 }

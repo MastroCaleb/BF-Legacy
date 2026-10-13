@@ -1,65 +1,67 @@
 {
   "id": "50594",
-  "unitName": "Ruruha (5★)",
-  "unreleased": "true",
-  "untranslated": "true",
-  "doenter": "true",
-  "no": "775",
-  "altname": "ルルハ",
-  "element": "Light",
-  "rarity": "★★★★★",
-  "cost": "16",
-  "maxlv": "80",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "161",
-  "animation_idle": "140",
-  "animation_move": "11",
-  "movespeed_attack": "0.0024",
-  "movespeed_skill": "0.0024",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "22, 26, 36, 40, 82, 86, 90, 94",
-  "normal_distribute": "15, 7, 15, 7, 13, 15, 13, 15",
-  "normal_totaldistr": "100",
-  "bb_frames": "22, 25, 36, 39, 82, 86, 90, 94, 98, 102, 106, 110",
-  "bb_distribute": "10, 5, 10, 5, 15, 7, 7, 7, 7, 7, 7, 13",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "description": "異界に存在するログレス王国のハンターズギルドに所属する女性。魔物と戦う冒険者たちを導き、優秀な観察眼で試験官を務めることもあり、王国の平穏と安定に貢献している。ただし、まだ成熟には程遠い若さゆえに、わがままできつい性格と評されることもしばしば。もっとも、魔物との過酷な戦いにおもむく冒険者たちを鍛えるために、あえて厳しく当たっていると言う者もいる。",
-  "summon": "あなたに力があることを<br>きちんと証明して。<br>私を安心させてちょうだい。",
-  "fusion": "なによ！<br>私にかまってないで、<br>自分を鍛えなさい！",
-  "evolution": "私も本気を出すわ。<br>はぁ、どうしてこう<br>手がかかるのかしら。",
-  "hp_base": "3334",
-  "atk_base": "1156",
-  "def_base": "1156",
-  "rec_base": "1054",
-  "hp_lord": "5050",
-  "atk_lord": "1630",
-  "def_lord": "1630",
-  "rec_lord": "1480",
-  "hp_anima": "5642",
-  "rec_anima": "1322",
-  "atk_breaker": "1788",
-  "def_breaker": "1472",
-  "def_guardian": "1788",
-  "rec_guardian": "1401",
-  "def_oracle": "1551",
-  "rec_oracle": "1717",
-  "hp_bonus": "500",
-  "atk_bonus": "200",
-  "def_bonus": "200",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "8",
-  "normaldc": "16",
-  "ls": "聖与の導き",
-  "lsdescription": "全てのユニットの攻撃力を２５％アップ＆低確率で被ダメージを超絶軽減",
-  "lsnote": "25% boost to Atk & 10% chance to reduce damage taken to 1",
-  "lstype": "Support",
+  "stats": {
+    "_base": {
+      "atk": 1156,
+      "def": 1156,
+      "hp": 3334,
+      "rec": 1054
+    },
+    "_lord": {
+      "atk": 1630,
+      "def": 1630,
+      "hp": 5050,
+      "rec": 1480
+    },
+    "anima": {
+      "atk": 1630,
+      "def": 1630,
+      "hp max": 5840,
+      "hp min": 5445,
+      "rec max": 1401,
+      "rec min": 1243
+    },
+    "breaker": {
+      "atk max": 1867,
+      "atk min": 1709,
+      "def max": 1551,
+      "def min": 1393,
+      "hp": 5050,
+      "rec": 1480
+    },
+    "guardian": {
+      "atk": 1630,
+      "def max": 1867,
+      "def min": 1709,
+      "hp": 5050,
+      "rec max": 1480,
+      "rec min": 1322
+    },
+    "oracle": {
+      "atk": 1630,
+      "def max": 1630,
+      "def min": 1472,
+      "hp": 5050,
+      "rec max": 1796,
+      "rec min": 1638
+    }
+  },
+  "leader_skill": {
+    "desc": "全てのユニットの攻撃力を２５％アップ＆低確率で被ダメージを超絶軽減",
+    "effects": [
+      {
+        "atk% buff": 25,
+        "passive id": "1"
+      },
+      {
+        "passive id": "43",
+        "take 1 dmg%": 10
+      }
+    ],
+    "id": "7700",
+    "name": "聖与の導き"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -428,6 +430,164 @@
     ],
     "name": "六星剣"
   },
+  "sbb": {},
+  "ubb": {},
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 161
+    },
+    "idle": {
+      "total number of frames": 140
+    },
+    "move": {
+      "total number of frames": 11
+    }
+  },
+  "category": 50590,
+  "cost": "16",
+  "damage frames": {
+    "frame times": [
+      22,
+      26,
+      36,
+      40,
+      82,
+      86,
+      90,
+      94
+    ],
+    "hit dmg% distribution": [
+      15,
+      7,
+      15,
+      7,
+      13,
+      15,
+      13,
+      15
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 8
+  },
+  "drop check count": 2,
+  "element": "light",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "farmable",
+  "guide_id": 775,
+  "imp": {
+    "max atk": "200",
+    "max def": "200",
+    "max hp": "500",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "1517~1695",
+  "movement": {
+    "attack": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    }
+  },
+  "name": "ルルハ",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "ルルハ",
+  "maxlv": "80",
+  "no": "775",
+  "unitDisplayHomePosition_1W9CxaFK": null,
+  "unitDisplayDetailPosition_6z54rgb3": null,
+  "unitDisplayConfirmImagePosition_MYK1fq6c": null,
+  "unitDisplayCutInImagePosition_7hLR6pDN": null,
+  "unitDisplaySummonPosition_KC3Jk8Br": null,
+  "unitDisplayHpPosition_3BpHN6VD": null,
+  "unitDisplayCursorPosition": null,
+  "sellPrice": "",
+  "sellCaution": false,
+  "effectFrames": "",
+  "evofrom": "50593",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "unreleased": "true",
+  "untranslated": "true",
+  "doenter": "true",
+  "altname": "ルルハ",
+  "basexp": "21",
+  "animation_attack": "161",
+  "animation_idle": "140",
+  "animation_move": "11",
+  "movespeed_attack": "0.0024",
+  "movespeed_skill": "0.0024",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "22, 26, 36, 40, 82, 86, 90, 94",
+  "normal_distribute": "15, 7, 15, 7, 13, 15, 13, 15",
+  "normal_totaldistr": "100",
+  "bb_frames": "22, 25, 36, 39, 82, 86, 90, 94, 98, 102, 106, 110",
+  "bb_distribute": "10, 5, 10, 5, 15, 7, 7, 7, 7, 7, 7, 13",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "description": "異界に存在するログレス王国のハンターズギルドに所属する女性。魔物と戦う冒険者たちを導き、優秀な観察眼で試験官を務めることもあり、王国の平穏と安定に貢献している。ただし、まだ成熟には程遠い若さゆえに、わがままできつい性格と評されることもしばしば。もっとも、魔物との過酷な戦いにおもむく冒険者たちを鍛えるために、あえて厳しく当たっていると言う者もいる。",
+  "summon": "あなたに力があることを<br>きちんと証明して。<br>私を安心させてちょうだい。",
+  "fusion": "なによ！<br>私にかまってないで、<br>自分を鍛えなさい！",
+  "evolution": "私も本気を出すわ。<br>はぁ、どうしてこう<br>手がかかるのかしら。",
+  "hp_base": "3334",
+  "atk_base": "1156",
+  "def_base": "1156",
+  "rec_base": "1054",
+  "hp_lord": "5050",
+  "atk_lord": "1630",
+  "def_lord": "1630",
+  "rec_lord": "1480",
+  "hp_anima": "5642",
+  "rec_anima": "1322",
+  "atk_breaker": "1788",
+  "def_breaker": "1472",
+  "def_guardian": "1788",
+  "rec_guardian": "1401",
+  "def_oracle": "1551",
+  "rec_oracle": "1717",
+  "hp_bonus": "500",
+  "atk_bonus": "200",
+  "def_bonus": "200",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "8",
+  "normaldc": "16",
+  "ls": "聖与の導き",
+  "lsdescription": "全てのユニットの攻撃力を２５％アップ＆低確率で被ダメージを超絶軽減",
+  "lsnote": "25% boost to Atk & 10% chance to reduce damage taken to 1",
+  "lstype": "Support",
   "bbdescription": "敵全体に光属性１２連ダメージ＆味方全体に２ターン、防御貫通効果を付与＆３ターン、防御力をアップ",
   "bbnote": "{{UnitBuffList",
   "buff_1_proc": "1",
@@ -448,87 +608,10 @@
   "bbgauge": "25",
   "bbdc": "12",
   "bbmultiplier": "190",
-  "evofrom": "50593",
-  "evointo": "",
   "evomats1": "",
   "evomats2": "",
   "evomats3": "",
   "evomats4": "",
   "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 1156,
-      "def": 1156,
-      "hp": 3334,
-      "rec": 1054
-    },
-    "_lord": {
-      "atk": 1630,
-      "def": 1630,
-      "hp": 5050,
-      "rec": 1480
-    },
-    "anima": {
-      "atk": 1630,
-      "def": 1630,
-      "hp max": 5840,
-      "hp min": 5445,
-      "rec max": 1401,
-      "rec min": 1243
-    },
-    "breaker": {
-      "atk max": 1867,
-      "atk min": 1709,
-      "def max": 1551,
-      "def min": 1393,
-      "hp": 5050,
-      "rec": 1480
-    },
-    "guardian": {
-      "atk": 1630,
-      "def max": 1867,
-      "def min": 1709,
-      "hp": 5050,
-      "rec max": 1480,
-      "rec min": 1322
-    },
-    "oracle": {
-      "atk": 1630,
-      "def max": 1630,
-      "def min": 1472,
-      "hp": 5050,
-      "rec max": 1796,
-      "rec min": 1638
-    }
-  },
-  "leader_skill": {
-    "desc": "全てのユニットの攻撃力を２５％アップ＆低確率で被ダメージを超絶軽減",
-    "effects": [
-      {
-        "atk% buff": 25,
-        "passive id": "1"
-      },
-      {
-        "passive id": "43",
-        "take 1 dmg%": 10
-      }
-    ],
-    "id": "7700",
-    "name": "聖与の導き"
-  },
-  "extra_skill": {},
-  "sbb": {},
-  "ubb": {},
-  "unitDisplayHomePosition_1W9CxaFK": null,
-  "unitDisplayDetailPosition_6z54rgb3": null,
-  "unitDisplayConfirmImagePosition_MYK1fq6c": null,
-  "unitDisplayCutInImagePosition_7hLR6pDN": null,
-  "unitDisplaySummonPosition_KC3Jk8Br": null,
-  "unitDisplayHpPosition_3BpHN6VD": null,
-  "unitDisplayCursorPosition": null,
-  "sellPrice": "",
-  "sellCaution": false,
-  "effectFrames": ""
+  "evoitem": ""
 }

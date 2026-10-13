@@ -1,61 +1,63 @@
 {
   "id": "50031",
-  "unitName": "King Glowy",
-  "no": "52",
-  "element": "Light",
-  "rarity": "★★",
-  "cost": "3",
-  "maxlv": "30",
-  "basexp": "10",
-  "gender": "N",
-  "ai": "2",
-  "animation_attack": "72",
-  "animation_idle": "39",
-  "animation_move": "43",
-  "movespeed_attack": "0.0041",
-  "movespeed_skill": "0.0041",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "42",
-  "normal_distribute": "100",
-  "normal_totaldistr": "100",
-  "bb_frames": "42, 50",
-  "bb_distribute": "50, 50",
-  "bb_totaldistr": "100",
-  "description": "There are many mysteries about Glowy Slime, including its origin, but the most curious thing is the existence of Glowy Slime King. It's said that a group of slimes merge to become a Glowy Slime King. However, as no other slime demons have done this before, researchers are puzzled how this could happen. When Glowy Slime King appears, even the night becomes as bright as day.",
-  "summon": "I'm sorry, I can't help<br>it that I'm so bright.<br>I can go if it's too much...",
-  "fusion": "Hehe, am I too bright?<br>Really? I'm too bright?",
-  "evolution": "Haha, how dazzling!<br>I'm so much brighter now!",
-  "hp_base": "1160",
-  "atk_base": "350",
-  "def_base": "520",
-  "rec_base": "350",
-  "hp_lord": "2207",
-  "atk_lord": "655",
-  "def_lord": "870",
-  "rec_lord": "665",
-  "hp_anima": "2425",
-  "rec_anima": "607",
-  "atk_breaker": "713",
-  "def_breaker": "812",
-  "atk_guardian": "597",
-  "def_guardian": "928",
-  "rec_guardian": "636",
-  "def_oracle": "841",
-  "hp_oracle": "2120",
-  "rec_oracle": "752",
-  "hp_bonus": "300",
-  "atk_bonus": "120",
-  "def_bonus": "120",
-  "rec_bonus": "120",
-  "lordonly": "",
-  "combo_hits": "1",
-  "normaldc": "2",
-  "ls": "Light's Protection",
-  "lsdescription": "10% reduction in damage from Light Types",
-  "lstype": "Defense",
+  "stats": {
+    "_base": {
+      "atk": 350,
+      "def": 520,
+      "hp": 1160,
+      "rec": 350
+    },
+    "_lord": {
+      "atk": 655,
+      "def": 870,
+      "hp": 2207,
+      "rec": 665
+    },
+    "anima": {
+      "atk": 655,
+      "def": 870,
+      "hp max": 2497,
+      "hp min": 2352,
+      "rec max": 636,
+      "rec min": 578
+    },
+    "breaker": {
+      "atk max": 742,
+      "atk min": 684,
+      "def max": 841,
+      "def min": 783,
+      "hp": 2207,
+      "rec": 665
+    },
+    "guardian": {
+      "atk": 655,
+      "def max": 957,
+      "def min": 899,
+      "hp": 2207,
+      "rec max": 665,
+      "rec min": 607
+    },
+    "oracle": {
+      "atk": 655,
+      "def max": 870,
+      "def min": 812,
+      "hp": 2207,
+      "rec max": 781,
+      "rec min": 723
+    }
+  },
+  "leader_skill": {
+    "desc": "10% reduction in damage from Light Types",
+    "effects": [
+      {
+        "light resist%": 10,
+        "passive id": "5"
+      }
+    ],
+    "id": "508",
+    "name": "Light's Protection"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -210,94 +212,83 @@
     ],
     "name": "Photon Munch"
   },
-  "bbdescription": "2 combo Light elemental power attack on single Enemy",
-  "bbtype": "Offense",
-  "bbhits": "2",
-  "bbaoe": "1",
-  "bbgauge": "12",
-  "bbdc": "10",
-  "bbmultiplier": "120",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "50030",
-  "evointo": "50032",
-  "evomats1": "50121",
-  "evomats2": "50120",
-  "evomats3": "60142",
-  "evomats4": "",
-  "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "50000",
-  "stats": {
-    "_base": {
-      "atk": 350,
-      "def": 520,
-      "hp": 1160,
-      "rec": 350
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 655,
-      "def": 870,
-      "hp": 2207,
-      "rec": 665
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 655,
-      "def": 870,
-      "hp max": 2497,
-      "hp min": 2352,
-      "rec max": 636,
-      "rec min": 578
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 72
     },
-    "breaker": {
-      "atk max": 742,
-      "atk min": 684,
-      "def max": 841,
-      "def min": 783,
-      "hp": 2207,
-      "rec": 665
+    "idle": {
+      "total number of frames": 39
     },
-    "guardian": {
-      "atk": 655,
-      "def max": 957,
-      "def min": 899,
-      "hp": 2207,
-      "rec max": 665,
-      "rec min": 607
-    },
-    "oracle": {
-      "atk": 655,
-      "def max": 870,
-      "def min": 812,
-      "hp": 2207,
-      "rec max": 781,
-      "rec min": 723
+    "move": {
+      "total number of frames": 43
     }
   },
-  "leader_skill": {
-    "desc": "10% reduction in damage from Light Types",
-    "effects": [
-      {
-        "light resist%": 10,
-        "passive id": "5"
-      }
+  "category": 50030,
+  "cost": "3",
+  "damage frames": {
+    "frame times": [
+      42
     ],
-    "id": "508",
-    "name": "Light's Protection"
+    "hit dmg% distribution": [
+      100
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 1
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "light",
+  "exp_pattern": 10,
+  "gender": "other",
+  "getting type": "not eligible for achievement",
+  "guide_id": 52,
+  "imp": {
+    "max atk": "120",
+    "max def": "120",
+    "max hp": "300",
+    "max rec": "120"
+  },
+  "kind": "normal",
+  "lord damage range": "609~681",
+  "movement": {
+    "attack": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    }
+  },
+  "name": "King Glowy",
+  "rarity": "2",
+  "sell caution": false,
+  "unitName": "King Glowy",
+  "maxlv": "30",
+  "no": "52",
   "unitDisplayHomePosition_1W9CxaFK": "110,-66,200,544",
   "unitDisplayDetailPosition_6z54rgb3": "127,158,700,613",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "189,384,276,242,0",
@@ -307,5 +298,99 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "300",
   "sellCaution": false,
-  "effectFrames": "36:125:1"
+  "effectFrames": "36:125:1",
+  "evofrom": "50030",
+  "evointo": "50032",
+  "evozelcost": "50000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50121",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50120",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60142",
+      "count": 1
+    }
+  ],
+  "basexp": "10",
+  "animation_attack": "72",
+  "animation_idle": "39",
+  "animation_move": "43",
+  "movespeed_attack": "0.0041",
+  "movespeed_skill": "0.0041",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "42",
+  "normal_distribute": "100",
+  "normal_totaldistr": "100",
+  "bb_frames": "42, 50",
+  "bb_distribute": "50, 50",
+  "bb_totaldistr": "100",
+  "description": "There are many mysteries about Glowy Slime, including its origin, but the most curious thing is the existence of Glowy Slime King. It's said that a group of slimes merge to become a Glowy Slime King. However, as no other slime demons have done this before, researchers are puzzled how this could happen. When Glowy Slime King appears, even the night becomes as bright as day.",
+  "summon": "I'm sorry, I can't help<br>it that I'm so bright.<br>I can go if it's too much...",
+  "fusion": "Hehe, am I too bright?<br>Really? I'm too bright?",
+  "evolution": "Haha, how dazzling!<br>I'm so much brighter now!",
+  "hp_base": "1160",
+  "atk_base": "350",
+  "def_base": "520",
+  "rec_base": "350",
+  "hp_lord": "2207",
+  "atk_lord": "655",
+  "def_lord": "870",
+  "rec_lord": "665",
+  "hp_anima": "2425",
+  "rec_anima": "607",
+  "atk_breaker": "713",
+  "def_breaker": "812",
+  "atk_guardian": "597",
+  "def_guardian": "928",
+  "rec_guardian": "636",
+  "def_oracle": "841",
+  "hp_oracle": "2120",
+  "rec_oracle": "752",
+  "hp_bonus": "300",
+  "atk_bonus": "120",
+  "def_bonus": "120",
+  "rec_bonus": "120",
+  "lordonly": "",
+  "combo_hits": "1",
+  "normaldc": "2",
+  "ls": "Light's Protection",
+  "lsdescription": "10% reduction in damage from Light Types",
+  "lstype": "Defense",
+  "bbdescription": "2 combo Light elemental power attack on single Enemy",
+  "bbtype": "Offense",
+  "bbhits": "2",
+  "bbaoe": "1",
+  "bbgauge": "12",
+  "bbdc": "10",
+  "bbmultiplier": "120",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50121",
+  "evomats2": "50120",
+  "evomats3": "60142",
+  "evomats4": "",
+  "evomats5": "",
+  "evoitem": ""
 }

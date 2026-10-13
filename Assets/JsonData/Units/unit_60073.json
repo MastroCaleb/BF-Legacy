@@ -1,59 +1,63 @@
 {
   "id": "60073",
-  "unitName": "Nyx",
-  "no": "363",
-  "element": "Dark",
-  "rarity": "★★★★",
-  "cost": "8",
-  "maxlv": "60",
-  "basexp": "15",
-  "gender": "N",
-  "ai": "1",
-  "animation_attack": "215",
-  "animation_idle": "64",
-  "animation_move": "64",
-  "movespeed_attack": "8",
-  "movespeed_skill": "8",
-  "speedtype_attack": "1",
-  "speedtype_skill": "1",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "119, 127, 135, 143, 151, 159, 167",
-  "normal_distribute": "30, 10, 10, 10, 10, 10, 20",
-  "normal_totaldistr": "100",
-  "description": "A high class demon of the night sometimes called the \"Princess of the Night.\" She usually draws in members of other species with her pheromones before making them her slaves. Unlike the Succubus she isn't known for her betrayals, but once she decides on a partner she sticks with them until she's absorbed all their vitality. When absorbing partners with higher concentrations of vitality it is said that she then tries herself to strengthen others, though by doing so it's said that she possesses their bodies eternally.",
-  "summon": "Kneel before me.<br>From today forward<br>you are my toy!",
-  "fusion": "That was nice, but I sure<br>would like some more.<br>You know what to do, right?",
-  "evolution": "You're so wonderful!<br>What are you planning to do <br>with me now that I'm like this?",
-  "hp_base": "1931",
-  "atk_base": "673",
-  "def_base": "678",
-  "rec_base": "683",
-  "hp_lord": "3317",
-  "atk_lord": "989",
-  "def_lord": "1000",
-  "rec_lord": "984",
-  "hp_anima": "3760",
-  "rec_anima": "866",
-  "atk_breaker": "1107",
-  "def_breaker": "882",
-  "atk_guardian": "871",
-  "def_guardian": "1118",
-  "rec_guardian": "925",
-  "def_oracle": "941",
-  "hp_oracle": "3140",
-  "rec_oracle": "1161",
-  "hp_bonus": "600",
-  "atk_bonus": "120",
-  "def_bonus": "120",
-  "rec_bonus": "120",
-  "lordonly": "",
-  "combo_hits": "7",
-  "normaldc": "14",
-  "ls": "Pure Shining",
-  "lsdescription": "Boost in Heart Crystals produced during Spark",
-  "lsnote": "35% boost",
-  "lstype": "Recovery",
+  "stats": {
+    "_base": {
+      "atk": 673,
+      "def": 678,
+      "hp": 1931,
+      "rec": 683
+    },
+    "_lord": {
+      "atk": 989,
+      "def": 1000,
+      "hp": 3317,
+      "rec": 984
+    },
+    "anima": {
+      "atk": 989,
+      "def": 1000,
+      "hp max": 3907,
+      "hp min": 3612,
+      "rec max": 925,
+      "rec min": 807
+    },
+    "breaker": {
+      "atk max": 1166,
+      "atk min": 1048,
+      "def max": 941,
+      "def min": 823,
+      "hp": 3317,
+      "rec": 984
+    },
+    "guardian": {
+      "atk": 989,
+      "def max": 1177,
+      "def min": 1059,
+      "hp": 3317,
+      "rec max": 984,
+      "rec min": 866
+    },
+    "oracle": {
+      "atk": 989,
+      "def max": 1000,
+      "def min": 882,
+      "hp": 3317,
+      "rec max": 1220,
+      "rec min": 1102
+    }
+  },
+  "leader_skill": {
+    "desc": "Boost in Heart Crystals produced during Spark",
+    "effects": [
+      {
+        "hc drop% for spark": 35,
+        "passive id": "31"
+      }
+    ],
+    "id": "1501",
+    "name": "Pure Shining"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -216,92 +220,95 @@
     ],
     "name": "Demon Boost"
   },
-  "bbdescription": "Boost to all allies' ATK for 3 turns",
-  "bbnote": "80% boost to Atk",
-  "bbtype": "Support",
-  "bbhits": "",
-  "bbaoe": "0",
-  "bbgauge": "15",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "60072",
-  "evointo": "",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 673,
-      "def": 678,
-      "hp": 1931,
-      "rec": 683
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "party"
     },
-    "_lord": {
-      "atk": 989,
-      "def": 1000,
-      "hp": 3317,
-      "rec": 984
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 989,
-      "def": 1000,
-      "hp max": 3907,
-      "hp min": 3612,
-      "rec max": 925,
-      "rec min": 807
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 215
     },
-    "breaker": {
-      "atk max": 1166,
-      "atk min": 1048,
-      "def max": 941,
-      "def min": 823,
-      "hp": 3317,
-      "rec": 984
+    "idle": {
+      "total number of frames": 64
     },
-    "guardian": {
-      "atk": 989,
-      "def max": 1177,
-      "def min": 1059,
-      "hp": 3317,
-      "rec max": 984,
-      "rec min": 866
-    },
-    "oracle": {
-      "atk": 989,
-      "def max": 1000,
-      "def min": 882,
-      "hp": 3317,
-      "rec max": 1220,
-      "rec min": 1102
+    "move": {
+      "total number of frames": 64
     }
   },
-  "leader_skill": {
-    "desc": "Boost in Heart Crystals produced during Spark",
-    "effects": [
-      {
-        "hc drop% for spark": 35,
-        "passive id": "31"
-      }
+  "category": 60070,
+  "cost": "8",
+  "damage frames": {
+    "frame times": [
+      119,
+      127,
+      135,
+      143,
+      151,
+      159,
+      167
     ],
-    "id": "1501",
-    "name": "Pure Shining"
+    "hit dmg% distribution": [
+      30,
+      10,
+      10,
+      10,
+      10,
+      10,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 7
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "dark",
+  "exp_pattern": 15,
+  "gender": "other",
+  "getting type": "farmable",
+  "guide_id": 363,
+  "imp": {
+    "max atk": "120",
+    "max def": "120",
+    "max hp": "600",
+    "max rec": "120"
+  },
+  "kind": "normal",
+  "lord damage range": "920~1028",
+  "movement": {
+    "attack": {
+      "move speed": 8,
+      "move speed type": "1",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 8,
+      "move speed type": "1",
+      "move type": "3"
+    }
+  },
+  "name": "Nyx",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Nyx",
+  "maxlv": "60",
+  "no": "363",
   "unitDisplayHomePosition_1W9CxaFK": "350,5,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-55,126,1052,710",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "109,308,435,330,1",
@@ -311,5 +318,79 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "70:370:1,145:600040:1,167:600220:1"
+  "effectFrames": "70:370:1,145:600040:1,167:600220:1",
+  "evofrom": "60072",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "15",
+  "animation_attack": "215",
+  "animation_idle": "64",
+  "animation_move": "64",
+  "movespeed_attack": "8",
+  "movespeed_skill": "8",
+  "speedtype_attack": "1",
+  "speedtype_skill": "1",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "119, 127, 135, 143, 151, 159, 167",
+  "normal_distribute": "30, 10, 10, 10, 10, 10, 20",
+  "normal_totaldistr": "100",
+  "description": "A high class demon of the night sometimes called the \"Princess of the Night.\" She usually draws in members of other species with her pheromones before making them her slaves. Unlike the Succubus she isn't known for her betrayals, but once she decides on a partner she sticks with them until she's absorbed all their vitality. When absorbing partners with higher concentrations of vitality it is said that she then tries herself to strengthen others, though by doing so it's said that she possesses their bodies eternally.",
+  "summon": "Kneel before me.<br>From today forward<br>you are my toy!",
+  "fusion": "That was nice, but I sure<br>would like some more.<br>You know what to do, right?",
+  "evolution": "You're so wonderful!<br>What are you planning to do <br>with me now that I'm like this?",
+  "hp_base": "1931",
+  "atk_base": "673",
+  "def_base": "678",
+  "rec_base": "683",
+  "hp_lord": "3317",
+  "atk_lord": "989",
+  "def_lord": "1000",
+  "rec_lord": "984",
+  "hp_anima": "3760",
+  "rec_anima": "866",
+  "atk_breaker": "1107",
+  "def_breaker": "882",
+  "atk_guardian": "871",
+  "def_guardian": "1118",
+  "rec_guardian": "925",
+  "def_oracle": "941",
+  "hp_oracle": "3140",
+  "rec_oracle": "1161",
+  "hp_bonus": "600",
+  "atk_bonus": "120",
+  "def_bonus": "120",
+  "rec_bonus": "120",
+  "lordonly": "",
+  "combo_hits": "7",
+  "normaldc": "14",
+  "ls": "Pure Shining",
+  "lsdescription": "Boost in Heart Crystals produced during Spark",
+  "lsnote": "35% boost",
+  "lstype": "Recovery",
+  "bbdescription": "Boost to all allies' ATK for 3 turns",
+  "bbnote": "80% boost to Atk",
+  "bbtype": "Support",
+  "bbhits": "",
+  "bbaoe": "0",
+  "bbgauge": "15",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "",
+  "evomats2": "",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": ""
 }

@@ -1,68 +1,90 @@
 {
   "id": "30816",
-  "unitName": "Emerald Knight Hisui",
-  "no": "1419",
-  "element": "Earth",
-  "rarity": "★★★★★★★",
-  "cost": "44",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "93",
-  "animation_idle": "52",
-  "animation_move": "11",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "39, 42, 45, 48, 51, 54",
-  "normal_distribute": "20, 18, 17, 16, 15, 14",
-  "normal_totaldistr": "100",
-  "bb_frames": "39, 42, 45, 48, 51, 54, 57, 60",
-  "bb_distribute": "21, 18, 16, 11, 10, 9, 8, 7",
-  "bb_totaldistr": "100",
-  "sbb_frames": "39, 42, 45, 48, 51, 54, 57, 60, 63, 66, 69, 72, 75, 78",
-  "sbb_distribute": "13, 10, 9, 8, 7, 7, 7, 7, 7, 7, 6, 5, 4, 3",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "39, 42, 45, 48, 51, 54, 57, 60, 63, 66, 69, 72, 75, 78, 81, 84, 87, 90, 93",
-  "ubb_distribute": "10, 8, 7, 6, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 4, 4, 3, 3",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "4",
-  "sbb_effectdelay": "4",
-  "ubb_effectdelay": "3",
-  "description": "A demon who trained under the renowned \"War Demon\" of Ishgria. At his master's request, Hisui and his younger and brash training partner set off on a journey across the land as part of their tutelage, until his chronic illness took a turn for the worse. Knowing he wasn't much longer for this world, he challenged his partner to battle in order to pass his knowledge onto him. This would eventually result in Hisui's own defeat at the hands of his younger opponent, but he is rumored to have perished with an expression of satisfaction upon his face.",
-  "summon": "Did you summon me here?<br>Then I shall fight for you.<br>Until my very last breath...",
-  "fusion": "To think this technique existed!<br>Using it may just help my body last a bit longer...",
-  "evolution": "",
-  "hp_base": "5013",
-  "atk_base": "1937",
-  "def_base": "2372",
-  "rec_base": "1995",
-  "hp_lord": "7113",
-  "atk_lord": "2497",
-  "def_lord": "2793",
-  "rec_lord": "2420",
-  "hp_anima": "8005",
-  "rec_anima": "2182",
-  "atk_breaker": "2735",
-  "def_breaker": "2555",
-  "def_guardian": "3031",
-  "rec_guardian": "2301",
-  "def_oracle": "2674",
-  "rec_oracle": "2777",
-  "hp_bonus": "1000",
-  "atk_bonus": "300",
-  "def_bonus": "600",
-  "rec_bonus": "400",
-  "lordonly": "",
-  "combo_hits": "6",
-  "normaldc": "36",
-  "ls": "Divine Nature Style",
-  "lsdescription": "30% boost to Def, max HP & negates critical damage",
-  "lsnote": "",
+  "stats": {
+    "_base": {
+      "atk": 1937,
+      "def": 2372,
+      "hp": 5013,
+      "rec": 1995
+    },
+    "_lord": {
+      "atk": 2497,
+      "def": 2793,
+      "hp": 7113,
+      "rec": 2420
+    },
+    "anima": {
+      "atk": 2497,
+      "def": 2793,
+      "hp max": 8303,
+      "hp min": 7708,
+      "rec max": 2301,
+      "rec min": 2063
+    },
+    "breaker": {
+      "atk max": 2854,
+      "atk min": 2616,
+      "def max": 2674,
+      "def min": 2436,
+      "hp": 7113,
+      "rec": 2420
+    },
+    "guardian": {
+      "atk": 2497,
+      "def max": 3150,
+      "def min": 2912,
+      "hp": 7113,
+      "rec max": 2420,
+      "rec min": 2182
+    },
+    "oracle": {
+      "atk": 2497,
+      "def max": 2793,
+      "def min": 2555,
+      "hp": 7113,
+      "rec max": 2896,
+      "rec min": 2658
+    }
+  },
+  "leader_skill": {
+    "desc": "30% boost to Def, max HP & negates critical damage",
+    "effects": [
+      {
+        "def% buff": 30,
+        "hp% buff": 30,
+        "passive id": "1"
+      },
+      {
+        "crit chance base resist%": 100,
+        "crit chance buffed resist%": 100,
+        "crit dmg base damage resist%": 100,
+        "crit dmg buffed damage resist%": 100,
+        "passive id": "53"
+      }
+    ],
+    "id": "4340",
+    "name": "Divine Nature Style"
+  },
+  "extra_skill": {
+    "desc": "Negates all status ailments",
+    "effects": [
+      {
+        "conditions": [],
+        "curse resist%": 100,
+        "injury resist%": 100,
+        "paralysis resist%": 100,
+        "passive id": "4",
+        "passive target": "self",
+        "poison resist%": 100,
+        "sick resist%": 100,
+        "weaken resist%": 100
+      }
+    ],
+    "id": "20000",
+    "name": "Fate's Beam of Light",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -687,14 +709,6 @@
     ],
     "name": "Croix Scudo"
   },
-  "bbdescription": "8 combo Earth attack, considerably boosts Def, Rec for 3 turns, negates status ailments for 3 turns, boosts damage reduction while guarding for 3 turns & negates Atk, Def, Rec reductions for 1 turn",
-  "bbnote": "140% Def, Rec & 10% damage reduction",
-  "bbtype": "Offense",
-  "bbhits": "8",
-  "bbaoe": "A",
-  "bbgauge": "26",
-  "bbdc": "8",
-  "bbmultiplier": "350",
   "sbb": {
     "damage frames": [
       {
@@ -1281,14 +1295,6 @@
     ],
     "name": "Sword Art: Divine Tempest"
   },
-  "sbbdescription": "14 combo powerful Earth attack, considerably boosts Def, Rec for 3 turns, considerably boosts Def relative to Rec for 3 turns, boosts damage reduction while guarding for 3 turns & negates elemental damage for 1 turn",
-  "sbbnote": "140% Def, Rec, 50% Rec to Def & 10% damage reduction",
-  "sbbtype": "Offense",
-  "sbbhits": "14",
-  "sbbaoe": "A",
-  "sbbgauge": "28",
-  "sbbdc": "14",
-  "sbbmultiplier": "560",
   "ubb": {
     "damage frames": [
       {
@@ -1422,6 +1428,208 @@
     ],
     "name": "Green Sword: Diesia"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 93
+    },
+    "idle": {
+      "total number of frames": 52
+    },
+    "move": {
+      "total number of frames": 11
+    }
+  },
+  "category": 30810,
+  "cost": "44",
+  "damage frames": {
+    "frame times": [
+      39,
+      42,
+      45,
+      48,
+      51,
+      54
+    ],
+    "hit dmg% distribution": [
+      20,
+      18,
+      17,
+      16,
+      15,
+      14
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 6
+  },
+  "drop check count": 6,
+  "element": "earth",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 1419,
+  "imp": {
+    "max atk": "300",
+    "max def": "600",
+    "max hp": "1000",
+    "max rec": "400"
+  },
+  "kind": "normal",
+  "lord damage range": "2325~2596",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Emerald Knight Hisui",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Emerald Knight Hisui",
+  "maxlv": "120",
+  "no": "1419",
+  "unitDisplayHomePosition_1W9CxaFK": "260,438,190,519",
+  "unitDisplayDetailPosition_6z54rgb3": "54,-114,1150,912",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "134,152,600,476,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "89,-396,1120,888",
+  "unitDisplaySummonPosition_KC3Jk8Br": "134,152,600,476,0",
+  "unitDisplayHpPosition_3BpHN6VD": "-8,66",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "15000",
+  "sellCaution": false,
+  "effectFrames": "33:120:1,36:120:1,39:120:1,42:120:1,45:120:1,48:120:1,39:500236:1,40:330390:1,43:300194:1,45:200759:1",
+  "evofrom": "",
+  "evointo": "30817",
+  "evozelcost": "3000000",
+  "evokarmacost": "1000000",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "30334",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 2
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "93",
+  "animation_idle": "52",
+  "animation_move": "11",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "39, 42, 45, 48, 51, 54",
+  "normal_distribute": "20, 18, 17, 16, 15, 14",
+  "normal_totaldistr": "100",
+  "bb_frames": "39, 42, 45, 48, 51, 54, 57, 60",
+  "bb_distribute": "21, 18, 16, 11, 10, 9, 8, 7",
+  "bb_totaldistr": "100",
+  "sbb_frames": "39, 42, 45, 48, 51, 54, 57, 60, 63, 66, 69, 72, 75, 78",
+  "sbb_distribute": "13, 10, 9, 8, 7, 7, 7, 7, 7, 7, 6, 5, 4, 3",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "39, 42, 45, 48, 51, 54, 57, 60, 63, 66, 69, 72, 75, 78, 81, 84, 87, 90, 93",
+  "ubb_distribute": "10, 8, 7, 6, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 4, 4, 3, 3",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "4",
+  "sbb_effectdelay": "4",
+  "ubb_effectdelay": "3",
+  "description": "A demon who trained under the renowned \"War Demon\" of Ishgria. At his master's request, Hisui and his younger and brash training partner set off on a journey across the land as part of their tutelage, until his chronic illness took a turn for the worse. Knowing he wasn't much longer for this world, he challenged his partner to battle in order to pass his knowledge onto him. This would eventually result in Hisui's own defeat at the hands of his younger opponent, but he is rumored to have perished with an expression of satisfaction upon his face.",
+  "summon": "Did you summon me here?<br>Then I shall fight for you.<br>Until my very last breath...",
+  "fusion": "To think this technique existed!<br>Using it may just help my body last a bit longer...",
+  "evolution": "",
+  "hp_base": "5013",
+  "atk_base": "1937",
+  "def_base": "2372",
+  "rec_base": "1995",
+  "hp_lord": "7113",
+  "atk_lord": "2497",
+  "def_lord": "2793",
+  "rec_lord": "2420",
+  "hp_anima": "8005",
+  "rec_anima": "2182",
+  "atk_breaker": "2735",
+  "def_breaker": "2555",
+  "def_guardian": "3031",
+  "rec_guardian": "2301",
+  "def_oracle": "2674",
+  "rec_oracle": "2777",
+  "hp_bonus": "1000",
+  "atk_bonus": "300",
+  "def_bonus": "600",
+  "rec_bonus": "400",
+  "lordonly": "",
+  "combo_hits": "6",
+  "normaldc": "36",
+  "ls": "Divine Nature Style",
+  "lsdescription": "30% boost to Def, max HP & negates critical damage",
+  "lsnote": "",
+  "bbdescription": "8 combo Earth attack, considerably boosts Def, Rec for 3 turns, negates status ailments for 3 turns, boosts damage reduction while guarding for 3 turns & negates Atk, Def, Rec reductions for 1 turn",
+  "bbnote": "140% Def, Rec & 10% damage reduction",
+  "bbtype": "Offense",
+  "bbhits": "8",
+  "bbaoe": "A",
+  "bbgauge": "26",
+  "bbdc": "8",
+  "bbmultiplier": "350",
+  "sbbdescription": "14 combo powerful Earth attack, considerably boosts Def, Rec for 3 turns, considerably boosts Def relative to Rec for 3 turns, boosts damage reduction while guarding for 3 turns & negates elemental damage for 1 turn",
+  "sbbnote": "140% Def, Rec, 50% Rec to Def & 10% damage reduction",
+  "sbbtype": "Offense",
+  "sbbhits": "14",
+  "sbbaoe": "A",
+  "sbbgauge": "28",
+  "sbbdc": "14",
+  "sbbmultiplier": "560",
   "ubbdescription": "19 combo massive Earth attack, 75% damage reduction for 3 turns, enormously boosts OD gauge fill rate for 3 turns & damage taken enormously boosts BB gauge for 3 turns",
   "ubbnote": "50% OD fill rate & fills 50 BC",
   "ubbtype": "Offense",
@@ -1434,8 +1642,6 @@
   "esitem": "",
   "esdescription": "Negates all status ailments",
   "esnote": "",
-  "evofrom": "",
-  "evointo": "30817",
   "evomats1": "Earth Mecha God",
   "evomats2": "Earth Mecha God",
   "evomats3": "Miracle Totem",
@@ -1444,101 +1650,5 @@
   "evomats6": "Dragon Mimic",
   "evomats7": "Metal Mimic",
   "evomats8": "Metal Mimic",
-  "evoitem": "",
-  "evozelcost": "3000000",
-  "stats": {
-    "_base": {
-      "atk": 1937,
-      "def": 2372,
-      "hp": 5013,
-      "rec": 1995
-    },
-    "_lord": {
-      "atk": 2497,
-      "def": 2793,
-      "hp": 7113,
-      "rec": 2420
-    },
-    "anima": {
-      "atk": 2497,
-      "def": 2793,
-      "hp max": 8303,
-      "hp min": 7708,
-      "rec max": 2301,
-      "rec min": 2063
-    },
-    "breaker": {
-      "atk max": 2854,
-      "atk min": 2616,
-      "def max": 2674,
-      "def min": 2436,
-      "hp": 7113,
-      "rec": 2420
-    },
-    "guardian": {
-      "atk": 2497,
-      "def max": 3150,
-      "def min": 2912,
-      "hp": 7113,
-      "rec max": 2420,
-      "rec min": 2182
-    },
-    "oracle": {
-      "atk": 2497,
-      "def max": 2793,
-      "def min": 2555,
-      "hp": 7113,
-      "rec max": 2896,
-      "rec min": 2658
-    }
-  },
-  "leader_skill": {
-    "desc": "30% boost to Def, max HP & negates critical damage",
-    "effects": [
-      {
-        "def% buff": 30,
-        "hp% buff": 30,
-        "passive id": "1"
-      },
-      {
-        "crit chance base resist%": 100,
-        "crit chance buffed resist%": 100,
-        "crit dmg base damage resist%": 100,
-        "crit dmg buffed damage resist%": 100,
-        "passive id": "53"
-      }
-    ],
-    "id": "4340",
-    "name": "Divine Nature Style"
-  },
-  "extra_skill": {
-    "desc": "Negates all status ailments",
-    "effects": [
-      {
-        "conditions": [],
-        "curse resist%": 100,
-        "injury resist%": 100,
-        "paralysis resist%": 100,
-        "passive id": "4",
-        "passive target": "self",
-        "poison resist%": 100,
-        "sick resist%": 100,
-        "weaken resist%": 100
-      }
-    ],
-    "id": "20000",
-    "name": "Fate's Beam of Light",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "260,438,190,519",
-  "unitDisplayDetailPosition_6z54rgb3": "54,-114,1150,912",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "134,152,600,476,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "89,-396,1120,888",
-  "unitDisplaySummonPosition_KC3Jk8Br": "134,152,600,476,0",
-  "unitDisplayHpPosition_3BpHN6VD": "-8,66",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "15000",
-  "sellCaution": false,
-  "effectFrames": "33:120:1,36:120:1,39:120:1,42:120:1,45:120:1,48:120:1,39:500236:1,40:330390:1,43:300194:1,45:200759:1"
+  "evoitem": ""
 }

@@ -1,68 +1,107 @@
 {
   "id": "11117",
-  "unitName": "Courageous Blade Amus",
-  "no": "1691",
-  "element": "Fire",
-  "rarity": "Omni",
-  "cost": "50",
-  "maxlv": "150",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "138",
-  "animation_idle": "52",
-  "animation_move": "5",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "23, 28, 33, 44, 49, 54, 70, 77, 84, 90",
-  "normal_distribute": "10, 6, 4, 9, 6, 4, 17, 10, 14, 20",
-  "normal_totaldistr": "100",
-  "bb_frames": "23, 26, 29, 33, 44, 47, 50, 54, 70, 73, 76, 79, 82, 85",
-  "bb_distribute": "9, 7, 5, 3, 9, 7, 5, 3, 11, 6, 9, 5, 8, 13",
-  "bb_totaldistr": "100",
-  "sbb_frames": "23, 26, 29, 33, 44, 47, 50, 54, 70, 73, 76, 79, 82, 85, 88, 91, 94",
-  "sbb_distribute": "9, 5, 3, 3, 8, 4, 3, 3, 10, 5, 10, 4, 8, 3, 7, 3, 12",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "23, 26, 29, 33, 44, 47, 50, 54, 70, 73, 76, 79, 82, 85, 88, 91, 94, 97, 100, 103, 106",
-  "ubb_distribute": "6, 4, 3, 2, 5, 4, 3, 2, 8, 4, 8, 3, 8, 3, 7, 2, 7, 2, 7, 2, 10",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "2",
-  "sbb_effectdelay": "2",
-  "ubb_effectdelay": "1",
-  "description": "Although she was assassinated the night before a final tournament battle, Amus did hold suspicions of her opponent's sinister tricks prior to that night. She had based her suspicions on the injuries her father sustained when he was slain alongside her fellow student. However, her oversight and misfortune lay in the logical assumption that her foe would not use such cowardly tactics the night before the final bout of a tournament. Had she only survived to win the tournament, she certainly would have carried on in her father's footsteps. She might have passed on a more mature La Veda fencing to the world, with an emphasis on spiritual focus.",
-  "summon": "The most vital thing for a fencer is humility. Those driven by desire and who proclaim themselves mighty are not worthy to wield a blade!",
-  "fusion": "Skill alone is not the source of strength. The heart that wields the skill is most critical for a fencer.",
-  "evolution": "\"Swords exist to protect us.\"<br>Now I know...<br>The meaning behind those words.",
-  "hp_base": "6380",
-  "atk_base": "2473",
-  "def_base": "2597",
-  "rec_base": "2337",
-  "hp_lord": "8283",
-  "atk_lord": "3063",
-  "def_lord": "3246",
-  "rec_lord": "2908",
-  "hp_anima": "9400",
-  "rec_anima": "2610",
-  "atk_breaker": "3361",
-  "def_breaker": "2948",
-  "def_guardian": "3544",
-  "rec_guardian": "2759",
-  "def_oracle": "3097",
-  "rec_oracle": "3355",
-  "hp_bonus": "1500",
-  "atk_bonus": "600",
-  "def_bonus": "600",
-  "rec_bonus": "600",
-  "lordonly": "",
-  "combo_hits": "10",
-  "normaldc": "50",
-  "ls": "Red Justice Obsession",
-  "lsdescription": "60% boost to Def, max HP, slight damage reduction for 1 turn when damage dealt exceeds certain amount, probable 20% damage reduction & considerably boosts BC efficacy",
-  "lsnote": "20% miti after dealing 5000 damage, 20% chance of 20% mitigation & 50% BB gauge fill rate",
+  "stats": {
+    "_base": {
+      "atk": 2473,
+      "def": 2597,
+      "hp": 6380,
+      "rec": 2337
+    },
+    "_lord": {
+      "atk": 3063,
+      "def": 3246,
+      "hp": 8283,
+      "rec": 2908
+    },
+    "anima": {
+      "atk": 3063,
+      "def": 3246,
+      "hp max": 9773,
+      "hp min": 9028,
+      "rec max": 2759,
+      "rec min": 2461
+    },
+    "breaker": {
+      "atk max": 3510,
+      "atk min": 3212,
+      "def max": 3097,
+      "def min": 2799,
+      "hp": 8283,
+      "rec": 2908
+    },
+    "guardian": {
+      "atk": 3063,
+      "def max": 3693,
+      "def min": 3395,
+      "hp": 8283,
+      "rec max": 2908,
+      "rec min": 2610
+    },
+    "oracle": {
+      "atk": 3063,
+      "def max": 3246,
+      "def min": 2948,
+      "hp": 8283,
+      "rec max": 3504,
+      "rec min": 3206
+    }
+  },
+  "leader_skill": {
+    "desc": "60% boost to Def, max HP, slight damage reduction for 1 turn when damage dealt exceeds certain amount, probable 20% damage reduction & considerably boosts BC efficacy",
+    "effects": [
+      {
+        "def% buff": 60,
+        "hp% buff": 60,
+        "passive id": "1"
+      },
+      {
+        "buff": {
+          "buff turns (36)": "1",
+          "dmg reduction% buff": 20
+        },
+        "damage dealt threshold buff activation": 5000,
+        "passive id": "80"
+      },
+      {
+        "dmg reduction chance%": 20,
+        "dmg reduction%": 20,
+        "passive id": "14"
+      },
+      {
+        "bb gauge fill rate%": 50,
+        "passive id": "32"
+      }
+    ],
+    "id": "4387",
+    "name": "Red Justice Obsession"
+  },
+  "extra_skill": {
+    "desc": "Slight damage reduction for 1 turn when damage taken exceeds certain amount & damage taken may restore HP",
+    "effects": [
+      {
+        "buff": {
+          "buff turns (36)": "1",
+          "dmg reduction% buff": 20
+        },
+        "conditions": [],
+        "damage threshold buff activation": 5000,
+        "passive id": "78",
+        "passive target": "self"
+      },
+      {
+        "conditions": [],
+        "dmg% to hp% when attacked chance%": 25,
+        "dmg% to hp% when attacked high": 25,
+        "dmg% to hp% when attacked low": 20,
+        "passive id": "24",
+        "passive target": "self"
+      }
+    ],
+    "id": "40900",
+    "name": "Unified Body Enlightenment",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -729,15 +768,6 @@
     ],
     "name": "La Veda: D'ete"
   },
-  "bbdescription": "14 combo Fire attack on all foes, greatly restores HP, removes all status ailments, hugely boosts Def, Rec for 3 turns & 50% damage reduction for 1 turn",
-  "bbnote": "Heals 4000-4500 HP + 32% Rec HP & 180% Def/Rec",
-  "bbtype": "Offense",
-  "bbhits": "14",
-  "bbaoe": "A",
-  "bbgauge": "24",
-  "bbdc": "14",
-  "bbmultiplier": "390",
-  "bb_hpscale": "",
   "sbb": {
     "damage frames": [
       {
@@ -1410,15 +1440,6 @@
     ],
     "name": "La Veda: Falan"
   },
-  "sbbdescription": "17 combo powerful Fire attack on all foes, greatly restores HP, removes all status ailments, hugely boosts Def, Rec relative to Atk for 3 turns & 50% damage reduction for 1 turn",
-  "sbbnote": "Heals 4000-4500 HP + 32% Rec HP & 80% Atk to Def/Rec",
-  "sbbtype": "Offense",
-  "sbbhits": "17",
-  "sbbaoe": "A",
-  "sbbgauge": "22",
-  "sbbdc": "17",
-  "sbbmultiplier": "540",
-  "sbb_hpscale": "",
   "ubb": {
     "damage frames": [
       {
@@ -1600,6 +1621,192 @@
     ],
     "name": "Apollo Divine"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 138
+    },
+    "idle": {
+      "total number of frames": 52
+    },
+    "move": {
+      "total number of frames": 5
+    }
+  },
+  "category": 11110,
+  "cost": "50",
+  "damage frames": {
+    "frame times": [
+      23,
+      28,
+      33,
+      44,
+      49,
+      54,
+      70,
+      77,
+      84,
+      90
+    ],
+    "hit dmg% distribution": [
+      10,
+      6,
+      4,
+      9,
+      6,
+      4,
+      17,
+      10,
+      14,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 10
+  },
+  "drop check count": 5,
+  "element": "fire",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 1691,
+  "imp": {
+    "max atk": "600",
+    "max def": "600",
+    "max hp": "1500",
+    "max rec": "600"
+  },
+  "kind": "normal",
+  "lord damage range": "2851~3185",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Courageous Blade Amus",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "8",
+  "sell caution": false,
+  "unitName": "Courageous Blade Amus",
+  "maxlv": "150",
+  "no": "1691",
+  "unitDisplayHomePosition_1W9CxaFK": "528,150,174,475",
+  "unitDisplayDetailPosition_6z54rgb3": "-170,43,1320,923",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "0,190,700,489,1",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-165,-169,1300,909",
+  "unitDisplaySummonPosition_KC3Jk8Br": "0,190,700,489,1",
+  "unitDisplayHpPosition_3BpHN6VD": "1,86",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "50000",
+  "sellCaution": false,
+  "effectFrames": "23:11554:1,23:11032:1,23:1858:1,39:1918:1,68:100191:1,70:1918:1,75:1839:1,88:100191:1,88:1758:1",
+  "evofrom": "11116",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "21",
+  "animation_attack": "138",
+  "animation_idle": "52",
+  "animation_move": "5",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "23, 28, 33, 44, 49, 54, 70, 77, 84, 90",
+  "normal_distribute": "10, 6, 4, 9, 6, 4, 17, 10, 14, 20",
+  "normal_totaldistr": "100",
+  "bb_frames": "23, 26, 29, 33, 44, 47, 50, 54, 70, 73, 76, 79, 82, 85",
+  "bb_distribute": "9, 7, 5, 3, 9, 7, 5, 3, 11, 6, 9, 5, 8, 13",
+  "bb_totaldistr": "100",
+  "sbb_frames": "23, 26, 29, 33, 44, 47, 50, 54, 70, 73, 76, 79, 82, 85, 88, 91, 94",
+  "sbb_distribute": "9, 5, 3, 3, 8, 4, 3, 3, 10, 5, 10, 4, 8, 3, 7, 3, 12",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "23, 26, 29, 33, 44, 47, 50, 54, 70, 73, 76, 79, 82, 85, 88, 91, 94, 97, 100, 103, 106",
+  "ubb_distribute": "6, 4, 3, 2, 5, 4, 3, 2, 8, 4, 8, 3, 8, 3, 7, 2, 7, 2, 7, 2, 10",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "2",
+  "sbb_effectdelay": "2",
+  "ubb_effectdelay": "1",
+  "description": "Although she was assassinated the night before a final tournament battle, Amus did hold suspicions of her opponent's sinister tricks prior to that night. She had based her suspicions on the injuries her father sustained when he was slain alongside her fellow student. However, her oversight and misfortune lay in the logical assumption that her foe would not use such cowardly tactics the night before the final bout of a tournament. Had she only survived to win the tournament, she certainly would have carried on in her father's footsteps. She might have passed on a more mature La Veda fencing to the world, with an emphasis on spiritual focus.",
+  "summon": "The most vital thing for a fencer is humility. Those driven by desire and who proclaim themselves mighty are not worthy to wield a blade!",
+  "fusion": "Skill alone is not the source of strength. The heart that wields the skill is most critical for a fencer.",
+  "evolution": "\"Swords exist to protect us.\"<br>Now I know...<br>The meaning behind those words.",
+  "hp_base": "6380",
+  "atk_base": "2473",
+  "def_base": "2597",
+  "rec_base": "2337",
+  "hp_lord": "8283",
+  "atk_lord": "3063",
+  "def_lord": "3246",
+  "rec_lord": "2908",
+  "hp_anima": "9400",
+  "rec_anima": "2610",
+  "atk_breaker": "3361",
+  "def_breaker": "2948",
+  "def_guardian": "3544",
+  "rec_guardian": "2759",
+  "def_oracle": "3097",
+  "rec_oracle": "3355",
+  "hp_bonus": "1500",
+  "atk_bonus": "600",
+  "def_bonus": "600",
+  "rec_bonus": "600",
+  "lordonly": "",
+  "combo_hits": "10",
+  "normaldc": "50",
+  "ls": "Red Justice Obsession",
+  "lsdescription": "60% boost to Def, max HP, slight damage reduction for 1 turn when damage dealt exceeds certain amount, probable 20% damage reduction & considerably boosts BC efficacy",
+  "lsnote": "20% miti after dealing 5000 damage, 20% chance of 20% mitigation & 50% BB gauge fill rate",
+  "bbdescription": "14 combo Fire attack on all foes, greatly restores HP, removes all status ailments, hugely boosts Def, Rec for 3 turns & 50% damage reduction for 1 turn",
+  "bbnote": "Heals 4000-4500 HP + 32% Rec HP & 180% Def/Rec",
+  "bbtype": "Offense",
+  "bbhits": "14",
+  "bbaoe": "A",
+  "bbgauge": "24",
+  "bbdc": "14",
+  "bbmultiplier": "390",
+  "bb_hpscale": "",
+  "sbbdescription": "17 combo powerful Fire attack on all foes, greatly restores HP, removes all status ailments, hugely boosts Def, Rec relative to Atk for 3 turns & 50% damage reduction for 1 turn",
+  "sbbnote": "Heals 4000-4500 HP + 32% Rec HP & 80% Atk to Def/Rec",
+  "sbbtype": "Offense",
+  "sbbhits": "17",
+  "sbbaoe": "A",
+  "sbbgauge": "22",
+  "sbbdc": "17",
+  "sbbmultiplier": "540",
+  "sbb_hpscale": "",
   "ubbdescription": "21 combo massive Fire attack on all foes, enormously boosts Def, Rec relative to Atk for 3 turns, enormously boosts OD gauge fill rate for 3 turns, damage taken enormously boosts BB gauge and restores HP for 3 turns & 75% damage reduction for 3 turns",
   "ubbnote": "250% Atk to Def/Rec, 250% OD gauge fill rate, fills 50 BC & heals 100% damage taken",
   "ubbtype": "Offense",
@@ -1612,7 +1819,6 @@
   "es": "Unified Body Enlightenment",
   "esdescription": "Slight damage reduction for 1 turn when damage taken exceeds certain amount & damage taken may restore HP",
   "esnote": "20% mitigation after taking 5000 damage & 25% chance of healing 20-25% damage taken",
-  "evofrom": "11116",
   "omniskill1_cat": "Parameter Boost",
   "omniskill1_1_sp": "10",
   "omniskill1_1_desc": "30% boost to Def, max HP",
@@ -1652,117 +1858,5 @@
   "notes": "",
   "addcat": "Zelban, Hero of La Veda",
   "addcatname": "Amus2",
-  "bottomtext": "",
-  "stats": {
-    "_base": {
-      "atk": 2473,
-      "def": 2597,
-      "hp": 6380,
-      "rec": 2337
-    },
-    "_lord": {
-      "atk": 3063,
-      "def": 3246,
-      "hp": 8283,
-      "rec": 2908
-    },
-    "anima": {
-      "atk": 3063,
-      "def": 3246,
-      "hp max": 9773,
-      "hp min": 9028,
-      "rec max": 2759,
-      "rec min": 2461
-    },
-    "breaker": {
-      "atk max": 3510,
-      "atk min": 3212,
-      "def max": 3097,
-      "def min": 2799,
-      "hp": 8283,
-      "rec": 2908
-    },
-    "guardian": {
-      "atk": 3063,
-      "def max": 3693,
-      "def min": 3395,
-      "hp": 8283,
-      "rec max": 2908,
-      "rec min": 2610
-    },
-    "oracle": {
-      "atk": 3063,
-      "def max": 3246,
-      "def min": 2948,
-      "hp": 8283,
-      "rec max": 3504,
-      "rec min": 3206
-    }
-  },
-  "leader_skill": {
-    "desc": "60% boost to Def, max HP, slight damage reduction for 1 turn when damage dealt exceeds certain amount, probable 20% damage reduction & considerably boosts BC efficacy",
-    "effects": [
-      {
-        "def% buff": 60,
-        "hp% buff": 60,
-        "passive id": "1"
-      },
-      {
-        "buff": {
-          "buff turns (36)": "1",
-          "dmg reduction% buff": 20
-        },
-        "damage dealt threshold buff activation": 5000,
-        "passive id": "80"
-      },
-      {
-        "dmg reduction chance%": 20,
-        "dmg reduction%": 20,
-        "passive id": "14"
-      },
-      {
-        "bb gauge fill rate%": 50,
-        "passive id": "32"
-      }
-    ],
-    "id": "4387",
-    "name": "Red Justice Obsession"
-  },
-  "extra_skill": {
-    "desc": "Slight damage reduction for 1 turn when damage taken exceeds certain amount & damage taken may restore HP",
-    "effects": [
-      {
-        "buff": {
-          "buff turns (36)": "1",
-          "dmg reduction% buff": 20
-        },
-        "conditions": [],
-        "damage threshold buff activation": 5000,
-        "passive id": "78",
-        "passive target": "self"
-      },
-      {
-        "conditions": [],
-        "dmg% to hp% when attacked chance%": 25,
-        "dmg% to hp% when attacked high": 25,
-        "dmg% to hp% when attacked low": 20,
-        "passive id": "24",
-        "passive target": "self"
-      }
-    ],
-    "id": "40900",
-    "name": "Unified Body Enlightenment",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "528,150,174,475",
-  "unitDisplayDetailPosition_6z54rgb3": "-170,43,1320,923",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "0,190,700,489,1",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-165,-169,1300,909",
-  "unitDisplaySummonPosition_KC3Jk8Br": "0,190,700,489,1",
-  "unitDisplayHpPosition_3BpHN6VD": "1,86",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "50000",
-  "sellCaution": false,
-  "effectFrames": "23:11554:1,23:11032:1,23:1858:1,39:1918:1,68:100191:1,70:1918:1,75:1839:1,88:100191:1,88:1758:1"
+  "bottomtext": ""
 }

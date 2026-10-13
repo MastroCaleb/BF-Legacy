@@ -1,52 +1,63 @@
 {
   "id": "40144",
-  "unitName": "Thunder Punt Zeln",
-  "no": "438",
-  "element": "Thunder",
-  "rarity": "★★★★★",
-  "cost": "15",
-  "maxlv": "80",
-  "basexp": "15",
-  "gender": "M",
-  "ai": "3",
-  "animation_attack": "76",
-  "animation_idle": "44",
-  "animation_move": "6",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "description": "A fighter who trained at the Toltya Dojo. He continued his training in various places, but after hearing of Nemia's countless victories decided to seclude himself in the mountains. Zeln, whose sole desire was strength, saw his abilities grow beyond even his own limits. Having completed his training, Zeln returned to his dojo to find Nemia under attack from the gods. With a smile on his face he dashingly tried to save her, though what he got in return was her fist.",
-  "summon": "I'm not just fast, <br>these phantasmagoric moves<br>or the essence of my being!",
-  "fusion": "Surely I'm not the only<br>one who's grown stronger.<br>More! I need more power!",
-  "evolution": "Thunder isn't just fast, you know.<br>Allow me to show you how<br>I got my name!",
-  "hp_base": "3163",
-  "atk_base": "1067",
-  "def_base": "663",
-  "rec_base": "653",
-  "hp_lord": "4926",
-  "atk_lord": "1587",
-  "def_lord": "1033",
-  "rec_lord": "1115",
-  "hp_anima": "5518",
-  "rec_anima": "957",
-  "atk_breaker": "1745",
-  "def_breaker": "875",
-  "atk_guardian": "1429",
-  "def_guardian": "1191",
-  "hp_oracle": "4333",
-  "rec_oracle": "1273",
-  "hp_bonus": "500",
-  "atk_bonus": "140",
-  "def_bonus": "260",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "6",
-  "ls": "Dynasty Power",
-  "lsdescription": "20% boost to Atk Power of all types",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 1067,
+      "def": 663,
+      "hp": 3163,
+      "rec": 653
+    },
+    "_lord": {
+      "atk": 1587,
+      "def": 1033,
+      "hp": 4926,
+      "rec": 1115
+    },
+    "anima": {
+      "atk": 1587,
+      "def": 1033,
+      "hp max": 5716,
+      "hp min": 5321,
+      "rec max": 1036,
+      "rec min": 878
+    },
+    "breaker": {
+      "atk max": 1824,
+      "atk min": 1666,
+      "def max": 954,
+      "def min": 796,
+      "hp": 4926,
+      "rec": 1115
+    },
+    "guardian": {
+      "atk": 1587,
+      "def max": 1270,
+      "def min": 1112,
+      "hp": 4926,
+      "rec max": 1115,
+      "rec min": 957
+    },
+    "oracle": {
+      "atk": 1587,
+      "def max": 1033,
+      "def min": 875,
+      "hp": 4926,
+      "rec max": 1431,
+      "rec min": 1273
+    }
+  },
+  "leader_skill": {
+    "desc": "20% boost to Atk",
+    "effects": [
+      {
+        "atk% buff": 20,
+        "passive id": "1"
+      }
+    ],
+    "id": "1902",
+    "name": "Dynasty Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -281,91 +292,99 @@
     ],
     "name": "Lightning Kick"
   },
-  "bbdescription": "6 combo Thunder elemental attack on all enemies & probable Injury effect",
-  "bbtype": "Offense",
-  "bbhits": "6",
-  "bbaoe": "A",
-  "bbgauge": "20",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "40143",
-  "evointo": "40145",
-  "evomats1": "50354",
-  "evomats2": "40133",
-  "evomats3": "40191",
-  "evomats4": "60144",
-  "evomats5": "60144",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 1067,
-      "def": 663,
-      "hp": 3163,
-      "rec": 653
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1587,
-      "def": 1033,
-      "hp": 4926,
-      "rec": 1115
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1587,
-      "def": 1033,
-      "hp max": 5716,
-      "hp min": 5321,
-      "rec max": 1036,
-      "rec min": 878
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 1824,
-      "atk min": 1666,
-      "def max": 954,
-      "def min": 796,
-      "hp": 4926,
-      "rec": 1115
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 76
     },
-    "guardian": {
-      "atk": 1587,
-      "def max": 1270,
-      "def min": 1112,
-      "hp": 4926,
-      "rec max": 1115,
-      "rec min": 957
+    "idle": {
+      "total number of frames": 44
     },
-    "oracle": {
-      "atk": 1587,
-      "def max": 1033,
-      "def min": 875,
-      "hp": 4926,
-      "rec max": 1431,
-      "rec min": 1273
+    "move": {
+      "total number of frames": 6
     }
   },
-  "leader_skill": {
-    "desc": "20% boost to Atk",
-    "effects": [
-      {
-        "atk% buff": 20,
-        "passive id": "1"
-      }
+  "category": 40140,
+  "cost": "15",
+  "damage frames": {
+    "frame times": [
+      32,
+      35,
+      38,
+      41,
+      44,
+      47
     ],
-    "id": "1902",
-    "name": "Dynasty Power"
+    "hit dmg% distribution": [
+      16,
+      17,
+      17,
+      16,
+      17,
+      17
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 6
   },
-  "extra_skill": {},
+  "drop check count": 4,
+  "element": "thunder",
+  "exp_pattern": 15,
+  "gender": "male",
+  "getting type": "farmable",
+  "guide_id": 438,
+  "imp": {
+    "max atk": "140",
+    "max def": "260",
+    "max hp": "500",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "1477~1650",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Thunder Punt Zeln",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Thunder Punt Zeln",
+  "maxlv": "80",
+  "no": "438",
   "unitDisplayHomePosition_1W9CxaFK": "298,82,208,570",
   "unitDisplayDetailPosition_6z54rgb3": "142,111,689,670",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "96,234,495,397,0",
@@ -375,5 +394,104 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "26:400130:1,29:400071:1,34:300:1"
+  "effectFrames": "26:400130:1,29:400071:1,34:300:1",
+  "evofrom": "40143",
+  "evointo": "40145",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 2
+    }
+  ],
+  "basexp": "15",
+  "animation_attack": "76",
+  "animation_idle": "44",
+  "animation_move": "6",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "32, 35, 38, 41, 44, 47",
+  "normal_distribute": "16, 17, 17, 16, 17, 17",
+  "normal_totaldistr": "100",
+  "bb_frames": "32, 35, 38, 41, 44, 47",
+  "bb_distribute": "16, 17, 17, 16, 17, 17",
+  "bb_totaldistr": "100",
+  "description": "A fighter who trained at the Toltya Dojo. He continued his training in various places, but after hearing of Nemia's countless victories decided to seclude himself in the mountains. Zeln, whose sole desire was strength, saw his abilities grow beyond even his own limits. Having completed his training, Zeln returned to his dojo to find Nemia under attack from the gods. With a smile on his face he dashingly tried to save her, though what he got in return was her fist.",
+  "summon": "I'm not just fast, <br>these phantasmagoric moves<br>or the essence of my being!",
+  "fusion": "Surely I'm not the only<br>one who's grown stronger.<br>More! I need more power!",
+  "evolution": "Thunder isn't just fast, you know.<br>Allow me to show you how<br>I got my name!",
+  "hp_base": "3163",
+  "atk_base": "1067",
+  "def_base": "663",
+  "rec_base": "653",
+  "hp_lord": "4926",
+  "atk_lord": "1587",
+  "def_lord": "1033",
+  "rec_lord": "1115",
+  "hp_anima": "5519",
+  "rec_anima": "957",
+  "atk_breaker": "1745",
+  "def_breaker": "875",
+  "atk_guardian": "1429",
+  "def_guardian": "1191",
+  "rec_guardian": "1036",
+  "def_oracle": "954",
+  "hp_oracle": "4689",
+  "rec_oracle": "1352",
+  "hp_bonus": "500",
+  "atk_bonus": "140",
+  "def_bonus": "260",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "6",
+  "normaldc": "24",
+  "ls": "Dynasty Power",
+  "lsdescription": "20% boost to Atk Power of all types",
+  "lstype": "Attack",
+  "bbdescription": "6 combo Thunder elemental attack on all enemies & probable Injury effect",
+  "bbnote": "55% chance",
+  "bbtype": "Offense",
+  "bbhits": "6",
+  "bbaoe": "A",
+  "bbgauge": "20",
+  "bbdc": "6",
+  "bbmultiplier": "120",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "40133",
+  "evomats3": "40191",
+  "evomats4": "60144",
+  "evomats5": "60144"
 }

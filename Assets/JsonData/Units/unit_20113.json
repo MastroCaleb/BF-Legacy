@@ -1,62 +1,63 @@
 {
   "id": "20113",
-  "unitName": "Loch Ness",
-  "no": "139",
-  "element": "Water",
-  "rarity": "★★★★",
-  "cost": "8",
-  "maxlv": "60",
-  "basexp": "21",
-  "gender": "N",
-  "ai": "1",
-  "animation_attack": "249",
-  "animation_idle": "52",
-  "animation_move": "52",
-  "movespeed_attack": "8",
-  "movespeed_skill": "8",
-  "speedtype_attack": "1",
-  "speedtype_skill": "1",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "48, 54, 60, 66",
-  "normal_distribute": "25, 25, 25, 25",
-  "normal_totaldistr": "100",
-  "bb_frames": "48, 63, 78, 93, 108",
-  "bb_distribute": "20, 20, 20, 20, 20",
-  "bb_totaldistr": "100",
-  "description": "A giant dragon strongest among the sea drakes and deathly feared by man. Extremely intelligent, it will not attack others as long as it is unharmed. Its abilities far surpass a normal sea drake, to the extent that storms rise when it appears. Loch Ness, leader of the proud sea drakes, is an impressive sight, and some sailors worship it.",
-  "summon": "You, he who subdued me.<br>Be not insolent.<br>Forget not the beauty of virtue.",
-  "fusion": "With just this power,<br>I rule the sea.",
-  "evolution": "With your help I became leader of the sea drakes.<br>I will use my abilities for you.",
-  "hp_base": "2646",
-  "atk_base": "637",
-  "def_base": "985",
-  "rec_base": "462",
-  "hp_lord": "4125",
-  "atk_lord": "970",
-  "def_lord": "1354",
-  "rec_lord": "783",
-  "hp_anima": "4568",
-  "rec_anima": "665",
-  "atk_breaker": "1088",
-  "def_breaker": "1236",
-  "atk_guardian": "852",
-  "def_guardian": "1472",
-  "rec_guardian": "724",
-  "def_oracle": "1295",
-  "hp_oracle": "3948",
-  "rec_oracle": "960",
-  "hp_bonus": "600",
-  "atk_bonus": "120",
-  "def_bonus": "120",
-  "rec_bonus": "120",
-  "lordonly": "",
-  "combo_hits": "4",
-  "normaldc": "8",
-  "ls": "Ares' Light",
-  "lsdescription": "Small boost in the BB Gauge fill rate",
-  "lsnote": "20% boost",
-  "lstype": "Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 637,
+      "def": 985,
+      "hp": 2646,
+      "rec": 462
+    },
+    "_lord": {
+      "atk": 970,
+      "def": 1354,
+      "hp": 4125,
+      "rec": 783
+    },
+    "anima": {
+      "atk": 970,
+      "def": 1354,
+      "hp max": 4715,
+      "hp min": 4420,
+      "rec max": 724,
+      "rec min": 606
+    },
+    "breaker": {
+      "atk max": 1147,
+      "atk min": 1029,
+      "def max": 1295,
+      "def min": 1177,
+      "hp": 4125,
+      "rec": 783
+    },
+    "guardian": {
+      "atk": 970,
+      "def max": 1531,
+      "def min": 1413,
+      "hp": 4125,
+      "rec max": 783,
+      "rec min": 665
+    },
+    "oracle": {
+      "atk": 970,
+      "def max": 1354,
+      "def min": 1236,
+      "hp": 4125,
+      "rec max": 1019,
+      "rec min": 901
+    }
+  },
+  "leader_skill": {
+    "desc": "Small boost in the BB Gauge fill rate",
+    "effects": [
+      {
+        "bb gauge fill rate%": 20,
+        "passive id": "32"
+      }
+    ],
+    "id": "1800",
+    "name": "Ares' Light"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -217,94 +218,89 @@
     ],
     "name": "Maelstrom"
   },
-  "bbdescription": "5 combo Water elemental attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "5",
-  "bbaoe": "A",
-  "bbgauge": "20",
-  "bbdc": "5",
-  "bbmultiplier": "95",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "20112",
-  "evointo": "20114",
-  "evomats1": "20133",
-  "evomats2": "60143",
-  "evomats3": "60142",
-  "evomats4": "20131",
-  "evomats5": "20130",
-  "evoitem": "",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 637,
-      "def": 985,
-      "hp": 2646,
-      "rec": 462
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "party"
     },
-    "_lord": {
-      "atk": 970,
-      "def": 1354,
-      "hp": 4125,
-      "rec": 783
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 970,
-      "def": 1354,
-      "hp max": 4715,
-      "hp min": 4420,
-      "rec max": 724,
-      "rec min": 606
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 249
     },
-    "breaker": {
-      "atk max": 1147,
-      "atk min": 1029,
-      "def max": 1295,
-      "def min": 1177,
-      "hp": 4125,
-      "rec": 783
+    "idle": {
+      "total number of frames": 52
     },
-    "guardian": {
-      "atk": 970,
-      "def max": 1531,
-      "def min": 1413,
-      "hp": 4125,
-      "rec max": 783,
-      "rec min": 665
-    },
-    "oracle": {
-      "atk": 970,
-      "def max": 1354,
-      "def min": 1236,
-      "hp": 4125,
-      "rec max": 1019,
-      "rec min": 901
+    "move": {
+      "total number of frames": 52
     }
   },
-  "leader_skill": {
-    "desc": "Small boost in the BB Gauge fill rate",
-    "effects": [
-      {
-        "bb gauge fill rate%": 20,
-        "passive id": "32"
-      }
+  "category": 20110,
+  "cost": "8",
+  "damage frames": {
+    "frame times": [
+      48,
+      54,
+      60,
+      66
     ],
-    "id": "1800",
-    "name": "Ares' Light"
+    "hit dmg% distribution": [
+      25,
+      25,
+      25,
+      25
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 4
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "water",
+  "exp_pattern": 20,
+  "gender": "other",
+  "getting type": "rare summon",
+  "guide_id": 139,
+  "imp": {
+    "max atk": "120",
+    "max def": "120",
+    "max hp": "600",
+    "max rec": "120"
+  },
+  "kind": "normal",
+  "lord damage range": "903~1008",
+  "movement": {
+    "attack": {
+      "move speed": 8,
+      "move speed type": "1",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 8,
+      "move speed type": "1",
+      "move type": "3"
+    }
+  },
+  "name": "Loch Ness",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Loch Ness",
+  "maxlv": "60",
+  "no": "139",
   "unitDisplayHomePosition_1W9CxaFK": "227,49,200,544",
   "unitDisplayDetailPosition_6z54rgb3": "51,124,850,722",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "33,232,550,466,1",
@@ -314,5 +310,110 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "23:190:1"
+  "effectFrames": "23:190:1",
+  "evofrom": "20112",
+  "evointo": "20114",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "20133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60142",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20131",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20130",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "249",
+  "animation_idle": "52",
+  "animation_move": "52",
+  "movespeed_attack": "8",
+  "movespeed_skill": "8",
+  "speedtype_attack": "1",
+  "speedtype_skill": "1",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "48, 54, 60, 66",
+  "normal_distribute": "25, 25, 25, 25",
+  "normal_totaldistr": "100",
+  "bb_frames": "48, 63, 78, 93, 108",
+  "bb_distribute": "20, 20, 20, 20, 20",
+  "bb_totaldistr": "100",
+  "description": "A giant dragon strongest among the sea drakes and deathly feared by man. Extremely intelligent, it will not attack others as long as it is unharmed. Its abilities far surpass a normal sea drake, to the extent that storms rise when it appears. Loch Ness, leader of the proud sea drakes, is an impressive sight, and some sailors worship it.",
+  "summon": "You, he who subdued me.<br>Be not insolent.<br>Forget not the beauty of virtue.",
+  "fusion": "With just this power,<br>I rule the sea.",
+  "evolution": "With your help I became leader of the sea drakes.<br>I will use my abilities for you.",
+  "hp_base": "2646",
+  "atk_base": "637",
+  "def_base": "985",
+  "rec_base": "462",
+  "hp_lord": "4125",
+  "atk_lord": "970",
+  "def_lord": "1354",
+  "rec_lord": "783",
+  "hp_anima": "4568",
+  "rec_anima": "665",
+  "atk_breaker": "1088",
+  "def_breaker": "1236",
+  "atk_guardian": "852",
+  "def_guardian": "1472",
+  "rec_guardian": "724",
+  "def_oracle": "1295",
+  "hp_oracle": "3948",
+  "rec_oracle": "960",
+  "hp_bonus": "600",
+  "atk_bonus": "120",
+  "def_bonus": "120",
+  "rec_bonus": "120",
+  "lordonly": "",
+  "combo_hits": "4",
+  "normaldc": "8",
+  "ls": "Ares' Light",
+  "lsdescription": "Small boost in the BB Gauge fill rate",
+  "lsnote": "20% boost",
+  "lstype": "Brave Burst",
+  "bbdescription": "5 combo Water elemental attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "5",
+  "bbaoe": "A",
+  "bbgauge": "20",
+  "bbdc": "5",
+  "bbmultiplier": "95",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "20133",
+  "evomats2": "60143",
+  "evomats3": "60142",
+  "evomats4": "20131",
+  "evomats5": "20130",
+  "evoitem": ""
 }

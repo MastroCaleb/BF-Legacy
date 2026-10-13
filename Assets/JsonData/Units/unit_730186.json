@@ -1,65 +1,102 @@
 {
   "id": "730186",
-  "unitName": "Taurus of Fate (EU)",
-  "disam": "Taurus",
-  "altname": "Taurus of Fate",
-  "idalt": "",
-  "has_altart": "",
-  "doenter": "true",
-  "no": "7142",
-  "element": "Earth",
-  "rarity": "★★★★★★★",
-  "cost": "48",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "3",
-  "animation_attack": "",
-  "animation_idle": "42",
-  "animation_move": "42",
-  "movespeed_attack": "4",
-  "speedtype_attack": "3",
-  "movetype_attack": "3",
-  "movespeed_skill": "4",
-  "speedtype_skill": "3",
-  "movetype_skill": "3",
-  "description": "Arbez leads an exemplary life, the champion of his world, fighting alongside the oppressed. One day, as he passed through a quiet village, celebrating the return of Taurus to the skies, he felt the presence of somebody he thought had disappeared a long time ago, but before he had time to shout out, his mind was filled with pictures and details about the end of the world. He knew he had to act, the Corruption was tainting one world after another, and Llewxam, still alive, was looking for champions who were able to stop it. He left in quest of those who would be compatible with the powers of the constellation portal Llewxam used.",
-  "summon": "This world needs us. Help me save them, summoner!",
-  "fusion": "This power lets me protect those who are worthy of it.",
-  "evolution": "",
-  "hp_base": "5247",
-  "atk_base": "2181",
-  "def_base": "1872",
-  "rec_base": "1711",
-  "hp_lord": "6821",
-  "atk_lord": "2704",
-  "def_lord": "2321",
-  "rec_lord": "2105",
-  "hp_anima": "7713",
-  "rec_anima": "1867",
-  "atk_breaker": "2942",
-  "def_breaker": "2083",
-  "def_guardian": "2559",
-  "rec_guardian": "2105",
-  "def_oracle": "2321",
-  "rec_oracle": "2343",
-  "hp_bonus": "1400",
-  "atk_bonus": "660",
-  "def_bonus": "620",
-  "rec_bonus": "560",
-  "lordonly": "",
-  "normal_frames": "55, 57, 59, 61, 63, 65, 67, 150, 152, 154, 156, 158, 160",
-  "normal_distribute": "10, 10, 10, 5, 5, 5, 5, 10, 10, 10, 10, 5, 5",
-  "normal_totaldistr": "100",
-  "combo_hits": "13",
-  "normaldc": "39",
-  "ls": "Honour of the Brave",
-  "lsdescription": "Boost Spark Dmg​ (75%) & Boosts Atk, Def and Rec by 50% when BB gauge is >50% & Boosts critical Dmg (150%) when dealt damage has exceeded certain amount (10 000) for 2 turns",
-  "lsnote": "",
-  "es": "Bull’s Dignity",
-  "esdescription": "Boosts Atk, Def and Rec by 50% when BB gauge is full & Boosts own Spark Dmg (50%).",
-  "esitem": "",
-  "esnote": "",
+  "stats": {
+    "_base": {
+      "atk": 2181,
+      "def": 1872,
+      "hp": 5247,
+      "rec": 1711
+    },
+    "_lord": {
+      "atk": 2704,
+      "def": 2321,
+      "hp": 6821,
+      "rec": 2105
+    },
+    "anima": {
+      "atk": 2704,
+      "def": 2321,
+      "hp max": 8011,
+      "hp min": 7416,
+      "rec max": 1986,
+      "rec min": 1748
+    },
+    "breaker": {
+      "atk max": 3061,
+      "atk min": 2823,
+      "def max": 2202,
+      "def min": 1964,
+      "hp": 6821,
+      "rec": 2105
+    },
+    "guardian": {
+      "atk max": 2585,
+      "atk min": 2347,
+      "def max": 2678,
+      "def min": 2440,
+      "hp": 6821,
+      "rec": 2105
+    },
+    "oracle": {
+      "atk": 2704,
+      "def": 2321,
+      "hp max": 6226,
+      "hp min": 5631,
+      "rec max": 2462,
+      "rec min": 2224
+    }
+  },
+  "leader_skill": {
+    "desc": "Boost Spark Dmg​ (75%) & Boosts Atk, Def and Rec by 50% when BB gauge is >50% & Boosts critical Dmg (150%) when dealt damage has exceeded certain amount (10 000) for 2 turns",
+    "effects": [
+      {
+        "damage% for spark": 75,
+        "passive id": "31"
+      },
+      {
+        "atk% buff": 50,
+        "bb gauge above % buff requirement": 50,
+        "def% buff": 50,
+        "passive id": "30",
+        "rec% buff": 50
+      },
+      {
+        "buff": {
+          "buff turns (84)": "2",
+          "unknown buff id": "84",
+          "unknown buff params": "1.5"
+        },
+        "damage dealt threshold buff activation": 10000,
+        "passive id": "80"
+      }
+    ],
+    "id": "730186",
+    "name": "Honour of the Brave"
+  },
+  "extra_skill": {
+    "desc": "Boosts Atk, Def and Rec by 50% when BB gauge is full & Boosts own Spark Dmg (50%).",
+    "effects": [
+      {
+        "atk% buff": 50,
+        "bb gauge above % buff requirement": 100,
+        "conditions": [],
+        "def% buff": 50,
+        "passive id": "30",
+        "passive target": "self",
+        "rec% buff": 50
+      },
+      {
+        "conditions": [],
+        "damage% for spark": 50,
+        "passive id": "31",
+        "passive target": "self"
+      }
+    ],
+    "id": "730186",
+    "name": "Bull’s Dignity",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -450,31 +487,6 @@
     ],
     "name": "Horns of Courage"
   },
-  "bbdescription": "13 combo Dark and Earth attack on all enemies & Adds Def ignoring effect to attack for 2 turns & Fills own BB gauge (25 BC)",
-  "bbnote": "{{UnitBuffList",
-  "buff_1_proc": "29",
-  "buff_1_potency": "2000% damage modifier",
-  "buff_1_duration": "—",
-  "buff_1_target": "All enemies",
-  "buff_2_proc": "19",
-  "buff_2_potency": "Boosts BB gauge by 99 BC each turn",
-  "buff_2_duration": "3 turns",
-  "buff_2_target": "All allies",
-  "buff_3_proc": "45",
-  "buff_3_potency": "500% boost to BB Atk",
-  "buff_3_duration": "3 turns",
-  "buff_3_target": "All allies",
-  "bbtype": "Offense",
-  "bbgauge": "25",
-  "bb_frames": "55, 57, 59, 61, 63, 65, 67, 150, 152, 154, 156, 158, 160",
-  "bb_distribute": "10, 10, 10, 5, 5, 5, 5, 10, 10, 10, 10, 5, 5",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "3",
-  "bbhits": "13",
-  "bbaoe": "A",
-  "bbdc": "13",
-  "bbmultiplier": "320",
-  "bb_hpscale": "",
   "sbb": {
     "damage frames": [
       {
@@ -813,19 +825,6 @@
     ],
     "name": "Lenient Punishment"
   },
-  "sbbdescription": "2 combo Earth attack on single enemy (consecutive uses (4 max) boosts damage (300%)) & Fills own BB gauge (100%) & Boosts OD gauge (6%)",
-  "sbbnote": "{{UnitBuffList",
-  "sbbtype": "Offense",
-  "sbbgauge": "40",
-  "sbb_frames": "55, 150",
-  "sbb_distribute": "50, 50",
-  "sbb_totaldistr": "100",
-  "sbb_effectdelay": "3",
-  "sbbhits": "2",
-  "sbbaoe": "1",
-  "sbbdc": "22",
-  "sbbmultiplier": "300",
-  "sbb_hpscale": "",
   "ubb": {
     "damage frames": [
       {
@@ -909,6 +908,213 @@
     ],
     "name": "Mercy Charge"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": "missing data",
+    "idle": {
+      "total number of frames": 42
+    },
+    "move": {
+      "total number of frames": 42
+    }
+  },
+  "cost": "48",
+  "damage frames": {
+    "frame times": [
+      55,
+      57,
+      59,
+      61,
+      63,
+      65,
+      67,
+      150,
+      152,
+      154,
+      156,
+      158,
+      160
+    ],
+    "hit dmg% distribution": [
+      10,
+      10,
+      10,
+      5,
+      5,
+      5,
+      5,
+      10,
+      10,
+      10,
+      10,
+      5,
+      5
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 13
+  },
+  "drop check count": 3,
+  "element": "earth",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 7142,
+  "imp": {
+    "max atk": "660",
+    "max def": "620",
+    "max hp": "1400",
+    "max rec": "560"
+  },
+  "kind": "normal",
+  "lord damage range": "2517~2812",
+  "movement": {
+    "attack": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    }
+  },
+  "name": "Taurus of Fate",
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Taurus of Fate",
+  "maxlv": "120",
+  "no": "7142",
+  "unitDisplayHomePosition_1W9CxaFK": null,
+  "unitDisplayDetailPosition_6z54rgb3": null,
+  "unitDisplayConfirmImagePosition_MYK1fq6c": null,
+  "unitDisplayCutInImagePosition_7hLR6pDN": null,
+  "unitDisplaySummonPosition_KC3Jk8Br": null,
+  "unitDisplayHpPosition_3BpHN6VD": null,
+  "unitDisplayCursorPosition": null,
+  "sellPrice": "",
+  "sellCaution": false,
+  "effectFrames": "",
+  "evofrom": "",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "disam": "Taurus",
+  "altname": "Taurus of Fate",
+  "idalt": "",
+  "has_altart": "",
+  "doenter": "true",
+  "basexp": "21",
+  "animation_attack": "",
+  "animation_idle": "42",
+  "animation_move": "42",
+  "movespeed_attack": "4",
+  "speedtype_attack": "3",
+  "movetype_attack": "3",
+  "movespeed_skill": "4",
+  "speedtype_skill": "3",
+  "movetype_skill": "3",
+  "description": "Arbez leads an exemplary life, the champion of his world, fighting alongside the oppressed. One day, as he passed through a quiet village, celebrating the return of Taurus to the skies, he felt the presence of somebody he thought had disappeared a long time ago, but before he had time to shout out, his mind was filled with pictures and details about the end of the world. He knew he had to act, the Corruption was tainting one world after another, and Llewxam, still alive, was looking for champions who were able to stop it. He left in quest of those who would be compatible with the powers of the constellation portal Llewxam used.",
+  "summon": "This world needs us. Help me save them, summoner!",
+  "fusion": "This power lets me protect those who are worthy of it.",
+  "evolution": "",
+  "hp_base": "5247",
+  "atk_base": "2181",
+  "def_base": "1872",
+  "rec_base": "1711",
+  "hp_lord": "6821",
+  "atk_lord": "2704",
+  "def_lord": "2321",
+  "rec_lord": "2105",
+  "hp_anima": "7713",
+  "rec_anima": "1867",
+  "atk_breaker": "2942",
+  "def_breaker": "2083",
+  "def_guardian": "2559",
+  "rec_guardian": "2105",
+  "def_oracle": "2321",
+  "rec_oracle": "2343",
+  "hp_bonus": "1400",
+  "atk_bonus": "660",
+  "def_bonus": "620",
+  "rec_bonus": "560",
+  "lordonly": "",
+  "normal_frames": "55, 57, 59, 61, 63, 65, 67, 150, 152, 154, 156, 158, 160",
+  "normal_distribute": "10, 10, 10, 5, 5, 5, 5, 10, 10, 10, 10, 5, 5",
+  "normal_totaldistr": "100",
+  "combo_hits": "13",
+  "normaldc": "39",
+  "ls": "Honour of the Brave",
+  "lsdescription": "Boost Spark Dmg​ (75%) & Boosts Atk, Def and Rec by 50% when BB gauge is >50% & Boosts critical Dmg (150%) when dealt damage has exceeded certain amount (10 000) for 2 turns",
+  "lsnote": "",
+  "es": "Bull’s Dignity",
+  "esdescription": "Boosts Atk, Def and Rec by 50% when BB gauge is full & Boosts own Spark Dmg (50%).",
+  "esitem": "",
+  "esnote": "",
+  "bbdescription": "13 combo Dark and Earth attack on all enemies & Adds Def ignoring effect to attack for 2 turns & Fills own BB gauge (25 BC)",
+  "bbnote": "{{UnitBuffList",
+  "buff_1_proc": "29",
+  "buff_1_potency": "2000% damage modifier",
+  "buff_1_duration": "—",
+  "buff_1_target": "All enemies",
+  "buff_2_proc": "19",
+  "buff_2_potency": "Boosts BB gauge by 99 BC each turn",
+  "buff_2_duration": "3 turns",
+  "buff_2_target": "All allies",
+  "buff_3_proc": "45",
+  "buff_3_potency": "500% boost to BB Atk",
+  "buff_3_duration": "3 turns",
+  "buff_3_target": "All allies",
+  "bbtype": "Offense",
+  "bbgauge": "25",
+  "bb_frames": "55, 57, 59, 61, 63, 65, 67, 150, 152, 154, 156, 158, 160",
+  "bb_distribute": "10, 10, 10, 5, 5, 5, 5, 10, 10, 10, 10, 5, 5",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "3",
+  "bbhits": "13",
+  "bbaoe": "A",
+  "bbdc": "13",
+  "bbmultiplier": "320",
+  "bb_hpscale": "",
+  "sbbdescription": "2 combo Earth attack on single enemy (consecutive uses (4 max) boosts damage (300%)) & Fills own BB gauge (100%) & Boosts OD gauge (6%)",
+  "sbbnote": "{{UnitBuffList",
+  "sbbtype": "Offense",
+  "sbbgauge": "40",
+  "sbb_frames": "55, 150",
+  "sbb_distribute": "50, 50",
+  "sbb_totaldistr": "100",
+  "sbb_effectdelay": "3",
+  "sbbhits": "2",
+  "sbbaoe": "1",
+  "sbbdc": "22",
+  "sbbmultiplier": "300",
+  "sbb_hpscale": "",
   "ubbdescription": "2 combo Dark and Earth attack on all enemies & Fills all allies BB gauge for 3 turns & Boosts to BB Atk (500%)",
   "ubbnote": "{{UnitBuffList",
   "ubbtype": "Offense",
@@ -926,112 +1132,5 @@
   "notes": "",
   "incorrectinfo": "",
   "addcat": "",
-  "addcatname": "",
-  "stats": {
-    "_base": {
-      "atk": 2181,
-      "def": 1872,
-      "hp": 5247,
-      "rec": 1711
-    },
-    "_lord": {
-      "atk": 2704,
-      "def": 2321,
-      "hp": 6821,
-      "rec": 2105
-    },
-    "anima": {
-      "atk": 2704,
-      "def": 2321,
-      "hp max": 8011,
-      "hp min": 7416,
-      "rec max": 1986,
-      "rec min": 1748
-    },
-    "breaker": {
-      "atk max": 3061,
-      "atk min": 2823,
-      "def max": 2202,
-      "def min": 1964,
-      "hp": 6821,
-      "rec": 2105
-    },
-    "guardian": {
-      "atk max": 2585,
-      "atk min": 2347,
-      "def max": 2678,
-      "def min": 2440,
-      "hp": 6821,
-      "rec": 2105
-    },
-    "oracle": {
-      "atk": 2704,
-      "def": 2321,
-      "hp max": 6226,
-      "hp min": 5631,
-      "rec max": 2462,
-      "rec min": 2224
-    }
-  },
-  "leader_skill": {
-    "desc": "Boost Spark Dmg​ (75%) & Boosts Atk, Def and Rec by 50% when BB gauge is >50% & Boosts critical Dmg (150%) when dealt damage has exceeded certain amount (10 000) for 2 turns",
-    "effects": [
-      {
-        "damage% for spark": 75,
-        "passive id": "31"
-      },
-      {
-        "atk% buff": 50,
-        "bb gauge above % buff requirement": 50,
-        "def% buff": 50,
-        "passive id": "30",
-        "rec% buff": 50
-      },
-      {
-        "buff": {
-          "buff turns (84)": "2",
-          "unknown buff id": "84",
-          "unknown buff params": "1.5"
-        },
-        "damage dealt threshold buff activation": 10000,
-        "passive id": "80"
-      }
-    ],
-    "id": "730186",
-    "name": "Honour of the Brave"
-  },
-  "extra_skill": {
-    "desc": "Boosts Atk, Def and Rec by 50% when BB gauge is full & Boosts own Spark Dmg (50%).",
-    "effects": [
-      {
-        "atk% buff": 50,
-        "bb gauge above % buff requirement": 100,
-        "conditions": [],
-        "def% buff": 50,
-        "passive id": "30",
-        "passive target": "self",
-        "rec% buff": 50
-      },
-      {
-        "conditions": [],
-        "damage% for spark": 50,
-        "passive id": "31",
-        "passive target": "self"
-      }
-    ],
-    "id": "730186",
-    "name": "Bull’s Dignity",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": null,
-  "unitDisplayDetailPosition_6z54rgb3": null,
-  "unitDisplayConfirmImagePosition_MYK1fq6c": null,
-  "unitDisplayCutInImagePosition_7hLR6pDN": null,
-  "unitDisplaySummonPosition_KC3Jk8Br": null,
-  "unitDisplayHpPosition_3BpHN6VD": null,
-  "unitDisplayCursorPosition": null,
-  "sellPrice": "",
-  "sellCaution": false,
-  "effectFrames": ""
+  "addcatname": ""
 }

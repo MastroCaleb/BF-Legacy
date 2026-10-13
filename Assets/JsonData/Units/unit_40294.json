@@ -1,59 +1,63 @@
 {
   "id": "40294",
-  "unitName": "Fast God Lucana",
-  "no": "650",
-  "element": "Thunder",
-  "rarity": "★★★★★",
-  "cost": "16",
-  "maxlv": "80",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "139",
-  "animation_idle": "52",
-  "animation_move": "52",
-  "movespeed_attack": "4",
-  "movespeed_skill": "4",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "70, 78, 86, 94, 102, 110, 118, 126",
-  "normal_distribute": "12, 12, 12, 12, 12, 12, 14, 14",
-  "normal_totaldistr": "100",
-  "description": "A Summoner who led many civilians to El Gaia during the last stages of the war with the gods. After receiving an oracle, she honed her skills alongside childhood friends Reed and Aneil in order to protect the helpless people of her hometown, who were fleeing towards El Gaia. Wielding the power of Thunder, it is said that she was the fastest in aiding people. Shortly receiving her late comrades with a smile, she proceeded to wave her staff, casting violent Thunder against the god army.",
-  "summon": "I can't hear the gods anymore.<br>But what I can hear<br>are the voices of the people crying in pain!",
-  "fusion": "We need power to help those in need.<br>That's why I wanna keep getting stronger!",
-  "evolution": "The voices of the gods<br>changed me back then.<br>Now your will has made me evolve...<br>Imagine that.",
-  "hp_base": "3564",
-  "atk_base": "1125",
-  "def_base": "1089",
-  "rec_base": "1340",
-  "hp_lord": "5106",
-  "atk_lord": "1495",
-  "def_lord": "1440",
-  "rec_lord": "1791",
-  "hp_anima": "5699",
-  "rec_anima": "1633",
-  "atk_breaker": "1653",
-  "def_breaker": "1282",
-  "atk_guardian": "1337",
-  "def_guardian": "1598",
-  "rec_guardian": "1712",
-  "def_oracle": "1361",
-  "hp_oracle": "4869",
-  "rec_oracle": "2028",
-  "hp_bonus": "500",
-  "atk_bonus": "140",
-  "def_bonus": "260",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "8",
-  "normaldc": "16",
-  "ls": "High Ruler's Magic",
-  "lsdescription": "Reduction in BB gauge required for BB",
-  "lsnote": "15% reduction",
-  "lstype": "Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 1125,
+      "def": 1089,
+      "hp": 3564,
+      "rec": 1340
+    },
+    "_lord": {
+      "atk": 1495,
+      "def": 1440,
+      "hp": 5106,
+      "rec": 1791
+    },
+    "anima": {
+      "atk": 1495,
+      "def": 1440,
+      "hp max": 5896,
+      "hp min": 5501,
+      "rec max": 1712,
+      "rec min": 1554
+    },
+    "breaker": {
+      "atk max": 1732,
+      "atk min": 1574,
+      "def max": 1361,
+      "def min": 1203,
+      "hp": 5106,
+      "rec": 1791
+    },
+    "guardian": {
+      "atk": 1495,
+      "def max": 1677,
+      "def min": 1519,
+      "hp": 5106,
+      "rec max": 1791,
+      "rec min": 1633
+    },
+    "oracle": {
+      "atk": 1495,
+      "def max": 1440,
+      "def min": 1282,
+      "hp": 5106,
+      "rec max": 2107,
+      "rec min": 1949
+    }
+  },
+  "leader_skill": {
+    "desc": "Reduction in BB gauge required for BB",
+    "effects": [
+      {
+        "passive id": "48",
+        "reduced bb bc cost%": 20
+      }
+    ],
+    "id": "4901",
+    "name": "High Ruler's Magic"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -338,93 +342,97 @@
     ],
     "name": "Rising Spirit"
   },
-  "bbdescription": "Greatly recovers HP for all allies & boosts Atk, Def, and Rec for all allies for 3 turns",
-  "bbnote": "Heals (1460~1760 + 22.5% of healer Rec) HP, 30% boost to the parameters",
-  "bbtype": "Support",
-  "bbhits": "0",
-  "bbaoe": "0",
-  "bbgauge": "25",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "40293",
-  "evointo": "40295",
-  "evomats1": "50354",
-  "evomats2": "40133",
-  "evomats3": "40191",
-  "evomats4": "40132",
-  "evomats5": "60224",
-  "evoitem": "",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 1125,
-      "def": 1089,
-      "hp": 3564,
-      "rec": 1340
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1495,
-      "def": 1440,
-      "hp": 5106,
-      "rec": 1791
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1495,
-      "def": 1440,
-      "hp max": 5896,
-      "hp min": 5501,
-      "rec max": 1712,
-      "rec min": 1554
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 139
     },
-    "breaker": {
-      "atk max": 1732,
-      "atk min": 1574,
-      "def max": 1361,
-      "def min": 1203,
-      "hp": 5106,
-      "rec": 1791
+    "idle": {
+      "total number of frames": 52
     },
-    "guardian": {
-      "atk": 1495,
-      "def max": 1677,
-      "def min": 1519,
-      "hp": 5106,
-      "rec max": 1791,
-      "rec min": 1633
-    },
-    "oracle": {
-      "atk": 1495,
-      "def max": 1440,
-      "def min": 1282,
-      "hp": 5106,
-      "rec max": 2107,
-      "rec min": 1949
+    "move": {
+      "total number of frames": 52
     }
   },
-  "leader_skill": {
-    "desc": "Reduction in BB gauge required for BB",
-    "effects": [
-      {
-        "passive id": "48",
-        "reduced bb bc cost%": 20
-      }
+  "category": 40290,
+  "cost": "16",
+  "damage frames": {
+    "frame times": [
+      70,
+      78,
+      86,
+      94,
+      102,
+      110,
+      118,
+      126
     ],
-    "id": "4901",
-    "name": "High Ruler's Magic"
+    "hit dmg% distribution": [
+      12,
+      12,
+      12,
+      12,
+      12,
+      12,
+      14,
+      14
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 8
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "thunder",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "farmable",
+  "guide_id": 650,
+  "imp": {
+    "max atk": "140",
+    "max def": "260",
+    "max hp": "500",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "1391~1554",
+  "movement": {
+    "attack": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    }
+  },
+  "name": "Fast God Lucana",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Fast God Lucana",
+  "maxlv": "80",
+  "no": "650",
   "unitDisplayHomePosition_1W9CxaFK": "515,72,210,573",
   "unitDisplayDetailPosition_6z54rgb3": "-105,100,938,678",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "157,355,319,277,0",
@@ -434,5 +442,106 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "66:400152:1,68:200121:1,70:100124:1,78:400152:1,85:200121:1,95:100124:1,102:200032:1,105:200121:1"
+  "effectFrames": "66:400152:1,68:200121:1,70:100124:1,78:400152:1,85:200121:1,95:100124:1,102:200032:1,105:200121:1",
+  "evofrom": "40293",
+  "evointo": "40295",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "139",
+  "animation_idle": "52",
+  "animation_move": "52",
+  "movespeed_attack": "4",
+  "movespeed_skill": "4",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "70, 78, 86, 94, 102, 110, 118, 126",
+  "normal_distribute": "12, 12, 12, 12, 12, 12, 14, 14",
+  "normal_totaldistr": "100",
+  "description": "A Summoner who led many civilians to El Gaia during the last stages of the war with the gods. After receiving an oracle, she honed her skills alongside childhood friends Reed and Aneil in order to protect the helpless people of her hometown, who were fleeing towards El Gaia. Wielding the power of Thunder, it is said that she was the fastest in aiding people. Shortly receiving her late comrades with a smile, she proceeded to wave her staff, casting violent Thunder against the god army.",
+  "summon": "I can't hear the gods anymore.<br>But what I can hear<br>are the voices of the people crying in pain!",
+  "fusion": "We need power to help those in need.<br>That's why I wanna keep getting stronger!",
+  "evolution": "The voices of the gods<br>changed me back then.<br>Now your will has made me evolve...<br>Imagine that.",
+  "hp_base": "3564",
+  "atk_base": "1125",
+  "def_base": "1089",
+  "rec_base": "1340",
+  "hp_lord": "5106",
+  "atk_lord": "1495",
+  "def_lord": "1440",
+  "rec_lord": "1791",
+  "hp_anima": "5699",
+  "rec_anima": "1633",
+  "atk_breaker": "1653",
+  "def_breaker": "1282",
+  "atk_guardian": "1337",
+  "def_guardian": "1598",
+  "rec_guardian": "1712",
+  "def_oracle": "1361",
+  "hp_oracle": "4869",
+  "rec_oracle": "2028",
+  "hp_bonus": "500",
+  "atk_bonus": "140",
+  "def_bonus": "260",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "8",
+  "normaldc": "16",
+  "ls": "High Ruler's Magic",
+  "lsdescription": "Reduction in BB gauge required for BB",
+  "lsnote": "15% reduction",
+  "lstype": "Brave Burst",
+  "bbdescription": "Greatly recovers HP for all allies & boosts Atk, Def, and Rec for all allies for 3 turns",
+  "bbnote": "Heals (1460~1760 + 22.5% of healer Rec) HP, 30% boost to the parameters",
+  "bbtype": "Support",
+  "bbhits": "0",
+  "bbaoe": "0",
+  "bbgauge": "25",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "40133",
+  "evomats3": "40191",
+  "evomats4": "40132",
+  "evomats5": "60224",
+  "evoitem": ""
 }

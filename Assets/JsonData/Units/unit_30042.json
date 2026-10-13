@@ -1,58 +1,63 @@
 {
   "id": "30042",
-  "unitName": "Time Lord Claris",
-  "no": "283",
-  "element": "Earth",
-  "rarity": "★★★",
-  "cost": "6",
-  "maxlv": "40",
-  "basexp": "10",
-  "gender": "F",
-  "ai": "5",
-  "animation_attack": "76",
-  "animation_idle": "52",
-  "animation_move": "52",
-  "movespeed_attack": "8",
-  "movespeed_skill": "8",
-  "speedtype_attack": "1",
-  "speedtype_skill": "1",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "48, 53, 58, 63, 68",
-  "normal_distribute": "20, 20, 20, 20, 20",
-  "normal_totaldistr": "100",
-  "description": "A geomancer once active in the ruined Vriksha Duchy. Despite her gaining the impressive power of being able to manipulate time, there exists very little proof of it. Record of Claris's efforts was, however, found in the diary of a girl from a small village. It was recorded that she had wielded great magical power, like that of the gods. The young girl wrote of her in her diary, \"It's like she had that power inside of her all along.\"",
-  "summon": "I already knew you were<br>going to summon me.<br>I know your future, too...",
-  "fusion": "Power is to be used when<br>necessary and in moderation.<br>You agree, don't you?",
-  "evolution": "I evolved because<br>I now know what it means <br>to manipulate time.",
-  "hp_base": "2304",
-  "atk_base": "514",
-  "def_base": "773",
-  "rec_base": "742",
-  "hp_lord": "3970",
-  "atk_lord": "639",
-  "def_lord": "1098",
-  "rec_lord": "1188",
-  "hp_anima": "4263",
-  "rec_anima": "1110",
-  "atk_breaker": "717",
-  "def_breaker": "1020",
-  "atk_guardian": "561",
-  "def_guardian": "1176",
-  "rec_guardian": "1149",
-  "def_oracle": "1059",
-  "hp_oracle": "3853",
-  "rec_oracle": "1305",
-  "hp_bonus": "300",
-  "atk_bonus": "100",
-  "def_bonus": "100",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "5",
-  "normaldc": "10",
-  "ls": "Earth's Protection",
-  "lsdescription": "10% reduction in damage from Earth Types",
-  "lstype": "Defense",
+  "stats": {
+    "_base": {
+      "atk": 514,
+      "def": 773,
+      "hp": 2304,
+      "rec": 742
+    },
+    "_lord": {
+      "atk": 639,
+      "def": 1098,
+      "hp": 3970,
+      "rec": 1188
+    },
+    "anima": {
+      "atk": 639,
+      "def": 1098,
+      "hp max": 4360,
+      "hp min": 4165,
+      "rec max": 1149,
+      "rec min": 1071
+    },
+    "breaker": {
+      "atk max": 756,
+      "atk min": 678,
+      "def max": 1059,
+      "def min": 981,
+      "hp": 3970,
+      "rec": 1188
+    },
+    "guardian": {
+      "atk": 639,
+      "def max": 1215,
+      "def min": 1137,
+      "hp": 3970,
+      "rec max": 1188,
+      "rec min": 1110
+    },
+    "oracle": {
+      "atk": 639,
+      "def max": 1098,
+      "def min": 1020,
+      "hp": 3970,
+      "rec max": 1344,
+      "rec min": 1266
+    }
+  },
+  "leader_skill": {
+    "desc": "10% reduction in damage from Earth Types",
+    "effects": [
+      {
+        "earth resist%": 10,
+        "passive id": "5"
+      }
+    ],
+    "id": "504",
+    "name": "Earth's Protection"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -215,92 +220,91 @@
     ],
     "name": "Space Ray"
   },
-  "bbdescription": "Greatly recovers HP for all allies",
-  "bbnote": "Heals (1270~1470 + 22.5% healer Rec) HP",
-  "bbtype": "Heal",
-  "bbhits": "0",
-  "bbaoe": "0",
-  "bbgauge": "15",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "30041",
-  "evointo": "",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 514,
-      "def": 773,
-      "hp": 2304,
-      "rec": 742
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 80.0,
+      "target conditions": "hp_50pr_under",
+      "target type": "party"
     },
-    "_lord": {
-      "atk": 639,
-      "def": 1098,
-      "hp": 3970,
-      "rec": 1188
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "hp_min",
+      "target type": "party"
     },
-    "anima": {
-      "atk": 639,
-      "def": 1098,
-      "hp max": 4360,
-      "hp min": 4165,
-      "rec max": 1149,
-      "rec min": 1071
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 76
     },
-    "breaker": {
-      "atk max": 756,
-      "atk min": 678,
-      "def max": 1059,
-      "def min": 981,
-      "hp": 3970,
-      "rec": 1188
+    "idle": {
+      "total number of frames": 52
     },
-    "guardian": {
-      "atk": 639,
-      "def max": 1215,
-      "def min": 1137,
-      "hp": 3970,
-      "rec max": 1188,
-      "rec min": 1110
-    },
-    "oracle": {
-      "atk": 639,
-      "def max": 1098,
-      "def min": 1020,
-      "hp": 3970,
-      "rec max": 1344,
-      "rec min": 1266
+    "move": {
+      "total number of frames": 52
     }
   },
-  "leader_skill": {
-    "desc": "10% reduction in damage from Earth Types",
-    "effects": [
-      {
-        "earth resist%": 10,
-        "passive id": "5"
-      }
+  "category": 30040,
+  "cost": "6",
+  "damage frames": {
+    "frame times": [
+      48,
+      53,
+      58,
+      63,
+      68
     ],
-    "id": "504",
-    "name": "Earth's Protection"
+    "hit dmg% distribution": [
+      20,
+      20,
+      20,
+      20,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 5
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "earth",
+  "exp_pattern": 10,
+  "gender": "female",
+  "getting type": "farmable",
+  "guide_id": 283,
+  "imp": {
+    "max atk": "100",
+    "max def": "100",
+    "max hp": "300",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "594~664",
+  "movement": {
+    "attack": {
+      "move speed": 8,
+      "move speed type": "1",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 8,
+      "move speed type": "1",
+      "move type": "3"
+    }
+  },
+  "name": "Time Lord Claris",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "Time Lord Claris",
+  "maxlv": "40",
+  "no": "283",
   "unitDisplayHomePosition_1W9CxaFK": "147,101,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "183,67,596,726",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "200,289,267,348,0",
@@ -310,5 +314,78 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "1000",
   "sellCaution": false,
-  "effectFrames": "47:240:1,57:230:1"
+  "effectFrames": "47:240:1,57:230:1",
+  "evofrom": "30041",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "10",
+  "animation_attack": "76",
+  "animation_idle": "52",
+  "animation_move": "52",
+  "movespeed_attack": "8",
+  "movespeed_skill": "8",
+  "speedtype_attack": "1",
+  "speedtype_skill": "1",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "48, 53, 58, 63, 68",
+  "normal_distribute": "20, 20, 20, 20, 20",
+  "normal_totaldistr": "100",
+  "description": "A geomancer once active in the ruined Vriksha Duchy. Despite her gaining the impressive power of being able to manipulate time, there exists very little proof of it. Record of Claris's efforts was, however, found in the diary of a girl from a small village. It was recorded that she had wielded great magical power, like that of the gods. The young girl wrote of her in her diary, \"It's like she had that power inside of her all along.\"",
+  "summon": "I already knew you were<br>going to summon me.<br>I know your future, too...",
+  "fusion": "Power is to be used when<br>necessary and in moderation.<br>You agree, don't you?",
+  "evolution": "I evolved because<br>I now know what it means <br>to manipulate time.",
+  "hp_base": "2304",
+  "atk_base": "514",
+  "def_base": "773",
+  "rec_base": "742",
+  "hp_lord": "3970",
+  "atk_lord": "639",
+  "def_lord": "1098",
+  "rec_lord": "1188",
+  "hp_anima": "4263",
+  "rec_anima": "1110",
+  "atk_breaker": "717",
+  "def_breaker": "1020",
+  "atk_guardian": "561",
+  "def_guardian": "1176",
+  "rec_guardian": "1149",
+  "def_oracle": "1059",
+  "hp_oracle": "3853",
+  "rec_oracle": "1305",
+  "hp_bonus": "300",
+  "atk_bonus": "100",
+  "def_bonus": "100",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "5",
+  "normaldc": "10",
+  "ls": "Earth's Protection",
+  "lsdescription": "10% reduction in damage from Earth Types",
+  "lstype": "Defense",
+  "bbdescription": "Greatly recovers HP for all allies",
+  "bbnote": "Heals (1270~1470 + 22.5% healer Rec) HP",
+  "bbtype": "Heal",
+  "bbhits": "0",
+  "bbaoe": "0",
+  "bbgauge": "15",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "",
+  "evomats2": "",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": ""
 }

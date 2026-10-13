@@ -1,56 +1,117 @@
 {
   "id": "30837",
-  "unitName": "Wind Princess Rozalia",
-  "no": "1443",
-  "element": "Earth",
-  "rarity": "Omni",
-  "cost": "48",
-  "maxlv": "150",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "126",
-  "animation_idle": "120",
-  "animation_move": "21",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "4",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "3",
-  "normal_frames": "64, 68, 72, 76, 80, 84, 88, 92",
-  "normal_distribute": "14, 14, 13, 13, 12, 12, 11, 11",
-  "normal_totaldistr": "100",
-  "description": "Unfortunately, no further information has been found on Rozalia or her country. However, legend has it that she eventually came to address her people in all her beauty once again. In addition, many literary works about the thief Zelnite claim that he \"stole\" the curse which afflicted Rozalia, saving her in the process. If this is true, it can be assumed that Zelnite taught Rozalia to protect what is truly important, or \"the real treasure.\" This lesson would have shaped her into a ruler that could bring back peace to her kingdom.",
-  "summon": "He took my curse upon himself...<br>And yet he said it would bond us for the end of time...",
-  "fusion": "I need to do my very best everyday to protect my people.<br>I realize that now...",
-  "evolution": "To think this day would come anew!<br>It seems like a dream!<br>And it is all thanks to that person...",
-  "hp_base": "6162",
-  "atk_base": "2199",
-  "def_base": "2309",
-  "rec_base": "2397",
-  "hp_lord": "8012",
-  "atk_lord": "2724",
-  "def_lord": "2886",
-  "rec_lord": "2983",
-  "hp_anima": "9129",
-  "rec_anima": "2685",
-  "atk_breaker": "3022",
-  "def_breaker": "2588",
-  "def_guardian": "3184",
-  "rec_guardian": "2834",
-  "def_oracle": "2737",
-  "rec_oracle": "3430",
-  "hp_bonus": "1500",
-  "atk_bonus": "600",
-  "def_bonus": "600",
-  "rec_bonus": "600",
-  "lordonly": "",
-  "combo_hits": "8",
-  "normaldc": "40",
-  "ls": "Bonds of a Beautiful Ruler",
-  "lsdescription": "50% boost to Def and max HP, negates critical damage, 10% damage reduction from Fire, Water, Earth and Thunder types & damage taken hugely boosts BB gauge",
-  "lsnote": "Fills 4-7 BC",
+  "stats": {
+    "_base": {
+      "atk": 2199,
+      "def": 2309,
+      "hp": 6162,
+      "rec": 2397
+    },
+    "_lord": {
+      "atk": 2724,
+      "def": 2886,
+      "hp": 8012,
+      "rec": 2983
+    },
+    "anima": {
+      "atk": 2724,
+      "def": 2886,
+      "hp max": 9502,
+      "hp min": 8757,
+      "rec max": 2834,
+      "rec min": 2536
+    },
+    "breaker": {
+      "atk max": 3171,
+      "atk min": 2873,
+      "def max": 2737,
+      "def min": 2439,
+      "hp": 8012,
+      "rec": 2983
+    },
+    "guardian": {
+      "atk": 2724,
+      "def max": 3333,
+      "def min": 3035,
+      "hp": 8012,
+      "rec max": 2983,
+      "rec min": 2685
+    },
+    "oracle": {
+      "atk": 2724,
+      "def max": 2886,
+      "def min": 2588,
+      "hp": 8012,
+      "rec max": 3579,
+      "rec min": 3281
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to Def and max HP, negates critical damage, 10% damage reduction from Fire, Water, Earth and Thunder types & damage taken hugely boosts BB gauge",
+    "effects": [
+      {
+        "def% buff": 50,
+        "hp% buff": 50,
+        "passive id": "1"
+      },
+      {
+        "crit chance base resist%": 100,
+        "crit chance buffed resist%": 100,
+        "crit dmg base damage resist%": 100,
+        "crit dmg buffed damage resist%": 100,
+        "passive id": "53"
+      },
+      {
+        "dmg% mitigation for elemental attacks": 10.0,
+        "mitigate earth attacks": true,
+        "mitigate fire attacks": true,
+        "mitigate thunder attacks": true,
+        "mitigate water attacks": true,
+        "passive id": "62"
+      },
+      {
+        "bc fill when attacked high": 7,
+        "bc fill when attacked low": 4,
+        "bc fill when attacked%": 100,
+        "passive id": "25"
+      }
+    ],
+    "id": "4346",
+    "name": "Bonds of a Beautiful Ruler"
+  },
+  "extra_skill": {
+    "desc": "Boosts Def when BB gauge is over 50%, negates all status ailments & considerably boosts BB gauge each turn",
+    "effects": [
+      {
+        "conditions": [],
+        "curse resist%": 100,
+        "injury resist%": 100,
+        "paralysis resist%": 100,
+        "passive id": "4",
+        "passive target": "self",
+        "poison resist%": 100,
+        "sick resist%": 100,
+        "weaken resist%": 100
+      },
+      {
+        "bc fill per turn": 5,
+        "conditions": [],
+        "passive id": "9",
+        "passive target": "self"
+      },
+      {
+        "bb gauge above % buff requirement": 50,
+        "conditions": [],
+        "def% buff": 50,
+        "passive id": "30",
+        "passive target": "self"
+      }
+    ],
+    "id": "21600",
+    "name": "Invaluable Treasure",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -731,14 +792,6 @@
     ],
     "name": "Blissful Winds of Life"
   },
-  "bbdescription": "Enormously boosts BB gauge, greatly restores HP, removes all status ailments, negates them for 3 turns & negates Atk and Def reducing effects for 2 turns",
-  "bbnote": "Heal 3000-3500 + 40% of own Rec & fills 10 BC",
-  "bbtype": "Heal",
-  "bbhits": "",
-  "bbaoe": "",
-  "bbgauge": "20",
-  "bbdc": "",
-  "bbmultiplier": "",
   "sbb": {
     "damage frames": [
       {
@@ -1197,14 +1250,6 @@
     ],
     "name": "Shining Treasure's Ballad"
   },
-  "sbbdescription": "Enormously boosts BB gauge, adds probable 1 turn Atk reduction effect to attack for 3 turns, enormously boosts Spark damage for 3 turns & hugely boosts BB Atk for 3 turns",
-  "sbbnote": "10% chance to reduce enemy Atk by 25%, 150% Spark, 350% BB Atk & fills 10 BC",
-  "sbbtype": "Support",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "10",
-  "sbbdc": "",
-  "sbbmultiplier": "",
   "ubb": {
     "damage frames": [
       {
@@ -1305,6 +1350,174 @@
     ],
     "name": "Twinkling Star of Dawn"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 126
+    },
+    "idle": {
+      "total number of frames": 120
+    },
+    "move": {
+      "total number of frames": 21
+    }
+  },
+  "category": 30830,
+  "cost": "48",
+  "damage frames": {
+    "frame times": [
+      64,
+      68,
+      72,
+      76,
+      80,
+      84,
+      88,
+      92
+    ],
+    "hit dmg% distribution": [
+      14,
+      14,
+      13,
+      13,
+      12,
+      12,
+      11,
+      11
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 8
+  },
+  "drop check count": 5,
+  "element": "earth",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 1443,
+  "imp": {
+    "max atk": "600",
+    "max def": "600",
+    "max hp": "1500",
+    "max rec": "600"
+  },
+  "kind": "normal",
+  "lord damage range": "2536~2832",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    }
+  },
+  "name": "Wind Princess Rozalia",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "8",
+  "sell caution": false,
+  "unitName": "Wind Princess Rozalia",
+  "maxlv": "150",
+  "no": "1443",
+  "unitDisplayHomePosition_1W9CxaFK": "452,235,174,475",
+  "unitDisplayDetailPosition_6z54rgb3": "-124,-45,1098,886",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "42,189,549,443,1",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-87,-251,980,791",
+  "unitDisplaySummonPosition_KC3Jk8Br": "42,189,549,443,1",
+  "unitDisplayHpPosition_3BpHN6VD": "-4,36",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "50000",
+  "sellCaution": false,
+  "effectFrames": "60:330507:1,61:330872:1,63:501112:1,55:200754:1,75:330390:1,90:330390:1",
+  "evofrom": "30836",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "21",
+  "animation_attack": "126",
+  "animation_idle": "120",
+  "animation_move": "21",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "4",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "3",
+  "normal_frames": "64, 68, 72, 76, 80, 84, 88, 92",
+  "normal_distribute": "14, 14, 13, 13, 12, 12, 11, 11",
+  "normal_totaldistr": "100",
+  "description": "Unfortunately, no further information has been found on Rozalia or her country. However, legend has it that she eventually came to address her people in all her beauty once again. In addition, many literary works about the thief Zelnite claim that he \"stole\" the curse which afflicted Rozalia, saving her in the process. If this is true, it can be assumed that Zelnite taught Rozalia to protect what is truly important, or \"the real treasure.\" This lesson would have shaped her into a ruler that could bring back peace to her kingdom.",
+  "summon": "He took my curse upon himself...<br>And yet he said it would bond us for the end of time...",
+  "fusion": "I need to do my very best everyday to protect my people.<br>I realize that now...",
+  "evolution": "To think this day would come anew!<br>It seems like a dream!<br>And it is all thanks to that person...",
+  "hp_base": "6162",
+  "atk_base": "2199",
+  "def_base": "2309",
+  "rec_base": "2397",
+  "hp_lord": "8012",
+  "atk_lord": "2724",
+  "def_lord": "2886",
+  "rec_lord": "2983",
+  "hp_anima": "9129",
+  "rec_anima": "2685",
+  "atk_breaker": "3022",
+  "def_breaker": "2588",
+  "def_guardian": "3184",
+  "rec_guardian": "2834",
+  "def_oracle": "2737",
+  "rec_oracle": "3430",
+  "hp_bonus": "1500",
+  "atk_bonus": "600",
+  "def_bonus": "600",
+  "rec_bonus": "600",
+  "lordonly": "",
+  "combo_hits": "8",
+  "normaldc": "40",
+  "ls": "Bonds of a Beautiful Ruler",
+  "lsdescription": "50% boost to Def and max HP, negates critical damage, 10% damage reduction from Fire, Water, Earth and Thunder types & damage taken hugely boosts BB gauge",
+  "lsnote": "Fills 4-7 BC",
+  "bbdescription": "Enormously boosts BB gauge, greatly restores HP, removes all status ailments, negates them for 3 turns & negates Atk and Def reducing effects for 2 turns",
+  "bbnote": "Heal 3000-3500 + 40% of own Rec & fills 10 BC",
+  "bbtype": "Heal",
+  "bbhits": "",
+  "bbaoe": "",
+  "bbgauge": "20",
+  "bbdc": "",
+  "bbmultiplier": "",
+  "sbbdescription": "Enormously boosts BB gauge, adds probable 1 turn Atk reduction effect to attack for 3 turns, enormously boosts Spark damage for 3 turns & hugely boosts BB Atk for 3 turns",
+  "sbbnote": "10% chance to reduce enemy Atk by 25%, 150% Spark, 350% BB Atk & fills 10 BC",
+  "sbbtype": "Support",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "10",
+  "sbbdc": "",
+  "sbbmultiplier": "",
   "ubbdescription": "Adds probable resistance against 1 KO attack, 75% damage reduction for 3 turns, enormously boosts BB Atk for 3 turns & damage taken enormously boosts BB gauge for 3 turns when damage is taken for 3 turns.",
   "ubbnote": "Fills 50 BC, 500% BB Atk & 50% chance to survive 1 KO attack",
   "ubbtype": "Support",
@@ -1317,7 +1530,6 @@
   "esitem": "",
   "esdescription": "Boosts Def when BB gauge is over 50%, negates all status ailments & considerably boosts BB gauge each turn",
   "esnote": "Fills 5 BC & 50% boost",
-  "evofrom": "30836",
   "howtoget": "",
   "omniskill1_cat": "Parameter Boost",
   "omniskill1_1_sp": "10",
@@ -1354,127 +1566,5 @@
   "notes": "",
   "addcat": "Legend of Zelnite",
   "addcatname": "Rozalia2",
-  "bottomtext": "",
-  "stats": {
-    "_base": {
-      "atk": 2199,
-      "def": 2309,
-      "hp": 6162,
-      "rec": 2397
-    },
-    "_lord": {
-      "atk": 2724,
-      "def": 2886,
-      "hp": 8012,
-      "rec": 2983
-    },
-    "anima": {
-      "atk": 2724,
-      "def": 2886,
-      "hp max": 9502,
-      "hp min": 8757,
-      "rec max": 2834,
-      "rec min": 2536
-    },
-    "breaker": {
-      "atk max": 3171,
-      "atk min": 2873,
-      "def max": 2737,
-      "def min": 2439,
-      "hp": 8012,
-      "rec": 2983
-    },
-    "guardian": {
-      "atk": 2724,
-      "def max": 3333,
-      "def min": 3035,
-      "hp": 8012,
-      "rec max": 2983,
-      "rec min": 2685
-    },
-    "oracle": {
-      "atk": 2724,
-      "def max": 2886,
-      "def min": 2588,
-      "hp": 8012,
-      "rec max": 3579,
-      "rec min": 3281
-    }
-  },
-  "leader_skill": {
-    "desc": "50% boost to Def and max HP, negates critical damage, 10% damage reduction from Fire, Water, Earth and Thunder types & damage taken hugely boosts BB gauge",
-    "effects": [
-      {
-        "def% buff": 50,
-        "hp% buff": 50,
-        "passive id": "1"
-      },
-      {
-        "crit chance base resist%": 100,
-        "crit chance buffed resist%": 100,
-        "crit dmg base damage resist%": 100,
-        "crit dmg buffed damage resist%": 100,
-        "passive id": "53"
-      },
-      {
-        "dmg% mitigation for elemental attacks": 10.0,
-        "mitigate earth attacks": true,
-        "mitigate fire attacks": true,
-        "mitigate thunder attacks": true,
-        "mitigate water attacks": true,
-        "passive id": "62"
-      },
-      {
-        "bc fill when attacked high": 7,
-        "bc fill when attacked low": 4,
-        "bc fill when attacked%": 100,
-        "passive id": "25"
-      }
-    ],
-    "id": "4346",
-    "name": "Bonds of a Beautiful Ruler"
-  },
-  "extra_skill": {
-    "desc": "Boosts Def when BB gauge is over 50%, negates all status ailments & considerably boosts BB gauge each turn",
-    "effects": [
-      {
-        "conditions": [],
-        "curse resist%": 100,
-        "injury resist%": 100,
-        "paralysis resist%": 100,
-        "passive id": "4",
-        "passive target": "self",
-        "poison resist%": 100,
-        "sick resist%": 100,
-        "weaken resist%": 100
-      },
-      {
-        "bc fill per turn": 5,
-        "conditions": [],
-        "passive id": "9",
-        "passive target": "self"
-      },
-      {
-        "bb gauge above % buff requirement": 50,
-        "conditions": [],
-        "def% buff": 50,
-        "passive id": "30",
-        "passive target": "self"
-      }
-    ],
-    "id": "21600",
-    "name": "Invaluable Treasure",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "452,235,174,475",
-  "unitDisplayDetailPosition_6z54rgb3": "-124,-45,1098,886",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "42,189,549,443,1",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-87,-251,980,791",
-  "unitDisplaySummonPosition_KC3Jk8Br": "42,189,549,443,1",
-  "unitDisplayHpPosition_3BpHN6VD": "-4,36",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "50000",
-  "sellCaution": false,
-  "effectFrames": "60:330507:1,61:330872:1,63:501112:1,55:200754:1,75:330390:1,90:330390:1"
+  "bottomtext": ""
 }

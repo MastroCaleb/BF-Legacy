@@ -1,61 +1,64 @@
 {
   "id": "60283",
-  "unitName": "Dark Swords Logan",
-  "no": "387",
-  "element": "Dark",
-  "rarity": "★★★★",
-  "cost": "10",
-  "maxlv": "60",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "120",
-  "animation_idle": "52",
-  "animation_move": "12",
-  "movespeed_attack": "0.0041",
-  "movespeed_skill": "0.0041",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "19, 33, 45, 57, 71",
-  "normal_distribute": "15, 15, 10, 10, 50",
-  "normal_totaldistr": "100",
-  "bb_frames": "19, 33, 45, 77, 85, 92",
-  "bb_distribute": "10, 10, 10, 50, 10, 10",
-  "bb_totaldistr": "100",
-  "description": "A twin sword wielding knight, loyal to the Bariura Empire. Originally a fairly ordinary knight who was worth little more than his serious attitude, his blind dedication to his country led him to give into Shida's request, resulting in him being completely transformed. He gained tremendous fighting strength, but found himself in Shida's secret army under his direct control. Following Shida's orders he then began investigating a demon that had appeared nearby, believing that by doing so he could fulfill the promise he made with his long-lost friend to become the empire's greatest swordsman.",
-  "summon": "You summoned me?<br>Do you know how to use this<br>power given to me by [[Executioner Shida|Shida]]?",
-  "fusion": "I require more power.<br>It matters not how I acquire it.<br>I have a promise to keep.",
-  "evolution": "",
-  "hp_base": "2610",
-  "atk_base": "988",
-  "def_base": "827",
-  "rec_base": "710",
-  "hp_lord": "3932",
-  "atk_lord": "1394",
-  "def_lord": "1185",
-  "rec_lord": "952",
-  "hp_anima": "4375",
-  "rec_anima": "834",
-  "atk_breaker": "1512",
-  "def_breaker": "1067",
-  "atk_guardian": "1276",
-  "def_guardian": "1303",
-  "rec_guardian": "893",
-  "def_oracle": "1126",
-  "hp_oracle": "3755",
-  "rec_oracle": "1129",
-  "hp_bonus": "400",
-  "atk_bonus": "160",
-  "def_bonus": "160",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "5",
-  "normaldc": "10",
-  "ls": "Five Light's Power",
-  "lsdescription": "25% boost to Atk power of all Units when 5 elements or more are present",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 988,
+      "def": 827,
+      "hp": 2610,
+      "rec": 710
+    },
+    "_lord": {
+      "atk": 1394,
+      "def": 1185,
+      "hp": 3932,
+      "rec": 952
+    },
+    "anima": {
+      "atk": 1394,
+      "def": 1185,
+      "hp max": 4522,
+      "hp min": 4227,
+      "rec max": 893,
+      "rec min": 775
+    },
+    "breaker": {
+      "atk max": 1571,
+      "atk min": 1453,
+      "def max": 1126,
+      "def min": 1008,
+      "hp": 3932,
+      "rec": 952
+    },
+    "guardian": {
+      "atk": 1394,
+      "def max": 1362,
+      "def min": 1244,
+      "hp": 3932,
+      "rec max": 952,
+      "rec min": 834
+    },
+    "oracle": {
+      "atk": 1394,
+      "def max": 1185,
+      "def min": 1067,
+      "hp": 3932,
+      "rec max": 1188,
+      "rec min": 1070
+    }
+  },
+  "leader_skill": {
+    "desc": "25% boost to Atk power of all Units when 5 elements or more are present",
+    "effects": [
+      {
+        "atk% buff": 25,
+        "passive id": "41",
+        "unique elements required": 5
+      }
+    ],
+    "id": "2200",
+    "name": "Five Light's Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -228,95 +231,91 @@
     ],
     "name": "Victim Soul"
   },
-  "bbdescription": "6 combo powerful Dark attack on single enemy & partial HP drain",
-  "bbnote": "38~48% HP drain",
-  "bbtype": "Heal/Offense",
-  "bbhits": "6",
-  "bbaoe": "1",
-  "bbgauge": "16",
-  "bbdc": "6",
-  "bbmultiplier": "380",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "60284",
-  "evomats1": "60123",
-  "evomats2": "60122",
-  "evomats3": "60201",
-  "evomats4": "60121",
-  "evomats5": "60120",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 988,
-      "def": 827,
-      "hp": 2610,
-      "rec": 710
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1394,
-      "def": 1185,
-      "hp": 3932,
-      "rec": 952
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1394,
-      "def": 1185,
-      "hp max": 4522,
-      "hp min": 4227,
-      "rec max": 893,
-      "rec min": 775
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 120
     },
-    "breaker": {
-      "atk max": 1571,
-      "atk min": 1453,
-      "def max": 1126,
-      "def min": 1008,
-      "hp": 3932,
-      "rec": 952
+    "idle": {
+      "total number of frames": 52
     },
-    "guardian": {
-      "atk": 1394,
-      "def max": 1362,
-      "def min": 1244,
-      "hp": 3932,
-      "rec max": 952,
-      "rec min": 834
-    },
-    "oracle": {
-      "atk": 1394,
-      "def max": 1185,
-      "def min": 1067,
-      "hp": 3932,
-      "rec max": 1188,
-      "rec min": 1070
+    "move": {
+      "total number of frames": 12
     }
   },
-  "leader_skill": {
-    "desc": "25% boost to Atk power of all Units when 5 elements or more are present",
-    "effects": [
-      {
-        "atk% buff": 25,
-        "passive id": "41",
-        "unique elements required": 5
-      }
+  "category": 60280,
+  "cost": "10",
+  "damage frames": {
+    "frame times": [
+      19,
+      33,
+      45,
+      57,
+      71
     ],
-    "id": "2200",
-    "name": "Five Light's Power"
+    "hit dmg% distribution": [
+      15,
+      15,
+      10,
+      10,
+      50
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 5
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "dark",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 387,
+  "imp": {
+    "max atk": "160",
+    "max def": "160",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "1297~1449",
+  "movement": {
+    "attack": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    }
+  },
+  "name": "Dark Swords Logan",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Dark Swords Logan",
+  "maxlv": "60",
+  "no": "387",
   "unitDisplayHomePosition_1W9CxaFK": "352,16,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-2,211,795,610",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "204,311,280,310,0",
@@ -326,5 +325,109 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "13:126:1,27:126:1,33:360:1,30:600351:1,30:680:1,60:360:1,71:126:1,73:600210:1"
+  "effectFrames": "13:126:1,27:126:1,33:360:1,30:600351:1,30:680:1,60:360:1,71:126:1,73:600210:1",
+  "evofrom": "",
+  "evointo": "60284",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "60123",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60122",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60201",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60121",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60120",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "120",
+  "animation_idle": "52",
+  "animation_move": "12",
+  "movespeed_attack": "0.0041",
+  "movespeed_skill": "0.0041",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "19, 33, 45, 57, 71",
+  "normal_distribute": "15, 15, 10, 10, 50",
+  "normal_totaldistr": "100",
+  "bb_frames": "19, 33, 45, 77, 85, 92",
+  "bb_distribute": "10, 10, 10, 50, 10, 10",
+  "bb_totaldistr": "100",
+  "description": "A twin sword wielding knight, loyal to the Bariura Empire. Originally a fairly ordinary knight who was worth little more than his serious attitude, his blind dedication to his country led him to give into Shida's request, resulting in him being completely transformed. He gained tremendous fighting strength, but found himself in Shida's secret army under his direct control. Following Shida's orders he then began investigating a demon that had appeared nearby, believing that by doing so he could fulfill the promise he made with his long-lost friend to become the empire's greatest swordsman.",
+  "summon": "You summoned me?<br>Do you know how to use this<br>power given to me by [[Executioner Shida|Shida]]?",
+  "fusion": "I require more power.<br>It matters not how I acquire it.<br>I have a promise to keep.",
+  "evolution": "",
+  "hp_base": "2610",
+  "atk_base": "988",
+  "def_base": "827",
+  "rec_base": "710",
+  "hp_lord": "3932",
+  "atk_lord": "1394",
+  "def_lord": "1185",
+  "rec_lord": "952",
+  "hp_anima": "4375",
+  "rec_anima": "834",
+  "atk_breaker": "1512",
+  "def_breaker": "1067",
+  "atk_guardian": "1276",
+  "def_guardian": "1303",
+  "rec_guardian": "893",
+  "def_oracle": "1126",
+  "hp_oracle": "3755",
+  "rec_oracle": "1129",
+  "hp_bonus": "400",
+  "atk_bonus": "160",
+  "def_bonus": "160",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "5",
+  "normaldc": "10",
+  "ls": "Five Light's Power",
+  "lsdescription": "25% boost to Atk power of all Units when 5 elements or more are present",
+  "lstype": "Attack",
+  "bbdescription": "6 combo powerful Dark attack on single enemy & partial HP drain",
+  "bbnote": "38~48% HP drain",
+  "bbtype": "Heal/Offense",
+  "bbhits": "6",
+  "bbaoe": "1",
+  "bbgauge": "16",
+  "bbdc": "6",
+  "bbmultiplier": "380",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "60123",
+  "evomats2": "60122",
+  "evomats3": "60201",
+  "evomats4": "60121",
+  "evomats5": "60120"
 }

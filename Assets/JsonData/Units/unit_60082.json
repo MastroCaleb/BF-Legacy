@@ -1,62 +1,63 @@
 {
   "id": "60082",
-  "unitName": "Vampire",
-  "freetext": ":''For other uses, see Vampire (disambiguation).''",
-  "no": "121",
-  "element": "Dark",
-  "rarity": "★★★",
-  "cost": "5",
-  "maxlv": "40",
-  "basexp": "15",
-  "gender": "N",
-  "ai": "2",
-  "animation_attack": "123",
-  "animation_idle": "78",
-  "animation_move": "10",
-  "movespeed_attack": "0.0041",
-  "movespeed_skill": "0.0041",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "62, 65, 68",
-  "normal_distribute": "33, 33, 34",
-  "normal_totaldistr": "100",
-  "bb_frames": "62, 65, 68",
-  "bb_distribute": "33, 33, 34",
-  "bb_totaldistr": "100",
-  "description": "A demon that lives in the night. Sunlight is its weakness. It is only active when the sun is down. It's immortal and can only be killed through external causes. As it drinks human blood to live, it is their natural enemy. Young female blood is its favorite. It stalks women it likes, waiting for its chance to strike. Male blood works too, but it attacks them much more violently.",
-  "summon": "Did you wake me?<br>I don't wake well, so be<br>to protect yourself.",
-  "fusion": "Hmm, that's not too bad,<br>but I like the blood of <br>young women better.",
-  "evolution": "",
-  "hp_base": "1850",
-  "atk_base": "540",
-  "def_base": "560",
-  "rec_base": "550",
-  "hp_lord": "3112",
-  "atk_lord": "702",
-  "def_lord": "740",
-  "rec_lord": "825",
-  "hp_anima": "3405",
-  "rec_anima": "747",
-  "atk_breaker": "780",
-  "def_breaker": "662",
-  "atk_guardian": "624",
-  "def_guardian": "818",
-  "rec_guardian": "786",
-  "def_oracle": "701",
-  "hp_oracle": "2995",
-  "rec_oracle": "942",
-  "hp_bonus": "300",
-  "atk_bonus": "120",
-  "def_bonus": "120",
-  "rec_bonus": "120",
-  "lordonly": "",
-  "combo_hits": "3",
-  "normaldc": "6",
-  "ls": "Dark Protection",
-  "lsdescription": "10% reduction in damage from Dark Types",
-  "lstype": "Defense",
+  "stats": {
+    "_base": {
+      "atk": 540,
+      "def": 560,
+      "hp": 1850,
+      "rec": 550
+    },
+    "_lord": {
+      "atk": 702,
+      "def": 740,
+      "hp": 3112,
+      "rec": 825
+    },
+    "anima": {
+      "atk": 702,
+      "def": 740,
+      "hp max": 3502,
+      "hp min": 3307,
+      "rec max": 786,
+      "rec min": 708
+    },
+    "breaker": {
+      "atk max": 819,
+      "atk min": 741,
+      "def max": 701,
+      "def min": 623,
+      "hp": 3112,
+      "rec": 825
+    },
+    "guardian": {
+      "atk": 702,
+      "def max": 857,
+      "def min": 779,
+      "hp": 3112,
+      "rec max": 825,
+      "rec min": 747
+    },
+    "oracle": {
+      "atk": 702,
+      "def max": 740,
+      "def min": 662,
+      "hp": 3112,
+      "rec max": 981,
+      "rec min": 903
+    }
+  },
+  "leader_skill": {
+    "desc": "10% reduction in damage from Dark Types",
+    "effects": [
+      {
+        "dark resist%": 10,
+        "passive id": "5"
+      }
+    ],
+    "id": "510",
+    "name": "Dark Protection"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -213,93 +214,87 @@
     ],
     "name": "Blood Gluttony"
   },
-  "bbdescription": "3 combo Dark elemental attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "3",
-  "bbaoe": "A",
-  "bbgauge": "20",
-  "bbdc": "3",
-  "bbmultiplier": "90",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "60083",
-  "evomats1": "60143",
-  "evomats2": "60121",
-  "evomats3": "60121",
-  "evomats4": "60121",
-  "evomats5": "",
-  "evozelcost": "100000",
-  "stats": {
-    "_base": {
-      "atk": 540,
-      "def": 560,
-      "hp": 1850,
-      "rec": 550
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 702,
-      "def": 740,
-      "hp": 3112,
-      "rec": 825
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 702,
-      "def": 740,
-      "hp max": 3502,
-      "hp min": 3307,
-      "rec max": 786,
-      "rec min": 708
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 123
     },
-    "breaker": {
-      "atk max": 819,
-      "atk min": 741,
-      "def max": 701,
-      "def min": 623,
-      "hp": 3112,
-      "rec": 825
+    "idle": {
+      "total number of frames": 78
     },
-    "guardian": {
-      "atk": 702,
-      "def max": 857,
-      "def min": 779,
-      "hp": 3112,
-      "rec max": 825,
-      "rec min": 747
-    },
-    "oracle": {
-      "atk": 702,
-      "def max": 740,
-      "def min": 662,
-      "hp": 3112,
-      "rec max": 981,
-      "rec min": 903
+    "move": {
+      "total number of frames": 10
     }
   },
-  "leader_skill": {
-    "desc": "10% reduction in damage from Dark Types",
-    "effects": [
-      {
-        "dark resist%": 10,
-        "passive id": "5"
-      }
+  "category": 60080,
+  "cost": "5",
+  "damage frames": {
+    "frame times": [
+      62,
+      65,
+      68
     ],
-    "id": "510",
-    "name": "Dark Protection"
+    "hit dmg% distribution": [
+      33,
+      33,
+      34
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 3
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "dark",
+  "exp_pattern": 15,
+  "gender": "other",
+  "getting type": "rare summon",
+  "guide_id": 121,
+  "imp": {
+    "max atk": "120",
+    "max def": "120",
+    "max hp": "300",
+    "max rec": "120"
+  },
+  "kind": "normal",
+  "lord damage range": "652~730",
+  "movement": {
+    "attack": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    }
+  },
+  "name": "Vampire",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "Vampire",
+  "maxlv": "40",
+  "no": "121",
   "unitDisplayHomePosition_1W9CxaFK": "202,-18,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "152,160,620,620",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "184,316,293,293,0",
@@ -309,5 +304,94 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "1000",
   "sellCaution": false,
-  "effectFrames": "61:360:1,65:360:1"
+  "effectFrames": "61:360:1,65:360:1",
+  "evofrom": "",
+  "evointo": "60083",
+  "evozelcost": "100000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60121",
+      "count": 3
+    }
+  ],
+  "freetext": ":''For other uses, see Vampire (disambiguation).''",
+  "basexp": "15",
+  "animation_attack": "123",
+  "animation_idle": "78",
+  "animation_move": "10",
+  "movespeed_attack": "0.0041",
+  "movespeed_skill": "0.0041",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "62, 65, 68",
+  "normal_distribute": "33, 33, 34",
+  "normal_totaldistr": "100",
+  "bb_frames": "62, 65, 68",
+  "bb_distribute": "33, 33, 34",
+  "bb_totaldistr": "100",
+  "description": "A demon that lives in the night. Sunlight is its weakness. It is only active when the sun is down. It's immortal and can only be killed through external causes. As it drinks human blood to live, it is their natural enemy. Young female blood is its favorite. It stalks women it likes, waiting for its chance to strike. Male blood works too, but it attacks them much more violently.",
+  "summon": "Did you wake me?<br>I don't wake well, so be<br>to protect yourself.",
+  "fusion": "Hmm, that's not too bad,<br>but I like the blood of <br>young women better.",
+  "evolution": "",
+  "hp_base": "1850",
+  "atk_base": "540",
+  "def_base": "560",
+  "rec_base": "550",
+  "hp_lord": "3112",
+  "atk_lord": "702",
+  "def_lord": "740",
+  "rec_lord": "825",
+  "hp_anima": "3405",
+  "rec_anima": "747",
+  "atk_breaker": "780",
+  "def_breaker": "662",
+  "atk_guardian": "624",
+  "def_guardian": "818",
+  "rec_guardian": "786",
+  "def_oracle": "701",
+  "hp_oracle": "2995",
+  "rec_oracle": "942",
+  "hp_bonus": "300",
+  "atk_bonus": "120",
+  "def_bonus": "120",
+  "rec_bonus": "120",
+  "lordonly": "",
+  "combo_hits": "3",
+  "normaldc": "6",
+  "ls": "Dark Protection",
+  "lsdescription": "10% reduction in damage from Dark Types",
+  "lstype": "Defense",
+  "bbdescription": "3 combo Dark elemental attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "3",
+  "bbaoe": "A",
+  "bbgauge": "20",
+  "bbdc": "3",
+  "bbmultiplier": "90",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "60143",
+  "evomats2": "60121",
+  "evomats3": "60121",
+  "evomats4": "60121",
+  "evomats5": ""
 }

@@ -1,60 +1,63 @@
 {
   "id": "20152",
-  "unitName": "Elimo",
-  "freetext": ":''For other uses, see Elimo (disambiguation).''",
-  "no": "224",
-  "element": "Water",
-  "rarity": "★★★",
-  "cost": "5",
-  "maxlv": "40",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "5",
-  "animation_attack": "185",
-  "animation_idle": "48",
-  "animation_move": "48",
-  "movespeed_attack": "0",
-  "movespeed_skill": "0",
-  "speedtype_attack": "5",
-  "speedtype_skill": "5",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "140, 142, 144",
-  "normal_distribute": "33, 33, 34",
-  "normal_totaldistr": "100",
-  "description": "A daughter from an aristocratic family hailing from the Sama Kingdom. A fervent reader, she was known to read academic tomes instead of picture books as a child. When she was 15, she stumbled across a book written in a mysterious language, and swore to one day decipher its contents. Hearing tales of remote stone monuments inscribed with a similar-looking script, she embarked on a journey into unchartered lands teeming with monsters, with only the magic she had learned from her books to protect her.",
-  "summon": "Ah, you’re summoning me now, is that it?<br>Gotcha. Ready when you are.",
-  "fusion": "W-Wait...<br>I-Is this what I think it is?<br>(Gasp...!) FUSION!",
-  "evolution": "",
-  "hp_base": "2000",
-  "atk_base": "460",
-  "def_base": "640",
-  "rec_base": "750",
-  "hp_lord": "3100",
-  "atk_lord": "598",
-  "def_lord": "902",
-  "rec_lord": "1275",
-  "hp_anima": "3393",
-  "rec_anima": "1197",
-  "atk_breaker": "676",
-  "def_breaker": "824",
-  "atk_guardian": "520",
-  "def_guardian": "980",
-  "rec_guardian": "1236",
-  "def_oracle": "863",
-  "hp_oracle": "2983",
-  "rec_oracle": "1392",
-  "hp_bonus": "300",
-  "atk_bonus": "120",
-  "def_bonus": "120",
-  "rec_bonus": "120",
-  "lordonly": "",
-  "combo_hits": "3",
-  "normaldc": "9",
-  "ls": "Loving Spirit",
-  "lsdescription": "Boost in effectiveness of Heart Crystals",
-  "lsnote": "25% boost",
-  "lstype": "Recovery",
+  "stats": {
+    "_base": {
+      "atk": 460,
+      "def": 640,
+      "hp": 2000,
+      "rec": 750
+    },
+    "_lord": {
+      "atk": 598,
+      "def": 902,
+      "hp": 3100,
+      "rec": 1275
+    },
+    "anima": {
+      "atk": 598,
+      "def": 902,
+      "hp max": 3490,
+      "hp min": 3295,
+      "rec max": 1236,
+      "rec min": 1158
+    },
+    "breaker": {
+      "atk max": 715,
+      "atk min": 637,
+      "def max": 863,
+      "def min": 785,
+      "hp": 3100,
+      "rec": 1275
+    },
+    "guardian": {
+      "atk": 598,
+      "def max": 1019,
+      "def min": 941,
+      "hp": 3100,
+      "rec max": 1275,
+      "rec min": 1197
+    },
+    "oracle": {
+      "atk": 598,
+      "def max": 902,
+      "def min": 824,
+      "hp": 3100,
+      "rec max": 1431,
+      "rec min": 1353
+    }
+  },
+  "leader_skill": {
+    "desc": "Boost in effectiveness of Heart Crystals",
+    "effects": [
+      {
+        "hc effectiveness%": 25,
+        "passive id": "10"
+      }
+    ],
+    "id": "1100",
+    "name": "Loving Spirit"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -319,93 +322,87 @@
     ],
     "name": "Aether Guard"
   },
-  "bbdescription": "Recovers HP for all allies and Boosts DEF for 3 Turns",
-  "bbnote": "Heals (1060~1460 + 27% of healer Rec) HP, 25% boost to Def",
-  "bbtype": "Heal/Support",
-  "bbhits": "",
-  "bbaoe": "0",
-  "bbgauge": "20",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "20153",
-  "evomats1": "20132",
-  "evomats2": "20131",
-  "evomats3": "20131",
-  "evomats4": "60142",
-  "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "100000",
-  "stats": {
-    "_base": {
-      "atk": 460,
-      "def": 640,
-      "hp": 2000,
-      "rec": 750
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 80.0,
+      "target conditions": "hp_50pr_under",
+      "target type": "party"
     },
-    "_lord": {
-      "atk": 598,
-      "def": 902,
-      "hp": 3100,
-      "rec": 1275
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "hp_min",
+      "target type": "party"
     },
-    "anima": {
-      "atk": 598,
-      "def": 902,
-      "hp max": 3490,
-      "hp min": 3295,
-      "rec max": 1236,
-      "rec min": 1158
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 185
     },
-    "breaker": {
-      "atk max": 715,
-      "atk min": 637,
-      "def max": 863,
-      "def min": 785,
-      "hp": 3100,
-      "rec": 1275
+    "idle": {
+      "total number of frames": 48
     },
-    "guardian": {
-      "atk": 598,
-      "def max": 1019,
-      "def min": 941,
-      "hp": 3100,
-      "rec max": 1275,
-      "rec min": 1197
-    },
-    "oracle": {
-      "atk": 598,
-      "def max": 902,
-      "def min": 824,
-      "hp": 3100,
-      "rec max": 1431,
-      "rec min": 1353
+    "move": {
+      "total number of frames": 48
     }
   },
-  "leader_skill": {
-    "desc": "Boost in effectiveness of Heart Crystals",
-    "effects": [
-      {
-        "hc effectiveness%": 25,
-        "passive id": "10"
-      }
+  "category": 20150,
+  "cost": "5",
+  "damage frames": {
+    "frame times": [
+      140,
+      142,
+      144
     ],
-    "id": "1100",
-    "name": "Loving Spirit"
+    "hit dmg% distribution": [
+      33,
+      33,
+      34
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 3
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "water",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 224,
+  "imp": {
+    "max atk": "120",
+    "max def": "120",
+    "max hp": "300",
+    "max rec": "120"
+  },
+  "kind": "normal",
+  "lord damage range": "556~621",
+  "movement": {
+    "attack": {
+      "move speed": 0,
+      "move speed type": "5",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 0,
+      "move speed type": "5",
+      "move type": "3"
+    }
+  },
+  "name": "Elimo",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "Elimo",
+  "maxlv": "40",
+  "no": "224",
   "unitDisplayHomePosition_1W9CxaFK": "276,160,147,403",
   "unitDisplayDetailPosition_6z54rgb3": "100,110,721,646",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "215,403,265,225,0",
@@ -415,5 +412,97 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "1000",
   "sellCaution": false,
-  "effectFrames": "134:180:1,136:180:1,138:180:1"
+  "effectFrames": "134:180:1,136:180:1,138:180:1",
+  "evofrom": "",
+  "evointo": "20153",
+  "evozelcost": "100000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "20132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20131",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60142",
+      "count": 1
+    }
+  ],
+  "freetext": ":''For other uses, see Elimo (disambiguation).''",
+  "basexp": "21",
+  "animation_attack": "185",
+  "animation_idle": "48",
+  "animation_move": "48",
+  "movespeed_attack": "0",
+  "movespeed_skill": "0",
+  "speedtype_attack": "5",
+  "speedtype_skill": "5",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "140, 142, 144",
+  "normal_distribute": "33, 33, 34",
+  "normal_totaldistr": "100",
+  "description": "A daughter from an aristocratic family hailing from the Sama Kingdom. A fervent reader, she was known to read academic tomes instead of picture books as a child. When she was 15, she stumbled across a book written in a mysterious language, and swore to one day decipher its contents. Hearing tales of remote stone monuments inscribed with a similar-looking script, she embarked on a journey into unchartered lands teeming with monsters, with only the magic she had learned from her books to protect her.",
+  "summon": "Ah, you’re summoning me now, is that it?<br>Gotcha. Ready when you are.",
+  "fusion": "W-Wait...<br>I-Is this what I think it is?<br>(Gasp...!) FUSION!",
+  "evolution": "",
+  "hp_base": "2000",
+  "atk_base": "460",
+  "def_base": "640",
+  "rec_base": "750",
+  "hp_lord": "3100",
+  "atk_lord": "598",
+  "def_lord": "902",
+  "rec_lord": "1275",
+  "hp_anima": "3393",
+  "rec_anima": "1197",
+  "atk_breaker": "676",
+  "def_breaker": "824",
+  "atk_guardian": "520",
+  "def_guardian": "980",
+  "rec_guardian": "1236",
+  "def_oracle": "863",
+  "hp_oracle": "2983",
+  "rec_oracle": "1392",
+  "hp_bonus": "300",
+  "atk_bonus": "120",
+  "def_bonus": "120",
+  "rec_bonus": "120",
+  "lordonly": "",
+  "combo_hits": "3",
+  "normaldc": "9",
+  "ls": "Loving Spirit",
+  "lsdescription": "Boost in effectiveness of Heart Crystals",
+  "lsnote": "25% boost",
+  "lstype": "Recovery",
+  "bbdescription": "Recovers HP for all allies and Boosts DEF for 3 Turns",
+  "bbnote": "Heals (1060~1460 + 27% of healer Rec) HP, 25% boost to Def",
+  "bbtype": "Heal/Support",
+  "bbhits": "",
+  "bbaoe": "0",
+  "bbgauge": "20",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "20132",
+  "evomats2": "20131",
+  "evomats3": "20131",
+  "evomats4": "60142",
+  "evomats5": "",
+  "evoitem": ""
 }

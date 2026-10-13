@@ -1,68 +1,109 @@
 {
   "id": "30967",
-  "unitName": "Final Petal Phileine",
-  "no": "1633",
-  "element": "Earth",
-  "rarity": "Omni",
-  "cost": "50",
-  "maxlv": "150",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "1",
-  "animation_attack": "150",
-  "animation_idle": "52",
-  "animation_move": "13",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "99, 117, 120, 123, 126, 129, 132, 135",
-  "normal_distribute": "7, 45, 15, 10, 8, 6, 5, 4",
-  "normal_totaldistr": "100",
-  "bb_frames": "99, 117, 120, 123, 126, 129, 132, 135, 138, 141, 144, 147, 150, 153",
-  "bb_distribute": "4, 34, 11, 9, 8, 6, 5, 4, 5, 4, 3, 2, 3, 2",
-  "bb_totaldistr": "100",
-  "sbb_frames": "99, 117, 120, 123, 126, 129, 132, 135, 138, 141, 144, 147, 150, 153, 156, 159, 162",
-  "sbb_distribute": "3, 30, 11, 9, 8, 6, 5, 4, 3, 4, 3, 2, 3, 2, 3, 2, 2",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "99, 120, 123, 126, 129, 132, 135, 138, 141, 144, 147, 150, 153, 156, 161, 166, 172, 178, 184, 190, 198, 206",
-  "ubb_distribute": "4, 22, 11, 8, 6, 5, 4, 5, 4, 3, 2, 3, 2, 2, 3, 2, 2, 3, 2, 2, 3, 2",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "1",
-  "ubb_effectdelay": "1",
-  "description": "Scholars believe that Phileine first held interest in life-manipulating magic in order to save her father, who suffered from an incurable illness. Furthermore, they hold that her experiments with the soul-flaying technique were performed on her father himself. Had she only accepted her father's death instead of turning to the soul-flaying technique, she likely would have remained under Bran's tutelage and developed her abilities further. In that event, she might have contributed considerably to the advancement of magic across the entire Atharva Republic, spreading knowledge as a leader among Bran's apprentices.",
-  "summon": "I will spread everything that Master Bran has taught me far and wide... I'm sure that's what my father would want.",
-  "fusion": "This power... I'll put it to good use. I don't have time to dwell on the past anymore!",
-  "evolution": "My father wanted to die as he was destined to, not live by some forbidden magic... I have to live a life he would be proud of.",
-  "hp_base": "6365",
-  "atk_base": "2368",
-  "def_base": "2472",
-  "rec_base": "2582",
-  "hp_lord": "8265",
-  "atk_lord": "2933",
-  "def_lord": "3089",
-  "rec_lord": "3213",
-  "hp_anima": "9382",
-  "rec_anima": "2915",
-  "atk_breaker": "3231",
-  "def_breaker": "2791",
-  "def_guardian": "3387",
-  "rec_guardian": "3064",
-  "def_oracle": "2940",
-  "rec_oracle": "3660",
-  "hp_bonus": "1250",
-  "atk_bonus": "400",
-  "def_bonus": "800",
-  "rec_bonus": "500",
-  "lordonly": "",
-  "combo_hits": "8",
-  "normaldc": "48",
-  "ls": "Emerald Supremacy",
-  "lsdescription": "60% boost to Def, Rec, max HP, damage taken boosts BB gauge and may restore HP & slight damage reduction for 2 turns when damage taken exceeds certain amount",
-  "lsnote": "Fills 4-7 BC, 25% chance to heal 25% damage & 20% reduction after 5000 damage",
+  "stats": {
+    "_base": {
+      "atk": 2368,
+      "def": 2472,
+      "hp": 6365,
+      "rec": 2582
+    },
+    "_lord": {
+      "atk": 2933,
+      "def": 3089,
+      "hp": 8265,
+      "rec": 3213
+    },
+    "anima": {
+      "atk": 2933,
+      "def": 3089,
+      "hp max": 9755,
+      "hp min": 9010,
+      "rec max": 3064,
+      "rec min": 2766
+    },
+    "breaker": {
+      "atk max": 3380,
+      "atk min": 3082,
+      "def max": 2940,
+      "def min": 2642,
+      "hp": 8265,
+      "rec": 3213
+    },
+    "guardian": {
+      "atk": 2933,
+      "def max": 3536,
+      "def min": 3238,
+      "hp": 8265,
+      "rec max": 3213,
+      "rec min": 2915
+    },
+    "oracle": {
+      "atk": 2933,
+      "def max": 3089,
+      "def min": 2791,
+      "hp": 8265,
+      "rec max": 3809,
+      "rec min": 3511
+    }
+  },
+  "leader_skill": {
+    "desc": "60% boost to Def, Rec, max HP, damage taken boosts BB gauge and may restore HP & slight damage reduction for 2 turns when damage taken exceeds certain amount",
+    "effects": [
+      {
+        "def% buff": 60,
+        "hp% buff": 60,
+        "passive id": "1",
+        "rec% buff": 60
+      },
+      {
+        "dmg% to hp% when attacked chance%": 25,
+        "dmg% to hp% when attacked high": 25,
+        "dmg% to hp% when attacked low": 25,
+        "passive id": "24"
+      },
+      {
+        "bc fill when attacked high": 7,
+        "bc fill when attacked low": 4,
+        "bc fill when attacked%": 100,
+        "passive id": "25"
+      },
+      {
+        "buff": {
+          "buff turns (36)": "1",
+          "dmg reduction% buff": 20
+        },
+        "damage threshold buff activation": 5000,
+        "passive id": "78"
+      }
+    ],
+    "id": "12517",
+    "name": "Emerald Supremacy"
+  },
+  "extra_skill": {
+    "desc": "Damage taken boosts BB gauge and may restore HP",
+    "effects": [
+      {
+        "bc fill when attacked high": 3,
+        "bc fill when attacked low": 2,
+        "bc fill when attacked%": 100,
+        "conditions": [],
+        "passive id": "25",
+        "passive target": "self"
+      },
+      {
+        "conditions": [],
+        "dmg% to hp% when attacked chance%": 25,
+        "dmg% to hp% when attacked high": 25,
+        "dmg% to hp% when attacked low": 20,
+        "passive id": "24",
+        "passive target": "self"
+      }
+    ],
+    "id": "36000",
+    "name": "Critical Mission",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -739,14 +780,6 @@
     ],
     "name": "Avnir Craze"
   },
-  "bbdescription": "14 combo powerful Earth attack on all foes, fully restores HP, removes all status ailments, hugely boosts Atk relative to Def for 3 turns & greatly restores HP for 3 turns",
-  "bbnote": "70% Def to Atk, heals 4000-4500 + 40% of own Rec '''(DOES NOT fully restore HP)''' & heals 3500-4000 + 15% Rec for 3 turns",
-  "bbtype": "Heal/Offense",
-  "bbhits": "14",
-  "bbaoe": "A",
-  "bbgauge": "22",
-  "bbdc": "14",
-  "bbmultiplier": "420",
   "sbb": {
     "damage frames": [
       {
@@ -1451,14 +1484,6 @@
     ],
     "name": "Manipulator Cercatore"
   },
-  "sbbdescription": "17 combo powerful Earth attack on all foes, probable huge 1 turn Atk reduction, hugely boosts BB gauge, greatly restores HP, hugely boosts Def relative to Atk for 3 turns & considerably boosts BC, HC drop rates for 3 turns",
-  "sbbnote": "70% Atk to Def, 30% chance to reduce enemy Atk by 50%, fills 8 BC, heals 4000-4500 + 40% of own Rec & 35% drop rate",
-  "sbbtype": "Heal/Offense",
-  "sbbhits": "17",
-  "sbbaoe": "A",
-  "sbbgauge": "30",
-  "sbbdc": "17",
-  "sbbmultiplier": "620",
   "ubb": {
     "damage frames": [
       {
@@ -1649,6 +1674,186 @@
     ],
     "name": "Jade Exalty"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "party"
+    },
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 150
+    },
+    "idle": {
+      "total number of frames": 52
+    },
+    "move": {
+      "total number of frames": 13
+    }
+  },
+  "category": 30960,
+  "cost": "50",
+  "damage frames": {
+    "frame times": [
+      99,
+      117,
+      120,
+      123,
+      126,
+      129,
+      132,
+      135
+    ],
+    "hit dmg% distribution": [
+      7,
+      45,
+      15,
+      10,
+      8,
+      6,
+      5,
+      4
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 8
+  },
+  "drop check count": 6,
+  "element": "earth",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 1633,
+  "imp": {
+    "max atk": "400",
+    "max def": "800",
+    "max hp": "1250",
+    "max rec": "500"
+  },
+  "kind": "normal",
+  "lord damage range": "2730~3050",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Final Petal Phileine",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "8",
+  "sell caution": false,
+  "unitName": "Final Petal Phileine",
+  "maxlv": "150",
+  "no": "1633",
+  "unitDisplayHomePosition_1W9CxaFK": "744,384,174,475",
+  "unitDisplayDetailPosition_6z54rgb3": "-408,-198,1690,1260",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "-99,72,860,641,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-410,-468,1690,1260",
+  "unitDisplaySummonPosition_KC3Jk8Br": "-99,72,860,641,0",
+  "unitDisplayHpPosition_3BpHN6VD": "4,47",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "50000",
+  "sellCaution": false,
+  "effectFrames": "45:330966:1,60:331182:1,100:330965:1,94:330757:1,114:330993:1,119:500710:1",
+  "evofrom": "30966",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "21",
+  "animation_attack": "150",
+  "animation_idle": "52",
+  "animation_move": "13",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "99, 117, 120, 123, 126, 129, 132, 135",
+  "normal_distribute": "7, 45, 15, 10, 8, 6, 5, 4",
+  "normal_totaldistr": "100",
+  "bb_frames": "99, 117, 120, 123, 126, 129, 132, 135, 138, 141, 144, 147, 150, 153",
+  "bb_distribute": "4, 34, 11, 9, 8, 6, 5, 4, 5, 4, 3, 2, 3, 2",
+  "bb_totaldistr": "100",
+  "sbb_frames": "99, 117, 120, 123, 126, 129, 132, 135, 138, 141, 144, 147, 150, 153, 156, 159, 162",
+  "sbb_distribute": "3, 30, 11, 9, 8, 6, 5, 4, 3, 4, 3, 2, 3, 2, 3, 2, 2",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "99, 120, 123, 126, 129, 132, 135, 138, 141, 144, 147, 150, 153, 156, 161, 166, 172, 178, 184, 190, 198, 206",
+  "ubb_distribute": "4, 22, 11, 8, 6, 5, 4, 5, 4, 3, 2, 3, 2, 2, 3, 2, 2, 3, 2, 2, 3, 2",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "1",
+  "ubb_effectdelay": "1",
+  "description": "Scholars believe that Phileine first held interest in life-manipulating magic in order to save her father, who suffered from an incurable illness. Furthermore, they hold that her experiments with the soul-flaying technique were performed on her father himself. Had she only accepted her father's death instead of turning to the soul-flaying technique, she likely would have remained under Bran's tutelage and developed her abilities further. In that event, she might have contributed considerably to the advancement of magic across the entire Atharva Republic, spreading knowledge as a leader among Bran's apprentices.",
+  "summon": "I will spread everything that Master Bran has taught me far and wide... I'm sure that's what my father would want.",
+  "fusion": "This power... I'll put it to good use. I don't have time to dwell on the past anymore!",
+  "evolution": "My father wanted to die as he was destined to, not live by some forbidden magic... I have to live a life he would be proud of.",
+  "hp_base": "6365",
+  "atk_base": "2368",
+  "def_base": "2472",
+  "rec_base": "2582",
+  "hp_lord": "8265",
+  "atk_lord": "2933",
+  "def_lord": "3089",
+  "rec_lord": "3213",
+  "hp_anima": "9382",
+  "rec_anima": "2915",
+  "atk_breaker": "3231",
+  "def_breaker": "2791",
+  "def_guardian": "3387",
+  "rec_guardian": "3064",
+  "def_oracle": "2940",
+  "rec_oracle": "3660",
+  "hp_bonus": "1250",
+  "atk_bonus": "400",
+  "def_bonus": "800",
+  "rec_bonus": "500",
+  "lordonly": "",
+  "combo_hits": "8",
+  "normaldc": "48",
+  "ls": "Emerald Supremacy",
+  "lsdescription": "60% boost to Def, Rec, max HP, damage taken boosts BB gauge and may restore HP & slight damage reduction for 2 turns when damage taken exceeds certain amount",
+  "lsnote": "Fills 4-7 BC, 25% chance to heal 25% damage & 20% reduction after 5000 damage",
+  "bbdescription": "14 combo powerful Earth attack on all foes, fully restores HP, removes all status ailments, hugely boosts Atk relative to Def for 3 turns & greatly restores HP for 3 turns",
+  "bbnote": "70% Def to Atk, heals 4000-4500 + 40% of own Rec '''(DOES NOT fully restore HP)''' & heals 3500-4000 + 15% Rec for 3 turns",
+  "bbtype": "Heal/Offense",
+  "bbhits": "14",
+  "bbaoe": "A",
+  "bbgauge": "22",
+  "bbdc": "14",
+  "bbmultiplier": "420",
+  "sbbdescription": "17 combo powerful Earth attack on all foes, probable huge 1 turn Atk reduction, hugely boosts BB gauge, greatly restores HP, hugely boosts Def relative to Atk for 3 turns & considerably boosts BC, HC drop rates for 3 turns",
+  "sbbnote": "70% Atk to Def, 30% chance to reduce enemy Atk by 50%, fills 8 BC, heals 4000-4500 + 40% of own Rec & 35% drop rate",
+  "sbbtype": "Heal/Offense",
+  "sbbhits": "17",
+  "sbbaoe": "A",
+  "sbbgauge": "30",
+  "sbbdc": "17",
+  "sbbmultiplier": "620",
   "ubbdescription": "22 combo massive Earth attack on all foes, enormous 3 turn Atk reduction, activates Earth barrier, enormously boosts Atk, Def, Rec for 3 turns, enormously boosts Atk, Def relative to Rec for 3 turns & fully restores HP for 3 turns",
   "ubbnote": "80% reduction, activates 30,000 HP barrier, 350% parameter boost & 250% Rec to Atk, Def",
   "ubbtype": "Heal/Offense",
@@ -1661,8 +1866,6 @@
   "esitem": "",
   "esdescription": "Damage taken boosts BB gauge and may restore HP",
   "esnote": "Fills 2-3 BC & 25% chance to heal 20-25% damage",
-  "evofrom": "30966",
-  "evointo": "",
   "evomats1": "",
   "evomats2": "",
   "evomats3": "",
@@ -1671,120 +1874,5 @@
   "evomats6": "",
   "evomats7": "",
   "evomats8": "",
-  "evoitem": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 2368,
-      "def": 2472,
-      "hp": 6365,
-      "rec": 2582
-    },
-    "_lord": {
-      "atk": 2933,
-      "def": 3089,
-      "hp": 8265,
-      "rec": 3213
-    },
-    "anima": {
-      "atk": 2933,
-      "def": 3089,
-      "hp max": 9755,
-      "hp min": 9010,
-      "rec max": 3064,
-      "rec min": 2766
-    },
-    "breaker": {
-      "atk max": 3380,
-      "atk min": 3082,
-      "def max": 2940,
-      "def min": 2642,
-      "hp": 8265,
-      "rec": 3213
-    },
-    "guardian": {
-      "atk": 2933,
-      "def max": 3536,
-      "def min": 3238,
-      "hp": 8265,
-      "rec max": 3213,
-      "rec min": 2915
-    },
-    "oracle": {
-      "atk": 2933,
-      "def max": 3089,
-      "def min": 2791,
-      "hp": 8265,
-      "rec max": 3809,
-      "rec min": 3511
-    }
-  },
-  "leader_skill": {
-    "desc": "60% boost to Def, Rec, max HP, damage taken boosts BB gauge and may restore HP & slight damage reduction for 2 turns when damage taken exceeds certain amount",
-    "effects": [
-      {
-        "def% buff": 60,
-        "hp% buff": 60,
-        "passive id": "1",
-        "rec% buff": 60
-      },
-      {
-        "dmg% to hp% when attacked chance%": 25,
-        "dmg% to hp% when attacked high": 25,
-        "dmg% to hp% when attacked low": 25,
-        "passive id": "24"
-      },
-      {
-        "bc fill when attacked high": 7,
-        "bc fill when attacked low": 4,
-        "bc fill when attacked%": 100,
-        "passive id": "25"
-      },
-      {
-        "buff": {
-          "buff turns (36)": "1",
-          "dmg reduction% buff": 20
-        },
-        "damage threshold buff activation": 5000,
-        "passive id": "78"
-      }
-    ],
-    "id": "12517",
-    "name": "Emerald Supremacy"
-  },
-  "extra_skill": {
-    "desc": "Damage taken boosts BB gauge and may restore HP",
-    "effects": [
-      {
-        "bc fill when attacked high": 3,
-        "bc fill when attacked low": 2,
-        "bc fill when attacked%": 100,
-        "conditions": [],
-        "passive id": "25",
-        "passive target": "self"
-      },
-      {
-        "conditions": [],
-        "dmg% to hp% when attacked chance%": 25,
-        "dmg% to hp% when attacked high": 25,
-        "dmg% to hp% when attacked low": 20,
-        "passive id": "24",
-        "passive target": "self"
-      }
-    ],
-    "id": "36000",
-    "name": "Critical Mission",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "744,384,174,475",
-  "unitDisplayDetailPosition_6z54rgb3": "-408,-198,1690,1260",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "-99,72,860,641,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-410,-468,1690,1260",
-  "unitDisplaySummonPosition_KC3Jk8Br": "-99,72,860,641,0",
-  "unitDisplayHpPosition_3BpHN6VD": "4,47",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "50000",
-  "sellCaution": false,
-  "effectFrames": "45:330966:1,60:331182:1,100:330965:1,94:330757:1,114:330993:1,119:500710:1"
+  "evoitem": ""
 }

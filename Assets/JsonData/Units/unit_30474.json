@@ -1,59 +1,63 @@
 {
   "id": "30474",
-  "unitName": "Divine Guardian Tia",
-  "no": "688",
-  "element": "Earth",
-  "rarity": "★★★★★",
-  "cost": "17",
-  "maxlv": "80",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "6",
-  "animation_attack": "121",
-  "animation_idle": "60",
-  "animation_move": "6",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "4",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "3",
-  "normal_frames": "39, 60, 67, 71, 82, 90, 98",
-  "normal_distribute": "15, 15, 10, 10, 13, 15, 22",
-  "normal_totaldistr": "100",
-  "description": "A girl who protected the forest with her animal friends. The forest in which she lived in was being gradually destroyed by the development of a nearby metropolis. Abhorred at the barbarisms being committed by humans against the forest, she watched as they tried to exterminate the forest animals with magical fire techniques. This fire would serve as the trigger that would unlock Tia's rage. Aching for retribution, a goddess bathed in blood appeared before her. It is said that the goddess invited her to destroy the humans together while smiling innocently.",
-  "summon": "You won't destroy the forest?<br>Well, if you say so...",
-  "fusion": "The forest... The animals...<br>I need power to protect them...",
-  "evolution": "I didn't get stronger alone.<br>We all got stronger together.<br>Hehe, thanks, everyone!",
-  "hp_base": "3599",
-  "atk_base": "1146",
-  "def_base": "1264",
-  "rec_base": "1309",
-  "hp_lord": "5105",
-  "atk_lord": "1510",
-  "def_lord": "1671",
-  "rec_lord": "1715",
-  "hp_anima": "5698",
-  "rec_anima": "1557",
-  "atk_breaker": "1668",
-  "def_breaker": "1513",
-  "atk_guardian": "1352",
-  "def_guardian": "1829",
-  "rec_guardian": "1636",
-  "def_oracle": "1592",
-  "hp_oracle": "4868",
-  "rec_oracle": "1952",
-  "hp_bonus": "500",
-  "atk_bonus": "140",
-  "def_bonus": "260",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "7",
-  "normaldc": "14",
-  "ls": "Loving Devotion",
-  "lsdescription": "Large boost in effectiveness of Heart Crystals",
-  "lsnote": "50% boost",
-  "lstype": "Recovery",
+  "stats": {
+    "_base": {
+      "atk": 1146,
+      "def": 1264,
+      "hp": 3599,
+      "rec": 1309
+    },
+    "_lord": {
+      "atk": 1510,
+      "def": 1671,
+      "hp": 5105,
+      "rec": 1715
+    },
+    "anima": {
+      "atk": 1510,
+      "def": 1671,
+      "hp max": 5895,
+      "hp min": 5500,
+      "rec max": 1636,
+      "rec min": 1478
+    },
+    "breaker": {
+      "atk max": 1747,
+      "atk min": 1589,
+      "def max": 1592,
+      "def min": 1434,
+      "hp": 5105,
+      "rec": 1715
+    },
+    "guardian": {
+      "atk": 1510,
+      "def max": 1908,
+      "def min": 1750,
+      "hp": 5105,
+      "rec max": 1715,
+      "rec min": 1557
+    },
+    "oracle": {
+      "atk": 1510,
+      "def max": 1671,
+      "def min": 1513,
+      "hp": 5105,
+      "rec max": 2031,
+      "rec min": 1873
+    }
+  },
+  "leader_skill": {
+    "desc": "Large boost in effectiveness of Heart Crystals",
+    "effects": [
+      {
+        "hc effectiveness%": 50,
+        "passive id": "10"
+      }
+    ],
+    "id": "1101",
+    "name": "Loving Devotion"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -328,92 +332,95 @@
     ],
     "name": "Forest Master's Blessing"
   },
-  "bbdescription": "Greatly recovers HP & gradually recovers HP for 3 turns for all allies",
-  "bbnote": "Heals (2000~2300 + 22.5% of healer Rec) HP & gradually heals (1600~1800 + 10% of target Rec) HP",
-  "bbtype": "Heal",
-  "bbhits": "0",
-  "bbaoe": "0",
-  "bbgauge": "20",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "30473",
-  "evointo": "30475",
-  "evomats1": "50354",
-  "evomats2": "30133",
-  "evomats3": "30191",
-  "evomats4": "60144",
-  "evomats5": "60224",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 1146,
-      "def": 1264,
-      "hp": 3599,
-      "rec": 1309
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 100.0,
+      "target conditions": "hp_25pr_under",
+      "target type": "party"
     },
-    "_lord": {
-      "atk": 1510,
-      "def": 1671,
-      "hp": 5105,
-      "rec": 1715
+    {
+      "action": "attack",
+      "chance%": 50.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1510,
-      "def": 1671,
-      "hp max": 5895,
-      "hp min": 5500,
-      "rec max": 1636,
-      "rec min": 1478
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 121
     },
-    "breaker": {
-      "atk max": 1747,
-      "atk min": 1589,
-      "def max": 1592,
-      "def min": 1434,
-      "hp": 5105,
-      "rec": 1715
+    "idle": {
+      "total number of frames": 60
     },
-    "guardian": {
-      "atk": 1510,
-      "def max": 1908,
-      "def min": 1750,
-      "hp": 5105,
-      "rec max": 1715,
-      "rec min": 1557
-    },
-    "oracle": {
-      "atk": 1510,
-      "def max": 1671,
-      "def min": 1513,
-      "hp": 5105,
-      "rec max": 2031,
-      "rec min": 1873
+    "move": {
+      "total number of frames": 6
     }
   },
-  "leader_skill": {
-    "desc": "Large boost in effectiveness of Heart Crystals",
-    "effects": [
-      {
-        "hc effectiveness%": 50,
-        "passive id": "10"
-      }
+  "category": 30470,
+  "cost": "17",
+  "damage frames": {
+    "frame times": [
+      39,
+      60,
+      67,
+      71,
+      82,
+      90,
+      98
     ],
-    "id": "1101",
-    "name": "Loving Devotion"
+    "hit dmg% distribution": [
+      15,
+      15,
+      10,
+      10,
+      13,
+      15,
+      22
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 7
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "earth",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 688,
+  "imp": {
+    "max atk": "140",
+    "max def": "260",
+    "max hp": "500",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "1406~1570",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    }
+  },
+  "name": "Divine Guardian Tia",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Divine Guardian Tia",
+  "maxlv": "80",
+  "no": "688",
   "unitDisplayHomePosition_1W9CxaFK": "365,244,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-28,-28,900,824",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "50,-16,684,639,0",
@@ -423,5 +430,105 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "39:133:1,39:300261:1,60:133:1,42:300261:1,67:123:1,71:123:1,82:133:1,90:133:1,98:133:1,78:300261:1,70:242:1,66:330413:1,39:500094:1,60:500094:1,90:500094:1"
+  "effectFrames": "39:133:1,39:300261:1,60:133:1,42:300261:1,67:123:1,71:123:1,82:133:1,90:133:1,98:133:1,78:300261:1,70:242:1,66:330413:1,39:500094:1,60:500094:1,90:500094:1",
+  "evofrom": "30473",
+  "evointo": "30475",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "121",
+  "animation_idle": "60",
+  "animation_move": "6",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "4",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "3",
+  "normal_frames": "39, 60, 67, 71, 82, 90, 98",
+  "normal_distribute": "15, 15, 10, 10, 13, 15, 22",
+  "normal_totaldistr": "100",
+  "description": "A girl who protected the forest with her animal friends. The forest in which she lived in was being gradually destroyed by the development of a nearby metropolis. Abhorred at the barbarisms being committed by humans against the forest, she watched as they tried to exterminate the forest animals with magical fire techniques. This fire would serve as the trigger that would unlock Tia's rage. Aching for retribution, a goddess bathed in blood appeared before her. It is said that the goddess invited her to destroy the humans together while smiling innocently.",
+  "summon": "You won't destroy the forest?<br>Well, if you say so...",
+  "fusion": "The forest... The animals...<br>I need power to protect them...",
+  "evolution": "I didn't get stronger alone.<br>We all got stronger together.<br>Hehe, thanks, everyone!",
+  "hp_base": "3599",
+  "atk_base": "1146",
+  "def_base": "1264",
+  "rec_base": "1309",
+  "hp_lord": "5105",
+  "atk_lord": "1510",
+  "def_lord": "1671",
+  "rec_lord": "1715",
+  "hp_anima": "5698",
+  "rec_anima": "1557",
+  "atk_breaker": "1668",
+  "def_breaker": "1513",
+  "atk_guardian": "1352",
+  "def_guardian": "1829",
+  "rec_guardian": "1636",
+  "def_oracle": "1592",
+  "hp_oracle": "4868",
+  "rec_oracle": "1952",
+  "hp_bonus": "500",
+  "atk_bonus": "140",
+  "def_bonus": "260",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "7",
+  "normaldc": "14",
+  "ls": "Loving Devotion",
+  "lsdescription": "Large boost in effectiveness of Heart Crystals",
+  "lsnote": "50% boost",
+  "lstype": "Recovery",
+  "bbdescription": "Greatly recovers HP & gradually recovers HP for 3 turns for all allies",
+  "bbnote": "Heals (2000~2300 + 22.5% of healer Rec) HP & gradually heals (1600~1800 + 10% of target Rec) HP",
+  "bbtype": "Heal",
+  "bbhits": "0",
+  "bbaoe": "0",
+  "bbgauge": "20",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "30133",
+  "evomats3": "30191",
+  "evomats4": "60144",
+  "evomats5": "60224"
 }

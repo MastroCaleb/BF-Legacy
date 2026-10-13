@@ -1,61 +1,63 @@
 {
   "id": "20484",
-  "unitName": "Aqua Ruler Kuhla",
-  "no": "685",
-  "element": "Water",
-  "rarity": "★★★★★",
-  "cost": "17",
-  "maxlv": "80",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "128",
-  "animation_idle": "60",
-  "animation_move": "8",
-  "movespeed_attack": "0.0041",
-  "movespeed_skill": "0.0041",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "66, 72, 78, 84, 90, 96, 102",
-  "normal_distribute": "15, 15, 14, 14, 14, 14, 14",
-  "normal_totaldistr": "100",
-  "bb_frames": "66, 72, 78, 84, 90, 96, 102, 108, 114, 120",
-  "bb_distribute": "10, 10, 10, 10, 10, 10, 10, 10, 10, 10",
-  "bb_totaldistr": "100",
-  "description": "A sorceress from the Sama Kingdom. When the gods began invading the land she received a letter from her motherland which stated that it was being ravaged by the war. And though she did not usually care much for people, she decided to head towards the battlefield in order to help her powerless countrymen. She saved many with her powers, receiving great praise from the royal family. She was unmoved by this, however, and decided to continue lending her powers to those who did not have any of their own. That is, until the knight she had nursed back to health appeared in front of her once more.",
-  "summon": "I'm no good at chatting...<br>Sorry...",
-  "fusion": "Are you making me stronger...?<br>I owe you...",
-  "evolution": "I didn't ask for this power...<br>But I do need it...",
-  "hp_base": "3591",
-  "atk_base": "1289",
-  "def_base": "1176",
-  "rec_base": "1262",
-  "hp_lord": "5018",
-  "atk_lord": "1669",
-  "def_lord": "1537",
-  "rec_lord": "1646",
-  "hp_anima": "5611",
-  "rec_anima": "1488",
-  "atk_breaker": "1827",
-  "def_breaker": "1379",
-  "atk_guardian": "1511",
-  "def_guardian": "1695",
-  "rec_guardian": "1567",
-  "def_oracle": "1458",
-  "hp_oracle": "4781",
-  "rec_oracle": "1883",
-  "hp_bonus": "500",
-  "atk_bonus": "260",
-  "def_bonus": "140",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "7",
-  "normaldc": "14",
-  "ls": "Supreme Oracle",
-  "lsdescription": "30% boost to HP of all Units",
-  "lstype": "Hit Points",
+  "stats": {
+    "_base": {
+      "atk": 1289,
+      "def": 1176,
+      "hp": 3591,
+      "rec": 1262
+    },
+    "_lord": {
+      "atk": 1669,
+      "def": 1537,
+      "hp": 5018,
+      "rec": 1646
+    },
+    "anima": {
+      "atk": 1669,
+      "def": 1537,
+      "hp max": 5808,
+      "hp min": 5413,
+      "rec max": 1567,
+      "rec min": 1409
+    },
+    "breaker": {
+      "atk max": 1906,
+      "atk min": 1748,
+      "def max": 1458,
+      "def min": 1300,
+      "hp": 5018,
+      "rec": 1646
+    },
+    "guardian": {
+      "atk": 1669,
+      "def max": 1774,
+      "def min": 1616,
+      "hp": 5018,
+      "rec max": 1646,
+      "rec min": 1488
+    },
+    "oracle": {
+      "atk": 1669,
+      "def max": 1537,
+      "def min": 1379,
+      "hp": 5018,
+      "rec max": 1962,
+      "rec min": 1804
+    }
+  },
+  "leader_skill": {
+    "desc": "30% boost to max HP",
+    "effects": [
+      {
+        "hp% buff": 30,
+        "passive id": "1"
+      }
+    ],
+    "id": "5501",
+    "name": "Supreme Oracle"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -308,95 +310,95 @@
     ],
     "name": "Ruthless Cascade"
   },
-  "bbdescription": "10 combo Water elemental attack on all enemies & slightly increases allies' BB gauge",
-  "bbnote": "7 BC fill",
-  "bbtype": "Support/Offense",
-  "bbhits": "10",
-  "bbaoe": "A",
-  "bbgauge": "26",
-  "bbdc": "10",
-  "bbmultiplier": "240",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "20483",
-  "evointo": "20485",
-  "evomats1": "50354",
-  "evomats2": "20133",
-  "evomats3": "20191",
-  "evomats4": "60144",
-  "evomats5": "60224",
-  "evoitem": "",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 1289,
-      "def": 1176,
-      "hp": 3591,
-      "rec": 1262
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1669,
-      "def": 1537,
-      "hp": 5018,
-      "rec": 1646
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1669,
-      "def": 1537,
-      "hp max": 5808,
-      "hp min": 5413,
-      "rec max": 1567,
-      "rec min": 1409
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 128
     },
-    "breaker": {
-      "atk max": 1906,
-      "atk min": 1748,
-      "def max": 1458,
-      "def min": 1300,
-      "hp": 5018,
-      "rec": 1646
+    "idle": {
+      "total number of frames": 60
     },
-    "guardian": {
-      "atk": 1669,
-      "def max": 1774,
-      "def min": 1616,
-      "hp": 5018,
-      "rec max": 1646,
-      "rec min": 1488
-    },
-    "oracle": {
-      "atk": 1669,
-      "def max": 1537,
-      "def min": 1379,
-      "hp": 5018,
-      "rec max": 1962,
-      "rec min": 1804
+    "move": {
+      "total number of frames": 8
     }
   },
-  "leader_skill": {
-    "desc": "30% boost to max HP",
-    "effects": [
-      {
-        "hp% buff": 30,
-        "passive id": "1"
-      }
+  "category": 20480,
+  "cost": "17",
+  "damage frames": {
+    "frame times": [
+      66,
+      72,
+      78,
+      84,
+      90,
+      96,
+      102
     ],
-    "id": "5501",
-    "name": "Supreme Oracle"
+    "hit dmg% distribution": [
+      15,
+      15,
+      14,
+      14,
+      14,
+      14,
+      14
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 7
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "water",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 685,
+  "imp": {
+    "max atk": "260",
+    "max def": "140",
+    "max hp": "500",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "1554~1735",
+  "movement": {
+    "attack": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    }
+  },
+  "name": "Aqua Ruler Kuhla",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Aqua Ruler Kuhla",
+  "maxlv": "80",
+  "no": "685",
   "unitDisplayHomePosition_1W9CxaFK": "524,219,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-164,-5,1214,864",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "96,234,495,397,0",
@@ -406,5 +408,110 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "60:137:1,66:200062:1,60:200138:1,66:400132:1,66:200284:1,78:200284:1,108:200084:1"
+  "effectFrames": "60:137:1,66:200062:1,60:200138:1,66:400132:1,66:200284:1,78:200284:1,108:200084:1",
+  "evofrom": "20483",
+  "evointo": "20485",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "128",
+  "animation_idle": "60",
+  "animation_move": "8",
+  "movespeed_attack": "0.0041",
+  "movespeed_skill": "0.0041",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "66, 72, 78, 84, 90, 96, 102",
+  "normal_distribute": "15, 15, 14, 14, 14, 14, 14",
+  "normal_totaldistr": "100",
+  "bb_frames": "66, 72, 78, 84, 90, 96, 102, 108, 114, 120",
+  "bb_distribute": "10, 10, 10, 10, 10, 10, 10, 10, 10, 10",
+  "bb_totaldistr": "100",
+  "description": "A sorceress from the Sama Kingdom. When the gods began invading the land she received a letter from her motherland which stated that it was being ravaged by the war. And though she did not usually care much for people, she decided to head towards the battlefield in order to help her powerless countrymen. She saved many with her powers, receiving great praise from the royal family. She was unmoved by this, however, and decided to continue lending her powers to those who did not have any of their own. That is, until the knight she had nursed back to health appeared in front of her once more.",
+  "summon": "I'm no good at chatting...<br>Sorry...",
+  "fusion": "Are you making me stronger...?<br>I owe you...",
+  "evolution": "I didn't ask for this power...<br>But I do need it...",
+  "hp_base": "3591",
+  "atk_base": "1289",
+  "def_base": "1176",
+  "rec_base": "1262",
+  "hp_lord": "5018",
+  "atk_lord": "1669",
+  "def_lord": "1537",
+  "rec_lord": "1646",
+  "hp_anima": "5611",
+  "rec_anima": "1488",
+  "atk_breaker": "1827",
+  "def_breaker": "1379",
+  "atk_guardian": "1511",
+  "def_guardian": "1695",
+  "rec_guardian": "1567",
+  "def_oracle": "1458",
+  "hp_oracle": "4781",
+  "rec_oracle": "1883",
+  "hp_bonus": "500",
+  "atk_bonus": "260",
+  "def_bonus": "140",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "7",
+  "normaldc": "14",
+  "ls": "Supreme Oracle",
+  "lsdescription": "30% boost to HP of all Units",
+  "lstype": "Hit Points",
+  "bbdescription": "10 combo Water elemental attack on all enemies & slightly increases allies' BB gauge",
+  "bbnote": "7 BC fill",
+  "bbtype": "Support/Offense",
+  "bbhits": "10",
+  "bbaoe": "A",
+  "bbgauge": "26",
+  "bbdc": "10",
+  "bbmultiplier": "240",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "20133",
+  "evomats3": "20191",
+  "evomats4": "60144",
+  "evomats5": "60224",
+  "evoitem": ""
 }

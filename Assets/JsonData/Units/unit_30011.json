@@ -1,59 +1,66 @@
 {
   "id": "30011",
-  "unitName": "Pikeman Lance",
-  "no": "9",
-  "element": "Earth",
-  "rarity": "★★",
-  "cost": "2",
-  "maxlv": "12",
-  "basexp": "10",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "94",
-  "animation_idle": "52",
-  "animation_move": "12",
-  "movespeed_attack": "0.0041",
-  "movespeed_skill": "0.0041",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "26, 32, 38",
-  "normal_distribute": "50, 20, 30",
-  "normal_totaldistr": "100",
-  "bb_frames": "26, 32, 38, 44",
-  "bb_distribute": "25, 25, 25, 25",
-  "bb_totaldistr": "100",
-  "description": "A pikeman from the ruined Principality of Vriksha, he eventually became one of the Six Heroes. He was a quiet, noble boy, but one day he saw the Demon Pike Drevas, lying in a storehouse on his estate. Suddenly, he informed his family he was leaving to train. His parents strongly opposed, but in the end he ran away, Drevas in hand. Rumors are that the spear spoke to him.",
-  "summon": "Do you like my pike?<br>Alright, I'll let you see it,<br>but just this once...",
-  "fusion": "Still not enough...<br>I must get stronger...",
-  "evolution": "",
-  "hp_base": "1010",
-  "atk_base": "500",
-  "def_base": "500",
-  "rec_base": "150",
-  "hp_lord": "1876",
-  "atk_lord": "720",
-  "def_lord": "700",
-  "rec_lord": "248",
-  "hp_anima": "1959",
-  "rec_anima": "226",
-  "atk_breaker": "742",
-  "def_breaker": "678",
-  "def_guardian": "722",
-  "rec_guardian": "237",
-  "def_oracle": "689",
-  "rec_oracle": "281",
-  "hp_bonus": "300",
-  "atk_bonus": "120",
-  "def_bonus": "120",
-  "rec_bonus": "120",
-  "lordonly": "",
-  "combo_hits": "3",
-  "normaldc": "9",
-  "ls": "Earth Spirit's Power",
-  "lsdescription": "25% boost to Atk Power of Earth Types",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 500,
+      "def": 500,
+      "hp": 1010,
+      "rec": 150
+    },
+    "_lord": {
+      "atk": 720,
+      "def": 700,
+      "hp": 1876,
+      "rec": 248
+    },
+    "anima": {
+      "atk": 720,
+      "def": 700,
+      "hp max": 1986,
+      "hp min": 1931,
+      "rec max": 237,
+      "rec min": 215
+    },
+    "breaker": {
+      "atk max": 753,
+      "atk min": 731,
+      "def max": 689,
+      "def min": 667,
+      "hp": 1876,
+      "rec": 248
+    },
+    "guardian": {
+      "atk": 720,
+      "def max": 733,
+      "def min": 711,
+      "hp": 1876,
+      "rec max": 248,
+      "rec min": 226
+    },
+    "oracle": {
+      "atk": 720,
+      "def max": 700,
+      "def min": 678,
+      "hp": 1876,
+      "rec max": 292,
+      "rec min": 270
+    }
+  },
+  "leader_skill": {
+    "desc": "25% boost to Atk Power of Earth Types",
+    "effects": [
+      {
+        "atk% buff": 25,
+        "elements buffed": [
+          "earth"
+        ],
+        "passive id": "2"
+      }
+    ],
+    "id": "120",
+    "name": "Earth Spirit's Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -202,96 +209,87 @@
     ],
     "name": "Flash Gale"
   },
-  "bbdescription": "4 combo Earth elemental attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "4",
-  "bbaoe": "A",
-  "bbgauge": "15",
-  "bbdc": "4",
-  "bbmultiplier": "75",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "30012",
-  "evomats1": "30130",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evozelcost": "2500",
-  "stats": {
-    "_base": {
-      "atk": 500,
-      "def": 500,
-      "hp": 1010,
-      "rec": 150
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 720,
-      "def": 700,
-      "hp": 1876,
-      "rec": 248
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 720,
-      "def": 700,
-      "hp max": 1986,
-      "hp min": 1931,
-      "rec max": 237,
-      "rec min": 215
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 94
     },
-    "breaker": {
-      "atk max": 753,
-      "atk min": 731,
-      "def max": 689,
-      "def min": 667,
-      "hp": 1876,
-      "rec": 248
+    "idle": {
+      "total number of frames": 52
     },
-    "guardian": {
-      "atk": 720,
-      "def max": 733,
-      "def min": 711,
-      "hp": 1876,
-      "rec max": 248,
-      "rec min": 226
-    },
-    "oracle": {
-      "atk": 720,
-      "def max": 700,
-      "def min": 678,
-      "hp": 1876,
-      "rec max": 292,
-      "rec min": 270
+    "move": {
+      "total number of frames": 12
     }
   },
-  "leader_skill": {
-    "desc": "25% boost to Atk Power of Earth Types",
-    "effects": [
-      {
-        "atk% buff": 25,
-        "elements buffed": [
-          "earth"
-        ],
-        "passive id": "2"
-      }
+  "category": 30010,
+  "cost": "2",
+  "damage frames": {
+    "frame times": [
+      26,
+      32,
+      38
     ],
-    "id": "120",
-    "name": "Earth Spirit's Power"
+    "hit dmg% distribution": [
+      50,
+      20,
+      30
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 3
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "earth",
+  "exp_pattern": 10,
+  "gender": "male",
+  "getting type": "not eligible for achievement",
+  "guide_id": 9,
+  "imp": {
+    "max atk": "120",
+    "max def": "120",
+    "max hp": "300",
+    "max rec": "120"
+  },
+  "kind": "normal",
+  "lord damage range": "670~748",
+  "movement": {
+    "attack": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    }
+  },
+  "name": "Pikeman Lance",
+  "rarity": "2",
+  "sell caution": false,
+  "unitName": "Pikeman Lance",
+  "maxlv": "12",
+  "no": "9",
   "unitDisplayHomePosition_1W9CxaFK": "322,0,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "27,179,720,566",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "110,359,332,261,0",
@@ -301,5 +299,86 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "300",
   "sellCaution": false,
-  "effectFrames": "20:123:1,26:123:1,32:123:1"
+  "effectFrames": "20:123:1,26:123:1,32:123:1",
+  "evofrom": "",
+  "evointo": "30012",
+  "evozelcost": "2500",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "30130",
+      "count": 1
+    }
+  ],
+  "basexp": "10",
+  "animation_attack": "94",
+  "animation_idle": "52",
+  "animation_move": "12",
+  "movespeed_attack": "0.0041",
+  "movespeed_skill": "0.0041",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "26, 32, 38",
+  "normal_distribute": "50, 20, 30",
+  "normal_totaldistr": "100",
+  "bb_frames": "26, 32, 38, 44",
+  "bb_distribute": "25, 25, 25, 25",
+  "bb_totaldistr": "100",
+  "description": "A pikeman from the ruined Principality of Vriksha, he eventually became one of the Six Heroes. He was a quiet, noble boy, but one day he saw the Demon Pike Drevas, lying in a storehouse on his estate. Suddenly, he informed his family he was leaving to train. His parents strongly opposed, but in the end he ran away, Drevas in hand. Rumors are that the spear spoke to him.",
+  "summon": "Do you like my pike?<br>Alright, I'll let you see it,<br>but just this once...",
+  "fusion": "Still not enough...<br>I must get stronger...",
+  "evolution": "",
+  "hp_base": "1010",
+  "atk_base": "500",
+  "def_base": "500",
+  "rec_base": "150",
+  "hp_lord": "1876",
+  "atk_lord": "720",
+  "def_lord": "700",
+  "rec_lord": "248",
+  "hp_anima": "1959",
+  "rec_anima": "226",
+  "atk_breaker": "742",
+  "def_breaker": "678",
+  "def_guardian": "722",
+  "rec_guardian": "237",
+  "def_oracle": "689",
+  "rec_oracle": "281",
+  "hp_bonus": "300",
+  "atk_bonus": "120",
+  "def_bonus": "120",
+  "rec_bonus": "120",
+  "lordonly": "",
+  "combo_hits": "3",
+  "normaldc": "9",
+  "ls": "Earth Spirit's Power",
+  "lsdescription": "25% boost to Atk Power of Earth Types",
+  "lstype": "Attack",
+  "bbdescription": "4 combo Earth elemental attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "4",
+  "bbaoe": "A",
+  "bbgauge": "15",
+  "bbdc": "4",
+  "bbmultiplier": "75",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "30130",
+  "evomats2": "",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": ""
 }

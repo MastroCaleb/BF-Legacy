@@ -1,60 +1,63 @@
 {
   "id": "10112",
-  "unitName": "Phoenix",
-  "freetext": ":''For other uses, see Phoenix (disambiguation).''",
-  "no": "135",
-  "element": "Fire",
-  "rarity": "★★★",
-  "cost": "5",
-  "maxlv": "40",
-  "basexp": "21",
-  "gender": "N",
-  "ai": "1",
-  "animation_attack": "108",
-  "animation_idle": "78",
-  "animation_move": "10",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "37, 42, 47",
-  "normal_distribute": "33, 33, 34",
-  "normal_totaldistr": "100",
-  "description": "A holy bird born from a volcano once every few millennia.Usually half-human, half-bird in appearance, in battle it turns into a fireball to attack. In Grand Gaia this species has a rare fondness for humans, who otherwise have many enemies. They like human passion and self-confidence. Their tails can heal and it's said they appear near brave, injured soldiers.",
-  "summon": "A stout heart beats fire.<br>This is why I entrust my <br>fire to you.",
-  "fusion": "More.<br>My fire needs to be fed.",
-  "evolution": "",
-  "hp_base": "2150",
-  "atk_base": "550",
-  "def_base": "800",
-  "rec_base": "400",
-  "hp_lord": "3310",
-  "atk_lord": "732",
-  "def_lord": "1064",
-  "rec_lord": "532",
-  "hp_anima": "3603",
-  "rec_anima": "454",
-  "atk_breaker": "810",
-  "def_breaker": "986",
-  "atk_guardian": "654",
-  "def_guardian": "1142",
-  "rec_guardian": "493",
-  "def_oracle": "1025",
-  "hp_oracle": "3193",
-  "rec_oracle": "649",
-  "hp_bonus": "300",
-  "atk_bonus": "160",
-  "def_bonus": "80",
-  "rec_bonus": "120",
-  "lordonly": "",
-  "combo_hits": "3",
-  "normaldc": "6",
-  "ls": "Loving Spirit",
-  "lsdescription": "Boost in effectiveness of Heart Crystals",
-  "lsnote": "25% boost",
-  "lstype": "Recovery",
+  "stats": {
+    "_base": {
+      "atk": 550,
+      "def": 800,
+      "hp": 2150,
+      "rec": 400
+    },
+    "_lord": {
+      "atk": 732,
+      "def": 1064,
+      "hp": 3310,
+      "rec": 532
+    },
+    "anima": {
+      "atk": 732,
+      "def": 1064,
+      "hp max": 3700,
+      "hp min": 3505,
+      "rec max": 493,
+      "rec min": 415
+    },
+    "breaker": {
+      "atk max": 849,
+      "atk min": 771,
+      "def max": 1025,
+      "def min": 947,
+      "hp": 3310,
+      "rec": 532
+    },
+    "guardian": {
+      "atk": 732,
+      "def max": 1181,
+      "def min": 1103,
+      "hp": 3310,
+      "rec max": 532,
+      "rec min": 454
+    },
+    "oracle": {
+      "atk": 732,
+      "def max": 1064,
+      "def min": 986,
+      "hp": 3310,
+      "rec max": 688,
+      "rec min": 610
+    }
+  },
+  "leader_skill": {
+    "desc": "Boost in effectiveness of Heart Crystals",
+    "effects": [
+      {
+        "hc effectiveness%": 25,
+        "passive id": "10"
+      }
+    ],
+    "id": "1100",
+    "name": "Loving Spirit"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -227,93 +230,87 @@
     ],
     "name": "Burning Feather"
   },
-  "bbdescription": "Gradual recovery to all allies' HP for 3 turns",
-  "bbnote": "Heals (570~770 + 10% of target Rec) HP",
-  "bbtype": "Heal",
-  "bbhits": "",
-  "bbaoe": "0",
-  "bbgauge": "15",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "10113",
-  "evomats1": "60143",
-  "evomats2": "10132",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "100000",
-  "stats": {
-    "_base": {
-      "atk": 550,
-      "def": 800,
-      "hp": 2150,
-      "rec": 400
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "party"
     },
-    "_lord": {
-      "atk": 732,
-      "def": 1064,
-      "hp": 3310,
-      "rec": 532
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 732,
-      "def": 1064,
-      "hp max": 3700,
-      "hp min": 3505,
-      "rec max": 493,
-      "rec min": 415
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 108
     },
-    "breaker": {
-      "atk max": 849,
-      "atk min": 771,
-      "def max": 1025,
-      "def min": 947,
-      "hp": 3310,
-      "rec": 532
+    "idle": {
+      "total number of frames": 78
     },
-    "guardian": {
-      "atk": 732,
-      "def max": 1181,
-      "def min": 1103,
-      "hp": 3310,
-      "rec max": 532,
-      "rec min": 454
-    },
-    "oracle": {
-      "atk": 732,
-      "def max": 1064,
-      "def min": 986,
-      "hp": 3310,
-      "rec max": 688,
-      "rec min": 610
+    "move": {
+      "total number of frames": 10
     }
   },
-  "leader_skill": {
-    "desc": "Boost in effectiveness of Heart Crystals",
-    "effects": [
-      {
-        "hc effectiveness%": 25,
-        "passive id": "10"
-      }
+  "category": 10110,
+  "cost": "5",
+  "damage frames": {
+    "frame times": [
+      37,
+      42,
+      47
     ],
-    "id": "1100",
-    "name": "Loving Spirit"
+    "hit dmg% distribution": [
+      33,
+      33,
+      34
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 3
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "fire",
+  "exp_pattern": 20,
+  "gender": "other",
+  "getting type": "rare summon",
+  "guide_id": 135,
+  "imp": {
+    "max atk": "160",
+    "max def": "80",
+    "max hp": "300",
+    "max rec": "120"
+  },
+  "kind": "normal",
+  "lord damage range": "680~761",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Phoenix",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "Phoenix",
+  "maxlv": "40",
+  "no": "135",
   "unitDisplayHomePosition_1W9CxaFK": "333,312,140,382",
   "unitDisplayDetailPosition_6z54rgb3": "-33,-170,1000,1004",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "83,155,495,496,1",
@@ -323,5 +320,92 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "1000",
   "sellCaution": false,
-  "effectFrames": "36:150:1"
+  "effectFrames": "36:150:1",
+  "evofrom": "",
+  "evointo": "10113",
+  "evozelcost": "100000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10132",
+      "count": 1
+    }
+  ],
+  "freetext": ":''For other uses, see Phoenix (disambiguation).''",
+  "basexp": "21",
+  "animation_attack": "108",
+  "animation_idle": "78",
+  "animation_move": "10",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "37, 42, 47",
+  "normal_distribute": "33, 33, 34",
+  "normal_totaldistr": "100",
+  "description": "A holy bird born from a volcano once every few millennia.Usually half-human, half-bird in appearance, in battle it turns into a fireball to attack. In Grand Gaia this species has a rare fondness for humans, who otherwise have many enemies. They like human passion and self-confidence. Their tails can heal and it's said they appear near brave, injured soldiers.",
+  "summon": "A stout heart beats fire.<br>This is why I entrust my <br>fire to you.",
+  "fusion": "More.<br>My fire needs to be fed.",
+  "evolution": "",
+  "hp_base": "2150",
+  "atk_base": "550",
+  "def_base": "800",
+  "rec_base": "400",
+  "hp_lord": "3310",
+  "atk_lord": "732",
+  "def_lord": "1064",
+  "rec_lord": "532",
+  "hp_anima": "3603",
+  "rec_anima": "454",
+  "atk_breaker": "810",
+  "def_breaker": "986",
+  "atk_guardian": "654",
+  "def_guardian": "1142",
+  "rec_guardian": "493",
+  "def_oracle": "1025",
+  "hp_oracle": "3193",
+  "rec_oracle": "649",
+  "hp_bonus": "300",
+  "atk_bonus": "160",
+  "def_bonus": "80",
+  "rec_bonus": "120",
+  "lordonly": "",
+  "combo_hits": "3",
+  "normaldc": "6",
+  "ls": "Loving Spirit",
+  "lsdescription": "Boost in effectiveness of Heart Crystals",
+  "lsnote": "25% boost",
+  "lstype": "Recovery",
+  "bbdescription": "Gradual recovery to all allies' HP for 3 turns",
+  "bbnote": "Heals (570~770 + 10% of target Rec) HP",
+  "bbtype": "Heal",
+  "bbhits": "",
+  "bbaoe": "0",
+  "bbgauge": "15",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "60143",
+  "evomats2": "10132",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": "",
+  "evoitem": ""
 }

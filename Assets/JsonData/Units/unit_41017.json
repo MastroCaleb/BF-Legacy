@@ -1,68 +1,110 @@
 {
   "id": "41017",
-  "unitName": "Killer Bolt Ordine",
-  "no": "1726",
-  "element": "Thunder",
-  "rarity": "Omni",
-  "cost": "50",
-  "maxlv": "150",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "3",
-  "animation_attack": "209",
-  "animation_idle": "52",
-  "animation_move": "5",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "78, 81, 127, 130, 133, 136",
-  "normal_distribute": "20, 14, 10, 25, 18, 13",
-  "normal_totaldistr": "100",
-  "bb_frames": "78, 81, 84, 127, 130, 133, 136, 139, 142, 145, 148, 151",
-  "bb_distribute": "16, 12, 8, 20, 6, 5, 6, 5, 6, 5, 6, 5",
-  "bb_totaldistr": "100",
-  "sbb_frames": "78, 81, 84, 127, 130, 133, 136, 139, 142, 145, 148, 151, 154, 157, 160, 163",
-  "sbb_distribute": "12, 8, 6, 20, 5, 4, 5, 4, 5, 4, 5, 4, 5, 4, 5, 4",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "78, 81, 84, 87, 127, 130, 133, 136, 139, 142, 145, 148, 151, 154, 157, 160, 163, 166",
-  "ubb_distribute": "12, 6, 4, 2, 18, 4, 5, 4, 5, 4, 5, 4, 5, 4, 5, 4, 5, 4",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "1",
-  "ubb_effectdelay": "1",
-  "description": "Ordine originally sealed away the battleaxe she seized out of concerns that wielding overwhelming power on her own could disrupt the balance of power in Ishgria. However, Ordine was a demon of Ishgria herself, and instinctively longed for battle. Had she given in to her instincts, she would have plunged Ishgria into chaos as she faced a massive army of demons with the axe in her hands. As such, perhaps this chaos was the axe's true, terrifying power.",
-  "summon": "This power can only be fully realized through perfect use. This axe is now a part of me. If you think you can take it, then try!",
-  "fusion": "You seek ultimate power for yourself, too? What do you think would be left to seek, if you were to ever achieve it?",
-  "evolution": "All things descend into chaos.<br>Perhaps Ishgria was always meant to be chaotic.",
-  "hp_base": "6601",
-  "atk_base": "3037",
-  "def_base": "2098",
-  "rec_base": "2092",
-  "hp_lord": "8568",
-  "atk_lord": "3809",
-  "def_lord": "2611",
-  "rec_lord": "2612",
-  "hp_anima": "9685",
-  "rec_anima": "2614",
-  "atk_breaker": "4107",
-  "def_breaker": "2313",
-  "def_guardian": "2909",
-  "rec_guardian": "2463",
-  "def_oracle": "2462",
-  "rec_oracle": "3059",
-  "hp_bonus": "1250",
-  "atk_bonus": "800",
-  "def_bonus": "400",
-  "rec_bonus": "500",
-  "lordonly": "",
-  "combo_hits": "6",
-  "normaldc": "42",
-  "ls": "Ravenous Axe God",
-  "lsdescription": "60% boost to Atk, Def, max HP, hugely boosts critical damage, adds probable Spark critical & enormously boosts BB Atk when HP is over 50%",
-  "lsnote": "150% Crit damage, 10% chance Sparks deal 50% extra damage & 280% BB Atk",
+  "stats": {
+    "_base": {
+      "atk": 3037,
+      "def": 2098,
+      "hp": 6601,
+      "rec": 2092
+    },
+    "_lord": {
+      "atk": 3809,
+      "def": 2611,
+      "hp": 8568,
+      "rec": 2612
+    },
+    "anima": {
+      "atk": 3809,
+      "def": 2611,
+      "hp max": 10058,
+      "hp min": 9313,
+      "rec max": 2463,
+      "rec min": 2165
+    },
+    "breaker": {
+      "atk max": 4256,
+      "atk min": 3958,
+      "def max": 2462,
+      "def min": 2164,
+      "hp": 8568,
+      "rec": 2612
+    },
+    "guardian": {
+      "atk": 3809,
+      "def max": 3058,
+      "def min": 2760,
+      "hp": 8568,
+      "rec max": 2612,
+      "rec min": 2314
+    },
+    "oracle": {
+      "atk": 3809,
+      "def max": 2611,
+      "def min": 2313,
+      "hp": 8568,
+      "rec max": 3208,
+      "rec min": 2910
+    }
+  },
+  "leader_skill": {
+    "desc": "60% boost to Atk, Def, max HP, hugely boosts critical damage, adds probable Spark critical & enormously boosts BB Atk when HP is over 50%",
+    "effects": [
+      {
+        "atk% buff": 60,
+        "def% buff": 60,
+        "hp% buff": 60,
+        "passive id": "1"
+      },
+      {
+        "crit multiplier%": 150.0,
+        "passive id": "34"
+      },
+      {
+        "passive id": "100",
+        "spark crit chance%": 10,
+        "spark crit dmg%": 50
+      },
+      {
+        "bb atk% add": 280,
+        "hp threshold": 50,
+        "passive id": "103",
+        "sbb atk% add": 280,
+        "triggered when hp": "higher",
+        "ubb atk% add": 280
+      }
+    ],
+    "id": "1971",
+    "name": "Ravenous Axe God"
+  },
+  "extra_skill": {
+    "desc": "80% boost to Spark damage, raises max Atk value from 99999 to 130000 & critical damage enormously boosts BB gauge",
+    "effects": [
+      {
+        "bc fill on crit max": 8,
+        "bc fill on crit min": 8,
+        "bc fill on crit%": 100.0,
+        "conditions": [],
+        "passive id": "65",
+        "passive target": "self"
+      },
+      {
+        "conditions": [],
+        "damage% for spark": 80,
+        "passive id": "31",
+        "passive target": "self"
+      },
+      {
+        "conditions": [],
+        "increase atk cap": 130000,
+        "passive id": "143",
+        "passive target": "self"
+      }
+    ],
+    "id": "44400",
+    "name": "Absolute Power's Lament",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -685,14 +727,6 @@
     ],
     "name": "Grand Destruction"
   },
-  "bbdescription": "12 combo powerful Thunder attack on all foes, probable 1 turn Atk reduction, hugely boosts Atk and BB Atk for 3 turns & enormously boosts critical hit rate and boosts critical damage for 3 turns",
-  "bbnote": "30% chance to reduce enemy Atk by 50%, 180% Atk, 400% BB Atk, 60% Crit, 75% crit damage",
-  "bbtype": "Offense",
-  "bbhits": "12",
-  "bbaoe": "A",
-  "bbgauge": "28",
-  "bbdc": "12",
-  "bbmultiplier": "470",
   "sbb": {
     "damage frames": [
       {
@@ -1395,15 +1429,6 @@
     ],
     "name": "Thundering Torment"
   },
-  "sbbdescription": "16 combo powerful Thunder attack on all foes (damage relative to remaining HP), boosts max HP, hugely boosts Atk and BB Atk for 3 turns, hugely boosts Atk relative to max HP for 3 turns & enormously boosts critical hit rate and boosts critical damage for 3 turns",
-  "sbbnote": "200% + 700% * current HP / max HP, 15% HP, 180% Atk, 40% HP to Atk, 400% BB Atk, 60% Crit & 75% crit damage",
-  "sbbtype": "Offense",
-  "sbbhits": "16",
-  "sbbaoe": "A",
-  "sbbgauge": "30",
-  "sbbdc": "16",
-  "sbbmultiplier": "200",
-  "sbb_hpscale": "true",
   "ubb": {
     "damage frames": [
       {
@@ -1579,6 +1604,189 @@
     ],
     "name": "Disaster Bringer"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 209
+    },
+    "idle": {
+      "total number of frames": 52
+    },
+    "move": {
+      "total number of frames": 5
+    }
+  },
+  "category": 41010,
+  "cost": "50",
+  "damage frames": {
+    "frame times": [
+      78,
+      81,
+      127,
+      130,
+      133,
+      136
+    ],
+    "hit dmg% distribution": [
+      20,
+      14,
+      10,
+      25,
+      18,
+      13
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 6
+  },
+  "drop check count": 7,
+  "element": "thunder",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 1726,
+  "imp": {
+    "max atk": "800",
+    "max def": "400",
+    "max hp": "1250",
+    "max rec": "500"
+  },
+  "kind": "normal",
+  "lord damage range": "3547~3961",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Killer Bolt Ordine",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "8",
+  "sell caution": false,
+  "unitName": "Killer Bolt Ordine",
+  "maxlv": "150",
+  "no": "1726",
+  "unitDisplayHomePosition_1W9CxaFK": "574,366,153,418",
+  "unitDisplayDetailPosition_6z54rgb3": "-320,-156,1289,1019",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "-48,139,642,508,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-274,-442,1289,1019",
+  "unitDisplaySummonPosition_KC3Jk8Br": "-48,139,642,508,0",
+  "unitDisplayHpPosition_3BpHN6VD": "-2,62",
+  "unitDisplayCursorPosition": "-2,19",
+  "sellPrice": "50000",
+  "sellCaution": false,
+  "effectFrames": "72:401501:1,72:401480:1,78:401160:1,80:400381:1,121:401481:1,128:401482:1,136:400147:1,136:200088:1,148:400181:1",
+  "evofrom": "41016",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "21",
+  "animation_attack": "209",
+  "animation_idle": "52",
+  "animation_move": "5",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "78, 81, 127, 130, 133, 136",
+  "normal_distribute": "20, 14, 10, 25, 18, 13",
+  "normal_totaldistr": "100",
+  "bb_frames": "78, 81, 84, 127, 130, 133, 136, 139, 142, 145, 148, 151",
+  "bb_distribute": "16, 12, 8, 20, 6, 5, 6, 5, 6, 5, 6, 5",
+  "bb_totaldistr": "100",
+  "sbb_frames": "78, 81, 84, 127, 130, 133, 136, 139, 142, 145, 148, 151, 154, 157, 160, 163",
+  "sbb_distribute": "12, 8, 6, 20, 5, 4, 5, 4, 5, 4, 5, 4, 5, 4, 5, 4",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "78, 81, 84, 87, 127, 130, 133, 136, 139, 142, 145, 148, 151, 154, 157, 160, 163, 166",
+  "ubb_distribute": "12, 6, 4, 2, 18, 4, 5, 4, 5, 4, 5, 4, 5, 4, 5, 4, 5, 4",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "1",
+  "ubb_effectdelay": "1",
+  "description": "Ordine originally sealed away the battleaxe she seized out of concerns that wielding overwhelming power on her own could disrupt the balance of power in Ishgria. However, Ordine was a demon of Ishgria herself, and instinctively longed for battle. Had she given in to her instincts, she would have plunged Ishgria into chaos as she faced a massive army of demons with the axe in her hands. As such, perhaps this chaos was the axe's true, terrifying power.",
+  "summon": "This power can only be fully realized through perfect use. This axe is now a part of me. If you think you can take it, then try!",
+  "fusion": "You seek ultimate power for yourself, too? What do you think would be left to seek, if you were to ever achieve it?",
+  "evolution": "All things descend into chaos.<br>Perhaps Ishgria was always meant to be chaotic.",
+  "hp_base": "6601",
+  "atk_base": "3037",
+  "def_base": "2098",
+  "rec_base": "2092",
+  "hp_lord": "8568",
+  "atk_lord": "3809",
+  "def_lord": "2611",
+  "rec_lord": "2612",
+  "hp_anima": "9685",
+  "rec_anima": "2614",
+  "atk_breaker": "4107",
+  "def_breaker": "2313",
+  "def_guardian": "2909",
+  "rec_guardian": "2463",
+  "def_oracle": "2462",
+  "rec_oracle": "3059",
+  "hp_bonus": "1250",
+  "atk_bonus": "800",
+  "def_bonus": "400",
+  "rec_bonus": "500",
+  "lordonly": "",
+  "combo_hits": "6",
+  "normaldc": "42",
+  "ls": "Ravenous Axe God",
+  "lsdescription": "60% boost to Atk, Def, max HP, hugely boosts critical damage, adds probable Spark critical & enormously boosts BB Atk when HP is over 50%",
+  "lsnote": "150% Crit damage, 10% chance Sparks deal 50% extra damage & 280% BB Atk",
+  "bbdescription": "12 combo powerful Thunder attack on all foes, probable 1 turn Atk reduction, hugely boosts Atk and BB Atk for 3 turns & enormously boosts critical hit rate and boosts critical damage for 3 turns",
+  "bbnote": "30% chance to reduce enemy Atk by 50%, 180% Atk, 400% BB Atk, 60% Crit, 75% crit damage",
+  "bbtype": "Offense",
+  "bbhits": "12",
+  "bbaoe": "A",
+  "bbgauge": "28",
+  "bbdc": "12",
+  "bbmultiplier": "470",
+  "sbbdescription": "16 combo powerful Thunder attack on all foes (damage relative to remaining HP), boosts max HP, hugely boosts Atk and BB Atk for 3 turns, hugely boosts Atk relative to max HP for 3 turns & enormously boosts critical hit rate and boosts critical damage for 3 turns",
+  "sbbnote": "200% + 700% * current HP / max HP, 15% HP, 180% Atk, 40% HP to Atk, 400% BB Atk, 60% Crit & 75% crit damage",
+  "sbbtype": "Offense",
+  "sbbhits": "16",
+  "sbbaoe": "A",
+  "sbbgauge": "30",
+  "sbbdc": "16",
+  "sbbmultiplier": "200",
+  "sbb_hpscale": "true",
   "ubbdescription": "18 combo massive Thunder attack on all foes (damage relative to remaining HP), hugely boosts max HP, enormously boosts Atk and BB Atk for 3 turns, enormously boosts critical hit rate and critical damage for 3 turns & adds probable powerful Spark critical for 3 turns",
   "ubbnote": "1500% + 1300% * current HP / max HP, 40% HP, 350% Atk, 650% BB Atk, 60% Crit, 350% Crit damage & 50% chance Sparks deal 120% extra damage",
   "ubbtype": "Offense",
@@ -1592,8 +1800,6 @@
   "esitem": "",
   "esdescription": "80% boost to Spark damage, raises max Atk value from 99999 to 130000 & critical damage enormously boosts BB gauge",
   "esnote": "Fills 8 BC",
-  "evofrom": "41016",
-  "evointo": "",
   "evomats1": "",
   "evomats2": "",
   "evomats3": "",
@@ -1602,121 +1808,5 @@
   "evomats6": "",
   "evomats7": "",
   "evomats8": "",
-  "evoitem": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 3037,
-      "def": 2098,
-      "hp": 6601,
-      "rec": 2092
-    },
-    "_lord": {
-      "atk": 3809,
-      "def": 2611,
-      "hp": 8568,
-      "rec": 2612
-    },
-    "anima": {
-      "atk": 3809,
-      "def": 2611,
-      "hp max": 10058,
-      "hp min": 9313,
-      "rec max": 2463,
-      "rec min": 2165
-    },
-    "breaker": {
-      "atk max": 4256,
-      "atk min": 3958,
-      "def max": 2462,
-      "def min": 2164,
-      "hp": 8568,
-      "rec": 2612
-    },
-    "guardian": {
-      "atk": 3809,
-      "def max": 3058,
-      "def min": 2760,
-      "hp": 8568,
-      "rec max": 2612,
-      "rec min": 2314
-    },
-    "oracle": {
-      "atk": 3809,
-      "def max": 2611,
-      "def min": 2313,
-      "hp": 8568,
-      "rec max": 3208,
-      "rec min": 2910
-    }
-  },
-  "leader_skill": {
-    "desc": "60% boost to Atk, Def, max HP, hugely boosts critical damage, adds probable Spark critical & enormously boosts BB Atk when HP is over 50%",
-    "effects": [
-      {
-        "atk% buff": 60,
-        "def% buff": 60,
-        "hp% buff": 60,
-        "passive id": "1"
-      },
-      {
-        "crit multiplier%": 150.0,
-        "passive id": "34"
-      },
-      {
-        "passive id": "100",
-        "spark crit chance%": 10,
-        "spark crit dmg%": 50
-      },
-      {
-        "bb atk% add": 280,
-        "hp threshold": 50,
-        "passive id": "103",
-        "sbb atk% add": 280,
-        "triggered when hp": "higher",
-        "ubb atk% add": 280
-      }
-    ],
-    "id": "1971",
-    "name": "Ravenous Axe God"
-  },
-  "extra_skill": {
-    "desc": "80% boost to Spark damage, raises max Atk value from 99999 to 130000 & critical damage enormously boosts BB gauge",
-    "effects": [
-      {
-        "bc fill on crit max": 8,
-        "bc fill on crit min": 8,
-        "bc fill on crit%": 100.0,
-        "conditions": [],
-        "passive id": "65",
-        "passive target": "self"
-      },
-      {
-        "conditions": [],
-        "damage% for spark": 80,
-        "passive id": "31",
-        "passive target": "self"
-      },
-      {
-        "conditions": [],
-        "increase atk cap": 130000,
-        "passive id": "143",
-        "passive target": "self"
-      }
-    ],
-    "id": "44400",
-    "name": "Absolute Power's Lament",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "574,366,153,418",
-  "unitDisplayDetailPosition_6z54rgb3": "-320,-156,1289,1019",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "-48,139,642,508,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-274,-442,1289,1019",
-  "unitDisplaySummonPosition_KC3Jk8Br": "-48,139,642,508,0",
-  "unitDisplayHpPosition_3BpHN6VD": "-2,62",
-  "unitDisplayCursorPosition": "-2,19",
-  "sellPrice": "50000",
-  "sellCaution": false,
-  "effectFrames": "72:401501:1,72:401480:1,78:401160:1,80:400381:1,121:401481:1,128:401482:1,136:400147:1,136:200088:1,148:400181:1"
+  "evoitem": ""
 }

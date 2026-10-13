@@ -1,73 +1,101 @@
 {
   "id": "860368",
-  "unitName": "Toki (Omni)",
-  "altname": "Toki",
-  "no": "8232",
-  "element": "Dark",
-  "rarity": "Omni",
-  "cost": "48",
-  "maxlv": "150",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "3",
-  "animation_attack": "165",
-  "animation_idle": "144",
-  "animation_move": "6",
-  "movespeed_attack": "0.0015",
-  "movespeed_skill": "0.0015",
-  "speedtype_attack": "5",
-  "speedtype_skill": "5",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "48, 66, 93",
-  "normal_distribute": "25, 25, 50",
-  "normal_totaldistr": "100",
-  "bb_frames": "48, 66, 93",
-  "bb_distribute": "25, 25, 50",
-  "bb_totaldistr": "100",
-  "sbb_frames": "48, 66, 93",
-  "sbb_distribute": "25, 25, 50",
-  "sbb_totaldistr": "100",
-  "sbb2_frames": "0",
-  "sbb2_distribute": "100",
-  "sbb2_totaldistr": "100",
-  "ubb_frames": "48, 66, 93",
-  "ubb_distribute": "25, 25, 50",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "1",
-  "sbb2_effectdelay": "1",
-  "ubb_effectdelay": "1",
-  "description": "A quiet battle partner from another world, Toki didn't allow the alien world unsettle her. After all, if enemies there bled, they could also die. Perhaps their deaths would be slower than usual, but that was a problem easily fixed. And what of the odd spirits who claimed to be heroes from other times and worlds? She had no problem with their presence. As long as they didn't bother her, there was no need to cut them down. Far more important were the lessons she had learned in this strange land, and how friendship could be used to hide one's true intentions.",
-  "summon": "The silence of the grave is always a welcome companion.",
-  "fusion": "You know,<br>I could have done that myself.",
-  "evolution": "Was that it?<br>I thought there would be...<br>something more.",
-  "hp_base": "5415",
-  "atk_base": "2464",
-  "def_base": "1733",
-  "rec_base": "1750",
-  "hp_lord": "7735",
-  "atk_lord": "3520",
-  "def_lord": "2475",
-  "rec_lord": "2500",
-  "hp_anima": "8852",
-  "rec_anima": "2202",
-  "atk_breaker": "3818",
-  "def_breaker": "2177",
-  "def_guardian": "2773",
-  "rec_guardian": "2351",
-  "def_oracle": "2326",
-  "rec_oracle": "2947",
-  "hp_bonus": "1250",
-  "atk_bonus": "800",
-  "def_bonus": "400",
-  "rec_bonus": "500",
-  "lordonly": "",
-  "combo_hits": "3",
-  "normaldc": "51",
-  "ls": "Paradoxical Demise",
-  "lsdescription": "200% boost to Atk and 60% boost to max HP of Dark types, 15% damage reduction from Light types, boosts Spark damage & boosts OD gauge fill rate",
-  "lsnote": "100% boost to Spark damage, 25% boost to OD gauge fill rate",
+  "stats": {
+    "_base": {
+      "atk": 2464,
+      "def": 1733,
+      "hp": 5415,
+      "rec": 1750
+    },
+    "_lord": {
+      "atk": 3520,
+      "def": 2475,
+      "hp": 7735,
+      "rec": 2500
+    },
+    "anima": {
+      "atk": 3520,
+      "def": 2475,
+      "hp max": 9225,
+      "hp min": 8480,
+      "rec max": 2351,
+      "rec min": 2053
+    },
+    "breaker": {
+      "atk max": 3967,
+      "atk min": 3669,
+      "def max": 2326,
+      "def min": 2028,
+      "hp": 7735,
+      "rec": 2500
+    },
+    "guardian": {
+      "atk": 3520,
+      "def max": 2922,
+      "def min": 2624,
+      "hp": 7735,
+      "rec max": 2500,
+      "rec min": 2202
+    },
+    "oracle": {
+      "atk": 3520,
+      "def max": 2475,
+      "def min": 2177,
+      "hp": 7735,
+      "rec max": 3096,
+      "rec min": 2798
+    }
+  },
+  "leader_skill": {
+    "desc": "200% boost to Atk and 60% boost to max HP of Dark types, 15% damage reduction from Light types, boosts Spark damage & boosts OD gauge fill rate",
+    "effects": [
+      {
+        "atk% buff": 200,
+        "elements buffed": [
+          "dark"
+        ],
+        "hp% buff": 60,
+        "passive id": "2"
+      },
+      {
+        "light resist%": 15,
+        "passive id": "5"
+      },
+      {
+        "damage% for spark": 100,
+        "passive id": "31"
+      },
+      {
+        "od fill rate%": 25,
+        "passive id": "70"
+      }
+    ],
+    "id": "810005",
+    "name": "Paradoxical Demise"
+  },
+  "extra_skill": {
+    "desc": "Greatly reflects damage when attacked & probable damage reduction to 1",
+    "effects": [
+      {
+        "conditions": [],
+        "dmg% reflect chance%": 100,
+        "dmg% reflect high": 50,
+        "dmg% reflect low": 50,
+        "passive id": "26",
+        "passive target": "self"
+      },
+      {
+        "conditions": [],
+        "passive id": "43",
+        "passive target": "self",
+        "take 1 dmg%": 20
+      }
+    ],
+    "id": "860368",
+    "name": "Death's Herald",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -428,19 +456,6 @@
     ],
     "name": "Dark Latency"
   },
-  "bbdescription": "3 combo powerful Dark attack on single foe (damage relative to remaining HP), probable Curse, Sick effects & enormously boosts own BB gauge for 1 turn",
-  "bbnote": "500% + 300% x current HP / max base HP, 90% chance to inflict status ailments, 55 BC fill",
-  "bbtype": "Offense",
-  "bbhits": "3",
-  "bbaoe": "1",
-  "bbgauge": "20",
-  "bbdc": "54",
-  "bbmultiplier": "500",
-  "bb_hpscale": "true",
-  "bbhits2": "",
-  "bbaoe2": "",
-  "bbdc2": "",
-  "bbmultiplier2": "",
   "sbb": {
     "damage frames": [
       {
@@ -1005,19 +1020,6 @@
     ],
     "name": "Assassin's Nata"
   },
-  "sbbdescription": "3 combo powerful Dark attack on single foe (damage relative to remaining HP), hugely boosts BB Atk for 3 turns, fills own BB gauge to max & probable huge Spark vulnerability for 2 turns",
-  "sbbnote": "500% + 1000% x current HP / max base HP, 350% boost to BB Atk, 35% chance to inflict Spark vulnerability effect that deals 70% more Spark damage",
-  "sbbtype": "Offense",
-  "sbbhits": "3",
-  "sbbaoe": "1",
-  "sbbgauge": "35",
-  "sbbdc": "60",
-  "sbbmultiplier": "500",
-  "sbb_hpscale": "true",
-  "sbbhits2": "1",
-  "sbbaoe2": "1",
-  "sbbdc2": "20",
-  "sbbmultiplier2": "660",
   "ubb": {
     "damage frames": [
       {
@@ -1145,6 +1147,197 @@
     ],
     "name": "Death Pact: Bladescape"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 165
+    },
+    "idle": {
+      "total number of frames": 144
+    },
+    "move": {
+      "total number of frames": 6
+    }
+  },
+  "category": 860360,
+  "cost": "48",
+  "damage frames": {
+    "frame times": [
+      48,
+      66,
+      93
+    ],
+    "hit dmg% distribution": [
+      25,
+      25,
+      50
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 3
+  },
+  "drop check count": 17,
+  "element": "dark",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 8232,
+  "imp": {
+    "max atk": "800",
+    "max def": "400",
+    "max hp": "1250",
+    "max rec": "500"
+  },
+  "kind": "normal",
+  "lord damage range": "3278~3660",
+  "movement": {
+    "attack": {
+      "move speed": 0.0015,
+      "move speed type": "5",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0015,
+      "move speed type": "5",
+      "move type": "1"
+    }
+  },
+  "name": "Toki",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "8",
+  "sell caution": false,
+  "unitName": "Toki",
+  "maxlv": "150",
+  "no": "8232",
+  "unitDisplayHomePosition_1W9CxaFK": "467,177,140,382",
+  "unitDisplayDetailPosition_6z54rgb3": "-223,-21,1246,898",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "-34,179,674,486,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-210,-212,1246,898",
+  "unitDisplaySummonPosition_KC3Jk8Br": "-34,179,674,486,0",
+  "unitDisplayHpPosition_3BpHN6VD": "0,50",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "20000",
+  "sellCaution": false,
+  "effectFrames": "48:126:1,66:126:1,93:126:1",
+  "evofrom": "860367",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "altname": "Toki",
+  "basexp": "21",
+  "animation_attack": "165",
+  "animation_idle": "144",
+  "animation_move": "6",
+  "movespeed_attack": "0.0015",
+  "movespeed_skill": "0.0015",
+  "speedtype_attack": "5",
+  "speedtype_skill": "5",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "48, 66, 93",
+  "normal_distribute": "25, 25, 50",
+  "normal_totaldistr": "100",
+  "bb_frames": "48, 66, 93",
+  "bb_distribute": "25, 25, 50",
+  "bb_totaldistr": "100",
+  "sbb_frames": "48, 66, 93",
+  "sbb_distribute": "25, 25, 50",
+  "sbb_totaldistr": "100",
+  "sbb2_frames": "0",
+  "sbb2_distribute": "100",
+  "sbb2_totaldistr": "100",
+  "ubb_frames": "48, 66, 93",
+  "ubb_distribute": "25, 25, 50",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "1",
+  "sbb2_effectdelay": "1",
+  "ubb_effectdelay": "1",
+  "description": "A quiet battle partner from another world, Toki didn't allow the alien world unsettle her. After all, if enemies there bled, they could also die. Perhaps their deaths would be slower than usual, but that was a problem easily fixed. And what of the odd spirits who claimed to be heroes from other times and worlds? She had no problem with their presence. As long as they didn't bother her, there was no need to cut them down. Far more important were the lessons she had learned in this strange land, and how friendship could be used to hide one's true intentions.",
+  "summon": "The silence of the grave is always a welcome companion.",
+  "fusion": "You know,<br>I could have done that myself.",
+  "evolution": "Was that it?<br>I thought there would be...<br>something more.",
+  "hp_base": "5415",
+  "atk_base": "2464",
+  "def_base": "1733",
+  "rec_base": "1750",
+  "hp_lord": "7735",
+  "atk_lord": "3520",
+  "def_lord": "2475",
+  "rec_lord": "2500",
+  "hp_anima": "8852",
+  "rec_anima": "2202",
+  "atk_breaker": "3818",
+  "def_breaker": "2177",
+  "def_guardian": "2773",
+  "rec_guardian": "2351",
+  "def_oracle": "2326",
+  "rec_oracle": "2947",
+  "hp_bonus": "1250",
+  "atk_bonus": "800",
+  "def_bonus": "400",
+  "rec_bonus": "500",
+  "lordonly": "",
+  "combo_hits": "3",
+  "normaldc": "51",
+  "ls": "Paradoxical Demise",
+  "lsdescription": "200% boost to Atk and 60% boost to max HP of Dark types, 15% damage reduction from Light types, boosts Spark damage & boosts OD gauge fill rate",
+  "lsnote": "100% boost to Spark damage, 25% boost to OD gauge fill rate",
+  "bbdescription": "3 combo powerful Dark attack on single foe (damage relative to remaining HP), probable Curse, Sick effects & enormously boosts own BB gauge for 1 turn",
+  "bbnote": "500% + 300% x current HP / max base HP, 90% chance to inflict status ailments, 55 BC fill",
+  "bbtype": "Offense",
+  "bbhits": "3",
+  "bbaoe": "1",
+  "bbgauge": "20",
+  "bbdc": "54",
+  "bbmultiplier": "500",
+  "bb_hpscale": "true",
+  "bbhits2": "",
+  "bbaoe2": "",
+  "bbdc2": "",
+  "bbmultiplier2": "",
+  "sbbdescription": "3 combo powerful Dark attack on single foe (damage relative to remaining HP), hugely boosts BB Atk for 3 turns, fills own BB gauge to max & probable huge Spark vulnerability for 2 turns",
+  "sbbnote": "500% + 1000% x current HP / max base HP, 350% boost to BB Atk, 35% chance to inflict Spark vulnerability effect that deals 70% more Spark damage",
+  "sbbtype": "Offense",
+  "sbbhits": "3",
+  "sbbaoe": "1",
+  "sbbgauge": "35",
+  "sbbdc": "60",
+  "sbbmultiplier": "500",
+  "sbb_hpscale": "true",
+  "sbbhits2": "1",
+  "sbbaoe2": "1",
+  "sbbdc2": "20",
+  "sbbmultiplier2": "660",
   "ubbdescription": "3 combo massive Dark attack on single foe (damage relative to remaining HP and additional 5% max HP damage), enormously boosts BB Atk for 3 turns, damage taken enormously restores HP for 3 turns & inflicts enormous Spark vulnerability on all foes for 3 turns",
   "ubbnote": "2000% + 2000% x current HP / max base HP, 100% chance to deal 5% of damage based on target's max HP, 100% HP healed from damage taken, 550% boost to BB Atk, 150% more Spark damage dealt on Spark vulnerability",
   "ubbtype": "Offense",
@@ -1162,8 +1355,6 @@
   "esitem": "",
   "esdescription": "Greatly reflects damage when attacked & probable damage reduction to 1",
   "esnote": "50% damage reflect, 20% chance to reduce damage",
-  "evofrom": "860367",
-  "evointo": "",
   "evomats1": "",
   "evomats2": "",
   "evomats3": "",
@@ -1174,112 +1365,5 @@
   "evomats8": "",
   "evomats9": "",
   "evoitem": "",
-  "evoitem2": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 2464,
-      "def": 1733,
-      "hp": 5415,
-      "rec": 1750
-    },
-    "_lord": {
-      "atk": 3520,
-      "def": 2475,
-      "hp": 7735,
-      "rec": 2500
-    },
-    "anima": {
-      "atk": 3520,
-      "def": 2475,
-      "hp max": 9225,
-      "hp min": 8480,
-      "rec max": 2351,
-      "rec min": 2053
-    },
-    "breaker": {
-      "atk max": 3967,
-      "atk min": 3669,
-      "def max": 2326,
-      "def min": 2028,
-      "hp": 7735,
-      "rec": 2500
-    },
-    "guardian": {
-      "atk": 3520,
-      "def max": 2922,
-      "def min": 2624,
-      "hp": 7735,
-      "rec max": 2500,
-      "rec min": 2202
-    },
-    "oracle": {
-      "atk": 3520,
-      "def max": 2475,
-      "def min": 2177,
-      "hp": 7735,
-      "rec max": 3096,
-      "rec min": 2798
-    }
-  },
-  "leader_skill": {
-    "desc": "200% boost to Atk and 60% boost to max HP of Dark types, 15% damage reduction from Light types, boosts Spark damage & boosts OD gauge fill rate",
-    "effects": [
-      {
-        "atk% buff": 200,
-        "elements buffed": [
-          "dark"
-        ],
-        "hp% buff": 60,
-        "passive id": "2"
-      },
-      {
-        "light resist%": 15,
-        "passive id": "5"
-      },
-      {
-        "damage% for spark": 100,
-        "passive id": "31"
-      },
-      {
-        "od fill rate%": 25,
-        "passive id": "70"
-      }
-    ],
-    "id": "810005",
-    "name": "Paradoxical Demise"
-  },
-  "extra_skill": {
-    "desc": "Greatly reflects damage when attacked & probable damage reduction to 1",
-    "effects": [
-      {
-        "conditions": [],
-        "dmg% reflect chance%": 100,
-        "dmg% reflect high": 50,
-        "dmg% reflect low": 50,
-        "passive id": "26",
-        "passive target": "self"
-      },
-      {
-        "conditions": [],
-        "passive id": "43",
-        "passive target": "self",
-        "take 1 dmg%": 20
-      }
-    ],
-    "id": "860368",
-    "name": "Death's Herald",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "467,177,140,382",
-  "unitDisplayDetailPosition_6z54rgb3": "-223,-21,1246,898",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "-34,179,674,486,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-210,-212,1246,898",
-  "unitDisplaySummonPosition_KC3Jk8Br": "-34,179,674,486,0",
-  "unitDisplayHpPosition_3BpHN6VD": "0,50",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "20000",
-  "sellCaution": false,
-  "effectFrames": "48:126:1,66:126:1,93:126:1"
+  "evoitem2": ""
 }

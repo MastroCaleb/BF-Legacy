@@ -1,55 +1,70 @@
 {
   "id": "60795",
-  "unitName": "Chronographia Phoena",
-  "no": "1068",
-  "element": "Dark",
-  "rarity": "★★★★★★",
-  "cost": "25",
-  "maxlv": "100",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "173",
-  "animation_idle": "68",
-  "animation_move": "32",
-  "movespeed_attack": "0.0041",
-  "movespeed_skill": "0.0041",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "74, 80, 86, 92, 98, 104, 109, 114, 119, 124",
-  "normal_distribute": "14, 17, 11, 9, 5, 10, 9, 8, 10, 7",
-  "normal_totaldistr": "100",
-  "bb_frames": "74, 83, 92, 101, 110, 118, 126, 133, 140, 146, 151, 156, 161, 165",
-  "bb_distribute": "14, 8, 9, 7, 5, 10, 4, 6, 9, 6, 7, 2, 5, 8",
-  "bb_totaldistr": "100",
-  "sbb_frames": "74, 83, 92, 100, 108, 115, 122, 128, 134, 139, 144, 148, 152, 155, 158, 161, 164, 167, 170, 173",
-  "sbb_distribute": "9, 4, 5, 3, 7, 5, 7, 3, 3, 6, 4, 7, 3, 5, 5, 4, 6, 3, 3, 8",
-  "sbb_totaldistr": "100",
-  "description": "A young lady from another world guided by the Chain Chronicle. As she set off on her journey with Yuuri and Pirika, Phoena began to regain some of her lost memories, ultimately learning the horrible truth about their world. Thinking that she must do something in order to save its future, Phoena surmounted an enormous challenge and managed to save Yggdra from peril. However, the challenge is not yet over. Refusing to have her face such a burden all by herself, her friends Yuuri and Pirika decide to help her out once again.",
-  "summon": "The world awaits its future.<br>I believe it's for that very reason<br>that I stand here now.",
-  "fusion": "We have built unbreakable bonds.<br>I want to help change the future<br>with everyone by my side!",
-  "evolution": "I will also stand at the frontlines<br>and support everyone in battle.<br>We will definitely grab the light!",
-  "hp_base": "4030",
-  "atk_base": "1380",
-  "def_base": "1300",
-  "rec_base": "1700",
-  "hp_lord": "5800",
-  "atk_lord": "1850",
-  "def_lord": "1750",
-  "rec_lord": "2300",
-  "hp_bonus": "1250",
-  "atk_bonus": "300",
-  "def_bonus": "300",
-  "rec_bonus": "300",
-  "lordonly": "true",
-  "combo_hits": "9",
-  "normaldc": "18",
-  "ls": "Phoena's Treatment",
-  "lsdescription": "25% boost to Atk, max HP & recovers HP each turn",
-  "lsnote": "Heal 600-800 + 10% Rec HP",
-  "lstype": "Hit Points/Attack/Recovery",
+  "stats": {
+    "_base": {
+      "atk": 1380,
+      "def": 1300,
+      "hp": 4030,
+      "rec": 1700
+    },
+    "_lord": {
+      "atk": 1850,
+      "def": 1750,
+      "hp": 5800,
+      "rec": 2300
+    },
+    "anima": {
+      "atk": 1850,
+      "def": 1750,
+      "hp max": 6790,
+      "hp min": 6295,
+      "rec max": 2201,
+      "rec min": 2003
+    },
+    "breaker": {
+      "atk max": 2147,
+      "atk min": 1949,
+      "def max": 1651,
+      "def min": 1453,
+      "hp": 5800,
+      "rec": 2300
+    },
+    "guardian": {
+      "atk": 1850,
+      "def max": 2047,
+      "def min": 1849,
+      "hp": 5800,
+      "rec max": 2300,
+      "rec min": 2102
+    },
+    "oracle": {
+      "atk": 1850,
+      "def max": 1750,
+      "def min": 1552,
+      "hp": 5800,
+      "rec max": 2696,
+      "rec min": 2498
+    }
+  },
+  "leader_skill": {
+    "desc": "25% boost to Atk, max HP & recovers HP each turn",
+    "effects": [
+      {
+        "atk% buff": 25,
+        "hp% buff": 25,
+        "passive id": "1"
+      },
+      {
+        "passive id": "33",
+        "rec% added (turn heal)": 10.0,
+        "turn heal high": 800,
+        "turn heal low": 600
+      }
+    ],
+    "id": "9451",
+    "name": "Phoena's Treatment"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -330,14 +345,6 @@
     ],
     "name": "I trust you."
   },
-  "bbdescription": "14 combo powerful Dark attack on all foes & recovers HP",
-  "bbnote": "Heal 1500-1800 + 16.9% Rec",
-  "bbtype": "Heal/Offense",
-  "bbhits": "14",
-  "bbaoe": "A",
-  "bbgauge": "20",
-  "bbdc": "14",
-  "bbmultiplier": "220",
   "sbb": {
     "damage frames": [
       {
@@ -712,6 +719,165 @@
     ],
     "name": "Chronos"
   },
+  "ubb": {},
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 173
+    },
+    "idle": {
+      "total number of frames": 68
+    },
+    "move": {
+      "total number of frames": 32
+    }
+  },
+  "category": 60790,
+  "cost": "25",
+  "damage frames": {
+    "frame times": [
+      74,
+      80,
+      86,
+      92,
+      98,
+      104,
+      109,
+      114,
+      119,
+      124
+    ],
+    "hit dmg% distribution": [
+      14,
+      17,
+      11,
+      9,
+      5,
+      10,
+      9,
+      8,
+      10,
+      7
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 10
+  },
+  "drop check count": 2,
+  "element": "dark",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "farmable",
+  "guide_id": 1068,
+  "imp": {
+    "max atk": "300",
+    "max def": "300",
+    "max hp": "1250",
+    "max rec": "300"
+  },
+  "kind": "normal",
+  "lord damage range": "1722~1924",
+  "movement": {
+    "attack": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    }
+  },
+  "name": "Chronographia Phoena",
+  "rarity": "6",
+  "sell caution": false,
+  "unitName": "Chronographia Phoena",
+  "maxlv": "100",
+  "no": "1068",
+  "unitDisplayHomePosition_1W9CxaFK": "431,162,174,475",
+  "unitDisplayDetailPosition_6z54rgb3": "-80,64,898,780",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "52,251,449,390,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-25,-240,898,780",
+  "unitDisplaySummonPosition_KC3Jk8Br": "52,251,449,390,0",
+  "unitDisplayHpPosition_3BpHN6VD": "-2,37",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "8000",
+  "sellCaution": false,
+  "effectFrames": "74:136:1,80:136:1,86:136:1,92:136:1,98:136:1,104:136:1,109:136:1,114:136:1,119:136:1,124:136:1,75:600210:1,98:600211:1,121:600210:1,70:600381:1",
+  "evofrom": "60794",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "21",
+  "animation_attack": "173",
+  "animation_idle": "68",
+  "animation_move": "32",
+  "movespeed_attack": "0.0041",
+  "movespeed_skill": "0.0041",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "74, 80, 86, 92, 98, 104, 109, 114, 119, 124",
+  "normal_distribute": "14, 17, 11, 9, 5, 10, 9, 8, 10, 7",
+  "normal_totaldistr": "100",
+  "bb_frames": "74, 83, 92, 101, 110, 118, 126, 133, 140, 146, 151, 156, 161, 165",
+  "bb_distribute": "14, 8, 9, 7, 5, 10, 4, 6, 9, 6, 7, 2, 5, 8",
+  "bb_totaldistr": "100",
+  "sbb_frames": "74, 83, 92, 100, 108, 115, 122, 128, 134, 139, 144, 148, 152, 155, 158, 161, 164, 167, 170, 173",
+  "sbb_distribute": "9, 4, 5, 3, 7, 5, 7, 3, 3, 6, 4, 7, 3, 5, 5, 4, 6, 3, 3, 8",
+  "sbb_totaldistr": "100",
+  "description": "A young lady from another world guided by the Chain Chronicle. As she set off on her journey with Yuuri and Pirika, Phoena began to regain some of her lost memories, ultimately learning the horrible truth about their world. Thinking that she must do something in order to save its future, Phoena surmounted an enormous challenge and managed to save Yggdra from peril. However, the challenge is not yet over. Refusing to have her face such a burden all by herself, her friends Yuuri and Pirika decide to help her out once again.",
+  "summon": "The world awaits its future.<br>I believe it's for that very reason<br>that I stand here now.",
+  "fusion": "We have built unbreakable bonds.<br>I want to help change the future<br>with everyone by my side!",
+  "evolution": "I will also stand at the frontlines<br>and support everyone in battle.<br>We will definitely grab the light!",
+  "hp_base": "4030",
+  "atk_base": "1380",
+  "def_base": "1300",
+  "rec_base": "1700",
+  "hp_lord": "5800",
+  "atk_lord": "1850",
+  "def_lord": "1750",
+  "rec_lord": "2300",
+  "hp_bonus": "1250",
+  "atk_bonus": "300",
+  "def_bonus": "300",
+  "rec_bonus": "300",
+  "lordonly": "true",
+  "combo_hits": "9",
+  "normaldc": "18",
+  "ls": "Phoena's Treatment",
+  "lsdescription": "25% boost to Atk, max HP & recovers HP each turn",
+  "lsnote": "Heal 600-800 + 10% Rec HP",
+  "lstype": "Hit Points/Attack/Recovery",
+  "bbdescription": "14 combo powerful Dark attack on all foes & recovers HP",
+  "bbnote": "Heal 1500-1800 + 16.9% Rec",
+  "bbtype": "Heal/Offense",
+  "bbhits": "14",
+  "bbaoe": "A",
+  "bbgauge": "20",
+  "bbdc": "14",
+  "bbmultiplier": "220",
   "sbbdescription": "20 combo powerful Dark attack on all foes, recovers HP & boosts BB gauge",
   "sbbnote": "Heal 2200-2500 + 16.9% Rec & fills 8 BC",
   "sbbtype": "Heal/Support/Offense",
@@ -720,7 +886,6 @@
   "sbbgauge": "25",
   "sbbdc": "20",
   "sbbmultiplier": "450",
-  "ubb": {},
   "ubbdescription": "",
   "ubbtype": "",
   "ubbhits": "",
@@ -731,88 +896,10 @@
   "es": "",
   "esitem": "",
   "esdescription": "",
-  "evofrom": "60794",
-  "evointo": "",
   "evomats1": "",
   "evomats2": "",
   "evomats3": "",
   "evomats4": "",
   "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 1380,
-      "def": 1300,
-      "hp": 4030,
-      "rec": 1700
-    },
-    "_lord": {
-      "atk": 1850,
-      "def": 1750,
-      "hp": 5800,
-      "rec": 2300
-    },
-    "anima": {
-      "atk": 1850,
-      "def": 1750,
-      "hp max": 6790,
-      "hp min": 6295,
-      "rec max": 2201,
-      "rec min": 2003
-    },
-    "breaker": {
-      "atk max": 2147,
-      "atk min": 1949,
-      "def max": 1651,
-      "def min": 1453,
-      "hp": 5800,
-      "rec": 2300
-    },
-    "guardian": {
-      "atk": 1850,
-      "def max": 2047,
-      "def min": 1849,
-      "hp": 5800,
-      "rec max": 2300,
-      "rec min": 2102
-    },
-    "oracle": {
-      "atk": 1850,
-      "def max": 1750,
-      "def min": 1552,
-      "hp": 5800,
-      "rec max": 2696,
-      "rec min": 2498
-    }
-  },
-  "leader_skill": {
-    "desc": "25% boost to Atk, max HP & recovers HP each turn",
-    "effects": [
-      {
-        "atk% buff": 25,
-        "hp% buff": 25,
-        "passive id": "1"
-      },
-      {
-        "passive id": "33",
-        "rec% added (turn heal)": 10.0,
-        "turn heal high": 800,
-        "turn heal low": 600
-      }
-    ],
-    "id": "9451",
-    "name": "Phoena's Treatment"
-  },
-  "extra_skill": {},
-  "unitDisplayHomePosition_1W9CxaFK": "431,162,174,475",
-  "unitDisplayDetailPosition_6z54rgb3": "-80,64,898,780",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "52,251,449,390,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-25,-240,898,780",
-  "unitDisplaySummonPosition_KC3Jk8Br": "52,251,449,390,0",
-  "unitDisplayHpPosition_3BpHN6VD": "-2,37",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "8000",
-  "sellCaution": false,
-  "effectFrames": "74:136:1,80:136:1,86:136:1,92:136:1,98:136:1,104:136:1,109:136:1,114:136:1,119:136:1,124:136:1,75:600210:1,98:600211:1,121:600210:1,70:600381:1"
+  "evoitem": ""
 }

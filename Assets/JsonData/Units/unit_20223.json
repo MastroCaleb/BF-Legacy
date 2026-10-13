@@ -1,62 +1,66 @@
 {
   "id": "20223",
-  "unitName": "Ice King Jaegar",
-  "no": "582",
-  "element": "Water",
-  "rarity": "★★★★",
-  "cost": "10",
-  "maxlv": "60",
-  "basexp": "15",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "72",
-  "animation_idle": "64",
-  "animation_move": "16",
-  "movespeed_attack": "0.0041",
-  "movespeed_skill": "0.0041",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "47, 49, 51, 53, 55",
-  "normal_distribute": "20, 20, 20, 20, 20",
-  "normal_totaldistr": "100",
-  "bb_frames": "41, 51, 61, 71, 81, 91",
-  "bb_distribute": "16, 16, 17, 17, 17, 17",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "description": "A young general from the Sama Kingdom. To protect the women, he held his position at a great ice fort that would later become the ruins left behind by the great war against the gods. Afterwards, when the Savat People continued fighting in numerous battles, he tried to serve as their reinforcement and got his right eye injured by the enemy in the process. It is said that he confessed his love for Selena, the tribe chief who nursed him back to health, by stating that he wanted to convey his true feelings for her before he died. However, his life was not truly in danger at the time, so no one knows how sincere his words truly were.",
-  "summon": "Hey, Summoner, I wanna suggest something.<br>Choose beautiful women only to fight by my side.<br> I'm counting on ya!",
-  "fusion": "So, which one of these girls is yours?<br>Maybe we could...<br>Whoa! Don't get so angry!",
-  "evolution": "I shall protect all of the beautiful women in this world!<br>I swear it by my lost eye!",
-  "hp_base": "2678",
-  "atk_base": "1071",
-  "def_base": "808",
-  "rec_base": "766",
-  "hp_lord": "4018",
-  "atk_lord": "1446",
-  "def_lord": "1091",
-  "rec_lord": "1034",
-  "hp_anima": "4461",
-  "rec_anima": "916",
-  "atk_breaker": "1564",
-  "def_breaker": "973",
-  "atk_guardian": "1328",
-  "def_guardian": "1209",
-  "rec_guardian": "975",
-  "def_oracle": "1032",
-  "hp_oracle": "3841",
-  "rec_oracle": "1211",
-  "hp_bonus": "400",
-  "atk_bonus": "200",
-  "def_bonus": "120",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "5",
-  "normaldc": "10",
-  "ls": "Instant Divine Wind",
-  "lsdescription": "50% boost to Atk, Def, & Rec for first turn",
-  "lstype": "Attack/Defense/Recovery",
+  "stats": {
+    "_base": {
+      "atk": 1071,
+      "def": 808,
+      "hp": 2678,
+      "rec": 766
+    },
+    "_lord": {
+      "atk": 1446,
+      "def": 1091,
+      "hp": 4018,
+      "rec": 1034
+    },
+    "anima": {
+      "atk": 1446,
+      "def": 1091,
+      "hp max": 4608,
+      "hp min": 4313,
+      "rec max": 975,
+      "rec min": 857
+    },
+    "breaker": {
+      "atk max": 1623,
+      "atk min": 1505,
+      "def max": 1032,
+      "def min": 914,
+      "hp": 4018,
+      "rec": 1034
+    },
+    "guardian": {
+      "atk": 1446,
+      "def max": 1268,
+      "def min": 1150,
+      "hp": 4018,
+      "rec max": 1034,
+      "rec min": 916
+    },
+    "oracle": {
+      "atk": 1446,
+      "def max": 1091,
+      "def min": 973,
+      "hp": 4018,
+      "rec max": 1270,
+      "rec min": 1152
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to Atk, Def, & Rec for first turn",
+    "effects": [
+      {
+        "first x turns": 1,
+        "first x turns atk% (1)": 50,
+        "first x turns def% (3)": 50,
+        "first x turns rec% (5)": 50,
+        "passive id": "21"
+      }
+    ],
+    "id": "2503",
+    "name": "Instant Divine Wind"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -301,97 +305,91 @@
     ],
     "name": "Frozen Blaze"
   },
-  "bbdescription": "6 combo Water elemental attack on all enemies & adds chance of ignoring opponents' Def when attacking for all allies for 2 turns",
-  "bbtype": "Offense",
-  "bbhits": "6",
-  "bbaoe": "A",
-  "bbgauge": "20",
-  "bbdc": "6",
-  "bbmultiplier": "120",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "20222",
-  "evointo": "",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 1071,
-      "def": 808,
-      "hp": 2678,
-      "rec": 766
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1446,
-      "def": 1091,
-      "hp": 4018,
-      "rec": 1034
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1446,
-      "def": 1091,
-      "hp max": 4608,
-      "hp min": 4313,
-      "rec max": 975,
-      "rec min": 857
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 72
     },
-    "breaker": {
-      "atk max": 1623,
-      "atk min": 1505,
-      "def max": 1032,
-      "def min": 914,
-      "hp": 4018,
-      "rec": 1034
+    "idle": {
+      "total number of frames": 64
     },
-    "guardian": {
-      "atk": 1446,
-      "def max": 1268,
-      "def min": 1150,
-      "hp": 4018,
-      "rec max": 1034,
-      "rec min": 916
-    },
-    "oracle": {
-      "atk": 1446,
-      "def max": 1091,
-      "def min": 973,
-      "hp": 4018,
-      "rec max": 1270,
-      "rec min": 1152
+    "move": {
+      "total number of frames": 16
     }
   },
-  "leader_skill": {
-    "desc": "50% boost to Atk, Def, & Rec for first turn",
-    "effects": [
-      {
-        "first x turns": 1,
-        "first x turns atk% (1)": 50,
-        "first x turns def% (3)": 50,
-        "first x turns rec% (5)": 50,
-        "passive id": "21"
-      }
+  "category": 20220,
+  "cost": "10",
+  "damage frames": {
+    "frame times": [
+      47,
+      49,
+      51,
+      53,
+      55
     ],
-    "id": "2503",
-    "name": "Instant Divine Wind"
+    "hit dmg% distribution": [
+      20,
+      20,
+      20,
+      20,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 5
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "water",
+  "exp_pattern": 15,
+  "gender": "male",
+  "getting type": "farmable",
+  "guide_id": 582,
+  "imp": {
+    "max atk": "200",
+    "max def": "120",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "1346~1503",
+  "movement": {
+    "attack": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    }
+  },
+  "name": "Ice King Jaegar",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Ice King Jaegar",
+  "maxlv": "60",
+  "no": "582",
   "unitDisplayHomePosition_1W9CxaFK": "160,-30,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "130,232,820,576",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "160,336,297,293,0",
@@ -401,5 +399,84 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "41:122:1,42:190:1,43:122:1,45:122:1,45:660:1,47:122:1,48:200140:1,50:200231:1,51:200030:1"
+  "effectFrames": "41:122:1,42:190:1,43:122:1,45:122:1,45:660:1,47:122:1,48:200140:1,50:200231:1,51:200030:1",
+  "evofrom": "20222",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "15",
+  "animation_attack": "72",
+  "animation_idle": "64",
+  "animation_move": "16",
+  "movespeed_attack": "0.0041",
+  "movespeed_skill": "0.0041",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "47, 49, 51, 53, 55",
+  "normal_distribute": "20, 20, 20, 20, 20",
+  "normal_totaldistr": "100",
+  "bb_frames": "41, 51, 61, 71, 81, 91",
+  "bb_distribute": "16, 16, 17, 17, 17, 17",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "description": "A young general from the Sama Kingdom. To protect the women, he held his position at a great ice fort that would later become the ruins left behind by the great war against the gods. Afterwards, when the Savat People continued fighting in numerous battles, he tried to serve as their reinforcement and got his right eye injured by the enemy in the process. It is said that he confessed his love for Selena, the tribe chief who nursed him back to health, by stating that he wanted to convey his true feelings for her before he died. However, his life was not truly in danger at the time, so no one knows how sincere his words truly were.",
+  "summon": "Hey, Summoner, I wanna suggest something.<br>Choose beautiful women only to fight by my side.<br> I'm counting on ya!",
+  "fusion": "So, which one of these girls is yours?<br>Maybe we could...<br>Whoa! Don't get so angry!",
+  "evolution": "I shall protect all of the beautiful women in this world!<br>I swear it by my lost eye!",
+  "hp_base": "2678",
+  "atk_base": "1071",
+  "def_base": "808",
+  "rec_base": "766",
+  "hp_lord": "4018",
+  "atk_lord": "1446",
+  "def_lord": "1091",
+  "rec_lord": "1034",
+  "hp_anima": "4461",
+  "rec_anima": "916",
+  "atk_breaker": "1564",
+  "def_breaker": "973",
+  "atk_guardian": "1328",
+  "def_guardian": "1209",
+  "rec_guardian": "975",
+  "def_oracle": "1032",
+  "hp_oracle": "3841",
+  "rec_oracle": "1211",
+  "hp_bonus": "400",
+  "atk_bonus": "200",
+  "def_bonus": "120",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "5",
+  "normaldc": "10",
+  "ls": "Instant Divine Wind",
+  "lsdescription": "50% boost to Atk, Def, & Rec for first turn",
+  "lstype": "Attack/Defense/Recovery",
+  "bbdescription": "6 combo Water elemental attack on all enemies & adds chance of ignoring opponents' Def when attacking for all allies for 2 turns",
+  "bbtype": "Offense",
+  "bbhits": "6",
+  "bbaoe": "A",
+  "bbgauge": "20",
+  "bbdc": "6",
+  "bbmultiplier": "120",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "",
+  "evomats2": "",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": "",
+  "evoitem": ""
 }

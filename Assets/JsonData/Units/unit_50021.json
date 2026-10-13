@@ -1,63 +1,63 @@
 {
   "id": "50021",
-  "unitName": "Luna",
-  "freetext": ":''For other uses, see Luna (disambiguation)''",
-  "no": "37",
-  "element": "Light",
-  "rarity": "★★",
-  "cost": "3",
-  "maxlv": "30",
-  "basexp": "15",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "100",
-  "animation_idle": "52",
-  "animation_move": "13",
-  "movespeed_attack": "0.0041",
-  "movespeed_skill": "0.0041",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "40, 46",
-  "normal_distribute": "50, 50",
-  "normal_totaldistr": "100",
-  "bb_frames": "40, 46",
-  "bb_distribute": "50, 50",
-  "bb_totaldistr": "100",
-  "description": "A woman with glittering hair who suddenly appeared in the La Veda Republic when the battle with the gods began. She fought the gods with a giant lance and her heroism and mysterious origins led some to worship her as a messiah. This ended when she spoke. Luna was very foul-mouthed. What she said was so terrible that it was never recorded in the history books.",
-  "summon": "Don't call on me so ubruptly!<br>Huh? You need my lance?<br>Then gimme something to stab!",
-  "fusion": "Hey, I'm over here!<br>Now, make me stronger!",
-  "evolution": "",
-  "hp_base": "980",
-  "atk_base": "570",
-  "def_base": "570",
-  "rec_base": "180",
-  "hp_lord": "1829",
-  "atk_lord": "855",
-  "def_lord": "855",
-  "rec_lord": "270",
-  "hp_anima": "2047",
-  "rec_anima": "212",
-  "atk_breaker": "913",
-  "def_breaker": "797",
-  "atk_guardian": "797",
-  "def_guardian": "913",
-  "rec_guardian": "241",
-  "def_oracle": "826",
-  "hp_oracle": "1742",
-  "rec_oracle": "357",
-  "hp_bonus": "400",
-  "atk_bonus": "100",
-  "def_bonus": "100",
-  "rec_bonus": "100",
-  "lordonly": "",
-  "combo_hits": "2",
-  "normaldc": "4",
-  "ls": "Fighting Light",
-  "lsdescription": "Small boost in Battle Crystals produced during Spark",
-  "lsnote": "30% boost",
-  "lstype": "Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 570,
+      "def": 570,
+      "hp": 980,
+      "rec": 180
+    },
+    "_lord": {
+      "atk": 855,
+      "def": 855,
+      "hp": 1829,
+      "rec": 270
+    },
+    "anima": {
+      "atk": 855,
+      "def": 855,
+      "hp max": 2119,
+      "hp min": 1974,
+      "rec max": 241,
+      "rec min": 183
+    },
+    "breaker": {
+      "atk max": 942,
+      "atk min": 884,
+      "def max": 826,
+      "def min": 768,
+      "hp": 1829,
+      "rec": 270
+    },
+    "guardian": {
+      "atk": 855,
+      "def max": 942,
+      "def min": 884,
+      "hp": 1829,
+      "rec max": 270,
+      "rec min": 212
+    },
+    "oracle": {
+      "atk": 855,
+      "def max": 855,
+      "def min": 797,
+      "hp": 1829,
+      "rec max": 386,
+      "rec min": 328
+    }
+  },
+  "leader_skill": {
+    "desc": "Small boost in Battle Crystals produced during Spark",
+    "effects": [
+      {
+        "bc drop% for spark": 30,
+        "passive id": "31"
+      }
+    ],
+    "id": "1400",
+    "name": "Fighting Light"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -212,93 +212,85 @@
     ],
     "name": "Rude Thrust"
   },
-  "bbdescription": "2 combo Light elemental attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "2",
-  "bbaoe": "A",
-  "bbgauge": "15",
-  "bbdc": "2",
-  "bbmultiplier": "140",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "50022",
-  "evomats1": "50120",
-  "evomats2": "50120",
-  "evomats3": "50121",
-  "evomats4": "",
-  "evomats5": "",
-  "evozelcost": "50000",
-  "stats": {
-    "_base": {
-      "atk": 570,
-      "def": 570,
-      "hp": 980,
-      "rec": 180
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 855,
-      "def": 855,
-      "hp": 1829,
-      "rec": 270
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 855,
-      "def": 855,
-      "hp max": 2119,
-      "hp min": 1974,
-      "rec max": 241,
-      "rec min": 183
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 100
     },
-    "breaker": {
-      "atk max": 942,
-      "atk min": 884,
-      "def max": 826,
-      "def min": 768,
-      "hp": 1829,
-      "rec": 270
+    "idle": {
+      "total number of frames": 52
     },
-    "guardian": {
-      "atk": 855,
-      "def max": 942,
-      "def min": 884,
-      "hp": 1829,
-      "rec max": 270,
-      "rec min": 212
-    },
-    "oracle": {
-      "atk": 855,
-      "def max": 855,
-      "def min": 797,
-      "hp": 1829,
-      "rec max": 386,
-      "rec min": 328
+    "move": {
+      "total number of frames": 13
     }
   },
-  "leader_skill": {
-    "desc": "Small boost in Battle Crystals produced during Spark",
-    "effects": [
-      {
-        "bc drop% for spark": 30,
-        "passive id": "31"
-      }
+  "category": 50020,
+  "cost": "3",
+  "damage frames": {
+    "frame times": [
+      40,
+      46
     ],
-    "id": "1400",
-    "name": "Fighting Light"
+    "hit dmg% distribution": [
+      50,
+      50
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 2
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "light",
+  "exp_pattern": 15,
+  "gender": "female",
+  "getting type": "not eligible for achievement",
+  "guide_id": 37,
+  "imp": {
+    "max atk": "100",
+    "max def": "100",
+    "max hp": "400",
+    "max rec": "100"
+  },
+  "kind": "normal",
+  "lord damage range": "795~889",
+  "movement": {
+    "attack": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    }
+  },
+  "name": "Luna",
+  "rarity": "2",
+  "sell caution": false,
+  "unitName": "Luna",
+  "maxlv": "30",
+  "no": "37",
   "unitDisplayHomePosition_1W9CxaFK": "333,-19,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-31,211,750,530",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "96,355,370,260,0",
@@ -308,5 +300,95 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "300",
   "sellCaution": false,
-  "effectFrames": "34:125:1,40:125:1"
+  "effectFrames": "34:125:1,40:125:1",
+  "evofrom": "",
+  "evointo": "50022",
+  "evozelcost": "50000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50120",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "50121",
+      "count": 1
+    }
+  ],
+  "freetext": ":''For other uses, see Luna (disambiguation)''",
+  "basexp": "15",
+  "animation_attack": "100",
+  "animation_idle": "52",
+  "animation_move": "13",
+  "movespeed_attack": "0.0041",
+  "movespeed_skill": "0.0041",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "40, 46",
+  "normal_distribute": "50, 50",
+  "normal_totaldistr": "100",
+  "bb_frames": "40, 46",
+  "bb_distribute": "50, 50",
+  "bb_totaldistr": "100",
+  "description": "A woman with glittering hair who suddenly appeared in the La Veda Republic when the battle with the gods began. She fought the gods with a giant lance and her heroism and mysterious origins led some to worship her as a messiah. This ended when she spoke. Luna was very foul-mouthed. What she said was so terrible that it was never recorded in the history books.",
+  "summon": "Don't call on me so ubruptly!<br>Huh? You need my lance?<br>Then gimme something to stab!",
+  "fusion": "Hey, I'm over here!<br>Now, make me stronger!",
+  "evolution": "",
+  "hp_base": "980",
+  "atk_base": "570",
+  "def_base": "570",
+  "rec_base": "180",
+  "hp_lord": "1829",
+  "atk_lord": "855",
+  "def_lord": "855",
+  "rec_lord": "270",
+  "hp_anima": "2047",
+  "rec_anima": "212",
+  "atk_breaker": "913",
+  "def_breaker": "797",
+  "atk_guardian": "797",
+  "def_guardian": "913",
+  "rec_guardian": "241",
+  "def_oracle": "826",
+  "hp_oracle": "1742",
+  "rec_oracle": "357",
+  "hp_bonus": "400",
+  "atk_bonus": "100",
+  "def_bonus": "100",
+  "rec_bonus": "100",
+  "lordonly": "",
+  "combo_hits": "2",
+  "normaldc": "4",
+  "ls": "Fighting Light",
+  "lsdescription": "Small boost in Battle Crystals produced during Spark",
+  "lsnote": "30% boost",
+  "lstype": "Brave Burst",
+  "bbdescription": "2 combo Light elemental attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "2",
+  "bbaoe": "A",
+  "bbgauge": "15",
+  "bbdc": "2",
+  "bbmultiplier": "140",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50120",
+  "evomats2": "50120",
+  "evomats3": "50121",
+  "evomats4": "",
+  "evomats5": ""
 }

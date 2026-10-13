@@ -1,57 +1,113 @@
 {
   "id": "860687",
-  "unitName": "Set",
-  "freetext": ":''For other uses, see Set (disambiguation).''",
-  "no": "8563",
-  "element": "Dark",
-  "rarity": "★★★★★★★",
-  "cost": "52",
-  "maxlv": "150",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "11",
-  "animation_attack": "153",
-  "animation_idle": "52",
-  "animation_move": "52",
-  "movespeed_attack": "2",
-  "speedtype_attack": "4",
-  "movetype_attack": "3",
-  "movespeed_skill": "2",
-  "speedtype_skill": "4",
-  "movetype_skill": "3",
-  "description": "Chaotic, volatile, and an incorrigible trickster—all these and more have been used to describe Set, the goddess of deserts, storms, and trickery. The younger sister of Osiris, patron of the earth's abundance, Set was as fickle as her brother was stoic. Among their many conflicts, one would change the face of the pantheon forever.The red soil of Urzyma was barren and dry, in contrast with the fertile black soil upon which the first humans built their civilizations. Osiris and his wife Aesys watched over them, cementing their status as symbols of nature, and left the scorching desert sands to Set. Unhappy with this arrangement, Set confronted Osiris, but his cold remark about her inability to govern the land she was given cut deep into her pride. In a fit of envious rage, Set mangled Osiris with her threads of darkness, leaving his body strewn along the riverbanks. It was said that on that day, her Sha—her totemic animal—howled the first storm into existence.Though Osiris would subsequently be reborn as the Lord of the netherworld Duat thanks to his wife's devotion, Set did not show up for his ceremony, and over the years slowly withdrew her attendance from their court. Shunned by her divine brethren, Set chose to slink through the lands of her undying brother instead, garnering widespread yet clandestine worship from those who skulk in the darkness as she does.As the patron of rogues, thieves, and assassins, worship of Set is generally frowned upon, but scribes—especially those of Thoth—advise their kings to be tolerant of her cult according to an ancient adage: there can be no Light without Darkness.",
-  "summon": "Well! Here to join this riotous occasion, hmm?<br>I admire your enthusiasm.<br>Then come—frolic in the fire with me!",
-  "fusion": "Hmhm...Aren't you sweet?<br>Come here. Closer...<br>...And feed my little darling here.",
-  "evolution": "",
-  "hp_base": "6110",
-  "atk_base": "2517",
-  "def_base": "2330",
-  "rec_base": "1950",
-  "hp_lord": "8729",
-  "atk_lord": "3596",
-  "def_lord": "3329",
-  "rec_lord": "2786",
-  "hp_anima": "9621",
-  "rec_anima": "2548",
-  "atk_breaker": "3834",
-  "def_breaker": "3091",
-  "def_guardian": "3567",
-  "rec_guardian": "2667",
-  "def_oracle": "3210",
-  "rec_oracle": "3143",
-  "hp_bonus": "1100",
-  "atk_bonus": "440",
-  "def_bonus": "440",
-  "rec_bonus": "440",
-  "lordonly": "",
-  "combo_hits": "15",
-  "normaldc": "45",
-  "normal_frames": "12, 19, 26, 33, 40, 47, 54, 61, 68, 75, 82, 89, 96, 103, 110",
-  "normal_distribute": "6, 6, 6, 6, 6, 6, 6, 6, 10, 9, 8, 7, 6, 6, 6",
-  "normal_totaldistr": "100",
-  "ls": "Heart-Weary",
-  "lsdescription": "150% Atk, 100% max HP and 30% critical rate (Dark), 150% spark damage, 175% Dark elemental damage & 10% damage reduction from Light, Dark types",
-  "lsnote": "",
+  "stats": {
+    "_base": {
+      "atk": 2517,
+      "def": 2330,
+      "hp": 6110,
+      "rec": 1950
+    },
+    "_lord": {
+      "atk": 3596,
+      "def": 3329,
+      "hp": 8729,
+      "rec": 2786
+    },
+    "anima": {
+      "atk": 3596,
+      "def": 3329,
+      "hp max": 9919,
+      "hp min": 9324,
+      "rec max": 2667,
+      "rec min": 2429
+    },
+    "breaker": {
+      "atk max": 3953,
+      "atk min": 3715,
+      "def max": 3210,
+      "def min": 2972,
+      "hp": 8729,
+      "rec": 2786
+    },
+    "guardian": {
+      "atk": 3596,
+      "def max": 3686,
+      "def min": 3448,
+      "hp": 8729,
+      "rec max": 2786,
+      "rec min": 2548
+    },
+    "oracle": {
+      "atk": 3596,
+      "def max": 3329,
+      "def min": 3091,
+      "hp": 8729,
+      "rec max": 3262,
+      "rec min": 3024
+    }
+  },
+  "leader_skill": {
+    "desc": "150% Atk, 100% max HP and 30% critical rate (Dark), 150% spark damage, 175% Dark elemental damage & 10% damage reduction from Light, Dark types",
+    "effects": [
+      {
+        "atk% buff": 150,
+        "crit% buff": 30,
+        "elements buffed": [
+          "dark"
+        ],
+        "hp% buff": 100,
+        "passive id": "2"
+      },
+      {
+        "damage% for spark": 150,
+        "passive id": "31"
+      },
+      {
+        "dark units do extra elemental weakness dmg": true,
+        "elemental weakness multiplier%": 175.0,
+        "passive id": "50"
+      },
+      {
+        "dmg% mitigation for elemental attacks": 10.0,
+        "mitigate dark attacks": true,
+        "mitigate light attacks": true,
+        "passive id": "62"
+      }
+    ],
+    "id": "860687",
+    "name": "Heart-Weary"
+  },
+  "extra_skill": {
+    "desc": "10% Atk, Def each turn (4 times) and 10% Dark elemental damage for all allies & reduces Skip Turn and ES Lock effect duration by 3 turns",
+    "effects": [
+      {
+        "atk% max buff": 40,
+        "conditions": [],
+        "def% max buff": 40,
+        "increase from min to max": 1,
+        "passive id": "105",
+        "passive target": "party",
+        "turn count": 4
+      },
+      {
+        "conditions": [],
+        "dark units do extra elemental weakness dmg": true,
+        "elemental weakness multiplier%": 10.0,
+        "passive id": "50",
+        "passive target": "party"
+      },
+      {
+        "conditions": [],
+        "passive target": "self",
+        "unknown passive id": "11009",
+        "unknown passive params": "10005:147,-3,0,0,0,0,0,0,0,0"
+      }
+    ],
+    "id": "860687",
+    "name": "Thief of Dawn",
+    "rarity": "7",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -814,28 +870,6 @@
     ],
     "name": "Scarlet Ripper"
   },
-  "bbdescription": "17 combo Dark attack on all foes (damage relative to remaining HP), 20 combo random Dark attack on all foes, adds probable 1 turn Atk, Def reduction infliction to attack for 3 turns, probable 1 turn Atk, Def reduction infliction & 100% critical, elemental and spark damage reduction for 3 turns",
-  "bbnote": "200% + 250% * current HP / max HP, 10% chance of reducing 20% Atk/Def (added to attack) & 30% chance of reducing 50% Atk/Def",
-  "bbtype": "Offense",
-  "bbgauge": "20",
-  "bb_frames": "12, 18, 24, 30, 36, 42, 48, 54, 60, 66, 72, 78, 84, 90, 96, 102, 108",
-  "bb_distribute": "5, 5, 5, 5, 5, 5, 5, 5, 5, 10, 8, 7, 6, 6, 6, 6, 6",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "bbhits": "17",
-  "bbaoe": "A",
-  "bbdc": "17",
-  "bbmultiplier": "200",
-  "bb_hpscale": "true",
-  "bb2_frames": "0",
-  "bb2_distribute": "100",
-  "bb2_totaldistr": "100",
-  "bb2_effectdelay": "0",
-  "bbhits2": "20",
-  "bbaoe2": "1",
-  "bbdc2": "20",
-  "bbmultiplier2": "4000",
-  "bb2_hpscale": "",
   "sbb": {
     "damage frames": [
       {
@@ -1554,28 +1588,6 @@
     ],
     "name": "Sanguine Deceit"
   },
-  "sbbdescription": "20 combo Dark attack on all foes (damage relative to remaining HP), 20 combo random Dark attack on all foes, adds probable 1 turn Atk, Def reduction infliction to attack for 3 turns, probable 2 turns Atk, Def reduction infliction, boosts spark damage for 3 turns",
-  "sbbnote": "200% + 700% * current HP / max HP, 20% chance of reducing 30% Atk/Def (added to attack), 40% chance of reducing 50% Atk/Def & 180% Spark",
-  "sbbtype": "Offense",
-  "sbbgauge": "24",
-  "sbb_frames": "12, 17, 22, 27, 32, 37, 42, 47, 52, 57, 62, 67, 72, 77, 82, 87, 92, 97, 102, 107",
-  "sbb_distribute": "4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 10, 8, 7, 6, 5, 5, 5, 5, 5",
-  "sbb_totaldistr": "100",
-  "sbb_effectdelay": "1",
-  "sbbhits": "20",
-  "sbbaoe": "A",
-  "sbbdc": "20",
-  "sbbmultiplier": "200",
-  "sbb_hpscale": "true",
-  "sbb2_frames": "0",
-  "sbb2_distribute": "100",
-  "sbb2_totaldistr": "100",
-  "sbb2_effectdelay": "0",
-  "sbbhits2": "20",
-  "sbbaoe2": "1",
-  "sbbdc2": "20",
-  "sbbmultiplier2": "4000",
-  "sbb2_hpscale": "",
   "ubb": {
     "damage frames": [
       {
@@ -1749,6 +1761,229 @@
     ],
     "name": "Serekh"
   },
+  "ai": "11",
+  "animations": {
+    "attack": {
+      "total number of frames": 153
+    },
+    "idle": {
+      "total number of frames": 52
+    },
+    "move": {
+      "total number of frames": 52
+    }
+  },
+  "category": 860680,
+  "cost": "52",
+  "damage frames": {
+    "frame times": [
+      12,
+      19,
+      26,
+      33,
+      40,
+      47,
+      54,
+      61,
+      68,
+      75,
+      82,
+      89,
+      96,
+      103,
+      110
+    ],
+    "hit dmg% distribution": [
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      10,
+      9,
+      8,
+      7,
+      6,
+      6,
+      6
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 15
+  },
+  "drop check count": 3,
+  "element": "dark",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 8563,
+  "imp": {
+    "max atk": "440",
+    "max def": "440",
+    "max hp": "1100",
+    "max rec": "440"
+  },
+  "kind": "normal",
+  "lord damage range": "3348~3739",
+  "movement": {
+    "attack": {
+      "move speed": 2,
+      "move speed type": "4",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 2,
+      "move speed type": "4",
+      "move type": "3"
+    }
+  },
+  "name": "Set",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Set",
+  "maxlv": "120",
+  "no": "8563",
+  "unitDisplayHomePosition_1W9CxaFK": "378,-23,174,475",
+  "unitDisplayDetailPosition_6z54rgb3": "131,184,727,624",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "138,324,353,303,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-92,31,989,849",
+  "unitDisplaySummonPosition_KC3Jk8Br": "138,324,353,303,0",
+  "unitDisplayHpPosition_3BpHN6VD": "2,20",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "15000",
+  "sellCaution": false,
+  "effectFrames": "64:8100154:1,0:8100156:1,65:8100157:1",
+  "evofrom": "",
+  "evointo": "860688",
+  "evozelcost": "3000000",
+  "evokarmacost": "1000000",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "60344",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60123",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    },
+    {
+      "type": "2",
+      "id": "110100",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "860034",
+      "count": 1
+    }
+  ],
+  "freetext": ":''For other uses, see Set (disambiguation).''",
+  "basexp": "21",
+  "animation_attack": "153",
+  "animation_idle": "52",
+  "animation_move": "52",
+  "movespeed_attack": "2",
+  "speedtype_attack": "4",
+  "movetype_attack": "3",
+  "movespeed_skill": "2",
+  "speedtype_skill": "4",
+  "movetype_skill": "3",
+  "description": "Chaotic, volatile, and an incorrigible trickster—all these and more have been used to describe Set, the goddess of deserts, storms, and trickery. The younger sister of Osiris, patron of the earth's abundance, Set was as fickle as her brother was stoic. Among their many conflicts, one would change the face of the pantheon forever.The red soil of Urzyma was barren and dry, in contrast with the fertile black soil upon which the first humans built their civilizations. Osiris and his wife Aesys watched over them, cementing their status as symbols of nature, and left the scorching desert sands to Set. Unhappy with this arrangement, Set confronted Osiris, but his cold remark about her inability to govern the land she was given cut deep into her pride. In a fit of envious rage, Set mangled Osiris with her threads of darkness, leaving his body strewn along the riverbanks. It was said that on that day, her Sha—her totemic animal—howled the first storm into existence.Though Osiris would subsequently be reborn as the Lord of the netherworld Duat thanks to his wife's devotion, Set did not show up for his ceremony, and over the years slowly withdrew her attendance from their court. Shunned by her divine brethren, Set chose to slink through the lands of her undying brother instead, garnering widespread yet clandestine worship from those who skulk in the darkness as she does.As the patron of rogues, thieves, and assassins, worship of Set is generally frowned upon, but scribes—especially those of Thoth—advise their kings to be tolerant of her cult according to an ancient adage: there can be no Light without Darkness.",
+  "summon": "Well! Here to join this riotous occasion, hmm?<br>I admire your enthusiasm.<br>Then come—frolic in the fire with me!",
+  "fusion": "Hmhm...Aren't you sweet?<br>Come here. Closer...<br>...And feed my little darling here.",
+  "evolution": "",
+  "hp_base": "6110",
+  "atk_base": "2517",
+  "def_base": "2330",
+  "rec_base": "1950",
+  "hp_lord": "8729",
+  "atk_lord": "3596",
+  "def_lord": "3329",
+  "rec_lord": "2786",
+  "hp_anima": "9621",
+  "rec_anima": "2548",
+  "atk_breaker": "3834",
+  "def_breaker": "3091",
+  "def_guardian": "3567",
+  "rec_guardian": "2667",
+  "def_oracle": "3210",
+  "rec_oracle": "3143",
+  "hp_bonus": "1100",
+  "atk_bonus": "440",
+  "def_bonus": "440",
+  "rec_bonus": "440",
+  "lordonly": "",
+  "combo_hits": "15",
+  "normaldc": "45",
+  "normal_frames": "12, 19, 26, 33, 40, 47, 54, 61, 68, 75, 82, 89, 96, 103, 110",
+  "normal_distribute": "6, 6, 6, 6, 6, 6, 6, 6, 10, 9, 8, 7, 6, 6, 6",
+  "normal_totaldistr": "100",
+  "ls": "Heart-Weary",
+  "lsdescription": "150% Atk, 100% max HP and 30% critical rate (Dark), 150% spark damage, 175% Dark elemental damage & 10% damage reduction from Light, Dark types",
+  "lsnote": "",
+  "bbdescription": "17 combo Dark attack on all foes (damage relative to remaining HP), 20 combo random Dark attack on all foes, adds probable 1 turn Atk, Def reduction infliction to attack for 3 turns, probable 1 turn Atk, Def reduction infliction & 100% critical, elemental and spark damage reduction for 3 turns",
+  "bbnote": "200% + 250% * current HP / max HP, 10% chance of reducing 20% Atk/Def (added to attack) & 30% chance of reducing 50% Atk/Def",
+  "bbtype": "Offense",
+  "bbgauge": "20",
+  "bb_frames": "12, 18, 24, 30, 36, 42, 48, 54, 60, 66, 72, 78, 84, 90, 96, 102, 108",
+  "bb_distribute": "5, 5, 5, 5, 5, 5, 5, 5, 5, 10, 8, 7, 6, 6, 6, 6, 6",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "bbhits": "17",
+  "bbaoe": "A",
+  "bbdc": "17",
+  "bbmultiplier": "200",
+  "bb_hpscale": "true",
+  "bb2_frames": "0",
+  "bb2_distribute": "100",
+  "bb2_totaldistr": "100",
+  "bb2_effectdelay": "0",
+  "bbhits2": "20",
+  "bbaoe2": "1",
+  "bbdc2": "20",
+  "bbmultiplier2": "4000",
+  "bb2_hpscale": "",
+  "sbbdescription": "20 combo Dark attack on all foes (damage relative to remaining HP), 20 combo random Dark attack on all foes, adds probable 1 turn Atk, Def reduction infliction to attack for 3 turns, probable 2 turns Atk, Def reduction infliction, boosts spark damage for 3 turns",
+  "sbbnote": "200% + 700% * current HP / max HP, 20% chance of reducing 30% Atk/Def (added to attack), 40% chance of reducing 50% Atk/Def & 180% Spark",
+  "sbbtype": "Offense",
+  "sbbgauge": "24",
+  "sbb_frames": "12, 17, 22, 27, 32, 37, 42, 47, 52, 57, 62, 67, 72, 77, 82, 87, 92, 97, 102, 107",
+  "sbb_distribute": "4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 10, 8, 7, 6, 5, 5, 5, 5, 5",
+  "sbb_totaldistr": "100",
+  "sbb_effectdelay": "1",
+  "sbbhits": "20",
+  "sbbaoe": "A",
+  "sbbdc": "20",
+  "sbbmultiplier": "200",
+  "sbb_hpscale": "true",
+  "sbb2_frames": "0",
+  "sbb2_distribute": "100",
+  "sbb2_totaldistr": "100",
+  "sbb2_effectdelay": "0",
+  "sbbhits2": "20",
+  "sbbaoe2": "1",
+  "sbbdc2": "20",
+  "sbbmultiplier2": "4000",
+  "sbb2_hpscale": "",
   "ubbdescription": "25 combo Dark attack on all foes (damage relative to remaining HP), 3 turns Atk, Def reduction infliction, boosts Dark elemental damage for 3 turns, boosts spark damage for 3 turns & 100% DoT reduction for 3 turns",
   "ubbnote": "1500% + 1000% * current HP / max HP, 100% chance of reducing 80% Atk/Def, 400% elemental damage & 400% Spark damage",
   "ubbtype": "Offense",
@@ -1766,7 +2001,6 @@
   "esitem": "",
   "esdescription": "10% Atk, Def each turn (4 times) and 10% Dark elemental damage for all allies & reduces Skip Turn and ES Lock effect duration by 3 turns",
   "esnote": "",
-  "evointo": "860688",
   "evomats1": "60344",
   "evomats2": "60344",
   "evomats3": "50354",
@@ -1775,124 +2009,5 @@
   "evomats6": "Dark Totem",
   "evomats7": "60224",
   "evomats8": "860034",
-  "evoitem": "Legend Stone",
-  "evozelcost": "3000000",
-  "stats": {
-    "_base": {
-      "atk": 2517,
-      "def": 2330,
-      "hp": 6110,
-      "rec": 1950
-    },
-    "_lord": {
-      "atk": 3596,
-      "def": 3329,
-      "hp": 8729,
-      "rec": 2786
-    },
-    "anima": {
-      "atk": 3596,
-      "def": 3329,
-      "hp max": 9919,
-      "hp min": 9324,
-      "rec max": 2667,
-      "rec min": 2429
-    },
-    "breaker": {
-      "atk max": 3953,
-      "atk min": 3715,
-      "def max": 3210,
-      "def min": 2972,
-      "hp": 8729,
-      "rec": 2786
-    },
-    "guardian": {
-      "atk": 3596,
-      "def max": 3686,
-      "def min": 3448,
-      "hp": 8729,
-      "rec max": 2786,
-      "rec min": 2548
-    },
-    "oracle": {
-      "atk": 3596,
-      "def max": 3329,
-      "def min": 3091,
-      "hp": 8729,
-      "rec max": 3262,
-      "rec min": 3024
-    }
-  },
-  "leader_skill": {
-    "desc": "150% Atk, 100% max HP and 30% critical rate (Dark), 150% spark damage, 175% Dark elemental damage & 10% damage reduction from Light, Dark types",
-    "effects": [
-      {
-        "atk% buff": 150,
-        "crit% buff": 30,
-        "elements buffed": [
-          "dark"
-        ],
-        "hp% buff": 100,
-        "passive id": "2"
-      },
-      {
-        "damage% for spark": 150,
-        "passive id": "31"
-      },
-      {
-        "dark units do extra elemental weakness dmg": true,
-        "elemental weakness multiplier%": 175.0,
-        "passive id": "50"
-      },
-      {
-        "dmg% mitigation for elemental attacks": 10.0,
-        "mitigate dark attacks": true,
-        "mitigate light attacks": true,
-        "passive id": "62"
-      }
-    ],
-    "id": "860687",
-    "name": "Heart-Weary"
-  },
-  "extra_skill": {
-    "desc": "10% Atk, Def each turn (4 times) and 10% Dark elemental damage for all allies & reduces Skip Turn and ES Lock effect duration by 3 turns",
-    "effects": [
-      {
-        "atk% max buff": 40,
-        "conditions": [],
-        "def% max buff": 40,
-        "increase from min to max": 1,
-        "passive id": "105",
-        "passive target": "party",
-        "turn count": 4
-      },
-      {
-        "conditions": [],
-        "dark units do extra elemental weakness dmg": true,
-        "elemental weakness multiplier%": 10.0,
-        "passive id": "50",
-        "passive target": "party"
-      },
-      {
-        "conditions": [],
-        "passive target": "self",
-        "unknown passive id": "11009",
-        "unknown passive params": "10005:147,-3,0,0,0,0,0,0,0,0"
-      }
-    ],
-    "id": "860687",
-    "name": "Thief of Dawn",
-    "rarity": "7",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "378,-23,174,475",
-  "unitDisplayDetailPosition_6z54rgb3": "131,184,727,624",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "138,324,353,303,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-92,31,989,849",
-  "unitDisplaySummonPosition_KC3Jk8Br": "138,324,353,303,0",
-  "unitDisplayHpPosition_3BpHN6VD": "2,20",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "15000",
-  "sellCaution": false,
-  "effectFrames": "64:8100154:1,0:8100156:1,65:8100157:1"
+  "evoitem": "Legend Stone"
 }

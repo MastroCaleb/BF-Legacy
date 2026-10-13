@@ -1,61 +1,68 @@
 {
   "id": "20284",
-  "unitName": "Hail Mech Reeze",
-  "no": "380",
-  "element": "Water",
-  "rarity": "★★★★★",
-  "cost": "15",
-  "maxlv": "80",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "142",
-  "animation_idle": "59",
-  "animation_move": "11",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "51, 54, 57, 70, 73, 76, 84, 87, 90",
-  "normal_distribute": "20, 10, 10, 10, 10, 10, 10, 10, 10",
-  "normal_totaldistr": "100",
-  "bb_frames": "51, 54, 57, 70, 73, 76, 84, 87, 90, 96",
-  "bb_distribute": "10, 10, 10, 10, 10, 10, 10, 10, 10, 10",
-  "bb_totaldistr": "100",
-  "description": "A scientist from another world whose body is partly made up by a machine which releases cold air. Having heard rumors of her older brother's armor-clad enemy, she headed for their source, the Bariura Empire. On her way she would come to meet many people including a loud-mouthed martial artist and twin sword wielding warrior, but not once did any sign of happiness appear on her face. With almost tragic determination she silently worked on modifying herself, advancing her abilities to a state above that of a normal human, all the while accompanied by her cyborg weapon.",
-  "summon": "You forgive what I've done?<br>I'll follow you as believing your<br>words has made me weak.",
-  "fusion": "Oww...<br>No good, still not enough...<br>I need more power...",
-  "evolution": "I can't forgive myself.<br>That's why I will continue<br>even if it destroys me...",
-  "hp_base": "3525",
-  "atk_base": "1103",
-  "def_base": "885",
-  "rec_base": "843",
-  "hp_lord": "5456",
-  "atk_lord": "1659",
-  "def_lord": "1314",
-  "rec_lord": "1245",
-  "hp_anima": "6049",
-  "rec_anima": "1087",
-  "atk_breaker": "1817",
-  "def_breaker": "1156",
-  "atk_guardian": "1501",
-  "def_guardian": "1472",
-  "rec_guardian": "1166",
-  "def_oracle": "1235",
-  "hp_oracle": "5219",
-  "rec_oracle": "1482",
-  "hp_bonus": "500",
-  "atk_bonus": "200",
-  "def_bonus": "200",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "9",
-  "normaldc": "18",
-  "ls": "Divine Gale",
-  "lsdescription": "Nullifies all status ailments",
-  "lstype": "Defense",
+  "stats": {
+    "_base": {
+      "atk": 1103,
+      "def": 885,
+      "hp": 3525,
+      "rec": 843
+    },
+    "_lord": {
+      "atk": 1659,
+      "def": 1314,
+      "hp": 5456,
+      "rec": 1245
+    },
+    "anima": {
+      "atk": 1659,
+      "def": 1314,
+      "hp max": 6246,
+      "hp min": 5851,
+      "rec max": 1166,
+      "rec min": 1008
+    },
+    "breaker": {
+      "atk max": 1896,
+      "atk min": 1738,
+      "def max": 1235,
+      "def min": 1077,
+      "hp": 5456,
+      "rec": 1245
+    },
+    "guardian": {
+      "atk": 1659,
+      "def max": 1551,
+      "def min": 1393,
+      "hp": 5456,
+      "rec max": 1245,
+      "rec min": 1087
+    },
+    "oracle": {
+      "atk": 1659,
+      "def max": 1314,
+      "def min": 1156,
+      "hp": 5456,
+      "rec max": 1561,
+      "rec min": 1403
+    }
+  },
+  "leader_skill": {
+    "desc": "Nullifies all status ailments",
+    "effects": [
+      {
+        "curse resist%": 100,
+        "injury resist%": 100,
+        "paralysis resist%": 100,
+        "passive id": "4",
+        "poison resist%": 100,
+        "sick resist%": 100,
+        "weaken resist%": 100
+      }
+    ],
+    "id": "2102",
+    "name": "Divine Gale"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -308,100 +315,99 @@
     ],
     "name": "Snow Constriction"
   },
-  "bbdescription": "9 combo powerful Water attack on all enemies & probable Paralysis effect",
-  "bbnote": "45% chance",
-  "bbtype": "Offense",
-  "bbhits": "10",
-  "bbaoe": "A",
-  "bbgauge": "34",
-  "bbdc": "10",
-  "bbmultiplier": "200",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "20283",
-  "evointo": "20285",
-  "evomats1": "50354",
-  "evomats2": "20133",
-  "evomats3": "20132",
-  "evomats4": "20132",
-  "evomats5": "60224",
-  "evoitem": "",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 1103,
-      "def": 885,
-      "hp": 3525,
-      "rec": 843
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1659,
-      "def": 1314,
-      "hp": 5456,
-      "rec": 1245
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1659,
-      "def": 1314,
-      "hp max": 6246,
-      "hp min": 5851,
-      "rec max": 1166,
-      "rec min": 1008
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 142
     },
-    "breaker": {
-      "atk max": 1896,
-      "atk min": 1738,
-      "def max": 1235,
-      "def min": 1077,
-      "hp": 5456,
-      "rec": 1245
+    "idle": {
+      "total number of frames": 59
     },
-    "guardian": {
-      "atk": 1659,
-      "def max": 1551,
-      "def min": 1393,
-      "hp": 5456,
-      "rec max": 1245,
-      "rec min": 1087
-    },
-    "oracle": {
-      "atk": 1659,
-      "def max": 1314,
-      "def min": 1156,
-      "hp": 5456,
-      "rec max": 1561,
-      "rec min": 1403
+    "move": {
+      "total number of frames": 11
     }
   },
-  "leader_skill": {
-    "desc": "Nullifies all status ailments",
-    "effects": [
-      {
-        "curse resist%": 100,
-        "injury resist%": 100,
-        "paralysis resist%": 100,
-        "passive id": "4",
-        "poison resist%": 100,
-        "sick resist%": 100,
-        "weaken resist%": 100
-      }
+  "category": 20280,
+  "cost": "15",
+  "damage frames": {
+    "frame times": [
+      51,
+      54,
+      57,
+      70,
+      73,
+      76,
+      84,
+      87,
+      90
     ],
-    "id": "2102",
-    "name": "Divine Gale"
+    "hit dmg% distribution": [
+      20,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 9
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "water",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 380,
+  "imp": {
+    "max atk": "200",
+    "max def": "200",
+    "max hp": "500",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "1544~1725",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Hail Mech Reeze",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Hail Mech Reeze",
+  "maxlv": "80",
+  "no": "380",
   "unitDisplayHomePosition_1W9CxaFK": "409,53,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-106,128,1054,671",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "196,295,294,326,0",
@@ -411,5 +417,105 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "45:122:1,51:200310:1,51:200140:1,48:122:1,51:122:1,57:200140:1,64:122:1,70:200140:1,67:122:1,70:122:1,76:200140:1,78:122:1,84:200310:1,84:200140:1,81:122:1,84:122:1,87:200030:1,90:200310:1"
+  "effectFrames": "45:122:1,51:200310:1,51:200140:1,48:122:1,51:122:1,57:200140:1,64:122:1,70:200140:1,67:122:1,70:122:1,76:200140:1,78:122:1,84:200310:1,84:200140:1,81:122:1,84:122:1,87:200030:1,90:200310:1",
+  "evofrom": "20283",
+  "evointo": "20285",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20132",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "142",
+  "animation_idle": "59",
+  "animation_move": "11",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "51, 54, 57, 70, 73, 76, 84, 87, 90",
+  "normal_distribute": "20, 10, 10, 10, 10, 10, 10, 10, 10",
+  "normal_totaldistr": "100",
+  "bb_frames": "51, 54, 57, 70, 73, 76, 84, 87, 90, 96",
+  "bb_distribute": "10, 10, 10, 10, 10, 10, 10, 10, 10, 10",
+  "bb_totaldistr": "100",
+  "description": "A scientist from another world whose body is partly made up by a machine which releases cold air. Having heard rumors of her older brother's armor-clad enemy, she headed for their source, the Bariura Empire. On her way she would come to meet many people including a loud-mouthed martial artist and twin sword wielding warrior, but not once did any sign of happiness appear on her face. With almost tragic determination she silently worked on modifying herself, advancing her abilities to a state above that of a normal human, all the while accompanied by her cyborg weapon.",
+  "summon": "You forgive what I've done?<br>I'll follow you as believing your<br>words has made me weak.",
+  "fusion": "Oww...<br>No good, still not enough...<br>I need more power...",
+  "evolution": "I can't forgive myself.<br>That's why I will continue<br>even if it destroys me...",
+  "hp_base": "3525",
+  "atk_base": "1103",
+  "def_base": "885",
+  "rec_base": "843",
+  "hp_lord": "5456",
+  "atk_lord": "1659",
+  "def_lord": "1314",
+  "rec_lord": "1245",
+  "hp_anima": "6049",
+  "rec_anima": "1087",
+  "atk_breaker": "1817",
+  "def_breaker": "1156",
+  "atk_guardian": "1501",
+  "def_guardian": "1472",
+  "rec_guardian": "1166",
+  "def_oracle": "1235",
+  "hp_oracle": "5219",
+  "rec_oracle": "1482",
+  "hp_bonus": "500",
+  "atk_bonus": "200",
+  "def_bonus": "200",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "9",
+  "normaldc": "18",
+  "ls": "Divine Gale",
+  "lsdescription": "Nullifies all status ailments",
+  "lstype": "Defense",
+  "bbdescription": "9 combo powerful Water attack on all enemies & probable Paralysis effect",
+  "bbnote": "45% chance",
+  "bbtype": "Offense",
+  "bbhits": "10",
+  "bbaoe": "A",
+  "bbgauge": "34",
+  "bbdc": "10",
+  "bbmultiplier": "200",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "20133",
+  "evomats3": "20132",
+  "evomats4": "20132",
+  "evomats5": "60224",
+  "evoitem": ""
 }

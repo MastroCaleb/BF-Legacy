@@ -1,52 +1,75 @@
 {
   "id": "60275",
-  "unitName": "God Eater Lira",
-  "no": "493",
-  "element": "Dark",
-  "rarity": "★★★★★★",
-  "cost": "25",
-  "maxlv": "100",
-  "basexp": "21",
-  "gender": "N",
-  "ai": "3",
-  "animation_attack": "164",
-  "animation_idle": "44",
-  "animation_move": "46",
-  "movespeed_attack": "6",
-  "movespeed_skill": "6",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "2",
-  "movetype_skill": "2",
-  "description": "The daughter of a human mother and a demon father. Watching from the house her father left her as the humans lived in peace, one day Lira came across a journal. It was filled with loving words between her mother and father. As the gods' invasion began, Lira, along with her improved magical puppet, headed to the battlefield to protect the world that her parents so loved. Lira is recorded by the humans as being like a god eater, having buried countless numbers of gods.",
-  "summon": "Demon, human, god, I don't care!<br>I am Lira!<br>I will protect the world I love!",
-  "fusion": "If I don't fight,<br>even more blood will be spilled.<br>I need to be strong!",
-  "evolution": "I was dearly loved once.<br>That experience made me strong!<br>Will you take care of me too?",
-  "hp_base": "4408",
-  "atk_base": "1411",
-  "def_base": "1411",
-  "rec_base": "1411",
-  "hp_lord": "5850",
-  "atk_lord": "1941",
-  "def_lord": "1795",
-  "rec_lord": "1795",
-  "hp_anima": "6592",
-  "rec_anima": "1597",
-  "atk_breaker": "2139",
-  "def_breaker": "1597",
-  "atk_guardian": "1743",
-  "def_guardian": "1993",
-  "hp_oracle": "5107",
-  "rec_oracle": "1993",
-  "hp_bonus": "750",
-  "atk_bonus": "300",
-  "def_bonus": "300",
-  "rec_bonus": "300",
-  "lordonly": "",
-  "combo_hits": "8",
-  "ls": "Epidemic Power",
-  "lsdescription": "25% boost to Atk power & high chance of inflicting a status ailment when attacking",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 1411,
+      "def": 1411,
+      "hp": 4408,
+      "rec": 1411
+    },
+    "_lord": {
+      "atk": 1941,
+      "def": 1795,
+      "hp": 5850,
+      "rec": 1795
+    },
+    "anima": {
+      "atk": 1941,
+      "def": 1795,
+      "hp max": 6840,
+      "hp min": 6345,
+      "rec max": 1696,
+      "rec min": 1498
+    },
+    "breaker": {
+      "atk max": 2238,
+      "atk min": 2040,
+      "def max": 1696,
+      "def min": 1498,
+      "hp": 5850,
+      "rec": 1795
+    },
+    "guardian": {
+      "atk": 1941,
+      "def max": 2092,
+      "def min": 1894,
+      "hp": 5850,
+      "rec max": 1795,
+      "rec min": 1597
+    },
+    "oracle": {
+      "atk": 1941,
+      "def max": 1795,
+      "def min": 1597,
+      "hp": 5850,
+      "rec max": 2191,
+      "rec min": 1993
+    }
+  },
+  "leader_skill": {
+    "desc": "25% boost to Atk power & high chance of inflicting a status ailment when attacking",
+    "effects": [
+      {
+        "injury%": 10,
+        "passive id": "20",
+        "poison%": 7,
+        "sick%": 10,
+        "weaken%": 10
+      },
+      {
+        "curse%": 7,
+        "paralysis%": 7,
+        "passive id": "20"
+      },
+      {
+        "atk% buff": 25,
+        "passive id": "1"
+      }
+    ],
+    "id": "3002",
+    "name": "Epidemic Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -219,11 +242,6 @@
     ],
     "name": "Demon Consumption"
   },
-  "bbdescription": "11 combo Dark elemental attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "11",
-  "bbaoe": "A",
-  "bbgauge": "15",
   "sbb": {
     "damage frames": [
       {
@@ -410,97 +428,102 @@
     ],
     "name": "Damnation"
   },
-  "sbbdescription": "13 combo powerful massive Dark attack on single enemy",
-  "sbbtype": "Offense",
-  "sbbhits": "13",
-  "sbbaoe": "1",
-  "sbbgauge": "15",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "60274",
-  "evointo": "",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 1411,
-      "def": 1411,
-      "hp": 4408,
-      "rec": 1411
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1941,
-      "def": 1795,
-      "hp": 5850,
-      "rec": 1795
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1941,
-      "def": 1795,
-      "hp max": 6840,
-      "hp min": 6345,
-      "rec max": 1696,
-      "rec min": 1498
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 2238,
-      "atk min": 2040,
-      "def max": 1696,
-      "def min": 1498,
-      "hp": 5850,
-      "rec": 1795
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 164
     },
-    "guardian": {
-      "atk": 1941,
-      "def max": 2092,
-      "def min": 1894,
-      "hp": 5850,
-      "rec max": 1795,
-      "rec min": 1597
+    "idle": {
+      "total number of frames": 44
     },
-    "oracle": {
-      "atk": 1941,
-      "def max": 1795,
-      "def min": 1597,
-      "hp": 5850,
-      "rec max": 2191,
-      "rec min": 1993
+    "move": {
+      "total number of frames": 46
     }
   },
-  "leader_skill": {
-    "desc": "25% boost to Atk power & high chance of inflicting a status ailment when attacking",
-    "effects": [
-      {
-        "injury%": 10,
-        "passive id": "20",
-        "poison%": 7,
-        "sick%": 10,
-        "weaken%": 10
-      },
-      {
-        "curse%": 7,
-        "paralysis%": 7,
-        "passive id": "20"
-      },
-      {
-        "atk% buff": 25,
-        "passive id": "1"
-      }
+  "category": 60270,
+  "cost": "25",
+  "damage frames": {
+    "frame times": [
+      50,
+      54,
+      58,
+      62,
+      72,
+      82,
+      97,
+      112
     ],
-    "id": "3002",
-    "name": "Epidemic Power"
+    "hit dmg% distribution": [
+      20,
+      15,
+      15,
+      10,
+      10,
+      10,
+      10,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 8
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "dark",
+  "exp_pattern": 20,
+  "gender": "other",
+  "getting type": "rare summon",
+  "guide_id": 493,
+  "imp": {
+    "max atk": "300",
+    "max def": "300",
+    "max hp": "750",
+    "max rec": "300"
+  },
+  "kind": "normal",
+  "lord damage range": "1806~2018",
+  "movement": {
+    "attack": {
+      "move speed": 6,
+      "move speed type": "2",
+      "move type": "2"
+    },
+    "skill": {
+      "move speed": 6,
+      "move speed type": "2",
+      "move type": "2"
+    }
+  },
+  "name": "God Eater Lira",
+  "rarity": "6",
+  "sell caution": false,
+  "unitName": "God Eater Lira",
+  "maxlv": "100",
+  "no": "493",
   "unitDisplayHomePosition_1W9CxaFK": "255,125,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "41,77,1043,742",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "209,308,283,312,0",
@@ -510,5 +533,88 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "8000",
   "sellCaution": false,
-  "effectFrames": "48:200341:1,50:600210:1,50:600220:1,97:600220:1,66:200341:1,44:126:1,48:126:1,52:126:1,72:600322:1,112:600322:1,100:650:1"
+  "effectFrames": "48:200341:1,50:600210:1,50:600220:1,97:600220:1,66:200341:1,44:126:1,48:126:1,52:126:1,72:600322:1,112:600322:1,100:650:1",
+  "evofrom": "60274",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "21",
+  "animation_attack": "164",
+  "animation_idle": "44",
+  "animation_move": "46",
+  "movespeed_attack": "6",
+  "movespeed_skill": "6",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "2",
+  "movetype_skill": "2",
+  "normal_frames": "50, 54, 58, 62, 72, 82, 97, 112",
+  "normal_distribute": "20, 15, 15, 10, 10, 10, 10, 10",
+  "normal_totaldistr": "100",
+  "bb_frames": "50, 54, 64, 74, 84, 94, 104, 114, 124, 134, 144",
+  "bb_distribute": "9, 8, 7, 13, 12, 11, 10, 9, 8, 7, 6",
+  "bb_totaldistr": "100",
+  "sbb_frames": "50, 54, 58, 62, 66, 70, 80, 90, 100, 110, 120, 130, 140",
+  "sbb_distribute": "10, 7, 7, 7, 7, 7, 8, 8, 8, 8, 8, 8, 7",
+  "sbb_totaldistr": "100",
+  "description": "The daughter of a human mother and a demon father. Watching from the house her father left her as the humans lived in peace, one day Lira came across a journal. It was filled with loving words between her mother and father. As the gods' invasion began, Lira, along with her improved magical puppet, headed to the battlefield to protect the world that her parents so loved. Lira is recorded by the humans as being like a god eater, having buried countless numbers of gods.",
+  "summon": "Demon, human, god, I don't care!<br>I am Lira!<br>I will protect the world I love!",
+  "fusion": "If I don't fight,<br>even more blood will be spilled.<br>I need to be strong!",
+  "evolution": "I was dearly loved once.<br>That experience made me strong!<br>Will you take care of me too?",
+  "hp_base": "4408",
+  "atk_base": "1411",
+  "def_base": "1411",
+  "rec_base": "1411",
+  "hp_lord": "5850",
+  "atk_lord": "1941",
+  "def_lord": "1795",
+  "rec_lord": "1795",
+  "hp_anima": "6593",
+  "rec_anima": "1597",
+  "atk_breaker": "2139",
+  "def_breaker": "1597",
+  "atk_guardian": "1743",
+  "def_guardian": "1993",
+  "rec_guardian": "1696",
+  "def_oracle": "1696",
+  "hp_oracle": "5553",
+  "rec_oracle": "2092",
+  "hp_bonus": "750",
+  "atk_bonus": "300",
+  "def_bonus": "300",
+  "rec_bonus": "300",
+  "lordonly": "",
+  "combo_hits": "8",
+  "normaldc": "24",
+  "ls": "Epidemic Power",
+  "lsdescription": "25% boost to Atk power & high chance of inflicting a status ailment when attacking",
+  "lsnote": "7% chance for Poison, Curse and Paralysis, 10% chance for Injury, Weakness and Sickness",
+  "lstype": "Attack",
+  "bbdescription": "11 combo Dark elemental attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "11",
+  "bbaoe": "A",
+  "bbgauge": "15",
+  "bbdc": "11",
+  "bbmultiplier": "160",
+  "sbbdescription": "13 combo powerful massive Dark attack on single enemy",
+  "sbbtype": "Offense",
+  "sbbhits": "13",
+  "sbbaoe": "1",
+  "sbbgauge": "15",
+  "sbbdc": "26",
+  "sbbmultiplier": "680",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "",
+  "evomats2": "",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": ""
 }

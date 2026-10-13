@@ -1,61 +1,63 @@
 {
   "id": "40213",
-  "unitName": "Bolt Knight Amy",
-  "no": "297",
-  "element": "Thunder",
-  "rarity": "★★★★",
-  "cost": "10",
-  "maxlv": "60",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "126",
-  "animation_idle": "64",
-  "animation_move": "31",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "32, 54, 76, 80",
-  "normal_distribute": "30, 15, 20, 35",
-  "normal_totaldistr": "100",
-  "bb_frames": "32, 54, 76, 80, 84",
-  "bb_distribute": "30, 20, 30, 10, 10",
-  "bb_totaldistr": "100",
-  "description": "The eldest daughter of an aristocratic family from Palmyna, she was invited to the imperial capital once the king got word of her bringing justice throughout the land with her beloved halberd. As Amy grew more and more excited, her father encouraged her to remain humble, however she ignored these words, testing her skills in the capital by dueling knight after knight. She gained popularity even in the imperial capital after her repeated victories, and came to be commonly known as the \"Bolt Knight.\"",
-  "summon": "My halberd shines with justice!<br>This power I give you is the<br>power of justice!",
-  "fusion": "My halberd sparkles!<br>Won't you bask in this<br>joy with me?",
-  "evolution": "To judge someone you must<br>be stronger than they are.<br>That is why I must train!",
-  "hp_base": "3067",
-  "atk_base": "900",
-  "def_base": "960",
-  "rec_base": "856",
-  "hp_lord": "4668",
-  "atk_lord": "1240",
-  "def_lord": "1400",
-  "rec_lord": "1140",
-  "hp_anima": "5111",
-  "rec_anima": "1022",
-  "atk_breaker": "1358",
-  "def_breaker": "1282",
-  "atk_guardian": "1122",
-  "def_guardian": "1518",
-  "rec_guardian": "1081",
-  "def_oracle": "1341",
-  "hp_oracle": "4491",
-  "rec_oracle": "1317",
-  "hp_bonus": "400",
-  "atk_bonus": "200",
-  "def_bonus": "120",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "4",
-  "normaldc": "12",
-  "ls": "Royal Power",
-  "lsdescription": "15% boost to Atk Power of all types",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 900,
+      "def": 960,
+      "hp": 3067,
+      "rec": 856
+    },
+    "_lord": {
+      "atk": 1240,
+      "def": 1400,
+      "hp": 4668,
+      "rec": 1140
+    },
+    "anima": {
+      "atk": 1240,
+      "def": 1400,
+      "hp max": 5258,
+      "hp min": 4963,
+      "rec max": 1081,
+      "rec min": 963
+    },
+    "breaker": {
+      "atk max": 1417,
+      "atk min": 1299,
+      "def max": 1341,
+      "def min": 1223,
+      "hp": 4668,
+      "rec": 1140
+    },
+    "guardian": {
+      "atk": 1240,
+      "def max": 1577,
+      "def min": 1459,
+      "hp": 4668,
+      "rec max": 1140,
+      "rec min": 1022
+    },
+    "oracle": {
+      "atk": 1240,
+      "def max": 1400,
+      "def min": 1282,
+      "hp": 4668,
+      "rec max": 1376,
+      "rec min": 1258
+    }
+  },
+  "leader_skill": {
+    "desc": "15% boost to Atk",
+    "effects": [
+      {
+        "atk% buff": 15,
+        "passive id": "1"
+      }
+    ],
+    "id": "1901",
+    "name": "Royal Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -308,94 +310,89 @@
     ],
     "name": "Thunder Spear Combo"
   },
-  "bbdescription": "5 combo Thunder elemental attack on single enemy & probable Injury and Weakness effect",
-  "bbnote": "80% chance",
-  "bbtype": "Offense",
-  "bbhits": "5",
-  "bbaoe": "1",
-  "bbgauge": "18",
-  "bbdc": "5",
-  "bbmultiplier": "370",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "40212",
-  "evointo": "40214",
-  "evomats1": "40133",
-  "evomats2": "40132",
-  "evomats3": "40132",
-  "evomats4": "60143",
-  "evomats5": "60143",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 900,
-      "def": 960,
-      "hp": 3067,
-      "rec": 856
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1240,
-      "def": 1400,
-      "hp": 4668,
-      "rec": 1140
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1240,
-      "def": 1400,
-      "hp max": 5258,
-      "hp min": 4963,
-      "rec max": 1081,
-      "rec min": 963
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 126
     },
-    "breaker": {
-      "atk max": 1417,
-      "atk min": 1299,
-      "def max": 1341,
-      "def min": 1223,
-      "hp": 4668,
-      "rec": 1140
+    "idle": {
+      "total number of frames": 64
     },
-    "guardian": {
-      "atk": 1240,
-      "def max": 1577,
-      "def min": 1459,
-      "hp": 4668,
-      "rec max": 1140,
-      "rec min": 1022
-    },
-    "oracle": {
-      "atk": 1240,
-      "def max": 1400,
-      "def min": 1282,
-      "hp": 4668,
-      "rec max": 1376,
-      "rec min": 1258
+    "move": {
+      "total number of frames": 31
     }
   },
-  "leader_skill": {
-    "desc": "15% boost to Atk",
-    "effects": [
-      {
-        "atk% buff": 15,
-        "passive id": "1"
-      }
+  "category": 40210,
+  "cost": "10",
+  "damage frames": {
+    "frame times": [
+      32,
+      54,
+      76,
+      80
     ],
-    "id": "1901",
-    "name": "Royal Power"
+    "hit dmg% distribution": [
+      30,
+      15,
+      20,
+      35
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 4
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "thunder",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 297,
+  "imp": {
+    "max atk": "200",
+    "max def": "120",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "1154~1289",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Bolt Knight Amy",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Bolt Knight Amy",
+  "maxlv": "60",
+  "no": "297",
   "unitDisplayHomePosition_1W9CxaFK": "540,-6,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-185,209,1082,588",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "215,387,216,240,0",
@@ -405,5 +402,99 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "26:124:1,48:124:1,70:124:1,74:290:1"
+  "effectFrames": "26:124:1,48:124:1,70:124:1,74:290:1",
+  "evofrom": "40212",
+  "evointo": "40214",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "40133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40132",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 2
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "126",
+  "animation_idle": "64",
+  "animation_move": "31",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "32, 54, 76, 80",
+  "normal_distribute": "30, 15, 20, 35",
+  "normal_totaldistr": "100",
+  "bb_frames": "32, 54, 76, 80, 84",
+  "bb_distribute": "30, 20, 30, 10, 10",
+  "bb_totaldistr": "100",
+  "description": "The eldest daughter of an aristocratic family from Palmyna, she was invited to the imperial capital once the king got word of her bringing justice throughout the land with her beloved halberd. As Amy grew more and more excited, her father encouraged her to remain humble, however she ignored these words, testing her skills in the capital by dueling knight after knight. She gained popularity even in the imperial capital after her repeated victories, and came to be commonly known as the \"Bolt Knight.\"",
+  "summon": "My halberd shines with justice!<br>This power I give you is the<br>power of justice!",
+  "fusion": "My halberd sparkles!<br>Won't you bask in this<br>joy with me?",
+  "evolution": "To judge someone you must<br>be stronger than they are.<br>That is why I must train!",
+  "hp_base": "3067",
+  "atk_base": "900",
+  "def_base": "960",
+  "rec_base": "856",
+  "hp_lord": "4668",
+  "atk_lord": "1240",
+  "def_lord": "1400",
+  "rec_lord": "1140",
+  "hp_anima": "5111",
+  "rec_anima": "1022",
+  "atk_breaker": "1358",
+  "def_breaker": "1282",
+  "atk_guardian": "1122",
+  "def_guardian": "1518",
+  "rec_guardian": "1081",
+  "def_oracle": "1341",
+  "hp_oracle": "4491",
+  "rec_oracle": "1317",
+  "hp_bonus": "400",
+  "atk_bonus": "200",
+  "def_bonus": "120",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "4",
+  "normaldc": "12",
+  "ls": "Royal Power",
+  "lsdescription": "15% boost to Atk Power of all types",
+  "lstype": "Attack",
+  "bbdescription": "5 combo Thunder elemental attack on single enemy & probable Injury and Weakness effect",
+  "bbnote": "80% chance",
+  "bbtype": "Offense",
+  "bbhits": "5",
+  "bbaoe": "1",
+  "bbgauge": "18",
+  "bbdc": "5",
+  "bbmultiplier": "370",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "40133",
+  "evomats2": "40132",
+  "evomats3": "40132",
+  "evomats4": "60143",
+  "evomats5": "60143"
 }

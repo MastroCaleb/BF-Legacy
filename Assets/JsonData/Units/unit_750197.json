@@ -1,67 +1,145 @@
 {
   "id": "750197",
-  "unitName": "Athena Asamiya (EU, Dream)",
-  "disam": "Athena Asamiya",
-  "altname": "Athena Asamiya",
-  "idalt": "",
-  "has_altart": "",
-  "doenter": "true",
-  "no": "7192",
-  "element": "Light",
-  "rarity": "Dream",
-  "cost": "48",
-  "maxlv": "150",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "3",
-  "animation_attack": "223",
-  "animation_idle": "113",
-  "animation_move": "8",
-  "movespeed_attack": "0.0033",
-  "speedtype_attack": "3",
-  "movetype_attack": "1",
-  "movespeed_skill": "0.0033",
-  "speedtype_skill": "3",
-  "movetype_skill": "1",
-  "description": "",
-  "summon": "",
-  "fusion": "",
-  "evolution": "",
-  "hp_base": "6234",
-  "atk_base": "2249",
-  "def_base": "2415",
-  "rec_base": "2497",
-  "hp_lord": "7605",
-  "atk_lord": "2744",
-  "def_lord": "2946",
-  "rec_lord": "3046",
-  "hp_anima": "8722",
-  "rec_anima": "2748",
-  "atk_breaker": "3042",
-  "def_breaker": "2648",
-  "def_guardian": "3244",
-  "rec_guardian": "3046",
-  "def_oracle": "2946",
-  "rec_oracle": "3344",
-  "hp_bonus": "1500",
-  "atk_bonus": "600",
-  "def_bonus": "600",
-  "rec_bonus": "600",
-  "lordonly": "",
-  "evofrom": "750196",
-  "evointo": "",
-  "normal_frames": "52, 54, 56, 58, 60, 62, 116, 118, 120, 122, 124, 126",
-  "normal_distribute": "6, 7, 13, 6, 6, 6, 13, 12, 7, 12, 6, 6",
-  "normal_totaldistr": "100",
-  "combo_hits": "12",
-  "normaldc": "48",
-  "ls": "Psycho Commando",
-  "lsdescription": "Boosts ATK, HP (50%) & damage taken may restore HP (50% chance to heal 25% damage) & reflects damage when attacked (50% damage reflection) & boosts elemental damage (125%)",
-  "lsnote": "",
-  "es": "Psychic Mastery",
-  "esdescription": "Adds all elements to attack and HP recovery for 3 turns effects to BB/SBB & reflects damage when attacked (50%)",
-  "esitem": "",
-  "esnote": "",
+  "stats": {
+    "_base": {
+      "atk": 2249,
+      "def": 2415,
+      "hp": 6234,
+      "rec": 2497
+    },
+    "_lord": {
+      "atk": 2744,
+      "def": 2946,
+      "hp": 7605,
+      "rec": 3046
+    },
+    "anima": {
+      "atk": 2744,
+      "def": 2946,
+      "hp max": 9095,
+      "hp min": 8350,
+      "rec max": 2897,
+      "rec min": 2599
+    },
+    "breaker": {
+      "atk max": 3191,
+      "atk min": 2893,
+      "def max": 2797,
+      "def min": 2499,
+      "hp": 7605,
+      "rec": 3046
+    },
+    "guardian": {
+      "atk max": 2595,
+      "atk min": 2297,
+      "def max": 3393,
+      "def min": 3095,
+      "hp": 7605,
+      "rec": 3046
+    },
+    "oracle": {
+      "atk": 2744,
+      "def": 2946,
+      "hp max": 6860,
+      "hp min": 6115,
+      "rec max": 3493,
+      "rec min": 3195
+    }
+  },
+  "leader_skill": {
+    "desc": "Boosts ATK, HP (50%) & damage taken may restore HP (50% chance to heal 25% damage) & reflects damage when attacked (50% damage reflection) & boosts elemental damage (125%) ",
+    "effects": [
+      {
+        "atk% buff": 50,
+        "hp% buff": 50,
+        "passive id": "1"
+      },
+      {
+        "dmg% to hp% when attacked chance%": 50,
+        "dmg% to hp% when attacked high": 25,
+        "dmg% to hp% when attacked low": 25,
+        "passive id": "24"
+      },
+      {
+        "dmg% reflect chance%": 100,
+        "dmg% reflect high": 50,
+        "dmg% reflect low": 50,
+        "passive id": "26"
+      },
+      {
+        "dark units do extra elemental weakness dmg": true,
+        "earth units do extra elemental weakness dmg": true,
+        "elemental weakness multiplier%": 125.0,
+        "fire units do extra elemental weakness dmg": true,
+        "light units do extra elemental weakness dmg": true,
+        "passive id": "50",
+        "thunder units do extra elemental weakness dmg": true,
+        "water units do extra elemental weakness dmg": true
+      }
+    ],
+    "id": "750197",
+    "name": "Psycho Commando"
+  },
+  "extra_skill": {
+    "desc": "Adds all elements to attack and HP recovery for 3 turns effects to BB/SBB & reflects damage when attacked (50%)",
+    "effects": [
+      {
+        "conditions": [],
+        "passive id": "66",
+        "passive target": "self",
+        "trigger on bb": true,
+        "trigger on sbb": true,
+        "triggered effect": [
+          {
+            "effect delay time(ms)/frame": "0.0/0",
+            "gradual heal high": 3000,
+            "gradual heal low": 2500,
+            "gradual heal turns (8)": 3,
+            "proc id": "3",
+            "rec added% (from target)": 15.0,
+            "target area": "aoe",
+            "target type": "party"
+          }
+        ]
+      },
+      {
+        "conditions": [],
+        "passive id": "66",
+        "passive target": "self",
+        "trigger on bb": true,
+        "trigger on sbb": true,
+        "triggered effect": [
+          {
+            "effect delay time(ms)/frame": "0.0/0",
+            "elements added": [
+              "fire",
+              "water",
+              "earth",
+              "thunder",
+              "light",
+              "dark"
+            ],
+            "elements added turns": 3,
+            "proc id": "30",
+            "target area": "aoe",
+            "target type": "party"
+          }
+        ]
+      },
+      {
+        "conditions": [],
+        "dmg% reflect chance%": 100,
+        "dmg% reflect high": 50,
+        "dmg% reflect low": 50,
+        "passive id": "26",
+        "passive target": "self"
+      }
+    ],
+    "id": "750197",
+    "name": "Psychic Mastery",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -562,35 +640,6 @@
     ],
     "name": "SDM: Phoenix Arrow I"
   },
-  "bbdescription": "12 combo Light attack on all foes & absorbs HP when attacking (10%) & damage taken may restore HP (25% chance to heal 30% damage) for 3 turns & HP absorption when attacking (50% chance to absorb 8%) for 3 turns & removes all status ailments",
-  "bbnote": "{{UnitBuffList",
-  "buff_1_proc": "1",
-  "buff_1_potency": "1400% damage modifier",
-  "buff_1_duration": "—",
-  "buff_1_target": "All enemies",
-  "buff_2_proc": "85",
-  "buff_2_potency": "100% chance of recovering 100% of damage taken as HP",
-  "buff_2_duration": "3 turns",
-  "buff_2_target": "All allies",
-  "buff_3_proc": "30",
-  "buff_3_potency": "Adds all elements to attacks",
-  "buff_3_duration": "3 turns",
-  "buff_3_target": "All allies",
-  "buff_4_proc": "73",
-  "buff_4_potency": "Negates Atk, Def, and Rec reduction effects",
-  "buff_4_duration": "3 turns",
-  "buff_4_target": "All allies",
-  "bbtype": "Offense",
-  "bbgauge": "16",
-  "bb_frames": "52, 54, 56, 58, 60, 62, 116, 118, 120, 122, 124, 126",
-  "bb_distribute": "6, 7, 13, 6, 6, 6, 13, 12, 7, 12, 6, 6",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "3",
-  "bbhits": "12",
-  "bbaoe": "A",
-  "bbdc": "24",
-  "bbmultiplier": "370",
-  "bb_hpscale": "",
   "sbb": {
     "damage frames": [
       {
@@ -1125,19 +1174,6 @@
     ],
     "name": "SDM: Phoenix Arrow II"
   },
-  "sbbdescription": "14 combo Light attack on all foes & absorbs HP when attacking (12%) & damage taken may restore HP (25% chance to heal 30% damage) for 3 turns & probable HP absorption when attacking (60% chance to absorb 8%) for 3 turns & activates Light barrier (3000 HP)",
-  "sbbnote": "{{UnitBuffList",
-  "sbbtype": "Offense",
-  "sbbgauge": "23",
-  "sbb_frames": "50, 52, 54, 56, 58, 60, 62, 64, 116, 118, 120, 122, 124, 126",
-  "sbb_distribute": "6, 7, 13, 6, 6, 6, 7, 6, 6, 6, 7, 12, 6, 6",
-  "sbb_totaldistr": "100",
-  "sbb_effectdelay": "3",
-  "sbbhits": "14",
-  "sbbaoe": "A",
-  "sbbdc": "28",
-  "sbbmultiplier": "600",
-  "sbb_hpscale": "",
   "ubb": {
     "damage frames": [
       {
@@ -1252,6 +1288,222 @@
     ],
     "name": "SDM: Phoenix Arrow MAX"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 223
+    },
+    "idle": {
+      "total number of frames": 113
+    },
+    "move": {
+      "total number of frames": 8
+    }
+  },
+  "cost": "48",
+  "damage frames": {
+    "frame times": [
+      52,
+      54,
+      56,
+      58,
+      60,
+      62,
+      116,
+      118,
+      120,
+      122,
+      124,
+      126
+    ],
+    "hit dmg% distribution": [
+      6,
+      7,
+      13,
+      6,
+      6,
+      6,
+      13,
+      12,
+      7,
+      12,
+      6,
+      6
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 12
+  },
+  "drop check count": 4,
+  "element": "light",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 7192,
+  "imp": {
+    "max atk": "600",
+    "max def": "600",
+    "max hp": "1500",
+    "max rec": "600"
+  },
+  "kind": "normal",
+  "lord damage range": "2554~2853",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Athena Asamiya",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "8",
+  "sell caution": false,
+  "unitName": "Athena Asamiya",
+  "maxlv": "150",
+  "no": "7192",
+  "unitDisplayHomePosition_1W9CxaFK": null,
+  "unitDisplayDetailPosition_6z54rgb3": null,
+  "unitDisplayConfirmImagePosition_MYK1fq6c": null,
+  "unitDisplayCutInImagePosition_7hLR6pDN": null,
+  "unitDisplaySummonPosition_KC3Jk8Br": null,
+  "unitDisplayHpPosition_3BpHN6VD": null,
+  "unitDisplayCursorPosition": null,
+  "sellPrice": "",
+  "sellCaution": false,
+  "effectFrames": "",
+  "evofrom": "750196",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "disam": "Athena Asamiya",
+  "altname": "Athena Asamiya",
+  "idalt": "",
+  "has_altart": "",
+  "doenter": "true",
+  "basexp": "21",
+  "animation_attack": "223",
+  "animation_idle": "113",
+  "animation_move": "8",
+  "movespeed_attack": "0.0033",
+  "speedtype_attack": "3",
+  "movetype_attack": "1",
+  "movespeed_skill": "0.0033",
+  "speedtype_skill": "3",
+  "movetype_skill": "1",
+  "description": "",
+  "summon": "",
+  "fusion": "",
+  "evolution": "",
+  "hp_base": "6234",
+  "atk_base": "2249",
+  "def_base": "2415",
+  "rec_base": "2497",
+  "hp_lord": "7605",
+  "atk_lord": "2744",
+  "def_lord": "2946",
+  "rec_lord": "3046",
+  "hp_anima": "8722",
+  "rec_anima": "2748",
+  "atk_breaker": "3042",
+  "def_breaker": "2648",
+  "def_guardian": "3244",
+  "rec_guardian": "3046",
+  "def_oracle": "2946",
+  "rec_oracle": "3344",
+  "hp_bonus": "1500",
+  "atk_bonus": "600",
+  "def_bonus": "600",
+  "rec_bonus": "600",
+  "lordonly": "",
+  "normal_frames": "52, 54, 56, 58, 60, 62, 116, 118, 120, 122, 124, 126",
+  "normal_distribute": "6, 7, 13, 6, 6, 6, 13, 12, 7, 12, 6, 6",
+  "normal_totaldistr": "100",
+  "combo_hits": "12",
+  "normaldc": "48",
+  "ls": "Psycho Commando",
+  "lsdescription": "Boosts ATK, HP (50%) & damage taken may restore HP (50% chance to heal 25% damage) & reflects damage when attacked (50% damage reflection) & boosts elemental damage (125%)",
+  "lsnote": "",
+  "es": "Psychic Mastery",
+  "esdescription": "Adds all elements to attack and HP recovery for 3 turns effects to BB/SBB & reflects damage when attacked (50%)",
+  "esitem": "",
+  "esnote": "",
+  "bbdescription": "12 combo Light attack on all foes & absorbs HP when attacking (10%) & damage taken may restore HP (25% chance to heal 30% damage) for 3 turns & HP absorption when attacking (50% chance to absorb 8%) for 3 turns & removes all status ailments",
+  "bbnote": "{{UnitBuffList",
+  "buff_1_proc": "1",
+  "buff_1_potency": "1400% damage modifier",
+  "buff_1_duration": "—",
+  "buff_1_target": "All enemies",
+  "buff_2_proc": "85",
+  "buff_2_potency": "100% chance of recovering 100% of damage taken as HP",
+  "buff_2_duration": "3 turns",
+  "buff_2_target": "All allies",
+  "buff_3_proc": "30",
+  "buff_3_potency": "Adds all elements to attacks",
+  "buff_3_duration": "3 turns",
+  "buff_3_target": "All allies",
+  "buff_4_proc": "73",
+  "buff_4_potency": "Negates Atk, Def, and Rec reduction effects",
+  "buff_4_duration": "3 turns",
+  "buff_4_target": "All allies",
+  "bbtype": "Offense",
+  "bbgauge": "16",
+  "bb_frames": "52, 54, 56, 58, 60, 62, 116, 118, 120, 122, 124, 126",
+  "bb_distribute": "6, 7, 13, 6, 6, 6, 13, 12, 7, 12, 6, 6",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "3",
+  "bbhits": "12",
+  "bbaoe": "A",
+  "bbdc": "24",
+  "bbmultiplier": "370",
+  "bb_hpscale": "",
+  "sbbdescription": "14 combo Light attack on all foes & absorbs HP when attacking (12%) & damage taken may restore HP (25% chance to heal 30% damage) for 3 turns & probable HP absorption when attacking (60% chance to absorb 8%) for 3 turns & activates Light barrier (3000 HP)",
+  "sbbnote": "{{UnitBuffList",
+  "sbbtype": "Offense",
+  "sbbgauge": "23",
+  "sbb_frames": "50, 52, 54, 56, 58, 60, 62, 64, 116, 118, 120, 122, 124, 126",
+  "sbb_distribute": "6, 7, 13, 6, 6, 6, 7, 6, 6, 6, 7, 12, 6, 6",
+  "sbb_totaldistr": "100",
+  "sbb_effectdelay": "3",
+  "sbbhits": "14",
+  "sbbaoe": "A",
+  "sbbdc": "28",
+  "sbbmultiplier": "600",
+  "sbb_hpscale": "",
   "ubbdescription": "5 combo Light attack on all foes & damage taken restores HP for 3 turns (100%) & adds all elements to attack for 3 turns & negates ATK, DEF, REC reduction for 3 turns",
   "ubbnote": "{{UnitBuffList",
   "ubbtype": "Offense",
@@ -1301,155 +1553,5 @@
   "notes": "",
   "incorrectinfo": "",
   "addcat": "",
-  "addcatname": "",
-  "stats": {
-    "_base": {
-      "atk": 2249,
-      "def": 2415,
-      "hp": 6234,
-      "rec": 2497
-    },
-    "_lord": {
-      "atk": 2744,
-      "def": 2946,
-      "hp": 7605,
-      "rec": 3046
-    },
-    "anima": {
-      "atk": 2744,
-      "def": 2946,
-      "hp max": 9095,
-      "hp min": 8350,
-      "rec max": 2897,
-      "rec min": 2599
-    },
-    "breaker": {
-      "atk max": 3191,
-      "atk min": 2893,
-      "def max": 2797,
-      "def min": 2499,
-      "hp": 7605,
-      "rec": 3046
-    },
-    "guardian": {
-      "atk max": 2595,
-      "atk min": 2297,
-      "def max": 3393,
-      "def min": 3095,
-      "hp": 7605,
-      "rec": 3046
-    },
-    "oracle": {
-      "atk": 2744,
-      "def": 2946,
-      "hp max": 6860,
-      "hp min": 6115,
-      "rec max": 3493,
-      "rec min": 3195
-    }
-  },
-  "leader_skill": {
-    "desc": "Boosts ATK, HP (50%) & damage taken may restore HP (50% chance to heal 25% damage) & reflects damage when attacked (50% damage reflection) & boosts elemental damage (125%) ",
-    "effects": [
-      {
-        "atk% buff": 50,
-        "hp% buff": 50,
-        "passive id": "1"
-      },
-      {
-        "dmg% to hp% when attacked chance%": 50,
-        "dmg% to hp% when attacked high": 25,
-        "dmg% to hp% when attacked low": 25,
-        "passive id": "24"
-      },
-      {
-        "dmg% reflect chance%": 100,
-        "dmg% reflect high": 50,
-        "dmg% reflect low": 50,
-        "passive id": "26"
-      },
-      {
-        "dark units do extra elemental weakness dmg": true,
-        "earth units do extra elemental weakness dmg": true,
-        "elemental weakness multiplier%": 125.0,
-        "fire units do extra elemental weakness dmg": true,
-        "light units do extra elemental weakness dmg": true,
-        "passive id": "50",
-        "thunder units do extra elemental weakness dmg": true,
-        "water units do extra elemental weakness dmg": true
-      }
-    ],
-    "id": "750197",
-    "name": "Psycho Commando"
-  },
-  "extra_skill": {
-    "desc": "Adds all elements to attack and HP recovery for 3 turns effects to BB/SBB & reflects damage when attacked (50%)",
-    "effects": [
-      {
-        "conditions": [],
-        "passive id": "66",
-        "passive target": "self",
-        "trigger on bb": true,
-        "trigger on sbb": true,
-        "triggered effect": [
-          {
-            "effect delay time(ms)/frame": "0.0/0",
-            "gradual heal high": 3000,
-            "gradual heal low": 2500,
-            "gradual heal turns (8)": 3,
-            "proc id": "3",
-            "rec added% (from target)": 15.0,
-            "target area": "aoe",
-            "target type": "party"
-          }
-        ]
-      },
-      {
-        "conditions": [],
-        "passive id": "66",
-        "passive target": "self",
-        "trigger on bb": true,
-        "trigger on sbb": true,
-        "triggered effect": [
-          {
-            "effect delay time(ms)/frame": "0.0/0",
-            "elements added": [
-              "fire",
-              "water",
-              "earth",
-              "thunder",
-              "light",
-              "dark"
-            ],
-            "elements added turns": 3,
-            "proc id": "30",
-            "target area": "aoe",
-            "target type": "party"
-          }
-        ]
-      },
-      {
-        "conditions": [],
-        "dmg% reflect chance%": 100,
-        "dmg% reflect high": 50,
-        "dmg% reflect low": 50,
-        "passive id": "26",
-        "passive target": "self"
-      }
-    ],
-    "id": "750197",
-    "name": "Psychic Mastery",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": null,
-  "unitDisplayDetailPosition_6z54rgb3": null,
-  "unitDisplayConfirmImagePosition_MYK1fq6c": null,
-  "unitDisplayCutInImagePosition_7hLR6pDN": null,
-  "unitDisplaySummonPosition_KC3Jk8Br": null,
-  "unitDisplayHpPosition_3BpHN6VD": null,
-  "unitDisplayCursorPosition": null,
-  "sellPrice": "",
-  "sellCaution": false,
-  "effectFrames": ""
+  "addcatname": ""
 }

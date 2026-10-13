@@ -1,61 +1,66 @@
 {
   "id": "50114",
-  "unitName": "God Knight Will",
-  "no": "167",
-  "element": "Light",
-  "rarity": "★★★★★",
-  "cost": "12",
-  "maxlv": "80",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "113",
-  "animation_idle": "64",
-  "animation_move": "59",
-  "movespeed_attack": "0",
-  "movespeed_skill": "0",
-  "speedtype_attack": "5",
-  "speedtype_skill": "5",
-  "movetype_attack": "2",
-  "movetype_skill": "2",
-  "normal_frames": "33, 39, 45, 51, 56",
-  "normal_distribute": "60, 10, 10, 10, 10",
-  "normal_totaldistr": "100",
-  "bb_frames": "33, 39, 45, 51, 57, 63",
-  "bb_distribute": "15, 15, 15, 15, 20, 20",
-  "bb_totaldistr": "100",
-  "description": "A knight from the ruined La Veda Republic who resisted the world's destruction until the very end. He anticipated the human loss at an early stage of the war, and in order to delay it he implemented a strange tactic, using a smaller forces to take on larger armies. The strategy was promising, but Will struggled until the end, knowing humanity would ultimately lose.",
-  "summon": "Oh, great light!<br>Grant this Summoner glory<br>and victory!",
-  "fusion": "We need strength to save<br>the world. I feel very <br>strongly about that.",
-  "evolution": "In this new form,<br>I will save the world!",
-  "hp_base": "3448",
-  "atk_base": "924",
-  "def_base": "1006",
-  "rec_base": "597",
-  "hp_lord": "5239",
-  "atk_lord": "1240",
-  "def_lord": "1368",
-  "rec_lord": "847",
-  "hp_anima": "5832",
-  "rec_anima": "689",
-  "atk_breaker": "1398",
-  "def_breaker": "1210",
-  "atk_guardian": "1082",
-  "def_guardian": "1526",
-  "rec_guardian": "768",
-  "def_oracle": "1289",
-  "hp_oracle": "5002",
-  "rec_oracle": "1084",
-  "hp_bonus": "500",
-  "atk_bonus": "140",
-  "def_bonus": "260",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "5",
-  "normaldc": "20",
-  "ls": "Light God's Power",
-  "lsdescription": "50% boost to Atk Power of Light Types",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 924,
+      "def": 1006,
+      "hp": 3448,
+      "rec": 597
+    },
+    "_lord": {
+      "atk": 1240,
+      "def": 1368,
+      "hp": 5239,
+      "rec": 847
+    },
+    "anima": {
+      "atk": 1240,
+      "def": 1368,
+      "hp max": 6029,
+      "hp min": 5634,
+      "rec max": 768,
+      "rec min": 610
+    },
+    "breaker": {
+      "atk max": 1477,
+      "atk min": 1319,
+      "def max": 1289,
+      "def min": 1131,
+      "hp": 5239,
+      "rec": 847
+    },
+    "guardian": {
+      "atk": 1240,
+      "def max": 1605,
+      "def min": 1447,
+      "hp": 5239,
+      "rec max": 847,
+      "rec min": 689
+    },
+    "oracle": {
+      "atk": 1240,
+      "def max": 1368,
+      "def min": 1210,
+      "hp": 5239,
+      "rec max": 1163,
+      "rec min": 1005
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to Atk Power of Light Types",
+    "effects": [
+      {
+        "atk% buff": 50,
+        "elements buffed": [
+          "light"
+        ],
+        "passive id": "2"
+      }
+    ],
+    "id": "141",
+    "name": "Light God's Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -218,96 +223,91 @@
     ],
     "name": "Astral Nova"
   },
-  "bbdescription": "6 combo Light elemental power attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "6",
-  "bbaoe": "A",
-  "bbgauge": "25",
-  "bbdc": "6",
-  "bbmultiplier": "190",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "50113",
-  "evointo": "50115",
-  "evomats1": "50354",
-  "evomats2": "50123",
-  "evomats3": "60144",
-  "evomats4": "50122",
-  "evomats5": "50191",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 924,
-      "def": 1006,
-      "hp": 3448,
-      "rec": 597
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1240,
-      "def": 1368,
-      "hp": 5239,
-      "rec": 847
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1240,
-      "def": 1368,
-      "hp max": 6029,
-      "hp min": 5634,
-      "rec max": 768,
-      "rec min": 610
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 113
     },
-    "breaker": {
-      "atk max": 1477,
-      "atk min": 1319,
-      "def max": 1289,
-      "def min": 1131,
-      "hp": 5239,
-      "rec": 847
+    "idle": {
+      "total number of frames": 64
     },
-    "guardian": {
-      "atk": 1240,
-      "def max": 1605,
-      "def min": 1447,
-      "hp": 5239,
-      "rec max": 847,
-      "rec min": 689
-    },
-    "oracle": {
-      "atk": 1240,
-      "def max": 1368,
-      "def min": 1210,
-      "hp": 5239,
-      "rec max": 1163,
-      "rec min": 1005
+    "move": {
+      "total number of frames": 59
     }
   },
-  "leader_skill": {
-    "desc": "50% boost to Atk Power of Light Types",
-    "effects": [
-      {
-        "atk% buff": 50,
-        "elements buffed": [
-          "light"
-        ],
-        "passive id": "2"
-      }
+  "category": 50110,
+  "cost": "12",
+  "damage frames": {
+    "frame times": [
+      33,
+      39,
+      45,
+      51,
+      56
     ],
-    "id": "141",
-    "name": "Light God's Power"
+    "hit dmg% distribution": [
+      60,
+      10,
+      10,
+      10,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 5
   },
-  "extra_skill": {},
+  "drop check count": 4,
+  "element": "light",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 167,
+  "imp": {
+    "max atk": "140",
+    "max def": "260",
+    "max hp": "500",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "1154~1289",
+  "movement": {
+    "attack": {
+      "move speed": 0,
+      "move speed type": "5",
+      "move type": "2"
+    },
+    "skill": {
+      "move speed": 0,
+      "move speed type": "5",
+      "move type": "2"
+    }
+  },
+  "name": "God Knight Will",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "God Knight Will",
+  "maxlv": "80",
+  "no": "167",
   "unitDisplayHomePosition_1W9CxaFK": "346,160,200,544",
   "unitDisplayDetailPosition_6z54rgb3": "-17,3,1010,770",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "95,235,505,385,0",
@@ -317,5 +317,108 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "27:125:1,33:125:1,39:125:1,45:125:1,50:125:1"
+  "effectFrames": "27:125:1,33:125:1,39:125:1,45:125:1,50:125:1",
+  "evofrom": "50113",
+  "evointo": "50115",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50123",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50122",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50191",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "113",
+  "animation_idle": "64",
+  "animation_move": "59",
+  "movespeed_attack": "0",
+  "movespeed_skill": "0",
+  "speedtype_attack": "5",
+  "speedtype_skill": "5",
+  "movetype_attack": "2",
+  "movetype_skill": "2",
+  "normal_frames": "33, 39, 45, 51, 56",
+  "normal_distribute": "60, 10, 10, 10, 10",
+  "normal_totaldistr": "100",
+  "bb_frames": "33, 39, 45, 51, 57, 63",
+  "bb_distribute": "15, 15, 15, 15, 20, 20",
+  "bb_totaldistr": "100",
+  "description": "A knight from the ruined La Veda Republic who resisted the world's destruction until the very end. He anticipated the human loss at an early stage of the war, and in order to delay it he implemented a strange tactic, using a smaller forces to take on larger armies. The strategy was promising, but Will struggled until the end, knowing humanity would ultimately lose.",
+  "summon": "Oh, great light!<br>Grant this Summoner glory<br>and victory!",
+  "fusion": "We need strength to save<br>the world. I feel very <br>strongly about that.",
+  "evolution": "In this new form,<br>I will save the world!",
+  "hp_base": "3448",
+  "atk_base": "924",
+  "def_base": "1006",
+  "rec_base": "597",
+  "hp_lord": "5239",
+  "atk_lord": "1240",
+  "def_lord": "1368",
+  "rec_lord": "847",
+  "hp_anima": "5832",
+  "rec_anima": "689",
+  "atk_breaker": "1398",
+  "def_breaker": "1210",
+  "atk_guardian": "1082",
+  "def_guardian": "1526",
+  "rec_guardian": "768",
+  "def_oracle": "1289",
+  "hp_oracle": "5002",
+  "rec_oracle": "1084",
+  "hp_bonus": "500",
+  "atk_bonus": "140",
+  "def_bonus": "260",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "5",
+  "normaldc": "20",
+  "ls": "Light God's Power",
+  "lsdescription": "50% boost to Atk Power of Light Types",
+  "lstype": "Attack",
+  "bbdescription": "6 combo Light elemental power attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "6",
+  "bbaoe": "A",
+  "bbgauge": "25",
+  "bbdc": "6",
+  "bbmultiplier": "190",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "50123",
+  "evomats3": "60144",
+  "evomats4": "50122",
+  "evomats5": "50191"
 }

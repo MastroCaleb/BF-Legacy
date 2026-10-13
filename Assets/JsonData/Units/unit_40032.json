@@ -1,61 +1,70 @@
 {
   "id": "40032",
-  "unitName": "Kaiser Sparky",
-  "no": "1082",
-  "element": "Thunder",
-  "rarity": "★★★",
-  "cost": "5",
-  "maxlv": "40",
-  "basexp": "10",
-  "gender": "N",
-  "ai": "2",
-  "animation_attack": "71",
-  "animation_idle": "112",
-  "animation_move": "7",
-  "movespeed_attack": "0.0041",
-  "movespeed_skill": "0.0041",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "30, 33, 36",
-  "normal_distribute": "33, 33, 34",
-  "normal_totaldistr": "100",
-  "bb_frames": "30, 34, 38, 42, 45, 49",
-  "bb_distribute": "20, 14, 19, 14, 19, 14",
-  "bb_totaldistr": "100",
-  "description": "The Kaiser Sparky is the evolved form of a King Sparky which absorbed special electric energy from Ishgria. The drums that adorn its back are believed to store electricity, but there is no actual evidence to support this. Always the rowdy creature, the Kaiser Sparky acts as the boss of the Sparky in its pack, commanding their every move and expanding its territory. This creature is a formidable foe even for Summoners with lots of experience, so Akras Summoners' Hall recommends fighting it along other fellow Summoners.",
-  "summon": "*Rumble* spark* *boooom*<br>My thunder makes everything<br>go wild and crazy!",
-  "fusion": "*Zip* *zap* *rumble*<br>I need lots more!<br>I need more rumbling in my belly!",
-  "evolution": "My thunder is really rumbling now!<br>I'm sparking all over the place!<br>Can you hear it roar? *Boom*",
-  "hp_base": "1670",
-  "atk_base": "600",
-  "def_base": "530",
-  "rec_base": "450",
-  "hp_lord": "3404",
-  "atk_lord": "1026",
-  "def_lord": "829",
-  "rec_lord": "701",
-  "hp_anima": "3696",
-  "rec_anima": "623",
-  "atk_breaker": "1104",
-  "def_breaker": "751",
-  "atk_guardian": "",
-  "def_guardian": "907",
-  "rec_guardian": "662",
-  "def_oracle": "790",
-  "hp_oracle": "",
-  "rec_oracle": "818",
-  "hp_bonus": "3000",
-  "atk_bonus": "1200",
-  "def_bonus": "1200",
-  "rec_bonus": "1200",
-  "lordonly": "",
-  "combo_hits": "3",
-  "normaldc": "9",
-  "ls": "Divine Thunder Crown",
-  "lsdescription": "15% boost to Atk of Thunder types & 15% damage reduction from Thunder types",
-  "lstype": "Attack/Defense",
+  "stats": {
+    "_base": {
+      "atk": 600,
+      "def": 530,
+      "hp": 1670,
+      "rec": 450
+    },
+    "_lord": {
+      "atk": 1026,
+      "def": 829,
+      "hp": 3404,
+      "rec": 701
+    },
+    "anima": {
+      "atk": 1026,
+      "def": 829,
+      "hp max": 3794,
+      "hp min": 3599,
+      "rec max": 662,
+      "rec min": 584
+    },
+    "breaker": {
+      "atk max": 1143,
+      "atk min": 1065,
+      "def max": 790,
+      "def min": 712,
+      "hp": 3404,
+      "rec": 701
+    },
+    "guardian": {
+      "atk": 1026,
+      "def max": 946,
+      "def min": 868,
+      "hp": 3404,
+      "rec max": 701,
+      "rec min": 623
+    },
+    "oracle": {
+      "atk": 1026,
+      "def max": 829,
+      "def min": 751,
+      "hp": 3404,
+      "rec max": 857,
+      "rec min": 779
+    }
+  },
+  "leader_skill": {
+    "desc": "15% boost to Atk of Thunder types & 15% damage reduction from Thunder types ",
+    "effects": [
+      {
+        "atk% buff": 15,
+        "elements buffed": [
+          "thunder"
+        ],
+        "passive id": "2"
+      },
+      {
+        "passive id": "5",
+        "thunder resist%": 15
+      }
+    ],
+    "id": "9763",
+    "name": "Divine Thunder Crown"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -218,102 +227,87 @@
     ],
     "name": "Electricity Gulp"
   },
-  "bbdescription": "6 combo powerful Thunder attack on all foes",
-  "bbtype": "Offense",
-  "bbhits": "6",
-  "bbaoe": "A",
-  "bbgauge": "12",
-  "bbdc": "6",
-  "bbmultiplier": "130",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "es": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "40031",
-  "evointo": "",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 600,
-      "def": 530,
-      "hp": 1670,
-      "rec": 450
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1026,
-      "def": 829,
-      "hp": 3404,
-      "rec": 701
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1026,
-      "def": 829,
-      "hp max": 3794,
-      "hp min": 3599,
-      "rec max": 662,
-      "rec min": 584
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 71
     },
-    "breaker": {
-      "atk max": 1143,
-      "atk min": 1065,
-      "def max": 790,
-      "def min": 712,
-      "hp": 3404,
-      "rec": 701
+    "idle": {
+      "total number of frames": 112
     },
-    "guardian": {
-      "atk": 1026,
-      "def max": 946,
-      "def min": 868,
-      "hp": 3404,
-      "rec max": 701,
-      "rec min": 623
-    },
-    "oracle": {
-      "atk": 1026,
-      "def max": 829,
-      "def min": 751,
-      "hp": 3404,
-      "rec max": 857,
-      "rec min": 779
+    "move": {
+      "total number of frames": 7
     }
   },
-  "leader_skill": {
-    "desc": "15% boost to Atk of Thunder types & 15% damage reduction from Thunder types ",
-    "effects": [
-      {
-        "atk% buff": 15,
-        "elements buffed": [
-          "thunder"
-        ],
-        "passive id": "2"
-      },
-      {
-        "passive id": "5",
-        "thunder resist%": 15
-      }
+  "category": 40030,
+  "cost": "5",
+  "damage frames": {
+    "frame times": [
+      30,
+      33,
+      36
     ],
-    "id": "9763",
-    "name": "Divine Thunder Crown"
+    "hit dmg% distribution": [
+      33,
+      33,
+      34
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 3
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "thunder",
+  "exp_pattern": 10,
+  "gender": "other",
+  "getting type": "farmable",
+  "guide_id": 1082,
+  "imp": {
+    "max atk": "1200",
+    "max def": "1200",
+    "max hp": "3000",
+    "max rec": "1200"
+  },
+  "kind": "normal",
+  "lord damage range": "955~1067",
+  "movement": {
+    "attack": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    }
+  },
+  "name": "Kaiser Sparky",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "Kaiser Sparky",
+  "maxlv": "40",
+  "no": "1082",
   "unitDisplayHomePosition_1W9CxaFK": "343,184,240,655",
   "unitDisplayDetailPosition_6z54rgb3": "-11,21,974,828",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "82,170,533,453,1",
@@ -323,5 +317,84 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "1000",
   "sellCaution": false,
-  "effectFrames": "27:400231:1,31:400231:1,30:400070:1,38:400132:1"
+  "effectFrames": "27:400231:1,31:400231:1,30:400070:1,38:400132:1",
+  "evofrom": "40031",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "10",
+  "animation_attack": "71",
+  "animation_idle": "112",
+  "animation_move": "7",
+  "movespeed_attack": "0.0041",
+  "movespeed_skill": "0.0041",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "30, 33, 36",
+  "normal_distribute": "33, 33, 34",
+  "normal_totaldistr": "100",
+  "bb_frames": "30, 34, 38, 42, 45, 49",
+  "bb_distribute": "20, 14, 19, 14, 19, 14",
+  "bb_totaldistr": "100",
+  "description": "The Kaiser Sparky is the evolved form of a King Sparky which absorbed special electric energy from Ishgria. The drums that adorn its back are believed to store electricity, but there is no actual evidence to support this. Always the rowdy creature, the Kaiser Sparky acts as the boss of the Sparky in its pack, commanding their every move and expanding its territory. This creature is a formidable foe even for Summoners with lots of experience, so Akras Summoners' Hall recommends fighting it along other fellow Summoners.",
+  "summon": "*Rumble* spark* *boooom*<br>My thunder makes everything<br>go wild and crazy!",
+  "fusion": "*Zip* *zap* *rumble*<br>I need lots more!<br>I need more rumbling in my belly!",
+  "evolution": "My thunder is really rumbling now!<br>I'm sparking all over the place!<br>Can you hear it roar? *Boom*",
+  "hp_base": "1670",
+  "atk_base": "600",
+  "def_base": "530",
+  "rec_base": "450",
+  "hp_lord": "3404",
+  "atk_lord": "1026",
+  "def_lord": "829",
+  "rec_lord": "701",
+  "hp_anima": "3696",
+  "rec_anima": "623",
+  "atk_breaker": "1104",
+  "def_breaker": "751",
+  "atk_guardian": "",
+  "def_guardian": "907",
+  "rec_guardian": "662",
+  "def_oracle": "790",
+  "hp_oracle": "",
+  "rec_oracle": "818",
+  "hp_bonus": "3000",
+  "atk_bonus": "1200",
+  "def_bonus": "1200",
+  "rec_bonus": "1200",
+  "lordonly": "",
+  "combo_hits": "3",
+  "normaldc": "9",
+  "ls": "Divine Thunder Crown",
+  "lsdescription": "15% boost to Atk of Thunder types & 15% damage reduction from Thunder types",
+  "lstype": "Attack/Defense",
+  "bbdescription": "6 combo powerful Thunder attack on all foes",
+  "bbtype": "Offense",
+  "bbhits": "6",
+  "bbaoe": "A",
+  "bbgauge": "12",
+  "bbdc": "6",
+  "bbmultiplier": "130",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "es": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "",
+  "evomats2": "",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": "",
+  "evoitem": ""
 }

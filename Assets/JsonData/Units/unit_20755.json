@@ -1,64 +1,70 @@
 {
   "id": "20755",
-  "unitName": "Hades Wave Sareas",
-  "no": "1266",
-  "element": "Water",
-  "rarity": "★★★★★★",
-  "cost": "30",
-  "maxlv": "100",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "147",
-  "animation_idle": "64",
-  "animation_move": "64",
-  "movespeed_attack": "2",
-  "movespeed_skill": "2",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "87, 90, 93, 96, 99",
-  "normal_distribute": "20, 20, 20, 20, 20",
-  "normal_totaldistr": "100",
-  "bb_frames": "87, 90, 93, 96, 99, 102, 105, 108, 111, 114",
-  "bb_distribute": "10, 10, 10, 10, 10, 10, 10, 10, 10, 10",
-  "bb_totaldistr": "100",
-  "sbb_frames": "87, 90, 93, 96, 99, 102, 105, 108, 111, 114, 117, 120, 123, 126, 129, 132, 135, 138, 141, 144, 147, 150, 153, 156, 159, 162, 165, 168, 171, 174",
-  "sbb_distribute": "4, 3, 3, 4, 3, 3, 4, 3, 3, 4, 3, 3, 4, 3, 3, 4, 3, 3, 4, 3, 3, 4, 3, 3, 4, 3, 3, 4, 3, 3",
-  "sbb_totaldistr": "100",
-  "sbb_effectdelay": "1",
-  "description": "Sareas is most renowned for his role in holding the East Gate, the last imperial strongpoint to fall to the God Army. Despite his gallantry in battle, rumor holds that he was detested by those close to the imperial family. However, there are almost no official records to support these claims of slander and conspiracy. Even the diary of the second imperial prince, who should have been the worst victim of Sareas's alleged schemes, contains no mentions of this nature whatsoever.",
-  "summon": "That conceited muscle head knows nothing of the truth...my hatred knows no bounds.",
-  "fusion": "Is this all? How pathetic...<br>Oh! W-Were you listening?<br>I was merely remembering the lines of an old theatrical performance, old friend!",
-  "evolution": "Better than nothing, I suppose...<br>Oh? Thank-you, my friend!<br>Now, how to put this new power to best use?",
-  "hp_base": "4098",
-  "atk_base": "1774",
-  "def_base": "1469",
-  "rec_base": "1629",
-  "hp_lord": "5897",
-  "atk_lord": "2391",
-  "def_lord": "1977",
-  "rec_lord": "2197",
-  "hp_anima": "6639",
-  "rec_anima": "1999",
-  "atk_breaker": "2589",
-  "def_breaker": "1779",
-  "def_guardian": "2175",
-  "rec_guardian": "2098",
-  "def_oracle": "1878",
-  "rec_oracle": "2494",
-  "hp_bonus": "750",
-  "atk_bonus": "300",
-  "def_bonus": "300",
-  "rec_bonus": "300",
-  "lordonly": "",
-  "combo_hits": "5",
-  "normaldc": "15",
-  "ls": "Bow God's Discipline",
-  "lsdescription": "20% boost to all parameters & considerably boosts BB gauge each turn",
-  "lsnote": "Fills 4 BC",
-  "lstype": "Hit Points/Attack/Defense/Recovery/Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 1774,
+      "def": 1469,
+      "hp": 4098,
+      "rec": 1629
+    },
+    "_lord": {
+      "atk": 2391,
+      "def": 1977,
+      "hp": 5897,
+      "rec": 2197
+    },
+    "anima": {
+      "atk": 2391,
+      "def": 1977,
+      "hp max": 6887,
+      "hp min": 6392,
+      "rec max": 2098,
+      "rec min": 1900
+    },
+    "breaker": {
+      "atk max": 2688,
+      "atk min": 2490,
+      "def max": 1878,
+      "def min": 1680,
+      "hp": 5897,
+      "rec": 2197
+    },
+    "guardian": {
+      "atk": 2391,
+      "def max": 2274,
+      "def min": 2076,
+      "hp": 5897,
+      "rec max": 2197,
+      "rec min": 1999
+    },
+    "oracle": {
+      "atk": 2391,
+      "def max": 1977,
+      "def min": 1779,
+      "hp": 5897,
+      "rec max": 2593,
+      "rec min": 2395
+    }
+  },
+  "leader_skill": {
+    "desc": "20% boost to all parameters & considerably boosts BB gauge each turn",
+    "effects": [
+      {
+        "atk% buff": 20,
+        "def% buff": 20,
+        "hp% buff": 20,
+        "passive id": "1",
+        "rec% buff": 20
+      },
+      {
+        "bc fill per turn": 4,
+        "passive id": "9"
+      }
+    ],
+    "id": "10110",
+    "name": "Bow God's Discipline"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -423,14 +429,6 @@
     ],
     "name": "Fledveros"
   },
-  "bbdescription": "10 combo Water attack on all foes, considerably boosts BB gauge & Spark damage slightly boosts BB gauge for 3 turns",
-  "bbnote": "Fills 6 BC/turn & fills 1-2 BC per Spark",
-  "bbtype": "Support/Offense",
-  "bbhits": "10",
-  "bbaoe": "A",
-  "bbgauge": "26",
-  "bbdc": "10",
-  "bbmultiplier": "270",
   "sbb": {
     "damage frames": [
       {
@@ -1029,6 +1027,185 @@
     ],
     "name": "Purification Wave"
   },
+  "ubb": {},
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 147
+    },
+    "idle": {
+      "total number of frames": 64
+    },
+    "move": {
+      "total number of frames": 64
+    }
+  },
+  "category": 20750,
+  "cost": "30",
+  "damage frames": {
+    "frame times": [
+      87,
+      90,
+      93,
+      96,
+      99
+    ],
+    "hit dmg% distribution": [
+      20,
+      20,
+      20,
+      20,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 5
+  },
+  "drop check count": 4,
+  "element": "water",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 1266,
+  "imp": {
+    "max atk": "300",
+    "max def": "300",
+    "max hp": "750",
+    "max rec": "300"
+  },
+  "kind": "normal",
+  "lord damage range": "2225~2486",
+  "movement": {
+    "attack": {
+      "move speed": 2,
+      "move speed type": "4",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 2,
+      "move speed type": "4",
+      "move type": "3"
+    }
+  },
+  "name": "Hades Wave Sareas",
+  "rarity": "6",
+  "sell caution": false,
+  "unitName": "Hades Wave Sareas",
+  "maxlv": "100",
+  "no": "1266",
+  "unitDisplayHomePosition_1W9CxaFK": "347,129,174,475",
+  "unitDisplayDetailPosition_6z54rgb3": "-25,112,932,666",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "88,272,466,333,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-5,-192,932,666",
+  "unitDisplaySummonPosition_KC3Jk8Br": "88,272,466,333,0",
+  "unitDisplayHpPosition_3BpHN6VD": "-3,45",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "8000",
+  "sellCaution": false,
+  "effectFrames": "87:111:1,90:111:1,93:111:1,96:111:1,99:111:1,87:200392:1,87:200312:1,90:200312:1,91:660:1,99:660:1,103:200030:1",
+  "evofrom": "20754",
+  "evointo": "20756",
+  "evozelcost": "1500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "20344",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 2
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "147",
+  "animation_idle": "64",
+  "animation_move": "64",
+  "movespeed_attack": "2",
+  "movespeed_skill": "2",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "87, 90, 93, 96, 99",
+  "normal_distribute": "20, 20, 20, 20, 20",
+  "normal_totaldistr": "100",
+  "bb_frames": "87, 90, 93, 96, 99, 102, 105, 108, 111, 114",
+  "bb_distribute": "10, 10, 10, 10, 10, 10, 10, 10, 10, 10",
+  "bb_totaldistr": "100",
+  "sbb_frames": "87, 90, 93, 96, 99, 102, 105, 108, 111, 114, 117, 120, 123, 126, 129, 132, 135, 138, 141, 144, 147, 150, 153, 156, 159, 162, 165, 168, 171, 174",
+  "sbb_distribute": "4, 3, 3, 4, 3, 3, 4, 3, 3, 4, 3, 3, 4, 3, 3, 4, 3, 3, 4, 3, 3, 4, 3, 3, 4, 3, 3, 4, 3, 3",
+  "sbb_totaldistr": "100",
+  "sbb_effectdelay": "1",
+  "description": "Sareas is most renowned for his role in holding the East Gate, the last imperial strongpoint to fall to the God Army. Despite his gallantry in battle, rumor holds that he was detested by those close to the imperial family. However, there are almost no official records to support these claims of slander and conspiracy. Even the diary of the second imperial prince, who should have been the worst victim of Sareas's alleged schemes, contains no mentions of this nature whatsoever.",
+  "summon": "That conceited muscle head knows nothing of the truth...my hatred knows no bounds.",
+  "fusion": "Is this all? How pathetic...<br>Oh! W-Were you listening?<br>I was merely remembering the lines of an old theatrical performance, old friend!",
+  "evolution": "Better than nothing, I suppose...<br>Oh? Thank-you, my friend!<br>Now, how to put this new power to best use?",
+  "hp_base": "4098",
+  "atk_base": "1774",
+  "def_base": "1469",
+  "rec_base": "1629",
+  "hp_lord": "5897",
+  "atk_lord": "2391",
+  "def_lord": "1977",
+  "rec_lord": "2197",
+  "hp_anima": "6639",
+  "rec_anima": "1999",
+  "atk_breaker": "2589",
+  "def_breaker": "1779",
+  "def_guardian": "2175",
+  "rec_guardian": "2098",
+  "def_oracle": "1878",
+  "rec_oracle": "2494",
+  "hp_bonus": "750",
+  "atk_bonus": "300",
+  "def_bonus": "300",
+  "rec_bonus": "300",
+  "lordonly": "",
+  "combo_hits": "5",
+  "normaldc": "15",
+  "ls": "Bow God's Discipline",
+  "lsdescription": "20% boost to all parameters & considerably boosts BB gauge each turn",
+  "lsnote": "Fills 4 BC",
+  "lstype": "Hit Points/Attack/Defense/Recovery/Brave Burst",
+  "bbdescription": "10 combo Water attack on all foes, considerably boosts BB gauge & Spark damage slightly boosts BB gauge for 3 turns",
+  "bbnote": "Fills 6 BC/turn & fills 1-2 BC per Spark",
+  "bbtype": "Support/Offense",
+  "bbhits": "10",
+  "bbaoe": "A",
+  "bbgauge": "26",
+  "bbdc": "10",
+  "bbmultiplier": "270",
   "sbbdescription": "30 combo powerful Water attack on all foes, considerably boosts BB gauge, fills own BB gauge to max, considerably boosts Atk, Def, Rec for 3 turns & Spark damage slightly boosts BB gauge for 3 turns",
   "sbbnote": "Fills 6 BC, 100% boost to Atk, Def, Rec & fills 1-2 BC per Spark",
   "sbbtype": "Support/Offense",
@@ -1037,7 +1214,6 @@
   "sbbgauge": "24",
   "sbbdc": "30",
   "sbbmultiplier": "480",
-  "ubb": {},
   "ubbdescription": "",
   "ubbtype": "",
   "ubbhits": "",
@@ -1048,88 +1224,10 @@
   "es": "",
   "esitem": "",
   "esdescription": "",
-  "evofrom": "20754",
-  "evointo": "20756",
   "evomats1": "20344",
   "evomats2": "50354",
   "evomats3": "20133",
   "evomats4": "60224",
   "evomats5": "60224",
-  "evoitem": "",
-  "evozelcost": "1500000",
-  "stats": {
-    "_base": {
-      "atk": 1774,
-      "def": 1469,
-      "hp": 4098,
-      "rec": 1629
-    },
-    "_lord": {
-      "atk": 2391,
-      "def": 1977,
-      "hp": 5897,
-      "rec": 2197
-    },
-    "anima": {
-      "atk": 2391,
-      "def": 1977,
-      "hp max": 6887,
-      "hp min": 6392,
-      "rec max": 2098,
-      "rec min": 1900
-    },
-    "breaker": {
-      "atk max": 2688,
-      "atk min": 2490,
-      "def max": 1878,
-      "def min": 1680,
-      "hp": 5897,
-      "rec": 2197
-    },
-    "guardian": {
-      "atk": 2391,
-      "def max": 2274,
-      "def min": 2076,
-      "hp": 5897,
-      "rec max": 2197,
-      "rec min": 1999
-    },
-    "oracle": {
-      "atk": 2391,
-      "def max": 1977,
-      "def min": 1779,
-      "hp": 5897,
-      "rec max": 2593,
-      "rec min": 2395
-    }
-  },
-  "leader_skill": {
-    "desc": "20% boost to all parameters & considerably boosts BB gauge each turn",
-    "effects": [
-      {
-        "atk% buff": 20,
-        "def% buff": 20,
-        "hp% buff": 20,
-        "passive id": "1",
-        "rec% buff": 20
-      },
-      {
-        "bc fill per turn": 4,
-        "passive id": "9"
-      }
-    ],
-    "id": "10110",
-    "name": "Bow God's Discipline"
-  },
-  "extra_skill": {},
-  "unitDisplayHomePosition_1W9CxaFK": "347,129,174,475",
-  "unitDisplayDetailPosition_6z54rgb3": "-25,112,932,666",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "88,272,466,333,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-5,-192,932,666",
-  "unitDisplaySummonPosition_KC3Jk8Br": "88,272,466,333,0",
-  "unitDisplayHpPosition_3BpHN6VD": "-3,45",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "8000",
-  "sellCaution": false,
-  "effectFrames": "87:111:1,90:111:1,93:111:1,96:111:1,99:111:1,87:200392:1,87:200312:1,90:200312:1,91:660:1,99:660:1,103:200030:1"
+  "evoitem": ""
 }

@@ -1,68 +1,108 @@
 {
   "id": "40867",
-  "unitName": "Auric Echo Eleanor",
-  "no": "1510",
-  "element": "Thunder",
-  "rarity": "Omni",
-  "cost": "48",
-  "maxlv": "150",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "10",
-  "animation_attack": "136",
-  "animation_idle": "54",
-  "animation_move": "54",
-  "movespeed_attack": "4",
-  "movespeed_skill": "4",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "95, 98, 101, 104, 107, 110, 113, 116, 119, 122, 125",
-  "normal_distribute": "10, 8, 10, 9, 10, 8, 10, 8, 9, 8, 10",
-  "normal_totaldistr": "100",
-  "bb_frames": "95, 98, 101, 104, 107, 110, 113, 116, 119, 122, 125, 128, 131, 134",
-  "bb_distribute": "8, 7, 8, 7, 8, 6, 8, 6, 8, 6, 8, 6, 8, 6",
-  "bb_totaldistr": "100",
-  "sbb_frames": "95, 98, 101, 104, 107, 110, 113, 116, 119, 122, 125, 128, 131, 134, 137, 140, 143",
-  "sbb_distribute": "7, 5, 7, 5, 7, 5, 7, 5, 7, 5, 7, 5, 6, 5, 6, 5, 6",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "95, 98, 101, 104, 107, 110, 113, 116, 119, 122, 125, 128, 131, 134, 137, 140, 143, 146, 149, 152, 155, 158, 161",
-  "ubb_distribute": "5, 4, 5, 4, 5, 4, 5, 4, 5, 4, 5, 4, 5, 4, 5, 3, 5, 3, 5, 3, 5, 3, 5",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "1",
-  "ubb_effectdelay": "1",
-  "description": "Eleanor vanished when the Arena inexplicably collapsed during the Zektasa's rematch with the mystery swordsman. The Arena was never rebuilt afterwards, and the Zektasa disbanded. Nothing is known of her fate afterwards. Although she developed numerous spells suited to the small-group combat of the Arena, those spells have not been passed down to the present era. Had the Arena been rebuilt, she might have returned and developed even more spells which could have been passed down to the current generation.",
-  "summon": "I'm a bit relieved that the Arena is restored. I want more people to see us... No...to see him fight.",
-  "fusion": "Rest assured that this power is now in good hands. I keep getting new ideas for spells to use, after all!",
-  "evolution": "The cheering crowds! The ground soaked in blood and sweat! Hehe... It seems like this place really is the only home for me.",
-  "hp_base": "6177",
-  "atk_base": "2310",
-  "def_base": "2320",
-  "rec_base": "2169",
-  "hp_lord": "8067",
-  "atk_lord": "2894",
-  "def_lord": "2906",
-  "rec_lord": "2733",
-  "hp_anima": "9184",
-  "rec_anima": "2435",
-  "atk_breaker": "3192",
-  "def_breaker": "2608",
-  "def_guardian": "3204",
-  "rec_guardian": "2584",
-  "def_oracle": "2757",
-  "rec_oracle": "3180",
-  "hp_bonus": "1250",
-  "atk_bonus": "400",
-  "def_bonus": "800",
-  "rec_bonus": "500",
-  "lordonly": "",
-  "combo_hits": "11",
-  "normaldc": "44",
-  "ls": "Bold Defense",
-  "lsdescription": "100% boost to Def, 50% boost to max HP, probable considerable foe BB gauge reduction, 15% reduction to Fire, Water, Earth, Thunder elemental damage & considerably boosts ABP and CBP gain",
-  "lsnote": "20% chance to reduce enemy BB gauge by 50%, 50% ABP boost & 25% CBP boost",
+  "stats": {
+    "_base": {
+      "atk": 2310,
+      "def": 2320,
+      "hp": 6177,
+      "rec": 2169
+    },
+    "_lord": {
+      "atk": 2894,
+      "def": 2906,
+      "hp": 8067,
+      "rec": 2733
+    },
+    "anima": {
+      "atk": 2894,
+      "def": 2906,
+      "hp max": 9557,
+      "hp min": 8812,
+      "rec max": 2584,
+      "rec min": 2286
+    },
+    "breaker": {
+      "atk max": 3341,
+      "atk min": 3043,
+      "def max": 2757,
+      "def min": 2459,
+      "hp": 8067,
+      "rec": 2733
+    },
+    "guardian": {
+      "atk": 2894,
+      "def max": 3353,
+      "def min": 3055,
+      "hp": 8067,
+      "rec max": 2733,
+      "rec min": 2435
+    },
+    "oracle": {
+      "atk": 2894,
+      "def max": 2906,
+      "def min": 2608,
+      "hp": 8067,
+      "rec max": 3329,
+      "rec min": 3031
+    }
+  },
+  "leader_skill": {
+    "desc": "100% boost to Def, 50% boost to max HP, probable considerable foe BB gauge reduction, 15% reduction to Fire, Water, Earth, Thunder elemental damage & considerably boosts ABP and CBP gain",
+    "effects": [
+      {
+        "def% buff": 100,
+        "hp% buff": 50,
+        "passive id": "1"
+      },
+      {
+        "dmg% mitigation for elemental attacks": 15.0,
+        "mitigate earth attacks": true,
+        "mitigate fire attacks": true,
+        "mitigate thunder attacks": true,
+        "mitigate water attacks": true,
+        "passive id": "62"
+      },
+      {
+        "unknown passive id": "110",
+        "unknown passive params": "0,0,50,50,20,0"
+      },
+      {
+        "abp gain%": 50,
+        "cbp gain%": 25,
+        "passive id": "112"
+      }
+    ],
+    "id": "4358",
+    "name": "Bold Defense"
+  },
+  "extra_skill": {
+    "desc": "Negates all status ailments & damage taken boosts BB gauge",
+    "effects": [
+      {
+        "conditions": [],
+        "curse resist%": 100,
+        "injury resist%": 100,
+        "paralysis resist%": 100,
+        "passive id": "4",
+        "passive target": "self",
+        "poison resist%": 100,
+        "sick resist%": 100,
+        "weaken resist%": 100
+      },
+      {
+        "bc fill when attacked high": 3,
+        "bc fill when attacked low": 2,
+        "bc fill when attacked%": 100,
+        "conditions": [],
+        "passive id": "25",
+        "passive target": "self"
+      }
+    ],
+    "id": "26600",
+    "name": "Ancient Mysteries",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -465,14 +505,6 @@
     ],
     "name": "Elebariel Grimoire"
   },
-  "bbdescription": "14 combo Thunder attack on all foes, slight Fire, Water, Earth, Thunder elemental damage reduction for 1 turn & 50% damage reduction for 1 turn",
-  "bbnote": "10% elemental reduction",
-  "bbtype": "Offense",
-  "bbhits": "14",
-  "bbaoe": "A",
-  "bbgauge": "28",
-  "bbdc": "14",
-  "bbmultiplier": "340",
   "sbb": {
     "damage frames": [
       {
@@ -983,14 +1015,6 @@
     ],
     "name": "Lad-Falna Rune"
   },
-  "sbbdescription": "17 combo powerful Thunder attack on all foes, considerably boosts BC, HC drop rates for 3 turns, slight Fire, Water, Earth, Thunder elemental damage reduction for 1 turn & 50% damage reduction for 1 turn",
-  "sbbnote": "10% elemental reduction & 35% BC/HC",
-  "sbbtype": "Offense",
-  "sbbhits": "17",
-  "sbbaoe": "A",
-  "sbbgauge": "24",
-  "sbbdc": "17",
-  "sbbmultiplier": "500",
   "ubb": {
     "damage frames": [
       {
@@ -1155,6 +1179,173 @@
     ],
     "name": "Zone of Reflection"
   },
+  "ai": "10",
+  "animations": {
+    "attack": {
+      "total number of frames": 136
+    },
+    "idle": {
+      "total number of frames": 54
+    },
+    "move": {
+      "total number of frames": 54
+    }
+  },
+  "category": 40860,
+  "cost": "48",
+  "damage frames": {
+    "frame times": [
+      95,
+      98,
+      101,
+      104,
+      107,
+      110,
+      113,
+      116,
+      119,
+      122,
+      125
+    ],
+    "hit dmg% distribution": [
+      10,
+      8,
+      10,
+      9,
+      10,
+      8,
+      10,
+      8,
+      9,
+      8,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 11
+  },
+  "drop check count": 4,
+  "element": "thunder",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 1510,
+  "imp": {
+    "max atk": "400",
+    "max def": "800",
+    "max hp": "1250",
+    "max rec": "500"
+  },
+  "kind": "normal",
+  "lord damage range": "2694~3009",
+  "movement": {
+    "attack": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    }
+  },
+  "name": "Auric Echo Eleanor",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "8",
+  "sell caution": false,
+  "unitName": "Auric Echo Eleanor",
+  "maxlv": "150",
+  "no": "1510",
+  "unitDisplayHomePosition_1W9CxaFK": "738,676,150,409",
+  "unitDisplayDetailPosition_6z54rgb3": "-467,-474,1800,1319",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "-102,-9,880,645,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-390,-712,1698,1244",
+  "unitDisplaySummonPosition_KC3Jk8Br": "-102,-9,880,645,0",
+  "unitDisplayHpPosition_3BpHN6VD": "2,64",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "50000",
+  "sellCaution": false,
+  "effectFrames": "96:1124:1,85:11290:1,95:304:1,105:11290:1,115:304:1,95:400078:1,127:400180:1,120:400432:1",
+  "evofrom": "40866",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "21",
+  "animation_attack": "136",
+  "animation_idle": "54",
+  "animation_move": "54",
+  "movespeed_attack": "4",
+  "movespeed_skill": "4",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "95, 98, 101, 104, 107, 110, 113, 116, 119, 122, 125",
+  "normal_distribute": "10, 8, 10, 9, 10, 8, 10, 8, 9, 8, 10",
+  "normal_totaldistr": "100",
+  "bb_frames": "95, 98, 101, 104, 107, 110, 113, 116, 119, 122, 125, 128, 131, 134",
+  "bb_distribute": "8, 7, 8, 7, 8, 6, 8, 6, 8, 6, 8, 6, 8, 6",
+  "bb_totaldistr": "100",
+  "sbb_frames": "95, 98, 101, 104, 107, 110, 113, 116, 119, 122, 125, 128, 131, 134, 137, 140, 143",
+  "sbb_distribute": "7, 5, 7, 5, 7, 5, 7, 5, 7, 5, 7, 5, 6, 5, 6, 5, 6",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "95, 98, 101, 104, 107, 110, 113, 116, 119, 122, 125, 128, 131, 134, 137, 140, 143, 146, 149, 152, 155, 158, 161",
+  "ubb_distribute": "5, 4, 5, 4, 5, 4, 5, 4, 5, 4, 5, 4, 5, 4, 5, 3, 5, 3, 5, 3, 5, 3, 5",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "1",
+  "ubb_effectdelay": "1",
+  "description": "Eleanor vanished when the Arena inexplicably collapsed during the Zektasa's rematch with the mystery swordsman. The Arena was never rebuilt afterwards, and the Zektasa disbanded. Nothing is known of her fate afterwards. Although she developed numerous spells suited to the small-group combat of the Arena, those spells have not been passed down to the present era. Had the Arena been rebuilt, she might have returned and developed even more spells which could have been passed down to the current generation.",
+  "summon": "I'm a bit relieved that the Arena is restored. I want more people to see us... No...to see him fight.",
+  "fusion": "Rest assured that this power is now in good hands. I keep getting new ideas for spells to use, after all!",
+  "evolution": "The cheering crowds! The ground soaked in blood and sweat! Hehe... It seems like this place really is the only home for me.",
+  "hp_base": "6177",
+  "atk_base": "2310",
+  "def_base": "2320",
+  "rec_base": "2169",
+  "hp_lord": "8067",
+  "atk_lord": "2894",
+  "def_lord": "2906",
+  "rec_lord": "2733",
+  "hp_anima": "9184",
+  "rec_anima": "2435",
+  "atk_breaker": "3192",
+  "def_breaker": "2608",
+  "def_guardian": "3204",
+  "rec_guardian": "2584",
+  "def_oracle": "2757",
+  "rec_oracle": "3180",
+  "hp_bonus": "1250",
+  "atk_bonus": "400",
+  "def_bonus": "800",
+  "rec_bonus": "500",
+  "lordonly": "",
+  "combo_hits": "11",
+  "normaldc": "44",
+  "ls": "Bold Defense",
+  "lsdescription": "100% boost to Def, 50% boost to max HP, probable considerable foe BB gauge reduction, 15% reduction to Fire, Water, Earth, Thunder elemental damage & considerably boosts ABP and CBP gain",
+  "lsnote": "20% chance to reduce enemy BB gauge by 50%, 50% ABP boost & 25% CBP boost",
+  "bbdescription": "14 combo Thunder attack on all foes, slight Fire, Water, Earth, Thunder elemental damage reduction for 1 turn & 50% damage reduction for 1 turn",
+  "bbnote": "10% elemental reduction",
+  "bbtype": "Offense",
+  "bbhits": "14",
+  "bbaoe": "A",
+  "bbgauge": "28",
+  "bbdc": "14",
+  "bbmultiplier": "340",
+  "sbbdescription": "17 combo powerful Thunder attack on all foes, considerably boosts BC, HC drop rates for 3 turns, slight Fire, Water, Earth, Thunder elemental damage reduction for 1 turn & 50% damage reduction for 1 turn",
+  "sbbnote": "10% elemental reduction & 35% BC/HC",
+  "sbbtype": "Offense",
+  "sbbhits": "17",
+  "sbbaoe": "A",
+  "sbbgauge": "24",
+  "sbbdc": "17",
+  "sbbmultiplier": "500",
   "ubbdescription": "23 combo massive Thunder attack on all foes, enormously boosts Thunder elemental damage for 3 turns, 75% damage reduction for 3 turns, damage taken enormously boosts BB for 3 turns & enormously restores HP for 3 turns",
   "ubbnote": "Fills 50 BC, heals 75% damage taken & 500% elemental damage",
   "ubbtype": "Heal/Offense",
@@ -1167,8 +1358,6 @@
   "esitem": "",
   "esdescription": "Negates all status ailments & damage taken boosts BB gauge",
   "esnote": "Fills 2-3 BC",
-  "evofrom": "40866",
-  "evointo": "",
   "evomats1": "",
   "evomats2": "",
   "evomats3": "",
@@ -1177,119 +1366,5 @@
   "evomats6": "",
   "evomats7": "",
   "evomats8": "",
-  "evoitem": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 2310,
-      "def": 2320,
-      "hp": 6177,
-      "rec": 2169
-    },
-    "_lord": {
-      "atk": 2894,
-      "def": 2906,
-      "hp": 8067,
-      "rec": 2733
-    },
-    "anima": {
-      "atk": 2894,
-      "def": 2906,
-      "hp max": 9557,
-      "hp min": 8812,
-      "rec max": 2584,
-      "rec min": 2286
-    },
-    "breaker": {
-      "atk max": 3341,
-      "atk min": 3043,
-      "def max": 2757,
-      "def min": 2459,
-      "hp": 8067,
-      "rec": 2733
-    },
-    "guardian": {
-      "atk": 2894,
-      "def max": 3353,
-      "def min": 3055,
-      "hp": 8067,
-      "rec max": 2733,
-      "rec min": 2435
-    },
-    "oracle": {
-      "atk": 2894,
-      "def max": 2906,
-      "def min": 2608,
-      "hp": 8067,
-      "rec max": 3329,
-      "rec min": 3031
-    }
-  },
-  "leader_skill": {
-    "desc": "100% boost to Def, 50% boost to max HP, probable considerable foe BB gauge reduction, 15% reduction to Fire, Water, Earth, Thunder elemental damage & considerably boosts ABP and CBP gain",
-    "effects": [
-      {
-        "def% buff": 100,
-        "hp% buff": 50,
-        "passive id": "1"
-      },
-      {
-        "dmg% mitigation for elemental attacks": 15.0,
-        "mitigate earth attacks": true,
-        "mitigate fire attacks": true,
-        "mitigate thunder attacks": true,
-        "mitigate water attacks": true,
-        "passive id": "62"
-      },
-      {
-        "unknown passive id": "110",
-        "unknown passive params": "0,0,50,50,20,0"
-      },
-      {
-        "abp gain%": 50,
-        "cbp gain%": 25,
-        "passive id": "112"
-      }
-    ],
-    "id": "4358",
-    "name": "Bold Defense"
-  },
-  "extra_skill": {
-    "desc": "Negates all status ailments & damage taken boosts BB gauge",
-    "effects": [
-      {
-        "conditions": [],
-        "curse resist%": 100,
-        "injury resist%": 100,
-        "paralysis resist%": 100,
-        "passive id": "4",
-        "passive target": "self",
-        "poison resist%": 100,
-        "sick resist%": 100,
-        "weaken resist%": 100
-      },
-      {
-        "bc fill when attacked high": 3,
-        "bc fill when attacked low": 2,
-        "bc fill when attacked%": 100,
-        "conditions": [],
-        "passive id": "25",
-        "passive target": "self"
-      }
-    ],
-    "id": "26600",
-    "name": "Ancient Mysteries",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "738,676,150,409",
-  "unitDisplayDetailPosition_6z54rgb3": "-467,-474,1800,1319",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "-102,-9,880,645,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-390,-712,1698,1244",
-  "unitDisplaySummonPosition_KC3Jk8Br": "-102,-9,880,645,0",
-  "unitDisplayHpPosition_3BpHN6VD": "2,64",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "50000",
-  "sellCaution": false,
-  "effectFrames": "96:1124:1,85:11290:1,95:304:1,105:11290:1,115:304:1,95:400078:1,127:400180:1,120:400432:1"
+  "evoitem": ""
 }

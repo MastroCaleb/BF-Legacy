@@ -1,68 +1,98 @@
 {
   "id": "40876",
-  "unitName": "Thunder General Ewan",
-  "no": "1551",
-  "element": "Thunder",
-  "rarity": "★★★★★★★",
-  "cost": "46",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "4",
-  "animation_attack": "185",
-  "animation_idle": "64",
-  "animation_move": "3",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "13, 16, 52, 67, 80, 88, 94, 118",
-  "normal_distribute": "16, 14, 9, 9, 9, 9, 9, 25",
-  "normal_totaldistr": "100",
-  "bb_frames": "13, 16, 19, 22, 52, 67, 80, 88, 91, 94, 97, 118",
-  "bb_distribute": "10, 8, 7, 6, 7, 7, 7, 7, 7, 7, 7, 20",
-  "bb_totaldistr": "100",
-  "sbb_frames": "13, 16, 19, 22, 25, 52, 60, 67, 74, 80, 84, 88, 91, 94, 97, 118",
-  "sbb_distribute": "9, 8, 7, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 16",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "13, 16, 19, 22, 25, 28, 31, 34, 37, 52, 60, 67, 74, 80, 84, 88, 91, 94, 97, 118",
-  "ubb_distribute": "5, 5, 5, 5, 5, 5, 5, 5, 5, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 15",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "1",
-  "ubb_effectdelay": "1",
-  "description": "A general from the Kingdom of Dichmarde, one of the three most influential powers that served as the foundation for the Elgaia Federation. Unlike other allies of the kingdom which clamored for rebellion, such as the Frenbrook Republic and the Nuikar Tribal Alliance, Ewan advised his superiors that a friendly relationship with the Randall Empire would be in the best interest of their rapidly decaying nation. He spoke from his knowledge of the great strength of the Imperial Guard, and of the suffering of his people, but was nevertheless labeled a traitor. His king would repay his counsel by hiring the band of outlaws known as the Ten Vile Disnomians to take his life.",
-  "summon": "I shall fight for the powerless alone. If you have sought me for your own personal gain, then I suggest you look elsewhere for help.",
-  "fusion": "Fighting exhausts and disheartens people. I must become stronger if I am to end this as soon as possible.",
-  "evolution": "",
-  "hp_base": "5175",
-  "atk_base": "2396",
-  "def_base": "1901",
-  "rec_base": "1727",
-  "hp_lord": "7183",
-  "atk_lord": "3018",
-  "def_lord": "2704",
-  "rec_lord": "2716",
-  "hp_anima": "8075",
-  "rec_anima": "2478",
-  "atk_breaker": "3256",
-  "def_breaker": "2466",
-  "def_guardian": "2942",
-  "rec_guardian": "2597",
-  "def_oracle": "2585",
-  "rec_oracle": "3073",
-  "hp_bonus": "1000",
-  "atk_bonus": "600",
-  "def_bonus": "300",
-  "rec_bonus": "400",
-  "lordonly": "",
-  "combo_hits": "8",
-  "normaldc": "40",
-  "ls": "Benevolent Rage",
-  "lsdescription": "50% boost to Atk and max HP, 10% damage reduction from Water, Thunder types & hugely boosts Earth, Thunder elemental damage",
-  "lsnote": "100% boost to elemental damage",
+  "stats": {
+    "_base": {
+      "atk": 2396,
+      "def": 1901,
+      "hp": 5175,
+      "rec": 1727
+    },
+    "_lord": {
+      "atk": 3242,
+      "def": 2576,
+      "hp": 7369,
+      "rec": 2331
+    },
+    "anima": {
+      "atk": 3242,
+      "def": 2576,
+      "hp max": 8559,
+      "hp min": 7964,
+      "rec max": 2212,
+      "rec min": 1974
+    },
+    "breaker": {
+      "atk max": 3599,
+      "atk min": 3361,
+      "def max": 2457,
+      "def min": 2219,
+      "hp": 7369,
+      "rec": 2331
+    },
+    "guardian": {
+      "atk": 3242,
+      "def max": 2933,
+      "def min": 2695,
+      "hp": 7369,
+      "rec max": 2331,
+      "rec min": 2093
+    },
+    "oracle": {
+      "atk": 3242,
+      "def max": 2576,
+      "def min": 2338,
+      "hp": 7369,
+      "rec max": 2807,
+      "rec min": 2569
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to Atk and max HP, 10% damage reduction from Water, Thunder types & hugely boosts Earth, Thunder elemental damage ",
+    "effects": [
+      {
+        "atk% buff": 50,
+        "hp% buff": 50,
+        "passive id": "1"
+      },
+      {
+        "dmg% mitigation for elemental attacks": 10.0,
+        "mitigate thunder attacks": true,
+        "mitigate water attacks": true,
+        "passive id": "62"
+      },
+      {
+        "earth units do extra elemental weakness dmg": true,
+        "elemental weakness multiplier%": 100.0,
+        "passive id": "50",
+        "thunder units do extra elemental weakness dmg": true
+      }
+    ],
+    "id": "7487",
+    "name": "Benevolent Rage"
+  },
+  "extra_skill": {
+    "desc": "Considerably boosts Atk relative to remaining HP & 30% boost to Spark damage",
+    "effects": [
+      {
+        "atk% base buff": 0,
+        "atk% extra buff based on hp": 80,
+        "buff proportional to hp": "remaining",
+        "conditions": [],
+        "passive id": "46",
+        "passive target": "self"
+      },
+      {
+        "conditions": [],
+        "damage% for spark": 30,
+        "passive id": "31",
+        "passive target": "self"
+      }
+    ],
+    "id": "29100",
+    "name": "Strength from Sorrow",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -573,14 +603,6 @@
     ],
     "name": "Brave War Lance"
   },
-  "bbdescription": "12 combo Thunder attack on all foes, hugely boosts Earth, Thunder elemental damage for 3 turns, considerably boosts BB Atk for 3 turns & boosts Atk, Def of Thunder types for 3 turns",
-  "bbnote": "100% boost to elemental damage, 250% boost to BB Atk, 80% boost to Atk, Def of Thunder types",
-  "bbtype": "Offense",
-  "bbhits": "12",
-  "bbaoe": "A",
-  "bbgauge": "31",
-  "bbdc": "12",
-  "bbmultiplier": "380",
   "sbb": {
     "damage frames": [
       {
@@ -1201,14 +1223,6 @@
     ],
     "name": "Dichmarde's Purple Bolt"
   },
-  "sbbdescription": "16 combo powerful Thunder attack on all foes, hugely boosts Earth, Thunder elemental damage for 3 turns, considerably boosts BB Atk for 3 turns, considerably boosts Atk relative to max HP for 3 turns & boosts Atk, Def of Thunder types for 3 turns",
-  "sbbnote": "100% boost to elemental damage, 250% boost to BB Atk, 25% HP to Atk, 80% boost to Atk, Def of Thunder types",
-  "sbbtype": "Offense",
-  "sbbhits": "16",
-  "sbbaoe": "A",
-  "sbbgauge": "33",
-  "sbbdc": "16",
-  "sbbmultiplier": "580",
   "ubb": {
     "damage frames": [
       {
@@ -1390,6 +1404,229 @@
     ],
     "name": "Allegiance"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_under",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 30.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 70.0,
+      "target conditions": "hp_max",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 50.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 185
+    },
+    "idle": {
+      "total number of frames": 64
+    },
+    "move": {
+      "total number of frames": 3
+    }
+  },
+  "category": 40870,
+  "cost": "46",
+  "damage frames": {
+    "frame times": [
+      13,
+      16,
+      52,
+      67,
+      80,
+      88,
+      94,
+      118
+    ],
+    "hit dmg% distribution": [
+      16,
+      14,
+      9,
+      9,
+      9,
+      9,
+      9,
+      25
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 8
+  },
+  "drop check count": 5,
+  "element": "thunder",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 1551,
+  "imp": {
+    "max atk": "600",
+    "max def": "300",
+    "max hp": "1000",
+    "max rec": "400"
+  },
+  "kind": "normal",
+  "lord damage range": "3018~3371",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Thunder General Ewan",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Thunder General Ewan",
+  "maxlv": "120",
+  "no": "1551",
+  "unitDisplayHomePosition_1W9CxaFK": "553,205,180,491",
+  "unitDisplayDetailPosition_6z54rgb3": "-134,49,1020,755",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "29,238,520,385,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-107,-214,970,718",
+  "unitDisplaySummonPosition_KC3Jk8Br": "29,238,520,385,0",
+  "unitDisplayHpPosition_3BpHN6VD": "0,59",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "15000",
+  "sellCaution": false,
+  "effectFrames": "7:120:1,10:120:1,46:120:1,61:120:1,74:120:1,82:120:1,88:120:1,112:120:1,13:400421:1,20:600750:1,52:600762:1,68:601612:1,117:600201:1,118:400421:1,125:400421:1,130:600750:1",
+  "evofrom": "",
+  "evointo": "40877",
+  "evozelcost": "3000000",
+  "evokarmacost": "1000000",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "40334",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40191",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "40132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "185",
+  "animation_idle": "64",
+  "animation_move": "3",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "13, 16, 52, 67, 80, 88, 94, 118",
+  "normal_distribute": "16, 14, 9, 9, 9, 9, 9, 25",
+  "normal_totaldistr": "100",
+  "bb_frames": "13, 16, 19, 22, 52, 67, 80, 88, 91, 94, 97, 118",
+  "bb_distribute": "10, 8, 7, 6, 7, 7, 7, 7, 7, 7, 7, 20",
+  "bb_totaldistr": "100",
+  "sbb_frames": "13, 16, 19, 22, 25, 52, 60, 67, 74, 80, 84, 88, 91, 94, 97, 118",
+  "sbb_distribute": "9, 8, 7, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 16",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "13, 16, 19, 22, 25, 28, 31, 34, 37, 52, 60, 67, 74, 80, 84, 88, 91, 94, 97, 118",
+  "ubb_distribute": "5, 5, 5, 5, 5, 5, 5, 5, 5, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 15",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "1",
+  "ubb_effectdelay": "1",
+  "description": "A general from the Kingdom of Dichmarde, one of the three most influential powers that served as the foundation for the Elgaia Federation. Unlike other allies of the kingdom which clamored for rebellion, such as the Frenbrook Republic and the Nuikar Tribal Alliance, Ewan advised his superiors that a friendly relationship with the Randall Empire would be in the best interest of their rapidly decaying nation. He spoke from his knowledge of the great strength of the Imperial Guard, and of the suffering of his people, but was nevertheless labeled a traitor. His king would repay his counsel by hiring the band of outlaws known as the Ten Vile Disnomians to take his life.",
+  "summon": "I shall fight for the powerless alone. If you have sought me for your own personal gain, then I suggest you look elsewhere for help.",
+  "fusion": "Fighting exhausts and disheartens people. I must become stronger if I am to end this as soon as possible.",
+  "evolution": "",
+  "hp_base": "5175",
+  "atk_base": "2396",
+  "def_base": "1901",
+  "rec_base": "1727",
+  "hp_lord": "7183",
+  "atk_lord": "3018",
+  "def_lord": "2704",
+  "rec_lord": "2716",
+  "hp_anima": "8075",
+  "rec_anima": "2478",
+  "atk_breaker": "3256",
+  "def_breaker": "2466",
+  "def_guardian": "2942",
+  "rec_guardian": "2597",
+  "def_oracle": "2585",
+  "rec_oracle": "3073",
+  "hp_bonus": "1000",
+  "atk_bonus": "600",
+  "def_bonus": "300",
+  "rec_bonus": "400",
+  "lordonly": "",
+  "combo_hits": "8",
+  "normaldc": "40",
+  "ls": "Benevolent Rage",
+  "lsdescription": "50% boost to Atk and max HP, 10% damage reduction from Water, Thunder types & hugely boosts Earth, Thunder elemental damage",
+  "lsnote": "100% boost to elemental damage",
+  "bbdescription": "12 combo Thunder attack on all foes, hugely boosts Earth, Thunder elemental damage for 3 turns, considerably boosts BB Atk for 3 turns & boosts Atk, Def of Thunder types for 3 turns",
+  "bbnote": "100% boost to elemental damage, 250% boost to BB Atk, 80% boost to Atk, Def of Thunder types",
+  "bbtype": "Offense",
+  "bbhits": "12",
+  "bbaoe": "A",
+  "bbgauge": "31",
+  "bbdc": "12",
+  "bbmultiplier": "380",
+  "sbbdescription": "16 combo powerful Thunder attack on all foes, hugely boosts Earth, Thunder elemental damage for 3 turns, considerably boosts BB Atk for 3 turns, considerably boosts Atk relative to max HP for 3 turns & boosts Atk, Def of Thunder types for 3 turns",
+  "sbbnote": "100% boost to elemental damage, 250% boost to BB Atk, 25% HP to Atk, 80% boost to Atk, Def of Thunder types",
+  "sbbtype": "Offense",
+  "sbbhits": "16",
+  "sbbaoe": "A",
+  "sbbgauge": "33",
+  "sbbdc": "16",
+  "sbbmultiplier": "580",
   "ubbdescription": "20 combo massive Thunder attack on all foes, enormously boosts Earth, Thunder elemental damage for 3 turns, enormously boosts BB Atk for 3 turns, enormously boosts Atk relative to max HP for 3 turns, enormously boosts Atk of Thunder types for 3 turns & considerably reduces damage from Earth, Thunder types for 3 turns",
   "ubbnote": "350% boost to elemental damage, 500% boost to BB Atk, 50% HP to Atk, 300% boost to Atk, Def of Thunder types, 60% damage reduction",
   "ubbtype": "Offense",
@@ -1402,8 +1639,6 @@
   "esitem": "",
   "esdescription": "Considerably boosts Atk relative to remaining HP & 30% boost to Spark damage",
   "esnote": "+0.8% boost per 1% HP remaining, 80% max.",
-  "evofrom": "",
-  "evointo": "40877",
   "evomats1": "Thunder Mecha God",
   "evomats2": "Thunder Mecha God",
   "evomats3": "Miracle Totem",
@@ -1412,109 +1647,5 @@
   "evomats6": "Dragon Mimic",
   "evomats7": "Metal Mimic",
   "evomats8": "Metal Mimic",
-  "evoitem": "",
-  "evozelcost": "3000000",
-  "stats": {
-    "_base": {
-      "atk": 2396,
-      "def": 1901,
-      "hp": 5175,
-      "rec": 1727
-    },
-    "_lord": {
-      "atk": 3242,
-      "def": 2576,
-      "hp": 7369,
-      "rec": 2331
-    },
-    "anima": {
-      "atk": 3242,
-      "def": 2576,
-      "hp max": 8559,
-      "hp min": 7964,
-      "rec max": 2212,
-      "rec min": 1974
-    },
-    "breaker": {
-      "atk max": 3599,
-      "atk min": 3361,
-      "def max": 2457,
-      "def min": 2219,
-      "hp": 7369,
-      "rec": 2331
-    },
-    "guardian": {
-      "atk": 3242,
-      "def max": 2933,
-      "def min": 2695,
-      "hp": 7369,
-      "rec max": 2331,
-      "rec min": 2093
-    },
-    "oracle": {
-      "atk": 3242,
-      "def max": 2576,
-      "def min": 2338,
-      "hp": 7369,
-      "rec max": 2807,
-      "rec min": 2569
-    }
-  },
-  "leader_skill": {
-    "desc": "50% boost to Atk and max HP, 10% damage reduction from Water, Thunder types & hugely boosts Earth, Thunder elemental damage ",
-    "effects": [
-      {
-        "atk% buff": 50,
-        "hp% buff": 50,
-        "passive id": "1"
-      },
-      {
-        "dmg% mitigation for elemental attacks": 10.0,
-        "mitigate thunder attacks": true,
-        "mitigate water attacks": true,
-        "passive id": "62"
-      },
-      {
-        "earth units do extra elemental weakness dmg": true,
-        "elemental weakness multiplier%": 100.0,
-        "passive id": "50",
-        "thunder units do extra elemental weakness dmg": true
-      }
-    ],
-    "id": "7487",
-    "name": "Benevolent Rage"
-  },
-  "extra_skill": {
-    "desc": "Considerably boosts Atk relative to remaining HP & 30% boost to Spark damage",
-    "effects": [
-      {
-        "atk% base buff": 0,
-        "atk% extra buff based on hp": 80,
-        "buff proportional to hp": "remaining",
-        "conditions": [],
-        "passive id": "46",
-        "passive target": "self"
-      },
-      {
-        "conditions": [],
-        "damage% for spark": 30,
-        "passive id": "31",
-        "passive target": "self"
-      }
-    ],
-    "id": "29100",
-    "name": "Strength from Sorrow",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "553,205,180,491",
-  "unitDisplayDetailPosition_6z54rgb3": "-134,49,1020,755",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "29,238,520,385,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-107,-214,970,718",
-  "unitDisplaySummonPosition_KC3Jk8Br": "29,238,520,385,0",
-  "unitDisplayHpPosition_3BpHN6VD": "0,59",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "15000",
-  "sellCaution": false,
-  "effectFrames": "7:120:1,10:120:1,46:120:1,61:120:1,74:120:1,82:120:1,88:120:1,112:120:1,13:400421:1,20:600750:1,52:600762:1,68:601612:1,117:600201:1,118:400421:1,125:400421:1,130:600750:1"
+  "evoitem": ""
 }

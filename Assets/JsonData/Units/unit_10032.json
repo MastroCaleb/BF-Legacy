@@ -1,61 +1,70 @@
 {
   "id": "10032",
-  "unitName": "Kaiser Burny",
-  "no": "1079",
-  "element": "Fire",
-  "rarity": "★★★",
-  "cost": "5",
-  "maxlv": "40",
-  "basexp": "10",
-  "gender": "N",
-  "ai": "2",
-  "animation_attack": "71",
-  "animation_idle": "112",
-  "animation_move": "7",
-  "movespeed_attack": "0.0041",
-  "movespeed_skill": "0.0041",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "30, 33, 36",
-  "normal_distribute": "33, 33, 34",
-  "normal_totaldistr": "100",
-  "bb_frames": "30, 34, 38, 42, 45, 49",
-  "bb_distribute": "20, 14, 19, 14, 19, 14",
-  "bb_totaldistr": "100",
-  "description": "The Kaiser Burny was first discovered in some rivers of lava found in Ishgria. Moving from place to place in hopes of finding highly explosive substances, this creature was mistakenly absorbed by a demon, which in turned altered its appearance. Though friendly for the most part, the Kaiser Burny tends to consume the Burny with the brightest flame in its pack when it is hungry. Thus, it is best to keep a safe distance away from this dangerous creature, especially when the flame on its head starts burning in a bluish hue.",
-  "summon": "You look yummy! *Sizzle*<br>If I don't get some good fire to eat<br>I'll eat you up instead! *Sizzle*",
-  "fusion": "\"My insides are burning! *Sizzle*<br>I feel like I'm going to explode<br>really, really soon!",
-  "evolution": "I feel kinda strange. *Sizzle*<br>I think I ate a really gross<br>fire pit somewhere... *Sizzle*",
-  "hp_base": "1670",
-  "atk_base": "600",
-  "def_base": "530",
-  "rec_base": "450",
-  "hp_lord": "3494",
-  "atk_lord": "946",
-  "def_lord": "849",
-  "rec_lord": "761",
-  "hp_anima": "3786",
-  "rec_anima": "683",
-  "atk_breaker": "1024",
-  "def_breaker": "771",
-  "atk_guardian": "",
-  "def_guardian": "927",
-  "rec_guardian": "722",
-  "def_oracle": "810",
-  "hp_oracle": "",
-  "rec_oracle": "878",
-  "hp_bonus": "3000",
-  "atk_bonus": "1200",
-  "def_bonus": "1200",
-  "rec_bonus": "1200",
-  "lordonly": "",
-  "combo_hits": "3",
-  "normaldc": "9",
-  "ls": "Divine Fire Crown",
-  "lsdescription": "15% boost to Atk of Fire types & 15% damage reduction from Fire types",
-  "lstype": "Attack/Defense",
+  "stats": {
+    "_base": {
+      "atk": 600,
+      "def": 530,
+      "hp": 1670,
+      "rec": 450
+    },
+    "_lord": {
+      "atk": 946,
+      "def": 849,
+      "hp": 3494,
+      "rec": 761
+    },
+    "anima": {
+      "atk": 946,
+      "def": 849,
+      "hp max": 3884,
+      "hp min": 3689,
+      "rec max": 722,
+      "rec min": 644
+    },
+    "breaker": {
+      "atk max": 1063,
+      "atk min": 985,
+      "def max": 810,
+      "def min": 732,
+      "hp": 3494,
+      "rec": 761
+    },
+    "guardian": {
+      "atk": 946,
+      "def max": 966,
+      "def min": 888,
+      "hp": 3494,
+      "rec max": 761,
+      "rec min": 683
+    },
+    "oracle": {
+      "atk": 946,
+      "def max": 849,
+      "def min": 771,
+      "hp": 3494,
+      "rec max": 917,
+      "rec min": 839
+    }
+  },
+  "leader_skill": {
+    "desc": "15% boost to Atk of Fire types & 15% damage reduction from Fire types ",
+    "effects": [
+      {
+        "atk% buff": 15,
+        "elements buffed": [
+          "fire"
+        ],
+        "passive id": "2"
+      },
+      {
+        "fire resist%": 15,
+        "passive id": "5"
+      }
+    ],
+    "id": "9760",
+    "name": "Divine Fire Crown"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -218,102 +227,87 @@
     ],
     "name": "Flame Gulp"
   },
-  "bbdescription": "6 combo powerful Fire attack on all foes",
-  "bbtype": "Offense",
-  "bbhits": "6",
-  "bbaoe": "A",
-  "bbgauge": "12",
-  "bbdc": "6",
-  "bbmultiplier": "130",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "es": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "10031",
-  "evointo": "",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 600,
-      "def": 530,
-      "hp": 1670,
-      "rec": 450
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 946,
-      "def": 849,
-      "hp": 3494,
-      "rec": 761
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 946,
-      "def": 849,
-      "hp max": 3884,
-      "hp min": 3689,
-      "rec max": 722,
-      "rec min": 644
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 71
     },
-    "breaker": {
-      "atk max": 1063,
-      "atk min": 985,
-      "def max": 810,
-      "def min": 732,
-      "hp": 3494,
-      "rec": 761
+    "idle": {
+      "total number of frames": 112
     },
-    "guardian": {
-      "atk": 946,
-      "def max": 966,
-      "def min": 888,
-      "hp": 3494,
-      "rec max": 761,
-      "rec min": 683
-    },
-    "oracle": {
-      "atk": 946,
-      "def max": 849,
-      "def min": 771,
-      "hp": 3494,
-      "rec max": 917,
-      "rec min": 839
+    "move": {
+      "total number of frames": 7
     }
   },
-  "leader_skill": {
-    "desc": "15% boost to Atk of Fire types & 15% damage reduction from Fire types ",
-    "effects": [
-      {
-        "atk% buff": 15,
-        "elements buffed": [
-          "fire"
-        ],
-        "passive id": "2"
-      },
-      {
-        "fire resist%": 15,
-        "passive id": "5"
-      }
+  "category": 10030,
+  "cost": "5",
+  "damage frames": {
+    "frame times": [
+      30,
+      33,
+      36
     ],
-    "id": "9760",
-    "name": "Divine Fire Crown"
+    "hit dmg% distribution": [
+      33,
+      33,
+      34
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 3
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "fire",
+  "exp_pattern": 10,
+  "gender": "other",
+  "getting type": "farmable",
+  "guide_id": 1079,
+  "imp": {
+    "max atk": "1200",
+    "max def": "1200",
+    "max hp": "3000",
+    "max rec": "1200"
+  },
+  "kind": "normal",
+  "lord damage range": "880~983",
+  "movement": {
+    "attack": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    }
+  },
+  "name": "Kaiser Burny",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "Kaiser Burny",
+  "maxlv": "40",
+  "no": "1079",
   "unitDisplayHomePosition_1W9CxaFK": "196,184,240,655",
   "unitDisplayDetailPosition_6z54rgb3": "114,23,730,791",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "151,171,400,433,1",
@@ -323,5 +317,84 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "1000",
   "sellCaution": false,
-  "effectFrames": "27:121:1,31:121:1,30:1141:1,37:100082:1"
+  "effectFrames": "27:121:1,31:121:1,30:1141:1,37:100082:1",
+  "evofrom": "10031",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "10",
+  "animation_attack": "71",
+  "animation_idle": "112",
+  "animation_move": "7",
+  "movespeed_attack": "0.0041",
+  "movespeed_skill": "0.0041",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "30, 33, 36",
+  "normal_distribute": "33, 33, 34",
+  "normal_totaldistr": "100",
+  "bb_frames": "30, 34, 38, 42, 45, 49",
+  "bb_distribute": "20, 14, 19, 14, 19, 14",
+  "bb_totaldistr": "100",
+  "description": "The Kaiser Burny was first discovered in some rivers of lava found in Ishgria. Moving from place to place in hopes of finding highly explosive substances, this creature was mistakenly absorbed by a demon, which in turned altered its appearance. Though friendly for the most part, the Kaiser Burny tends to consume the Burny with the brightest flame in its pack when it is hungry. Thus, it is best to keep a safe distance away from this dangerous creature, especially when the flame on its head starts burning in a bluish hue.",
+  "summon": "You look yummy! *Sizzle*<br>If I don't get some good fire to eat<br>I'll eat you up instead! *Sizzle*",
+  "fusion": "\"My insides are burning! *Sizzle*<br>I feel like I'm going to explode<br>really, really soon!",
+  "evolution": "I feel kinda strange. *Sizzle*<br>I think I ate a really gross<br>fire pit somewhere... *Sizzle*",
+  "hp_base": "1670",
+  "atk_base": "600",
+  "def_base": "530",
+  "rec_base": "450",
+  "hp_lord": "3494",
+  "atk_lord": "946",
+  "def_lord": "849",
+  "rec_lord": "761",
+  "hp_anima": "3786",
+  "rec_anima": "683",
+  "atk_breaker": "1024",
+  "def_breaker": "771",
+  "atk_guardian": "",
+  "def_guardian": "927",
+  "rec_guardian": "722",
+  "def_oracle": "810",
+  "hp_oracle": "",
+  "rec_oracle": "878",
+  "hp_bonus": "3000",
+  "atk_bonus": "1200",
+  "def_bonus": "1200",
+  "rec_bonus": "1200",
+  "lordonly": "",
+  "combo_hits": "3",
+  "normaldc": "9",
+  "ls": "Divine Fire Crown",
+  "lsdescription": "15% boost to Atk of Fire types & 15% damage reduction from Fire types",
+  "lstype": "Attack/Defense",
+  "bbdescription": "6 combo powerful Fire attack on all foes",
+  "bbtype": "Offense",
+  "bbhits": "6",
+  "bbaoe": "A",
+  "bbgauge": "12",
+  "bbdc": "6",
+  "bbmultiplier": "130",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "es": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "",
+  "evomats2": "",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": "",
+  "evoitem": ""
 }

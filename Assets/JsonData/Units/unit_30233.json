@@ -1,60 +1,65 @@
 {
   "id": "30233",
-  "unitName": "Lugina",
-  "freetext": ":''For other uses, see Lugina (disambiguation).''",
-  "no": "336",
-  "element": "Earth",
-  "rarity": "★★★★",
-  "cost": "10",
-  "maxlv": "60",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "113",
-  "animation_idle": "100",
-  "animation_move": "13",
-  "movespeed_attack": "0.0024",
-  "movespeed_skill": "0.0024",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "7, 22, 41, 56, 78",
-  "normal_distribute": "30, 10, 15, 10, 20",
-  "normal_totaldistr": "85",
-  "bb_frames": "7, 22, 41, 56, 78, 90, 102, 110",
-  "bb_distribute": "20, 10, 10, 10, 20, 10, 10, 10",
-  "bb_totaldistr": "100",
-  "description": "A mock Unit modeled after Lugina, a Summoner belonging to the Akras Summoners' Hall. The real Lugina is leader of the 23rd Demon Slayers Division \"Sky Guardians.\" Full of unwavering pride in himself, many regarded his rivalry with the very popular Karl as odd. Though his strength as a Summoner is impressive thanks to his well calculated actions, his conduct and way of speaking often get him into trouble.",
-  "summon": "Huh!?<br>I was summoned by you!?<br>How bothersome!",
-  "fusion": "Huh!?<br>Hey, you don't think that's<br>enough already, do you?",
-  "evolution": "",
-  "hp_base": "3090",
-  "atk_base": "1100",
-  "def_base": "750",
-  "rec_base": "690",
-  "hp_lord": "4650",
-  "atk_lord": "1640",
-  "def_lord": "1110",
-  "rec_lord": "950",
-  "hp_anima": "5093",
-  "rec_anima": "832",
-  "atk_breaker": "1758",
-  "def_breaker": "992",
-  "atk_guardian": "1522",
-  "def_guardian": "1228",
-  "hp_oracle": "4473",
-  "rec_oracle": "1127",
-  "hp_bonus": "400",
-  "atk_bonus": "160",
-  "def_bonus": "160",
-  "rec_bonus": "160",
-  "lordonly": "true",
-  "combo_hits": "5",
-  "normaldc": "10",
-  "ls": "Instant Assault",
-  "lsdescription": "25% boost to Atk and Def for first 2 turns",
-  "lstype": "Attack/Defense",
+  "stats": {
+    "_base": {
+      "atk": 1100,
+      "def": 750,
+      "hp": 3090,
+      "rec": 690
+    },
+    "_lord": {
+      "atk": 1640,
+      "def": 1110,
+      "hp": 4650,
+      "rec": 950
+    },
+    "anima": {
+      "atk": 1640,
+      "def": 1110,
+      "hp max": 5240,
+      "hp min": 4945,
+      "rec max": 891,
+      "rec min": 773
+    },
+    "breaker": {
+      "atk max": 1817,
+      "atk min": 1699,
+      "def max": 1051,
+      "def min": 933,
+      "hp": 4650,
+      "rec": 950
+    },
+    "guardian": {
+      "atk": 1640,
+      "def max": 1287,
+      "def min": 1169,
+      "hp": 4650,
+      "rec max": 950,
+      "rec min": 832
+    },
+    "oracle": {
+      "atk": 1640,
+      "def max": 1110,
+      "def min": 992,
+      "hp": 4650,
+      "rec max": 1186,
+      "rec min": 1068
+    }
+  },
+  "leader_skill": {
+    "desc": "25% boost to Atk and Def for first 2 turns",
+    "effects": [
+      {
+        "first x turns": 2,
+        "first x turns atk% (1)": 25,
+        "first x turns def% (3)": 25,
+        "passive id": "21"
+      }
+    ],
+    "id": "2500",
+    "name": "Instant Assault"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -221,95 +226,91 @@
     ],
     "name": "Ground Zapper"
   },
-  "bbdescription": "8 combo powerful Earth attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "8",
-  "bbaoe": "A",
-  "bbgauge": "16",
-  "bbdc": "8",
-  "bbmultiplier": "105",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "30234",
-  "evomats1": "30133",
-  "evomats2": "30132",
-  "evomats3": "30132",
-  "evomats4": "30191",
-  "evomats5": "30191",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 1100,
-      "def": 750,
-      "hp": 3090,
-      "rec": 690
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1640,
-      "def": 1110,
-      "hp": 4650,
-      "rec": 950
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1640,
-      "def": 1110,
-      "hp max": 5240,
-      "hp min": 4945,
-      "rec max": 891,
-      "rec min": 773
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 113
     },
-    "breaker": {
-      "atk max": 1817,
-      "atk min": 1699,
-      "def max": 1051,
-      "def min": 933,
-      "hp": 4650,
-      "rec": 950
+    "idle": {
+      "total number of frames": 100
     },
-    "guardian": {
-      "atk": 1640,
-      "def max": 1287,
-      "def min": 1169,
-      "hp": 4650,
-      "rec max": 950,
-      "rec min": 832
-    },
-    "oracle": {
-      "atk": 1640,
-      "def max": 1110,
-      "def min": 992,
-      "hp": 4650,
-      "rec max": 1186,
-      "rec min": 1068
+    "move": {
+      "total number of frames": 13
     }
   },
-  "leader_skill": {
-    "desc": "25% boost to Atk and Def for first 2 turns",
-    "effects": [
-      {
-        "first x turns": 2,
-        "first x turns atk% (1)": 25,
-        "first x turns def% (3)": 25,
-        "passive id": "21"
-      }
+  "category": 30230,
+  "cost": "10",
+  "damage frames": {
+    "frame times": [
+      7,
+      22,
+      41,
+      56,
+      78
     ],
-    "id": "2500",
-    "name": "Instant Assault"
+    "hit dmg% distribution": [
+      30,
+      10,
+      15,
+      10,
+      20
+    ],
+    "hit dmg% distribution (total)": 85,
+    "hits": 5
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "earth",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "farmable",
+  "guide_id": 336,
+  "imp": {
+    "max atk": "160",
+    "max def": "160",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "1527~1705",
+  "movement": {
+    "attack": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    }
+  },
+  "name": "Lugina",
+  "rarity": "4",
+  "sell caution": true,
+  "unitName": "Lugina",
+  "maxlv": "60",
+  "no": "336",
   "unitDisplayHomePosition_1W9CxaFK": "418,201,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-94,-22,901,834",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "160,336,297,293,0",
@@ -319,5 +320,97 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": true,
-  "effectFrames": "1:123:1,16:123:1,35:123:1,50:123:1,72:123:1,72:230:1"
+  "effectFrames": "1:123:1,16:123:1,35:123:1,50:123:1,72:123:1,72:230:1",
+  "evofrom": "",
+  "evointo": "30234",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "30133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30132",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "30191",
+      "count": 2
+    }
+  ],
+  "freetext": ":''For other uses, see Lugina (disambiguation).''",
+  "basexp": "21",
+  "animation_attack": "113",
+  "animation_idle": "100",
+  "animation_move": "13",
+  "movespeed_attack": "0.0024",
+  "movespeed_skill": "0.0024",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "7, 22, 41, 56, 78",
+  "normal_distribute": "30, 10, 15, 10, 20",
+  "normal_totaldistr": "85",
+  "bb_frames": "7, 22, 41, 56, 78, 90, 102, 110",
+  "bb_distribute": "20, 10, 10, 10, 20, 10, 10, 10",
+  "bb_totaldistr": "100",
+  "description": "A mock Unit modeled after Lugina, a Summoner belonging to the Akras Summoners' Hall. The real Lugina is leader of the 23rd Demon Slayers Division \"Sky Guardians.\" Full of unwavering pride in himself, many regarded his rivalry with the very popular Karl as odd. Though his strength as a Summoner is impressive thanks to his well calculated actions, his conduct and way of speaking often get him into trouble.",
+  "summon": "Huh!?<br>I was summoned by you!?<br>How bothersome!",
+  "fusion": "Huh!?<br>Hey, you don't think that's<br>enough already, do you?",
+  "evolution": "",
+  "hp_base": "3090",
+  "atk_base": "1100",
+  "def_base": "750",
+  "rec_base": "690",
+  "hp_lord": "4650",
+  "atk_lord": "1640",
+  "def_lord": "1110",
+  "rec_lord": "950",
+  "hp_anima": "5093",
+  "rec_anima": "832",
+  "atk_breaker": "1758",
+  "def_breaker": "992",
+  "atk_guardian": "1522",
+  "def_guardian": "1228",
+  "hp_oracle": "4473",
+  "rec_oracle": "1127",
+  "hp_bonus": "400",
+  "atk_bonus": "160",
+  "def_bonus": "160",
+  "rec_bonus": "160",
+  "lordonly": "true",
+  "combo_hits": "5",
+  "normaldc": "10",
+  "ls": "Instant Assault",
+  "lsdescription": "25% boost to Atk and Def for first 2 turns",
+  "lstype": "Attack/Defense",
+  "bbdescription": "8 combo powerful Earth attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "8",
+  "bbaoe": "A",
+  "bbgauge": "16",
+  "bbdc": "8",
+  "bbmultiplier": "105",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "30133",
+  "evomats2": "30132",
+  "evomats3": "30132",
+  "evomats4": "30191",
+  "evomats5": "30191"
 }

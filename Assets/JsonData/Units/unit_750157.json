@@ -1,67 +1,130 @@
 {
   "id": "750157",
-  "unitName": "Avenging Angel Blink (EU)",
-  "disam": "Blink (disambiguation)",
-  "altname": "Avenging Angel Blink",
-  "idalt": "",
-  "has_altart": "",
-  "doenter": "true",
-  "no": "7101",
-  "element": "Light",
-  "rarity": "Dream",
-  "cost": "48",
-  "maxlv": "150",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "3",
-  "animation_attack": "192",
-  "animation_idle": "96",
-  "animation_move": "96",
-  "movespeed_attack": "0.0033",
-  "speedtype_attack": "3",
-  "movetype_attack": "1",
-  "movespeed_skill": "0.0033",
-  "speedtype_skill": "3",
-  "movetype_skill": "1",
-  "description": "Plumatachi was everything to Blink. Had Blink and Plumatachi’s roles been reversed during Coal Cauldron’s attack, history would have been quite different. Plumatachi would have lost her life instead of Blink. Consumed by grief, Blink would have dedicated her body and soul to avenging her, dismantling her motorcycle to create a prosthesis in order to replace the limb she lost during Coal Cauldron’s attack. She would have used Techs to create new weapons meant to kill everyone who participated in the attack.",
-  "summon": "",
-  "fusion": "Crushing Coal’s band is the only thing left for me to do now, and I’ll need all the help I can get.",
-  "evolution": "I’ll avenge you, my love!",
-  "hp_base": "6598",
-  "atk_base": "2377",
-  "def_base": "2246",
-  "rec_base": "2377",
-  "hp_lord": "8050",
-  "atk_lord": "2900",
-  "def_lord": "2740",
-  "rec_lord": "2900",
-  "hp_anima": "9167",
-  "rec_anima": "2602",
-  "atk_breaker": "3198",
-  "def_breaker": "2442",
-  "def_guardian": "3038",
-  "rec_guardian": "2900",
-  "def_oracle": "2740",
-  "rec_oracle": "3198",
-  "hp_bonus": "1500",
-  "atk_bonus": "600",
-  "def_bonus": "600",
-  "rec_bonus": "600",
-  "lordonly": "",
-  "evofrom": "750155",
-  "evointo": "",
-  "normal_frames": "120",
-  "normal_distribute": "100",
-  "normal_totaldistr": "100",
-  "combo_hits": "1",
-  "normaldc": "41",
-  "ls": "Revenge at Any Cost",
-  "lsdescription": "Boosts ATK, REC, HP (60%) & boosts ATK, REC (80%) when BB gauge is over 50% & chance to reduce damage to 1 (15%) & normal attack boosts BB gauge (10 BC)",
-  "lsnote": "",
-  "es": "Memory of the Soulmate",
-  "esdescription": "Damage taken boosts BB gauge (3 BC) & Adds Def ignoring effect for 2 turns to BB/SBB & if Plumatachi's Glasses is equipped, adds probable resistance against 1 KO attack (50%)",
-  "esitem": "Plumatachi's Glasses",
-  "esnote": "",
+  "stats": {
+    "_base": {
+      "atk": 2377,
+      "def": 2246,
+      "hp": 6598,
+      "rec": 2377
+    },
+    "_lord": {
+      "atk": 2900,
+      "def": 2740,
+      "hp": 8050,
+      "rec": 2900
+    },
+    "anima": {
+      "atk": 2900,
+      "def": 2740,
+      "hp max": 9540,
+      "hp min": 8795,
+      "rec max": 2751,
+      "rec min": 2453
+    },
+    "breaker": {
+      "atk max": 3347,
+      "atk min": 3049,
+      "def max": 2591,
+      "def min": 2293,
+      "hp": 8050,
+      "rec": 2900
+    },
+    "guardian": {
+      "atk max": 2751,
+      "atk min": 2453,
+      "def max": 3187,
+      "def min": 2889,
+      "hp": 8050,
+      "rec": 2900
+    },
+    "oracle": {
+      "atk": 2900,
+      "def": 2740,
+      "hp max": 7305,
+      "hp min": 6560,
+      "rec max": 3347,
+      "rec min": 3049
+    }
+  },
+  "leader_skill": {
+    "desc": "Boosts ATK, REC, HP (60%) & boosts ATK, REC (80%) when BB gauge is over 50% & chance to reduce damage to 1 (15%) & normal attack boosts BB gauge (10 BC)",
+    "effects": [
+      {
+        "passive id": "43",
+        "take 1 dmg%": 15
+      },
+      {
+        "atk% buff": 60,
+        "hp% buff": 60,
+        "passive id": "1",
+        "rec% buff": 60
+      },
+      {
+        "atk% buff": 80,
+        "bb gauge above % buff requirement": 50,
+        "passive id": "30",
+        "rec% buff": 80
+      },
+      {
+        "bc fill when attacking high": 10,
+        "bc fill when attacking low": 10,
+        "bc fill when attacking%": 100,
+        "passive id": "35"
+      }
+    ],
+    "id": "750157",
+    "name": "Revenge at Any Cost"
+  },
+  "extra_skill": {
+    "desc": "Damage taken boosts BB gauge (3 BC) & Adds Def ignoring effect for 2 turns to BB/SBB & if Plumatachi's Glasses is equipped, adds probable resistance against 1 KO attack (50%)",
+    "effects": [
+      {
+        "bc fill when attacked high": 3,
+        "bc fill when attacked low": 3,
+        "bc fill when attacked%": 100,
+        "conditions": [],
+        "passive id": "25",
+        "passive target": "self"
+      },
+      {
+        "conditions": [],
+        "passive id": "66",
+        "passive target": "self",
+        "trigger on bb": true,
+        "trigger on sbb": true,
+        "triggered effect": [
+          {
+            "defense% ignore": 100,
+            "defense% ignore turns (39)": 2,
+            "effect delay time(ms)/frame": "0.0/0",
+            "proc id": "22",
+            "target area": "aoe",
+            "target type": "party"
+          }
+        ]
+      },
+      {
+        "angel idol chance% condition": 0,
+        "angel idol recover chance% high": 50,
+        "angel idol recover chance% low": 50,
+        "angel idol recover counts": 1,
+        "angel idol recover hp%": 1,
+        "conditions": [
+          {
+            "item required": [
+              "701033"
+            ]
+          }
+        ],
+        "passive id": "69",
+        "passive target": "self"
+      }
+    ],
+    "id": "750157",
+    "name": "Memory of the Soulmate",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -530,43 +593,6 @@
     ],
     "name": "Vengeful Light"
   },
-  "bbdescription": "Light attack on all foes & boosts REC (180%) for 3 turns & boosts DEF relative to REC (90%) for 3 turns & boosts own ATK, DEF, REC (120%) for 3 turns",
-  "bbnote": "{{UnitBuffList",
-  "buff_1_proc": "47",
-  "buff_1_potency": "1500% + 1000% * (current HP / base max HP) damage modifier",
-  "buff_1_duration": "—",
-  "buff_1_target": "All enemies",
-  "buff_2_proc": "5_atk",
-  "buff_2_potency": "300% boost to Atk",
-  "buff_2_duration": "3 turns",
-  "buff_2_target": "All allies",
-  "buff_3_proc": "5_def",
-  "buff_3_potency": "300% boost to Def",
-  "buff_3_duration": "3 turns",
-  "buff_3_target": "All allies",
-  "buff_4_proc": "5_rec",
-  "buff_4_potency": "300% boost to Rec",
-  "buff_4_duration": "3 turns",
-  "buff_4_target": "All allies",
-  "buff_5_proc": "56",
-  "buff_5_potency": "70% chance of resisting 1 KO, restores 100% of unit's HP",
-  "buff_5_duration": "999 turns",
-  "buff_5_target": "All allies",
-  "buff_6_proc": "62_light",
-  "buff_6_potency": "Activates Light barrier with 25000 HP",
-  "buff_6_duration": "—",
-  "buff_6_target": "All allies",
-  "bbtype": "Offense",
-  "bbgauge": "21",
-  "bb_frames": "120",
-  "bb_distribute": "100",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "3",
-  "bbhits": "1",
-  "bbaoe": "A",
-  "bbdc": "22",
-  "bbmultiplier": "420",
-  "bb_hpscale": "",
   "sbb": {
     "damage frames": [
       {
@@ -1025,19 +1051,6 @@
     ],
     "name": "Merciless Radiance"
   },
-  "sbbdescription": "Light attack on all foes & boosts REC (180%) for 3 turns & boosts REC relative to HP (15%) & boosts ATK relative to REC (90%) for 3 turns",
-  "sbbnote": "{{UnitBuffList",
-  "sbbtype": "Offense",
-  "sbbgauge": "27",
-  "sbb_frames": "120",
-  "sbb_distribute": "100",
-  "sbb_totaldistr": "100",
-  "sbb_effectdelay": "3",
-  "sbbhits": "1",
-  "sbbaoe": "A",
-  "sbbdc": "16",
-  "sbbmultiplier": "620",
-  "sbb_hpscale": "",
   "ubb": {
     "damage frames": [
       {
@@ -1141,6 +1154,208 @@
     ],
     "name": "Shoot to Kill"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 192
+    },
+    "idle": {
+      "total number of frames": 96
+    },
+    "move": {
+      "total number of frames": 96
+    }
+  },
+  "cost": "48",
+  "damage frames": {
+    "frame times": [
+      120
+    ],
+    "hit dmg% distribution": [
+      100
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 1
+  },
+  "drop check count": 41,
+  "element": "light",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 7101,
+  "imp": {
+    "max atk": "600",
+    "max def": "600",
+    "max hp": "1500",
+    "max rec": "600"
+  },
+  "kind": "normal",
+  "lord damage range": "2700~3016",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Avenging Angel Blink",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "8",
+  "sell caution": false,
+  "unitName": "Avenging Angel Blink",
+  "maxlv": "150",
+  "no": "7101",
+  "unitDisplayHomePosition_1W9CxaFK": null,
+  "unitDisplayDetailPosition_6z54rgb3": null,
+  "unitDisplayConfirmImagePosition_MYK1fq6c": null,
+  "unitDisplayCutInImagePosition_7hLR6pDN": null,
+  "unitDisplaySummonPosition_KC3Jk8Br": null,
+  "unitDisplayHpPosition_3BpHN6VD": null,
+  "unitDisplayCursorPosition": null,
+  "sellPrice": "",
+  "sellCaution": false,
+  "effectFrames": "",
+  "evofrom": "750155",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "disam": "Blink (disambiguation)",
+  "altname": "Avenging Angel Blink",
+  "idalt": "",
+  "has_altart": "",
+  "doenter": "true",
+  "basexp": "21",
+  "animation_attack": "192",
+  "animation_idle": "96",
+  "animation_move": "96",
+  "movespeed_attack": "0.0033",
+  "speedtype_attack": "3",
+  "movetype_attack": "1",
+  "movespeed_skill": "0.0033",
+  "speedtype_skill": "3",
+  "movetype_skill": "1",
+  "description": "Plumatachi was everything to Blink. Had Blink and Plumatachi’s roles been reversed during Coal Cauldron’s attack, history would have been quite different. Plumatachi would have lost her life instead of Blink. Consumed by grief, Blink would have dedicated her body and soul to avenging her, dismantling her motorcycle to create a prosthesis in order to replace the limb she lost during Coal Cauldron’s attack. She would have used Techs to create new weapons meant to kill everyone who participated in the attack.",
+  "summon": "",
+  "fusion": "Crushing Coal’s band is the only thing left for me to do now, and I’ll need all the help I can get.",
+  "evolution": "I’ll avenge you, my love!",
+  "hp_base": "6598",
+  "atk_base": "2377",
+  "def_base": "2246",
+  "rec_base": "2377",
+  "hp_lord": "8050",
+  "atk_lord": "2900",
+  "def_lord": "2740",
+  "rec_lord": "2900",
+  "hp_anima": "9167",
+  "rec_anima": "2602",
+  "atk_breaker": "3198",
+  "def_breaker": "2442",
+  "def_guardian": "3038",
+  "rec_guardian": "2900",
+  "def_oracle": "2740",
+  "rec_oracle": "3198",
+  "hp_bonus": "1500",
+  "atk_bonus": "600",
+  "def_bonus": "600",
+  "rec_bonus": "600",
+  "lordonly": "",
+  "normal_frames": "120",
+  "normal_distribute": "100",
+  "normal_totaldistr": "100",
+  "combo_hits": "1",
+  "normaldc": "41",
+  "ls": "Revenge at Any Cost",
+  "lsdescription": "Boosts ATK, REC, HP (60%) & boosts ATK, REC (80%) when BB gauge is over 50% & chance to reduce damage to 1 (15%) & normal attack boosts BB gauge (10 BC)",
+  "lsnote": "",
+  "es": "Memory of the Soulmate",
+  "esdescription": "Damage taken boosts BB gauge (3 BC) & Adds Def ignoring effect for 2 turns to BB/SBB & if Plumatachi's Glasses is equipped, adds probable resistance against 1 KO attack (50%)",
+  "esitem": "Plumatachi's Glasses",
+  "esnote": "",
+  "bbdescription": "Light attack on all foes & boosts REC (180%) for 3 turns & boosts DEF relative to REC (90%) for 3 turns & boosts own ATK, DEF, REC (120%) for 3 turns",
+  "bbnote": "{{UnitBuffList",
+  "buff_1_proc": "47",
+  "buff_1_potency": "1500% + 1000% * (current HP / base max HP) damage modifier",
+  "buff_1_duration": "—",
+  "buff_1_target": "All enemies",
+  "buff_2_proc": "5_atk",
+  "buff_2_potency": "300% boost to Atk",
+  "buff_2_duration": "3 turns",
+  "buff_2_target": "All allies",
+  "buff_3_proc": "5_def",
+  "buff_3_potency": "300% boost to Def",
+  "buff_3_duration": "3 turns",
+  "buff_3_target": "All allies",
+  "buff_4_proc": "5_rec",
+  "buff_4_potency": "300% boost to Rec",
+  "buff_4_duration": "3 turns",
+  "buff_4_target": "All allies",
+  "buff_5_proc": "56",
+  "buff_5_potency": "70% chance of resisting 1 KO, restores 100% of unit's HP",
+  "buff_5_duration": "999 turns",
+  "buff_5_target": "All allies",
+  "buff_6_proc": "62_light",
+  "buff_6_potency": "Activates Light barrier with 25000 HP",
+  "buff_6_duration": "—",
+  "buff_6_target": "All allies",
+  "bbtype": "Offense",
+  "bbgauge": "21",
+  "bb_frames": "120",
+  "bb_distribute": "100",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "3",
+  "bbhits": "1",
+  "bbaoe": "A",
+  "bbdc": "22",
+  "bbmultiplier": "420",
+  "bb_hpscale": "",
+  "sbbdescription": "Light attack on all foes & boosts REC (180%) for 3 turns & boosts REC relative to HP (15%) & boosts ATK relative to REC (90%) for 3 turns",
+  "sbbnote": "{{UnitBuffList",
+  "sbbtype": "Offense",
+  "sbbgauge": "27",
+  "sbb_frames": "120",
+  "sbb_distribute": "100",
+  "sbb_totaldistr": "100",
+  "sbb_effectdelay": "3",
+  "sbbhits": "1",
+  "sbbaoe": "A",
+  "sbbdc": "16",
+  "sbbmultiplier": "620",
+  "sbb_hpscale": "",
   "ubbdescription": "Light attack on all foes (damage relative to remaining HP) & boosts ATK, DEF, REC (300%) & adds probable resistance against 1 KO attack (70%) & activates Light barrier (25000 HP)",
   "ubbnote": "{{UnitBuffList",
   "ubbtype": "Offense",
@@ -1191,140 +1406,5 @@
   "notes": "",
   "incorrectinfo": "",
   "addcat": "",
-  "addcatname": "",
-  "stats": {
-    "_base": {
-      "atk": 2377,
-      "def": 2246,
-      "hp": 6598,
-      "rec": 2377
-    },
-    "_lord": {
-      "atk": 2900,
-      "def": 2740,
-      "hp": 8050,
-      "rec": 2900
-    },
-    "anima": {
-      "atk": 2900,
-      "def": 2740,
-      "hp max": 9540,
-      "hp min": 8795,
-      "rec max": 2751,
-      "rec min": 2453
-    },
-    "breaker": {
-      "atk max": 3347,
-      "atk min": 3049,
-      "def max": 2591,
-      "def min": 2293,
-      "hp": 8050,
-      "rec": 2900
-    },
-    "guardian": {
-      "atk max": 2751,
-      "atk min": 2453,
-      "def max": 3187,
-      "def min": 2889,
-      "hp": 8050,
-      "rec": 2900
-    },
-    "oracle": {
-      "atk": 2900,
-      "def": 2740,
-      "hp max": 7305,
-      "hp min": 6560,
-      "rec max": 3347,
-      "rec min": 3049
-    }
-  },
-  "leader_skill": {
-    "desc": "Boosts ATK, REC, HP (60%) & boosts ATK, REC (80%) when BB gauge is over 50% & chance to reduce damage to 1 (15%) & normal attack boosts BB gauge (10 BC)",
-    "effects": [
-      {
-        "passive id": "43",
-        "take 1 dmg%": 15
-      },
-      {
-        "atk% buff": 60,
-        "hp% buff": 60,
-        "passive id": "1",
-        "rec% buff": 60
-      },
-      {
-        "atk% buff": 80,
-        "bb gauge above % buff requirement": 50,
-        "passive id": "30",
-        "rec% buff": 80
-      },
-      {
-        "bc fill when attacking high": 10,
-        "bc fill when attacking low": 10,
-        "bc fill when attacking%": 100,
-        "passive id": "35"
-      }
-    ],
-    "id": "750157",
-    "name": "Revenge at Any Cost"
-  },
-  "extra_skill": {
-    "desc": "Damage taken boosts BB gauge (3 BC) & Adds Def ignoring effect for 2 turns to BB/SBB & if Plumatachi's Glasses is equipped, adds probable resistance against 1 KO attack (50%)",
-    "effects": [
-      {
-        "bc fill when attacked high": 3,
-        "bc fill when attacked low": 3,
-        "bc fill when attacked%": 100,
-        "conditions": [],
-        "passive id": "25",
-        "passive target": "self"
-      },
-      {
-        "conditions": [],
-        "passive id": "66",
-        "passive target": "self",
-        "trigger on bb": true,
-        "trigger on sbb": true,
-        "triggered effect": [
-          {
-            "defense% ignore": 100,
-            "defense% ignore turns (39)": 2,
-            "effect delay time(ms)/frame": "0.0/0",
-            "proc id": "22",
-            "target area": "aoe",
-            "target type": "party"
-          }
-        ]
-      },
-      {
-        "angel idol chance% condition": 0,
-        "angel idol recover chance% high": 50,
-        "angel idol recover chance% low": 50,
-        "angel idol recover counts": 1,
-        "angel idol recover hp%": 1,
-        "conditions": [
-          {
-            "item required": [
-              "701033"
-            ]
-          }
-        ],
-        "passive id": "69",
-        "passive target": "self"
-      }
-    ],
-    "id": "750157",
-    "name": "Memory of the Soulmate",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": null,
-  "unitDisplayDetailPosition_6z54rgb3": null,
-  "unitDisplayConfirmImagePosition_MYK1fq6c": null,
-  "unitDisplayCutInImagePosition_7hLR6pDN": null,
-  "unitDisplaySummonPosition_KC3Jk8Br": null,
-  "unitDisplayHpPosition_3BpHN6VD": null,
-  "unitDisplayCursorPosition": null,
-  "sellPrice": "",
-  "sellCaution": false,
-  "effectFrames": ""
+  "addcatname": ""
 }

@@ -1,61 +1,63 @@
 {
   "id": "10093",
-  "unitName": "Dragon Graven",
-  "no": "112",
-  "element": "Fire",
-  "rarity": "★★★★",
-  "cost": "8",
-  "maxlv": "60",
-  "basexp": "15",
-  "gender": "N",
-  "ai": "3",
-  "animation_attack": "120",
-  "animation_idle": "192",
-  "animation_move": "192",
-  "movespeed_attack": "8",
-  "movespeed_skill": "8",
-  "speedtype_attack": "1",
-  "speedtype_skill": "1",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "45, 52, 59, 66, 73",
-  "normal_distribute": "25, 25, 25, 25, 25",
-  "normal_totaldistr": "125",
-  "bb_frames": "40, 47, 54, 61, 68",
-  "bb_distribute": "25, 25, 25, 25, 25",
-  "bb_totaldistr": "125",
-  "description": "A fire dragon that lives in the Agni volcanoes. When a Firedrake ages an astounding number of years, he becomes the Dragon Graven. With absolute confidence in his strength, he desires to increase it even more. He looks down on humans but will aid one that he deems worthy. However, many have been burnt to ashes after asking for his assistance.",
-  "summon": "A human wants my help?<br>You look strong enough...<br>Let it be!",
-  "fusion": "Hmm, you will do.<br>Now feel the intense heat<br>from my breath!",
-  "evolution": "I used to hate humans,<br>but it seems there are a<br>few promising ones.",
-  "hp_base": "2768",
-  "atk_base": "594",
-  "def_base": "856",
-  "rec_base": "419",
-  "hp_lord": "4220",
-  "atk_lord": "917",
-  "def_lord": "1242",
-  "rec_lord": "765",
-  "hp_anima": "4663",
-  "rec_anima": "647",
-  "atk_breaker": "1035",
-  "def_breaker": "1124",
-  "atk_guardian": "799",
-  "def_guardian": "1360",
-  "rec_guardian": "706",
-  "def_oracle": "1183",
-  "hp_oracle": "4043",
-  "rec_oracle": "942",
-  "hp_bonus": "400",
-  "atk_bonus": "200",
-  "def_bonus": "120",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "5",
-  "normaldc": "10",
-  "ls": "Fire's Protection",
-  "lsdescription": "10% reduction in damage from Fire Types",
-  "lstype": "Defense",
+  "stats": {
+    "_base": {
+      "atk": 594,
+      "def": 856,
+      "hp": 2768,
+      "rec": 419
+    },
+    "_lord": {
+      "atk": 917,
+      "def": 1242,
+      "hp": 4220,
+      "rec": 765
+    },
+    "anima": {
+      "atk": 917,
+      "def": 1242,
+      "hp max": 4810,
+      "hp min": 4515,
+      "rec max": 706,
+      "rec min": 588
+    },
+    "breaker": {
+      "atk max": 1094,
+      "atk min": 976,
+      "def max": 1183,
+      "def min": 1065,
+      "hp": 4220,
+      "rec": 765
+    },
+    "guardian": {
+      "atk": 917,
+      "def max": 1419,
+      "def min": 1301,
+      "hp": 4220,
+      "rec max": 765,
+      "rec min": 647
+    },
+    "oracle": {
+      "atk": 917,
+      "def max": 1242,
+      "def min": 1124,
+      "hp": 4220,
+      "rec max": 1001,
+      "rec min": 883
+    }
+  },
+  "leader_skill": {
+    "desc": "10% reduction in damage from Fire Types",
+    "effects": [
+      {
+        "fire resist%": 10,
+        "passive id": "5"
+      }
+    ],
+    "id": "500",
+    "name": "Fire's Protection"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -216,94 +218,97 @@
     ],
     "name": "Mega Breath"
   },
-  "bbdescription": "5 combo Fire elemental attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "5",
-  "bbaoe": "A",
-  "bbgauge": "20",
-  "bbdc": "5",
-  "bbmultiplier": "110",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "10092",
-  "evointo": "10094",
-  "evomats1": "10133",
-  "evomats2": "10132",
-  "evomats3": "10131",
-  "evomats4": "10130",
-  "evomats5": "60143",
-  "evoitem": "",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 594,
-      "def": 856,
-      "hp": 2768,
-      "rec": 419
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 917,
-      "def": 1242,
-      "hp": 4220,
-      "rec": 765
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 917,
-      "def": 1242,
-      "hp max": 4810,
-      "hp min": 4515,
-      "rec max": 706,
-      "rec min": 588
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 1094,
-      "atk min": 976,
-      "def max": 1183,
-      "def min": 1065,
-      "hp": 4220,
-      "rec": 765
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 120
     },
-    "guardian": {
-      "atk": 917,
-      "def max": 1419,
-      "def min": 1301,
-      "hp": 4220,
-      "rec max": 765,
-      "rec min": 647
+    "idle": {
+      "total number of frames": 192
     },
-    "oracle": {
-      "atk": 917,
-      "def max": 1242,
-      "def min": 1124,
-      "hp": 4220,
-      "rec max": 1001,
-      "rec min": 883
+    "move": {
+      "total number of frames": 192
     }
   },
-  "leader_skill": {
-    "desc": "10% reduction in damage from Fire Types",
-    "effects": [
-      {
-        "fire resist%": 10,
-        "passive id": "5"
-      }
+  "category": 10090,
+  "cost": "8",
+  "damage frames": {
+    "frame times": [
+      45,
+      52,
+      59,
+      66,
+      73
     ],
-    "id": "500",
-    "name": "Fire's Protection"
+    "hit dmg% distribution": [
+      25,
+      25,
+      25,
+      25,
+      25
+    ],
+    "hit dmg% distribution (total)": 125,
+    "hits": 5
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "fire",
+  "exp_pattern": 15,
+  "gender": "other",
+  "getting type": "rare summon",
+  "guide_id": 112,
+  "imp": {
+    "max atk": "200",
+    "max def": "120",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "853~953",
+  "movement": {
+    "attack": {
+      "move speed": 8,
+      "move speed type": "1",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 8,
+      "move speed type": "1",
+      "move type": "3"
+    }
+  },
+  "name": "Dragon Graven",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Dragon Graven",
+  "maxlv": "60",
+  "no": "112",
   "unitDisplayHomePosition_1W9CxaFK": "88,221,200,544",
   "unitDisplayDetailPosition_6z54rgb3": "113,-37,950,931",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "133,183,470,460,0",
@@ -313,5 +318,109 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "45:150:1"
+  "effectFrames": "45:150:1",
+  "evofrom": "10092",
+  "evointo": "10094",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "10133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10131",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10130",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 1
+    }
+  ],
+  "basexp": "15",
+  "animation_attack": "120",
+  "animation_idle": "192",
+  "animation_move": "192",
+  "movespeed_attack": "8",
+  "movespeed_skill": "8",
+  "speedtype_attack": "1",
+  "speedtype_skill": "1",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "45, 52, 59, 66, 73",
+  "normal_distribute": "25, 25, 25, 25, 25",
+  "normal_totaldistr": "125",
+  "bb_frames": "40, 47, 54, 61, 68",
+  "bb_distribute": "25, 25, 25, 25, 25",
+  "bb_totaldistr": "125",
+  "description": "A fire dragon that lives in the Agni volcanoes. When a Firedrake ages an astounding number of years, he becomes the Dragon Graven. With absolute confidence in his strength, he desires to increase it even more. He looks down on humans but will aid one that he deems worthy. However, many have been burnt to ashes after asking for his assistance.",
+  "summon": "A human wants my help?<br>You look strong enough...<br>Let it be!",
+  "fusion": "Hmm, you will do.<br>Now feel the intense heat<br>from my breath!",
+  "evolution": "I used to hate humans,<br>but it seems there are a<br>few promising ones.",
+  "hp_base": "2768",
+  "atk_base": "594",
+  "def_base": "856",
+  "rec_base": "419",
+  "hp_lord": "4220",
+  "atk_lord": "917",
+  "def_lord": "1242",
+  "rec_lord": "765",
+  "hp_anima": "4663",
+  "rec_anima": "647",
+  "atk_breaker": "1035",
+  "def_breaker": "1124",
+  "atk_guardian": "799",
+  "def_guardian": "1360",
+  "rec_guardian": "706",
+  "def_oracle": "1183",
+  "hp_oracle": "4043",
+  "rec_oracle": "942",
+  "hp_bonus": "400",
+  "atk_bonus": "200",
+  "def_bonus": "120",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "5",
+  "normaldc": "10",
+  "ls": "Fire's Protection",
+  "lsdescription": "10% reduction in damage from Fire Types",
+  "lstype": "Defense",
+  "bbdescription": "5 combo Fire elemental attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "5",
+  "bbaoe": "A",
+  "bbgauge": "20",
+  "bbdc": "5",
+  "bbmultiplier": "110",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "10133",
+  "evomats2": "10132",
+  "evomats3": "10131",
+  "evomats4": "10130",
+  "evomats5": "60143",
+  "evoitem": ""
 }

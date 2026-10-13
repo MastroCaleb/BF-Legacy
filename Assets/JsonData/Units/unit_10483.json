@@ -1,67 +1,63 @@
 {
   "id": "10483",
-  "unitName": "Barbara (4★)",
-  "freetext": ":''To see a similar unit available in Global, please refer to Barbara.''",
-  "unreleased": "true",
-  "untranslated": "true",
-  "doenter": "true",
-  "no": "673",
-  "altname": "バーバラ",
-  "element": "Fire",
-  "rarity": "★★★★",
-  "cost": "10",
-  "maxlv": "60",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "4",
-  "animation_attack": "127",
-  "animation_idle": "102",
-  "animation_move": "5",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "6, 12, 23, 28, 54, 60, 66, 72",
-  "normal_distribute": "8, 8, 8, 8, 38, 10, 10, 10",
-  "normal_totaldistr": "100",
-  "bb_frames": "49, 52, 55, 68, 75, 82, 90, 96, 103, 110",
-  "bb_distribute": "14, 14, 14, 13, 8, 7, 8, 7, 8, 7",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "description": "運命石に導かれし異界の踊り子。気風の良い姉御肌の人物として知られるバーバラは、旅芸人一座の踊り子として、異界の地マルディアスを旅していた。しかし、旅の終着点ウエストエンドの開拓地で出会った詩人から首飾りを贈られたことで、彼女の運命は一変してしまう。首飾りに輝く紫水晶は、持つ者の運命を絡め取る１２の運命石の１つであり、運命石を集める旅へと彼女を導いていく。",
-  "summon": "あたいはバーバラ！<br>踊りが気に入ったなら<br>お代ははずんでおくれよ。",
-  "fusion": "いいのかい？<br>こんなにももらっちまって。<br>すまないね。",
-  "evolution": "",
-  "hp_base": "2522",
-  "atk_base": "943",
-  "def_base": "710",
-  "rec_base": "804",
-  "hp_lord": "3726",
-  "atk_lord": "1291",
-  "def_lord": "986",
-  "rec_lord": "1033",
-  "hp_anima": "4168",
-  "rec_anima": "915",
-  "atk_breaker": "1409",
-  "def_breaker": "868",
-  "def_guardian": "1104",
-  "rec_guardian": "974",
-  "def_oracle": "927",
-  "rec_oracle": "1210",
-  "hp_bonus": "400",
-  "atk_bonus": "160",
-  "def_bonus": "160",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "8",
-  "normaldc": "16",
-  "ls": "インペリアルクロス",
-  "lsdescription": "全てのユニットの防御力を２５％アップ",
-  "lsnote": "{{PassiveList",
-  "passive_1_proc": "1",
-  "passive_1_potency": "25% boost to Def",
+  "stats": {
+    "_base": {
+      "atk": 943,
+      "def": 710,
+      "hp": 2522,
+      "rec": 804
+    },
+    "_lord": {
+      "atk": 1291,
+      "def": 986,
+      "hp": 3726,
+      "rec": 1033
+    },
+    "anima": {
+      "atk": 1291,
+      "def": 986,
+      "hp max": 4316,
+      "hp min": 4021,
+      "rec max": 974,
+      "rec min": 856
+    },
+    "breaker": {
+      "atk max": 1468,
+      "atk min": 1350,
+      "def max": 927,
+      "def min": 809,
+      "hp": 3726,
+      "rec": 1033
+    },
+    "guardian": {
+      "atk": 1291,
+      "def max": 1163,
+      "def min": 1045,
+      "hp": 3726,
+      "rec max": 1033,
+      "rec min": 915
+    },
+    "oracle": {
+      "atk": 1291,
+      "def max": 986,
+      "def min": 868,
+      "hp": 3726,
+      "rec max": 1269,
+      "rec min": 1151
+    }
+  },
+  "leader_skill": {
+    "desc": "全てのユニットの防御力を２５％アップ",
+    "effects": [
+      {
+        "def% buff": 25,
+        "passive id": "1"
+      }
+    ],
+    "id": "6200",
+    "name": "インペリアルクロス"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -324,6 +320,204 @@
     ],
     "name": "火幻術"
   },
+  "sbb": {},
+  "ubb": {},
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_under",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 30.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 70.0,
+      "target conditions": "hp_max",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 50.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 127
+    },
+    "idle": {
+      "total number of frames": 102
+    },
+    "move": {
+      "total number of frames": 5
+    }
+  },
+  "category": 10480,
+  "cost": "10",
+  "damage frames": {
+    "frame times": [
+      6,
+      12,
+      23,
+      28,
+      54,
+      60,
+      66,
+      72
+    ],
+    "hit dmg% distribution": [
+      8,
+      8,
+      8,
+      8,
+      38,
+      10,
+      10,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 8
+  },
+  "drop check count": 2,
+  "element": "fire",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "farmable",
+  "guide_id": 673,
+  "imp": {
+    "max atk": "160",
+    "max def": "160",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "1201~1342",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "バーバラ",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "バーバラ",
+  "maxlv": "60",
+  "no": "673",
+  "unitDisplayHomePosition_1W9CxaFK": null,
+  "unitDisplayDetailPosition_6z54rgb3": null,
+  "unitDisplayConfirmImagePosition_MYK1fq6c": null,
+  "unitDisplayCutInImagePosition_7hLR6pDN": null,
+  "unitDisplaySummonPosition_KC3Jk8Br": null,
+  "unitDisplayHpPosition_3BpHN6VD": null,
+  "unitDisplayCursorPosition": null,
+  "sellPrice": "",
+  "sellCaution": false,
+  "effectFrames": "",
+  "evofrom": "",
+  "evointo": "10484",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "10133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10131",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10130",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 1
+    }
+  ],
+  "freetext": ":''To see a similar unit available in Global, please refer to Barbara.''",
+  "unreleased": "true",
+  "untranslated": "true",
+  "doenter": "true",
+  "altname": "バーバラ",
+  "basexp": "21",
+  "animation_attack": "127",
+  "animation_idle": "102",
+  "animation_move": "5",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "6, 12, 23, 28, 54, 60, 66, 72",
+  "normal_distribute": "8, 8, 8, 8, 38, 10, 10, 10",
+  "normal_totaldistr": "100",
+  "bb_frames": "49, 52, 55, 68, 75, 82, 90, 96, 103, 110",
+  "bb_distribute": "14, 14, 14, 13, 8, 7, 8, 7, 8, 7",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "description": "運命石に導かれし異界の踊り子。気風の良い姉御肌の人物として知られるバーバラは、旅芸人一座の踊り子として、異界の地マルディアスを旅していた。しかし、旅の終着点ウエストエンドの開拓地で出会った詩人から首飾りを贈られたことで、彼女の運命は一変してしまう。首飾りに輝く紫水晶は、持つ者の運命を絡め取る１２の運命石の１つであり、運命石を集める旅へと彼女を導いていく。",
+  "summon": "あたいはバーバラ！<br>踊りが気に入ったなら<br>お代ははずんでおくれよ。",
+  "fusion": "いいのかい？<br>こんなにももらっちまって。<br>すまないね。",
+  "evolution": "",
+  "hp_base": "2522",
+  "atk_base": "943",
+  "def_base": "710",
+  "rec_base": "804",
+  "hp_lord": "3726",
+  "atk_lord": "1291",
+  "def_lord": "986",
+  "rec_lord": "1033",
+  "hp_anima": "4168",
+  "rec_anima": "915",
+  "atk_breaker": "1409",
+  "def_breaker": "868",
+  "def_guardian": "1104",
+  "rec_guardian": "974",
+  "def_oracle": "927",
+  "rec_oracle": "1210",
+  "hp_bonus": "400",
+  "atk_bonus": "160",
+  "def_bonus": "160",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "8",
+  "normaldc": "16",
+  "ls": "インペリアルクロス",
+  "lsdescription": "全てのユニットの防御力を２５％アップ",
+  "lsnote": "{{PassiveList",
+  "passive_1_proc": "1",
+  "passive_1_potency": "25% boost to Def",
   "bbdescription": "敵全体に炎属性１０連ダメージ＆味方全体に３ターン、攻撃力を少しアップ",
   "bbnote": "{{UnitBuffList",
   "buff_1_proc": "1",
@@ -340,83 +534,10 @@
   "bbgauge": "20",
   "bbdc": "10",
   "bbmultiplier": "100",
-  "evofrom": "",
-  "evointo": "10484",
   "evomats1": "10133",
   "evomats2": "10132",
   "evomats3": "10131",
   "evomats4": "10130",
   "evomats5": "60143",
-  "evoitem": "",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 943,
-      "def": 710,
-      "hp": 2522,
-      "rec": 804
-    },
-    "_lord": {
-      "atk": 1291,
-      "def": 986,
-      "hp": 3726,
-      "rec": 1033
-    },
-    "anima": {
-      "atk": 1291,
-      "def": 986,
-      "hp max": 4316,
-      "hp min": 4021,
-      "rec max": 974,
-      "rec min": 856
-    },
-    "breaker": {
-      "atk max": 1468,
-      "atk min": 1350,
-      "def max": 927,
-      "def min": 809,
-      "hp": 3726,
-      "rec": 1033
-    },
-    "guardian": {
-      "atk": 1291,
-      "def max": 1163,
-      "def min": 1045,
-      "hp": 3726,
-      "rec max": 1033,
-      "rec min": 915
-    },
-    "oracle": {
-      "atk": 1291,
-      "def max": 986,
-      "def min": 868,
-      "hp": 3726,
-      "rec max": 1269,
-      "rec min": 1151
-    }
-  },
-  "leader_skill": {
-    "desc": "全てのユニットの防御力を２５％アップ",
-    "effects": [
-      {
-        "def% buff": 25,
-        "passive id": "1"
-      }
-    ],
-    "id": "6200",
-    "name": "インペリアルクロス"
-  },
-  "extra_skill": {},
-  "sbb": {},
-  "ubb": {},
-  "unitDisplayHomePosition_1W9CxaFK": null,
-  "unitDisplayDetailPosition_6z54rgb3": null,
-  "unitDisplayConfirmImagePosition_MYK1fq6c": null,
-  "unitDisplayCutInImagePosition_7hLR6pDN": null,
-  "unitDisplaySummonPosition_KC3Jk8Br": null,
-  "unitDisplayHpPosition_3BpHN6VD": null,
-  "unitDisplayCursorPosition": null,
-  "sellPrice": "",
-  "sellCaution": false,
-  "effectFrames": ""
+  "evoitem": ""
 }

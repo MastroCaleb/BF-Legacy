@@ -1,62 +1,65 @@
 {
   "id": "30222",
-  "unitName": "Ristrall",
-  "no": "583",
-  "element": "Earth",
-  "rarity": "★★★",
-  "cost": "6",
-  "maxlv": "40",
-  "basexp": "15",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "83",
-  "animation_idle": "64",
-  "animation_move": "16",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "11, 30, 32, 35",
-  "normal_distribute": "30, 25, 25, 20",
-  "normal_totaldistr": "100",
-  "bb_frames": "11, 30, 32, 35, 37",
-  "bb_distribute": "30, 18, 17, 18, 17",
-  "bb_totaldistr": "100",
-  "description": "An elf knight who served as a bodyguard for the duke of the Principality of Vriksha. Though his hometown is the fairies' grove, he served as a knight for the principality in order to repay a favor he received from the late duke. Although in reality he wasn't very fond of humans, he was never ungrateful and kept faithful to his vows. Gifted with incredible speed, the way he handles his lance makes it seem like it has multiple spearheads, confusing his enemies with his elaborate movements. Thus, he was feared as the \"Phantom,\" a nickname given to him by those who had faced his speed on the battlefield.",
-  "summon": "Summoner...<br>If I have to serve humans again, there must be a pretty good reason.",
-  "fusion": "Humans are generally greedy.<br> Not only that, but they use their greed to gain more power.",
-  "evolution": "",
-  "hp_base": "1889",
-  "atk_base": "786",
-  "def_base": "702",
-  "rec_base": "741",
-  "hp_lord": "3107",
-  "atk_lord": "1065",
-  "def_lord": "1043",
-  "rec_lord": "1028",
-  "hp_anima": "3400",
-  "rec_anima": "950",
-  "atk_breaker": "1143",
-  "def_breaker": "965",
-  "atk_guardian": "987",
-  "def_guardian": "1121",
-  "rec_guardian": "989",
-  "def_oracle": "1004",
-  "hp_oracle": "2990",
-  "rec_oracle": "1145",
-  "hp_bonus": "300",
-  "atk_bonus": "120",
-  "def_bonus": "120",
-  "rec_bonus": "120",
-  "lordonly": "",
-  "combo_hits": "4",
-  "normaldc": "8",
-  "ls": "Major Energy Absorption",
-  "lsdescription": "Chance of BB gauge greatly filling after defeating an enemy",
-  "lsnote": "50% chance to fill 3 BC",
-  "lstype": "Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 786,
+      "def": 702,
+      "hp": 1889,
+      "rec": 741
+    },
+    "_lord": {
+      "atk": 1065,
+      "def": 1043,
+      "hp": 3107,
+      "rec": 1028
+    },
+    "anima": {
+      "atk": 1065,
+      "def": 1043,
+      "hp max": 3497,
+      "hp min": 3302,
+      "rec max": 989,
+      "rec min": 911
+    },
+    "breaker": {
+      "atk max": 1182,
+      "atk min": 1104,
+      "def max": 1004,
+      "def min": 926,
+      "hp": 3107,
+      "rec": 1028
+    },
+    "guardian": {
+      "atk": 1065,
+      "def max": 1160,
+      "def min": 1082,
+      "hp": 3107,
+      "rec max": 1028,
+      "rec min": 950
+    },
+    "oracle": {
+      "atk": 1065,
+      "def max": 1043,
+      "def min": 965,
+      "hp": 3107,
+      "rec max": 1184,
+      "rec min": 1106
+    }
+  },
+  "leader_skill": {
+    "desc": "Chance of BB gauge greatly filling after defeating an enemy",
+    "effects": [
+      {
+        "bc fill on enemy defeat high": 3,
+        "bc fill on enemy defeat low": 3,
+        "bc fill on enemy defeat%": 50,
+        "passive id": "13"
+      }
+    ],
+    "id": "5100",
+    "name": "Major Energy Absorption"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -289,96 +292,89 @@
     ],
     "name": "Rune Impact"
   },
-  "bbdescription": "5 combo Earth elemental attack on single enemy & probable Paralysis effect",
-  "bbnote": "60% chance to inflict",
-  "bbtype": "Offense",
-  "bbhits": "5",
-  "bbaoe": "1",
-  "bbgauge": "15",
-  "bbdc": "5",
-  "bbmultiplier": "240",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "30223",
-  "evomats1": "30132",
-  "evomats2": "30132",
-  "evomats3": "30131",
-  "evomats4": "60143",
-  "evomats5": "60142",
-  "evozelcost": "100000",
-  "stats": {
-    "_base": {
-      "atk": 786,
-      "def": 702,
-      "hp": 1889,
-      "rec": 741
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1065,
-      "def": 1043,
-      "hp": 3107,
-      "rec": 1028
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1065,
-      "def": 1043,
-      "hp max": 3497,
-      "hp min": 3302,
-      "rec max": 989,
-      "rec min": 911
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 83
     },
-    "breaker": {
-      "atk max": 1182,
-      "atk min": 1104,
-      "def max": 1004,
-      "def min": 926,
-      "hp": 3107,
-      "rec": 1028
+    "idle": {
+      "total number of frames": 64
     },
-    "guardian": {
-      "atk": 1065,
-      "def max": 1160,
-      "def min": 1082,
-      "hp": 3107,
-      "rec max": 1028,
-      "rec min": 950
-    },
-    "oracle": {
-      "atk": 1065,
-      "def max": 1043,
-      "def min": 965,
-      "hp": 3107,
-      "rec max": 1184,
-      "rec min": 1106
+    "move": {
+      "total number of frames": 16
     }
   },
-  "leader_skill": {
-    "desc": "Chance of BB gauge greatly filling after defeating an enemy",
-    "effects": [
-      {
-        "bc fill on enemy defeat high": 3,
-        "bc fill on enemy defeat low": 3,
-        "bc fill on enemy defeat%": 50,
-        "passive id": "13"
-      }
+  "category": 30220,
+  "cost": "6",
+  "damage frames": {
+    "frame times": [
+      11,
+      30,
+      32,
+      35
     ],
-    "id": "5100",
-    "name": "Major Energy Absorption"
+    "hit dmg% distribution": [
+      30,
+      25,
+      25,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 4
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "earth",
+  "exp_pattern": 15,
+  "gender": "male",
+  "getting type": "farmable",
+  "guide_id": 583,
+  "imp": {
+    "max atk": "120",
+    "max def": "120",
+    "max hp": "300",
+    "max rec": "120"
+  },
+  "kind": "normal",
+  "lord damage range": "991~1107",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Ristrall",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "Ristrall",
+  "maxlv": "40",
+  "no": "583",
   "unitDisplayHomePosition_1W9CxaFK": "435,5,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-80,182,907,618",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "160,336,297,293,0",
@@ -388,5 +384,105 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "1000",
   "sellCaution": false,
-  "effectFrames": "8:123:1,8:300120:1,30:123:1,36:123:1,36:230:1,40:123:1"
+  "effectFrames": "8:123:1,8:300120:1,30:123:1,36:123:1,36:230:1,40:123:1",
+  "evofrom": "",
+  "evointo": "30223",
+  "evozelcost": "100000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "30132",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "30131",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60142",
+      "count": 1
+    }
+  ],
+  "basexp": "15",
+  "animation_attack": "83",
+  "animation_idle": "64",
+  "animation_move": "16",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "11, 30, 32, 35",
+  "normal_distribute": "30, 25, 25, 20",
+  "normal_totaldistr": "100",
+  "bb_frames": "11, 30, 32, 35, 37",
+  "bb_distribute": "30, 18, 17, 18, 17",
+  "bb_totaldistr": "100",
+  "description": "An elf knight who served as a bodyguard for the duke of the Principality of Vriksha. Though his hometown is the fairies' grove, he served as a knight for the principality in order to repay a favor he received from the late duke. Although in reality he wasn't very fond of humans, he was never ungrateful and kept faithful to his vows. Gifted with incredible speed, the way he handles his lance makes it seem like it has multiple spearheads, confusing his enemies with his elaborate movements. Thus, he was feared as the \"Phantom,\" a nickname given to him by those who had faced his speed on the battlefield.",
+  "summon": "Summoner...<br>If I have to serve humans again, there must be a pretty good reason.",
+  "fusion": "Humans are generally greedy.<br> Not only that, but they use their greed to gain more power.",
+  "evolution": "",
+  "hp_base": "1889",
+  "atk_base": "786",
+  "def_base": "702",
+  "rec_base": "741",
+  "hp_lord": "3107",
+  "atk_lord": "1065",
+  "def_lord": "1043",
+  "rec_lord": "1028",
+  "hp_anima": "3400",
+  "rec_anima": "950",
+  "atk_breaker": "1143",
+  "def_breaker": "965",
+  "atk_guardian": "987",
+  "def_guardian": "1121",
+  "rec_guardian": "989",
+  "def_oracle": "1004",
+  "hp_oracle": "2990",
+  "rec_oracle": "1145",
+  "hp_bonus": "300",
+  "atk_bonus": "120",
+  "def_bonus": "120",
+  "rec_bonus": "120",
+  "lordonly": "",
+  "combo_hits": "4",
+  "normaldc": "8",
+  "ls": "Major Energy Absorption",
+  "lsdescription": "Chance of BB gauge greatly filling after defeating an enemy",
+  "lsnote": "50% chance to fill 3 BC",
+  "lstype": "Brave Burst",
+  "bbdescription": "5 combo Earth elemental attack on single enemy & probable Paralysis effect",
+  "bbnote": "60% chance to inflict",
+  "bbtype": "Offense",
+  "bbhits": "5",
+  "bbaoe": "1",
+  "bbgauge": "15",
+  "bbdc": "5",
+  "bbmultiplier": "240",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "30132",
+  "evomats2": "30132",
+  "evomats3": "30131",
+  "evomats4": "60143",
+  "evomats5": "60142"
 }

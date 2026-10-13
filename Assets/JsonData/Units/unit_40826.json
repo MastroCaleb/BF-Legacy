@@ -1,68 +1,106 @@
 {
   "id": "40826",
-  "unitName": "Lion Demon Viktor",
-  "no": "1450",
-  "element": "Thunder",
-  "rarity": "★★★★★★★",
-  "cost": "44",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "123",
-  "animation_idle": "54",
-  "animation_move": "6",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "51",
-  "normal_distribute": "100",
-  "normal_totaldistr": "100",
-  "bb_frames": "51",
-  "bb_distribute": "100",
-  "bb_totaldistr": "100",
-  "sbb_frames": "51, 54, 57, 60, 63, 66, 69, 72, 75, 78, 81, 84, 87, 90, 93, 96, 99, 102",
-  "sbb_distribute": "9, 7, 8, 7, 8, 7, 6, 5, 6, 5, 6, 5, 4, 3, 4, 3, 4, 3",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "51, 54, 57, 60, 63, 66, 69, 72, 75, 78, 81, 84, 87, 90, 93, 96, 99, 102, 105, 108",
-  "ubb_distribute": "6, 5, 6, 5, 6, 5, 6, 5, 6, 5, 5, 4, 5, 4, 5, 4, 5, 4, 5, 4",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "2",
-  "sbb_effectdelay": "2",
-  "ubb_effectdelay": "1",
-  "description": "The leader of the lion demons of Ishgria. Viktor's clan practiced the custom of marrying their kind to stronger beings in order for future offspring to overcome the harshest of environments and secure the survival of their race. Once he discovered that a woman from Elgaia had been blessed with the rare gift of clairvoyance, he decided to cross over to her world and kidnap her in hopes of making her his wife. However, it wasn't long until his mortal enemy, the leader of the dragon demons, took her from him and destroyed what remained of the lion demon clan. Written accounts claim that Viktor then challenged his nemesis to battle, only to die at the dragon demon's hands.",
-  "summon": "Huh? Who the hell are you?!<br>You must have a lot of guts to have summoned me, the leader of the lion demon clan!",
-  "fusion": "Claiming a fine woman is the right of a great man. You know as much, don't you?",
-  "evolution": "",
-  "hp_base": "5150",
-  "atk_base": "2271",
-  "def_base": "1643",
-  "rec_base": "1601",
-  "hp_lord": "7353",
-  "atk_lord": "3073",
-  "def_lord": "2235",
-  "rec_lord": "2159",
-  "hp_anima": "8245",
-  "rec_anima": "1921",
-  "atk_breaker": "3311",
-  "def_breaker": "1997",
-  "def_guardian": "2743",
-  "rec_guardian": "2040",
-  "def_oracle": "2116",
-  "rec_oracle": "2516",
-  "hp_bonus": "1000",
-  "atk_bonus": "600",
-  "def_bonus": "300",
-  "rec_bonus": "400",
-  "lordonly": "",
-  "combo_hits": "1",
-  "normaldc": "40",
-  "ls": "Beast's Ferocious Spirit",
-  "lsdescription": "120% boost to Atk, Def and 20% damage reduction for first 2 turns & adds probable Def ignoring effect to attack",
-  "lsnote": "20% '''elemental''' reduction & 15% chance to ignore Def",
+  "stats": {
+    "_base": {
+      "atk": 2271,
+      "def": 1643,
+      "hp": 5150,
+      "rec": 1601
+    },
+    "_lord": {
+      "atk": 3073,
+      "def": 2235,
+      "hp": 7353,
+      "rec": 2159
+    },
+    "anima": {
+      "atk": 3073,
+      "def": 2235,
+      "hp max": 8543,
+      "hp min": 7948,
+      "rec max": 2040,
+      "rec min": 1802
+    },
+    "breaker": {
+      "atk max": 3430,
+      "atk min": 3192,
+      "def max": 2116,
+      "def min": 1878,
+      "hp": 7353,
+      "rec": 2159
+    },
+    "guardian": {
+      "atk": 3073,
+      "def max": 2592,
+      "def min": 2354,
+      "hp": 7353,
+      "rec max": 2159,
+      "rec min": 1921
+    },
+    "oracle": {
+      "atk": 3073,
+      "def max": 2235,
+      "def min": 1997,
+      "hp": 7353,
+      "rec max": 2635,
+      "rec min": 2397
+    }
+  },
+  "leader_skill": {
+    "desc": "120% boost to Atk, Def and 20% damage reduction for first 2 turns & adds probable Def ignoring effect to attack",
+    "effects": [
+      {
+        "first x turns": 2,
+        "first x turns atk% (1)": 120,
+        "first x turns def% (3)": 120,
+        "passive id": "21"
+      },
+      {
+        "dmg% mitigation for elemental attacks": 20,
+        "dmg% mitigation for elemental attacks buff for first x turns": 2,
+        "mitigate dark attacks": true,
+        "mitigate earth attacks": true,
+        "mitigate fire attacks": true,
+        "mitigate light attacks": true,
+        "mitigate thunder attacks": true,
+        "mitigate water attacks": true,
+        "passive id": "63"
+      },
+      {
+        "ignore def%": 15,
+        "passive id": "29"
+      }
+    ],
+    "id": "2511",
+    "name": "Beast's Ferocious Spirit"
+  },
+  "extra_skill": {
+    "desc": "Boosts critical and elemental based damage",
+    "effects": [
+      {
+        "conditions": [],
+        "crit multiplier%": 50.0,
+        "passive id": "34",
+        "passive target": "self"
+      },
+      {
+        "conditions": [],
+        "dark units do extra elemental weakness dmg": true,
+        "earth units do extra elemental weakness dmg": true,
+        "elemental weakness multiplier%": 50.0,
+        "fire units do extra elemental weakness dmg": true,
+        "light units do extra elemental weakness dmg": true,
+        "passive id": "50",
+        "passive target": "self",
+        "thunder units do extra elemental weakness dmg": true,
+        "water units do extra elemental weakness dmg": true
+      }
+    ],
+    "id": "22300",
+    "name": "A Lion's Pride",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -633,14 +671,6 @@
     ],
     "name": "Sanctio"
   },
-  "bbdescription": "Thunder attack on all foes, probable Injury and Paralysis effects, adds additional attack at turn's end for 2 turns, hugely boosts BB gauge & considerably boosts Atk, Def, Rec for 3 turns",
-  "bbnote": "Fills 8 BC, 120% Atk, Def, Rec, 75% chance for ailments & 300% DoT",
-  "bbtype": "Offense",
-  "bbhits": "1",
-  "bbaoe": "A",
-  "bbgauge": "27",
-  "bbdc": "20",
-  "bbmultiplier": "350",
   "sbb": {
     "damage frames": [
       {
@@ -1223,14 +1253,6 @@
     ],
     "name": "Violator"
   },
-  "sbbdescription": "18 combo powerful Thunder attack on all foes, probable huge 1 turn Atk reduction, adds powerful additional attack at turn's end for 2 turns & considerably boosts Atk relative to Def for 3 turns",
-  "sbbnote": "30% chance to reduce enemy Atk by 50%, 400% DoT & 60% Def to Atk",
-  "sbbtype": "Offense",
-  "sbbhits": "18",
-  "sbbaoe": "A",
-  "sbbgauge": "30",
-  "sbbdc": "18",
-  "sbbmultiplier": "560",
   "ubb": {
     "damage frames": [
       {
@@ -1388,6 +1410,203 @@
     ],
     "name": "Flashing Thunder Fang"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 123
+    },
+    "idle": {
+      "total number of frames": 54
+    },
+    "move": {
+      "total number of frames": 6
+    }
+  },
+  "category": 40820,
+  "cost": "44",
+  "damage frames": {
+    "frame times": [
+      51
+    ],
+    "hit dmg% distribution": [
+      100
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 1
+  },
+  "drop check count": 40,
+  "element": "thunder",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 1450,
+  "imp": {
+    "max atk": "600",
+    "max def": "300",
+    "max hp": "1000",
+    "max rec": "400"
+  },
+  "kind": "normal",
+  "lord damage range": "2861~3195",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Lion Demon Viktor",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Lion Demon Viktor",
+  "maxlv": "120",
+  "no": "1450",
+  "unitDisplayHomePosition_1W9CxaFK": "400,158,180,491",
+  "unitDisplayDetailPosition_6z54rgb3": "-81,62,1100,781",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "60,237,580,412,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-20,-198,1030,732",
+  "unitDisplaySummonPosition_KC3Jk8Br": "60,237,580,412,0",
+  "unitDisplayHpPosition_3BpHN6VD": "1,49",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "15000",
+  "sellCaution": false,
+  "effectFrames": "45:127:1,51:400871:1,54:400089:1,57:600598:1",
+  "evofrom": "",
+  "evointo": "40827",
+  "evozelcost": "3000000",
+  "evokarmacost": "1000000",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "40334",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40132",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "123",
+  "animation_idle": "54",
+  "animation_move": "6",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "51",
+  "normal_distribute": "100",
+  "normal_totaldistr": "100",
+  "bb_frames": "51",
+  "bb_distribute": "100",
+  "bb_totaldistr": "100",
+  "sbb_frames": "51, 54, 57, 60, 63, 66, 69, 72, 75, 78, 81, 84, 87, 90, 93, 96, 99, 102",
+  "sbb_distribute": "9, 7, 8, 7, 8, 7, 6, 5, 6, 5, 6, 5, 4, 3, 4, 3, 4, 3",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "51, 54, 57, 60, 63, 66, 69, 72, 75, 78, 81, 84, 87, 90, 93, 96, 99, 102, 105, 108",
+  "ubb_distribute": "6, 5, 6, 5, 6, 5, 6, 5, 6, 5, 5, 4, 5, 4, 5, 4, 5, 4, 5, 4",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "2",
+  "sbb_effectdelay": "2",
+  "ubb_effectdelay": "1",
+  "description": "The leader of the lion demons of Ishgria. Viktor's clan practiced the custom of marrying their kind to stronger beings in order for future offspring to overcome the harshest of environments and secure the survival of their race. Once he discovered that a woman from Elgaia had been blessed with the rare gift of clairvoyance, he decided to cross over to her world and kidnap her in hopes of making her his wife. However, it wasn't long until his mortal enemy, the leader of the dragon demons, took her from him and destroyed what remained of the lion demon clan. Written accounts claim that Viktor then challenged his nemesis to battle, only to die at the dragon demon's hands.",
+  "summon": "Huh? Who the hell are you?!<br>You must have a lot of guts to have summoned me, the leader of the lion demon clan!",
+  "fusion": "Claiming a fine woman is the right of a great man. You know as much, don't you?",
+  "evolution": "",
+  "hp_base": "5150",
+  "atk_base": "2271",
+  "def_base": "1643",
+  "rec_base": "1601",
+  "hp_lord": "7353",
+  "atk_lord": "3073",
+  "def_lord": "2235",
+  "rec_lord": "2159",
+  "hp_anima": "8245",
+  "rec_anima": "1921",
+  "atk_breaker": "3311",
+  "def_breaker": "1997",
+  "def_guardian": "2743",
+  "rec_guardian": "2040",
+  "def_oracle": "2116",
+  "rec_oracle": "2516",
+  "hp_bonus": "1000",
+  "atk_bonus": "600",
+  "def_bonus": "300",
+  "rec_bonus": "400",
+  "lordonly": "",
+  "combo_hits": "1",
+  "normaldc": "40",
+  "ls": "Beast's Ferocious Spirit",
+  "lsdescription": "120% boost to Atk, Def and 20% damage reduction for first 2 turns & adds probable Def ignoring effect to attack",
+  "lsnote": "20% '''elemental''' reduction & 15% chance to ignore Def",
+  "bbdescription": "Thunder attack on all foes, probable Injury and Paralysis effects, adds additional attack at turn's end for 2 turns, hugely boosts BB gauge & considerably boosts Atk, Def, Rec for 3 turns",
+  "bbnote": "Fills 8 BC, 120% Atk, Def, Rec, 75% chance for ailments & 300% DoT",
+  "bbtype": "Offense",
+  "bbhits": "1",
+  "bbaoe": "A",
+  "bbgauge": "27",
+  "bbdc": "20",
+  "bbmultiplier": "350",
+  "sbbdescription": "18 combo powerful Thunder attack on all foes, probable huge 1 turn Atk reduction, adds powerful additional attack at turn's end for 2 turns & considerably boosts Atk relative to Def for 3 turns",
+  "sbbnote": "30% chance to reduce enemy Atk by 50%, 400% DoT & 60% Def to Atk",
+  "sbbtype": "Offense",
+  "sbbhits": "18",
+  "sbbaoe": "A",
+  "sbbgauge": "30",
+  "sbbdc": "18",
+  "sbbmultiplier": "560",
   "ubbdescription": "20 combo massive Thunder attack on all foes, fills all allies' BB gauge to max, enormously boosts Atk and Def for 3 turns, enormously boosts Atk relative to Def for 3 turns & enormously boosts BB Atk for 3 turns",
   "ubbnote": "300% Atk, Def, 200% Def to Atk, 500% BB Atk",
   "ubbtype": "Offense",
@@ -1400,8 +1619,6 @@
   "esitem": "",
   "esdescription": "Boosts critical and elemental based damage",
   "esnote": "50% boost",
-  "evofrom": "",
-  "evointo": "40827",
   "evomats1": "Thunder Mecha God",
   "evomats2": "Thunder Mecha God",
   "evomats3": "Miracle Totem",
@@ -1410,117 +1627,5 @@
   "evomats6": "Thunder Idol",
   "evomats7": "Thunder Idol",
   "evomats8": "Metal Mimic",
-  "evoitem": "",
-  "evozelcost": "3000000",
-  "stats": {
-    "_base": {
-      "atk": 2271,
-      "def": 1643,
-      "hp": 5150,
-      "rec": 1601
-    },
-    "_lord": {
-      "atk": 3073,
-      "def": 2235,
-      "hp": 7353,
-      "rec": 2159
-    },
-    "anima": {
-      "atk": 3073,
-      "def": 2235,
-      "hp max": 8543,
-      "hp min": 7948,
-      "rec max": 2040,
-      "rec min": 1802
-    },
-    "breaker": {
-      "atk max": 3430,
-      "atk min": 3192,
-      "def max": 2116,
-      "def min": 1878,
-      "hp": 7353,
-      "rec": 2159
-    },
-    "guardian": {
-      "atk": 3073,
-      "def max": 2592,
-      "def min": 2354,
-      "hp": 7353,
-      "rec max": 2159,
-      "rec min": 1921
-    },
-    "oracle": {
-      "atk": 3073,
-      "def max": 2235,
-      "def min": 1997,
-      "hp": 7353,
-      "rec max": 2635,
-      "rec min": 2397
-    }
-  },
-  "leader_skill": {
-    "desc": "120% boost to Atk, Def and 20% damage reduction for first 2 turns & adds probable Def ignoring effect to attack",
-    "effects": [
-      {
-        "first x turns": 2,
-        "first x turns atk% (1)": 120,
-        "first x turns def% (3)": 120,
-        "passive id": "21"
-      },
-      {
-        "dmg% mitigation for elemental attacks": 20,
-        "dmg% mitigation for elemental attacks buff for first x turns": 2,
-        "mitigate dark attacks": true,
-        "mitigate earth attacks": true,
-        "mitigate fire attacks": true,
-        "mitigate light attacks": true,
-        "mitigate thunder attacks": true,
-        "mitigate water attacks": true,
-        "passive id": "63"
-      },
-      {
-        "ignore def%": 15,
-        "passive id": "29"
-      }
-    ],
-    "id": "2511",
-    "name": "Beast's Ferocious Spirit"
-  },
-  "extra_skill": {
-    "desc": "Boosts critical and elemental based damage",
-    "effects": [
-      {
-        "conditions": [],
-        "crit multiplier%": 50.0,
-        "passive id": "34",
-        "passive target": "self"
-      },
-      {
-        "conditions": [],
-        "dark units do extra elemental weakness dmg": true,
-        "earth units do extra elemental weakness dmg": true,
-        "elemental weakness multiplier%": 50.0,
-        "fire units do extra elemental weakness dmg": true,
-        "light units do extra elemental weakness dmg": true,
-        "passive id": "50",
-        "passive target": "self",
-        "thunder units do extra elemental weakness dmg": true,
-        "water units do extra elemental weakness dmg": true
-      }
-    ],
-    "id": "22300",
-    "name": "A Lion's Pride",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "400,158,180,491",
-  "unitDisplayDetailPosition_6z54rgb3": "-81,62,1100,781",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "60,237,580,412,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-20,-198,1030,732",
-  "unitDisplaySummonPosition_KC3Jk8Br": "60,237,580,412,0",
-  "unitDisplayHpPosition_3BpHN6VD": "1,49",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "15000",
-  "sellCaution": false,
-  "effectFrames": "45:127:1,51:400871:1,54:400089:1,57:600598:1"
+  "evoitem": ""
 }

@@ -1,68 +1,94 @@
 {
   "id": "40816",
-  "unitName": "Thunder Knight Fizz",
-  "no": "1444",
-  "element": "Thunder",
-  "rarity": "★★★★★★★",
-  "cost": "44",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "231",
-  "animation_idle": "52",
-  "animation_move": "15",
-  "movespeed_attack": "0.0024",
-  "movespeed_skill": "0.0024",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "75, 80, 85, 90, 122, 127, 132, 137, 142, 147",
-  "normal_distribute": "7, 6, 7, 6, 18, 15, 13, 11, 9, 8",
-  "normal_totaldistr": "100",
-  "bb_frames": "75, 78, 81, 84, 87, 90, 122, 126, 130, 134, 138, 142, 146, 150",
-  "bb_distribute": "5, 4, 5, 4, 5, 4, 15, 13, 10, 9, 8, 7, 6, 5",
-  "bb_totaldistr": "100",
-  "sbb_frames": "75, 78, 81, 84, 87, 90, 122, 125, 128, 131, 134, 137, 140, 143, 146, 149, 152",
-  "sbb_distribute": "4, 3, 4, 3, 4, 3, 13, 12, 10, 9, 8, 7, 6, 5, 4, 3, 2",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "75, 78, 81, 84, 87, 90, 93, 122, 125, 128, 131, 134, 137, 140, 143, 146, 149, 152, 155, 158",
-  "ubb_distribute": "3, 3, 3, 3, 3, 3, 3, 10, 9, 8, 7, 7, 6, 6, 5, 5, 4, 4, 4, 4",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "4",
-  "sbb_effectdelay": "5",
-  "ubb_effectdelay": "3",
-  "description": "Fizz served as a personal guard of the Princess of the Wind under the all female knight order of the \"Lady Wings.\" The princess trusted her completely, and held her in high regards amongst her subordinates. As such, Fizz never gave up hope on her liege, even when she had been kidnapped by a sorcerer who sought to claim the royal family's heirloom. In fact, it is believed that it was Fizz herself who requested the help of a certain thief to rescue the princess. She was also one of the few people who continued supporting the princess after she had fallen prey to a curse and retired from the public eye.",
-  "summon": "I shall only wield my sword for the princess. It is my duty to protect her. You have someone to protect as well, do you not?",
-  "fusion": "Grant me more power!<br>I want to aid her...<br>No, I must!",
-  "evolution": "",
-  "hp_base": "4989",
-  "atk_base": "2038",
-  "def_base": "1987",
-  "rec_base": "1951",
-  "hp_lord": "6931",
-  "atk_lord": "2848",
-  "def_lord": "2517",
-  "rec_lord": "2511",
-  "hp_anima": "7823",
-  "rec_anima": "2273",
-  "atk_breaker": "3086",
-  "def_breaker": "2279",
-  "def_guardian": "2755",
-  "rec_guardian": "2392",
-  "def_oracle": "2398",
-  "rec_oracle": "2868",
-  "hp_bonus": "1100",
-  "atk_bonus": "440",
-  "def_bonus": "440",
-  "rec_bonus": "440",
-  "lordonly": "",
-  "combo_hits": "10",
-  "normaldc": "40",
-  "ls": "Grand Exhibition of Knowledge",
-  "lsdescription": "30% boost to Atk and max HP, adds probability of normal attacks hitting all foes & damage dealt enormously boosts BB gauge",
-  "lsnote": "25% chance with 50% damage penalty & fills 8 BC",
+  "stats": {
+    "_base": {
+      "atk": 2038,
+      "def": 1987,
+      "hp": 4989,
+      "rec": 1951
+    },
+    "_lord": {
+      "atk": 2848,
+      "def": 2517,
+      "hp": 6931,
+      "rec": 2511
+    },
+    "anima": {
+      "atk": 2848,
+      "def": 2517,
+      "hp max": 8121,
+      "hp min": 7526,
+      "rec max": 2392,
+      "rec min": 2154
+    },
+    "breaker": {
+      "atk max": 3205,
+      "atk min": 2967,
+      "def max": 2398,
+      "def min": 2160,
+      "hp": 6931,
+      "rec": 2511
+    },
+    "guardian": {
+      "atk": 2848,
+      "def max": 2874,
+      "def min": 2636,
+      "hp": 6931,
+      "rec max": 2511,
+      "rec min": 2273
+    },
+    "oracle": {
+      "atk": 2848,
+      "def max": 2517,
+      "def min": 2279,
+      "hp": 6931,
+      "rec max": 2987,
+      "rec min": 2749
+    }
+  },
+  "leader_skill": {
+    "desc": "30% boost to Atk and max HP, adds probability of normal attacks hitting all foes & damage dealt enormously boosts BB gauge",
+    "effects": [
+      {
+        "atk% buff": 30,
+        "hp% buff": 30,
+        "passive id": "1"
+      },
+      {
+        "aoe atk inc%": -50,
+        "chance to aoe": 25,
+        "passive id": "96"
+      },
+      {
+        "bc fill when attacking high": 8,
+        "bc fill when attacking low": 8,
+        "bc fill when attacking%": 100,
+        "passive id": "35"
+      }
+    ],
+    "id": "7453",
+    "name": "Grand Exhibition of Courage"
+  },
+  "extra_skill": {
+    "desc": "Enormously boosts OD gauge fill rate for 2 turns when damage taken has exceeded a certain amount",
+    "effects": [
+      {
+        "buff": {
+          "buff turns (132)": "1",
+          "unknown buff id": "132",
+          "unknown buff params": "300&1&0"
+        },
+        "conditions": [],
+        "damage threshold buff activation": 5000,
+        "passive id": "78",
+        "passive target": "self"
+      }
+    ],
+    "id": "21700",
+    "name": "Honest Devotion",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -609,14 +635,6 @@
     ],
     "name": "Roaring Flash: Hrist"
   },
-  "bbdescription": "14 combo Thunder attack on all foes, boosts OD gauge fill rate for 3 turns, raises normal hit amount and normal attacks hit all foes for 3 turns & hugely boosts BC efficacy for 3 turns",
-  "bbnote": "15% OD fill rate,adds +1 hit to each hit count, 100% chance normal attack hit all foes & 50% BC efficacy",
-  "bbtype": "Offense",
-  "bbhits": "14",
-  "bbaoe": "A",
-  "bbgauge": "26",
-  "bbdc": "14",
-  "bbmultiplier": "350",
   "sbb": {
     "damage frames": [
       {
@@ -1159,14 +1177,6 @@
     ],
     "name": "Holy Roaring Flash: Hervor"
   },
-  "sbbdescription": "17 combo powerful Thunder attack on all foes, slightly boosts OD gauge, boosts OD gauge fill rate for 3 turns & raises normal hit amount and normal attacks hit all foes for 3 turns",
-  "sbbnote": "8% OD fill, 15% OD fill rate, adds +1 hit to each hit count & 100% chance normal attack hit all foes",
-  "sbbtype": "Offense",
-  "sbbhits": "17",
-  "sbbaoe": "A",
-  "sbbgauge": "28",
-  "sbbdc": "17",
-  "sbbmultiplier": "560",
   "ubb": {
     "damage frames": [
       {
@@ -1302,6 +1312,221 @@
     ],
     "name": "Ausrine's Force"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 231
+    },
+    "idle": {
+      "total number of frames": 52
+    },
+    "move": {
+      "total number of frames": 15
+    }
+  },
+  "category": 40810,
+  "cost": "44",
+  "damage frames": {
+    "frame times": [
+      75,
+      80,
+      85,
+      90,
+      122,
+      127,
+      132,
+      137,
+      142,
+      147
+    ],
+    "hit dmg% distribution": [
+      7,
+      6,
+      7,
+      6,
+      18,
+      15,
+      13,
+      11,
+      9,
+      8
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 10
+  },
+  "drop check count": 4,
+  "element": "thunder",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 1444,
+  "imp": {
+    "max atk": "440",
+    "max def": "440",
+    "max hp": "1100",
+    "max rec": "440"
+  },
+  "kind": "normal",
+  "lord damage range": "2652~2961",
+  "movement": {
+    "attack": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    }
+  },
+  "name": "Thunder Knight Fizz",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Thunder Knight Fizz",
+  "maxlv": "120",
+  "no": "1444",
+  "unitDisplayHomePosition_1W9CxaFK": "427,314,174,475",
+  "unitDisplayDetailPosition_6z54rgb3": "-107,-90,1060,970",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "50,173,530,485,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-59,-345,1000,915",
+  "unitDisplaySummonPosition_KC3Jk8Br": "50,173,530,485,0",
+  "unitDisplayHpPosition_3BpHN6VD": "3,55",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "15000",
+  "sellCaution": false,
+  "effectFrames": "69:400231:1,74:400231:1,79:400231:1,84:400231:1,116:127:1,121:127:1,126:127:1,131:127:1,136:127:1,141:127:1,31:500662:1,121:306:1,122:500090:1,132:400147:1",
+  "evofrom": "",
+  "evointo": "40817",
+  "evozelcost": "3000000",
+  "evokarmacost": "1000000",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "40334",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40191",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "40132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "231",
+  "animation_idle": "52",
+  "animation_move": "15",
+  "movespeed_attack": "0.0024",
+  "movespeed_skill": "0.0024",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "75, 80, 85, 90, 122, 127, 132, 137, 142, 147",
+  "normal_distribute": "7, 6, 7, 6, 18, 15, 13, 11, 9, 8",
+  "normal_totaldistr": "100",
+  "bb_frames": "75, 78, 81, 84, 87, 90, 122, 126, 130, 134, 138, 142, 146, 150",
+  "bb_distribute": "5, 4, 5, 4, 5, 4, 15, 13, 10, 9, 8, 7, 6, 5",
+  "bb_totaldistr": "100",
+  "sbb_frames": "75, 78, 81, 84, 87, 90, 122, 125, 128, 131, 134, 137, 140, 143, 146, 149, 152",
+  "sbb_distribute": "4, 3, 4, 3, 4, 3, 13, 12, 10, 9, 8, 7, 6, 5, 4, 3, 2",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "75, 78, 81, 84, 87, 90, 93, 122, 125, 128, 131, 134, 137, 140, 143, 146, 149, 152, 155, 158",
+  "ubb_distribute": "3, 3, 3, 3, 3, 3, 3, 10, 9, 8, 7, 7, 6, 6, 5, 5, 4, 4, 4, 4",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "4",
+  "sbb_effectdelay": "5",
+  "ubb_effectdelay": "3",
+  "description": "Fizz served as a personal guard of the Princess of the Wind under the all female knight order of the \"Lady Wings.\" The princess trusted her completely, and held her in high regards amongst her subordinates. As such, Fizz never gave up hope on her liege, even when she had been kidnapped by a sorcerer who sought to claim the royal family's heirloom. In fact, it is believed that it was Fizz herself who requested the help of a certain thief to rescue the princess. She was also one of the few people who continued supporting the princess after she had fallen prey to a curse and retired from the public eye.",
+  "summon": "I shall only wield my sword for the princess. It is my duty to protect her. You have someone to protect as well, do you not?",
+  "fusion": "Grant me more power!<br>I want to aid her...<br>No, I must!",
+  "evolution": "",
+  "hp_base": "4989",
+  "atk_base": "2038",
+  "def_base": "1987",
+  "rec_base": "1951",
+  "hp_lord": "6931",
+  "atk_lord": "2848",
+  "def_lord": "2517",
+  "rec_lord": "2511",
+  "hp_anima": "7823",
+  "rec_anima": "2273",
+  "atk_breaker": "3086",
+  "def_breaker": "2279",
+  "def_guardian": "2755",
+  "rec_guardian": "2392",
+  "def_oracle": "2398",
+  "rec_oracle": "2868",
+  "hp_bonus": "1100",
+  "atk_bonus": "440",
+  "def_bonus": "440",
+  "rec_bonus": "440",
+  "lordonly": "",
+  "combo_hits": "10",
+  "normaldc": "40",
+  "ls": "Grand Exhibition of Knowledge",
+  "lsdescription": "30% boost to Atk and max HP, adds probability of normal attacks hitting all foes & damage dealt enormously boosts BB gauge",
+  "lsnote": "25% chance with 50% damage penalty & fills 8 BC",
+  "bbdescription": "14 combo Thunder attack on all foes, boosts OD gauge fill rate for 3 turns, raises normal hit amount and normal attacks hit all foes for 3 turns & hugely boosts BC efficacy for 3 turns",
+  "bbnote": "15% OD fill rate,adds +1 hit to each hit count, 100% chance normal attack hit all foes & 50% BC efficacy",
+  "bbtype": "Offense",
+  "bbhits": "14",
+  "bbaoe": "A",
+  "bbgauge": "26",
+  "bbdc": "14",
+  "bbmultiplier": "350",
+  "sbbdescription": "17 combo powerful Thunder attack on all foes, slightly boosts OD gauge, boosts OD gauge fill rate for 3 turns & raises normal hit amount and normal attacks hit all foes for 3 turns",
+  "sbbnote": "8% OD fill, 15% OD fill rate, adds +1 hit to each hit count & 100% chance normal attack hit all foes",
+  "sbbtype": "Offense",
+  "sbbhits": "17",
+  "sbbaoe": "A",
+  "sbbgauge": "28",
+  "sbbdc": "17",
+  "sbbmultiplier": "560",
   "ubbdescription": "20 combo massive Thunder attack on all foes, enormously boosts Atk and Def for 5 turns, enormously boosts OD gauge fill rate for 5 turns & normal attacks hit all foes for 5 turns",
   "ubbnote": "250% Atk/Def, 200% OD fill rate",
   "ubbtype": "Offense",
@@ -1314,8 +1539,6 @@
   "esitem": "",
   "esdescription": "Enormously boosts OD gauge fill rate for 2 turns when damage taken has exceeded a certain amount",
   "esnote": "300% boost '''for 1 turn''' after 5000 damage",
-  "evofrom": "",
-  "evointo": "40817",
   "evomats1": "Thunder Mecha God",
   "evomats2": "Thunder Mecha God",
   "evomats3": "Miracle Totem",
@@ -1324,105 +1547,5 @@
   "evomats6": "Thunder Pot",
   "evomats7": "Thunder Idol",
   "evomats8": "Metal Mimic",
-  "evoitem": "",
-  "evozelcost": "3000000",
-  "stats": {
-    "_base": {
-      "atk": 2038,
-      "def": 1987,
-      "hp": 4989,
-      "rec": 1951
-    },
-    "_lord": {
-      "atk": 2848,
-      "def": 2517,
-      "hp": 6931,
-      "rec": 2511
-    },
-    "anima": {
-      "atk": 2848,
-      "def": 2517,
-      "hp max": 8121,
-      "hp min": 7526,
-      "rec max": 2392,
-      "rec min": 2154
-    },
-    "breaker": {
-      "atk max": 3205,
-      "atk min": 2967,
-      "def max": 2398,
-      "def min": 2160,
-      "hp": 6931,
-      "rec": 2511
-    },
-    "guardian": {
-      "atk": 2848,
-      "def max": 2874,
-      "def min": 2636,
-      "hp": 6931,
-      "rec max": 2511,
-      "rec min": 2273
-    },
-    "oracle": {
-      "atk": 2848,
-      "def max": 2517,
-      "def min": 2279,
-      "hp": 6931,
-      "rec max": 2987,
-      "rec min": 2749
-    }
-  },
-  "leader_skill": {
-    "desc": "30% boost to Atk and max HP, adds probability of normal attacks hitting all foes & damage dealt enormously boosts BB gauge",
-    "effects": [
-      {
-        "atk% buff": 30,
-        "hp% buff": 30,
-        "passive id": "1"
-      },
-      {
-        "aoe atk inc%": -50,
-        "chance to aoe": 25,
-        "passive id": "96"
-      },
-      {
-        "bc fill when attacking high": 8,
-        "bc fill when attacking low": 8,
-        "bc fill when attacking%": 100,
-        "passive id": "35"
-      }
-    ],
-    "id": "7453",
-    "name": "Grand Exhibition of Courage"
-  },
-  "extra_skill": {
-    "desc": "Enormously boosts OD gauge fill rate for 2 turns when damage taken has exceeded a certain amount",
-    "effects": [
-      {
-        "buff": {
-          "buff turns (132)": "1",
-          "unknown buff id": "132",
-          "unknown buff params": "300&1&0"
-        },
-        "conditions": [],
-        "damage threshold buff activation": 5000,
-        "passive id": "78",
-        "passive target": "self"
-      }
-    ],
-    "id": "21700",
-    "name": "Honest Devotion",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "427,314,174,475",
-  "unitDisplayDetailPosition_6z54rgb3": "-107,-90,1060,970",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "50,173,530,485,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-59,-345,1000,915",
-  "unitDisplaySummonPosition_KC3Jk8Br": "50,173,530,485,0",
-  "unitDisplayHpPosition_3BpHN6VD": "3,55",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "15000",
-  "sellCaution": false,
-  "effectFrames": "69:400231:1,74:400231:1,79:400231:1,84:400231:1,116:127:1,121:127:1,126:127:1,131:127:1,136:127:1,141:127:1,31:500662:1,121:306:1,122:500090:1,132:400147:1"
+  "evoitem": ""
 }

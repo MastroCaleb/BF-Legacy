@@ -1,68 +1,108 @@
 {
   "id": "20907",
-  "unitName": "Great General Zalts",
-  "no": "1486",
-  "element": "Water",
-  "rarity": "Omni",
-  "cost": "48",
-  "maxlv": "150",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "105",
-  "animation_idle": "54",
-  "animation_move": "6",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "19, 24, 29, 54, 59, 64, 69, 74",
-  "normal_distribute": "15, 11, 8, 18, 15, 13, 11, 9",
-  "normal_totaldistr": "100",
-  "bb_frames": "19, 22, 25, 28, 31, 34, 54, 57, 60, 63, 66, 69, 72, 75",
-  "bb_distribute": "9, 8, 7, 6, 5, 5, 10, 9, 8, 7, 7, 7, 6, 6",
-  "bb_totaldistr": "100",
-  "sbb_frames": "19, 22, 25, 28, 31, 34, 37, 40, 43, 54, 57, 60, 63, 66, 69, 72, 75, 78, 81",
-  "sbb_distribute": "6, 6, 5, 5, 4, 4, 4, 3, 3, 8, 7, 7, 6, 6, 6, 5, 5, 5, 5",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "19, 22, 25, 28, 31, 34, 37, 40, 43, 46, 49, 54, 57, 60, 63, 66, 69, 72, 75, 78, 81, 84",
-  "ubb_distribute": "5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 8, 7, 6, 6, 6, 5, 5, 5, 4, 4, 4",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "1",
-  "ubb_effectdelay": "1",
-  "description": "Zalts was always admired for his great amount of experience, fair judgment, and practical advice. However, he was also known for his overly blunt manner of speaking. He is said to have been awfully strict with the young man who eventually became the emperor, having in a sense taken the role of his master. Had he lived to see what followed the founding of the empire and began involving himself in government affairs as a meritorious retainer, the political system would have been laxer, leaving more room for free expression. It would have most likely altered the establishment of a volunteer army as well.",
-  "summon": "Keeping my ideas to myself helps no one. Sure, the way I share them may not always be pleasant, but that's just how I do things.",
-  "fusion": "Do you think I'm weak just because I'm old? I'm still too young to be losing to little brats like yourself",
-  "evolution": "I guess someone still needs these old bones! And even if no one claims to, I'll say it for them!",
-  "hp_base": "7055",
-  "atk_base": "2620",
-  "def_base": "2079",
-  "rec_base": "1918",
-  "hp_lord": "8235",
-  "atk_lord": "3234",
-  "def_lord": "2669",
-  "rec_lord": "2458",
-  "hp_anima": "9352",
-  "rec_anima": "2160",
-  "atk_breaker": "3532",
-  "def_breaker": "2371",
-  "def_guardian": "2967",
-  "rec_guardian": "2309",
-  "def_oracle": "2520",
-  "rec_oracle": "2905",
-  "hp_bonus": "1500",
-  "atk_bonus": "600",
-  "def_bonus": "600",
-  "rec_bonus": "600",
-  "lordonly": "",
-  "combo_hits": "8",
-  "normaldc": "48",
-  "ls": "Resiliently Faithful Soul",
-  "lsdescription": "50% boost to Atk and max HP, enormously boosts BB Atk, enormously boosts Spark damage for 2 turns when BC collected has exceeded certain amount & slightly reduces damage for 2 turns when HC collected has exceeded certain amount",
-  "lsnote": "250% BB Atk, 120% Spark boost after 30 BC & 20% reduction after 20 HC",
+  "stats": {
+    "_base": {
+      "atk": 2620,
+      "def": 2079,
+      "hp": 7055,
+      "rec": 1918
+    },
+    "_lord": {
+      "atk": 3234,
+      "def": 2669,
+      "hp": 8235,
+      "rec": 2458
+    },
+    "anima": {
+      "atk": 3234,
+      "def": 2669,
+      "hp max": 9725,
+      "hp min": 8980,
+      "rec max": 2309,
+      "rec min": 2011
+    },
+    "breaker": {
+      "atk max": 3681,
+      "atk min": 3383,
+      "def max": 2520,
+      "def min": 2222,
+      "hp": 8235,
+      "rec": 2458
+    },
+    "guardian": {
+      "atk": 3234,
+      "def max": 3116,
+      "def min": 2818,
+      "hp": 8235,
+      "rec max": 2458,
+      "rec min": 2160
+    },
+    "oracle": {
+      "atk": 3234,
+      "def max": 2669,
+      "def min": 2371,
+      "hp": 8235,
+      "rec max": 3054,
+      "rec min": 2756
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to Atk and max HP, enormously boosts BB Atk, enormously boosts Spark damage for 2 turns when BC collected has exceeded certain amount & slightly reduces damage for 2 turns when HC collected has exceeded certain amount",
+    "effects": [
+      {
+        "atk% buff": 50,
+        "hp% buff": 50,
+        "passive id": "1"
+      },
+      {
+        "bb atk% buff": 250,
+        "passive id": "64",
+        "sbb atk% buff": 250,
+        "ubb atk% buff": 250
+      },
+      {
+        "bc receive count buff activation": 30,
+        "buff": {
+          "buff turns (40)": "2",
+          "spark dmg% buff": 120
+        },
+        "passive id": "82"
+      },
+      {
+        "buff": {
+          "buff turns (36)": "2",
+          "dmg reduction% buff": 20
+        },
+        "hc receive count buff activation": 20,
+        "passive id": "84"
+      }
+    ],
+    "id": "7471",
+    "name": "Resiliently Faithful Soul"
+  },
+  "extra_skill": {
+    "desc": "Hugely boosts BB Atk & 50% boost to Spark damage",
+    "effects": [
+      {
+        "conditions": [],
+        "damage% for spark": 50,
+        "passive id": "31",
+        "passive target": "self"
+      },
+      {
+        "bb atk% buff": 150,
+        "conditions": [],
+        "passive id": "64",
+        "passive target": "self",
+        "sbb atk% buff": 150,
+        "ubb atk% buff": 150
+      }
+    ],
+    "id": "24200",
+    "name": "Veteran General's Roar",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -547,14 +587,6 @@
     ],
     "name": "Arctic Opposition"
   },
-  "bbdescription": "14 combo Water attack on all foes, considerably boosts BB Atk for 3 turns, considerably boosts BC, HC drop rate for 3 turns & hugely boosts BC efficacy for 3 turns",
-  "bbnote": "250% BB Atk, 50% BC efficacy & 30% BC/HC",
-  "bbtype": "Offense",
-  "bbhits": "14",
-  "bbaoe": "A",
-  "bbgauge": "29",
-  "bbdc": "14",
-  "bbmultiplier": "370",
   "sbb": {
     "damage frames": [
       {
@@ -1059,15 +1091,6 @@
     ],
     "name": "Imperial Forces: 1000 Strong"
   },
-  "sbbdescription": "19 combo powerful Water attack on all foes (damage relative to HP remaining), slightly boosts OD gauge, hugely boosts BB Atk for 3 turns & considerably boosts BC, HC drop rate for 3 turns",
-  "sbbnote": "200% + 670% x current HP / base max HP, 300% BB Atk, 30% BC/HC & fills 8% OD gauge",
-  "sbbtype": "Offense",
-  "sbbhits": "19",
-  "sbbaoe": "A",
-  "sbbgauge": "30",
-  "sbbdc": "19",
-  "sbbmultiplier": "200",
-  "sbb_hpscale": "true",
   "ubb": {
     "damage frames": [
       {
@@ -1239,6 +1262,187 @@
     ],
     "name": "Naraka: Nirarbuda"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 105
+    },
+    "idle": {
+      "total number of frames": 54
+    },
+    "move": {
+      "total number of frames": 6
+    }
+  },
+  "category": 20900,
+  "cost": "48",
+  "damage frames": {
+    "frame times": [
+      19,
+      24,
+      29,
+      54,
+      59,
+      64,
+      69,
+      74
+    ],
+    "hit dmg% distribution": [
+      15,
+      11,
+      8,
+      18,
+      15,
+      13,
+      11,
+      9
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 8
+  },
+  "drop check count": 6,
+  "element": "water",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 1486,
+  "imp": {
+    "max atk": "600",
+    "max def": "600",
+    "max hp": "1500",
+    "max rec": "600"
+  },
+  "kind": "normal",
+  "lord damage range": "3011~3363",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Great General Zalts",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "8",
+  "sell caution": false,
+  "unitName": "Great General Zalts",
+  "maxlv": "150",
+  "no": "1486",
+  "unitDisplayHomePosition_1W9CxaFK": "602,311,160,437",
+  "unitDisplayDetailPosition_6z54rgb3": "-332,-53,1450,908",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "-59,203,695,435,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-279,-323,1390,870",
+  "unitDisplaySummonPosition_KC3Jk8Br": "-59,203,695,435,0",
+  "unitDisplayHpPosition_3BpHN6VD": "-4,41",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "50000",
+  "sellCaution": false,
+  "effectFrames": "13:120:1,18:120:1,23:120:1,48:120:1,53:120:1,58:120:1,63:120:1,68:120:1,0:215:1,19:200670:1,54:200310:1,57:201320:1,60:200310:1,63:201320:1,66:200310:1,69:201320:1,72:200310:1,75:201320:1,24:501240:1",
+  "evofrom": "20906",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "21",
+  "animation_attack": "105",
+  "animation_idle": "54",
+  "animation_move": "6",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "19, 24, 29, 54, 59, 64, 69, 74",
+  "normal_distribute": "15, 11, 8, 18, 15, 13, 11, 9",
+  "normal_totaldistr": "100",
+  "bb_frames": "19, 22, 25, 28, 31, 34, 54, 57, 60, 63, 66, 69, 72, 75",
+  "bb_distribute": "9, 8, 7, 6, 5, 5, 10, 9, 8, 7, 7, 7, 6, 6",
+  "bb_totaldistr": "100",
+  "sbb_frames": "19, 22, 25, 28, 31, 34, 37, 40, 43, 54, 57, 60, 63, 66, 69, 72, 75, 78, 81",
+  "sbb_distribute": "6, 6, 5, 5, 4, 4, 4, 3, 3, 8, 7, 7, 6, 6, 6, 5, 5, 5, 5",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "19, 22, 25, 28, 31, 34, 37, 40, 43, 46, 49, 54, 57, 60, 63, 66, 69, 72, 75, 78, 81, 84",
+  "ubb_distribute": "5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 8, 7, 6, 6, 6, 5, 5, 5, 4, 4, 4",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "1",
+  "ubb_effectdelay": "1",
+  "description": "Zalts was always admired for his great amount of experience, fair judgment, and practical advice. However, he was also known for his overly blunt manner of speaking. He is said to have been awfully strict with the young man who eventually became the emperor, having in a sense taken the role of his master. Had he lived to see what followed the founding of the empire and began involving himself in government affairs as a meritorious retainer, the political system would have been laxer, leaving more room for free expression. It would have most likely altered the establishment of a volunteer army as well.",
+  "summon": "Keeping my ideas to myself helps no one. Sure, the way I share them may not always be pleasant, but that's just how I do things.",
+  "fusion": "Do you think I'm weak just because I'm old? I'm still too young to be losing to little brats like yourself",
+  "evolution": "I guess someone still needs these old bones! And even if no one claims to, I'll say it for them!",
+  "hp_base": "7055",
+  "atk_base": "2620",
+  "def_base": "2079",
+  "rec_base": "1918",
+  "hp_lord": "8235",
+  "atk_lord": "3234",
+  "def_lord": "2669",
+  "rec_lord": "2458",
+  "hp_anima": "9352",
+  "rec_anima": "2160",
+  "atk_breaker": "3532",
+  "def_breaker": "2371",
+  "def_guardian": "2967",
+  "rec_guardian": "2309",
+  "def_oracle": "2520",
+  "rec_oracle": "2905",
+  "hp_bonus": "1500",
+  "atk_bonus": "600",
+  "def_bonus": "600",
+  "rec_bonus": "600",
+  "lordonly": "",
+  "combo_hits": "8",
+  "normaldc": "48",
+  "ls": "Resiliently Faithful Soul",
+  "lsdescription": "50% boost to Atk and max HP, enormously boosts BB Atk, enormously boosts Spark damage for 2 turns when BC collected has exceeded certain amount & slightly reduces damage for 2 turns when HC collected has exceeded certain amount",
+  "lsnote": "250% BB Atk, 120% Spark boost after 30 BC & 20% reduction after 20 HC",
+  "bbdescription": "14 combo Water attack on all foes, considerably boosts BB Atk for 3 turns, considerably boosts BC, HC drop rate for 3 turns & hugely boosts BC efficacy for 3 turns",
+  "bbnote": "250% BB Atk, 50% BC efficacy & 30% BC/HC",
+  "bbtype": "Offense",
+  "bbhits": "14",
+  "bbaoe": "A",
+  "bbgauge": "29",
+  "bbdc": "14",
+  "bbmultiplier": "370",
+  "sbbdescription": "19 combo powerful Water attack on all foes (damage relative to HP remaining), slightly boosts OD gauge, hugely boosts BB Atk for 3 turns & considerably boosts BC, HC drop rate for 3 turns",
+  "sbbnote": "200% + 670% x current HP / base max HP, 300% BB Atk, 30% BC/HC & fills 8% OD gauge",
+  "sbbtype": "Offense",
+  "sbbhits": "19",
+  "sbbaoe": "A",
+  "sbbgauge": "30",
+  "sbbdc": "19",
+  "sbbmultiplier": "200",
+  "sbb_hpscale": "true",
   "ubbdescription": "22 combo massive Water attack on all foes (damage relative to HP remaining), enormous 2 turn Atk, Def reduction, inflicts enormous Spark vulnerability for 3 turns, enormously boosts BB Atk for 3 turns & enormously boosts critical hit rate for 3 turns",
   "ubbnote": "1500% + 1000% x current HP / base max HP, 550% BB Atk, 60% Crit, 150% Spark vulnerability & 80% reduction",
   "ubbtype": "Offense",
@@ -1252,7 +1456,6 @@
   "esitem": "",
   "esdescription": "Hugely boosts BB Atk & 50% boost to Spark damage",
   "esnote": "150% boost",
-  "evofrom": "20906",
   "omniskill1_cat": "Parameter Boost",
   "omniskill1_1_sp": "10",
   "omniskill1_1_desc": "20% boost to max HP",
@@ -1281,118 +1484,5 @@
   "notes": "",
   "addcat": "Champions of Randall",
   "addcatname": "Zalts2",
-  "bottomtext": "",
-  "stats": {
-    "_base": {
-      "atk": 2620,
-      "def": 2079,
-      "hp": 7055,
-      "rec": 1918
-    },
-    "_lord": {
-      "atk": 3234,
-      "def": 2669,
-      "hp": 8235,
-      "rec": 2458
-    },
-    "anima": {
-      "atk": 3234,
-      "def": 2669,
-      "hp max": 9725,
-      "hp min": 8980,
-      "rec max": 2309,
-      "rec min": 2011
-    },
-    "breaker": {
-      "atk max": 3681,
-      "atk min": 3383,
-      "def max": 2520,
-      "def min": 2222,
-      "hp": 8235,
-      "rec": 2458
-    },
-    "guardian": {
-      "atk": 3234,
-      "def max": 3116,
-      "def min": 2818,
-      "hp": 8235,
-      "rec max": 2458,
-      "rec min": 2160
-    },
-    "oracle": {
-      "atk": 3234,
-      "def max": 2669,
-      "def min": 2371,
-      "hp": 8235,
-      "rec max": 3054,
-      "rec min": 2756
-    }
-  },
-  "leader_skill": {
-    "desc": "50% boost to Atk and max HP, enormously boosts BB Atk, enormously boosts Spark damage for 2 turns when BC collected has exceeded certain amount & slightly reduces damage for 2 turns when HC collected has exceeded certain amount",
-    "effects": [
-      {
-        "atk% buff": 50,
-        "hp% buff": 50,
-        "passive id": "1"
-      },
-      {
-        "bb atk% buff": 250,
-        "passive id": "64",
-        "sbb atk% buff": 250,
-        "ubb atk% buff": 250
-      },
-      {
-        "bc receive count buff activation": 30,
-        "buff": {
-          "buff turns (40)": "2",
-          "spark dmg% buff": 120
-        },
-        "passive id": "82"
-      },
-      {
-        "buff": {
-          "buff turns (36)": "2",
-          "dmg reduction% buff": 20
-        },
-        "hc receive count buff activation": 20,
-        "passive id": "84"
-      }
-    ],
-    "id": "7471",
-    "name": "Resiliently Faithful Soul"
-  },
-  "extra_skill": {
-    "desc": "Hugely boosts BB Atk & 50% boost to Spark damage",
-    "effects": [
-      {
-        "conditions": [],
-        "damage% for spark": 50,
-        "passive id": "31",
-        "passive target": "self"
-      },
-      {
-        "bb atk% buff": 150,
-        "conditions": [],
-        "passive id": "64",
-        "passive target": "self",
-        "sbb atk% buff": 150,
-        "ubb atk% buff": 150
-      }
-    ],
-    "id": "24200",
-    "name": "Veteran General's Roar",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "602,311,160,437",
-  "unitDisplayDetailPosition_6z54rgb3": "-332,-53,1450,908",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "-59,203,695,435,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-279,-323,1390,870",
-  "unitDisplaySummonPosition_KC3Jk8Br": "-59,203,695,435,0",
-  "unitDisplayHpPosition_3BpHN6VD": "-4,41",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "50000",
-  "sellCaution": false,
-  "effectFrames": "13:120:1,18:120:1,23:120:1,48:120:1,53:120:1,58:120:1,63:120:1,68:120:1,0:215:1,19:200670:1,54:200310:1,57:201320:1,60:200310:1,63:201320:1,66:200310:1,69:201320:1,72:200310:1,75:201320:1,24:501240:1"
+  "bottomtext": ""
 }

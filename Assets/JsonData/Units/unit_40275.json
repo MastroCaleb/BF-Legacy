@@ -1,52 +1,72 @@
 {
   "id": "40275",
-  "unitName": "Havoc Angel Ronel",
-  "no": "491",
-  "element": "Thunder",
-  "rarity": "★★★★★★",
-  "cost": "25",
-  "maxlv": "100",
-  "basexp": "21",
-  "gender": "N",
-  "ai": "3",
-  "animation_attack": "105",
-  "animation_idle": "76",
-  "animation_move": "11",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "description": "Seeking her own freedom, this angel rebelled against the gods. There is no recorded trace of her after her battle with the Keeper of Order. However, there is a legend which likely points to her that speaks of an angel who came from the heavens and destroyed the gods. There are similarities between the angel and the girl from the legend said to have appeared with a flash of lightning, mowing down the gods with her twin blades. It has also been said that she fought alongside a half blood girl and a disastrous beast, though no further details of this exist.",
-  "summon": "I've no power to lend to weaklings.<br>If you want my help then you must <br>show the power you already have!",
-  "fusion": "Power is neither good nor bad.<br>It is the loser who is seen as bad.<br>That's why I want more power!",
-  "evolution": "There is nothing more satisfying<br>than releasing your true potential!<br>Hehe, don't you agree?",
-  "hp_base": "4583",
-  "atk_base": "1367",
-  "def_base": "1367",
-  "rec_base": "1411",
-  "hp_lord": "6032",
-  "atk_lord": "1879",
-  "def_lord": "1731",
-  "rec_lord": "1800",
-  "hp_anima": "6774",
-  "rec_anima": "1602",
-  "atk_breaker": "2077",
-  "def_breaker": "1533",
-  "atk_guardian": "1681",
-  "def_guardian": "1929",
-  "hp_oracle": "5289",
-  "rec_oracle": "1998",
-  "hp_bonus": "750",
-  "atk_bonus": "300",
-  "def_bonus": "300",
-  "rec_bonus": "300",
-  "lordonly": "",
-  "combo_hits": "8",
-  "ls": "Eternal Life",
-  "lsdescription": "10% increase in HP and nullifies all status ailments",
-  "lstype": "Hit Points/Defense",
+  "stats": {
+    "_base": {
+      "atk": 1367,
+      "def": 1367,
+      "hp": 4583,
+      "rec": 1411
+    },
+    "_lord": {
+      "atk": 1879,
+      "def": 1731,
+      "hp": 6032,
+      "rec": 1800
+    },
+    "anima": {
+      "atk": 1879,
+      "def": 1731,
+      "hp max": 7022,
+      "hp min": 6527,
+      "rec max": 1701,
+      "rec min": 1503
+    },
+    "breaker": {
+      "atk max": 2176,
+      "atk min": 1978,
+      "def max": 1632,
+      "def min": 1434,
+      "hp": 6032,
+      "rec": 1800
+    },
+    "guardian": {
+      "atk": 1879,
+      "def max": 2028,
+      "def min": 1830,
+      "hp": 6032,
+      "rec max": 1800,
+      "rec min": 1602
+    },
+    "oracle": {
+      "atk": 1879,
+      "def max": 1731,
+      "def min": 1533,
+      "hp": 6032,
+      "rec max": 2196,
+      "rec min": 1998
+    }
+  },
+  "leader_skill": {
+    "desc": "10% increase in HP and nullifies all status ailments",
+    "effects": [
+      {
+        "curse resist%": 100,
+        "injury resist%": 100,
+        "paralysis resist%": 100,
+        "passive id": "4",
+        "poison resist%": 100,
+        "sick resist%": 100,
+        "weaken resist%": 100
+      },
+      {
+        "hp% buff": 10,
+        "passive id": "1"
+      }
+    ],
+    "id": "2104",
+    "name": "Eternal Life"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -313,11 +333,6 @@
     ],
     "name": "Lost Vision"
   },
-  "bbdescription": "12 combo powerful Thunder attack on all enemies & boost to BC drop rate for 3 turns",
-  "bbtype": "Support/Offense",
-  "bbhits": "12",
-  "bbaoe": "A",
-  "bbgauge": "34",
   "sbb": {
     "damage frames": [
       {
@@ -598,95 +613,102 @@
     ],
     "name": "Angel of Destruction"
   },
-  "sbbdescription": "14 combo powerful Thunder attack on all enemies & boost to BC and HC drop rate for 3 turns",
-  "sbbtype": "Support/Offense",
-  "sbbhits": "14",
-  "sbbaoe": "A",
-  "sbbgauge": "30",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "40274",
-  "evointo": "40276",
-  "evomats1": "40334",
-  "evomats2": "50354",
-  "evomats3": "40133",
-  "evomats4": "40191",
-  "evomats5": "",
-  "evoitem": "Legend Stone",
-  "evozelcost": "1500000",
-  "stats": {
-    "_base": {
-      "atk": 1367,
-      "def": 1367,
-      "hp": 4583,
-      "rec": 1411
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1879,
-      "def": 1731,
-      "hp": 6032,
-      "rec": 1800
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1879,
-      "def": 1731,
-      "hp max": 7022,
-      "hp min": 6527,
-      "rec max": 1701,
-      "rec min": 1503
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 2176,
-      "atk min": 1978,
-      "def max": 1632,
-      "def min": 1434,
-      "hp": 6032,
-      "rec": 1800
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 105
     },
-    "guardian": {
-      "atk": 1879,
-      "def max": 2028,
-      "def min": 1830,
-      "hp": 6032,
-      "rec max": 1800,
-      "rec min": 1602
+    "idle": {
+      "total number of frames": 76
     },
-    "oracle": {
-      "atk": 1879,
-      "def max": 1731,
-      "def min": 1533,
-      "hp": 6032,
-      "rec max": 2196,
-      "rec min": 1998
+    "move": {
+      "total number of frames": 11
     }
   },
-  "leader_skill": {
-    "desc": "10% increase in HP and nullifies all status ailments",
-    "effects": [
-      {
-        "curse resist%": 100,
-        "injury resist%": 100,
-        "paralysis resist%": 100,
-        "passive id": "4",
-        "poison resist%": 100,
-        "sick resist%": 100,
-        "weaken resist%": 100
-      },
-      {
-        "hp% buff": 10,
-        "passive id": "1"
-      }
+  "category": 40270,
+  "cost": "25",
+  "damage frames": {
+    "frame times": [
+      15,
+      20,
+      23,
+      62,
+      66,
+      70,
+      74,
+      78
     ],
-    "id": "2104",
-    "name": "Eternal Life"
+    "hit dmg% distribution": [
+      10,
+      10,
+      10,
+      20,
+      10,
+      10,
+      10,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 8
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "thunder",
+  "exp_pattern": 20,
+  "gender": "other",
+  "getting type": "rare summon",
+  "guide_id": 491,
+  "imp": {
+    "max atk": "300",
+    "max def": "300",
+    "max hp": "750",
+    "max rec": "300"
+  },
+  "kind": "normal",
+  "lord damage range": "1749~1954",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Havoc Angel Ronel",
+  "rarity": "6",
+  "sell caution": false,
+  "unitName": "Havoc Angel Ronel",
+  "maxlv": "100",
+  "no": "491",
   "unitDisplayHomePosition_1W9CxaFK": "527,153,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-182,29,1014,813",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "133,183,470,460,0",
@@ -696,5 +718,118 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "8000",
   "sellCaution": false,
-  "effectFrames": "9:400231:1,11:400130:1,14:400231:1,17:400231:1,17:600220:1,57:124:1,60:400231:1,64:400231:1,68:400231:1,38:200401:1,70:400071:1,76:300:1"
+  "effectFrames": "9:400231:1,11:400130:1,14:400231:1,17:400231:1,17:600220:1,57:124:1,60:400231:1,64:400231:1,68:400231:1,38:200401:1,70:400071:1,76:300:1",
+  "evofrom": "40274",
+  "evointo": "40276",
+  "evozelcost": "1500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "40334",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40191",
+      "count": 1
+    },
+    {
+      "type": "2",
+      "id": "110100",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "105",
+  "animation_idle": "76",
+  "animation_move": "11",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "15, 20, 23, 62, 66, 70, 74, 78",
+  "normal_distribute": "10, 10, 10, 20, 10, 10, 10, 20",
+  "normal_totaldistr": "100",
+  "bb_frames": "14, 19, 22, 53, 57, 61, 69, 77, 85, 89, 93, 97",
+  "bb_distribute": "10, 10, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8",
+  "bb_totaldistr": "100",
+  "sbb_frames": "14, 19, 22, 25, 53, 57, 61, 69, 77, 85, 89, 93, 97, 101",
+  "sbb_distribute": "14, 6, 6, 6, 14, 6, 6, 6, 6, 6, 6, 6, 6, 6",
+  "sbb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "1",
+  "description": "Seeking her own freedom, this angel rebelled against the gods. There is no recorded trace of her after her battle with the Keeper of Order. However, there is a legend which likely points to her that speaks of an angel who came from the heavens and destroyed the gods. There are similarities between the angel and the girl from the legend said to have appeared with a flash of lightning, mowing down the gods with her twin blades. It has also been said that she fought alongside a half blood girl and a disastrous beast, though no further details of this exist.",
+  "summon": "I've no power to lend to weaklings.<br>If you want my help then you must <br>show the power you already have!",
+  "fusion": "Power is neither good nor bad.<br>It is the loser who is seen as bad.<br>That's why I want more power!",
+  "evolution": "There is nothing more satisfying<br>than releasing your true potential!<br>Hehe, don't you agree?",
+  "hp_base": "4583",
+  "atk_base": "1367",
+  "def_base": "1367",
+  "rec_base": "1411",
+  "hp_lord": "6032",
+  "atk_lord": "1879",
+  "def_lord": "1731",
+  "rec_lord": "1800",
+  "hp_anima": "6775",
+  "rec_anima": "1602",
+  "atk_breaker": "2077",
+  "def_breaker": "1533",
+  "atk_guardian": "1681",
+  "def_guardian": "1929",
+  "rec_guardian": "1701",
+  "def_oracle": "1632",
+  "hp_oracle": "5735",
+  "rec_oracle": "2097",
+  "hp_bonus": "750",
+  "atk_bonus": "300",
+  "def_bonus": "300",
+  "rec_bonus": "300",
+  "lordonly": "",
+  "combo_hits": "8",
+  "normaldc": "24",
+  "ls": "Eternal Life",
+  "lsdescription": "10% increase in HP and nullifies all status ailments",
+  "lstype": "Hit Points/Defense",
+  "bbdescription": "12 combo powerful Thunder attack on all enemies & boost to BC drop rate for 3 turns",
+  "bbnote": "25% boost",
+  "bbtype": "Support/Offense",
+  "bbhits": "12",
+  "bbaoe": "A",
+  "bbgauge": "25",
+  "bbdc": "12",
+  "bbmultiplier": "250",
+  "sbbdescription": "14 combo powerful Thunder attack on all enemies & boost to BC and HC drop rate for 3 turns",
+  "sbbnote": "25% boost",
+  "sbbtype": "Support/Offense",
+  "sbbhits": "14",
+  "sbbaoe": "A",
+  "sbbgauge": "25",
+  "sbbdc": "14",
+  "sbbmultiplier": "480",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "40334",
+  "evomats2": "50354",
+  "evomats3": "40133",
+  "evomats4": "40191",
+  "evomats5": "",
+  "evoitem": "Legend Stone"
 }

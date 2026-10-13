@@ -1,63 +1,68 @@
 {
   "id": "720255",
-  "unitName": "Party Apostle Tiara (EU)",
-  "disam": "Tiara",
-  "altname": "Party Apostle Tiara",
-  "idalt": "",
-  "has_altart": "",
-  "doenter": "true",
-  "no": "7007",
-  "element": "Water",
-  "rarity": "★★★★★★",
-  "cost": "23",
-  "maxlv": "100",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "1",
-  "animation_attack": "147",
-  "animation_idle": "64",
-  "animation_move": "64",
-  "movespeed_attack": "4",
-  "speedtype_attack": "3",
-  "movetype_attack": "3",
-  "movespeed_skill": "4",
-  "speedtype_skill": "3",
-  "movetype_skill": "3",
-  "description": "A young girl of both holy and demonic descent. She once defeated Melchio alongside Michele. However, when she saw how powerful his destructive forces had become after the light from above revived him, she was frozen with fear. Michele exclaimed that she had no room for wimpy friends and took on the villain by herself. Perhaps it was these words or the sight of her injured friend after her solitary battle, but something struck a nerve with Tiara, inspiring her to perform a miracle with her mix of holy and demonic powers.",
-  "summon": "You're certainly no Michele...<br>But I trust you all the same.<br>Let's do this!",
-  "fusion": "U-Ugh...<br>I can't hold myself back anymore.<br>Michele won't tolerate wimps!",
-  "evolution": "I won't fight my strength any<br>longer. So please let me fight<br><br>by your side...",
-  "hp_base": "4110",
-  "atk_base": "1137",
-  "def_base": "1219",
-  "rec_base": "1850",
-  "hp_lord": "5435",
-  "atk_lord": "1559",
-  "def_lord": "1768",
-  "rec_lord": "2233",
-  "hp_anima": "6177",
-  "rec_anima": "2035",
-  "atk_breaker": "1757",
-  "def_breaker": "1570",
-  "def_guardian": "1966",
-  "rec_guardian": "2233",
-  "def_oracle": "1768",
-  "rec_oracle": "2431",
-  "hp_bonus": "1000",
-  "atk_bonus": "200",
-  "def_bonus": "200",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "evofrom": "720254",
-  "evointo": "",
-  "normal_frames": "62, 70, 78, 86, 94, 102, 110",
-  "normal_distribute": "10, 10, 10, 10, 10, 20, 30",
-  "normal_totaldistr": "100",
-  "combo_hits": "7",
-  "normaldc": "14",
-  "ls": "Five Light's Aggression",
-  "lsdescription": "50% boost to Atk power of all Units when 5 elements or more are present & fills BB gauge after each turn",
-  "lsnote": "",
+  "stats": {
+    "_base": {
+      "atk": 1137,
+      "def": 1219,
+      "hp": 4110,
+      "rec": 1850
+    },
+    "_lord": {
+      "atk": 1559,
+      "def": 1768,
+      "hp": 5435,
+      "rec": 2233
+    },
+    "anima": {
+      "atk": 1559,
+      "def": 1768,
+      "hp max": 6425,
+      "hp min": 5930,
+      "rec max": 2134,
+      "rec min": 1936
+    },
+    "breaker": {
+      "atk max": 1856,
+      "atk min": 1658,
+      "def max": 1669,
+      "def min": 1471,
+      "hp": 5435,
+      "rec": 2233
+    },
+    "guardian": {
+      "atk max": 1460,
+      "atk min": 1262,
+      "def max": 2065,
+      "def min": 1867,
+      "hp": 5435,
+      "rec": 2233
+    },
+    "oracle": {
+      "atk": 1559,
+      "def": 1768,
+      "hp max": 4940,
+      "hp min": 4445,
+      "rec max": 2530,
+      "rec min": 2332
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to Atk power of all Units when 5 elements or more are present & fills BB gauge after each turn ",
+    "effects": [
+      {
+        "atk% buff": 50,
+        "passive id": "41",
+        "unique elements required": 5
+      },
+      {
+        "bc fill per turn": 3,
+        "passive id": "9"
+      }
+    ],
+    "id": "2203",
+    "name": "Five Light's Aggression"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -342,18 +347,6 @@
     ],
     "name": "Divine Frost"
   },
-  "bbdescription": "Gradually recovers HP & adds Water element to attack for all allies for 3 turns",
-  "bbnote": "{{UnitBuffList",
-  "buff_1_proc": "1",
-  "buff_1_potency": "350% damage modifier",
-  "buff_1_duration": "—",
-  "buff_1_target": "All enemies",
-  "buff_2_proc": "3",
-  "buff_2_potency": "Heals 1800~2100 + 13% Rec of HP each turn",
-  "buff_2_duration": "3 turns",
-  "buff_2_target": "All allies",
-  "bbtype": "Heal",
-  "bbgauge": "20",
   "sbb": {
     "damage frames": [
       {
@@ -752,6 +745,168 @@
     ],
     "name": "Radiant Thimble"
   },
+  "ubb": {},
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "party"
+    },
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 147
+    },
+    "idle": {
+      "total number of frames": 64
+    },
+    "move": {
+      "total number of frames": 64
+    }
+  },
+  "cost": "23",
+  "damage frames": {
+    "frame times": [
+      62,
+      70,
+      78,
+      86,
+      94,
+      102,
+      110
+    ],
+    "hit dmg% distribution": [
+      10,
+      10,
+      10,
+      10,
+      10,
+      20,
+      30
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 7
+  },
+  "drop check count": 2,
+  "element": "water",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 7007,
+  "imp": {
+    "max atk": "200",
+    "max def": "200",
+    "max hp": "1000",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "1451~1621",
+  "movement": {
+    "attack": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    }
+  },
+  "name": "Party Apostle Tiara",
+  "rarity": "6",
+  "sell caution": false,
+  "unitName": "Party Apostle Tiara",
+  "maxlv": "100",
+  "no": "7007",
+  "unitDisplayHomePosition_1W9CxaFK": null,
+  "unitDisplayDetailPosition_6z54rgb3": null,
+  "unitDisplayConfirmImagePosition_MYK1fq6c": null,
+  "unitDisplayCutInImagePosition_7hLR6pDN": null,
+  "unitDisplaySummonPosition_KC3Jk8Br": null,
+  "unitDisplayHpPosition_3BpHN6VD": null,
+  "unitDisplayCursorPosition": null,
+  "sellPrice": "",
+  "sellCaution": false,
+  "effectFrames": "",
+  "evofrom": "720254",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "disam": "Tiara",
+  "altname": "Party Apostle Tiara",
+  "idalt": "",
+  "has_altart": "",
+  "doenter": "true",
+  "basexp": "21",
+  "animation_attack": "147",
+  "animation_idle": "64",
+  "animation_move": "64",
+  "movespeed_attack": "4",
+  "speedtype_attack": "3",
+  "movetype_attack": "3",
+  "movespeed_skill": "4",
+  "speedtype_skill": "3",
+  "movetype_skill": "3",
+  "description": "A young girl of both holy and demonic descent. She once defeated Melchio alongside Michele. However, when she saw how powerful his destructive forces had become after the light from above revived him, she was frozen with fear. Michele exclaimed that she had no room for wimpy friends and took on the villain by herself. Perhaps it was these words or the sight of her injured friend after her solitary battle, but something struck a nerve with Tiara, inspiring her to perform a miracle with her mix of holy and demonic powers.",
+  "summon": "You're certainly no Michele...<br>But I trust you all the same.<br>Let's do this!",
+  "fusion": "U-Ugh...<br>I can't hold myself back anymore.<br>Michele won't tolerate wimps!",
+  "evolution": "I won't fight my strength any<br>longer. So please let me fight<br><br>by your side...",
+  "hp_base": "4110",
+  "atk_base": "1137",
+  "def_base": "1219",
+  "rec_base": "1850",
+  "hp_lord": "5435",
+  "atk_lord": "1559",
+  "def_lord": "1768",
+  "rec_lord": "2233",
+  "hp_anima": "6177",
+  "rec_anima": "2035",
+  "atk_breaker": "1757",
+  "def_breaker": "1570",
+  "def_guardian": "1966",
+  "rec_guardian": "2233",
+  "def_oracle": "1768",
+  "rec_oracle": "2431",
+  "hp_bonus": "1000",
+  "atk_bonus": "200",
+  "def_bonus": "200",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "normal_frames": "62, 70, 78, 86, 94, 102, 110",
+  "normal_distribute": "10, 10, 10, 10, 10, 20, 30",
+  "normal_totaldistr": "100",
+  "combo_hits": "7",
+  "normaldc": "14",
+  "ls": "Five Light's Aggression",
+  "lsdescription": "50% boost to Atk power of all Units when 5 elements or more are present & fills BB gauge after each turn",
+  "lsnote": "",
+  "bbdescription": "Gradually recovers HP & adds Water element to attack for all allies for 3 turns",
+  "bbnote": "{{UnitBuffList",
+  "buff_1_proc": "1",
+  "buff_1_potency": "350% damage modifier",
+  "buff_1_duration": "—",
+  "buff_1_target": "All enemies",
+  "buff_2_proc": "3",
+  "buff_2_potency": "Heals 1800~2100 + 13% Rec of HP each turn",
+  "buff_2_duration": "3 turns",
+  "buff_2_target": "All allies",
+  "bbtype": "Heal",
+  "bbgauge": "20",
   "sbbdescription": "12 combo Water elemental attack on all enemies & gradually recovers HP and adds Water element to attack for all allies for 3 turns",
   "sbbnote": "{{UnitBuffList",
   "buff_3_proc": "30",
@@ -773,79 +928,5 @@
   "notes": "",
   "incorrectinfo": "",
   "addcat": "",
-  "addcatname": "",
-  "stats": {
-    "_base": {
-      "atk": 1137,
-      "def": 1219,
-      "hp": 4110,
-      "rec": 1850
-    },
-    "_lord": {
-      "atk": 1559,
-      "def": 1768,
-      "hp": 5435,
-      "rec": 2233
-    },
-    "anima": {
-      "atk": 1559,
-      "def": 1768,
-      "hp max": 6425,
-      "hp min": 5930,
-      "rec max": 2134,
-      "rec min": 1936
-    },
-    "breaker": {
-      "atk max": 1856,
-      "atk min": 1658,
-      "def max": 1669,
-      "def min": 1471,
-      "hp": 5435,
-      "rec": 2233
-    },
-    "guardian": {
-      "atk max": 1460,
-      "atk min": 1262,
-      "def max": 2065,
-      "def min": 1867,
-      "hp": 5435,
-      "rec": 2233
-    },
-    "oracle": {
-      "atk": 1559,
-      "def": 1768,
-      "hp max": 4940,
-      "hp min": 4445,
-      "rec max": 2530,
-      "rec min": 2332
-    }
-  },
-  "leader_skill": {
-    "desc": "50% boost to Atk power of all Units when 5 elements or more are present & fills BB gauge after each turn ",
-    "effects": [
-      {
-        "atk% buff": 50,
-        "passive id": "41",
-        "unique elements required": 5
-      },
-      {
-        "bc fill per turn": 3,
-        "passive id": "9"
-      }
-    ],
-    "id": "2203",
-    "name": "Five Light's Aggression"
-  },
-  "extra_skill": {},
-  "ubb": {},
-  "unitDisplayHomePosition_1W9CxaFK": null,
-  "unitDisplayDetailPosition_6z54rgb3": null,
-  "unitDisplayConfirmImagePosition_MYK1fq6c": null,
-  "unitDisplayCutInImagePosition_7hLR6pDN": null,
-  "unitDisplaySummonPosition_KC3Jk8Br": null,
-  "unitDisplayHpPosition_3BpHN6VD": null,
-  "unitDisplayCursorPosition": null,
-  "sellPrice": "",
-  "sellCaution": false,
-  "effectFrames": ""
+  "addcatname": ""
 }

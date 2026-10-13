@@ -1,60 +1,63 @@
 {
   "id": "10154",
-  "unitName": "Head Chef Lancia",
-  "freetext": ":''See Head Chef Lancia (BFH) for her appearance in BRAVE FRONTIER HEROES.''",
-  "no": "223",
-  "element": "Fire",
-  "rarity": "★★★★★",
-  "cost": "12",
-  "maxlv": "80",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "5",
-  "animation_attack": "96",
-  "animation_idle": "44",
-  "animation_move": "13",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "4",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "3",
-  "normal_frames": "33, 65, 75",
-  "normal_distribute": "20, 60, 20",
-  "normal_totaldistr": "100",
-  "description": "Young girl and owner of Lan-Lan, a famous diner in the Agni Empire. While traveling the globe in search of the ultimate dish, Lancia happened upon her dream ingredient in the form of Ramsa the God Phoenix. After a grueling battle, Ramsa admitted defeat and offered a portion of his flesh to Lancia as a token of peace. The dish Lancia created with it went down in history as the height of exquisite delicacies. Lacking the special ingredient, no one has been able to make it since.",
-  "summon": "Let’s fry this thing from<br>head to toe!<br>My mouth’s watering already!",
-  "fusion": "Cooking is love, c’est amour!<br>Stir a little in and voilà:<br>an instant taste-bud sensation!",
-  "evolution": "I evolved!<br>And it’s all thanks to your love<br>and these wonderful ingredients.",
-  "hp_base": "3227",
-  "atk_base": "773",
-  "def_base": "975",
-  "rec_base": "1304",
-  "hp_lord": "4774",
-  "atk_lord": "1036",
-  "def_lord": "1339",
-  "rec_lord": "1804",
-  "hp_anima": "5367",
-  "rec_anima": "1646",
-  "atk_breaker": "1194",
-  "def_breaker": "1181",
-  "atk_guardian": "878",
-  "def_guardian": "1497",
-  "rec_guardian": "1725",
-  "def_oracle": "1260",
-  "hp_oracle": "4537",
-  "rec_oracle": "2041",
-  "hp_bonus": "500",
-  "atk_bonus": "200",
-  "def_bonus": "200",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "3",
-  "normaldc": "15",
-  "ls": "Pure Strobe",
-  "lsdescription": "Large boost in Heart Crystals produced during Spark",
-  "lsnote": "50% boost",
-  "lstype": "Recovery",
+  "stats": {
+    "_base": {
+      "atk": 773,
+      "def": 975,
+      "hp": 3227,
+      "rec": 1304
+    },
+    "_lord": {
+      "atk": 1036,
+      "def": 1339,
+      "hp": 4774,
+      "rec": 1804
+    },
+    "anima": {
+      "atk": 1036,
+      "def": 1339,
+      "hp max": 5564,
+      "hp min": 5169,
+      "rec max": 1725,
+      "rec min": 1567
+    },
+    "breaker": {
+      "atk max": 1273,
+      "atk min": 1115,
+      "def max": 1260,
+      "def min": 1102,
+      "hp": 4774,
+      "rec": 1804
+    },
+    "guardian": {
+      "atk": 1036,
+      "def max": 1576,
+      "def min": 1418,
+      "hp": 4774,
+      "rec max": 1804,
+      "rec min": 1646
+    },
+    "oracle": {
+      "atk": 1036,
+      "def max": 1339,
+      "def min": 1181,
+      "hp": 4774,
+      "rec max": 2120,
+      "rec min": 1962
+    }
+  },
+  "leader_skill": {
+    "desc": "Large boost in Heart Crystals produced during Spark",
+    "effects": [
+      {
+        "hc drop% for spark": 50,
+        "passive id": "31"
+      }
+    ],
+    "id": "1502",
+    "name": "Pure Strobe"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -319,93 +322,87 @@
     ],
     "name": "Gourmet Dish"
   },
-  "bbdescription": "Greatly Recovers HP for All allies and Boosts ATK for 3 Turns",
-  "bbnote": "Heals (1760~2060 + 25% of healer Rec) HP, 35% boost to Atk",
-  "bbtype": "Heal/Support",
-  "bbhits": "0",
-  "bbaoe": "0",
-  "bbgauge": "20",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "10153",
-  "evointo": "10155",
-  "evomats1": "50354",
-  "evomats2": "10133",
-  "evomats3": "60144",
-  "evomats4": "60143",
-  "evomats5": "10191",
-  "evoitem": "",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 773,
-      "def": 975,
-      "hp": 3227,
-      "rec": 1304
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 80.0,
+      "target conditions": "hp_50pr_under",
+      "target type": "party"
     },
-    "_lord": {
-      "atk": 1036,
-      "def": 1339,
-      "hp": 4774,
-      "rec": 1804
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "hp_min",
+      "target type": "party"
     },
-    "anima": {
-      "atk": 1036,
-      "def": 1339,
-      "hp max": 5564,
-      "hp min": 5169,
-      "rec max": 1725,
-      "rec min": 1567
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 96
     },
-    "breaker": {
-      "atk max": 1273,
-      "atk min": 1115,
-      "def max": 1260,
-      "def min": 1102,
-      "hp": 4774,
-      "rec": 1804
+    "idle": {
+      "total number of frames": 44
     },
-    "guardian": {
-      "atk": 1036,
-      "def max": 1576,
-      "def min": 1418,
-      "hp": 4774,
-      "rec max": 1804,
-      "rec min": 1646
-    },
-    "oracle": {
-      "atk": 1036,
-      "def max": 1339,
-      "def min": 1181,
-      "hp": 4774,
-      "rec max": 2120,
-      "rec min": 1962
+    "move": {
+      "total number of frames": 13
     }
   },
-  "leader_skill": {
-    "desc": "Large boost in Heart Crystals produced during Spark",
-    "effects": [
-      {
-        "hc drop% for spark": 50,
-        "passive id": "31"
-      }
+  "category": 10150,
+  "cost": "12",
+  "damage frames": {
+    "frame times": [
+      33,
+      65,
+      75
     ],
-    "id": "1502",
-    "name": "Pure Strobe"
+    "hit dmg% distribution": [
+      20,
+      60,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 3
   },
-  "extra_skill": {},
+  "drop check count": 5,
+  "element": "fire",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 223,
+  "imp": {
+    "max atk": "200",
+    "max def": "200",
+    "max hp": "500",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "964~1077",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    }
+  },
+  "name": "Head Chef Lancia",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Head Chef Lancia",
+  "maxlv": "80",
+  "no": "223",
   "unitDisplayHomePosition_1W9CxaFK": "520,95,182,498",
   "unitDisplayDetailPosition_6z54rgb3": "-110,90,825,670",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "96,234,495,397,0",
@@ -415,5 +412,107 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "33:131:1,33:150:1,59:131:1,55:160:1"
+  "effectFrames": "33:131:1,33:150:1,59:131:1,55:160:1",
+  "evofrom": "10153",
+  "evointo": "10155",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10191",
+      "count": 1
+    }
+  ],
+  "freetext": ":''See Head Chef Lancia (BFH) for her appearance in BRAVE FRONTIER HEROES.''",
+  "basexp": "21",
+  "animation_attack": "96",
+  "animation_idle": "44",
+  "animation_move": "13",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "4",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "3",
+  "normal_frames": "33, 65, 75",
+  "normal_distribute": "20, 60, 20",
+  "normal_totaldistr": "100",
+  "description": "Young girl and owner of Lan-Lan, a famous diner in the Agni Empire. While traveling the globe in search of the ultimate dish, Lancia happened upon her dream ingredient in the form of Ramsa the God Phoenix. After a grueling battle, Ramsa admitted defeat and offered a portion of his flesh to Lancia as a token of peace. The dish Lancia created with it went down in history as the height of exquisite delicacies. Lacking the special ingredient, no one has been able to make it since.",
+  "summon": "Let’s fry this thing from<br>head to toe!<br>My mouth’s watering already!",
+  "fusion": "Cooking is love, c’est amour!<br>Stir a little in and voilà:<br>an instant taste-bud sensation!",
+  "evolution": "I evolved!<br>And it’s all thanks to your love<br>and these wonderful ingredients.",
+  "hp_base": "3227",
+  "atk_base": "773",
+  "def_base": "975",
+  "rec_base": "1304",
+  "hp_lord": "4774",
+  "atk_lord": "1036",
+  "def_lord": "1339",
+  "rec_lord": "1804",
+  "hp_anima": "5367",
+  "rec_anima": "1646",
+  "atk_breaker": "1194",
+  "def_breaker": "1181",
+  "atk_guardian": "878",
+  "def_guardian": "1497",
+  "rec_guardian": "1725",
+  "def_oracle": "1260",
+  "hp_oracle": "4537",
+  "rec_oracle": "2041",
+  "hp_bonus": "500",
+  "atk_bonus": "200",
+  "def_bonus": "200",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "3",
+  "normaldc": "15",
+  "ls": "Pure Strobe",
+  "lsdescription": "Large boost in Heart Crystals produced during Spark",
+  "lsnote": "50% boost",
+  "lstype": "Recovery",
+  "bbdescription": "Greatly Recovers HP for All allies and Boosts ATK for 3 Turns",
+  "bbnote": "Heals (1760~2060 + 25% of healer Rec) HP, 35% boost to Atk",
+  "bbtype": "Heal/Support",
+  "bbhits": "0",
+  "bbaoe": "0",
+  "bbgauge": "20",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "10133",
+  "evomats3": "60144",
+  "evomats4": "60143",
+  "evomats5": "10191",
+  "evoitem": ""
 }

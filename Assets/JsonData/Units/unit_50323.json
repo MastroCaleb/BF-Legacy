@@ -1,58 +1,68 @@
 {
   "id": "50323",
-  "unitName": "Heavy Guard Nevsky",
-  "no": "651",
-  "element": "Light",
-  "rarity": "★★★★",
-  "cost": "12",
-  "maxlv": "60",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "117",
-  "animation_idle": "128",
-  "animation_move": "5",
-  "movespeed_attack": "0.005",
-  "movespeed_skill": "8",
-  "speedtype_attack": "1",
-  "speedtype_skill": "1",
-  "movetype_attack": "1",
-  "movetype_skill": "3",
-  "normal_frames": "24, 30, 68, 74",
-  "normal_distribute": "20, 10, 50, 20",
-  "normal_totaldistr": "100",
-  "description": "A heavily armored soldier who appears in the tales about the migration of a group of refugees towards El Gaia. His story began when Reed and his party helped him out of a predicament he he'd fallen into following an attack from the god army. Though he never swore fealty to Reed, it is said he would appear out of nowhere whenever one of the party members was in danger to rescue them. It has also been told that he'd offer advice at the time of the rescue, but apparently Aneil was the only one to take this advice seriously, while everyone else never really stopped to listen.",
-  "summon": "The sealed door has opened.<br>I understand.<br>I'll lend you my power without falter!",
-  "fusion": "What a convenient technique...<br>Things have really advanced.<br>But don't trust everyone so easily.",
-  "evolution": "",
-  "hp_base": "3003",
-  "atk_base": "993",
-  "def_base": "1091",
-  "rec_base": "789",
-  "hp_lord": "4304",
-  "atk_lord": "1324",
-  "def_lord": "1455",
-  "rec_lord": "1052",
-  "hp_anima": "4747",
-  "rec_anima": "934",
-  "atk_breaker": "1442",
-  "def_breaker": "1337",
-  "atk_guardian": "1206",
-  "def_guardian": "1573",
-  "rec_guardian": "993",
-  "def_oracle": "1396",
-  "hp_oracle": "4127",
-  "rec_oracle": "1229",
-  "hp_bonus": "400",
-  "atk_bonus": "140",
-  "def_bonus": "140",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "4",
-  "normaldc": "8",
-  "ls": "Divine Gale",
-  "lsdescription": "Nullifies all status ailments",
-  "lstype": "Defense",
+  "stats": {
+    "_base": {
+      "atk": 993,
+      "def": 1091,
+      "hp": 3003,
+      "rec": 789
+    },
+    "_lord": {
+      "atk": 1324,
+      "def": 1455,
+      "hp": 4304,
+      "rec": 1052
+    },
+    "anima": {
+      "atk": 1324,
+      "def": 1455,
+      "hp max": 4894,
+      "hp min": 4599,
+      "rec max": 993,
+      "rec min": 875
+    },
+    "breaker": {
+      "atk max": 1501,
+      "atk min": 1383,
+      "def max": 1396,
+      "def min": 1278,
+      "hp": 4304,
+      "rec": 1052
+    },
+    "guardian": {
+      "atk": 1324,
+      "def max": 1632,
+      "def min": 1514,
+      "hp": 4304,
+      "rec max": 1052,
+      "rec min": 934
+    },
+    "oracle": {
+      "atk": 1324,
+      "def max": 1455,
+      "def min": 1337,
+      "hp": 4304,
+      "rec max": 1288,
+      "rec min": 1170
+    }
+  },
+  "leader_skill": {
+    "desc": "Nullifies all status ailments",
+    "effects": [
+      {
+        "curse resist%": 100,
+        "injury resist%": 100,
+        "paralysis resist%": 100,
+        "passive id": "4",
+        "poison resist%": 100,
+        "sick resist%": 100,
+        "weaken resist%": 100
+      }
+    ],
+    "id": "2102",
+    "name": "Divine Gale"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -307,97 +317,89 @@
     ],
     "name": "Light Barrier"
   },
-  "bbdescription": "Boost to Def for all allies for 3 turns & slightly reduces damage taken",
-  "bbnote": "50% boost to Def, 10% damage reduction '''for 3 turns'''",
-  "bbtype": "Support",
-  "bbhits": "",
-  "bbaoe": "0",
-  "bbgauge": "20",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "50324",
-  "evomats1": "50123",
-  "evomats2": "50191",
-  "evomats3": "50191",
-  "evomats4": "50122",
-  "evomats5": "60144",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 993,
-      "def": 1091,
-      "hp": 3003,
-      "rec": 789
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1324,
-      "def": 1455,
-      "hp": 4304,
-      "rec": 1052
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1324,
-      "def": 1455,
-      "hp max": 4894,
-      "hp min": 4599,
-      "rec max": 993,
-      "rec min": 875
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 117
     },
-    "breaker": {
-      "atk max": 1501,
-      "atk min": 1383,
-      "def max": 1396,
-      "def min": 1278,
-      "hp": 4304,
-      "rec": 1052
+    "idle": {
+      "total number of frames": 128
     },
-    "guardian": {
-      "atk": 1324,
-      "def max": 1632,
-      "def min": 1514,
-      "hp": 4304,
-      "rec max": 1052,
-      "rec min": 934
-    },
-    "oracle": {
-      "atk": 1324,
-      "def max": 1455,
-      "def min": 1337,
-      "hp": 4304,
-      "rec max": 1288,
-      "rec min": 1170
+    "move": {
+      "total number of frames": 5
     }
   },
-  "leader_skill": {
-    "desc": "Nullifies all status ailments",
-    "effects": [
-      {
-        "curse resist%": 100,
-        "injury resist%": 100,
-        "paralysis resist%": 100,
-        "passive id": "4",
-        "poison resist%": 100,
-        "sick resist%": 100,
-        "weaken resist%": 100
-      }
+  "category": 50320,
+  "cost": "12",
+  "damage frames": {
+    "frame times": [
+      24,
+      30,
+      68,
+      74
     ],
-    "id": "2102",
-    "name": "Divine Gale"
+    "hit dmg% distribution": [
+      20,
+      10,
+      50,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 4
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "light",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "farmable",
+  "guide_id": 651,
+  "imp": {
+    "max atk": "140",
+    "max def": "140",
+    "max hp": "400",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "1232~1376",
+  "movement": {
+    "attack": {
+      "move speed": 0.005,
+      "move speed type": "1",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 8,
+      "move speed type": "1",
+      "move type": "3"
+    }
+  },
+  "name": "Heavy Guard Nevsky",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Heavy Guard Nevsky",
+  "maxlv": "60",
+  "no": "651",
   "unitDisplayHomePosition_1W9CxaFK": "634,228,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-290,-39,1250,920",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "157,355,319,277,0",
@@ -407,5 +409,99 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "18:125:1,24:125:1,24:500173:1,30:500218:1,62:125:1,68:125:1,62:500225:1,68:500225:1"
+  "effectFrames": "18:125:1,24:125:1,24:500173:1,30:500218:1,62:125:1,68:125:1,62:500225:1,68:500225:1",
+  "evofrom": "",
+  "evointo": "50324",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50123",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50191",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "50122",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "117",
+  "animation_idle": "128",
+  "animation_move": "5",
+  "movespeed_attack": "0.005",
+  "movespeed_skill": "8",
+  "speedtype_attack": "1",
+  "speedtype_skill": "1",
+  "movetype_attack": "1",
+  "movetype_skill": "3",
+  "normal_frames": "24, 30, 68, 74",
+  "normal_distribute": "20, 10, 50, 20",
+  "normal_totaldistr": "100",
+  "description": "A heavily armored soldier who appears in the tales about the migration of a group of refugees towards El Gaia. His story began when Reed and his party helped him out of a predicament he he'd fallen into following an attack from the god army. Though he never swore fealty to Reed, it is said he would appear out of nowhere whenever one of the party members was in danger to rescue them. It has also been told that he'd offer advice at the time of the rescue, but apparently Aneil was the only one to take this advice seriously, while everyone else never really stopped to listen.",
+  "summon": "The sealed door has opened.<br>I understand.<br>I'll lend you my power without falter!",
+  "fusion": "What a convenient technique...<br>Things have really advanced.<br>But don't trust everyone so easily.",
+  "evolution": "",
+  "hp_base": "3003",
+  "atk_base": "993",
+  "def_base": "1091",
+  "rec_base": "789",
+  "hp_lord": "4304",
+  "atk_lord": "1324",
+  "def_lord": "1455",
+  "rec_lord": "1052",
+  "hp_anima": "4747",
+  "rec_anima": "934",
+  "atk_breaker": "1442",
+  "def_breaker": "1337",
+  "atk_guardian": "1206",
+  "def_guardian": "1573",
+  "rec_guardian": "993",
+  "def_oracle": "1396",
+  "hp_oracle": "4127",
+  "rec_oracle": "1229",
+  "hp_bonus": "400",
+  "atk_bonus": "140",
+  "def_bonus": "140",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "4",
+  "normaldc": "8",
+  "ls": "Divine Gale",
+  "lsdescription": "Nullifies all status ailments",
+  "lstype": "Defense",
+  "bbdescription": "Boost to Def for all allies for 3 turns & slightly reduces damage taken",
+  "bbnote": "50% boost to Def, 10% damage reduction '''for 3 turns'''",
+  "bbtype": "Support",
+  "bbhits": "",
+  "bbaoe": "0",
+  "bbgauge": "20",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50123",
+  "evomats2": "50191",
+  "evomats3": "50191",
+  "evomats4": "50122",
+  "evomats5": "60144"
 }

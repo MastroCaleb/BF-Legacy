@@ -1,63 +1,68 @@
 {
   "id": "820134",
-  "unitName": "Tridon",
-  "freetext": ":''For other uses, see Tridon (disambiguation).''",
-  "no": "8054",
-  "element": "Water",
-  "rarity": "★★★★",
-  "cost": "13",
-  "maxlv": "60",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "Unsupported",
-  "animation_idle": "Unsupported",
-  "animation_move": "Unsupported",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "44, 48, 104, 110, 116, 122",
-  "normal_distribute": "27, 25, 15, 11, 11, 11",
-  "normal_totaldistr": "100",
-  "bb_frames": "117, 124, 131, 138, 145, 152, 159",
-  "bb_distribute": "9, 12, 14, 14, 15, 17, 19",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "description": "Created by the old gods, birthed from water and earth, Tridon has the ability to manipulate and maneuver himself in water with ease and precision, thus making himself a great fighter in the sea. Working together with Ultor in defending the realm, he leads a strong naval force guarding the seas surrounding Athensphere. When the augmentation wars started, he together with Ultor was ordered by Zedus to go against Gazia's destructive and illegal technology.",
-  "summon": "I defend the peace of Athensphere…",
-  "fusion": "I can feel the water flowing like the blood in my veins…",
-  "evolution": "I defend the peace of Athensphere…",
-  "hp_base": "3225",
-  "atk_base": "1185",
-  "def_base": "1115",
-  "rec_base": "1345",
-  "hp_lord": "4260",
-  "atk_lord": "1300",
-  "def_lord": "1255",
-  "rec_lord": "1450",
-  "hp_anima": "4703",
-  "rec_anima": "1332",
-  "atk_breaker": "1418",
-  "def_breaker": "1137",
-  "atk_guardian": "1182",
-  "def_guardian": "1373",
-  "rec_guardian": "1391",
-  "def_oracle": "1196",
-  "hp_oracle": "4083",
-  "rec_oracle": "1627",
-  "hp_bonus": "400",
-  "atk_bonus": "160",
-  "def_bonus": "160",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "6",
-  "normaldc": "12",
-  "ls": "Gush Vigor",
-  "lsdescription": "20% boost to max HP, 30% boost to Rec & mitigates 5% of damage received",
-  "lstype": "Hit Points/Defense/Recovery",
+  "stats": {
+    "_base": {
+      "atk": 1185,
+      "def": 1115,
+      "hp": 3225,
+      "rec": 1345
+    },
+    "_lord": {
+      "atk": 1300,
+      "def": 1255,
+      "hp": 4260,
+      "rec": 1450
+    },
+    "anima": {
+      "atk": 1300,
+      "def": 1255,
+      "hp max": 4850,
+      "hp min": 4555,
+      "rec max": 1391,
+      "rec min": 1273
+    },
+    "breaker": {
+      "atk max": 1477,
+      "atk min": 1359,
+      "def max": 1196,
+      "def min": 1078,
+      "hp": 4260,
+      "rec": 1450
+    },
+    "guardian": {
+      "atk": 1300,
+      "def max": 1432,
+      "def min": 1314,
+      "hp": 4260,
+      "rec max": 1450,
+      "rec min": 1332
+    },
+    "oracle": {
+      "atk": 1300,
+      "def max": 1255,
+      "def min": 1137,
+      "hp": 4260,
+      "rec max": 1686,
+      "rec min": 1568
+    }
+  },
+  "leader_skill": {
+    "desc": "20% boost to max HP, 30% boost to Rec & mitigates 5% of damage received",
+    "effects": [
+      {
+        "dmg% mitigation": 5,
+        "passive id": "8"
+      },
+      {
+        "hp% buff": 20,
+        "passive id": "1",
+        "rec% buff": 30
+      }
+    ],
+    "id": "801014",
+    "name": "Gush Vigor"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -294,99 +299,85 @@
     ],
     "name": "Strike Defense"
   },
-  "bbdescription": "7 combo Water elemental attack to all enemies & casts minor Earth shield on all allies for 2 turns",
-  "bbnote": "Creates a 1380 HP, 820 Def shield",
-  "bbtype": "Support/Offense",
-  "bbhits": "7",
-  "bbaoe": "A",
-  "bbgauge": "26",
-  "bbdc": "7",
-  "bbmultiplier": "170",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "820135",
-  "evomats1": "20133",
-  "evomats2": "820034",
-  "evomats3": "870034",
-  "evomats4": "20132",
-  "evomats5": "60143",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 1185,
-      "def": 1115,
-      "hp": 3225,
-      "rec": 1345
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1300,
-      "def": 1255,
-      "hp": 4260,
-      "rec": 1450
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1300,
-      "def": 1255,
-      "hp max": 4850,
-      "hp min": 4555,
-      "rec max": 1391,
-      "rec min": 1273
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "error": "sam file not supported"
+  },
+  "category": 820130,
+  "cost": "13",
+  "damage frames": {
+    "frame times": [
+      44,
+      48,
+      104,
+      110,
+      116,
+      122
+    ],
+    "hit dmg% distribution": [
+      27,
+      25,
+      15,
+      11,
+      11,
+      11
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 6
+  },
+  "drop check count": 2,
+  "element": "water",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 8054,
+  "imp": {
+    "max atk": "160",
+    "max def": "160",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "1210~1352",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
     },
-    "breaker": {
-      "atk max": 1477,
-      "atk min": 1359,
-      "def max": 1196,
-      "def min": 1078,
-      "hp": 4260,
-      "rec": 1450
-    },
-    "guardian": {
-      "atk": 1300,
-      "def max": 1432,
-      "def min": 1314,
-      "hp": 4260,
-      "rec max": 1450,
-      "rec min": 1332
-    },
-    "oracle": {
-      "atk": 1300,
-      "def max": 1255,
-      "def min": 1137,
-      "hp": 4260,
-      "rec max": 1686,
-      "rec min": 1568
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
     }
   },
-  "leader_skill": {
-    "desc": "20% boost to max HP, 30% boost to Rec & mitigates 5% of damage received",
-    "effects": [
-      {
-        "dmg% mitigation": 5,
-        "passive id": "8"
-      },
-      {
-        "hp% buff": 20,
-        "passive id": "1",
-        "rec% buff": 30
-      }
-    ],
-    "id": "801014",
-    "name": "Gush Vigor"
-  },
-  "extra_skill": {},
+  "name": "Tridon",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Tridon",
+  "maxlv": "60",
+  "no": "8054",
   "unitDisplayHomePosition_1W9CxaFK": "277,141,250,682",
   "unitDisplayDetailPosition_6z54rgb3": "70,90,867,688",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "128,236,481,383,0",
@@ -396,5 +387,111 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "42:200030:1,44:122:1,48:122:1,48:200310:1,101:137:1,107:200139:1,107:200284:1,109:200284:1"
+  "effectFrames": "42:200030:1,44:122:1,48:122:1,48:200310:1,101:137:1,107:200139:1,107:200284:1,109:200284:1",
+  "evofrom": "",
+  "evointo": "820135",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "20133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "820034",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "870034",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 1
+    }
+  ],
+  "freetext": ":''For other uses, see Tridon (disambiguation).''",
+  "basexp": "21",
+  "animation_attack": "Unsupported",
+  "animation_idle": "Unsupported",
+  "animation_move": "Unsupported",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "44, 48, 104, 110, 116, 122",
+  "normal_distribute": "27, 25, 15, 11, 11, 11",
+  "normal_totaldistr": "100",
+  "bb_frames": "117, 124, 131, 138, 145, 152, 159",
+  "bb_distribute": "9, 12, 14, 14, 15, 17, 19",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "description": "Created by the old gods, birthed from water and earth, Tridon has the ability to manipulate and maneuver himself in water with ease and precision, thus making himself a great fighter in the sea. Working together with Ultor in defending the realm, he leads a strong naval force guarding the seas surrounding Athensphere. When the augmentation wars started, he together with Ultor was ordered by Zedus to go against Gazia's destructive and illegal technology.",
+  "summon": "I defend the peace of Athensphere…",
+  "fusion": "I can feel the water flowing like the blood in my veins…",
+  "evolution": "I defend the peace of Athensphere…",
+  "hp_base": "3225",
+  "atk_base": "1185",
+  "def_base": "1115",
+  "rec_base": "1345",
+  "hp_lord": "4260",
+  "atk_lord": "1300",
+  "def_lord": "1255",
+  "rec_lord": "1450",
+  "hp_anima": "4703",
+  "rec_anima": "1332",
+  "atk_breaker": "1418",
+  "def_breaker": "1137",
+  "atk_guardian": "1182",
+  "def_guardian": "1373",
+  "rec_guardian": "1391",
+  "def_oracle": "1196",
+  "hp_oracle": "4083",
+  "rec_oracle": "1627",
+  "hp_bonus": "400",
+  "atk_bonus": "160",
+  "def_bonus": "160",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "6",
+  "normaldc": "12",
+  "ls": "Gush Vigor",
+  "lsdescription": "20% boost to max HP, 30% boost to Rec & mitigates 5% of damage received",
+  "lstype": "Hit Points/Defense/Recovery",
+  "bbdescription": "7 combo Water elemental attack to all enemies & casts minor Earth shield on all allies for 2 turns",
+  "bbnote": "Creates a 1380 HP, 820 Def shield",
+  "bbtype": "Support/Offense",
+  "bbhits": "7",
+  "bbaoe": "A",
+  "bbgauge": "26",
+  "bbdc": "7",
+  "bbmultiplier": "170",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "20133",
+  "evomats2": "820034",
+  "evomats3": "870034",
+  "evomats4": "20132",
+  "evomats5": "60143"
 }

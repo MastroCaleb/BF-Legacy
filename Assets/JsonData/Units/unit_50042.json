@@ -1,58 +1,63 @@
 {
   "id": "50042",
-  "unitName": "Great Sage Mimir",
-  "no": "285",
-  "element": "Light",
-  "rarity": "★★★",
-  "cost": "6",
-  "maxlv": "40",
-  "basexp": "10",
-  "gender": "F",
-  "ai": "7",
-  "animation_attack": "98",
-  "animation_idle": "52",
-  "animation_move": "52",
-  "movespeed_attack": "8",
-  "movespeed_skill": "8",
-  "speedtype_attack": "1",
-  "speedtype_skill": "1",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "69, 73, 77, 81, 85",
-  "normal_distribute": "20, 20, 20, 20, 20",
-  "normal_totaldistr": "100",
-  "description": "A white mage that was active in the ruined La Veda Republic during the ancient war. By the time the war with the gods had started, her healing powers had grown miraculously strong. She freely wielded her powers saving countless people who in turn called her a saint, to which she simply smiled. She would never accept payment for her services, but it's said she would take sweet treats, albeit after a bit of hesitation.",
-  "summon": "I see healing powers are needed.<br>Of course I'll lend mine to you.<br>Alright, let's save the people!",
-  "fusion": "My healing light grows!<br>With this power I can save<br>even more people!",
-  "evolution": "Can you see how the light<br>has grown strong inside me?<br>It shines along with you!",
-  "hp_base": "2266",
-  "atk_base": "498",
-  "def_base": "718",
-  "rec_base": "789",
-  "hp_lord": "3880",
-  "atk_lord": "639",
-  "def_lord": "1030",
-  "rec_lord": "1269",
-  "hp_anima": "4173",
-  "rec_anima": "1191",
-  "atk_breaker": "717",
-  "def_breaker": "952",
-  "atk_guardian": "561",
-  "def_guardian": "1108",
-  "rec_guardian": "1230",
-  "def_oracle": "991",
-  "hp_oracle": "3763",
-  "rec_oracle": "1386",
-  "hp_bonus": "300",
-  "atk_bonus": "80",
-  "def_bonus": "160",
-  "rec_bonus": "120",
-  "lordonly": "",
-  "combo_hits": "5",
-  "normaldc": "10",
-  "ls": "Light's Protection",
-  "lsdescription": "10% reduction in damage from Light Types",
-  "lstype": "Defense",
+  "stats": {
+    "_base": {
+      "atk": 498,
+      "def": 718,
+      "hp": 2266,
+      "rec": 789
+    },
+    "_lord": {
+      "atk": 639,
+      "def": 1030,
+      "hp": 3880,
+      "rec": 1269
+    },
+    "anima": {
+      "atk": 639,
+      "def": 1030,
+      "hp max": 4270,
+      "hp min": 4075,
+      "rec max": 1230,
+      "rec min": 1152
+    },
+    "breaker": {
+      "atk max": 756,
+      "atk min": 678,
+      "def max": 991,
+      "def min": 913,
+      "hp": 3880,
+      "rec": 1269
+    },
+    "guardian": {
+      "atk": 639,
+      "def max": 1147,
+      "def min": 1069,
+      "hp": 3880,
+      "rec max": 1269,
+      "rec min": 1191
+    },
+    "oracle": {
+      "atk": 639,
+      "def max": 1030,
+      "def min": 952,
+      "hp": 3880,
+      "rec max": 1425,
+      "rec min": 1347
+    }
+  },
+  "leader_skill": {
+    "desc": "10% reduction in damage from Light Types",
+    "effects": [
+      {
+        "light resist%": 10,
+        "passive id": "5"
+      }
+    ],
+    "id": "508",
+    "name": "Light's Protection"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -215,92 +220,91 @@
     ],
     "name": "Star Heal"
   },
-  "bbdescription": "Greatly recovers HP for all allies",
-  "bbnote": "Heals (1270~1470 + 22.5% healer Rec) HP",
-  "bbtype": "Heal",
-  "bbhits": "",
-  "bbaoe": "0",
-  "bbgauge": "15",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "50041",
-  "evointo": "",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 498,
-      "def": 718,
-      "hp": 2266,
-      "rec": 789
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 100.0,
+      "target conditions": "hp_75pr_under",
+      "target type": "party"
     },
-    "_lord": {
-      "atk": 639,
-      "def": 1030,
-      "hp": 3880,
-      "rec": 1269
+    {
+      "action": "attack",
+      "chance%": 50.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 639,
-      "def": 1030,
-      "hp max": 4270,
-      "hp min": 4075,
-      "rec max": 1230,
-      "rec min": 1152
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 98
     },
-    "breaker": {
-      "atk max": 756,
-      "atk min": 678,
-      "def max": 991,
-      "def min": 913,
-      "hp": 3880,
-      "rec": 1269
+    "idle": {
+      "total number of frames": 52
     },
-    "guardian": {
-      "atk": 639,
-      "def max": 1147,
-      "def min": 1069,
-      "hp": 3880,
-      "rec max": 1269,
-      "rec min": 1191
-    },
-    "oracle": {
-      "atk": 639,
-      "def max": 1030,
-      "def min": 952,
-      "hp": 3880,
-      "rec max": 1425,
-      "rec min": 1347
+    "move": {
+      "total number of frames": 52
     }
   },
-  "leader_skill": {
-    "desc": "10% reduction in damage from Light Types",
-    "effects": [
-      {
-        "light resist%": 10,
-        "passive id": "5"
-      }
+  "category": 50040,
+  "cost": "6",
+  "damage frames": {
+    "frame times": [
+      69,
+      73,
+      77,
+      81,
+      85
     ],
-    "id": "508",
-    "name": "Light's Protection"
+    "hit dmg% distribution": [
+      20,
+      20,
+      20,
+      20,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 5
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "light",
+  "exp_pattern": 10,
+  "gender": "female",
+  "getting type": "farmable",
+  "guide_id": 285,
+  "imp": {
+    "max atk": "80",
+    "max def": "160",
+    "max hp": "300",
+    "max rec": "120"
+  },
+  "kind": "normal",
+  "lord damage range": "594~664",
+  "movement": {
+    "attack": {
+      "move speed": 8,
+      "move speed type": "1",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 8,
+      "move speed type": "1",
+      "move type": "3"
+    }
+  },
+  "name": "Great Sage Mimir",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "Great Sage Mimir",
+  "maxlv": "40",
+  "no": "285",
   "unitDisplayHomePosition_1W9CxaFK": "226,68,200,544",
   "unitDisplayDetailPosition_6z54rgb3": "148,94,652,678",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "157,276,283,339,0",
@@ -310,5 +314,78 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "1000",
   "sellCaution": false,
-  "effectFrames": "68:330:1,76:320:1"
+  "effectFrames": "68:330:1,76:320:1",
+  "evofrom": "50041",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "10",
+  "animation_attack": "98",
+  "animation_idle": "52",
+  "animation_move": "52",
+  "movespeed_attack": "8",
+  "movespeed_skill": "8",
+  "speedtype_attack": "1",
+  "speedtype_skill": "1",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "69, 73, 77, 81, 85",
+  "normal_distribute": "20, 20, 20, 20, 20",
+  "normal_totaldistr": "100",
+  "description": "A white mage that was active in the ruined La Veda Republic during the ancient war. By the time the war with the gods had started, her healing powers had grown miraculously strong. She freely wielded her powers saving countless people who in turn called her a saint, to which she simply smiled. She would never accept payment for her services, but it's said she would take sweet treats, albeit after a bit of hesitation.",
+  "summon": "I see healing powers are needed.<br>Of course I'll lend mine to you.<br>Alright, let's save the people!",
+  "fusion": "My healing light grows!<br>With this power I can save<br>even more people!",
+  "evolution": "Can you see how the light<br>has grown strong inside me?<br>It shines along with you!",
+  "hp_base": "2266",
+  "atk_base": "498",
+  "def_base": "718",
+  "rec_base": "789",
+  "hp_lord": "3880",
+  "atk_lord": "639",
+  "def_lord": "1030",
+  "rec_lord": "1269",
+  "hp_anima": "4173",
+  "rec_anima": "1191",
+  "atk_breaker": "717",
+  "def_breaker": "952",
+  "atk_guardian": "561",
+  "def_guardian": "1108",
+  "rec_guardian": "1230",
+  "def_oracle": "991",
+  "hp_oracle": "3763",
+  "rec_oracle": "1386",
+  "hp_bonus": "300",
+  "atk_bonus": "80",
+  "def_bonus": "160",
+  "rec_bonus": "120",
+  "lordonly": "",
+  "combo_hits": "5",
+  "normaldc": "10",
+  "ls": "Light's Protection",
+  "lsdescription": "10% reduction in damage from Light Types",
+  "lstype": "Defense",
+  "bbdescription": "Greatly recovers HP for all allies",
+  "bbnote": "Heals (1270~1470 + 22.5% healer Rec) HP",
+  "bbtype": "Heal",
+  "bbhits": "",
+  "bbaoe": "0",
+  "bbgauge": "15",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "",
+  "evomats2": "",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": ""
 }

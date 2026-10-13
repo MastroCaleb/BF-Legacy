@@ -1,62 +1,63 @@
 {
   "id": "60103",
-  "unitName": "Hell King Hades",
-  "no": "151",
-  "element": "Dark",
-  "rarity": "★★★★",
-  "cost": "8",
-  "maxlv": "60",
-  "basexp": "21",
-  "gender": "N",
-  "ai": "4",
-  "animation_attack": "74",
-  "animation_idle": "48",
-  "animation_move": "5",
-  "movespeed_attack": "0.0041",
-  "movespeed_skill": "0.0041",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "35, 39, 43",
-  "normal_distribute": "60, 20, 20",
-  "normal_totaldistr": "100",
-  "bb_frames": "35, 39, 43, 47, 51",
-  "bb_distribute": "20, 20, 20, 20, 20",
-  "bb_totaldistr": "100",
-  "description": "The king of all devils who live in hell. Usually he would send his subordinates when something in the living world concerned him and would rarely appear himself. His appearance in the world meant that the situation was beyond Memetes' capabilities. When Hades harvests a soul, it is severed from all regret and attachment to the world, depriving it of all spiritual resistance.",
-  "summon": "I am the King of Hell.<br>Let me be your guide as to<br>what defines life and death.",
-  "fusion": "When you visit hell,<br>I can assure you a peaceful rest.",
-  "evolution": "The gates to hell are open.<br>I grant eternal peace to<br>all living things.",
-  "hp_base": "2319",
-  "atk_base": "980",
-  "def_base": "630",
-  "rec_base": "391",
-  "hp_lord": "3772",
-  "atk_lord": "1325",
-  "def_lord": "917",
-  "rec_lord": "689",
-  "hp_anima": "4215",
-  "rec_anima": "571",
-  "atk_breaker": "1443",
-  "def_breaker": "799",
-  "atk_guardian": "1207",
-  "def_guardian": "1035",
-  "rec_guardian": "630",
-  "def_oracle": "858",
-  "hp_oracle": "3595",
-  "rec_oracle": "866",
-  "hp_bonus": "400",
-  "atk_bonus": "200",
-  "def_bonus": "120",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "3",
-  "normaldc": "12",
-  "ls": "Intense Flash",
-  "lsdescription": "Boost in damage dealt during Spark",
-  "lsnote": "30% boost",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 980,
+      "def": 630,
+      "hp": 2319,
+      "rec": 391
+    },
+    "_lord": {
+      "atk": 1325,
+      "def": 917,
+      "hp": 3772,
+      "rec": 689
+    },
+    "anima": {
+      "atk": 1325,
+      "def": 917,
+      "hp max": 4362,
+      "hp min": 4067,
+      "rec max": 630,
+      "rec min": 512
+    },
+    "breaker": {
+      "atk max": 1502,
+      "atk min": 1384,
+      "def max": 858,
+      "def min": 740,
+      "hp": 3772,
+      "rec": 689
+    },
+    "guardian": {
+      "atk": 1325,
+      "def max": 1094,
+      "def min": 976,
+      "hp": 3772,
+      "rec max": 689,
+      "rec min": 571
+    },
+    "oracle": {
+      "atk": 1325,
+      "def max": 917,
+      "def min": 799,
+      "hp": 3772,
+      "rec max": 925,
+      "rec min": 807
+    }
+  },
+  "leader_skill": {
+    "desc": "Boost in damage dealt during Spark",
+    "effects": [
+      {
+        "damage% for spark": 30,
+        "passive id": "31"
+      }
+    ],
+    "id": "1301",
+    "name": "Intense Flash"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -299,94 +300,99 @@
     ],
     "name": "Chaos Fall"
   },
-  "bbdescription": "5 combo Dark elemental power attack on single Enemy & probable Curse effect",
-  "bbnote": "80% chance",
-  "bbtype": "Offense",
-  "bbhits": "5",
-  "bbaoe": "1",
-  "bbgauge": "17",
-  "bbdc": "5",
-  "bbmultiplier": "350",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "60102",
-  "evointo": "60104",
-  "evomats1": "60123",
-  "evomats2": "60143",
-  "evomats3": "60142",
-  "evomats4": "60121",
-  "evomats5": "60120",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 980,
-      "def": 630,
-      "hp": 2319,
-      "rec": 391
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_under",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1325,
-      "def": 917,
-      "hp": 3772,
-      "rec": 689
+    {
+      "action": "skill",
+      "chance%": 30.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1325,
-      "def": 917,
-      "hp max": 4362,
-      "hp min": 4067,
-      "rec max": 630,
-      "rec min": 512
+    {
+      "action": "attack",
+      "chance%": 70.0,
+      "target conditions": "hp_max",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 1502,
-      "atk min": 1384,
-      "def max": 858,
-      "def min": 740,
-      "hp": 3772,
-      "rec": 689
+    {
+      "action": "attack",
+      "chance%": 50.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "guardian": {
-      "atk": 1325,
-      "def max": 1094,
-      "def min": 976,
-      "hp": 3772,
-      "rec max": 689,
-      "rec min": 571
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 74
     },
-    "oracle": {
-      "atk": 1325,
-      "def max": 917,
-      "def min": 799,
-      "hp": 3772,
-      "rec max": 925,
-      "rec min": 807
+    "idle": {
+      "total number of frames": 48
+    },
+    "move": {
+      "total number of frames": 5
     }
   },
-  "leader_skill": {
-    "desc": "Boost in damage dealt during Spark",
-    "effects": [
-      {
-        "damage% for spark": 30,
-        "passive id": "31"
-      }
+  "category": 60100,
+  "cost": "8",
+  "damage frames": {
+    "frame times": [
+      35,
+      39,
+      43
     ],
-    "id": "1301",
-    "name": "Intense Flash"
+    "hit dmg% distribution": [
+      60,
+      20,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 3
   },
-  "extra_skill": {},
+  "drop check count": 4,
+  "element": "dark",
+  "exp_pattern": 20,
+  "gender": "other",
+  "getting type": "rare summon",
+  "guide_id": 151,
+  "imp": {
+    "max atk": "200",
+    "max def": "120",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "1233~1378",
+  "movement": {
+    "attack": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    }
+  },
+  "name": "Hell King Hades",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Hell King Hades",
+  "maxlv": "60",
+  "no": "151",
   "unitDisplayHomePosition_1W9CxaFK": "199,164,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "121,15,740,814",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "144,200,390,429,0",
@@ -396,5 +402,110 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "29:126:1,33:126:1,37:126:1"
+  "effectFrames": "29:126:1,33:126:1,37:126:1",
+  "evofrom": "60102",
+  "evointo": "60104",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "60123",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60142",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60121",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60120",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "74",
+  "animation_idle": "48",
+  "animation_move": "5",
+  "movespeed_attack": "0.0041",
+  "movespeed_skill": "0.0041",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "35, 39, 43",
+  "normal_distribute": "60, 20, 20",
+  "normal_totaldistr": "100",
+  "bb_frames": "35, 39, 43, 47, 51",
+  "bb_distribute": "20, 20, 20, 20, 20",
+  "bb_totaldistr": "100",
+  "description": "The king of all devils who live in hell. Usually he would send his subordinates when something in the living world concerned him and would rarely appear himself. His appearance in the world meant that the situation was beyond Memetes' capabilities. When Hades harvests a soul, it is severed from all regret and attachment to the world, depriving it of all spiritual resistance.",
+  "summon": "I am the King of Hell.<br>Let me be your guide as to<br>what defines life and death.",
+  "fusion": "When you visit hell,<br>I can assure you a peaceful rest.",
+  "evolution": "The gates to hell are open.<br>I grant eternal peace to<br>all living things.",
+  "hp_base": "2319",
+  "atk_base": "980",
+  "def_base": "630",
+  "rec_base": "391",
+  "hp_lord": "3772",
+  "atk_lord": "1325",
+  "def_lord": "917",
+  "rec_lord": "689",
+  "hp_anima": "4215",
+  "rec_anima": "571",
+  "atk_breaker": "1443",
+  "def_breaker": "799",
+  "atk_guardian": "1207",
+  "def_guardian": "1035",
+  "rec_guardian": "630",
+  "def_oracle": "858",
+  "hp_oracle": "3595",
+  "rec_oracle": "866",
+  "hp_bonus": "400",
+  "atk_bonus": "200",
+  "def_bonus": "120",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "3",
+  "normaldc": "12",
+  "ls": "Intense Flash",
+  "lsdescription": "Boost in damage dealt during Spark",
+  "lsnote": "30% boost",
+  "lstype": "Attack",
+  "bbdescription": "5 combo Dark elemental power attack on single Enemy & probable Curse effect",
+  "bbnote": "80% chance",
+  "bbtype": "Offense",
+  "bbhits": "5",
+  "bbaoe": "1",
+  "bbgauge": "17",
+  "bbdc": "5",
+  "bbmultiplier": "350",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "60123",
+  "evomats2": "60143",
+  "evomats3": "60142",
+  "evomats4": "60121",
+  "evomats5": "60120"
 }

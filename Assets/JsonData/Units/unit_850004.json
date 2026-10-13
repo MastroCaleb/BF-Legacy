@@ -1,62 +1,66 @@
 {
   "id": "850004",
-  "unitName": "Sky Queen Vanila",
-  "no": "8013",
-  "element": "Light",
-  "rarity": "★★★★",
-  "cost": "10",
-  "maxlv": "60",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "120",
-  "animation_idle": "49",
-  "animation_move": "49",
-  "movespeed_attack": "4",
-  "movespeed_skill": "4",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "61, 62, 104, 105, 106, 107",
-  "normal_distribute": "16, 16, 17, 17, 17, 17",
-  "normal_totaldistr": "100",
-  "bb_frames": "55",
-  "bb_distribute": "100",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "description": "Defeated by the gods, Vanila managed to take the Battle Maidens to safety before succumbing to her wounds. In her near-death state, darkness came for her, but it was thwarted by a mysterious figure who stood sentinel beside her. Regaining consciousness, she found herself alone but with new powers. A note was attached to her Mech. It read, 'Ganbatte, Nee-san'.",
-  "summon": "There is nothing to know. <br>Provide me the battlefield of the sky <br>and I will show you my worth.",
-  "fusion": "This strength gives me purpose. <br>I am reminded of what I need.",
-  "evolution": "This new form.., <br>it feels not like mine alone... <br>as if I share it with someone else.",
-  "hp_base": "2844",
-  "atk_base": "976",
-  "def_base": "789",
-  "rec_base": "844",
-  "hp_lord": "4155",
-  "atk_lord": "1392",
-  "def_lord": "1095",
-  "rec_lord": "1138",
-  "hp_anima": "4598",
-  "rec_anima": "1020",
-  "atk_breaker": "1510",
-  "def_breaker": "977",
-  "atk_guardian": "1274",
-  "def_guardian": "1213",
-  "rec_guardian": "1079",
-  "def_oracle": "1036",
-  "hp_oracle": "3978",
-  "rec_oracle": "1315",
-  "hp_bonus": "500",
-  "atk_bonus": "200",
-  "def_bonus": "200",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "6",
-  "normaldc": "12",
-  "ls": "Light God's Power",
-  "lsdescription": "50% boost to Atk Power of Light Types",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 976,
+      "def": 789,
+      "hp": 2844,
+      "rec": 844
+    },
+    "_lord": {
+      "atk": 1392,
+      "def": 1095,
+      "hp": 4155,
+      "rec": 1138
+    },
+    "anima": {
+      "atk": 1392,
+      "def": 1095,
+      "hp max": 4745,
+      "hp min": 4450,
+      "rec max": 1079,
+      "rec min": 961
+    },
+    "breaker": {
+      "atk max": 1569,
+      "atk min": 1451,
+      "def max": 1036,
+      "def min": 918,
+      "hp": 4155,
+      "rec": 1138
+    },
+    "guardian": {
+      "atk": 1392,
+      "def max": 1272,
+      "def min": 1154,
+      "hp": 4155,
+      "rec max": 1138,
+      "rec min": 1020
+    },
+    "oracle": {
+      "atk": 1392,
+      "def max": 1095,
+      "def min": 977,
+      "hp": 4155,
+      "rec max": 1374,
+      "rec min": 1256
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to Atk Power of Light Types",
+    "effects": [
+      {
+        "atk% buff": 50,
+        "elements buffed": [
+          "light"
+        ],
+        "passive id": "2"
+      }
+    ],
+    "id": "141",
+    "name": "Light God's Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -433,97 +437,93 @@
     ],
     "name": "Angel's Wrath"
   },
-  "bbdescription": "14 combo powerful Light random attack on all enemies with probable random status effect",
-  "bbnote": "16% chance to inflict Paralysis, Injury, Wekaness or Sickness",
-  "bbtype": "Offense",
-  "bbhits": "14",
-  "bbaoe": "1",
-  "bbgauge": "22",
-  "bbdc": "14",
-  "bbmultiplier": "300",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "850003",
-  "evointo": "850005",
-  "evomats1": "50123",
-  "evomats2": "50122",
-  "evomats3": "50122",
-  "evomats4": "50121",
-  "evomats5": "60143",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 976,
-      "def": 789,
-      "hp": 2844,
-      "rec": 844
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1392,
-      "def": 1095,
-      "hp": 4155,
-      "rec": 1138
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1392,
-      "def": 1095,
-      "hp max": 4745,
-      "hp min": 4450,
-      "rec max": 1079,
-      "rec min": 961
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 120
     },
-    "breaker": {
-      "atk max": 1569,
-      "atk min": 1451,
-      "def max": 1036,
-      "def min": 918,
-      "hp": 4155,
-      "rec": 1138
+    "idle": {
+      "total number of frames": 49
     },
-    "guardian": {
-      "atk": 1392,
-      "def max": 1272,
-      "def min": 1154,
-      "hp": 4155,
-      "rec max": 1138,
-      "rec min": 1020
-    },
-    "oracle": {
-      "atk": 1392,
-      "def max": 1095,
-      "def min": 977,
-      "hp": 4155,
-      "rec max": 1374,
-      "rec min": 1256
+    "move": {
+      "total number of frames": 49
     }
   },
-  "leader_skill": {
-    "desc": "50% boost to Atk Power of Light Types",
-    "effects": [
-      {
-        "atk% buff": 50,
-        "elements buffed": [
-          "light"
-        ],
-        "passive id": "2"
-      }
+  "category": 850000,
+  "cost": "10",
+  "damage frames": {
+    "frame times": [
+      61,
+      62,
+      104,
+      105,
+      106,
+      107
     ],
-    "id": "141",
-    "name": "Light God's Power"
+    "hit dmg% distribution": [
+      16,
+      16,
+      17,
+      17,
+      17,
+      17
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 6
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "light",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "farmable",
+  "guide_id": 8013,
+  "imp": {
+    "max atk": "200",
+    "max def": "200",
+    "max hp": "500",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "1295~1447",
+  "movement": {
+    "attack": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    }
+  },
+  "name": "Sky Queen Vanila",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Sky Queen Vanila",
+  "maxlv": "60",
+  "no": "8013",
   "unitDisplayHomePosition_1W9CxaFK": "496,163,182,498",
   "unitDisplayDetailPosition_6z54rgb3": "-165,-38,1370,1000",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "21,148,684,500,1",
@@ -533,5 +533,105 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "55:114:1,56:114:1,98:100120:1,98:114:1,99:100120:1,99:114:1,100:100120:1,100:114:1,101:100120:1,101:114:1"
+  "effectFrames": "55:114:1,56:114:1,98:100120:1,98:114:1,99:100120:1,99:114:1,100:100120:1,100:114:1,101:100120:1,101:114:1",
+  "evofrom": "850003",
+  "evointo": "850005",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50123",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50122",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "50121",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "120",
+  "animation_idle": "49",
+  "animation_move": "49",
+  "movespeed_attack": "4",
+  "movespeed_skill": "4",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "61, 62, 104, 105, 106, 107",
+  "normal_distribute": "16, 16, 17, 17, 17, 17",
+  "normal_totaldistr": "100",
+  "bb_frames": "55",
+  "bb_distribute": "100",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "description": "Defeated by the gods, Vanila managed to take the Battle Maidens to safety before succumbing to her wounds. In her near-death state, darkness came for her, but it was thwarted by a mysterious figure who stood sentinel beside her. Regaining consciousness, she found herself alone but with new powers. A note was attached to her Mech. It read, 'Ganbatte, Nee-san'.",
+  "summon": "There is nothing to know. <br>Provide me the battlefield of the sky <br>and I will show you my worth.",
+  "fusion": "This strength gives me purpose. <br>I am reminded of what I need.",
+  "evolution": "This new form.., <br>it feels not like mine alone... <br>as if I share it with someone else.",
+  "hp_base": "2844",
+  "atk_base": "976",
+  "def_base": "789",
+  "rec_base": "844",
+  "hp_lord": "4155",
+  "atk_lord": "1392",
+  "def_lord": "1095",
+  "rec_lord": "1138",
+  "hp_anima": "4598",
+  "rec_anima": "1020",
+  "atk_breaker": "1510",
+  "def_breaker": "977",
+  "atk_guardian": "1274",
+  "def_guardian": "1213",
+  "rec_guardian": "1079",
+  "def_oracle": "1036",
+  "hp_oracle": "3978",
+  "rec_oracle": "1315",
+  "hp_bonus": "500",
+  "atk_bonus": "200",
+  "def_bonus": "200",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "6",
+  "normaldc": "12",
+  "ls": "Light God's Power",
+  "lsdescription": "50% boost to Atk Power of Light Types",
+  "lstype": "Attack",
+  "bbdescription": "14 combo powerful Light random attack on all enemies with probable random status effect",
+  "bbnote": "16% chance to inflict Paralysis, Injury, Wekaness or Sickness",
+  "bbtype": "Offense",
+  "bbhits": "14",
+  "bbaoe": "1",
+  "bbgauge": "22",
+  "bbdc": "14",
+  "bbmultiplier": "300",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50123",
+  "evomats2": "50122",
+  "evomats3": "50122",
+  "evomats4": "50121",
+  "evomats5": "60143"
 }

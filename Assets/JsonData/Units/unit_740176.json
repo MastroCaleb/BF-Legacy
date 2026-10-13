@@ -1,65 +1,121 @@
 {
   "id": "740176",
-  "unitName": "Aquarius of Weeping (EU)",
-  "disam": "Aquarius",
-  "altname": "Aquarius of Weeping",
-  "idalt": "",
-  "has_altart": "",
-  "doenter": "true",
-  "no": "7137",
-  "element": "Thunder",
-  "rarity": "★★★★★★★",
-  "cost": "48",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "1",
-  "animation_attack": "136",
-  "animation_idle": "48",
-  "animation_move": "48",
-  "movespeed_attack": "4",
-  "speedtype_attack": "3",
-  "movetype_attack": "3",
-  "movespeed_skill": "4",
-  "speedtype_skill": "3",
-  "movetype_skill": "3",
-  "description": "Sailing around the Bad Lands alone, glorying in the stars, Gazolina was enjoying her newfound freedom. The constellation of Aquarius was reflected on the waves when Gazolina’s Techs became mired in a dark pool. Gazolina didn’t think twice about diving in immediately to untangle the weeds that she thought were hindering her progress. She never came out of the dark liquid. The Corruption which was invading every dimension had found a new and powerful defender. The dark tears which had flowed down her cheeks were still wet as she contaminated more souls every day.",
-  "summon": "I will defend the Corruption if that is to be my destiny.",
-  "fusion": "My Techs feed off desolation",
-  "evolution": "",
-  "hp_base": "5401",
-  "atk_base": "1775",
-  "def_base": "1870",
-  "rec_base": "2197",
-  "hp_lord": "7021",
-  "atk_lord": "2201",
-  "def_lord": "2319",
-  "rec_lord": "2702",
-  "hp_anima": "7913",
-  "rec_anima": "2464",
-  "atk_breaker": "2439",
-  "def_breaker": "2081",
-  "def_guardian": "2557",
-  "rec_guardian": "2702",
-  "def_oracle": "2319",
-  "rec_oracle": "2940",
-  "hp_bonus": "1600",
-  "atk_bonus": "520",
-  "def_bonus": "600",
-  "rec_bonus": "640",
-  "lordonly": "",
-  "normal_frames": "20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70",
-  "normal_distribute": "7, 6, 7, 6, 7, 6, 13, 12, 12, 12, 12",
-  "normal_totaldistr": "100",
-  "combo_hits": "11",
-  "normaldc": "33",
-  "ls": "Fountain of Curses",
-  "lsdescription": "Boosts all stats (30%) & Probable recovery of HP when attacked (40% Chance to heal 20% of DMG received) & Boost REC and DEF when damage taken has exceeded certain amount for 2 turns (70%, 5000 damage)",
-  "lsnote": "",
-  "es": "Profane Voltage",
-  "esdescription": "Adds Removes status ailments to BB/SBB/UBB & Boosts BB gauge when attacked (3-5 BC)",
-  "esitem": "",
-  "esnote": "",
+  "stats": {
+    "_base": {
+      "atk": 1775,
+      "def": 1870,
+      "hp": 5401,
+      "rec": 2197
+    },
+    "_lord": {
+      "atk": 2201,
+      "def": 2319,
+      "hp": 7021,
+      "rec": 2702
+    },
+    "anima": {
+      "atk": 2201,
+      "def": 2319,
+      "hp max": 8211,
+      "hp min": 7616,
+      "rec max": 2583,
+      "rec min": 2345
+    },
+    "breaker": {
+      "atk max": 2558,
+      "atk min": 2320,
+      "def max": 2200,
+      "def min": 1962,
+      "hp": 7021,
+      "rec": 2702
+    },
+    "guardian": {
+      "atk max": 2082,
+      "atk min": 1844,
+      "def max": 2676,
+      "def min": 2438,
+      "hp": 7021,
+      "rec": 2702
+    },
+    "oracle": {
+      "atk": 2201,
+      "def": 2319,
+      "hp max": 6426,
+      "hp min": 5831,
+      "rec max": 3059,
+      "rec min": 2821
+    }
+  },
+  "leader_skill": {
+    "desc": "Boosts all stats (30%) & Probable recovery of HP when attacked (40% Chance to heal 20% of DMG received) & Boost REC and DEF when damage taken has exceeded certain amount for 2 turns (70%, 5000 damage)",
+    "effects": [
+      {
+        "atk% buff": 30,
+        "def% buff": 30,
+        "hp% buff": 30,
+        "passive id": "1",
+        "rec% buff": 30
+      },
+      {
+        "dmg% to hp% when attacked chance%": 40,
+        "dmg% to hp% when attacked high": 20,
+        "dmg% to hp% when attacked low": 20,
+        "passive id": "24"
+      },
+      {
+        "buff": {
+          "buff turns (3)": "2",
+          "def% buff (3)": 70
+        },
+        "damage threshold buff activation": 5000,
+        "passive id": "78"
+      },
+      {
+        "buff": {
+          "buff turns (5)": "2",
+          "rec% buff (5)": 70
+        },
+        "damage threshold buff activation": 5000,
+        "passive id": "78"
+      }
+    ],
+    "id": "740176",
+    "name": "Fountain of Curses"
+  },
+  "extra_skill": {
+    "desc": "Adds Removes status ailments to BB/SBB/UBB & Boosts BB gauge when attacked (3-5 BC)",
+    "effects": [
+      {
+        "bc fill when attacked high": 5,
+        "bc fill when attacked low": 3,
+        "bc fill when attacked%": 100,
+        "conditions": [],
+        "passive id": "25",
+        "passive target": "self"
+      },
+      {
+        "conditions": [],
+        "passive id": "66",
+        "passive target": "self",
+        "trigger on bb": true,
+        "trigger on sbb": true,
+        "trigger on ubb": true,
+        "triggered effect": [
+          {
+            "effect delay time(ms)/frame": "0.0/0",
+            "proc id": "10",
+            "remove all status ailments": true,
+            "target area": "aoe",
+            "target type": "party"
+          }
+        ]
+      }
+    ],
+    "id": "740176",
+    "name": "Profane Voltage",
+    "rarity": "0",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -470,31 +526,6 @@
     ],
     "name": "Corrupted Stream"
   },
-  "bbdescription": "13 combo Water and Thunder attack on all enemies & Cast a mana bubble shielding all allies (10% REC) & Boosts to BB gauge when damage is taken for 3 turns (3-5 BC)",
-  "bbnote": "{{UnitBuffList",
-  "buff_1_proc": "29",
-  "buff_1_potency": "1000% damage modifier",
-  "buff_1_duration": "—",
-  "buff_1_target": "All enemies",
-  "buff_2_proc": "5_rec",
-  "buff_2_potency": "150% boost to Rec",
-  "buff_2_duration": "5 turns",
-  "buff_2_target": "All allies",
-  "buff_3_proc": "24_rec",
-  "buff_3_potency": "Boosts Rec relative to 150% of Defense",
-  "buff_3_duration": "3 turns",
-  "buff_3_target": "All allies",
-  "bbtype": "Offense",
-  "bbgauge": "26",
-  "bb_frames": "20, 25, 30, 35, 40, 45, 50, 55, 57, 60, 65, 67, 70",
-  "bb_distribute": "9, 9, 9, 9, 8, 8, 8, 4, 4, 8, 8, 8, 8",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "0",
-  "bbhits": "13",
-  "bbaoe": "A",
-  "bbdc": "13",
-  "bbmultiplier": "290",
-  "bb_hpscale": "",
   "sbb": {
     "damage frames": [
       {
@@ -1119,27 +1150,6 @@
     ],
     "name": "Thundering Waterfall"
   },
-  "sbbdescription": "23 combo Water and Thunder attack on all enemies & Cast a mana bubble shielding all allies (15% REC) & Boosts all allies' REC for 3 turns (110%) & Boosts to BB gauge for 3 turns (6 BC) & Gradually heal all allies for 3 turns (2000-2500 HP + 10% REC)",
-  "sbbnote": "{{UnitBuffList",
-  "buff_4_proc": "20",
-  "buff_4_potency": "Damage taken boosts BB gauge by 50 BC",
-  "buff_4_duration": "3 turns",
-  "buff_4_target": "All allies",
-  "buff_5_proc": "3",
-  "buff_5_potency": "Heals 2000~2500 + 11% Rec of HP each turn",
-  "buff_5_duration": "3 turns",
-  "buff_5_target": "All allies",
-  "sbbtype": "Offense",
-  "sbbgauge": "27",
-  "sbb_frames": "20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 56, 60, 64, 66, 68, 70",
-  "sbb_distribute": "2, 5, 3, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4",
-  "sbb_totaldistr": "100",
-  "sbb_effectdelay": "0",
-  "sbbhits": "23",
-  "sbbaoe": "A",
-  "sbbdc": "23",
-  "sbbmultiplier": "540",
-  "sbb_hpscale": "",
   "ubb": {
     "damage frames": [
       {
@@ -1294,6 +1304,213 @@
     ],
     "name": "Ocean of Corruption"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "party"
+    },
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 136
+    },
+    "idle": {
+      "total number of frames": 48
+    },
+    "move": {
+      "total number of frames": 48
+    }
+  },
+  "cost": "48",
+  "damage frames": {
+    "frame times": [
+      20,
+      25,
+      30,
+      35,
+      40,
+      45,
+      50,
+      55,
+      60,
+      65,
+      70
+    ],
+    "hit dmg% distribution": [
+      7,
+      6,
+      7,
+      6,
+      7,
+      6,
+      13,
+      12,
+      12,
+      12,
+      12
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 11
+  },
+  "drop check count": 3,
+  "element": "thunder",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 7137,
+  "imp": {
+    "max atk": "520",
+    "max def": "600",
+    "max hp": "1600",
+    "max rec": "640"
+  },
+  "kind": "normal",
+  "lord damage range": "2048~2289",
+  "movement": {
+    "attack": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    }
+  },
+  "name": "Aquarius of Weeping",
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Aquarius of Weeping",
+  "maxlv": "120",
+  "no": "7137",
+  "unitDisplayHomePosition_1W9CxaFK": null,
+  "unitDisplayDetailPosition_6z54rgb3": null,
+  "unitDisplayConfirmImagePosition_MYK1fq6c": null,
+  "unitDisplayCutInImagePosition_7hLR6pDN": null,
+  "unitDisplaySummonPosition_KC3Jk8Br": null,
+  "unitDisplayHpPosition_3BpHN6VD": null,
+  "unitDisplayCursorPosition": null,
+  "sellPrice": "",
+  "sellCaution": false,
+  "effectFrames": "",
+  "evofrom": "",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "disam": "Aquarius",
+  "altname": "Aquarius of Weeping",
+  "idalt": "",
+  "has_altart": "",
+  "doenter": "true",
+  "basexp": "21",
+  "animation_attack": "136",
+  "animation_idle": "48",
+  "animation_move": "48",
+  "movespeed_attack": "4",
+  "speedtype_attack": "3",
+  "movetype_attack": "3",
+  "movespeed_skill": "4",
+  "speedtype_skill": "3",
+  "movetype_skill": "3",
+  "description": "Sailing around the Bad Lands alone, glorying in the stars, Gazolina was enjoying her newfound freedom. The constellation of Aquarius was reflected on the waves when Gazolina’s Techs became mired in a dark pool. Gazolina didn’t think twice about diving in immediately to untangle the weeds that she thought were hindering her progress. She never came out of the dark liquid. The Corruption which was invading every dimension had found a new and powerful defender. The dark tears which had flowed down her cheeks were still wet as she contaminated more souls every day.",
+  "summon": "I will defend the Corruption if that is to be my destiny.",
+  "fusion": "My Techs feed off desolation",
+  "evolution": "",
+  "hp_base": "5401",
+  "atk_base": "1775",
+  "def_base": "1870",
+  "rec_base": "2197",
+  "hp_lord": "7021",
+  "atk_lord": "2201",
+  "def_lord": "2319",
+  "rec_lord": "2702",
+  "hp_anima": "7913",
+  "rec_anima": "2464",
+  "atk_breaker": "2439",
+  "def_breaker": "2081",
+  "def_guardian": "2557",
+  "rec_guardian": "2702",
+  "def_oracle": "2319",
+  "rec_oracle": "2940",
+  "hp_bonus": "1600",
+  "atk_bonus": "520",
+  "def_bonus": "600",
+  "rec_bonus": "640",
+  "lordonly": "",
+  "normal_frames": "20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70",
+  "normal_distribute": "7, 6, 7, 6, 7, 6, 13, 12, 12, 12, 12",
+  "normal_totaldistr": "100",
+  "combo_hits": "11",
+  "normaldc": "33",
+  "ls": "Fountain of Curses",
+  "lsdescription": "Boosts all stats (30%) & Probable recovery of HP when attacked (40% Chance to heal 20% of DMG received) & Boost REC and DEF when damage taken has exceeded certain amount for 2 turns (70%, 5000 damage)",
+  "lsnote": "",
+  "es": "Profane Voltage",
+  "esdescription": "Adds Removes status ailments to BB/SBB/UBB & Boosts BB gauge when attacked (3-5 BC)",
+  "esitem": "",
+  "esnote": "",
+  "bbdescription": "13 combo Water and Thunder attack on all enemies & Cast a mana bubble shielding all allies (10% REC) & Boosts to BB gauge when damage is taken for 3 turns (3-5 BC)",
+  "bbnote": "{{UnitBuffList",
+  "buff_1_proc": "29",
+  "buff_1_potency": "1000% damage modifier",
+  "buff_1_duration": "—",
+  "buff_1_target": "All enemies",
+  "buff_2_proc": "5_rec",
+  "buff_2_potency": "150% boost to Rec",
+  "buff_2_duration": "5 turns",
+  "buff_2_target": "All allies",
+  "buff_3_proc": "24_rec",
+  "buff_3_potency": "Boosts Rec relative to 150% of Defense",
+  "buff_3_duration": "3 turns",
+  "buff_3_target": "All allies",
+  "bbtype": "Offense",
+  "bbgauge": "26",
+  "bb_frames": "20, 25, 30, 35, 40, 45, 50, 55, 57, 60, 65, 67, 70",
+  "bb_distribute": "9, 9, 9, 9, 8, 8, 8, 4, 4, 8, 8, 8, 8",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "0",
+  "bbhits": "13",
+  "bbaoe": "A",
+  "bbdc": "13",
+  "bbmultiplier": "290",
+  "bb_hpscale": "",
+  "sbbdescription": "23 combo Water and Thunder attack on all enemies & Cast a mana bubble shielding all allies (15% REC) & Boosts all allies' REC for 3 turns (110%) & Boosts to BB gauge for 3 turns (6 BC) & Gradually heal all allies for 3 turns (2000-2500 HP + 10% REC)",
+  "sbbnote": "{{UnitBuffList",
+  "buff_4_proc": "20",
+  "buff_4_potency": "Damage taken boosts BB gauge by 50 BC",
+  "buff_4_duration": "3 turns",
+  "buff_4_target": "All allies",
+  "buff_5_proc": "3",
+  "buff_5_potency": "Heals 2000~2500 + 11% Rec of HP each turn",
+  "buff_5_duration": "3 turns",
+  "buff_5_target": "All allies",
+  "sbbtype": "Offense",
+  "sbbgauge": "27",
+  "sbb_frames": "20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 56, 60, 64, 66, 68, 70",
+  "sbb_distribute": "2, 5, 3, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4",
+  "sbb_totaldistr": "100",
+  "sbb_effectdelay": "0",
+  "sbbhits": "23",
+  "sbbaoe": "A",
+  "sbbdc": "23",
+  "sbbmultiplier": "540",
+  "sbb_hpscale": "",
   "ubbdescription": "22 combo Water and Thunder attack on all enemies & Boosts allies' Def relative to their Rec for 3 turns (150%) & Boost all allies REC (150%) for 5 turns & Boosts to BB gauge when damage is taken for 3 turns (50 BC)",
   "ubbnote": "{{UnitBuffList",
   "ubbtype": "Offense",
@@ -1311,131 +1528,5 @@
   "notes": "",
   "incorrectinfo": "",
   "addcat": "",
-  "addcatname": "",
-  "stats": {
-    "_base": {
-      "atk": 1775,
-      "def": 1870,
-      "hp": 5401,
-      "rec": 2197
-    },
-    "_lord": {
-      "atk": 2201,
-      "def": 2319,
-      "hp": 7021,
-      "rec": 2702
-    },
-    "anima": {
-      "atk": 2201,
-      "def": 2319,
-      "hp max": 8211,
-      "hp min": 7616,
-      "rec max": 2583,
-      "rec min": 2345
-    },
-    "breaker": {
-      "atk max": 2558,
-      "atk min": 2320,
-      "def max": 2200,
-      "def min": 1962,
-      "hp": 7021,
-      "rec": 2702
-    },
-    "guardian": {
-      "atk max": 2082,
-      "atk min": 1844,
-      "def max": 2676,
-      "def min": 2438,
-      "hp": 7021,
-      "rec": 2702
-    },
-    "oracle": {
-      "atk": 2201,
-      "def": 2319,
-      "hp max": 6426,
-      "hp min": 5831,
-      "rec max": 3059,
-      "rec min": 2821
-    }
-  },
-  "leader_skill": {
-    "desc": "Boosts all stats (30%) & Probable recovery of HP when attacked (40% Chance to heal 20% of DMG received) & Boost REC and DEF when damage taken has exceeded certain amount for 2 turns (70%, 5000 damage)",
-    "effects": [
-      {
-        "atk% buff": 30,
-        "def% buff": 30,
-        "hp% buff": 30,
-        "passive id": "1",
-        "rec% buff": 30
-      },
-      {
-        "dmg% to hp% when attacked chance%": 40,
-        "dmg% to hp% when attacked high": 20,
-        "dmg% to hp% when attacked low": 20,
-        "passive id": "24"
-      },
-      {
-        "buff": {
-          "buff turns (3)": "2",
-          "def% buff (3)": 70
-        },
-        "damage threshold buff activation": 5000,
-        "passive id": "78"
-      },
-      {
-        "buff": {
-          "buff turns (5)": "2",
-          "rec% buff (5)": 70
-        },
-        "damage threshold buff activation": 5000,
-        "passive id": "78"
-      }
-    ],
-    "id": "740176",
-    "name": "Fountain of Curses"
-  },
-  "extra_skill": {
-    "desc": "Adds Removes status ailments to BB/SBB/UBB & Boosts BB gauge when attacked (3-5 BC)",
-    "effects": [
-      {
-        "bc fill when attacked high": 5,
-        "bc fill when attacked low": 3,
-        "bc fill when attacked%": 100,
-        "conditions": [],
-        "passive id": "25",
-        "passive target": "self"
-      },
-      {
-        "conditions": [],
-        "passive id": "66",
-        "passive target": "self",
-        "trigger on bb": true,
-        "trigger on sbb": true,
-        "trigger on ubb": true,
-        "triggered effect": [
-          {
-            "effect delay time(ms)/frame": "0.0/0",
-            "proc id": "10",
-            "remove all status ailments": true,
-            "target area": "aoe",
-            "target type": "party"
-          }
-        ]
-      }
-    ],
-    "id": "740176",
-    "name": "Profane Voltage",
-    "rarity": "0",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": null,
-  "unitDisplayDetailPosition_6z54rgb3": null,
-  "unitDisplayConfirmImagePosition_MYK1fq6c": null,
-  "unitDisplayCutInImagePosition_7hLR6pDN": null,
-  "unitDisplaySummonPosition_KC3Jk8Br": null,
-  "unitDisplayHpPosition_3BpHN6VD": null,
-  "unitDisplayCursorPosition": null,
-  "sellPrice": "",
-  "sellCaution": false,
-  "effectFrames": ""
+  "addcatname": ""
 }

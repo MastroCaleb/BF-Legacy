@@ -1,62 +1,74 @@
 {
   "id": "50263",
-  "unitName": "Sola",
-  "freetext": ":''For other uses, see Sola (disambiguation)''",
-  "no": "399",
-  "element": "Light",
-  "rarity": "★★★★",
-  "cost": "10",
-  "maxlv": "60",
-  "basexp": "15",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "155",
-  "animation_idle": "52",
-  "animation_move": "19",
-  "movespeed_attack": "4",
-  "movespeed_skill": "4",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "2",
-  "movetype_skill": "2",
-  "normal_frames": "112, 118, 124, 130, 136",
-  "normal_distribute": "20, 20, 20, 20, 20",
-  "normal_totaldistr": "100",
-  "bb_frames": "112, 118, 124, 130, 136, 142, 148, 154",
-  "bb_distribute": "15, 10, 15, 10, 15, 10, 15, 10",
-  "bb_totaldistr": "100",
-  "description": "The oldest of the Six Sibyl Sisters who fought against the gods in order to save the humans. As gentle as she was, she could also be really stubborn. However there was no one who doubted her kindness, and it's said even Madia looked upon her with a pleasant smile. Sola rallied her sisters to fight in defense of the humans with her kindness, though this very act resulted in a battle between the sisters themselves.",
-  "summon": "Alright, let's fight!<br>Show me your definition<br>of justice!",
-  "fusion": "I don't know what is right.<br>That is why I just react.<br>Are you any different?",
-  "evolution": "",
-  "hp_base": "2719",
-  "atk_base": "770",
-  "def_base": "885",
-  "rec_base": "994",
-  "hp_lord": "3807",
-  "atk_lord": "1078",
-  "def_lord": "1239",
-  "rec_lord": "1392",
-  "hp_anima": "4250",
-  "rec_anima": "1274",
-  "atk_breaker": "1196",
-  "def_breaker": "1121",
-  "atk_guardian": "960",
-  "def_guardian": "1357",
-  "rec_guardian": "1333",
-  "def_oracle": "1180",
-  "hp_oracle": "3630",
-  "rec_oracle": "1569",
-  "hp_bonus": "400",
-  "atk_bonus": "200",
-  "def_bonus": "120",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "5",
-  "normaldc": "10",
-  "ls": "Holy Light's Power",
-  "lsdescription": "15% boost to Atk power of Light, Fire, and Thunder types",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 770,
+      "def": 885,
+      "hp": 2719,
+      "rec": 994
+    },
+    "_lord": {
+      "atk": 1078,
+      "def": 1239,
+      "hp": 3807,
+      "rec": 1392
+    },
+    "anima": {
+      "atk": 1078,
+      "def": 1239,
+      "hp max": 4397,
+      "hp min": 4102,
+      "rec max": 1333,
+      "rec min": 1215
+    },
+    "breaker": {
+      "atk max": 1255,
+      "atk min": 1137,
+      "def max": 1180,
+      "def min": 1062,
+      "hp": 3807,
+      "rec": 1392
+    },
+    "guardian": {
+      "atk": 1078,
+      "def max": 1416,
+      "def min": 1298,
+      "hp": 3807,
+      "rec max": 1392,
+      "rec min": 1274
+    },
+    "oracle": {
+      "atk": 1078,
+      "def max": 1239,
+      "def min": 1121,
+      "hp": 3807,
+      "rec max": 1628,
+      "rec min": 1510
+    }
+  },
+  "leader_skill": {
+    "desc": "15% boost to Atk power of Light, Fire, and Thunder types",
+    "effects": [
+      {
+        "atk% buff": 15,
+        "elements buffed": [
+          "light",
+          "fire"
+        ],
+        "passive id": "2"
+      },
+      {
+        "atk% buff": 15,
+        "elements buffed": [
+          "thunder"
+        ],
+        "passive id": "2"
+      }
+    ],
+    "id": "3500",
+    "name": "Holy Light's Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -263,104 +275,91 @@
     ],
     "name": "Flash Effect"
   },
-  "bbdescription": "8 combo powerful Fire, Thunder and Light attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "8",
-  "bbaoe": "A",
-  "bbgauge": "18",
-  "bbdc": "8",
-  "bbmultiplier": "150",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "50264",
-  "evomats1": "50123",
-  "evomats2": "50122",
-  "evomats3": "50121",
-  "evomats4": "10191",
-  "evomats5": "40191",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 770,
-      "def": 885,
-      "hp": 2719,
-      "rec": 994
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1078,
-      "def": 1239,
-      "hp": 3807,
-      "rec": 1392
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1078,
-      "def": 1239,
-      "hp max": 4397,
-      "hp min": 4102,
-      "rec max": 1333,
-      "rec min": 1215
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 155
     },
-    "breaker": {
-      "atk max": 1255,
-      "atk min": 1137,
-      "def max": 1180,
-      "def min": 1062,
-      "hp": 3807,
-      "rec": 1392
+    "idle": {
+      "total number of frames": 52
     },
-    "guardian": {
-      "atk": 1078,
-      "def max": 1416,
-      "def min": 1298,
-      "hp": 3807,
-      "rec max": 1392,
-      "rec min": 1274
-    },
-    "oracle": {
-      "atk": 1078,
-      "def max": 1239,
-      "def min": 1121,
-      "hp": 3807,
-      "rec max": 1628,
-      "rec min": 1510
+    "move": {
+      "total number of frames": 19
     }
   },
-  "leader_skill": {
-    "desc": "15% boost to Atk power of Light, Fire, and Thunder types",
-    "effects": [
-      {
-        "atk% buff": 15,
-        "elements buffed": [
-          "light",
-          "fire"
-        ],
-        "passive id": "2"
-      },
-      {
-        "atk% buff": 15,
-        "elements buffed": [
-          "thunder"
-        ],
-        "passive id": "2"
-      }
+  "category": 50260,
+  "cost": "10",
+  "damage frames": {
+    "frame times": [
+      112,
+      118,
+      124,
+      130,
+      136
     ],
-    "id": "3500",
-    "name": "Holy Light's Power"
+    "hit dmg% distribution": [
+      20,
+      20,
+      20,
+      20,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 5
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "light",
+  "exp_pattern": 15,
+  "gender": "female",
+  "getting type": "farmable",
+  "guide_id": 399,
+  "imp": {
+    "max atk": "200",
+    "max def": "120",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "1003~1121",
+  "movement": {
+    "attack": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "2"
+    },
+    "skill": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "2"
+    }
+  },
+  "name": "Sola",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Sola",
+  "maxlv": "60",
+  "no": "399",
   "unitDisplayHomePosition_1W9CxaFK": "362,21,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-56,160,934,755",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "146,347,343,263,0",
@@ -370,5 +369,109 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "106:125:1,100:500191:1,112:125:1,118:125:1,124:125:1,130:125:1,134:500170:1"
+  "effectFrames": "106:125:1,100:500191:1,112:125:1,118:125:1,124:125:1,130:125:1,134:500170:1",
+  "evofrom": "",
+  "evointo": "50264",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50123",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50122",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50121",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40191",
+      "count": 1
+    }
+  ],
+  "freetext": ":''For other uses, see Sola (disambiguation)''",
+  "basexp": "15",
+  "animation_attack": "155",
+  "animation_idle": "52",
+  "animation_move": "19",
+  "movespeed_attack": "4",
+  "movespeed_skill": "4",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "2",
+  "movetype_skill": "2",
+  "normal_frames": "112, 118, 124, 130, 136",
+  "normal_distribute": "20, 20, 20, 20, 20",
+  "normal_totaldistr": "100",
+  "bb_frames": "112, 118, 124, 130, 136, 142, 148, 154",
+  "bb_distribute": "15, 10, 15, 10, 15, 10, 15, 10",
+  "bb_totaldistr": "100",
+  "description": "The oldest of the Six Sibyl Sisters who fought against the gods in order to save the humans. As gentle as she was, she could also be really stubborn. However there was no one who doubted her kindness, and it's said even Madia looked upon her with a pleasant smile. Sola rallied her sisters to fight in defense of the humans with her kindness, though this very act resulted in a battle between the sisters themselves.",
+  "summon": "Alright, let's fight!<br>Show me your definition<br>of justice!",
+  "fusion": "I don't know what is right.<br>That is why I just react.<br>Are you any different?",
+  "evolution": "",
+  "hp_base": "2719",
+  "atk_base": "770",
+  "def_base": "885",
+  "rec_base": "994",
+  "hp_lord": "3807",
+  "atk_lord": "1078",
+  "def_lord": "1239",
+  "rec_lord": "1392",
+  "hp_anima": "4250",
+  "rec_anima": "1274",
+  "atk_breaker": "1196",
+  "def_breaker": "1121",
+  "atk_guardian": "960",
+  "def_guardian": "1357",
+  "rec_guardian": "1333",
+  "def_oracle": "1180",
+  "hp_oracle": "3630",
+  "rec_oracle": "1569",
+  "hp_bonus": "400",
+  "atk_bonus": "200",
+  "def_bonus": "120",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "5",
+  "normaldc": "10",
+  "ls": "Holy Light's Power",
+  "lsdescription": "15% boost to Atk power of Light, Fire, and Thunder types",
+  "lstype": "Attack",
+  "bbdescription": "8 combo powerful Fire, Thunder and Light attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "8",
+  "bbaoe": "A",
+  "bbgauge": "18",
+  "bbdc": "8",
+  "bbmultiplier": "150",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50123",
+  "evomats2": "50122",
+  "evomats3": "50121",
+  "evomats4": "10191",
+  "evomats5": "40191"
 }

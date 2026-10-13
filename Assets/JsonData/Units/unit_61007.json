@@ -1,68 +1,105 @@
 {
   "id": "61007",
-  "unitName": "Dark Destruction Kalon",
-  "no": "1410",
-  "element": "Dark",
-  "rarity": "Omni",
-  "cost": "48",
-  "maxlv": "150",
-  "basexp": "21",
-  "ai": "2",
-  "gender": "M",
-  "animation_attack": "140",
-  "animation_idle": "52",
-  "animation_move": "48",
-  "movespeed_attack": "4",
-  "movespeed_skill": "4",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "2",
-  "movetype_skill": "2",
-  "normal_frames": "74, 77, 80, 83, 86, 89, 92, 95, 98, 101",
-  "normal_distribute": "17, 15, 12, 11, 10, 9, 8, 7, 6, 5",
-  "normal_totaldistr": "100",
-  "bb_frames": "74, 77, 80, 83, 86, 89, 92, 95, 98, 101, 104, 107, 110, 113",
-  "bb_distribute": "15, 12, 11, 10, 9, 8, 7, 6, 5, 4, 4, 3, 3, 3",
-  "bb_totaldistr": "100",
-  "sbb_frames": "74, 77, 80, 83, 86, 89, 92, 95, 98, 101, 104, 107, 110, 113, 116, 119, 122, 125",
-  "sbb_distribute": "13, 10, 9, 8, 7, 6, 5, 5, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "74, 77, 80, 83, 86, 89, 92, 95, 98, 101, 104, 107, 110, 113, 116, 119, 122, 125, 128, 131, 134, 137",
-  "ubb_distribute": "12, 9, 8, 6, 5, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "3",
-  "sbb_effectdelay": "4",
-  "ubb_effectdelay": "3",
-  "description": "Although Kalon ultimately chose to protect the world of Ishgria, many claim that his past links him to many demons who may have played a hand in the heated battle he fought against his younger brother. He is also said to have sealed most of his younger sibling's power away during the same fight. Had he succumbed to his true nature as a demon, Kalon would have most likely incited wars in the regions he ruled, seeking to further expand his territory. There is no doubt that the demon world would have witnessed even more chaos at his hands.",
-  "summon": "Fighting and scheming...<br>That is the essence of Ishgria.<br>I am no more than that myself.",
-  "fusion": "Do not assume that I will serve you in exchange for power. A demon would never do such a thing.",
-  "evolution": "Is my power what you seek?<br>Allow me to offer a demonstration...<br>You shall learn the ruin and chaos born of demons!",
-  "hp_base": "6254",
-  "atk_base": "2718",
-  "def_base": "2060",
-  "rec_base": "2037",
-  "hp_lord": "8126",
-  "atk_lord": "3367",
-  "def_lord": "2575",
-  "rec_lord": "2534",
-  "hp_anima": "9243",
-  "rec_anima": "2236",
-  "atk_breaker": "3665",
-  "def_breaker": "2277",
-  "def_guardian": "2873",
-  "rec_guardian": "2385",
-  "def_oracle": "2426",
-  "rec_oracle": "2981",
-  "hp_bonus": "1250",
-  "atk_bonus": "800",
-  "def_bonus": "400",
-  "rec_bonus": "500",
-  "lordonly": "",
-  "combo_hits": "10",
-  "normaldc": "50",
-  "ls": "Dark God's Demon Wings",
-  "lsdescription": "50% boost to Atk, max HP, enormously boosts BB Atk, adds probable Spark critical & considerably boosts BB gauge when damage dealt has exceeded certain amount",
-  "lsnote": "250% boost to BB Atk, 5% chance to deal 50% more Spark damage for Spark critical, 7 BC fill when 10,000 HP as damage is dealt",
+  "stats": {
+    "_base": {
+      "atk": 2718,
+      "def": 2060,
+      "hp": 6254,
+      "rec": 2037
+    },
+    "_lord": {
+      "atk": 3367,
+      "def": 2575,
+      "hp": 8126,
+      "rec": 2534
+    },
+    "anima": {
+      "atk": 3367,
+      "def": 2575,
+      "hp max": 9616,
+      "hp min": 8871,
+      "rec max": 2385,
+      "rec min": 2087
+    },
+    "breaker": {
+      "atk max": 3814,
+      "atk min": 3516,
+      "def max": 2426,
+      "def min": 2128,
+      "hp": 8126,
+      "rec": 2534
+    },
+    "guardian": {
+      "atk": 3367,
+      "def max": 3022,
+      "def min": 2724,
+      "hp": 8126,
+      "rec max": 2534,
+      "rec min": 2236
+    },
+    "oracle": {
+      "atk": 3367,
+      "def max": 2575,
+      "def min": 2277,
+      "hp": 8126,
+      "rec max": 3130,
+      "rec min": 2832
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to Atk, max HP, enormously boosts BB Atk, adds probable Spark critical & considerably boosts BB gauge when damage dealt has exceeded certain amount",
+    "effects": [
+      {
+        "atk% buff": 50,
+        "hp% buff": 50,
+        "passive id": "1"
+      },
+      {
+        "bb atk% buff": 250,
+        "passive id": "64",
+        "sbb atk% buff": 250,
+        "ubb atk% buff": 250
+      },
+      {
+        "passive id": "100",
+        "spark crit chance%": 5,
+        "spark crit dmg%": 50
+      },
+      {
+        "damage dealt threshold activation": 10000,
+        "increase bb gauge": 7,
+        "passive id": "81"
+      }
+    ],
+    "id": "7449",
+    "name": "Dark God's Demon Wings"
+  },
+  "extra_skill": {
+    "desc": "Considerably boosts Atk when HP is full & hugely boosts BB Atk when HP is over 50%",
+    "effects": [
+      {
+        "bb atk% add": 150,
+        "conditions": [],
+        "hp threshold": 50,
+        "passive id": "103",
+        "passive target": "self",
+        "sbb atk% add": 150,
+        "triggered when hp": "higher",
+        "ubb atk% add": 150
+      },
+      {
+        "atk% buff": 80,
+        "conditions": [],
+        "hp above % buff requirement": 100,
+        "passive id": "11",
+        "passive target": "self"
+      }
+    ],
+    "id": "19700",
+    "name": "Vanguard of Chaos",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -719,18 +756,6 @@
     ],
     "name": "Chaos Magnifier"
   },
-  "bbdescription": "14 combo Dark attack on all foes, hugely boosts Atk and considerably boosts BB Atk for 3 turns, boosts elemental based damage for 3 turns & probable slight HP absorption when attacking for 3 turns",
-  "bbnote": "50% chance to drain 3~6% HP, 170% boost to Atk, 280% boost to BB Atk, 50% boost to elemental damage",
-  "bbtype": "Offense",
-  "bbhits": "14",
-  "bbaoe": "A",
-  "bbgauge": "25",
-  "bbdc": "14",
-  "bbmultiplier": "370",
-  "bbhits2": "",
-  "bbaoe2": "",
-  "bbdc2": "",
-  "bbmultiplier2": "",
   "sbb": {
     "damage frames": [
       {
@@ -1547,18 +1572,6 @@
     ],
     "name": "Rising Disparity"
   },
-  "sbbdescription": "18 combo powerful Light and Dark attack on all foes, powerful additional attack at turn's end for 2 turns, hugely boosts Atk and BB Atk for 3 turns, boosts elemental based damage for 3 turns & probable Spark critical for 3 turns",
-  "sbbnote": "30% chance to deal 50% more Spark damage for Spark critical, 170% boost to Atk, 350% boost to BB Atk, 50% boost to elemental damage, 500% damage multiplier for additional attack",
-  "sbbtype": "Offense",
-  "sbbhits": "18",
-  "sbbaoe": "A",
-  "sbbgauge": "30",
-  "sbbdc": "18",
-  "sbbmultiplier": "580",
-  "sbbhits2": "",
-  "sbbaoe2": "",
-  "sbbdc2": "",
-  "sbbmultiplier2": "",
   "ubb": {
     "damage frames": [
       {
@@ -1724,6 +1737,198 @@
     ],
     "name": "Distant Dark Burial"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 140
+    },
+    "idle": {
+      "total number of frames": 52
+    },
+    "move": {
+      "total number of frames": 48
+    }
+  },
+  "category": 61000,
+  "cost": "48",
+  "damage frames": {
+    "frame times": [
+      74,
+      77,
+      80,
+      83,
+      86,
+      89,
+      92,
+      95,
+      98,
+      101
+    ],
+    "hit dmg% distribution": [
+      17,
+      15,
+      12,
+      11,
+      10,
+      9,
+      8,
+      7,
+      6,
+      5
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 10
+  },
+  "drop check count": 5,
+  "element": "dark",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 1410,
+  "imp": {
+    "max atk": "800",
+    "max def": "400",
+    "max hp": "1250",
+    "max rec": "500"
+  },
+  "kind": "normal",
+  "lord damage range": "3135~3501",
+  "movement": {
+    "attack": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "2"
+    },
+    "skill": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "2"
+    }
+  },
+  "name": "Dark Destruction Kalon",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "8",
+  "sell caution": false,
+  "unitName": "Dark Destruction Kalon",
+  "maxlv": "150",
+  "no": "1410",
+  "unitDisplayHomePosition_1W9CxaFK": "529,313,150,409",
+  "unitDisplayDetailPosition_6z54rgb3": "-267,-141,1340,1110",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "-26,132,650,538,1",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-159,-343,1200,994",
+  "unitDisplaySummonPosition_KC3Jk8Br": "-26,132,650,538,1",
+  "unitDisplayHpPosition_3BpHN6VD": "1,62",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "50000",
+  "sellCaution": false,
+  "effectFrames": "68:127:1,74:127:1,73:100237:1,74:600329:1,77:600210:1,85:601080:1,93:600906:1,98:600906:1,90:11050:1",
+  "evofrom": "61006",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "21",
+  "animation_attack": "140",
+  "animation_idle": "52",
+  "animation_move": "48",
+  "movespeed_attack": "4",
+  "movespeed_skill": "4",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "2",
+  "movetype_skill": "2",
+  "normal_frames": "74, 77, 80, 83, 86, 89, 92, 95, 98, 101",
+  "normal_distribute": "17, 15, 12, 11, 10, 9, 8, 7, 6, 5",
+  "normal_totaldistr": "100",
+  "bb_frames": "74, 77, 80, 83, 86, 89, 92, 95, 98, 101, 104, 107, 110, 113",
+  "bb_distribute": "15, 12, 11, 10, 9, 8, 7, 6, 5, 4, 4, 3, 3, 3",
+  "bb_totaldistr": "100",
+  "sbb_frames": "74, 77, 80, 83, 86, 89, 92, 95, 98, 101, 104, 107, 110, 113, 116, 119, 122, 125",
+  "sbb_distribute": "13, 10, 9, 8, 7, 6, 5, 5, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "74, 77, 80, 83, 86, 89, 92, 95, 98, 101, 104, 107, 110, 113, 116, 119, 122, 125, 128, 131, 134, 137",
+  "ubb_distribute": "12, 9, 8, 6, 5, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "3",
+  "sbb_effectdelay": "4",
+  "ubb_effectdelay": "3",
+  "description": "Although Kalon ultimately chose to protect the world of Ishgria, many claim that his past links him to many demons who may have played a hand in the heated battle he fought against his younger brother. He is also said to have sealed most of his younger sibling's power away during the same fight. Had he succumbed to his true nature as a demon, Kalon would have most likely incited wars in the regions he ruled, seeking to further expand his territory. There is no doubt that the demon world would have witnessed even more chaos at his hands.",
+  "summon": "Fighting and scheming...<br>That is the essence of Ishgria.<br>I am no more than that myself.",
+  "fusion": "Do not assume that I will serve you in exchange for power. A demon would never do such a thing.",
+  "evolution": "Is my power what you seek?<br>Allow me to offer a demonstration...<br>You shall learn the ruin and chaos born of demons!",
+  "hp_base": "6254",
+  "atk_base": "2718",
+  "def_base": "2060",
+  "rec_base": "2037",
+  "hp_lord": "8126",
+  "atk_lord": "3367",
+  "def_lord": "2575",
+  "rec_lord": "2534",
+  "hp_anima": "9243",
+  "rec_anima": "2236",
+  "atk_breaker": "3665",
+  "def_breaker": "2277",
+  "def_guardian": "2873",
+  "rec_guardian": "2385",
+  "def_oracle": "2426",
+  "rec_oracle": "2981",
+  "hp_bonus": "1250",
+  "atk_bonus": "800",
+  "def_bonus": "400",
+  "rec_bonus": "500",
+  "lordonly": "",
+  "combo_hits": "10",
+  "normaldc": "50",
+  "ls": "Dark God's Demon Wings",
+  "lsdescription": "50% boost to Atk, max HP, enormously boosts BB Atk, adds probable Spark critical & considerably boosts BB gauge when damage dealt has exceeded certain amount",
+  "lsnote": "250% boost to BB Atk, 5% chance to deal 50% more Spark damage for Spark critical, 7 BC fill when 10,000 HP as damage is dealt",
+  "bbdescription": "14 combo Dark attack on all foes, hugely boosts Atk and considerably boosts BB Atk for 3 turns, boosts elemental based damage for 3 turns & probable slight HP absorption when attacking for 3 turns",
+  "bbnote": "50% chance to drain 3~6% HP, 170% boost to Atk, 280% boost to BB Atk, 50% boost to elemental damage",
+  "bbtype": "Offense",
+  "bbhits": "14",
+  "bbaoe": "A",
+  "bbgauge": "25",
+  "bbdc": "14",
+  "bbmultiplier": "370",
+  "bbhits2": "",
+  "bbaoe2": "",
+  "bbdc2": "",
+  "bbmultiplier2": "",
+  "sbbdescription": "18 combo powerful Light and Dark attack on all foes, powerful additional attack at turn's end for 2 turns, hugely boosts Atk and BB Atk for 3 turns, boosts elemental based damage for 3 turns & probable Spark critical for 3 turns",
+  "sbbnote": "30% chance to deal 50% more Spark damage for Spark critical, 170% boost to Atk, 350% boost to BB Atk, 50% boost to elemental damage, 500% damage multiplier for additional attack",
+  "sbbtype": "Offense",
+  "sbbhits": "18",
+  "sbbaoe": "A",
+  "sbbgauge": "30",
+  "sbbdc": "18",
+  "sbbmultiplier": "580",
+  "sbbhits2": "",
+  "sbbaoe2": "",
+  "sbbdc2": "",
+  "sbbmultiplier2": "",
   "ubbdescription": "22 combo massive Light and Dark attack on all foes, enormously boosts Atk and BB Atk for 3 turns, probable Spark critical for 3 turns & enormous damage reduction for 2 turns",
   "ubbnote": "50% more Spark damage for Spark critical, 300% boost to Atk, 550% boost to BB Atk, 100% damage reduction",
   "ubbtype": "Offense",
@@ -1740,8 +1945,6 @@
   "esitem": "",
   "esdescription": "Considerably boosts Atk when HP is full & hugely boosts BB Atk when HP is over 50%",
   "esnote": "80% boost to Atk, 150% boost to BB Atk",
-  "evofrom": "61006",
-  "evointo": "",
   "evomats1": "",
   "evomats2": "",
   "evomats3": "",
@@ -1752,116 +1955,5 @@
   "evomats8": "",
   "evomats9": "",
   "evoitem": "",
-  "evoitem2": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 2718,
-      "def": 2060,
-      "hp": 6254,
-      "rec": 2037
-    },
-    "_lord": {
-      "atk": 3367,
-      "def": 2575,
-      "hp": 8126,
-      "rec": 2534
-    },
-    "anima": {
-      "atk": 3367,
-      "def": 2575,
-      "hp max": 9616,
-      "hp min": 8871,
-      "rec max": 2385,
-      "rec min": 2087
-    },
-    "breaker": {
-      "atk max": 3814,
-      "atk min": 3516,
-      "def max": 2426,
-      "def min": 2128,
-      "hp": 8126,
-      "rec": 2534
-    },
-    "guardian": {
-      "atk": 3367,
-      "def max": 3022,
-      "def min": 2724,
-      "hp": 8126,
-      "rec max": 2534,
-      "rec min": 2236
-    },
-    "oracle": {
-      "atk": 3367,
-      "def max": 2575,
-      "def min": 2277,
-      "hp": 8126,
-      "rec max": 3130,
-      "rec min": 2832
-    }
-  },
-  "leader_skill": {
-    "desc": "50% boost to Atk, max HP, enormously boosts BB Atk, adds probable Spark critical & considerably boosts BB gauge when damage dealt has exceeded certain amount",
-    "effects": [
-      {
-        "atk% buff": 50,
-        "hp% buff": 50,
-        "passive id": "1"
-      },
-      {
-        "bb atk% buff": 250,
-        "passive id": "64",
-        "sbb atk% buff": 250,
-        "ubb atk% buff": 250
-      },
-      {
-        "passive id": "100",
-        "spark crit chance%": 5,
-        "spark crit dmg%": 50
-      },
-      {
-        "damage dealt threshold activation": 10000,
-        "increase bb gauge": 7,
-        "passive id": "81"
-      }
-    ],
-    "id": "7449",
-    "name": "Dark God's Demon Wings"
-  },
-  "extra_skill": {
-    "desc": "Considerably boosts Atk when HP is full & hugely boosts BB Atk when HP is over 50%",
-    "effects": [
-      {
-        "bb atk% add": 150,
-        "conditions": [],
-        "hp threshold": 50,
-        "passive id": "103",
-        "passive target": "self",
-        "sbb atk% add": 150,
-        "triggered when hp": "higher",
-        "ubb atk% add": 150
-      },
-      {
-        "atk% buff": 80,
-        "conditions": [],
-        "hp above % buff requirement": 100,
-        "passive id": "11",
-        "passive target": "self"
-      }
-    ],
-    "id": "19700",
-    "name": "Vanguard of Chaos",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "529,313,150,409",
-  "unitDisplayDetailPosition_6z54rgb3": "-267,-141,1340,1110",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "-26,132,650,538,1",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-159,-343,1200,994",
-  "unitDisplaySummonPosition_KC3Jk8Br": "-26,132,650,538,1",
-  "unitDisplayHpPosition_3BpHN6VD": "1,62",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "50000",
-  "sellCaution": false,
-  "effectFrames": "68:127:1,74:127:1,73:100237:1,74:600329:1,77:600210:1,85:601080:1,93:600906:1,98:600906:1,90:11050:1"
+  "evoitem2": ""
 }

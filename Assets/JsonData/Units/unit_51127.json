@@ -1,68 +1,108 @@
 {
   "id": "51127",
-  "unitName": "Pure General Regil",
-  "no": "1558",
-  "element": "Light",
-  "rarity": "Omni",
-  "cost": "50",
-  "maxlv": "150",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "136",
-  "animation_idle": "60",
-  "animation_move": "6",
-  "movespeed_attack": "0.0024",
-  "movespeed_skill": "0.0024",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "11, 14, 38, 42, 46, 50, 54, 86, 90, 94, 98, 102, 106",
-  "normal_distribute": "8, 4, 10, 8, 6, 5, 4, 13, 11, 10, 8, 7, 6",
-  "normal_totaldistr": "100",
-  "bb_frames": "11, 14, 38, 41, 44, 47, 50, 53, 86, 90, 94, 98, 102, 106, 110",
-  "bb_distribute": "8, 4, 10, 8, 6, 5, 4, 3, 12, 10, 8, 7, 6, 5, 4",
-  "bb_totaldistr": "100",
-  "sbb_frames": "11, 14, 17, 20, 38, 41, 44, 47, 50, 53, 56, 86, 90, 94, 98, 102, 106, 110, 114",
-  "sbb_distribute": "7, 4, 3, 3, 10, 6, 5, 4, 4, 3, 3, 12, 8, 7, 6, 5, 4, 3, 3",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "11, 14, 17, 20, 23, 26, 38, 41, 44, 47, 50, 53, 56, 59, 86, 89, 92, 95, 98, 101, 104, 107, 110, 113, 116",
-  "ubb_distribute": "6, 4, 3, 3, 3, 3, 8, 4, 3, 3, 3, 3, 3, 3, 9, 6, 5, 4, 3, 4, 3, 4, 3, 4, 3",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "1",
-  "ubb_effectdelay": "1",
-  "description": "A knight believed to have assassinated the emperor after the same refused to support his plan to defeat the demon threatening the empire. Regil's plan involved acquiring the soul stealing sword of the Ten Vile Disnomians' leader, and using it to vanquish the demon. Had the emperor supported his plan, the monarch's tragic death could have been prevented. He would've then been made commander of the Imperial Guard, and become a strong presence with the raw power of the Imperial Army at his disposal.",
-  "summon": "I fight for the people of the empire. I shall strike down anyone who dares lay a hand on them!",
-  "fusion": "I am grateful for your aid!<br>I shall never tarnish my title as the commander of the Imperial Guard.",
-  "evolution": "There was no need to falter.<br>My emperor and I...<br>It doesn't matter, as long as it leads my friend to his happiness.",
-  "hp_base": "6444",
-  "atk_base": "2563",
-  "def_base": "2518",
-  "rec_base": "2228",
-  "hp_lord": "8372",
-  "atk_lord": "3214",
-  "def_lord": "3133",
-  "rec_lord": "2781",
-  "hp_anima": "9489",
-  "rec_anima": "2483",
-  "atk_breaker": "3512",
-  "def_breaker": "2835",
-  "def_guardian": "3431",
-  "rec_guardian": "2632",
-  "def_oracle": "2984",
-  "rec_oracle": "3228",
-  "hp_bonus": "1500",
-  "atk_bonus": "600",
-  "def_bonus": "600",
-  "rec_bonus": "600",
-  "lordonly": "",
-  "combo_hits": "13",
-  "normaldc": "52",
-  "ls": "Emperor's Just Protector",
-  "lsdescription": "50% boost to all parameters, enormously boosts BB Atk, 10% all elemental damage reduction & considerably boosts BC efficacy",
-  "lsnote": "200% BB Atk, elemental mitigation & 50% efficacy",
+  "stats": {
+    "_base": {
+      "atk": 2563,
+      "def": 2518,
+      "hp": 6444,
+      "rec": 2228
+    },
+    "_lord": {
+      "atk": 3214,
+      "def": 3133,
+      "hp": 8372,
+      "rec": 2781
+    },
+    "anima": {
+      "atk": 3214,
+      "def": 3133,
+      "hp max": 9862,
+      "hp min": 9117,
+      "rec max": 2632,
+      "rec min": 2334
+    },
+    "breaker": {
+      "atk max": 3661,
+      "atk min": 3363,
+      "def max": 2984,
+      "def min": 2686,
+      "hp": 8372,
+      "rec": 2781
+    },
+    "guardian": {
+      "atk": 3214,
+      "def max": 3580,
+      "def min": 3282,
+      "hp": 8372,
+      "rec max": 2781,
+      "rec min": 2483
+    },
+    "oracle": {
+      "atk": 3214,
+      "def max": 3133,
+      "def min": 2835,
+      "hp": 8372,
+      "rec max": 3377,
+      "rec min": 3079
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to all parameters, enormously boosts BB Atk, 10% damage reduction from all elemental types & considerably boosts BC efficacy",
+    "effects": [
+      {
+        "atk% buff": 50,
+        "def% buff": 50,
+        "hp% buff": 50,
+        "passive id": "1",
+        "rec% buff": 50
+      },
+      {
+        "bb atk% buff": 200,
+        "passive id": "64",
+        "sbb atk% buff": 200,
+        "ubb atk% buff": 200
+      },
+      {
+        "dmg% mitigation for elemental attacks": 10.0,
+        "mitigate dark attacks": true,
+        "mitigate earth attacks": true,
+        "mitigate fire attacks": true,
+        "mitigate light attacks": true,
+        "mitigate thunder attacks": true,
+        "mitigate water attacks": true,
+        "passive id": "62"
+      },
+      {
+        "bb gauge fill rate%": 50,
+        "passive id": "32"
+      }
+    ],
+    "id": "10135",
+    "name": "Emperor's Just Protector"
+  },
+  "extra_skill": {
+    "desc": "Boosts Atk, Def when HP is over 50% & low probability of enormous damage reduction",
+    "effects": [
+      {
+        "atk% buff": 50,
+        "conditions": [],
+        "def% buff": 50,
+        "hp above % buff requirement": 50,
+        "passive id": "11",
+        "passive target": "self"
+      },
+      {
+        "conditions": [],
+        "passive id": "43",
+        "passive target": "self",
+        "take 1 dmg%": 10
+      }
+    ],
+    "id": "29800",
+    "name": "Light of a New Era",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -457,14 +497,6 @@
     ],
     "name": "Hallowedgram"
   },
-  "bbdescription": "15 combo powerful Light attack on all foes & hugely boosts Atk and BB Atk for 3 turns",
-  "bbnote": "450% BB Atk & 170% Atk",
-  "bbtype": "Offense",
-  "bbhits": "15",
-  "bbaoe": "A",
-  "bbgauge": "30",
-  "bbdc": "15",
-  "bbmultiplier": "420",
   "sbb": {
     "damage frames": [
       {
@@ -1081,15 +1113,6 @@
     ],
     "name": "Imperial Guard: Xesta Coat"
   },
-  "sbbdescription": "19 combo powerful Light attack on all foes (damage relative to remaining HP), probable Spark vulnerability infliction for 2 turns, hugely boosts Atk relative to max HP for 3 turns, hugely boosts BB Atk for 3 turns & enormously boosts Spark damage for 3 turns",
-  "sbbnote": "200% + 700% x current HP / base max HP, 25% chance for 25% vulnerability, 450% BB Atk, 150% Spark & 35% HP to Atk",
-  "sbbtype": "Offense",
-  "sbbhits": "19",
-  "sbbaoe": "A",
-  "sbbgauge": "32",
-  "sbbdc": "19",
-  "sbbmultiplier": "200",
-  "sbb_hpscale": "true",
   "ubb": {
     "damage frames": [
       {
@@ -1256,6 +1279,197 @@
     ],
     "name": "Imperial Guard: Soul Eater"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 136
+    },
+    "idle": {
+      "total number of frames": 60
+    },
+    "move": {
+      "total number of frames": 6
+    }
+  },
+  "category": 51120,
+  "cost": "50",
+  "damage frames": {
+    "frame times": [
+      11,
+      14,
+      38,
+      42,
+      46,
+      50,
+      54,
+      86,
+      90,
+      94,
+      98,
+      102,
+      106
+    ],
+    "hit dmg% distribution": [
+      8,
+      4,
+      10,
+      8,
+      6,
+      5,
+      4,
+      13,
+      11,
+      10,
+      8,
+      7,
+      6
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 13
+  },
+  "drop check count": 4,
+  "element": "light",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 1558,
+  "imp": {
+    "max atk": "600",
+    "max def": "600",
+    "max hp": "1500",
+    "max rec": "600"
+  },
+  "kind": "normal",
+  "lord damage range": "2992~3342",
+  "movement": {
+    "attack": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    }
+  },
+  "name": "Pure General Regil",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "8",
+  "sell caution": false,
+  "unitName": "Pure General Regil",
+  "maxlv": "150",
+  "no": "1558",
+  "unitDisplayHomePosition_1W9CxaFK": "570,346,165,450",
+  "unitDisplayDetailPosition_6z54rgb3": "-265,-126,1386,1142",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "-20,147,693,571,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-250,-381,1386,1142",
+  "unitDisplaySummonPosition_KC3Jk8Br": "-20,147,693,571,0",
+  "unitDisplayHpPosition_3BpHN6VD": "0,43",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "50000",
+  "sellCaution": false,
+  "effectFrames": "5:120:1,8:120:1,32:120:1,36:120:1,40:120:1,44:120:1,48:120:1,80:120:1,84:120:1,88:120:1,92:120:1,96:120:1,100:120:1,6:500269:1,8:500092:1,10:200964:1,37:501042:1,86:501186:1,90:500092:1,79:400892:1",
+  "evofrom": "51126",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "21",
+  "animation_attack": "136",
+  "animation_idle": "60",
+  "animation_move": "6",
+  "movespeed_attack": "0.0024",
+  "movespeed_skill": "0.0024",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "11, 14, 38, 42, 46, 50, 54, 86, 90, 94, 98, 102, 106",
+  "normal_distribute": "8, 4, 10, 8, 6, 5, 4, 13, 11, 10, 8, 7, 6",
+  "normal_totaldistr": "100",
+  "bb_frames": "11, 14, 38, 41, 44, 47, 50, 53, 86, 90, 94, 98, 102, 106, 110",
+  "bb_distribute": "8, 4, 10, 8, 6, 5, 4, 3, 12, 10, 8, 7, 6, 5, 4",
+  "bb_totaldistr": "100",
+  "sbb_frames": "11, 14, 17, 20, 38, 41, 44, 47, 50, 53, 56, 86, 90, 94, 98, 102, 106, 110, 114",
+  "sbb_distribute": "7, 4, 3, 3, 10, 6, 5, 4, 4, 3, 3, 12, 8, 7, 6, 5, 4, 3, 3",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "11, 14, 17, 20, 23, 26, 38, 41, 44, 47, 50, 53, 56, 59, 86, 89, 92, 95, 98, 101, 104, 107, 110, 113, 116",
+  "ubb_distribute": "6, 4, 3, 3, 3, 3, 8, 4, 3, 3, 3, 3, 3, 3, 9, 6, 5, 4, 3, 4, 3, 4, 3, 4, 3",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "1",
+  "ubb_effectdelay": "1",
+  "description": "A knight believed to have assassinated the emperor after the same refused to support his plan to defeat the demon threatening the empire. Regil's plan involved acquiring the soul stealing sword of the Ten Vile Disnomians' leader, and using it to vanquish the demon. Had the emperor supported his plan, the monarch's tragic death could have been prevented. He would've then been made commander of the Imperial Guard, and become a strong presence with the raw power of the Imperial Army at his disposal.",
+  "summon": "I fight for the people of the empire. I shall strike down anyone who dares lay a hand on them!",
+  "fusion": "I am grateful for your aid!<br>I shall never tarnish my title as the commander of the Imperial Guard.",
+  "evolution": "There was no need to falter.<br>My emperor and I...<br>It doesn't matter, as long as it leads my friend to his happiness.",
+  "hp_base": "6444",
+  "atk_base": "2563",
+  "def_base": "2518",
+  "rec_base": "2228",
+  "hp_lord": "8372",
+  "atk_lord": "3214",
+  "def_lord": "3133",
+  "rec_lord": "2781",
+  "hp_anima": "9489",
+  "rec_anima": "2483",
+  "atk_breaker": "3512",
+  "def_breaker": "2835",
+  "def_guardian": "3431",
+  "rec_guardian": "2632",
+  "def_oracle": "2984",
+  "rec_oracle": "3228",
+  "hp_bonus": "1500",
+  "atk_bonus": "600",
+  "def_bonus": "600",
+  "rec_bonus": "600",
+  "lordonly": "",
+  "combo_hits": "13",
+  "normaldc": "52",
+  "ls": "Emperor's Just Protector",
+  "lsdescription": "50% boost to all parameters, enormously boosts BB Atk, 10% all elemental damage reduction & considerably boosts BC efficacy",
+  "lsnote": "200% BB Atk, elemental mitigation & 50% efficacy",
+  "bbdescription": "15 combo powerful Light attack on all foes & hugely boosts Atk and BB Atk for 3 turns",
+  "bbnote": "450% BB Atk & 170% Atk",
+  "bbtype": "Offense",
+  "bbhits": "15",
+  "bbaoe": "A",
+  "bbgauge": "30",
+  "bbdc": "15",
+  "bbmultiplier": "420",
+  "sbbdescription": "19 combo powerful Light attack on all foes (damage relative to remaining HP), probable Spark vulnerability infliction for 2 turns, hugely boosts Atk relative to max HP for 3 turns, hugely boosts BB Atk for 3 turns & enormously boosts Spark damage for 3 turns",
+  "sbbnote": "200% + 700% x current HP / base max HP, 25% chance for 25% vulnerability, 450% BB Atk, 150% Spark & 35% HP to Atk",
+  "sbbtype": "Offense",
+  "sbbhits": "19",
+  "sbbaoe": "A",
+  "sbbgauge": "32",
+  "sbbdc": "19",
+  "sbbmultiplier": "200",
+  "sbb_hpscale": "true",
   "ubbdescription": "25 combo powerful Light attack on all foes (damage relative to remaining HP), hugely boosts max HP, enormously boosts BB Atk and Spark damage for 3 turns & 75% damage reduction for 3 turns",
   "ubbnote": "1500% + 1300% x current HP / base max HP, 600% BB Atk, 350% Spark & 35% HP",
   "ubbtype": "Offense",
@@ -1269,8 +1483,6 @@
   "esitem": "",
   "esdescription": "Boosts Atk, Def when HP is over 50% & low probability of enormous damage reduction",
   "esnote": "50% Atk, Def & 10% chance to reduce damage",
-  "evofrom": "51126",
-  "evointo": "",
   "evomats1": "",
   "evomats2": "",
   "evomats3": "",
@@ -1279,119 +1491,5 @@
   "evomats6": "",
   "evomats7": "",
   "evomats8": "",
-  "evoitem": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 2563,
-      "def": 2518,
-      "hp": 6444,
-      "rec": 2228
-    },
-    "_lord": {
-      "atk": 3214,
-      "def": 3133,
-      "hp": 8372,
-      "rec": 2781
-    },
-    "anima": {
-      "atk": 3214,
-      "def": 3133,
-      "hp max": 9862,
-      "hp min": 9117,
-      "rec max": 2632,
-      "rec min": 2334
-    },
-    "breaker": {
-      "atk max": 3661,
-      "atk min": 3363,
-      "def max": 2984,
-      "def min": 2686,
-      "hp": 8372,
-      "rec": 2781
-    },
-    "guardian": {
-      "atk": 3214,
-      "def max": 3580,
-      "def min": 3282,
-      "hp": 8372,
-      "rec max": 2781,
-      "rec min": 2483
-    },
-    "oracle": {
-      "atk": 3214,
-      "def max": 3133,
-      "def min": 2835,
-      "hp": 8372,
-      "rec max": 3377,
-      "rec min": 3079
-    }
-  },
-  "leader_skill": {
-    "desc": "50% boost to all parameters, enormously boosts BB Atk, 10% damage reduction from all elemental types & considerably boosts BC efficacy",
-    "effects": [
-      {
-        "atk% buff": 50,
-        "def% buff": 50,
-        "hp% buff": 50,
-        "passive id": "1",
-        "rec% buff": 50
-      },
-      {
-        "bb atk% buff": 200,
-        "passive id": "64",
-        "sbb atk% buff": 200,
-        "ubb atk% buff": 200
-      },
-      {
-        "dmg% mitigation for elemental attacks": 10.0,
-        "mitigate dark attacks": true,
-        "mitigate earth attacks": true,
-        "mitigate fire attacks": true,
-        "mitigate light attacks": true,
-        "mitigate thunder attacks": true,
-        "mitigate water attacks": true,
-        "passive id": "62"
-      },
-      {
-        "bb gauge fill rate%": 50,
-        "passive id": "32"
-      }
-    ],
-    "id": "10135",
-    "name": "Emperor's Just Protector"
-  },
-  "extra_skill": {
-    "desc": "Boosts Atk, Def when HP is over 50% & low probability of enormous damage reduction",
-    "effects": [
-      {
-        "atk% buff": 50,
-        "conditions": [],
-        "def% buff": 50,
-        "hp above % buff requirement": 50,
-        "passive id": "11",
-        "passive target": "self"
-      },
-      {
-        "conditions": [],
-        "passive id": "43",
-        "passive target": "self",
-        "take 1 dmg%": 10
-      }
-    ],
-    "id": "29800",
-    "name": "Light of a New Era",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "570,346,165,450",
-  "unitDisplayDetailPosition_6z54rgb3": "-265,-126,1386,1142",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "-20,147,693,571,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-250,-381,1386,1142",
-  "unitDisplaySummonPosition_KC3Jk8Br": "-20,147,693,571,0",
-  "unitDisplayHpPosition_3BpHN6VD": "0,43",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "50000",
-  "sellCaution": false,
-  "effectFrames": "5:120:1,8:120:1,32:120:1,36:120:1,40:120:1,44:120:1,48:120:1,80:120:1,84:120:1,88:120:1,92:120:1,96:120:1,100:120:1,6:500269:1,8:500092:1,10:200964:1,37:501042:1,86:501186:1,90:500092:1,79:400892:1"
+  "evoitem": ""
 }

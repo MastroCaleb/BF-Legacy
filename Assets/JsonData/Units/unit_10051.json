@@ -1,62 +1,63 @@
 {
   "id": "10051",
-  "unitName": "Redcap",
-  "no": "68",
-  "element": "Fire",
-  "rarity": "★★",
-  "cost": "4",
-  "maxlv": "30",
-  "basexp": "10",
-  "gender": "N",
-  "ai": "4",
-  "animation_attack": "62",
-  "animation_idle": "44",
-  "animation_move": "44",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "40",
-  "normal_distribute": "100",
-  "normal_totaldistr": "100",
-  "bb_frames": "40, 43, 46, 49, 52",
-  "bb_distribute": "20, 20, 20, 20, 20",
-  "bb_totaldistr": "100",
-  "description": "While Goblins act in groups, there are always a few that stand out. These individuals are called Redcaps. They act as leaders, wear red hats, wield brutal weapons and command the other Goblins. One theory suggests they were initially infused with a higher amount of evil, but more research is needed to prove this.",
-  "summon": "Dye it red, you say?<br>If it's bloodshed you want,<br>then you have my blade!",
-  "fusion": "How do you like my power now!<br>Impressive, isn't it!!",
-  "evolution": "My hat is my pride!<br>Wearing it, I become stronger!",
-  "hp_base": "1404",
-  "atk_base": "547",
-  "def_base": "297",
-  "rec_base": "153",
-  "hp_lord": "2680",
-  "atk_lord": "878",
-  "def_lord": "563",
-  "rec_lord": "390",
-  "hp_anima": "2898",
-  "rec_anima": "332",
-  "atk_breaker": "936",
-  "def_breaker": "505",
-  "atk_guardian": "820",
-  "def_guardian": "621",
-  "rec_guardian": "361",
-  "def_oracle": "534",
-  "hp_oracle": "2593",
-  "rec_oracle": "477",
-  "hp_bonus": "250",
-  "atk_bonus": "100",
-  "def_bonus": "100",
-  "rec_bonus": "100",
-  "lordonly": "",
-  "combo_hits": "1",
-  "normaldc": "2",
-  "ls": "Fighting Light",
-  "lsdescription": "Small boost in Battle Crystals produced during Spark",
-  "lsnote": "30% boost",
-  "lstype": "Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 547,
+      "def": 297,
+      "hp": 1404,
+      "rec": 153
+    },
+    "_lord": {
+      "atk": 878,
+      "def": 563,
+      "hp": 2680,
+      "rec": 390
+    },
+    "anima": {
+      "atk": 878,
+      "def": 563,
+      "hp max": 2970,
+      "hp min": 2825,
+      "rec max": 361,
+      "rec min": 303
+    },
+    "breaker": {
+      "atk max": 965,
+      "atk min": 907,
+      "def max": 534,
+      "def min": 476,
+      "hp": 2680,
+      "rec": 390
+    },
+    "guardian": {
+      "atk": 878,
+      "def max": 650,
+      "def min": 592,
+      "hp": 2680,
+      "rec max": 390,
+      "rec min": 332
+    },
+    "oracle": {
+      "atk": 878,
+      "def max": 563,
+      "def min": 505,
+      "hp": 2680,
+      "rec max": 506,
+      "rec min": 448
+    }
+  },
+  "leader_skill": {
+    "desc": "Small boost in Battle Crystals produced during Spark",
+    "effects": [
+      {
+        "bc drop% for spark": 30,
+        "passive id": "31"
+      }
+    ],
+    "id": "1400",
+    "name": "Fighting Light"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -227,95 +228,95 @@
     ],
     "name": "Red Strike"
   },
-  "bbdescription": "5 combo Fire elemental attack on single Enemy & boost to BC drop rate",
-  "bbnote": "50% boost",
-  "bbtype": "Offense",
-  "bbhits": "5",
-  "bbaoe": "1",
-  "bbgauge": "10",
-  "bbdc": "25",
-  "bbmultiplier": "150",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "10050",
-  "evointo": "10052",
-  "evomats1": "10131",
-  "evomats2": "60142",
-  "evomats3": "60142",
-  "evomats4": "",
-  "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "50000",
-  "stats": {
-    "_base": {
-      "atk": 547,
-      "def": 297,
-      "hp": 1404,
-      "rec": 153
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_under",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 878,
-      "def": 563,
-      "hp": 2680,
-      "rec": 390
+    {
+      "action": "skill",
+      "chance%": 30.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 878,
-      "def": 563,
-      "hp max": 2970,
-      "hp min": 2825,
-      "rec max": 361,
-      "rec min": 303
+    {
+      "action": "attack",
+      "chance%": 70.0,
+      "target conditions": "hp_max",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 965,
-      "atk min": 907,
-      "def max": 534,
-      "def min": 476,
-      "hp": 2680,
-      "rec": 390
+    {
+      "action": "attack",
+      "chance%": 50.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "guardian": {
-      "atk": 878,
-      "def max": 650,
-      "def min": 592,
-      "hp": 2680,
-      "rec max": 390,
-      "rec min": 332
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 62
     },
-    "oracle": {
-      "atk": 878,
-      "def max": 563,
-      "def min": 505,
-      "hp": 2680,
-      "rec max": 506,
-      "rec min": 448
+    "idle": {
+      "total number of frames": 44
+    },
+    "move": {
+      "total number of frames": 44
     }
   },
-  "leader_skill": {
-    "desc": "Small boost in Battle Crystals produced during Spark",
-    "effects": [
-      {
-        "bc drop% for spark": 30,
-        "passive id": "31"
-      }
+  "category": 10050,
+  "cost": "4",
+  "damage frames": {
+    "frame times": [
+      40
     ],
-    "id": "1400",
-    "name": "Fighting Light"
+    "hit dmg% distribution": [
+      100
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 1
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "fire",
+  "exp_pattern": 10,
+  "gender": "other",
+  "getting type": "not eligible for achievement",
+  "guide_id": 68,
+  "imp": {
+    "max atk": "100",
+    "max def": "100",
+    "max hp": "250",
+    "max rec": "100"
+  },
+  "kind": "normal",
+  "lord damage range": "817~913",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Redcap",
+  "rarity": "2",
+  "sell caution": false,
+  "unitName": "Redcap",
+  "maxlv": "30",
+  "no": "68",
   "unitDisplayHomePosition_1W9CxaFK": "392,29,174,473",
   "unitDisplayDetailPosition_6z54rgb3": "-95,181,800,625",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "74,348,365,286,0",
@@ -325,5 +326,96 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "300",
   "sellCaution": false,
-  "effectFrames": "34:121:1"
+  "effectFrames": "34:121:1",
+  "evofrom": "10050",
+  "evointo": "10052",
+  "evozelcost": "50000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "10131",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60142",
+      "count": 2
+    }
+  ],
+  "basexp": "10",
+  "animation_attack": "62",
+  "animation_idle": "44",
+  "animation_move": "44",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "40",
+  "normal_distribute": "100",
+  "normal_totaldistr": "100",
+  "bb_frames": "40, 43, 46, 49, 52",
+  "bb_distribute": "20, 20, 20, 20, 20",
+  "bb_totaldistr": "100",
+  "description": "While Goblins act in groups, there are always a few that stand out. These individuals are called Redcaps. They act as leaders, wear red hats, wield brutal weapons and command the other Goblins. One theory suggests they were initially infused with a higher amount of evil, but more research is needed to prove this.",
+  "summon": "Dye it red, you say?<br>If it's bloodshed you want,<br>then you have my blade!",
+  "fusion": "How do you like my power now!<br>Impressive, isn't it!!",
+  "evolution": "My hat is my pride!<br>Wearing it, I become stronger!",
+  "hp_base": "1404",
+  "atk_base": "547",
+  "def_base": "297",
+  "rec_base": "153",
+  "hp_lord": "2680",
+  "atk_lord": "878",
+  "def_lord": "563",
+  "rec_lord": "390",
+  "hp_anima": "2898",
+  "rec_anima": "332",
+  "atk_breaker": "936",
+  "def_breaker": "505",
+  "atk_guardian": "820",
+  "def_guardian": "621",
+  "rec_guardian": "361",
+  "def_oracle": "534",
+  "hp_oracle": "2593",
+  "rec_oracle": "477",
+  "hp_bonus": "250",
+  "atk_bonus": "100",
+  "def_bonus": "100",
+  "rec_bonus": "100",
+  "lordonly": "",
+  "combo_hits": "1",
+  "normaldc": "2",
+  "ls": "Fighting Light",
+  "lsdescription": "Small boost in Battle Crystals produced during Spark",
+  "lsnote": "30% boost",
+  "lstype": "Brave Burst",
+  "bbdescription": "5 combo Fire elemental attack on single Enemy & boost to BC drop rate",
+  "bbnote": "50% boost",
+  "bbtype": "Offense",
+  "bbhits": "5",
+  "bbaoe": "1",
+  "bbgauge": "10",
+  "bbdc": "25",
+  "bbmultiplier": "150",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "10131",
+  "evomats2": "60142",
+  "evomats3": "60142",
+  "evomats4": "",
+  "evomats5": "",
+  "evoitem": ""
 }

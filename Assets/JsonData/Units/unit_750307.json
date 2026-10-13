@@ -1,65 +1,155 @@
 {
   "id": "750307",
-  "unitName": "Duality Queen Freyja (EU, Dream)",
-  "disam": "Freyja",
-  "altname": "Duality Queen Freyja",
-  "idalt": "",
-  "has_altart": "",
-  "doenter": "true",
-  "no": "7243",
-  "element": "Light",
-  "rarity": "Dream",
-  "cost": "54",
-  "maxlv": "150",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "3",
-  "animation_attack": "116",
-  "animation_idle": "84",
-  "animation_move": "8",
-  "movespeed_attack": "0.0033",
-  "speedtype_attack": "3",
-  "movetype_attack": "1",
-  "movespeed_skill": "0.0033",
-  "speedtype_skill": "3",
-  "movetype_skill": "1",
-  "description": "The warriors who live in the coldest regions of Grand Gaia have their own Pantheon. Throughout the land, a certain prophecy has been passed down from generation to generation:”When the Corruption draws nigh spreading death and strife, When the dead ascend no more to the afterlife,When the divine tree doth before the shadows fall,The queen of semi-goddesses shall hearken to the call,Establishing her dominion over one and all,The balance twixt light and shade by flame split asunder, Shall meld once more in a world full of peace and wonder,Where warriors' souls rest in their Pantheon again, assuaged,And the queen alone shall give thanks in her palace, caged,Remembering the last battle her favourite ever waged.\"",
-  "summon": "Summoner, which side are you on?",
-  "fusion": "The souls of heroes will come to help me accomplish my mission.",
-  "evolution": "",
-  "hp_base": "6311",
-  "atk_base": "2459",
-  "def_base": "2459",
-  "rec_base": "2459",
-  "hp_lord": "7700",
-  "atk_lord": "3000",
-  "def_lord": "3000",
-  "rec_lord": "3000",
-  "hp_anima": "8817",
-  "rec_anima": "2702",
-  "atk_breaker": "3298",
-  "def_breaker": "2702",
-  "def_guardian": "3298",
-  "rec_guardian": "3000",
-  "def_oracle": "3000",
-  "rec_oracle": "3298",
-  "hp_bonus": "1500",
-  "atk_bonus": "600",
-  "def_bonus": "600",
-  "rec_bonus": "600",
-  "lordonly": "",
-  "normal_frames": "20, 23, 26, 29, 32, 35, 38, 41, 44, 47, 50, 53",
-  "normal_distribute": "10, 10, 10, 10, 10, 10, 10, 10, 5, 5, 5, 5",
-  "normal_totaldistr": "100",
-  "combo_hits": "12",
-  "normaldc": "36",
-  "ls": "Prophecy of Valhalla",
-  "lsdescription": "Boosts all parameters of Female types (80%) & damage reduction from Light, Dark types (15%) & boosts Spark damage (130%) & negates elemental damage & Spark damage boosts BB gauge (2-3 BC)",
-  "lsnote": "",
-  "es": "War and Peace",
-  "esdescription": "Reduces BB gauge required for BB (5%, all) & adds probability of activating BB/SBB/UBB twice (25%) and Light barrier (4000 HP) effects to BB/SBB & negates status ailments (all) & negates elemental damage",
-  "esitem": "",
-  "esnote": "",
+  "stats": {
+    "_base": {
+      "atk": 2459,
+      "def": 2459,
+      "hp": 6311,
+      "rec": 2459
+    },
+    "_lord": {
+      "atk": 3000,
+      "def": 3000,
+      "hp": 7700,
+      "rec": 3000
+    },
+    "anima": {
+      "atk": 3000,
+      "def": 3000,
+      "hp max": 9190,
+      "hp min": 8445,
+      "rec max": 2851,
+      "rec min": 2553
+    },
+    "breaker": {
+      "atk max": 3447,
+      "atk min": 3149,
+      "def max": 2851,
+      "def min": 2553,
+      "hp": 7700,
+      "rec": 3000
+    },
+    "guardian": {
+      "atk max": 2851,
+      "atk min": 2553,
+      "def max": 3447,
+      "def min": 3149,
+      "hp": 7700,
+      "rec": 3000
+    },
+    "oracle": {
+      "atk": 3000,
+      "def": 3000,
+      "hp max": 6955,
+      "hp min": 6210,
+      "rec max": 3447,
+      "rec min": 3149
+    }
+  },
+  "leader_skill": {
+    "desc": "Boosts all parameters of Female types (80%) & damage reduction from Light, Dark types (15%) & boosts Spark damage (130%) & negates elemental damage & Spark damage boosts BB gauge (2-3 BC)",
+    "effects": [
+      {
+        "atk% buff": 80,
+        "def% buff": 80,
+        "gender required": "female",
+        "hp% buff": 80,
+        "passive id": "42",
+        "rec% buff": 80
+      },
+      {
+        "dmg% mitigation for elemental attacks": 15.0,
+        "mitigate dark attacks": true,
+        "mitigate light attacks": true,
+        "passive id": "62"
+      },
+      {
+        "damage% for spark": 130,
+        "passive id": "31"
+      },
+      {
+        "passive id": "53",
+        "strong base element damage resist%": 100,
+        "strong buffed element damage resist%": 100
+      },
+      {
+        "bc fill on spark high": 3,
+        "bc fill on spark low": 2,
+        "bc fill on spark%": 100,
+        "passive id": "47"
+      }
+    ],
+    "id": "750307",
+    "name": "Prophecy of Valhalla"
+  },
+  "extra_skill": {
+    "desc": "Reduces BB gauge required for BB (5%, all) & adds probability of activating BB/SBB/UBB twice (25%) and Light barrier (4000 HP) effects to BB/SBB & negates status ailments (all) & negates elemental damage",
+    "effects": [
+      {
+        "conditions": [],
+        "passive id": "48",
+        "passive target": "party",
+        "reduced bb bc cost%": 5
+      },
+      {
+        "conditions": [],
+        "passive id": "66",
+        "passive target": "self",
+        "trigger on bb": true,
+        "trigger on sbb": true,
+        "triggered effect": [
+          {
+            "effect delay time(ms)/frame": "0.0/0",
+            "target area": "aoe",
+            "target type": "party",
+            "unknown proc id": "70002",
+            "unknown proc param": "0.25,3,0,0,0,0,0,0,0"
+          }
+        ]
+      },
+      {
+        "conditions": [],
+        "passive id": "66",
+        "passive target": "self",
+        "trigger on bb": true,
+        "trigger on sbb": true,
+        "triggered effect": [
+          {
+            "effect delay time(ms)/frame": "0.0/0",
+            "elemental barrier absorb dmg%": 100,
+            "elemental barrier def": 0,
+            "elemental barrier element": "light",
+            "elemental barrier hp": 4000,
+            "proc id": "62",
+            "target area": "aoe",
+            "target type": "party"
+          }
+        ]
+      },
+      {
+        "conditions": [],
+        "curse resist%": 100,
+        "injury resist%": 100,
+        "paralysis resist%": 100,
+        "passive id": "4",
+        "passive target": "party",
+        "poison resist%": 100,
+        "sick resist%": 100,
+        "weaken resist%": 100
+      },
+      {
+        "conditions": [],
+        "passive id": "53",
+        "passive target": "self",
+        "strong base element damage resist%": 100,
+        "strong buffed element damage resist%": 100
+      }
+    ],
+    "id": "750307",
+    "name": "War and Peace",
+    "rarity": "0",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -772,50 +862,6 @@
     ],
     "name": "War through peace"
   },
-  "bbdescription": "Restores HP & boosts BB gauge (8 BC) for 3 turns & boosts ATK, DEF and REC for Light and Dark types (130%) for 3 turns & boosts BB ATK (550%) for 3 turns & adds probability of performing 1 extra action for 1 turn (10%)",
-  "bbnote": "{{UnitBuffList",
-  "buff_1_proc": "29",
-  "buff_1_potency": "2500% damage modifier",
-  "buff_1_duration": "—",
-  "buff_1_target": "All enemies",
-  "buff_2_proc": "5_atk",
-  "buff_2_potency": "400% boost to Atk",
-  "buff_2_duration": "3 turns",
-  "buff_2_target": "All allies",
-  "buff_3_proc": "5_def",
-  "buff_3_potency": "400% boost to Def",
-  "buff_3_duration": "3 turns",
-  "buff_3_target": "All allies",
-  "buff_4_proc": "5_rec",
-  "buff_4_potency": "400% boost to Rec",
-  "buff_4_duration": "3 turns",
-  "buff_4_target": "All allies",
-  "buff_5_proc": "23",
-  "buff_5_potency": "400% boost to Spark damage",
-  "buff_5_duration": "3 turns",
-  "buff_5_target": "All allies",
-  "buff_6_proc": "67",
-  "buff_6_potency": "Fills 5~8 BC per spark",
-  "buff_6_duration": "3 turns",
-  "buff_6_target": "All allies",
-  "buff_7_proc": "76",
-  "buff_7_potency": "50% chance of acting 1 extra time",
-  "buff_7_duration": "1 turn",
-  "buff_7_target": "All allies",
-  "buff_8_proc": "5_dark_rec",
-  "buff_8_potency": "130% boost to Rec of Dark units",
-  "buff_8_duration": "3 turns",
-  "buff_8_target": "All allies",
-  "buff_9_proc": "45",
-  "buff_9_potency": "550% boost to BB Atk",
-  "buff_9_duration": "3 turns",
-  "buff_9_target": "All allies",
-  "buff_10_proc": "76",
-  "buff_10_potency": "10% chance of acting 1 extra time",
-  "buff_10_duration": "3 turns",
-  "buff_10_target": "All allies",
-  "bbtype": "Heal",
-  "bbgauge": "28",
   "sbb": {
     "damage frames": [
       {
@@ -1494,19 +1540,6 @@
     ],
     "name": "Peace through war"
   },
-  "sbbdescription": "30 combo Light attack on all foes (damage relative to remaining HP) & boosts Spark damage (150%) for 3 turns & adds all elements to attack for 3 turns & removes all status ailments & damage reduction from Light, Dark types (15%) for 3 turns",
-  "sbbnote": "{{UnitBuffList",
-  "sbbtype": "Offense",
-  "sbbgauge": "24",
-  "sbb_frames": "40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 140, 142",
-  "sbb_distribute": "4, 5, 5, 5, 5, 5, 5, 5, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 4, 4, 3, 2",
-  "sbb_totaldistr": "98",
-  "sbb_effectdelay": "5",
-  "sbbhits": "30",
-  "sbbaoe": "A",
-  "sbbdc": "30",
-  "sbbmultiplier": "300",
-  "sbb_hpscale": "true",
   "ubb": {
     "damage frames": [
       {
@@ -1700,6 +1733,232 @@
     ],
     "name": "Queen's Punishment"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 116
+    },
+    "idle": {
+      "total number of frames": 84
+    },
+    "move": {
+      "total number of frames": 8
+    }
+  },
+  "cost": "54",
+  "damage frames": {
+    "frame times": [
+      20,
+      23,
+      26,
+      29,
+      32,
+      35,
+      38,
+      41,
+      44,
+      47,
+      50,
+      53
+    ],
+    "hit dmg% distribution": [
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      5,
+      5,
+      5,
+      5
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 12
+  },
+  "drop check count": 3,
+  "element": "light",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 7243,
+  "imp": {
+    "max atk": "600",
+    "max def": "600",
+    "max hp": "1500",
+    "max rec": "600"
+  },
+  "kind": "normal",
+  "lord damage range": "2793~3120",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Duality Queen Freyja",
+  "rarity": "8",
+  "sell caution": false,
+  "unitName": "Duality Queen Freyja",
+  "maxlv": "150",
+  "no": "7243",
+  "unitDisplayHomePosition_1W9CxaFK": null,
+  "unitDisplayDetailPosition_6z54rgb3": null,
+  "unitDisplayConfirmImagePosition_MYK1fq6c": null,
+  "unitDisplayCutInImagePosition_7hLR6pDN": null,
+  "unitDisplaySummonPosition_KC3Jk8Br": null,
+  "unitDisplayHpPosition_3BpHN6VD": null,
+  "unitDisplayCursorPosition": null,
+  "sellPrice": "",
+  "sellCaution": false,
+  "effectFrames": "",
+  "evofrom": "",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "disam": "Freyja",
+  "altname": "Duality Queen Freyja",
+  "idalt": "",
+  "has_altart": "",
+  "doenter": "true",
+  "basexp": "21",
+  "animation_attack": "116",
+  "animation_idle": "84",
+  "animation_move": "8",
+  "movespeed_attack": "0.0033",
+  "speedtype_attack": "3",
+  "movetype_attack": "1",
+  "movespeed_skill": "0.0033",
+  "speedtype_skill": "3",
+  "movetype_skill": "1",
+  "description": "The warriors who live in the coldest regions of Grand Gaia have their own Pantheon. Throughout the land, a certain prophecy has been passed down from generation to generation:”When the Corruption draws nigh spreading death and strife, When the dead ascend no more to the afterlife,When the divine tree doth before the shadows fall,The queen of semi-goddesses shall hearken to the call,Establishing her dominion over one and all,The balance twixt light and shade by flame split asunder, Shall meld once more in a world full of peace and wonder,Where warriors' souls rest in their Pantheon again, assuaged,And the queen alone shall give thanks in her palace, caged,Remembering the last battle her favourite ever waged.\"",
+  "summon": "Summoner, which side are you on?",
+  "fusion": "The souls of heroes will come to help me accomplish my mission.",
+  "evolution": "",
+  "hp_base": "6311",
+  "atk_base": "2459",
+  "def_base": "2459",
+  "rec_base": "2459",
+  "hp_lord": "7700",
+  "atk_lord": "3000",
+  "def_lord": "3000",
+  "rec_lord": "3000",
+  "hp_anima": "8817",
+  "rec_anima": "2702",
+  "atk_breaker": "3298",
+  "def_breaker": "2702",
+  "def_guardian": "3298",
+  "rec_guardian": "3000",
+  "def_oracle": "3000",
+  "rec_oracle": "3298",
+  "hp_bonus": "1500",
+  "atk_bonus": "600",
+  "def_bonus": "600",
+  "rec_bonus": "600",
+  "lordonly": "",
+  "normal_frames": "20, 23, 26, 29, 32, 35, 38, 41, 44, 47, 50, 53",
+  "normal_distribute": "10, 10, 10, 10, 10, 10, 10, 10, 5, 5, 5, 5",
+  "normal_totaldistr": "100",
+  "combo_hits": "12",
+  "normaldc": "36",
+  "ls": "Prophecy of Valhalla",
+  "lsdescription": "Boosts all parameters of Female types (80%) & damage reduction from Light, Dark types (15%) & boosts Spark damage (130%) & negates elemental damage & Spark damage boosts BB gauge (2-3 BC)",
+  "lsnote": "",
+  "es": "War and Peace",
+  "esdescription": "Reduces BB gauge required for BB (5%, all) & adds probability of activating BB/SBB/UBB twice (25%) and Light barrier (4000 HP) effects to BB/SBB & negates status ailments (all) & negates elemental damage",
+  "esitem": "",
+  "esnote": "",
+  "bbdescription": "Restores HP & boosts BB gauge (8 BC) for 3 turns & boosts ATK, DEF and REC for Light and Dark types (130%) for 3 turns & boosts BB ATK (550%) for 3 turns & adds probability of performing 1 extra action for 1 turn (10%)",
+  "bbnote": "{{UnitBuffList",
+  "buff_1_proc": "29",
+  "buff_1_potency": "2500% damage modifier",
+  "buff_1_duration": "—",
+  "buff_1_target": "All enemies",
+  "buff_2_proc": "5_atk",
+  "buff_2_potency": "400% boost to Atk",
+  "buff_2_duration": "3 turns",
+  "buff_2_target": "All allies",
+  "buff_3_proc": "5_def",
+  "buff_3_potency": "400% boost to Def",
+  "buff_3_duration": "3 turns",
+  "buff_3_target": "All allies",
+  "buff_4_proc": "5_rec",
+  "buff_4_potency": "400% boost to Rec",
+  "buff_4_duration": "3 turns",
+  "buff_4_target": "All allies",
+  "buff_5_proc": "23",
+  "buff_5_potency": "400% boost to Spark damage",
+  "buff_5_duration": "3 turns",
+  "buff_5_target": "All allies",
+  "buff_6_proc": "67",
+  "buff_6_potency": "Fills 5~8 BC per spark",
+  "buff_6_duration": "3 turns",
+  "buff_6_target": "All allies",
+  "buff_7_proc": "76",
+  "buff_7_potency": "50% chance of acting 1 extra time",
+  "buff_7_duration": "1 turn",
+  "buff_7_target": "All allies",
+  "buff_8_proc": "5_dark_rec",
+  "buff_8_potency": "130% boost to Rec of Dark units",
+  "buff_8_duration": "3 turns",
+  "buff_8_target": "All allies",
+  "buff_9_proc": "45",
+  "buff_9_potency": "550% boost to BB Atk",
+  "buff_9_duration": "3 turns",
+  "buff_9_target": "All allies",
+  "buff_10_proc": "76",
+  "buff_10_potency": "10% chance of acting 1 extra time",
+  "buff_10_duration": "3 turns",
+  "buff_10_target": "All allies",
+  "bbtype": "Heal",
+  "bbgauge": "28",
+  "sbbdescription": "30 combo Light attack on all foes (damage relative to remaining HP) & boosts Spark damage (150%) for 3 turns & adds all elements to attack for 3 turns & removes all status ailments & damage reduction from Light, Dark types (15%) for 3 turns",
+  "sbbnote": "{{UnitBuffList",
+  "sbbtype": "Offense",
+  "sbbgauge": "24",
+  "sbb_frames": "40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 140, 142",
+  "sbb_distribute": "4, 5, 5, 5, 5, 5, 5, 5, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 4, 4, 3, 2",
+  "sbb_totaldistr": "98",
+  "sbb_effectdelay": "5",
+  "sbbhits": "30",
+  "sbbaoe": "A",
+  "sbbdc": "30",
+  "sbbmultiplier": "300",
+  "sbb_hpscale": "true",
   "ubbdescription": "35 combo Light and Dark attack on all foes & boosts ATK, DEF, REC and Spark damage (350%) for 3 turns & Spark damage boosts BB gauge (5-8 BC) & adds probability of performing 1 extra action for 1 turn (50%)",
   "ubbnote": "{{UnitBuffList",
   "ubbtype": "Offense",
@@ -1757,165 +2016,5 @@
   "notes": "",
   "incorrectinfo": "",
   "addcat": "",
-  "addcatname": "",
-  "stats": {
-    "_base": {
-      "atk": 2459,
-      "def": 2459,
-      "hp": 6311,
-      "rec": 2459
-    },
-    "_lord": {
-      "atk": 3000,
-      "def": 3000,
-      "hp": 7700,
-      "rec": 3000
-    },
-    "anima": {
-      "atk": 3000,
-      "def": 3000,
-      "hp max": 9190,
-      "hp min": 8445,
-      "rec max": 2851,
-      "rec min": 2553
-    },
-    "breaker": {
-      "atk max": 3447,
-      "atk min": 3149,
-      "def max": 2851,
-      "def min": 2553,
-      "hp": 7700,
-      "rec": 3000
-    },
-    "guardian": {
-      "atk max": 2851,
-      "atk min": 2553,
-      "def max": 3447,
-      "def min": 3149,
-      "hp": 7700,
-      "rec": 3000
-    },
-    "oracle": {
-      "atk": 3000,
-      "def": 3000,
-      "hp max": 6955,
-      "hp min": 6210,
-      "rec max": 3447,
-      "rec min": 3149
-    }
-  },
-  "leader_skill": {
-    "desc": "Boosts all parameters of Female types (80%) & damage reduction from Light, Dark types (15%) & boosts Spark damage (130%) & negates elemental damage & Spark damage boosts BB gauge (2-3 BC)",
-    "effects": [
-      {
-        "atk% buff": 80,
-        "def% buff": 80,
-        "gender required": "female",
-        "hp% buff": 80,
-        "passive id": "42",
-        "rec% buff": 80
-      },
-      {
-        "dmg% mitigation for elemental attacks": 15.0,
-        "mitigate dark attacks": true,
-        "mitigate light attacks": true,
-        "passive id": "62"
-      },
-      {
-        "damage% for spark": 130,
-        "passive id": "31"
-      },
-      {
-        "passive id": "53",
-        "strong base element damage resist%": 100,
-        "strong buffed element damage resist%": 100
-      },
-      {
-        "bc fill on spark high": 3,
-        "bc fill on spark low": 2,
-        "bc fill on spark%": 100,
-        "passive id": "47"
-      }
-    ],
-    "id": "750307",
-    "name": "Prophecy of Valhalla"
-  },
-  "extra_skill": {
-    "desc": "Reduces BB gauge required for BB (5%, all) & adds probability of activating BB/SBB/UBB twice (25%) and Light barrier (4000 HP) effects to BB/SBB & negates status ailments (all) & negates elemental damage",
-    "effects": [
-      {
-        "conditions": [],
-        "passive id": "48",
-        "passive target": "party",
-        "reduced bb bc cost%": 5
-      },
-      {
-        "conditions": [],
-        "passive id": "66",
-        "passive target": "self",
-        "trigger on bb": true,
-        "trigger on sbb": true,
-        "triggered effect": [
-          {
-            "effect delay time(ms)/frame": "0.0/0",
-            "target area": "aoe",
-            "target type": "party",
-            "unknown proc id": "70002",
-            "unknown proc param": "0.25,3,0,0,0,0,0,0,0"
-          }
-        ]
-      },
-      {
-        "conditions": [],
-        "passive id": "66",
-        "passive target": "self",
-        "trigger on bb": true,
-        "trigger on sbb": true,
-        "triggered effect": [
-          {
-            "effect delay time(ms)/frame": "0.0/0",
-            "elemental barrier absorb dmg%": 100,
-            "elemental barrier def": 0,
-            "elemental barrier element": "light",
-            "elemental barrier hp": 4000,
-            "proc id": "62",
-            "target area": "aoe",
-            "target type": "party"
-          }
-        ]
-      },
-      {
-        "conditions": [],
-        "curse resist%": 100,
-        "injury resist%": 100,
-        "paralysis resist%": 100,
-        "passive id": "4",
-        "passive target": "party",
-        "poison resist%": 100,
-        "sick resist%": 100,
-        "weaken resist%": 100
-      },
-      {
-        "conditions": [],
-        "passive id": "53",
-        "passive target": "self",
-        "strong base element damage resist%": 100,
-        "strong buffed element damage resist%": 100
-      }
-    ],
-    "id": "750307",
-    "name": "War and Peace",
-    "rarity": "0",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": null,
-  "unitDisplayDetailPosition_6z54rgb3": null,
-  "unitDisplayConfirmImagePosition_MYK1fq6c": null,
-  "unitDisplayCutInImagePosition_7hLR6pDN": null,
-  "unitDisplaySummonPosition_KC3Jk8Br": null,
-  "unitDisplayHpPosition_3BpHN6VD": null,
-  "unitDisplayCursorPosition": null,
-  "sellPrice": "",
-  "sellCaution": false,
-  "effectFrames": ""
+  "addcatname": ""
 }

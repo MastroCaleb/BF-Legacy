@@ -1,66 +1,76 @@
 {
   "id": "850176",
-  "unitName": "Athena Asamiya (6★)",
-  "altname": "Athena Asamiya",
-  "idalt": "",
-  "no": "8219",
-  "element": "Light",
-  "rarity": "★★★★★★",
-  "cost": "31",
-  "maxlv": "100",
-  "basexp": "21",
-  "ai": "3",
-  "gender": "F",
-  "animation_attack": "201",
-  "animation_idle": "113",
-  "animation_move": "8",
-  "movespeed_attack": "0.0015",
-  "movespeed_skill": "0.0015",
-  "speedtype_attack": "5",
-  "speedtype_skill": "5",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "27, 30, 57, 60, 63, 118, 121, 124",
-  "normal_distribute": "15, 10, 20, 10, 10, 10, 15, 10",
-  "normal_totaldistr": "100",
-  "bb_frames": "27, 30, 57, 60, 63, 118, 121, 124, 127",
-  "bb_distribute": "14, 9, 18, 9, 9, 9, 14, 9, 9",
-  "bb_totaldistr": "100",
-  "sbb_frames": "27, 30, 33, 57, 60, 63, 66, 118, 121, 124, 127",
-  "sbb_distribute": "12, 7, 7, 18, 7, 7, 7, 7, 14, 7, 7",
-  "sbb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "1",
-  "description": "A cheerful fighter who possesses keen psychic abilities, Athena trained in martial arts from a young age as she honed her telekinetic skills. After joining her first tournament despite the wishes of her master, she emerged victorious with her friends and gained an interest in fighting tournaments. While her popularity rose thanks to her pop-star status, she honed her fighting skills while keeping an eye out for the next tournament to come her way. One day, a blood-scented letter arrived at her doorstep...",
-  "summon": "Here comes Athena Asamiya!",
-  "fusion": "Thanks!<br>I'll do my best!",
-  "evolution": "",
-  "hp_base": "4280",
-  "atk_base": "1545",
-  "def_base": "1660",
-  "rec_base": "1715",
-  "hp_lord": "6110",
-  "atk_lord": "2205",
-  "def_lord": "2370",
-  "rec_lord": "2450",
-  "hp_anima": "6853",
-  "rec_anima": "2252",
-  "atk_breaker": "2403",
-  "def_breaker": "2172",
-  "def_guardian": "2568",
-  "rec_guardian": "2351",
-  "def_oracle": "2271",
-  "rec_oracle": "2747",
-  "hp_bonus": "750",
-  "atk_bonus": "300",
-  "def_bonus": "300",
-  "rec_bonus": "300",
-  "lordonly": "",
-  "combo_hits": "8",
-  "normaldc": "32",
-  "ls": "Psionic Genius",
-  "lsdescription": "35% boost to Atk, max HP, damage taken may restore HP & reflects damage when attacked",
-  "lsnote": "40% chance to heal 20% damage, 100% chance to reflect 40% damage",
+  "stats": {
+    "_base": {
+      "atk": 1545,
+      "def": 1660,
+      "hp": 4280,
+      "rec": 1715
+    },
+    "_lord": {
+      "atk": 2205,
+      "def": 2370,
+      "hp": 6110,
+      "rec": 2450
+    },
+    "anima": {
+      "atk": 2205,
+      "def": 2370,
+      "hp max": 7100,
+      "hp min": 6605,
+      "rec max": 2351,
+      "rec min": 2153
+    },
+    "breaker": {
+      "atk max": 2502,
+      "atk min": 2304,
+      "def max": 2271,
+      "def min": 2073,
+      "hp": 6110,
+      "rec": 2450
+    },
+    "guardian": {
+      "atk": 2205,
+      "def max": 2667,
+      "def min": 2469,
+      "hp": 6110,
+      "rec max": 2450,
+      "rec min": 2252
+    },
+    "oracle": {
+      "atk": 2205,
+      "def max": 2370,
+      "def min": 2172,
+      "hp": 6110,
+      "rec max": 2846,
+      "rec min": 2648
+    }
+  },
+  "leader_skill": {
+    "desc": "35% boost to Atk, max HP, damage taken may restore HP & reflects damage when attacked",
+    "effects": [
+      {
+        "atk% buff": 35,
+        "hp% buff": 35,
+        "passive id": "1"
+      },
+      {
+        "dmg% to hp% when attacked chance%": 40,
+        "dmg% to hp% when attacked high": 20,
+        "dmg% to hp% when attacked low": 20,
+        "passive id": "24"
+      },
+      {
+        "dmg% reflect chance%": 100,
+        "dmg% reflect high": 40,
+        "dmg% reflect low": 40,
+        "passive id": "26"
+      }
+    ],
+    "id": "801254",
+    "name": "Psionic Genius"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -523,14 +533,6 @@
     ],
     "name": "Phoenix Arrow I"
   },
-  "bbdescription": "9 combo powerful Light attack on all foes, damage taken may slightly restore HP for 3 turns & removes all status ailments",
-  "bbnote": "20% chance to heal 15~20% damage",
-  "bbtype": "Offense",
-  "bbhits": "9",
-  "bbaoe": "A",
-  "bbgauge": "16",
-  "bbdc": "18",
-  "bbmultiplier": "300",
   "sbb": {
     "damage frames": [
       {
@@ -927,6 +929,199 @@
     ],
     "name": "Phoenix Arrow II"
   },
+  "ubb": {},
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 201
+    },
+    "idle": {
+      "total number of frames": 113
+    },
+    "move": {
+      "total number of frames": 8
+    }
+  },
+  "category": 850170,
+  "cost": "31",
+  "damage frames": {
+    "frame times": [
+      27,
+      30,
+      57,
+      60,
+      63,
+      118,
+      121,
+      124
+    ],
+    "hit dmg% distribution": [
+      15,
+      10,
+      20,
+      10,
+      10,
+      10,
+      15,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 8
+  },
+  "drop check count": 4,
+  "element": "light",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 8219,
+  "imp": {
+    "max atk": "300",
+    "max def": "300",
+    "max hp": "750",
+    "max rec": "300"
+  },
+  "kind": "normal",
+  "lord damage range": "2052~2293",
+  "movement": {
+    "attack": {
+      "move speed": 0.0015,
+      "move speed type": "5",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0015,
+      "move speed type": "5",
+      "move type": "1"
+    }
+  },
+  "name": "Athena Asamiya",
+  "rarity": "6",
+  "sell caution": false,
+  "unitName": "Athena Asamiya",
+  "maxlv": "100",
+  "no": "8219",
+  "unitDisplayHomePosition_1W9CxaFK": "293,142,140,382",
+  "unitDisplayDetailPosition_6z54rgb3": "1,29,977,870",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "104,240,456,408,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "27,-178,977,870",
+  "unitDisplaySummonPosition_KC3Jk8Br": "104,240,456,408,0",
+  "unitDisplayHpPosition_3BpHN6VD": "2,-2",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "8000",
+  "sellCaution": false,
+  "effectFrames": "27:116:1,30:116:1,57:116:1,60:116:1,121:400134:1,121:500170:1,124:400134:1,124:500170:1",
+  "evofrom": "",
+  "evointo": "850177",
+  "evozelcost": "1500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50394",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "850034",
+      "count": 1
+    }
+  ],
+  "altname": "Athena Asamiya",
+  "idalt": "",
+  "basexp": "21",
+  "animation_attack": "201",
+  "animation_idle": "113",
+  "animation_move": "8",
+  "movespeed_attack": "0.0015",
+  "movespeed_skill": "0.0015",
+  "speedtype_attack": "5",
+  "speedtype_skill": "5",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "27, 30, 57, 60, 63, 118, 121, 124",
+  "normal_distribute": "15, 10, 20, 10, 10, 10, 15, 10",
+  "normal_totaldistr": "100",
+  "bb_frames": "27, 30, 57, 60, 63, 118, 121, 124, 127",
+  "bb_distribute": "14, 9, 18, 9, 9, 9, 14, 9, 9",
+  "bb_totaldistr": "100",
+  "sbb_frames": "27, 30, 33, 57, 60, 63, 66, 118, 121, 124, 127",
+  "sbb_distribute": "12, 7, 7, 18, 7, 7, 7, 7, 14, 7, 7",
+  "sbb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "1",
+  "description": "A cheerful fighter who possesses keen psychic abilities, Athena trained in martial arts from a young age as she honed her telekinetic skills. After joining her first tournament despite the wishes of her master, she emerged victorious with her friends and gained an interest in fighting tournaments. While her popularity rose thanks to her pop-star status, she honed her fighting skills while keeping an eye out for the next tournament to come her way. One day, a blood-scented letter arrived at her doorstep...",
+  "summon": "Here comes Athena Asamiya!",
+  "fusion": "Thanks!<br>I'll do my best!",
+  "evolution": "",
+  "hp_base": "4280",
+  "atk_base": "1545",
+  "def_base": "1660",
+  "rec_base": "1715",
+  "hp_lord": "6110",
+  "atk_lord": "2205",
+  "def_lord": "2370",
+  "rec_lord": "2450",
+  "hp_anima": "6853",
+  "rec_anima": "2252",
+  "atk_breaker": "2403",
+  "def_breaker": "2172",
+  "def_guardian": "2568",
+  "rec_guardian": "2351",
+  "def_oracle": "2271",
+  "rec_oracle": "2747",
+  "hp_bonus": "750",
+  "atk_bonus": "300",
+  "def_bonus": "300",
+  "rec_bonus": "300",
+  "lordonly": "",
+  "combo_hits": "8",
+  "normaldc": "32",
+  "ls": "Psionic Genius",
+  "lsdescription": "35% boost to Atk, max HP, damage taken may restore HP & reflects damage when attacked",
+  "lsnote": "40% chance to heal 20% damage, 100% chance to reflect 40% damage",
+  "bbdescription": "9 combo powerful Light attack on all foes, damage taken may slightly restore HP for 3 turns & removes all status ailments",
+  "bbnote": "20% chance to heal 15~20% damage",
+  "bbtype": "Offense",
+  "bbhits": "9",
+  "bbaoe": "A",
+  "bbgauge": "16",
+  "bbdc": "18",
+  "bbmultiplier": "300",
   "sbbdescription": "11 combo powerful Light attack on all foes, damage taken may restore HP for 3 turns & activates Light barrier",
   "sbbnote": "20% chance to heal 20~25% damage, 2000 HP Light barrier",
   "sbbtype": "Offense",
@@ -935,8 +1130,6 @@
   "sbbgauge": "24",
   "sbbdc": "22",
   "sbbmultiplier": "490",
-  "evofrom": "",
-  "evointo": "850177",
   "evomats1": "Light Mecha God",
   "evomats2": "Light Totem",
   "evomats3": "Miracle Totem",
@@ -947,88 +1140,5 @@
   "evomats8": "",
   "evomats9": "",
   "evoitem": "",
-  "evoitem2": "",
-  "evozelcost": "1500000",
-  "stats": {
-    "_base": {
-      "atk": 1545,
-      "def": 1660,
-      "hp": 4280,
-      "rec": 1715
-    },
-    "_lord": {
-      "atk": 2205,
-      "def": 2370,
-      "hp": 6110,
-      "rec": 2450
-    },
-    "anima": {
-      "atk": 2205,
-      "def": 2370,
-      "hp max": 7100,
-      "hp min": 6605,
-      "rec max": 2351,
-      "rec min": 2153
-    },
-    "breaker": {
-      "atk max": 2502,
-      "atk min": 2304,
-      "def max": 2271,
-      "def min": 2073,
-      "hp": 6110,
-      "rec": 2450
-    },
-    "guardian": {
-      "atk": 2205,
-      "def max": 2667,
-      "def min": 2469,
-      "hp": 6110,
-      "rec max": 2450,
-      "rec min": 2252
-    },
-    "oracle": {
-      "atk": 2205,
-      "def max": 2370,
-      "def min": 2172,
-      "hp": 6110,
-      "rec max": 2846,
-      "rec min": 2648
-    }
-  },
-  "leader_skill": {
-    "desc": "35% boost to Atk, max HP, damage taken may restore HP & reflects damage when attacked",
-    "effects": [
-      {
-        "atk% buff": 35,
-        "hp% buff": 35,
-        "passive id": "1"
-      },
-      {
-        "dmg% to hp% when attacked chance%": 40,
-        "dmg% to hp% when attacked high": 20,
-        "dmg% to hp% when attacked low": 20,
-        "passive id": "24"
-      },
-      {
-        "dmg% reflect chance%": 100,
-        "dmg% reflect high": 40,
-        "dmg% reflect low": 40,
-        "passive id": "26"
-      }
-    ],
-    "id": "801254",
-    "name": "Psionic Genius"
-  },
-  "extra_skill": {},
-  "ubb": {},
-  "unitDisplayHomePosition_1W9CxaFK": "293,142,140,382",
-  "unitDisplayDetailPosition_6z54rgb3": "1,29,977,870",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "104,240,456,408,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "27,-178,977,870",
-  "unitDisplaySummonPosition_KC3Jk8Br": "104,240,456,408,0",
-  "unitDisplayHpPosition_3BpHN6VD": "2,-2",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "8000",
-  "sellCaution": false,
-  "effectFrames": "27:116:1,30:116:1,57:116:1,60:116:1,121:400134:1,121:500170:1,124:400134:1,124:500170:1"
+  "evoitem2": ""
 }

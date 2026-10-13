@@ -1,61 +1,53 @@
 {
   "id": "20030",
-  "unitName": "Squirty",
-  "no": "45",
-  "element": "Water",
-  "rarity": "★",
-  "cost": "1",
-  "maxlv": "10",
-  "basexp": "10",
-  "gender": "N",
-  "ai": "2",
-  "animation_attack": "64",
-  "animation_idle": "46",
-  "animation_move": "35",
-  "movespeed_attack": "0.0041",
-  "movespeed_skill": "0.0041",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "30",
-  "normal_distribute": "100",
-  "normal_totaldistr": "100",
-  "bb_frames": "30",
-  "bb_distribute": "100",
-  "bb_totaldistr": "100",
-  "description": "A demon born from drops at the bottom of a giant waterfall. They are weak and the lowest ranked of all monsters. They exhibit pack behavior and like watery places, but are cowardly and usually run from humans. However, some of them are violent and attack by attaching themselves to an enemy's head. Rumor is they're not suitable for drinking, but no one has ever tested this theory.",
-  "summon": "Take me with you!<br>If you get thirsty you can <br>have a drink of me.",
-  "fusion": "*Splish* *Splosh*<br>My body is damp!",
-  "evolution": "",
-  "hp_base": "800",
-  "atk_base": "300",
-  "def_base": "280",
-  "rec_base": "250",
-  "hp_lord": "1596",
-  "atk_lord": "396",
-  "def_lord": "392",
-  "rec_lord": "408",
-  "hp_anima": "1664",
-  "rec_anima": "390",
-  "atk_breaker": "414",
-  "def_breaker": "374",
-  "atk_guardian": "378",
-  "def_guardian": "410",
-  "rec_guardian": "399",
-  "def_oracle": "383",
-  "hp_oracle": "1569",
-  "rec_oracle": "435",
-  "hp_bonus": "200",
-  "atk_bonus": "80",
-  "def_bonus": "80",
-  "rec_bonus": "80",
-  "lordonly": "",
-  "combo_hits": "1",
-  "normaldc": "2",
-  "ls": "",
-  "lsdescription": "",
-  "lstype": "",
+  "stats": {
+    "_base": {
+      "atk": 300,
+      "def": 280,
+      "hp": 800,
+      "rec": 250
+    },
+    "_lord": {
+      "atk": 396,
+      "def": 392,
+      "hp": 1596,
+      "rec": 408
+    },
+    "anima": {
+      "atk": 396,
+      "def": 392,
+      "hp max": 1686,
+      "hp min": 1641,
+      "rec max": 399,
+      "rec min": 381
+    },
+    "breaker": {
+      "atk max": 423,
+      "atk min": 405,
+      "def max": 383,
+      "def min": 365,
+      "hp": 1596,
+      "rec": 408
+    },
+    "guardian": {
+      "atk": 396,
+      "def max": 419,
+      "def min": 401,
+      "hp": 1596,
+      "rec max": 408,
+      "rec min": 390
+    },
+    "oracle": {
+      "atk": 396,
+      "def max": 392,
+      "def min": 374,
+      "hp": 1596,
+      "rec max": 444,
+      "rec min": 426
+    }
+  },
+  "leader_skill": {},
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -208,84 +200,83 @@
     ],
     "name": "Gnawing Ice"
   },
-  "bbdescription": "Water elemental attack on single Enemy",
-  "bbtype": "Offense",
-  "bbhits": "1",
-  "bbaoe": "1",
-  "bbgauge": "12",
-  "bbdc": "5",
-  "bbmultiplier": "100",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "20031",
-  "evomats1": "20130",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "1000",
-  "stats": {
-    "_base": {
-      "atk": 300,
-      "def": 280,
-      "hp": 800,
-      "rec": 250
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 396,
-      "def": 392,
-      "hp": 1596,
-      "rec": 408
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 396,
-      "def": 392,
-      "hp max": 1686,
-      "hp min": 1641,
-      "rec max": 399,
-      "rec min": 381
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 64
     },
-    "breaker": {
-      "atk max": 423,
-      "atk min": 405,
-      "def max": 383,
-      "def min": 365,
-      "hp": 1596,
-      "rec": 408
+    "idle": {
+      "total number of frames": 46
     },
-    "guardian": {
-      "atk": 396,
-      "def max": 419,
-      "def min": 401,
-      "hp": 1596,
-      "rec max": 408,
-      "rec min": 390
-    },
-    "oracle": {
-      "atk": 396,
-      "def max": 392,
-      "def min": 374,
-      "hp": 1596,
-      "rec max": 444,
-      "rec min": 426
+    "move": {
+      "total number of frames": 35
     }
   },
-  "leader_skill": {},
-  "extra_skill": {},
+  "category": 20030,
+  "cost": "1",
+  "damage frames": {
+    "frame times": [
+      30
+    ],
+    "hit dmg% distribution": [
+      100
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 1
+  },
+  "drop check count": 2,
+  "element": "water",
+  "exp_pattern": 10,
+  "gender": "other",
+  "getting type": "not eligible for achievement",
+  "guide_id": 45,
+  "imp": {
+    "max atk": "80",
+    "max def": "80",
+    "max hp": "200",
+    "max rec": "80"
+  },
+  "kind": "normal",
+  "lord damage range": "368~411",
+  "movement": {
+    "attack": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    }
+  },
+  "name": "Squirty",
+  "rarity": "1",
+  "sell caution": false,
+  "unitName": "Squirty",
+  "maxlv": "10",
+  "no": "45",
   "unitDisplayHomePosition_1W9CxaFK": "38,-139,140,382",
   "unitDisplayDetailPosition_6z54rgb3": "205,256,550,440",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "255,494,150,120,0",
@@ -295,5 +286,89 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "100",
   "sellCaution": false,
-  "effectFrames": "24:122:1"
+  "effectFrames": "24:122:1",
+  "evofrom": "",
+  "evointo": "20031",
+  "evozelcost": "1000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "20130",
+      "count": 1
+    }
+  ],
+  "basexp": "10",
+  "animation_attack": "64",
+  "animation_idle": "46",
+  "animation_move": "35",
+  "movespeed_attack": "0.0041",
+  "movespeed_skill": "0.0041",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "30",
+  "normal_distribute": "100",
+  "normal_totaldistr": "100",
+  "bb_frames": "30",
+  "bb_distribute": "100",
+  "bb_totaldistr": "100",
+  "description": "A demon born from drops at the bottom of a giant waterfall. They are weak and the lowest ranked of all monsters. They exhibit pack behavior and like watery places, but are cowardly and usually run from humans. However, some of them are violent and attack by attaching themselves to an enemy's head. Rumor is they're not suitable for drinking, but no one has ever tested this theory.",
+  "summon": "Take me with you!<br>If you get thirsty you can <br>have a drink of me.",
+  "fusion": "*Splish* *Splosh*<br>My body is damp!",
+  "evolution": "",
+  "hp_base": "800",
+  "atk_base": "300",
+  "def_base": "280",
+  "rec_base": "250",
+  "hp_lord": "1596",
+  "atk_lord": "396",
+  "def_lord": "392",
+  "rec_lord": "408",
+  "hp_anima": "1664",
+  "rec_anima": "390",
+  "atk_breaker": "414",
+  "def_breaker": "374",
+  "atk_guardian": "378",
+  "def_guardian": "410",
+  "rec_guardian": "399",
+  "def_oracle": "383",
+  "hp_oracle": "1569",
+  "rec_oracle": "435",
+  "hp_bonus": "200",
+  "atk_bonus": "80",
+  "def_bonus": "80",
+  "rec_bonus": "80",
+  "lordonly": "",
+  "combo_hits": "1",
+  "normaldc": "2",
+  "ls": "",
+  "lsdescription": "",
+  "lstype": "",
+  "bbdescription": "Water elemental attack on single Enemy",
+  "bbtype": "Offense",
+  "bbhits": "1",
+  "bbaoe": "1",
+  "bbgauge": "12",
+  "bbdc": "5",
+  "bbmultiplier": "100",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "20130",
+  "evomats2": "",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": "",
+  "evoitem": ""
 }

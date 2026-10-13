@@ -1,68 +1,95 @@
 {
   "id": "11016",
-  "unitName": "Blazing Chain Barbara",
-  "no": "1519",
-  "element": "Fire",
-  "rarity": "★★★★★★★",
-  "cost": "46",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "139",
-  "animation_idle": "52",
-  "animation_move": "6",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "71, 75, 79, 83, 87, 91, 95",
-  "normal_distribute": "20, 16, 12, 11, 14, 12, 15",
-  "normal_totaldistr": "100",
-  "bb_frames": "71, 74, 77, 80, 83, 86, 89, 92, 95, 98",
-  "bb_distribute": "17, 11, 9, 10, 7, 8, 11, 8, 9, 10",
-  "bb_totaldistr": "100",
-  "sbb_frames": "71",
-  "sbb_distribute": "100",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "71, 74, 77, 80, 83, 86, 89, 92, 95, 98, 101, 104, 107, 110, 113, 116, 119, 122, 125, 128",
-  "ubb_distribute": "10, 7, 4, 5, 3, 5, 6, 4, 3, 5, 4, 6, 3, 6, 5, 3, 6, 4, 5, 6",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "1",
-  "ubb_effectdelay": "1",
-  "description": "Leader of the Nuikar Tribal Alliance, one of the three powers that went on to form the foundations of the modern Elgaia Federation. She unified the bandit-ridden Nuikar region by force and the sheer magnetism of her single-mindedness. Her courage put even the Imperial Guard to shame. Afterwards, she went on to form the Elgaia Federation in conjunction with the Frenbrook Republic and the Kingdom of Dichmarde, in order to better resist the empire. By this time she had already abdicated her role as leader, but accounts hold that she remained a trusted advisor in the region for many years.",
-  "summon": "What? You need me for something? If you're counting on me, then fine. I guess I'll help you out for a bit.",
-  "fusion": "Excellent, I can feel the power! I can beat the empire with this. We'll show you how strong we are!",
-  "evolution": "",
-  "hp_base": "5231",
-  "atk_base": "2409",
-  "def_base": "1761",
-  "rec_base": "1857",
-  "hp_lord": "7463",
-  "atk_lord": "3261",
-  "def_lord": "2395",
-  "rec_lord": "2504",
-  "hp_anima": "8355",
-  "rec_anima": "2266",
-  "atk_breaker": "3499",
-  "def_breaker": "2157",
-  "def_guardian": "2633",
-  "rec_guardian": "2385",
-  "def_oracle": "2276",
-  "rec_oracle": "2861",
-  "hp_bonus": "1000",
-  "atk_bonus": "600",
-  "def_bonus": "300",
-  "rec_bonus": "400",
-  "lordonly": "",
-  "combo_hits": "7",
-  "normaldc": "42",
-  "ls": "Wild Courage",
-  "lsdescription": "30% boost to Atk and max HP, 100% boost to Spark damage & probable Spark critical",
-  "lsnote": "3% chance Sparks deal 50% extra damage",
+  "stats": {
+    "_base": {
+      "atk": 2409,
+      "def": 1761,
+      "hp": 5231,
+      "rec": 1857
+    },
+    "_lord": {
+      "atk": 3261,
+      "def": 2395,
+      "hp": 7463,
+      "rec": 2504
+    },
+    "anima": {
+      "atk": 3261,
+      "def": 2395,
+      "hp max": 8653,
+      "hp min": 8058,
+      "rec max": 2385,
+      "rec min": 2147
+    },
+    "breaker": {
+      "atk max": 3618,
+      "atk min": 3380,
+      "def max": 2276,
+      "def min": 2038,
+      "hp": 7463,
+      "rec": 2504
+    },
+    "guardian": {
+      "atk": 3261,
+      "def max": 2752,
+      "def min": 2514,
+      "hp": 7463,
+      "rec max": 2504,
+      "rec min": 2266
+    },
+    "oracle": {
+      "atk": 3261,
+      "def max": 2395,
+      "def min": 2157,
+      "hp": 7463,
+      "rec max": 2980,
+      "rec min": 2742
+    }
+  },
+  "leader_skill": {
+    "desc": "30% boost to Atk and max HP, 100% boost to Spark damage & probable Spark critical",
+    "effects": [
+      {
+        "atk% buff": 30,
+        "hp% buff": 30,
+        "passive id": "1"
+      },
+      {
+        "damage% for spark": 100,
+        "passive id": "31"
+      },
+      {
+        "passive id": "100",
+        "spark crit chance%": 3,
+        "spark crit dmg%": 50
+      }
+    ],
+    "id": "7479",
+    "name": "Wild Courage"
+  },
+  "extra_skill": {
+    "desc": "Boosts Atk each turn for up to 10 turns & 30% boost to Spark damage",
+    "effects": [
+      {
+        "conditions": [],
+        "damage% for spark": 30,
+        "passive id": "31",
+        "passive target": "self"
+      },
+      {
+        "atk% max buff": 80,
+        "conditions": [],
+        "increase from min to max": 1,
+        "passive id": "105",
+        "passive target": "self",
+        "turn count": 10
+      }
+    ],
+    "id": "27500",
+    "name": "Master Combatant",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -457,14 +484,6 @@
     ],
     "name": "Katena Faqr"
   },
-  "bbdescription": "10 combo Fire attack on all foes, probable huge 1 turn Atk reduction & hugely boosts Spark damage for 3 turns",
-  "bbnote": "80% Spark & 30% chance to reduce enemy Atk by 50%",
-  "bbtype": "Offense",
-  "bbhits": "10",
-  "bbaoe": "A",
-  "bbgauge": "31",
-  "bbdc": "10",
-  "bbmultiplier": "380",
   "sbb": {
     "damage frames": [
       {
@@ -1045,14 +1064,6 @@
     ],
     "name": "Teo Ovis"
   },
-  "sbbdescription": "Powerful Fire attack on all foes, probable huge 1 turn Atk reduction, hugely boosts Spark damage for 3 turns, adds probable 1 turn Atk reduction to attack for 3 turns & adds Def ignoring effect to attack for 2 turns",
-  "sbbnote": "80% Spark, 30% chance to reduce enemy Atk by 50% instantly & adds 10% chance to reduce enemy Atk by 20% to attack",
-  "sbbtype": "Offense",
-  "sbbhits": "1",
-  "sbbaoe": "A",
-  "sbbgauge": "33",
-  "sbbdc": "20",
-  "sbbmultiplier": "580",
   "ubb": {
     "damage frames": [
       {
@@ -1212,6 +1223,215 @@
     ],
     "name": "Valentia"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 139
+    },
+    "idle": {
+      "total number of frames": 52
+    },
+    "move": {
+      "total number of frames": 6
+    }
+  },
+  "category": 11010,
+  "cost": "46",
+  "damage frames": {
+    "frame times": [
+      71,
+      75,
+      79,
+      83,
+      87,
+      91,
+      95
+    ],
+    "hit dmg% distribution": [
+      20,
+      16,
+      12,
+      11,
+      14,
+      12,
+      15
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 7
+  },
+  "drop check count": 6,
+  "element": "fire",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 1519,
+  "imp": {
+    "max atk": "600",
+    "max def": "300",
+    "max hp": "1000",
+    "max rec": "400"
+  },
+  "kind": "normal",
+  "lord damage range": "3035~3391",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Blazing Chain Barbara",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Blazing Chain Barbara",
+  "maxlv": "120",
+  "no": "1519",
+  "unitDisplayHomePosition_1W9CxaFK": "451,333,174,475",
+  "unitDisplayDetailPosition_6z54rgb3": "-100,-76,1180,944",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "63,157,626,501,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-55,-335,1120,896",
+  "unitDisplaySummonPosition_KC3Jk8Br": "63,157,626,501,0",
+  "unitDisplayHpPosition_3BpHN6VD": "1,38",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "15000",
+  "sellCaution": false,
+  "effectFrames": "71:131:1,75:131:1,79:131:1,83:131:1,87:131:1,91:131:1,95:131:1,70:11030:1,77:11030:1,84:11030:1,100:1961:1,22:10070:1",
+  "evofrom": "",
+  "evointo": "11017",
+  "evozelcost": "3000000",
+  "evokarmacost": "1000000",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "10354",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10191",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "139",
+  "animation_idle": "52",
+  "animation_move": "6",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "71, 75, 79, 83, 87, 91, 95",
+  "normal_distribute": "20, 16, 12, 11, 14, 12, 15",
+  "normal_totaldistr": "100",
+  "bb_frames": "71, 74, 77, 80, 83, 86, 89, 92, 95, 98",
+  "bb_distribute": "17, 11, 9, 10, 7, 8, 11, 8, 9, 10",
+  "bb_totaldistr": "100",
+  "sbb_frames": "71",
+  "sbb_distribute": "100",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "71, 74, 77, 80, 83, 86, 89, 92, 95, 98, 101, 104, 107, 110, 113, 116, 119, 122, 125, 128",
+  "ubb_distribute": "10, 7, 4, 5, 3, 5, 6, 4, 3, 5, 4, 6, 3, 6, 5, 3, 6, 4, 5, 6",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "1",
+  "ubb_effectdelay": "1",
+  "description": "Leader of the Nuikar Tribal Alliance, one of the three powers that went on to form the foundations of the modern Elgaia Federation. She unified the bandit-ridden Nuikar region by force and the sheer magnetism of her single-mindedness. Her courage put even the Imperial Guard to shame. Afterwards, she went on to form the Elgaia Federation in conjunction with the Frenbrook Republic and the Kingdom of Dichmarde, in order to better resist the empire. By this time she had already abdicated her role as leader, but accounts hold that she remained a trusted advisor in the region for many years.",
+  "summon": "What? You need me for something? If you're counting on me, then fine. I guess I'll help you out for a bit.",
+  "fusion": "Excellent, I can feel the power! I can beat the empire with this. We'll show you how strong we are!",
+  "evolution": "",
+  "hp_base": "5231",
+  "atk_base": "2409",
+  "def_base": "1761",
+  "rec_base": "1857",
+  "hp_lord": "7463",
+  "atk_lord": "3261",
+  "def_lord": "2395",
+  "rec_lord": "2504",
+  "hp_anima": "8355",
+  "rec_anima": "2266",
+  "atk_breaker": "3499",
+  "def_breaker": "2157",
+  "def_guardian": "2633",
+  "rec_guardian": "2385",
+  "def_oracle": "2276",
+  "rec_oracle": "2861",
+  "hp_bonus": "1000",
+  "atk_bonus": "600",
+  "def_bonus": "300",
+  "rec_bonus": "400",
+  "lordonly": "",
+  "combo_hits": "7",
+  "normaldc": "42",
+  "ls": "Wild Courage",
+  "lsdescription": "30% boost to Atk and max HP, 100% boost to Spark damage & probable Spark critical",
+  "lsnote": "3% chance Sparks deal 50% extra damage",
+  "bbdescription": "10 combo Fire attack on all foes, probable huge 1 turn Atk reduction & hugely boosts Spark damage for 3 turns",
+  "bbnote": "80% Spark & 30% chance to reduce enemy Atk by 50%",
+  "bbtype": "Offense",
+  "bbhits": "10",
+  "bbaoe": "A",
+  "bbgauge": "31",
+  "bbdc": "10",
+  "bbmultiplier": "380",
+  "sbbdescription": "Powerful Fire attack on all foes, probable huge 1 turn Atk reduction, hugely boosts Spark damage for 3 turns, adds probable 1 turn Atk reduction to attack for 3 turns & adds Def ignoring effect to attack for 2 turns",
+  "sbbnote": "80% Spark, 30% chance to reduce enemy Atk by 50% instantly & adds 10% chance to reduce enemy Atk by 20% to attack",
+  "sbbtype": "Offense",
+  "sbbhits": "1",
+  "sbbaoe": "A",
+  "sbbgauge": "33",
+  "sbbdc": "20",
+  "sbbmultiplier": "580",
   "ubbdescription": "20 combo massive Fire attack on all foes, enormous 1 turn Atk reduction, enormously boosts Spark damage for 3 turns, enormously boosts Atk for 3 turns & adds probable powerful Spark critical for 3 turns",
   "ubbnote": "80% reduction, 250% Spark, 300% Atk & 50% chance Sparks deal 100% extra damage",
   "ubbtype": "Offense",
@@ -1224,8 +1444,6 @@
   "esitem": "",
   "esdescription": "Boosts Atk each turn for up to 10 turns & 30% boost to Spark damage",
   "esnote": "8% boost per turn, 80% boost total",
-  "evofrom": "",
-  "evointo": "11017",
   "evomats1": "Fire Mecha God",
   "evomats2": "Fire Mecha God",
   "evomats3": "Miracle Totem",
@@ -1234,106 +1452,5 @@
   "evomats6": "Fire Pot",
   "evomats7": "Dragon Mimic",
   "evomats8": "Metal Mimic",
-  "evoitem": "",
-  "evozelcost": "3000000",
-  "stats": {
-    "_base": {
-      "atk": 2409,
-      "def": 1761,
-      "hp": 5231,
-      "rec": 1857
-    },
-    "_lord": {
-      "atk": 3261,
-      "def": 2395,
-      "hp": 7463,
-      "rec": 2504
-    },
-    "anima": {
-      "atk": 3261,
-      "def": 2395,
-      "hp max": 8653,
-      "hp min": 8058,
-      "rec max": 2385,
-      "rec min": 2147
-    },
-    "breaker": {
-      "atk max": 3618,
-      "atk min": 3380,
-      "def max": 2276,
-      "def min": 2038,
-      "hp": 7463,
-      "rec": 2504
-    },
-    "guardian": {
-      "atk": 3261,
-      "def max": 2752,
-      "def min": 2514,
-      "hp": 7463,
-      "rec max": 2504,
-      "rec min": 2266
-    },
-    "oracle": {
-      "atk": 3261,
-      "def max": 2395,
-      "def min": 2157,
-      "hp": 7463,
-      "rec max": 2980,
-      "rec min": 2742
-    }
-  },
-  "leader_skill": {
-    "desc": "30% boost to Atk and max HP, 100% boost to Spark damage & probable Spark critical",
-    "effects": [
-      {
-        "atk% buff": 30,
-        "hp% buff": 30,
-        "passive id": "1"
-      },
-      {
-        "damage% for spark": 100,
-        "passive id": "31"
-      },
-      {
-        "passive id": "100",
-        "spark crit chance%": 3,
-        "spark crit dmg%": 50
-      }
-    ],
-    "id": "7479",
-    "name": "Wild Courage"
-  },
-  "extra_skill": {
-    "desc": "Boosts Atk each turn for up to 10 turns & 30% boost to Spark damage",
-    "effects": [
-      {
-        "conditions": [],
-        "damage% for spark": 30,
-        "passive id": "31",
-        "passive target": "self"
-      },
-      {
-        "atk% max buff": 80,
-        "conditions": [],
-        "increase from min to max": 1,
-        "passive id": "105",
-        "passive target": "self",
-        "turn count": 10
-      }
-    ],
-    "id": "27500",
-    "name": "Master Combatant",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "451,333,174,475",
-  "unitDisplayDetailPosition_6z54rgb3": "-100,-76,1180,944",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "63,157,626,501,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-55,-335,1120,896",
-  "unitDisplaySummonPosition_KC3Jk8Br": "63,157,626,501,0",
-  "unitDisplayHpPosition_3BpHN6VD": "1,38",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "15000",
-  "sellCaution": false,
-  "effectFrames": "71:131:1,75:131:1,79:131:1,83:131:1,87:131:1,91:131:1,95:131:1,70:11030:1,77:11030:1,84:11030:1,100:1961:1,22:10070:1"
+  "evoitem": ""
 }

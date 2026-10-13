@@ -1,68 +1,97 @@
 {
   "id": "51046",
-  "unitName": "Azure King Garrel",
-  "freetext": ":''See Azure King Garrel (BFH) for his appearance in BRAVE FRONTIER HEROES''",
-  "no": "1452",
-  "element": "Light",
-  "rarity": "★★★★★★★",
-  "cost": "44",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "159",
-  "animation_idle": "52",
-  "animation_move": "10",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "73, 78, 83, 88, 93, 98, 103",
-  "normal_distribute": "8, 10, 12, 14, 16, 18, 22",
-  "normal_totaldistr": "100",
-  "bb_frames": "73, 77, 81, 85, 89, 93, 97, 101, 105",
-  "bb_distribute": "7, 8, 9, 10, 11, 12, 13, 14, 16",
-  "bb_totaldistr": "100",
-  "sbb_frames": "73, 76, 79, 82, 85, 88, 91, 94, 97, 100, 103, 106, 109, 112, 115, 118, 121, 124",
-  "sbb_distribute": "3, 3, 3, 4, 4, 4, 5, 5, 5, 6, 6, 6, 7, 7, 7, 8, 8, 9",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "73, 76, 79, 82, 85, 88, 91, 94, 97, 100, 103, 106, 109, 112, 115, 118, 121, 124, 127, 130, 133",
-  "ubb_distribute": "3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 5, 5, 5, 6, 6, 6, 7, 7, 7, 8",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "2",
-  "sbb_effectdelay": "2",
-  "ubb_effectdelay": "2",
-  "description": "The king of a local kingdom under the jurisdiction of the Randall Empire. Long ago Garrel's daughter was kidnapped by a demon who sought her for the rare abilities she possessed. A famed and valiant hero from his youth, he did his best to protect his daughter and even requested the help of some old Summoner friends. Unfortunately, however, his strength alone was not enough to defeat the demon, and he lost his life. By the time the Summoners of Old had come to his aid, his daughter had already been taken by the demon.",
-  "summon": "Are you requesting my help...?<br>As long as you use my powers to fight unnecessary oppression, I shall aid you!",
-  "fusion": "You have my gratitude.<br>I must grow stronger in order to protect my country, as well as my family.",
-  "evolution": "",
-  "hp_base": "5099",
-  "atk_base": "2057",
-  "def_base": "1760",
-  "rec_base": "1631",
-  "hp_lord": "7328",
-  "atk_lord": "2828",
-  "def_lord": "2399",
-  "rec_lord": "2223",
-  "hp_anima": "8220",
-  "rec_anima": "1985",
-  "atk_breaker": "3066",
-  "def_breaker": "2161",
-  "def_guardian": "2637",
-  "rec_guardian": "2104",
-  "def_oracle": "2280",
-  "rec_oracle": "2580",
-  "hp_bonus": "1100",
-  "atk_bonus": "440",
-  "def_bonus": "440",
-  "rec_bonus": "440",
-  "lordonly": "",
-  "combo_hits": "7",
-  "normaldc": "35",
-  "ls": "Emperor's Holy Authority",
-  "lsdescription": "80% boost to Atk of Light types, 40% boost to Atk and max HP & 80% boost to Spark damage",
+  "stats": {
+    "_base": {
+      "atk": 2057,
+      "def": 1760,
+      "hp": 5099,
+      "rec": 1631
+    },
+    "_lord": {
+      "atk": 2828,
+      "def": 2399,
+      "hp": 7328,
+      "rec": 2223
+    },
+    "anima": {
+      "atk": 2828,
+      "def": 2399,
+      "hp max": 8518,
+      "hp min": 7923,
+      "rec max": 2104,
+      "rec min": 1866
+    },
+    "breaker": {
+      "atk max": 3185,
+      "atk min": 2947,
+      "def max": 2280,
+      "def min": 2042,
+      "hp": 7328,
+      "rec": 2223
+    },
+    "guardian": {
+      "atk": 2828,
+      "def max": 2756,
+      "def min": 2518,
+      "hp": 7328,
+      "rec max": 2223,
+      "rec min": 1985
+    },
+    "oracle": {
+      "atk": 2828,
+      "def max": 2399,
+      "def min": 2161,
+      "hp": 7328,
+      "rec max": 2699,
+      "rec min": 2461
+    }
+  },
+  "leader_skill": {
+    "desc": "80% boost to Atk of Light types, 40% boost to Atk and max HP & 80% boost to Spark damage",
+    "effects": [
+      {
+        "atk% buff": 40,
+        "hp% buff": 40,
+        "passive id": "1"
+      },
+      {
+        "atk% buff": 80,
+        "elements buffed": [
+          "light"
+        ],
+        "passive id": "2"
+      },
+      {
+        "damage% for spark": 80,
+        "passive id": "31"
+      }
+    ],
+    "id": "7457",
+    "name": "Emperor's Holy Authority"
+  },
+  "extra_skill": {
+    "desc": "Spark damage restores HP & 30% boost to Spark damage",
+    "effects": [
+      {
+        "conditions": [],
+        "damage% for spark": 30,
+        "passive id": "31",
+        "passive target": "self"
+      },
+      {
+        "conditions": [],
+        "heal on spark high": 300,
+        "heal on spark low": 200,
+        "heal on spark%": 100,
+        "passive id": "101",
+        "passive target": "self"
+      }
+    ],
+    "id": "22500",
+    "name": "Heroic Monarch",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -537,14 +566,6 @@
     ],
     "name": "Blue Sky Slash"
   },
-  "bbdescription": "9 combo Light attack on all foes, hugely boosts Spark damage for 3 turns, enormously boosts critical hit rate for 3 turns & boosts Light types' Atk and Def for 3 turns",
-  "bbnote": "80% Spark, 60% Crit & 80% Atk, Def of Light types",
-  "bbtype": "Offense",
-  "bbhits": "9",
-  "bbaoe": "A",
-  "bbgauge": "26",
-  "bbdc": "9",
-  "bbmultiplier": "350",
   "sbb": {
     "damage frames": [
       {
@@ -1129,14 +1150,6 @@
     ],
     "name": "Sacred Strike: Luc Ravine"
   },
-  "sbbdescription": "18 combo powerful Light attack on all foes (consecutive uses boost damage), fills own BB gauge to max, adds additional slight Spark damage for 3 turns, hugely boosts Spark damage for 3 turns & boosts Light types' Atk and Def for 3 turns",
-  "sbbnote": "200% boost to multiplier per use up to 3x, 80% Spark, 30% boost to own Spark damage & 80% Atk, Def of Light types",
-  "sbbtype": "Offense",
-  "sbbhits": "18",
-  "sbbaoe": "A",
-  "sbbgauge": "28",
-  "sbbdc": "18",
-  "sbbmultiplier": "420~1020",
   "ubb": {
     "damage frames": [
       {
@@ -1294,6 +1307,215 @@
     ],
     "name": "Rising Light Wave"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 159
+    },
+    "idle": {
+      "total number of frames": 52
+    },
+    "move": {
+      "total number of frames": 10
+    }
+  },
+  "category": 51040,
+  "cost": "44",
+  "damage frames": {
+    "frame times": [
+      73,
+      78,
+      83,
+      88,
+      93,
+      98,
+      103
+    ],
+    "hit dmg% distribution": [
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      22
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 7
+  },
+  "drop check count": 5,
+  "element": "light",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 1452,
+  "imp": {
+    "max atk": "440",
+    "max def": "440",
+    "max hp": "1100",
+    "max rec": "440"
+  },
+  "kind": "normal",
+  "lord damage range": "2633~2941",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Azure King Garrel",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Azure King Garrel",
+  "maxlv": "120",
+  "no": "1452",
+  "unitDisplayHomePosition_1W9CxaFK": "537,183,190,519",
+  "unitDisplayDetailPosition_6z54rgb3": "-182,52,1090,802",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "-21,203,590,434,1",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-120,-192,1000,736",
+  "unitDisplaySummonPosition_KC3Jk8Br": "-21,203,590,434,1",
+  "unitDisplayHpPosition_3BpHN6VD": "-2,91",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "15000",
+  "sellCaution": false,
+  "effectFrames": "17:501164:1,72:200991:1,73:501180:1,76:1381:1,82:200991:1,83:501180:1,86:1381:1,92:200991:1,93:501180:1,96:1381:1",
+  "evofrom": "",
+  "evointo": "51047",
+  "evozelcost": "3000000",
+  "evokarmacost": "1000000",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50394",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50123",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50122",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    }
+  ],
+  "freetext": ":''See Azure King Garrel (BFH) for his appearance in BRAVE FRONTIER HEROES''",
+  "basexp": "21",
+  "animation_attack": "159",
+  "animation_idle": "52",
+  "animation_move": "10",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "73, 78, 83, 88, 93, 98, 103",
+  "normal_distribute": "8, 10, 12, 14, 16, 18, 22",
+  "normal_totaldistr": "100",
+  "bb_frames": "73, 77, 81, 85, 89, 93, 97, 101, 105",
+  "bb_distribute": "7, 8, 9, 10, 11, 12, 13, 14, 16",
+  "bb_totaldistr": "100",
+  "sbb_frames": "73, 76, 79, 82, 85, 88, 91, 94, 97, 100, 103, 106, 109, 112, 115, 118, 121, 124",
+  "sbb_distribute": "3, 3, 3, 4, 4, 4, 5, 5, 5, 6, 6, 6, 7, 7, 7, 8, 8, 9",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "73, 76, 79, 82, 85, 88, 91, 94, 97, 100, 103, 106, 109, 112, 115, 118, 121, 124, 127, 130, 133",
+  "ubb_distribute": "3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 5, 5, 5, 6, 6, 6, 7, 7, 7, 8",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "2",
+  "sbb_effectdelay": "2",
+  "ubb_effectdelay": "2",
+  "description": "The king of a local kingdom under the jurisdiction of the Randall Empire. Long ago Garrel's daughter was kidnapped by a demon who sought her for the rare abilities she possessed. A famed and valiant hero from his youth, he did his best to protect his daughter and even requested the help of some old Summoner friends. Unfortunately, however, his strength alone was not enough to defeat the demon, and he lost his life. By the time the Summoners of Old had come to his aid, his daughter had already been taken by the demon.",
+  "summon": "Are you requesting my help...?<br>As long as you use my powers to fight unnecessary oppression, I shall aid you!",
+  "fusion": "You have my gratitude.<br>I must grow stronger in order to protect my country, as well as my family.",
+  "evolution": "",
+  "hp_base": "5099",
+  "atk_base": "2057",
+  "def_base": "1760",
+  "rec_base": "1631",
+  "hp_lord": "7328",
+  "atk_lord": "2828",
+  "def_lord": "2399",
+  "rec_lord": "2223",
+  "hp_anima": "8220",
+  "rec_anima": "1985",
+  "atk_breaker": "3066",
+  "def_breaker": "2161",
+  "def_guardian": "2637",
+  "rec_guardian": "2104",
+  "def_oracle": "2280",
+  "rec_oracle": "2580",
+  "hp_bonus": "1100",
+  "atk_bonus": "440",
+  "def_bonus": "440",
+  "rec_bonus": "440",
+  "lordonly": "",
+  "combo_hits": "7",
+  "normaldc": "35",
+  "ls": "Emperor's Holy Authority",
+  "lsdescription": "80% boost to Atk of Light types, 40% boost to Atk and max HP & 80% boost to Spark damage",
+  "bbdescription": "9 combo Light attack on all foes, hugely boosts Spark damage for 3 turns, enormously boosts critical hit rate for 3 turns & boosts Light types' Atk and Def for 3 turns",
+  "bbnote": "80% Spark, 60% Crit & 80% Atk, Def of Light types",
+  "bbtype": "Offense",
+  "bbhits": "9",
+  "bbaoe": "A",
+  "bbgauge": "26",
+  "bbdc": "9",
+  "bbmultiplier": "350",
+  "sbbdescription": "18 combo powerful Light attack on all foes (consecutive uses boost damage), fills own BB gauge to max, adds additional slight Spark damage for 3 turns, hugely boosts Spark damage for 3 turns & boosts Light types' Atk and Def for 3 turns",
+  "sbbnote": "200% boost to multiplier per use up to 3x, 80% Spark, 30% boost to own Spark damage & 80% Atk, Def of Light types",
+  "sbbtype": "Offense",
+  "sbbhits": "18",
+  "sbbaoe": "A",
+  "sbbgauge": "28",
+  "sbbdc": "18",
+  "sbbmultiplier": "420~1020",
   "ubbdescription": "21 combo massive Light attack on all foes, enormously boosts Spark damage and critical damage for 3 turns, enormously boosts BB gauge for 3 turns & hugely boosts Light types' Atk and Def for 5 turns",
   "ubbnote": "250% Spark, 300% Crit damage, fills 50 BC & 150% Atk, Def for Light types",
   "ubbtype": "Offense",
@@ -1306,8 +1528,6 @@
   "esitem": "",
   "esdescription": "Spark damage restores HP & 30% boost to Spark damage",
   "esnote": "Heals 200-300 HP",
-  "evofrom": "",
-  "evointo": "51047",
   "evomats1": "Light Mecha God",
   "evomats2": "Light Mecha God",
   "evomats3": "Miracle Totem",
@@ -1316,108 +1536,5 @@
   "evomats6": "Light Idol",
   "evomats7": "Light Idol",
   "evomats8": "Metal Mimic",
-  "evoitem": "",
-  "evozelcost": "3000000",
-  "stats": {
-    "_base": {
-      "atk": 2057,
-      "def": 1760,
-      "hp": 5099,
-      "rec": 1631
-    },
-    "_lord": {
-      "atk": 2828,
-      "def": 2399,
-      "hp": 7328,
-      "rec": 2223
-    },
-    "anima": {
-      "atk": 2828,
-      "def": 2399,
-      "hp max": 8518,
-      "hp min": 7923,
-      "rec max": 2104,
-      "rec min": 1866
-    },
-    "breaker": {
-      "atk max": 3185,
-      "atk min": 2947,
-      "def max": 2280,
-      "def min": 2042,
-      "hp": 7328,
-      "rec": 2223
-    },
-    "guardian": {
-      "atk": 2828,
-      "def max": 2756,
-      "def min": 2518,
-      "hp": 7328,
-      "rec max": 2223,
-      "rec min": 1985
-    },
-    "oracle": {
-      "atk": 2828,
-      "def max": 2399,
-      "def min": 2161,
-      "hp": 7328,
-      "rec max": 2699,
-      "rec min": 2461
-    }
-  },
-  "leader_skill": {
-    "desc": "80% boost to Atk of Light types, 40% boost to Atk and max HP & 80% boost to Spark damage",
-    "effects": [
-      {
-        "atk% buff": 40,
-        "hp% buff": 40,
-        "passive id": "1"
-      },
-      {
-        "atk% buff": 80,
-        "elements buffed": [
-          "light"
-        ],
-        "passive id": "2"
-      },
-      {
-        "damage% for spark": 80,
-        "passive id": "31"
-      }
-    ],
-    "id": "7457",
-    "name": "Emperor's Holy Authority"
-  },
-  "extra_skill": {
-    "desc": "Spark damage restores HP & 30% boost to Spark damage",
-    "effects": [
-      {
-        "conditions": [],
-        "damage% for spark": 30,
-        "passive id": "31",
-        "passive target": "self"
-      },
-      {
-        "conditions": [],
-        "heal on spark high": 300,
-        "heal on spark low": 200,
-        "heal on spark%": 100,
-        "passive id": "101",
-        "passive target": "self"
-      }
-    ],
-    "id": "22500",
-    "name": "Heroic Monarch",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "537,183,190,519",
-  "unitDisplayDetailPosition_6z54rgb3": "-182,52,1090,802",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "-21,203,590,434,1",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-120,-192,1000,736",
-  "unitDisplaySummonPosition_KC3Jk8Br": "-21,203,590,434,1",
-  "unitDisplayHpPosition_3BpHN6VD": "-2,91",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "15000",
-  "sellCaution": false,
-  "effectFrames": "17:501164:1,72:200991:1,73:501180:1,76:1381:1,82:200991:1,83:501180:1,86:1381:1,92:200991:1,93:501180:1,96:1381:1"
+  "evoitem": ""
 }

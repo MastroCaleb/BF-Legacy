@@ -1,63 +1,63 @@
 {
   "id": "20574",
-  "unitName": "Frozen Blade Colt",
-  "no": "886",
-  "element": "Water",
-  "rarity": "★★★★★",
-  "cost": "19",
-  "maxlv": "80",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "4",
-  "animation_attack": "162",
-  "animation_idle": "52",
-  "animation_move": "13",
-  "movespeed_attack": "0.0024",
-  "movespeed_skill": "0.0024",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "64, 68, 72, 76, 80, 84",
-  "normal_distribute": "50, 11, 8, 11, 8, 12",
-  "normal_totaldistr": "100",
-  "bb_frames": "10, 18, 26, 34, 42, 50, 58, 64, 68, 72, 76, 80, 84",
-  "bb_distribute": "5, 5, 5, 5, 5, 5, 5, 20, 9, 9, 9, 9, 9",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "description": "One of the sacred Guardians of Meirith, who worshipped the Holy Emperor Karna Masta in the La Veda Republic. He is the younger twin brother of Claire, who also served as a Guardian. Taking great pride in being chosen by the gods themselves, Colt was always abrasive, but said to be gentle to the defenseless. He had a strong dislike for Quaid, another one of the Guardians. However, it is speculated that these feelings came as a form of jealousy that sprouted from the deep bond he shared with his twin sister. Curiously, he was also known to dislike small animals.",
-  "summon": "You unworthy thing summoned me here?<br>I don't have a choice, so I'll stay,<br>but don't get any ideas.",
-  "fusion": "You don't need to tell me I'm strong.<br>I already knew that.<br>You got anything else to say?",
-  "evolution": "",
-  "hp_base": "3250",
-  "atk_base": "1400",
-  "def_base": "1300",
-  "rec_base": "1010",
-  "hp_lord": "4810",
-  "atk_lord": "1820",
-  "def_lord": "1690",
-  "rec_lord": "1313",
-  "hp_anima": "5402",
-  "rec_anima": "1155",
-  "atk_breaker": "1978",
-  "def_breaker": "1532",
-  "atk_guardian": "1662",
-  "def_guardian": "1848",
-  "rec_guardian": "1234",
-  "def_oracle": "1611",
-  "hp_oracle": "4573",
-  "rec_oracle": "1550",
-  "hp_bonus": "500",
-  "atk_bonus": "260",
-  "def_bonus": "140",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "6",
-  "normaldc": "12",
-  "ls": "Flashing Slash",
-  "lsdescription": "Large boost in critical hit damage",
-  "lsnote": "150% boost",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 1400,
+      "def": 1300,
+      "hp": 3250,
+      "rec": 1010
+    },
+    "_lord": {
+      "atk": 1820,
+      "def": 1690,
+      "hp": 4810,
+      "rec": 1313
+    },
+    "anima": {
+      "atk": 1820,
+      "def": 1690,
+      "hp max": 5600,
+      "hp min": 5205,
+      "rec max": 1234,
+      "rec min": 1076
+    },
+    "breaker": {
+      "atk max": 2057,
+      "atk min": 1899,
+      "def max": 1611,
+      "def min": 1453,
+      "hp": 4810,
+      "rec": 1313
+    },
+    "guardian": {
+      "atk": 1820,
+      "def max": 1927,
+      "def min": 1769,
+      "hp": 4810,
+      "rec max": 1313,
+      "rec min": 1155
+    },
+    "oracle": {
+      "atk": 1820,
+      "def max": 1690,
+      "def min": 1532,
+      "hp": 4810,
+      "rec max": 1629,
+      "rec min": 1471
+    }
+  },
+  "leader_skill": {
+    "desc": "Large boost in critical hit damage",
+    "effects": [
+      {
+        "crit multiplier%": 150.0,
+        "passive id": "34"
+      }
+    ],
+    "id": "2301",
+    "name": "Flashing Slash"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -336,96 +336,105 @@
     ],
     "name": "Glace Gleyre"
   },
-  "bbdescription": "13 combo powerful Water attack on all enemies & boosts critical hit rate for all allies for 3 turns",
-  "bbnote": "50% boost",
-  "bbtype": "Support/Offense",
-  "bbhits": "13",
-  "bbaoe": "A",
-  "bbgauge": "24",
-  "bbdc": "13",
-  "bbmultiplier": "240",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "es": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "20575",
-  "evomats1": "50354",
-  "evomats2": "20133",
-  "evomats3": "60144",
-  "evomats4": "60224",
-  "evomats5": "20191",
-  "evoitem": "",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 1400,
-      "def": 1300,
-      "hp": 3250,
-      "rec": 1010
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_under",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1820,
-      "def": 1690,
-      "hp": 4810,
-      "rec": 1313
+    {
+      "action": "skill",
+      "chance%": 30.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1820,
-      "def": 1690,
-      "hp max": 5600,
-      "hp min": 5205,
-      "rec max": 1234,
-      "rec min": 1076
+    {
+      "action": "attack",
+      "chance%": 70.0,
+      "target conditions": "hp_max",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 2057,
-      "atk min": 1899,
-      "def max": 1611,
-      "def min": 1453,
-      "hp": 4810,
-      "rec": 1313
+    {
+      "action": "attack",
+      "chance%": 50.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "guardian": {
-      "atk": 1820,
-      "def max": 1927,
-      "def min": 1769,
-      "hp": 4810,
-      "rec max": 1313,
-      "rec min": 1155
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 162
     },
-    "oracle": {
-      "atk": 1820,
-      "def max": 1690,
-      "def min": 1532,
-      "hp": 4810,
-      "rec max": 1629,
-      "rec min": 1471
+    "idle": {
+      "total number of frames": 52
+    },
+    "move": {
+      "total number of frames": 13
     }
   },
-  "leader_skill": {
-    "desc": "Large boost in critical hit damage",
-    "effects": [
-      {
-        "crit multiplier%": 150.0,
-        "passive id": "34"
-      }
+  "category": 20570,
+  "cost": "19",
+  "damage frames": {
+    "frame times": [
+      64,
+      68,
+      72,
+      76,
+      80,
+      84
     ],
-    "id": "2301",
-    "name": "Flashing Slash"
+    "hit dmg% distribution": [
+      50,
+      11,
+      8,
+      11,
+      8,
+      12
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 6
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "water",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 886,
+  "imp": {
+    "max atk": "260",
+    "max def": "140",
+    "max hp": "500",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "1694~1892",
+  "movement": {
+    "attack": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    }
+  },
+  "name": "Frozen Blade Colt",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Frozen Blade Colt",
+  "maxlv": "80",
+  "no": "886",
   "unitDisplayHomePosition_1W9CxaFK": "475,208,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-128,18,1060,832",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "38,234,530,416,0",
@@ -435,5 +444,113 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "58:122:1,62:122:1,66:122:1,70:122:1,74:122:1,78:122:1,10:200232:1,35:190:1,36:190:1,72:183:1,72:182:1,84:200032:1,80:200032:1"
+  "effectFrames": "58:122:1,62:122:1,66:122:1,70:122:1,74:122:1,78:122:1,10:200232:1,35:190:1,36:190:1,72:183:1,72:182:1,84:200032:1,80:200032:1",
+  "evofrom": "",
+  "evointo": "20575",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20191",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "162",
+  "animation_idle": "52",
+  "animation_move": "13",
+  "movespeed_attack": "0.0024",
+  "movespeed_skill": "0.0024",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "64, 68, 72, 76, 80, 84",
+  "normal_distribute": "50, 11, 8, 11, 8, 12",
+  "normal_totaldistr": "100",
+  "bb_frames": "10, 18, 26, 34, 42, 50, 58, 64, 68, 72, 76, 80, 84",
+  "bb_distribute": "5, 5, 5, 5, 5, 5, 5, 20, 9, 9, 9, 9, 9",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "description": "One of the sacred Guardians of Meirith, who worshipped the Holy Emperor Karna Masta in the La Veda Republic. He is the younger twin brother of Claire, who also served as a Guardian. Taking great pride in being chosen by the gods themselves, Colt was always abrasive, but said to be gentle to the defenseless. He had a strong dislike for Quaid, another one of the Guardians. However, it is speculated that these feelings came as a form of jealousy that sprouted from the deep bond he shared with his twin sister. Curiously, he was also known to dislike small animals.",
+  "summon": "You unworthy thing summoned me here?<br>I don't have a choice, so I'll stay,<br>but don't get any ideas.",
+  "fusion": "You don't need to tell me I'm strong.<br>I already knew that.<br>You got anything else to say?",
+  "evolution": "",
+  "hp_base": "3250",
+  "atk_base": "1400",
+  "def_base": "1300",
+  "rec_base": "1010",
+  "hp_lord": "4810",
+  "atk_lord": "1820",
+  "def_lord": "1690",
+  "rec_lord": "1313",
+  "hp_anima": "5402",
+  "rec_anima": "1155",
+  "atk_breaker": "1978",
+  "def_breaker": "1532",
+  "atk_guardian": "1662",
+  "def_guardian": "1848",
+  "rec_guardian": "1234",
+  "def_oracle": "1611",
+  "hp_oracle": "4573",
+  "rec_oracle": "1550",
+  "hp_bonus": "500",
+  "atk_bonus": "260",
+  "def_bonus": "140",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "6",
+  "normaldc": "12",
+  "ls": "Flashing Slash",
+  "lsdescription": "Large boost in critical hit damage",
+  "lsnote": "150% boost",
+  "lstype": "Attack",
+  "bbdescription": "13 combo powerful Water attack on all enemies & boosts critical hit rate for all allies for 3 turns",
+  "bbnote": "50% boost",
+  "bbtype": "Support/Offense",
+  "bbhits": "13",
+  "bbaoe": "A",
+  "bbgauge": "24",
+  "bbdc": "13",
+  "bbmultiplier": "240",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "es": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "20133",
+  "evomats3": "60144",
+  "evomats4": "60224",
+  "evomats5": "20191",
+  "evoitem": ""
 }

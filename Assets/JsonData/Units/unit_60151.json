@@ -1,62 +1,63 @@
 {
   "id": "60151",
-  "unitName": "Ninja Oboro",
-  "no": "218",
-  "element": "Dark",
-  "rarity": "★★",
-  "cost": "4",
-  "maxlv": "30",
-  "basexp": "15",
-  "gender": "M",
-  "ai": "3",
-  "animation_attack": "62",
-  "animation_idle": "52",
-  "animation_move": "7",
-  "movespeed_attack": "8",
-  "movespeed_skill": "8",
-  "speedtype_attack": "1",
-  "speedtype_skill": "1",
-  "movetype_attack": "2",
-  "movetype_skill": "2",
-  "normal_frames": "19, 20, 21",
-  "normal_distribute": "40, 35, 25",
-  "normal_totaldistr": "100",
-  "bb_frames": "19, 20, 21, 22",
-  "bb_distribute": "40, 30, 20, 10",
-  "bb_totaldistr": "100",
-  "description": "A ninja said to have lived in the ruined Bariura Empire. There was an incident where this man in a strange outfit suddenly appeared in the empire. A rumor spread that this strange person, known as a shinobi, had come from another world. However, afterwards, almost no one saw him again. Later, scholars surmised that this was because of his pride and dislike for standing out.",
-  "summon": "Are you my new master?<br>I have nothing more to say.<br>Just give me my mission.",
-  "fusion": "...<br>So you will give power to me,<br>one who lives in the dark?",
-  "evolution": "",
-  "hp_base": "1180",
-  "atk_base": "500",
-  "def_base": "430",
-  "rec_base": "450",
-  "hp_lord": "2259",
-  "atk_lord": "725",
-  "def_lord": "624",
-  "rec_lord": "720",
-  "hp_anima": "2477",
-  "rec_anima": "662",
-  "atk_breaker": "783",
-  "def_breaker": "566",
-  "atk_guardian": "667",
-  "def_guardian": "682",
-  "rec_guardian": "691",
-  "def_oracle": "595",
-  "hp_oracle": "2172",
-  "rec_oracle": "807",
-  "hp_bonus": "250",
-  "atk_bonus": "100",
-  "def_bonus": "100",
-  "rec_bonus": "100",
-  "lordonly": "",
-  "combo_hits": "3",
-  "normaldc": "6",
-  "ls": "Ares' Light",
-  "lsdescription": "Small boost in the BB Gauge fill rate",
-  "lsnote": "20% boost",
-  "lstype": "Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 500,
+      "def": 430,
+      "hp": 1180,
+      "rec": 450
+    },
+    "_lord": {
+      "atk": 725,
+      "def": 624,
+      "hp": 2259,
+      "rec": 720
+    },
+    "anima": {
+      "atk": 725,
+      "def": 624,
+      "hp max": 2549,
+      "hp min": 2404,
+      "rec max": 691,
+      "rec min": 633
+    },
+    "breaker": {
+      "atk max": 812,
+      "atk min": 754,
+      "def max": 595,
+      "def min": 537,
+      "hp": 2259,
+      "rec": 720
+    },
+    "guardian": {
+      "atk": 725,
+      "def max": 711,
+      "def min": 653,
+      "hp": 2259,
+      "rec max": 720,
+      "rec min": 662
+    },
+    "oracle": {
+      "atk": 725,
+      "def max": 624,
+      "def min": 566,
+      "hp": 2259,
+      "rec max": 836,
+      "rec min": 778
+    }
+  },
+  "leader_skill": {
+    "desc": "Small boost in the BB Gauge fill rate",
+    "effects": [
+      {
+        "bb gauge fill rate%": 20,
+        "passive id": "32"
+      }
+    ],
+    "id": "1800",
+    "name": "Ares' Light"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -287,94 +288,93 @@
     ],
     "name": "Ninjitsu: Blade Drop"
   },
-  "bbdescription": "4 combo Dark elemental attack on all enemies & probable Curse effect",
-  "bbnote": "45% chance",
-  "bbtype": "Offense",
-  "bbhits": "4",
-  "bbaoe": "A",
-  "bbgauge": "20",
-  "bbdc": "4",
-  "bbmultiplier": "85",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "60152",
-  "evomats1": "60121",
-  "evomats2": "60120",
-  "evomats3": "60120",
-  "evomats4": "60120",
-  "evomats5": "60142",
-  "evozelcost": "50000",
-  "stats": {
-    "_base": {
-      "atk": 500,
-      "def": 430,
-      "hp": 1180,
-      "rec": 450
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 725,
-      "def": 624,
-      "hp": 2259,
-      "rec": 720
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 725,
-      "def": 624,
-      "hp max": 2549,
-      "hp min": 2404,
-      "rec max": 691,
-      "rec min": 633
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 812,
-      "atk min": 754,
-      "def max": 595,
-      "def min": 537,
-      "hp": 2259,
-      "rec": 720
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 62
     },
-    "guardian": {
-      "atk": 725,
-      "def max": 711,
-      "def min": 653,
-      "hp": 2259,
-      "rec max": 720,
-      "rec min": 662
+    "idle": {
+      "total number of frames": 52
     },
-    "oracle": {
-      "atk": 725,
-      "def max": 624,
-      "def min": 566,
-      "hp": 2259,
-      "rec max": 836,
-      "rec min": 778
+    "move": {
+      "total number of frames": 7
     }
   },
-  "leader_skill": {
-    "desc": "Small boost in the BB Gauge fill rate",
-    "effects": [
-      {
-        "bb gauge fill rate%": 20,
-        "passive id": "32"
-      }
+  "category": 60150,
+  "cost": "4",
+  "damage frames": {
+    "frame times": [
+      19,
+      20,
+      21
     ],
-    "id": "1800",
-    "name": "Ares' Light"
+    "hit dmg% distribution": [
+      40,
+      35,
+      25
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 3
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "dark",
+  "exp_pattern": 15,
+  "gender": "male",
+  "getting type": "not eligible for achievement",
+  "guide_id": 218,
+  "imp": {
+    "max atk": "100",
+    "max def": "100",
+    "max hp": "250",
+    "max rec": "100"
+  },
+  "kind": "normal",
+  "lord damage range": "674~754",
+  "movement": {
+    "attack": {
+      "move speed": 8,
+      "move speed type": "1",
+      "move type": "2"
+    },
+    "skill": {
+      "move speed": 8,
+      "move speed type": "1",
+      "move type": "2"
+    }
+  },
+  "name": "Ninja Oboro",
+  "rarity": "2",
+  "sell caution": false,
+  "unitName": "Ninja Oboro",
+  "maxlv": "30",
+  "no": "218",
   "unitDisplayHomePosition_1W9CxaFK": "150,83,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "170,140,660,610",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "105,332,480,302,0",
@@ -384,5 +384,100 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "300",
   "sellCaution": false,
-  "effectFrames": "13:126:1,14:126:1,15:126:1"
+  "effectFrames": "13:126:1,14:126:1,15:126:1",
+  "evofrom": "",
+  "evointo": "60152",
+  "evozelcost": "50000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "60121",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60120",
+      "count": 3
+    },
+    {
+      "type": "1",
+      "id": "60142",
+      "count": 1
+    }
+  ],
+  "basexp": "15",
+  "animation_attack": "62",
+  "animation_idle": "52",
+  "animation_move": "7",
+  "movespeed_attack": "8",
+  "movespeed_skill": "8",
+  "speedtype_attack": "1",
+  "speedtype_skill": "1",
+  "movetype_attack": "2",
+  "movetype_skill": "2",
+  "normal_frames": "19, 20, 21",
+  "normal_distribute": "40, 35, 25",
+  "normal_totaldistr": "100",
+  "bb_frames": "19, 20, 21, 22",
+  "bb_distribute": "40, 30, 20, 10",
+  "bb_totaldistr": "100",
+  "description": "A ninja said to have lived in the ruined Bariura Empire. There was an incident where this man in a strange outfit suddenly appeared in the empire. A rumor spread that this strange person, known as a shinobi, had come from another world. However, afterwards, almost no one saw him again. Later, scholars surmised that this was because of his pride and dislike for standing out.",
+  "summon": "Are you my new master?<br>I have nothing more to say.<br>Just give me my mission.",
+  "fusion": "...<br>So you will give power to me,<br>one who lives in the dark?",
+  "evolution": "",
+  "hp_base": "1180",
+  "atk_base": "500",
+  "def_base": "430",
+  "rec_base": "450",
+  "hp_lord": "2259",
+  "atk_lord": "725",
+  "def_lord": "624",
+  "rec_lord": "720",
+  "hp_anima": "2477",
+  "rec_anima": "662",
+  "atk_breaker": "783",
+  "def_breaker": "566",
+  "atk_guardian": "667",
+  "def_guardian": "682",
+  "rec_guardian": "691",
+  "def_oracle": "595",
+  "hp_oracle": "2172",
+  "rec_oracle": "807",
+  "hp_bonus": "250",
+  "atk_bonus": "100",
+  "def_bonus": "100",
+  "rec_bonus": "100",
+  "lordonly": "",
+  "combo_hits": "3",
+  "normaldc": "6",
+  "ls": "Ares' Light",
+  "lsdescription": "Small boost in the BB Gauge fill rate",
+  "lsnote": "20% boost",
+  "lstype": "Brave Burst",
+  "bbdescription": "4 combo Dark elemental attack on all enemies & probable Curse effect",
+  "bbnote": "45% chance",
+  "bbtype": "Offense",
+  "bbhits": "4",
+  "bbaoe": "A",
+  "bbgauge": "20",
+  "bbdc": "4",
+  "bbmultiplier": "85",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "60121",
+  "evomats2": "60120",
+  "evomats3": "60120",
+  "evomats4": "60120",
+  "evomats5": "60142"
 }

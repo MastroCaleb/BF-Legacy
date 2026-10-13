@@ -1,68 +1,100 @@
 {
   "id": "61046",
-  "unitName": "Noble Links Johan",
-  "no": "1497",
-  "element": "Dark",
-  "rarity": "★★★★★★★",
-  "cost": "44",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "116",
-  "animation_idle": "52",
-  "animation_move": "3",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "11, 27, 43, 71, 75, 79, 83, 87",
-  "normal_distribute": "10, 10, 10, 16, 15, 14, 13, 12",
-  "normal_totaldistr": "100",
-  "bb_frames": "11, 17, 27, 33, 43, 49, 71, 75, 79, 83, 87, 91, 95",
-  "bb_distribute": "6, 4, 6, 4, 6, 4, 13, 12, 11, 10, 9, 8, 7",
-  "bb_totaldistr": "100",
-  "sbb_frames": "11, 14, 17, 27, 30, 33, 43, 46, 49, 71, 75, 79, 83, 87, 91, 95, 99",
-  "sbb_distribute": "5, 3, 2, 5, 3, 2, 5, 3, 2, 13, 12, 10, 9, 8, 7, 6, 5",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "11, 14, 17, 27, 30, 33, 43, 46, 49, 52, 71, 75, 79, 83, 87, 91, 95, 99, 103, 107",
-  "ubb_distribute": "4, 3, 2, 4, 3, 2, 4, 3, 3, 2, 11, 10, 9, 8, 7, 6, 5, 5, 5, 4",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "1",
-  "ubb_effectdelay": "1",
-  "description": "The most trusted staff officer of the Randall Empire's first emperor. Identifying the emperor's talents before his rise, Johan spread word that he was the descendant of a hero who had led the people of Elgaia, which helped win unprecedented support. After the empire's founding, Johan laid the foundations for its government and the current system of aristocracy. However, he also set about permanently eliminating all obstacles to his own personal ideals, and even attempted to execute the decorated leader of the volunteer army. This earned him widespread animosity, and he was assassinated by an unknown individual with his ambitions still unfulfilled.",
-  "summon": "It seems our interests are aligned. I will keep getting my hands dirty in order to form a perfect nation!",
-  "fusion": "This technique for using talented people... It's so logical, so breathtaking! There's a lesson in government to be learned from this.",
-  "evolution": "",
-  "hp_base": "5139",
-  "atk_base": "1937",
-  "def_base": "1979",
-  "rec_base": "1593",
-  "hp_lord": "7320",
-  "atk_lord": "2621",
-  "def_lord": "2681",
-  "rec_lord": "2151",
-  "hp_anima": "8212",
-  "rec_anima": "1913",
-  "atk_breaker": "2859",
-  "def_breaker": "2443",
-  "def_guardian": "2919",
-  "rec_guardian": "2032",
-  "def_oracle": "2562",
-  "rec_oracle": "2508",
-  "hp_bonus": "1000",
-  "atk_bonus": "300",
-  "def_bonus": "600",
-  "rec_bonus": "400",
-  "lordonly": "",
-  "combo_hits": "8",
-  "normaldc": "32",
-  "ls": "Divine Rule",
-  "lsdescription": "30% boost to Def, max HP & damage taken boosts BB gauge and may restore HP",
-  "lsnote": "Fills 2-4 BC & 25% chance to heal 20% damage",
+  "stats": {
+    "_base": {
+      "atk": 1937,
+      "def": 1979,
+      "hp": 5139,
+      "rec": 1593
+    },
+    "_lord": {
+      "atk": 2621,
+      "def": 2681,
+      "hp": 7320,
+      "rec": 2151
+    },
+    "anima": {
+      "atk": 2621,
+      "def": 2681,
+      "hp max": 8510,
+      "hp min": 7915,
+      "rec max": 2032,
+      "rec min": 1794
+    },
+    "breaker": {
+      "atk max": 2978,
+      "atk min": 2740,
+      "def max": 2562,
+      "def min": 2324,
+      "hp": 7320,
+      "rec": 2151
+    },
+    "guardian": {
+      "atk": 2621,
+      "def max": 3038,
+      "def min": 2800,
+      "hp": 7320,
+      "rec max": 2151,
+      "rec min": 1913
+    },
+    "oracle": {
+      "atk": 2621,
+      "def max": 2681,
+      "def min": 2443,
+      "hp": 7320,
+      "rec max": 2627,
+      "rec min": 2389
+    }
+  },
+  "leader_skill": {
+    "desc": "30% boost to Def, max HP & damage taken boosts BB gauge and may restore HP",
+    "effects": [
+      {
+        "def% buff": 30,
+        "hp% buff": 30,
+        "passive id": "1"
+      },
+      {
+        "bc fill when attacked high": 4,
+        "bc fill when attacked low": 2,
+        "bc fill when attacked%": 100,
+        "passive id": "25"
+      },
+      {
+        "dmg% to hp% when attacked chance%": 25,
+        "dmg% to hp% when attacked high": 20,
+        "dmg% to hp% when attacked low": 20,
+        "passive id": "24"
+      }
+    ],
+    "id": "4353",
+    "name": "Divine Rule"
+  },
+  "extra_skill": {
+    "desc": "Negates Def ignoring effect & slight damage reduction for 2 turns when damage taken has exceeded certain amount",
+    "effects": [
+      {
+        "conditions": [],
+        "ignore def resist chance%": 100,
+        "passive id": "92",
+        "passive target": "self"
+      },
+      {
+        "buff": {
+          "buff turns (36)": "1",
+          "dmg reduction% buff": 20
+        },
+        "conditions": [],
+        "damage threshold buff activation": 5000,
+        "passive id": "78",
+        "passive target": "self"
+      }
+    ],
+    "id": "25900",
+    "name": "Icy Gambit",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -535,14 +567,6 @@
     ],
     "name": "Serpent Formation"
   },
-  "bbdescription": "13 combo Dark attack on all foes, considerably boosts OD gauge fill rate for 3 turns, damage taken boosts BB gauge for 3 turns & 50% damage reduction for 1 turn",
-  "bbnote": "20% OD fill rate & fills 3-6 BC",
-  "bbtype": "Offense",
-  "bbhits": "13",
-  "bbaoe": "A",
-  "bbgauge": "27",
-  "bbdc": "13",
-  "bbmultiplier": "290",
   "sbb": {
     "damage frames": [
       {
@@ -1115,14 +1139,6 @@
     ],
     "name": "Grand Decree"
   },
-  "sbbdescription": "17 combo powerful Dark attack on all foes, considerably boosts OD gauge fill rate for 3 turns, considerably boosts BC efficacy for 3 turns, damage taken boosts BB gauge for 3 turns & 50% damage reduction for 1 turn",
-  "sbbnote": "20% OD fill rate, 40% BC efficacy & fills 3-6 BC",
-  "sbbtype": "Offense",
-  "sbbhits": "17",
-  "sbbaoe": "A",
-  "sbbgauge": "29",
-  "sbbdc": "17",
-  "sbbmultiplier": "480",
   "ubb": {
     "damage frames": [
       {
@@ -1258,6 +1274,217 @@
     ],
     "name": "Epoch's Fate"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 116
+    },
+    "idle": {
+      "total number of frames": 52
+    },
+    "move": {
+      "total number of frames": 3
+    }
+  },
+  "category": 61040,
+  "cost": "44",
+  "damage frames": {
+    "frame times": [
+      11,
+      27,
+      43,
+      71,
+      75,
+      79,
+      83,
+      87
+    ],
+    "hit dmg% distribution": [
+      10,
+      10,
+      10,
+      16,
+      15,
+      14,
+      13,
+      12
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 8
+  },
+  "drop check count": 4,
+  "element": "dark",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 1497,
+  "imp": {
+    "max atk": "300",
+    "max def": "600",
+    "max hp": "1000",
+    "max rec": "400"
+  },
+  "kind": "normal",
+  "lord damage range": "2439~2725",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Noble Links Johan",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Noble Links Johan",
+  "maxlv": "120",
+  "no": "1497",
+  "unitDisplayHomePosition_1W9CxaFK": "345,45,174,475",
+  "unitDisplayDetailPosition_6z54rgb3": "-10,154,900,679",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "70,253,520,393,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "4,-102,870,657",
+  "unitDisplaySummonPosition_KC3Jk8Br": "70,253,520,393,0",
+  "unitDisplayHpPosition_3BpHN6VD": "1,14",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "15000",
+  "sellCaution": false,
+  "effectFrames": "5:120:1,21:120:1,37:120:1,65:120:1,69:120:1,73:120:1,77:120:1,81:120:1,3:601711:1,75:400541:1,11:601024:1,27:601024:1,43:601024:1,71:400364:1,80:600210:1",
+  "evofrom": "",
+  "evointo": "61047",
+  "evozelcost": "3000000",
+  "evokarmacost": "1000000",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "60344",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60123",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60201",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60122",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "116",
+  "animation_idle": "52",
+  "animation_move": "3",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "11, 27, 43, 71, 75, 79, 83, 87",
+  "normal_distribute": "10, 10, 10, 16, 15, 14, 13, 12",
+  "normal_totaldistr": "100",
+  "bb_frames": "11, 17, 27, 33, 43, 49, 71, 75, 79, 83, 87, 91, 95",
+  "bb_distribute": "6, 4, 6, 4, 6, 4, 13, 12, 11, 10, 9, 8, 7",
+  "bb_totaldistr": "100",
+  "sbb_frames": "11, 14, 17, 27, 30, 33, 43, 46, 49, 71, 75, 79, 83, 87, 91, 95, 99",
+  "sbb_distribute": "5, 3, 2, 5, 3, 2, 5, 3, 2, 13, 12, 10, 9, 8, 7, 6, 5",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "11, 14, 17, 27, 30, 33, 43, 46, 49, 52, 71, 75, 79, 83, 87, 91, 95, 99, 103, 107",
+  "ubb_distribute": "4, 3, 2, 4, 3, 2, 4, 3, 3, 2, 11, 10, 9, 8, 7, 6, 5, 5, 5, 4",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "1",
+  "ubb_effectdelay": "1",
+  "description": "The most trusted staff officer of the Randall Empire's first emperor. Identifying the emperor's talents before his rise, Johan spread word that he was the descendant of a hero who had led the people of Elgaia, which helped win unprecedented support. After the empire's founding, Johan laid the foundations for its government and the current system of aristocracy. However, he also set about permanently eliminating all obstacles to his own personal ideals, and even attempted to execute the decorated leader of the volunteer army. This earned him widespread animosity, and he was assassinated by an unknown individual with his ambitions still unfulfilled.",
+  "summon": "It seems our interests are aligned. I will keep getting my hands dirty in order to form a perfect nation!",
+  "fusion": "This technique for using talented people... It's so logical, so breathtaking! There's a lesson in government to be learned from this.",
+  "evolution": "",
+  "hp_base": "5139",
+  "atk_base": "1937",
+  "def_base": "1979",
+  "rec_base": "1593",
+  "hp_lord": "7320",
+  "atk_lord": "2621",
+  "def_lord": "2681",
+  "rec_lord": "2151",
+  "hp_anima": "8212",
+  "rec_anima": "1913",
+  "atk_breaker": "2859",
+  "def_breaker": "2443",
+  "def_guardian": "2919",
+  "rec_guardian": "2032",
+  "def_oracle": "2562",
+  "rec_oracle": "2508",
+  "hp_bonus": "1000",
+  "atk_bonus": "300",
+  "def_bonus": "600",
+  "rec_bonus": "400",
+  "lordonly": "",
+  "combo_hits": "8",
+  "normaldc": "32",
+  "ls": "Divine Rule",
+  "lsdescription": "30% boost to Def, max HP & damage taken boosts BB gauge and may restore HP",
+  "lsnote": "Fills 2-4 BC & 25% chance to heal 20% damage",
+  "bbdescription": "13 combo Dark attack on all foes, considerably boosts OD gauge fill rate for 3 turns, damage taken boosts BB gauge for 3 turns & 50% damage reduction for 1 turn",
+  "bbnote": "20% OD fill rate & fills 3-6 BC",
+  "bbtype": "Offense",
+  "bbhits": "13",
+  "bbaoe": "A",
+  "bbgauge": "27",
+  "bbdc": "13",
+  "bbmultiplier": "290",
+  "sbbdescription": "17 combo powerful Dark attack on all foes, considerably boosts OD gauge fill rate for 3 turns, considerably boosts BC efficacy for 3 turns, damage taken boosts BB gauge for 3 turns & 50% damage reduction for 1 turn",
+  "sbbnote": "20% OD fill rate, 40% BC efficacy & fills 3-6 BC",
+  "sbbtype": "Offense",
+  "sbbhits": "17",
+  "sbbaoe": "A",
+  "sbbgauge": "29",
+  "sbbdc": "17",
+  "sbbmultiplier": "480",
   "ubbdescription": "20 combo massive Dark attack on all foes, enormously boosts OD gauge fill rate for 1 turn, 75% damage reduction for 3 turns & damage taken enormously boosts BB gauge for 3 turns",
   "ubbnote": "300% OD fill rate & fills 50 BC",
   "ubbtype": "Offense",
@@ -1270,8 +1497,6 @@
   "esitem": "",
   "esdescription": "Negates Def ignoring effect & slight damage reduction for 2 turns when damage taken has exceeded certain amount",
   "esnote": "20% reduction after 5,000 damage",
-  "evofrom": "",
-  "evointo": "61047",
   "evomats1": "Dark Mecha God",
   "evomats2": "Dark Mecha God",
   "evomats3": "Miracle Totem",
@@ -1280,111 +1505,5 @@
   "evomats6": "Dark Idol",
   "evomats7": "Dragon Mimic",
   "evomats8": "Metal Mimic",
-  "evoitem": "",
-  "evozelcost": "3000000",
-  "stats": {
-    "_base": {
-      "atk": 1937,
-      "def": 1979,
-      "hp": 5139,
-      "rec": 1593
-    },
-    "_lord": {
-      "atk": 2621,
-      "def": 2681,
-      "hp": 7320,
-      "rec": 2151
-    },
-    "anima": {
-      "atk": 2621,
-      "def": 2681,
-      "hp max": 8510,
-      "hp min": 7915,
-      "rec max": 2032,
-      "rec min": 1794
-    },
-    "breaker": {
-      "atk max": 2978,
-      "atk min": 2740,
-      "def max": 2562,
-      "def min": 2324,
-      "hp": 7320,
-      "rec": 2151
-    },
-    "guardian": {
-      "atk": 2621,
-      "def max": 3038,
-      "def min": 2800,
-      "hp": 7320,
-      "rec max": 2151,
-      "rec min": 1913
-    },
-    "oracle": {
-      "atk": 2621,
-      "def max": 2681,
-      "def min": 2443,
-      "hp": 7320,
-      "rec max": 2627,
-      "rec min": 2389
-    }
-  },
-  "leader_skill": {
-    "desc": "30% boost to Def, max HP & damage taken boosts BB gauge and may restore HP",
-    "effects": [
-      {
-        "def% buff": 30,
-        "hp% buff": 30,
-        "passive id": "1"
-      },
-      {
-        "bc fill when attacked high": 4,
-        "bc fill when attacked low": 2,
-        "bc fill when attacked%": 100,
-        "passive id": "25"
-      },
-      {
-        "dmg% to hp% when attacked chance%": 25,
-        "dmg% to hp% when attacked high": 20,
-        "dmg% to hp% when attacked low": 20,
-        "passive id": "24"
-      }
-    ],
-    "id": "4353",
-    "name": "Divine Rule"
-  },
-  "extra_skill": {
-    "desc": "Negates Def ignoring effect & slight damage reduction for 2 turns when damage taken has exceeded certain amount",
-    "effects": [
-      {
-        "conditions": [],
-        "ignore def resist chance%": 100,
-        "passive id": "92",
-        "passive target": "self"
-      },
-      {
-        "buff": {
-          "buff turns (36)": "1",
-          "dmg reduction% buff": 20
-        },
-        "conditions": [],
-        "damage threshold buff activation": 5000,
-        "passive id": "78",
-        "passive target": "self"
-      }
-    ],
-    "id": "25900",
-    "name": "Icy Gambit",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "345,45,174,475",
-  "unitDisplayDetailPosition_6z54rgb3": "-10,154,900,679",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "70,253,520,393,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "4,-102,870,657",
-  "unitDisplaySummonPosition_KC3Jk8Br": "70,253,520,393,0",
-  "unitDisplayHpPosition_3BpHN6VD": "1,14",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "15000",
-  "sellCaution": false,
-  "effectFrames": "5:120:1,21:120:1,37:120:1,65:120:1,69:120:1,73:120:1,77:120:1,81:120:1,3:601711:1,75:400541:1,11:601024:1,27:601024:1,43:601024:1,71:400364:1,80:600210:1"
+  "evoitem": ""
 }

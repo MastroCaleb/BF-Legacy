@@ -1,62 +1,63 @@
 {
   "id": "10052",
-  "unitName": "Hobgoblin",
-  "no": "518",
-  "element": "Fire",
-  "rarity": "★★★",
-  "cost": "6",
-  "maxlv": "40",
-  "basexp": "10",
-  "gender": "N",
-  "ai": "4",
-  "animation_attack": "78",
-  "animation_idle": "52",
-  "animation_move": "44",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "40, 44, 48",
-  "normal_distribute": "40, 30, 30",
-  "normal_totaldistr": "100",
-  "bb_frames": "40, 42, 44, 46, 48, 50",
-  "bb_distribute": "15, 16, 15, 16, 18, 20",
-  "bb_totaldistr": "100",
-  "description": "Though Goblins usually gather in groups, there are a rare few highly able ones that go off on their own. These independent few actively perform dangerous feats in order to grow stronger, and they've even been observed wandering about to train. Oddly enough, there are few reports of these monsters causing damage, and despite being the wicked Goblins they are, some suggest that through self-discipline it's possible they've learned how to conduct themselves.",
-  "summon": "You're what they call a Summoner?<br>Take me with you!<br>I grow stronger by the minute!",
-  "fusion": "Mwa ha ha ha!<br>That's nice!<br>How easy it is to grow strong!",
-  "evolution": "What a bother it is to be<br>surrounded by such weaklings.<br>I must grow stronger!",
-  "hp_base": "2142",
-  "atk_base": "773",
-  "def_base": "495",
-  "rec_base": "343",
-  "hp_lord": "3427",
-  "atk_lord": "1051",
-  "def_lord": "669",
-  "rec_lord": "463",
-  "hp_anima": "3720",
-  "rec_anima": "385",
-  "atk_breaker": "1129",
-  "def_breaker": "591",
-  "atk_guardian": "973",
-  "def_guardian": "747",
-  "rec_guardian": "424",
-  "def_oracle": "630",
-  "hp_oracle": "3310",
-  "rec_oracle": "580",
-  "hp_bonus": "300",
-  "atk_bonus": "120",
-  "def_bonus": "120",
-  "rec_bonus": "120",
-  "lordonly": "",
-  "combo_hits": "3",
-  "normaldc": "6",
-  "ls": "Fighting Light",
-  "lsdescription": "Small boost in Battle Crystals produced during Spark",
-  "lsnote": "30% boost",
-  "lstype": "Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 773,
+      "def": 495,
+      "hp": 2142,
+      "rec": 343
+    },
+    "_lord": {
+      "atk": 1051,
+      "def": 669,
+      "hp": 3427,
+      "rec": 463
+    },
+    "anima": {
+      "atk": 1051,
+      "def": 669,
+      "hp max": 3817,
+      "hp min": 3622,
+      "rec max": 424,
+      "rec min": 346
+    },
+    "breaker": {
+      "atk max": 1168,
+      "atk min": 1090,
+      "def max": 630,
+      "def min": 552,
+      "hp": 3427,
+      "rec": 463
+    },
+    "guardian": {
+      "atk": 1051,
+      "def max": 786,
+      "def min": 708,
+      "hp": 3427,
+      "rec max": 463,
+      "rec min": 385
+    },
+    "oracle": {
+      "atk": 1051,
+      "def max": 669,
+      "def min": 591,
+      "hp": 3427,
+      "rec max": 619,
+      "rec min": 541
+    }
+  },
+  "leader_skill": {
+    "desc": "Small boost in Battle Crystals produced during Spark",
+    "effects": [
+      {
+        "bc drop% for spark": 30,
+        "passive id": "31"
+      }
+    ],
+    "id": "1400",
+    "name": "Fighting Light"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -229,95 +230,99 @@
     ],
     "name": "Goblin Crush"
   },
-  "bbdescription": "6 combo Fire elemental attack on single enemy & boost to BC drop rate",
-  "bbnote": "50% boost to self",
-  "bbtype": "Support/Offense",
-  "bbhits": "6",
-  "bbaoe": "1",
-  "bbgauge": "10",
-  "bbdc": "30",
-  "bbmultiplier": "180",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "10051",
-  "evointo": "",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 773,
-      "def": 495,
-      "hp": 2142,
-      "rec": 343
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_under",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1051,
-      "def": 669,
-      "hp": 3427,
-      "rec": 463
+    {
+      "action": "skill",
+      "chance%": 30.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1051,
-      "def": 669,
-      "hp max": 3817,
-      "hp min": 3622,
-      "rec max": 424,
-      "rec min": 346
+    {
+      "action": "attack",
+      "chance%": 70.0,
+      "target conditions": "hp_max",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 1168,
-      "atk min": 1090,
-      "def max": 630,
-      "def min": 552,
-      "hp": 3427,
-      "rec": 463
+    {
+      "action": "attack",
+      "chance%": 50.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "guardian": {
-      "atk": 1051,
-      "def max": 786,
-      "def min": 708,
-      "hp": 3427,
-      "rec max": 463,
-      "rec min": 385
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 78
     },
-    "oracle": {
-      "atk": 1051,
-      "def max": 669,
-      "def min": 591,
-      "hp": 3427,
-      "rec max": 619,
-      "rec min": 541
+    "idle": {
+      "total number of frames": 52
+    },
+    "move": {
+      "total number of frames": 44
     }
   },
-  "leader_skill": {
-    "desc": "Small boost in Battle Crystals produced during Spark",
-    "effects": [
-      {
-        "bc drop% for spark": 30,
-        "passive id": "31"
-      }
+  "category": 10050,
+  "cost": "6",
+  "damage frames": {
+    "frame times": [
+      40,
+      44,
+      48
     ],
-    "id": "1400",
-    "name": "Fighting Light"
+    "hit dmg% distribution": [
+      40,
+      30,
+      30
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 3
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "fire",
+  "exp_pattern": 10,
+  "gender": "other",
+  "getting type": "farmable",
+  "guide_id": 518,
+  "imp": {
+    "max atk": "120",
+    "max def": "120",
+    "max hp": "300",
+    "max rec": "120"
+  },
+  "kind": "normal",
+  "lord damage range": "977~1093",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Hobgoblin",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "Hobgoblin",
+  "maxlv": "40",
+  "no": "518",
   "unitDisplayHomePosition_1W9CxaFK": "179,85,180,491",
   "unitDisplayDetailPosition_6z54rgb3": "120,154,600,640",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "74,348,365,286,0",
@@ -327,5 +332,85 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "1000",
   "sellCaution": false,
-  "effectFrames": "36:121:1,40:121:1,44:121:1,44:100081:1"
+  "effectFrames": "36:121:1,40:121:1,44:121:1,44:100081:1",
+  "evofrom": "10051",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "10",
+  "animation_attack": "78",
+  "animation_idle": "52",
+  "animation_move": "44",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "40, 44, 48",
+  "normal_distribute": "40, 30, 30",
+  "normal_totaldistr": "100",
+  "bb_frames": "40, 42, 44, 46, 48, 50",
+  "bb_distribute": "15, 16, 15, 16, 18, 20",
+  "bb_totaldistr": "100",
+  "description": "Though Goblins usually gather in groups, there are a rare few highly able ones that go off on their own. These independent few actively perform dangerous feats in order to grow stronger, and they've even been observed wandering about to train. Oddly enough, there are few reports of these monsters causing damage, and despite being the wicked Goblins they are, some suggest that through self-discipline it's possible they've learned how to conduct themselves.",
+  "summon": "You're what they call a Summoner?<br>Take me with you!<br>I grow stronger by the minute!",
+  "fusion": "Mwa ha ha ha!<br>That's nice!<br>How easy it is to grow strong!",
+  "evolution": "What a bother it is to be<br>surrounded by such weaklings.<br>I must grow stronger!",
+  "hp_base": "2142",
+  "atk_base": "773",
+  "def_base": "495",
+  "rec_base": "343",
+  "hp_lord": "3427",
+  "atk_lord": "1051",
+  "def_lord": "669",
+  "rec_lord": "463",
+  "hp_anima": "3720",
+  "rec_anima": "385",
+  "atk_breaker": "1129",
+  "def_breaker": "591",
+  "atk_guardian": "973",
+  "def_guardian": "747",
+  "rec_guardian": "424",
+  "def_oracle": "630",
+  "hp_oracle": "3310",
+  "rec_oracle": "580",
+  "hp_bonus": "300",
+  "atk_bonus": "120",
+  "def_bonus": "120",
+  "rec_bonus": "120",
+  "lordonly": "",
+  "combo_hits": "3",
+  "normaldc": "6",
+  "ls": "Fighting Light",
+  "lsdescription": "Small boost in Battle Crystals produced during Spark",
+  "lsnote": "30% boost",
+  "lstype": "Brave Burst",
+  "bbdescription": "6 combo Fire elemental attack on single enemy & boost to BC drop rate",
+  "bbnote": "50% boost to self",
+  "bbtype": "Support/Offense",
+  "bbhits": "6",
+  "bbaoe": "1",
+  "bbgauge": "10",
+  "bbdc": "30",
+  "bbmultiplier": "180",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "",
+  "evomats2": "",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": "",
+  "evoitem": ""
 }

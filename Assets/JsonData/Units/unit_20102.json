@@ -1,61 +1,63 @@
 {
   "id": "20102",
-  "unitName": "Knight Sergio",
-  "no": "125",
-  "element": "Water",
-  "rarity": "★★★",
-  "cost": "5",
-  "maxlv": "40",
-  "basexp": "15",
-  "gender": "M",
-  "ai": "3",
-  "animation_attack": "73",
-  "animation_idle": "42",
-  "animation_move": "21",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "18, 33",
-  "normal_distribute": "60, 40",
-  "normal_totaldistr": "100",
-  "bb_frames": "18, 33, 70, 75, 80",
-  "bb_distribute": "40, 30, 10, 10, 10",
-  "bb_totaldistr": "100",
-  "description": "A knight from the ruined Sama Kingdom. Sergio was isolated as a heretic for secretly training by himself in the Cavalry Corps, whose aim was group combat. However, his skills far surpassed the others, and he was reluctantly made the leader of a commando unit. His own unit feared him, and called him the Ice Knight after the cold way he cuts down his enemies.",
-  "summon": "So you need my blade?<br>Hmm, alright.<br>Stay behind me. I'll defend you.",
-  "fusion": "What does power mean<br>to you??<br>Show me your answer in combat.",
-  "evolution": "",
-  "hp_base": "2050",
-  "atk_base": "600",
-  "def_base": "600",
-  "rec_base": "580",
-  "hp_lord": "3375",
-  "atk_lord": "900",
-  "def_lord": "816",
-  "rec_lord": "870",
-  "hp_anima": "3668",
-  "rec_anima": "792",
-  "atk_breaker": "978",
-  "def_breaker": "738",
-  "atk_guardian": "822",
-  "def_guardian": "894",
-  "rec_guardian": "831",
-  "def_oracle": "777",
-  "hp_oracle": "3258",
-  "rec_oracle": "987",
-  "hp_bonus": "300",
-  "atk_bonus": "120",
-  "def_bonus": "120",
-  "rec_bonus": "120",
-  "lordonly": "",
-  "combo_hits": "2",
-  "normaldc": "6",
-  "ls": "Valiant Power",
-  "lsdescription": "10% boost to Atk Power of all types",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 600,
+      "def": 600,
+      "hp": 2050,
+      "rec": 580
+    },
+    "_lord": {
+      "atk": 900,
+      "def": 816,
+      "hp": 3375,
+      "rec": 870
+    },
+    "anima": {
+      "atk": 900,
+      "def": 816,
+      "hp max": 3765,
+      "hp min": 3570,
+      "rec max": 831,
+      "rec min": 753
+    },
+    "breaker": {
+      "atk max": 1017,
+      "atk min": 939,
+      "def max": 777,
+      "def min": 699,
+      "hp": 3375,
+      "rec": 870
+    },
+    "guardian": {
+      "atk": 900,
+      "def max": 933,
+      "def min": 855,
+      "hp": 3375,
+      "rec max": 870,
+      "rec min": 792
+    },
+    "oracle": {
+      "atk": 900,
+      "def max": 816,
+      "def min": 738,
+      "hp": 3375,
+      "rec max": 1026,
+      "rec min": 948
+    }
+  },
+  "leader_skill": {
+    "desc": "10% boost to Atk",
+    "effects": [
+      {
+        "atk% buff": 10,
+        "passive id": "1"
+      }
+    ],
+    "id": "1900",
+    "name": "Valiant Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -288,95 +290,91 @@
     ],
     "name": "Frigid Combo"
   },
-  "bbdescription": "5 combo Water elemental power attack on single Enemy & probable Weakness effect",
-  "bbnote": "80% chance",
-  "bbtype": "Offense",
-  "bbhits": "5",
-  "bbaoe": "1",
-  "bbgauge": "13",
-  "bbdc": "5",
-  "bbmultiplier": "250",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "20103",
-  "evomats1": "60143",
-  "evomats2": "20132",
-  "evomats3": "20131",
-  "evomats4": "",
-  "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "100000",
-  "stats": {
-    "_base": {
-      "atk": 600,
-      "def": 600,
-      "hp": 2050,
-      "rec": 580
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 900,
-      "def": 816,
-      "hp": 3375,
-      "rec": 870
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 900,
-      "def": 816,
-      "hp max": 3765,
-      "hp min": 3570,
-      "rec max": 831,
-      "rec min": 753
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 1017,
-      "atk min": 939,
-      "def max": 777,
-      "def min": 699,
-      "hp": 3375,
-      "rec": 870
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 73
     },
-    "guardian": {
-      "atk": 900,
-      "def max": 933,
-      "def min": 855,
-      "hp": 3375,
-      "rec max": 870,
-      "rec min": 792
+    "idle": {
+      "total number of frames": 42
     },
-    "oracle": {
-      "atk": 900,
-      "def max": 816,
-      "def min": 738,
-      "hp": 3375,
-      "rec max": 1026,
-      "rec min": 948
+    "move": {
+      "total number of frames": 21
     }
   },
-  "leader_skill": {
-    "desc": "10% boost to Atk",
-    "effects": [
-      {
-        "atk% buff": 10,
-        "passive id": "1"
-      }
+  "category": 20100,
+  "cost": "5",
+  "damage frames": {
+    "frame times": [
+      18,
+      33
     ],
-    "id": "1900",
-    "name": "Valiant Power"
+    "hit dmg% distribution": [
+      60,
+      40
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 2
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "water",
+  "exp_pattern": 15,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 125,
+  "imp": {
+    "max atk": "120",
+    "max def": "120",
+    "max hp": "300",
+    "max rec": "120"
+  },
+  "kind": "normal",
+  "lord damage range": "838~936",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Knight Sergio",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "Knight Sergio",
+  "maxlv": "40",
+  "no": "125",
   "unitDisplayHomePosition_1W9CxaFK": "122,-66,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "216,182,550,595",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "215,356,244,264,0",
@@ -386,5 +384,100 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "1000",
   "sellCaution": false,
-  "effectFrames": "12:122:1,27:122:1"
+  "effectFrames": "12:122:1,27:122:1",
+  "evofrom": "",
+  "evointo": "20103",
+  "evozelcost": "100000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20131",
+      "count": 1
+    }
+  ],
+  "basexp": "15",
+  "animation_attack": "73",
+  "animation_idle": "42",
+  "animation_move": "21",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "18, 33",
+  "normal_distribute": "60, 40",
+  "normal_totaldistr": "100",
+  "bb_frames": "18, 33, 70, 75, 80",
+  "bb_distribute": "40, 30, 10, 10, 10",
+  "bb_totaldistr": "100",
+  "description": "A knight from the ruined Sama Kingdom. Sergio was isolated as a heretic for secretly training by himself in the Cavalry Corps, whose aim was group combat. However, his skills far surpassed the others, and he was reluctantly made the leader of a commando unit. His own unit feared him, and called him the Ice Knight after the cold way he cuts down his enemies.",
+  "summon": "So you need my blade?<br>Hmm, alright.<br>Stay behind me. I'll defend you.",
+  "fusion": "What does power mean<br>to you??<br>Show me your answer in combat.",
+  "evolution": "",
+  "hp_base": "2050",
+  "atk_base": "600",
+  "def_base": "600",
+  "rec_base": "580",
+  "hp_lord": "3375",
+  "atk_lord": "900",
+  "def_lord": "816",
+  "rec_lord": "870",
+  "hp_anima": "3668",
+  "rec_anima": "792",
+  "atk_breaker": "978",
+  "def_breaker": "738",
+  "atk_guardian": "822",
+  "def_guardian": "894",
+  "rec_guardian": "831",
+  "def_oracle": "777",
+  "hp_oracle": "3258",
+  "rec_oracle": "987",
+  "hp_bonus": "300",
+  "atk_bonus": "120",
+  "def_bonus": "120",
+  "rec_bonus": "120",
+  "lordonly": "",
+  "combo_hits": "2",
+  "normaldc": "6",
+  "ls": "Valiant Power",
+  "lsdescription": "10% boost to Atk Power of all types",
+  "lstype": "Attack",
+  "bbdescription": "5 combo Water elemental power attack on single Enemy & probable Weakness effect",
+  "bbnote": "80% chance",
+  "bbtype": "Offense",
+  "bbhits": "5",
+  "bbaoe": "1",
+  "bbgauge": "13",
+  "bbdc": "5",
+  "bbmultiplier": "250",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "60143",
+  "evomats2": "20132",
+  "evomats3": "20131",
+  "evomats4": "",
+  "evomats5": "",
+  "evoitem": ""
 }

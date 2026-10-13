@@ -1,62 +1,63 @@
 {
   "id": "10062",
-  "unitName": "Head Thief Leon",
-  "no": "80",
-  "element": "Fire",
-  "rarity": "★★★",
-  "cost": "6",
-  "maxlv": "40",
-  "basexp": "10",
-  "gender": "M",
-  "ai": "3",
-  "animation_attack": "103",
-  "animation_idle": "64",
-  "animation_move": "11",
-  "movespeed_attack": "0.0024",
-  "movespeed_skill": "0.0024",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "23, 41, 45, 51, 56, 61",
-  "normal_distribute": "10, 30, 20, 15, 15, 10",
-  "normal_totaldistr": "100",
-  "bb_frames": "23, 41, 45, 51, 56, 61",
-  "bb_distribute": "10, 10, 15, 20, 20, 25",
-  "bb_totaldistr": "100",
-  "description": "With a simple credo of \"help the weak, crush the strong\", he came to lead a large band of thieves around the ruined Agni Empire. Trading his knives for swords as the war with the gods began, he fought for the masses. Alas, the officials he hurt before interfered, leaving him with enemies among the gods and the empire, but he was still able to meet a heroic end.",
-  "summon": "I know you know who I am,<br>and you know I'm expecting <br>a reward.",
-  "fusion": "That's an interesting reward.<br>OK! I'll fight for you more!",
-  "evolution": "Hehe, you can count on me!<br>I will save those who cannot<br>save themselves!",
-  "hp_base": "1728",
-  "atk_base": "572",
-  "def_base": "572",
-  "rec_base": "567",
-  "hp_lord": "2892",
-  "atk_lord": "905",
-  "def_lord": "905",
-  "rec_lord": "935",
-  "hp_anima": "3185",
-  "rec_anima": "857",
-  "atk_breaker": "983",
-  "def_breaker": "827",
-  "atk_guardian": "827",
-  "def_guardian": "983",
-  "rec_guardian": "896",
-  "def_oracle": "866",
-  "hp_oracle": "2775",
-  "rec_oracle": "1052",
-  "hp_bonus": "300",
-  "atk_bonus": "160",
-  "def_bonus": "80",
-  "rec_bonus": "120",
-  "lordonly": "",
-  "combo_hits": "6",
-  "normaldc": "12",
-  "ls": "Abundant Flash",
-  "lsdescription": "Boost in Zel produced during Spark",
-  "lsnote": "70% boost",
-  "lstype": "Zel",
+  "stats": {
+    "_base": {
+      "atk": 572,
+      "def": 572,
+      "hp": 1728,
+      "rec": 567
+    },
+    "_lord": {
+      "atk": 905,
+      "def": 905,
+      "hp": 2892,
+      "rec": 935
+    },
+    "anima": {
+      "atk": 905,
+      "def": 905,
+      "hp max": 3282,
+      "hp min": 3087,
+      "rec max": 896,
+      "rec min": 818
+    },
+    "breaker": {
+      "atk max": 1022,
+      "atk min": 944,
+      "def max": 866,
+      "def min": 788,
+      "hp": 2892,
+      "rec": 935
+    },
+    "guardian": {
+      "atk": 905,
+      "def max": 1022,
+      "def min": 944,
+      "hp": 2892,
+      "rec max": 935,
+      "rec min": 857
+    },
+    "oracle": {
+      "atk": 905,
+      "def max": 905,
+      "def min": 827,
+      "hp": 2892,
+      "rec max": 1091,
+      "rec min": 1013
+    }
+  },
+  "leader_skill": {
+    "desc": "Boost in Zel produced during Spark",
+    "effects": [
+      {
+        "passive id": "31",
+        "zel drop% for spark": 70
+      }
+    ],
+    "id": "1601",
+    "name": "Abundant Flash"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -301,95 +302,99 @@
     ],
     "name": "Venom Gale"
   },
-  "bbdescription": "6 combo Fire elemental attack on single Enemy & probable Poison effect",
-  "bbnote": "80% chance",
-  "bbtype": "Offense",
-  "bbhits": "6",
-  "bbaoe": "1",
-  "bbgauge": "15",
-  "bbdc": "6",
-  "bbmultiplier": "220",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "10061",
-  "evointo": "10063",
-  "evomats1": "10132",
-  "evomats2": "10130",
-  "evomats3": "60142",
-  "evomats4": "60142",
-  "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "100000",
-  "stats": {
-    "_base": {
-      "atk": 572,
-      "def": 572,
-      "hp": 1728,
-      "rec": 567
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 905,
-      "def": 905,
-      "hp": 2892,
-      "rec": 935
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 905,
-      "def": 905,
-      "hp max": 3282,
-      "hp min": 3087,
-      "rec max": 896,
-      "rec min": 818
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 1022,
-      "atk min": 944,
-      "def max": 866,
-      "def min": 788,
-      "hp": 2892,
-      "rec": 935
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 103
     },
-    "guardian": {
-      "atk": 905,
-      "def max": 1022,
-      "def min": 944,
-      "hp": 2892,
-      "rec max": 935,
-      "rec min": 857
+    "idle": {
+      "total number of frames": 64
     },
-    "oracle": {
-      "atk": 905,
-      "def max": 905,
-      "def min": 827,
-      "hp": 2892,
-      "rec max": 1091,
-      "rec min": 1013
+    "move": {
+      "total number of frames": 11
     }
   },
-  "leader_skill": {
-    "desc": "Boost in Zel produced during Spark",
-    "effects": [
-      {
-        "passive id": "31",
-        "zel drop% for spark": 70
-      }
+  "category": 10060,
+  "cost": "6",
+  "damage frames": {
+    "frame times": [
+      23,
+      41,
+      45,
+      51,
+      56,
+      61
     ],
-    "id": "1601",
-    "name": "Abundant Flash"
+    "hit dmg% distribution": [
+      10,
+      30,
+      20,
+      15,
+      15,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 6
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "fire",
+  "exp_pattern": 10,
+  "gender": "male",
+  "getting type": "farmable",
+  "guide_id": 80,
+  "imp": {
+    "max atk": "160",
+    "max def": "80",
+    "max hp": "300",
+    "max rec": "120"
+  },
+  "kind": "normal",
+  "lord damage range": "842~941",
+  "movement": {
+    "attack": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    }
+  },
+  "name": "Head Thief Leon",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "Head Thief Leon",
+  "maxlv": "40",
+  "no": "80",
   "unitDisplayHomePosition_1W9CxaFK": "97,15,200,544",
   "unitDisplayDetailPosition_6z54rgb3": "223,119,480,626",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "199,333,221,289,0",
@@ -399,5 +404,101 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "1000",
   "sellCaution": false,
-  "effectFrames": "17:121:1,35:121:1,39:121:1,45:121:1,50:121:1,55:121:1"
+  "effectFrames": "17:121:1,35:121:1,39:121:1,45:121:1,50:121:1,55:121:1",
+  "evofrom": "10061",
+  "evointo": "10063",
+  "evozelcost": "100000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "10132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10130",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60142",
+      "count": 2
+    }
+  ],
+  "basexp": "10",
+  "animation_attack": "103",
+  "animation_idle": "64",
+  "animation_move": "11",
+  "movespeed_attack": "0.0024",
+  "movespeed_skill": "0.0024",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "23, 41, 45, 51, 56, 61",
+  "normal_distribute": "10, 30, 20, 15, 15, 10",
+  "normal_totaldistr": "100",
+  "bb_frames": "23, 41, 45, 51, 56, 61",
+  "bb_distribute": "10, 10, 15, 20, 20, 25",
+  "bb_totaldistr": "100",
+  "description": "With a simple credo of \"help the weak, crush the strong\", he came to lead a large band of thieves around the ruined Agni Empire. Trading his knives for swords as the war with the gods began, he fought for the masses. Alas, the officials he hurt before interfered, leaving him with enemies among the gods and the empire, but he was still able to meet a heroic end.",
+  "summon": "I know you know who I am,<br>and you know I'm expecting <br>a reward.",
+  "fusion": "That's an interesting reward.<br>OK! I'll fight for you more!",
+  "evolution": "Hehe, you can count on me!<br>I will save those who cannot<br>save themselves!",
+  "hp_base": "1728",
+  "atk_base": "572",
+  "def_base": "572",
+  "rec_base": "567",
+  "hp_lord": "2892",
+  "atk_lord": "905",
+  "def_lord": "905",
+  "rec_lord": "935",
+  "hp_anima": "3185",
+  "rec_anima": "857",
+  "atk_breaker": "983",
+  "def_breaker": "827",
+  "atk_guardian": "827",
+  "def_guardian": "983",
+  "rec_guardian": "896",
+  "def_oracle": "866",
+  "hp_oracle": "2775",
+  "rec_oracle": "1052",
+  "hp_bonus": "300",
+  "atk_bonus": "160",
+  "def_bonus": "80",
+  "rec_bonus": "120",
+  "lordonly": "",
+  "combo_hits": "6",
+  "normaldc": "12",
+  "ls": "Abundant Flash",
+  "lsdescription": "Boost in Zel produced during Spark",
+  "lsnote": "70% boost",
+  "lstype": "Zel",
+  "bbdescription": "6 combo Fire elemental attack on single Enemy & probable Poison effect",
+  "bbnote": "80% chance",
+  "bbtype": "Offense",
+  "bbhits": "6",
+  "bbaoe": "1",
+  "bbgauge": "15",
+  "bbdc": "6",
+  "bbmultiplier": "220",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "10132",
+  "evomats2": "10130",
+  "evomats3": "60142",
+  "evomats4": "60142",
+  "evomats5": "",
+  "evoitem": ""
 }

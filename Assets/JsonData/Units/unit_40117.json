@@ -1,69 +1,102 @@
 {
   "id": "40117",
-  "unitName": "Ultimate Behemoth",
-  "<!--|idalt": "40117 2-->",
-  "no": "1719",
-  "element": "Thunder",
-  "rarity": "Omni",
-  "cost": "47",
-  "maxlv": "150",
-  "basexp": "21",
-  "gender": "N",
-  "ai": "3",
-  "animation_attack": "111",
-  "animation_idle": "54",
-  "animation_move": "32",
-  "movespeed_attack": "0.0041",
-  "movespeed_skill": "0.0041",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "26",
-  "normal_distribute": "100",
-  "normal_totaldistr": "100",
-  "bb_frames": "26",
-  "bb_distribute": "100",
-  "bb_totaldistr": "100",
-  "sbb_frames": "26",
-  "sbb_distribute": "100",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "26",
-  "ubb_distribute": "100",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "1",
-  "ubb_effectdelay": "1",
-  "description": "The Ultimate Behemoth is an Omega Behemoth that experienced a sudden mutation, causing it to gain unnatural power. Discontent with power sufficient to level a continent, the beast went on to assault even the Four Fallen Gods. Had it succeeded in slaying its adversaries, the beast would have certainly absorbed their power, and in doing so, would have evolved further still into a form that may have surpassed even the greatest gods. From there it would have moved on to absorb the energy of the great powers of other worlds, and the beast would truly have transcended all boundaries. With a single blow it could have shaken the heavens themselves.",
-  "summon": "I will annihilate all existence, and devour all that exists! That is all that drives me!",
-  "fusion": "*Rooooaaaar!*<br>More!<br>Until I have consumed all that is, I will never be complete!",
-  "evolution": "My power exceeds that of a god! A single world is no longer fit to contain me! It is time to seize the might of other worlds!",
-  "hp_base": "5758",
-  "atk_base": "6062",
-  "def_base": "793",
-  "rec_base": "395",
-  "hp_lord": "7509",
-  "atk_lord": "7509",
-  "def_lord": "991",
-  "rec_lord": "401",
-  "hp_anima": "8626",
-  "rec_anima": "193",
-  "atk_breaker": "7807",
-  "def_breaker": "693",
-  "def_guardian": "1289",
-  "rec_guardian": "342",
-  "def_oracle": "842",
-  "rec_oracle": "938",
-  "hp_bonus": "1250",
-  "atk_bonus": "800",
-  "def_bonus": "400",
-  "rec_bonus": "500",
-  "lordonly": "",
-  "combo_hits": "1",
-  "normaldc": "42",
-  "ls": "Mutant Thunder Horn",
-  "lsdescription": "150% boost to Atk, 60% boost to max HP, boosts Atk relative to remaining HP & 150% boost to Spark damage",
-  "lsnote": "0.5% boost per 1% HP remaining",
+  "stats": {
+    "_base": {
+      "atk": 6062,
+      "def": 793,
+      "hp": 5758,
+      "rec": 395
+    },
+    "_lord": {
+      "atk": 7509,
+      "def": 991,
+      "hp": 7509,
+      "rec": 491
+    },
+    "anima": {
+      "atk": 7509,
+      "def": 991,
+      "hp max": 8999,
+      "hp min": 8254,
+      "rec max": 342,
+      "rec min": 44
+    },
+    "breaker": {
+      "atk max": 7956,
+      "atk min": 7658,
+      "def max": 842,
+      "def min": 544,
+      "hp": 7509,
+      "rec": 491
+    },
+    "guardian": {
+      "atk": 7509,
+      "def max": 1438,
+      "def min": 1140,
+      "hp": 7509,
+      "rec max": 491,
+      "rec min": 193
+    },
+    "oracle": {
+      "atk": 7509,
+      "def max": 991,
+      "def min": 693,
+      "hp": 7509,
+      "rec max": 1087,
+      "rec min": 789
+    }
+  },
+  "leader_skill": {
+    "desc": "150% boost to Atk, 60% boost to max HP, boosts Atk relative to remaining HP & 150% boost to Spark damage",
+    "effects": [
+      {
+        "atk% buff": 150,
+        "hp% buff": 60,
+        "passive id": "1"
+      },
+      {
+        "atk% base buff": 0,
+        "atk% extra buff based on hp": 50,
+        "buff proportional to hp": "remaining",
+        "passive id": "46"
+      },
+      {
+        "damage% for spark": 150,
+        "passive id": "31"
+      }
+    ],
+    "id": "1968",
+    "name": "Mutant Thunder Horn"
+  },
+  "extra_skill": {
+    "desc": "Spark damage enormously boosts BB gauge, 80% boost to Spark damage & adds probable Def ignoring effect to attack",
+    "effects": [
+      {
+        "conditions": [],
+        "damage% for spark": 80,
+        "passive id": "31",
+        "passive target": "self"
+      },
+      {
+        "bc fill on spark high": 30,
+        "bc fill on spark low": 30,
+        "bc fill on spark%": 100,
+        "conditions": [],
+        "passive id": "47",
+        "passive target": "self"
+      },
+      {
+        "conditions": [],
+        "ignore def%": 50,
+        "passive id": "29",
+        "passive target": "self"
+      }
+    ],
+    "id": "43700",
+    "name": "Fallen Gods' Devourer",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -522,14 +555,6 @@
     ],
     "name": "Rough Devouring"
   },
-  "bbdescription": "Massive Thunder attack on all foes, enormously boosts own critical hit rate for 3 turns, enormously boosts own Atk for 3 turns, hugely boosts own Atk relative to max HP for 3 turns & enormously boosts own Spark damage for 3 turns",
-  "bbnote": "60% Crit, 200% Atk, 40% HP to Atk & 120% Spark",
-  "bbtype": "Offense",
-  "bbhits": "1",
-  "bbaoe": "A",
-  "bbgauge": "29",
-  "bbdc": "20",
-  "bbmultiplier": "1000",
   "sbb": {
     "damage frames": [
       {
@@ -1172,14 +1197,6 @@
     ],
     "name": "Heavy Illusion"
   },
-  "sbbdescription": "Massive Thunder attack on all foes, enormously boosts own critical hit rate for 3 turns, enormously boosts own Atk for 3 turns, hugely boosts own Atk relative to max HP for 3 turns, enormously boosts own Spark damage for 3 turns, boosts own critical damage for 3 turns & enormously boosts Spark damage for 3 turns",
-  "sbbnote": "60% Crit, 200% Atk, 40% HP to Atk, 120% self Spark, 75% Crit damage & 130% Spark",
-  "sbbtype": "Offense",
-  "sbbhits": "1",
-  "sbbaoe": "A",
-  "sbbgauge": "30",
-  "sbbdc": "20",
-  "sbbmultiplier": "1500",
   "ubb": {
     "damage frames": [
       {
@@ -1298,6 +1315,179 @@
     ],
     "name": "Devourer of Gods"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 111
+    },
+    "idle": {
+      "total number of frames": 54
+    },
+    "move": {
+      "total number of frames": 32
+    }
+  },
+  "category": 40110,
+  "cost": "47",
+  "damage frames": {
+    "frame times": [
+      26
+    ],
+    "hit dmg% distribution": [
+      100
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 1
+  },
+  "drop check count": 42,
+  "element": "thunder",
+  "exp_pattern": 20,
+  "gender": "other",
+  "getting type": "rare summon",
+  "guide_id": 1719,
+  "imp": {
+    "max atk": "800",
+    "max def": "400",
+    "max hp": "1250",
+    "max rec": "500"
+  },
+  "kind": "normal",
+  "lord damage range": "6992~7809",
+  "movement": {
+    "attack": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    }
+  },
+  "name": "Ultimate Behemoth",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "8",
+  "sell caution": false,
+  "unitName": "Ultimate Behemoth",
+  "maxlv": "150",
+  "no": "1719",
+  "unitDisplayHomePosition_1W9CxaFK": "270,279,174,475",
+  "unitDisplayDetailPosition_6z54rgb3": "-32,-68,1110,946",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "38,150,560,482,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "9,-380,1228,1056",
+  "unitDisplaySummonPosition_KC3Jk8Br": "38,150,560,482,0",
+  "unitDisplayHpPosition_3BpHN6VD": "-22,35",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "50000",
+  "sellCaution": false,
+  "effectFrames": "20:134:1,23:200868:1,25:400181:1,45:400070:1,55:600940:1,65:200032:1",
+  "evofrom": "40115",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "<!--|idalt": "40117 2-->",
+  "basexp": "21",
+  "animation_attack": "111",
+  "animation_idle": "54",
+  "animation_move": "32",
+  "movespeed_attack": "0.0041",
+  "movespeed_skill": "0.0041",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "26",
+  "normal_distribute": "100",
+  "normal_totaldistr": "100",
+  "bb_frames": "26",
+  "bb_distribute": "100",
+  "bb_totaldistr": "100",
+  "sbb_frames": "26",
+  "sbb_distribute": "100",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "26",
+  "ubb_distribute": "100",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "1",
+  "ubb_effectdelay": "1",
+  "description": "The Ultimate Behemoth is an Omega Behemoth that experienced a sudden mutation, causing it to gain unnatural power. Discontent with power sufficient to level a continent, the beast went on to assault even the Four Fallen Gods. Had it succeeded in slaying its adversaries, the beast would have certainly absorbed their power, and in doing so, would have evolved further still into a form that may have surpassed even the greatest gods. From there it would have moved on to absorb the energy of the great powers of other worlds, and the beast would truly have transcended all boundaries. With a single blow it could have shaken the heavens themselves.",
+  "summon": "I will annihilate all existence, and devour all that exists! That is all that drives me!",
+  "fusion": "*Rooooaaaar!*<br>More!<br>Until I have consumed all that is, I will never be complete!",
+  "evolution": "My power exceeds that of a god! A single world is no longer fit to contain me! It is time to seize the might of other worlds!",
+  "hp_base": "5758",
+  "atk_base": "6062",
+  "def_base": "793",
+  "rec_base": "395",
+  "hp_lord": "7509",
+  "atk_lord": "7509",
+  "def_lord": "991",
+  "rec_lord": "401",
+  "hp_anima": "8626",
+  "rec_anima": "193",
+  "atk_breaker": "7807",
+  "def_breaker": "693",
+  "def_guardian": "1289",
+  "rec_guardian": "342",
+  "def_oracle": "842",
+  "rec_oracle": "938",
+  "hp_bonus": "1250",
+  "atk_bonus": "800",
+  "def_bonus": "400",
+  "rec_bonus": "500",
+  "lordonly": "",
+  "combo_hits": "1",
+  "normaldc": "42",
+  "ls": "Mutant Thunder Horn",
+  "lsdescription": "150% boost to Atk, 60% boost to max HP, boosts Atk relative to remaining HP & 150% boost to Spark damage",
+  "lsnote": "0.5% boost per 1% HP remaining",
+  "bbdescription": "Massive Thunder attack on all foes, enormously boosts own critical hit rate for 3 turns, enormously boosts own Atk for 3 turns, hugely boosts own Atk relative to max HP for 3 turns & enormously boosts own Spark damage for 3 turns",
+  "bbnote": "60% Crit, 200% Atk, 40% HP to Atk & 120% Spark",
+  "bbtype": "Offense",
+  "bbhits": "1",
+  "bbaoe": "A",
+  "bbgauge": "29",
+  "bbdc": "20",
+  "bbmultiplier": "1000",
+  "sbbdescription": "Massive Thunder attack on all foes, enormously boosts own critical hit rate for 3 turns, enormously boosts own Atk for 3 turns, hugely boosts own Atk relative to max HP for 3 turns, enormously boosts own Spark damage for 3 turns, boosts own critical damage for 3 turns & enormously boosts Spark damage for 3 turns",
+  "sbbnote": "60% Crit, 200% Atk, 40% HP to Atk, 120% self Spark, 75% Crit damage & 130% Spark",
+  "sbbtype": "Offense",
+  "sbbhits": "1",
+  "sbbaoe": "A",
+  "sbbgauge": "30",
+  "sbbdc": "20",
+  "sbbmultiplier": "1500",
   "ubbdescription": "Massive Thunder attack on all foes, enormously boosts own critical hit rate for 3 turns, enormously boosts own Atk for 3 turns, enormously boosts own Atk relative to max HP for 3 turns, enormously boosts own Spark damage for 3 turns & enormously boosts Spark damage for 3 turns",
   "ubbnote": "60% Crit, 350% Atk, 60% HP to Atk, 200% self Spark & 350% Spark",
   "ubbtype": "Offense",
@@ -1310,8 +1500,6 @@
   "esitem": "",
   "esdescription": "Spark damage enormously boosts BB gauge, 80% boost to Spark damage & adds probable Def ignoring effect to attack",
   "esnote": "Fills 30 BC & 50% chance to Ignore Def",
-  "evofrom": "40115",
-  "evointo": "",
   "evomats1": "",
   "evomats2": "",
   "evomats3": "",
@@ -1320,113 +1508,5 @@
   "evomats6": "",
   "evomats7": "",
   "evomats8": "",
-  "evoitem": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 6062,
-      "def": 793,
-      "hp": 5758,
-      "rec": 395
-    },
-    "_lord": {
-      "atk": 7509,
-      "def": 991,
-      "hp": 7509,
-      "rec": 491
-    },
-    "anima": {
-      "atk": 7509,
-      "def": 991,
-      "hp max": 8999,
-      "hp min": 8254,
-      "rec max": 342,
-      "rec min": 44
-    },
-    "breaker": {
-      "atk max": 7956,
-      "atk min": 7658,
-      "def max": 842,
-      "def min": 544,
-      "hp": 7509,
-      "rec": 491
-    },
-    "guardian": {
-      "atk": 7509,
-      "def max": 1438,
-      "def min": 1140,
-      "hp": 7509,
-      "rec max": 491,
-      "rec min": 193
-    },
-    "oracle": {
-      "atk": 7509,
-      "def max": 991,
-      "def min": 693,
-      "hp": 7509,
-      "rec max": 1087,
-      "rec min": 789
-    }
-  },
-  "leader_skill": {
-    "desc": "150% boost to Atk, 60% boost to max HP, boosts Atk relative to remaining HP & 150% boost to Spark damage",
-    "effects": [
-      {
-        "atk% buff": 150,
-        "hp% buff": 60,
-        "passive id": "1"
-      },
-      {
-        "atk% base buff": 0,
-        "atk% extra buff based on hp": 50,
-        "buff proportional to hp": "remaining",
-        "passive id": "46"
-      },
-      {
-        "damage% for spark": 150,
-        "passive id": "31"
-      }
-    ],
-    "id": "1968",
-    "name": "Mutant Thunder Horn"
-  },
-  "extra_skill": {
-    "desc": "Spark damage enormously boosts BB gauge, 80% boost to Spark damage & adds probable Def ignoring effect to attack",
-    "effects": [
-      {
-        "conditions": [],
-        "damage% for spark": 80,
-        "passive id": "31",
-        "passive target": "self"
-      },
-      {
-        "bc fill on spark high": 30,
-        "bc fill on spark low": 30,
-        "bc fill on spark%": 100,
-        "conditions": [],
-        "passive id": "47",
-        "passive target": "self"
-      },
-      {
-        "conditions": [],
-        "ignore def%": 50,
-        "passive id": "29",
-        "passive target": "self"
-      }
-    ],
-    "id": "43700",
-    "name": "Fallen Gods' Devourer",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "270,279,174,475",
-  "unitDisplayDetailPosition_6z54rgb3": "-32,-68,1110,946",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "38,150,560,482,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "9,-380,1228,1056",
-  "unitDisplaySummonPosition_KC3Jk8Br": "38,150,560,482,0",
-  "unitDisplayHpPosition_3BpHN6VD": "-22,35",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "50000",
-  "sellCaution": false,
-  "effectFrames": "20:134:1,23:200868:1,25:400181:1,45:400070:1,55:600940:1,65:200032:1"
+  "evoitem": ""
 }

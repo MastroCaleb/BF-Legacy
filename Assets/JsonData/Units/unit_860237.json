@@ -1,69 +1,92 @@
 {
   "id": "860237",
-  "unitName": "Zero (7★)",
-  "altname": "Zero",
-  "no": "8207",
-  "element": "Dark",
-  "rarity": "★★★★★★★",
-  "cost": "43",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "96",
-  "animation_idle": "48",
-  "animation_move": "48",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "22, 25, 28, 31, 34, 37, 42, 45, 48, 51, 54, 64, 66, 68, 70",
-  "normal_distribute": "3, 3, 3, 3, 4, 4, 6, 6, 6, 6, 6, 12, 12, 13, 13",
-  "normal_totaldistr": "100",
-  "bb_frames": "16, 19, 22, 25, 28, 31, 33, 36, 39, 42, 45, 48, 51, 54, 57, 60",
-  "bb_distribute": "7, 7, 6, 6, 6, 6, 6, 6, 7, 7, 5, 6, 6, 6, 6, 7",
-  "bb_totaldistr": "100",
-  "sbb_frames": "16, 19, 22, 25, 28, 31, 33, 36, 39, 42, 45, 48, 51, 54, 57, 60, 63, 66, 69",
-  "sbb_distribute": "6, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 5, 5, 5, 5, 5, 5, 5, 6",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "16, 19, 22, 25, 28, 31, 33, 36, 39, 42, 45, 48, 51, 54, 57, 60, 63, 66, 69, 72, 75, 78, 81",
-  "ubb_distribute": "5, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "1",
-  "ubb_effectdelay": "1",
-  "description": "A lone wolf who only trusts himself, Laevateinn calls none his leader and none his comrades. This is due to the personality of his Prime version, codenamed Zero, who is the first Killer Prince. His essence is from Laevateinn, the flaming sword that left the world in smoldering ruins. In the past, the demonblade Laevateinn was said to have been kept under lock and key--nine of them, in fact--which is perhaps what has given him his love of metallic accoutrements that vaguely resemble locks or keys. This means the clothes he wears are much heavier than they appear.",
-  "summon": "Commander? Summoner?<br>Whatever you are,<br>just stay out of my way!",
-  "fusion": "I feel even stronger!<br>So I don't know why I need you...",
-  "evolution": "",
-  "hp_base": "5014",
-  "atk_base": "1926",
-  "def_base": "1601",
-  "rec_base": "1516",
-  "hp_lord": "7164",
-  "atk_lord": "2752",
-  "def_lord": "2288",
-  "rec_lord": "2167",
-  "hp_anima": "8056",
-  "rec_anima": "1929",
-  "atk_breaker": "2990",
-  "def_breaker": "2060",
-  "def_guardian": "2526",
-  "rec_guardian": "2048",
-  "def_oracle": "2169",
-  "rec_oracle": "2524",
-  "hp_bonus": "1100",
-  "atk_bonus": "440",
-  "def_bonus": "440",
-  "rec_bonus": "440",
-  "lordonly": "",
-  "combo_hits": "15",
-  "normaldc": "45",
-  "ls": "Liberated Sword",
-  "lsdescription": "30% boost to max HP, Atk, 100% boost to Spark damage & boosts Spark damage for 2 turns when Sparks have exceeded certain amount",
-  "lsnote": "100% additional boost on Spark damage for 2 turns when 16 Sparks dealt",
+  "stats": {
+    "_base": {
+      "atk": 1926,
+      "def": 1601,
+      "hp": 5014,
+      "rec": 1516
+    },
+    "_lord": {
+      "atk": 2752,
+      "def": 2288,
+      "hp": 7164,
+      "rec": 2167
+    },
+    "anima": {
+      "atk": 2752,
+      "def": 2288,
+      "hp max": 8354,
+      "hp min": 7759,
+      "rec max": 2048,
+      "rec min": 1810
+    },
+    "breaker": {
+      "atk max": 3109,
+      "atk min": 2871,
+      "def max": 2169,
+      "def min": 1931,
+      "hp": 7164,
+      "rec": 2167
+    },
+    "guardian": {
+      "atk": 2752,
+      "def max": 2645,
+      "def min": 2407,
+      "hp": 7164,
+      "rec max": 2167,
+      "rec min": 1929
+    },
+    "oracle": {
+      "atk": 2752,
+      "def max": 2288,
+      "def min": 2050,
+      "hp": 7164,
+      "rec max": 2643,
+      "rec min": 2405
+    }
+  },
+  "leader_skill": {
+    "desc": "30% boost to max HP, Atk, 100% boost to Spark damage & boosts Spark damage for 2 turns when Sparks have exceeded certain amount",
+    "effects": [
+      {
+        "atk% buff": 30,
+        "hp% buff": 30,
+        "passive id": "1"
+      },
+      {
+        "damage% for spark": 100,
+        "passive id": "31"
+      },
+      {
+        "buff": {
+          "buff turns (40)": "2",
+          "spark dmg% buff": 100
+        },
+        "passive id": "86",
+        "spark count buff activation": 16
+      }
+    ],
+    "id": "801240",
+    "name": "Liberated Sword"
+  },
+  "extra_skill": {
+    "desc": "Damage taken boosts BB gauge",
+    "effects": [
+      {
+        "bc fill when attacked high": 3,
+        "bc fill when attacked low": 2,
+        "bc fill when attacked%": 100,
+        "conditions": [],
+        "passive id": "25",
+        "passive target": "self"
+      }
+    ],
+    "id": "860237",
+    "name": "Lone Wolf",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -460,18 +483,6 @@
     ],
     "name": "Mercenary of Terra"
   },
-  "bbdescription": "16 combo powerful Dark attack on all foes, probable Spark critical & damage taken restores HP for 3 turns",
-  "bbnote": "20% chance to heal 15~20% HP from damage taken, 20% chance to deal 50% more Spark damage on Spark critical",
-  "bbtype": "Offense",
-  "bbhits": "16",
-  "bbaoe": "A",
-  "bbgauge": "24",
-  "bbdc": "16",
-  "bbmultiplier": "350",
-  "bbhits2": "",
-  "bbaoe2": "",
-  "bbdc2": "",
-  "bbmultiplier2": "",
   "sbb": {
     "damage frames": [
       {
@@ -1068,18 +1079,6 @@
     ],
     "name": "Protector of Terra"
   },
-  "sbbdescription": "19 combo massive Dark attack on all foes, probable Spark critical, greatly boosts Spark damage for 3 turns, inflicts Spark vulnerability for 2 turn & Spark damage restores HP for 3 turns",
-  "sbbnote": "100% boost to Spark damage, 20% chance to deal 50% more Spark damage on Spark critical, 25% chance to inflict Spark vulnerability that deals 25% more Spark damage, 400~500 HP healed on Spark",
-  "sbbtype": "Offense",
-  "sbbhits": "19",
-  "sbbaoe": "A",
-  "sbbgauge": "30",
-  "sbbdc": "19",
-  "sbbmultiplier": "560",
-  "sbbhits2": "",
-  "sbbaoe2": "",
-  "sbbdc2": "",
-  "sbbmultiplier2": "",
   "ubb": {
     "damage frames": [
       {
@@ -1245,6 +1244,225 @@
     ],
     "name": "Savior of Terra"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 96
+    },
+    "idle": {
+      "total number of frames": 48
+    },
+    "move": {
+      "total number of frames": 48
+    }
+  },
+  "category": 860230,
+  "cost": "43",
+  "damage frames": {
+    "frame times": [
+      22,
+      25,
+      28,
+      31,
+      34,
+      37,
+      42,
+      45,
+      48,
+      51,
+      54,
+      64,
+      66,
+      68,
+      70
+    ],
+    "hit dmg% distribution": [
+      3,
+      3,
+      3,
+      3,
+      4,
+      4,
+      6,
+      6,
+      6,
+      6,
+      6,
+      12,
+      12,
+      13,
+      13
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 15
+  },
+  "drop check count": 3,
+  "element": "dark",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 8207,
+  "imp": {
+    "max atk": "440",
+    "max def": "440",
+    "max hp": "1100",
+    "max rec": "440"
+  },
+  "kind": "normal",
+  "lord damage range": "2562~2862",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Zero",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Zero",
+  "maxlv": "120",
+  "no": "8207",
+  "unitDisplayHomePosition_1W9CxaFK": "378,193,140,382",
+  "unitDisplayDetailPosition_6z54rgb3": "-109,-37,1248,1018",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "40,160,615,502,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-130,-246,1248,1018",
+  "unitDisplaySummonPosition_KC3Jk8Br": "-6,207,634,440,0",
+  "unitDisplayHpPosition_3BpHN6VD": "0,45",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "15000",
+  "sellCaution": false,
+  "effectFrames": "16:126:1,19:120:1,22:126:1,25:120:1,28:120:1,31:126:1,34:120:1,37:120:1,40:126:1,43:120:1,46:120:1,49:120:1,52:120:1,59:600404:1,62:400368:1,65:400368:1,43:600351:1,66:600351:1,70:600275:1",
+  "evofrom": "",
+  "evointo": "860238",
+  "evozelcost": "3000000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "60344",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60123",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "860034",
+      "count": 1
+    }
+  ],
+  "altname": "Zero",
+  "basexp": "21",
+  "animation_attack": "96",
+  "animation_idle": "48",
+  "animation_move": "48",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "22, 25, 28, 31, 34, 37, 42, 45, 48, 51, 54, 64, 66, 68, 70",
+  "normal_distribute": "3, 3, 3, 3, 4, 4, 6, 6, 6, 6, 6, 12, 12, 13, 13",
+  "normal_totaldistr": "100",
+  "bb_frames": "16, 19, 22, 25, 28, 31, 33, 36, 39, 42, 45, 48, 51, 54, 57, 60",
+  "bb_distribute": "7, 7, 6, 6, 6, 6, 6, 6, 7, 7, 5, 6, 6, 6, 6, 7",
+  "bb_totaldistr": "100",
+  "sbb_frames": "16, 19, 22, 25, 28, 31, 33, 36, 39, 42, 45, 48, 51, 54, 57, 60, 63, 66, 69",
+  "sbb_distribute": "6, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 5, 5, 5, 5, 5, 5, 5, 6",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "16, 19, 22, 25, 28, 31, 33, 36, 39, 42, 45, 48, 51, 54, 57, 60, 63, 66, 69, 72, 75, 78, 81",
+  "ubb_distribute": "5, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "1",
+  "ubb_effectdelay": "1",
+  "description": "A lone wolf who only trusts himself, Laevateinn calls none his leader and none his comrades. This is due to the personality of his Prime version, codenamed Zero, who is the first Killer Prince. His essence is from Laevateinn, the flaming sword that left the world in smoldering ruins. In the past, the demonblade Laevateinn was said to have been kept under lock and key--nine of them, in fact--which is perhaps what has given him his love of metallic accoutrements that vaguely resemble locks or keys. This means the clothes he wears are much heavier than they appear.",
+  "summon": "Commander? Summoner?<br>Whatever you are,<br>just stay out of my way!",
+  "fusion": "I feel even stronger!<br>So I don't know why I need you...",
+  "evolution": "",
+  "hp_base": "5014",
+  "atk_base": "1926",
+  "def_base": "1601",
+  "rec_base": "1516",
+  "hp_lord": "7164",
+  "atk_lord": "2752",
+  "def_lord": "2288",
+  "rec_lord": "2167",
+  "hp_anima": "8056",
+  "rec_anima": "1929",
+  "atk_breaker": "2990",
+  "def_breaker": "2060",
+  "def_guardian": "2526",
+  "rec_guardian": "2048",
+  "def_oracle": "2169",
+  "rec_oracle": "2524",
+  "hp_bonus": "1100",
+  "atk_bonus": "440",
+  "def_bonus": "440",
+  "rec_bonus": "440",
+  "lordonly": "",
+  "combo_hits": "15",
+  "normaldc": "45",
+  "ls": "Liberated Sword",
+  "lsdescription": "30% boost to max HP, Atk, 100% boost to Spark damage & boosts Spark damage for 2 turns when Sparks have exceeded certain amount",
+  "lsnote": "100% additional boost on Spark damage for 2 turns when 16 Sparks dealt",
+  "bbdescription": "16 combo powerful Dark attack on all foes, probable Spark critical & damage taken restores HP for 3 turns",
+  "bbnote": "20% chance to heal 15~20% HP from damage taken, 20% chance to deal 50% more Spark damage on Spark critical",
+  "bbtype": "Offense",
+  "bbhits": "16",
+  "bbaoe": "A",
+  "bbgauge": "24",
+  "bbdc": "16",
+  "bbmultiplier": "350",
+  "bbhits2": "",
+  "bbaoe2": "",
+  "bbdc2": "",
+  "bbmultiplier2": "",
+  "sbbdescription": "19 combo massive Dark attack on all foes, probable Spark critical, greatly boosts Spark damage for 3 turns, inflicts Spark vulnerability for 2 turn & Spark damage restores HP for 3 turns",
+  "sbbnote": "100% boost to Spark damage, 20% chance to deal 50% more Spark damage on Spark critical, 25% chance to inflict Spark vulnerability that deals 25% more Spark damage, 400~500 HP healed on Spark",
+  "sbbtype": "Offense",
+  "sbbhits": "19",
+  "sbbaoe": "A",
+  "sbbgauge": "30",
+  "sbbdc": "19",
+  "sbbmultiplier": "560",
+  "sbbhits2": "",
+  "sbbaoe2": "",
+  "sbbdc2": "",
+  "sbbmultiplier2": "",
   "ubbdescription": "23 combo massive Dark attack on all foes (damage increases as HP decreases), probable Spark critical, hugely boosts Spark damage for 3 turns, inflicts enormous Spark vulnerability for 2 turn & greatly boosts own Atk, Def, Rec for 3 turn",
   "ubbnote": "1300% + 950% x current HP / max base HP, 950% additional multiplier max, 50% chance to deal 100% more Spark damage on Spark critical, 100% boost to Spark damage, 150% more Spark damage dealt on Spark vulnerability, 300% boost to own Atk, Def, Rec",
   "ubbtype": "Offense",
@@ -1262,8 +1480,6 @@
   "esitem": "",
   "esdescription": "Damage taken boosts BB gauge",
   "esnote": "2~3 BC fill",
-  "evofrom": "",
-  "evointo": "860238",
   "evomats1": "Dark Mecha God",
   "evomats2": "Dark Mecha God",
   "evomats3": "Dark Totem",
@@ -1274,103 +1490,5 @@
   "evomats8": "",
   "evomats9": "",
   "evoitem": "",
-  "evoitem2": "",
-  "evozelcost": "3000000",
-  "stats": {
-    "_base": {
-      "atk": 1926,
-      "def": 1601,
-      "hp": 5014,
-      "rec": 1516
-    },
-    "_lord": {
-      "atk": 2752,
-      "def": 2288,
-      "hp": 7164,
-      "rec": 2167
-    },
-    "anima": {
-      "atk": 2752,
-      "def": 2288,
-      "hp max": 8354,
-      "hp min": 7759,
-      "rec max": 2048,
-      "rec min": 1810
-    },
-    "breaker": {
-      "atk max": 3109,
-      "atk min": 2871,
-      "def max": 2169,
-      "def min": 1931,
-      "hp": 7164,
-      "rec": 2167
-    },
-    "guardian": {
-      "atk": 2752,
-      "def max": 2645,
-      "def min": 2407,
-      "hp": 7164,
-      "rec max": 2167,
-      "rec min": 1929
-    },
-    "oracle": {
-      "atk": 2752,
-      "def max": 2288,
-      "def min": 2050,
-      "hp": 7164,
-      "rec max": 2643,
-      "rec min": 2405
-    }
-  },
-  "leader_skill": {
-    "desc": "30% boost to max HP, Atk, 100% boost to Spark damage & boosts Spark damage for 2 turns when Sparks have exceeded certain amount",
-    "effects": [
-      {
-        "atk% buff": 30,
-        "hp% buff": 30,
-        "passive id": "1"
-      },
-      {
-        "damage% for spark": 100,
-        "passive id": "31"
-      },
-      {
-        "buff": {
-          "buff turns (40)": "2",
-          "spark dmg% buff": 100
-        },
-        "passive id": "86",
-        "spark count buff activation": 16
-      }
-    ],
-    "id": "801240",
-    "name": "Liberated Sword"
-  },
-  "extra_skill": {
-    "desc": "Damage taken boosts BB gauge",
-    "effects": [
-      {
-        "bc fill when attacked high": 3,
-        "bc fill when attacked low": 2,
-        "bc fill when attacked%": 100,
-        "conditions": [],
-        "passive id": "25",
-        "passive target": "self"
-      }
-    ],
-    "id": "860237",
-    "name": "Lone Wolf",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "378,193,140,382",
-  "unitDisplayDetailPosition_6z54rgb3": "-109,-37,1248,1018",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "40,160,615,502,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-130,-246,1248,1018",
-  "unitDisplaySummonPosition_KC3Jk8Br": "-6,207,634,440,0",
-  "unitDisplayHpPosition_3BpHN6VD": "0,45",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "15000",
-  "sellCaution": false,
-  "effectFrames": "16:126:1,19:120:1,22:126:1,25:120:1,28:120:1,31:126:1,34:120:1,37:120:1,40:126:1,43:120:1,46:120:1,49:120:1,52:120:1,59:600404:1,62:400368:1,65:400368:1,43:600351:1,66:600351:1,70:600275:1"
+  "evoitem2": ""
 }

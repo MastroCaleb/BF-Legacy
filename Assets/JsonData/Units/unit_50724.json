@@ -1,60 +1,78 @@
 {
   "id": "50724",
-  "unitName": "ゼノン＆エスティア",
-  "freetext": ":''Not to be confused with Global counterpart, Xenon & Estia.''",
-  "unreleased": "true",
-  "untranslated": "true",
-  "doenter": "true",
-  "no": "932",
-  "element": "Light",
-  "rarity": "★★★★★",
-  "cost": "20",
-  "maxlv": "80",
-  "basexp": "21",
-  "gender": "O",
-  "ai": "2",
-  "animation_attack": "125",
-  "animation_idle": "310",
-  "animation_move": "20",
-  "movespeed_attack": "0.0033",
-  "speedtype_attack": "3",
-  "movetype_attack": "1",
-  "movespeed_skill": "0.0033",
-  "speedtype_skill": "3",
-  "movetype_skill": "1",
-  "description": "神々に滅ぼされたエリシアン王国の王女と彼女を守る騎士。神々の侵攻がグランガイア全土に及ぶ中、逃亡の旅を始める2人。騎士ゼノンは義父より受け継いだ名剣トロスタンをふるって神軍の追手を撃退し、王女エスティアはこれまで習得した魔法を使って彼を援護した。その後の2人の消息は明らかになっていないが、最後まで希望の光が失われることはなかったという。",
-  "summon": "姫様、この者が召喚したようです。<br>そのようね。<br>お会いできて光栄だわ。",
-  "fusion": "姫様、力が溢れてきますね！<br>ええ、感謝しないとね。<br>これでもっとがんばれそうよ！",
-  "evolution": "",
-  "hp_base": "3701",
-  "atk_base": "1275",
-  "def_base": "1155",
-  "rec_base": "1155",
-  "hp_lord": "5235",
-  "atk_lord": "1700",
-  "def_lord": "1540",
-  "rec_lord": "1540",
-  "hp_anima": "5827",
-  "rec_anima": "1382",
-  "atk_breaker": "1858",
-  "def_breaker": "1382",
-  "def_guardian": "1698",
-  "rec_guardian": "1461",
-  "def_oracle": "1461",
-  "rec_oracle": "1777",
-  "hp_bonus": "750",
-  "atk_bonus": "300",
-  "def_bonus": "300",
-  "rec_bonus": "300",
-  "lordonly": "",
-  "normal_frames": "17, 22, 27, 32, 55, 58, 61, 64, 67, 70",
-  "normal_distribute": "10, 8, 10, 8, 10, 12, 10, 11, 10, 11",
-  "normal_totaldistr": "100",
-  "combo_hits": "10",
-  "normaldc": "20",
-  "ls": "雄大なる至福",
-  "lsdescription": "全てのユニットの全能力を１５％アップ＆被ダメージ時、確率でＢＢゲージを増加・確率でＨＰを回復",
-  "lsnote": "15% boost to all parameters, 25% chance to heal 20% HP & 40% chance to fill 2-4 BC when attacked",
+  "stats": {
+    "_base": {
+      "atk": 1275,
+      "def": 1155,
+      "hp": 3701,
+      "rec": 1155
+    },
+    "_lord": {
+      "atk": 1700,
+      "def": 1540,
+      "hp": 5235,
+      "rec": 1540
+    },
+    "anima": {
+      "atk": 1700,
+      "def": 1540,
+      "hp max": 6025,
+      "hp min": 5630,
+      "rec max": 1461,
+      "rec min": 1303
+    },
+    "breaker": {
+      "atk max": 1937,
+      "atk min": 1779,
+      "def max": 1461,
+      "def min": 1303,
+      "hp": 5235,
+      "rec": 1540
+    },
+    "guardian": {
+      "atk": 1700,
+      "def max": 1777,
+      "def min": 1619,
+      "hp": 5235,
+      "rec max": 1540,
+      "rec min": 1382
+    },
+    "oracle": {
+      "atk": 1700,
+      "def max": 1540,
+      "def min": 1382,
+      "hp": 5235,
+      "rec max": 1856,
+      "rec min": 1698
+    }
+  },
+  "leader_skill": {
+    "desc": "全てのユニットの全能力を１５％アップ＆被ダメージ時、確率でＢＢゲージを増加・確率でＨＰを回復",
+    "effects": [
+      {
+        "atk% buff": 15,
+        "def% buff": 15,
+        "hp% buff": 15,
+        "passive id": "1",
+        "rec% buff": 15
+      },
+      {
+        "dmg% to hp% when attacked chance%": 25,
+        "dmg% to hp% when attacked high": 20,
+        "dmg% to hp% when attacked low": 20,
+        "passive id": "24"
+      },
+      {
+        "bc fill when attacked high": 4,
+        "bc fill when attacked low": 2,
+        "bc fill when attacked%": 40,
+        "passive id": "25"
+      }
+    ],
+    "id": "9000",
+    "name": "雄大なる至福"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -561,6 +579,163 @@
     ],
     "name": "エリシアングローリー"
   },
+  "sbb": {},
+  "ubb": {},
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 125
+    },
+    "idle": {
+      "total number of frames": 310
+    },
+    "move": {
+      "total number of frames": 20
+    }
+  },
+  "category": 50720,
+  "cost": "20",
+  "damage frames": {
+    "frame times": [
+      17,
+      22,
+      27,
+      32,
+      55,
+      58,
+      61,
+      64,
+      67,
+      70
+    ],
+    "hit dmg% distribution": [
+      10,
+      8,
+      10,
+      8,
+      10,
+      12,
+      10,
+      11,
+      10,
+      11
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 10
+  },
+  "drop check count": 2,
+  "element": "light",
+  "exp_pattern": 20,
+  "gender": "other",
+  "getting type": "farmable",
+  "guide_id": 932,
+  "imp": {
+    "max atk": "300",
+    "max def": "300",
+    "max hp": "750",
+    "max rec": "300"
+  },
+  "kind": "normal",
+  "lord damage range": "1583~1768",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "ゼノン＆エスティア",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "ゼノン＆エスティア",
+  "maxlv": "80",
+  "no": "932",
+  "unitDisplayHomePosition_1W9CxaFK": null,
+  "unitDisplayDetailPosition_6z54rgb3": null,
+  "unitDisplayConfirmImagePosition_MYK1fq6c": null,
+  "unitDisplayCutInImagePosition_7hLR6pDN": null,
+  "unitDisplaySummonPosition_KC3Jk8Br": null,
+  "unitDisplayHpPosition_3BpHN6VD": null,
+  "unitDisplayCursorPosition": null,
+  "sellPrice": "",
+  "sellCaution": false,
+  "effectFrames": "",
+  "evofrom": "",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "freetext": ":''Not to be confused with Global counterpart, Xenon & Estia.''",
+  "unreleased": "true",
+  "untranslated": "true",
+  "doenter": "true",
+  "basexp": "21",
+  "animation_attack": "125",
+  "animation_idle": "310",
+  "animation_move": "20",
+  "movespeed_attack": "0.0033",
+  "speedtype_attack": "3",
+  "movetype_attack": "1",
+  "movespeed_skill": "0.0033",
+  "speedtype_skill": "3",
+  "movetype_skill": "1",
+  "description": "神々に滅ぼされたエリシアン王国の王女と彼女を守る騎士。神々の侵攻がグランガイア全土に及ぶ中、逃亡の旅を始める2人。騎士ゼノンは義父より受け継いだ名剣トロスタンをふるって神軍の追手を撃退し、王女エスティアはこれまで習得した魔法を使って彼を援護した。その後の2人の消息は明らかになっていないが、最後まで希望の光が失われることはなかったという。",
+  "summon": "姫様、この者が召喚したようです。<br>そのようね。<br>お会いできて光栄だわ。",
+  "fusion": "姫様、力が溢れてきますね！<br>ええ、感謝しないとね。<br>これでもっとがんばれそうよ！",
+  "evolution": "",
+  "hp_base": "3701",
+  "atk_base": "1275",
+  "def_base": "1155",
+  "rec_base": "1155",
+  "hp_lord": "5235",
+  "atk_lord": "1700",
+  "def_lord": "1540",
+  "rec_lord": "1540",
+  "hp_anima": "5827",
+  "rec_anima": "1382",
+  "atk_breaker": "1858",
+  "def_breaker": "1382",
+  "def_guardian": "1698",
+  "rec_guardian": "1461",
+  "def_oracle": "1461",
+  "rec_oracle": "1777",
+  "hp_bonus": "750",
+  "atk_bonus": "300",
+  "def_bonus": "300",
+  "rec_bonus": "300",
+  "lordonly": "",
+  "normal_frames": "17, 22, 27, 32, 55, 58, 61, 64, 67, 70",
+  "normal_distribute": "10, 8, 10, 8, 10, 12, 10, 11, 10, 11",
+  "normal_totaldistr": "100",
+  "combo_hits": "10",
+  "normaldc": "20",
+  "ls": "雄大なる至福",
+  "lsdescription": "全てのユニットの全能力を１５％アップ＆被ダメージ時、確率でＢＢゲージを増加・確率でＨＰを回復",
+  "lsnote": "15% boost to all parameters, 25% chance to heal 20% HP & 40% chance to fill 2-4 BC when attacked",
   "bbdescription": "敵全体に光属性１５連ダメージ＆味方全体に３ターン、攻撃力・防御力・回復力をアップ・ターン毎にＨＰを少し回復・ＢＢゲージを増加",
   "bbnote": "{{UnitBuffList",
   "buff_1_proc": "1",
@@ -602,90 +777,5 @@
   "notes": "",
   "incorrectinfo": "",
   "addcat": "",
-  "addcatname": "",
-  "stats": {
-    "_base": {
-      "atk": 1275,
-      "def": 1155,
-      "hp": 3701,
-      "rec": 1155
-    },
-    "_lord": {
-      "atk": 1700,
-      "def": 1540,
-      "hp": 5235,
-      "rec": 1540
-    },
-    "anima": {
-      "atk": 1700,
-      "def": 1540,
-      "hp max": 6025,
-      "hp min": 5630,
-      "rec max": 1461,
-      "rec min": 1303
-    },
-    "breaker": {
-      "atk max": 1937,
-      "atk min": 1779,
-      "def max": 1461,
-      "def min": 1303,
-      "hp": 5235,
-      "rec": 1540
-    },
-    "guardian": {
-      "atk": 1700,
-      "def max": 1777,
-      "def min": 1619,
-      "hp": 5235,
-      "rec max": 1540,
-      "rec min": 1382
-    },
-    "oracle": {
-      "atk": 1700,
-      "def max": 1540,
-      "def min": 1382,
-      "hp": 5235,
-      "rec max": 1856,
-      "rec min": 1698
-    }
-  },
-  "leader_skill": {
-    "desc": "全てのユニットの全能力を１５％アップ＆被ダメージ時、確率でＢＢゲージを増加・確率でＨＰを回復",
-    "effects": [
-      {
-        "atk% buff": 15,
-        "def% buff": 15,
-        "hp% buff": 15,
-        "passive id": "1",
-        "rec% buff": 15
-      },
-      {
-        "dmg% to hp% when attacked chance%": 25,
-        "dmg% to hp% when attacked high": 20,
-        "dmg% to hp% when attacked low": 20,
-        "passive id": "24"
-      },
-      {
-        "bc fill when attacked high": 4,
-        "bc fill when attacked low": 2,
-        "bc fill when attacked%": 40,
-        "passive id": "25"
-      }
-    ],
-    "id": "9000",
-    "name": "雄大なる至福"
-  },
-  "extra_skill": {},
-  "sbb": {},
-  "ubb": {},
-  "unitDisplayHomePosition_1W9CxaFK": null,
-  "unitDisplayDetailPosition_6z54rgb3": null,
-  "unitDisplayConfirmImagePosition_MYK1fq6c": null,
-  "unitDisplayCutInImagePosition_7hLR6pDN": null,
-  "unitDisplaySummonPosition_KC3Jk8Br": null,
-  "unitDisplayHpPosition_3BpHN6VD": null,
-  "unitDisplayCursorPosition": null,
-  "sellPrice": "",
-  "sellCaution": false,
-  "effectFrames": ""
+  "addcatname": ""
 }

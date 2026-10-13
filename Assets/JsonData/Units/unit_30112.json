@@ -1,59 +1,63 @@
 {
   "id": "30112",
-  "unitName": "Great Tree Alneu",
-  "no": "141",
-  "element": "Earth",
-  "rarity": "★★★",
-  "cost": "5",
-  "maxlv": "40",
-  "basexp": "21",
-  "gender": "N",
-  "ai": "5",
-  "animation_attack": "197",
-  "animation_idle": "64",
-  "animation_move": "64",
-  "movespeed_attack": "6",
-  "movespeed_skill": "6",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "46, 52, 58",
-  "normal_distribute": "33, 33, 34",
-  "normal_totaldistr": "100",
-  "description": "A giant tree with a will of its own and the ability to move. It can also speak, but since it gets its nutrition from photosynthesis, it's still biologically classified as a plant. Alneu's fruit contains a stimulant that can heal fatigue, and it often gives it to humans it likes. Contrary to its large size it likes small and cute things, especially human children.",
-  "summon": "Why do you seek me, little one?<br>I will make sure your wish<br>comes true.",
-  "fusion": "If I were to use human words,<br>I guess I'd say that felt good.",
-  "evolution": "",
-  "hp_base": "2180",
-  "atk_base": "550",
-  "def_base": "800",
-  "rec_base": "410",
-  "hp_lord": "3352",
-  "atk_lord": "726",
-  "def_lord": "1056",
-  "rec_lord": "562",
-  "hp_anima": "3645",
-  "rec_anima": "484",
-  "atk_breaker": "804",
-  "def_breaker": "978",
-  "atk_guardian": "648",
-  "def_guardian": "1134",
-  "rec_guardian": "523",
-  "def_oracle": "1017",
-  "hp_oracle": "3235",
-  "rec_oracle": "679",
-  "hp_bonus": "300",
-  "atk_bonus": "80",
-  "def_bonus": "160",
-  "rec_bonus": "120",
-  "lordonly": "",
-  "combo_hits": "3",
-  "normaldc": "6",
-  "ls": "Loving Spirit",
-  "lsdescription": "Boost in effectiveness of Heart Crystals",
-  "lsnote": "25% boost",
-  "lstype": "Recovery",
+  "stats": {
+    "_base": {
+      "atk": 550,
+      "def": 800,
+      "hp": 2180,
+      "rec": 410
+    },
+    "_lord": {
+      "atk": 726,
+      "def": 1056,
+      "hp": 3352,
+      "rec": 562
+    },
+    "anima": {
+      "atk": 726,
+      "def": 1056,
+      "hp max": 3742,
+      "hp min": 3547,
+      "rec max": 523,
+      "rec min": 445
+    },
+    "breaker": {
+      "atk max": 843,
+      "atk min": 765,
+      "def max": 1017,
+      "def min": 939,
+      "hp": 3352,
+      "rec": 562
+    },
+    "guardian": {
+      "atk": 726,
+      "def max": 1173,
+      "def min": 1095,
+      "hp": 3352,
+      "rec max": 562,
+      "rec min": 484
+    },
+    "oracle": {
+      "atk": 726,
+      "def max": 1056,
+      "def min": 978,
+      "hp": 3352,
+      "rec max": 718,
+      "rec min": 640
+    }
+  },
+  "leader_skill": {
+    "desc": "Boost in effectiveness of Heart Crystals",
+    "effects": [
+      {
+        "hc effectiveness%": 25,
+        "passive id": "10"
+      }
+    ],
+    "id": "1100",
+    "name": "Loving Spirit"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -398,92 +402,87 @@
     ],
     "name": "Lucent Purge"
   },
-  "bbdescription": "Recovery of all allies' HP & reverses all irregular conditions",
-  "bbnote": "Heals (1360~1660 + 22.5% of healer Rec) HP",
-  "bbtype": "Heal",
-  "bbhits": "0",
-  "bbaoe": "0",
-  "bbgauge": "20",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "30113",
-  "evomats1": "60143",
-  "evomats2": "30132",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evozelcost": "100000",
-  "stats": {
-    "_base": {
-      "atk": 550,
-      "def": 800,
-      "hp": 2180,
-      "rec": 410
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 80.0,
+      "target conditions": "hp_50pr_under",
+      "target type": "party"
     },
-    "_lord": {
-      "atk": 726,
-      "def": 1056,
-      "hp": 3352,
-      "rec": 562
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "hp_min",
+      "target type": "party"
     },
-    "anima": {
-      "atk": 726,
-      "def": 1056,
-      "hp max": 3742,
-      "hp min": 3547,
-      "rec max": 523,
-      "rec min": 445
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 197
     },
-    "breaker": {
-      "atk max": 843,
-      "atk min": 765,
-      "def max": 1017,
-      "def min": 939,
-      "hp": 3352,
-      "rec": 562
+    "idle": {
+      "total number of frames": 64
     },
-    "guardian": {
-      "atk": 726,
-      "def max": 1173,
-      "def min": 1095,
-      "hp": 3352,
-      "rec max": 562,
-      "rec min": 484
-    },
-    "oracle": {
-      "atk": 726,
-      "def max": 1056,
-      "def min": 978,
-      "hp": 3352,
-      "rec max": 718,
-      "rec min": 640
+    "move": {
+      "total number of frames": 64
     }
   },
-  "leader_skill": {
-    "desc": "Boost in effectiveness of Heart Crystals",
-    "effects": [
-      {
-        "hc effectiveness%": 25,
-        "passive id": "10"
-      }
+  "category": 30110,
+  "cost": "5",
+  "damage frames": {
+    "frame times": [
+      46,
+      52,
+      58
     ],
-    "id": "1100",
-    "name": "Loving Spirit"
+    "hit dmg% distribution": [
+      33,
+      33,
+      34
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 3
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "earth",
+  "exp_pattern": 20,
+  "gender": "other",
+  "getting type": "rare summon",
+  "guide_id": 141,
+  "imp": {
+    "max atk": "80",
+    "max def": "160",
+    "max hp": "300",
+    "max rec": "120"
+  },
+  "kind": "normal",
+  "lord damage range": "675~755",
+  "movement": {
+    "attack": {
+      "move speed": 6,
+      "move speed type": "2",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 6,
+      "move speed type": "2",
+      "move type": "3"
+    }
+  },
+  "name": "Great Tree Alneu",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "Great Tree Alneu",
+  "maxlv": "40",
+  "no": "141",
   "unitDisplayHomePosition_1W9CxaFK": "232,63,200,544",
   "unitDisplayDetailPosition_6z54rgb3": "126,94,686,694",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "92,209,450,454,0",
@@ -493,5 +492,90 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "1000",
   "sellCaution": false,
-  "effectFrames": "45:240:1"
+  "effectFrames": "45:240:1",
+  "evofrom": "",
+  "evointo": "30113",
+  "evozelcost": "100000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30132",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "197",
+  "animation_idle": "64",
+  "animation_move": "64",
+  "movespeed_attack": "6",
+  "movespeed_skill": "6",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "46, 52, 58",
+  "normal_distribute": "33, 33, 34",
+  "normal_totaldistr": "100",
+  "description": "A giant tree with a will of its own and the ability to move. It can also speak, but since it gets its nutrition from photosynthesis, it's still biologically classified as a plant. Alneu's fruit contains a stimulant that can heal fatigue, and it often gives it to humans it likes. Contrary to its large size it likes small and cute things, especially human children.",
+  "summon": "Why do you seek me, little one?<br>I will make sure your wish<br>comes true.",
+  "fusion": "If I were to use human words,<br>I guess I'd say that felt good.",
+  "evolution": "",
+  "hp_base": "2180",
+  "atk_base": "550",
+  "def_base": "800",
+  "rec_base": "410",
+  "hp_lord": "3352",
+  "atk_lord": "726",
+  "def_lord": "1056",
+  "rec_lord": "562",
+  "hp_anima": "3645",
+  "rec_anima": "484",
+  "atk_breaker": "804",
+  "def_breaker": "978",
+  "atk_guardian": "648",
+  "def_guardian": "1134",
+  "rec_guardian": "523",
+  "def_oracle": "1017",
+  "hp_oracle": "3235",
+  "rec_oracle": "679",
+  "hp_bonus": "300",
+  "atk_bonus": "80",
+  "def_bonus": "160",
+  "rec_bonus": "120",
+  "lordonly": "",
+  "combo_hits": "3",
+  "normaldc": "6",
+  "ls": "Loving Spirit",
+  "lsdescription": "Boost in effectiveness of Heart Crystals",
+  "lsnote": "25% boost",
+  "lstype": "Recovery",
+  "bbdescription": "Recovery of all allies' HP & reverses all irregular conditions",
+  "bbnote": "Heals (1360~1660 + 22.5% of healer Rec) HP",
+  "bbtype": "Heal",
+  "bbhits": "0",
+  "bbaoe": "0",
+  "bbgauge": "20",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "60143",
+  "evomats2": "30132",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": ""
 }

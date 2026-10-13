@@ -1,68 +1,117 @@
 {
   "id": "40886",
-  "unitName": "Odd Character Zora",
-  "no": "1567",
-  "element": "Thunder",
-  "rarity": "★★★★★★★",
-  "cost": "46",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "N",
-  "ai": "4",
-  "animation_attack": "194",
-  "animation_idle": "58",
-  "animation_move": "32",
-  "movespeed_attack": "0.0041",
-  "movespeed_skill": "0.0041",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "144, 148, 152, 156",
-  "normal_distribute": "30, 25, 25, 20",
-  "normal_totaldistr": "100",
-  "bb_frames": "144, 147, 150, 153, 156, 159, 162, 165, 168, 171",
-  "bb_distribute": "13, 11, 11, 11, 10, 10, 10, 10, 8, 6",
-  "bb_totaldistr": "100",
-  "sbb_frames": "144, 147, 150, 153, 156, 159, 162, 165, 168, 171, 174, 177, 180, 183",
-  "sbb_distribute": "10, 10, 10, 10, 10, 8, 8, 8, 6, 6, 4, 4, 4, 2",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "144, 147, 150, 153, 156, 159, 162, 165, 168, 171, 174, 177, 180, 183, 186, 189, 192, 195, 198, 201",
-  "ubb_distribute": "7, 7, 7, 7, 7, 6, 6, 6, 6, 5, 5, 5, 4, 4, 4, 4, 3, 3, 2, 2",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "1",
-  "ubb_effectdelay": "1",
-  "description": "The interrogator with the fearsome band of outlaws, the \"Ten Vile Disnomians.\" Active during the early days of the empire, Zora was skilled in telepathic techniques. Stories tell us that he took great pleasure in toying with his subjects' minds, and that he was skilled in psychological warfare. He confused countless knights when the band was ambushed by the Imperial Guard, creating a mountain of bodies. Even so, he sacrificed himself to save a magical automaton team member, and is believed to have perished in the act.",
-  "summon": "All right, time for a lively little interrogation! What do you want to play? It's okay, it won't hurt!",
-  "fusion": "All I want is a new toy and the strength to keep that [[Magical Host Mariletta|kid]] safe. I'll toss away anything else!",
-  "evolution": "",
-  "hp_base": "5097",
-  "atk_base": "2237",
-  "def_base": "1921",
-  "rec_base": "1943",
-  "hp_lord": "7263",
-  "atk_lord": "3027",
-  "def_lord": "2602",
-  "rec_lord": "2623",
-  "hp_anima": "8155",
-  "rec_anima": "2385",
-  "atk_breaker": "3265",
-  "def_breaker": "2364",
-  "def_guardian": "2840",
-  "rec_guardian": "2504",
-  "def_oracle": "2483",
-  "rec_oracle": "2980",
-  "hp_bonus": "1100",
-  "atk_bonus": "440",
-  "def_bonus": "440",
-  "rec_bonus": "440",
-  "lordonly": "",
-  "combo_hits": "4",
-  "normaldc": "36",
-  "ls": "Interrogator's Gambit",
-  "lsdescription": "50% boost to Atk, max HP, probable infliction of random status ailment & hugely boosts damage against status afflicted foes",
-  "lsnote": "7% Injury, Weak, Sick chance, 5% Curse, Poison, Paralysis chance & 100% boost",
+  "stats": {
+    "_base": {
+      "atk": 2237,
+      "def": 1921,
+      "hp": 5097,
+      "rec": 1943
+    },
+    "_lord": {
+      "atk": 3027,
+      "def": 2602,
+      "hp": 7263,
+      "rec": 2623
+    },
+    "anima": {
+      "atk": 3027,
+      "def": 2602,
+      "hp max": 8453,
+      "hp min": 7858,
+      "rec max": 2504,
+      "rec min": 2266
+    },
+    "breaker": {
+      "atk max": 3384,
+      "atk min": 3146,
+      "def max": 2483,
+      "def min": 2245,
+      "hp": 7263,
+      "rec": 2623
+    },
+    "guardian": {
+      "atk": 3027,
+      "def max": 2959,
+      "def min": 2721,
+      "hp": 7263,
+      "rec max": 2623,
+      "rec min": 2385
+    },
+    "oracle": {
+      "atk": 3027,
+      "def max": 2602,
+      "def min": 2364,
+      "hp": 7263,
+      "rec max": 3099,
+      "rec min": 2861
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to Atk, max HP, probable infliction of random status ailment & hugely boosts damage against status afflicted foes",
+    "effects": [
+      {
+        "atk% buff": 50,
+        "hp% buff": 50,
+        "passive id": "1"
+      },
+      {
+        "injury%": 7,
+        "passive id": "20",
+        "poison%": 5,
+        "sick%": 7,
+        "weaken%": 7
+      },
+      {
+        "curse%": 5,
+        "paralysis%": 5,
+        "passive id": "20"
+      },
+      {
+        "atk% buff when enemy has ailment": 100,
+        "atk% buff when enemy has curse": true,
+        "atk% buff when enemy has injury": true,
+        "atk% buff when enemy has paralysis": true,
+        "atk% buff when enemy has poison": true,
+        "atk% buff when enemy has sick": true,
+        "atk% buff when enemy has weaken": true,
+        "passive id": "74"
+      }
+    ],
+    "id": "7494",
+    "name": "Interrogator's Gambit"
+  },
+  "extra_skill": {
+    "desc": "Hugely boosts damage against status afflicted foes & negates all status ailments",
+    "effects": [
+      {
+        "atk% buff when enemy has ailment": 100,
+        "atk% buff when enemy has curse": true,
+        "atk% buff when enemy has injury": true,
+        "atk% buff when enemy has paralysis": true,
+        "atk% buff when enemy has poison": true,
+        "atk% buff when enemy has sick": true,
+        "atk% buff when enemy has weaken": true,
+        "conditions": [],
+        "passive id": "74",
+        "passive target": "self"
+      },
+      {
+        "conditions": [],
+        "curse resist%": 100,
+        "injury resist%": 100,
+        "paralysis resist%": 100,
+        "passive id": "4",
+        "passive target": "self",
+        "poison resist%": 100,
+        "sick resist%": 100,
+        "weaken resist%": 100
+      }
+    ],
+    "id": "30700",
+    "name": "Telepathy",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -721,14 +770,6 @@
     ],
     "name": "Brutal Punishment!"
   },
-  "bbdescription": "10 combo Thunder attack on all foes, probable huge 1 turn Atk, Def reduction, probable random status ailment infliction & adds probable slight HP absorption to attack for 3 turns",
-  "bbnote": "50% chance to drain 3-5% damage, 30% chance to reduce enemy Atk, Def by 50%, 65% infliction chance",
-  "bbtype": "Heal/Offense",
-  "bbhits": "10",
-  "bbaoe": "A",
-  "bbgauge": "31",
-  "bbdc": "10",
-  "bbmultiplier": "380",
   "sbb": {
     "damage frames": [
       {
@@ -1527,14 +1568,6 @@
     ],
     "name": "Solitary Cell"
   },
-  "sbbdescription": "14 combo powerful Thunder attack on all foes, probable huge 1 turn to Atk, Def reduction, adds probable random status ailment infliction to attack for 3 turns, adds probable slight HP absorption to attack for 3 turns & damage taken may slightly restore HP for 3 turns",
-  "sbbnote": "50% chance to drain 3-5% damage, 30% chance to reduce enemy Atk, Def by 50%, 8% Curse, Poison, Paralysis chance, 10% Injury, Weak, Sick & 20% chance to heal 20-25% damage",
-  "sbbtype": "Heal/Offense",
-  "sbbhits": "14",
-  "sbbaoe": "A",
-  "sbbgauge": "33",
-  "sbbdc": "14",
-  "sbbmultiplier": "580",
   "ubb": {
     "damage frames": [
       {
@@ -1699,6 +1732,221 @@
     ],
     "name": "Ruisette's Absolution"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_under",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 30.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 70.0,
+      "target conditions": "hp_max",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 50.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 194
+    },
+    "idle": {
+      "total number of frames": 58
+    },
+    "move": {
+      "total number of frames": 32
+    }
+  },
+  "category": 40880,
+  "cost": "46",
+  "damage frames": {
+    "frame times": [
+      144,
+      148,
+      152,
+      156
+    ],
+    "hit dmg% distribution": [
+      30,
+      25,
+      25,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 4
+  },
+  "drop check count": 9,
+  "element": "thunder",
+  "exp_pattern": 20,
+  "gender": "other",
+  "getting type": "rare summon",
+  "guide_id": 1567,
+  "imp": {
+    "max atk": "440",
+    "max def": "440",
+    "max hp": "1100",
+    "max rec": "440"
+  },
+  "kind": "normal",
+  "lord damage range": "2818~3148",
+  "movement": {
+    "attack": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    }
+  },
+  "name": "Odd Character Zora",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Odd Character Zora",
+  "maxlv": "120",
+  "no": "1567",
+  "unitDisplayHomePosition_1W9CxaFK": "534,267,200,546",
+  "unitDisplayDetailPosition_6z54rgb3": "-186,-14,1130,877",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "-10,180,608,472,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-166,-281,1100,854",
+  "unitDisplaySummonPosition_KC3Jk8Br": "-10,180,608,472,0",
+  "unitDisplayHpPosition_3BpHN6VD": "-3,79",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "15000",
+  "sellCaution": false,
+  "effectFrames": "138:400231:1,142:400231:1,146:400231:1,150:400231:1,144:401108:1",
+  "evofrom": "",
+  "evointo": "40887",
+  "evozelcost": "3000000",
+  "evokarmacost": "1000000",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "40334",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 2
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "194",
+  "animation_idle": "58",
+  "animation_move": "32",
+  "movespeed_attack": "0.0041",
+  "movespeed_skill": "0.0041",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "144, 148, 152, 156",
+  "normal_distribute": "30, 25, 25, 20",
+  "normal_totaldistr": "100",
+  "bb_frames": "144, 147, 150, 153, 156, 159, 162, 165, 168, 171",
+  "bb_distribute": "13, 11, 11, 11, 10, 10, 10, 10, 8, 6",
+  "bb_totaldistr": "100",
+  "sbb_frames": "144, 147, 150, 153, 156, 159, 162, 165, 168, 171, 174, 177, 180, 183",
+  "sbb_distribute": "10, 10, 10, 10, 10, 8, 8, 8, 6, 6, 4, 4, 4, 2",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "144, 147, 150, 153, 156, 159, 162, 165, 168, 171, 174, 177, 180, 183, 186, 189, 192, 195, 198, 201",
+  "ubb_distribute": "7, 7, 7, 7, 7, 6, 6, 6, 6, 5, 5, 5, 4, 4, 4, 4, 3, 3, 2, 2",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "1",
+  "ubb_effectdelay": "1",
+  "description": "The interrogator with the fearsome band of outlaws, the \"Ten Vile Disnomians.\" Active during the early days of the empire, Zora was skilled in telepathic techniques. Stories tell us that he took great pleasure in toying with his subjects' minds, and that he was skilled in psychological warfare. He confused countless knights when the band was ambushed by the Imperial Guard, creating a mountain of bodies. Even so, he sacrificed himself to save a magical automaton team member, and is believed to have perished in the act.",
+  "summon": "All right, time for a lively little interrogation! What do you want to play? It's okay, it won't hurt!",
+  "fusion": "All I want is a new toy and the strength to keep that [[Magical Host Mariletta|kid]] safe. I'll toss away anything else!",
+  "evolution": "",
+  "hp_base": "5097",
+  "atk_base": "2237",
+  "def_base": "1921",
+  "rec_base": "1943",
+  "hp_lord": "7263",
+  "atk_lord": "3027",
+  "def_lord": "2602",
+  "rec_lord": "2623",
+  "hp_anima": "8155",
+  "rec_anima": "2385",
+  "atk_breaker": "3265",
+  "def_breaker": "2364",
+  "def_guardian": "2840",
+  "rec_guardian": "2504",
+  "def_oracle": "2483",
+  "rec_oracle": "2980",
+  "hp_bonus": "1100",
+  "atk_bonus": "440",
+  "def_bonus": "440",
+  "rec_bonus": "440",
+  "lordonly": "",
+  "combo_hits": "4",
+  "normaldc": "36",
+  "ls": "Interrogator's Gambit",
+  "lsdescription": "50% boost to Atk, max HP, probable infliction of random status ailment & hugely boosts damage against status afflicted foes",
+  "lsnote": "7% Injury, Weak, Sick chance, 5% Curse, Poison, Paralysis chance & 100% boost",
+  "bbdescription": "10 combo Thunder attack on all foes, probable huge 1 turn Atk, Def reduction, probable random status ailment infliction & adds probable slight HP absorption to attack for 3 turns",
+  "bbnote": "50% chance to drain 3-5% damage, 30% chance to reduce enemy Atk, Def by 50%, 65% infliction chance",
+  "bbtype": "Heal/Offense",
+  "bbhits": "10",
+  "bbaoe": "A",
+  "bbgauge": "31",
+  "bbdc": "10",
+  "bbmultiplier": "380",
+  "sbbdescription": "14 combo powerful Thunder attack on all foes, probable huge 1 turn to Atk, Def reduction, adds probable random status ailment infliction to attack for 3 turns, adds probable slight HP absorption to attack for 3 turns & damage taken may slightly restore HP for 3 turns",
+  "sbbnote": "50% chance to drain 3-5% damage, 30% chance to reduce enemy Atk, Def by 50%, 8% Curse, Poison, Paralysis chance, 10% Injury, Weak, Sick & 20% chance to heal 20-25% damage",
+  "sbbtype": "Heal/Offense",
+  "sbbhits": "14",
+  "sbbaoe": "A",
+  "sbbgauge": "33",
+  "sbbdc": "14",
+  "sbbmultiplier": "580",
   "ubbdescription": "20 combo massive Thunder attack on all foes, enormous 1 turn Atk, Def reduction, enormously boosts critical hit rate and critical damage for 3 turns & damage taken may enormously restore HP for 3 turns",
   "ubbnote": "60% Crit, 80% reduction, 300% Crit damage & 100% chance to restore 100% damage",
   "ubbtype": "Heal/Offense",
@@ -1711,8 +1959,6 @@
   "esitem": "",
   "esdescription": "Hugely boosts damage against status afflicted foes & negates all status ailments",
   "esnote": "100% boost",
-  "evofrom": "",
-  "evointo": "40887",
   "evomats1": "Thunder Mecha God",
   "evomats2": "Thunder Mecha God",
   "evomats3": "Miracle Totem",
@@ -1721,128 +1967,5 @@
   "evomats6": "Dragon Mimic",
   "evomats7": "Metal Mimic",
   "evomats8": "Metal Mimic",
-  "evoitem": "",
-  "evozelcost": "3000000",
-  "stats": {
-    "_base": {
-      "atk": 2237,
-      "def": 1921,
-      "hp": 5097,
-      "rec": 1943
-    },
-    "_lord": {
-      "atk": 3027,
-      "def": 2602,
-      "hp": 7263,
-      "rec": 2623
-    },
-    "anima": {
-      "atk": 3027,
-      "def": 2602,
-      "hp max": 8453,
-      "hp min": 7858,
-      "rec max": 2504,
-      "rec min": 2266
-    },
-    "breaker": {
-      "atk max": 3384,
-      "atk min": 3146,
-      "def max": 2483,
-      "def min": 2245,
-      "hp": 7263,
-      "rec": 2623
-    },
-    "guardian": {
-      "atk": 3027,
-      "def max": 2959,
-      "def min": 2721,
-      "hp": 7263,
-      "rec max": 2623,
-      "rec min": 2385
-    },
-    "oracle": {
-      "atk": 3027,
-      "def max": 2602,
-      "def min": 2364,
-      "hp": 7263,
-      "rec max": 3099,
-      "rec min": 2861
-    }
-  },
-  "leader_skill": {
-    "desc": "50% boost to Atk, max HP, probable infliction of random status ailment & hugely boosts damage against status afflicted foes",
-    "effects": [
-      {
-        "atk% buff": 50,
-        "hp% buff": 50,
-        "passive id": "1"
-      },
-      {
-        "injury%": 7,
-        "passive id": "20",
-        "poison%": 5,
-        "sick%": 7,
-        "weaken%": 7
-      },
-      {
-        "curse%": 5,
-        "paralysis%": 5,
-        "passive id": "20"
-      },
-      {
-        "atk% buff when enemy has ailment": 100,
-        "atk% buff when enemy has curse": true,
-        "atk% buff when enemy has injury": true,
-        "atk% buff when enemy has paralysis": true,
-        "atk% buff when enemy has poison": true,
-        "atk% buff when enemy has sick": true,
-        "atk% buff when enemy has weaken": true,
-        "passive id": "74"
-      }
-    ],
-    "id": "7494",
-    "name": "Interrogator's Gambit"
-  },
-  "extra_skill": {
-    "desc": "Hugely boosts damage against status afflicted foes & negates all status ailments",
-    "effects": [
-      {
-        "atk% buff when enemy has ailment": 100,
-        "atk% buff when enemy has curse": true,
-        "atk% buff when enemy has injury": true,
-        "atk% buff when enemy has paralysis": true,
-        "atk% buff when enemy has poison": true,
-        "atk% buff when enemy has sick": true,
-        "atk% buff when enemy has weaken": true,
-        "conditions": [],
-        "passive id": "74",
-        "passive target": "self"
-      },
-      {
-        "conditions": [],
-        "curse resist%": 100,
-        "injury resist%": 100,
-        "paralysis resist%": 100,
-        "passive id": "4",
-        "passive target": "self",
-        "poison resist%": 100,
-        "sick resist%": 100,
-        "weaken resist%": 100
-      }
-    ],
-    "id": "30700",
-    "name": "Telepathy",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "534,267,200,546",
-  "unitDisplayDetailPosition_6z54rgb3": "-186,-14,1130,877",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "-10,180,608,472,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-166,-281,1100,854",
-  "unitDisplaySummonPosition_KC3Jk8Br": "-10,180,608,472,0",
-  "unitDisplayHpPosition_3BpHN6VD": "-3,79",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "15000",
-  "sellCaution": false,
-  "effectFrames": "138:400231:1,142:400231:1,146:400231:1,150:400231:1,144:401108:1"
+  "evoitem": ""
 }

@@ -1,65 +1,153 @@
 {
   "id": "750237",
-  "unitName": "Balance Bringer Plumatachi (EU)",
-  "disam": "Plumatachi",
-  "altname": "Balance Bringer Plumatachi",
-  "idalt": "",
-  "has_altart": "",
-  "doenter": "true",
-  "no": "7203",
-  "element": "Light",
-  "rarity": "Dream",
-  "cost": "48",
-  "maxlv": "150",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "3",
-  "animation_attack": "146",
-  "animation_idle": "60",
-  "animation_move": "60",
-  "movespeed_attack": "0.0033",
-  "speedtype_attack": "3",
-  "movetype_attack": "1",
-  "movespeed_skill": "0.0033",
-  "speedtype_skill": "3",
-  "movetype_skill": "1",
-  "description": "Plumatachi chose the path of blind vengeance. She destroyed everything in her path, only bringing chaos and death to the Bad Lands. This wake of devastation could have been avoided if Plumatachi had made different choices. Rather than kill everyone in her path in Blink’s honor, she could have neutralized and punished the former despots and Coal Cauldron by banishing them to the desert far away from all civilization. And thus she would have liberated the Bad Lands from Coal’s yoke and brought back balance to his lands by unifying the different groups and clans with the help of her allies.",
-  "summon": "",
-  "fusion": "Force is necessary in order to maintain the balance. Thank you for lending yours to me.",
-  "evolution": "Violence is not the solution. There is always another path.",
-  "hp_base": "6993",
-  "atk_base": "2470",
-  "def_base": "2066",
-  "rec_base": "2470",
-  "hp_lord": "8532",
-  "atk_lord": "3013",
-  "def_lord": "2520",
-  "rec_lord": "3013",
-  "hp_anima": "9649",
-  "rec_anima": "2715",
-  "atk_breaker": "3311",
-  "def_breaker": "2222",
-  "def_guardian": "2818",
-  "rec_guardian": "3013",
-  "def_oracle": "2520",
-  "rec_oracle": "3311",
-  "hp_bonus": "1750",
-  "atk_bonus": "600",
-  "def_bonus": "600",
-  "rec_bonus": "700",
-  "lordonly": "",
-  "normal_frames": "45, 48, 51, 54, 57, 60, 65, 70, 75, 80, 85",
-  "normal_distribute": "10, 10, 10, 10, 10, 10, 10, 10, 10, 5, 5",
-  "normal_totaldistr": "100",
-  "combo_hits": "11",
-  "normaldc": "44",
-  "ls": "Blessed Alliance",
-  "lsdescription": "Boosts HP and REC (60%) & boosts ATK (150%) for Water and Light units & raises normal hit amount (+1, 50% damage) & chance to reduce damage to 1 (15%) & boosts Water and Light elemental damage (150%)",
-  "lsnote": "",
-  "es": "Rest in Peace",
-  "esdescription": "When Blink's Glasses is equipped, boosts all parameters (20%) and adds reduce Thunder and Dark damage (15%) for 1 turn and raise normal hit amount (+2) for 3 turns to BB/SBB",
-  "esitem": "Blink's Glasses",
-  "esnote": "",
+  "stats": {
+    "_base": {
+      "atk": 2470,
+      "def": 2066,
+      "hp": 6993,
+      "rec": 2470
+    },
+    "_lord": {
+      "atk": 3013,
+      "def": 2520,
+      "hp": 8532,
+      "rec": 3013
+    },
+    "anima": {
+      "atk": 3013,
+      "def": 2520,
+      "hp max": 10022,
+      "hp min": 9277,
+      "rec max": 2864,
+      "rec min": 2566
+    },
+    "breaker": {
+      "atk max": 3460,
+      "atk min": 3162,
+      "def max": 2371,
+      "def min": 2073,
+      "hp": 8532,
+      "rec": 3013
+    },
+    "guardian": {
+      "atk max": 2864,
+      "atk min": 2566,
+      "def max": 2967,
+      "def min": 2669,
+      "hp": 8532,
+      "rec": 3013
+    },
+    "oracle": {
+      "atk": 3013,
+      "def": 2520,
+      "hp max": 7787,
+      "hp min": 7042,
+      "rec max": 3460,
+      "rec min": 3162
+    }
+  },
+  "leader_skill": {
+    "desc": "Boosts HP and REC (60%) & boosts ATK (150%) for Water and Light units & raises normal hit amount (+1, 50% damage) & chance to reduce damage to 1 (15%) & boosts Water and Light elemental damage (150%)",
+    "effects": [
+      {
+        "passive id": "43",
+        "take 1 dmg%": 15
+      },
+      {
+        "hp% buff": 60,
+        "passive id": "1",
+        "rec% buff": 60
+      },
+      {
+        "atk% buff": 150,
+        "elements buffed": [
+          "water",
+          "light"
+        ],
+        "passive id": "2"
+      },
+      {
+        "extra hits dmg%": -50,
+        "hit increase/hit": 1,
+        "passive id": "37"
+      },
+      {
+        "elemental weakness multiplier%": 150.0,
+        "light units do extra elemental weakness dmg": true,
+        "passive id": "50",
+        "water units do extra elemental weakness dmg": true
+      }
+    ],
+    "id": "750237",
+    "name": "Blessed Alliance"
+  },
+  "extra_skill": {
+    "desc": "When Blink's Glasses is equipped, boosts all parameters (20%) and adds reduce Thunder and Dark damage (15%) for 1 turn and raise normal hit amount (+2) for 3 turns to BB/SBB",
+    "effects": [
+      {
+        "atk% buff": 20,
+        "conditions": [
+          {
+            "item required": [
+              "700018"
+            ]
+          }
+        ],
+        "def% buff": 20,
+        "hp% buff": 20,
+        "passive id": "1",
+        "passive target": "self",
+        "rec% buff": 20
+      },
+      {
+        "conditions": [],
+        "passive id": "66",
+        "passive target": "self",
+        "trigger on bb": true,
+        "trigger on sbb": true,
+        "triggered effect": [
+          {
+            "dmg% mitigation for elemental attacks": 15,
+            "dmg% mitigation for elemental attacks buff turns": 1,
+            "effect delay time(ms)/frame": "0.0/0",
+            "mitigate dark attacks": true,
+            "mitigate thunder attacks": true,
+            "proc id": "39",
+            "target area": "aoe",
+            "target type": "party"
+          }
+        ]
+      },
+      {
+        "conditions": [
+          {
+            "item required": [
+              "700018"
+            ]
+          }
+        ],
+        "passive id": "66",
+        "passive target": "self",
+        "trigger on bb": true,
+        "trigger on sbb": true,
+        "triggered effect": [
+          {
+            "effect delay time(ms)/frame": "0.0/0",
+            "extra hits dmg%": 20,
+            "hit increase buff turns (50)": 3,
+            "hit increase/hit": 2,
+            "proc id": "26",
+            "target area": "aoe",
+            "target type": "party"
+          }
+        ]
+      }
+    ],
+    "id": "750237",
+    "name": "Rest in Peace",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -568,39 +656,6 @@
     ],
     "name": "Path to Exile"
   },
-  "bbdescription": "16 Light combo attack on all foes & boosts REC (170%) for 3 turns & adds probable 1 turn ATK reduction (20% chance reduce 20%) to attack for 3 turns & boosts Water and Light elemental damage (125%) for 3 turns",
-  "bbnote": "{{UnitBuffList",
-  "buff_1_proc": "1",
-  "buff_1_potency": "1500% damage modifier",
-  "buff_1_duration": "—",
-  "buff_1_target": "All enemies",
-  "buff_2_proc": "26",
-  "buff_2_potency": "+3 to each normal hit (200% extra hit damage modifier)",
-  "buff_2_duration": "3 turns",
-  "buff_2_target": "All allies",
-  "buff_3_proc": "55_water",
-  "buff_3_potency": "400% boost to Water elemental damage",
-  "buff_3_duration": "3 turns",
-  "buff_3_target": "All allies",
-  "buff_4_proc": "55_light",
-  "buff_4_potency": "400% boost to Light elemental damage",
-  "buff_4_duration": "3 turns",
-  "buff_4_target": "All allies",
-  "buff_5_proc": "24_atk",
-  "buff_5_potency": "Boosts Atk relative to 250% of Recovery",
-  "buff_5_duration": "3 turns",
-  "buff_5_target": "All allies",
-  "bbtype": "Offense",
-  "bbgauge": "20",
-  "bb_frames": "45, 48, 51, 54, 57, 60, 63, 66, 69, 71, 74, 77, 80, 83, 86, 89",
-  "bb_distribute": "5, 5, 5, 5, 5, 10, 10, 10, 10, 5, 5, 5, 5, 5, 5, 5",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "3",
-  "bbhits": "16",
-  "bbaoe": "A",
-  "bbdc": "16",
-  "bbmultiplier": "370",
-  "bb_hpscale": "",
   "sbb": {
     "damage frames": [
       {
@@ -1241,31 +1296,6 @@
     ],
     "name": "Decree of Justice"
   },
-  "sbbdescription": "26 Light combo attack on all foes & boosts ATK (120%) and REC (80%) for Water and Light units for 3 turns & boosts ATK relative to REC (80%) for 3 turns & boosts Water and Light elemental damage (125%) for 3 turns",
-  "sbbnote": "{{UnitBuffList",
-  "buff_6_proc": "76",
-  "buff_6_potency": "50% chance of acting 1 extra time",
-  "buff_6_duration": "1 turn",
-  "buff_6_target": "All allies",
-  "buff_7_proc": "55_water",
-  "buff_7_potency": "125% boost to Water elemental damage",
-  "buff_7_duration": "3 turns",
-  "buff_7_target": "All allies",
-  "buff_8_proc": "55_light",
-  "buff_8_potency": "125% boost to Light elemental damage",
-  "buff_8_duration": "3 turns",
-  "buff_8_target": "All allies",
-  "sbbtype": "Offense",
-  "sbbgauge": "26",
-  "sbb_frames": "45, 48, 51, 54, 57, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80, 82, 84, 86, 88, 90, 92, 94, 96, 98, 100",
-  "sbb_distribute": "2, 2, 2, 2, 2, 2, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 3, 3, 3, 3, 3, 3",
-  "sbb_totaldistr": "100",
-  "sbb_effectdelay": "3",
-  "sbbhits": "26",
-  "sbbaoe": "A",
-  "sbbdc": "26",
-  "sbbmultiplier": "580",
-  "sbb_hpscale": "",
   "ubb": {
     "damage frames": [
       {
@@ -1440,6 +1470,236 @@
     ],
     "name": "Supreme Verdict"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 146
+    },
+    "idle": {
+      "total number of frames": 60
+    },
+    "move": {
+      "total number of frames": 60
+    }
+  },
+  "cost": "48",
+  "damage frames": {
+    "frame times": [
+      45,
+      48,
+      51,
+      54,
+      57,
+      60,
+      65,
+      70,
+      75,
+      80,
+      85
+    ],
+    "hit dmg% distribution": [
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      5,
+      5
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 11
+  },
+  "drop check count": 4,
+  "element": "light",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 7203,
+  "imp": {
+    "max atk": "600",
+    "max def": "600",
+    "max hp": "1750",
+    "max rec": "700"
+  },
+  "kind": "normal",
+  "lord damage range": "2805~3133",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Balance Bringer Plumatachi",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "8",
+  "sell caution": false,
+  "unitName": "Balance Bringer Plumatachi",
+  "maxlv": "150",
+  "no": "7203",
+  "unitDisplayHomePosition_1W9CxaFK": null,
+  "unitDisplayDetailPosition_6z54rgb3": null,
+  "unitDisplayConfirmImagePosition_MYK1fq6c": null,
+  "unitDisplayCutInImagePosition_7hLR6pDN": null,
+  "unitDisplaySummonPosition_KC3Jk8Br": null,
+  "unitDisplayHpPosition_3BpHN6VD": null,
+  "unitDisplayCursorPosition": null,
+  "sellPrice": "",
+  "sellCaution": false,
+  "effectFrames": "",
+  "evofrom": "",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "disam": "Plumatachi",
+  "altname": "Balance Bringer Plumatachi",
+  "idalt": "",
+  "has_altart": "",
+  "doenter": "true",
+  "basexp": "21",
+  "animation_attack": "146",
+  "animation_idle": "60",
+  "animation_move": "60",
+  "movespeed_attack": "0.0033",
+  "speedtype_attack": "3",
+  "movetype_attack": "1",
+  "movespeed_skill": "0.0033",
+  "speedtype_skill": "3",
+  "movetype_skill": "1",
+  "description": "Plumatachi chose the path of blind vengeance. She destroyed everything in her path, only bringing chaos and death to the Bad Lands. This wake of devastation could have been avoided if Plumatachi had made different choices. Rather than kill everyone in her path in Blink’s honor, she could have neutralized and punished the former despots and Coal Cauldron by banishing them to the desert far away from all civilization. And thus she would have liberated the Bad Lands from Coal’s yoke and brought back balance to his lands by unifying the different groups and clans with the help of her allies.",
+  "summon": "",
+  "fusion": "Force is necessary in order to maintain the balance. Thank you for lending yours to me.",
+  "evolution": "Violence is not the solution. There is always another path.",
+  "hp_base": "6993",
+  "atk_base": "2470",
+  "def_base": "2066",
+  "rec_base": "2470",
+  "hp_lord": "8532",
+  "atk_lord": "3013",
+  "def_lord": "2520",
+  "rec_lord": "3013",
+  "hp_anima": "9649",
+  "rec_anima": "2715",
+  "atk_breaker": "3311",
+  "def_breaker": "2222",
+  "def_guardian": "2818",
+  "rec_guardian": "3013",
+  "def_oracle": "2520",
+  "rec_oracle": "3311",
+  "hp_bonus": "1750",
+  "atk_bonus": "600",
+  "def_bonus": "600",
+  "rec_bonus": "700",
+  "lordonly": "",
+  "normal_frames": "45, 48, 51, 54, 57, 60, 65, 70, 75, 80, 85",
+  "normal_distribute": "10, 10, 10, 10, 10, 10, 10, 10, 10, 5, 5",
+  "normal_totaldistr": "100",
+  "combo_hits": "11",
+  "normaldc": "44",
+  "ls": "Blessed Alliance",
+  "lsdescription": "Boosts HP and REC (60%) & boosts ATK (150%) for Water and Light units & raises normal hit amount (+1, 50% damage) & chance to reduce damage to 1 (15%) & boosts Water and Light elemental damage (150%)",
+  "lsnote": "",
+  "es": "Rest in Peace",
+  "esdescription": "When Blink's Glasses is equipped, boosts all parameters (20%) and adds reduce Thunder and Dark damage (15%) for 1 turn and raise normal hit amount (+2) for 3 turns to BB/SBB",
+  "esitem": "Blink's Glasses",
+  "esnote": "",
+  "bbdescription": "16 Light combo attack on all foes & boosts REC (170%) for 3 turns & adds probable 1 turn ATK reduction (20% chance reduce 20%) to attack for 3 turns & boosts Water and Light elemental damage (125%) for 3 turns",
+  "bbnote": "{{UnitBuffList",
+  "buff_1_proc": "1",
+  "buff_1_potency": "1500% damage modifier",
+  "buff_1_duration": "—",
+  "buff_1_target": "All enemies",
+  "buff_2_proc": "26",
+  "buff_2_potency": "+3 to each normal hit (200% extra hit damage modifier)",
+  "buff_2_duration": "3 turns",
+  "buff_2_target": "All allies",
+  "buff_3_proc": "55_water",
+  "buff_3_potency": "400% boost to Water elemental damage",
+  "buff_3_duration": "3 turns",
+  "buff_3_target": "All allies",
+  "buff_4_proc": "55_light",
+  "buff_4_potency": "400% boost to Light elemental damage",
+  "buff_4_duration": "3 turns",
+  "buff_4_target": "All allies",
+  "buff_5_proc": "24_atk",
+  "buff_5_potency": "Boosts Atk relative to 250% of Recovery",
+  "buff_5_duration": "3 turns",
+  "buff_5_target": "All allies",
+  "bbtype": "Offense",
+  "bbgauge": "20",
+  "bb_frames": "45, 48, 51, 54, 57, 60, 63, 66, 69, 71, 74, 77, 80, 83, 86, 89",
+  "bb_distribute": "5, 5, 5, 5, 5, 10, 10, 10, 10, 5, 5, 5, 5, 5, 5, 5",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "3",
+  "bbhits": "16",
+  "bbaoe": "A",
+  "bbdc": "16",
+  "bbmultiplier": "370",
+  "bb_hpscale": "",
+  "sbbdescription": "26 Light combo attack on all foes & boosts ATK (120%) and REC (80%) for Water and Light units for 3 turns & boosts ATK relative to REC (80%) for 3 turns & boosts Water and Light elemental damage (125%) for 3 turns",
+  "sbbnote": "{{UnitBuffList",
+  "buff_6_proc": "76",
+  "buff_6_potency": "50% chance of acting 1 extra time",
+  "buff_6_duration": "1 turn",
+  "buff_6_target": "All allies",
+  "buff_7_proc": "55_water",
+  "buff_7_potency": "125% boost to Water elemental damage",
+  "buff_7_duration": "3 turns",
+  "buff_7_target": "All allies",
+  "buff_8_proc": "55_light",
+  "buff_8_potency": "125% boost to Light elemental damage",
+  "buff_8_duration": "3 turns",
+  "buff_8_target": "All allies",
+  "sbbtype": "Offense",
+  "sbbgauge": "26",
+  "sbb_frames": "45, 48, 51, 54, 57, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80, 82, 84, 86, 88, 90, 92, 94, 96, 98, 100",
+  "sbb_distribute": "2, 2, 2, 2, 2, 2, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 3, 3, 3, 3, 3, 3",
+  "sbb_totaldistr": "100",
+  "sbb_effectdelay": "3",
+  "sbbhits": "26",
+  "sbbaoe": "A",
+  "sbbdc": "26",
+  "sbbmultiplier": "580",
+  "sbb_hpscale": "",
   "ubbdescription": "28 Light combo attack on all foes & raises normal hit count (+3), light and water elemental damage (400%) and ATK relative to REC (250%) for 3 turns & chance to execute 1 more action in the same turn for 1 turn (50%)",
   "ubbnote": "{{UnitBuffList",
   "ubbtype": "Offense",
@@ -1490,163 +1750,5 @@
   "notes": "",
   "incorrectinfo": "",
   "addcat": "",
-  "addcatname": "",
-  "stats": {
-    "_base": {
-      "atk": 2470,
-      "def": 2066,
-      "hp": 6993,
-      "rec": 2470
-    },
-    "_lord": {
-      "atk": 3013,
-      "def": 2520,
-      "hp": 8532,
-      "rec": 3013
-    },
-    "anima": {
-      "atk": 3013,
-      "def": 2520,
-      "hp max": 10022,
-      "hp min": 9277,
-      "rec max": 2864,
-      "rec min": 2566
-    },
-    "breaker": {
-      "atk max": 3460,
-      "atk min": 3162,
-      "def max": 2371,
-      "def min": 2073,
-      "hp": 8532,
-      "rec": 3013
-    },
-    "guardian": {
-      "atk max": 2864,
-      "atk min": 2566,
-      "def max": 2967,
-      "def min": 2669,
-      "hp": 8532,
-      "rec": 3013
-    },
-    "oracle": {
-      "atk": 3013,
-      "def": 2520,
-      "hp max": 7787,
-      "hp min": 7042,
-      "rec max": 3460,
-      "rec min": 3162
-    }
-  },
-  "leader_skill": {
-    "desc": "Boosts HP and REC (60%) & boosts ATK (150%) for Water and Light units & raises normal hit amount (+1, 50% damage) & chance to reduce damage to 1 (15%) & boosts Water and Light elemental damage (150%)",
-    "effects": [
-      {
-        "passive id": "43",
-        "take 1 dmg%": 15
-      },
-      {
-        "hp% buff": 60,
-        "passive id": "1",
-        "rec% buff": 60
-      },
-      {
-        "atk% buff": 150,
-        "elements buffed": [
-          "water",
-          "light"
-        ],
-        "passive id": "2"
-      },
-      {
-        "extra hits dmg%": -50,
-        "hit increase/hit": 1,
-        "passive id": "37"
-      },
-      {
-        "elemental weakness multiplier%": 150.0,
-        "light units do extra elemental weakness dmg": true,
-        "passive id": "50",
-        "water units do extra elemental weakness dmg": true
-      }
-    ],
-    "id": "750237",
-    "name": "Blessed Alliance"
-  },
-  "extra_skill": {
-    "desc": "When Blink's Glasses is equipped, boosts all parameters (20%) and adds reduce Thunder and Dark damage (15%) for 1 turn and raise normal hit amount (+2) for 3 turns to BB/SBB",
-    "effects": [
-      {
-        "atk% buff": 20,
-        "conditions": [
-          {
-            "item required": [
-              "700018"
-            ]
-          }
-        ],
-        "def% buff": 20,
-        "hp% buff": 20,
-        "passive id": "1",
-        "passive target": "self",
-        "rec% buff": 20
-      },
-      {
-        "conditions": [],
-        "passive id": "66",
-        "passive target": "self",
-        "trigger on bb": true,
-        "trigger on sbb": true,
-        "triggered effect": [
-          {
-            "dmg% mitigation for elemental attacks": 15,
-            "dmg% mitigation for elemental attacks buff turns": 1,
-            "effect delay time(ms)/frame": "0.0/0",
-            "mitigate dark attacks": true,
-            "mitigate thunder attacks": true,
-            "proc id": "39",
-            "target area": "aoe",
-            "target type": "party"
-          }
-        ]
-      },
-      {
-        "conditions": [
-          {
-            "item required": [
-              "700018"
-            ]
-          }
-        ],
-        "passive id": "66",
-        "passive target": "self",
-        "trigger on bb": true,
-        "trigger on sbb": true,
-        "triggered effect": [
-          {
-            "effect delay time(ms)/frame": "0.0/0",
-            "extra hits dmg%": 20,
-            "hit increase buff turns (50)": 3,
-            "hit increase/hit": 2,
-            "proc id": "26",
-            "target area": "aoe",
-            "target type": "party"
-          }
-        ]
-      }
-    ],
-    "id": "750237",
-    "name": "Rest in Peace",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": null,
-  "unitDisplayDetailPosition_6z54rgb3": null,
-  "unitDisplayConfirmImagePosition_MYK1fq6c": null,
-  "unitDisplayCutInImagePosition_7hLR6pDN": null,
-  "unitDisplaySummonPosition_KC3Jk8Br": null,
-  "unitDisplayHpPosition_3BpHN6VD": null,
-  "unitDisplayCursorPosition": null,
-  "sellPrice": "",
-  "sellCaution": false,
-  "effectFrames": ""
+  "addcatname": ""
 }

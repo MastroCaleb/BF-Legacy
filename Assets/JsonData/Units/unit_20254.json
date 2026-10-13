@@ -1,58 +1,64 @@
 {
   "id": "20254",
-  "unitName": "Ice Apostle Tiara",
-  "no": "349",
-  "element": "Water",
-  "rarity": "★★★★★",
-  "cost": "13",
-  "maxlv": "80",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "1",
-  "animation_attack": "122",
-  "animation_idle": "64",
-  "animation_move": "64",
-  "movespeed_attack": "4",
-  "movespeed_skill": "4",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "82, 86, 90, 110, 118",
-  "normal_distribute": "10, 10, 10, 30, 40",
-  "normal_totaldistr": "100",
-  "description": "A young girl of both holy and demonic descent. She continued on her journey with Michele to defeat Melchio. It is said she used the abilities of both races she descended from to protect her friends. During their travels it is said that Michele's mean words actually brought happiness to her, allowing her to become even stronger than before. Tiara would later say, \"M-Michele saved me from isolation. I can become stronger for her.\"",
-  "summon": "I'll give my all for those<br>who really need me. <br>Most especially [[Lotus Axe Michele|Michele]]!",
-  "fusion": "U-Ugh...<br>I can feel myself getting stronger...<br>[[Lotus Axe Michele|Michele]], I'll do my best!",
-  "evolution": "I-I've gotten stronger!<br>I wonder if [[Lotus Axe Michele|Michele]] will<br>compliment me now...",
-  "hp_base": "3327",
-  "atk_base": "925",
-  "def_base": "1018",
-  "rec_base": "1520",
-  "hp_lord": "4867",
-  "atk_lord": "1263",
-  "def_lord": "1354",
-  "rec_lord": "2055",
-  "hp_anima": "5460",
-  "rec_anima": "1897",
-  "atk_breaker": "1421",
-  "def_breaker": "1196",
-  "atk_guardian": "1105",
-  "def_guardian": "1512",
-  "rec_guardian": "1976",
-  "def_oracle": "1275",
-  "hp_oracle": "4630",
-  "rec_oracle": "2292",
-  "hp_bonus": "750",
-  "atk_bonus": "140",
-  "def_bonus": "140",
-  "rec_bonus": "140",
-  "lordonly": "",
-  "combo_hits": "5",
-  "normaldc": "15",
-  "ls": "Five Light's Force",
-  "lsdescription": "50% boost to Atk power of all Units when 5 elements or more are present",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 925,
+      "def": 1018,
+      "hp": 3327,
+      "rec": 1520
+    },
+    "_lord": {
+      "atk": 1263,
+      "def": 1354,
+      "hp": 4867,
+      "rec": 2055
+    },
+    "anima": {
+      "atk": 1263,
+      "def": 1354,
+      "hp max": 5657,
+      "hp min": 5262,
+      "rec max": 1976,
+      "rec min": 1818
+    },
+    "breaker": {
+      "atk max": 1500,
+      "atk min": 1342,
+      "def max": 1275,
+      "def min": 1117,
+      "hp": 4867,
+      "rec": 2055
+    },
+    "guardian": {
+      "atk": 1263,
+      "def max": 1591,
+      "def min": 1433,
+      "hp": 4867,
+      "rec max": 2055,
+      "rec min": 1897
+    },
+    "oracle": {
+      "atk": 1263,
+      "def max": 1354,
+      "def min": 1196,
+      "hp": 4867,
+      "rec max": 2371,
+      "rec min": 2213
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to Atk power of all Units when 5 elements or more are present",
+    "effects": [
+      {
+        "atk% buff": 50,
+        "passive id": "41",
+        "unique elements required": 5
+      }
+    ],
+    "id": "2201",
+    "name": "Five Light's Force"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -337,94 +343,91 @@
     ],
     "name": "Solar Cold"
   },
-  "bbdescription": "Gradually recovers HP & adds Water element to attack for all allies for 3 turns",
-  "bbnote": "Heals (980~1080 + 10% of target Rec) HP",
-  "bbtype": "Heal/Support",
-  "bbhits": "",
-  "bbaoe": "0",
-  "bbgauge": "23",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "20253",
-  "evointo": "20255",
-  "evomats1": "50354",
-  "evomats2": "20133",
-  "evomats3": "20133",
-  "evomats4": "20191",
-  "evomats5": "60144",
-  "evoitem": "",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 925,
-      "def": 1018,
-      "hp": 3327,
-      "rec": 1520
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "party"
     },
-    "_lord": {
-      "atk": 1263,
-      "def": 1354,
-      "hp": 4867,
-      "rec": 2055
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1263,
-      "def": 1354,
-      "hp max": 5657,
-      "hp min": 5262,
-      "rec max": 1976,
-      "rec min": 1818
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 122
     },
-    "breaker": {
-      "atk max": 1500,
-      "atk min": 1342,
-      "def max": 1275,
-      "def min": 1117,
-      "hp": 4867,
-      "rec": 2055
+    "idle": {
+      "total number of frames": 64
     },
-    "guardian": {
-      "atk": 1263,
-      "def max": 1591,
-      "def min": 1433,
-      "hp": 4867,
-      "rec max": 2055,
-      "rec min": 1897
-    },
-    "oracle": {
-      "atk": 1263,
-      "def max": 1354,
-      "def min": 1196,
-      "hp": 4867,
-      "rec max": 2371,
-      "rec min": 2213
+    "move": {
+      "total number of frames": 64
     }
   },
-  "leader_skill": {
-    "desc": "50% boost to Atk power of all Units when 5 elements or more are present",
-    "effects": [
-      {
-        "atk% buff": 50,
-        "passive id": "41",
-        "unique elements required": 5
-      }
+  "category": 20250,
+  "cost": "13",
+  "damage frames": {
+    "frame times": [
+      82,
+      86,
+      90,
+      110,
+      118
     ],
-    "id": "2201",
-    "name": "Five Light's Force"
+    "hit dmg% distribution": [
+      10,
+      10,
+      10,
+      30,
+      40
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 5
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "water",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 349,
+  "imp": {
+    "max atk": "140",
+    "max def": "140",
+    "max hp": "750",
+    "max rec": "140"
+  },
+  "kind": "normal",
+  "lord damage range": "1175~1313",
+  "movement": {
+    "attack": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    }
+  },
+  "name": "Ice Apostle Tiara",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Ice Apostle Tiara",
+  "maxlv": "80",
+  "no": "349",
   "unitDisplayHomePosition_1W9CxaFK": "334,93,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "24,73,793,762",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "196,295,294,326,0",
@@ -434,5 +437,100 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "76:200:1,76:190:1,76:200120:1,80:190:1,84:190:1,84:200120:1,90:190:1,100:190:1,100:200120:1,110:660:1,126:200140:1"
+  "effectFrames": "76:200:1,76:190:1,76:200120:1,80:190:1,84:190:1,84:200120:1,90:190:1,100:190:1,100:200120:1,110:660:1,126:200140:1",
+  "evofrom": "20253",
+  "evointo": "20255",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20133",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "20191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "122",
+  "animation_idle": "64",
+  "animation_move": "64",
+  "movespeed_attack": "4",
+  "movespeed_skill": "4",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "82, 86, 90, 110, 118",
+  "normal_distribute": "10, 10, 10, 30, 40",
+  "normal_totaldistr": "100",
+  "description": "A young girl of both holy and demonic descent. She continued on her journey with Michele to defeat Melchio. It is said she used the abilities of both races she descended from to protect her friends. During their travels it is said that Michele's mean words actually brought happiness to her, allowing her to become even stronger than before. Tiara would later say, \"M-Michele saved me from isolation. I can become stronger for her.\"",
+  "summon": "I'll give my all for those<br>who really need me. <br>Most especially [[Lotus Axe Michele|Michele]]!",
+  "fusion": "U-Ugh...<br>I can feel myself getting stronger...<br>[[Lotus Axe Michele|Michele]], I'll do my best!",
+  "evolution": "I-I've gotten stronger!<br>I wonder if [[Lotus Axe Michele|Michele]] will<br>compliment me now...",
+  "hp_base": "3327",
+  "atk_base": "925",
+  "def_base": "1018",
+  "rec_base": "1520",
+  "hp_lord": "4867",
+  "atk_lord": "1263",
+  "def_lord": "1354",
+  "rec_lord": "2055",
+  "hp_anima": "5460",
+  "rec_anima": "1897",
+  "atk_breaker": "1421",
+  "def_breaker": "1196",
+  "atk_guardian": "1105",
+  "def_guardian": "1512",
+  "rec_guardian": "1976",
+  "def_oracle": "1275",
+  "hp_oracle": "4630",
+  "rec_oracle": "2292",
+  "hp_bonus": "750",
+  "atk_bonus": "140",
+  "def_bonus": "140",
+  "rec_bonus": "140",
+  "lordonly": "",
+  "combo_hits": "5",
+  "normaldc": "15",
+  "ls": "Five Light's Force",
+  "lsdescription": "50% boost to Atk power of all Units when 5 elements or more are present",
+  "lstype": "Attack",
+  "bbdescription": "Gradually recovers HP & adds Water element to attack for all allies for 3 turns",
+  "bbnote": "Heals (980~1080 + 10% of target Rec) HP",
+  "bbtype": "Heal/Support",
+  "bbhits": "",
+  "bbaoe": "0",
+  "bbgauge": "23",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "20133",
+  "evomats3": "20133",
+  "evomats4": "20191",
+  "evomats5": "60144",
+  "evoitem": ""
 }

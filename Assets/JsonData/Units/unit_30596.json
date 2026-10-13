@@ -1,70 +1,85 @@
 {
   "id": "30596",
-  "unitName": "Gaia Sennin Oguro",
-  "no": "916",
-  "element": "Earth",
-  "rarity": "★★★★★★★",
-  "cost": "40",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "3",
-  "animation_attack": "184",
-  "animation_idle": "66",
-  "animation_move": "11",
-  "movespeed_attack": "0.0041",
-  "movespeed_skill": "0.0041",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "90, 94, 98, 102, 106, 110, 114, 118",
-  "normal_distribute": "20, 18, 15, 13, 10, 9, 8, 7",
-  "normal_totaldistr": "100",
-  "bb_frames": "90, 94, 98, 102, 106, 110, 114, 118, 122, 126, 130, 134, 138, 142",
-  "bb_distribute": "13, 12, 10, 9, 8, 7, 7, 6, 6, 5, 5, 4, 4, 4",
-  "bb_totaldistr": "100",
-  "sbb_frames": "90, 93, 96, 99, 102, 105, 108, 111, 114, 117, 120, 123, 126, 129, 132, 135, 138",
-  "sbb_distribute": "6, 6, 6, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5, 6, 6, 6",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "90, 93, 96, 99, 102, 105, 108, 111, 114, 117, 120, 123, 126, 129, 132, 135, 138, 141, 144, 147, 150, 153",
-  "ubb_distribute": "5, 5, 4, 5, 4, 5, 5, 4, 5, 5, 4, 5, 5, 4, 5, 4, 5, 4, 5, 4, 4, 4",
-  "ubb_totaldistr": "100",
-  "sbb_effectdelay": "1",
-  "ubb_effectdelay": "1",
-  "description": "A demon once followed by many others of his kind who ruled over a large territory. There was a young demon he had instructed himself, far excelling the rest of his peers, who hatched a plan to steal Oguro's position. Having lost his desire to rule long ago, Oguro stepped down from his position quietly, relocating to a land far away and beginning a life of seclusion. There are no more records about him after that, but according to oral accounts, he began his pursuit of knowledge and power once again.",
-  "summon": "That creature was quite interesting. Having such pure aspirations, and yet nothing to hide.",
-  "fusion": "Can you see past power? Do you see a bright future ahead? If you do, I shall stay a bit longer.",
-  "evolution": "Listen, you careless fighter. There is no enemy to fight. Knowing that is the first step.",
-  "hp_base": "4945",
-  "atk_base": "2020",
-  "def_base": "1710",
-  "rec_base": "1807",
-  "hp_lord": "6482",
-  "atk_lord": "2539",
-  "def_lord": "2133",
-  "rec_lord": "2300",
-  "hp_anima": "7374",
-  "rec_anima": "2062",
-  "atk_breaker": "2777",
-  "def_breaker": "1895",
-  "atk_guardian": "2301",
-  "def_guardian": "2371",
-  "rec_guardian": "2181",
-  "def_oracle": "2014",
-  "hp_oracle": "6125",
-  "rec_oracle": "2657",
-  "hp_bonus": "1000",
-  "atk_bonus": "600",
-  "def_bonus": "300",
-  "rec_bonus": "400",
-  "lordonly": "",
-  "combo_hits": "8",
-  "normaldc": "16",
-  "ls": "Eris's Holy Roar",
-  "lsdescription": "30% boost to max HP and Def for all Units & greatly boosts BB gauge when attacked",
-  "lsnote": "Fills 3-6 BC",
-  "lstype": "Hit Points/Defense/Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 2020,
+      "def": 1710,
+      "hp": 4945,
+      "rec": 1807
+    },
+    "_lord": {
+      "atk": 2539,
+      "def": 2133,
+      "hp": 6482,
+      "rec": 2300
+    },
+    "anima": {
+      "atk": 2539,
+      "def": 2133,
+      "hp max": 7672,
+      "hp min": 7077,
+      "rec max": 2181,
+      "rec min": 1943
+    },
+    "breaker": {
+      "atk max": 2896,
+      "atk min": 2658,
+      "def max": 2014,
+      "def min": 1776,
+      "hp": 6482,
+      "rec": 2300
+    },
+    "guardian": {
+      "atk": 2539,
+      "def max": 2490,
+      "def min": 2252,
+      "hp": 6482,
+      "rec max": 2300,
+      "rec min": 2062
+    },
+    "oracle": {
+      "atk": 2539,
+      "def max": 2133,
+      "def min": 1895,
+      "hp": 6482,
+      "rec max": 2776,
+      "rec min": 2538
+    }
+  },
+  "leader_skill": {
+    "desc": "30% boost to max HP and Def for all Units & greatly boosts BB gauge when attacked",
+    "effects": [
+      {
+        "def% buff": 30,
+        "hp% buff": 30,
+        "passive id": "1"
+      },
+      {
+        "bc fill when attacked high": 6,
+        "bc fill when attacked low": 3,
+        "bc fill when attacked%": 100,
+        "passive id": "25"
+      }
+    ],
+    "id": "4312",
+    "name": "Eris's Holy Roar"
+  },
+  "extra_skill": {
+    "desc": "Huge boost to Atk when BB gauge is full",
+    "effects": [
+      {
+        "atk% buff": 80,
+        "bb gauge above % buff requirement": 100,
+        "conditions": [],
+        "passive id": "30",
+        "passive target": "self"
+      }
+    ],
+    "id": "2600",
+    "name": "Spiritual Transcendence",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -335,14 +350,6 @@
     ],
     "name": "Destructive Jungle"
   },
-  "bbdescription": "14 combo powerful Earth attack on all enemies & gradually recovers BB gauge for 3 turns",
-  "bbnote": "Fills 4 BC",
-  "bbtype": "Support/Offense",
-  "bbhits": "14",
-  "bbaoe": "A",
-  "bbgauge": "26",
-  "bbdc": "14",
-  "bbmultiplier": "280",
   "sbb": {
     "damage frames": [
       {
@@ -701,14 +708,6 @@
     ],
     "name": "Divine Bindings"
   },
-  "sbbdescription": "17 combo massive Earth attack on single enemy, fills own BB gauge to max & largely boosts own Atk for 3 turns",
-  "sbbnote": "100% boost",
-  "sbbtype": "Support/Offense",
-  "sbbhits": "17",
-  "sbbaoe": "1",
-  "sbbgauge": "25",
-  "sbbdc": "34",
-  "sbbmultiplier": "640",
   "ubb": {
     "damage frames": [
       {
@@ -826,6 +825,194 @@
     ],
     "name": "Ignorant Reasoning"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 184
+    },
+    "idle": {
+      "total number of frames": 66
+    },
+    "move": {
+      "total number of frames": 11
+    }
+  },
+  "category": 30590,
+  "cost": "40",
+  "damage frames": {
+    "frame times": [
+      90,
+      94,
+      98,
+      102,
+      106,
+      110,
+      114,
+      118
+    ],
+    "hit dmg% distribution": [
+      20,
+      18,
+      15,
+      13,
+      10,
+      9,
+      8,
+      7
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 8
+  },
+  "drop check count": 2,
+  "element": "earth",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 916,
+  "imp": {
+    "max atk": "600",
+    "max def": "300",
+    "max hp": "1000",
+    "max rec": "400"
+  },
+  "kind": "normal",
+  "lord damage range": "2364~2640",
+  "movement": {
+    "attack": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    }
+  },
+  "name": "Gaia Sennin Oguro",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Gaia Sennin Oguro",
+  "maxlv": "120",
+  "no": "916",
+  "unitDisplayHomePosition_1W9CxaFK": "431,174,174,475",
+  "unitDisplayDetailPosition_6z54rgb3": "-116,-14,1070,849",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "63,222,535,425,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-51,-276,1070,849",
+  "unitDisplaySummonPosition_KC3Jk8Br": "63,222,535,425,0",
+  "unitDisplayHpPosition_3BpHN6VD": "0,35",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "15000",
+  "sellCaution": false,
+  "effectFrames": "84:127:1,88:120:1,92:120:1,96:120:1,100:120:1,104:120:1,108:120:1,112:120:1,87:690:1,82:300201:1,95:600351:1,115:600351:1,90:300260:1,89:600222:1,97:600273:1",
+  "evofrom": "30595",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "21",
+  "animation_attack": "184",
+  "animation_idle": "66",
+  "animation_move": "11",
+  "movespeed_attack": "0.0041",
+  "movespeed_skill": "0.0041",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "90, 94, 98, 102, 106, 110, 114, 118",
+  "normal_distribute": "20, 18, 15, 13, 10, 9, 8, 7",
+  "normal_totaldistr": "100",
+  "bb_frames": "90, 94, 98, 102, 106, 110, 114, 118, 122, 126, 130, 134, 138, 142",
+  "bb_distribute": "13, 12, 10, 9, 8, 7, 7, 6, 6, 5, 5, 4, 4, 4",
+  "bb_totaldistr": "100",
+  "sbb_frames": "90, 93, 96, 99, 102, 105, 108, 111, 114, 117, 120, 123, 126, 129, 132, 135, 138",
+  "sbb_distribute": "6, 6, 6, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5, 6, 6, 6",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "90, 93, 96, 99, 102, 105, 108, 111, 114, 117, 120, 123, 126, 129, 132, 135, 138, 141, 144, 147, 150, 153",
+  "ubb_distribute": "5, 5, 4, 5, 4, 5, 5, 4, 5, 5, 4, 5, 5, 4, 5, 4, 5, 4, 5, 4, 4, 4",
+  "ubb_totaldistr": "100",
+  "sbb_effectdelay": "1",
+  "ubb_effectdelay": "1",
+  "description": "A demon once followed by many others of his kind who ruled over a large territory. There was a young demon he had instructed himself, far excelling the rest of his peers, who hatched a plan to steal Oguro's position. Having lost his desire to rule long ago, Oguro stepped down from his position quietly, relocating to a land far away and beginning a life of seclusion. There are no more records about him after that, but according to oral accounts, he began his pursuit of knowledge and power once again.",
+  "summon": "That creature was quite interesting. Having such pure aspirations, and yet nothing to hide.",
+  "fusion": "Can you see past power? Do you see a bright future ahead? If you do, I shall stay a bit longer.",
+  "evolution": "Listen, you careless fighter. There is no enemy to fight. Knowing that is the first step.",
+  "hp_base": "4945",
+  "atk_base": "2020",
+  "def_base": "1710",
+  "rec_base": "1807",
+  "hp_lord": "6482",
+  "atk_lord": "2539",
+  "def_lord": "2133",
+  "rec_lord": "2300",
+  "hp_anima": "7374",
+  "rec_anima": "2062",
+  "atk_breaker": "2777",
+  "def_breaker": "1895",
+  "atk_guardian": "2301",
+  "def_guardian": "2371",
+  "rec_guardian": "2181",
+  "def_oracle": "2014",
+  "hp_oracle": "6125",
+  "rec_oracle": "2657",
+  "hp_bonus": "1000",
+  "atk_bonus": "600",
+  "def_bonus": "300",
+  "rec_bonus": "400",
+  "lordonly": "",
+  "combo_hits": "8",
+  "normaldc": "16",
+  "ls": "Eris's Holy Roar",
+  "lsdescription": "30% boost to max HP and Def for all Units & greatly boosts BB gauge when attacked",
+  "lsnote": "Fills 3-6 BC",
+  "lstype": "Hit Points/Defense/Brave Burst",
+  "bbdescription": "14 combo powerful Earth attack on all enemies & gradually recovers BB gauge for 3 turns",
+  "bbnote": "Fills 4 BC",
+  "bbtype": "Support/Offense",
+  "bbhits": "14",
+  "bbaoe": "A",
+  "bbgauge": "26",
+  "bbdc": "14",
+  "bbmultiplier": "280",
+  "sbbdescription": "17 combo massive Earth attack on single enemy, fills own BB gauge to max & largely boosts own Atk for 3 turns",
+  "sbbnote": "100% boost",
+  "sbbtype": "Support/Offense",
+  "sbbhits": "17",
+  "sbbaoe": "1",
+  "sbbgauge": "25",
+  "sbbdc": "34",
+  "sbbmultiplier": "640",
   "ubbdescription": "22 combo massive Earth attack on all enemies, adds Def ignoring effect to attack for 3 turns & enormously boosts own Atk for 3 turns",
   "ubbnote": "200% boost",
   "ubbtype": "Support/Offense",
@@ -838,103 +1025,10 @@
   "esitem": "",
   "esdescription": "Huge boost to Atk when BB gauge is full",
   "esnote": "80% boost",
-  "evofrom": "30595",
-  "evointo": "",
   "evomats1": "",
   "evomats2": "",
   "evomats3": "",
   "evomats4": "",
   "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 2020,
-      "def": 1710,
-      "hp": 4945,
-      "rec": 1807
-    },
-    "_lord": {
-      "atk": 2539,
-      "def": 2133,
-      "hp": 6482,
-      "rec": 2300
-    },
-    "anima": {
-      "atk": 2539,
-      "def": 2133,
-      "hp max": 7672,
-      "hp min": 7077,
-      "rec max": 2181,
-      "rec min": 1943
-    },
-    "breaker": {
-      "atk max": 2896,
-      "atk min": 2658,
-      "def max": 2014,
-      "def min": 1776,
-      "hp": 6482,
-      "rec": 2300
-    },
-    "guardian": {
-      "atk": 2539,
-      "def max": 2490,
-      "def min": 2252,
-      "hp": 6482,
-      "rec max": 2300,
-      "rec min": 2062
-    },
-    "oracle": {
-      "atk": 2539,
-      "def max": 2133,
-      "def min": 1895,
-      "hp": 6482,
-      "rec max": 2776,
-      "rec min": 2538
-    }
-  },
-  "leader_skill": {
-    "desc": "30% boost to max HP and Def for all Units & greatly boosts BB gauge when attacked",
-    "effects": [
-      {
-        "def% buff": 30,
-        "hp% buff": 30,
-        "passive id": "1"
-      },
-      {
-        "bc fill when attacked high": 6,
-        "bc fill when attacked low": 3,
-        "bc fill when attacked%": 100,
-        "passive id": "25"
-      }
-    ],
-    "id": "4312",
-    "name": "Eris's Holy Roar"
-  },
-  "extra_skill": {
-    "desc": "Huge boost to Atk when BB gauge is full",
-    "effects": [
-      {
-        "atk% buff": 80,
-        "bb gauge above % buff requirement": 100,
-        "conditions": [],
-        "passive id": "30",
-        "passive target": "self"
-      }
-    ],
-    "id": "2600",
-    "name": "Spiritual Transcendence",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "431,174,174,475",
-  "unitDisplayDetailPosition_6z54rgb3": "-116,-14,1070,849",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "63,222,535,425,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-51,-276,1070,849",
-  "unitDisplaySummonPosition_KC3Jk8Br": "63,222,535,425,0",
-  "unitDisplayHpPosition_3BpHN6VD": "0,35",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "15000",
-  "sellCaution": false,
-  "effectFrames": "84:127:1,88:120:1,92:120:1,96:120:1,100:120:1,104:120:1,108:120:1,112:120:1,87:690:1,82:300201:1,95:600351:1,115:600351:1,90:300260:1,89:600222:1,97:600273:1"
+  "evoitem": ""
 }

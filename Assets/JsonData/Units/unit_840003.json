@@ -1,62 +1,66 @@
 {
   "id": "840003",
-  "unitName": "Maiden Fennia",
-  "no": "8009",
-  "element": "Thunder",
-  "rarity": "★★★",
-  "cost": "6",
-  "maxlv": "40",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "183",
-  "animation_idle": "77",
-  "animation_move": "77",
-  "movespeed_attack": "2",
-  "movespeed_skill": "2",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "147, 151",
-  "normal_distribute": "50, 50",
-  "normal_totaldistr": "100",
-  "bb_frames": "147, 151, 155",
-  "bb_distribute": "40, 30, 30",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "description": "Renowned as a cheerful witch who specializes in the combination of voodoo and lightning, Fennia used her power to foretell any dangers that might bring an end to the peace of the lands. As chaos descended, she lent her skills to the Battle Maidens in a bid to change the fates of impending doom. Little did she know that the very fabric of time was being manipulated..",
-  "summon": "You want to be my friend? <br>Reaally...!? Weee! <br>Let's make some fun memories together!",
-  "fusion": "That tickles!<br>I feel charged up and<br>ready to go-go-go!",
-  "evolution": "",
-  "hp_base": "2022",
-  "atk_base": "705",
-  "def_base": "861",
-  "rec_base": "987",
-  "hp_lord": "2880",
-  "atk_lord": "920",
-  "def_lord": "1007",
-  "rec_lord": "1228",
-  "hp_anima": "3173",
-  "rec_anima": "1150",
-  "atk_breaker": "998",
-  "def_breaker": "929",
-  "atk_guardian": "842",
-  "def_guardian": "1085",
-  "rec_guardian": "1189",
-  "def_oracle": "968",
-  "hp_oracle": "2763",
-  "rec_oracle": "1345",
-  "hp_bonus": "400",
-  "atk_bonus": "160",
-  "def_bonus": "160",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "2",
-  "normaldc": "4",
-  "ls": "Thunder Spirit's Power",
-  "lsdescription": "25% boost to Atk Power of Thunder Types",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 705,
+      "def": 861,
+      "hp": 2022,
+      "rec": 987
+    },
+    "_lord": {
+      "atk": 920,
+      "def": 1007,
+      "hp": 2880,
+      "rec": 1228
+    },
+    "anima": {
+      "atk": 920,
+      "def": 1007,
+      "hp max": 3270,
+      "hp min": 3075,
+      "rec max": 1189,
+      "rec min": 1111
+    },
+    "breaker": {
+      "atk max": 1037,
+      "atk min": 959,
+      "def max": 968,
+      "def min": 890,
+      "hp": 2880,
+      "rec": 1228
+    },
+    "guardian": {
+      "atk": 920,
+      "def max": 1124,
+      "def min": 1046,
+      "hp": 2880,
+      "rec max": 1228,
+      "rec min": 1150
+    },
+    "oracle": {
+      "atk": 920,
+      "def max": 1007,
+      "def min": 929,
+      "hp": 2880,
+      "rec max": 1384,
+      "rec min": 1306
+    }
+  },
+  "leader_skill": {
+    "desc": "25% boost to Atk Power of Thunder Types",
+    "effects": [
+      {
+        "atk% buff": 25,
+        "elements buffed": [
+          "thunder"
+        ],
+        "passive id": "2"
+      }
+    ],
+    "id": "130",
+    "name": "Thunder Spirit's Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -203,96 +207,85 @@
     ],
     "name": "Static Blast"
   },
-  "bbdescription": "3 combo Thunder elemental attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "3",
-  "bbaoe": "A",
-  "bbgauge": "22",
-  "bbdc": "3",
-  "bbmultiplier": "180",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "840004",
-  "evomats1": "40132",
-  "evomats2": "40132",
-  "evomats3": "40131",
-  "evomats4": "40131",
-  "evomats5": "60142",
-  "evozelcost": "100000",
-  "stats": {
-    "_base": {
-      "atk": 705,
-      "def": 861,
-      "hp": 2022,
-      "rec": 987
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 920,
-      "def": 1007,
-      "hp": 2880,
-      "rec": 1228
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 920,
-      "def": 1007,
-      "hp max": 3270,
-      "hp min": 3075,
-      "rec max": 1189,
-      "rec min": 1111
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 183
     },
-    "breaker": {
-      "atk max": 1037,
-      "atk min": 959,
-      "def max": 968,
-      "def min": 890,
-      "hp": 2880,
-      "rec": 1228
+    "idle": {
+      "total number of frames": 77
     },
-    "guardian": {
-      "atk": 920,
-      "def max": 1124,
-      "def min": 1046,
-      "hp": 2880,
-      "rec max": 1228,
-      "rec min": 1150
-    },
-    "oracle": {
-      "atk": 920,
-      "def max": 1007,
-      "def min": 929,
-      "hp": 2880,
-      "rec max": 1384,
-      "rec min": 1306
+    "move": {
+      "total number of frames": 77
     }
   },
-  "leader_skill": {
-    "desc": "25% boost to Atk Power of Thunder Types",
-    "effects": [
-      {
-        "atk% buff": 25,
-        "elements buffed": [
-          "thunder"
-        ],
-        "passive id": "2"
-      }
+  "category": 840000,
+  "cost": "6",
+  "damage frames": {
+    "frame times": [
+      147,
+      151
     ],
-    "id": "130",
-    "name": "Thunder Spirit's Power"
+    "hit dmg% distribution": [
+      50,
+      50
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 2
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "thunder",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "farmable",
+  "guide_id": 8009,
+  "imp": {
+    "max atk": "160",
+    "max def": "160",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "856~956",
+  "movement": {
+    "attack": {
+      "move speed": 2,
+      "move speed type": "4",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 2,
+      "move speed type": "4",
+      "move type": "3"
+    }
+  },
+  "name": "Maiden Fennia",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "Maiden Fennia",
+  "maxlv": "40",
+  "no": "8009",
   "unitDisplayHomePosition_1W9CxaFK": "412,367,182,498",
   "unitDisplayDetailPosition_6z54rgb3": "-73,-221,1024,1024",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "64,126,530,530,0",
@@ -302,5 +295,99 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "1000",
   "sellCaution": false,
-  "effectFrames": "141:124:1,145:124:1"
+  "effectFrames": "141:124:1,145:124:1",
+  "evofrom": "",
+  "evointo": "840004",
+  "evozelcost": "100000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "40132",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "40131",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60142",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "183",
+  "animation_idle": "77",
+  "animation_move": "77",
+  "movespeed_attack": "2",
+  "movespeed_skill": "2",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "147, 151",
+  "normal_distribute": "50, 50",
+  "normal_totaldistr": "100",
+  "bb_frames": "147, 151, 155",
+  "bb_distribute": "40, 30, 30",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "description": "Renowned as a cheerful witch who specializes in the combination of voodoo and lightning, Fennia used her power to foretell any dangers that might bring an end to the peace of the lands. As chaos descended, she lent her skills to the Battle Maidens in a bid to change the fates of impending doom. Little did she know that the very fabric of time was being manipulated..",
+  "summon": "You want to be my friend? <br>Reaally...!? Weee! <br>Let's make some fun memories together!",
+  "fusion": "That tickles!<br>I feel charged up and<br>ready to go-go-go!",
+  "evolution": "",
+  "hp_base": "2022",
+  "atk_base": "705",
+  "def_base": "861",
+  "rec_base": "987",
+  "hp_lord": "2880",
+  "atk_lord": "920",
+  "def_lord": "1007",
+  "rec_lord": "1228",
+  "hp_anima": "3173",
+  "rec_anima": "1150",
+  "atk_breaker": "998",
+  "def_breaker": "929",
+  "atk_guardian": "842",
+  "def_guardian": "1085",
+  "rec_guardian": "1189",
+  "def_oracle": "968",
+  "hp_oracle": "2763",
+  "rec_oracle": "1345",
+  "hp_bonus": "400",
+  "atk_bonus": "160",
+  "def_bonus": "160",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "2",
+  "normaldc": "4",
+  "ls": "Thunder Spirit's Power",
+  "lsdescription": "25% boost to Atk Power of Thunder Types",
+  "lstype": "Attack",
+  "bbdescription": "3 combo Thunder elemental attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "3",
+  "bbaoe": "A",
+  "bbgauge": "22",
+  "bbdc": "3",
+  "bbmultiplier": "180",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "40132",
+  "evomats2": "40132",
+  "evomats3": "40131",
+  "evomats4": "40131",
+  "evomats5": "60142"
 }

@@ -1,62 +1,69 @@
 {
   "id": "10573",
-  "unitName": "Stahn (4★)",
-  "idalt": "",
-  "altname": "Stahn",
-  "no": "780",
-  "element": "Fire",
-  "rarity": "★★★★",
-  "cost": "12",
-  "maxlv": "60",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "152",
-  "animation_idle": "68",
-  "animation_move": "4",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "18, 40, 44, 82, 86, 90, 94",
-  "normal_distribute": "15, 10, 10, 30, 15, 10, 10",
-  "normal_totaldistr": "100",
-  "bb_frames": "18, 40, 44, 78, 82, 86, 90, 94, 98, 102",
-  "bb_distribute": "10, 10, 10, 10, 10, 10, 10, 10, 10, 10",
-  "bb_totaldistr": "100",
-  "description": "A young man from another world in search of the Eye of Atamoni. Although initially a simple shepherd, Stahn left his hometown of Lienea, where he lived with his grandfather and his younger sister, to become a soldier in service of the kingdom of Seinegald. After smuggling himself aboard the ship Draconis to make his way to the capital, Darilsheid, the ship was suddenly attacked. Looking for a weapon to defend himself with inside the ship, Stahn experienced the encounter of a lifetime.",
-  "summon": "So you summoned me here?<br>I'm Stahn Aileron!<br>What's your name?",
-  "fusion": "This stuff is amazing!<br>It makes you more powerful, right?<br>Is this normal practice here?",
-  "evolution": "",
-  "hp_base": "2990",
-  "atk_base": "1040",
-  "def_base": "860",
-  "rec_base": "820",
-  "hp_lord": "4290",
-  "atk_lord": "1390",
-  "def_lord": "1150",
-  "rec_lord": "1090",
-  "hp_anima": "4732",
-  "rec_anima": "972",
-  "atk_breaker": "1508",
-  "def_breaker": "1032",
-  "def_guardian": "1268",
-  "rec_guardian": "1031",
-  "def_oracle": "1091",
-  "rec_oracle": "1267",
-  "hp_bonus": "500",
-  "atk_bonus": "200",
-  "def_bonus": "200",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "7",
-  "normaldc": "14",
-  "ls": "Heir to the Sun's Courage",
-  "lsdescription": "Boosts Atk relative to how high remaining HP is & boosts BB gauge each turn",
-  "lsnote": "20% base boost to Atk + 0.55% boost per 1% HP remaining, 75% boost max., 2 BC fill each turn",
-  "lstype": "Attack/Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 1040,
+      "def": 860,
+      "hp": 2990,
+      "rec": 820
+    },
+    "_lord": {
+      "atk": 1390,
+      "def": 1150,
+      "hp": 4290,
+      "rec": 1090
+    },
+    "anima": {
+      "atk": 1390,
+      "def": 1150,
+      "hp max": 4880,
+      "hp min": 4585,
+      "rec max": 1031,
+      "rec min": 913
+    },
+    "breaker": {
+      "atk max": 1567,
+      "atk min": 1449,
+      "def max": 1091,
+      "def min": 973,
+      "hp": 4290,
+      "rec": 1090
+    },
+    "guardian": {
+      "atk": 1390,
+      "def max": 1327,
+      "def min": 1209,
+      "hp": 4290,
+      "rec max": 1090,
+      "rec min": 972
+    },
+    "oracle": {
+      "atk": 1390,
+      "def max": 1150,
+      "def min": 1032,
+      "hp": 4290,
+      "rec max": 1326,
+      "rec min": 1208
+    }
+  },
+  "leader_skill": {
+    "desc": "Boosts Atk relative to how high remaining HP is & boosts BB gauge each turn",
+    "effects": [
+      {
+        "atk% base buff": 20,
+        "atk% extra buff based on hp": 55,
+        "buff proportional to hp": "remaining",
+        "passive id": "46"
+      },
+      {
+        "bc fill per turn": 2,
+        "passive id": "9"
+      }
+    ],
+    "id": "7900",
+    "name": "Heir to the Sun's Courage"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -227,6 +234,180 @@
     ],
     "name": "Rising Phoenix"
   },
+  "sbb": {},
+  "ubb": {},
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 152
+    },
+    "idle": {
+      "total number of frames": 68
+    },
+    "move": {
+      "total number of frames": 4
+    }
+  },
+  "category": 10570,
+  "cost": "12",
+  "damage frames": {
+    "frame times": [
+      18,
+      40,
+      44,
+      82,
+      86,
+      90,
+      94
+    ],
+    "hit dmg% distribution": [
+      15,
+      10,
+      10,
+      30,
+      15,
+      10,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 7
+  },
+  "drop check count": 2,
+  "element": "fire",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "farmable",
+  "guide_id": 780,
+  "imp": {
+    "max atk": "200",
+    "max def": "200",
+    "max hp": "500",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "1294~1445",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Stahn",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Stahn",
+  "maxlv": "60",
+  "no": "780",
+  "unitDisplayHomePosition_1W9CxaFK": "389,118,174,475",
+  "unitDisplayDetailPosition_6z54rgb3": "-110,71,920,716",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "157,355,319,277,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-75,-194,876,682",
+  "unitDisplaySummonPosition_KC3Jk8Br": "40,260,460,358,0",
+  "unitDisplayHpPosition_3BpHN6VD": "0,35",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "2500",
+  "sellCaution": false,
+  "effectFrames": "12:121:1,34:121:1,38:121:1,76:121:1,80:121:1,84:121:1,88:121:1,18:650:1,86:100010:1,82:150:1",
+  "evofrom": "",
+  "evointo": "10574",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "10133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10191",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "10132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 1
+    }
+  ],
+  "idalt": "",
+  "altname": "Stahn",
+  "basexp": "21",
+  "animation_attack": "152",
+  "animation_idle": "68",
+  "animation_move": "4",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "18, 40, 44, 82, 86, 90, 94",
+  "normal_distribute": "15, 10, 10, 30, 15, 10, 10",
+  "normal_totaldistr": "100",
+  "bb_frames": "18, 40, 44, 78, 82, 86, 90, 94, 98, 102",
+  "bb_distribute": "10, 10, 10, 10, 10, 10, 10, 10, 10, 10",
+  "bb_totaldistr": "100",
+  "description": "A young man from another world in search of the Eye of Atamoni. Although initially a simple shepherd, Stahn left his hometown of Lienea, where he lived with his grandfather and his younger sister, to become a soldier in service of the kingdom of Seinegald. After smuggling himself aboard the ship Draconis to make his way to the capital, Darilsheid, the ship was suddenly attacked. Looking for a weapon to defend himself with inside the ship, Stahn experienced the encounter of a lifetime.",
+  "summon": "So you summoned me here?<br>I'm Stahn Aileron!<br>What's your name?",
+  "fusion": "This stuff is amazing!<br>It makes you more powerful, right?<br>Is this normal practice here?",
+  "evolution": "",
+  "hp_base": "2990",
+  "atk_base": "1040",
+  "def_base": "860",
+  "rec_base": "820",
+  "hp_lord": "4290",
+  "atk_lord": "1390",
+  "def_lord": "1150",
+  "rec_lord": "1090",
+  "hp_anima": "4732",
+  "rec_anima": "972",
+  "atk_breaker": "1508",
+  "def_breaker": "1032",
+  "def_guardian": "1268",
+  "rec_guardian": "1031",
+  "def_oracle": "1091",
+  "rec_oracle": "1267",
+  "hp_bonus": "500",
+  "atk_bonus": "200",
+  "def_bonus": "200",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "7",
+  "normaldc": "14",
+  "ls": "Heir to the Sun's Courage",
+  "lsdescription": "Boosts Atk relative to how high remaining HP is & boosts BB gauge each turn",
+  "lsnote": "20% base boost to Atk + 0.55% boost per 1% HP remaining, 75% boost max., 2 BC fill each turn",
+  "lstype": "Attack/Brave Burst",
   "bbdescription": "10 combo Fire attack on all foes",
   "bbnote": "",
   "bbtype": "Offense",
@@ -239,7 +420,6 @@
   "bbaoe2": "",
   "bbdc2": "",
   "bbmultiplier2": "",
-  "sbb": {},
   "sbbdescription": "",
   "sbbnote": "",
   "sbbtype": "",
@@ -252,7 +432,6 @@
   "sbbaoe2": "",
   "sbbdc2": "",
   "sbbmultiplier2": "",
-  "ubb": {},
   "ubbdescription": "",
   "ubbnote": "",
   "ubbtype": "",
@@ -269,86 +448,9 @@
   "esitem": "",
   "esdescription": "",
   "esnote": "",
-  "evofrom": "",
-  "evointo": "10574",
   "evomats1": "Fire Idol",
   "evomats2": "Fire Pot",
   "evomats3": "Fire Pot",
   "evomats4": "Fire Totem",
-  "evomats5": "Bat Mimic",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 1040,
-      "def": 860,
-      "hp": 2990,
-      "rec": 820
-    },
-    "_lord": {
-      "atk": 1390,
-      "def": 1150,
-      "hp": 4290,
-      "rec": 1090
-    },
-    "anima": {
-      "atk": 1390,
-      "def": 1150,
-      "hp max": 4880,
-      "hp min": 4585,
-      "rec max": 1031,
-      "rec min": 913
-    },
-    "breaker": {
-      "atk max": 1567,
-      "atk min": 1449,
-      "def max": 1091,
-      "def min": 973,
-      "hp": 4290,
-      "rec": 1090
-    },
-    "guardian": {
-      "atk": 1390,
-      "def max": 1327,
-      "def min": 1209,
-      "hp": 4290,
-      "rec max": 1090,
-      "rec min": 972
-    },
-    "oracle": {
-      "atk": 1390,
-      "def max": 1150,
-      "def min": 1032,
-      "hp": 4290,
-      "rec max": 1326,
-      "rec min": 1208
-    }
-  },
-  "leader_skill": {
-    "desc": "Boosts Atk relative to how high remaining HP is & boosts BB gauge each turn",
-    "effects": [
-      {
-        "atk% base buff": 20,
-        "atk% extra buff based on hp": 55,
-        "buff proportional to hp": "remaining",
-        "passive id": "46"
-      },
-      {
-        "bc fill per turn": 2,
-        "passive id": "9"
-      }
-    ],
-    "id": "7900",
-    "name": "Heir to the Sun's Courage"
-  },
-  "extra_skill": {},
-  "unitDisplayHomePosition_1W9CxaFK": "389,118,174,475",
-  "unitDisplayDetailPosition_6z54rgb3": "-110,71,920,716",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "157,355,319,277,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-75,-194,876,682",
-  "unitDisplaySummonPosition_KC3Jk8Br": "40,260,460,358,0",
-  "unitDisplayHpPosition_3BpHN6VD": "0,35",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "2500",
-  "sellCaution": false,
-  "effectFrames": "12:121:1,34:121:1,38:121:1,76:121:1,80:121:1,84:121:1,88:121:1,18:650:1,86:100010:1,82:150:1"
+  "evomats5": "Bat Mimic"
 }

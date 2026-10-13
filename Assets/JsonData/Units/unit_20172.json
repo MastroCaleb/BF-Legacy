@@ -1,62 +1,63 @@
 {
   "id": "20172",
-  "unitName": "Hrungnir",
-  "no": "272",
-  "element": "Water",
-  "rarity": "★★★",
-  "cost": "5",
-  "maxlv": "40",
-  "basexp": "10",
-  "gender": "N",
-  "ai": "2",
-  "animation_attack": "110",
-  "animation_idle": "70",
-  "animation_move": "11",
-  "movespeed_attack": "0.005",
-  "movespeed_skill": "0.005",
-  "speedtype_attack": "1",
-  "speedtype_skill": "1",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "52, 76",
-  "normal_distribute": "50, 50",
-  "normal_totaldistr": "100",
-  "bb_frames": "52, 58, 64, 76, 82, 88",
-  "bb_distribute": "30, 10, 10, 30, 10, 10",
-  "bb_totaldistr": "100",
-  "description": "A monster that gains all the knowledge held by the people it devours. Its defense is also greatly increased by the armor it wears which was stolen from humans it found in the past. They rarely form large groups, but they do seem to communicate with each other via a means of communication specific to their race which is comprised of gestures and very basic speech. It's even been said that Hrungnirs have formed militant groups to take revenge on humans who have attacked a certain individual's residence.",
-  "summon": "My favorite thing is<br>the wisdom of humans!<br>You are wise too, right?",
-  "fusion": "Give me lots more!<br>If you do, I will become<br>more intelligent!",
-  "evolution": "Have you seen me?<br>Look at how wonderful<br>my armor is!",
-  "hp_base": "2065",
-  "atk_base": "478",
-  "def_base": "693",
-  "rec_base": "298",
-  "hp_lord": "2852",
-  "atk_lord": "754",
-  "def_lord": "990",
-  "rec_lord": "520",
-  "hp_anima": "3145",
-  "rec_anima": "442",
-  "atk_breaker": "832",
-  "def_breaker": "912",
-  "atk_guardian": "676",
-  "def_guardian": "1068",
-  "rec_guardian": "481",
-  "def_oracle": "951",
-  "hp_oracle": "2735",
-  "rec_oracle": "637",
-  "hp_bonus": "300",
-  "atk_bonus": "120",
-  "def_bonus": "120",
-  "rec_bonus": "120",
-  "lordonly": "",
-  "combo_hits": "2",
-  "normaldc": "4",
-  "ls": "Intense Light",
-  "lsdescription": "Small boost in damage dealt during Spark",
-  "lsnote": "15% boost",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 478,
+      "def": 693,
+      "hp": 2065,
+      "rec": 298
+    },
+    "_lord": {
+      "atk": 754,
+      "def": 990,
+      "hp": 2852,
+      "rec": 520
+    },
+    "anima": {
+      "atk": 754,
+      "def": 990,
+      "hp max": 3242,
+      "hp min": 3047,
+      "rec max": 481,
+      "rec min": 403
+    },
+    "breaker": {
+      "atk max": 871,
+      "atk min": 793,
+      "def max": 951,
+      "def min": 873,
+      "hp": 2852,
+      "rec": 520
+    },
+    "guardian": {
+      "atk": 754,
+      "def max": 1107,
+      "def min": 1029,
+      "hp": 2852,
+      "rec max": 520,
+      "rec min": 442
+    },
+    "oracle": {
+      "atk": 754,
+      "def max": 990,
+      "def min": 912,
+      "hp": 2852,
+      "rec max": 676,
+      "rec min": 598
+    }
+  },
+  "leader_skill": {
+    "desc": "Small boost in damage dealt during Spark",
+    "effects": [
+      {
+        "damage% for spark": 15,
+        "passive id": "31"
+      }
+    ],
+    "id": "1300",
+    "name": "Intense Light"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -301,95 +302,85 @@
     ],
     "name": "Blizzard Storm"
   },
-  "bbdescription": "6 combo Water elemental attack on single enemy & probable Sickness effect",
-  "bbnote": "80% chance",
-  "bbtype": "Offense",
-  "bbhits": "6",
-  "bbaoe": "1",
-  "bbgauge": "12",
-  "bbdc": "18",
-  "bbmultiplier": "280",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "20171",
-  "evointo": "",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 478,
-      "def": 693,
-      "hp": 2065,
-      "rec": 298
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 754,
-      "def": 990,
-      "hp": 2852,
-      "rec": 520
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 754,
-      "def": 990,
-      "hp max": 3242,
-      "hp min": 3047,
-      "rec max": 481,
-      "rec min": 403
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 110
     },
-    "breaker": {
-      "atk max": 871,
-      "atk min": 793,
-      "def max": 951,
-      "def min": 873,
-      "hp": 2852,
-      "rec": 520
+    "idle": {
+      "total number of frames": 70
     },
-    "guardian": {
-      "atk": 754,
-      "def max": 1107,
-      "def min": 1029,
-      "hp": 2852,
-      "rec max": 520,
-      "rec min": 442
-    },
-    "oracle": {
-      "atk": 754,
-      "def max": 990,
-      "def min": 912,
-      "hp": 2852,
-      "rec max": 676,
-      "rec min": 598
+    "move": {
+      "total number of frames": 11
     }
   },
-  "leader_skill": {
-    "desc": "Small boost in damage dealt during Spark",
-    "effects": [
-      {
-        "damage% for spark": 15,
-        "passive id": "31"
-      }
+  "category": 20170,
+  "cost": "5",
+  "damage frames": {
+    "frame times": [
+      52,
+      76
     ],
-    "id": "1300",
-    "name": "Intense Light"
+    "hit dmg% distribution": [
+      50,
+      50
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 2
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "water",
+  "exp_pattern": 10,
+  "gender": "other",
+  "getting type": "farmable",
+  "guide_id": 272,
+  "imp": {
+    "max atk": "120",
+    "max def": "120",
+    "max hp": "300",
+    "max rec": "120"
+  },
+  "kind": "normal",
+  "lord damage range": "701~784",
+  "movement": {
+    "attack": {
+      "move speed": 0.005,
+      "move speed type": "1",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.005,
+      "move speed type": "1",
+      "move type": "1"
+    }
+  },
+  "name": "Hrungnir",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "Hrungnir",
+  "maxlv": "40",
+  "no": "272",
   "unitDisplayHomePosition_1W9CxaFK": "316,5,200,544",
   "unitDisplayDetailPosition_6z54rgb3": "42,179,630,598",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "130,408,303,232,0",
@@ -399,5 +390,85 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "1000",
   "sellCaution": false,
-  "effectFrames": "46:132:1,70:132:1"
+  "effectFrames": "46:132:1,70:132:1",
+  "evofrom": "20171",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "10",
+  "animation_attack": "110",
+  "animation_idle": "70",
+  "animation_move": "11",
+  "movespeed_attack": "0.005",
+  "movespeed_skill": "0.005",
+  "speedtype_attack": "1",
+  "speedtype_skill": "1",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "52, 76",
+  "normal_distribute": "50, 50",
+  "normal_totaldistr": "100",
+  "bb_frames": "52, 58, 64, 76, 82, 88",
+  "bb_distribute": "30, 10, 10, 30, 10, 10",
+  "bb_totaldistr": "100",
+  "description": "A monster that gains all the knowledge held by the people it devours. Its defense is also greatly increased by the armor it wears which was stolen from humans it found in the past. They rarely form large groups, but they do seem to communicate with each other via a means of communication specific to their race which is comprised of gestures and very basic speech. It's even been said that Hrungnirs have formed militant groups to take revenge on humans who have attacked a certain individual's residence.",
+  "summon": "My favorite thing is<br>the wisdom of humans!<br>You are wise too, right?",
+  "fusion": "Give me lots more!<br>If you do, I will become<br>more intelligent!",
+  "evolution": "Have you seen me?<br>Look at how wonderful<br>my armor is!",
+  "hp_base": "2065",
+  "atk_base": "478",
+  "def_base": "693",
+  "rec_base": "298",
+  "hp_lord": "2852",
+  "atk_lord": "754",
+  "def_lord": "990",
+  "rec_lord": "520",
+  "hp_anima": "3145",
+  "rec_anima": "442",
+  "atk_breaker": "832",
+  "def_breaker": "912",
+  "atk_guardian": "676",
+  "def_guardian": "1068",
+  "rec_guardian": "481",
+  "def_oracle": "951",
+  "hp_oracle": "2735",
+  "rec_oracle": "637",
+  "hp_bonus": "300",
+  "atk_bonus": "120",
+  "def_bonus": "120",
+  "rec_bonus": "120",
+  "lordonly": "",
+  "combo_hits": "2",
+  "normaldc": "4",
+  "ls": "Intense Light",
+  "lsdescription": "Small boost in damage dealt during Spark",
+  "lsnote": "15% boost",
+  "lstype": "Attack",
+  "bbdescription": "6 combo Water elemental attack on single enemy & probable Sickness effect",
+  "bbnote": "80% chance",
+  "bbtype": "Offense",
+  "bbhits": "6",
+  "bbaoe": "1",
+  "bbgauge": "12",
+  "bbdc": "18",
+  "bbmultiplier": "280",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "",
+  "evomats2": "",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": "",
+  "evoitem": ""
 }

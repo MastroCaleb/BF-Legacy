@@ -1,58 +1,64 @@
 {
   "id": "50292",
-  "unitName": "GS-1000",
-  "no": "638",
-  "element": "Light",
-  "rarity": "★★★",
-  "cost": "6",
-  "maxlv": "40",
-  "basexp": "10",
-  "gender": "N",
-  "ai": "1",
-  "animation_attack": "175",
-  "animation_idle": "64",
-  "animation_move": "6",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "4",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "3",
-  "normal_frames": "65, 71, 77, 83, 89, 95, 101, 107",
-  "normal_distribute": "13, 13, 13, 13, 12, 12, 12, 12",
-  "normal_totaldistr": "100",
-  "description": "A guardian weapon that can move autonomously which has a number of defense mechanisms controlled by its core. This rarely found guardian weapon has in essence come to disregard all its initial functions, and achieved evolution for the purpose of disposing of anything it considers hostile. It is believed that it was modified by someone for some particular purpose, but now it is nothing more but a machine which attacks anything that approaches it. Without a soul, and without a conscience, it has brought countless of warriors to their deaths.",
-  "summon": "Registration...<br>Beep!<br>Complete.",
-  "fusion": "Supply replenishment...<br>Beep, beep!<br>Complete.",
-  "evolution": "Update...<br>Beep! Beep!<br>Complete.",
-  "hp_base": "2112",
-  "atk_base": "645",
-  "def_base": "661",
-  "rec_base": "516",
-  "hp_lord": "3351",
-  "atk_lord": "871",
-  "def_lord": "892",
-  "rec_lord": "683",
-  "hp_anima": "3644",
-  "rec_anima": "605",
-  "atk_breaker": "949",
-  "def_breaker": "814",
-  "atk_guardian": "793",
-  "def_guardian": "970",
-  "rec_guardian": "644",
-  "def_oracle": "853",
-  "hp_oracle": "3234",
-  "rec_oracle": "800",
-  "hp_bonus": "300",
-  "atk_bonus": "120",
-  "def_bonus": "120",
-  "rec_bonus": "120",
-  "lordonly": "",
-  "combo_hits": "8",
-  "normaldc": "16",
-  "ls": "Absolute Power",
-  "lsdescription": "25% boost to Atk power of Genderless Units",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 645,
+      "def": 661,
+      "hp": 2112,
+      "rec": 516
+    },
+    "_lord": {
+      "atk": 871,
+      "def": 892,
+      "hp": 3351,
+      "rec": 683
+    },
+    "anima": {
+      "atk": 871,
+      "def": 892,
+      "hp max": 3741,
+      "hp min": 3546,
+      "rec max": 644,
+      "rec min": 566
+    },
+    "breaker": {
+      "atk max": 988,
+      "atk min": 910,
+      "def max": 853,
+      "def min": 775,
+      "hp": 3351,
+      "rec": 683
+    },
+    "guardian": {
+      "atk": 871,
+      "def max": 1009,
+      "def min": 931,
+      "hp": 3351,
+      "rec max": 683,
+      "rec min": 605
+    },
+    "oracle": {
+      "atk": 871,
+      "def max": 892,
+      "def min": 814,
+      "hp": 3351,
+      "rec max": 839,
+      "rec min": 761
+    }
+  },
+  "leader_skill": {
+    "desc": "25% boost to Atk power of genderless Units",
+    "effects": [
+      {
+        "atk% buff": 25,
+        "gender required": "genderless",
+        "passive id": "42"
+      }
+    ],
+    "id": "4700",
+    "name": "Absolute Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -205,93 +211,97 @@
     ],
     "name": "Defense Level 100"
   },
-  "bbdescription": "Reduces damage taken for 1 turn",
-  "bbnote": "25% reduction",
-  "bbtype": "Support",
-  "bbhits": "0",
-  "bbaoe": "0",
-  "bbgauge": "22",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "50291",
-  "evointo": "",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 645,
-      "def": 661,
-      "hp": 2112,
-      "rec": 516
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "party"
     },
-    "_lord": {
-      "atk": 871,
-      "def": 892,
-      "hp": 3351,
-      "rec": 683
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 871,
-      "def": 892,
-      "hp max": 3741,
-      "hp min": 3546,
-      "rec max": 644,
-      "rec min": 566
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 175
     },
-    "breaker": {
-      "atk max": 988,
-      "atk min": 910,
-      "def max": 853,
-      "def min": 775,
-      "hp": 3351,
-      "rec": 683
+    "idle": {
+      "total number of frames": 64
     },
-    "guardian": {
-      "atk": 871,
-      "def max": 1009,
-      "def min": 931,
-      "hp": 3351,
-      "rec max": 683,
-      "rec min": 605
-    },
-    "oracle": {
-      "atk": 871,
-      "def max": 892,
-      "def min": 814,
-      "hp": 3351,
-      "rec max": 839,
-      "rec min": 761
+    "move": {
+      "total number of frames": 6
     }
   },
-  "leader_skill": {
-    "desc": "25% boost to Atk power of genderless Units",
-    "effects": [
-      {
-        "atk% buff": 25,
-        "gender required": "genderless",
-        "passive id": "42"
-      }
+  "category": 50290,
+  "cost": "6",
+  "damage frames": {
+    "frame times": [
+      65,
+      71,
+      77,
+      83,
+      89,
+      95,
+      101,
+      107
     ],
-    "id": "4700",
-    "name": "Absolute Power"
+    "hit dmg% distribution": [
+      13,
+      13,
+      13,
+      13,
+      12,
+      12,
+      12,
+      12
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 8
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "light",
+  "exp_pattern": 10,
+  "gender": "other",
+  "getting type": "farmable",
+  "guide_id": 638,
+  "imp": {
+    "max atk": "120",
+    "max def": "120",
+    "max hp": "300",
+    "max rec": "120"
+  },
+  "kind": "normal",
+  "lord damage range": "810~905",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    }
+  },
+  "name": "GS-1000",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "GS-1000",
+  "maxlv": "40",
+  "no": "638",
   "unitDisplayHomePosition_1W9CxaFK": "113,-83,250,682",
   "unitDisplayDetailPosition_6z54rgb3": "182,236,490,519",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "157,355,319,277,0",
@@ -301,5 +311,78 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "1000",
   "sellCaution": false,
-  "effectFrames": "65:500172:1,68:400131:1,71:500172:1,79:500025:1"
+  "effectFrames": "65:500172:1,68:400131:1,71:500172:1,79:500025:1",
+  "evofrom": "50291",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "10",
+  "animation_attack": "175",
+  "animation_idle": "64",
+  "animation_move": "6",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "4",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "3",
+  "normal_frames": "65, 71, 77, 83, 89, 95, 101, 107",
+  "normal_distribute": "13, 13, 13, 13, 12, 12, 12, 12",
+  "normal_totaldistr": "100",
+  "description": "A guardian weapon that can move autonomously which has a number of defense mechanisms controlled by its core. This rarely found guardian weapon has in essence come to disregard all its initial functions, and achieved evolution for the purpose of disposing of anything it considers hostile. It is believed that it was modified by someone for some particular purpose, but now it is nothing more but a machine which attacks anything that approaches it. Without a soul, and without a conscience, it has brought countless of warriors to their deaths.",
+  "summon": "Registration...<br>Beep!<br>Complete.",
+  "fusion": "Supply replenishment...<br>Beep, beep!<br>Complete.",
+  "evolution": "Update...<br>Beep! Beep!<br>Complete.",
+  "hp_base": "2112",
+  "atk_base": "645",
+  "def_base": "661",
+  "rec_base": "516",
+  "hp_lord": "3351",
+  "atk_lord": "871",
+  "def_lord": "892",
+  "rec_lord": "683",
+  "hp_anima": "3644",
+  "rec_anima": "605",
+  "atk_breaker": "949",
+  "def_breaker": "814",
+  "atk_guardian": "793",
+  "def_guardian": "970",
+  "rec_guardian": "644",
+  "def_oracle": "853",
+  "hp_oracle": "3234",
+  "rec_oracle": "800",
+  "hp_bonus": "300",
+  "atk_bonus": "120",
+  "def_bonus": "120",
+  "rec_bonus": "120",
+  "lordonly": "",
+  "combo_hits": "8",
+  "normaldc": "16",
+  "ls": "Absolute Power",
+  "lsdescription": "25% boost to Atk power of Genderless Units",
+  "lstype": "Attack",
+  "bbdescription": "Reduces damage taken for 1 turn",
+  "bbnote": "25% reduction",
+  "bbtype": "Support",
+  "bbhits": "0",
+  "bbaoe": "0",
+  "bbgauge": "22",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "",
+  "evomats2": "",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": ""
 }

@@ -1,62 +1,63 @@
 {
   "id": "40261",
-  "unitName": "Cockatrice",
-  "no": "635",
-  "element": "Thunder",
-  "rarity": "★★",
-  "cost": "4",
-  "maxlv": "30",
-  "basexp": "10",
-  "gender": "N",
-  "ai": "2",
-  "animation_attack": "70",
-  "animation_idle": "84",
-  "animation_move": "42",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "36, 54",
-  "normal_distribute": "50, 50",
-  "normal_totaldistr": "100",
-  "bb_frames": "36, 45, 54",
-  "bb_distribute": "34, 33, 33",
-  "bb_totaldistr": "100",
-  "description": "A highly poisonous and frightening beast. According to some reports, this beast was born from the rotten egg of a rooster which was incubated by reptiles. Though full of contradictions, this process is believed to have been used in order to produce this demons for dark magic purposes. The poisonous miasma that the Cockatrice releases can defeat enemies at great distances, and the springs it has touched with its beak can never be drank from again. There are also legends which state that its strong poison can be used as materials to make miraculous medicine.",
-  "summon": "Cock-a-doodle-doo!<br>B'gawk!",
-  "fusion": "Cluck, cluck... B'gawk!",
-  "evolution": "",
-  "hp_base": "1601",
-  "atk_base": "494",
-  "def_base": "389",
-  "rec_base": "156",
-  "hp_lord": "2956",
-  "atk_lord": "778",
-  "def_lord": "741",
-  "rec_lord": "392",
-  "hp_anima": "3174",
-  "rec_anima": "334",
-  "atk_breaker": "836",
-  "def_breaker": "683",
-  "atk_guardian": "720",
-  "def_guardian": "799",
-  "rec_guardian": "363",
-  "def_oracle": "712",
-  "hp_oracle": "2869",
-  "rec_oracle": "479",
-  "hp_bonus": "250",
-  "atk_bonus": "100",
-  "def_bonus": "100",
-  "rec_bonus": "100",
-  "lordonly": "",
-  "combo_hits": "2",
-  "normaldc": "4",
-  "ls": "Fighting Light",
-  "lsdescription": "Small boost in Battle Crystals produced during Spark",
-  "lsnote": "30% boost",
-  "lstype": "Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 494,
+      "def": 389,
+      "hp": 1601,
+      "rec": 156
+    },
+    "_lord": {
+      "atk": 778,
+      "def": 741,
+      "hp": 2956,
+      "rec": 392
+    },
+    "anima": {
+      "atk": 778,
+      "def": 741,
+      "hp max": 3246,
+      "hp min": 3101,
+      "rec max": 363,
+      "rec min": 305
+    },
+    "breaker": {
+      "atk max": 865,
+      "atk min": 807,
+      "def max": 712,
+      "def min": 654,
+      "hp": 2956,
+      "rec": 392
+    },
+    "guardian": {
+      "atk": 778,
+      "def max": 828,
+      "def min": 770,
+      "hp": 2956,
+      "rec max": 392,
+      "rec min": 334
+    },
+    "oracle": {
+      "atk": 778,
+      "def max": 741,
+      "def min": 683,
+      "hp": 2956,
+      "rec max": 508,
+      "rec min": 450
+    }
+  },
+  "leader_skill": {
+    "desc": "Small boost in Battle Crystals produced during Spark",
+    "effects": [
+      {
+        "bc drop% for spark": 30,
+        "passive id": "31"
+      }
+    ],
+    "id": "1400",
+    "name": "Fighting Light"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -295,94 +296,85 @@
     ],
     "name": "Petrifying Beak"
   },
-  "bbdescription": "3 combo Thunder elemental attack on single enemy & probable Paralysis effect",
-  "bbnote": "80% chance to inflict",
-  "bbtype": "Offense",
-  "bbhits": "3",
-  "bbaoe": "1",
-  "bbgauge": "15",
-  "bbdc": "9",
-  "bbmultiplier": "280",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "40262",
-  "evomats1": "40131",
-  "evomats2": "40130",
-  "evomats3": "60142",
-  "evomats4": "60143",
-  "evomats5": "",
-  "evozelcost": "50000",
-  "stats": {
-    "_base": {
-      "atk": 494,
-      "def": 389,
-      "hp": 1601,
-      "rec": 156
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 778,
-      "def": 741,
-      "hp": 2956,
-      "rec": 392
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 778,
-      "def": 741,
-      "hp max": 3246,
-      "hp min": 3101,
-      "rec max": 363,
-      "rec min": 305
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 70
     },
-    "breaker": {
-      "atk max": 865,
-      "atk min": 807,
-      "def max": 712,
-      "def min": 654,
-      "hp": 2956,
-      "rec": 392
+    "idle": {
+      "total number of frames": 84
     },
-    "guardian": {
-      "atk": 778,
-      "def max": 828,
-      "def min": 770,
-      "hp": 2956,
-      "rec max": 392,
-      "rec min": 334
-    },
-    "oracle": {
-      "atk": 778,
-      "def max": 741,
-      "def min": 683,
-      "hp": 2956,
-      "rec max": 508,
-      "rec min": 450
+    "move": {
+      "total number of frames": 42
     }
   },
-  "leader_skill": {
-    "desc": "Small boost in Battle Crystals produced during Spark",
-    "effects": [
-      {
-        "bc drop% for spark": 30,
-        "passive id": "31"
-      }
+  "category": 40260,
+  "cost": "4",
+  "damage frames": {
+    "frame times": [
+      36,
+      54
     ],
-    "id": "1400",
-    "name": "Fighting Light"
+    "hit dmg% distribution": [
+      50,
+      50
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 2
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "thunder",
+  "exp_pattern": 10,
+  "gender": "other",
+  "getting type": "not eligible for achievement",
+  "guide_id": 635,
+  "imp": {
+    "max atk": "100",
+    "max def": "100",
+    "max hp": "250",
+    "max rec": "100"
+  },
+  "kind": "normal",
+  "lord damage range": "724~809",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Cockatrice",
+  "rarity": "2",
+  "sell caution": false,
+  "unitName": "Cockatrice",
+  "maxlv": "30",
+  "no": "635",
   "unitDisplayHomePosition_1W9CxaFK": "82,20,185,505",
   "unitDisplayDetailPosition_6z54rgb3": "124,255,673,525",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "157,355,319,277,0",
@@ -392,5 +384,105 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "300",
   "sellCaution": false,
-  "effectFrames": "30:124:1,48:124:1"
+  "effectFrames": "30:124:1,48:124:1",
+  "evofrom": "",
+  "evointo": "40262",
+  "evozelcost": "50000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "40131",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40130",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60142",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 1
+    }
+  ],
+  "basexp": "10",
+  "animation_attack": "70",
+  "animation_idle": "84",
+  "animation_move": "42",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "36, 54",
+  "normal_distribute": "50, 50",
+  "normal_totaldistr": "100",
+  "bb_frames": "36, 45, 54",
+  "bb_distribute": "34, 33, 33",
+  "bb_totaldistr": "100",
+  "description": "A highly poisonous and frightening beast. According to some reports, this beast was born from the rotten egg of a rooster which was incubated by reptiles. Though full of contradictions, this process is believed to have been used in order to produce this demons for dark magic purposes. The poisonous miasma that the Cockatrice releases can defeat enemies at great distances, and the springs it has touched with its beak can never be drank from again. There are also legends which state that its strong poison can be used as materials to make miraculous medicine.",
+  "summon": "Cock-a-doodle-doo!<br>B'gawk!",
+  "fusion": "Cluck, cluck... B'gawk!",
+  "evolution": "",
+  "hp_base": "1601",
+  "atk_base": "494",
+  "def_base": "389",
+  "rec_base": "156",
+  "hp_lord": "2956",
+  "atk_lord": "778",
+  "def_lord": "741",
+  "rec_lord": "392",
+  "hp_anima": "3174",
+  "rec_anima": "334",
+  "atk_breaker": "836",
+  "def_breaker": "683",
+  "atk_guardian": "720",
+  "def_guardian": "799",
+  "rec_guardian": "363",
+  "def_oracle": "712",
+  "hp_oracle": "2869",
+  "rec_oracle": "479",
+  "hp_bonus": "250",
+  "atk_bonus": "100",
+  "def_bonus": "100",
+  "rec_bonus": "100",
+  "lordonly": "",
+  "combo_hits": "2",
+  "normaldc": "4",
+  "ls": "Fighting Light",
+  "lsdescription": "Small boost in Battle Crystals produced during Spark",
+  "lsnote": "30% boost",
+  "lstype": "Brave Burst",
+  "bbdescription": "3 combo Thunder elemental attack on single enemy & probable Paralysis effect",
+  "bbnote": "80% chance to inflict",
+  "bbtype": "Offense",
+  "bbhits": "3",
+  "bbaoe": "1",
+  "bbgauge": "15",
+  "bbdc": "9",
+  "bbmultiplier": "280",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "40131",
+  "evomats2": "40130",
+  "evomats3": "60142",
+  "evomats4": "60143",
+  "evomats5": ""
 }

@@ -1,52 +1,66 @@
 {
   "id": "10335",
-  "unitName": "Red Swordsman Farlon",
-  "no": "494",
-  "element": "Fire",
-  "rarity": "★★★★★★",
-  "cost": "26",
-  "maxlv": "100",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "101",
-  "animation_idle": "52",
-  "animation_move": "6",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "description": "One of the 12 Guardians who wielded fire and his blade as he pursued the traitors. Hearing that his girlfriend Ramna had betrayed the gods and left their land, filled with rage he chased after the traitors, not even leaving time for his wounds to heal. He directed his angry flames toward his former allies who now sided with Sodis. It's said that even his girlfriend's heartfelt plea couldn't change his mind. In the end, no one knows upon whom or what his angry blade fell.",
-  "summon": "No one can quell my anger!<br>My flames will scorch everything!<br>It matters not who stands before me!",
-  "fusion": "Nngh, it's so hot!<br>This burning feeling inside of me<br>has ignited my soul!",
-  "evolution": "I will be the strongest!<br>Until then I must keep going forth.<br>My soul still burns strong!",
-  "hp_base": "4680",
-  "atk_base": "1422",
-  "def_base": "1422",
-  "rec_base": "1422",
-  "hp_lord": "6202",
-  "atk_lord": "1800",
-  "def_lord": "1800",
-  "rec_lord": "1800",
-  "hp_anima": "6944",
-  "rec_anima": "1602",
-  "atk_breaker": "1998",
-  "def_breaker": "1602",
-  "atk_guardian": "1602",
-  "def_guardian": "1998",
-  "hp_oracle": "5459",
-  "rec_oracle": "1998",
-  "hp_bonus": "750",
-  "atk_bonus": "300",
-  "def_bonus": "300",
-  "rec_bonus": "300",
-  "lordonly": "",
-  "combo_hits": "8",
-  "ls": "Burning Unity",
-  "lsdescription": "65% boost to Atk power of Fire types",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 1422,
+      "def": 1422,
+      "hp": 4680,
+      "rec": 1422
+    },
+    "_lord": {
+      "atk": 1800,
+      "def": 1800,
+      "hp": 6202,
+      "rec": 1800
+    },
+    "anima": {
+      "atk": 1800,
+      "def": 1800,
+      "hp max": 7192,
+      "hp min": 6697,
+      "rec max": 1701,
+      "rec min": 1503
+    },
+    "breaker": {
+      "atk max": 2097,
+      "atk min": 1899,
+      "def max": 1701,
+      "def min": 1503,
+      "hp": 6202,
+      "rec": 1800
+    },
+    "guardian": {
+      "atk": 1800,
+      "def max": 2097,
+      "def min": 1899,
+      "hp": 6202,
+      "rec max": 1800,
+      "rec min": 1602
+    },
+    "oracle": {
+      "atk": 1800,
+      "def max": 1800,
+      "def min": 1602,
+      "hp": 6202,
+      "rec max": 2196,
+      "rec min": 1998
+    }
+  },
+  "leader_skill": {
+    "desc": "65% boost to Atk power of Fire types",
+    "effects": [
+      {
+        "atk% buff": 65,
+        "elements buffed": [
+          "fire"
+        ],
+        "passive id": "2"
+      }
+    ],
+    "id": "105",
+    "name": "Burning Unity"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -215,11 +229,6 @@
     ],
     "name": "Red Ignition"
   },
-  "bbdescription": "9 combo Fire elemental attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "9",
-  "bbaoe": "A",
-  "bbgauge": "15",
   "sbb": {
     "damage frames": [
       {
@@ -496,89 +505,96 @@
     ],
     "name": "Crimson Wing"
   },
-  "sbbdescription": "12 combo Fire elemental attack on all enemies & own Def decreased by half and massive boost to Atk power for 3 turns",
-  "sbbtype": "Offense",
-  "sbbhits": "12",
-  "sbbaoe": "A",
-  "sbbgauge": "15",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "10334",
-  "evointo": "",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 1422,
-      "def": 1422,
-      "hp": 4680,
-      "rec": 1422
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1800,
-      "def": 1800,
-      "hp": 6202,
-      "rec": 1800
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1800,
-      "def": 1800,
-      "hp max": 7192,
-      "hp min": 6697,
-      "rec max": 1701,
-      "rec min": 1503
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 101
     },
-    "breaker": {
-      "atk max": 2097,
-      "atk min": 1899,
-      "def max": 1701,
-      "def min": 1503,
-      "hp": 6202,
-      "rec": 1800
+    "idle": {
+      "total number of frames": 52
     },
-    "guardian": {
-      "atk": 1800,
-      "def max": 2097,
-      "def min": 1899,
-      "hp": 6202,
-      "rec max": 1800,
-      "rec min": 1602
-    },
-    "oracle": {
-      "atk": 1800,
-      "def max": 1800,
-      "def min": 1602,
-      "hp": 6202,
-      "rec max": 2196,
-      "rec min": 1998
+    "move": {
+      "total number of frames": 6
     }
   },
-  "leader_skill": {
-    "desc": "65% boost to Atk power of Fire types",
-    "effects": [
-      {
-        "atk% buff": 65,
-        "elements buffed": [
-          "fire"
-        ],
-        "passive id": "2"
-      }
+  "category": 10330,
+  "cost": "26",
+  "damage frames": {
+    "frame times": [
+      18,
+      48,
+      53,
+      58,
+      63,
+      68,
+      73,
+      78
     ],
-    "id": "105",
-    "name": "Burning Unity"
+    "hit dmg% distribution": [
+      30,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 8
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "fire",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 494,
+  "imp": {
+    "max atk": "300",
+    "max def": "300",
+    "max hp": "750",
+    "max rec": "300"
+  },
+  "kind": "normal",
+  "lord damage range": "1676~1872",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Red Swordsman Farlon",
+  "rarity": "6",
+  "sell caution": false,
+  "unitName": "Red Swordsman Farlon",
+  "maxlv": "100",
+  "no": "494",
   "unitDisplayHomePosition_1W9CxaFK": "350,282,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-50,-141,1372,958",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "112,357,341,261,0",
@@ -588,5 +604,116 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "8000",
   "sellCaution": false,
-  "effectFrames": "12:121:1,42:121:1,47:121:1,52:121:1,57:121:1,62:121:1,67:121:1,72:121:1,18:650:1,40:650:1,18:100010:1,18:100192:1,48:150:0,73:1101:1,63:100181:1"
+  "effectFrames": "12:121:1,42:121:1,47:121:1,52:121:1,57:121:1,62:121:1,67:121:1,72:121:1,18:650:1,40:650:1,18:100010:1,18:100192:1,48:150:0,73:1101:1,63:100181:1",
+  "evofrom": "10334",
+  "evointo": "10336",
+  "evozelcost": "1500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "10354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10191",
+      "count": 1
+    },
+    {
+      "type": "2",
+      "id": "110100",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "101",
+  "animation_idle": "52",
+  "animation_move": "6",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "18, 48, 53, 58, 63, 68, 73, 78",
+  "normal_distribute": "30, 10, 10, 10, 10, 10, 10, 10",
+  "normal_totaldistr": "100",
+  "bb_frames": "18, 48, 56, 64, 72, 80, 88, 96, 104",
+  "bb_distribute": "20, 10, 10, 10, 10, 10, 10, 10, 10",
+  "bb_totaldistr": "100",
+  "sbb_frames": "17, 21, 47, 57, 67, 75, 83, 91, 97, 103, 107, 111",
+  "sbb_distribute": "10, 10, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8",
+  "sbb_totaldistr": "100",
+  "sbb_effectdelay": "1",
+  "description": "One of the 12 Guardians who wielded fire and his blade as he pursued the traitors. Hearing that his girlfriend Ramna had betrayed the gods and left their land, filled with rage he chased after the traitors, not even leaving time for his wounds to heal. He directed his angry flames toward his former allies who now sided with Sodis. It's said that even his girlfriend's heartfelt plea couldn't change his mind. In the end, no one knows upon whom or what his angry blade fell.",
+  "summon": "No one can quell my anger!<br>My flames will scorch everything!<br>It matters not who stands before me!",
+  "fusion": "Nngh, it's so hot!<br>This burning feeling inside of me<br>has ignited my soul!",
+  "evolution": "I will be the strongest!<br>Until then I must keep going forth.<br>My soul still burns strong!",
+  "hp_base": "4680",
+  "atk_base": "1422",
+  "def_base": "1422",
+  "rec_base": "1422",
+  "hp_lord": "6202",
+  "atk_lord": "1800",
+  "def_lord": "1800",
+  "rec_lord": "1800",
+  "hp_anima": "6945",
+  "rec_anima": "1602",
+  "atk_breaker": "1998",
+  "def_breaker": "1602",
+  "atk_guardian": "1602",
+  "def_guardian": "1998",
+  "rec_guardian": "1701",
+  "def_oracle": "1701",
+  "hp_oracle": "5905",
+  "rec_oracle": "2097",
+  "hp_bonus": "750",
+  "atk_bonus": "300",
+  "def_bonus": "300",
+  "rec_bonus": "300",
+  "lordonly": "",
+  "combo_hits": "8",
+  "normaldc": "24",
+  "ls": "Burning Unity",
+  "lsdescription": "65% boost to Atk power of Fire types",
+  "lstype": "Attack",
+  "bbdescription": "9 combo Fire elemental attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "9",
+  "bbaoe": "A",
+  "bbgauge": "15",
+  "bbdc": "9",
+  "bbmultiplier": "160",
+  "sbbdescription": "12 combo Fire elemental attack on all enemies & own Def decreased by half and massive boost to Atk power for 3 turns",
+  "sbbnote": "200% boost to Atk, -50% boost to Def",
+  "sbbtype": "Support/Offense",
+  "sbbhits": "12",
+  "sbbaoe": "A",
+  "sbbgauge": "15",
+  "sbbdc": "12",
+  "sbbmultiplier": "250",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "10354",
+  "evomats2": "50354",
+  "evomats3": "10133",
+  "evomats4": "10191",
+  "evomats5": "",
+  "evoitem": "Legend Stone"
 }

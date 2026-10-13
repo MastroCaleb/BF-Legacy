@@ -1,62 +1,63 @@
 {
   "id": "50024",
-  "unitName": "Holy Empress Luna",
-  "no": "324",
-  "element": "Light",
-  "rarity": "★★★★★",
-  "cost": "14",
-  "maxlv": "80",
-  "basexp": "15",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "100",
-  "animation_idle": "52",
-  "animation_move": "13",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "36, 44, 48, 52, 56",
-  "normal_distribute": "40, 15, 15, 15, 15",
-  "normal_totaldistr": "100",
-  "bb_frames": "40, 46, 48, 50, 54, 58",
-  "bb_distribute": "20, 20, 15, 15, 15, 15",
-  "bb_totaldistr": "100",
-  "description": "A woman with glittering hair who suddenly appeared in the La Veda Republic when the battle with the gods began. Though she both spoke and attacked without mercy, her actions during the La Veda Republic's retreat after the great war were uncharacteristic of her. As other soldiers struggled along, Luna adorned her armor with gaudy decorations and bashed away at the gods who were after them. It's said that seeing this brought back a smile to the soldiers' faces, and gave them the courage to once again pick up their weapons.",
-  "summon": "You summoned me!<br>You know what this means, right?<br>Now you have to keep me company!",
-  "fusion": "More, gimme more!<br>You have all the power needed<br>to satisfy me, don't you?",
-  "evolution": "I hate sad faces!<br>If you're gonna do something,<br>do it flamboyantly!",
-  "hp_base": "2158",
-  "atk_base": "1087",
-  "def_base": "1096",
-  "rec_base": "538",
-  "hp_lord": "3880",
-  "atk_lord": "1567",
-  "def_lord": "1578",
-  "rec_lord": "918",
-  "hp_anima": "4473",
-  "rec_anima": "760",
-  "atk_breaker": "1725",
-  "def_breaker": "1420",
-  "atk_guardian": "1409",
-  "def_guardian": "1736",
-  "rec_guardian": "839",
-  "def_oracle": "1499",
-  "hp_oracle": "3643",
-  "rec_oracle": "1155",
-  "hp_bonus": "1000",
-  "atk_bonus": "200",
-  "def_bonus": "200",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "5",
-  "normaldc": "10",
-  "ls": "Fighting Strobe",
-  "lsdescription": "Large boost in Battle Crystals produced during Spark",
-  "lsnote": "70% boost",
-  "lstype": "Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 1087,
+      "def": 1096,
+      "hp": 2158,
+      "rec": 538
+    },
+    "_lord": {
+      "atk": 1567,
+      "def": 1578,
+      "hp": 3880,
+      "rec": 918
+    },
+    "anima": {
+      "atk": 1567,
+      "def": 1578,
+      "hp max": 4670,
+      "hp min": 4275,
+      "rec max": 839,
+      "rec min": 681
+    },
+    "breaker": {
+      "atk max": 1804,
+      "atk min": 1646,
+      "def max": 1499,
+      "def min": 1341,
+      "hp": 3880,
+      "rec": 918
+    },
+    "guardian": {
+      "atk": 1567,
+      "def max": 1815,
+      "def min": 1657,
+      "hp": 3880,
+      "rec max": 918,
+      "rec min": 760
+    },
+    "oracle": {
+      "atk": 1567,
+      "def max": 1578,
+      "def min": 1420,
+      "hp": 3880,
+      "rec max": 1234,
+      "rec min": 1076
+    }
+  },
+  "leader_skill": {
+    "desc": "Large boost in Battle Crystals produced during Spark",
+    "effects": [
+      {
+        "bc drop% for spark": 70,
+        "passive id": "31"
+      }
+    ],
+    "id": "1402",
+    "name": "Fighting Strobe"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -219,93 +220,91 @@
     ],
     "name": "Savage Stab"
   },
-  "bbdescription": "6 combo powerful Light attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "6",
-  "bbaoe": "A",
-  "bbgauge": "33",
-  "bbdc": "6",
-  "bbmultiplier": "200",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "50023",
-  "evointo": "50025",
-  "evomats1": "50354",
-  "evomats2": "50123",
-  "evomats3": "50122",
-  "evomats4": "60144",
-  "evomats5": "60224",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 1087,
-      "def": 1096,
-      "hp": 2158,
-      "rec": 538
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1567,
-      "def": 1578,
-      "hp": 3880,
-      "rec": 918
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1567,
-      "def": 1578,
-      "hp max": 4670,
-      "hp min": 4275,
-      "rec max": 839,
-      "rec min": 681
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 100
     },
-    "breaker": {
-      "atk max": 1804,
-      "atk min": 1646,
-      "def max": 1499,
-      "def min": 1341,
-      "hp": 3880,
-      "rec": 918
+    "idle": {
+      "total number of frames": 52
     },
-    "guardian": {
-      "atk": 1567,
-      "def max": 1815,
-      "def min": 1657,
-      "hp": 3880,
-      "rec max": 918,
-      "rec min": 760
-    },
-    "oracle": {
-      "atk": 1567,
-      "def max": 1578,
-      "def min": 1420,
-      "hp": 3880,
-      "rec max": 1234,
-      "rec min": 1076
+    "move": {
+      "total number of frames": 13
     }
   },
-  "leader_skill": {
-    "desc": "Large boost in Battle Crystals produced during Spark",
-    "effects": [
-      {
-        "bc drop% for spark": 70,
-        "passive id": "31"
-      }
+  "category": 50020,
+  "cost": "14",
+  "damage frames": {
+    "frame times": [
+      36,
+      44,
+      48,
+      52,
+      56
     ],
-    "id": "1402",
-    "name": "Fighting Strobe"
+    "hit dmg% distribution": [
+      40,
+      15,
+      15,
+      15,
+      15
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 5
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "light",
+  "exp_pattern": 15,
+  "gender": "female",
+  "getting type": "farmable",
+  "guide_id": 324,
+  "imp": {
+    "max atk": "200",
+    "max def": "200",
+    "max hp": "1000",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "1458~1629",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Holy Empress Luna",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Holy Empress Luna",
+  "maxlv": "80",
+  "no": "324",
   "unitDisplayHomePosition_1W9CxaFK": "428,64,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-132,112,1069,631",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "103,355,332,239,0",
@@ -315,5 +314,109 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "30:125:1,38:125:1,42:125:1,46:125:1,50:125:1"
+  "effectFrames": "30:125:1,38:125:1,42:125:1,46:125:1,50:125:1",
+  "evofrom": "50023",
+  "evointo": "50025",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50123",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50122",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    }
+  ],
+  "basexp": "15",
+  "animation_attack": "100",
+  "animation_idle": "52",
+  "animation_move": "13",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "36, 44, 48, 52, 56",
+  "normal_distribute": "40, 15, 15, 15, 15",
+  "normal_totaldistr": "100",
+  "bb_frames": "40, 46, 48, 50, 54, 58",
+  "bb_distribute": "20, 20, 15, 15, 15, 15",
+  "bb_totaldistr": "100",
+  "description": "A woman with glittering hair who suddenly appeared in the La Veda Republic when the battle with the gods began. Though she both spoke and attacked without mercy, her actions during the La Veda Republic's retreat after the great war were uncharacteristic of her. As other soldiers struggled along, Luna adorned her armor with gaudy decorations and bashed away at the gods who were after them. It's said that seeing this brought back a smile to the soldiers' faces, and gave them the courage to once again pick up their weapons.",
+  "summon": "You summoned me!<br>You know what this means, right?<br>Now you have to keep me company!",
+  "fusion": "More, gimme more!<br>You have all the power needed<br>to satisfy me, don't you?",
+  "evolution": "I hate sad faces!<br>If you're gonna do something,<br>do it flamboyantly!",
+  "hp_base": "2158",
+  "atk_base": "1087",
+  "def_base": "1096",
+  "rec_base": "538",
+  "hp_lord": "3880",
+  "atk_lord": "1567",
+  "def_lord": "1578",
+  "rec_lord": "918",
+  "hp_anima": "4473",
+  "rec_anima": "760",
+  "atk_breaker": "1725",
+  "def_breaker": "1420",
+  "atk_guardian": "1409",
+  "def_guardian": "1736",
+  "rec_guardian": "839",
+  "def_oracle": "1499",
+  "hp_oracle": "3643",
+  "rec_oracle": "1155",
+  "hp_bonus": "1000",
+  "atk_bonus": "200",
+  "def_bonus": "200",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "5",
+  "normaldc": "10",
+  "ls": "Fighting Strobe",
+  "lsdescription": "Large boost in Battle Crystals produced during Spark",
+  "lsnote": "70% boost",
+  "lstype": "Brave Burst",
+  "bbdescription": "6 combo powerful Light attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "6",
+  "bbaoe": "A",
+  "bbgauge": "33",
+  "bbdc": "6",
+  "bbmultiplier": "200",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "50123",
+  "evomats3": "50122",
+  "evomats4": "60144",
+  "evomats5": "60224"
 }

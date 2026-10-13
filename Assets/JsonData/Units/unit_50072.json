@@ -1,59 +1,63 @@
 {
   "id": "50072",
-  "unitName": "Angel Maria",
-  "no": "108",
-  "element": "Light",
-  "rarity": "★★★",
-  "cost": "4",
-  "maxlv": "40",
-  "basexp": "10",
-  "gender": "F",
-  "ai": "5",
-  "animation_attack": "128",
-  "animation_idle": "64",
-  "animation_move": "64",
-  "movespeed_attack": "8",
-  "movespeed_skill": "8",
-  "speedtype_attack": "1",
-  "speedtype_skill": "1",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "76, 82, 88, 94, 100",
-  "normal_distribute": "20, 20, 20, 20, 20",
-  "normal_totaldistr": "100",
-  "description": "A priestess who boasted of her belief in the gods in the ruined La Veda Republic. Helping many people through supposed miracles, she continued to preach the gods' teachings, eventually earning her the nickname, Angel. Yet when the war began, the judgement of the gods concerned her. She held her piety, and continued to plead with the gods, desiring to know their motive.",
-  "summon": "I can see it, a future where<br>god and man are at peace.<br>Let us welcome this future!",
-  "fusion": "I feel a great light.<br>Let us give thanks for the presence of the gods!",
-  "evolution": "My path has been revealed!<br>I can see a peaceful world!",
-  "hp_base": "1674",
-  "atk_base": "567",
-  "def_base": "511",
-  "rec_base": "783",
-  "hp_lord": "2540",
-  "atk_lord": "878",
-  "def_lord": "819",
-  "rec_lord": "1030",
-  "hp_anima": "2833",
-  "rec_anima": "952",
-  "atk_breaker": "956",
-  "def_breaker": "741",
-  "atk_guardian": "800",
-  "def_guardian": "897",
-  "rec_guardian": "991",
-  "def_oracle": "780",
-  "hp_oracle": "2423",
-  "rec_oracle": "1147",
-  "hp_bonus": "300",
-  "atk_bonus": "100",
-  "def_bonus": "100",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "5",
-  "normaldc": "10",
-  "ls": "Loving Spirit",
-  "lsdescription": "Boost in effectiveness of Heart Crystals",
-  "lsnote": "25% boost",
-  "lstype": "Recovery",
+  "stats": {
+    "_base": {
+      "atk": 567,
+      "def": 511,
+      "hp": 1674,
+      "rec": 783
+    },
+    "_lord": {
+      "atk": 878,
+      "def": 819,
+      "hp": 2540,
+      "rec": 1030
+    },
+    "anima": {
+      "atk": 878,
+      "def": 819,
+      "hp max": 2930,
+      "hp min": 2735,
+      "rec max": 991,
+      "rec min": 913
+    },
+    "breaker": {
+      "atk max": 995,
+      "atk min": 917,
+      "def max": 780,
+      "def min": 702,
+      "hp": 2540,
+      "rec": 1030
+    },
+    "guardian": {
+      "atk": 878,
+      "def max": 936,
+      "def min": 858,
+      "hp": 2540,
+      "rec max": 1030,
+      "rec min": 952
+    },
+    "oracle": {
+      "atk": 878,
+      "def max": 819,
+      "def min": 741,
+      "hp": 2540,
+      "rec max": 1186,
+      "rec min": 1108
+    }
+  },
+  "leader_skill": {
+    "desc": "Boost in effectiveness of Heart Crystals",
+    "effects": [
+      {
+        "hc effectiveness%": 25,
+        "passive id": "10"
+      }
+    ],
+    "id": "1100",
+    "name": "Loving Spirit"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -216,92 +220,91 @@
     ],
     "name": "Saint's Gospel"
   },
-  "bbdescription": "Large recovery of all allies' HP",
-  "bbnote": "Heals (2000~2450 + 30% of healer Rec) HP",
-  "bbtype": "Heal",
-  "bbhits": "",
-  "bbaoe": "0",
-  "bbgauge": "20",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "50071",
-  "evointo": "50073",
-  "evomats1": "50122",
-  "evomats2": "50121",
-  "evomats3": "50120",
-  "evomats4": "60142",
-  "evomats5": "",
-  "evozelcost": "100000",
-  "stats": {
-    "_base": {
-      "atk": 567,
-      "def": 511,
-      "hp": 1674,
-      "rec": 783
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 80.0,
+      "target conditions": "hp_50pr_under",
+      "target type": "party"
     },
-    "_lord": {
-      "atk": 878,
-      "def": 819,
-      "hp": 2540,
-      "rec": 1030
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "hp_min",
+      "target type": "party"
     },
-    "anima": {
-      "atk": 878,
-      "def": 819,
-      "hp max": 2930,
-      "hp min": 2735,
-      "rec max": 991,
-      "rec min": 913
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 128
     },
-    "breaker": {
-      "atk max": 995,
-      "atk min": 917,
-      "def max": 780,
-      "def min": 702,
-      "hp": 2540,
-      "rec": 1030
+    "idle": {
+      "total number of frames": 64
     },
-    "guardian": {
-      "atk": 878,
-      "def max": 936,
-      "def min": 858,
-      "hp": 2540,
-      "rec max": 1030,
-      "rec min": 952
-    },
-    "oracle": {
-      "atk": 878,
-      "def max": 819,
-      "def min": 741,
-      "hp": 2540,
-      "rec max": 1186,
-      "rec min": 1108
+    "move": {
+      "total number of frames": 64
     }
   },
-  "leader_skill": {
-    "desc": "Boost in effectiveness of Heart Crystals",
-    "effects": [
-      {
-        "hc effectiveness%": 25,
-        "passive id": "10"
-      }
+  "category": 50070,
+  "cost": "4",
+  "damage frames": {
+    "frame times": [
+      76,
+      82,
+      88,
+      94,
+      100
     ],
-    "id": "1100",
-    "name": "Loving Spirit"
+    "hit dmg% distribution": [
+      20,
+      20,
+      20,
+      20,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 5
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "light",
+  "exp_pattern": 10,
+  "gender": "female",
+  "getting type": "farmable",
+  "guide_id": 108,
+  "imp": {
+    "max atk": "100",
+    "max def": "100",
+    "max hp": "300",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "817~913",
+  "movement": {
+    "attack": {
+      "move speed": 8,
+      "move speed type": "1",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 8,
+      "move speed type": "1",
+      "move type": "3"
+    }
+  },
+  "name": "Angel Maria",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "Angel Maria",
+  "maxlv": "40",
+  "no": "108",
   "unitDisplayHomePosition_1W9CxaFK": "210,45,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "142,131,636,648",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "164,293,318,324,0",
@@ -311,5 +314,100 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "1000",
   "sellCaution": false,
-  "effectFrames": "75:330:1"
+  "effectFrames": "75:330:1",
+  "evofrom": "50071",
+  "evointo": "50073",
+  "evozelcost": "100000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50122",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50121",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50120",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60142",
+      "count": 1
+    }
+  ],
+  "basexp": "10",
+  "animation_attack": "128",
+  "animation_idle": "64",
+  "animation_move": "64",
+  "movespeed_attack": "8",
+  "movespeed_skill": "8",
+  "speedtype_attack": "1",
+  "speedtype_skill": "1",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "76, 82, 88, 94, 100",
+  "normal_distribute": "20, 20, 20, 20, 20",
+  "normal_totaldistr": "100",
+  "description": "A priestess who boasted of her belief in the gods in the ruined La Veda Republic. Helping many people through supposed miracles, she continued to preach the gods' teachings, eventually earning her the nickname, Angel. Yet when the war began, the judgement of the gods concerned her. She held her piety, and continued to plead with the gods, desiring to know their motive.",
+  "summon": "I can see it, a future where<br>god and man are at peace.<br>Let us welcome this future!",
+  "fusion": "I feel a great light.<br>Let us give thanks for the presence of the gods!",
+  "evolution": "My path has been revealed!<br>I can see a peaceful world!",
+  "hp_base": "1674",
+  "atk_base": "567",
+  "def_base": "511",
+  "rec_base": "783",
+  "hp_lord": "2540",
+  "atk_lord": "878",
+  "def_lord": "819",
+  "rec_lord": "1030",
+  "hp_anima": "2833",
+  "rec_anima": "952",
+  "atk_breaker": "956",
+  "def_breaker": "741",
+  "atk_guardian": "800",
+  "def_guardian": "897",
+  "rec_guardian": "991",
+  "def_oracle": "780",
+  "hp_oracle": "2423",
+  "rec_oracle": "1147",
+  "hp_bonus": "300",
+  "atk_bonus": "100",
+  "def_bonus": "100",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "5",
+  "normaldc": "10",
+  "ls": "Loving Spirit",
+  "lsdescription": "Boost in effectiveness of Heart Crystals",
+  "lsnote": "25% boost",
+  "lstype": "Recovery",
+  "bbdescription": "Large recovery of all allies' HP",
+  "bbnote": "Heals (2000~2450 + 30% of healer Rec) HP",
+  "bbtype": "Heal",
+  "bbhits": "",
+  "bbaoe": "0",
+  "bbgauge": "20",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50122",
+  "evomats2": "50121",
+  "evomats3": "50120",
+  "evomats4": "60142",
+  "evomats5": ""
 }

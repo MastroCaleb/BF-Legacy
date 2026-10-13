@@ -1,64 +1,115 @@
 {
   "id": "21087",
-  "unitName": "Winged Mercy Lumis",
-  "no": "1724",
-  "element": "Water",
-  "rarity": "Omni",
-  "cost": "50",
-  "maxlv": "150",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "6",
-  "animation_attack": "156",
-  "animation_idle": "60",
-  "animation_move": "60",
-  "movespeed_attack": "4",
-  "movespeed_skill": "4",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "89, 93, 97, 101, 105, 109, 137",
-  "normal_distribute": "11, 11, 11, 11, 11, 11, 34",
-  "normal_totaldistr": "100",
-  "sbb_frames": "89, 92, 95, 98, 101, 104, 107, 110, 113, 116, 119, 122, 137, 140, 143, 147, 151",
-  "sbb_distribute": "5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 12, 7, 7, 7, 7",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "89, 92, 95, 98, 101, 104, 107, 110, 113, 116, 119, 122, 137, 140, 143, 146, 149, 152, 155, 158",
-  "ubb_distribute": "4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 10, 6, 6, 6, 6, 6, 6, 6",
-  "ubb_totaldistr": "100",
-  "sbb_effectdelay": "2",
-  "ubb_effectdelay": "1",
-  "description": "Though she went along with wars fought to spread the word of the gods, Lumis secretly wished for her foes' salvation out of revulsion at the sight of humans harming one another. Sadly, however, she lacked the power to end these wars. Had the gods only granted her power sufficient to awaken her as a goddess, Lumis definitely would have worked to end military conflict. In doing so, most likely she also would have won a great many fervent worshippers as a goddess.",
-  "summon": "It saddens me to see people reject the gods... But far more than that, it saddens me to see human blood spilled.",
-  "fusion": "All I want is to save everyone...<br>Have I forgotten that desire? No, I don't believe I have.",
-  "evolution": "This is the power of the gods...<br>I feel as though I can save many more souls using this power.",
-  "hp_base": "6331",
-  "atk_base": "2029",
-  "def_base": "2556",
-  "rec_base": "2950",
-  "hp_lord": "8222",
-  "atk_lord": "2513",
-  "def_lord": "3194",
-  "rec_lord": "3671",
-  "hp_anima": "9339",
-  "rec_anima": "3373",
-  "atk_breaker": "2811",
-  "def_breaker": "2896",
-  "def_guardian": "3492",
-  "rec_guardian": "3522",
-  "def_oracle": "3045",
-  "rec_oracle": "4118",
-  "hp_bonus": "1250",
-  "atk_bonus": "460",
-  "def_bonus": "460",
-  "rec_bonus": "820",
-  "lordonly": "",
-  "combo_hits": "7",
-  "normaldc": "49",
-  "ls": "Merciful Jewel",
-  "lsdescription": "60% boost to Def, Rec, max HP, negates all status ailments, negates critical damage and elemental damage & damage taken may restore HP",
-  "lsnote": "25% chance to heal 25% damage",
+  "stats": {
+    "_base": {
+      "atk": 2029,
+      "def": 2556,
+      "hp": 6331,
+      "rec": 2950
+    },
+    "_lord": {
+      "atk": 2513,
+      "def": 3194,
+      "hp": 8222,
+      "rec": 3671
+    },
+    "anima": {
+      "atk": 2513,
+      "def": 3194,
+      "hp max": 9712,
+      "hp min": 8967,
+      "rec max": 3522,
+      "rec min": 3224
+    },
+    "breaker": {
+      "atk max": 2960,
+      "atk min": 2662,
+      "def max": 3045,
+      "def min": 2747,
+      "hp": 8222,
+      "rec": 3671
+    },
+    "guardian": {
+      "atk": 2513,
+      "def max": 3641,
+      "def min": 3343,
+      "hp": 8222,
+      "rec max": 3671,
+      "rec min": 3373
+    },
+    "oracle": {
+      "atk": 2513,
+      "def max": 3194,
+      "def min": 2896,
+      "hp": 8222,
+      "rec max": 4267,
+      "rec min": 3969
+    }
+  },
+  "leader_skill": {
+    "desc": "60% boost to Def, Rec, max HP, negates all status ailments, negates critical damage and elemental damage & damage taken may restore HP",
+    "effects": [
+      {
+        "def% buff": 60,
+        "hp% buff": 60,
+        "passive id": "1",
+        "rec% buff": 60
+      },
+      {
+        "dmg% to hp% when attacked chance%": 25,
+        "dmg% to hp% when attacked high": 25,
+        "dmg% to hp% when attacked low": 25,
+        "passive id": "24"
+      },
+      {
+        "curse resist%": 100,
+        "injury resist%": 100,
+        "paralysis resist%": 100,
+        "passive id": "4",
+        "poison resist%": 100,
+        "sick resist%": 100,
+        "weaken resist%": 100
+      },
+      {
+        "crit chance base resist%": 100,
+        "crit chance buffed resist%": 100,
+        "crit dmg base damage resist%": 100,
+        "crit dmg buffed damage resist%": 100,
+        "passive id": "53",
+        "strong base element damage resist%": 100,
+        "strong buffed element damage resist%": 100
+      }
+    ],
+    "id": "12537",
+    "name": "Merciful Jewel"
+  },
+  "extra_skill": {
+    "desc": "Restores HP each turn & slight damage reduction for 2 turns when damage taken exceeds certain amount",
+    "effects": [
+      {
+        "buff": {
+          "buff turns (36)": "1",
+          "dmg reduction% buff": 20
+        },
+        "conditions": [],
+        "damage threshold buff activation": 5000,
+        "passive id": "78",
+        "passive target": "self"
+      },
+      {
+        "conditions": [],
+        "passive id": "33",
+        "passive target": "self",
+        "rec% added (turn heal)": 10.0,
+        "turn heal high": 1000,
+        "turn heal low": 800
+      }
+    ],
+    "id": "44200",
+    "name": "Miraculous Dance",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -931,14 +982,6 @@
     ],
     "name": "Panacea Extend"
   },
-  "bbdescription": "Greatly restores HP, removes all status ailments, activates Water barrier, adds all elements to attack for 3 turns, negates all status ailments for 3 turns & greatly restores HP for 3 turns",
-  "bbnote": "Heals 4000-4500 + 40% of healer Rec, activates 3500 HP barrier & heals 3500-4000 + 18% Rec",
-  "bbtype": "Heal",
-  "bbhits": "",
-  "bbaoe": "",
-  "bbgauge": "25",
-  "bbdc": "",
-  "bbmultiplier": "",
   "sbb": {
     "damage frames": [
       {
@@ -1713,14 +1756,6 @@
     ],
     "name": "Mystical Reveal"
   },
-  "sbbdescription": "17 combo powerful Water attack on all foes, greatly restores HP, removes all status ailments, hugely boosts Rec for 3 turns, hugely boosts Rec relative to Atk for 3 turns & Spark damage reduction for 2 turns",
-  "sbbnote": "Heals 4000-4500 + 40% of healer Rec, 180% Rec, 80% Atk to Rec & 25% Spark mitigation",
-  "sbbtype": "Heal/Offense",
-  "sbbhits": "17",
-  "sbbaoe": "A",
-  "sbbgauge": "29",
-  "sbbdc": "17",
-  "sbbmultiplier": "620",
   "ubb": {
     "damage frames": [
       {
@@ -1902,6 +1937,180 @@
     ],
     "name": "Radiant Blue Waves"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 100.0,
+      "target conditions": "hp_25pr_under",
+      "target type": "party"
+    },
+    {
+      "action": "attack",
+      "chance%": 50.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 156
+    },
+    "idle": {
+      "total number of frames": 60
+    },
+    "move": {
+      "total number of frames": 60
+    }
+  },
+  "category": 21080,
+  "cost": "50",
+  "damage frames": {
+    "frame times": [
+      89,
+      93,
+      97,
+      101,
+      105,
+      109,
+      137
+    ],
+    "hit dmg% distribution": [
+      11,
+      11,
+      11,
+      11,
+      11,
+      11,
+      34
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 7
+  },
+  "drop check count": 7,
+  "element": "water",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 1724,
+  "imp": {
+    "max atk": "460",
+    "max def": "460",
+    "max hp": "1250",
+    "max rec": "820"
+  },
+  "kind": "normal",
+  "lord damage range": "2339~2613",
+  "movement": {
+    "attack": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    }
+  },
+  "name": "Winged Mercy Lumis",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "8",
+  "sell caution": false,
+  "unitName": "Winged Mercy Lumis",
+  "maxlv": "150",
+  "no": "1724",
+  "unitDisplayHomePosition_1W9CxaFK": "668,307,160,437",
+  "unitDisplayDetailPosition_6z54rgb3": "-314,-106,1392,1136",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "-111,33,800,653,1",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-340,-347,1392,1136",
+  "unitDisplaySummonPosition_KC3Jk8Br": "-111,33,800,653,1",
+  "unitDisplayHpPosition_3BpHN6VD": "0,37",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "50000",
+  "sellCaution": false,
+  "effectFrames": "89:201800:1,89:602270:1,89:601706:1,132:200284:1,138:201308:1,140:200406:1",
+  "evofrom": "21086",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "21",
+  "animation_attack": "156",
+  "animation_idle": "60",
+  "animation_move": "60",
+  "movespeed_attack": "4",
+  "movespeed_skill": "4",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "89, 93, 97, 101, 105, 109, 137",
+  "normal_distribute": "11, 11, 11, 11, 11, 11, 34",
+  "normal_totaldistr": "100",
+  "sbb_frames": "89, 92, 95, 98, 101, 104, 107, 110, 113, 116, 119, 122, 137, 140, 143, 147, 151",
+  "sbb_distribute": "5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 12, 7, 7, 7, 7",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "89, 92, 95, 98, 101, 104, 107, 110, 113, 116, 119, 122, 137, 140, 143, 146, 149, 152, 155, 158",
+  "ubb_distribute": "4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 10, 6, 6, 6, 6, 6, 6, 6",
+  "ubb_totaldistr": "100",
+  "sbb_effectdelay": "2",
+  "ubb_effectdelay": "1",
+  "description": "Though she went along with wars fought to spread the word of the gods, Lumis secretly wished for her foes' salvation out of revulsion at the sight of humans harming one another. Sadly, however, she lacked the power to end these wars. Had the gods only granted her power sufficient to awaken her as a goddess, Lumis definitely would have worked to end military conflict. In doing so, most likely she also would have won a great many fervent worshippers as a goddess.",
+  "summon": "It saddens me to see people reject the gods... But far more than that, it saddens me to see human blood spilled.",
+  "fusion": "All I want is to save everyone...<br>Have I forgotten that desire? No, I don't believe I have.",
+  "evolution": "This is the power of the gods...<br>I feel as though I can save many more souls using this power.",
+  "hp_base": "6331",
+  "atk_base": "2029",
+  "def_base": "2556",
+  "rec_base": "2950",
+  "hp_lord": "8222",
+  "atk_lord": "2513",
+  "def_lord": "3194",
+  "rec_lord": "3671",
+  "hp_anima": "9339",
+  "rec_anima": "3373",
+  "atk_breaker": "2811",
+  "def_breaker": "2896",
+  "def_guardian": "3492",
+  "rec_guardian": "3522",
+  "def_oracle": "3045",
+  "rec_oracle": "4118",
+  "hp_bonus": "1250",
+  "atk_bonus": "460",
+  "def_bonus": "460",
+  "rec_bonus": "820",
+  "lordonly": "",
+  "combo_hits": "7",
+  "normaldc": "49",
+  "ls": "Merciful Jewel",
+  "lsdescription": "60% boost to Def, Rec, max HP, negates all status ailments, negates critical damage and elemental damage & damage taken may restore HP",
+  "lsnote": "25% chance to heal 25% damage",
+  "bbdescription": "Greatly restores HP, removes all status ailments, activates Water barrier, adds all elements to attack for 3 turns, negates all status ailments for 3 turns & greatly restores HP for 3 turns",
+  "bbnote": "Heals 4000-4500 + 40% of healer Rec, activates 3500 HP barrier & heals 3500-4000 + 18% Rec",
+  "bbtype": "Heal",
+  "bbhits": "",
+  "bbaoe": "",
+  "bbgauge": "25",
+  "bbdc": "",
+  "bbmultiplier": "",
+  "sbbdescription": "17 combo powerful Water attack on all foes, greatly restores HP, removes all status ailments, hugely boosts Rec for 3 turns, hugely boosts Rec relative to Atk for 3 turns & Spark damage reduction for 2 turns",
+  "sbbnote": "Heals 4000-4500 + 40% of healer Rec, 180% Rec, 80% Atk to Rec & 25% Spark mitigation",
+  "sbbtype": "Heal/Offense",
+  "sbbhits": "17",
+  "sbbaoe": "A",
+  "sbbgauge": "29",
+  "sbbdc": "17",
+  "sbbmultiplier": "620",
   "ubbdescription": "20 combo massive Water attack on all foes, enormously boosts OD gauge, enormously boosts Def, Rec for 3 turns, fully restores HP for 3 turns, 75% damage reduction for 3 turns, negates critical and elemental damage for 5 turns & 50% Spark damage reduction for 5 turns",
   "ubbnote": "50% OD fill, 350% parameter boost & 50% Spark mitigation",
   "ubbtype": "Heal/Offense",
@@ -1914,8 +2123,6 @@
   "esitem": "",
   "esdescription": "Restores HP each turn & slight damage reduction for 2 turns when damage taken exceeds certain amount",
   "esnote": "Heals 800-1000 + 10% Rec & 20% mitigation after 5000 damage",
-  "evofrom": "21086",
-  "evointo": "",
   "evomats1": "",
   "evomats2": "",
   "evomats3": "",
@@ -1924,126 +2131,5 @@
   "evomats6": "",
   "evomats7": "",
   "evomats8": "",
-  "evoitem": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 2029,
-      "def": 2556,
-      "hp": 6331,
-      "rec": 2950
-    },
-    "_lord": {
-      "atk": 2513,
-      "def": 3194,
-      "hp": 8222,
-      "rec": 3671
-    },
-    "anima": {
-      "atk": 2513,
-      "def": 3194,
-      "hp max": 9712,
-      "hp min": 8967,
-      "rec max": 3522,
-      "rec min": 3224
-    },
-    "breaker": {
-      "atk max": 2960,
-      "atk min": 2662,
-      "def max": 3045,
-      "def min": 2747,
-      "hp": 8222,
-      "rec": 3671
-    },
-    "guardian": {
-      "atk": 2513,
-      "def max": 3641,
-      "def min": 3343,
-      "hp": 8222,
-      "rec max": 3671,
-      "rec min": 3373
-    },
-    "oracle": {
-      "atk": 2513,
-      "def max": 3194,
-      "def min": 2896,
-      "hp": 8222,
-      "rec max": 4267,
-      "rec min": 3969
-    }
-  },
-  "leader_skill": {
-    "desc": "60% boost to Def, Rec, max HP, negates all status ailments, negates critical damage and elemental damage & damage taken may restore HP",
-    "effects": [
-      {
-        "def% buff": 60,
-        "hp% buff": 60,
-        "passive id": "1",
-        "rec% buff": 60
-      },
-      {
-        "dmg% to hp% when attacked chance%": 25,
-        "dmg% to hp% when attacked high": 25,
-        "dmg% to hp% when attacked low": 25,
-        "passive id": "24"
-      },
-      {
-        "curse resist%": 100,
-        "injury resist%": 100,
-        "paralysis resist%": 100,
-        "passive id": "4",
-        "poison resist%": 100,
-        "sick resist%": 100,
-        "weaken resist%": 100
-      },
-      {
-        "crit chance base resist%": 100,
-        "crit chance buffed resist%": 100,
-        "crit dmg base damage resist%": 100,
-        "crit dmg buffed damage resist%": 100,
-        "passive id": "53",
-        "strong base element damage resist%": 100,
-        "strong buffed element damage resist%": 100
-      }
-    ],
-    "id": "12537",
-    "name": "Merciful Jewel"
-  },
-  "extra_skill": {
-    "desc": "Restores HP each turn & slight damage reduction for 2 turns when damage taken exceeds certain amount",
-    "effects": [
-      {
-        "buff": {
-          "buff turns (36)": "1",
-          "dmg reduction% buff": 20
-        },
-        "conditions": [],
-        "damage threshold buff activation": 5000,
-        "passive id": "78",
-        "passive target": "self"
-      },
-      {
-        "conditions": [],
-        "passive id": "33",
-        "passive target": "self",
-        "rec% added (turn heal)": 10.0,
-        "turn heal high": 1000,
-        "turn heal low": 800
-      }
-    ],
-    "id": "44200",
-    "name": "Miraculous Dance",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "668,307,160,437",
-  "unitDisplayDetailPosition_6z54rgb3": "-314,-106,1392,1136",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "-111,33,800,653,1",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-340,-347,1392,1136",
-  "unitDisplaySummonPosition_KC3Jk8Br": "-111,33,800,653,1",
-  "unitDisplayHpPosition_3BpHN6VD": "0,37",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "50000",
-  "sellCaution": false,
-  "effectFrames": "89:201800:1,89:602270:1,89:601706:1,132:200284:1,138:201308:1,140:200406:1"
+  "evoitem": ""
 }

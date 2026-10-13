@@ -1,68 +1,105 @@
 {
   "id": "51067",
-  "unitName": "Supreme Emperor Agress",
-  "no": "1490",
-  "element": "Light",
-  "rarity": "Omni",
-  "cost": "48",
-  "maxlv": "150",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "143",
-  "animation_idle": "56",
-  "animation_move": "14",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "8, 11, 14, 25, 28, 31, 58, 62, 66, 70, 74",
-  "normal_distribute": "8, 6, 4, 8, 6, 4, 17, 15, 13, 11, 8",
-  "normal_totaldistr": "100",
-  "bb_frames": "8, 11, 14, 17, 25, 28, 31, 34, 58, 61, 64, 67, 70, 73, 76, 79",
-  "bb_distribute": "6, 5, 4, 3, 6, 5, 4, 3, 12, 10, 9, 8, 7, 6, 6, 6",
-  "bb_totaldistr": "100",
-  "sbb_frames": "8, 11, 14, 17, 20, 25, 28, 31, 34, 37, 58, 61, 64, 67, 70, 73, 76, 79, 82, 85",
-  "sbb_distribute": "5, 4, 3, 3, 3, 5, 4, 3, 3, 3, 10, 8, 7, 6, 6, 6, 6, 5, 5, 5",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "8, 11, 14, 17, 20, 25, 28, 31, 34, 37, 40, 43, 46, 49, 58, 61, 64, 67, 70, 73, 76, 79, 82, 85, 88",
-  "ubb_distribute": "3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 7, 6, 6, 6, 6, 5, 5, 5, 4, 4, 4",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "2",
-  "ubb_effectdelay": "1",
-  "description": "The first emperor of the Randall Empire. Shortly after the founding of the empire, Agress fell out of favor with the volunteer army that had helped him win the crown. He was also unable to capture the hearts of the people or manage the administration he had set into place, resulting in an unfulfilled life. Had he been able to entrust his rule to someone else and serve on the field to keep the empire united, its influence over Elgaia would have been much greater today. Perhaps he would have been able to achieve the ideal of uniting the whole of Elgaia under the empire's rule.",
-  "summon": "I shall fear nothing...<br>I will work towards my ideals.<br>History shall serve as proof of my deeds!",
-  "fusion": "Accomplishments demand sacrifice.<br>And I will never forget those who have given up so much for us...",
-  "evolution": "I have no doubts, nor grief.<br>I shall fight until the end, not only for my vassals and my people, but for myself as well!",
-  "hp_base": "6215",
-  "atk_base": "2345",
-  "def_base": "2325",
-  "rec_base": "2162",
-  "hp_lord": "8075",
-  "atk_lord": "2905",
-  "def_lord": "2919",
-  "rec_lord": "2714",
-  "hp_anima": "9192",
-  "rec_anima": "2416",
-  "atk_breaker": "3203",
-  "def_breaker": "2621",
-  "def_guardian": "3217",
-  "rec_guardian": "2565",
-  "def_oracle": "2770",
-  "rec_oracle": "3161",
-  "hp_bonus": "1250",
-  "atk_bonus": "400",
-  "def_bonus": "800",
-  "rec_bonus": "500",
-  "lordonly": "",
-  "combo_hits": "11",
-  "normaldc": "44",
-  "ls": "Sacred Emperor's Guidance",
-  "lsdescription": "40% boost to all parameters, damage taken hugely boosts BB gauge, restores HP each turn & considerably boosts BC efficacy",
-  "lsnote": "Fills 4-7 BC, 50% BC efficacy & heals 600-800 + 10% Rec",
+  "stats": {
+    "_base": {
+      "atk": 2345,
+      "def": 2325,
+      "hp": 6215,
+      "rec": 2162
+    },
+    "_lord": {
+      "atk": 2905,
+      "def": 2919,
+      "hp": 8075,
+      "rec": 2714
+    },
+    "anima": {
+      "atk": 2905,
+      "def": 2919,
+      "hp max": 9565,
+      "hp min": 8820,
+      "rec max": 2565,
+      "rec min": 2267
+    },
+    "breaker": {
+      "atk max": 3352,
+      "atk min": 3054,
+      "def max": 2770,
+      "def min": 2472,
+      "hp": 8075,
+      "rec": 2714
+    },
+    "guardian": {
+      "atk": 2905,
+      "def max": 3366,
+      "def min": 3068,
+      "hp": 8075,
+      "rec max": 2714,
+      "rec min": 2416
+    },
+    "oracle": {
+      "atk": 2905,
+      "def max": 2919,
+      "def min": 2621,
+      "hp": 8075,
+      "rec max": 3310,
+      "rec min": 3012
+    }
+  },
+  "leader_skill": {
+    "desc": "40% boost to all parameters, damage taken hugely boosts BB gauge, restores HP each turn & considerably boosts BC efficacy",
+    "effects": [
+      {
+        "atk% buff": 40,
+        "def% buff": 40,
+        "hp% buff": 40,
+        "passive id": "1",
+        "rec% buff": 40
+      },
+      {
+        "bc fill when attacked high": 7,
+        "bc fill when attacked low": 4,
+        "bc fill when attacked%": 100,
+        "passive id": "25"
+      },
+      {
+        "bb gauge fill rate%": 50,
+        "passive id": "32"
+      },
+      {
+        "passive id": "33",
+        "rec% added (turn heal)": 10.0,
+        "turn heal high": 1000,
+        "turn heal low": 800
+      }
+    ],
+    "id": "10128",
+    "name": "Sacred Emperor's Guidance"
+  },
+  "extra_skill": {
+    "desc": "10% boost to Atk, Def, Rec, max HP & low probability of enormous damage reduction",
+    "effects": [
+      {
+        "atk% buff": 10,
+        "conditions": [],
+        "def% buff": 10,
+        "hp% buff": 10,
+        "passive id": "1",
+        "passive target": "party",
+        "rec% buff": 10
+      },
+      {
+        "conditions": [],
+        "passive id": "43",
+        "passive target": "self",
+        "take 1 dmg%": 10
+      }
+    ],
+    "id": "24600",
+    "name": "Supreme Emperor's Splendor",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -663,14 +700,6 @@
     ],
     "name": "Supreme Emperor's Light"
   },
-  "bbdescription": "16 combo Light attack on all foes, hugely boosts Def for 3 turns, greatly restores HP for 3 turns, hugely boosts BB gauge for 3 turns & damage taken may slightly restore HP for 3 turns",
-  "bbnote": "160% Def, 20% chance to heal 20-25% damage, heal 3500-4000 + 10% Rec & fills 7 BC",
-  "bbtype": "Heal/Offense",
-  "bbhits": "16",
-  "bbaoe": "A",
-  "bbgauge": "28",
-  "bbdc": "16",
-  "bbmultiplier": "370",
   "sbb": {
     "damage frames": [
       {
@@ -1249,14 +1278,6 @@
     ],
     "name": "Dynastic Radius"
   },
-  "sbbdescription": "20 combo powerful Light attack on all foes, hugely boosts BB gauge, hugely boosts Atk relative to Def for 3 turns, damage taken considerably boosts BB gauge for 3 turns & hugely boosts BB gauge for 3 turns",
-  "sbbnote": "70% Def to Atk, fills 4-7 BC when damage is taken, fills 7 BC per turn & fills 8 BC instantly",
-  "sbbtype": "Offense",
-  "sbbhits": "20",
-  "sbbaoe": "A",
-  "sbbgauge": "30",
-  "sbbdc": "20",
-  "sbbmultiplier": "580",
   "ubb": {
     "damage frames": [
       {
@@ -1420,6 +1441,192 @@
     ],
     "name": "Glory of the Dawn"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 143
+    },
+    "idle": {
+      "total number of frames": 56
+    },
+    "move": {
+      "total number of frames": 14
+    }
+  },
+  "category": 51060,
+  "cost": "48",
+  "damage frames": {
+    "frame times": [
+      8,
+      11,
+      14,
+      25,
+      28,
+      31,
+      58,
+      62,
+      66,
+      70,
+      74
+    ],
+    "hit dmg% distribution": [
+      8,
+      6,
+      4,
+      8,
+      6,
+      4,
+      17,
+      15,
+      13,
+      11,
+      8
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 11
+  },
+  "drop check count": 4,
+  "element": "light",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 1490,
+  "imp": {
+    "max atk": "400",
+    "max def": "800",
+    "max hp": "1250",
+    "max rec": "500"
+  },
+  "kind": "normal",
+  "lord damage range": "2704~3021",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Supreme Emperor Agress",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "8",
+  "sell caution": false,
+  "unitName": "Supreme Emperor Agress",
+  "maxlv": "150",
+  "no": "1490",
+  "unitDisplayHomePosition_1W9CxaFK": "728,624,174,475",
+  "unitDisplayDetailPosition_6z54rgb3": "-322,-362,1250,1210",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "-89,-24,693,671,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-282,-599,1200,1162",
+  "unitDisplaySummonPosition_KC3Jk8Br": "-89,-24,693,671,0",
+  "unitDisplayHpPosition_3BpHN6VD": "2,38",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "50000",
+  "sellCaution": false,
+  "effectFrames": "2:501197:1,7:501143:1,8:400517:1,25:400517:1,35:400612:1,55:501143:1,58:500544:1,59:400813:1,60:200973:1",
+  "evofrom": "51066",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "21",
+  "animation_attack": "143",
+  "animation_idle": "56",
+  "animation_move": "14",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "8, 11, 14, 25, 28, 31, 58, 62, 66, 70, 74",
+  "normal_distribute": "8, 6, 4, 8, 6, 4, 17, 15, 13, 11, 8",
+  "normal_totaldistr": "100",
+  "bb_frames": "8, 11, 14, 17, 25, 28, 31, 34, 58, 61, 64, 67, 70, 73, 76, 79",
+  "bb_distribute": "6, 5, 4, 3, 6, 5, 4, 3, 12, 10, 9, 8, 7, 6, 6, 6",
+  "bb_totaldistr": "100",
+  "sbb_frames": "8, 11, 14, 17, 20, 25, 28, 31, 34, 37, 58, 61, 64, 67, 70, 73, 76, 79, 82, 85",
+  "sbb_distribute": "5, 4, 3, 3, 3, 5, 4, 3, 3, 3, 10, 8, 7, 6, 6, 6, 6, 5, 5, 5",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "8, 11, 14, 17, 20, 25, 28, 31, 34, 37, 40, 43, 46, 49, 58, 61, 64, 67, 70, 73, 76, 79, 82, 85, 88",
+  "ubb_distribute": "3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 7, 6, 6, 6, 6, 5, 5, 5, 4, 4, 4",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "2",
+  "ubb_effectdelay": "1",
+  "description": "The first emperor of the Randall Empire. Shortly after the founding of the empire, Agress fell out of favor with the volunteer army that had helped him win the crown. He was also unable to capture the hearts of the people or manage the administration he had set into place, resulting in an unfulfilled life. Had he been able to entrust his rule to someone else and serve on the field to keep the empire united, its influence over Elgaia would have been much greater today. Perhaps he would have been able to achieve the ideal of uniting the whole of Elgaia under the empire's rule.",
+  "summon": "I shall fear nothing...<br>I will work towards my ideals.<br>History shall serve as proof of my deeds!",
+  "fusion": "Accomplishments demand sacrifice.<br>And I will never forget those who have given up so much for us...",
+  "evolution": "I have no doubts, nor grief.<br>I shall fight until the end, not only for my vassals and my people, but for myself as well!",
+  "hp_base": "6215",
+  "atk_base": "2345",
+  "def_base": "2325",
+  "rec_base": "2162",
+  "hp_lord": "8075",
+  "atk_lord": "2905",
+  "def_lord": "2919",
+  "rec_lord": "2714",
+  "hp_anima": "9192",
+  "rec_anima": "2416",
+  "atk_breaker": "3203",
+  "def_breaker": "2621",
+  "def_guardian": "3217",
+  "rec_guardian": "2565",
+  "def_oracle": "2770",
+  "rec_oracle": "3161",
+  "hp_bonus": "1250",
+  "atk_bonus": "400",
+  "def_bonus": "800",
+  "rec_bonus": "500",
+  "lordonly": "",
+  "combo_hits": "11",
+  "normaldc": "44",
+  "ls": "Sacred Emperor's Guidance",
+  "lsdescription": "40% boost to all parameters, damage taken hugely boosts BB gauge, restores HP each turn & considerably boosts BC efficacy",
+  "lsnote": "Fills 4-7 BC, 50% BC efficacy & heals 600-800 + 10% Rec",
+  "bbdescription": "16 combo Light attack on all foes, hugely boosts Def for 3 turns, greatly restores HP for 3 turns, hugely boosts BB gauge for 3 turns & damage taken may slightly restore HP for 3 turns",
+  "bbnote": "160% Def, 20% chance to heal 20-25% damage, heal 3500-4000 + 10% Rec & fills 7 BC",
+  "bbtype": "Heal/Offense",
+  "bbhits": "16",
+  "bbaoe": "A",
+  "bbgauge": "28",
+  "bbdc": "16",
+  "bbmultiplier": "370",
+  "sbbdescription": "20 combo powerful Light attack on all foes, hugely boosts BB gauge, hugely boosts Atk relative to Def for 3 turns, damage taken considerably boosts BB gauge for 3 turns & hugely boosts BB gauge for 3 turns",
+  "sbbnote": "70% Def to Atk, fills 4-7 BC when damage is taken, fills 7 BC per turn & fills 8 BC instantly",
+  "sbbtype": "Offense",
+  "sbbhits": "20",
+  "sbbaoe": "A",
+  "sbbgauge": "30",
+  "sbbdc": "20",
+  "sbbmultiplier": "580",
   "ubbdescription": "25 combo massive Light attack on all foes, enormously boosts BB gauge, enormously boosts Atk relative to Def for 3 turns, 75% damage reduction for 3 turns & enormously boosts BB gauge for 3 turns",
   "ubbnote": "250% Def to Atk & fills 50 BC",
   "ubbtype": "Offense",
@@ -1432,7 +1639,6 @@
   "esitem": "",
   "esdescription": "10% boost to Atk, Def, Rec, max HP & low probability of enormous damage reduction",
   "esnote": "10% chance to reduce damage to 1 (parameter boost applies to all units in party)",
-  "evofrom": "51066",
   "omniskill1_cat": "Parameter Boost",
   "omniskill1_1_sp": "10",
   "omniskill1_1_desc": "20% boost to Atk, Rec",
@@ -1465,115 +1671,5 @@
   "notes": "",
   "addcat": "Champions of Randall",
   "addcatname": "Agress2",
-  "bottomtext": "",
-  "stats": {
-    "_base": {
-      "atk": 2345,
-      "def": 2325,
-      "hp": 6215,
-      "rec": 2162
-    },
-    "_lord": {
-      "atk": 2905,
-      "def": 2919,
-      "hp": 8075,
-      "rec": 2714
-    },
-    "anima": {
-      "atk": 2905,
-      "def": 2919,
-      "hp max": 9565,
-      "hp min": 8820,
-      "rec max": 2565,
-      "rec min": 2267
-    },
-    "breaker": {
-      "atk max": 3352,
-      "atk min": 3054,
-      "def max": 2770,
-      "def min": 2472,
-      "hp": 8075,
-      "rec": 2714
-    },
-    "guardian": {
-      "atk": 2905,
-      "def max": 3366,
-      "def min": 3068,
-      "hp": 8075,
-      "rec max": 2714,
-      "rec min": 2416
-    },
-    "oracle": {
-      "atk": 2905,
-      "def max": 2919,
-      "def min": 2621,
-      "hp": 8075,
-      "rec max": 3310,
-      "rec min": 3012
-    }
-  },
-  "leader_skill": {
-    "desc": "40% boost to all parameters, damage taken hugely boosts BB gauge, restores HP each turn & considerably boosts BC efficacy",
-    "effects": [
-      {
-        "atk% buff": 40,
-        "def% buff": 40,
-        "hp% buff": 40,
-        "passive id": "1",
-        "rec% buff": 40
-      },
-      {
-        "bc fill when attacked high": 7,
-        "bc fill when attacked low": 4,
-        "bc fill when attacked%": 100,
-        "passive id": "25"
-      },
-      {
-        "bb gauge fill rate%": 50,
-        "passive id": "32"
-      },
-      {
-        "passive id": "33",
-        "rec% added (turn heal)": 10.0,
-        "turn heal high": 1000,
-        "turn heal low": 800
-      }
-    ],
-    "id": "10128",
-    "name": "Sacred Emperor's Guidance"
-  },
-  "extra_skill": {
-    "desc": "10% boost to Atk, Def, Rec, max HP & low probability of enormous damage reduction",
-    "effects": [
-      {
-        "atk% buff": 10,
-        "conditions": [],
-        "def% buff": 10,
-        "hp% buff": 10,
-        "passive id": "1",
-        "passive target": "party",
-        "rec% buff": 10
-      },
-      {
-        "conditions": [],
-        "passive id": "43",
-        "passive target": "self",
-        "take 1 dmg%": 10
-      }
-    ],
-    "id": "24600",
-    "name": "Supreme Emperor's Splendor",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "728,624,174,475",
-  "unitDisplayDetailPosition_6z54rgb3": "-322,-362,1250,1210",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "-89,-24,693,671,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-282,-599,1200,1162",
-  "unitDisplaySummonPosition_KC3Jk8Br": "-89,-24,693,671,0",
-  "unitDisplayHpPosition_3BpHN6VD": "2,38",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "50000",
-  "sellCaution": false,
-  "effectFrames": "2:501197:1,7:501143:1,8:400517:1,25:400517:1,35:400612:1,55:501143:1,58:500544:1,59:400813:1,60:200973:1"
+  "bottomtext": ""
 }

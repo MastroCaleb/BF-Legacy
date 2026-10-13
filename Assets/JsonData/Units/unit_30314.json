@@ -1,52 +1,63 @@
 {
   "id": "30314",
-  "unitName": "Havoc Queen Luly",
-  "no": "452",
-  "element": "Earth",
-  "rarity": "★★★★★",
-  "cost": "16",
-  "maxlv": "80",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "3",
-  "animation_attack": "155",
-  "animation_idle": "64",
-  "animation_move": "64",
-  "movespeed_attack": "4",
-  "movespeed_skill": "4",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "description": "A talented magician and former Guardian who rebelled against the gods. When Sodis defected Luly was quick to offer help as she thought it might be fun. She saw all gods, humans, monsters, and even plants as equal, and it's doubtful she even understood what treason meant. Because of this it's said that even when her friends came to fight each other on the battlefield she was able to wield her magical powers without constraint, and enjoyed the battle from the bottom of her heart.",
-  "summon": "What a funny person, you are!<br>You're a Summoner? What's that?<br>What do you do? Are you strong?",
-  "fusion": "That was cool!<br>Let me try next time!<br>How do I do it?",
-  "evolution": "Huh? What happened?<br>I feel a bit better now.<br>I don't need an explanation.",
-  "hp_base": "3522",
-  "atk_base": "1156",
-  "def_base": "972",
-  "rec_base": "1295",
-  "hp_lord": "5312",
-  "atk_lord": "1620",
-  "def_lord": "1382",
-  "rec_lord": "1750",
-  "hp_anima": "5904",
-  "rec_anima": "1592",
-  "atk_breaker": "1778",
-  "def_breaker": "1224",
-  "atk_guardian": "1462",
-  "def_guardian": "1540",
-  "hp_oracle": "4719",
-  "rec_oracle": "1908",
-  "hp_bonus": "500",
-  "atk_bonus": "140",
-  "def_bonus": "260",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "7",
-  "ls": "Thunder Barrier",
-  "lsdescription": "15% reduction in damage from Thunder Types",
-  "lstype": "Defense",
+  "stats": {
+    "_base": {
+      "atk": 1156,
+      "def": 972,
+      "hp": 3522,
+      "rec": 1295
+    },
+    "_lord": {
+      "atk": 1620,
+      "def": 1382,
+      "hp": 5312,
+      "rec": 1750
+    },
+    "anima": {
+      "atk": 1620,
+      "def": 1382,
+      "hp max": 6102,
+      "hp min": 5707,
+      "rec max": 1671,
+      "rec min": 1513
+    },
+    "breaker": {
+      "atk max": 1857,
+      "atk min": 1699,
+      "def max": 1303,
+      "def min": 1145,
+      "hp": 5312,
+      "rec": 1750
+    },
+    "guardian": {
+      "atk": 1620,
+      "def max": 1619,
+      "def min": 1461,
+      "hp": 5312,
+      "rec max": 1750,
+      "rec min": 1592
+    },
+    "oracle": {
+      "atk": 1620,
+      "def max": 1382,
+      "def min": 1224,
+      "hp": 5312,
+      "rec max": 2066,
+      "rec min": 1908
+    }
+  },
+  "leader_skill": {
+    "desc": "15% reduction in damage from Thunder Types",
+    "effects": [
+      {
+        "passive id": "5",
+        "thunder resist%": 15
+      }
+    ],
+    "id": "507",
+    "name": "Thunder Barrier"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -305,91 +316,101 @@
     ],
     "name": "Jungle Rage"
   },
-  "bbdescription": "8 combo powerful Earth attack on all enemies & boost to HC drop rate for 3 turns",
-  "bbtype": "Support/Offense",
-  "bbhits": "8",
-  "bbaoe": "A",
-  "bbgauge": "27",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "30313",
-  "evointo": "30315",
-  "evomats1": "50354",
-  "evomats2": "30133",
-  "evomats3": "30191",
-  "evomats4": "30191",
-  "evomats5": "60224",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 1156,
-      "def": 972,
-      "hp": 3522,
-      "rec": 1295
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1620,
-      "def": 1382,
-      "hp": 5312,
-      "rec": 1750
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1620,
-      "def": 1382,
-      "hp max": 6102,
-      "hp min": 5707,
-      "rec max": 1671,
-      "rec min": 1513
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 1857,
-      "atk min": 1699,
-      "def max": 1303,
-      "def min": 1145,
-      "hp": 5312,
-      "rec": 1750
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 155
     },
-    "guardian": {
-      "atk": 1620,
-      "def max": 1619,
-      "def min": 1461,
-      "hp": 5312,
-      "rec max": 1750,
-      "rec min": 1592
+    "idle": {
+      "total number of frames": 64
     },
-    "oracle": {
-      "atk": 1620,
-      "def max": 1382,
-      "def min": 1224,
-      "hp": 5312,
-      "rec max": 2066,
-      "rec min": 1908
+    "move": {
+      "total number of frames": 64
     }
   },
-  "leader_skill": {
-    "desc": "15% reduction in damage from Thunder Types",
-    "effects": [
-      {
-        "passive id": "5",
-        "thunder resist%": 15
-      }
+  "category": 30310,
+  "cost": "16",
+  "damage frames": {
+    "frame times": [
+      102,
+      117,
+      132,
+      147,
+      162,
+      177,
+      192
     ],
-    "id": "507",
-    "name": "Thunder Barrier"
+    "hit dmg% distribution": [
+      15,
+      14,
+      14,
+      15,
+      14,
+      14,
+      14
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 7
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "earth",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 452,
+  "imp": {
+    "max atk": "140",
+    "max def": "260",
+    "max hp": "500",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "1508~1684",
+  "movement": {
+    "attack": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    }
+  },
+  "name": "Havoc Queen Luly",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Havoc Queen Luly",
+  "maxlv": "80",
+  "no": "452",
   "unitDisplayHomePosition_1W9CxaFK": "401,145,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-40,58,810,728",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "164,343,310,286,0",
@@ -399,5 +420,106 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "102:330391:1,117:330401:1,147:330401:1,177:330401:1,132:300261:1,162:300261:1,192:300261:1,117:240:1,162:251:1"
+  "effectFrames": "102:330391:1,117:330401:1,147:330401:1,177:330401:1,132:300261:1,162:300261:1,192:300261:1,117:240:1,162:251:1",
+  "evofrom": "30313",
+  "evointo": "30315",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30191",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    }
+  ],
+  "freetext": ":''See Havoc Queen Luly (BFH) for her appearance in BRAVE FRONTIER HEROES''",
+  "basexp": "21",
+  "animation_attack": "155",
+  "animation_idle": "64",
+  "animation_move": "64",
+  "movespeed_attack": "4",
+  "movespeed_skill": "4",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "102, 117, 132, 147, 162, 177, 192",
+  "normal_distribute": "15, 14, 14, 15, 14, 14, 14",
+  "normal_totaldistr": "100",
+  "bb_frames": "101, 116, 131, 146, 161, 176, 191, 206",
+  "bb_distribute": "13, 12, 13, 12, 13, 12, 13, 12",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "description": "A talented magician and former Guardian who rebelled against the gods. When Sodis defected Luly was quick to offer help as she thought it might be fun. She saw all gods, humans, monsters, and even plants as equal, and it's doubtful she even understood what treason meant. Because of this it's said that even when her friends came to fight each other on the battlefield she was able to wield her magical powers without constraint, and enjoyed the battle from the bottom of her heart.",
+  "summon": "What a funny person, you are!<br>You're a Summoner? What's that?<br>What do you do? Are you strong?",
+  "fusion": "That was cool!<br>Let me try next time!<br>How do I do it?",
+  "evolution": "Huh? What happened?<br>I feel a bit better now.<br>I don't need an explanation.",
+  "hp_base": "3522",
+  "atk_base": "1156",
+  "def_base": "972",
+  "rec_base": "1295",
+  "hp_lord": "5312",
+  "atk_lord": "1620",
+  "def_lord": "1382",
+  "rec_lord": "1750",
+  "hp_anima": "5905",
+  "rec_anima": "1592",
+  "atk_breaker": "1778",
+  "def_breaker": "1224",
+  "atk_guardian": "1462",
+  "def_guardian": "1540",
+  "rec_guardian": "1671",
+  "def_oracle": "1303",
+  "hp_oracle": "5075",
+  "rec_oracle": "1987",
+  "hp_bonus": "500",
+  "atk_bonus": "140",
+  "def_bonus": "260",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "7",
+  "normaldc": "14",
+  "ls": "Thunder Barrier",
+  "lsdescription": "15% reduction in damage from Thunder Types",
+  "lstype": "Defense",
+  "bbdescription": "8 combo powerful Earth attack on all enemies & boost to HC drop rate for 3 turns",
+  "bbnote": "22% boost",
+  "bbtype": "Support/Offense",
+  "bbhits": "8",
+  "bbaoe": "A",
+  "bbgauge": "25",
+  "bbdc": "8",
+  "bbmultiplier": "220",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "30133",
+  "evomats3": "30191",
+  "evomats4": "30191",
+  "evomats5": "60224"
 }

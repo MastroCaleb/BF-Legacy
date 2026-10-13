@@ -1,62 +1,63 @@
 {
   "id": "10073",
-  "unitName": "Ragnaberus",
-  "no": "699",
-  "element": "Fire",
-  "rarity": "★★★★",
-  "cost": "9",
-  "maxlv": "60",
-  "basexp": "15",
-  "gender": "N",
-  "ai": "2",
-  "animation_attack": "102",
-  "animation_idle": "52",
-  "animation_move": "36",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "20, 44, 68",
-  "normal_distribute": "30, 40, 30",
-  "normal_totaldistr": "100",
-  "bb_frames": "20, 44, 68",
-  "bb_distribute": "30, 40, 30",
-  "bb_totaldistr": "100",
-  "description": "A recently discovered snake-tailed demon beast with three heads, including those of a dog, a goat, and a dragon. It is written in ancient myth that each of its three heads devour the souls of the past, present, and future. Without witnesses of this creature, it was believed that the details regarding this beast in mythology were purely figurative. However, now that its existence has been confirmed, mythologists are turning back to the old legends to gather more information.",
-  "summon": "I can see your past.<br>I shall invite your present self<br>to witness the future you hope for!",
-  "fusion": "Heh heh heh...<br>Can you see it?<br>Your own fate?",
-  "evolution": "Time has gone and passed.<br>Let's reveal our existence<br>from a yet unknown future.",
-  "hp_base": "2079",
-  "atk_base": "868",
-  "def_base": "725",
-  "rec_base": "410",
-  "hp_lord": "3238",
-  "atk_lord": "1221",
-  "def_lord": "1001",
-  "rec_lord": "777",
-  "hp_anima": "3681",
-  "rec_anima": "659",
-  "atk_breaker": "1339",
-  "def_breaker": "883",
-  "atk_guardian": "1103",
-  "def_guardian": "1119",
-  "rec_guardian": "718",
-  "def_oracle": "942",
-  "hp_oracle": "3061",
-  "rec_oracle": "954",
-  "hp_bonus": "400",
-  "atk_bonus": "160",
-  "def_bonus": "160",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "3",
-  "normaldc": "6",
-  "ls": "Soul Flash",
-  "lsdescription": "Boost in Karma produced during Spark",
-  "lsnote": "50% boost",
-  "lstype": "Karma",
+  "stats": {
+    "_base": {
+      "atk": 868,
+      "def": 725,
+      "hp": 2079,
+      "rec": 410
+    },
+    "_lord": {
+      "atk": 1221,
+      "def": 1001,
+      "hp": 3238,
+      "rec": 777
+    },
+    "anima": {
+      "atk": 1221,
+      "def": 1001,
+      "hp max": 3828,
+      "hp min": 3533,
+      "rec max": 718,
+      "rec min": 600
+    },
+    "breaker": {
+      "atk max": 1398,
+      "atk min": 1280,
+      "def max": 942,
+      "def min": 824,
+      "hp": 3238,
+      "rec": 777
+    },
+    "guardian": {
+      "atk": 1221,
+      "def max": 1178,
+      "def min": 1060,
+      "hp": 3238,
+      "rec max": 777,
+      "rec min": 659
+    },
+    "oracle": {
+      "atk": 1221,
+      "def max": 1001,
+      "def min": 883,
+      "hp": 3238,
+      "rec max": 1013,
+      "rec min": 895
+    }
+  },
+  "leader_skill": {
+    "desc": "Boost in Karma produced during Spark",
+    "effects": [
+      {
+        "karma drop% for spark": 50,
+        "passive id": "31"
+      }
+    ],
+    "id": "1701",
+    "name": "Soul Flash"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -305,95 +306,87 @@
     ],
     "name": "Chimera Growl"
   },
-  "bbdescription": "3 combo Fire elemental attack on single enemy & probable Sickness effect",
-  "bbnote": "80% chance to inflict",
-  "bbtype": "Offense",
-  "bbhits": "3",
-  "bbaoe": "1",
-  "bbgauge": "15",
-  "bbdc": "9",
-  "bbmultiplier": "290",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "10072",
-  "evointo": "",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 868,
-      "def": 725,
-      "hp": 2079,
-      "rec": 410
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1221,
-      "def": 1001,
-      "hp": 3238,
-      "rec": 777
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1221,
-      "def": 1001,
-      "hp max": 3828,
-      "hp min": 3533,
-      "rec max": 718,
-      "rec min": 600
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 102
     },
-    "breaker": {
-      "atk max": 1398,
-      "atk min": 1280,
-      "def max": 942,
-      "def min": 824,
-      "hp": 3238,
-      "rec": 777
+    "idle": {
+      "total number of frames": 52
     },
-    "guardian": {
-      "atk": 1221,
-      "def max": 1178,
-      "def min": 1060,
-      "hp": 3238,
-      "rec max": 777,
-      "rec min": 659
-    },
-    "oracle": {
-      "atk": 1221,
-      "def max": 1001,
-      "def min": 883,
-      "hp": 3238,
-      "rec max": 1013,
-      "rec min": 895
+    "move": {
+      "total number of frames": 36
     }
   },
-  "leader_skill": {
-    "desc": "Boost in Karma produced during Spark",
-    "effects": [
-      {
-        "karma drop% for spark": 50,
-        "passive id": "31"
-      }
+  "category": 10070,
+  "cost": "9",
+  "damage frames": {
+    "frame times": [
+      20,
+      44,
+      68
     ],
-    "id": "1701",
-    "name": "Soul Flash"
+    "hit dmg% distribution": [
+      30,
+      40,
+      30
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 3
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "fire",
+  "exp_pattern": 15,
+  "gender": "other",
+  "getting type": "farmable",
+  "guide_id": 699,
+  "imp": {
+    "max atk": "160",
+    "max def": "160",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "1136~1269",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Ragnaberus",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Ragnaberus",
+  "maxlv": "60",
+  "no": "699",
   "unitDisplayHomePosition_1W9CxaFK": "101,-9,200,544",
   "unitDisplayDetailPosition_6z54rgb3": "200,187,800,613",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "126,301,450,345,0",
@@ -403,5 +396,85 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "14:121:1,20:140:1,38:121:1,44:140:1,62:121:1,68:140:1"
+  "effectFrames": "14:121:1,20:140:1,38:121:1,44:140:1,62:121:1,68:140:1",
+  "evofrom": "10072",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "15",
+  "animation_attack": "102",
+  "animation_idle": "52",
+  "animation_move": "36",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "20, 44, 68",
+  "normal_distribute": "30, 40, 30",
+  "normal_totaldistr": "100",
+  "bb_frames": "20, 44, 68",
+  "bb_distribute": "30, 40, 30",
+  "bb_totaldistr": "100",
+  "description": "A recently discovered snake-tailed demon beast with three heads, including those of a dog, a goat, and a dragon. It is written in ancient myth that each of its three heads devour the souls of the past, present, and future. Without witnesses of this creature, it was believed that the details regarding this beast in mythology were purely figurative. However, now that its existence has been confirmed, mythologists are turning back to the old legends to gather more information.",
+  "summon": "I can see your past.<br>I shall invite your present self<br>to witness the future you hope for!",
+  "fusion": "Heh heh heh...<br>Can you see it?<br>Your own fate?",
+  "evolution": "Time has gone and passed.<br>Let's reveal our existence<br>from a yet unknown future.",
+  "hp_base": "2079",
+  "atk_base": "868",
+  "def_base": "725",
+  "rec_base": "410",
+  "hp_lord": "3238",
+  "atk_lord": "1221",
+  "def_lord": "1001",
+  "rec_lord": "777",
+  "hp_anima": "3681",
+  "rec_anima": "659",
+  "atk_breaker": "1339",
+  "def_breaker": "883",
+  "atk_guardian": "1103",
+  "def_guardian": "1119",
+  "rec_guardian": "718",
+  "def_oracle": "942",
+  "hp_oracle": "3061",
+  "rec_oracle": "954",
+  "hp_bonus": "400",
+  "atk_bonus": "160",
+  "def_bonus": "160",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "3",
+  "normaldc": "6",
+  "ls": "Soul Flash",
+  "lsdescription": "Boost in Karma produced during Spark",
+  "lsnote": "50% boost",
+  "lstype": "Karma",
+  "bbdescription": "3 combo Fire elemental attack on single enemy & probable Sickness effect",
+  "bbnote": "80% chance to inflict",
+  "bbtype": "Offense",
+  "bbhits": "3",
+  "bbaoe": "1",
+  "bbgauge": "15",
+  "bbdc": "9",
+  "bbmultiplier": "290",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "",
+  "evomats2": "",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": "",
+  "evoitem": ""
 }

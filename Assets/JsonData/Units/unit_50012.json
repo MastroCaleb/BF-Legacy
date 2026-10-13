@@ -1,61 +1,66 @@
 {
   "id": "50012",
-  "unitName": "Knight Atro",
-  "no": "18",
-  "element": "Light",
-  "rarity": "★★★",
-  "cost": "4",
-  "maxlv": "40",
-  "basexp": "10",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "91",
-  "animation_idle": "52",
-  "animation_move": "12",
-  "movespeed_attack": "0",
-  "movespeed_skill": "0",
-  "speedtype_attack": "5",
-  "speedtype_skill": "5",
-  "movetype_attack": "2",
-  "movetype_skill": "2",
-  "normal_frames": "29",
-  "normal_distribute": "100",
-  "normal_totaldistr": "100",
-  "bb_frames": "29, 35, 41",
-  "bb_distribute": "33, 33, 34",
-  "bb_totaldistr": "100",
-  "description": "A swordsman from the ruined La Veda Republic, later he became one of the Six Heroes. As advised by the Friar that raised him, Atro trained with a fencing master, quickly becoming a gifted swordsman. His technique was keen, and he had integrity thanks to his monastery childhood. He earned the title of \"Sword Saint.\" Unaware of this, he continued to train daily.",
-  "summon": "If you can show me the future,<br>with my Vedan fencing skills,<br>I will become your sword.",
-  "fusion": "I am full of vigor.<br>How do you propose I make<br>use of this energy?",
-  "evolution": "I will dedicate my <br>Vedan fencing skills to<br>serving you.",
-  "hp_base": "1397",
-  "atk_base": "630",
-  "def_base": "630",
-  "rec_base": "630",
-  "hp_lord": "2397",
-  "atk_lord": "910",
-  "def_lord": "910",
-  "rec_lord": "910",
-  "hp_anima": "2690",
-  "rec_anima": "832",
-  "atk_breaker": "988",
-  "def_breaker": "832",
-  "atk_guardian": "832",
-  "def_guardian": "988",
-  "rec_guardian": "832",
-  "def_oracle": "832",
-  "hp_oracle": "2280",
-  "rec_oracle": "1027",
-  "hp_bonus": "400",
-  "atk_bonus": "160",
-  "def_bonus": "160",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "1",
-  "normaldc": "8",
-  "ls": "Light Spirit's Power",
-  "lsdescription": "25% boost to Atk Power of Light Types",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 630,
+      "def": 630,
+      "hp": 1397,
+      "rec": 630
+    },
+    "_lord": {
+      "atk": 910,
+      "def": 910,
+      "hp": 2397,
+      "rec": 910
+    },
+    "anima": {
+      "atk": 910,
+      "def": 910,
+      "hp max": 2787,
+      "hp min": 2592,
+      "rec max": 871,
+      "rec min": 793
+    },
+    "breaker": {
+      "atk max": 1027,
+      "atk min": 949,
+      "def max": 871,
+      "def min": 793,
+      "hp": 2397,
+      "rec": 910
+    },
+    "guardian": {
+      "atk": 910,
+      "def max": 1027,
+      "def min": 949,
+      "hp": 2397,
+      "rec max": 910,
+      "rec min": 832
+    },
+    "oracle": {
+      "atk": 910,
+      "def max": 910,
+      "def min": 832,
+      "hp": 2397,
+      "rec max": 1066,
+      "rec min": 988
+    }
+  },
+  "leader_skill": {
+    "desc": "25% boost to Atk Power of Light Types",
+    "effects": [
+      {
+        "atk% buff": 25,
+        "elements buffed": [
+          "light"
+        ],
+        "passive id": "2"
+      }
+    ],
+    "id": "140",
+    "name": "Light Spirit's Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -212,96 +217,83 @@
     ],
     "name": "Cardinal Judgement"
   },
-  "bbdescription": "3 combo Light elemental attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "3",
-  "bbaoe": "A",
-  "bbgauge": "15",
-  "bbdc": "3",
-  "bbmultiplier": "85",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "50011",
-  "evointo": "50013",
-  "evomats1": "50122",
-  "evomats2": "50121",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evozelcost": "100000",
-  "stats": {
-    "_base": {
-      "atk": 630,
-      "def": 630,
-      "hp": 1397,
-      "rec": 630
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 910,
-      "def": 910,
-      "hp": 2397,
-      "rec": 910
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 910,
-      "def": 910,
-      "hp max": 2787,
-      "hp min": 2592,
-      "rec max": 871,
-      "rec min": 793
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 91
     },
-    "breaker": {
-      "atk max": 1027,
-      "atk min": 949,
-      "def max": 871,
-      "def min": 793,
-      "hp": 2397,
-      "rec": 910
+    "idle": {
+      "total number of frames": 52
     },
-    "guardian": {
-      "atk": 910,
-      "def max": 1027,
-      "def min": 949,
-      "hp": 2397,
-      "rec max": 910,
-      "rec min": 832
-    },
-    "oracle": {
-      "atk": 910,
-      "def max": 910,
-      "def min": 832,
-      "hp": 2397,
-      "rec max": 1066,
-      "rec min": 988
+    "move": {
+      "total number of frames": 12
     }
   },
-  "leader_skill": {
-    "desc": "25% boost to Atk Power of Light Types",
-    "effects": [
-      {
-        "atk% buff": 25,
-        "elements buffed": [
-          "light"
-        ],
-        "passive id": "2"
-      }
+  "category": 50010,
+  "cost": "4",
+  "damage frames": {
+    "frame times": [
+      29
     ],
-    "id": "140",
-    "name": "Light Spirit's Power"
+    "hit dmg% distribution": [
+      100
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 1
   },
-  "extra_skill": {},
+  "drop check count": 8,
+  "element": "light",
+  "exp_pattern": 10,
+  "gender": "male",
+  "getting type": "farmable",
+  "guide_id": 18,
+  "imp": {
+    "max atk": "160",
+    "max def": "160",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "847~946",
+  "movement": {
+    "attack": {
+      "move speed": 0,
+      "move speed type": "5",
+      "move type": "2"
+    },
+    "skill": {
+      "move speed": 0,
+      "move speed type": "5",
+      "move type": "2"
+    }
+  },
+  "name": "Knight Atro",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "Knight Atro",
+  "maxlv": "40",
+  "no": "18",
   "unitDisplayHomePosition_1W9CxaFK": "213,-39,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "124,203,590,566",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "166,353,268,258,0",
@@ -311,5 +303,93 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "1000",
   "sellCaution": false,
-  "effectFrames": "23:125:1"
+  "effectFrames": "23:125:1",
+  "evofrom": "50011",
+  "evointo": "50013",
+  "evozelcost": "100000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50122",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50121",
+      "count": 1
+    }
+  ],
+  "basexp": "10",
+  "animation_attack": "91",
+  "animation_idle": "52",
+  "animation_move": "12",
+  "movespeed_attack": "0",
+  "movespeed_skill": "0",
+  "speedtype_attack": "5",
+  "speedtype_skill": "5",
+  "movetype_attack": "2",
+  "movetype_skill": "2",
+  "normal_frames": "29",
+  "normal_distribute": "100",
+  "normal_totaldistr": "100",
+  "bb_frames": "29, 35, 41",
+  "bb_distribute": "33, 33, 34",
+  "bb_totaldistr": "100",
+  "description": "A swordsman from the ruined La Veda Republic, later he became one of the Six Heroes. As advised by the Friar that raised him, Atro trained with a fencing master, quickly becoming a gifted swordsman. His technique was keen, and he had integrity thanks to his monastery childhood. He earned the title of \"Sword Saint.\" Unaware of this, he continued to train daily.",
+  "summon": "If you can show me the future,<br>with my Vedan fencing skills,<br>I will become your sword.",
+  "fusion": "I am full of vigor.<br>How do you propose I make<br>use of this energy?",
+  "evolution": "I will dedicate my <br>Vedan fencing skills to<br>serving you.",
+  "hp_base": "1397",
+  "atk_base": "630",
+  "def_base": "630",
+  "rec_base": "630",
+  "hp_lord": "2397",
+  "atk_lord": "910",
+  "def_lord": "910",
+  "rec_lord": "910",
+  "hp_anima": "2690",
+  "rec_anima": "832",
+  "atk_breaker": "988",
+  "def_breaker": "832",
+  "atk_guardian": "832",
+  "def_guardian": "988",
+  "rec_guardian": "832",
+  "def_oracle": "832",
+  "hp_oracle": "2280",
+  "rec_oracle": "1027",
+  "hp_bonus": "400",
+  "atk_bonus": "160",
+  "def_bonus": "160",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "1",
+  "normaldc": "8",
+  "ls": "Light Spirit's Power",
+  "lsdescription": "25% boost to Atk Power of Light Types",
+  "lstype": "Attack",
+  "bbdescription": "3 combo Light elemental attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "3",
+  "bbaoe": "A",
+  "bbgauge": "15",
+  "bbdc": "3",
+  "bbmultiplier": "85",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50122",
+  "evomats2": "50121",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": ""
 }

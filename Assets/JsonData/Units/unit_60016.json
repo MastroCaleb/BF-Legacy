@@ -1,67 +1,102 @@
 {
   "id": "60016",
-  "unitName": "Dark Legend Magress",
-  "no": "806",
-  "element": "Dark",
-  "rarity": "★★★★★★★",
-  "cost": "38",
-  "maxlv": "120",
-  "basexp": "10",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "151",
-  "animation_idle": "102",
-  "animation_move": "84",
-  "movespeed_attack": "0.005",
-  "movespeed_skill": "0.005",
-  "speedtype_attack": "1",
-  "speedtype_skill": "1",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "52, 56, 60, 64, 68, 72, 76",
-  "normal_distribute": "40, 10, 10, 10, 10, 10, 10",
-  "normal_totaldistr": "100",
-  "bb_frames": "52, 58, 64, 70, 76, 82, 88, 94, 100, 106",
-  "bb_distribute": "20, 10, 10, 10, 10, 10, 10, 10, 5, 5",
-  "bb_totaldistr": "100",
-  "sbb_frames": "52, 58, 64, 70, 76, 82, 88, 94, 100, 106, 112, 118",
-  "sbb_distribute": "20, 10, 10, 10, 10, 10, 5, 5, 5, 5, 5, 5",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "52, 58, 64, 70, 76, 82, 88, 94, 100, 106, 112, 118, 124, 130, 136, 142, 148, 154, 160, 166, 172, 178",
-  "ubb_distribute": "10, 10, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4",
-  "ubb_totaldistr": "100",
-  "description": "As his comrades fell at the hands of Narza, Magress fell into quite the predicament himself. Amongst his friends was one who although having previously claimed to hate traitors, sacrificed himself in order to save Magress. Consumed by the rage of vengeance, Magress slaughtered Narza while completely covered in wounds. A lone knight appeared shortly after to relay a message to him. Magress discarded every piece of his heavy armor except for his beloved lance, and though unable to move, challenged the mysterious knight to a duel he couldn't win. As he perished, Magress uttered words of gratitude for being able to die as a knight.",
-  "summon": "The pride of a knight.<br>That should be the source of my power.<br>But I failed to realize that sooner.",
-  "fusion": "The overwhelming darkness is powerful.<br>However, a strong heart able to contain it<br>is also key.",
-  "evolution": "Vengeance made me strong.<br>But my friends showed me the right path.<br>I'll become a legendary knight!",
-  "hp_base": "4750",
-  "atk_base": "1190",
-  "def_base": "1330",
-  "rec_base": "770",
-  "hp_lord": "7000",
-  "atk_lord": "2000",
-  "def_lord": "2400",
-  "rec_lord": "1700",
-  "hp_anima": "7892",
-  "rec_anima": "1462",
-  "atk_breaker": "2238",
-  "def_breaker": "2162",
-  "atk_guardian": "1762",
-  "def_guardian": "2638",
-  "rec_guardian": "1581",
-  "def_oracle": "2281",
-  "hp_oracle": "6643",
-  "rec_oracle": "2057",
-  "hp_bonus": "1000",
-  "atk_bonus": "840",
-  "def_bonus": "840",
-  "rec_bonus": "400",
-  "lordonly": "",
-  "combo_hits": "7",
-  "normaldc": "42",
-  "ls": "Darkness of Lore",
-  "lsdescription": "100% boost to Atk power and 30% increase in HP of Dark types",
-  "lstype": "Hit Points/Attack",
+  "stats": {
+    "_base": {
+      "atk": 1190,
+      "def": 1330,
+      "hp": 4750,
+      "rec": 770
+    },
+    "_lord": {
+      "atk": 2000,
+      "def": 2400,
+      "hp": 7000,
+      "rec": 1700
+    },
+    "anima": {
+      "atk": 2000,
+      "def": 2400,
+      "hp max": 8190,
+      "hp min": 7595,
+      "rec max": 1581,
+      "rec min": 1343
+    },
+    "breaker": {
+      "atk max": 2357,
+      "atk min": 2119,
+      "def max": 2281,
+      "def min": 2043,
+      "hp": 7000,
+      "rec": 1700
+    },
+    "guardian": {
+      "atk": 2000,
+      "def max": 2757,
+      "def min": 2519,
+      "hp": 7000,
+      "rec max": 1700,
+      "rec min": 1462
+    },
+    "oracle": {
+      "atk": 2000,
+      "def max": 2400,
+      "def min": 2162,
+      "hp": 7000,
+      "rec max": 2176,
+      "rec min": 1938
+    }
+  },
+  "leader_skill": {
+    "desc": "100% boost to Atk power and 30% increase in HP of Dark types",
+    "effects": [
+      {
+        "atk% buff": 100,
+        "elements buffed": [
+          "dark"
+        ],
+        "hp% buff": 30,
+        "passive id": "2"
+      }
+    ],
+    "id": "156",
+    "name": "Darkness of Lore"
+  },
+  "extra_skill": {
+    "desc": "20% boost to all parameters in battle & adds chance of ignoring an opponent's Def when attacking when Leomurg is equipped.",
+    "effects": [
+      {
+        "atk% buff": 20,
+        "conditions": [
+          {
+            "item required": [
+              "37640"
+            ]
+          }
+        ],
+        "def% buff": 20,
+        "hp% buff": 20,
+        "passive id": "1",
+        "passive target": "self",
+        "rec% buff": 20
+      },
+      {
+        "conditions": [
+          {
+            "item required": [
+              "37640"
+            ]
+          }
+        ],
+        "ignore def%": 50,
+        "passive id": "29",
+        "passive target": "self"
+      }
+    ],
+    "id": "600",
+    "name": "True Knight's Pride",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -232,13 +267,6 @@
     ],
     "name": "Gloom of the Abyss"
   },
-  "bbdescription": "10 combo powerful Dark attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "10",
-  "bbaoe": "A",
-  "bbgauge": "25",
-  "bbdc": "10",
-  "bbmultiplier": "250",
   "sbb": {
     "damage frames": [
       {
@@ -515,14 +543,6 @@
     ],
     "name": "Darkest Rise"
   },
-  "sbbdescription": "12 combo powerful Dark attack on all enemies & greatly boosts Def for all allies for 3 turns",
-  "sbbnote": "110% boost",
-  "sbbtype": "Support/Offense",
-  "sbbhits": "12",
-  "sbbaoe": "A",
-  "sbbgauge": "20",
-  "sbbdc": "12",
-  "sbbmultiplier": "500",
   "ubb": {
     "damage frames": [
       {
@@ -641,6 +661,218 @@
     ],
     "name": "Dark Ending"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 151
+    },
+    "idle": {
+      "total number of frames": 102
+    },
+    "move": {
+      "total number of frames": 84
+    }
+  },
+  "category": 60010,
+  "cost": "38",
+  "damage frames": {
+    "frame times": [
+      52,
+      56,
+      60,
+      64,
+      68,
+      72,
+      76
+    ],
+    "hit dmg% distribution": [
+      40,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 7
+  },
+  "drop check count": 6,
+  "element": "dark",
+  "exp_pattern": 10,
+  "gender": "male",
+  "getting type": "farmable",
+  "guide_id": 806,
+  "imp": {
+    "max atk": "840",
+    "max def": "840",
+    "max hp": "1000",
+    "max rec": "400"
+  },
+  "kind": "normal",
+  "lord damage range": "1862~2080",
+  "movement": {
+    "attack": {
+      "move speed": 0.005,
+      "move speed type": "1",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.005,
+      "move speed type": "1",
+      "move type": "1"
+    }
+  },
+  "name": "Dark Legend Magress",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Dark Legend Magress",
+  "maxlv": "120",
+  "no": "806",
+  "unitDisplayHomePosition_1W9CxaFK": "509,302,174,475",
+  "unitDisplayDetailPosition_6z54rgb3": "-242,-57,1300,882",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "-8,247,550,395,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-133,-346,1300,882",
+  "unitDisplaySummonPosition_KC3Jk8Br": "16,212,650,441,0",
+  "unitDisplayHpPosition_3BpHN6VD": "-5,38",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "15000",
+  "sellCaution": false,
+  "effectFrames": "46:126:1,50:126:1,54:126:1,58:126:1,62:126:1,66:126:1,70:126:1,20:600064:1,52:600040:1,52:680:1",
+  "evofrom": "60015",
+  "evointo": "60017",
+  "evozelcost": "3000000",
+  "evokarmacost": "1000000",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "60344",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60123",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60122",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60121",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60120",
+      "count": 1
+    },
+    {
+      "type": "2",
+      "id": "110100",
+      "count": 1
+    }
+  ],
+  "basexp": "10",
+  "animation_attack": "151",
+  "animation_idle": "102",
+  "animation_move": "84",
+  "movespeed_attack": "0.005",
+  "movespeed_skill": "0.005",
+  "speedtype_attack": "1",
+  "speedtype_skill": "1",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "52, 56, 60, 64, 68, 72, 76",
+  "normal_distribute": "40, 10, 10, 10, 10, 10, 10",
+  "normal_totaldistr": "100",
+  "bb_frames": "52, 58, 64, 70, 76, 82, 88, 94, 100, 106",
+  "bb_distribute": "20, 10, 10, 10, 10, 10, 10, 10, 5, 5",
+  "bb_totaldistr": "100",
+  "sbb_frames": "52, 58, 64, 70, 76, 82, 88, 94, 100, 106, 112, 118",
+  "sbb_distribute": "20, 10, 10, 10, 10, 10, 5, 5, 5, 5, 5, 5",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "52, 58, 64, 70, 76, 82, 88, 94, 100, 106, 112, 118, 124, 130, 136, 142, 148, 154, 160, 166, 172, 178",
+  "ubb_distribute": "10, 10, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4",
+  "ubb_totaldistr": "100",
+  "description": "As his comrades fell at the hands of Narza, Magress fell into quite the predicament himself. Amongst his friends was one who although having previously claimed to hate traitors, sacrificed himself in order to save Magress. Consumed by the rage of vengeance, Magress slaughtered Narza while completely covered in wounds. A lone knight appeared shortly after to relay a message to him. Magress discarded every piece of his heavy armor except for his beloved lance, and though unable to move, challenged the mysterious knight to a duel he couldn't win. As he perished, Magress uttered words of gratitude for being able to die as a knight.",
+  "summon": "The pride of a knight.<br>That should be the source of my power.<br>But I failed to realize that sooner.",
+  "fusion": "The overwhelming darkness is powerful.<br>However, a strong heart able to contain it<br>is also key.",
+  "evolution": "Vengeance made me strong.<br>But my friends showed me the right path.<br>I'll become a legendary knight!",
+  "hp_base": "4750",
+  "atk_base": "1190",
+  "def_base": "1330",
+  "rec_base": "770",
+  "hp_lord": "7000",
+  "atk_lord": "2000",
+  "def_lord": "2400",
+  "rec_lord": "1700",
+  "hp_anima": "7892",
+  "rec_anima": "1462",
+  "atk_breaker": "2238",
+  "def_breaker": "2162",
+  "atk_guardian": "1762",
+  "def_guardian": "2638",
+  "rec_guardian": "1581",
+  "def_oracle": "2281",
+  "hp_oracle": "6643",
+  "rec_oracle": "2057",
+  "hp_bonus": "1000",
+  "atk_bonus": "840",
+  "def_bonus": "840",
+  "rec_bonus": "400",
+  "lordonly": "",
+  "combo_hits": "7",
+  "normaldc": "42",
+  "ls": "Darkness of Lore",
+  "lsdescription": "100% boost to Atk power and 30% increase in HP of Dark types",
+  "lstype": "Hit Points/Attack",
+  "bbdescription": "10 combo powerful Dark attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "10",
+  "bbaoe": "A",
+  "bbgauge": "25",
+  "bbdc": "10",
+  "bbmultiplier": "250",
+  "sbbdescription": "12 combo powerful Dark attack on all enemies & greatly boosts Def for all allies for 3 turns",
+  "sbbnote": "110% boost",
+  "sbbtype": "Support/Offense",
+  "sbbhits": "12",
+  "sbbaoe": "A",
+  "sbbgauge": "20",
+  "sbbdc": "12",
+  "sbbmultiplier": "500",
   "ubbdescription": "22 combo massive Dark attack on all enemies, greatly boosts Def for all allies for 3 turns & all damage received is reduced to 1 for 1 turn",
   "ubbnote": "150% boost",
   "ubbtype": "Support/Offense",
@@ -653,8 +885,6 @@
   "esitem": "Leomurg",
   "esdescription": "20% boost to all parameters in battle & adds chance of ignoring an opponent's Def when attacking when Leomurg is equipped.",
   "esnote": "50% chance",
-  "evofrom": "60015",
-  "evointo": "60017",
   "evomats1": "60344",
   "evomats2": "60344",
   "evomats3": "50354",
@@ -662,113 +892,5 @@
   "evomats5": "60122",
   "evomats6": "60121",
   "evomats7": "60120",
-  "evoitem": "Legend Stone",
-  "evozelcost": "3000000",
-  "stats": {
-    "_base": {
-      "atk": 1190,
-      "def": 1330,
-      "hp": 4750,
-      "rec": 770
-    },
-    "_lord": {
-      "atk": 2000,
-      "def": 2400,
-      "hp": 7000,
-      "rec": 1700
-    },
-    "anima": {
-      "atk": 2000,
-      "def": 2400,
-      "hp max": 8190,
-      "hp min": 7595,
-      "rec max": 1581,
-      "rec min": 1343
-    },
-    "breaker": {
-      "atk max": 2357,
-      "atk min": 2119,
-      "def max": 2281,
-      "def min": 2043,
-      "hp": 7000,
-      "rec": 1700
-    },
-    "guardian": {
-      "atk": 2000,
-      "def max": 2757,
-      "def min": 2519,
-      "hp": 7000,
-      "rec max": 1700,
-      "rec min": 1462
-    },
-    "oracle": {
-      "atk": 2000,
-      "def max": 2400,
-      "def min": 2162,
-      "hp": 7000,
-      "rec max": 2176,
-      "rec min": 1938
-    }
-  },
-  "leader_skill": {
-    "desc": "100% boost to Atk power and 30% increase in HP of Dark types",
-    "effects": [
-      {
-        "atk% buff": 100,
-        "elements buffed": [
-          "dark"
-        ],
-        "hp% buff": 30,
-        "passive id": "2"
-      }
-    ],
-    "id": "156",
-    "name": "Darkness of Lore"
-  },
-  "extra_skill": {
-    "desc": "20% boost to all parameters in battle & adds chance of ignoring an opponent's Def when attacking when Leomurg is equipped.",
-    "effects": [
-      {
-        "atk% buff": 20,
-        "conditions": [
-          {
-            "item required": [
-              "37640"
-            ]
-          }
-        ],
-        "def% buff": 20,
-        "hp% buff": 20,
-        "passive id": "1",
-        "passive target": "self",
-        "rec% buff": 20
-      },
-      {
-        "conditions": [
-          {
-            "item required": [
-              "37640"
-            ]
-          }
-        ],
-        "ignore def%": 50,
-        "passive id": "29",
-        "passive target": "self"
-      }
-    ],
-    "id": "600",
-    "name": "True Knight's Pride",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "509,302,174,475",
-  "unitDisplayDetailPosition_6z54rgb3": "-242,-57,1300,882",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "-8,247,550,395,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-133,-346,1300,882",
-  "unitDisplaySummonPosition_KC3Jk8Br": "16,212,650,441,0",
-  "unitDisplayHpPosition_3BpHN6VD": "-5,38",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "15000",
-  "sellCaution": false,
-  "effectFrames": "46:126:1,50:126:1,54:126:1,58:126:1,62:126:1,66:126:1,70:126:1,20:600064:1,52:600040:1,52:680:1"
+  "evoitem": "Legend Stone"
 }

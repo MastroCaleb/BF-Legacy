@@ -1,62 +1,63 @@
 {
   "id": "60024",
-  "unitName": "Ryujin Mifune",
-  "no": "325",
-  "element": "Dark",
-  "rarity": "★★★★★",
-  "cost": "14",
-  "maxlv": "80",
-  "basexp": "15",
-  "gender": "M",
-  "ai": "3",
-  "animation_attack": "87",
-  "animation_idle": "52",
-  "animation_move": "16",
-  "movespeed_attack": "0.0015",
-  "movespeed_skill": "0.0015",
-  "speedtype_attack": "5",
-  "speedtype_skill": "5",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "31, 32, 33, 34, 35",
-  "normal_distribute": "35, 20, 15, 15, 15",
-  "normal_totaldistr": "100",
-  "bb_frames": "31, 32, 33, 34, 36, 38",
-  "bb_distribute": "20, 20, 20, 20, 10, 10",
-  "bb_totaldistr": "100",
-  "description": "An other-worldly samurai that appeared in the ruined Bariura Empire. Demonic blade in hand, Mifune found the death he so desired as he fought aggressively against the gods. However, the demonic blade he carried wouldn't allow him to pass on so easily. Together with his demonic blade that had already claimed so many lives, upon death Mifune's skills sharpened even further, and it's said he was then able to chop down gods in a single blow.",
-  "summon": "So fortune has you summoning me!<br>Do you know the spirit within my blade?<br>If so, then I shall devote it to you.",
-  "fusion": "Surely its beauty has faded.<br>But still, my blade continues to<br>demand more power.",
-  "evolution": "Even if my soul should perish,<br>my demon sword's soul remains.<br>It's always calling me to battle.",
-  "hp_base": "2288",
-  "atk_base": "1251",
-  "def_base": "560",
-  "rec_base": "618",
-  "hp_lord": "3682",
-  "atk_lord": "1948",
-  "def_lord": "928",
-  "rec_lord": "961",
-  "hp_anima": "4275",
-  "rec_anima": "803",
-  "atk_breaker": "2106",
-  "def_breaker": "770",
-  "atk_guardian": "1790",
-  "def_guardian": "1086",
-  "rec_guardian": "882",
-  "def_oracle": "849",
-  "hp_oracle": "3445",
-  "rec_oracle": "1198",
-  "hp_bonus": "250",
-  "atk_bonus": "500",
-  "def_bonus": "100",
-  "rec_bonus": "100",
-  "lordonly": "",
-  "combo_hits": "5",
-  "normaldc": "15",
-  "ls": "Intense Strobe",
-  "lsdescription": "Large boost in damage dealt during Spark",
-  "lsnote": "50% boost",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 1251,
+      "def": 560,
+      "hp": 2288,
+      "rec": 618
+    },
+    "_lord": {
+      "atk": 1948,
+      "def": 928,
+      "hp": 3682,
+      "rec": 961
+    },
+    "anima": {
+      "atk": 1948,
+      "def": 928,
+      "hp max": 4472,
+      "hp min": 4077,
+      "rec max": 882,
+      "rec min": 724
+    },
+    "breaker": {
+      "atk max": 2185,
+      "atk min": 2027,
+      "def max": 849,
+      "def min": 691,
+      "hp": 3682,
+      "rec": 961
+    },
+    "guardian": {
+      "atk": 1948,
+      "def max": 1165,
+      "def min": 1007,
+      "hp": 3682,
+      "rec max": 961,
+      "rec min": 803
+    },
+    "oracle": {
+      "atk": 1948,
+      "def max": 928,
+      "def min": 770,
+      "hp": 3682,
+      "rec max": 1277,
+      "rec min": 1119
+    }
+  },
+  "leader_skill": {
+    "desc": "Large boost in damage dealt during Spark",
+    "effects": [
+      {
+        "damage% for spark": 50,
+        "passive id": "31"
+      }
+    ],
+    "id": "1302",
+    "name": "Intense Strobe"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -219,93 +220,97 @@
     ],
     "name": "Cosmic Flash"
   },
-  "bbdescription": "6 combo powerful Dark attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "6",
-  "bbaoe": "A",
-  "bbgauge": "34",
-  "bbdc": "6",
-  "bbmultiplier": "200",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "60023",
-  "evointo": "60025",
-  "evomats1": "50354",
-  "evomats2": "60123",
-  "evomats3": "60122",
-  "evomats4": "60144",
-  "evomats5": "60224",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 1251,
-      "def": 560,
-      "hp": 2288,
-      "rec": 618
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1948,
-      "def": 928,
-      "hp": 3682,
-      "rec": 961
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1948,
-      "def": 928,
-      "hp max": 4472,
-      "hp min": 4077,
-      "rec max": 882,
-      "rec min": 724
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 2185,
-      "atk min": 2027,
-      "def max": 849,
-      "def min": 691,
-      "hp": 3682,
-      "rec": 961
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 87
     },
-    "guardian": {
-      "atk": 1948,
-      "def max": 1165,
-      "def min": 1007,
-      "hp": 3682,
-      "rec max": 961,
-      "rec min": 803
+    "idle": {
+      "total number of frames": 52
     },
-    "oracle": {
-      "atk": 1948,
-      "def max": 928,
-      "def min": 770,
-      "hp": 3682,
-      "rec max": 1277,
-      "rec min": 1119
+    "move": {
+      "total number of frames": 16
     }
   },
-  "leader_skill": {
-    "desc": "Large boost in damage dealt during Spark",
-    "effects": [
-      {
-        "damage% for spark": 50,
-        "passive id": "31"
-      }
+  "category": 60020,
+  "cost": "14",
+  "damage frames": {
+    "frame times": [
+      31,
+      32,
+      33,
+      34,
+      35
     ],
-    "id": "1302",
-    "name": "Intense Strobe"
+    "hit dmg% distribution": [
+      35,
+      20,
+      15,
+      15,
+      15
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 5
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "dark",
+  "exp_pattern": 15,
+  "gender": "male",
+  "getting type": "farmable",
+  "guide_id": 325,
+  "imp": {
+    "max atk": "500",
+    "max def": "100",
+    "max hp": "250",
+    "max rec": "100"
+  },
+  "kind": "normal",
+  "lord damage range": "1813~2025",
+  "movement": {
+    "attack": {
+      "move speed": 0.0015,
+      "move speed type": "5",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0015,
+      "move speed type": "5",
+      "move type": "1"
+    }
+  },
+  "name": "Ryujin Mifune",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Ryujin Mifune",
+  "maxlv": "80",
+  "no": "325",
   "unitDisplayHomePosition_1W9CxaFK": "357,152,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-58,-3,1184,788",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "196,363,330,273,0",
@@ -315,5 +320,109 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "25:126:1,26:126:1,27:126:1,28:126:1,29:126:1"
+  "effectFrames": "25:126:1,26:126:1,27:126:1,28:126:1,29:126:1",
+  "evofrom": "60023",
+  "evointo": "60025",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60123",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60122",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    }
+  ],
+  "basexp": "15",
+  "animation_attack": "87",
+  "animation_idle": "52",
+  "animation_move": "16",
+  "movespeed_attack": "0.0015",
+  "movespeed_skill": "0.0015",
+  "speedtype_attack": "5",
+  "speedtype_skill": "5",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "31, 32, 33, 34, 35",
+  "normal_distribute": "35, 20, 15, 15, 15",
+  "normal_totaldistr": "100",
+  "bb_frames": "31, 32, 33, 34, 36, 38",
+  "bb_distribute": "20, 20, 20, 20, 10, 10",
+  "bb_totaldistr": "100",
+  "description": "An other-worldly samurai that appeared in the ruined Bariura Empire. Demonic blade in hand, Mifune found the death he so desired as he fought aggressively against the gods. However, the demonic blade he carried wouldn't allow him to pass on so easily. Together with his demonic blade that had already claimed so many lives, upon death Mifune's skills sharpened even further, and it's said he was then able to chop down gods in a single blow.",
+  "summon": "So fortune has you summoning me!<br>Do you know the spirit within my blade?<br>If so, then I shall devote it to you.",
+  "fusion": "Surely its beauty has faded.<br>But still, my blade continues to<br>demand more power.",
+  "evolution": "Even if my soul should perish,<br>my demon sword's soul remains.<br>It's always calling me to battle.",
+  "hp_base": "2288",
+  "atk_base": "1251",
+  "def_base": "560",
+  "rec_base": "618",
+  "hp_lord": "3682",
+  "atk_lord": "1948",
+  "def_lord": "928",
+  "rec_lord": "961",
+  "hp_anima": "4275",
+  "rec_anima": "803",
+  "atk_breaker": "2106",
+  "def_breaker": "770",
+  "atk_guardian": "1790",
+  "def_guardian": "1086",
+  "rec_guardian": "882",
+  "def_oracle": "849",
+  "hp_oracle": "3445",
+  "rec_oracle": "1198",
+  "hp_bonus": "250",
+  "atk_bonus": "500",
+  "def_bonus": "100",
+  "rec_bonus": "100",
+  "lordonly": "",
+  "combo_hits": "5",
+  "normaldc": "15",
+  "ls": "Intense Strobe",
+  "lsdescription": "Large boost in damage dealt during Spark",
+  "lsnote": "50% boost",
+  "lstype": "Attack",
+  "bbdescription": "6 combo powerful Dark attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "6",
+  "bbaoe": "A",
+  "bbgauge": "34",
+  "bbdc": "6",
+  "bbmultiplier": "200",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "60123",
+  "evomats3": "60122",
+  "evomats4": "60144",
+  "evomats5": "60224"
 }

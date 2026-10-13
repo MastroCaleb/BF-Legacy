@@ -1,68 +1,103 @@
 {
   "id": "20617",
-  "unitName": "Aquamarine Knight Medina",
-  "no": "1740",
-  "element": "Water",
-  "rarity": "Omni",
-  "cost": "47",
-  "maxlv": "150",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "133",
-  "animation_idle": "52",
-  "animation_move": "5",
-  "movespeed_attack": "0.0024",
-  "movespeed_skill": "0.0024",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "50, 53, 56, 59, 62, 65, 68, 71, 74, 77, 80",
-  "normal_distribute": "37, 6, 8, 6, 8, 6, 8, 6, 8, 4, 3",
-  "normal_totaldistr": "100",
-  "bb_frames": "8, 14, 20, 26, 32, 38, 50, 53, 56, 59, 62, 65, 68, 71, 74, 77, 80, 83",
-  "bb_distribute": "18, 12, 9, 5, 3, 5, 3, 5, 3, 5, 3, 5, 3, 5, 3, 5, 3, 5",
-  "bb_totaldistr": "100",
-  "sbb_frames": "8, 14, 20, 26, 32, 38, 50, 53, 56, 59, 62, 65, 68, 71, 74, 77, 80, 83, 86, 89",
-  "sbb_distribute": "18, 12, 10, 6, 4, 6, 4, 5, 3, 5, 3, 5, 3, 5, 3, 2, 1, 2, 1, 2",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "8, 14, 20, 26, 32, 38, 50, 53, 56, 59, 62, 65, 68, 71, 74, 77, 80, 83, 86, 89, 92, 95",
-  "ubb_distribute": "18, 12, 10, 8, 4, 8, 4, 6, 4, 2, 3, 2, 3, 2, 3, 2, 1, 2, 1, 2, 1, 2",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "1",
-  "ubb_effectdelay": "1",
-  "description": "A knight who once fought against the gods alongside the legendary Oracle Knight, but is rumored to have been indignant about not having been chosen to become the Oracle Knight herself. Had Medina been selected to become the Oracle Knight, her dormant powers would have flourished in order to protect her best friend, the Oracle Maiden. As her shield, there is no doubt that her destiny would have been to dedicate her life to ensuring the safety of Oracle Maiden.",
-  "summon": "No matter what happens, I will always be her friend. That will never change.",
-  "fusion": "Feel free to ask for my help more often. Knowing you trust me only makes me stronger!",
-  "evolution": "So you have chosen me? Then I vow to live up to your expectations.",
-  "hp_base": "5497",
-  "atk_base": "2512",
-  "def_base": "2449",
-  "rec_base": "2383",
-  "hp_lord": "7183",
-  "atk_lord": "3111",
-  "def_lord": "3061",
-  "rec_lord": "2965",
-  "hp_anima": "8300",
-  "rec_anima": "2667",
-  "atk_breaker": "3409",
-  "def_breaker": "2763",
-  "def_guardian": "3359",
-  "rec_guardian": "2816",
-  "def_oracle": "2912",
-  "rec_oracle": "3412",
-  "hp_bonus": "1500",
-  "atk_bonus": "600",
-  "def_bonus": "600",
-  "rec_bonus": "600",
-  "lordonly": "",
-  "combo_hits": "11",
-  "normaldc": "44",
-  "ls": "Torrential Vow",
-  "lsdescription": "40% boost to Atk, Def, max HP, enormously boosts BB Atk, hugely boosts BB gauge each turn & hugely boosts BB gauge when damage dealt has exceeded certain amount",
-  "lsnote": "200% BB Atk, fills 6 BC each turn & fills 8 BC after 5000 damage",
+  "stats": {
+    "_base": {
+      "atk": 2512,
+      "def": 2449,
+      "hp": 5497,
+      "rec": 2383
+    },
+    "_lord": {
+      "atk": 3111,
+      "def": 3061,
+      "hp": 7183,
+      "rec": 2965
+    },
+    "anima": {
+      "atk": 3111,
+      "def": 3061,
+      "hp max": 8673,
+      "hp min": 7928,
+      "rec max": 2816,
+      "rec min": 2518
+    },
+    "breaker": {
+      "atk max": 3558,
+      "atk min": 3260,
+      "def max": 2912,
+      "def min": 2614,
+      "hp": 7183,
+      "rec": 2965
+    },
+    "guardian": {
+      "atk": 3111,
+      "def max": 3508,
+      "def min": 3210,
+      "hp": 7183,
+      "rec max": 2965,
+      "rec min": 2667
+    },
+    "oracle": {
+      "atk": 3111,
+      "def max": 3061,
+      "def min": 2763,
+      "hp": 7183,
+      "rec max": 3561,
+      "rec min": 3263
+    }
+  },
+  "leader_skill": {
+    "desc": "40% boost to Atk, Def, max HP, enormously boosts BB Atk, hugely boosts BB gauge each turn & hugely boosts BB gauge when damage dealt has exceeded certain amount",
+    "effects": [
+      {
+        "atk% buff": 40,
+        "def% buff": 40,
+        "hp% buff": 40,
+        "passive id": "1"
+      },
+      {
+        "damage dealt threshold activation": 5000,
+        "increase bb gauge": 8,
+        "passive id": "81"
+      },
+      {
+        "bc fill per turn": 6,
+        "passive id": "9"
+      },
+      {
+        "bb atk% buff": 200,
+        "passive id": "64",
+        "sbb atk% buff": 200,
+        "ubb atk% buff": 200
+      }
+    ],
+    "id": "1972",
+    "name": "Torrential Vow"
+  },
+  "extra_skill": {
+    "desc": "Boosts Atk, Def, Rec when BB gauge is over 50% & considerably boosts BB gauge each turn",
+    "effects": [
+      {
+        "atk% buff": 50,
+        "bb gauge above % buff requirement": 50,
+        "conditions": [],
+        "def% buff": 50,
+        "passive id": "30",
+        "passive target": "self",
+        "rec% buff": 50
+      },
+      {
+        "bc fill per turn": 4,
+        "conditions": [],
+        "passive id": "9",
+        "passive target": "self"
+      }
+    ],
+    "id": "45800",
+    "name": "Heaven & the Sea Unite",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -617,14 +652,6 @@
     ],
     "name": "Blasé Torrent"
   },
-  "bbdescription": "18 combo Water attack on all foes, hugely boosts BB gauge, enormously boosts Spark damage for 3 turns, considerably boosts BC and HC drop rate for 3 turns & hugely boosts BB gauge for 3 turns",
-  "bbnote": "Fills 8 BC instantly, 100% Spark, 35% drop rate & fills 7 BC per turn",
-  "bbtype": "Offense",
-  "bbhits": "18",
-  "bbaoe": "A",
-  "bbgauge": "24",
-  "bbdc": "18",
-  "bbmultiplier": "360",
   "sbb": {
     "damage frames": [
       {
@@ -1305,14 +1332,6 @@
     ],
     "name": "Apsalus Cradle"
   },
-  "sbbdescription": "20 combo powerful Water attack on all foes, enormously boosts BB gauge, hugely boosts BB gauge for 3 turns, damage taken considerably boosts BB gauge for 3 turns, Spark damage boosts BB gauge for 3 turns & enormously boosts Spark damage for 3 turns",
-  "sbbnote": "Fills 10 BC instantly, fills 7 BC per turn, fills 4-7 BC on hit, fills 2-3 BC on Spark & 100% Spark",
-  "sbbtype": "Offense",
-  "sbbhits": "20",
-  "sbbaoe": "A",
-  "sbbgauge": "26",
-  "sbbdc": "20",
-  "sbbmultiplier": "560",
   "ubb": {
     "damage frames": [
       {
@@ -1496,6 +1515,192 @@
     ],
     "name": "Sea Sword Art: Ultexedia"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 133
+    },
+    "idle": {
+      "total number of frames": 52
+    },
+    "move": {
+      "total number of frames": 5
+    }
+  },
+  "category": 20610,
+  "cost": "47",
+  "damage frames": {
+    "frame times": [
+      50,
+      53,
+      56,
+      59,
+      62,
+      65,
+      68,
+      71,
+      74,
+      77,
+      80
+    ],
+    "hit dmg% distribution": [
+      37,
+      6,
+      8,
+      6,
+      8,
+      6,
+      8,
+      6,
+      8,
+      4,
+      3
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 11
+  },
+  "drop check count": 4,
+  "element": "water",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 1740,
+  "imp": {
+    "max atk": "600",
+    "max def": "600",
+    "max hp": "1500",
+    "max rec": "600"
+  },
+  "kind": "normal",
+  "lord damage range": "2896~3235",
+  "movement": {
+    "attack": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    }
+  },
+  "name": "Aquamarine Knight Medina",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "8",
+  "sell caution": false,
+  "unitName": "Aquamarine Knight Medina",
+  "maxlv": "150",
+  "no": "1740",
+  "unitDisplayHomePosition_1W9CxaFK": "472,274,164,448",
+  "unitDisplayDetailPosition_6z54rgb3": "-204,-90,1435,1070",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "-12,174,726,541,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-228,-369,1428,1065",
+  "unitDisplaySummonPosition_KC3Jk8Br": "-12,174,726,541,0",
+  "unitDisplayHpPosition_3BpHN6VD": "-9,76",
+  "unitDisplayCursorPosition": "-5,12",
+  "sellPrice": "50000",
+  "sellCaution": false,
+  "effectFrames": "44:201810:1,4:200560:1,4:200397:1,4:200067:1,4:200404:1,50:500355:1,60:201342:1,60:201027:1,65:201031:1,50:500172:1,63:500172:1,70:500172:1,48:200120:1,55:200120:1,60:200120:1,63:200120:1,66:200120:1",
+  "evofrom": "20616",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "21",
+  "animation_attack": "133",
+  "animation_idle": "52",
+  "animation_move": "5",
+  "movespeed_attack": "0.0024",
+  "movespeed_skill": "0.0024",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "50, 53, 56, 59, 62, 65, 68, 71, 74, 77, 80",
+  "normal_distribute": "37, 6, 8, 6, 8, 6, 8, 6, 8, 4, 3",
+  "normal_totaldistr": "100",
+  "bb_frames": "8, 14, 20, 26, 32, 38, 50, 53, 56, 59, 62, 65, 68, 71, 74, 77, 80, 83",
+  "bb_distribute": "18, 12, 9, 5, 3, 5, 3, 5, 3, 5, 3, 5, 3, 5, 3, 5, 3, 5",
+  "bb_totaldistr": "100",
+  "sbb_frames": "8, 14, 20, 26, 32, 38, 50, 53, 56, 59, 62, 65, 68, 71, 74, 77, 80, 83, 86, 89",
+  "sbb_distribute": "18, 12, 10, 6, 4, 6, 4, 5, 3, 5, 3, 5, 3, 5, 3, 2, 1, 2, 1, 2",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "8, 14, 20, 26, 32, 38, 50, 53, 56, 59, 62, 65, 68, 71, 74, 77, 80, 83, 86, 89, 92, 95",
+  "ubb_distribute": "18, 12, 10, 8, 4, 8, 4, 6, 4, 2, 3, 2, 3, 2, 3, 2, 1, 2, 1, 2, 1, 2",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "1",
+  "ubb_effectdelay": "1",
+  "description": "A knight who once fought against the gods alongside the legendary Oracle Knight, but is rumored to have been indignant about not having been chosen to become the Oracle Knight herself. Had Medina been selected to become the Oracle Knight, her dormant powers would have flourished in order to protect her best friend, the Oracle Maiden. As her shield, there is no doubt that her destiny would have been to dedicate her life to ensuring the safety of Oracle Maiden.",
+  "summon": "No matter what happens, I will always be her friend. That will never change.",
+  "fusion": "Feel free to ask for my help more often. Knowing you trust me only makes me stronger!",
+  "evolution": "So you have chosen me? Then I vow to live up to your expectations.",
+  "hp_base": "5497",
+  "atk_base": "2512",
+  "def_base": "2449",
+  "rec_base": "2383",
+  "hp_lord": "7183",
+  "atk_lord": "3111",
+  "def_lord": "3061",
+  "rec_lord": "2965",
+  "hp_anima": "8300",
+  "rec_anima": "2667",
+  "atk_breaker": "3409",
+  "def_breaker": "2763",
+  "def_guardian": "3359",
+  "rec_guardian": "2816",
+  "def_oracle": "2912",
+  "rec_oracle": "3412",
+  "hp_bonus": "1500",
+  "atk_bonus": "600",
+  "def_bonus": "600",
+  "rec_bonus": "600",
+  "lordonly": "",
+  "combo_hits": "11",
+  "normaldc": "44",
+  "ls": "Torrential Vow",
+  "lsdescription": "40% boost to Atk, Def, max HP, enormously boosts BB Atk, hugely boosts BB gauge each turn & hugely boosts BB gauge when damage dealt has exceeded certain amount",
+  "lsnote": "200% BB Atk, fills 6 BC each turn & fills 8 BC after 5000 damage",
+  "bbdescription": "18 combo Water attack on all foes, hugely boosts BB gauge, enormously boosts Spark damage for 3 turns, considerably boosts BC and HC drop rate for 3 turns & hugely boosts BB gauge for 3 turns",
+  "bbnote": "Fills 8 BC instantly, 100% Spark, 35% drop rate & fills 7 BC per turn",
+  "bbtype": "Offense",
+  "bbhits": "18",
+  "bbaoe": "A",
+  "bbgauge": "24",
+  "bbdc": "18",
+  "bbmultiplier": "360",
+  "sbbdescription": "20 combo powerful Water attack on all foes, enormously boosts BB gauge, hugely boosts BB gauge for 3 turns, damage taken considerably boosts BB gauge for 3 turns, Spark damage boosts BB gauge for 3 turns & enormously boosts Spark damage for 3 turns",
+  "sbbnote": "Fills 10 BC instantly, fills 7 BC per turn, fills 4-7 BC on hit, fills 2-3 BC on Spark & 100% Spark",
+  "sbbtype": "Offense",
+  "sbbhits": "20",
+  "sbbaoe": "A",
+  "sbbgauge": "26",
+  "sbbdc": "20",
+  "sbbmultiplier": "560",
   "ubbdescription": "22 combo massive Water attack on all foes, activates Water barrier, enormously boosts Atk and Def for 3 turns, enormously boosts BB Atk for 3 turns, 75% damage reduction for 3 turns & enormously boosts BB gauge for 3 turns",
   "ubbnote": "25000 HP barrier, 300% parameter boost, 500% BB Atk & fills 50 BC",
   "ubbtype": "Offense",
@@ -1508,8 +1713,6 @@
   "esitem": "",
   "esdescription": "Boosts Atk, Def, Rec when BB gauge is above 50% & slightly boosts BB gauge each turn",
   "esnote": "50% boost & fills 4 BC",
-  "evofrom": "20616",
-  "evointo": "",
   "evomats1": "",
   "evomats2": "",
   "evomats3": "",
@@ -1518,114 +1721,5 @@
   "evomats6": "",
   "evomats7": "",
   "evomats8": "",
-  "evoitem": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 2512,
-      "def": 2449,
-      "hp": 5497,
-      "rec": 2383
-    },
-    "_lord": {
-      "atk": 3111,
-      "def": 3061,
-      "hp": 7183,
-      "rec": 2965
-    },
-    "anima": {
-      "atk": 3111,
-      "def": 3061,
-      "hp max": 8673,
-      "hp min": 7928,
-      "rec max": 2816,
-      "rec min": 2518
-    },
-    "breaker": {
-      "atk max": 3558,
-      "atk min": 3260,
-      "def max": 2912,
-      "def min": 2614,
-      "hp": 7183,
-      "rec": 2965
-    },
-    "guardian": {
-      "atk": 3111,
-      "def max": 3508,
-      "def min": 3210,
-      "hp": 7183,
-      "rec max": 2965,
-      "rec min": 2667
-    },
-    "oracle": {
-      "atk": 3111,
-      "def max": 3061,
-      "def min": 2763,
-      "hp": 7183,
-      "rec max": 3561,
-      "rec min": 3263
-    }
-  },
-  "leader_skill": {
-    "desc": "40% boost to Atk, Def, max HP, enormously boosts BB Atk, hugely boosts BB gauge each turn & hugely boosts BB gauge when damage dealt has exceeded certain amount",
-    "effects": [
-      {
-        "atk% buff": 40,
-        "def% buff": 40,
-        "hp% buff": 40,
-        "passive id": "1"
-      },
-      {
-        "damage dealt threshold activation": 5000,
-        "increase bb gauge": 8,
-        "passive id": "81"
-      },
-      {
-        "bc fill per turn": 6,
-        "passive id": "9"
-      },
-      {
-        "bb atk% buff": 200,
-        "passive id": "64",
-        "sbb atk% buff": 200,
-        "ubb atk% buff": 200
-      }
-    ],
-    "id": "1972",
-    "name": "Torrential Vow"
-  },
-  "extra_skill": {
-    "desc": "Boosts Atk, Def, Rec when BB gauge is over 50% & considerably boosts BB gauge each turn",
-    "effects": [
-      {
-        "atk% buff": 50,
-        "bb gauge above % buff requirement": 50,
-        "conditions": [],
-        "def% buff": 50,
-        "passive id": "30",
-        "passive target": "self",
-        "rec% buff": 50
-      },
-      {
-        "bc fill per turn": 4,
-        "conditions": [],
-        "passive id": "9",
-        "passive target": "self"
-      }
-    ],
-    "id": "45800",
-    "name": "Heaven & the Sea Unite",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "472,274,164,448",
-  "unitDisplayDetailPosition_6z54rgb3": "-204,-90,1435,1070",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "-12,174,726,541,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-228,-369,1428,1065",
-  "unitDisplaySummonPosition_KC3Jk8Br": "-12,174,726,541,0",
-  "unitDisplayHpPosition_3BpHN6VD": "-9,76",
-  "unitDisplayCursorPosition": "-5,12",
-  "sellPrice": "50000",
-  "sellCaution": false,
-  "effectFrames": "44:201810:1,4:200560:1,4:200397:1,4:200067:1,4:200404:1,50:500355:1,60:201342:1,60:201027:1,65:201031:1,50:500172:1,63:500172:1,70:500172:1,48:200120:1,55:200120:1,60:200120:1,63:200120:1,66:200120:1"
+  "evoitem": ""
 }

@@ -1,61 +1,66 @@
 {
   "id": "10012",
-  "unitName": "Burning Vargas",
-  "no": "2",
-  "element": "Fire",
-  "rarity": "★★★",
-  "cost": "4",
-  "maxlv": "40",
-  "basexp": "10",
-  "gender": "M",
-  "ai": "4",
-  "animation_attack": "128",
-  "animation_idle": "52",
-  "animation_move": "13",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "26, 44, 62",
-  "normal_distribute": "50, 30, 20",
-  "normal_totaldistr": "100",
-  "bb_frames": "26, 47, 68, 89, 110",
-  "bb_distribute": "20, 20, 20, 20, 20",
-  "bb_totaldistr": "100",
-  "description": "A swordsman from the ruined Agni Empire, he later became one of the Six Heroes. Vargas achieved strength through countless battles, eventually joining the Order of Agni like his father before him. Soon after, however, he was defeated by a swordswoman of the Order of Lava. Ashamed, he then left to train again and intensify his technique.",
-  "summon": "It looks like you need me.<br>Alright, I'll give you a hand.<br>Let's just hope it's fun.",
-  "fusion": "That's not all I've got!<br>I'll show you what I can do!",
-  "evolution": "I'm not yet satisfied!<br>I will become even stronger!",
-  "hp_base": "1484",
-  "atk_base": "630",
-  "def_base": "517",
-  "rec_base": "404",
-  "hp_lord": "2517",
-  "atk_lord": "917",
-  "def_lord": "806",
-  "rec_lord": "702",
-  "hp_anima": "2810",
-  "rec_anima": "624",
-  "atk_breaker": "995",
-  "def_breaker": "728",
-  "atk_guardian": "839",
-  "def_guardian": "884",
-  "rec_guardian": "663",
-  "def_oracle": "767",
-  "hp_oracle": "2400",
-  "rec_oracle": "819",
-  "hp_bonus": "500",
-  "atk_bonus": "200",
-  "def_bonus": "120",
-  "rec_bonus": "120",
-  "lordonly": "",
-  "combo_hits": "3",
-  "normaldc": "6",
-  "ls": "Fire Spirit's Power",
-  "lsdescription": "25% boost to Atk Power of Fire Types",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 630,
+      "def": 517,
+      "hp": 1484,
+      "rec": 404
+    },
+    "_lord": {
+      "atk": 917,
+      "def": 806,
+      "hp": 2517,
+      "rec": 702
+    },
+    "anima": {
+      "atk": 917,
+      "def": 806,
+      "hp max": 2907,
+      "hp min": 2712,
+      "rec max": 663,
+      "rec min": 585
+    },
+    "breaker": {
+      "atk max": 1034,
+      "atk min": 956,
+      "def max": 767,
+      "def min": 689,
+      "hp": 2517,
+      "rec": 702
+    },
+    "guardian": {
+      "atk": 917,
+      "def max": 923,
+      "def min": 845,
+      "hp": 2517,
+      "rec max": 702,
+      "rec min": 624
+    },
+    "oracle": {
+      "atk": 917,
+      "def max": 806,
+      "def min": 728,
+      "hp": 2517,
+      "rec max": 858,
+      "rec min": 780
+    }
+  },
+  "leader_skill": {
+    "desc": "25% boost to Atk Power of Fire Types",
+    "effects": [
+      {
+        "atk% buff": 25,
+        "elements buffed": [
+          "fire"
+        ],
+        "passive id": "2"
+      }
+    ],
+    "id": "100",
+    "name": "Fire Spirit's Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -216,97 +221,99 @@
     ],
     "name": "Flare Ride Plus"
   },
-  "bbdescription": "5 combo Fire elemental attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "5",
-  "bbaoe": "A",
-  "bbgauge": "15",
-  "bbdc": "5",
-  "bbmultiplier": "85",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "10011",
-  "evointo": "10013",
-  "evomats1": "10132",
-  "evomats2": "10131",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "100000",
-  "stats": {
-    "_base": {
-      "atk": 630,
-      "def": 517,
-      "hp": 1484,
-      "rec": 404
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_under",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 917,
-      "def": 806,
-      "hp": 2517,
-      "rec": 702
+    {
+      "action": "skill",
+      "chance%": 30.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 917,
-      "def": 806,
-      "hp max": 2907,
-      "hp min": 2712,
-      "rec max": 663,
-      "rec min": 585
+    {
+      "action": "attack",
+      "chance%": 70.0,
+      "target conditions": "hp_max",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 1034,
-      "atk min": 956,
-      "def max": 767,
-      "def min": 689,
-      "hp": 2517,
-      "rec": 702
+    {
+      "action": "attack",
+      "chance%": 50.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "guardian": {
-      "atk": 917,
-      "def max": 923,
-      "def min": 845,
-      "hp": 2517,
-      "rec max": 702,
-      "rec min": 624
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 128
     },
-    "oracle": {
-      "atk": 917,
-      "def max": 806,
-      "def min": 728,
-      "hp": 2517,
-      "rec max": 858,
-      "rec min": 780
+    "idle": {
+      "total number of frames": 52
+    },
+    "move": {
+      "total number of frames": 13
     }
   },
-  "leader_skill": {
-    "desc": "25% boost to Atk Power of Fire Types",
-    "effects": [
-      {
-        "atk% buff": 25,
-        "elements buffed": [
-          "fire"
-        ],
-        "passive id": "2"
-      }
+  "category": 10010,
+  "cost": "4",
+  "damage frames": {
+    "frame times": [
+      26,
+      44,
+      62
     ],
-    "id": "100",
-    "name": "Fire Spirit's Power"
+    "hit dmg% distribution": [
+      50,
+      30,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 3
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "fire",
+  "exp_pattern": 10,
+  "gender": "male",
+  "getting type": "farmable",
+  "guide_id": 2,
+  "imp": {
+    "max atk": "200",
+    "max def": "120",
+    "max hp": "500",
+    "max rec": "120"
+  },
+  "kind": "normal",
+  "lord damage range": "853~953",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Burning Vargas",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "Burning Vargas",
+  "maxlv": "40",
+  "no": "2",
   "unitDisplayHomePosition_1W9CxaFK": "311,-20,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-34,123,811,655",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "128,345,338,273,0",
@@ -316,5 +323,94 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "1000",
   "sellCaution": false,
-  "effectFrames": "20:121:1,38:121:1,56:121:1"
+  "effectFrames": "20:121:1,38:121:1,56:121:1",
+  "evofrom": "10011",
+  "evointo": "10013",
+  "evozelcost": "100000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "10132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10131",
+      "count": 1
+    }
+  ],
+  "basexp": "10",
+  "animation_attack": "128",
+  "animation_idle": "52",
+  "animation_move": "13",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "26, 44, 62",
+  "normal_distribute": "50, 30, 20",
+  "normal_totaldistr": "100",
+  "bb_frames": "26, 47, 68, 89, 110",
+  "bb_distribute": "20, 20, 20, 20, 20",
+  "bb_totaldistr": "100",
+  "description": "A swordsman from the ruined Agni Empire, he later became one of the Six Heroes. Vargas achieved strength through countless battles, eventually joining the Order of Agni like his father before him. Soon after, however, he was defeated by a swordswoman of the Order of Lava. Ashamed, he then left to train again and intensify his technique.",
+  "summon": "It looks like you need me.<br>Alright, I'll give you a hand.<br>Let's just hope it's fun.",
+  "fusion": "That's not all I've got!<br>I'll show you what I can do!",
+  "evolution": "I'm not yet satisfied!<br>I will become even stronger!",
+  "hp_base": "1484",
+  "atk_base": "630",
+  "def_base": "517",
+  "rec_base": "404",
+  "hp_lord": "2517",
+  "atk_lord": "917",
+  "def_lord": "806",
+  "rec_lord": "702",
+  "hp_anima": "2810",
+  "rec_anima": "624",
+  "atk_breaker": "995",
+  "def_breaker": "728",
+  "atk_guardian": "839",
+  "def_guardian": "884",
+  "rec_guardian": "663",
+  "def_oracle": "767",
+  "hp_oracle": "2400",
+  "rec_oracle": "819",
+  "hp_bonus": "500",
+  "atk_bonus": "200",
+  "def_bonus": "120",
+  "rec_bonus": "120",
+  "lordonly": "",
+  "combo_hits": "3",
+  "normaldc": "6",
+  "ls": "Fire Spirit's Power",
+  "lsdescription": "25% boost to Atk Power of Fire Types",
+  "lstype": "Attack",
+  "bbdescription": "5 combo Fire elemental attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "5",
+  "bbaoe": "A",
+  "bbgauge": "15",
+  "bbdc": "5",
+  "bbmultiplier": "85",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "10132",
+  "evomats2": "10131",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": "",
+  "evoitem": ""
 }

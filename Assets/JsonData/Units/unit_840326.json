@@ -1,65 +1,70 @@
 {
   "id": "840326",
-  "unitName": "Star-Crossed Ravenna",
-  "no": "8181",
-  "element": "Thunder",
-  "rarity": "★★★★★★",
-  "cost": "30",
-  "maxlv": "100",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "Unsupported",
-  "animation_idle": "Unsupported",
-  "animation_move": "Unsupported",
-  "movespeed_attack": "4",
-  "movespeed_skill": "4",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "2",
-  "movetype_skill": "2",
-  "normal_frames": "60, 70, 95, 140, 142",
-  "normal_distribute": "20, 20, 20, 20, 20",
-  "normal_totaldistr": "100",
-  "bb_frames": "60, 70, 95, 140, 142",
-  "bb_distribute": "20, 20, 20, 20, 20",
-  "bb_totaldistr": "100",
-  "sbb_frames": "60, 70, 95, 140, 142",
-  "sbb_distribute": "20, 20, 20, 20, 20",
-  "sbb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "1",
-  "description": "Several years after Randolph met Ravenna, the land fell into dark times as monsters grew bolder under the glow of the Blood Moon. Ravenna followed Randolph and joined the Witch Hunters, an Order sworn to hunt down evil and protect the good folk. Under the guidance of Randolph, she honed her marksmanship skills and become a renowned sniper. Their love also blossomed over the years and they were engaged to be married soon. After completing their final expedition together, they held their wedding ceremony in the local town chapel, inviting all their friends, neighbors and comrades from the Order. An unexpected, great tragedy occurred that night. It is said that when dawn came, the interior of the chapel was painted with blood and gore. Every guest had been massacred, except for Ravenna and Randolph who were nowhere to be found.",
-  "summon": "Vice-Captain Ravenna reporting!<br>I will snipe down any foe.<br>None shall harm you, Summoner!",
-  "fusion": "Hold me in your arms!<br>My heart is yours forever...<br>Will you dance with me tonight?",
-  "evolution": "One shot, one kill!<br>I am no longer the klutz I was!<br>*Splat* Owwie...",
-  "hp_base": "4145",
-  "atk_base": "1745",
-  "def_base": "1386",
-  "rec_base": "1417",
-  "hp_lord": "5922",
-  "atk_lord": "2493",
-  "def_lord": "1980",
-  "rec_lord": "2025",
-  "hp_anima": "6664",
-  "rec_anima": "1827",
-  "atk_breaker": "2691",
-  "def_breaker": "1782",
-  "def_guardian": "2178",
-  "rec_guardian": "1926",
-  "def_oracle": "1881",
-  "rec_oracle": "2322",
-  "hp_bonus": "750",
-  "atk_bonus": "300",
-  "def_bonus": "300",
-  "rec_bonus": "300",
-  "lordonly": "",
-  "combo_hits": "5",
-  "normaldc": "35",
-  "ls": "Markswoman Aura",
-  "lsdescription": "Largely boosts Atk relative to amount of depleted HP & negates critical hits from foes",
-  "lsnote": "75% base boost + 12.5% boost per 1% HP lost, 200% boost total",
-  "lstype": "Attack/Defense",
+  "stats": {
+    "_base": {
+      "atk": 1745,
+      "def": 1386,
+      "hp": 4145,
+      "rec": 1417
+    },
+    "_lord": {
+      "atk": 2493,
+      "def": 1980,
+      "hp": 5922,
+      "rec": 2025
+    },
+    "anima": {
+      "atk": 2493,
+      "def": 1980,
+      "hp max": 6912,
+      "hp min": 6417,
+      "rec max": 1926,
+      "rec min": 1728
+    },
+    "breaker": {
+      "atk max": 2790,
+      "atk min": 2592,
+      "def max": 1881,
+      "def min": 1683,
+      "hp": 5922,
+      "rec": 2025
+    },
+    "guardian": {
+      "atk": 2493,
+      "def max": 2277,
+      "def min": 2079,
+      "hp": 5922,
+      "rec max": 2025,
+      "rec min": 1827
+    },
+    "oracle": {
+      "atk": 2493,
+      "def max": 1980,
+      "def min": 1782,
+      "hp": 5922,
+      "rec max": 2421,
+      "rec min": 2223
+    }
+  },
+  "leader_skill": {
+    "desc": "Largely boosts Atk relative to amount of depleted HP & negates critical hits from foes",
+    "effects": [
+      {
+        "base crit% resist": 100,
+        "buff crit% resist": 100,
+        "passive id": "45"
+      },
+      {
+        "atk% base buff": 75,
+        "atk% extra buff based on hp": 125,
+        "buff proportional to hp": "lost",
+        "passive id": "46"
+      }
+    ],
+    "id": "801207",
+    "name": "Markswoman Aura"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -394,14 +399,6 @@
     ],
     "name": "Deadeye Zap"
   },
-  "bbdescription": "5 combo powerful Thunder attack on single foe, probable Poison, Paralysis effects & boosts BB gauge of all allies",
-  "bbnote": "70% chance to inflict Poison and Paralysis, 10 BC fill",
-  "bbtype": "Support/Offense",
-  "bbhits": "5",
-  "bbaoe": "1",
-  "bbgauge": "22",
-  "bbdc": "30",
-  "bbmultiplier": "520",
   "sbb": {
     "damage frames": [
       {
@@ -664,6 +661,183 @@
     ],
     "name": "Occult Slayer"
   },
+  "ubb": {},
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "error": "sam file not supported"
+  },
+  "category": 840320,
+  "cost": "30",
+  "damage frames": {
+    "frame times": [
+      60,
+      70,
+      95,
+      140,
+      142
+    ],
+    "hit dmg% distribution": [
+      20,
+      20,
+      20,
+      20,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 5
+  },
+  "drop check count": 7,
+  "element": "thunder",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 8181,
+  "imp": {
+    "max atk": "300",
+    "max def": "300",
+    "max hp": "750",
+    "max rec": "300"
+  },
+  "kind": "normal",
+  "lord damage range": "2320~2592",
+  "movement": {
+    "attack": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "2"
+    },
+    "skill": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "2"
+    }
+  },
+  "name": "Star-Crossed Ravenna",
+  "rarity": "6",
+  "sell caution": false,
+  "unitName": "Star-Crossed Ravenna",
+  "maxlv": "100",
+  "no": "8181",
+  "unitDisplayHomePosition_1W9CxaFK": "331,117,140,382",
+  "unitDisplayDetailPosition_6z54rgb3": "-82,23,1222,818",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "32,251,586,393,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-70,-148,1222,818",
+  "unitDisplaySummonPosition_KC3Jk8Br": "32,251,586,393,0",
+  "unitDisplayHpPosition_3BpHN6VD": "0,-29",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "8000",
+  "sellCaution": false,
+  "effectFrames": "60:280:1,70:280:1,95:280:1,140:300:1,120:400321:1",
+  "evofrom": "840325",
+  "evointo": "840327",
+  "evozelcost": "1500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "40334",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "870034",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "840034",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "Unsupported",
+  "animation_idle": "Unsupported",
+  "animation_move": "Unsupported",
+  "movespeed_attack": "4",
+  "movespeed_skill": "4",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "2",
+  "movetype_skill": "2",
+  "normal_frames": "60, 70, 95, 140, 142",
+  "normal_distribute": "20, 20, 20, 20, 20",
+  "normal_totaldistr": "100",
+  "bb_frames": "60, 70, 95, 140, 142",
+  "bb_distribute": "20, 20, 20, 20, 20",
+  "bb_totaldistr": "100",
+  "sbb_frames": "60, 70, 95, 140, 142",
+  "sbb_distribute": "20, 20, 20, 20, 20",
+  "sbb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "1",
+  "description": "Several years after Randolph met Ravenna, the land fell into dark times as monsters grew bolder under the glow of the Blood Moon. Ravenna followed Randolph and joined the Witch Hunters, an Order sworn to hunt down evil and protect the good folk. Under the guidance of Randolph, she honed her marksmanship skills and become a renowned sniper. Their love also blossomed over the years and they were engaged to be married soon. After completing their final expedition together, they held their wedding ceremony in the local town chapel, inviting all their friends, neighbors and comrades from the Order. An unexpected, great tragedy occurred that night. It is said that when dawn came, the interior of the chapel was painted with blood and gore. Every guest had been massacred, except for Ravenna and Randolph who were nowhere to be found.",
+  "summon": "Vice-Captain Ravenna reporting!<br>I will snipe down any foe.<br>None shall harm you, Summoner!",
+  "fusion": "Hold me in your arms!<br>My heart is yours forever...<br>Will you dance with me tonight?",
+  "evolution": "One shot, one kill!<br>I am no longer the klutz I was!<br>*Splat* Owwie...",
+  "hp_base": "4145",
+  "atk_base": "1745",
+  "def_base": "1386",
+  "rec_base": "1417",
+  "hp_lord": "5922",
+  "atk_lord": "2493",
+  "def_lord": "1980",
+  "rec_lord": "2025",
+  "hp_anima": "6664",
+  "rec_anima": "1827",
+  "atk_breaker": "2691",
+  "def_breaker": "1782",
+  "def_guardian": "2178",
+  "rec_guardian": "1926",
+  "def_oracle": "1881",
+  "rec_oracle": "2322",
+  "hp_bonus": "750",
+  "atk_bonus": "300",
+  "def_bonus": "300",
+  "rec_bonus": "300",
+  "lordonly": "",
+  "combo_hits": "5",
+  "normaldc": "35",
+  "ls": "Markswoman Aura",
+  "lsdescription": "Largely boosts Atk relative to amount of depleted HP & negates critical hits from foes",
+  "lsnote": "75% base boost + 12.5% boost per 1% HP lost, 200% boost total",
+  "lstype": "Attack/Defense",
+  "bbdescription": "5 combo powerful Thunder attack on single foe, probable Poison, Paralysis effects & boosts BB gauge of all allies",
+  "bbnote": "70% chance to inflict Poison and Paralysis, 10 BC fill",
+  "bbtype": "Support/Offense",
+  "bbhits": "5",
+  "bbaoe": "1",
+  "bbgauge": "22",
+  "bbdc": "30",
+  "bbmultiplier": "520",
   "sbbdescription": "5 combo powerful Thunder attack on single foe (consecutive uses boost damage) & fills own BB gauge to max",
   "sbbnote": "+150% multiplier per use, 3x max, 1250% multiplier total",
   "sbbtype": "Support/Offense",
@@ -672,7 +846,6 @@
   "sbbgauge": "33",
   "sbbdc": "35",
   "sbbmultiplier": "800~1250",
-  "ubb": {},
   "ubbdescription": "",
   "ubbtype": "",
   "ubbhits": "",
@@ -683,88 +856,10 @@
   "es": "",
   "esitem": "",
   "esdescription": "",
-  "evofrom": "840325",
-  "evointo": "840327",
   "evomats1": "Thunder Mecha God",
   "evomats2": "Miracle Totem",
   "evomats3": "Miracle Bulb",
   "evomats4": "Metal Mimic",
   "evomats5": "Thunder Bulb",
-  "evoitem": "",
-  "evozelcost": "1500000",
-  "stats": {
-    "_base": {
-      "atk": 1745,
-      "def": 1386,
-      "hp": 4145,
-      "rec": 1417
-    },
-    "_lord": {
-      "atk": 2493,
-      "def": 1980,
-      "hp": 5922,
-      "rec": 2025
-    },
-    "anima": {
-      "atk": 2493,
-      "def": 1980,
-      "hp max": 6912,
-      "hp min": 6417,
-      "rec max": 1926,
-      "rec min": 1728
-    },
-    "breaker": {
-      "atk max": 2790,
-      "atk min": 2592,
-      "def max": 1881,
-      "def min": 1683,
-      "hp": 5922,
-      "rec": 2025
-    },
-    "guardian": {
-      "atk": 2493,
-      "def max": 2277,
-      "def min": 2079,
-      "hp": 5922,
-      "rec max": 2025,
-      "rec min": 1827
-    },
-    "oracle": {
-      "atk": 2493,
-      "def max": 1980,
-      "def min": 1782,
-      "hp": 5922,
-      "rec max": 2421,
-      "rec min": 2223
-    }
-  },
-  "leader_skill": {
-    "desc": "Largely boosts Atk relative to amount of depleted HP & negates critical hits from foes",
-    "effects": [
-      {
-        "base crit% resist": 100,
-        "buff crit% resist": 100,
-        "passive id": "45"
-      },
-      {
-        "atk% base buff": 75,
-        "atk% extra buff based on hp": 125,
-        "buff proportional to hp": "lost",
-        "passive id": "46"
-      }
-    ],
-    "id": "801207",
-    "name": "Markswoman Aura"
-  },
-  "extra_skill": {},
-  "unitDisplayHomePosition_1W9CxaFK": "331,117,140,382",
-  "unitDisplayDetailPosition_6z54rgb3": "-82,23,1222,818",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "32,251,586,393,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-70,-148,1222,818",
-  "unitDisplaySummonPosition_KC3Jk8Br": "32,251,586,393,0",
-  "unitDisplayHpPosition_3BpHN6VD": "0,-29",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "8000",
-  "sellCaution": false,
-  "effectFrames": "60:280:1,70:280:1,95:280:1,140:300:1,120:400321:1"
+  "evoitem": ""
 }

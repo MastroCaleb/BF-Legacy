@@ -1,59 +1,68 @@
 {
   "id": "20553",
-  "unitName": "Alchemist Rigness",
-  "no": "818",
-  "element": "Water",
-  "rarity": "★★★★",
-  "cost": "13",
-  "maxlv": "60",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "158",
-  "animation_idle": "80",
-  "animation_move": "11",
-  "movespeed_attack": "0.0041",
-  "movespeed_skill": "0.0041",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "98, 102, 106, 110",
-  "normal_distribute": "25, 25, 25, 25",
-  "normal_totaldistr": "100",
-  "description": "The most historically renowned alchemist. Unable to determine the date and region where he once lived, it was formerly believed that all of his great scientific accomplishments could not be attributed to one alchemist alone, and thus he was considered mere fiction. However, when a certain demonic tool's existence was proven, his existence was confirmed along with it. Rigness was not the typical alchemist who trapped himself in his laboratory, but rather set off in many adventures to collect rare materials for his research.",
-  "summon": "What is it? I'm busy at the moment.<br>If you simply wish to chat,<br>please leave it for another time.",
-  "fusion": "Are these ingredients?<br>Just leave them there.<br>I'll fuse them myself.<br>What? I can't do that?",
-  "evolution": "",
-  "hp_base": "3005",
-  "atk_base": "1056",
-  "def_base": "1051",
-  "rec_base": "1051",
-  "hp_lord": "4307",
-  "atk_lord": "1408",
-  "def_lord": "1401",
-  "rec_lord": "1401",
-  "hp_anima": "4749",
-  "rec_anima": "1283",
-  "atk_breaker": "1526",
-  "def_breaker": "1283",
-  "atk_guardian": "1290",
-  "def_guardian": "1519",
-  "rec_guardian": "1342",
-  "def_oracle": "1342",
-  "hp_oracle": "4130",
-  "rec_oracle": "1578",
-  "hp_bonus": "400",
-  "atk_bonus": "160",
-  "def_bonus": "160",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "4",
-  "normaldc": "12",
-  "ls": "Cleansing Breeze",
-  "lsdescription": "Large boost to resistance against all status ailments",
-  "lsnote": "80% boost",
-  "lstype": "Defense",
+  "stats": {
+    "_base": {
+      "atk": 1056,
+      "def": 1051,
+      "hp": 3005,
+      "rec": 1051
+    },
+    "_lord": {
+      "atk": 1408,
+      "def": 1401,
+      "hp": 4307,
+      "rec": 1401
+    },
+    "anima": {
+      "atk": 1408,
+      "def": 1401,
+      "hp max": 4897,
+      "hp min": 4602,
+      "rec max": 1342,
+      "rec min": 1224
+    },
+    "breaker": {
+      "atk max": 1585,
+      "atk min": 1467,
+      "def max": 1342,
+      "def min": 1224,
+      "hp": 4307,
+      "rec": 1401
+    },
+    "guardian": {
+      "atk": 1408,
+      "def max": 1578,
+      "def min": 1460,
+      "hp": 4307,
+      "rec max": 1401,
+      "rec min": 1283
+    },
+    "oracle": {
+      "atk": 1408,
+      "def max": 1401,
+      "def min": 1283,
+      "hp": 4307,
+      "rec max": 1637,
+      "rec min": 1519
+    }
+  },
+  "leader_skill": {
+    "desc": "Large boost to resistance against all status ailments",
+    "effects": [
+      {
+        "curse resist%": 80,
+        "injury resist%": 80,
+        "paralysis resist%": 80,
+        "passive id": "4",
+        "poison resist%": 80,
+        "sick resist%": 80,
+        "weaken resist%": 80
+      }
+    ],
+    "id": "2101",
+    "name": "Cleansing Breeze"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -540,97 +549,89 @@
     ],
     "name": "Soul Alchemy"
   },
-  "bbdescription": "Recovers HP for all allies & removes all status ailments and negates them for 3 turns",
-  "bbnote": "Heals (1360~1660 + 22.5% of healer Rec) HP",
-  "bbtype": "Heal/Support",
-  "bbhits": "0",
-  "bbaoe": "0",
-  "bbgauge": "23",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "20554",
-  "evomats1": "20133",
-  "evomats2": "20191",
-  "evomats3": "20191",
-  "evomats4": "20132",
-  "evomats5": "60144",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 1056,
-      "def": 1051,
-      "hp": 3005,
-      "rec": 1051
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1408,
-      "def": 1401,
-      "hp": 4307,
-      "rec": 1401
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1408,
-      "def": 1401,
-      "hp max": 4897,
-      "hp min": 4602,
-      "rec max": 1342,
-      "rec min": 1224
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 158
     },
-    "breaker": {
-      "atk max": 1585,
-      "atk min": 1467,
-      "def max": 1342,
-      "def min": 1224,
-      "hp": 4307,
-      "rec": 1401
+    "idle": {
+      "total number of frames": 80
     },
-    "guardian": {
-      "atk": 1408,
-      "def max": 1578,
-      "def min": 1460,
-      "hp": 4307,
-      "rec max": 1401,
-      "rec min": 1283
-    },
-    "oracle": {
-      "atk": 1408,
-      "def max": 1401,
-      "def min": 1283,
-      "hp": 4307,
-      "rec max": 1637,
-      "rec min": 1519
+    "move": {
+      "total number of frames": 11
     }
   },
-  "leader_skill": {
-    "desc": "Large boost to resistance against all status ailments",
-    "effects": [
-      {
-        "curse resist%": 80,
-        "injury resist%": 80,
-        "paralysis resist%": 80,
-        "passive id": "4",
-        "poison resist%": 80,
-        "sick resist%": 80,
-        "weaken resist%": 80
-      }
+  "category": 20550,
+  "cost": "13",
+  "damage frames": {
+    "frame times": [
+      98,
+      102,
+      106,
+      110
     ],
-    "id": "2101",
-    "name": "Cleansing Breeze"
+    "hit dmg% distribution": [
+      25,
+      25,
+      25,
+      25
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 4
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "water",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 818,
+  "imp": {
+    "max atk": "160",
+    "max def": "160",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "1311~1464",
+  "movement": {
+    "attack": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    }
+  },
+  "name": "Alchemist Rigness",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Alchemist Rigness",
+  "maxlv": "60",
+  "no": "818",
   "unitDisplayHomePosition_1W9CxaFK": "420,295,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-49,-70,1250,915",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "157,355,319,277,0",
@@ -640,5 +641,100 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "92:122:1,96:122:1,100:122:1,104:122:1,98:200142:1,102:200142:1,106:200142:1,110:200142:1,98:182:1,106:182:1,98:661:1"
+  "effectFrames": "92:122:1,96:122:1,100:122:1,104:122:1,98:200142:1,102:200142:1,106:200142:1,110:200142:1,98:182:1,106:182:1,98:661:1",
+  "evofrom": "",
+  "evointo": "20554",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "20133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20191",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "20132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "158",
+  "animation_idle": "80",
+  "animation_move": "11",
+  "movespeed_attack": "0.0041",
+  "movespeed_skill": "0.0041",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "98, 102, 106, 110",
+  "normal_distribute": "25, 25, 25, 25",
+  "normal_totaldistr": "100",
+  "description": "The most historically renowned alchemist. Unable to determine the date and region where he once lived, it was formerly believed that all of his great scientific accomplishments could not be attributed to one alchemist alone, and thus he was considered mere fiction. However, when a certain demonic tool's existence was proven, his existence was confirmed along with it. Rigness was not the typical alchemist who trapped himself in his laboratory, but rather set off in many adventures to collect rare materials for his research.",
+  "summon": "What is it? I'm busy at the moment.<br>If you simply wish to chat,<br>please leave it for another time.",
+  "fusion": "Are these ingredients?<br>Just leave them there.<br>I'll fuse them myself.<br>What? I can't do that?",
+  "evolution": "",
+  "hp_base": "3005",
+  "atk_base": "1056",
+  "def_base": "1051",
+  "rec_base": "1051",
+  "hp_lord": "4307",
+  "atk_lord": "1408",
+  "def_lord": "1401",
+  "rec_lord": "1401",
+  "hp_anima": "4749",
+  "rec_anima": "1283",
+  "atk_breaker": "1526",
+  "def_breaker": "1283",
+  "atk_guardian": "1290",
+  "def_guardian": "1519",
+  "rec_guardian": "1342",
+  "def_oracle": "1342",
+  "hp_oracle": "4130",
+  "rec_oracle": "1578",
+  "hp_bonus": "400",
+  "atk_bonus": "160",
+  "def_bonus": "160",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "4",
+  "normaldc": "12",
+  "ls": "Cleansing Breeze",
+  "lsdescription": "Large boost to resistance against all status ailments",
+  "lsnote": "80% boost",
+  "lstype": "Defense",
+  "bbdescription": "Recovers HP for all allies & removes all status ailments and negates them for 3 turns",
+  "bbnote": "Heals (1360~1660 + 22.5% of healer Rec) HP",
+  "bbtype": "Heal/Support",
+  "bbhits": "0",
+  "bbaoe": "0",
+  "bbgauge": "23",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "20133",
+  "evomats2": "20191",
+  "evomats3": "20191",
+  "evomats4": "20132",
+  "evomats5": "60144"
 }

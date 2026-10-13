@@ -1,67 +1,122 @@
 {
   "id": "760017",
-  "unitName": "Lucy & Prince Bogey (EU)",
-  "disam": "Lucy & Bogey (disambiguation)",
-  "altname": "Lucy & Prince Bogey",
-  "idalt": "",
-  "has_altart": "",
-  "doenter": "true",
-  "no": "7081",
-  "element": "Dark",
-  "rarity": "Dream",
-  "cost": "47",
-  "maxlv": "150",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "3",
-  "animation_attack": "164",
-  "animation_idle": "48",
-  "animation_move": "10",
-  "movespeed_attack": "0.0033",
-  "speedtype_attack": "3",
-  "movetype_attack": "1",
-  "movespeed_skill": "0.0033",
-  "speedtype_skill": "3",
-  "movetype_skill": "1",
-  "description": "A young, female summoner from a forsaken kingdom. The most powerful female summoner of her time was imprisoned by a young, male summoner for wanting to change the order of the seasons and kidnap the benefactor of winter. During her first night of captivity, she dreamt of a savior like the ones which featured in the stories that her father would read to her before bed when she was a child. Upon awakening, she was surprised to see that she was flying in the air, accompanied by a prince and miles away from the cage and the summoner who had imprisoned her. Would Lucy have chosen to use her powers in another way, having dreamt of princes and flying carpets from her childhood stories?",
-  "summon": "",
-  "fusion": "I love sleeping. That's how I make new friends!",
-  "evolution": "Free me my dear Prince! Let's make our own tale!",
-  "hp_base": "6284",
-  "atk_base": "2130",
-  "def_base": "1995",
-  "rec_base": "1988",
-  "hp_lord": "8169",
-  "atk_lord": "2769",
-  "def_lord": "2594",
-  "rec_lord": "2584",
-  "hp_anima": "9286",
-  "rec_anima": "2286",
-  "atk_breaker": "3067",
-  "def_breaker": "2296",
-  "def_guardian": "2892",
-  "rec_guardian": "2584",
-  "def_oracle": "2594",
-  "rec_oracle": "2882",
-  "hp_bonus": "1750",
-  "atk_bonus": "600",
-  "def_bonus": "800",
-  "rec_bonus": "700",
-  "lordonly": "",
-  "evofrom": "760015",
-  "evointo": "",
-  "normal_frames": "55, 57, 59, 61, 63, 65, 67, 69, 71, 73, 75, 77, 79, 81",
-  "normal_distribute": "8, 8, 8, 8, 8, 8, 12, 8, 8, 8, 8, 4, 2, 2",
-  "normal_totaldistr": "100",
-  "combo_hits": "14",
-  "normaldc": "42",
-  "ls": "One Thousand and One Nights",
-  "lsdescription": "Boosts ATK, HP (50%) & Fills BB gauge after each turn (7 BC/Turn) & Boosts BC efficacy (50%) & Boosts EXP gained (15%)",
-  "lsnote": "",
-  "es": "My Own Tale",
-  "esdescription": "If Winter's Bells is equipped, boosts ATK (80%) when HP is full and adds Spark damage boosts BB gauge (2-3 BC) for 3 turns on BB/SBB",
-  "esitem": "Winter's Bells",
-  "esnote": "",
+  "stats": {
+    "_base": {
+      "atk": 2130,
+      "def": 1995,
+      "hp": 6284,
+      "rec": 1988
+    },
+    "_lord": {
+      "atk": 2769,
+      "def": 2594,
+      "hp": 8169,
+      "rec": 2584
+    },
+    "anima": {
+      "atk": 2769,
+      "def": 2594,
+      "hp max": 9659,
+      "hp min": 8914,
+      "rec max": 2435,
+      "rec min": 2137
+    },
+    "breaker": {
+      "atk max": 3216,
+      "atk min": 2918,
+      "def max": 2445,
+      "def min": 2147,
+      "hp": 8169,
+      "rec": 2584
+    },
+    "guardian": {
+      "atk max": 2620,
+      "atk min": 2322,
+      "def max": 3041,
+      "def min": 2743,
+      "hp": 8169,
+      "rec": 2584
+    },
+    "oracle": {
+      "atk": 2769,
+      "def": 2594,
+      "hp max": 7424,
+      "hp min": 6679,
+      "rec max": 3031,
+      "rec min": 2733
+    }
+  },
+  "leader_skill": {
+    "desc": "Boosts ATK, HP (50%) & Fills BB gauge after each turn (7 BC/Turn) & Boosts BC efficacy (50%) & Boosts EXP gained (15%)",
+    "effects": [
+      {
+        "atk% buff": 50,
+        "hp% buff": 50,
+        "passive id": "1"
+      },
+      {
+        "bc fill per turn": 7,
+        "passive id": "9"
+      },
+      {
+        "bb gauge fill rate%": 50,
+        "passive id": "32"
+      },
+      {
+        "passive id": "97",
+        "xp gained increase%": 15
+      }
+    ],
+    "id": "760017",
+    "name": "One Thousand and One Nights"
+  },
+  "extra_skill": {
+    "desc": "If Winter's Bells is equipped, boosts ATK (80%) when HP is full and adds Spark damage boosts BB gauge (2-3 BC) for 3 turns on BB/SBB",
+    "effects": [
+      {
+        "atk% buff": 80,
+        "conditions": [
+          {
+            "item required": [
+              "701025"
+            ]
+          }
+        ],
+        "hp above % buff requirement": 100,
+        "passive id": "11",
+        "passive target": "self"
+      },
+      {
+        "conditions": [
+          {
+            "item required": [
+              "701025"
+            ]
+          }
+        ],
+        "passive id": "66",
+        "passive target": "self",
+        "trigger on bb": true,
+        "trigger on sbb": true,
+        "triggered effect": [
+          {
+            "bc fill on spark buff turns (111)": 3,
+            "bc fill on spark high": 3,
+            "bc fill on spark low": 2,
+            "bc fill on spark%": 100,
+            "effect delay time(ms)/frame": "0.0/0",
+            "proc id": "67",
+            "target area": "aoe",
+            "target type": "party"
+          }
+        ]
+      }
+    ],
+    "id": "760017",
+    "name": "My Own Tale",
+    "rarity": "0",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -516,31 +571,6 @@
     ],
     "name": "Enjoy the Freedom"
   },
-  "bbdescription": "30 combo Dark & Thunder attack on all foes & Boosts BB gauge (8 BC) for 3 turns & Damage taken boosts BB gauge (3-5 BC) for 3 turns",
-  "bbnote": "{{UnitBuffList",
-  "buff_1_proc": "29",
-  "buff_1_potency": "1200% damage modifier",
-  "buff_1_duration": "—",
-  "buff_1_target": "All enemies",
-  "buff_2_proc": "4",
-  "buff_2_potency": "Refills BB gauge to 100%",
-  "buff_2_duration": "—",
-  "buff_2_target": "All allies",
-  "buff_3_proc": "19",
-  "buff_3_potency": "Boosts BB gauge by 50 BC each turn",
-  "buff_3_duration": "3 turns",
-  "buff_3_target": "All allies",
-  "bbtype": "Offense",
-  "bbgauge": "26",
-  "bb_frames": "55, 57, 59, 61, 63, 65, 67, 69, 71, 73, 75, 77, 79, 81, 83, 85, 87, 89, 91, 93, 95, 97, 99, 101, 103, 105, 107, 109, 111, 113",
-  "bb_distribute": "3, 9, 7, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "3",
-  "bbhits": "30",
-  "bbaoe": "A",
-  "bbdc": "30",
-  "bbmultiplier": "360",
-  "bb_hpscale": "",
   "sbb": {
     "damage frames": [
       {
@@ -1099,23 +1129,6 @@
     ],
     "name": "Make a Wish"
   },
-  "sbbdescription": "41 combo Dark & Thunder attack on all foes & Fill own BB gauge (100%) & Boosts BC efficacy (50%) for 3 turns & Damage taken boosts BB gauge (3-5 BC) for 3 turns",
-  "sbbnote": "{{UnitBuffList",
-  "buff_4_proc": "5_atk",
-  "buff_4_potency": "300% boost to Atk",
-  "buff_4_duration": "3 turns",
-  "buff_4_target": "All allies",
-  "sbbtype": "Offense",
-  "sbbgauge": "29",
-  "sbb_frames": "55, 57, 59, 61, 63, 65, 67, 69, 71, 73, 75, 77, 79, 81, 83, 85, 87, 89, 91, 93, 95, 97, 99, 101, 103, 105, 107, 109, 111, 113, 115, 117, 119, 121, 123, 125, 127, 129, 131, 133, 135",
-  "sbb_distribute": "2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2, 2, 2, 2, 2, 2, 2",
-  "sbb_totaldistr": "100",
-  "sbb_effectdelay": "3",
-  "sbbhits": "41",
-  "sbbaoe": "A",
-  "sbbdc": "41",
-  "sbbmultiplier": "550",
-  "sbb_hpscale": "",
   "ubb": {
     "damage frames": [
       {
@@ -1303,6 +1316,221 @@
     ],
     "name": "A Whole New World"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 164
+    },
+    "idle": {
+      "total number of frames": 48
+    },
+    "move": {
+      "total number of frames": 10
+    }
+  },
+  "cost": "47",
+  "damage frames": {
+    "frame times": [
+      55,
+      57,
+      59,
+      61,
+      63,
+      65,
+      67,
+      69,
+      71,
+      73,
+      75,
+      77,
+      79,
+      81
+    ],
+    "hit dmg% distribution": [
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      12,
+      8,
+      8,
+      8,
+      8,
+      4,
+      2,
+      2
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 14
+  },
+  "drop check count": 3,
+  "element": "dark",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 7081,
+  "imp": {
+    "max atk": "600",
+    "max def": "800",
+    "max hp": "1750",
+    "max rec": "700"
+  },
+  "kind": "normal",
+  "lord damage range": "2578~2879",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Lucy & Prince Bogey",
+  "rarity": "8",
+  "sell caution": false,
+  "unitName": "Lucy & Prince Bogey",
+  "maxlv": "150",
+  "no": "7081",
+  "unitDisplayHomePosition_1W9CxaFK": null,
+  "unitDisplayDetailPosition_6z54rgb3": null,
+  "unitDisplayConfirmImagePosition_MYK1fq6c": null,
+  "unitDisplayCutInImagePosition_7hLR6pDN": null,
+  "unitDisplaySummonPosition_KC3Jk8Br": null,
+  "unitDisplayHpPosition_3BpHN6VD": null,
+  "unitDisplayCursorPosition": null,
+  "sellPrice": "",
+  "sellCaution": false,
+  "effectFrames": "",
+  "evofrom": "760015",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "disam": "Lucy & Bogey (disambiguation)",
+  "altname": "Lucy & Prince Bogey",
+  "idalt": "",
+  "has_altart": "",
+  "doenter": "true",
+  "basexp": "21",
+  "animation_attack": "164",
+  "animation_idle": "48",
+  "animation_move": "10",
+  "movespeed_attack": "0.0033",
+  "speedtype_attack": "3",
+  "movetype_attack": "1",
+  "movespeed_skill": "0.0033",
+  "speedtype_skill": "3",
+  "movetype_skill": "1",
+  "description": "A young, female summoner from a forsaken kingdom. The most powerful female summoner of her time was imprisoned by a young, male summoner for wanting to change the order of the seasons and kidnap the benefactor of winter. During her first night of captivity, she dreamt of a savior like the ones which featured in the stories that her father would read to her before bed when she was a child. Upon awakening, she was surprised to see that she was flying in the air, accompanied by a prince and miles away from the cage and the summoner who had imprisoned her. Would Lucy have chosen to use her powers in another way, having dreamt of princes and flying carpets from her childhood stories?",
+  "summon": "",
+  "fusion": "I love sleeping. That's how I make new friends!",
+  "evolution": "Free me my dear Prince! Let's make our own tale!",
+  "hp_base": "6284",
+  "atk_base": "2130",
+  "def_base": "1995",
+  "rec_base": "1988",
+  "hp_lord": "8169",
+  "atk_lord": "2769",
+  "def_lord": "2594",
+  "rec_lord": "2584",
+  "hp_anima": "9286",
+  "rec_anima": "2286",
+  "atk_breaker": "3067",
+  "def_breaker": "2296",
+  "def_guardian": "2892",
+  "rec_guardian": "2584",
+  "def_oracle": "2594",
+  "rec_oracle": "2882",
+  "hp_bonus": "1750",
+  "atk_bonus": "600",
+  "def_bonus": "800",
+  "rec_bonus": "700",
+  "lordonly": "",
+  "normal_frames": "55, 57, 59, 61, 63, 65, 67, 69, 71, 73, 75, 77, 79, 81",
+  "normal_distribute": "8, 8, 8, 8, 8, 8, 12, 8, 8, 8, 8, 4, 2, 2",
+  "normal_totaldistr": "100",
+  "combo_hits": "14",
+  "normaldc": "42",
+  "ls": "One Thousand and One Nights",
+  "lsdescription": "Boosts ATK, HP (50%) & Fills BB gauge after each turn (7 BC/Turn) & Boosts BC efficacy (50%) & Boosts EXP gained (15%)",
+  "lsnote": "",
+  "es": "My Own Tale",
+  "esdescription": "If Winter's Bells is equipped, boosts ATK (80%) when HP is full and adds Spark damage boosts BB gauge (2-3 BC) for 3 turns on BB/SBB",
+  "esitem": "Winter's Bells",
+  "esnote": "",
+  "bbdescription": "30 combo Dark & Thunder attack on all foes & Boosts BB gauge (8 BC) for 3 turns & Damage taken boosts BB gauge (3-5 BC) for 3 turns",
+  "bbnote": "{{UnitBuffList",
+  "buff_1_proc": "29",
+  "buff_1_potency": "1200% damage modifier",
+  "buff_1_duration": "—",
+  "buff_1_target": "All enemies",
+  "buff_2_proc": "4",
+  "buff_2_potency": "Refills BB gauge to 100%",
+  "buff_2_duration": "—",
+  "buff_2_target": "All allies",
+  "buff_3_proc": "19",
+  "buff_3_potency": "Boosts BB gauge by 50 BC each turn",
+  "buff_3_duration": "3 turns",
+  "buff_3_target": "All allies",
+  "bbtype": "Offense",
+  "bbgauge": "26",
+  "bb_frames": "55, 57, 59, 61, 63, 65, 67, 69, 71, 73, 75, 77, 79, 81, 83, 85, 87, 89, 91, 93, 95, 97, 99, 101, 103, 105, 107, 109, 111, 113",
+  "bb_distribute": "3, 9, 7, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "3",
+  "bbhits": "30",
+  "bbaoe": "A",
+  "bbdc": "30",
+  "bbmultiplier": "360",
+  "bb_hpscale": "",
+  "sbbdescription": "41 combo Dark & Thunder attack on all foes & Fill own BB gauge (100%) & Boosts BC efficacy (50%) for 3 turns & Damage taken boosts BB gauge (3-5 BC) for 3 turns",
+  "sbbnote": "{{UnitBuffList",
+  "buff_4_proc": "5_atk",
+  "buff_4_potency": "300% boost to Atk",
+  "buff_4_duration": "3 turns",
+  "buff_4_target": "All allies",
+  "sbbtype": "Offense",
+  "sbbgauge": "29",
+  "sbb_frames": "55, 57, 59, 61, 63, 65, 67, 69, 71, 73, 75, 77, 79, 81, 83, 85, 87, 89, 91, 93, 95, 97, 99, 101, 103, 105, 107, 109, 111, 113, 115, 117, 119, 121, 123, 125, 127, 129, 131, 133, 135",
+  "sbb_distribute": "2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2, 2, 2, 2, 2, 2, 2",
+  "sbb_totaldistr": "100",
+  "sbb_effectdelay": "3",
+  "sbbhits": "41",
+  "sbbaoe": "A",
+  "sbbdc": "41",
+  "sbbmultiplier": "550",
+  "sbb_hpscale": "",
   "ubbdescription": "35 combo Dark & Thunder attack on all foes & Fill BB gauge (100%) & Boosts BB gauge (50 BC) 3 turns & Boosts ATK and Spark damage (300%) 3 turns",
   "ubbnote": "{{UnitBuffList",
   "buff_5_proc": "23",
@@ -1357,132 +1585,5 @@
   "notes": "",
   "incorrectinfo": "",
   "addcat": "",
-  "addcatname": "",
-  "stats": {
-    "_base": {
-      "atk": 2130,
-      "def": 1995,
-      "hp": 6284,
-      "rec": 1988
-    },
-    "_lord": {
-      "atk": 2769,
-      "def": 2594,
-      "hp": 8169,
-      "rec": 2584
-    },
-    "anima": {
-      "atk": 2769,
-      "def": 2594,
-      "hp max": 9659,
-      "hp min": 8914,
-      "rec max": 2435,
-      "rec min": 2137
-    },
-    "breaker": {
-      "atk max": 3216,
-      "atk min": 2918,
-      "def max": 2445,
-      "def min": 2147,
-      "hp": 8169,
-      "rec": 2584
-    },
-    "guardian": {
-      "atk max": 2620,
-      "atk min": 2322,
-      "def max": 3041,
-      "def min": 2743,
-      "hp": 8169,
-      "rec": 2584
-    },
-    "oracle": {
-      "atk": 2769,
-      "def": 2594,
-      "hp max": 7424,
-      "hp min": 6679,
-      "rec max": 3031,
-      "rec min": 2733
-    }
-  },
-  "leader_skill": {
-    "desc": "Boosts ATK, HP (50%) & Fills BB gauge after each turn (7 BC/Turn) & Boosts BC efficacy (50%) & Boosts EXP gained (15%)",
-    "effects": [
-      {
-        "atk% buff": 50,
-        "hp% buff": 50,
-        "passive id": "1"
-      },
-      {
-        "bc fill per turn": 7,
-        "passive id": "9"
-      },
-      {
-        "bb gauge fill rate%": 50,
-        "passive id": "32"
-      },
-      {
-        "passive id": "97",
-        "xp gained increase%": 15
-      }
-    ],
-    "id": "760017",
-    "name": "One Thousand and One Nights"
-  },
-  "extra_skill": {
-    "desc": "If Winter's Bells is equipped, boosts ATK (80%) when HP is full and adds Spark damage boosts BB gauge (2-3 BC) for 3 turns on BB/SBB",
-    "effects": [
-      {
-        "atk% buff": 80,
-        "conditions": [
-          {
-            "item required": [
-              "701025"
-            ]
-          }
-        ],
-        "hp above % buff requirement": 100,
-        "passive id": "11",
-        "passive target": "self"
-      },
-      {
-        "conditions": [
-          {
-            "item required": [
-              "701025"
-            ]
-          }
-        ],
-        "passive id": "66",
-        "passive target": "self",
-        "trigger on bb": true,
-        "trigger on sbb": true,
-        "triggered effect": [
-          {
-            "bc fill on spark buff turns (111)": 3,
-            "bc fill on spark high": 3,
-            "bc fill on spark low": 2,
-            "bc fill on spark%": 100,
-            "effect delay time(ms)/frame": "0.0/0",
-            "proc id": "67",
-            "target area": "aoe",
-            "target type": "party"
-          }
-        ]
-      }
-    ],
-    "id": "760017",
-    "name": "My Own Tale",
-    "rarity": "0",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": null,
-  "unitDisplayDetailPosition_6z54rgb3": null,
-  "unitDisplayConfirmImagePosition_MYK1fq6c": null,
-  "unitDisplayCutInImagePosition_7hLR6pDN": null,
-  "unitDisplaySummonPosition_KC3Jk8Br": null,
-  "unitDisplayHpPosition_3BpHN6VD": null,
-  "unitDisplayCursorPosition": null,
-  "sellPrice": "",
-  "sellCaution": false,
-  "effectFrames": ""
+  "addcatname": ""
 }

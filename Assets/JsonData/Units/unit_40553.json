@@ -1,63 +1,63 @@
 {
   "id": "40553",
-  "unitName": "Bagura Nagia",
-  "no": "941",
-  "element": "Thunder",
-  "rarity": "★★★★",
-  "cost": "10",
-  "maxlv": "60",
-  "basexp": "15",
-  "gender": "N",
-  "ai": "2",
-  "animation_attack": "136",
-  "animation_idle": "130",
-  "animation_move": "14",
-  "movespeed_attack": "0.005",
-  "movespeed_skill": "0.005",
-  "speedtype_attack": "1",
-  "speedtype_skill": "1",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "87, 97, 107",
-  "normal_distribute": "75, 15, 10",
-  "normal_totaldistr": "100",
-  "bb_frames": "87, 91, 95, 99, 103, 107",
-  "bb_distribute": "30, 20, 15, 15, 10, 10",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "description": "A type of land dragon native to Ishgria known for its unusually sharp teeth. Obvious from its appearance, the Bagura Nagia is a carnivore which attacks its prey swiftly, completely devouring it without even a trace of bones left behind. When attempting to hunt prey in the distance, it releases a powerful electrical shock generated from the inside of its body to paralyze it. For this reason, it is said that when crossing paths with the infamous Bagura Nagia, escape is nearly futile.",
-  "summon": "Who are ya?<br>Summoning me here means you're<br>ready to take on anythin', right?",
-  "fusion": "If a human like you's feedin' me,<br>it must mean you've got a good heart.<br>I wanna keep helpin' ya.",
-  "evolution": "Whoa, ain't this interestin'.<br>Well, you helped me evolve,<br>so I'm gonna go on a wild rampage!",
-  "hp_base": "2995",
-  "atk_base": "920",
-  "def_base": "814",
-  "rec_base": "755",
-  "hp_lord": "4547",
-  "atk_lord": "1451",
-  "def_lord": "1057",
-  "rec_lord": "948",
-  "hp_anima": "4989",
-  "rec_anima": "830",
-  "atk_breaker": "1569",
-  "def_breaker": "939",
-  "atk_guardian": "1333",
-  "def_guardian": "1175",
-  "rec_guardian": "889",
-  "def_oracle": "998",
-  "hp_oracle": "4370",
-  "rec_oracle": "1125",
-  "hp_bonus": "600",
-  "atk_bonus": "120",
-  "def_bonus": "120",
-  "rec_bonus": "120",
-  "lordonly": "",
-  "combo_hits": "3",
-  "normaldc": "6",
-  "ls": "Soul Vigor",
-  "lsdescription": "Boost to Karma drop rate",
-  "lsnote": "20% boost",
-  "lstype": "Karma",
+  "stats": {
+    "_base": {
+      "atk": 920,
+      "def": 814,
+      "hp": 2995,
+      "rec": 755
+    },
+    "_lord": {
+      "atk": 1451,
+      "def": 1057,
+      "hp": 4547,
+      "rec": 948
+    },
+    "anima": {
+      "atk": 1451,
+      "def": 1057,
+      "hp max": 5137,
+      "hp min": 4842,
+      "rec max": 889,
+      "rec min": 771
+    },
+    "breaker": {
+      "atk max": 1628,
+      "atk min": 1510,
+      "def max": 998,
+      "def min": 880,
+      "hp": 4547,
+      "rec": 948
+    },
+    "guardian": {
+      "atk": 1451,
+      "def max": 1234,
+      "def min": 1116,
+      "hp": 4547,
+      "rec max": 948,
+      "rec min": 830
+    },
+    "oracle": {
+      "atk": 1451,
+      "def max": 1057,
+      "def min": 939,
+      "hp": 4547,
+      "rec max": 1184,
+      "rec min": 1066
+    }
+  },
+  "leader_skill": {
+    "desc": "Boosts Karma drop rate",
+    "effects": [
+      {
+        "karma drop rate% buff": 20,
+        "passive id": "19"
+      }
+    ],
+    "id": "5410",
+    "name": "Soul Vigor"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -312,96 +312,87 @@
     ],
     "name": "Grand Roar"
   },
-  "bbdescription": "6 combo Thunder attack on single enemy & probable Injury and Paralysis effect",
-  "bbnote": "45% chance",
-  "bbtype": "Offense",
-  "bbhits": "6",
-  "bbaoe": "1",
-  "bbgauge": "15",
-  "bbdc": "12",
-  "bbmultiplier": "290",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "es": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "40552",
-  "evointo": "",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 920,
-      "def": 814,
-      "hp": 2995,
-      "rec": 755
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1451,
-      "def": 1057,
-      "hp": 4547,
-      "rec": 948
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1451,
-      "def": 1057,
-      "hp max": 5137,
-      "hp min": 4842,
-      "rec max": 889,
-      "rec min": 771
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 136
     },
-    "breaker": {
-      "atk max": 1628,
-      "atk min": 1510,
-      "def max": 998,
-      "def min": 880,
-      "hp": 4547,
-      "rec": 948
+    "idle": {
+      "total number of frames": 130
     },
-    "guardian": {
-      "atk": 1451,
-      "def max": 1234,
-      "def min": 1116,
-      "hp": 4547,
-      "rec max": 948,
-      "rec min": 830
-    },
-    "oracle": {
-      "atk": 1451,
-      "def max": 1057,
-      "def min": 939,
-      "hp": 4547,
-      "rec max": 1184,
-      "rec min": 1066
+    "move": {
+      "total number of frames": 14
     }
   },
-  "leader_skill": {
-    "desc": "Boosts Karma drop rate",
-    "effects": [
-      {
-        "karma drop rate% buff": 20,
-        "passive id": "19"
-      }
+  "category": 40550,
+  "cost": "10",
+  "damage frames": {
+    "frame times": [
+      87,
+      97,
+      107
     ],
-    "id": "5410",
-    "name": "Soul Vigor"
+    "hit dmg% distribution": [
+      75,
+      15,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 3
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "thunder",
+  "exp_pattern": 15,
+  "gender": "other",
+  "getting type": "farmable",
+  "guide_id": 941,
+  "imp": {
+    "max atk": "120",
+    "max def": "120",
+    "max hp": "600",
+    "max rec": "120"
+  },
+  "kind": "normal",
+  "lord damage range": "1350~1509",
+  "movement": {
+    "attack": {
+      "move speed": 0.005,
+      "move speed type": "1",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.005,
+      "move speed type": "1",
+      "move type": "1"
+    }
+  },
+  "name": "Bagura Nagia",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Bagura Nagia",
+  "maxlv": "60",
+  "no": "941",
   "unitDisplayHomePosition_1W9CxaFK": "80,35,230,628",
   "unitDisplayDetailPosition_6z54rgb3": "120,199,900,579",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "65,298,510,328,0",
@@ -411,5 +402,87 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "86:400231:1,88:400075:1,97:200089:1,98:400201:1,99:500171:1,107:100081:1,108:400130:1,109:500171:1"
+  "effectFrames": "86:400231:1,88:400075:1,97:200089:1,98:400201:1,99:500171:1,107:100081:1,108:400130:1,109:500171:1",
+  "evofrom": "40552",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "15",
+  "animation_attack": "136",
+  "animation_idle": "130",
+  "animation_move": "14",
+  "movespeed_attack": "0.005",
+  "movespeed_skill": "0.005",
+  "speedtype_attack": "1",
+  "speedtype_skill": "1",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "87, 97, 107",
+  "normal_distribute": "75, 15, 10",
+  "normal_totaldistr": "100",
+  "bb_frames": "87, 91, 95, 99, 103, 107",
+  "bb_distribute": "30, 20, 15, 15, 10, 10",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "description": "A type of land dragon native to Ishgria known for its unusually sharp teeth. Obvious from its appearance, the Bagura Nagia is a carnivore which attacks its prey swiftly, completely devouring it without even a trace of bones left behind. When attempting to hunt prey in the distance, it releases a powerful electrical shock generated from the inside of its body to paralyze it. For this reason, it is said that when crossing paths with the infamous Bagura Nagia, escape is nearly futile.",
+  "summon": "Who are ya?<br>Summoning me here means you're<br>ready to take on anythin', right?",
+  "fusion": "If a human like you's feedin' me,<br>it must mean you've got a good heart.<br>I wanna keep helpin' ya.",
+  "evolution": "Whoa, ain't this interestin'.<br>Well, you helped me evolve,<br>so I'm gonna go on a wild rampage!",
+  "hp_base": "2995",
+  "atk_base": "920",
+  "def_base": "814",
+  "rec_base": "755",
+  "hp_lord": "4547",
+  "atk_lord": "1451",
+  "def_lord": "1057",
+  "rec_lord": "948",
+  "hp_anima": "4989",
+  "rec_anima": "830",
+  "atk_breaker": "1569",
+  "def_breaker": "939",
+  "atk_guardian": "1333",
+  "def_guardian": "1175",
+  "rec_guardian": "889",
+  "def_oracle": "998",
+  "hp_oracle": "4370",
+  "rec_oracle": "1125",
+  "hp_bonus": "600",
+  "atk_bonus": "120",
+  "def_bonus": "120",
+  "rec_bonus": "120",
+  "lordonly": "",
+  "combo_hits": "3",
+  "normaldc": "6",
+  "ls": "Soul Vigor",
+  "lsdescription": "Boost to Karma drop rate",
+  "lsnote": "20% boost",
+  "lstype": "Karma",
+  "bbdescription": "6 combo Thunder attack on single enemy & probable Injury and Paralysis effect",
+  "bbnote": "45% chance",
+  "bbtype": "Offense",
+  "bbhits": "6",
+  "bbaoe": "1",
+  "bbgauge": "15",
+  "bbdc": "12",
+  "bbmultiplier": "290",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "es": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "",
+  "evomats2": "",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": "",
+  "evoitem": ""
 }

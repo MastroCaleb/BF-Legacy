@@ -1,69 +1,103 @@
 {
   "id": "30016",
-  "unitName": "Earth Legend Lance",
-  "no": "803",
-  "element": "Earth",
-  "rarity": "★★★★★★★",
-  "cost": "38",
-  "maxlv": "120",
-  "basexp": "10",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "117",
-  "animation_idle": "120",
-  "animation_move": "6",
-  "movespeed_attack": "0.0041",
-  "movespeed_skill": "0.0041",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "45, 48, 51, 54, 57, 60, 63, 66",
-  "normal_distribute": "30, 10, 10, 10, 10, 10, 10, 10",
-  "normal_totaldistr": "100",
-  "bb_frames": "45, 48, 51, 54, 57, 60, 63, 66, 70, 74, 78, 82",
-  "bb_distribute": "12, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8",
-  "bb_totaldistr": "100",
-  "sbb_frames": "45, 48, 51, 54, 57, 60, 63, 66, 69, 75, 81, 87, 93, 99, 105, 111",
-  "sbb_distribute": "10, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "45, 51, 57, 63, 69, 75, 81, 87, 93, 99, 105, 111, 115, 119, 123, 127, 131, 135, 138, 141, 144",
-  "ubb_distribute": "10, 8, 6, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 8",
-  "ubb_totaldistr": "100",
-  "sbb_effectdelay": "1",
-  "ubb_effectdelay": "1",
-  "description": "As he kept fighting the gods, Lance's Demon Pike ate into his body even further. In the midst of everything, Lance unleashed his pike's ultimate power and flung it across a great distance in order to defend himself from a series of sniper attacks that had been continuously targeting him. And though this attack was successful in taking down the sniper, it consequently sped up the rate at which the Demon Pike was deteriorating his body. Moments later, a lone knight showed himself before him to deliver a message. It is said that an expression of relief came over Lance's face upon hearing the knight's words, after which he turned into a great tree whilst embracing the Demon Pike.",
-  "summon": "When I close my eyes and listen closely<br>I can hear the voice of someone precious<br>calling me…",
-  "fusion": "My entire being<br>is turning into one with Drevas...<br>I can feel Drevas deep in my soul…",
-  "evolution": "I fear nothing now.<br>I'll continue living beside Drevas.<br>I'll surpass the gods just by doing that.",
-  "hp_base": "4220",
-  "atk_base": "1325",
-  "def_base": "1280",
-  "rec_base": "810",
-  "hp_lord": "6630",
-  "atk_lord": "2310",
-  "def_lord": "2300",
-  "rec_lord": "1860",
-  "hp_anima": "7522",
-  "rec_anima": "1622",
-  "atk_breaker": "2548",
-  "def_breaker": "2062",
-  "atk_guardian": "2072",
-  "def_guardian": "2538",
-  "rec_guardian": "1741",
-  "def_oracle": "2181",
-  "hp_oracle": "6273",
-  "rec_oracle": "2217",
-  "hp_bonus": "1500",
-  "atk_bonus": "600",
-  "def_bonus": "600",
-  "rec_bonus": "600",
-  "lordonly": "",
-  "combo_hits": "8",
-  "normaldc": "40",
-  "ls": "Earth of Lore",
-  "lsdescription": "100% boost to Atk power and 30% increase in HP of Earth types",
-  "lstype": "Hit Points/Attack",
+  "stats": {
+    "_base": {
+      "atk": 1325,
+      "def": 1280,
+      "hp": 4220,
+      "rec": 810
+    },
+    "_lord": {
+      "atk": 2310,
+      "def": 2300,
+      "hp": 6630,
+      "rec": 1860
+    },
+    "anima": {
+      "atk": 2310,
+      "def": 2300,
+      "hp max": 7820,
+      "hp min": 7225,
+      "rec max": 1741,
+      "rec min": 1503
+    },
+    "breaker": {
+      "atk max": 2667,
+      "atk min": 2429,
+      "def max": 2181,
+      "def min": 1943,
+      "hp": 6630,
+      "rec": 1860
+    },
+    "guardian": {
+      "atk": 2310,
+      "def max": 2657,
+      "def min": 2419,
+      "hp": 6630,
+      "rec max": 1860,
+      "rec min": 1622
+    },
+    "oracle": {
+      "atk": 2310,
+      "def max": 2300,
+      "def min": 2062,
+      "hp": 6630,
+      "rec max": 2336,
+      "rec min": 2098
+    }
+  },
+  "leader_skill": {
+    "desc": "100% boost to Atk power and 30% increase in HP of Earth types",
+    "effects": [
+      {
+        "atk% buff": 100,
+        "elements buffed": [
+          "earth"
+        ],
+        "hp% buff": 30,
+        "passive id": "2"
+      }
+    ],
+    "id": "126",
+    "name": "Earth of Lore"
+  },
+  "extra_skill": {
+    "desc": "20% boost to all parameters in battle & probable reduction in damage taken by 20% when Drevas is equipped.",
+    "effects": [
+      {
+        "atk% buff": 20,
+        "conditions": [
+          {
+            "item required": [
+              "37610"
+            ]
+          }
+        ],
+        "def% buff": 20,
+        "hp% buff": 20,
+        "passive id": "1",
+        "passive target": "self",
+        "rec% buff": 20
+      },
+      {
+        "conditions": [
+          {
+            "item required": [
+              "37610"
+            ]
+          }
+        ],
+        "dmg reduction chance%": 20,
+        "dmg reduction%": 20,
+        "passive id": "14",
+        "passive target": "self"
+      }
+    ],
+    "id": "300",
+    "name": "Return to the Great Tree",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -238,13 +272,6 @@
     ],
     "name": "Gaia's Essence"
   },
-  "bbdescription": "12 combo powerful Earth attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "12",
-  "bbaoe": "A",
-  "bbgauge": "25",
-  "bbdc": "12",
-  "bbmultiplier": "250",
   "sbb": {
     "damage frames": [
       {
@@ -529,14 +556,6 @@
     ],
     "name": "Great Tree of Ruin"
   },
-  "sbbdescription": "16 combo powerful Earth attack on all enemies & greatly boosts Def for all allies for 3 turns",
-  "sbbnote": "110% boost",
-  "sbbtype": "Support/Offense",
-  "sbbhits": "16",
-  "sbbaoe": "A",
-  "sbbgauge": "20",
-  "sbbdc": "16",
-  "sbbmultiplier": "500",
   "ubb": {
     "damage frames": [
       {
@@ -633,6 +652,222 @@
     ],
     "name": "Unleashed Seven"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 117
+    },
+    "idle": {
+      "total number of frames": 120
+    },
+    "move": {
+      "total number of frames": 6
+    }
+  },
+  "category": 30010,
+  "cost": "38",
+  "damage frames": {
+    "frame times": [
+      45,
+      48,
+      51,
+      54,
+      57,
+      60,
+      63,
+      66
+    ],
+    "hit dmg% distribution": [
+      30,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 8
+  },
+  "drop check count": 5,
+  "element": "earth",
+  "exp_pattern": 10,
+  "gender": "male",
+  "getting type": "farmable",
+  "guide_id": 803,
+  "imp": {
+    "max atk": "600",
+    "max def": "600",
+    "max hp": "1500",
+    "max rec": "600"
+  },
+  "kind": "normal",
+  "lord damage range": "2151~2402",
+  "movement": {
+    "attack": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    }
+  },
+  "name": "Earth Legend Lance",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Earth Legend Lance",
+  "maxlv": "120",
+  "no": "803",
+  "unitDisplayHomePosition_1W9CxaFK": "792,431,174,475",
+  "unitDisplayDetailPosition_6z54rgb3": "-442,-234,1654,1066",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "57,251,457,378,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-328,-541,1654,1066",
+  "unitDisplaySummonPosition_KC3Jk8Br": "-71,110,827,533,0",
+  "unitDisplayHpPosition_3BpHN6VD": "0,59",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "15000",
+  "sellCaution": false,
+  "effectFrames": "39:123:1,42:123:1,45:123:1,48:123:1,51:123:1,54:123:1,57:123:1,63:123:1,55:240:1,45:300201:1,45:400131:1,55:400131:1,65:400131:1,60:330396:1,75:330391:1",
+  "evofrom": "30015",
+  "evointo": "30017",
+  "evozelcost": "3000000",
+  "evokarmacost": "1000000",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "30334",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30131",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30130",
+      "count": 1
+    },
+    {
+      "type": "2",
+      "id": "110100",
+      "count": 1
+    }
+  ],
+  "basexp": "10",
+  "animation_attack": "117",
+  "animation_idle": "120",
+  "animation_move": "6",
+  "movespeed_attack": "0.0041",
+  "movespeed_skill": "0.0041",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "45, 48, 51, 54, 57, 60, 63, 66",
+  "normal_distribute": "30, 10, 10, 10, 10, 10, 10, 10",
+  "normal_totaldistr": "100",
+  "bb_frames": "45, 48, 51, 54, 57, 60, 63, 66, 70, 74, 78, 82",
+  "bb_distribute": "12, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8",
+  "bb_totaldistr": "100",
+  "sbb_frames": "45, 48, 51, 54, 57, 60, 63, 66, 69, 75, 81, 87, 93, 99, 105, 111",
+  "sbb_distribute": "10, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "45, 51, 57, 63, 69, 75, 81, 87, 93, 99, 105, 111, 115, 119, 123, 127, 131, 135, 138, 141, 144",
+  "ubb_distribute": "10, 8, 6, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 8",
+  "ubb_totaldistr": "100",
+  "sbb_effectdelay": "1",
+  "ubb_effectdelay": "1",
+  "description": "As he kept fighting the gods, Lance's Demon Pike ate into his body even further. In the midst of everything, Lance unleashed his pike's ultimate power and flung it across a great distance in order to defend himself from a series of sniper attacks that had been continuously targeting him. And though this attack was successful in taking down the sniper, it consequently sped up the rate at which the Demon Pike was deteriorating his body. Moments later, a lone knight showed himself before him to deliver a message. It is said that an expression of relief came over Lance's face upon hearing the knight's words, after which he turned into a great tree whilst embracing the Demon Pike.",
+  "summon": "When I close my eyes and listen closely<br>I can hear the voice of someone precious<br>calling me…",
+  "fusion": "My entire being<br>is turning into one with Drevas...<br>I can feel Drevas deep in my soul…",
+  "evolution": "I fear nothing now.<br>I'll continue living beside Drevas.<br>I'll surpass the gods just by doing that.",
+  "hp_base": "4220",
+  "atk_base": "1325",
+  "def_base": "1280",
+  "rec_base": "810",
+  "hp_lord": "6630",
+  "atk_lord": "2310",
+  "def_lord": "2300",
+  "rec_lord": "1860",
+  "hp_anima": "7522",
+  "rec_anima": "1622",
+  "atk_breaker": "2548",
+  "def_breaker": "2062",
+  "atk_guardian": "2072",
+  "def_guardian": "2538",
+  "rec_guardian": "1741",
+  "def_oracle": "2181",
+  "hp_oracle": "6273",
+  "rec_oracle": "2217",
+  "hp_bonus": "1500",
+  "atk_bonus": "600",
+  "def_bonus": "600",
+  "rec_bonus": "600",
+  "lordonly": "",
+  "combo_hits": "8",
+  "normaldc": "40",
+  "ls": "Earth of Lore",
+  "lsdescription": "100% boost to Atk power and 30% increase in HP of Earth types",
+  "lstype": "Hit Points/Attack",
+  "bbdescription": "12 combo powerful Earth attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "12",
+  "bbaoe": "A",
+  "bbgauge": "25",
+  "bbdc": "12",
+  "bbmultiplier": "250",
+  "sbbdescription": "16 combo powerful Earth attack on all enemies & greatly boosts Def for all allies for 3 turns",
+  "sbbnote": "110% boost",
+  "sbbtype": "Support/Offense",
+  "sbbhits": "16",
+  "sbbaoe": "A",
+  "sbbgauge": "20",
+  "sbbdc": "16",
+  "sbbmultiplier": "500",
   "ubbdescription": "21 combo massive Earth attack on all enemies & boosts all allies' Atk relative to their Def for 3 turns",
   "ubbnote": "100% boost",
   "ubbtype": "Support/Offense",
@@ -645,8 +880,6 @@
   "esitem": "Drevas",
   "esdescription": "20% boost to all parameters in battle & probable reduction in damage taken by 20% when Drevas is equipped.",
   "esnote": "20% chance",
-  "evofrom": "30015",
-  "evointo": "30017",
   "evomats1": "30334",
   "evomats2": "30334",
   "evomats3": "50354",
@@ -654,114 +887,5 @@
   "evomats5": "30132",
   "evomats6": "30131",
   "evomats7": "30130",
-  "evoitem2": "Legend Stone",
-  "evozelcost": "3000000",
-  "stats": {
-    "_base": {
-      "atk": 1325,
-      "def": 1280,
-      "hp": 4220,
-      "rec": 810
-    },
-    "_lord": {
-      "atk": 2310,
-      "def": 2300,
-      "hp": 6630,
-      "rec": 1860
-    },
-    "anima": {
-      "atk": 2310,
-      "def": 2300,
-      "hp max": 7820,
-      "hp min": 7225,
-      "rec max": 1741,
-      "rec min": 1503
-    },
-    "breaker": {
-      "atk max": 2667,
-      "atk min": 2429,
-      "def max": 2181,
-      "def min": 1943,
-      "hp": 6630,
-      "rec": 1860
-    },
-    "guardian": {
-      "atk": 2310,
-      "def max": 2657,
-      "def min": 2419,
-      "hp": 6630,
-      "rec max": 1860,
-      "rec min": 1622
-    },
-    "oracle": {
-      "atk": 2310,
-      "def max": 2300,
-      "def min": 2062,
-      "hp": 6630,
-      "rec max": 2336,
-      "rec min": 2098
-    }
-  },
-  "leader_skill": {
-    "desc": "100% boost to Atk power and 30% increase in HP of Earth types",
-    "effects": [
-      {
-        "atk% buff": 100,
-        "elements buffed": [
-          "earth"
-        ],
-        "hp% buff": 30,
-        "passive id": "2"
-      }
-    ],
-    "id": "126",
-    "name": "Earth of Lore"
-  },
-  "extra_skill": {
-    "desc": "20% boost to all parameters in battle & probable reduction in damage taken by 20% when Drevas is equipped.",
-    "effects": [
-      {
-        "atk% buff": 20,
-        "conditions": [
-          {
-            "item required": [
-              "37610"
-            ]
-          }
-        ],
-        "def% buff": 20,
-        "hp% buff": 20,
-        "passive id": "1",
-        "passive target": "self",
-        "rec% buff": 20
-      },
-      {
-        "conditions": [
-          {
-            "item required": [
-              "37610"
-            ]
-          }
-        ],
-        "dmg reduction chance%": 20,
-        "dmg reduction%": 20,
-        "passive id": "14",
-        "passive target": "self"
-      }
-    ],
-    "id": "300",
-    "name": "Return to the Great Tree",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "792,431,174,475",
-  "unitDisplayDetailPosition_6z54rgb3": "-442,-234,1654,1066",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "57,251,457,378,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-328,-541,1654,1066",
-  "unitDisplaySummonPosition_KC3Jk8Br": "-71,110,827,533,0",
-  "unitDisplayHpPosition_3BpHN6VD": "0,59",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "15000",
-  "sellCaution": false,
-  "effectFrames": "39:123:1,42:123:1,45:123:1,48:123:1,51:123:1,54:123:1,57:123:1,63:123:1,55:240:1,45:300201:1,45:400131:1,55:400131:1,65:400131:1,60:330396:1,75:330391:1"
+  "evoitem2": "Legend Stone"
 }

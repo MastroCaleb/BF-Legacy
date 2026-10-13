@@ -1,71 +1,111 @@
 {
   "id": "20276",
-  "unitName": "Ice Bastion Zeldeus",
-  "no": "975",
-  "element": "Water",
-  "rarity": "★★★★★★★",
-  "cost": "40",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "N",
-  "ai": "2",
-  "animation_attack": "249",
-  "animation_idle": "208",
-  "animation_move": "208",
-  "movespeed_attack": "6",
-  "movespeed_skill": "6",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "140, 147, 154, 161, 168, 173, 180, 187, 194, 201",
-  "normal_distribute": "12, 10, 9, 10, 8, 11, 10, 11, 9, 10",
-  "normal_totaldistr": "100",
-  "bb_frames": "141",
-  "bb_distribute": "100",
-  "bb_totaldistr": "100",
-  "sbb_frames": "141",
-  "sbb_distribute": "100",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "141, 145, 149, 153, 157, 161, 165, 169, 173, 177, 181, 185, 189, 193, 197, 201, 205, 209, 213, 217",
-  "ubb_distribute": "9, 4, 3, 5, 5, 2, 5, 6, 3, 5, 4, 5, 3, 5, 7, 5, 4, 5, 9, 6",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "1",
-  "ubb_effectdelay": "2",
-  "description": "A super freezing weapon created by the gods which turned against its creators during the invasion of the God Army thanks to the influence of a rebellious angel. However, having suffered continuous attacks, its functionality began to break down. As its consciousness and movements began to slow down, it acquired its own free will, and chose to accept it before its body was completely destroyed. Now with a soul, the weapon managed to evolve into its final form in order to defend the young lady it swore to protect.",
-  "summon": "Protect...Lira.<br>Conversion 4A7.<br>Must risk own life...",
-  "fusion": "Contact... 3 to 8 ratio.<br>Evolution possible.<br>Basic functions...operational.",
-  "evolution": "What is my new name...?<br>I must protect Lira.",
-  "hp_base": "5487",
-  "atk_base": "1488",
-  "def_base": "1763",
-  "rec_base": "1279",
-  "hp_lord": "6947",
-  "atk_lord": "2000",
-  "def_lord": "2552",
-  "rec_lord": "1772",
-  "hp_anima": "7839",
-  "rec_anima": "1534",
-  "atk_breaker": "2238",
-  "def_breaker": "2314",
-  "atk_guardian": "1762",
-  "def_guardian": "2790",
-  "rec_guardian": "1653",
-  "def_oracle": "2433",
-  "hp_oracle": "6590",
-  "rec_oracle": "2129",
-  "hp_bonus": "1000",
-  "atk_bonus": "300",
-  "def_bonus": "600",
-  "rec_bonus": "400",
-  "lordonly": "",
-  "combo_hits": "10",
-  "normaldc": "40",
-  "ls": "Ice God's Sanctuary",
-  "lsdescription": "30% boost to max HP and Def of all allies & probable slight damage reduction",
-  "lsnote": "20% chance to reduce 20% damage",
-  "lstype": "Hit Points/Defense",
+  "stats": {
+    "_base": {
+      "atk": 1488,
+      "def": 1763,
+      "hp": 5487,
+      "rec": 1279
+    },
+    "_lord": {
+      "atk": 2000,
+      "def": 2552,
+      "hp": 6947,
+      "rec": 1772
+    },
+    "anima": {
+      "atk": 2000,
+      "def": 2552,
+      "hp max": 8137,
+      "hp min": 7542,
+      "rec max": 1653,
+      "rec min": 1415
+    },
+    "breaker": {
+      "atk max": 2357,
+      "atk min": 2119,
+      "def max": 2433,
+      "def min": 2195,
+      "hp": 6947,
+      "rec": 1772
+    },
+    "guardian": {
+      "atk": 2000,
+      "def max": 2909,
+      "def min": 2671,
+      "hp": 6947,
+      "rec max": 1772,
+      "rec min": 1534
+    },
+    "oracle": {
+      "atk": 2000,
+      "def max": 2552,
+      "def min": 2314,
+      "hp": 6947,
+      "rec max": 2248,
+      "rec min": 2010
+    }
+  },
+  "leader_skill": {
+    "desc": "30% boost to max HP and Def of all allies & probable slight damage reduction",
+    "effects": [
+      {
+        "def% buff": 30,
+        "hp% buff": 30,
+        "passive id": "1"
+      },
+      {
+        "dmg reduction chance%": 20,
+        "dmg reduction%": 20,
+        "passive id": "14"
+      }
+    ],
+    "id": "4313",
+    "name": "Ice God's Sanctuary"
+  },
+  "extra_skill": {
+    "desc": "Boosts BB/SBB Atk for 3 turns & when Golem Core is equipped, 20% boost to all parameters",
+    "effects": [
+      {
+        "atk% buff": 20,
+        "conditions": [
+          {
+            "item required": [
+              "47202"
+            ]
+          }
+        ],
+        "def% buff": 20,
+        "hp% buff": 20,
+        "passive id": "1",
+        "passive target": "self",
+        "rec% buff": 20
+      },
+      {
+        "conditions": [],
+        "passive id": "66",
+        "passive target": "self",
+        "trigger on bb": true,
+        "trigger on sbb": true,
+        "triggered effect": [
+          {
+            "bb atk% buff": 100,
+            "buff turns (72)": 3,
+            "effect delay time(ms)/frame": "0.0/0",
+            "proc id": "45",
+            "sbb atk% buff": 100,
+            "target area": "aoe",
+            "target type": "party",
+            "ubb atk% buff": 100
+          }
+        ]
+      }
+    ],
+    "id": "3500",
+    "name": "Demon Puppet's Will",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -320,13 +360,6 @@
     ],
     "name": "Lastrum Guard"
   },
-  "bbdescription": "Powerful water attack on all foes & reduces damage taken by 50% for 1 turn",
-  "bbtype": "Support/Offense",
-  "bbhits": "1",
-  "bbaoe": "A",
-  "bbgauge": "25",
-  "bbdc": "20",
-  "bbmultiplier": "260",
   "sbb": {
     "damage frames": [
       {
@@ -683,14 +716,6 @@
     ],
     "name": "A. G. W."
   },
-  "sbbdescription": "Powerful water attack on all foes, boosts Def for 3 turns & reduces damage taken by 50% for 1 turn",
-  "sbbnote": "140% boost",
-  "sbbtype": "Support/Offense",
-  "sbbhits": "1",
-  "sbbaoe": "A",
-  "sbbgauge": "20",
-  "sbbdc": "25",
-  "sbbmultiplier": "450",
   "ubb": {
     "damage frames": [
       {
@@ -826,6 +851,192 @@
     ],
     "name": "Full Degeneration"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 249
+    },
+    "idle": {
+      "total number of frames": 208
+    },
+    "move": {
+      "total number of frames": 208
+    }
+  },
+  "category": 20270,
+  "cost": "40",
+  "damage frames": {
+    "frame times": [
+      140,
+      147,
+      154,
+      161,
+      168,
+      173,
+      180,
+      187,
+      194,
+      201
+    ],
+    "hit dmg% distribution": [
+      12,
+      10,
+      9,
+      10,
+      8,
+      11,
+      10,
+      11,
+      9,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 10
+  },
+  "drop check count": 4,
+  "element": "water",
+  "exp_pattern": 20,
+  "gender": "other",
+  "getting type": "rare summon",
+  "guide_id": 975,
+  "imp": {
+    "max atk": "300",
+    "max def": "600",
+    "max hp": "1000",
+    "max rec": "400"
+  },
+  "kind": "normal",
+  "lord damage range": "1862~2080",
+  "movement": {
+    "attack": {
+      "move speed": 6,
+      "move speed type": "2",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 6,
+      "move speed type": "2",
+      "move type": "3"
+    }
+  },
+  "name": "Ice Bastion Zeldeus",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Ice Bastion Zeldeus",
+  "maxlv": "120",
+  "no": "975",
+  "unitDisplayHomePosition_1W9CxaFK": "352,88,200,546",
+  "unitDisplayDetailPosition_6z54rgb3": "-7,115,970,692",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "49,255,568,405,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "44,-129,970,692",
+  "unitDisplaySummonPosition_KC3Jk8Br": "49,255,568,405,0",
+  "unitDisplayHpPosition_3BpHN6VD": "-20,44",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "15000",
+  "sellCaution": false,
+  "effectFrames": "196:200030:1,195:200140:1,130:200421:1,130:200401:1,135:200251:1,140:200351:1,165:200351:1,145:200283:1",
+  "evofrom": "20275",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "21",
+  "animation_attack": "249",
+  "animation_idle": "208",
+  "animation_move": "208",
+  "movespeed_attack": "6",
+  "movespeed_skill": "6",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "140, 147, 154, 161, 168, 173, 180, 187, 194, 201",
+  "normal_distribute": "12, 10, 9, 10, 8, 11, 10, 11, 9, 10",
+  "normal_totaldistr": "100",
+  "bb_frames": "141",
+  "bb_distribute": "100",
+  "bb_totaldistr": "100",
+  "sbb_frames": "141",
+  "sbb_distribute": "100",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "141, 145, 149, 153, 157, 161, 165, 169, 173, 177, 181, 185, 189, 193, 197, 201, 205, 209, 213, 217",
+  "ubb_distribute": "9, 4, 3, 5, 5, 2, 5, 6, 3, 5, 4, 5, 3, 5, 7, 5, 4, 5, 9, 6",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "1",
+  "ubb_effectdelay": "2",
+  "description": "A super freezing weapon created by the gods which turned against its creators during the invasion of the God Army thanks to the influence of a rebellious angel. However, having suffered continuous attacks, its functionality began to break down. As its consciousness and movements began to slow down, it acquired its own free will, and chose to accept it before its body was completely destroyed. Now with a soul, the weapon managed to evolve into its final form in order to defend the young lady it swore to protect.",
+  "summon": "Protect...Lira.<br>Conversion 4A7.<br>Must risk own life...",
+  "fusion": "Contact... 3 to 8 ratio.<br>Evolution possible.<br>Basic functions...operational.",
+  "evolution": "What is my new name...?<br>I must protect Lira.",
+  "hp_base": "5487",
+  "atk_base": "1488",
+  "def_base": "1763",
+  "rec_base": "1279",
+  "hp_lord": "6947",
+  "atk_lord": "2000",
+  "def_lord": "2552",
+  "rec_lord": "1772",
+  "hp_anima": "7839",
+  "rec_anima": "1534",
+  "atk_breaker": "2238",
+  "def_breaker": "2314",
+  "atk_guardian": "1762",
+  "def_guardian": "2790",
+  "rec_guardian": "1653",
+  "def_oracle": "2433",
+  "hp_oracle": "6590",
+  "rec_oracle": "2129",
+  "hp_bonus": "1000",
+  "atk_bonus": "300",
+  "def_bonus": "600",
+  "rec_bonus": "400",
+  "lordonly": "",
+  "combo_hits": "10",
+  "normaldc": "40",
+  "ls": "Ice God's Sanctuary",
+  "lsdescription": "30% boost to max HP and Def of all allies & probable slight damage reduction",
+  "lsnote": "20% chance to reduce 20% damage",
+  "lstype": "Hit Points/Defense",
+  "bbdescription": "Powerful water attack on all foes & reduces damage taken by 50% for 1 turn",
+  "bbtype": "Support/Offense",
+  "bbhits": "1",
+  "bbaoe": "A",
+  "bbgauge": "25",
+  "bbdc": "20",
+  "bbmultiplier": "260",
+  "sbbdescription": "Powerful water attack on all foes, boosts Def for 3 turns & reduces damage taken by 50% for 1 turn",
+  "sbbnote": "140% boost",
+  "sbbtype": "Support/Offense",
+  "sbbhits": "1",
+  "sbbaoe": "A",
+  "sbbgauge": "20",
+  "sbbdc": "25",
+  "sbbmultiplier": "450",
   "ubbdescription": "20 combo massive water attack on all foes, boosts Def and boosts Atk relative to Def for 3 turns & reduces damage taken by 75% for 2 turns",
   "ubbnote": "140% Def & 100% Def to Atk",
   "ubbtype": "Support/Offense",
@@ -838,129 +1049,10 @@
   "esitem": "Golem Core",
   "esdescription": "Boosts BB/SBB Atk for 3 turns & when Golem Core is equipped, 20% boost to all parameters",
   "esnote": "100% boost",
-  "evofrom": "20275",
-  "evointo": "",
   "evomats1": "",
   "evomats2": "",
   "evomats3": "",
   "evomats4": "",
   "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 1488,
-      "def": 1763,
-      "hp": 5487,
-      "rec": 1279
-    },
-    "_lord": {
-      "atk": 2000,
-      "def": 2552,
-      "hp": 6947,
-      "rec": 1772
-    },
-    "anima": {
-      "atk": 2000,
-      "def": 2552,
-      "hp max": 8137,
-      "hp min": 7542,
-      "rec max": 1653,
-      "rec min": 1415
-    },
-    "breaker": {
-      "atk max": 2357,
-      "atk min": 2119,
-      "def max": 2433,
-      "def min": 2195,
-      "hp": 6947,
-      "rec": 1772
-    },
-    "guardian": {
-      "atk": 2000,
-      "def max": 2909,
-      "def min": 2671,
-      "hp": 6947,
-      "rec max": 1772,
-      "rec min": 1534
-    },
-    "oracle": {
-      "atk": 2000,
-      "def max": 2552,
-      "def min": 2314,
-      "hp": 6947,
-      "rec max": 2248,
-      "rec min": 2010
-    }
-  },
-  "leader_skill": {
-    "desc": "30% boost to max HP and Def of all allies & probable slight damage reduction",
-    "effects": [
-      {
-        "def% buff": 30,
-        "hp% buff": 30,
-        "passive id": "1"
-      },
-      {
-        "dmg reduction chance%": 20,
-        "dmg reduction%": 20,
-        "passive id": "14"
-      }
-    ],
-    "id": "4313",
-    "name": "Ice God's Sanctuary"
-  },
-  "extra_skill": {
-    "desc": "Boosts BB/SBB Atk for 3 turns & when Golem Core is equipped, 20% boost to all parameters",
-    "effects": [
-      {
-        "atk% buff": 20,
-        "conditions": [
-          {
-            "item required": [
-              "47202"
-            ]
-          }
-        ],
-        "def% buff": 20,
-        "hp% buff": 20,
-        "passive id": "1",
-        "passive target": "self",
-        "rec% buff": 20
-      },
-      {
-        "conditions": [],
-        "passive id": "66",
-        "passive target": "self",
-        "trigger on bb": true,
-        "trigger on sbb": true,
-        "triggered effect": [
-          {
-            "bb atk% buff": 100,
-            "buff turns (72)": 3,
-            "effect delay time(ms)/frame": "0.0/0",
-            "proc id": "45",
-            "sbb atk% buff": 100,
-            "target area": "aoe",
-            "target type": "party",
-            "ubb atk% buff": 100
-          }
-        ]
-      }
-    ],
-    "id": "3500",
-    "name": "Demon Puppet's Will",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "352,88,200,546",
-  "unitDisplayDetailPosition_6z54rgb3": "-7,115,970,692",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "49,255,568,405,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "44,-129,970,692",
-  "unitDisplaySummonPosition_KC3Jk8Br": "49,255,568,405,0",
-  "unitDisplayHpPosition_3BpHN6VD": "-20,44",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "15000",
-  "sellCaution": false,
-  "effectFrames": "196:200030:1,195:200140:1,130:200421:1,130:200401:1,135:200251:1,140:200351:1,165:200351:1,145:200283:1"
+  "evoitem": ""
 }

@@ -1,69 +1,103 @@
 {
   "id": "30716",
-  "unitName": "Venomous Echo Isterio",
-  "no": "1244",
-  "element": "Earth",
-  "rarity": "★★★★★★★",
-  "cost": "42",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "174",
-  "animation_idle": "52",
-  "animation_move": "8",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "24, 34, 44, 48, 54, 64, 88, 91, 94, 97",
-  "normal_distribute": "10, 8, 7, 12, 8, 8, 15, 14, 10, 8",
-  "normal_totaldistr": "100",
-  "bb_frames": "24, 34, 44, 54, 64, 88, 91, 94, 97, 100, 103, 106, 109, 112, 115",
-  "bb_distribute": "6, 5, 3, 5, 4, 16, 9, 8, 7, 6, 7, 6, 7, 6, 5",
-  "bb_totaldistr": "100",
-  "sbb_frames": "24, 30, 36, 42, 48, 54, 60, 88, 91, 94, 97, 100, 103, 106, 109, 112, 115, 118",
-  "sbb_distribute": "6, 4, 3, 5, 4, 3, 4, 12, 9, 7, 5, 6, 5, 6, 5, 6, 5, 5",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "24, 28, 32, 36, 40, 44, 48, 52, 56, 60, 88, 91, 94, 97, 100, 103, 106, 109, 112, 115, 118",
-  "ubb_distribute": "5, 4, 3, 5, 4, 3, 4, 3, 4, 3, 11, 9, 6, 4, 5, 4, 5, 4, 5, 4, 5",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "2",
-  "ubb_effectdelay": "3",
-  "description": "An otherworldly god resurrected as a \"Mock God\" prototype Mock Unit. Also resurrected is the god that once fought at his side. Together, they destroyed everything around them, and the weapon of mass destruction that once defeated them appeared as they attempted to return to their home world. Isterio was able to avenge himself briefly, using the powers of his new body. However, he was ultimately destroyed again at the hands of the weapon, after it was upgraded by the scientist who resurrected him. Furthermore, his vessel was seized by an unknown party moments before its destruction.",
-  "summon": "Ah, my vessel, which exceeds<br>the limits of Mock Godhood.<br>Someday, you will curse this world.<br>This pure, beautiful world<br>that birthed you.",
-  "fusion": "Death! Birth! Death!<br>The sanctity of life is an illusion.<br>That illusion allows my strength<br>to grow boundlessly.",
-  "evolution": "The world is filled with falsehood!<br>This Mock God will be a true god,<br>and create a world of falsehood!",
-  "hp_base": "5002",
-  "atk_base": "2161",
-  "def_base": "1919",
-  "rec_base": "1891",
-  "hp_lord": "6567",
-  "atk_lord": "2701",
-  "def_lord": "2398",
-  "rec_lord": "2355",
-  "hp_anima": "7459",
-  "rec_anima": "2117",
-  "atk_breaker": "2939",
-  "def_breaker": "2160",
-  "def_guardian": "2636",
-  "rec_guardian": "2236",
-  "def_oracle": "2279",
-  "rec_oracle": "2712",
-  "hp_bonus": "1100",
-  "atk_bonus": "440",
-  "def_bonus": "440",
-  "rec_bonus": "440",
-  "lordonly": "",
-  "combo_hits": "10",
-  "normaldc": "40",
-  "ls": "Vile Serpent's Delusion",
-  "lsdescription": "30% boost to Atk, max HP of all Units, probable infliction of random status ailment & hugely boosts damage against status inflicted foes",
-  "lsnote": "10% chance to inflict Curse, Poison, Paralysis & 15% chance to inflict Injury, Sick, Weak & 100% boost",
-  "lstype": "Hit Points/Attack",
+  "stats": {
+    "_base": {
+      "atk": 2161,
+      "def": 1919,
+      "hp": 5002,
+      "rec": 1891
+    },
+    "_lord": {
+      "atk": 2701,
+      "def": 2398,
+      "hp": 6567,
+      "rec": 2355
+    },
+    "anima": {
+      "atk": 2701,
+      "def": 2398,
+      "hp max": 7757,
+      "hp min": 7162,
+      "rec max": 2236,
+      "rec min": 1998
+    },
+    "breaker": {
+      "atk max": 3058,
+      "atk min": 2820,
+      "def max": 2279,
+      "def min": 2041,
+      "hp": 6567,
+      "rec": 2355
+    },
+    "guardian": {
+      "atk": 2701,
+      "def max": 2755,
+      "def min": 2517,
+      "hp": 6567,
+      "rec max": 2355,
+      "rec min": 2117
+    },
+    "oracle": {
+      "atk": 2701,
+      "def max": 2398,
+      "def min": 2160,
+      "hp": 6567,
+      "rec max": 2831,
+      "rec min": 2593
+    }
+  },
+  "leader_skill": {
+    "desc": "30% boost to Atk, max HP of all Units, probable infliction of random status ailment & hugely boosts damage against status inflicted foes",
+    "effects": [
+      {
+        "atk% buff": 30,
+        "hp% buff": 30,
+        "passive id": "1"
+      },
+      {
+        "injury%": 15,
+        "passive id": "20",
+        "poison%": 10,
+        "sick%": 15,
+        "weaken%": 15
+      },
+      {
+        "curse%": 10,
+        "paralysis%": 10,
+        "passive id": "20"
+      },
+      {
+        "atk% buff when enemy has ailment": 100,
+        "atk% buff when enemy has curse": true,
+        "atk% buff when enemy has injury": true,
+        "atk% buff when enemy has paralysis": true,
+        "atk% buff when enemy has poison": true,
+        "atk% buff when enemy has sick": true,
+        "atk% buff when enemy has weaken": true,
+        "passive id": "74"
+      }
+    ],
+    "id": "7417",
+    "name": "Vile Serpent's Delusion"
+  },
+  "extra_skill": {
+    "desc": "Probable resistance against up to 2 KO attacks",
+    "effects": [
+      {
+        "angel idol chance% condition": 0,
+        "angel idol recover chance% high": 40,
+        "angel idol recover chance% low": 40,
+        "angel idol recover counts": 2,
+        "conditions": [],
+        "passive id": "69",
+        "passive target": "self"
+      }
+    ],
+    "id": "12400",
+    "name": "Mock God's Scorn",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -530,14 +564,6 @@
     ],
     "name": "Mad Serpent's Passepied"
   },
-  "bbdescription": "15 combo Earth attack on all foes, probable random infliction of all status ailment & boosts max HP",
-  "bbnote": "50% chance & 15% boost",
-  "bbtype": "Support/Offense",
-  "bbhits": "15",
-  "bbaoe": "A",
-  "bbgauge": "24",
-  "bbdc": "15",
-  "bbmultiplier": "300",
   "sbb": {
     "damage frames": [
       {
@@ -1162,14 +1188,6 @@
     ],
     "name": "Performance List: Spiccato"
   },
-  "sbbdescription": "18 combo powerful Earth attack on all foes, adds probable random infliction of all status ailments effect to attack & boosts BB Atk and Atk relative to max HP for 3 turns",
-  "sbbnote": "10% chance to inflict Curse, Poison, Paralysis & 15% chance to inflict Injury, Sick, Weak, 200% boost to BB Atk & 15% HP to Atk",
-  "sbbtype": "Support/Offense",
-  "sbbhits": "18",
-  "sbbaoe": "A",
-  "sbbgauge": "26",
-  "sbbdc": "18",
-  "sbbmultiplier": "540",
   "ubb": {
     "damage frames": [
       {
@@ -1333,6 +1351,191 @@
     ],
     "name": "Finale: Nidhogg"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 174
+    },
+    "idle": {
+      "total number of frames": 52
+    },
+    "move": {
+      "total number of frames": 8
+    }
+  },
+  "category": 30710,
+  "cost": "42",
+  "damage frames": {
+    "frame times": [
+      24,
+      34,
+      44,
+      48,
+      54,
+      64,
+      88,
+      91,
+      94,
+      97
+    ],
+    "hit dmg% distribution": [
+      10,
+      8,
+      7,
+      12,
+      8,
+      8,
+      15,
+      14,
+      10,
+      8
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 10
+  },
+  "drop check count": 4,
+  "element": "earth",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 1244,
+  "imp": {
+    "max atk": "440",
+    "max def": "440",
+    "max hp": "1100",
+    "max rec": "440"
+  },
+  "kind": "normal",
+  "lord damage range": "2514~2809",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Venomous Echo Isterio",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Venomous Echo Isterio",
+  "maxlv": "120",
+  "no": "1244",
+  "unitDisplayHomePosition_1W9CxaFK": "683,97,174,475",
+  "unitDisplayDetailPosition_6z54rgb3": "-244,83,1180,869",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "-8,141,645,475,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-211,-173,1200,884",
+  "unitDisplaySummonPosition_KC3Jk8Br": "-8,141,645,475,0",
+  "unitDisplayHpPosition_3BpHN6VD": "-1,66",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "15000",
+  "sellCaution": false,
+  "effectFrames": "24:731:1,34:731:1,44:731:1,48:731:1,54:731:1,64:731:1,88:731:1,91:731:1,94:731:1,97:731:1,17:330652:1,35:330652:1,18:330368:1,35:330368:1,59:330368:1,87:330721:1,25:600351:1,55:600351:1,85:600351:1",
+  "evofrom": "30715",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "21",
+  "animation_attack": "174",
+  "animation_idle": "52",
+  "animation_move": "8",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "24, 34, 44, 48, 54, 64, 88, 91, 94, 97",
+  "normal_distribute": "10, 8, 7, 12, 8, 8, 15, 14, 10, 8",
+  "normal_totaldistr": "100",
+  "bb_frames": "24, 34, 44, 54, 64, 88, 91, 94, 97, 100, 103, 106, 109, 112, 115",
+  "bb_distribute": "6, 5, 3, 5, 4, 16, 9, 8, 7, 6, 7, 6, 7, 6, 5",
+  "bb_totaldistr": "100",
+  "sbb_frames": "24, 30, 36, 42, 48, 54, 60, 88, 91, 94, 97, 100, 103, 106, 109, 112, 115, 118",
+  "sbb_distribute": "6, 4, 3, 5, 4, 3, 4, 12, 9, 7, 5, 6, 5, 6, 5, 6, 5, 5",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "24, 28, 32, 36, 40, 44, 48, 52, 56, 60, 88, 91, 94, 97, 100, 103, 106, 109, 112, 115, 118",
+  "ubb_distribute": "5, 4, 3, 5, 4, 3, 4, 3, 4, 3, 11, 9, 6, 4, 5, 4, 5, 4, 5, 4, 5",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "2",
+  "ubb_effectdelay": "3",
+  "description": "An otherworldly god resurrected as a \"Mock God\" prototype Mock Unit. Also resurrected is the god that once fought at his side. Together, they destroyed everything around them, and the weapon of mass destruction that once defeated them appeared as they attempted to return to their home world. Isterio was able to avenge himself briefly, using the powers of his new body. However, he was ultimately destroyed again at the hands of the weapon, after it was upgraded by the scientist who resurrected him. Furthermore, his vessel was seized by an unknown party moments before its destruction.",
+  "summon": "Ah, my vessel, which exceeds<br>the limits of Mock Godhood.<br>Someday, you will curse this world.<br>This pure, beautiful world<br>that birthed you.",
+  "fusion": "Death! Birth! Death!<br>The sanctity of life is an illusion.<br>That illusion allows my strength<br>to grow boundlessly.",
+  "evolution": "The world is filled with falsehood!<br>This Mock God will be a true god,<br>and create a world of falsehood!",
+  "hp_base": "5002",
+  "atk_base": "2161",
+  "def_base": "1919",
+  "rec_base": "1891",
+  "hp_lord": "6567",
+  "atk_lord": "2701",
+  "def_lord": "2398",
+  "rec_lord": "2355",
+  "hp_anima": "7459",
+  "rec_anima": "2117",
+  "atk_breaker": "2939",
+  "def_breaker": "2160",
+  "def_guardian": "2636",
+  "rec_guardian": "2236",
+  "def_oracle": "2279",
+  "rec_oracle": "2712",
+  "hp_bonus": "1100",
+  "atk_bonus": "440",
+  "def_bonus": "440",
+  "rec_bonus": "440",
+  "lordonly": "",
+  "combo_hits": "10",
+  "normaldc": "40",
+  "ls": "Vile Serpent's Delusion",
+  "lsdescription": "30% boost to Atk, max HP of all Units, probable infliction of random status ailment & hugely boosts damage against status inflicted foes",
+  "lsnote": "10% chance to inflict Curse, Poison, Paralysis & 15% chance to inflict Injury, Sick, Weak & 100% boost",
+  "lstype": "Hit Points/Attack",
+  "bbdescription": "15 combo Earth attack on all foes, probable random infliction of all status ailment & boosts max HP",
+  "bbnote": "50% chance & 15% boost",
+  "bbtype": "Support/Offense",
+  "bbhits": "15",
+  "bbaoe": "A",
+  "bbgauge": "24",
+  "bbdc": "15",
+  "bbmultiplier": "300",
+  "sbbdescription": "18 combo powerful Earth attack on all foes, adds probable random infliction of all status ailments effect to attack & boosts BB Atk and Atk relative to max HP for 3 turns",
+  "sbbnote": "10% chance to inflict Curse, Poison, Paralysis & 15% chance to inflict Injury, Sick, Weak, 200% boost to BB Atk & 15% HP to Atk",
+  "sbbtype": "Support/Offense",
+  "sbbhits": "18",
+  "sbbaoe": "A",
+  "sbbgauge": "26",
+  "sbbdc": "18",
+  "sbbmultiplier": "540",
   "ubbdescription": "21 combo Massive Earth attack on all foes, adds probable random infliction of all status ailments effect to attack for 3 turns & enormously boosts BB Atk & enormously boosts Water, Earth elemental damage for 3 turns",
   "ubbnote": "500% boost to BB Atk & 400% boost to elemental damage",
   "ubbtype": "Support/Offense",
@@ -1345,121 +1548,10 @@
   "esitem": "",
   "esdescription": "Probable resistance against 2 KO attacks max",
   "esnote": "40% chance",
-  "evofrom": "30715",
-  "evointo": "",
   "evomats1": "",
   "evomats2": "",
   "evomats3": "",
   "evomats4": "",
   "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 2161,
-      "def": 1919,
-      "hp": 5002,
-      "rec": 1891
-    },
-    "_lord": {
-      "atk": 2701,
-      "def": 2398,
-      "hp": 6567,
-      "rec": 2355
-    },
-    "anima": {
-      "atk": 2701,
-      "def": 2398,
-      "hp max": 7757,
-      "hp min": 7162,
-      "rec max": 2236,
-      "rec min": 1998
-    },
-    "breaker": {
-      "atk max": 3058,
-      "atk min": 2820,
-      "def max": 2279,
-      "def min": 2041,
-      "hp": 6567,
-      "rec": 2355
-    },
-    "guardian": {
-      "atk": 2701,
-      "def max": 2755,
-      "def min": 2517,
-      "hp": 6567,
-      "rec max": 2355,
-      "rec min": 2117
-    },
-    "oracle": {
-      "atk": 2701,
-      "def max": 2398,
-      "def min": 2160,
-      "hp": 6567,
-      "rec max": 2831,
-      "rec min": 2593
-    }
-  },
-  "leader_skill": {
-    "desc": "30% boost to Atk, max HP of all Units, probable infliction of random status ailment & hugely boosts damage against status inflicted foes",
-    "effects": [
-      {
-        "atk% buff": 30,
-        "hp% buff": 30,
-        "passive id": "1"
-      },
-      {
-        "injury%": 15,
-        "passive id": "20",
-        "poison%": 10,
-        "sick%": 15,
-        "weaken%": 15
-      },
-      {
-        "curse%": 10,
-        "paralysis%": 10,
-        "passive id": "20"
-      },
-      {
-        "atk% buff when enemy has ailment": 100,
-        "atk% buff when enemy has curse": true,
-        "atk% buff when enemy has injury": true,
-        "atk% buff when enemy has paralysis": true,
-        "atk% buff when enemy has poison": true,
-        "atk% buff when enemy has sick": true,
-        "atk% buff when enemy has weaken": true,
-        "passive id": "74"
-      }
-    ],
-    "id": "7417",
-    "name": "Vile Serpent's Delusion"
-  },
-  "extra_skill": {
-    "desc": "Probable resistance against up to 2 KO attacks",
-    "effects": [
-      {
-        "angel idol chance% condition": 0,
-        "angel idol recover chance% high": 40,
-        "angel idol recover chance% low": 40,
-        "angel idol recover counts": 2,
-        "conditions": [],
-        "passive id": "69",
-        "passive target": "self"
-      }
-    ],
-    "id": "12400",
-    "name": "Mock God's Scorn",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "683,97,174,475",
-  "unitDisplayDetailPosition_6z54rgb3": "-244,83,1180,869",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "-8,141,645,475,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-211,-173,1200,884",
-  "unitDisplaySummonPosition_KC3Jk8Br": "-8,141,645,475,0",
-  "unitDisplayHpPosition_3BpHN6VD": "-1,66",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "15000",
-  "sellCaution": false,
-  "effectFrames": "24:731:1,34:731:1,44:731:1,48:731:1,54:731:1,64:731:1,88:731:1,91:731:1,94:731:1,97:731:1,17:330652:1,35:330652:1,18:330368:1,35:330368:1,59:330368:1,87:330721:1,25:600351:1,55:600351:1,85:600351:1"
+  "evoitem": ""
 }

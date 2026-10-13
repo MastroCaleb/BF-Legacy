@@ -1,52 +1,66 @@
 {
   "id": "60313",
-  "unitName": "Dark Charm Lunaris",
-  "no": "457",
-  "element": "Dark",
-  "rarity": "★★★★",
-  "cost": "12",
-  "maxlv": "60",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "3",
-  "animation_attack": "134",
-  "animation_idle": "52",
-  "animation_move": "7",
-  "movespeed_attack": "0.0024",
-  "movespeed_skill": "0.0024",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "description": "One of the 12 Guardians of the Gods, protectors of the land of the gods. Friends with Sodis and his younger brother since childhood, it is theorized that she held a special interest in the older Sodis. Once he was selected to to be in the Guardians, she worked towards getting in as well. Though she was known for her ability to manipulate shadows as well as her magnificent lance wielding abilities, she was also very family-oriented and thoughtful, and it's said she was the mother figure of the 12 Guardians.",
-  "summon": "I'm Lunaris, one of the Guardians.<br>Me, a mother figure?<br>I'm not that old, you know!",
-  "fusion": "Thank you.<br>Take care of yourself, too.<br>You'll regret it if you don't.",
-  "evolution": "",
-  "hp_base": "2750",
-  "atk_base": "1150",
-  "def_base": "1050",
-  "rec_base": "800",
-  "hp_lord": "4070",
-  "atk_lord": "1506",
-  "def_lord": "1407",
-  "rec_lord": "1040",
-  "hp_anima": "4512",
-  "rec_anima": "922",
-  "atk_breaker": "1624",
-  "def_breaker": "1289",
-  "atk_guardian": "1388",
-  "def_guardian": "1525",
-  "hp_oracle": "3627",
-  "rec_oracle": "1158",
-  "hp_bonus": "400",
-  "atk_bonus": "140",
-  "def_bonus": "140",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "6",
-  "ls": "Dark Spirit's Power",
-  "lsdescription": "25% boost to Atk Power of Dark Types",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 1150,
+      "def": 1050,
+      "hp": 2750,
+      "rec": 800
+    },
+    "_lord": {
+      "atk": 1506,
+      "def": 1407,
+      "hp": 4070,
+      "rec": 1040
+    },
+    "anima": {
+      "atk": 1506,
+      "def": 1407,
+      "hp max": 4660,
+      "hp min": 4365,
+      "rec max": 981,
+      "rec min": 863
+    },
+    "breaker": {
+      "atk max": 1683,
+      "atk min": 1565,
+      "def max": 1348,
+      "def min": 1230,
+      "hp": 4070,
+      "rec": 1040
+    },
+    "guardian": {
+      "atk": 1506,
+      "def max": 1584,
+      "def min": 1466,
+      "hp": 4070,
+      "rec max": 1040,
+      "rec min": 922
+    },
+    "oracle": {
+      "atk": 1506,
+      "def max": 1407,
+      "def min": 1289,
+      "hp": 4070,
+      "rec max": 1276,
+      "rec min": 1158
+    }
+  },
+  "leader_skill": {
+    "desc": "25% boost to Atk Power of Dark Types",
+    "effects": [
+      {
+        "atk% buff": 25,
+        "elements buffed": [
+          "dark"
+        ],
+        "passive id": "2"
+      }
+    ],
+    "id": "150",
+    "name": "Dark Spirit's Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -293,94 +307,99 @@
     ],
     "name": "Cruel Invitation"
   },
-  "bbdescription": "7 combo Dark elemental attack on all enemies & probable Weakness effect",
-  "bbtype": "Offense",
-  "bbhits": "7",
-  "bbaoe": "A",
-  "bbgauge": "24",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "60314",
-  "evomats1": "60123",
-  "evomats2": "60122",
-  "evomats3": "60122",
-  "evomats4": "60201",
-  "evomats5": "60201",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 1150,
-      "def": 1050,
-      "hp": 2750,
-      "rec": 800
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1506,
-      "def": 1407,
-      "hp": 4070,
-      "rec": 1040
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1506,
-      "def": 1407,
-      "hp max": 4660,
-      "hp min": 4365,
-      "rec max": 981,
-      "rec min": 863
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 1683,
-      "atk min": 1565,
-      "def max": 1348,
-      "def min": 1230,
-      "hp": 4070,
-      "rec": 1040
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 134
     },
-    "guardian": {
-      "atk": 1506,
-      "def max": 1584,
-      "def min": 1466,
-      "hp": 4070,
-      "rec max": 1040,
-      "rec min": 922
+    "idle": {
+      "total number of frames": 52
     },
-    "oracle": {
-      "atk": 1506,
-      "def max": 1407,
-      "def min": 1289,
-      "hp": 4070,
-      "rec max": 1276,
-      "rec min": 1158
+    "move": {
+      "total number of frames": 7
     }
   },
-  "leader_skill": {
-    "desc": "25% boost to Atk Power of Dark Types",
-    "effects": [
-      {
-        "atk% buff": 25,
-        "elements buffed": [
-          "dark"
-        ],
-        "passive id": "2"
-      }
+  "category": 60310,
+  "cost": "12",
+  "damage frames": {
+    "frame times": [
+      10,
+      13,
+      16,
+      31,
+      34,
+      37
     ],
-    "id": "150",
-    "name": "Dark Spirit's Power"
+    "hit dmg% distribution": [
+      17,
+      17,
+      16,
+      17,
+      17,
+      16
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 6
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "dark",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 457,
+  "imp": {
+    "max atk": "140",
+    "max def": "140",
+    "max hp": "400",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "1402~1566",
+  "movement": {
+    "attack": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    }
+  },
+  "name": "Dark Charm Lunaris",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Dark Charm Lunaris",
+  "maxlv": "60",
+  "no": "457",
   "unitDisplayHomePosition_1W9CxaFK": "647,205,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-377,-76,1318,873",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "57,251,457,378,0",
@@ -390,5 +409,99 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "4:600460:1,25:600460:1,10:600321:1,10:600351:1,4:680:1,37:600220:1,4:600472:2"
+  "effectFrames": "4:600460:1,25:600460:1,10:600321:1,10:600351:1,4:680:1,37:600220:1,4:600472:2",
+  "evofrom": "",
+  "evointo": "60314",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "60123",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60122",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60201",
+      "count": 2
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "134",
+  "animation_idle": "52",
+  "animation_move": "7",
+  "movespeed_attack": "0.0024",
+  "movespeed_skill": "0.0024",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "10, 13, 16, 31, 34, 37",
+  "normal_distribute": "17, 17, 16, 17, 17, 16",
+  "normal_totaldistr": "100",
+  "bb_frames": "10, 13, 16, 31, 34, 37, 40",
+  "bb_distribute": "15, 15, 15, 15, 15, 15, 10",
+  "bb_totaldistr": "100",
+  "description": "One of the 12 Guardians of the Gods, protectors of the land of the gods. Friends with Sodis and his younger brother since childhood, it is theorized that she held a special interest in the older Sodis. Once he was selected to be in the Guardians, she worked towards getting in as well. Though she was known for her ability to manipulate shadows as well as her magnificent lance wielding abilities, she was also very family-oriented and thoughtful, and it's said she was the mother figure of the 12 Guardians.",
+  "summon": "I'm Lunaris, one of the Guardians.<br>Me, a mother figure?<br>I'm not that old, you know!",
+  "fusion": "Thank you.<br>Take care of yourself, too.<br>You'll regret it if you don't.",
+  "evolution": "",
+  "hp_base": "2750",
+  "atk_base": "1150",
+  "def_base": "1050",
+  "rec_base": "800",
+  "hp_lord": "4070",
+  "atk_lord": "1506",
+  "def_lord": "1407",
+  "rec_lord": "1040",
+  "hp_anima": "4513",
+  "rec_anima": "922",
+  "atk_breaker": "1624",
+  "def_breaker": "1289",
+  "atk_guardian": "1388",
+  "def_guardian": "1525",
+  "rec_guardian": "981",
+  "def_oracle": "1348",
+  "hp_oracle": "3893",
+  "rec_oracle": "1217",
+  "hp_bonus": "400",
+  "atk_bonus": "140",
+  "def_bonus": "140",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "6",
+  "normaldc": "12",
+  "ls": "Dark Spirit's Power",
+  "lsdescription": "25% boost to Atk Power of Dark Types",
+  "lstype": "Attack",
+  "bbdescription": "7 combo Dark elemental attack on all enemies & probable Weakness effect",
+  "bbnote": "45% chance",
+  "bbtype": "Offense",
+  "bbhits": "7",
+  "bbaoe": "A",
+  "bbgauge": "24",
+  "bbdc": "8",
+  "bbmultiplier": "200",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "60123",
+  "evomats2": "60122",
+  "evomats3": "60122",
+  "evomats4": "60201",
+  "evomats5": "60201"
 }

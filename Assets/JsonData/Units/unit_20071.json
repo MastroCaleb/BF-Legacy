@@ -1,61 +1,53 @@
 {
   "id": "20071",
-  "unitName": "Ramia",
-  "no": "89",
-  "element": "Water",
-  "rarity": "★★",
-  "cost": "2",
-  "maxlv": "30",
-  "basexp": "10",
-  "ai": "3",
-  "animation_attack": "80",
-  "animation_idle": "52",
-  "animation_move": "13",
-  "movespeed_attack": "0.0041",
-  "movespeed_skill": "0.0041",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "gender": "N",
-  "normal_frames": "30, 50",
-  "normal_distribute": "50, 50",
-  "normal_totaldistr": "100",
-  "bb_frames": "30, 50",
-  "bb_distribute": "50, 50",
-  "bb_totaldistr": "100",
-  "description": "Magic beings that are half woman, half snake. It is rumored their bodies attract men lost at sea. When a man gets close, their snake tail grabs them and drags them to the ocean floor. Captured men are said to become Ramia's food or slaves, but since none have ever returned, it's unclear which is true. They are dangerous, but many men still wish to see one just once.",
-  "summon": "Don't I look good?<br>Take me with you and I<br>promise to treat you right.",
-  "fusion": "Oh, is this a tribute to me?<br>So sweet, now how should I<br>reward you?",
-  "evolution": "",
-  "hp_base": "1350",
-  "atk_base": "480",
-  "def_base": "380",
-  "rec_base": "250",
-  "hp_lord": "2595",
-  "atk_lord": "720",
-  "def_lord": "498",
-  "rec_lord": "338",
-  "hp_anima": "2813",
-  "rec_anima": "280",
-  "atk_breaker": "778",
-  "def_breaker": "440",
-  "atk_guardian": "662",
-  "def_guardian": "556",
-  "rec_guardian": "309",
-  "def_oracle": "469",
-  "hp_oracle": "2508",
-  "rec_oracle": "425",
-  "hp_bonus": "250",
-  "atk_bonus": "100",
-  "def_bonus": "100",
-  "rec_bonus": "100",
-  "lordonly": "",
-  "combo_hits": "2",
-  "normaldc": "4",
-  "ls": "",
-  "lsdescription": "",
-  "lstype": "",
+  "stats": {
+    "_base": {
+      "atk": 480,
+      "def": 380,
+      "hp": 1350,
+      "rec": 250
+    },
+    "_lord": {
+      "atk": 720,
+      "def": 498,
+      "hp": 2595,
+      "rec": 338
+    },
+    "anima": {
+      "atk": 720,
+      "def": 498,
+      "hp max": 2885,
+      "hp min": 2740,
+      "rec max": 309,
+      "rec min": 251
+    },
+    "breaker": {
+      "atk max": 807,
+      "atk min": 749,
+      "def max": 469,
+      "def min": 411,
+      "hp": 2595,
+      "rec": 338
+    },
+    "guardian": {
+      "atk": 720,
+      "def max": 585,
+      "def min": 527,
+      "hp": 2595,
+      "rec max": 338,
+      "rec min": 280
+    },
+    "oracle": {
+      "atk": 720,
+      "def max": 498,
+      "def min": 440,
+      "hp": 2595,
+      "rec max": 454,
+      "rec min": 396
+    }
+  },
+  "leader_skill": {},
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -282,85 +274,91 @@
     ],
     "name": "Snake Ripsaw"
   },
-  "bbdescription": "2 combo Water elemental attack on single Enemy & probable Poison effect",
-  "bbnote": "80% chance",
-  "bbtype": "Offense",
-  "bbhits": "2",
-  "bbaoe": "1",
-  "bbgauge": "15",
-  "bbdc": "6",
-  "bbmultiplier": "200",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "20072",
-  "evomats1": "20130",
-  "evomats2": "60142",
-  "evomats3": "60142",
-  "evomats4": "",
-  "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "50000",
-  "stats": {
-    "_base": {
-      "atk": 480,
-      "def": 380,
-      "hp": 1350,
-      "rec": 250
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 720,
-      "def": 498,
-      "hp": 2595,
-      "rec": 338
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 720,
-      "def": 498,
-      "hp max": 2885,
-      "hp min": 2740,
-      "rec max": 309,
-      "rec min": 251
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 807,
-      "atk min": 749,
-      "def max": 469,
-      "def min": 411,
-      "hp": 2595,
-      "rec": 338
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 80
     },
-    "guardian": {
-      "atk": 720,
-      "def max": 585,
-      "def min": 527,
-      "hp": 2595,
-      "rec max": 338,
-      "rec min": 280
+    "idle": {
+      "total number of frames": 52
     },
-    "oracle": {
-      "atk": 720,
-      "def max": 498,
-      "def min": 440,
-      "hp": 2595,
-      "rec max": 454,
-      "rec min": 396
+    "move": {
+      "total number of frames": 13
     }
   },
-  "leader_skill": {},
-  "extra_skill": {},
+  "category": 20070,
+  "cost": "2",
+  "damage frames": {
+    "frame times": [
+      30,
+      50
+    ],
+    "hit dmg% distribution": [
+      50,
+      50
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 2
+  },
+  "drop check count": 2,
+  "element": "water",
+  "exp_pattern": 10,
+  "gender": "other",
+  "getting type": "not eligible for achievement",
+  "guide_id": 89,
+  "imp": {
+    "max atk": "100",
+    "max def": "100",
+    "max hp": "250",
+    "max rec": "100"
+  },
+  "kind": "normal",
+  "lord damage range": "670~748",
+  "movement": {
+    "attack": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    }
+  },
+  "name": "Ramia",
+  "rarity": "2",
+  "sell caution": false,
+  "unitName": "Ramia",
+  "maxlv": "30",
+  "no": "89",
   "unitDisplayHomePosition_1W9CxaFK": "137,-46,200,544",
   "unitDisplayDetailPosition_6z54rgb3": "151,176,670,621",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "188,325,319,296,0",
@@ -370,5 +368,95 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "300",
   "sellCaution": false,
-  "effectFrames": "24:122:1,44:122:1"
+  "effectFrames": "24:122:1,44:122:1",
+  "evofrom": "",
+  "evointo": "20072",
+  "evozelcost": "50000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "20130",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60142",
+      "count": 2
+    }
+  ],
+  "basexp": "10",
+  "animation_attack": "80",
+  "animation_idle": "52",
+  "animation_move": "13",
+  "movespeed_attack": "0.0041",
+  "movespeed_skill": "0.0041",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "30, 50",
+  "normal_distribute": "50, 50",
+  "normal_totaldistr": "100",
+  "bb_frames": "30, 50",
+  "bb_distribute": "50, 50",
+  "bb_totaldistr": "100",
+  "description": "Magic beings that are half woman, half snake. It is rumored their bodies attract men lost at sea. When a man gets close, their snake tail grabs them and drags them to the ocean floor. Captured men are said to become Ramia's food or slaves, but since none have ever returned, it's unclear which is true. They are dangerous, but many men still wish to see one just once.",
+  "summon": "Don't I look good?<br>Take me with you and I<br>promise to treat you right.",
+  "fusion": "Oh, is this a tribute to me?<br>So sweet, now how should I<br>reward you?",
+  "evolution": "",
+  "hp_base": "1350",
+  "atk_base": "480",
+  "def_base": "380",
+  "rec_base": "250",
+  "hp_lord": "2595",
+  "atk_lord": "720",
+  "def_lord": "498",
+  "rec_lord": "338",
+  "hp_anima": "2813",
+  "rec_anima": "280",
+  "atk_breaker": "778",
+  "def_breaker": "440",
+  "atk_guardian": "662",
+  "def_guardian": "556",
+  "rec_guardian": "309",
+  "def_oracle": "469",
+  "hp_oracle": "2508",
+  "rec_oracle": "425",
+  "hp_bonus": "250",
+  "atk_bonus": "100",
+  "def_bonus": "100",
+  "rec_bonus": "100",
+  "lordonly": "",
+  "combo_hits": "2",
+  "normaldc": "4",
+  "ls": "",
+  "lsdescription": "",
+  "lstype": "",
+  "bbdescription": "2 combo Water elemental attack on single Enemy & probable Poison effect",
+  "bbnote": "80% chance",
+  "bbtype": "Offense",
+  "bbhits": "2",
+  "bbaoe": "1",
+  "bbgauge": "15",
+  "bbdc": "6",
+  "bbmultiplier": "200",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "20130",
+  "evomats2": "60142",
+  "evomats3": "60142",
+  "evomats4": "",
+  "evomats5": "",
+  "evoitem": ""
 }

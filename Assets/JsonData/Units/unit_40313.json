@@ -1,52 +1,66 @@
 {
   "id": "40313",
-  "unitName": "Gold Warrior Rina",
-  "no": "453",
-  "element": "Thunder",
-  "rarity": "★★★★",
-  "cost": "12",
-  "maxlv": "60",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "4",
-  "animation_attack": "218",
-  "animation_idle": "44",
-  "animation_move": "58",
-  "movespeed_attack": "0",
-  "movespeed_skill": "0",
-  "speedtype_attack": "5",
-  "speedtype_skill": "5",
-  "movetype_attack": "2",
-  "movetype_skill": "2",
-  "description": "One of the 12 Guardians of the Gods. The 12 Guardians of the Gods, who were charged with protecting the land of the gods, were highly respected by the humans before the war with the gods broke out. Rina, known for her spear as well as her piety, was highly popular also due to her honest nature. There is an anecdote describing her personality in which Sodis, leader of the Guardians, had told her to relax a bit, in response to which she did serious research on how to do so.",
-  "summon": "I am the Guardian Rina.<br>I heard your call, Summoner.<br>Now where is the enemy?",
-  "fusion": "Forget not that the <br>power you were given <br>came from the gods.",
-  "evolution": "",
-  "hp_base": "2890",
-  "atk_base": "1050",
-  "def_base": "900",
-  "rec_base": "1000",
-  "hp_lord": "4248",
-  "atk_lord": "1428",
-  "def_lord": "1188",
-  "rec_lord": "1320",
-  "hp_anima": "4690",
-  "rec_anima": "1202",
-  "atk_breaker": "1546",
-  "def_breaker": "1070",
-  "atk_guardian": "1310",
-  "def_guardian": "1306",
-  "hp_oracle": "3805",
-  "rec_oracle": "1438",
-  "hp_bonus": "400",
-  "atk_bonus": "160",
-  "def_bonus": "160",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "3",
-  "ls": "Thunder Spirit's Power",
-  "lsdescription": "25% boost to Atk Power of Thunder Types",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 1050,
+      "def": 900,
+      "hp": 2890,
+      "rec": 1000
+    },
+    "_lord": {
+      "atk": 1428,
+      "def": 1188,
+      "hp": 4248,
+      "rec": 1320
+    },
+    "anima": {
+      "atk": 1428,
+      "def": 1188,
+      "hp max": 4838,
+      "hp min": 4543,
+      "rec max": 1261,
+      "rec min": 1143
+    },
+    "breaker": {
+      "atk max": 1605,
+      "atk min": 1487,
+      "def max": 1129,
+      "def min": 1011,
+      "hp": 4248,
+      "rec": 1320
+    },
+    "guardian": {
+      "atk": 1428,
+      "def max": 1365,
+      "def min": 1247,
+      "hp": 4248,
+      "rec max": 1320,
+      "rec min": 1202
+    },
+    "oracle": {
+      "atk": 1428,
+      "def max": 1188,
+      "def min": 1070,
+      "hp": 4248,
+      "rec max": 1556,
+      "rec min": 1438
+    }
+  },
+  "leader_skill": {
+    "desc": "25% boost to Atk Power of Thunder Types",
+    "effects": [
+      {
+        "atk% buff": 25,
+        "elements buffed": [
+          "thunder"
+        ],
+        "passive id": "2"
+      }
+    ],
+    "id": "130",
+    "name": "Thunder Spirit's Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -291,94 +305,99 @@
     ],
     "name": "Elimination Shine"
   },
-  "bbdescription": "6 combo Thunder elemental attack on all enemies & probable Paralysis effect",
-  "bbtype": "Offense",
-  "bbhits": "6",
-  "bbaoe": "A",
-  "bbgauge": "24",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "40314",
-  "evomats1": "40133",
-  "evomats2": "40132",
-  "evomats3": "40132",
-  "evomats4": "40191",
-  "evomats5": "40191",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 1050,
-      "def": 900,
-      "hp": 2890,
-      "rec": 1000
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_under",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1428,
-      "def": 1188,
-      "hp": 4248,
-      "rec": 1320
+    {
+      "action": "skill",
+      "chance%": 30.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1428,
-      "def": 1188,
-      "hp max": 4838,
-      "hp min": 4543,
-      "rec max": 1261,
-      "rec min": 1143
+    {
+      "action": "attack",
+      "chance%": 70.0,
+      "target conditions": "hp_max",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 1605,
-      "atk min": 1487,
-      "def max": 1129,
-      "def min": 1011,
-      "hp": 4248,
-      "rec": 1320
+    {
+      "action": "attack",
+      "chance%": 50.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "guardian": {
-      "atk": 1428,
-      "def max": 1365,
-      "def min": 1247,
-      "hp": 4248,
-      "rec max": 1320,
-      "rec min": 1202
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 218
     },
-    "oracle": {
-      "atk": 1428,
-      "def max": 1188,
-      "def min": 1070,
-      "hp": 4248,
-      "rec max": 1556,
-      "rec min": 1438
+    "idle": {
+      "total number of frames": 44
+    },
+    "move": {
+      "total number of frames": 58
     }
   },
-  "leader_skill": {
-    "desc": "25% boost to Atk Power of Thunder Types",
-    "effects": [
-      {
-        "atk% buff": 25,
-        "elements buffed": [
-          "thunder"
-        ],
-        "passive id": "2"
-      }
+  "category": 40310,
+  "cost": "12",
+  "damage frames": {
+    "frame times": [
+      38,
+      53,
+      70
     ],
-    "id": "130",
-    "name": "Thunder Spirit's Power"
+    "hit dmg% distribution": [
+      10,
+      10,
+      80
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 3
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "thunder",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 453,
+  "imp": {
+    "max atk": "160",
+    "max def": "160",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "1329~1485",
+  "movement": {
+    "attack": {
+      "move speed": 0,
+      "move speed type": "5",
+      "move type": "2"
+    },
+    "skill": {
+      "move speed": 0,
+      "move speed type": "5",
+      "move type": "2"
+    }
+  },
+  "name": "Gold Warrior Rina",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Gold Warrior Rina",
+  "maxlv": "60",
+  "no": "453",
   "unitDisplayHomePosition_1W9CxaFK": "162,33,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "135,130,790,651",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "110,359,332,261,0",
@@ -388,5 +407,99 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "32:400201:1,32:120:1,47:400201:1,47:120:1,64:400061:1,64:120:1,70:400130:1"
+  "effectFrames": "32:400201:1,32:120:1,47:400201:1,47:120:1,64:400061:1,64:120:1,70:400130:1",
+  "evofrom": "",
+  "evointo": "40314",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "40133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40132",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "40191",
+      "count": 2
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "218",
+  "animation_idle": "44",
+  "animation_move": "58",
+  "movespeed_attack": "0",
+  "movespeed_skill": "0",
+  "speedtype_attack": "5",
+  "speedtype_skill": "5",
+  "movetype_attack": "2",
+  "movetype_skill": "2",
+  "normal_frames": "38, 53, 70",
+  "normal_distribute": "10, 10, 80",
+  "normal_totaldistr": "100",
+  "bb_frames": "38, 45, 52, 59, 66, 70",
+  "bb_distribute": "10, 10, 10, 10, 10, 50",
+  "bb_totaldistr": "100",
+  "description": "One of the 12 Guardians of the Gods. The 12 Guardians of the Gods, who were charged with protecting the land of the gods, were highly respected by the humans before the war with the gods broke out. Rina, known for her spear as well as her piety, was highly popular also due to her honest nature. There is an anecdote describing her personality in which Sodis, leader of the Guardians, had told her to relax a bit, in response to which she did serious research on how to do so.",
+  "summon": "I am the Guardian Rina.<br>I heard your call, Summoner.<br>Now where is the enemy?",
+  "fusion": "Forget not that the <br>power you were given <br>came from the gods.",
+  "evolution": "",
+  "hp_base": "2890",
+  "atk_base": "1050",
+  "def_base": "900",
+  "rec_base": "1000",
+  "hp_lord": "4248",
+  "atk_lord": "1428",
+  "def_lord": "1188",
+  "rec_lord": "1320",
+  "hp_anima": "4691",
+  "rec_anima": "1202",
+  "atk_breaker": "1546",
+  "def_breaker": "1070",
+  "atk_guardian": "1310",
+  "def_guardian": "1306",
+  "rec_guardian": "1261",
+  "def_oracle": "1129",
+  "hp_oracle": "4071",
+  "rec_oracle": "1497",
+  "hp_bonus": "400",
+  "atk_bonus": "160",
+  "def_bonus": "160",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "3",
+  "normaldc": "9",
+  "ls": "Thunder Spirit's Power",
+  "lsdescription": "25% boost to Atk Power of Thunder Types",
+  "lstype": "Attack",
+  "bbdescription": "6 combo Thunder elemental attack on all enemies & probable Paralysis effect",
+  "bbnote": "45% chance",
+  "bbtype": "Offense",
+  "bbhits": "6",
+  "bbaoe": "A",
+  "bbgauge": "24",
+  "bbdc": "6",
+  "bbmultiplier": "200",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "40133",
+  "evomats2": "40132",
+  "evomats3": "40132",
+  "evomats4": "40191",
+  "evomats5": "40191"
 }

@@ -1,58 +1,64 @@
 {
   "id": "20253",
-  "unitName": "Polar Angel Tiara",
-  "no": "348",
-  "element": "Water",
-  "rarity": "★★★★",
-  "cost": "8",
-  "maxlv": "60",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "1",
-  "animation_attack": "101",
-  "animation_idle": "64",
-  "animation_move": "64",
-  "movespeed_attack": "4",
-  "movespeed_skill": "4",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "82, 86, 90, 110",
-  "normal_distribute": "10, 20, 30, 40",
-  "normal_totaldistr": "100",
-  "description": "A young girl of both holy and demonic descent. Persecuted equally for both races she came from, she ran away to the human world. However, people there failed to neither praise her as a god nor fear her as a demon. Then one day, a girl with an axe in both hands appeared before her. The girl requested she come along with her, saying \"You're strong, right? Then you'll do fine as my assistant!\"",
-  "summon": "D-Did you summon me?<br>Are you not afraid of me?<br>I'll do my very best for you!",
-  "fusion": "I want to become stronger!<br>If I'm able to people will <br>like me more, won't they?",
-  "evolution": "",
-  "hp_base": "2740",
-  "atk_base": "762",
-  "def_base": "839",
-  "rec_base": "1341",
-  "hp_lord": "3914",
-  "atk_lord": "1088",
-  "def_lord": "1198",
-  "rec_lord": "1788",
-  "hp_anima": "4357",
-  "rec_anima": "1670",
-  "atk_breaker": "1206",
-  "def_breaker": "1080",
-  "atk_guardian": "970",
-  "def_guardian": "1316",
-  "rec_guardian": "1729",
-  "def_oracle": "1139",
-  "hp_oracle": "3737",
-  "rec_oracle": "1965",
-  "hp_bonus": "600",
-  "atk_bonus": "120",
-  "def_bonus": "120",
-  "rec_bonus": "120",
-  "lordonly": "",
-  "combo_hits": "4",
-  "normaldc": "8",
-  "ls": "Five Light's Power",
-  "lsdescription": "25% boost to Atk power of all Units when 5 elements or more are present",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 762,
+      "def": 839,
+      "hp": 2740,
+      "rec": 1341
+    },
+    "_lord": {
+      "atk": 1088,
+      "def": 1198,
+      "hp": 3914,
+      "rec": 1788
+    },
+    "anima": {
+      "atk": 1088,
+      "def": 1198,
+      "hp max": 4504,
+      "hp min": 4209,
+      "rec max": 1729,
+      "rec min": 1611
+    },
+    "breaker": {
+      "atk max": 1265,
+      "atk min": 1147,
+      "def max": 1139,
+      "def min": 1021,
+      "hp": 3914,
+      "rec": 1788
+    },
+    "guardian": {
+      "atk": 1088,
+      "def max": 1375,
+      "def min": 1257,
+      "hp": 3914,
+      "rec max": 1788,
+      "rec min": 1670
+    },
+    "oracle": {
+      "atk": 1088,
+      "def max": 1198,
+      "def min": 1080,
+      "hp": 3914,
+      "rec max": 2024,
+      "rec min": 1906
+    }
+  },
+  "leader_skill": {
+    "desc": "25% boost to Atk power of all Units when 5 elements or more are present",
+    "effects": [
+      {
+        "atk% buff": 25,
+        "passive id": "41",
+        "unique elements required": 5
+      }
+    ],
+    "id": "2200",
+    "name": "Five Light's Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -337,94 +343,89 @@
     ],
     "name": "Icicle Bright"
   },
-  "bbdescription": "Gradually recovers HP & adds Water element to attack for all allies for 3 turns",
-  "bbnote": "Heals (780~880 + 10% of target Rec) HP",
-  "bbtype": "Heal",
-  "bbhits": "0",
-  "bbaoe": "0",
-  "bbgauge": "20",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "20254",
-  "evomats1": "20133",
-  "evomats2": "20132",
-  "evomats3": "20132",
-  "evomats4": "20191",
-  "evomats5": "60143",
-  "evoitem": "",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 762,
-      "def": 839,
-      "hp": 2740,
-      "rec": 1341
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "party"
     },
-    "_lord": {
-      "atk": 1088,
-      "def": 1198,
-      "hp": 3914,
-      "rec": 1788
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1088,
-      "def": 1198,
-      "hp max": 4504,
-      "hp min": 4209,
-      "rec max": 1729,
-      "rec min": 1611
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 101
     },
-    "breaker": {
-      "atk max": 1265,
-      "atk min": 1147,
-      "def max": 1139,
-      "def min": 1021,
-      "hp": 3914,
-      "rec": 1788
+    "idle": {
+      "total number of frames": 64
     },
-    "guardian": {
-      "atk": 1088,
-      "def max": 1375,
-      "def min": 1257,
-      "hp": 3914,
-      "rec max": 1788,
-      "rec min": 1670
-    },
-    "oracle": {
-      "atk": 1088,
-      "def max": 1198,
-      "def min": 1080,
-      "hp": 3914,
-      "rec max": 2024,
-      "rec min": 1906
+    "move": {
+      "total number of frames": 64
     }
   },
-  "leader_skill": {
-    "desc": "25% boost to Atk power of all Units when 5 elements or more are present",
-    "effects": [
-      {
-        "atk% buff": 25,
-        "passive id": "41",
-        "unique elements required": 5
-      }
+  "category": 20250,
+  "cost": "8",
+  "damage frames": {
+    "frame times": [
+      82,
+      86,
+      90,
+      110
     ],
-    "id": "2200",
-    "name": "Five Light's Power"
+    "hit dmg% distribution": [
+      10,
+      20,
+      30,
+      40
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 4
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "water",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 348,
+  "imp": {
+    "max atk": "120",
+    "max def": "120",
+    "max hp": "600",
+    "max rec": "120"
+  },
+  "kind": "normal",
+  "lord damage range": "1013~1131",
+  "movement": {
+    "attack": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    }
+  },
+  "name": "Polar Angel Tiara",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Polar Angel Tiara",
+  "maxlv": "60",
+  "no": "348",
   "unitDisplayHomePosition_1W9CxaFK": "334,93,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "24,73,793,762",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "137,270,328,347,0",
@@ -434,5 +435,100 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "76:180:1,80:180:1,84:190:1,90:200030:1,90:200120:1,106:200140:1"
+  "effectFrames": "76:180:1,80:180:1,84:190:1,90:200030:1,90:200120:1,106:200140:1",
+  "evofrom": "",
+  "evointo": "20254",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "20133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20132",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "20191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "101",
+  "animation_idle": "64",
+  "animation_move": "64",
+  "movespeed_attack": "4",
+  "movespeed_skill": "4",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "82, 86, 90, 110",
+  "normal_distribute": "10, 20, 30, 40",
+  "normal_totaldistr": "100",
+  "description": "A young girl of both holy and demonic descent. Persecuted equally for both races she came from, she ran away to the human world. However, people there failed to neither praise her as a god nor fear her as a demon. Then one day, a girl with an axe in both hands appeared before her. The girl requested she come along with her, saying \"You're strong, right? Then you'll do fine as my assistant!\"",
+  "summon": "D-Did you summon me?<br>Are you not afraid of me?<br>I'll do my very best for you!",
+  "fusion": "I want to become stronger!<br>If I'm able to people will <br>like me more, won't they?",
+  "evolution": "",
+  "hp_base": "2740",
+  "atk_base": "762",
+  "def_base": "839",
+  "rec_base": "1341",
+  "hp_lord": "3914",
+  "atk_lord": "1088",
+  "def_lord": "1198",
+  "rec_lord": "1788",
+  "hp_anima": "4357",
+  "rec_anima": "1670",
+  "atk_breaker": "1206",
+  "def_breaker": "1080",
+  "atk_guardian": "970",
+  "def_guardian": "1316",
+  "rec_guardian": "1729",
+  "def_oracle": "1139",
+  "hp_oracle": "3737",
+  "rec_oracle": "1965",
+  "hp_bonus": "600",
+  "atk_bonus": "120",
+  "def_bonus": "120",
+  "rec_bonus": "120",
+  "lordonly": "",
+  "combo_hits": "4",
+  "normaldc": "8",
+  "ls": "Five Light's Power",
+  "lsdescription": "25% boost to Atk power of all Units when 5 elements or more are present",
+  "lstype": "Attack",
+  "bbdescription": "Gradually recovers HP & adds Water element to attack for all allies for 3 turns",
+  "bbnote": "Heals (780~880 + 10% of target Rec) HP",
+  "bbtype": "Heal",
+  "bbhits": "0",
+  "bbaoe": "0",
+  "bbgauge": "20",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "20133",
+  "evomats2": "20132",
+  "evomats3": "20132",
+  "evomats4": "20191",
+  "evomats5": "60143",
+  "evoitem": ""
 }

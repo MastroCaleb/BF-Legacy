@@ -1,62 +1,63 @@
 {
   "id": "50051",
-  "unitName": "Archangel",
-  "no": "76",
-  "element": "Light",
-  "rarity": "★★",
-  "cost": "4",
-  "maxlv": "30",
-  "basexp": "10",
-  "gender": "N",
-  "ai": "1",
-  "animation_attack": "70",
-  "animation_idle": "78",
-  "animation_move": "10",
-  "movespeed_attack": "0.005",
-  "movespeed_skill": "0.005",
-  "speedtype_attack": "1",
-  "speedtype_skill": "1",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "38, 44",
-  "normal_distribute": "50, 50",
-  "normal_totaldistr": "100",
-  "bb_frames": "38, 44, 50",
-  "bb_distribute": "33, 33, 34",
-  "bb_totaldistr": "100",
-  "description": "A humanoid with large, pure-white wings on its back. Angels who have won numerous battles and considered as suitable commanders are called Archangels. People who have received their divine protection and extreme devotion can have their minor wounds instantly healed by them. They are more than ruthless and will annihilate their enemy without hesitation.",
-  "summon": "My sword will condemn evil!<br>If you harbor no guilt<br>then you've nothing to fear!",
-  "fusion": "Behold my glistening sword!<br>The day for the gods' enemies <br>to submit has come!",
-  "evolution": "The gods have <br>heard your prayers.<br>You have my strength!",
-  "hp_base": "1512",
-  "atk_base": "413",
-  "def_base": "416",
-  "rec_base": "210",
-  "hp_lord": "2620",
-  "atk_lord": "715",
-  "def_lord": "737",
-  "rec_lord": "560",
-  "hp_anima": "2838",
-  "rec_anima": "502",
-  "atk_breaker": "773",
-  "def_breaker": "679",
-  "atk_guardian": "657",
-  "def_guardian": "795",
-  "rec_guardian": "531",
-  "def_oracle": "708",
-  "hp_oracle": "2533",
-  "rec_oracle": "647",
-  "hp_bonus": "250",
-  "atk_bonus": "120",
-  "def_bonus": "80",
-  "rec_bonus": "100",
-  "lordonly": "",
-  "combo_hits": "2",
-  "normaldc": "4",
-  "ls": "Pure Light",
-  "lsdescription": "Small boost in Heart Crystals produced during Spark",
-  "lsnote": "20% boost",
-  "lstype": "Recovery",
+  "stats": {
+    "_base": {
+      "atk": 413,
+      "def": 416,
+      "hp": 1512,
+      "rec": 210
+    },
+    "_lord": {
+      "atk": 715,
+      "def": 737,
+      "hp": 2620,
+      "rec": 560
+    },
+    "anima": {
+      "atk": 715,
+      "def": 737,
+      "hp max": 2910,
+      "hp min": 2765,
+      "rec max": 531,
+      "rec min": 473
+    },
+    "breaker": {
+      "atk max": 802,
+      "atk min": 744,
+      "def max": 708,
+      "def min": 650,
+      "hp": 2620,
+      "rec": 560
+    },
+    "guardian": {
+      "atk": 715,
+      "def max": 824,
+      "def min": 766,
+      "hp": 2620,
+      "rec max": 560,
+      "rec min": 502
+    },
+    "oracle": {
+      "atk": 715,
+      "def max": 737,
+      "def min": 679,
+      "hp": 2620,
+      "rec max": 676,
+      "rec min": 618
+    }
+  },
+  "leader_skill": {
+    "desc": "Small boost in Heart Crystals produced during Spark",
+    "effects": [
+      {
+        "hc drop% for spark": 20,
+        "passive id": "31"
+      }
+    ],
+    "id": "1500",
+    "name": "Pure Light"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -223,94 +224,85 @@
     ],
     "name": "Blessed Sword"
   },
-  "bbdescription": "3 combo Light elemental attack on single Enemy & boost to HC drop rate",
-  "bbnote": "40% boost",
-  "bbtype": "Offense",
-  "bbhits": "3",
-  "bbaoe": "1",
-  "bbgauge": "10",
-  "bbdc": "18",
-  "bbmultiplier": "150",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "50050",
-  "evointo": "50052",
-  "evomats1": "50121",
-  "evomats2": "60142",
-  "evomats3": "60142",
-  "evomats4": "",
-  "evomats5": "",
-  "evozelcost": "50000",
-  "stats": {
-    "_base": {
-      "atk": 413,
-      "def": 416,
-      "hp": 1512,
-      "rec": 210
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "party"
     },
-    "_lord": {
-      "atk": 715,
-      "def": 737,
-      "hp": 2620,
-      "rec": 560
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 715,
-      "def": 737,
-      "hp max": 2910,
-      "hp min": 2765,
-      "rec max": 531,
-      "rec min": 473
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 70
     },
-    "breaker": {
-      "atk max": 802,
-      "atk min": 744,
-      "def max": 708,
-      "def min": 650,
-      "hp": 2620,
-      "rec": 560
+    "idle": {
+      "total number of frames": 78
     },
-    "guardian": {
-      "atk": 715,
-      "def max": 824,
-      "def min": 766,
-      "hp": 2620,
-      "rec max": 560,
-      "rec min": 502
-    },
-    "oracle": {
-      "atk": 715,
-      "def max": 737,
-      "def min": 679,
-      "hp": 2620,
-      "rec max": 676,
-      "rec min": 618
+    "move": {
+      "total number of frames": 10
     }
   },
-  "leader_skill": {
-    "desc": "Small boost in Heart Crystals produced during Spark",
-    "effects": [
-      {
-        "hc drop% for spark": 20,
-        "passive id": "31"
-      }
+  "category": 50050,
+  "cost": "4",
+  "damage frames": {
+    "frame times": [
+      38,
+      44
     ],
-    "id": "1500",
-    "name": "Pure Light"
+    "hit dmg% distribution": [
+      50,
+      50
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 2
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "light",
+  "exp_pattern": 10,
+  "gender": "other",
+  "getting type": "not eligible for achievement",
+  "guide_id": 76,
+  "imp": {
+    "max atk": "120",
+    "max def": "80",
+    "max hp": "250",
+    "max rec": "100"
+  },
+  "kind": "normal",
+  "lord damage range": "665~743",
+  "movement": {
+    "attack": {
+      "move speed": 0.005,
+      "move speed type": "1",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.005,
+      "move speed type": "1",
+      "move type": "1"
+    }
+  },
+  "name": "Archangel",
+  "rarity": "2",
+  "sell caution": false,
+  "unitName": "Archangel",
+  "maxlv": "30",
+  "no": "76",
   "unitDisplayHomePosition_1W9CxaFK": "460,216,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-93,-41,1024,820",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "40,218,512,410,1",
@@ -320,5 +312,95 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "300",
   "sellCaution": false,
-  "effectFrames": "32:125:1,38:125:1"
+  "effectFrames": "32:125:1,38:125:1",
+  "evofrom": "50050",
+  "evointo": "50052",
+  "evozelcost": "50000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50121",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60142",
+      "count": 2
+    }
+  ],
+  "basexp": "10",
+  "animation_attack": "70",
+  "animation_idle": "78",
+  "animation_move": "10",
+  "movespeed_attack": "0.005",
+  "movespeed_skill": "0.005",
+  "speedtype_attack": "1",
+  "speedtype_skill": "1",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "38, 44",
+  "normal_distribute": "50, 50",
+  "normal_totaldistr": "100",
+  "bb_frames": "38, 44, 50",
+  "bb_distribute": "33, 33, 34",
+  "bb_totaldistr": "100",
+  "description": "A humanoid with large, pure-white wings on its back. Angels who have won numerous battles and considered as suitable commanders are called Archangels. People who have received their divine protection and extreme devotion can have their minor wounds instantly healed by them. They are more than ruthless and will annihilate their enemy without hesitation.",
+  "summon": "My sword will condemn evil!<br>If you harbor no guilt<br>then you've nothing to fear!",
+  "fusion": "Behold my glistening sword!<br>The day for the gods' enemies <br>to submit has come!",
+  "evolution": "The gods have <br>heard your prayers.<br>You have my strength!",
+  "hp_base": "1512",
+  "atk_base": "413",
+  "def_base": "416",
+  "rec_base": "210",
+  "hp_lord": "2620",
+  "atk_lord": "715",
+  "def_lord": "737",
+  "rec_lord": "560",
+  "hp_anima": "2838",
+  "rec_anima": "502",
+  "atk_breaker": "773",
+  "def_breaker": "679",
+  "atk_guardian": "657",
+  "def_guardian": "795",
+  "rec_guardian": "531",
+  "def_oracle": "708",
+  "hp_oracle": "2533",
+  "rec_oracle": "647",
+  "hp_bonus": "250",
+  "atk_bonus": "120",
+  "def_bonus": "80",
+  "rec_bonus": "100",
+  "lordonly": "",
+  "combo_hits": "2",
+  "normaldc": "4",
+  "ls": "Pure Light",
+  "lsdescription": "Small boost in Heart Crystals produced during Spark",
+  "lsnote": "20% boost",
+  "lstype": "Recovery",
+  "bbdescription": "3 combo Light elemental attack on single Enemy & boost to HC drop rate",
+  "bbnote": "40% boost",
+  "bbtype": "Offense",
+  "bbhits": "3",
+  "bbaoe": "1",
+  "bbgauge": "10",
+  "bbdc": "18",
+  "bbmultiplier": "150",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50121",
+  "evomats2": "60142",
+  "evomats3": "60142",
+  "evomats4": "",
+  "evomats5": ""
 }

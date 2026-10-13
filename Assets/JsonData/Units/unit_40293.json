@@ -1,59 +1,63 @@
 {
   "id": "40293",
-  "unitName": "Fast Princess Lucana",
-  "no": "649",
-  "element": "Thunder",
-  "rarity": "★★★★",
-  "cost": "12",
-  "maxlv": "60",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "139",
-  "animation_idle": "52",
-  "animation_move": "52",
-  "movespeed_attack": "4",
-  "movespeed_skill": "4",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "70, 80, 90, 100, 110, 120",
-  "normal_distribute": "15, 16, 16, 17, 18, 18",
-  "normal_totaldistr": "100",
-  "description": "A Summoner who led many civilians to El Gaia during the last stages of the war with the gods. By the time the invasion of the gods had commenced, her name and abilities as a Summoner were already well known, and she received invitations from all countries asking her to join their armies. However, it is said that she turned down all of the invitations in order to protect the hometown where she was born. Shortly, she began to hear the voices of the gods in her dreams, which revealed to her a way to help the humans escape from the invasion. The next day she immediately decided to contact her childhood friend fighting far away.",
-  "summon": "I fight to rid people of their grief!<br>You'll help me too,<br>won't you?",
-  "fusion": "What is this power?<br>I can feel someone's will...<br>But it's not that weird, for some reason.",
-  "evolution": "",
-  "hp_base": "2970",
-  "atk_base": "938",
-  "def_base": "908",
-  "rec_base": "1117",
-  "hp_lord": "4260",
-  "atk_lord": "1250",
-  "def_lord": "1210",
-  "rec_lord": "1489",
-  "hp_anima": "4703",
-  "rec_anima": "1371",
-  "atk_breaker": "1368",
-  "def_breaker": "1092",
-  "atk_guardian": "1132",
-  "def_guardian": "1328",
-  "rec_guardian": "1430",
-  "def_oracle": "1151",
-  "hp_oracle": "4083",
-  "rec_oracle": "1666",
-  "hp_bonus": "400",
-  "atk_bonus": "120",
-  "def_bonus": "200",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "6",
-  "normaldc": "12",
-  "ls": "Monarch's Magic",
-  "lsdescription": "Small reduction in BB gauge required for BB",
-  "lsnote": "10% reduction",
-  "lstype": "Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 938,
+      "def": 908,
+      "hp": 2970,
+      "rec": 1117
+    },
+    "_lord": {
+      "atk": 1250,
+      "def": 1210,
+      "hp": 4260,
+      "rec": 1489
+    },
+    "anima": {
+      "atk": 1250,
+      "def": 1210,
+      "hp max": 4850,
+      "hp min": 4555,
+      "rec max": 1430,
+      "rec min": 1312
+    },
+    "breaker": {
+      "atk max": 1427,
+      "atk min": 1309,
+      "def max": 1151,
+      "def min": 1033,
+      "hp": 4260,
+      "rec": 1489
+    },
+    "guardian": {
+      "atk": 1250,
+      "def max": 1387,
+      "def min": 1269,
+      "hp": 4260,
+      "rec max": 1489,
+      "rec min": 1371
+    },
+    "oracle": {
+      "atk": 1250,
+      "def max": 1210,
+      "def min": 1092,
+      "hp": 4260,
+      "rec max": 1725,
+      "rec min": 1607
+    }
+  },
+  "leader_skill": {
+    "desc": "Small reduction in BB gauge required for BB",
+    "effects": [
+      {
+        "passive id": "48",
+        "reduced bb bc cost%": 15
+      }
+    ],
+    "id": "4900",
+    "name": "Monarch's Magic"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -338,92 +342,93 @@
     ],
     "name": "Rising Force"
   },
-  "bbdescription": "Greatly recovers HP for all allies & boosts Atk, Def, and Rec for all allies for 3 turns",
-  "bbnote": "Heals (1260~1560 + 22.5% of healer Rec) HP, 25% boost to the parameters",
-  "bbtype": "Heal/Support",
-  "bbhits": "",
-  "bbaoe": "0",
-  "bbgauge": "25",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "40294",
-  "evomats1": "40133",
-  "evomats2": "40191",
-  "evomats3": "40191",
-  "evomats4": "40132",
-  "evomats5": "60144",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 938,
-      "def": 908,
-      "hp": 2970,
-      "rec": 1117
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1250,
-      "def": 1210,
-      "hp": 4260,
-      "rec": 1489
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1250,
-      "def": 1210,
-      "hp max": 4850,
-      "hp min": 4555,
-      "rec max": 1430,
-      "rec min": 1312
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 139
     },
-    "breaker": {
-      "atk max": 1427,
-      "atk min": 1309,
-      "def max": 1151,
-      "def min": 1033,
-      "hp": 4260,
-      "rec": 1489
+    "idle": {
+      "total number of frames": 52
     },
-    "guardian": {
-      "atk": 1250,
-      "def max": 1387,
-      "def min": 1269,
-      "hp": 4260,
-      "rec max": 1489,
-      "rec min": 1371
-    },
-    "oracle": {
-      "atk": 1250,
-      "def max": 1210,
-      "def min": 1092,
-      "hp": 4260,
-      "rec max": 1725,
-      "rec min": 1607
+    "move": {
+      "total number of frames": 52
     }
   },
-  "leader_skill": {
-    "desc": "Small reduction in BB gauge required for BB",
-    "effects": [
-      {
-        "passive id": "48",
-        "reduced bb bc cost%": 15
-      }
+  "category": 40290,
+  "cost": "12",
+  "damage frames": {
+    "frame times": [
+      70,
+      80,
+      90,
+      100,
+      110,
+      120
     ],
-    "id": "4900",
-    "name": "Monarch's Magic"
+    "hit dmg% distribution": [
+      15,
+      16,
+      16,
+      17,
+      18,
+      18
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 6
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "thunder",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "farmable",
+  "guide_id": 649,
+  "imp": {
+    "max atk": "120",
+    "max def": "200",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "1164~1300",
+  "movement": {
+    "attack": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "3"
+    }
+  },
+  "name": "Fast Princess Lucana",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Fast Princess Lucana",
+  "maxlv": "60",
+  "no": "649",
   "unitDisplayHomePosition_1W9CxaFK": "393,-57,210,573",
   "unitDisplayDetailPosition_6z54rgb3": "3,212,830,566",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "157,355,319,277,0",
@@ -433,5 +438,100 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "64:400152:1,70:100123:1,90:100123:1"
+  "effectFrames": "64:400152:1,70:100123:1,90:100123:1",
+  "evofrom": "",
+  "evointo": "40294",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "40133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40191",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "40132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "139",
+  "animation_idle": "52",
+  "animation_move": "52",
+  "movespeed_attack": "4",
+  "movespeed_skill": "4",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "70, 80, 90, 100, 110, 120",
+  "normal_distribute": "15, 16, 16, 17, 18, 18",
+  "normal_totaldistr": "100",
+  "description": "A Summoner who led many civilians to El Gaia during the last stages of the war with the gods. By the time the invasion of the gods had commenced, her name and abilities as a Summoner were already well known, and she received invitations from all countries asking her to join their armies. However, it is said that she turned down all of the invitations in order to protect the hometown where she was born. Shortly, she began to hear the voices of the gods in her dreams, which revealed to her a way to help the humans escape from the invasion. The next day she immediately decided to contact her childhood friend fighting far away.",
+  "summon": "I fight to rid people of their grief!<br>You'll help me too,<br>won't you?",
+  "fusion": "What is this power?<br>I can feel someone's will...<br>But it's not that weird, for some reason.",
+  "evolution": "",
+  "hp_base": "2970",
+  "atk_base": "938",
+  "def_base": "908",
+  "rec_base": "1117",
+  "hp_lord": "4260",
+  "atk_lord": "1250",
+  "def_lord": "1210",
+  "rec_lord": "1489",
+  "hp_anima": "4703",
+  "rec_anima": "1371",
+  "atk_breaker": "1368",
+  "def_breaker": "1092",
+  "atk_guardian": "1132",
+  "def_guardian": "1328",
+  "rec_guardian": "1430",
+  "def_oracle": "1151",
+  "hp_oracle": "4083",
+  "rec_oracle": "1666",
+  "hp_bonus": "400",
+  "atk_bonus": "120",
+  "def_bonus": "200",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "6",
+  "normaldc": "12",
+  "ls": "Monarch's Magic",
+  "lsdescription": "Small reduction in BB gauge required for BB",
+  "lsnote": "10% reduction",
+  "lstype": "Brave Burst",
+  "bbdescription": "Greatly recovers HP for all allies & boosts Atk, Def, and Rec for all allies for 3 turns",
+  "bbnote": "Heals (1260~1560 + 22.5% of healer Rec) HP, 25% boost to the parameters",
+  "bbtype": "Heal/Support",
+  "bbhits": "",
+  "bbaoe": "0",
+  "bbgauge": "25",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "40133",
+  "evomats2": "40191",
+  "evomats3": "40191",
+  "evomats4": "40132",
+  "evomats5": "60144"
 }

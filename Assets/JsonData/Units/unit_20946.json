@@ -1,68 +1,112 @@
 {
   "id": "20946",
-  "unitName": "Weeping Ice Camilla",
-  "no": "1547",
-  "element": "Water",
-  "rarity": "★★★★★★★",
-  "cost": "46",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "3",
-  "animation_attack": "188",
-  "animation_idle": "52",
-  "animation_move": "5",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "28, 31, 48, 51, 116, 119, 122, 125, 128",
-  "normal_distribute": "10, 10, 10, 10, 12, 12, 12, 12, 12",
-  "normal_totaldistr": "100",
-  "bb_frames": "28, 31, 34, 37, 48, 51, 54, 57, 116, 119, 122, 125, 128, 131",
-  "bb_distribute": "6, 6, 6, 6, 6, 6, 6, 6, 9, 9, 9, 9, 8, 8",
-  "bb_totaldistr": "100",
-  "sbb_frames": "28, 31, 34, 37, 40, 48, 51, 54, 57, 60, 116, 119, 122, 125, 128, 131, 134, 137",
-  "sbb_distribute": "5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 7, 7, 6, 6, 6, 6, 6, 6",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "28, 31, 34, 37, 40, 43, 48, 51, 54, 57, 60, 63, 116, 119, 122, 125, 128, 131, 134, 137, 140, 143",
-  "ubb_distribute": "4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 6, 6, 5, 5, 5, 5, 5, 5, 5, 5",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "1",
-  "ubb_effectdelay": "1",
-  "description": "A female thief belonging to the Ten Vile Disnomians, a group once known to have operated at the dawn of the Empire. Camilla's band of thieves focused their activities on the territories surrounding the Empire until they were eventually wiped out by a strike from the Imperial Guard. It was then that the leader of the Disnomians came to Camilla's rescue, resulting in her eventual enlistment as a permanent member of the group. Although using her comrades to achieve her own ends originally earned her quite a deal of mistrust from the other members, her ability to gather intelligence proved to be invaluable. Rumor has it that it was Camilla who provided the leader of the Disnomians with information of the man behind the emperor's murder.",
-  "summon": "Wow, you managed to summon me.<br>Well, just know that I don't work for free. I'll need something substantial in return.",
-  "fusion": "That's all you're gonna give me?<br>You've gotta be kidding me.<br>I'll still take it though.",
-  "evolution": "",
-  "hp_base": "5025",
-  "atk_base": "2230",
-  "def_base": "1988",
-  "rec_base": "2014",
-  "hp_lord": "7183",
-  "atk_lord": "3018",
-  "def_lord": "2704",
-  "rec_lord": "2716",
-  "hp_anima": "8075",
-  "rec_anima": "2478",
-  "atk_breaker": "3256",
-  "def_breaker": "2466",
-  "def_guardian": "2942",
-  "rec_guardian": "2597",
-  "def_oracle": "2585",
-  "rec_oracle": "3073",
-  "hp_bonus": "1100",
-  "atk_bonus": "440",
-  "def_bonus": "440",
-  "rec_bonus": "440",
-  "lordonly": "",
-  "combo_hits": "9",
-  "normaldc": "36",
-  "ls": "Lovely Thief's Loot",
-  "lsdescription": "50% boost to Atk and max HP, hugely boosts Item drop rate, normal attacks may hit all foes & adds probable Spark critical",
-  "lsnote": "4% Item, 25% chance with 50% damage penalty & 5% chance Sparks deal 50% extra damage",
+  "stats": {
+    "_base": {
+      "atk": 2230,
+      "def": 1988,
+      "hp": 5025,
+      "rec": 2014
+    },
+    "_lord": {
+      "atk": 3018,
+      "def": 2704,
+      "hp": 7183,
+      "rec": 2716
+    },
+    "anima": {
+      "atk": 3018,
+      "def": 2704,
+      "hp max": 8373,
+      "hp min": 7778,
+      "rec max": 2597,
+      "rec min": 2359
+    },
+    "breaker": {
+      "atk max": 3375,
+      "atk min": 3137,
+      "def max": 2585,
+      "def min": 2347,
+      "hp": 7183,
+      "rec": 2716
+    },
+    "guardian": {
+      "atk": 3018,
+      "def max": 3061,
+      "def min": 2823,
+      "hp": 7183,
+      "rec max": 2716,
+      "rec min": 2478
+    },
+    "oracle": {
+      "atk": 3018,
+      "def max": 2704,
+      "def min": 2466,
+      "hp": 7183,
+      "rec max": 3192,
+      "rec min": 2954
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to Atk and max HP, hugely boosts Item drop rate, normal attacks may hit all foes & adds probable Spark critical",
+    "effects": [
+      {
+        "atk% buff": 50,
+        "hp% buff": 50,
+        "passive id": "1"
+      },
+      {
+        "item drop rate% buff": 4,
+        "passive id": "19"
+      },
+      {
+        "aoe atk inc%": -50,
+        "chance to aoe": 25,
+        "passive id": "96"
+      },
+      {
+        "passive id": "100",
+        "spark crit chance%": 5,
+        "spark crit dmg%": 50
+      }
+    ],
+    "id": "7485",
+    "name": "Lovely Thief's Loot"
+  },
+  "extra_skill": {
+    "desc": "Boosts Atk, Def for 2 turns when BC collected has exceeded certain amount & raises normal hit amount",
+    "effects": [
+      {
+        "conditions": [],
+        "hit increase/hit": 1,
+        "passive id": "37",
+        "passive target": "self"
+      },
+      {
+        "bc receive count buff activation": 10,
+        "buff": {
+          "atk% buff (1)": 50,
+          "buff turns (1)": "2"
+        },
+        "conditions": [],
+        "passive id": "82",
+        "passive target": "self"
+      },
+      {
+        "bc receive count buff activation": 10,
+        "buff": {
+          "buff turns (3)": "2",
+          "def% buff (3)": 50
+        },
+        "conditions": [],
+        "passive id": "82",
+        "passive target": "self"
+      }
+    ],
+    "id": "28700",
+    "name": "Cobalt Pillager",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -527,14 +571,6 @@
     ],
     "name": "Lucid Daggers"
   },
-  "bbdescription": "14 combo Water attack on all foes, considerably boosts BC, HC drop rate for 3 turns, raises normal hit amount for 3 turns & hugely boosts Spark damage for 3 turns",
-  "bbnote": "30% BC/HC, adds +1 hit to each hit & 80% Spark",
-  "bbtype": "Offense",
-  "bbhits": "14",
-  "bbaoe": "A",
-  "bbgauge": "31",
-  "bbdc": "14",
-  "bbmultiplier": "380",
   "sbb": {
     "damage frames": [
       {
@@ -1231,14 +1267,6 @@
     ],
     "name": "Diverging Rain"
   },
-  "sbbdescription": "18 combo powerful Water attack on all foes, considerably boosts BC, HC drop rate for 3 turns, raises normal hit amount for 3 turns, normal attacks hit all foes for 3 turns & damage taken boosts BB gauge and may slightly restore HP for 3 turns",
-  "sbbnote": "30% BC/HC, adds +1 hit to each hit, 20% chance to heal 15-20% damage & fills 4-7 BC",
-  "sbbtype": "Heal/Offense",
-  "sbbhits": "18",
-  "sbbaoe": "A",
-  "sbbgauge": "33",
-  "sbbdc": "18",
-  "sbbmultiplier": "580",
   "ubb": {
     "damage frames": [
       {
@@ -1403,6 +1431,225 @@
     ],
     "name": "Glacial Abductor"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 188
+    },
+    "idle": {
+      "total number of frames": 52
+    },
+    "move": {
+      "total number of frames": 5
+    }
+  },
+  "category": 20940,
+  "cost": "46",
+  "damage frames": {
+    "frame times": [
+      28,
+      31,
+      48,
+      51,
+      116,
+      119,
+      122,
+      125,
+      128
+    ],
+    "hit dmg% distribution": [
+      10,
+      10,
+      10,
+      10,
+      12,
+      12,
+      12,
+      12,
+      12
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 9
+  },
+  "drop check count": 4,
+  "element": "water",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 1547,
+  "imp": {
+    "max atk": "440",
+    "max def": "440",
+    "max hp": "1100",
+    "max rec": "440"
+  },
+  "kind": "normal",
+  "lord damage range": "2810~3138",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Weeping Ice Camilla",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Weeping Ice Camilla",
+  "maxlv": "120",
+  "no": "1547",
+  "unitDisplayHomePosition_1W9CxaFK": "345,84,160,437",
+  "unitDisplayDetailPosition_6z54rgb3": "-10,136,860,710",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "113,286,430,355,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "28,-111,800,660",
+  "unitDisplaySummonPosition_KC3Jk8Br": "99,280,430,355,0",
+  "unitDisplayHpPosition_3BpHN6VD": "0,36",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "15000",
+  "sellCaution": false,
+  "effectFrames": "22:201479:1,111:180:1,117:180:1,123:180:1,129:180:1,135:180:1,28:183:1,29:400478:1,30:200030:1,31:200140:1,48:183:1,49:400478:1,50:200030:1,45:200140:1,112:200167:1,113:200030:1,114:200175:1",
+  "evofrom": "",
+  "evointo": "20947",
+  "evozelcost": "3000000",
+  "evokarmacost": "1000000",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "20344",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 2
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "188",
+  "animation_idle": "52",
+  "animation_move": "5",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "28, 31, 48, 51, 116, 119, 122, 125, 128",
+  "normal_distribute": "10, 10, 10, 10, 12, 12, 12, 12, 12",
+  "normal_totaldistr": "100",
+  "bb_frames": "28, 31, 34, 37, 48, 51, 54, 57, 116, 119, 122, 125, 128, 131",
+  "bb_distribute": "6, 6, 6, 6, 6, 6, 6, 6, 9, 9, 9, 9, 8, 8",
+  "bb_totaldistr": "100",
+  "sbb_frames": "28, 31, 34, 37, 40, 48, 51, 54, 57, 60, 116, 119, 122, 125, 128, 131, 134, 137",
+  "sbb_distribute": "5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 7, 7, 6, 6, 6, 6, 6, 6",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "28, 31, 34, 37, 40, 43, 48, 51, 54, 57, 60, 63, 116, 119, 122, 125, 128, 131, 134, 137, 140, 143",
+  "ubb_distribute": "4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 6, 6, 5, 5, 5, 5, 5, 5, 5, 5",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "1",
+  "ubb_effectdelay": "1",
+  "description": "A female thief belonging to the Ten Vile Disnomians, a group once known to have operated at the dawn of the Empire. Camilla's band of thieves focused their activities on the territories surrounding the Empire until they were eventually wiped out by a strike from the Imperial Guard. It was then that the leader of the Disnomians came to Camilla's rescue, resulting in her eventual enlistment as a permanent member of the group. Although using her comrades to achieve her own ends originally earned her quite a deal of mistrust from the other members, her ability to gather intelligence proved to be invaluable. Rumor has it that it was Camilla who provided the leader of the Disnomians with information of the man behind the emperor's murder.",
+  "summon": "Wow, you managed to summon me.<br>Well, just know that I don't work for free. I'll need something substantial in return.",
+  "fusion": "That's all you're gonna give me?<br>You've gotta be kidding me.<br>I'll still take it though.",
+  "evolution": "",
+  "hp_base": "5025",
+  "atk_base": "2230",
+  "def_base": "1988",
+  "rec_base": "2014",
+  "hp_lord": "7183",
+  "atk_lord": "3018",
+  "def_lord": "2704",
+  "rec_lord": "2716",
+  "hp_anima": "8075",
+  "rec_anima": "2478",
+  "atk_breaker": "3256",
+  "def_breaker": "2466",
+  "def_guardian": "2942",
+  "rec_guardian": "2597",
+  "def_oracle": "2585",
+  "rec_oracle": "3073",
+  "hp_bonus": "1100",
+  "atk_bonus": "440",
+  "def_bonus": "440",
+  "rec_bonus": "440",
+  "lordonly": "",
+  "combo_hits": "9",
+  "normaldc": "36",
+  "ls": "Lovely Thief's Loot",
+  "lsdescription": "50% boost to Atk and max HP, hugely boosts Item drop rate, normal attacks may hit all foes & adds probable Spark critical",
+  "lsnote": "4% Item, 25% chance with 50% damage penalty & 5% chance Sparks deal 50% extra damage",
+  "bbdescription": "14 combo Water attack on all foes, considerably boosts BC, HC drop rate for 3 turns, raises normal hit amount for 3 turns & hugely boosts Spark damage for 3 turns",
+  "bbnote": "30% BC/HC, adds +1 hit to each hit & 80% Spark",
+  "bbtype": "Offense",
+  "bbhits": "14",
+  "bbaoe": "A",
+  "bbgauge": "31",
+  "bbdc": "14",
+  "bbmultiplier": "380",
+  "sbbdescription": "18 combo powerful Water attack on all foes, considerably boosts BC, HC drop rate for 3 turns, raises normal hit amount for 3 turns, normal attacks hit all foes for 3 turns & damage taken boosts BB gauge and may slightly restore HP for 3 turns",
+  "sbbnote": "30% BC/HC, adds +1 hit to each hit, 20% chance to heal 15-20% damage & fills 4-7 BC",
+  "sbbtype": "Heal/Offense",
+  "sbbhits": "18",
+  "sbbaoe": "A",
+  "sbbgauge": "33",
+  "sbbdc": "18",
+  "sbbmultiplier": "580",
   "ubbdescription": "22 combo massive Water attack on all foes, hugely boosts BC, HC drop rate for 3 turns, enormously boosts Item drop rate for 3 turns, hugely raises normal hit amount for 3 turns & damage taken enormously boosts BB gauge and restores HP for 3 turns",
   "ubbnote": "50% BC/HC, 10% Item, adds +3 hits to each hit count (extra hits deal +50% damage), fills 50 BC & recovers 100% of damage taken",
   "ubbtype": "Heal/Offense",
@@ -1415,8 +1662,6 @@
   "esitem": "",
   "esdescription": "Boosts Atk, Def for 2 turns when BC collected has exceeded certain amount & raises normal hit amount",
   "esnote": "50% boost after 10 BC & adds +1 hit to each hit",
-  "evofrom": "",
-  "evointo": "20947",
   "evomats1": "Water Mecha God",
   "evomats2": "Water Mecha God",
   "evomats3": "Miracle Totem",
@@ -1425,123 +1670,5 @@
   "evomats6": "Dragon Mimic",
   "evomats7": "Metal Mimic",
   "evomats8": "Metal Mimic",
-  "evoitem": "",
-  "evozelcost": "3000000",
-  "stats": {
-    "_base": {
-      "atk": 2230,
-      "def": 1988,
-      "hp": 5025,
-      "rec": 2014
-    },
-    "_lord": {
-      "atk": 3018,
-      "def": 2704,
-      "hp": 7183,
-      "rec": 2716
-    },
-    "anima": {
-      "atk": 3018,
-      "def": 2704,
-      "hp max": 8373,
-      "hp min": 7778,
-      "rec max": 2597,
-      "rec min": 2359
-    },
-    "breaker": {
-      "atk max": 3375,
-      "atk min": 3137,
-      "def max": 2585,
-      "def min": 2347,
-      "hp": 7183,
-      "rec": 2716
-    },
-    "guardian": {
-      "atk": 3018,
-      "def max": 3061,
-      "def min": 2823,
-      "hp": 7183,
-      "rec max": 2716,
-      "rec min": 2478
-    },
-    "oracle": {
-      "atk": 3018,
-      "def max": 2704,
-      "def min": 2466,
-      "hp": 7183,
-      "rec max": 3192,
-      "rec min": 2954
-    }
-  },
-  "leader_skill": {
-    "desc": "50% boost to Atk and max HP, hugely boosts Item drop rate, normal attacks may hit all foes & adds probable Spark critical",
-    "effects": [
-      {
-        "atk% buff": 50,
-        "hp% buff": 50,
-        "passive id": "1"
-      },
-      {
-        "item drop rate% buff": 4,
-        "passive id": "19"
-      },
-      {
-        "aoe atk inc%": -50,
-        "chance to aoe": 25,
-        "passive id": "96"
-      },
-      {
-        "passive id": "100",
-        "spark crit chance%": 5,
-        "spark crit dmg%": 50
-      }
-    ],
-    "id": "7485",
-    "name": "Lovely Thief's Loot"
-  },
-  "extra_skill": {
-    "desc": "Boosts Atk, Def for 2 turns when BC collected has exceeded certain amount & raises normal hit amount",
-    "effects": [
-      {
-        "conditions": [],
-        "hit increase/hit": 1,
-        "passive id": "37",
-        "passive target": "self"
-      },
-      {
-        "bc receive count buff activation": 10,
-        "buff": {
-          "atk% buff (1)": 50,
-          "buff turns (1)": "2"
-        },
-        "conditions": [],
-        "passive id": "82",
-        "passive target": "self"
-      },
-      {
-        "bc receive count buff activation": 10,
-        "buff": {
-          "buff turns (3)": "2",
-          "def% buff (3)": 50
-        },
-        "conditions": [],
-        "passive id": "82",
-        "passive target": "self"
-      }
-    ],
-    "id": "28700",
-    "name": "Cobalt Pillager",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "345,84,160,437",
-  "unitDisplayDetailPosition_6z54rgb3": "-10,136,860,710",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "113,286,430,355,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "28,-111,800,660",
-  "unitDisplaySummonPosition_KC3Jk8Br": "99,280,430,355,0",
-  "unitDisplayHpPosition_3BpHN6VD": "0,36",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "15000",
-  "sellCaution": false,
-  "effectFrames": "22:201479:1,111:180:1,117:180:1,123:180:1,129:180:1,135:180:1,28:183:1,29:400478:1,30:200030:1,31:200140:1,48:183:1,49:400478:1,50:200030:1,45:200140:1,112:200167:1,113:200030:1,114:200175:1"
+  "evoitem": ""
 }

@@ -1,61 +1,63 @@
 {
   "id": "30262",
-  "unitName": "Woodland Fairy Finia",
-  "no": "634",
-  "element": "Earth",
-  "rarity": "★★★",
-  "cost": "6",
-  "maxlv": "40",
-  "basexp": "10",
-  "gender": "N",
-  "ai": "2",
-  "animation_attack": "114",
-  "animation_idle": "84",
-  "animation_move": "84",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "68, 76, 84, 92",
-  "normal_distribute": "40, 20, 20, 20",
-  "normal_totaldistr": "100",
-  "bb_frames": "60, 68, 76, 84",
-  "bb_distribute": "25, 25, 25, 25",
-  "bb_totaldistr": "100",
-  "description": "A wicked demon known as the leader of the Tinpalls. Although she seems very cute, this demon wields terrifying powers. Living in the depths of the forest, she spends her life toying with the humans the Tinpalls bring with them. It is said that when famous warriors and clergymen visit the forest, these demons seek them out in order to corrupt them. The fairies have long been their enemy, and they constantly fight each other in places unknown to humans.",
-  "summon": "Nice to meet you!<br>Are you a Summoner?<br>I will do my best!",
-  "fusion": "That was delicious!<br>But I want to eat more.<br>Can I? Can I?",
-  "evolution": "Wow! Thanks a lot!<br>With this I can...hehe...",
-  "hp_base": "1993",
-  "atk_base": "681",
-  "def_base": "689",
-  "rec_base": "396",
-  "hp_lord": "3289",
-  "atk_lord": "869",
-  "def_lord": "981",
-  "rec_lord": "546",
-  "hp_anima": "3582",
-  "rec_anima": "468",
-  "atk_breaker": "947",
-  "def_breaker": "903",
-  "atk_guardian": "791",
-  "def_guardian": "1059",
-  "rec_guardian": "507",
-  "def_oracle": "942",
-  "hp_oracle": "3172",
-  "rec_oracle": "663",
-  "hp_bonus": "300",
-  "atk_bonus": "120",
-  "def_bonus": "120",
-  "rec_bonus": "120",
-  "lordonly": "",
-  "combo_hits": "4",
-  "normaldc": "8",
-  "ls": "Earth's Protection",
-  "lsdescription": "10% reduction in damage from Earth Types",
-  "lstype": "Defense",
+  "stats": {
+    "_base": {
+      "atk": 681,
+      "def": 689,
+      "hp": 1993,
+      "rec": 396
+    },
+    "_lord": {
+      "atk": 869,
+      "def": 981,
+      "hp": 3289,
+      "rec": 546
+    },
+    "anima": {
+      "atk": 869,
+      "def": 981,
+      "hp max": 3679,
+      "hp min": 3484,
+      "rec max": 507,
+      "rec min": 429
+    },
+    "breaker": {
+      "atk max": 986,
+      "atk min": 908,
+      "def max": 942,
+      "def min": 864,
+      "hp": 3289,
+      "rec": 546
+    },
+    "guardian": {
+      "atk": 869,
+      "def max": 1098,
+      "def min": 1020,
+      "hp": 3289,
+      "rec max": 546,
+      "rec min": 468
+    },
+    "oracle": {
+      "atk": 869,
+      "def max": 981,
+      "def min": 903,
+      "hp": 3289,
+      "rec max": 702,
+      "rec min": 624
+    }
+  },
+  "leader_skill": {
+    "desc": "10% reduction in damage from Earth Types",
+    "effects": [
+      {
+        "earth resist%": 10,
+        "passive id": "5"
+      }
+    ],
+    "id": "504",
+    "name": "Earth's Protection"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -296,94 +298,89 @@
     ],
     "name": "Godswood"
   },
-  "bbdescription": "4 combo Earth elemental attack on all enemies & probable Curse effect",
-  "bbnote": "80% chance to inflict",
-  "bbtype": "Offense",
-  "bbhits": "4",
-  "bbaoe": "A",
-  "bbgauge": "18",
-  "bbdc": "12",
-  "bbmultiplier": "100",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "30261",
-  "evointo": "",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 681,
-      "def": 689,
-      "hp": 1993,
-      "rec": 396
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 869,
-      "def": 981,
-      "hp": 3289,
-      "rec": 546
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 869,
-      "def": 981,
-      "hp max": 3679,
-      "hp min": 3484,
-      "rec max": 507,
-      "rec min": 429
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 114
     },
-    "breaker": {
-      "atk max": 986,
-      "atk min": 908,
-      "def max": 942,
-      "def min": 864,
-      "hp": 3289,
-      "rec": 546
+    "idle": {
+      "total number of frames": 84
     },
-    "guardian": {
-      "atk": 869,
-      "def max": 1098,
-      "def min": 1020,
-      "hp": 3289,
-      "rec max": 546,
-      "rec min": 468
-    },
-    "oracle": {
-      "atk": 869,
-      "def max": 981,
-      "def min": 903,
-      "hp": 3289,
-      "rec max": 702,
-      "rec min": 624
+    "move": {
+      "total number of frames": 84
     }
   },
-  "leader_skill": {
-    "desc": "10% reduction in damage from Earth Types",
-    "effects": [
-      {
-        "earth resist%": 10,
-        "passive id": "5"
-      }
+  "category": 30260,
+  "cost": "6",
+  "damage frames": {
+    "frame times": [
+      68,
+      76,
+      84,
+      92
     ],
-    "id": "504",
-    "name": "Earth's Protection"
+    "hit dmg% distribution": [
+      40,
+      20,
+      20,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 4
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "earth",
+  "exp_pattern": 10,
+  "gender": "other",
+  "getting type": "farmable",
+  "guide_id": 634,
+  "imp": {
+    "max atk": "120",
+    "max def": "120",
+    "max hp": "300",
+    "max rec": "120"
+  },
+  "kind": "normal",
+  "lord damage range": "809~903",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Woodland Fairy Finia",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "Woodland Fairy Finia",
+  "maxlv": "40",
+  "no": "634",
   "unitDisplayHomePosition_1W9CxaFK": "166,0,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "178,285,504,441",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "157,355,319,277,0",
@@ -393,5 +390,83 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "1000",
   "sellCaution": false,
-  "effectFrames": "68:300123:1,70:600222:1,72:200142:1,76:300120:1,78:600221:1,80:200141:1,84:300120:1,67:600221:1,91:200141:1,92:230:1"
+  "effectFrames": "68:300123:1,70:600222:1,72:200142:1,76:300120:1,78:600221:1,80:200141:1,84:300120:1,67:600221:1,91:200141:1,92:230:1",
+  "evofrom": "30261",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "10",
+  "animation_attack": "114",
+  "animation_idle": "84",
+  "animation_move": "84",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "68, 76, 84, 92",
+  "normal_distribute": "40, 20, 20, 20",
+  "normal_totaldistr": "100",
+  "bb_frames": "60, 68, 76, 84",
+  "bb_distribute": "25, 25, 25, 25",
+  "bb_totaldistr": "100",
+  "description": "A wicked demon known as the leader of the Tinpalls. Although she seems very cute, this demon wields terrifying powers. Living in the depths of the forest, she spends her life toying with the humans the Tinpalls bring with them. It is said that when famous warriors and clergymen visit the forest, these demons seek them out in order to corrupt them. The fairies have long been their enemy, and they constantly fight each other in places unknown to humans.",
+  "summon": "Nice to meet you!<br>Are you a Summoner?<br>I will do my best!",
+  "fusion": "That was delicious!<br>But I want to eat more.<br>Can I? Can I?",
+  "evolution": "Wow! Thanks a lot!<br>With this I can...hehe...",
+  "hp_base": "1993",
+  "atk_base": "681",
+  "def_base": "689",
+  "rec_base": "396",
+  "hp_lord": "3289",
+  "atk_lord": "869",
+  "def_lord": "981",
+  "rec_lord": "546",
+  "hp_anima": "3582",
+  "rec_anima": "468",
+  "atk_breaker": "947",
+  "def_breaker": "903",
+  "atk_guardian": "791",
+  "def_guardian": "1059",
+  "rec_guardian": "507",
+  "def_oracle": "942",
+  "hp_oracle": "3172",
+  "rec_oracle": "663",
+  "hp_bonus": "300",
+  "atk_bonus": "120",
+  "def_bonus": "120",
+  "rec_bonus": "120",
+  "lordonly": "",
+  "combo_hits": "4",
+  "normaldc": "8",
+  "ls": "Earth's Protection",
+  "lsdescription": "10% reduction in damage from Earth Types",
+  "lstype": "Defense",
+  "bbdescription": "4 combo Earth elemental attack on all enemies & probable Curse effect",
+  "bbnote": "80% chance to inflict",
+  "bbtype": "Offense",
+  "bbhits": "4",
+  "bbaoe": "A",
+  "bbgauge": "18",
+  "bbdc": "12",
+  "bbmultiplier": "100",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "",
+  "evomats2": "",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": ""
 }

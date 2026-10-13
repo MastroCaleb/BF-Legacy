@@ -1,68 +1,118 @@
 {
   "id": "51267",
-  "unitName": "Compliant Subduer Mel",
-  "no": "1688",
-  "element": "Light",
-  "rarity": "Omni",
-  "cost": "47",
-  "maxlv": "150",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "128",
-  "animation_idle": "54",
-  "animation_move": "3",
-  "movespeed_attack": "0.0024",
-  "movespeed_skill": "0.0024",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "24, 27, 30, 33, 59, 64, 69, 74, 79, 84, 89, 94",
-  "normal_distribute": "12, 9, 6, 4, 16, 10, 8, 6, 5, 10, 8, 6",
-  "normal_totaldistr": "100",
-  "bb_frames": "24, 27, 30, 33, 36, 59, 62, 65, 68, 79, 82, 85, 88, 91, 94",
-  "bb_distribute": "8, 7, 6, 5, 4, 12, 9, 7, 5, 4, 10, 8, 6, 5, 4",
-  "bb_totaldistr": "100",
-  "sbb_frames": "24, 27, 30, 33, 36, 39, 59, 62, 65, 68, 71, 79, 82, 85, 88, 91, 94, 97",
-  "sbb_distribute": "7, 6, 5, 4, 3, 2, 12, 9, 7, 5, 4, 3, 9, 7, 6, 5, 3, 3",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "24, 27, 30, 33, 36, 39, 42, 45, 59, 62, 65, 68, 71, 74, 79, 82, 85, 88, 91, 94, 97, 100, 103",
-  "ubb_distribute": "6, 5, 4, 4, 3, 3, 2, 2, 10, 8, 6, 5, 4, 3, 8, 6, 5, 4, 3, 3, 2, 2, 2",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "1",
-  "ubb_effectdelay": "1",
-  "description": "Most would agree that, judging by Mel's past, she would have continued her indifferent execution of missions unchanged even in Rahnas's ideal world. She almost certainly would have lost the last shreds of her emotions, including even the fear of death. In time, her almost-mechanical movements and nature would have become a symbol of terror to the common people. With Mel as a symbolic deterrent against subversives, Rahnas's control would have been all the more secure.",
-  "summon": "I don't know how my comrades feel... But if it's an order, I simply obey. I will join your side.",
-  "fusion": "In strength itself there is value. Lord Rahnas said so... My value...depends on you.",
-  "evolution": "I exist... to achieve Lord Rahnas's goals. I do not know any other way to live...",
-  "hp_base": "6025",
-  "atk_base": "2225",
-  "def_base": "2395",
-  "rec_base": "2147",
-  "hp_lord": "7850",
-  "atk_lord": "2790",
-  "def_lord": "2980",
-  "rec_lord": "2680",
-  "hp_anima": "8967",
-  "rec_anima": "2382",
-  "atk_breaker": "3088",
-  "def_breaker": "2682",
-  "def_guardian": "3278",
-  "rec_guardian": "2531",
-  "def_oracle": "2831",
-  "rec_oracle": "3127",
-  "hp_bonus": "1250",
-  "atk_bonus": "800",
-  "def_bonus": "400",
-  "rec_bonus": "500",
-  "lordonly": "true",
-  "combo_hits": "12",
-  "normaldc": "48",
-  "ls": "Frost Delusions",
-  "lsdescription": "40% boost to Atk, Rec, max HP, normal attacks may hit all foes, damage taken may restore HP & negates all status ailments",
-  "lsnote": "25% chance of AoE normal attack (-50% extra damage, 50% total) & 25% chance of healing 25% damage taken",
+  "stats": {
+    "_base": {
+      "atk": 2225,
+      "def": 2395,
+      "hp": 6025,
+      "rec": 2147
+    },
+    "_lord": {
+      "atk": 2790,
+      "def": 2980,
+      "hp": 7850,
+      "rec": 2680
+    },
+    "anima": {
+      "atk": 2790,
+      "def": 2980,
+      "hp max": 9340,
+      "hp min": 8595,
+      "rec max": 2531,
+      "rec min": 2233
+    },
+    "breaker": {
+      "atk max": 3237,
+      "atk min": 2939,
+      "def max": 2831,
+      "def min": 2533,
+      "hp": 7850,
+      "rec": 2680
+    },
+    "guardian": {
+      "atk": 2790,
+      "def max": 3427,
+      "def min": 3129,
+      "hp": 7850,
+      "rec max": 2680,
+      "rec min": 2382
+    },
+    "oracle": {
+      "atk": 2790,
+      "def max": 2980,
+      "def min": 2682,
+      "hp": 7850,
+      "rec max": 3276,
+      "rec min": 2978
+    }
+  },
+  "leader_skill": {
+    "desc": "40% boost to Atk, Rec, max HP, normal attacks may hit all foes, damage taken may restore HP & negates all status ailments",
+    "effects": [
+      {
+        "atk% buff": 40,
+        "hp% buff": 40,
+        "passive id": "1",
+        "rec% buff": 40
+      },
+      {
+        "aoe atk inc%": -50,
+        "chance to aoe": 25,
+        "passive id": "96"
+      },
+      {
+        "dmg% to hp% when attacked chance%": 25,
+        "dmg% to hp% when attacked high": 25,
+        "dmg% to hp% when attacked low": 25,
+        "passive id": "24"
+      },
+      {
+        "curse resist%": 100,
+        "injury resist%": 100,
+        "paralysis resist%": 100,
+        "passive id": "4",
+        "poison resist%": 100,
+        "sick resist%": 100,
+        "weaken resist%": 100
+      }
+    ],
+    "id": "7532",
+    "name": "Frost Delusions"
+  },
+  "extra_skill": {
+    "desc": "20% boost to all parameters when an HP Recovery type Sphere is equipped & negates all status ailments",
+    "effects": [
+      {
+        "atk% buff": 20,
+        "conditions": [
+          {
+            "sphere category required": "HP Recovery",
+            "sphere category required (raw)": "7"
+          }
+        ],
+        "def% buff": 20,
+        "hp% buff": 20,
+        "passive id": "1",
+        "passive target": "self",
+        "rec% buff": 20
+      },
+      {
+        "conditions": [],
+        "curse resist%": 100,
+        "injury resist%": 100,
+        "paralysis resist%": 100,
+        "passive id": "4",
+        "passive target": "self",
+        "poison resist%": 100,
+        "sick resist%": 100,
+        "weaken resist%": 100
+      }
+    ],
+    "id": "40600",
+    "name": "Seeking Raison d'Etre",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -559,15 +609,6 @@
     ],
     "name": "Helix Dissection"
   },
-  "bbdescription": "15 combo Light attack on all foes, additional attack at turn's end for 3 turns, greatly restores HP & normal attacks hit all foes for 3 turns",
-  "bbnote": "250% DoT modifier & heals 3500-4000 + 32% Rec HP",
-  "bbtype": "Offense",
-  "bbhits": "15",
-  "bbaoe": "A",
-  "bbgauge": "25",
-  "bbdc": "15",
-  "bbmultiplier": "350",
-  "bb_hpscale": "",
   "sbb": {
     "damage frames": [
       {
@@ -1252,15 +1293,6 @@
     ],
     "name": "Fake Estateaux"
   },
-  "sbbdescription": "18 combo powerful Light attack on all foes, additional attack at turn's end for 3 turns, greatly restores HP, removes all status ailments & normal attacks hit all foes for 3 turns",
-  "sbbnote": "350% DoT modifier & heals 3500-4000 + 32% Rec HP",
-  "sbbtype": "Offense",
-  "sbbhits": "18",
-  "sbbaoe": "A",
-  "sbbgauge": "27",
-  "sbbdc": "18",
-  "sbbmultiplier": "550",
-  "sbb_hpscale": "",
   "ubb": {
     "damage frames": [
       {
@@ -1427,6 +1459,196 @@
     ],
     "name": "Perfect Automata"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 128
+    },
+    "idle": {
+      "total number of frames": 54
+    },
+    "move": {
+      "total number of frames": 3
+    }
+  },
+  "category": 51260,
+  "cost": "47",
+  "damage frames": {
+    "frame times": [
+      24,
+      27,
+      30,
+      33,
+      59,
+      64,
+      69,
+      74,
+      79,
+      84,
+      89,
+      94
+    ],
+    "hit dmg% distribution": [
+      12,
+      9,
+      6,
+      4,
+      16,
+      10,
+      8,
+      6,
+      5,
+      10,
+      8,
+      6
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 12
+  },
+  "drop check count": 4,
+  "element": "light",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "farmable",
+  "guide_id": 1688,
+  "imp": {
+    "max atk": "800",
+    "max def": "400",
+    "max hp": "1250",
+    "max rec": "500"
+  },
+  "kind": "normal",
+  "lord damage range": "2598~2901",
+  "movement": {
+    "attack": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    }
+  },
+  "name": "Compliant Subduer Mel",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "8",
+  "sell caution": true,
+  "unitName": "Compliant Subduer Mel",
+  "maxlv": "150",
+  "no": "1688",
+  "unitDisplayHomePosition_1W9CxaFK": "628,211,163,445",
+  "unitDisplayDetailPosition_6z54rgb3": "-293,-12,1338,900",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "-84,137,790,531,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-290,-268,1338,900",
+  "unitDisplaySummonPosition_KC3Jk8Br": "-84,137,790,531,0",
+  "unitDisplayHpPosition_3BpHN6VD": "0,43",
+  "unitDisplayCursorPosition": "1,8",
+  "sellPrice": "50000",
+  "sellCaution": true,
+  "effectFrames": "20:500215:1,19:601690:1,18:125:1,21:125:1,24:125:1,27:127:1,53:120:1,58:120:1,63:120:1,68:120:1,24:401110:1,57:600762:1,55:500612:1,80:401110:1,77:600203:1",
+  "evofrom": "51266",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "21",
+  "animation_attack": "128",
+  "animation_idle": "54",
+  "animation_move": "3",
+  "movespeed_attack": "0.0024",
+  "movespeed_skill": "0.0024",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "24, 27, 30, 33, 59, 64, 69, 74, 79, 84, 89, 94",
+  "normal_distribute": "12, 9, 6, 4, 16, 10, 8, 6, 5, 10, 8, 6",
+  "normal_totaldistr": "100",
+  "bb_frames": "24, 27, 30, 33, 36, 59, 62, 65, 68, 79, 82, 85, 88, 91, 94",
+  "bb_distribute": "8, 7, 6, 5, 4, 12, 9, 7, 5, 4, 10, 8, 6, 5, 4",
+  "bb_totaldistr": "100",
+  "sbb_frames": "24, 27, 30, 33, 36, 39, 59, 62, 65, 68, 71, 79, 82, 85, 88, 91, 94, 97",
+  "sbb_distribute": "7, 6, 5, 4, 3, 2, 12, 9, 7, 5, 4, 3, 9, 7, 6, 5, 3, 3",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "24, 27, 30, 33, 36, 39, 42, 45, 59, 62, 65, 68, 71, 74, 79, 82, 85, 88, 91, 94, 97, 100, 103",
+  "ubb_distribute": "6, 5, 4, 4, 3, 3, 2, 2, 10, 8, 6, 5, 4, 3, 8, 6, 5, 4, 3, 3, 2, 2, 2",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "1",
+  "ubb_effectdelay": "1",
+  "description": "Most would agree that, judging by Mel's past, she would have continued her indifferent execution of missions unchanged even in Rahnas's ideal world. She almost certainly would have lost the last shreds of her emotions, including even the fear of death. In time, her almost-mechanical movements and nature would have become a symbol of terror to the common people. With Mel as a symbolic deterrent against subversives, Rahnas's control would have been all the more secure.",
+  "summon": "I don't know how my comrades feel... But if it's an order, I simply obey. I will join your side.",
+  "fusion": "In strength itself there is value. Lord Rahnas said so... My value...depends on you.",
+  "evolution": "I exist... to achieve Lord Rahnas's goals. I do not know any other way to live...",
+  "hp_base": "6025",
+  "atk_base": "2225",
+  "def_base": "2395",
+  "rec_base": "2147",
+  "hp_lord": "7850",
+  "atk_lord": "2790",
+  "def_lord": "2980",
+  "rec_lord": "2680",
+  "hp_anima": "8967",
+  "rec_anima": "2382",
+  "atk_breaker": "3088",
+  "def_breaker": "2682",
+  "def_guardian": "3278",
+  "rec_guardian": "2531",
+  "def_oracle": "2831",
+  "rec_oracle": "3127",
+  "hp_bonus": "1250",
+  "atk_bonus": "800",
+  "def_bonus": "400",
+  "rec_bonus": "500",
+  "lordonly": "true",
+  "combo_hits": "12",
+  "normaldc": "48",
+  "ls": "Frost Delusions",
+  "lsdescription": "40% boost to Atk, Rec, max HP, normal attacks may hit all foes, damage taken may restore HP & negates all status ailments",
+  "lsnote": "25% chance of AoE normal attack (-50% extra damage, 50% total) & 25% chance of healing 25% damage taken",
+  "bbdescription": "15 combo Light attack on all foes, additional attack at turn's end for 3 turns, greatly restores HP & normal attacks hit all foes for 3 turns",
+  "bbnote": "250% DoT modifier & heals 3500-4000 + 32% Rec HP",
+  "bbtype": "Offense",
+  "bbhits": "15",
+  "bbaoe": "A",
+  "bbgauge": "25",
+  "bbdc": "15",
+  "bbmultiplier": "350",
+  "bb_hpscale": "",
+  "sbbdescription": "18 combo powerful Light attack on all foes, additional attack at turn's end for 3 turns, greatly restores HP, removes all status ailments & normal attacks hit all foes for 3 turns",
+  "sbbnote": "350% DoT modifier & heals 3500-4000 + 32% Rec HP",
+  "sbbtype": "Offense",
+  "sbbhits": "18",
+  "sbbaoe": "A",
+  "sbbgauge": "27",
+  "sbbdc": "18",
+  "sbbmultiplier": "550",
+  "sbb_hpscale": "",
   "ubbdescription": "23 combo massive Light attack on all foes, normal attacks hit all foes for 3 turns, enormously boosts OD gauge fill rate at turn's end for 3 turns, fully restores HP for 3 turns & negates all status ailments for 5 turns",
   "ubbnote": "100% chance to AoE normal (30% extra damage, 130% damage total) & 1000 OD fill per turn",
   "ubbtype": "Offense",
@@ -1440,7 +1662,6 @@
   "esitem": "HP Recovery Sphere",
   "esdescription": "20% boost to all parameters when an HP Recovery type Sphere is equipped & negates all status ailments",
   "esnote": "",
-  "evofrom": "51266",
   "omniskill1_cat": "Parameter Boost",
   "omniskill1_1_sp": "20",
   "omniskill1_1_desc": "20% boost to all parameters",
@@ -1476,128 +1697,5 @@
   "notes": "",
   "addcat": "Mock Unit",
   "addcatname": "Mel2",
-  "bottomtext": "",
-  "stats": {
-    "_base": {
-      "atk": 2225,
-      "def": 2395,
-      "hp": 6025,
-      "rec": 2147
-    },
-    "_lord": {
-      "atk": 2790,
-      "def": 2980,
-      "hp": 7850,
-      "rec": 2680
-    },
-    "anima": {
-      "atk": 2790,
-      "def": 2980,
-      "hp max": 9340,
-      "hp min": 8595,
-      "rec max": 2531,
-      "rec min": 2233
-    },
-    "breaker": {
-      "atk max": 3237,
-      "atk min": 2939,
-      "def max": 2831,
-      "def min": 2533,
-      "hp": 7850,
-      "rec": 2680
-    },
-    "guardian": {
-      "atk": 2790,
-      "def max": 3427,
-      "def min": 3129,
-      "hp": 7850,
-      "rec max": 2680,
-      "rec min": 2382
-    },
-    "oracle": {
-      "atk": 2790,
-      "def max": 2980,
-      "def min": 2682,
-      "hp": 7850,
-      "rec max": 3276,
-      "rec min": 2978
-    }
-  },
-  "leader_skill": {
-    "desc": "40% boost to Atk, Rec, max HP, normal attacks may hit all foes, damage taken may restore HP & negates all status ailments",
-    "effects": [
-      {
-        "atk% buff": 40,
-        "hp% buff": 40,
-        "passive id": "1",
-        "rec% buff": 40
-      },
-      {
-        "aoe atk inc%": -50,
-        "chance to aoe": 25,
-        "passive id": "96"
-      },
-      {
-        "dmg% to hp% when attacked chance%": 25,
-        "dmg% to hp% when attacked high": 25,
-        "dmg% to hp% when attacked low": 25,
-        "passive id": "24"
-      },
-      {
-        "curse resist%": 100,
-        "injury resist%": 100,
-        "paralysis resist%": 100,
-        "passive id": "4",
-        "poison resist%": 100,
-        "sick resist%": 100,
-        "weaken resist%": 100
-      }
-    ],
-    "id": "7532",
-    "name": "Frost Delusions"
-  },
-  "extra_skill": {
-    "desc": "20% boost to all parameters when an HP Recovery type Sphere is equipped & negates all status ailments",
-    "effects": [
-      {
-        "atk% buff": 20,
-        "conditions": [
-          {
-            "sphere category required": "HP Recovery",
-            "sphere category required (raw)": "7"
-          }
-        ],
-        "def% buff": 20,
-        "hp% buff": 20,
-        "passive id": "1",
-        "passive target": "self",
-        "rec% buff": 20
-      },
-      {
-        "conditions": [],
-        "curse resist%": 100,
-        "injury resist%": 100,
-        "paralysis resist%": 100,
-        "passive id": "4",
-        "passive target": "self",
-        "poison resist%": 100,
-        "sick resist%": 100,
-        "weaken resist%": 100
-      }
-    ],
-    "id": "40600",
-    "name": "Seeking Raison d'Etre",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "628,211,163,445",
-  "unitDisplayDetailPosition_6z54rgb3": "-293,-12,1338,900",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "-84,137,790,531,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-290,-268,1338,900",
-  "unitDisplaySummonPosition_KC3Jk8Br": "-84,137,790,531,0",
-  "unitDisplayHpPosition_3BpHN6VD": "0,43",
-  "unitDisplayCursorPosition": "1,8",
-  "sellPrice": "50000",
-  "sellCaution": true,
-  "effectFrames": "20:500215:1,19:601690:1,18:125:1,21:125:1,24:125:1,27:127:1,53:120:1,58:120:1,63:120:1,68:120:1,24:401110:1,57:600762:1,55:500612:1,80:401110:1,77:600203:1"
+  "bottomtext": ""
 }

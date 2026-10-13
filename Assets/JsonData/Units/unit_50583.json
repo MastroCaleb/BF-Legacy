@@ -1,62 +1,64 @@
 {
   "id": "50583",
-  "unitName": "Holy Treasures Yujeh",
-  "no": "727",
-  "element": "Light",
-  "rarity": "★★★★",
-  "cost": "13",
-  "maxlv": "60",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "6",
-  "animation_attack": "170",
-  "animation_idle": "80",
-  "animation_move": "19",
-  "movespeed_attack": "0.0041",
-  "movespeed_skill": "0.0041",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "96, 103, 110, 117, 124, 131",
-  "normal_distribute": "17, 16, 17, 16, 17, 17",
-  "normal_totaldistr": "100",
-  "bb_frames": "96, 102, 108, 114, 120, 126, 132, 138, 144",
-  "bb_distribute": "11, 11, 11, 11, 11, 11, 11, 11, 12",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "description": "A beautifully winged young woman holding a divine flower on her right hand, and a chalice on her left. She was first sighted in one of the countless forests in the Vriksha Region. In the beginning, people had considered her a goddess based on her appearance, giving her offerings and the like. But claiming to be a human, she refused all of the offerings, and left the forest. As luck would have it, however, she destroyed an atrocious demon nesting in that region at about the same time, which only made the people's adoration for her even stronger.",
-  "summon": "A Summoner?<br>Please, keep your distance.<br>I don't think I can meet your expectations.",
-  "fusion": "How peculiar that you would share<br>your power with me. However, I have<br>enough of my own, thank you.",
-  "evolution": "",
-  "hp_base": "2918",
-  "atk_base": "954",
-  "def_base": "1101",
-  "rec_base": "1134",
-  "hp_lord": "4191",
-  "atk_lord": "1272",
-  "def_lord": "1468",
-  "rec_lord": "1512",
-  "hp_anima": "4634",
-  "rec_anima": "1394",
-  "atk_breaker": "1390",
-  "def_breaker": "1350",
-  "atk_guardian": "1154",
-  "def_guardian": "1586",
-  "rec_guardian": "1453",
-  "def_oracle": "1409",
-  "hp_oracle": "4014",
-  "rec_oracle": "1689",
-  "hp_bonus": "600",
-  "atk_bonus": "120",
-  "def_bonus": "120",
-  "rec_bonus": "120",
-  "lordonly": "",
-  "combo_hits": "6",
-  "normaldc": "12",
-  "ls": "Five Light's Power",
-  "lsdescription": "25% boost to Atk power of all Units when 5 elements or more are present",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 954,
+      "def": 1101,
+      "hp": 2918,
+      "rec": 1134
+    },
+    "_lord": {
+      "atk": 1272,
+      "def": 1468,
+      "hp": 4191,
+      "rec": 1512
+    },
+    "anima": {
+      "atk": 1272,
+      "def": 1468,
+      "hp max": 4781,
+      "hp min": 4486,
+      "rec max": 1453,
+      "rec min": 1335
+    },
+    "breaker": {
+      "atk max": 1449,
+      "atk min": 1331,
+      "def max": 1409,
+      "def min": 1291,
+      "hp": 4191,
+      "rec": 1512
+    },
+    "guardian": {
+      "atk": 1272,
+      "def max": 1645,
+      "def min": 1527,
+      "hp": 4191,
+      "rec max": 1512,
+      "rec min": 1394
+    },
+    "oracle": {
+      "atk": 1272,
+      "def max": 1468,
+      "def min": 1350,
+      "hp": 4191,
+      "rec max": 1748,
+      "rec min": 1630
+    }
+  },
+  "leader_skill": {
+    "desc": "25% boost to Atk power of all Units when 5 elements or more are present",
+    "effects": [
+      {
+        "atk% buff": 25,
+        "passive id": "41",
+        "unique elements required": 5
+      }
+    ],
+    "id": "2200",
+    "name": "Five Light's Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -347,94 +349,93 @@
     ],
     "name": "Holy Light"
   },
-  "bbdescription": "9 combo Light elemental attack on all enemies & adds Light and Dark elements to attack for all allies for 3 turns",
-  "bbtype": "Support/Offense",
-  "bbhits": "9",
-  "bbaoe": "A",
-  "bbgauge": "23",
-  "bbdc": "9",
-  "bbmultiplier": "200",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "50584",
-  "evomats1": "50123",
-  "evomats2": "50191",
-  "evomats3": "50122",
-  "evomats4": "60144",
-  "evomats5": "60144",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 954,
-      "def": 1101,
-      "hp": 2918,
-      "rec": 1134
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 100.0,
+      "target conditions": "hp_25pr_under",
+      "target type": "party"
     },
-    "_lord": {
-      "atk": 1272,
-      "def": 1468,
-      "hp": 4191,
-      "rec": 1512
+    {
+      "action": "attack",
+      "chance%": 50.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1272,
-      "def": 1468,
-      "hp max": 4781,
-      "hp min": 4486,
-      "rec max": 1453,
-      "rec min": 1335
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 170
     },
-    "breaker": {
-      "atk max": 1449,
-      "atk min": 1331,
-      "def max": 1409,
-      "def min": 1291,
-      "hp": 4191,
-      "rec": 1512
+    "idle": {
+      "total number of frames": 80
     },
-    "guardian": {
-      "atk": 1272,
-      "def max": 1645,
-      "def min": 1527,
-      "hp": 4191,
-      "rec max": 1512,
-      "rec min": 1394
-    },
-    "oracle": {
-      "atk": 1272,
-      "def max": 1468,
-      "def min": 1350,
-      "hp": 4191,
-      "rec max": 1748,
-      "rec min": 1630
+    "move": {
+      "total number of frames": 19
     }
   },
-  "leader_skill": {
-    "desc": "25% boost to Atk power of all Units when 5 elements or more are present",
-    "effects": [
-      {
-        "atk% buff": 25,
-        "passive id": "41",
-        "unique elements required": 5
-      }
+  "category": 50580,
+  "cost": "13",
+  "damage frames": {
+    "frame times": [
+      96,
+      103,
+      110,
+      117,
+      124,
+      131
     ],
-    "id": "2200",
-    "name": "Five Light's Power"
+    "hit dmg% distribution": [
+      17,
+      16,
+      17,
+      16,
+      17,
+      17
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 6
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "light",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 727,
+  "imp": {
+    "max atk": "120",
+    "max def": "120",
+    "max hp": "600",
+    "max rec": "120"
+  },
+  "kind": "normal",
+  "lord damage range": "1183~1322",
+  "movement": {
+    "attack": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    }
+  },
+  "name": "Holy Treasures Yujeh",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Holy Treasures Yujeh",
+  "maxlv": "60",
+  "no": "727",
   "unitDisplayHomePosition_1W9CxaFK": "440,231,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-108,-32,1020,898",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "215,387,216,240,0",
@@ -444,5 +445,104 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "75:600491:1,105:500382:1,65:500033:1,73:200262:1"
+  "effectFrames": "75:600491:1,105:500382:1,65:500033:1,73:200262:1",
+  "evofrom": "",
+  "evointo": "50584",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50123",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50122",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 2
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "170",
+  "animation_idle": "80",
+  "animation_move": "19",
+  "movespeed_attack": "0.0041",
+  "movespeed_skill": "0.0041",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "96, 103, 110, 117, 124, 131",
+  "normal_distribute": "17, 16, 17, 16, 17, 17",
+  "normal_totaldistr": "100",
+  "bb_frames": "96, 102, 108, 114, 120, 126, 132, 138, 144",
+  "bb_distribute": "11, 11, 11, 11, 11, 11, 11, 11, 12",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "description": "A beautifully winged young woman holding a divine flower on her right hand, and a chalice on her left. She was first sighted in one of the countless forests in the Vriksha Region. In the beginning, people had considered her a goddess based on her appearance, giving her offerings and the like. But claiming to be a human, she refused all of the offerings, and left the forest. As luck would have it, however, she destroyed an atrocious demon nesting in that region at about the same time, which only made the people's adoration for her even stronger.",
+  "summon": "A Summoner?<br>Please, keep your distance.<br>I don't think I can meet your expectations.",
+  "fusion": "How peculiar that you would share<br>your power with me. However, I have<br>enough of my own, thank you.",
+  "evolution": "",
+  "hp_base": "2918",
+  "atk_base": "954",
+  "def_base": "1101",
+  "rec_base": "1134",
+  "hp_lord": "4191",
+  "atk_lord": "1272",
+  "def_lord": "1468",
+  "rec_lord": "1512",
+  "hp_anima": "4634",
+  "rec_anima": "1394",
+  "atk_breaker": "1390",
+  "def_breaker": "1350",
+  "atk_guardian": "1154",
+  "def_guardian": "1586",
+  "rec_guardian": "1453",
+  "def_oracle": "1409",
+  "hp_oracle": "4014",
+  "rec_oracle": "1689",
+  "hp_bonus": "600",
+  "atk_bonus": "120",
+  "def_bonus": "120",
+  "rec_bonus": "120",
+  "lordonly": "",
+  "combo_hits": "6",
+  "normaldc": "12",
+  "ls": "Five Light's Power",
+  "lsdescription": "25% boost to Atk power of all Units when 5 elements or more are present",
+  "lstype": "Attack",
+  "bbdescription": "9 combo Light elemental attack on all enemies & adds Light and Dark elements to attack for all allies for 3 turns",
+  "bbtype": "Support/Offense",
+  "bbhits": "9",
+  "bbaoe": "A",
+  "bbgauge": "23",
+  "bbdc": "9",
+  "bbmultiplier": "200",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50123",
+  "evomats2": "50191",
+  "evomats3": "50122",
+  "evomats4": "60144",
+  "evomats5": "60144"
 }

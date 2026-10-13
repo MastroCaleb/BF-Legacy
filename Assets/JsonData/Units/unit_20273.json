@@ -1,52 +1,64 @@
 {
   "id": "20273",
-  "unitName": "Ice Keep Copra",
-  "no": "417",
-  "element": "Water",
-  "rarity": "★★★★",
-  "cost": "12",
-  "maxlv": "60",
-  "basexp": "21",
-  "gender": "N",
-  "ai": "2",
-  "animation_attack": "306",
-  "animation_idle": "204",
-  "animation_move": "204",
-  "movespeed_attack": "6",
-  "movespeed_skill": "6",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "description": "A freezing weapon created by the gods to seal away a disastrous fiery beast. Its ice crystal protected outer walls and overwhelming destructive force helped it to carry out its mission. However, Copra's true power lied in its ability to reconfigure its own armaments from ice. Copra had much room to grow strong in his battle against the raging beast, and in time his abilities surpassed even the gods' expectations.",
-  "summon": "I am the Ice Keep Copra.<br>I was created by the gods. <br>I am the extinguisher of flames.",
-  "fusion": "My ice wall has grown thicker.<br>None shall pass.",
-  "evolution": "",
-  "hp_base": "3085",
-  "atk_base": "821",
-  "def_base": "1010",
-  "rec_base": "566",
-  "hp_lord": "4771",
-  "atk_lord": "1171",
-  "def_lord": "1434",
-  "rec_lord": "809",
-  "hp_anima": "5213",
-  "rec_anima": "691",
-  "atk_breaker": "1289",
-  "def_breaker": "1316",
-  "atk_guardian": "1053",
-  "def_guardian": "1552",
-  "hp_oracle": "4328",
-  "rec_oracle": "927",
-  "hp_bonus": "400",
-  "atk_bonus": "120",
-  "def_bonus": "200",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "4",
-  "ls": "Royal Sanctuary",
-  "lsdescription": "5% boost to Def and HP for all types",
-  "lstype": "Hit Points/Defense",
+  "stats": {
+    "_base": {
+      "atk": 821,
+      "def": 1010,
+      "hp": 3085,
+      "rec": 566
+    },
+    "_lord": {
+      "atk": 1171,
+      "def": 1434,
+      "hp": 4771,
+      "rec": 809
+    },
+    "anima": {
+      "atk": 1171,
+      "def": 1434,
+      "hp max": 5361,
+      "hp min": 5066,
+      "rec max": 750,
+      "rec min": 632
+    },
+    "breaker": {
+      "atk max": 1348,
+      "atk min": 1230,
+      "def max": 1375,
+      "def min": 1257,
+      "hp": 4771,
+      "rec": 809
+    },
+    "guardian": {
+      "atk": 1171,
+      "def max": 1611,
+      "def min": 1493,
+      "hp": 4771,
+      "rec max": 809,
+      "rec min": 691
+    },
+    "oracle": {
+      "atk": 1171,
+      "def max": 1434,
+      "def min": 1316,
+      "hp": 4771,
+      "rec max": 1045,
+      "rec min": 927
+    }
+  },
+  "leader_skill": {
+    "desc": "5% boost to Def and HP for all types",
+    "effects": [
+      {
+        "def% buff": 5,
+        "hp% buff": 5,
+        "passive id": "1"
+      }
+    ],
+    "id": "4300",
+    "name": "Royal Sanctuary"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -199,93 +211,89 @@
     ],
     "name": "Tera Guard"
   },
-  "bbdescription": "Reduces damage taken by half for 1 turn",
-  "bbtype": "Support",
-  "bbhits": "0",
-  "bbaoe": "0",
-  "bbgauge": "35~26",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "20274",
-  "evomats1": "20133",
-  "evomats2": "20132",
-  "evomats3": "20132",
-  "evomats4": "20191",
-  "evomats5": "20191",
-  "evoitem": "",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 821,
-      "def": 1010,
-      "hp": 3085,
-      "rec": 566
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1171,
-      "def": 1434,
-      "hp": 4771,
-      "rec": 809
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1171,
-      "def": 1434,
-      "hp max": 5361,
-      "hp min": 5066,
-      "rec max": 750,
-      "rec min": 632
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 306
     },
-    "breaker": {
-      "atk max": 1348,
-      "atk min": 1230,
-      "def max": 1375,
-      "def min": 1257,
-      "hp": 4771,
-      "rec": 809
+    "idle": {
+      "total number of frames": 204
     },
-    "guardian": {
-      "atk": 1171,
-      "def max": 1611,
-      "def min": 1493,
-      "hp": 4771,
-      "rec max": 809,
-      "rec min": 691
-    },
-    "oracle": {
-      "atk": 1171,
-      "def max": 1434,
-      "def min": 1316,
-      "hp": 4771,
-      "rec max": 1045,
-      "rec min": 927
+    "move": {
+      "total number of frames": 204
     }
   },
-  "leader_skill": {
-    "desc": "5% boost to Def and HP for all types",
-    "effects": [
-      {
-        "def% buff": 5,
-        "hp% buff": 5,
-        "passive id": "1"
-      }
+  "category": 20270,
+  "cost": "12",
+  "damage frames": {
+    "frame times": [
+      180,
+      190,
+      200,
+      210
     ],
-    "id": "4300",
-    "name": "Royal Sanctuary"
+    "hit dmg% distribution": [
+      40,
+      20,
+      20,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 4
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "water",
+  "exp_pattern": 20,
+  "gender": "other",
+  "getting type": "rare summon",
+  "guide_id": 417,
+  "imp": {
+    "max atk": "120",
+    "max def": "200",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "1089~1217",
+  "movement": {
+    "attack": {
+      "move speed": 6,
+      "move speed type": "2",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 6,
+      "move speed type": "2",
+      "move type": "3"
+    }
+  },
+  "name": "Ice Keep Copra",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Ice Keep Copra",
+  "maxlv": "60",
+  "no": "417",
   "unitDisplayHomePosition_1W9CxaFK": "177,28,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "135,223,600,626",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "73,260,450,373,0",
@@ -295,5 +303,94 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "180:200140:1,180:200251:1,190:180:1,200:180:1,210:180:1,190:660:1"
+  "effectFrames": "180:200140:1,180:200251:1,190:180:1,200:180:1,210:180:1,190:660:1",
+  "evofrom": "",
+  "evointo": "20274",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "20133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20132",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "20191",
+      "count": 2
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "306",
+  "animation_idle": "204",
+  "animation_move": "204",
+  "movespeed_attack": "6",
+  "movespeed_skill": "6",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "180, 190, 200, 210",
+  "normal_distribute": "40, 20, 20, 20",
+  "normal_totaldistr": "100",
+  "description": "A freezing weapon created by the gods to seal away a disastrous fiery beast. Its ice crystal protected outer walls and overwhelming destructive force helped it to carry out its mission. However, Copra's true power lied in its ability to reconfigure its own armaments from ice. Copra had much room to grow strong in his battle against the raging beast, and in time his abilities surpassed even the gods' expectations.",
+  "summon": "I am the Ice Keep Copra.<br>I was created by the gods. <br>I am the extinguisher of flames.",
+  "fusion": "My ice wall has grown thicker.<br>None shall pass.",
+  "evolution": "",
+  "hp_base": "3085",
+  "atk_base": "821",
+  "def_base": "1010",
+  "rec_base": "566",
+  "hp_lord": "4771",
+  "atk_lord": "1171",
+  "def_lord": "1434",
+  "rec_lord": "809",
+  "hp_anima": "5214",
+  "rec_anima": "691",
+  "atk_breaker": "1289",
+  "def_breaker": "1316",
+  "atk_guardian": "1053",
+  "def_guardian": "1552",
+  "rec_guardian": "750",
+  "def_oracle": "1375",
+  "hp_oracle": "4594",
+  "rec_oracle": "986",
+  "hp_bonus": "400",
+  "atk_bonus": "120",
+  "def_bonus": "200",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "4",
+  "normaldc": "8",
+  "ls": "Royal Sanctuary",
+  "lsdescription": "5% boost to Def and HP for all types",
+  "lstype": "Hit Points/Defense",
+  "bbdescription": "Reduces damage taken by half for 1 turn",
+  "bbtype": "Support",
+  "bbhits": "0",
+  "bbaoe": "0",
+  "bbgauge": "26",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "20133",
+  "evomats2": "20132",
+  "evomats3": "20132",
+  "evomats4": "20191",
+  "evomats5": "20191",
+  "evoitem": ""
 }

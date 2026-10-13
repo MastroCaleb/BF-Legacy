@@ -1,52 +1,72 @@
 {
   "id": "50253",
-  "unitName": "Tilith",
-  "no": "427",
-  "element": "Light",
-  "rarity": "★★★★",
-  "cost": "10",
-  "maxlv": "60",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "185",
-  "animation_idle": "52",
-  "animation_move": "52",
-  "movespeed_attack": "2",
-  "movespeed_skill": "2",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "description": "A mock Unit modeled after Tilith, the goddess who serves Lucius and governs the Gate. There's a rumor that the success of the goddess's mock Unit was thanks to information obtained from Summoner Hall authorities who were in contact with her. However, this information didn't explicit how to recreate the goddess's true power, therefore the resulting Unit is far weaker. There's still a long way to go before the \"beautifully indomitable goddess\" can be recreated.",
-  "summon": "Hey, let's have some fun!<br>I look forward to all the wonderful<br>adventures we're sure to have!",
-  "fusion": "I've always been strong<br>so I really don't need to<br>train anymore!",
-  "evolution": "",
-  "hp_base": "3000",
-  "atk_base": "960",
-  "def_base": "960",
-  "rec_base": "1200",
-  "hp_lord": "4500",
-  "atk_lord": "1340",
-  "def_lord": "1340",
-  "rec_lord": "1680",
-  "hp_anima": "4942",
-  "rec_anima": "1562",
-  "atk_breaker": "1458",
-  "def_breaker": "1222",
-  "atk_guardian": "1222",
-  "def_guardian": "1458",
-  "hp_oracle": "4057",
-  "rec_oracle": "1798",
-  "hp_bonus": "500",
-  "atk_bonus": "200",
-  "def_bonus": "200",
-  "rec_bonus": "200",
-  "lordonly": "true",
-  "combo_hits": "5",
-  "ls": "Goddess' Gift",
-  "lsdescription": "Boosts resistence to status ailments & fills BB gauge after each turn",
-  "lstype": "Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 960,
+      "def": 960,
+      "hp": 3000,
+      "rec": 1200
+    },
+    "_lord": {
+      "atk": 1340,
+      "def": 1340,
+      "hp": 4500,
+      "rec": 1680
+    },
+    "anima": {
+      "atk": 1340,
+      "def": 1340,
+      "hp max": 5090,
+      "hp min": 4795,
+      "rec max": 1621,
+      "rec min": 1503
+    },
+    "breaker": {
+      "atk max": 1517,
+      "atk min": 1399,
+      "def max": 1281,
+      "def min": 1163,
+      "hp": 4500,
+      "rec": 1680
+    },
+    "guardian": {
+      "atk": 1340,
+      "def max": 1517,
+      "def min": 1399,
+      "hp": 4500,
+      "rec max": 1680,
+      "rec min": 1562
+    },
+    "oracle": {
+      "atk": 1340,
+      "def max": 1340,
+      "def min": 1222,
+      "hp": 4500,
+      "rec max": 1916,
+      "rec min": 1798
+    }
+  },
+  "leader_skill": {
+    "desc": "Boosts resistence to status ailments & fills BB gauge after each turn",
+    "effects": [
+      {
+        "bc fill per turn": 1,
+        "passive id": "9"
+      },
+      {
+        "curse resist%": 80,
+        "injury resist%": 80,
+        "paralysis resist%": 80,
+        "passive id": "4",
+        "poison resist%": 80,
+        "sick resist%": 80,
+        "weaken resist%": 80
+      }
+    ],
+    "id": "4400",
+    "name": "Goddess' Gift"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -291,100 +311,91 @@
     ],
     "name": "Pretty Battle Kiss"
   },
-  "bbdescription": "Increases BB gauge & greatly recovers HP for all allies",
-  "bbtype": "Support",
-  "bbhits": "0",
-  "bbaoe": "0",
-  "bbgauge": "130~85",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "50254",
-  "evomats1": "50123",
-  "evomats2": "50122",
-  "evomats3": "50121",
-  "evomats4": "50120",
-  "evomats5": "50191",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 960,
-      "def": 960,
-      "hp": 3000,
-      "rec": 1200
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1340,
-      "def": 1340,
-      "hp": 4500,
-      "rec": 1680
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1340,
-      "def": 1340,
-      "hp max": 5090,
-      "hp min": 4795,
-      "rec max": 1621,
-      "rec min": 1503
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 185
     },
-    "breaker": {
-      "atk max": 1517,
-      "atk min": 1399,
-      "def max": 1281,
-      "def min": 1163,
-      "hp": 4500,
-      "rec": 1680
+    "idle": {
+      "total number of frames": 52
     },
-    "guardian": {
-      "atk": 1340,
-      "def max": 1517,
-      "def min": 1399,
-      "hp": 4500,
-      "rec max": 1680,
-      "rec min": 1562
-    },
-    "oracle": {
-      "atk": 1340,
-      "def max": 1340,
-      "def min": 1222,
-      "hp": 4500,
-      "rec max": 1916,
-      "rec min": 1798
+    "move": {
+      "total number of frames": 52
     }
   },
-  "leader_skill": {
-    "desc": "Boosts resistence to status ailments & fills BB gauge after each turn",
-    "effects": [
-      {
-        "bc fill per turn": 1,
-        "passive id": "9"
-      },
-      {
-        "curse resist%": 80,
-        "injury resist%": 80,
-        "paralysis resist%": 80,
-        "passive id": "4",
-        "poison resist%": 80,
-        "sick resist%": 80,
-        "weaken resist%": 80
-      }
+  "category": 50250,
+  "cost": "10",
+  "damage frames": {
+    "frame times": [
+      140,
+      146,
+      152,
+      164,
+      176
     ],
-    "id": "4400",
-    "name": "Goddess' Gift"
+    "hit dmg% distribution": [
+      30,
+      10,
+      30,
+      20,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 5
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "light",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "farmable",
+  "guide_id": 427,
+  "imp": {
+    "max atk": "200",
+    "max def": "200",
+    "max hp": "500",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "1247~1393",
+  "movement": {
+    "attack": {
+      "move speed": 2,
+      "move speed type": "4",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 2,
+      "move speed type": "4",
+      "move type": "3"
+    }
+  },
+  "name": "Tilith",
+  "rarity": "4",
+  "sell caution": true,
+  "unitName": "Tilith",
+  "maxlv": "60",
+  "no": "427",
   "unitDisplayHomePosition_1W9CxaFK": "245,-5,135,369",
   "unitDisplayDetailPosition_6z54rgb3": "13,196,906,606",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "196,295,294,326,0",
@@ -394,5 +405,104 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": true,
-  "effectFrames": "140:500090:1,140:500280:1,150:500021:1"
+  "effectFrames": "140:500090:1,140:500280:1,150:500021:1",
+  "evofrom": "",
+  "evointo": "50254",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50123",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50122",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50121",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50120",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50191",
+      "count": 1
+    }
+  ],
+  "freetext": ":''For other uses, see Tilith (disambiguation)''",
+  "basexp": "21",
+  "animation_attack": "185",
+  "animation_idle": "52",
+  "animation_move": "52",
+  "movespeed_attack": "2",
+  "movespeed_skill": "2",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "140, 146, 152, 164, 176",
+  "normal_distribute": "30, 10, 30, 20, 10",
+  "normal_totaldistr": "100",
+  "description": "A mock Unit modeled after Tilith, the goddess who serves Lucius and governs the Gate. There's a rumor that the success of the goddess's mock Unit was thanks to information obtained from Summoner Hall authorities who were in contact with her. However, this information didn't explicit how to recreate the goddess's true power, therefore the resulting Unit is far weaker. There's still a long way to go before the \"beautifully indomitable goddess\" can be recreated.",
+  "summon": "Hey, let's have some fun!<br>I look forward to all the wonderful<br>adventures we're sure to have!",
+  "fusion": "I've always been strong<br>so I really don't need to<br>train anymore!",
+  "evolution": "",
+  "hp_base": "3000",
+  "atk_base": "960",
+  "def_base": "960",
+  "rec_base": "1200",
+  "hp_lord": "4500",
+  "atk_lord": "1340",
+  "def_lord": "1340",
+  "rec_lord": "1680",
+  "hp_anima": "4943",
+  "rec_anima": "1562",
+  "atk_breaker": "1458",
+  "def_breaker": "1222",
+  "atk_guardian": "1222",
+  "def_guardian": "1458",
+  "hp_oracle": "4323",
+  "rec_oracle": "1857",
+  "hp_bonus": "500",
+  "atk_bonus": "200",
+  "def_bonus": "200",
+  "rec_bonus": "200",
+  "lordonly": "true",
+  "combo_hits": "5",
+  "normaldc": "10",
+  "ls": "Goddess' Gift",
+  "lsdescription": "Boosts resistance to status ailments & fills BB gauge after each turn",
+  "lsnote": "80% resistance to status ailments, 2 BC fill per turn",
+  "lstype": "Brave Burst",
+  "bbdescription": "Increases BB gauge & greatly recovers HP for all allies",
+  "bbnote": "40 BC fill, heals (5000~5500 + 15% of healer's Rec) HP",
+  "bbtype": "Heal/Support",
+  "bbhits": "0",
+  "bbaoe": "0",
+  "bbgauge": "85",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50123",
+  "evomats2": "50122",
+  "evomats3": "50121",
+  "evomats4": "50120",
+  "evomats5": "50191"
 }

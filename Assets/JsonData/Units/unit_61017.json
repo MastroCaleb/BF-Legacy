@@ -1,69 +1,112 @@
 {
   "id": "61017",
-  "unitName": "Militant Leader Rahnas",
-  "unreleased": "true",
-  "no": "1423",
-  "element": "Dark",
-  "rarity": "Omni",
-  "cost": "47",
-  "maxlv": "150",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "227",
-  "animation_idle": "52",
-  "animation_move": "13",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "12, 15, 30, 33, 49, 54, 59, 63, 67, 132, 140, 148",
-  "normal_distribute": "10, 6, 10, 6, 17, 10, 9, 6, 5, 9, 7, 5",
-  "normal_totaldistr": "100",
-  "bb_frames": "12, 15, 18, 30, 33, 36, 49, 54, 59, 63, 67, 132, 140, 148",
-  "bb_distribute": "10, 6, 3, 10, 6, 3, 15, 8, 7, 6, 5, 9, 7, 5",
-  "bb_totaldistr": "100",
-  "sbb_frames": "12, 15, 18, 30, 33, 36, 49, 54, 59, 63, 67, 132, 136, 140, 144, 148, 152",
-  "sbb_distribute": "9, 5, 3, 9, 5, 3, 14, 7, 6, 5, 4, 9, 3, 7, 3, 5, 3",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "12, 15, 18, 21, 30, 33, 36, 39, 49, 54, 59, 63, 67, 71, 75, 78, 132, 135, 138, 141, 144, 147",
-  "ubb_distribute": "7, 4, 3, 3, 7, 4, 3, 3, 12, 7, 6, 5, 4, 3, 3, 3, 7, 4, 3, 3, 3, 3",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "2",
-  "ubb_effectdelay": "2",
-  "description": "Although it operates under extreme secrecy at present, the Abel Faction is said to wield major influence over both the military and politics of the Elgaia Federation. As its commander, he would likely transform the Elgaia Federation into a mighty nation if given sole authority to lead. This would likely be achieved by limiting civil liberties and managing the military, political, and economic balance of the land. Any nation he built would definitely pose a fearsome threat to the Randall Empire and Akras Summoners' Hall.",
-  "summon": "[[Grahdens (disambiguation)|Grahdens]], [[Owen (disambiguation)|Owen]]...and all you pathetic Summoners. I will give you the barest glimpse of my power!",
-  "fusion": "Very well, I will use you. For a member of the faceless masses, you seem a fairly useful sort.",
-  "evolution": "Absolute rule of the Federation is just the beginning. It's just a natural stepping stone for the completion of my true goals.",
-  "hp_base": "6320",
-  "atk_base": "2490",
-  "def_base": "2170",
-  "rec_base": "1760",
-  "hp_lord": "8250",
-  "atk_lord": "3120",
-  "def_lord": "2720",
-  "rec_lord": "2230",
-  "hp_anima": "",
-  "rec_anima": "",
-  "atk_breaker": "",
-  "def_breaker": "",
-  "def_guardian": "",
-  "rec_guardian": "",
-  "def_oracle": "",
-  "rec_oracle": "",
-  "hp_bonus": "1250",
-  "atk_bonus": "800",
-  "def_bonus": "400",
-  "rec_bonus": "500",
-  "lordonly": "true",
-  "combo_hits": "12",
-  "normaldc": "48",
-  "ls": "Mighty Ruler",
-  "lsdescription": "100% boost to Atk, 40% boost to max HP, normal attacks enormously boost BB gauge, raises normal hit amount & hugely boosts BB gauge when damage dealt exceeds certain amount",
-  "lsnote": "10 BC fill when normal attacking,adds +1 hit to each hit count with -50% damage penalty, 8 BC fill when 50,000 HP as damage is dealt",
+  "stats": {
+    "_base": {
+      "atk": 2490,
+      "def": 2170,
+      "hp": 6320,
+      "rec": 1760
+    },
+    "_lord": {
+      "atk": 3120,
+      "def": 2720,
+      "hp": 8250,
+      "rec": 2230
+    },
+    "anima": {
+      "atk": 3120,
+      "def": 2720,
+      "hp max": 9740,
+      "hp min": 8995,
+      "rec max": 2081,
+      "rec min": 1783
+    },
+    "breaker": {
+      "atk max": 3567,
+      "atk min": 3269,
+      "def max": 2571,
+      "def min": 2273,
+      "hp": 8250,
+      "rec": 2230
+    },
+    "guardian": {
+      "atk": 3120,
+      "def max": 3167,
+      "def min": 2869,
+      "hp": 8250,
+      "rec max": 2230,
+      "rec min": 1932
+    },
+    "oracle": {
+      "atk": 3120,
+      "def max": 2720,
+      "def min": 2422,
+      "hp": 8250,
+      "rec max": 2826,
+      "rec min": 2528
+    }
+  },
+  "leader_skill": {
+    "desc": "100% boost to Atk, 40% boost to max HP, normal attacks enormously boost BB gauge, raises normal hit amount & hugely boosts BB gauge when damage dealt exceeds certain amount",
+    "effects": [
+      {
+        "atk% buff": 100,
+        "hp% buff": 40,
+        "passive id": "1"
+      },
+      {
+        "extra hits dmg%": -50,
+        "hit increase/hit": 1,
+        "passive id": "37"
+      },
+      {
+        "bc fill when attacking high": 10,
+        "bc fill when attacking low": 10,
+        "bc fill when attacking%": 100,
+        "passive id": "35"
+      },
+      {
+        "damage dealt threshold activation": 50000,
+        "increase bb gauge": 8,
+        "passive id": "81"
+      }
+    ],
+    "id": "1946",
+    "name": "Mighty Ruler"
+  },
+  "extra_skill": {
+    "desc": "30% boost to all parameters when Atk Boost type Sphere is equipped & boosts Atk for 2 turns when BC collected has exceeded a certain amount",
+    "effects": [
+      {
+        "atk% buff": 30,
+        "conditions": [
+          {
+            "sphere category required": "Atk Boosting",
+            "sphere category required (raw)": "13"
+          }
+        ],
+        "def% buff": 30,
+        "hp% buff": 30,
+        "passive id": "1",
+        "passive target": "self",
+        "rec% buff": 30
+      },
+      {
+        "bc receive count buff activation": 30,
+        "buff": {
+          "atk% buff (1)": 50,
+          "buff turns (1)": "2"
+        },
+        "conditions": [],
+        "passive id": "82",
+        "passive target": "self"
+      }
+    ],
+    "id": "20600",
+    "name": "Grand Ambition",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -518,18 +561,6 @@
     ],
     "name": "Aberrant Dissection"
   },
-  "bbdescription": "14 combo Dark attack on all foes, raises normal hit amount for 3 turns, hugely boosts BB gauge for 3 turns & adds Def ignoring effect to attack for 2 turns",
-  "bbnote": "Adds +1 hit to each hit count, 7 BC fill",
-  "bbtype": "Offense",
-  "bbhits": "14",
-  "bbaoe": "A",
-  "bbgauge": "26",
-  "bbdc": "14",
-  "bbmultiplier": "370",
-  "bbhits2": "",
-  "bbaoe2": "",
-  "bbdc2": "",
-  "bbmultiplier2": "",
   "sbb": {
     "damage frames": [
       {
@@ -1010,18 +1041,6 @@
     ],
     "name": "Strict Valor"
   },
-  "sbbdescription": "17 combo powerful Dark attack on all foes, considerably boosts Atk, Def, Rec for 3 turns, raises normal hit amount for 3 turns & adds Def ignoring effect to attack for 2 turns",
-  "sbbnote": "'''140% boost to own Atk, Def, Rec''', adds +1 hits to each hit count",
-  "sbbtype": "Offense",
-  "sbbhits": "17",
-  "sbbaoe": "A",
-  "sbbgauge": "30",
-  "sbbdc": "17",
-  "sbbmultiplier": "580",
-  "sbbhits2": "",
-  "sbbaoe2": "",
-  "sbbdc2": "",
-  "sbbmultiplier2": "",
   "ubb": {
     "damage frames": [
       {
@@ -1185,6 +1204,203 @@
     ],
     "name": "Sacrificial Order"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 227
+    },
+    "idle": {
+      "total number of frames": 52
+    },
+    "move": {
+      "total number of frames": 13
+    }
+  },
+  "category": 61010,
+  "cost": "47",
+  "damage frames": {
+    "frame times": [
+      12,
+      15,
+      30,
+      33,
+      49,
+      54,
+      59,
+      63,
+      67,
+      132,
+      140,
+      148
+    ],
+    "hit dmg% distribution": [
+      10,
+      6,
+      10,
+      6,
+      17,
+      10,
+      9,
+      6,
+      5,
+      9,
+      7,
+      5
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 12
+  },
+  "drop check count": 4,
+  "element": "dark",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "farmable",
+  "guide_id": 1423,
+  "imp": {
+    "max atk": "800",
+    "max def": "400",
+    "max hp": "1250",
+    "max rec": "500"
+  },
+  "kind": "normal",
+  "lord damage range": "2905~3244",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Militant Leader Rahnas",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "8",
+  "sell caution": false,
+  "unitName": "Militant Leader Rahnas",
+  "maxlv": "150",
+  "no": "1423",
+  "unitDisplayHomePosition_1W9CxaFK": "537,528,200,546",
+  "unitDisplayDetailPosition_6z54rgb3": "-162,-216,1150,995",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "-8,77,620,537,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-80,-462,1080,935",
+  "unitDisplaySummonPosition_KC3Jk8Br": "-8,77,620,537,0",
+  "unitDisplayHpPosition_3BpHN6VD": "-9,42",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "50000",
+  "sellCaution": false,
+  "effectFrames": "10:126:1,13:120:1,31:126:1,34:120:1,54:126:1,62:120:1,69:120:1,75:120:1,80:120:1,16:600767:1,59:600171:1,60:1860:1,62:601501:1,135:400421:1,132:600203:1",
+  "evofrom": "61016",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "unreleased": "true",
+  "basexp": "21",
+  "animation_attack": "227",
+  "animation_idle": "52",
+  "animation_move": "13",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "12, 15, 30, 33, 49, 54, 59, 63, 67, 132, 140, 148",
+  "normal_distribute": "10, 6, 10, 6, 17, 10, 9, 6, 5, 9, 7, 5",
+  "normal_totaldistr": "100",
+  "bb_frames": "12, 15, 18, 30, 33, 36, 49, 54, 59, 63, 67, 132, 140, 148",
+  "bb_distribute": "10, 6, 3, 10, 6, 3, 15, 8, 7, 6, 5, 9, 7, 5",
+  "bb_totaldistr": "100",
+  "sbb_frames": "12, 15, 18, 30, 33, 36, 49, 54, 59, 63, 67, 132, 136, 140, 144, 148, 152",
+  "sbb_distribute": "9, 5, 3, 9, 5, 3, 14, 7, 6, 5, 4, 9, 3, 7, 3, 5, 3",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "12, 15, 18, 21, 30, 33, 36, 39, 49, 54, 59, 63, 67, 71, 75, 78, 132, 135, 138, 141, 144, 147",
+  "ubb_distribute": "7, 4, 3, 3, 7, 4, 3, 3, 12, 7, 6, 5, 4, 3, 3, 3, 7, 4, 3, 3, 3, 3",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "2",
+  "ubb_effectdelay": "2",
+  "description": "Although it operates under extreme secrecy at present, the Abel Faction is said to wield major influence over both the military and politics of the Elgaia Federation. As its commander, he would likely transform the Elgaia Federation into a mighty nation if given sole authority to lead. This would likely be achieved by limiting civil liberties and managing the military, political, and economic balance of the land. Any nation he built would definitely pose a fearsome threat to the Randall Empire and Akras Summoners' Hall.",
+  "summon": "[[Grahdens (disambiguation)|Grahdens]], [[Owen (disambiguation)|Owen]]...and all you pathetic Summoners. I will give you the barest glimpse of my power!",
+  "fusion": "Very well, I will use you. For a member of the faceless masses, you seem a fairly useful sort.",
+  "evolution": "Absolute rule of the Federation is just the beginning. It's just a natural stepping stone for the completion of my true goals.",
+  "hp_base": "6320",
+  "atk_base": "2490",
+  "def_base": "2170",
+  "rec_base": "1760",
+  "hp_lord": "8250",
+  "atk_lord": "3120",
+  "def_lord": "2720",
+  "rec_lord": "2230",
+  "hp_anima": "",
+  "rec_anima": "",
+  "atk_breaker": "",
+  "def_breaker": "",
+  "def_guardian": "",
+  "rec_guardian": "",
+  "def_oracle": "",
+  "rec_oracle": "",
+  "hp_bonus": "1250",
+  "atk_bonus": "800",
+  "def_bonus": "400",
+  "rec_bonus": "500",
+  "lordonly": "true",
+  "combo_hits": "12",
+  "normaldc": "48",
+  "ls": "Mighty Ruler",
+  "lsdescription": "100% boost to Atk, 40% boost to max HP, normal attacks enormously boost BB gauge, raises normal hit amount & hugely boosts BB gauge when damage dealt exceeds certain amount",
+  "lsnote": "10 BC fill when normal attacking,adds +1 hit to each hit count with -50% damage penalty, 8 BC fill when 50,000 HP as damage is dealt",
+  "bbdescription": "14 combo Dark attack on all foes, raises normal hit amount for 3 turns, hugely boosts BB gauge for 3 turns & adds Def ignoring effect to attack for 2 turns",
+  "bbnote": "Adds +1 hit to each hit count, 7 BC fill",
+  "bbtype": "Offense",
+  "bbhits": "14",
+  "bbaoe": "A",
+  "bbgauge": "26",
+  "bbdc": "14",
+  "bbmultiplier": "370",
+  "bbhits2": "",
+  "bbaoe2": "",
+  "bbdc2": "",
+  "bbmultiplier2": "",
+  "sbbdescription": "17 combo powerful Dark attack on all foes, considerably boosts Atk, Def, Rec for 3 turns, raises normal hit amount for 3 turns & adds Def ignoring effect to attack for 2 turns",
+  "sbbnote": "'''140% boost to own Atk, Def, Rec''', adds +1 hits to each hit count",
+  "sbbtype": "Offense",
+  "sbbhits": "17",
+  "sbbaoe": "A",
+  "sbbgauge": "30",
+  "sbbdc": "17",
+  "sbbmultiplier": "580",
+  "sbbhits2": "",
+  "sbbaoe2": "",
+  "sbbdc2": "",
+  "sbbmultiplier2": "",
   "ubbdescription": "22 combo massive Dark attack on all foes, additional massive attack at turn's end for 3 turns, enormously boosts Atk, Def for 3 turns, hugely raises normal hit amount for 3 turns & normal attacks hit all foes for 3 turns",
   "ubbnote": "Adds +3 hits to each hit count (+50% extra damage, 150% total), 1200% multiplier on additional attack at turn's end, 300% boost to Atk and Def",
   "ubbtype": "Offense",
@@ -1201,8 +1417,6 @@
   "esitem": "Atk Boosting Sphere",
   "esdescription": "30% boost to all parameters when Atk Boost type Sphere is equipped & boosts Atk for 2 turns when BC collected has exceeded a certain amount",
   "esnote": "50% boost to Atk when 30 BC is collected",
-  "evofrom": "61016",
-  "evointo": "",
   "evomats1": "",
   "evomats2": "",
   "evomats3": "",
@@ -1213,123 +1427,5 @@
   "evomats8": "",
   "evomats9": "",
   "evoitem": "",
-  "evoitem2": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 2490,
-      "def": 2170,
-      "hp": 6320,
-      "rec": 1760
-    },
-    "_lord": {
-      "atk": 3120,
-      "def": 2720,
-      "hp": 8250,
-      "rec": 2230
-    },
-    "anima": {
-      "atk": 3120,
-      "def": 2720,
-      "hp max": 9740,
-      "hp min": 8995,
-      "rec max": 2081,
-      "rec min": 1783
-    },
-    "breaker": {
-      "atk max": 3567,
-      "atk min": 3269,
-      "def max": 2571,
-      "def min": 2273,
-      "hp": 8250,
-      "rec": 2230
-    },
-    "guardian": {
-      "atk": 3120,
-      "def max": 3167,
-      "def min": 2869,
-      "hp": 8250,
-      "rec max": 2230,
-      "rec min": 1932
-    },
-    "oracle": {
-      "atk": 3120,
-      "def max": 2720,
-      "def min": 2422,
-      "hp": 8250,
-      "rec max": 2826,
-      "rec min": 2528
-    }
-  },
-  "leader_skill": {
-    "desc": "100% boost to Atk, 40% boost to max HP, normal attacks enormously boost BB gauge, raises normal hit amount & hugely boosts BB gauge when damage dealt exceeds certain amount",
-    "effects": [
-      {
-        "atk% buff": 100,
-        "hp% buff": 40,
-        "passive id": "1"
-      },
-      {
-        "extra hits dmg%": -50,
-        "hit increase/hit": 1,
-        "passive id": "37"
-      },
-      {
-        "bc fill when attacking high": 10,
-        "bc fill when attacking low": 10,
-        "bc fill when attacking%": 100,
-        "passive id": "35"
-      },
-      {
-        "damage dealt threshold activation": 50000,
-        "increase bb gauge": 8,
-        "passive id": "81"
-      }
-    ],
-    "id": "1946",
-    "name": "Mighty Ruler"
-  },
-  "extra_skill": {
-    "desc": "30% boost to all parameters when Atk Boost type Sphere is equipped & boosts Atk for 2 turns when BC collected has exceeded a certain amount",
-    "effects": [
-      {
-        "atk% buff": 30,
-        "conditions": [
-          {
-            "sphere category required": "Atk Boosting",
-            "sphere category required (raw)": "13"
-          }
-        ],
-        "def% buff": 30,
-        "hp% buff": 30,
-        "passive id": "1",
-        "passive target": "self",
-        "rec% buff": 30
-      },
-      {
-        "bc receive count buff activation": 30,
-        "buff": {
-          "atk% buff (1)": 50,
-          "buff turns (1)": "2"
-        },
-        "conditions": [],
-        "passive id": "82",
-        "passive target": "self"
-      }
-    ],
-    "id": "20600",
-    "name": "Grand Ambition",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "537,528,200,546",
-  "unitDisplayDetailPosition_6z54rgb3": "-162,-216,1150,995",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "-8,77,620,537,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-80,-462,1080,935",
-  "unitDisplaySummonPosition_KC3Jk8Br": "-8,77,620,537,0",
-  "unitDisplayHpPosition_3BpHN6VD": "-9,42",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "50000",
-  "sellCaution": false,
-  "effectFrames": "10:126:1,13:120:1,31:126:1,34:120:1,54:126:1,62:120:1,69:120:1,75:120:1,80:120:1,16:600767:1,59:600171:1,60:1860:1,62:601501:1,135:400421:1,132:600203:1"
+  "evoitem2": ""
 }

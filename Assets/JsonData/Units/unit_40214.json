@@ -1,61 +1,63 @@
 {
   "id": "40214",
-  "unitName": "Bolt Goddess Amy",
-  "no": "298",
-  "element": "Thunder",
-  "rarity": "★★★★★",
-  "cost": "15",
-  "maxlv": "80",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "126",
-  "animation_idle": "64",
-  "animation_move": "31",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "32, 54, 76, 79, 81",
-  "normal_distribute": "30, 10, 15, 20, 35",
-  "normal_totaldistr": "110",
-  "bb_frames": "32, 54, 76, 80, 84, 102, 106",
-  "bb_distribute": "20, 10, 20, 10, 10, 20, 10",
-  "bb_totaldistr": "100",
-  "description": "The eldest daughter of an aristocratic family from Palmyna, when the war with the gods began she begged the king to let her return to save her father, but he refused and made her focus on protecting him. During this time her home territory was destroyed by the gods, and her parents went missing. It's told that from then on she wielded her bolt pike for her homeland, but did so with a heavy heart, full of sadness from having gotten caught up in the joy of living in the capital and forgetting who she was really meant to protect.",
-  "summon": "I'll fight with you to defend<br>the helpless and use my bolt<br>pike to judge the gods!",
-  "fusion": "Underestimating your enemy<br>is no different than begging<br>for tragedy to befall you.",
-  "evolution": "Hesitation is weakness.<br>I will erase any hesitation I <br>sense with a thrust of my pike!",
-  "hp_base": "3712",
-  "atk_base": "1054",
-  "def_base": "1190",
-  "rec_base": "969",
-  "hp_lord": "5570",
-  "atk_lord": "1500",
-  "def_lord": "1624",
-  "rec_lord": "1394",
-  "hp_anima": "6163",
-  "rec_anima": "1236",
-  "atk_breaker": "1658",
-  "def_breaker": "1466",
-  "atk_guardian": "1342",
-  "def_guardian": "1782",
-  "rec_guardian": "1315",
-  "def_oracle": "1545",
-  "hp_oracle": "5333",
-  "rec_oracle": "1631",
-  "hp_bonus": "500",
-  "atk_bonus": "260",
-  "def_bonus": "140",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "5",
-  "normaldc": "15",
-  "ls": "Dynasty Power",
-  "lsdescription": "20% boost to Atk Power of all types",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 1054,
+      "def": 1190,
+      "hp": 3712,
+      "rec": 969
+    },
+    "_lord": {
+      "atk": 1500,
+      "def": 1624,
+      "hp": 5570,
+      "rec": 1394
+    },
+    "anima": {
+      "atk": 1500,
+      "def": 1624,
+      "hp max": 6360,
+      "hp min": 5965,
+      "rec max": 1315,
+      "rec min": 1157
+    },
+    "breaker": {
+      "atk max": 1737,
+      "atk min": 1579,
+      "def max": 1545,
+      "def min": 1387,
+      "hp": 5570,
+      "rec": 1394
+    },
+    "guardian": {
+      "atk": 1500,
+      "def max": 1861,
+      "def min": 1703,
+      "hp": 5570,
+      "rec max": 1394,
+      "rec min": 1236
+    },
+    "oracle": {
+      "atk": 1500,
+      "def max": 1624,
+      "def min": 1466,
+      "hp": 5570,
+      "rec max": 1710,
+      "rec min": 1552
+    }
+  },
+  "leader_skill": {
+    "desc": "20% boost to Atk",
+    "effects": [
+      {
+        "atk% buff": 20,
+        "passive id": "1"
+      }
+    ],
+    "id": "1902",
+    "name": "Dynasty Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -312,94 +314,91 @@
     ],
     "name": "Thunder Spear Barrage"
   },
-  "bbdescription": "7 combo Thunder elemental attack on single enemy & probable Injury and Weakness effect",
-  "bbnote": "80% chance",
-  "bbtype": "Offense",
-  "bbhits": "7",
-  "bbaoe": "1",
-  "bbgauge": "16",
-  "bbdc": "7",
-  "bbmultiplier": "420",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "40213",
-  "evointo": "40215",
-  "evomats1": "50354",
-  "evomats2": "40133",
-  "evomats3": "40133",
-  "evomats4": "40132",
-  "evomats5": "60144",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 1054,
-      "def": 1190,
-      "hp": 3712,
-      "rec": 969
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1500,
-      "def": 1624,
-      "hp": 5570,
-      "rec": 1394
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1500,
-      "def": 1624,
-      "hp max": 6360,
-      "hp min": 5965,
-      "rec max": 1315,
-      "rec min": 1157
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 126
     },
-    "breaker": {
-      "atk max": 1737,
-      "atk min": 1579,
-      "def max": 1545,
-      "def min": 1387,
-      "hp": 5570,
-      "rec": 1394
+    "idle": {
+      "total number of frames": 64
     },
-    "guardian": {
-      "atk": 1500,
-      "def max": 1861,
-      "def min": 1703,
-      "hp": 5570,
-      "rec max": 1394,
-      "rec min": 1236
-    },
-    "oracle": {
-      "atk": 1500,
-      "def max": 1624,
-      "def min": 1466,
-      "hp": 5570,
-      "rec max": 1710,
-      "rec min": 1552
+    "move": {
+      "total number of frames": 31
     }
   },
-  "leader_skill": {
-    "desc": "20% boost to Atk",
-    "effects": [
-      {
-        "atk% buff": 20,
-        "passive id": "1"
-      }
+  "category": 40210,
+  "cost": "15",
+  "damage frames": {
+    "frame times": [
+      32,
+      54,
+      76,
+      79,
+      81
     ],
-    "id": "1902",
-    "name": "Dynasty Power"
+    "hit dmg% distribution": [
+      30,
+      10,
+      15,
+      20,
+      35
+    ],
+    "hit dmg% distribution (total)": 110,
+    "hits": 5
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "thunder",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 298,
+  "imp": {
+    "max atk": "260",
+    "max def": "140",
+    "max hp": "500",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "1396~1560",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Bolt Goddess Amy",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Bolt Goddess Amy",
+  "maxlv": "80",
+  "no": "298",
   "unitDisplayHomePosition_1W9CxaFK": "540,-6,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-185,209,1082,588",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "96,234,495,397,0",
@@ -409,5 +408,104 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "26:124:1,48:124:1,70:124:1,73:290:1,75:290:1"
+  "effectFrames": "26:124:1,48:124:1,70:124:1,73:290:1,75:290:1",
+  "evofrom": "40213",
+  "evointo": "40215",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40133",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "40132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "126",
+  "animation_idle": "64",
+  "animation_move": "31",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "32, 54, 76, 79, 81",
+  "normal_distribute": "30, 10, 15, 20, 35",
+  "normal_totaldistr": "110",
+  "bb_frames": "32, 54, 76, 80, 84, 102, 106",
+  "bb_distribute": "20, 10, 20, 10, 10, 20, 10",
+  "bb_totaldistr": "100",
+  "description": "The eldest daughter of an aristocratic family from Palmyna, when the war with the gods began she begged the king to let her return to save her father, but he refused and made her focus on protecting him. During this time her home territory was destroyed by the gods, and her parents went missing. It's told that from then on she wielded her bolt pike for her homeland, but did so with a heavy heart, full of sadness from having gotten caught up in the joy of living in the capital and forgetting who she was really meant to protect.",
+  "summon": "I'll fight with you to defend<br>the helpless and use my bolt<br>pike to judge the gods!",
+  "fusion": "Underestimating your enemy<br>is no different than begging<br>for tragedy to befall you.",
+  "evolution": "Hesitation is weakness.<br>I will erase any hesitation I <br>sense with a thrust of my pike!",
+  "hp_base": "3712",
+  "atk_base": "1054",
+  "def_base": "1190",
+  "rec_base": "969",
+  "hp_lord": "5570",
+  "atk_lord": "1500",
+  "def_lord": "1624",
+  "rec_lord": "1394",
+  "hp_anima": "6163",
+  "rec_anima": "1236",
+  "atk_breaker": "1658",
+  "def_breaker": "1466",
+  "atk_guardian": "1342",
+  "def_guardian": "1782",
+  "rec_guardian": "1315",
+  "def_oracle": "1545",
+  "hp_oracle": "5333",
+  "rec_oracle": "1631",
+  "hp_bonus": "500",
+  "atk_bonus": "260",
+  "def_bonus": "140",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "5",
+  "normaldc": "15",
+  "ls": "Dynasty Power",
+  "lsdescription": "20% boost to Atk Power of all types",
+  "lstype": "Attack",
+  "bbdescription": "7 combo Thunder elemental attack on single enemy & probable Injury and Weakness effect",
+  "bbnote": "80% chance",
+  "bbtype": "Offense",
+  "bbhits": "7",
+  "bbaoe": "1",
+  "bbgauge": "16",
+  "bbdc": "7",
+  "bbmultiplier": "420",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "40133",
+  "evomats3": "40133",
+  "evomats4": "40132",
+  "evomats5": "60144"
 }

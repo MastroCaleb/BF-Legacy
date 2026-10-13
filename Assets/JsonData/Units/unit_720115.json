@@ -1,63 +1,69 @@
 {
   "id": "720115",
-  "unitName": "Goddess Svafa (EU)",
-  "disam": "Svafa (disambiguation)",
-  "altname": "Goddess Svafa",
-  "idalt": "",
-  "has_altart": "",
-  "doenter": "true",
-  "no": "7025",
-  "element": "Water",
-  "rarity": "★★★★★★",
-  "cost": "24",
-  "maxlv": "100",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "3",
-  "animation_attack": "",
-  "animation_idle": "96",
-  "animation_move": "8",
-  "movespeed_attack": "0.0033",
-  "speedtype_attack": "3",
-  "movetype_attack": "1",
-  "movespeed_skill": "0.0033",
-  "speedtype_skill": "3",
-  "movetype_skill": "1",
-  "description": "Part of the pantheon of fierce warriors coming from the coldest territories of Grand Gaia. Their legend tells us that 6 exceptional semi-goddesses select among the best of dying combatants, whom would be granted the right to enter their heaven and fight side by side with the gods. Svafa is now the real embodiment of the power of the seas. She can call at will any creatures of the abbyss and unleash their wrath.",
-  "summon": "",
-  "fusion": "I feel the strength of the seas.",
-  "evolution": "I just came back from the abbyss. Will you met my new friend?",
-  "hp_base": "4988",
-  "atk_base": "1470",
-  "def_base": "1343",
-  "rec_base": "1177",
-  "hp_lord": "6300",
-  "atk_lord": "1910",
-  "def_lord": "1800",
-  "rec_lord": "1600",
-  "hp_anima": "7042",
-  "rec_anima": "1402",
-  "atk_breaker": "2108",
-  "def_breaker": "1602",
-  "def_guardian": "1998",
-  "rec_guardian": "1600",
-  "def_oracle": "1800",
-  "rec_oracle": "1798",
-  "hp_bonus": "850",
-  "atk_bonus": "340",
-  "def_bonus": "420",
-  "rec_bonus": "340",
-  "lordonly": "",
-  "evofrom": "720114",
-  "evointo": "",
-  "normal_frames": "8, 23, 29, 38, 44, 48, 56, 66, 76, 86, 92, 96",
-  "normal_distribute": "8, 8, 12, 8, 8, 8, 8, 8, 8, 8, 8, 8",
-  "normal_totaldistr": "100",
-  "combo_hits": "12",
-  "normaldc": "24",
-  "ls": "Torch of Valhalla",
-  "lsdescription": "35% boost to Atk Power of Female Units. Additional 30% when 5 elements or more are present",
-  "lsnote": "",
+  "stats": {
+    "_base": {
+      "atk": 1470,
+      "def": 1343,
+      "hp": 4988,
+      "rec": 1177
+    },
+    "_lord": {
+      "atk": 1910,
+      "def": 1800,
+      "hp": 6300,
+      "rec": 1600
+    },
+    "anima": {
+      "atk": 1910,
+      "def": 1800,
+      "hp max": 7290,
+      "hp min": 6795,
+      "rec max": 1501,
+      "rec min": 1303
+    },
+    "breaker": {
+      "atk max": 2207,
+      "atk min": 2009,
+      "def max": 1701,
+      "def min": 1503,
+      "hp": 6300,
+      "rec": 1600
+    },
+    "guardian": {
+      "atk max": 1811,
+      "atk min": 1613,
+      "def max": 2097,
+      "def min": 1899,
+      "hp": 6300,
+      "rec": 1600
+    },
+    "oracle": {
+      "atk": 1910,
+      "def": 1800,
+      "hp max": 5805,
+      "hp min": 5310,
+      "rec max": 1897,
+      "rec min": 1699
+    }
+  },
+  "leader_skill": {
+    "desc": "35% boost to Atk Power of Female Units. Additional 30% when 5 elements or more are present",
+    "effects": [
+      {
+        "atk% buff": 35,
+        "gender required": "female",
+        "passive id": "42"
+      },
+      {
+        "atk% buff": 30,
+        "passive id": "41",
+        "unique elements required": 5
+      }
+    ],
+    "id": "720115",
+    "name": "Torch of Valhalla"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -336,27 +342,6 @@
     ],
     "name": "Creature from the black lagoon"
   },
-  "bbdescription": "13 combo Water elemental attack on all enemies & ATTK Boost attk for all allies for 2 turns",
-  "bbnote": "{{UnitBuffList",
-  "buff_1_proc": "1",
-  "buff_1_potency": "350% damage modifier",
-  "buff_1_duration": "—",
-  "buff_1_target": "All enemies",
-  "buff_2_proc": "5_atk",
-  "buff_2_potency": "90% boost to Atk",
-  "buff_2_duration": "3 turns",
-  "buff_2_target": "All allies",
-  "bbtype": "Offense",
-  "bbgauge": "25",
-  "bb_frames": "51, 54, 57, 70, 73, 76, 84, 87, 90, 93, 95, 97, 100",
-  "bb_distribute": "7, 7, 7, 7, 16, 7, 7, 7, 7, 7, 7, 7, 7",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "0",
-  "bbhits": "13",
-  "bbaoe": "A",
-  "bbdc": "13",
-  "bbmultiplier": "220",
-  "bb_hpscale": "",
   "sbb": {
     "damage frames": [
       {
@@ -655,6 +640,191 @@
     ],
     "name": "Creature of the Abyss"
   },
+  "ubb": {},
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": "missing data",
+    "idle": {
+      "total number of frames": 96
+    },
+    "move": {
+      "total number of frames": 8
+    }
+  },
+  "cost": "24",
+  "damage frames": {
+    "frame times": [
+      8,
+      23,
+      29,
+      38,
+      44,
+      48,
+      56,
+      66,
+      76,
+      86,
+      92,
+      96
+    ],
+    "hit dmg% distribution": [
+      8,
+      8,
+      12,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 12
+  },
+  "drop check count": 2,
+  "element": "water",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 7025,
+  "imp": {
+    "max atk": "340",
+    "max def": "420",
+    "max hp": "850",
+    "max rec": "340"
+  },
+  "kind": "normal",
+  "lord damage range": "1778~1986",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Goddess Svafa",
+  "rarity": "6",
+  "sell caution": false,
+  "unitName": "Goddess Svafa",
+  "maxlv": "100",
+  "no": "7025",
+  "unitDisplayHomePosition_1W9CxaFK": null,
+  "unitDisplayDetailPosition_6z54rgb3": null,
+  "unitDisplayConfirmImagePosition_MYK1fq6c": null,
+  "unitDisplayCutInImagePosition_7hLR6pDN": null,
+  "unitDisplaySummonPosition_KC3Jk8Br": null,
+  "unitDisplayHpPosition_3BpHN6VD": null,
+  "unitDisplayCursorPosition": null,
+  "sellPrice": "",
+  "sellCaution": false,
+  "effectFrames": "",
+  "evofrom": "720114",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "disam": "Svafa (disambiguation)",
+  "altname": "Goddess Svafa",
+  "idalt": "",
+  "has_altart": "",
+  "doenter": "true",
+  "basexp": "21",
+  "animation_attack": "",
+  "animation_idle": "96",
+  "animation_move": "8",
+  "movespeed_attack": "0.0033",
+  "speedtype_attack": "3",
+  "movetype_attack": "1",
+  "movespeed_skill": "0.0033",
+  "speedtype_skill": "3",
+  "movetype_skill": "1",
+  "description": "Part of the pantheon of fierce warriors coming from the coldest territories of Grand Gaia. Their legend tells us that 6 exceptional semi-goddesses select among the best of dying combatants, whom would be granted the right to enter their heaven and fight side by side with the gods. Svafa is now the real embodiment of the power of the seas. She can call at will any creatures of the abbyss and unleash their wrath.",
+  "summon": "",
+  "fusion": "I feel the strength of the seas.",
+  "evolution": "I just came back from the abbyss. Will you met my new friend?",
+  "hp_base": "4988",
+  "atk_base": "1470",
+  "def_base": "1343",
+  "rec_base": "1177",
+  "hp_lord": "6300",
+  "atk_lord": "1910",
+  "def_lord": "1800",
+  "rec_lord": "1600",
+  "hp_anima": "7042",
+  "rec_anima": "1402",
+  "atk_breaker": "2108",
+  "def_breaker": "1602",
+  "def_guardian": "1998",
+  "rec_guardian": "1600",
+  "def_oracle": "1800",
+  "rec_oracle": "1798",
+  "hp_bonus": "850",
+  "atk_bonus": "340",
+  "def_bonus": "420",
+  "rec_bonus": "340",
+  "lordonly": "",
+  "normal_frames": "8, 23, 29, 38, 44, 48, 56, 66, 76, 86, 92, 96",
+  "normal_distribute": "8, 8, 12, 8, 8, 8, 8, 8, 8, 8, 8, 8",
+  "normal_totaldistr": "100",
+  "combo_hits": "12",
+  "normaldc": "24",
+  "ls": "Torch of Valhalla",
+  "lsdescription": "35% boost to Atk Power of Female Units. Additional 30% when 5 elements or more are present",
+  "lsnote": "",
+  "bbdescription": "13 combo Water elemental attack on all enemies & ATTK Boost attk for all allies for 2 turns",
+  "bbnote": "{{UnitBuffList",
+  "buff_1_proc": "1",
+  "buff_1_potency": "350% damage modifier",
+  "buff_1_duration": "—",
+  "buff_1_target": "All enemies",
+  "buff_2_proc": "5_atk",
+  "buff_2_potency": "90% boost to Atk",
+  "buff_2_duration": "3 turns",
+  "buff_2_target": "All allies",
+  "bbtype": "Offense",
+  "bbgauge": "25",
+  "bb_frames": "51, 54, 57, 70, 73, 76, 84, 87, 90, 93, 95, 97, 100",
+  "bb_distribute": "7, 7, 7, 7, 16, 7, 7, 7, 7, 7, 7, 7, 7",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "0",
+  "bbhits": "13",
+  "bbaoe": "A",
+  "bbdc": "13",
+  "bbmultiplier": "220",
+  "bb_hpscale": "",
   "sbbdescription": "18 combo Water elemental attack on all enemies & ATTK Boost attk for all allies for 3 turns & Boosts Def for all allies for 3 turns",
   "sbbnote": "{{UnitBuffList",
   "buff_3_proc": "5_def",
@@ -676,80 +846,5 @@
   "notes": "",
   "incorrectinfo": "",
   "addcat": "",
-  "addcatname": "",
-  "stats": {
-    "_base": {
-      "atk": 1470,
-      "def": 1343,
-      "hp": 4988,
-      "rec": 1177
-    },
-    "_lord": {
-      "atk": 1910,
-      "def": 1800,
-      "hp": 6300,
-      "rec": 1600
-    },
-    "anima": {
-      "atk": 1910,
-      "def": 1800,
-      "hp max": 7290,
-      "hp min": 6795,
-      "rec max": 1501,
-      "rec min": 1303
-    },
-    "breaker": {
-      "atk max": 2207,
-      "atk min": 2009,
-      "def max": 1701,
-      "def min": 1503,
-      "hp": 6300,
-      "rec": 1600
-    },
-    "guardian": {
-      "atk max": 1811,
-      "atk min": 1613,
-      "def max": 2097,
-      "def min": 1899,
-      "hp": 6300,
-      "rec": 1600
-    },
-    "oracle": {
-      "atk": 1910,
-      "def": 1800,
-      "hp max": 5805,
-      "hp min": 5310,
-      "rec max": 1897,
-      "rec min": 1699
-    }
-  },
-  "leader_skill": {
-    "desc": "35% boost to Atk Power of Female Units. Additional 30% when 5 elements or more are present",
-    "effects": [
-      {
-        "atk% buff": 35,
-        "gender required": "female",
-        "passive id": "42"
-      },
-      {
-        "atk% buff": 30,
-        "passive id": "41",
-        "unique elements required": 5
-      }
-    ],
-    "id": "720115",
-    "name": "Torch of Valhalla"
-  },
-  "extra_skill": {},
-  "ubb": {},
-  "unitDisplayHomePosition_1W9CxaFK": null,
-  "unitDisplayDetailPosition_6z54rgb3": null,
-  "unitDisplayConfirmImagePosition_MYK1fq6c": null,
-  "unitDisplayCutInImagePosition_7hLR6pDN": null,
-  "unitDisplaySummonPosition_KC3Jk8Br": null,
-  "unitDisplayHpPosition_3BpHN6VD": null,
-  "unitDisplayCursorPosition": null,
-  "sellPrice": "",
-  "sellCaution": false,
-  "effectFrames": ""
+  "addcatname": ""
 }

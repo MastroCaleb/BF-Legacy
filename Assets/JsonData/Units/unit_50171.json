@@ -1,58 +1,53 @@
 {
   "id": "50171",
-  "unitName": "Al-mi'raj",
-  "no": "277",
-  "element": "Light",
-  "rarity": "★★",
-  "cost": "3",
-  "maxlv": "30",
-  "basexp": "10",
-  "gender": "N",
-  "ai": "4",
-  "animation_attack": "107",
-  "animation_idle": "48",
-  "animation_move": "28",
-  "movespeed_attack": "0.0015",
-  "movespeed_skill": "0",
-  "speedtype_attack": "5",
-  "speedtype_skill": "5",
-  "movetype_attack": "1",
-  "movetype_skill": "3",
-  "normal_frames": "23, 29, 36, 43, 51",
-  "normal_distribute": "20, 20, 20, 20, 20",
-  "normal_totaldistr": "100",
-  "description": "A horned rabbit that inhabits a small part of Grand Gaia. They are herbivores, but they are very territorial and indiscriminately lay waste to anyone who steps foot in their territory. One can crush a stone with a full on attack making use of the tremendous spring power in its hind legs. They are, however, sometimes seen struggling to get their horn free, having rammed it through something and getting it stuck. The scream of an Al-mi'raj that's gotten its horn stuck up high and is unable to stand on the ground is enough to make anyone who hears it tremble.",
-  "summon": "K-Kiiiiiip!!<br>Kip, kip, kip, kiiip!!",
-  "fusion": "Kip, kip, kiiip!<br>Kiiiip, kip...<br>Kip, kip, kiiip!",
-  "evolution": "",
-  "hp_base": "1150",
-  "atk_base": "570",
-  "def_base": "350",
-  "rec_base": "600",
-  "hp_lord": "1725",
-  "atk_lord": "798",
-  "def_lord": "455",
-  "rec_lord": "960",
-  "hp_anima": "1943",
-  "rec_anima": "902",
-  "atk_breaker": "856",
-  "def_breaker": "397",
-  "atk_guardian": "740",
-  "def_guardian": "513",
-  "rec_guardian": "931",
-  "def_oracle": "426",
-  "hp_oracle": "1638",
-  "rec_oracle": "1047",
-  "hp_bonus": "250",
-  "atk_bonus": "100",
-  "def_bonus": "100",
-  "rec_bonus": "100",
-  "lordonly": "",
-  "combo_hits": "5",
-  "normaldc": "10",
-  "ls": "",
-  "lsdescription": "",
-  "lstype": "",
+  "stats": {
+    "_base": {
+      "atk": 570,
+      "def": 350,
+      "hp": 1150,
+      "rec": 600
+    },
+    "_lord": {
+      "atk": 798,
+      "def": 455,
+      "hp": 1725,
+      "rec": 960
+    },
+    "anima": {
+      "atk": 798,
+      "def": 455,
+      "hp max": 2015,
+      "hp min": 1870,
+      "rec max": 931,
+      "rec min": 873
+    },
+    "breaker": {
+      "atk max": 885,
+      "atk min": 827,
+      "def max": 426,
+      "def min": 368,
+      "hp": 1725,
+      "rec": 960
+    },
+    "guardian": {
+      "atk": 798,
+      "def max": 542,
+      "def min": 484,
+      "hp": 1725,
+      "rec max": 960,
+      "rec min": 902
+    },
+    "oracle": {
+      "atk": 798,
+      "def max": 455,
+      "def min": 397,
+      "hp": 1725,
+      "rec max": 1076,
+      "rec min": 1018
+    }
+  },
+  "leader_skill": {},
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -215,82 +210,103 @@
     ],
     "name": "Power Charge"
   },
-  "bbdescription": "Boosts all allies' Atk for 3 turns",
-  "bbnote": "40% boost",
-  "bbtype": "Support",
-  "bbhits": "",
-  "bbaoe": "0",
-  "bbgauge": "12",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "50172",
-  "evomats1": "50121",
-  "evomats2": "60142",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evozelcost": "50000",
-  "stats": {
-    "_base": {
-      "atk": 570,
-      "def": 350,
-      "hp": 1150,
-      "rec": 600
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_under",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 798,
-      "def": 455,
-      "hp": 1725,
-      "rec": 960
+    {
+      "action": "skill",
+      "chance%": 30.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 798,
-      "def": 455,
-      "hp max": 2015,
-      "hp min": 1870,
-      "rec max": 931,
-      "rec min": 873
+    {
+      "action": "attack",
+      "chance%": 70.0,
+      "target conditions": "hp_max",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 885,
-      "atk min": 827,
-      "def max": 426,
-      "def min": 368,
-      "hp": 1725,
-      "rec": 960
+    {
+      "action": "attack",
+      "chance%": 50.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "guardian": {
-      "atk": 798,
-      "def max": 542,
-      "def min": 484,
-      "hp": 1725,
-      "rec max": 960,
-      "rec min": 902
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 107
     },
-    "oracle": {
-      "atk": 798,
-      "def max": 455,
-      "def min": 397,
-      "hp": 1725,
-      "rec max": 1076,
-      "rec min": 1018
+    "idle": {
+      "total number of frames": 48
+    },
+    "move": {
+      "total number of frames": 28
     }
   },
-  "leader_skill": {},
-  "extra_skill": {},
+  "category": 50170,
+  "cost": "3",
+  "damage frames": {
+    "frame times": [
+      23,
+      29,
+      36,
+      43,
+      51
+    ],
+    "hit dmg% distribution": [
+      20,
+      20,
+      20,
+      20,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 5
+  },
+  "drop check count": 2,
+  "element": "light",
+  "exp_pattern": 10,
+  "gender": "other",
+  "getting type": "not eligible for achievement",
+  "guide_id": 277,
+  "imp": {
+    "max atk": "100",
+    "max def": "100",
+    "max hp": "250",
+    "max rec": "100"
+  },
+  "kind": "normal",
+  "lord damage range": "742~829",
+  "movement": {
+    "attack": {
+      "move speed": 0.0015,
+      "move speed type": "5",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0,
+      "move speed type": "5",
+      "move type": "3"
+    }
+  },
+  "name": "Al-mi'raj",
+  "rarity": "2",
+  "sell caution": false,
+  "unitName": "Al-mi'raj",
+  "maxlv": "30",
+  "no": "277",
   "unitDisplayHomePosition_1W9CxaFK": "87,11,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "126,274,564,477",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "130,408,303,232,0",
@@ -300,5 +316,89 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "300",
   "sellCaution": false,
-  "effectFrames": "17:135:1,23:135:1,30:135:1,37:135:1,45:135:1"
+  "effectFrames": "17:135:1,23:135:1,30:135:1,37:135:1,45:135:1",
+  "evofrom": "",
+  "evointo": "50172",
+  "evozelcost": "50000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50121",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60142",
+      "count": 1
+    }
+  ],
+  "basexp": "10",
+  "animation_attack": "107",
+  "animation_idle": "48",
+  "animation_move": "28",
+  "movespeed_attack": "0.0015",
+  "movespeed_skill": "0",
+  "speedtype_attack": "5",
+  "speedtype_skill": "5",
+  "movetype_attack": "1",
+  "movetype_skill": "3",
+  "normal_frames": "23, 29, 36, 43, 51",
+  "normal_distribute": "20, 20, 20, 20, 20",
+  "normal_totaldistr": "100",
+  "description": "A horned rabbit that inhabits a small part of Grand Gaia. They are herbivores, but they are very territorial and indiscriminately lay waste to anyone who steps foot in their territory. One can crush a stone with a full on attack making use of the tremendous spring power in its hind legs. They are, however, sometimes seen struggling to get their horn free, having rammed it through something and getting it stuck. The scream of an Al-mi'raj that's gotten its horn stuck up high and is unable to stand on the ground is enough to make anyone who hears it tremble.",
+  "summon": "K-Kiiiiiip!!<br>Kip, kip, kip, kiiip!!",
+  "fusion": "Kip, kip, kiiip!<br>Kiiiip, kip...<br>Kip, kip, kiiip!",
+  "evolution": "",
+  "hp_base": "1150",
+  "atk_base": "570",
+  "def_base": "350",
+  "rec_base": "600",
+  "hp_lord": "1725",
+  "atk_lord": "798",
+  "def_lord": "455",
+  "rec_lord": "960",
+  "hp_anima": "1943",
+  "rec_anima": "902",
+  "atk_breaker": "856",
+  "def_breaker": "397",
+  "atk_guardian": "740",
+  "def_guardian": "513",
+  "rec_guardian": "931",
+  "def_oracle": "426",
+  "hp_oracle": "1638",
+  "rec_oracle": "1047",
+  "hp_bonus": "250",
+  "atk_bonus": "100",
+  "def_bonus": "100",
+  "rec_bonus": "100",
+  "lordonly": "",
+  "combo_hits": "5",
+  "normaldc": "10",
+  "ls": "",
+  "lsdescription": "",
+  "lstype": "",
+  "bbdescription": "Boosts all allies' Atk for 3 turns",
+  "bbnote": "40% boost",
+  "bbtype": "Support",
+  "bbhits": "",
+  "bbaoe": "0",
+  "bbgauge": "12",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50121",
+  "evomats2": "60142",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": ""
 }

@@ -1,62 +1,66 @@
 {
   "id": "830005",
-  "unitName": "Wild Slash Bayley",
-  "no": "8008",
-  "element": "Earth",
-  "rarity": "★★★★★",
-  "cost": "15",
-  "maxlv": "80",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "90",
-  "animation_idle": "54",
-  "animation_move": "36",
-  "movespeed_attack": "0.0024",
-  "movespeed_skill": "0.0024",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "16, 21, 26, 31, 33",
-  "normal_distribute": "30, 30, 20, 10, 10",
-  "normal_totaldistr": "100",
-  "bb_frames": "16, 19, 21, 26, 31, 33",
-  "bb_distribute": "20, 16, 16, 16, 16, 16",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "description": "A practitioner of the lost \"Nyan-jutsu\" style of martial arts. She fully unleashed the potential of her fist and attained better control of her trusted rifle Liebe after experiencing true hardship and hunger while training alone in the mountains. With renewed vigor, she re-joined the Battle Maidens and set out on a journey like never before.",
-  "summon": "Nya! As long as I live,<br>you can rely on me for<br>anything you need!",
-  "fusion": "I mustn't be lazy! <br>This is hard work but at least <br>I have something to fight for!",
-  "evolution": "I have no regrets!<br>My fists were meant for battle!<br>Nya ha!",
-  "hp_base": "3262",
-  "atk_base": "989",
-  "def_base": "995",
-  "rec_base": "1268",
-  "hp_lord": "5278",
-  "atk_lord": "1511",
-  "def_lord": "1289",
-  "rec_lord": "1556",
-  "hp_anima": "5871",
-  "rec_anima": "1398",
-  "atk_breaker": "1669",
-  "def_breaker": "1131",
-  "atk_guardian": "1353",
-  "def_guardian": "1447",
-  "rec_guardian": "1477",
-  "def_oracle": "1210",
-  "hp_oracle": "5041",
-  "rec_oracle": "1793",
-  "hp_bonus": "750",
-  "atk_bonus": "300",
-  "def_bonus": "300",
-  "rec_bonus": "300",
-  "lordonly": "",
-  "combo_hits": "5",
-  "normaldc": "10",
-  "ls": "Earth God's Power",
-  "lsdescription": "50% boost to Atk Power of Earth Types",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 989,
+      "def": 995,
+      "hp": 3262,
+      "rec": 1268
+    },
+    "_lord": {
+      "atk": 1511,
+      "def": 1289,
+      "hp": 5278,
+      "rec": 1556
+    },
+    "anima": {
+      "atk": 1511,
+      "def": 1289,
+      "hp max": 6068,
+      "hp min": 5673,
+      "rec max": 1477,
+      "rec min": 1319
+    },
+    "breaker": {
+      "atk max": 1748,
+      "atk min": 1590,
+      "def max": 1210,
+      "def min": 1052,
+      "hp": 5278,
+      "rec": 1556
+    },
+    "guardian": {
+      "atk": 1511,
+      "def max": 1526,
+      "def min": 1368,
+      "hp": 5278,
+      "rec max": 1556,
+      "rec min": 1398
+    },
+    "oracle": {
+      "atk": 1511,
+      "def max": 1289,
+      "def min": 1131,
+      "hp": 5278,
+      "rec max": 1872,
+      "rec min": 1714
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to Atk Power of Earth Types",
+    "effects": [
+      {
+        "atk% buff": 50,
+        "elements buffed": [
+          "earth"
+        ],
+        "passive id": "2"
+      }
+    ],
+    "id": "121",
+    "name": "Earth God's Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -287,97 +291,91 @@
     ],
     "name": "Slash Strike"
   },
-  "bbdescription": "6 combo Earth elemental attack on all enemies with probable Poison effect",
-  "bbnote": "50% chance to inflict",
-  "bbtype": "Offense",
-  "bbhits": "6",
-  "bbaoe": "A",
-  "bbgauge": "24",
-  "bbdc": "6",
-  "bbmultiplier": "200",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "830004",
-  "evointo": "830006",
-  "evomats1": "50354",
-  "evomats2": "30133",
-  "evomats3": "30133",
-  "evomats4": "30132",
-  "evomats5": "60224",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 989,
-      "def": 995,
-      "hp": 3262,
-      "rec": 1268
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1511,
-      "def": 1289,
-      "hp": 5278,
-      "rec": 1556
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1511,
-      "def": 1289,
-      "hp max": 6068,
-      "hp min": 5673,
-      "rec max": 1477,
-      "rec min": 1319
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 90
     },
-    "breaker": {
-      "atk max": 1748,
-      "atk min": 1590,
-      "def max": 1210,
-      "def min": 1052,
-      "hp": 5278,
-      "rec": 1556
+    "idle": {
+      "total number of frames": 54
     },
-    "guardian": {
-      "atk": 1511,
-      "def max": 1526,
-      "def min": 1368,
-      "hp": 5278,
-      "rec max": 1556,
-      "rec min": 1398
-    },
-    "oracle": {
-      "atk": 1511,
-      "def max": 1289,
-      "def min": 1131,
-      "hp": 5278,
-      "rec max": 1872,
-      "rec min": 1714
+    "move": {
+      "total number of frames": 36
     }
   },
-  "leader_skill": {
-    "desc": "50% boost to Atk Power of Earth Types",
-    "effects": [
-      {
-        "atk% buff": 50,
-        "elements buffed": [
-          "earth"
-        ],
-        "passive id": "2"
-      }
+  "category": 830000,
+  "cost": "15",
+  "damage frames": {
+    "frame times": [
+      16,
+      21,
+      26,
+      31,
+      33
     ],
-    "id": "121",
-    "name": "Earth God's Power"
+    "hit dmg% distribution": [
+      30,
+      30,
+      20,
+      10,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 5
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "earth",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "farmable",
+  "guide_id": 8008,
+  "imp": {
+    "max atk": "300",
+    "max def": "300",
+    "max hp": "750",
+    "max rec": "300"
+  },
+  "kind": "normal",
+  "lord damage range": "1406~1571",
+  "movement": {
+    "attack": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    }
+  },
+  "name": "Wild Slash Bayley",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Wild Slash Bayley",
+  "maxlv": "80",
+  "no": "8008",
   "unitDisplayHomePosition_1W9CxaFK": "362,271,182,498",
   "unitDisplayDetailPosition_6z54rgb3": "-27,-70,940,850",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "94,220,479,434,0",
@@ -387,5 +385,105 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "10:230:1,10:300230:1,10:123:1,15:123:1,20:123:1,25:123:1,25:300230:1"
+  "effectFrames": "10:230:1,10:300230:1,10:123:1,15:123:1,20:123:1,25:123:1,25:300230:1",
+  "evofrom": "830004",
+  "evointo": "830006",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30133",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "30132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "90",
+  "animation_idle": "54",
+  "animation_move": "36",
+  "movespeed_attack": "0.0024",
+  "movespeed_skill": "0.0024",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "16, 21, 26, 31, 33",
+  "normal_distribute": "30, 30, 20, 10, 10",
+  "normal_totaldistr": "100",
+  "bb_frames": "16, 19, 21, 26, 31, 33",
+  "bb_distribute": "20, 16, 16, 16, 16, 16",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "description": "A practitioner of the lost \"Nyan-jutsu\" style of martial arts. She fully unleashed the potential of her fist and attained better control of her trusted rifle Liebe after experiencing true hardship and hunger while training alone in the mountains. With renewed vigor, she re-joined the Battle Maidens and set out on a journey like never before.",
+  "summon": "Nya! As long as I live,<br>you can rely on me for<br>anything you need!",
+  "fusion": "I mustn't be lazy! <br>This is hard work but at least <br>I have something to fight for!",
+  "evolution": "I have no regrets!<br>My fists were meant for battle!<br>Nya ha!",
+  "hp_base": "3262",
+  "atk_base": "989",
+  "def_base": "995",
+  "rec_base": "1268",
+  "hp_lord": "5278",
+  "atk_lord": "1511",
+  "def_lord": "1289",
+  "rec_lord": "1556",
+  "hp_anima": "5871",
+  "rec_anima": "1398",
+  "atk_breaker": "1669",
+  "def_breaker": "1131",
+  "atk_guardian": "1353",
+  "def_guardian": "1447",
+  "rec_guardian": "1477",
+  "def_oracle": "1210",
+  "hp_oracle": "5041",
+  "rec_oracle": "1793",
+  "hp_bonus": "750",
+  "atk_bonus": "300",
+  "def_bonus": "300",
+  "rec_bonus": "300",
+  "lordonly": "",
+  "combo_hits": "5",
+  "normaldc": "10",
+  "ls": "Earth God's Power",
+  "lsdescription": "50% boost to Atk Power of Earth Types",
+  "lstype": "Attack",
+  "bbdescription": "6 combo Earth elemental attack on all enemies with probable Poison effect",
+  "bbnote": "50% chance to inflict",
+  "bbtype": "Offense",
+  "bbhits": "6",
+  "bbaoe": "A",
+  "bbgauge": "24",
+  "bbdc": "6",
+  "bbmultiplier": "200",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "30133",
+  "evomats3": "30133",
+  "evomats4": "30132",
+  "evomats5": "60224"
 }

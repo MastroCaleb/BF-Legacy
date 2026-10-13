@@ -1,68 +1,101 @@
 {
   "id": "10916",
-  "unitName": "Wicked Warrior Shura",
-  "no": "1417",
-  "element": "Fire",
-  "rarity": "★★★★★★★",
-  "cost": "44",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "130",
-  "animation_idle": "52",
-  "animation_move": "11",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "40, 58, 66, 72, 78, 84, 90",
-  "normal_distribute": "12, 60, 10, 6, 5, 4, 3",
-  "normal_totaldistr": "100",
-  "bb_frames": "40, 58, 62, 66, 70",
-  "bb_distribute": "20, 55, 10, 8, 7",
-  "bb_totaldistr": "100",
-  "sbb_frames": "40, 43, 46, 49, 52, 55, 58, 61, 64, 67, 70, 73, 76, 79, 82, 85, 88, 91",
-  "sbb_distribute": "12, 5, 4, 3, 3, 3, 25, 8, 6, 5, 4, 3, 4, 3, 3, 3, 3, 3",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "40, 43, 46, 49, 52, 55, 58, 61, 64, 67, 70, 73, 76, 79, 82, 85, 88, 91, 94, 97, 100, 103",
-  "ubb_distribute": "10, 4, 3, 3, 3, 3, 21, 8, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "2",
-  "sbb_effectdelay": "4",
-  "ubb_effectdelay": "4",
-  "description": "A mock Unit created in an attempt to replicate the great powers of a certain demon of Ishgria. Shura was an apprentice of the \"War Demon,\" and underwent rigorous training alongside another pupil who was his senior. Sadly, Shura ended up fatally wounding his training partner during practice one day, and though his partner did not fault him for it, the grief of losing his closest friend was too much for Shura to bear. He is said to have added a part of his dear friend's name to his own afterwards, eventually surrendering himself to the unending chaos of war.",
-  "summon": "My path has been decided.<br>I shall challenge the strongest to battle. All you have to do is guide me to them.",
-  "fusion": "Yes, give me more power!<br>I shall not hold back any longer.<br>Not till I am crowned the strongest!",
-  "evolution": "",
-  "hp_base": "5018",
-  "atk_base": "2264",
-  "def_base": "1722",
-  "rec_base": "1660",
-  "hp_lord": "7174",
-  "atk_lord": "3064",
-  "def_lord": "2342",
-  "rec_lord": "2239",
-  "hp_anima": "8066",
-  "rec_anima": "2001",
-  "atk_breaker": "3302",
-  "def_breaker": "2104",
-  "def_guardian": "2580",
-  "rec_guardian": "2120",
-  "def_oracle": "2223",
-  "rec_oracle": "2596",
-  "hp_bonus": "1000",
-  "atk_bonus": "600",
-  "def_bonus": "300",
-  "rec_bonus": "400",
-  "lordonly": "",
-  "combo_hits": "7",
-  "normaldc": "35",
-  "ls": "Divine Violent Flame",
-  "lsdescription": "30% boost to max HP, slightly boosts Atk, Def, Rec when HP is over 50%, Spark damage slightly boosts BB gauge & 100% boost to Spark damage",
-  "lsnote": "30% boost to Atk, Def, Rec, 1~2 BC fill on Spark",
+  "stats": {
+    "_base": {
+      "atk": 2264,
+      "def": 1722,
+      "hp": 5018,
+      "rec": 1660
+    },
+    "_lord": {
+      "atk": 3064,
+      "def": 2342,
+      "hp": 7174,
+      "rec": 2239
+    },
+    "anima": {
+      "atk": 3064,
+      "def": 2342,
+      "hp max": 8364,
+      "hp min": 7769,
+      "rec max": 2120,
+      "rec min": 1882
+    },
+    "breaker": {
+      "atk max": 3421,
+      "atk min": 3183,
+      "def max": 2223,
+      "def min": 1985,
+      "hp": 7174,
+      "rec": 2239
+    },
+    "guardian": {
+      "atk": 3064,
+      "def max": 2699,
+      "def min": 2461,
+      "hp": 7174,
+      "rec max": 2239,
+      "rec min": 2001
+    },
+    "oracle": {
+      "atk": 3064,
+      "def max": 2342,
+      "def min": 2104,
+      "hp": 7174,
+      "rec max": 2715,
+      "rec min": 2477
+    }
+  },
+  "leader_skill": {
+    "desc": "30% boost to max HP, slightly boosts Atk, Def, Rec when HP is over 50%, Spark damage slightly boosts BB gauge & 100% boost to Spark damage",
+    "effects": [
+      {
+        "hp% buff": 30,
+        "passive id": "1"
+      },
+      {
+        "bc fill on spark high": 2,
+        "bc fill on spark low": 1,
+        "bc fill on spark%": 100,
+        "passive id": "47"
+      },
+      {
+        "damage% for spark": 100,
+        "passive id": "31"
+      },
+      {
+        "atk% buff": 30,
+        "def% buff": 30,
+        "hp above % buff requirement": 50,
+        "passive id": "11",
+        "rec% buff": 30
+      }
+    ],
+    "id": "5529",
+    "name": "Divine Violent Flame"
+  },
+  "extra_skill": {
+    "desc": "Slightly boosts Atk when BB gauge is over 50% & 30% boost to Spark damage",
+    "effects": [
+      {
+        "atk% buff": 30,
+        "bb gauge above % buff requirement": 50,
+        "conditions": [],
+        "passive id": "30",
+        "passive target": "self"
+      },
+      {
+        "conditions": [],
+        "damage% for spark": 30,
+        "passive id": "31",
+        "passive target": "self"
+      }
+    ],
+    "id": "19800",
+    "name": "Path of Carnage",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -509,18 +542,6 @@
     ],
     "name": "Art of War Strike"
   },
-  "bbdescription": "5 combo Fire attack on all foes, hugely boosts Spark damage and BC efficacy for 3 turns & adds probable Spark critical for 3 turns",
-  "bbnote": "80% boost to Spark damage, 50% boost to BC efficacy, 20% chance to deal 50% more Spark damage from Spark critical",
-  "bbtype": "Offense",
-  "bbhits": "5",
-  "bbaoe": "A",
-  "bbgauge": "26",
-  "bbdc": "10",
-  "bbmultiplier": "350",
-  "bbhits2": "",
-  "bbaoe2": "",
-  "bbdc2": "",
-  "bbmultiplier2": "",
   "sbb": {
     "damage frames": [
       {
@@ -1095,18 +1116,6 @@
     ],
     "name": "Divine Fury's Brandish"
   },
-  "sbbdescription": "18 combo powerful Fire attack on all foes, boosts own Spark damage for 3 turns, boosts own Atk and enormously boosts own critical hit rate for 3 turns, hugely boosts Spark damage for 3 turns & adds probable Spark critical for 3 turns",
-  "sbbnote": "30% boost to own Spark damage, 80% boost to own Atk, 60% boost to own critical hit rate, 80% boost to allies' Spark damage, 20% chance to deal 50% more Spark damage from Spark critical",
-  "sbbtype": "Offense",
-  "sbbhits": "18",
-  "sbbaoe": "A",
-  "sbbgauge": "30",
-  "sbbdc": "18",
-  "sbbmultiplier": "560",
-  "sbbhits2": "",
-  "sbbaoe2": "",
-  "sbbdc2": "",
-  "sbbmultiplier2": "",
   "ubb": {
     "damage frames": [
       {
@@ -1265,6 +1274,218 @@
     ],
     "name": "Flame of War Formation"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 130
+    },
+    "idle": {
+      "total number of frames": 52
+    },
+    "move": {
+      "total number of frames": 11
+    }
+  },
+  "category": 10910,
+  "cost": "44",
+  "damage frames": {
+    "frame times": [
+      40,
+      58,
+      66,
+      72,
+      78,
+      84,
+      90
+    ],
+    "hit dmg% distribution": [
+      12,
+      60,
+      10,
+      6,
+      5,
+      4,
+      3
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 7
+  },
+  "drop check count": 5,
+  "element": "fire",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 1417,
+  "imp": {
+    "max atk": "600",
+    "max def": "300",
+    "max hp": "1000",
+    "max rec": "400"
+  },
+  "kind": "normal",
+  "lord damage range": "2852~3186",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Wicked Warrior Shura",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Wicked Warrior Shura",
+  "maxlv": "120",
+  "no": "1417",
+  "unitDisplayHomePosition_1W9CxaFK": "680,195,170,464",
+  "unitDisplayDetailPosition_6z54rgb3": "-293,33,1250,807",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "-35,232,630,407,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-237,-224,1180,761",
+  "unitDisplaySummonPosition_KC3Jk8Br": "-35,232,630,407,0",
+  "unitDisplayHpPosition_3BpHN6VD": "-1,48",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "15000",
+  "sellCaution": false,
+  "effectFrames": "34:121:1,40:1758:1,52:127:1,58:158:1,60:121:1,66:120:1,72:121:1,78:120:1,84:121:1,80:11080:1,85:601460:1",
+  "evofrom": "",
+  "evointo": "10917",
+  "evozelcost": "3000000",
+  "evokarmacost": "1000000",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "10354",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 2
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "130",
+  "animation_idle": "52",
+  "animation_move": "11",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "40, 58, 66, 72, 78, 84, 90",
+  "normal_distribute": "12, 60, 10, 6, 5, 4, 3",
+  "normal_totaldistr": "100",
+  "bb_frames": "40, 58, 62, 66, 70",
+  "bb_distribute": "20, 55, 10, 8, 7",
+  "bb_totaldistr": "100",
+  "sbb_frames": "40, 43, 46, 49, 52, 55, 58, 61, 64, 67, 70, 73, 76, 79, 82, 85, 88, 91",
+  "sbb_distribute": "12, 5, 4, 3, 3, 3, 25, 8, 6, 5, 4, 3, 4, 3, 3, 3, 3, 3",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "40, 43, 46, 49, 52, 55, 58, 61, 64, 67, 70, 73, 76, 79, 82, 85, 88, 91, 94, 97, 100, 103",
+  "ubb_distribute": "10, 4, 3, 3, 3, 3, 21, 8, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "2",
+  "sbb_effectdelay": "4",
+  "ubb_effectdelay": "4",
+  "description": "A mock Unit created in an attempt to replicate the great powers of a certain demon of Ishgria. Shura was an apprentice of the \"War Demon,\" and underwent rigorous training alongside another pupil who was his senior. Sadly, Shura ended up fatally wounding his training partner during practice one day, and though his partner did not fault him for it, the grief of losing his closest friend was too much for Shura to bear. He is said to have added a part of his dear friend's name to his own afterwards, eventually surrendering himself to the unending chaos of war.",
+  "summon": "My path has been decided.<br>I shall challenge the strongest to battle. All you have to do is guide me to them.",
+  "fusion": "Yes, give me more power!<br>I shall not hold back any longer.<br>Not till I am crowned the strongest!",
+  "evolution": "",
+  "hp_base": "5018",
+  "atk_base": "2264",
+  "def_base": "1722",
+  "rec_base": "1660",
+  "hp_lord": "7174",
+  "atk_lord": "3064",
+  "def_lord": "2342",
+  "rec_lord": "2239",
+  "hp_anima": "8066",
+  "rec_anima": "2001",
+  "atk_breaker": "3302",
+  "def_breaker": "2104",
+  "def_guardian": "2580",
+  "rec_guardian": "2120",
+  "def_oracle": "2223",
+  "rec_oracle": "2596",
+  "hp_bonus": "1000",
+  "atk_bonus": "600",
+  "def_bonus": "300",
+  "rec_bonus": "400",
+  "lordonly": "",
+  "combo_hits": "7",
+  "normaldc": "35",
+  "ls": "Divine Violent Flame",
+  "lsdescription": "30% boost to max HP, slightly boosts Atk, Def, Rec when HP is over 50%, Spark damage slightly boosts BB gauge & 100% boost to Spark damage",
+  "lsnote": "30% boost to Atk, Def, Rec, 1~2 BC fill on Spark",
+  "bbdescription": "5 combo Fire attack on all foes, hugely boosts Spark damage and BC efficacy for 3 turns & adds probable Spark critical for 3 turns",
+  "bbnote": "80% boost to Spark damage, 50% boost to BC efficacy, 20% chance to deal 50% more Spark damage from Spark critical",
+  "bbtype": "Offense",
+  "bbhits": "5",
+  "bbaoe": "A",
+  "bbgauge": "26",
+  "bbdc": "10",
+  "bbmultiplier": "350",
+  "bbhits2": "",
+  "bbaoe2": "",
+  "bbdc2": "",
+  "bbmultiplier2": "",
+  "sbbdescription": "18 combo powerful Fire attack on all foes, boosts own Spark damage for 3 turns, boosts own Atk and enormously boosts own critical hit rate for 3 turns, hugely boosts Spark damage for 3 turns & adds probable Spark critical for 3 turns",
+  "sbbnote": "30% boost to own Spark damage, 80% boost to own Atk, 60% boost to own critical hit rate, 80% boost to allies' Spark damage, 20% chance to deal 50% more Spark damage from Spark critical",
+  "sbbtype": "Offense",
+  "sbbhits": "18",
+  "sbbaoe": "A",
+  "sbbgauge": "30",
+  "sbbdc": "18",
+  "sbbmultiplier": "560",
+  "sbbhits2": "",
+  "sbbaoe2": "",
+  "sbbdc2": "",
+  "sbbmultiplier2": "",
   "ubbdescription": "22 combo massive Fire attack on all foes, boosts own Spark damage and enormously boosts allies' Spark damage for 3 turns, enormously boosts critical damage for 3 turns & adds probable Spark critical for 3 turns",
   "ubbnote": "50% boost to own Spark damage, 250% boost to allies' Spark damage, 300% boost to critical damage, 50% chance to deal 50% more Spark damage from Spark critical",
   "ubbtype": "Offense",
@@ -1281,8 +1502,6 @@
   "esitem": "",
   "esdescription": "Slightly boosts Atk when BB gauge is over 50% & 30% boost to Spark damage",
   "esnote": "30% boost",
-  "evofrom": "",
-  "evointo": "10917",
   "evomats1": "Fire Mecha God",
   "evomats2": "Fire Mecha God",
   "evomats3": "Miracle Totem",
@@ -1293,112 +1512,5 @@
   "evomats8": "Metal Mimic",
   "evomats9": "",
   "evoitem": "",
-  "evoitem2": "",
-  "evozelcost": "3000000",
-  "stats": {
-    "_base": {
-      "atk": 2264,
-      "def": 1722,
-      "hp": 5018,
-      "rec": 1660
-    },
-    "_lord": {
-      "atk": 3064,
-      "def": 2342,
-      "hp": 7174,
-      "rec": 2239
-    },
-    "anima": {
-      "atk": 3064,
-      "def": 2342,
-      "hp max": 8364,
-      "hp min": 7769,
-      "rec max": 2120,
-      "rec min": 1882
-    },
-    "breaker": {
-      "atk max": 3421,
-      "atk min": 3183,
-      "def max": 2223,
-      "def min": 1985,
-      "hp": 7174,
-      "rec": 2239
-    },
-    "guardian": {
-      "atk": 3064,
-      "def max": 2699,
-      "def min": 2461,
-      "hp": 7174,
-      "rec max": 2239,
-      "rec min": 2001
-    },
-    "oracle": {
-      "atk": 3064,
-      "def max": 2342,
-      "def min": 2104,
-      "hp": 7174,
-      "rec max": 2715,
-      "rec min": 2477
-    }
-  },
-  "leader_skill": {
-    "desc": "30% boost to max HP, slightly boosts Atk, Def, Rec when HP is over 50%, Spark damage slightly boosts BB gauge & 100% boost to Spark damage",
-    "effects": [
-      {
-        "hp% buff": 30,
-        "passive id": "1"
-      },
-      {
-        "bc fill on spark high": 2,
-        "bc fill on spark low": 1,
-        "bc fill on spark%": 100,
-        "passive id": "47"
-      },
-      {
-        "damage% for spark": 100,
-        "passive id": "31"
-      },
-      {
-        "atk% buff": 30,
-        "def% buff": 30,
-        "hp above % buff requirement": 50,
-        "passive id": "11",
-        "rec% buff": 30
-      }
-    ],
-    "id": "5529",
-    "name": "Divine Violent Flame"
-  },
-  "extra_skill": {
-    "desc": "Slightly boosts Atk when BB gauge is over 50% & 30% boost to Spark damage",
-    "effects": [
-      {
-        "atk% buff": 30,
-        "bb gauge above % buff requirement": 50,
-        "conditions": [],
-        "passive id": "30",
-        "passive target": "self"
-      },
-      {
-        "conditions": [],
-        "damage% for spark": 30,
-        "passive id": "31",
-        "passive target": "self"
-      }
-    ],
-    "id": "19800",
-    "name": "Path of Carnage",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "680,195,170,464",
-  "unitDisplayDetailPosition_6z54rgb3": "-293,33,1250,807",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "-35,232,630,407,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-237,-224,1180,761",
-  "unitDisplaySummonPosition_KC3Jk8Br": "-35,232,630,407,0",
-  "unitDisplayHpPosition_3BpHN6VD": "-1,48",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "15000",
-  "sellCaution": false,
-  "effectFrames": "34:121:1,40:1758:1,52:127:1,58:158:1,60:121:1,66:120:1,72:121:1,78:120:1,84:121:1,80:11080:1,85:601460:1"
+  "evoitem2": ""
 }

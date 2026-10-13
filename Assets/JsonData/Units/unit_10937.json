@@ -1,68 +1,110 @@
 {
   "id": "10937",
-  "unitName": "Torch Eccentric Malef",
-  "no": "1435",
-  "element": "Fire",
-  "rarity": "Omni",
-  "cost": "48",
-  "maxlv": "150",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "144",
-  "animation_idle": "52",
-  "animation_move": "6",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "13, 17, 30, 34, 86, 90, 94, 98, 102",
-  "normal_distribute": "7, 5, 7, 5, 25, 20, 15, 10, 6",
-  "normal_totaldistr": "100",
-  "bb_frames": "13, 16, 19, 30, 33, 36, 86, 89, 92, 95, 98, 101, 104",
-  "bb_distribute": "5, 4, 3, 5, 4, 3, 22, 17, 12, 9, 7, 6, 3",
-  "bb_totaldistr": "100",
-  "sbb_frames": "13, 16, 19, 22, 30, 33, 36, 39, 86, 89, 92, 95, 98, 101, 104, 107, 110",
-  "sbb_distribute": "4, 3, 3, 2, 4, 3, 3, 2, 20, 14, 9, 8, 7, 6, 5, 4, 3",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "13, 16, 19, 22, 25, 30, 33, 36, 39, 42, 86, 89, 92, 95, 98, 101, 104, 107, 110, 113, 116",
-  "ubb_distribute": "3, 3, 2, 2, 2, 3, 3, 2, 2, 2, 18, 13, 8, 7, 6, 5, 5, 4, 4, 3, 3",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "1",
-  "ubb_effectdelay": "1",
-  "description": "Although Malef accepted a deal with a female demon to save his life out of his obsession with his own research, current theories hold that he was motivated by more than just intellectual curiosity. It seems likely he held a grudge against his fellow researcher, or perhaps even more complicated emotions. Had he continued to work alongside his partner without allowing those feelings to fester, he might have succeeded in achieving the ultimate goal of his research.",
-  "summon": "The truth...still so far off! The \"ultimate being,\" still so far off! I will create it, with these hands!",
-  "fusion": "And that's one more step closer to the truth. It seems that my genius has moved even a fool like you!",
-  "evolution": "My lust for research is ablaze! I don't have time for petty concerns; not when I'm creating the \"ultimate being!\"",
-  "hp_base": "6162",
-  "atk_base": "2377",
-  "def_base": "2255",
-  "rec_base": "2272",
-  "hp_lord": "8012",
-  "atk_lord": "2944",
-  "def_lord": "2818",
-  "rec_lord": "2827",
-  "hp_anima": "9129",
-  "rec_anima": "2529",
-  "atk_breaker": "3242",
-  "def_breaker": "2520",
-  "def_guardian": "3116",
-  "rec_guardian": "2678",
-  "def_oracle": "2669",
-  "rec_oracle": "3274",
-  "hp_bonus": "1500",
-  "atk_bonus": "600",
-  "def_bonus": "600",
-  "rec_bonus": "600",
-  "lordonly": "",
-  "combo_hits": "9",
-  "normaldc": "45",
-  "ls": "Vile Pestilence",
-  "lsdescription": "50% boost to Def and max HP, probable random status ailment infliction & damage taken hugely boosts BB gauge",
-  "lsnote": "15% chance to inflict Injury, Weak, Sick, 10% chance to inflict Curse, Paralysis, Poison & fills 4-7 BC",
+  "stats": {
+    "_base": {
+      "atk": 2377,
+      "def": 2255,
+      "hp": 6162,
+      "rec": 2272
+    },
+    "_lord": {
+      "atk": 2944,
+      "def": 2818,
+      "hp": 8012,
+      "rec": 2827
+    },
+    "anima": {
+      "atk": 2944,
+      "def": 2818,
+      "hp max": 9502,
+      "hp min": 8757,
+      "rec max": 2678,
+      "rec min": 2380
+    },
+    "breaker": {
+      "atk max": 3391,
+      "atk min": 3093,
+      "def max": 2669,
+      "def min": 2371,
+      "hp": 8012,
+      "rec": 2827
+    },
+    "guardian": {
+      "atk": 2944,
+      "def max": 3265,
+      "def min": 2967,
+      "hp": 8012,
+      "rec max": 2827,
+      "rec min": 2529
+    },
+    "oracle": {
+      "atk": 2944,
+      "def max": 2818,
+      "def min": 2520,
+      "hp": 8012,
+      "rec max": 3423,
+      "rec min": 3125
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to Def and max HP, probable random status ailment infliction & damage taken hugely boosts BB gauge",
+    "effects": [
+      {
+        "def% buff": 50,
+        "hp% buff": 50,
+        "passive id": "1"
+      },
+      {
+        "injury%": 15,
+        "passive id": "20",
+        "poison%": 10,
+        "sick%": 15,
+        "weaken%": 15
+      },
+      {
+        "curse%": 10,
+        "paralysis%": 10,
+        "passive id": "20"
+      },
+      {
+        "bc fill when attacked high": 7,
+        "bc fill when attacked low": 4,
+        "bc fill when attacked%": 100,
+        "passive id": "25"
+      }
+    ],
+    "id": "4345",
+    "name": "Vile Pestilence"
+  },
+  "extra_skill": {
+    "desc": "Hugely boosts damage against status afflicted foes & damage taken may restore HP",
+    "effects": [
+      {
+        "atk% buff when enemy has ailment": 100,
+        "atk% buff when enemy has curse": true,
+        "atk% buff when enemy has injury": true,
+        "atk% buff when enemy has paralysis": true,
+        "atk% buff when enemy has poison": true,
+        "atk% buff when enemy has sick": true,
+        "atk% buff when enemy has weaken": true,
+        "conditions": [],
+        "passive id": "74",
+        "passive target": "self"
+      },
+      {
+        "conditions": [],
+        "dmg% to hp% when attacked chance%": 25,
+        "dmg% to hp% when attacked high": 25,
+        "dmg% to hp% when attacked low": 20,
+        "passive id": "24",
+        "passive target": "self"
+      }
+    ],
+    "id": "20800",
+    "name": "True Revolutionary",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -525,14 +567,6 @@
     ],
     "name": "Lofty Heretic"
   },
-  "bbdescription": "13 combo Fire attack on all foes, probable random status ailment infliction & hugely boosts BB gauge",
-  "bbnote": "75% chance & fills 8 BC",
-  "bbtype": "Offense",
-  "bbhits": "13",
-  "bbaoe": "A",
-  "bbgauge": "27",
-  "bbdc": "13",
-  "bbmultiplier": "370",
   "sbb": {
     "damage frames": [
       {
@@ -1195,14 +1229,6 @@
     ],
     "name": "Phantom Darkness"
   },
-  "sbbdescription": "17 combo powerful Fire attack on all foes, probable random status ailment infliction to attack and probable status ailment counter for 3 turns & damage taken considerably boosts BB gauge for 3 turns",
-  "sbbnote": "15% chance to inflict Injury, Weak, Sick, 10% chance to inflict Curse, Paralysis, Poison & damage taken fills 4-7 BC",
-  "sbbtype": "Offense",
-  "sbbhits": "17",
-  "sbbaoe": "A",
-  "sbbgauge": "30",
-  "sbbdc": "17",
-  "sbbmultiplier": "580",
   "ubb": {
     "damage frames": [
       {
@@ -1364,6 +1390,188 @@
     ],
     "name": "Unnatural Convulsion"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 144
+    },
+    "idle": {
+      "total number of frames": 52
+    },
+    "move": {
+      "total number of frames": 6
+    }
+  },
+  "category": 10930,
+  "cost": "48",
+  "damage frames": {
+    "frame times": [
+      13,
+      17,
+      30,
+      34,
+      86,
+      90,
+      94,
+      98,
+      102
+    ],
+    "hit dmg% distribution": [
+      7,
+      5,
+      7,
+      5,
+      25,
+      20,
+      15,
+      10,
+      6
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 9
+  },
+  "drop check count": 5,
+  "element": "fire",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 1435,
+  "imp": {
+    "max atk": "600",
+    "max def": "600",
+    "max hp": "1500",
+    "max rec": "600"
+  },
+  "kind": "normal",
+  "lord damage range": "2741~3061",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Torch Eccentric Malef",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "8",
+  "sell caution": false,
+  "unitName": "Torch Eccentric Malef",
+  "maxlv": "150",
+  "no": "1435",
+  "unitDisplayHomePosition_1W9CxaFK": "516,475,155,423",
+  "unitDisplayDetailPosition_6z54rgb3": "-234,-299,1220,1173",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "-14,9,650,625,1",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-172,-527,1130,1086",
+  "unitDisplaySummonPosition_KC3Jk8Br": "-14,9,650,625,1",
+  "unitDisplayHpPosition_3BpHN6VD": "2,53",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "50000",
+  "sellCaution": false,
+  "effectFrames": "12:1115:1,13:100191:1,26:100191:1,82:1912:1,88:10070:1,90:10070:1",
+  "evofrom": "10936",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "21",
+  "animation_attack": "144",
+  "animation_idle": "52",
+  "animation_move": "6",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "13, 17, 30, 34, 86, 90, 94, 98, 102",
+  "normal_distribute": "7, 5, 7, 5, 25, 20, 15, 10, 6",
+  "normal_totaldistr": "100",
+  "bb_frames": "13, 16, 19, 30, 33, 36, 86, 89, 92, 95, 98, 101, 104",
+  "bb_distribute": "5, 4, 3, 5, 4, 3, 22, 17, 12, 9, 7, 6, 3",
+  "bb_totaldistr": "100",
+  "sbb_frames": "13, 16, 19, 22, 30, 33, 36, 39, 86, 89, 92, 95, 98, 101, 104, 107, 110",
+  "sbb_distribute": "4, 3, 3, 2, 4, 3, 3, 2, 20, 14, 9, 8, 7, 6, 5, 4, 3",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "13, 16, 19, 22, 25, 30, 33, 36, 39, 42, 86, 89, 92, 95, 98, 101, 104, 107, 110, 113, 116",
+  "ubb_distribute": "3, 3, 2, 2, 2, 3, 3, 2, 2, 2, 18, 13, 8, 7, 6, 5, 5, 4, 4, 3, 3",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "1",
+  "ubb_effectdelay": "1",
+  "description": "Although Malef accepted a deal with a female demon to save his life out of his obsession with his own research, current theories hold that he was motivated by more than just intellectual curiosity. It seems likely he held a grudge against his fellow researcher, or perhaps even more complicated emotions. Had he continued to work alongside his partner without allowing those feelings to fester, he might have succeeded in achieving the ultimate goal of his research.",
+  "summon": "The truth...still so far off! The \"ultimate being,\" still so far off! I will create it, with these hands!",
+  "fusion": "And that's one more step closer to the truth. It seems that my genius has moved even a fool like you!",
+  "evolution": "My lust for research is ablaze! I don't have time for petty concerns; not when I'm creating the \"ultimate being!\"",
+  "hp_base": "6162",
+  "atk_base": "2377",
+  "def_base": "2255",
+  "rec_base": "2272",
+  "hp_lord": "8012",
+  "atk_lord": "2944",
+  "def_lord": "2818",
+  "rec_lord": "2827",
+  "hp_anima": "9129",
+  "rec_anima": "2529",
+  "atk_breaker": "3242",
+  "def_breaker": "2520",
+  "def_guardian": "3116",
+  "rec_guardian": "2678",
+  "def_oracle": "2669",
+  "rec_oracle": "3274",
+  "hp_bonus": "1500",
+  "atk_bonus": "600",
+  "def_bonus": "600",
+  "rec_bonus": "600",
+  "lordonly": "",
+  "combo_hits": "9",
+  "normaldc": "45",
+  "ls": "Vile Pestilence",
+  "lsdescription": "50% boost to Def and max HP, probable random status ailment infliction & damage taken hugely boosts BB gauge",
+  "lsnote": "15% chance to inflict Injury, Weak, Sick, 10% chance to inflict Curse, Paralysis, Poison & fills 4-7 BC",
+  "bbdescription": "13 combo Fire attack on all foes, probable random status ailment infliction & hugely boosts BB gauge",
+  "bbnote": "75% chance & fills 8 BC",
+  "bbtype": "Offense",
+  "bbhits": "13",
+  "bbaoe": "A",
+  "bbgauge": "27",
+  "bbdc": "13",
+  "bbmultiplier": "370",
+  "sbbdescription": "17 combo powerful Fire attack on all foes, probable random status ailment infliction to attack and probable status ailment counter for 3 turns & damage taken considerably boosts BB gauge for 3 turns",
+  "sbbnote": "15% chance to inflict Injury, Weak, Sick, 10% chance to inflict Curse, Paralysis, Poison & damage taken fills 4-7 BC",
+  "sbbtype": "Offense",
+  "sbbhits": "17",
+  "sbbaoe": "A",
+  "sbbgauge": "30",
+  "sbbdc": "17",
+  "sbbmultiplier": "580",
   "ubbdescription": "21 combo massive Fire attack on all foes, adds random status ailment infliction to attack and enormously boosts damage against status afflicted foes for 3 turns & damage taken enormously boosts BB gauge for 3 turns",
   "ubbnote": "300% Atk on status afflicted foes & damage taken fills 50 BC",
   "ubbtype": "Offense",
@@ -1376,7 +1584,6 @@
   "esitem": "",
   "esdescription": "Hugely boosts damage against status afflicted foes & damage taken may restore HP",
   "esnote": "100% boost & 25% chance to heal 20-25% damage",
-  "evofrom": "10936",
   "howtoget": "",
   "omniskill1_cat": "Parameter Boost",
   "omniskill1_1_sp": "10",
@@ -1409,120 +1616,5 @@
   "notes": "",
   "addcat": "Demon Inventors",
   "addcatname": "Malef2",
-  "bottomtext": "",
-  "stats": {
-    "_base": {
-      "atk": 2377,
-      "def": 2255,
-      "hp": 6162,
-      "rec": 2272
-    },
-    "_lord": {
-      "atk": 2944,
-      "def": 2818,
-      "hp": 8012,
-      "rec": 2827
-    },
-    "anima": {
-      "atk": 2944,
-      "def": 2818,
-      "hp max": 9502,
-      "hp min": 8757,
-      "rec max": 2678,
-      "rec min": 2380
-    },
-    "breaker": {
-      "atk max": 3391,
-      "atk min": 3093,
-      "def max": 2669,
-      "def min": 2371,
-      "hp": 8012,
-      "rec": 2827
-    },
-    "guardian": {
-      "atk": 2944,
-      "def max": 3265,
-      "def min": 2967,
-      "hp": 8012,
-      "rec max": 2827,
-      "rec min": 2529
-    },
-    "oracle": {
-      "atk": 2944,
-      "def max": 2818,
-      "def min": 2520,
-      "hp": 8012,
-      "rec max": 3423,
-      "rec min": 3125
-    }
-  },
-  "leader_skill": {
-    "desc": "50% boost to Def and max HP, probable random status ailment infliction & damage taken hugely boosts BB gauge",
-    "effects": [
-      {
-        "def% buff": 50,
-        "hp% buff": 50,
-        "passive id": "1"
-      },
-      {
-        "injury%": 15,
-        "passive id": "20",
-        "poison%": 10,
-        "sick%": 15,
-        "weaken%": 15
-      },
-      {
-        "curse%": 10,
-        "paralysis%": 10,
-        "passive id": "20"
-      },
-      {
-        "bc fill when attacked high": 7,
-        "bc fill when attacked low": 4,
-        "bc fill when attacked%": 100,
-        "passive id": "25"
-      }
-    ],
-    "id": "4345",
-    "name": "Vile Pestilence"
-  },
-  "extra_skill": {
-    "desc": "Hugely boosts damage against status afflicted foes & damage taken may restore HP",
-    "effects": [
-      {
-        "atk% buff when enemy has ailment": 100,
-        "atk% buff when enemy has curse": true,
-        "atk% buff when enemy has injury": true,
-        "atk% buff when enemy has paralysis": true,
-        "atk% buff when enemy has poison": true,
-        "atk% buff when enemy has sick": true,
-        "atk% buff when enemy has weaken": true,
-        "conditions": [],
-        "passive id": "74",
-        "passive target": "self"
-      },
-      {
-        "conditions": [],
-        "dmg% to hp% when attacked chance%": 25,
-        "dmg% to hp% when attacked high": 25,
-        "dmg% to hp% when attacked low": 20,
-        "passive id": "24",
-        "passive target": "self"
-      }
-    ],
-    "id": "20800",
-    "name": "True Revolutionary",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "516,475,155,423",
-  "unitDisplayDetailPosition_6z54rgb3": "-234,-299,1220,1173",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "-14,9,650,625,1",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-172,-527,1130,1086",
-  "unitDisplaySummonPosition_KC3Jk8Br": "-14,9,650,625,1",
-  "unitDisplayHpPosition_3BpHN6VD": "2,53",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "50000",
-  "sellCaution": false,
-  "effectFrames": "12:1115:1,13:100191:1,26:100191:1,82:1912:1,88:10070:1,90:10070:1"
+  "bottomtext": ""
 }

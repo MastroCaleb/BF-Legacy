@@ -1,61 +1,66 @@
 {
   "id": "30343",
-  "unitName": "Battle Girl Ophelia",
-  "no": "506",
-  "element": "Earth",
-  "rarity": "★★★★",
-  "cost": "12",
-  "maxlv": "60",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "3",
-  "animation_attack": "87",
-  "animation_idle": "52",
-  "animation_move": "6",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "7, 12, 47",
-  "normal_distribute": "20, 20, 60",
-  "normal_totaldistr": "100",
-  "bb_frames": "7, 12, 45, 47, 49, 51",
-  "bb_distribute": "15, 15, 15, 15, 20, 20",
-  "bb_totaldistr": "100",
-  "description": "One of the 12 Guardians from a small remote nation. Having lived up to the expectations people held of her in her village of becoming a perfect warrior, it is said she avoided getting involved with others. Despite this, everyone admired her outstanding swordsmanship. Recently a diary has been discovered which is thought to have been written by her. It outlines the relationships between the other members of the 12 Guardians.",
-  "summon": "Knights are to be chosen by<br>those who require their service.<br>I refuse all trivial requests.",
-  "fusion": "I've no need for charity.<br>I mean, excuse me...<br>Thank you for your assistance.",
-  "evolution": "",
-  "hp_base": "3149",
-  "atk_base": "1073",
-  "def_base": "929",
-  "rec_base": "929",
-  "hp_lord": "4498",
-  "atk_lord": "1394",
-  "def_lord": "1255",
-  "rec_lord": "1256",
-  "hp_anima": "4941",
-  "rec_anima": "1138",
-  "atk_breaker": "1512",
-  "def_breaker": "1137",
-  "atk_guardian": "1276",
-  "def_guardian": "1373",
-  "rec_guardian": "1197",
-  "def_oracle": "1196",
-  "hp_oracle": "4321",
-  "rec_oracle": "1433",
-  "hp_bonus": "400",
-  "atk_bonus": "160",
-  "def_bonus": "160",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "3",
-  "normaldc": "6",
-  "ls": "Earth Spirit's Power",
-  "lsdescription": "25% boost to Atk Power of Earth Types",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 1073,
+      "def": 929,
+      "hp": 3149,
+      "rec": 929
+    },
+    "_lord": {
+      "atk": 1394,
+      "def": 1255,
+      "hp": 4498,
+      "rec": 1256
+    },
+    "anima": {
+      "atk": 1394,
+      "def": 1255,
+      "hp max": 5088,
+      "hp min": 4793,
+      "rec max": 1197,
+      "rec min": 1079
+    },
+    "breaker": {
+      "atk max": 1571,
+      "atk min": 1453,
+      "def max": 1196,
+      "def min": 1078,
+      "hp": 4498,
+      "rec": 1256
+    },
+    "guardian": {
+      "atk": 1394,
+      "def max": 1432,
+      "def min": 1314,
+      "hp": 4498,
+      "rec max": 1256,
+      "rec min": 1138
+    },
+    "oracle": {
+      "atk": 1394,
+      "def max": 1255,
+      "def min": 1137,
+      "hp": 4498,
+      "rec max": 1492,
+      "rec min": 1374
+    }
+  },
+  "leader_skill": {
+    "desc": "25% boost to Atk Power of Earth Types",
+    "effects": [
+      {
+        "atk% buff": 25,
+        "elements buffed": [
+          "earth"
+        ],
+        "passive id": "2"
+      }
+    ],
+    "id": "120",
+    "name": "Earth Spirit's Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -218,96 +223,93 @@
     ],
     "name": "Folium Sky"
   },
-  "bbdescription": "6 combo Earth elemental attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "6",
-  "bbaoe": "A",
-  "bbgauge": "14",
-  "bbdc": "6",
-  "bbmultiplier": "130",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "30344",
-  "evomats1": "30133",
-  "evomats2": "30132",
-  "evomats3": "30132",
-  "evomats4": "30191",
-  "evomats5": "30191",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 1073,
-      "def": 929,
-      "hp": 3149,
-      "rec": 929
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1394,
-      "def": 1255,
-      "hp": 4498,
-      "rec": 1256
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1394,
-      "def": 1255,
-      "hp max": 5088,
-      "hp min": 4793,
-      "rec max": 1197,
-      "rec min": 1079
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 1571,
-      "atk min": 1453,
-      "def max": 1196,
-      "def min": 1078,
-      "hp": 4498,
-      "rec": 1256
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 87
     },
-    "guardian": {
-      "atk": 1394,
-      "def max": 1432,
-      "def min": 1314,
-      "hp": 4498,
-      "rec max": 1256,
-      "rec min": 1138
+    "idle": {
+      "total number of frames": 52
     },
-    "oracle": {
-      "atk": 1394,
-      "def max": 1255,
-      "def min": 1137,
-      "hp": 4498,
-      "rec max": 1492,
-      "rec min": 1374
+    "move": {
+      "total number of frames": 6
     }
   },
-  "leader_skill": {
-    "desc": "25% boost to Atk Power of Earth Types",
-    "effects": [
-      {
-        "atk% buff": 25,
-        "elements buffed": [
-          "earth"
-        ],
-        "passive id": "2"
-      }
+  "category": 30340,
+  "cost": "12",
+  "damage frames": {
+    "frame times": [
+      7,
+      12,
+      47
     ],
-    "id": "120",
-    "name": "Earth Spirit's Power"
+    "hit dmg% distribution": [
+      20,
+      20,
+      60
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 3
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "earth",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 506,
+  "imp": {
+    "max atk": "160",
+    "max def": "160",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "1297~1449",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Battle Girl Ophelia",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Battle Girl Ophelia",
+  "maxlv": "60",
+  "no": "506",
   "unitDisplayHomePosition_1W9CxaFK": "546,10,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-288,161,1326,656",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "96,234,495,397,0",
@@ -317,5 +319,98 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "1:123:1,6:123:1,41:123:1,7:300120:1,41:300110:1,47:330391:1,7:230:1"
+  "effectFrames": "1:123:1,6:123:1,41:123:1,7:300120:1,41:300110:1,47:330391:1,7:230:1",
+  "evofrom": "",
+  "evointo": "30344",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "30133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30132",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "30191",
+      "count": 2
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "87",
+  "animation_idle": "52",
+  "animation_move": "6",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "7, 12, 47",
+  "normal_distribute": "20, 20, 60",
+  "normal_totaldistr": "100",
+  "bb_frames": "7, 12, 45, 47, 49, 51",
+  "bb_distribute": "15, 15, 15, 15, 20, 20",
+  "bb_totaldistr": "100",
+  "description": "One of the 12 Guardians from a small remote nation. Having lived up to the expectations people held of her in her village of becoming a perfect warrior, it is said she avoided getting involved with others. Despite this, everyone admired her outstanding swordsmanship. Recently a diary has been discovered which is thought to have been written by her. It outlines the relationships between the other members of the 12 Guardians.",
+  "summon": "Knights are to be chosen by<br>those who require their service.<br>I refuse all trivial requests.",
+  "fusion": "I've no need for charity.<br>I mean, excuse me...<br>Thank you for your assistance.",
+  "evolution": "",
+  "hp_base": "3149",
+  "atk_base": "1073",
+  "def_base": "929",
+  "rec_base": "929",
+  "hp_lord": "4498",
+  "atk_lord": "1394",
+  "def_lord": "1255",
+  "rec_lord": "1256",
+  "hp_anima": "4941",
+  "rec_anima": "1138",
+  "atk_breaker": "1512",
+  "def_breaker": "1137",
+  "atk_guardian": "1276",
+  "def_guardian": "1373",
+  "rec_guardian": "1197",
+  "def_oracle": "1196",
+  "hp_oracle": "4321",
+  "rec_oracle": "1433",
+  "hp_bonus": "400",
+  "atk_bonus": "160",
+  "def_bonus": "160",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "3",
+  "normaldc": "6",
+  "ls": "Earth Spirit's Power",
+  "lsdescription": "25% boost to Atk Power of Earth Types",
+  "lstype": "Attack",
+  "bbdescription": "6 combo Earth elemental attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "6",
+  "bbaoe": "A",
+  "bbgauge": "14",
+  "bbdc": "6",
+  "bbmultiplier": "130",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "30133",
+  "evomats2": "30132",
+  "evomats3": "30132",
+  "evomats4": "30191",
+  "evomats5": "30191"
 }

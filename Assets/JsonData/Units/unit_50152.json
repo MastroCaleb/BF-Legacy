@@ -1,62 +1,63 @@
 {
   "id": "50152",
-  "unitName": "Knight Aem",
-  "no": "233",
-  "element": "Light",
-  "rarity": "★★★",
-  "cost": "5",
-  "maxlv": "40",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "3",
-  "animation_attack": "83",
-  "animation_idle": "52",
-  "animation_move": "24",
-  "movespeed_attack": "0.0041",
-  "movespeed_skill": "0.0041",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "19, 55",
-  "normal_distribute": "30, 70",
-  "normal_totaldistr": "100",
-  "bb_frames": "13, 18, 23, 49, 55, 60, 65",
-  "bb_distribute": "5, 5, 5, 30, 30, 15, 10",
-  "bb_totaldistr": "100",
-  "description": "A swordsman who became a knight in order to follow in the steps of his hero, Will of the Republic of La Veda. As a new knight recruit, Aem trained day and night to become as nimble and agile as Will. It was Will himself who suggested he swap his weapon for a broadsword, a major adjustment that brought with it a whole new world of tactical possibilities. After that, Aem swung his sword at least 10 thousand times a day, and soon became recognized as a true talent among his fellow knights.",
-  "summon": "It is an honor to be chosen<br>by you, kind Summoner.<br>Aem, at your service.",
-  "fusion": "You want to fuse with me?<br>I don’t know if I’ll be of any<br>use to you, but you’re welcome to try.",
-  "evolution": "",
-  "hp_base": "2100",
-  "atk_base": "780",
-  "def_base": "430",
-  "rec_base": "430",
-  "hp_lord": "3345",
-  "atk_lord": "1037",
-  "def_lord": "619",
-  "rec_lord": "645",
-  "hp_anima": "3638",
-  "rec_anima": "567",
-  "atk_breaker": "1115",
-  "def_breaker": "541",
-  "atk_guardian": "959",
-  "def_guardian": "697",
-  "rec_guardian": "606",
-  "def_oracle": "580",
-  "hp_oracle": "3228",
-  "rec_oracle": "762",
-  "hp_bonus": "300",
-  "atk_bonus": "120",
-  "def_bonus": "120",
-  "rec_bonus": "120",
-  "lordonly": "",
-  "combo_hits": "2",
-  "normaldc": "10",
-  "ls": "Pulsating Energy",
-  "lsdescription": "BB Gauge fills after each turn",
-  "lsnote": "1 BC per turn",
-  "lstype": "Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 780,
+      "def": 430,
+      "hp": 2100,
+      "rec": 430
+    },
+    "_lord": {
+      "atk": 1037,
+      "def": 619,
+      "hp": 3345,
+      "rec": 645
+    },
+    "anima": {
+      "atk": 1037,
+      "def": 619,
+      "hp max": 3735,
+      "hp min": 3540,
+      "rec max": 606,
+      "rec min": 528
+    },
+    "breaker": {
+      "atk max": 1154,
+      "atk min": 1076,
+      "def max": 580,
+      "def min": 502,
+      "hp": 3345,
+      "rec": 645
+    },
+    "guardian": {
+      "atk": 1037,
+      "def max": 736,
+      "def min": 658,
+      "hp": 3345,
+      "rec max": 645,
+      "rec min": 567
+    },
+    "oracle": {
+      "atk": 1037,
+      "def max": 619,
+      "def min": 541,
+      "hp": 3345,
+      "rec max": 801,
+      "rec min": 723
+    }
+  },
+  "leader_skill": {
+    "desc": "BB Gauge fills after each turn",
+    "effects": [
+      {
+        "bc fill per turn": 1,
+        "passive id": "9"
+      }
+    ],
+    "id": "1200",
+    "name": "Pulsating Energy"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -221,93 +222,91 @@
     ],
     "name": "Dragon Slayer"
   },
-  "bbdescription": "7 Combo Light Elemental Attack on All enemies",
-  "bbtype": "Offense",
-  "bbhits": "7",
-  "bbaoe": "A",
-  "bbgauge": "18",
-  "bbdc": "7",
-  "bbmultiplier": "140",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "50153",
-  "evomats1": "50122",
-  "evomats2": "50121",
-  "evomats3": "50121",
-  "evomats4": "60142",
-  "evomats5": "",
-  "evozelcost": "100000",
-  "stats": {
-    "_base": {
-      "atk": 780,
-      "def": 430,
-      "hp": 2100,
-      "rec": 430
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1037,
-      "def": 619,
-      "hp": 3345,
-      "rec": 645
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1037,
-      "def": 619,
-      "hp max": 3735,
-      "hp min": 3540,
-      "rec max": 606,
-      "rec min": 528
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 1154,
-      "atk min": 1076,
-      "def max": 580,
-      "def min": 502,
-      "hp": 3345,
-      "rec": 645
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 83
     },
-    "guardian": {
-      "atk": 1037,
-      "def max": 736,
-      "def min": 658,
-      "hp": 3345,
-      "rec max": 645,
-      "rec min": 567
+    "idle": {
+      "total number of frames": 52
     },
-    "oracle": {
-      "atk": 1037,
-      "def max": 619,
-      "def min": 541,
-      "hp": 3345,
-      "rec max": 801,
-      "rec min": 723
+    "move": {
+      "total number of frames": 24
     }
   },
-  "leader_skill": {
-    "desc": "BB Gauge fills after each turn",
-    "effects": [
-      {
-        "bc fill per turn": 1,
-        "passive id": "9"
-      }
+  "category": 50150,
+  "cost": "5",
+  "damage frames": {
+    "frame times": [
+      19,
+      55
     ],
-    "id": "1200",
-    "name": "Pulsating Energy"
+    "hit dmg% distribution": [
+      30,
+      70
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 2
   },
-  "extra_skill": {},
+  "drop check count": 5,
+  "element": "light",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 233,
+  "imp": {
+    "max atk": "120",
+    "max def": "120",
+    "max hp": "300",
+    "max rec": "120"
+  },
+  "kind": "normal",
+  "lord damage range": "965~1078",
+  "movement": {
+    "attack": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    }
+  },
+  "name": "Knight Aem",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "Knight Aem",
+  "maxlv": "40",
+  "no": "233",
   "unitDisplayHomePosition_1W9CxaFK": "800,100,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-350,100,1051,620",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "207,332,260,283,0",
@@ -317,5 +316,99 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "1000",
   "sellCaution": false,
-  "effectFrames": "19:125:1,49:125:1"
+  "effectFrames": "19:125:1,49:125:1",
+  "evofrom": "",
+  "evointo": "50153",
+  "evozelcost": "100000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50122",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50121",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60142",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "83",
+  "animation_idle": "52",
+  "animation_move": "24",
+  "movespeed_attack": "0.0041",
+  "movespeed_skill": "0.0041",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "19, 55",
+  "normal_distribute": "30, 70",
+  "normal_totaldistr": "100",
+  "bb_frames": "13, 18, 23, 49, 55, 60, 65",
+  "bb_distribute": "5, 5, 5, 30, 30, 15, 10",
+  "bb_totaldistr": "100",
+  "description": "A swordsman who became a knight in order to follow in the steps of his hero, Will of the Republic of La Veda. As a new knight recruit, Aem trained day and night to become as nimble and agile as Will. It was Will himself who suggested he swap his weapon for a broadsword, a major adjustment that brought with it a whole new world of tactical possibilities. After that, Aem swung his sword at least 10 thousand times a day, and soon became recognized as a true talent among his fellow knights.",
+  "summon": "It is an honor to be chosen<br>by you, kind Summoner.<br>Aem, at your service.",
+  "fusion": "You want to fuse with me?<br>I don’t know if I’ll be of any<br>use to you, but you’re welcome to try.",
+  "evolution": "",
+  "hp_base": "2100",
+  "atk_base": "780",
+  "def_base": "430",
+  "rec_base": "430",
+  "hp_lord": "3345",
+  "atk_lord": "1037",
+  "def_lord": "619",
+  "rec_lord": "645",
+  "hp_anima": "3638",
+  "rec_anima": "567",
+  "atk_breaker": "1115",
+  "def_breaker": "541",
+  "atk_guardian": "959",
+  "def_guardian": "697",
+  "rec_guardian": "606",
+  "def_oracle": "580",
+  "hp_oracle": "3228",
+  "rec_oracle": "762",
+  "hp_bonus": "300",
+  "atk_bonus": "120",
+  "def_bonus": "120",
+  "rec_bonus": "120",
+  "lordonly": "",
+  "combo_hits": "2",
+  "normaldc": "10",
+  "ls": "Pulsating Energy",
+  "lsdescription": "BB Gauge fills after each turn",
+  "lsnote": "1 BC per turn",
+  "lstype": "Brave Burst",
+  "bbdescription": "7 Combo Light Elemental Attack on All enemies",
+  "bbtype": "Offense",
+  "bbhits": "7",
+  "bbaoe": "A",
+  "bbgauge": "18",
+  "bbdc": "7",
+  "bbmultiplier": "140",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50122",
+  "evomats2": "50121",
+  "evomats3": "50121",
+  "evomats4": "60142",
+  "evomats5": ""
 }

@@ -1,68 +1,103 @@
 {
   "id": "11146",
-  "unitName": "Blazing Dragoon Ludero",
-  "no": "1715",
-  "element": "Fire",
-  "rarity": "★★★★★★★",
-  "cost": "46",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "130",
-  "animation_idle": "54",
-  "animation_move": "6",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "12, 15, 18, 70, 73, 76",
-  "normal_distribute": "20, 15, 12, 20, 18, 15",
-  "normal_totaldistr": "100",
-  "bb_frames": "12, 15, 18, 21, 24, 70, 73, 76, 79, 82, 85",
-  "bb_distribute": "14, 12, 8, 6, 4, 16, 12, 10, 8, 6, 4",
-  "bb_totaldistr": "100",
-  "sbb_frames": "12, 15, 18, 21, 24, 70, 73, 76, 79, 82, 85, 88, 91, 94",
-  "sbb_distribute": "14, 12, 8, 6, 4, 15, 12, 10, 8, 5, 2, 1, 2, 1",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "12, 15, 18, 21, 24, 27, 70, 73, 76, 79, 82, 85, 88, 91, 94, 97",
-  "ubb_distribute": "15, 10, 8, 4, 2, 1, 14, 12, 10, 8, 6, 4, 2, 1, 2, 1",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "2",
-  "sbb_effectdelay": "1",
-  "ubb_effectdelay": "1",
-  "description": "A heroic knight said to have defeated an evil demon dragon that had been resurrected in a distant world. Long ago when a demon dragon presumed dead came back to life, Ludero's master commanded him to vanquish the demon by using the Sacred Lance forged by the gods themselves. Legend has it that Ludero's battle against the powerful dragon lasted three days and three nights. The collision between the dragon's powers and those of the Sacred Lance is rumored to have warped time and space, and that both combatants disappeared without really concluding their duel.",
-  "summon": "I have but one favor to ask...<br>Please command me to defeat evil.<br>That is all I require to fight.",
-  "fusion": "Everyone, please lend me your power! I need all of your energy to protect our world!",
-  "evolution": "",
-  "hp_base": "5173",
-  "atk_base": "2196",
-  "def_base": "2263",
-  "rec_base": "1686",
-  "hp_lord": "7384",
-  "atk_lord": "2973",
-  "def_lord": "3078",
-  "rec_lord": "2274",
-  "hp_anima": "8276",
-  "rec_anima": "2036",
-  "atk_breaker": "3211",
-  "def_breaker": "2840",
-  "def_guardian": "3316",
-  "rec_guardian": "2155",
-  "def_oracle": "2959",
-  "rec_oracle": "2631",
-  "hp_bonus": "1000",
-  "atk_bonus": "300",
-  "def_bonus": "600",
-  "rec_bonus": "400",
-  "lordonly": "",
-  "combo_hits": "6",
-  "normaldc": "36",
-  "ls": "Burning Dragon Slayer",
-  "lsdescription": "50% boost to Atk, Def, max HP, enormously boosts BB Atk & restores HP and considerably boosts BB gauge each turn",
-  "lsnote": "200% BB Atk, heals 800-1000 + 10% Rec HP & fills 5 BC",
+  "stats": {
+    "_base": {
+      "atk": 2196,
+      "def": 2263,
+      "hp": 5173,
+      "rec": 1686
+    },
+    "_lord": {
+      "atk": 2973,
+      "def": 3078,
+      "hp": 7384,
+      "rec": 2274
+    },
+    "anima": {
+      "atk": 2973,
+      "def": 3078,
+      "hp max": 8574,
+      "hp min": 7979,
+      "rec max": 2155,
+      "rec min": 1917
+    },
+    "breaker": {
+      "atk max": 3330,
+      "atk min": 3092,
+      "def max": 2959,
+      "def min": 2721,
+      "hp": 7384,
+      "rec": 2274
+    },
+    "guardian": {
+      "atk": 2973,
+      "def max": 3435,
+      "def min": 3197,
+      "hp": 7384,
+      "rec max": 2274,
+      "rec min": 2036
+    },
+    "oracle": {
+      "atk": 2973,
+      "def max": 3078,
+      "def min": 2840,
+      "hp": 7384,
+      "rec max": 2750,
+      "rec min": 2512
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to Atk, Def, max HP, enormously boosts BB Atk & restores HP and considerably boosts BB gauge each turn",
+    "effects": [
+      {
+        "atk% buff": 50,
+        "def% buff": 50,
+        "hp% buff": 50,
+        "passive id": "1"
+      },
+      {
+        "passive id": "33",
+        "rec% added (turn heal)": 10.0,
+        "turn heal high": 1000,
+        "turn heal low": 800
+      },
+      {
+        "bc fill per turn": 5,
+        "passive id": "9"
+      },
+      {
+        "bb atk% buff": 200,
+        "passive id": "64",
+        "sbb atk% buff": 200,
+        "ubb atk% buff": 200
+      }
+    ],
+    "id": "1964",
+    "name": "Burning Dragon Slayer"
+  },
+  "extra_skill": {
+    "desc": "Slightly boosts Atk, Def when BB gauge is over 50% & negates Def ignoring damage",
+    "effects": [
+      {
+        "atk% buff": 40,
+        "bb gauge above % buff requirement": 50,
+        "conditions": [],
+        "def% buff": 40,
+        "passive id": "30",
+        "passive target": "self"
+      },
+      {
+        "conditions": [],
+        "ignore def resist chance%": 100,
+        "passive id": "92",
+        "passive target": "self"
+      }
+    ],
+    "id": "43300",
+    "name": "Dragon Slayer's Vow",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -633,15 +668,6 @@
     ],
     "name": "Dragon Tempest"
   },
-  "bbdescription": "11 combo Fire attack on all foes, hugely boosts Atk, Def for 3 turns, hugely boosts Atk relative to Def for 3 turns, hugely boosts Def relative to Atk for 3 turns & slight damage reduction for 2 turns",
-  "bbnote": "160% Atk/Def, 70% Atk to Def, 70% Def to Atk & 10% DoT mitigation",
-  "bbtype": "Offense",
-  "bbhits": "11",
-  "bbaoe": "A",
-  "bbgauge": "21",
-  "bbdc": "11",
-  "bbmultiplier": "380",
-  "bb_hpscale": "",
   "sbb": {
     "damage frames": [
       {
@@ -1248,15 +1274,6 @@
     ],
     "name": "Old Galdia"
   },
-  "sbbdescription": "14 combo powerful Fire attack on all foes, greatly restores HP for 3 turns, hugely boosts BB gauge for 3 turns, Spark damage slightly boosts BB gauge for 3 turns & damage taken may slightly restore HP for 3 turns",
-  "sbbnote": "Heals 3000-3500 + 15% Rec HP, fills 6 BC gradually, fills 1-2 BC on spark & 20% chance of 15-20% heal when hit",
-  "sbbtype": "Offense",
-  "sbbhits": "14",
-  "sbbaoe": "A",
-  "sbbgauge": "25",
-  "sbbdc": "14",
-  "sbbmultiplier": "580",
-  "sbb_hpscale": "",
   "ubb": {
     "damage frames": [
       {
@@ -1429,6 +1446,210 @@
     ],
     "name": "Giltonyla"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 130
+    },
+    "idle": {
+      "total number of frames": 54
+    },
+    "move": {
+      "total number of frames": 6
+    }
+  },
+  "category": 11140,
+  "cost": "46",
+  "damage frames": {
+    "frame times": [
+      12,
+      15,
+      18,
+      70,
+      73,
+      76
+    ],
+    "hit dmg% distribution": [
+      20,
+      15,
+      12,
+      20,
+      18,
+      15
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 6
+  },
+  "drop check count": 6,
+  "element": "fire",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 1715,
+  "imp": {
+    "max atk": "300",
+    "max def": "600",
+    "max hp": "1000",
+    "max rec": "400"
+  },
+  "kind": "normal",
+  "lord damage range": "2767~3091",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Blazing Dragoon Ludero",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Blazing Dragoon Ludero",
+  "maxlv": "120",
+  "no": "1715",
+  "unitDisplayHomePosition_1W9CxaFK": "570,94,174,475",
+  "unitDisplayDetailPosition_6z54rgb3": "-216,101,1310,679",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "-21,268,679,352,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-247,-169,1350,700",
+  "unitDisplaySummonPosition_KC3Jk8Br": "-21,268,679,352,0",
+  "unitDisplayHpPosition_3BpHN6VD": "-2,23",
+  "unitDisplayCursorPosition": "0,16",
+  "sellPrice": "15000",
+  "sellCaution": false,
+  "effectFrames": "6:11590:1,1:100310:1,10:1146:1,12:100082:1,32:121:1,38:1130:1,70:100311:1,68:1732:1,70:100231:1,74:1103:1,88:100231:1",
+  "evofrom": "",
+  "evointo": "11147",
+  "evozelcost": "3000000",
+  "evokarmacost": "1000000",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "10354",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10191",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 2
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "130",
+  "animation_idle": "54",
+  "animation_move": "6",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "12, 15, 18, 70, 73, 76",
+  "normal_distribute": "20, 15, 12, 20, 18, 15",
+  "normal_totaldistr": "100",
+  "bb_frames": "12, 15, 18, 21, 24, 70, 73, 76, 79, 82, 85",
+  "bb_distribute": "14, 12, 8, 6, 4, 16, 12, 10, 8, 6, 4",
+  "bb_totaldistr": "100",
+  "sbb_frames": "12, 15, 18, 21, 24, 70, 73, 76, 79, 82, 85, 88, 91, 94",
+  "sbb_distribute": "14, 12, 8, 6, 4, 15, 12, 10, 8, 5, 2, 1, 2, 1",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "12, 15, 18, 21, 24, 27, 70, 73, 76, 79, 82, 85, 88, 91, 94, 97",
+  "ubb_distribute": "15, 10, 8, 4, 2, 1, 14, 12, 10, 8, 6, 4, 2, 1, 2, 1",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "2",
+  "sbb_effectdelay": "1",
+  "ubb_effectdelay": "1",
+  "description": "A heroic knight said to have defeated an evil demon dragon that had been resurrected in a distant world. Long ago when a demon dragon presumed dead came back to life, Ludero's master commanded him to vanquish the demon by using the Sacred Lance forged by the gods themselves. Legend has it that Ludero's battle against the powerful dragon lasted three days and three nights. The collision between the dragon's powers and those of the Sacred Lance is rumored to have warped time and space, and that both combatants disappeared without really concluding their duel.",
+  "summon": "I have but one favor to ask...<br>Please command me to defeat evil.<br>That is all I require to fight.",
+  "fusion": "Everyone, please lend me your power! I need all of your energy to protect our world!",
+  "evolution": "",
+  "hp_base": "5173",
+  "atk_base": "2196",
+  "def_base": "2263",
+  "rec_base": "1686",
+  "hp_lord": "7384",
+  "atk_lord": "2973",
+  "def_lord": "3078",
+  "rec_lord": "2274",
+  "hp_anima": "8276",
+  "rec_anima": "2036",
+  "atk_breaker": "3211",
+  "def_breaker": "2840",
+  "def_guardian": "3316",
+  "rec_guardian": "2155",
+  "def_oracle": "2959",
+  "rec_oracle": "2631",
+  "hp_bonus": "1000",
+  "atk_bonus": "300",
+  "def_bonus": "600",
+  "rec_bonus": "400",
+  "lordonly": "",
+  "combo_hits": "6",
+  "normaldc": "36",
+  "ls": "Burning Dragon Slayer",
+  "lsdescription": "50% boost to Atk, Def, max HP, enormously boosts BB Atk & restores HP and considerably boosts BB gauge each turn",
+  "lsnote": "200% BB Atk, heals 800-1000 + 10% Rec HP & fills 5 BC",
+  "bbdescription": "11 combo Fire attack on all foes, hugely boosts Atk, Def for 3 turns, hugely boosts Atk relative to Def for 3 turns, hugely boosts Def relative to Atk for 3 turns & slight damage reduction for 2 turns",
+  "bbnote": "160% Atk/Def, 70% Atk to Def, 70% Def to Atk & 10% DoT mitigation",
+  "bbtype": "Offense",
+  "bbhits": "11",
+  "bbaoe": "A",
+  "bbgauge": "21",
+  "bbdc": "11",
+  "bbmultiplier": "380",
+  "bb_hpscale": "",
+  "sbbdescription": "14 combo powerful Fire attack on all foes, greatly restores HP for 3 turns, hugely boosts BB gauge for 3 turns, Spark damage slightly boosts BB gauge for 3 turns & damage taken may slightly restore HP for 3 turns",
+  "sbbnote": "Heals 3000-3500 + 15% Rec HP, fills 6 BC gradually, fills 1-2 BC on spark & 20% chance of 15-20% heal when hit",
+  "sbbtype": "Offense",
+  "sbbhits": "14",
+  "sbbaoe": "A",
+  "sbbgauge": "25",
+  "sbbdc": "14",
+  "sbbmultiplier": "580",
+  "sbb_hpscale": "",
   "ubbdescription": "16 combo massive Fire attack on all foes, inflicts huge Spark vulnerability for 3 turns, enormously boosts Atk, Def and BB Atk for 3 turns, fully restores HP for 3 turns & enormously boosts BB gauge for 3 turns",
   "ubbnote": "300% Atk/Def, 80% Spark vulnerability, 500% BB Atk & fills 50 BC",
   "ubbtype": "Offense",
@@ -1441,7 +1662,6 @@
   "es": "Dragon Slayer's Vow",
   "esdescription": "Slightly boosts Atk, Def when BB gauge is over 50% full & negates Def ignoring damage",
   "esnote": "40% Atk/Def",
-  "evointo": "11147",
   "evomats1": "10354",
   "evomats2": "10354",
   "evomats3": "50354",
@@ -1449,114 +1669,5 @@
   "evomats5": "10191",
   "evomats6": "10191",
   "evomats7": "60224",
-  "evomats8": "60224",
-  "evozelcost": "3000000",
-  "stats": {
-    "_base": {
-      "atk": 2196,
-      "def": 2263,
-      "hp": 5173,
-      "rec": 1686
-    },
-    "_lord": {
-      "atk": 2973,
-      "def": 3078,
-      "hp": 7384,
-      "rec": 2274
-    },
-    "anima": {
-      "atk": 2973,
-      "def": 3078,
-      "hp max": 8574,
-      "hp min": 7979,
-      "rec max": 2155,
-      "rec min": 1917
-    },
-    "breaker": {
-      "atk max": 3330,
-      "atk min": 3092,
-      "def max": 2959,
-      "def min": 2721,
-      "hp": 7384,
-      "rec": 2274
-    },
-    "guardian": {
-      "atk": 2973,
-      "def max": 3435,
-      "def min": 3197,
-      "hp": 7384,
-      "rec max": 2274,
-      "rec min": 2036
-    },
-    "oracle": {
-      "atk": 2973,
-      "def max": 3078,
-      "def min": 2840,
-      "hp": 7384,
-      "rec max": 2750,
-      "rec min": 2512
-    }
-  },
-  "leader_skill": {
-    "desc": "50% boost to Atk, Def, max HP, enormously boosts BB Atk & restores HP and considerably boosts BB gauge each turn",
-    "effects": [
-      {
-        "atk% buff": 50,
-        "def% buff": 50,
-        "hp% buff": 50,
-        "passive id": "1"
-      },
-      {
-        "passive id": "33",
-        "rec% added (turn heal)": 10.0,
-        "turn heal high": 1000,
-        "turn heal low": 800
-      },
-      {
-        "bc fill per turn": 5,
-        "passive id": "9"
-      },
-      {
-        "bb atk% buff": 200,
-        "passive id": "64",
-        "sbb atk% buff": 200,
-        "ubb atk% buff": 200
-      }
-    ],
-    "id": "1964",
-    "name": "Burning Dragon Slayer"
-  },
-  "extra_skill": {
-    "desc": "Slightly boosts Atk, Def when BB gauge is over 50% & negates Def ignoring damage",
-    "effects": [
-      {
-        "atk% buff": 40,
-        "bb gauge above % buff requirement": 50,
-        "conditions": [],
-        "def% buff": 40,
-        "passive id": "30",
-        "passive target": "self"
-      },
-      {
-        "conditions": [],
-        "ignore def resist chance%": 100,
-        "passive id": "92",
-        "passive target": "self"
-      }
-    ],
-    "id": "43300",
-    "name": "Dragon Slayer's Vow",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "570,94,174,475",
-  "unitDisplayDetailPosition_6z54rgb3": "-216,101,1310,679",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "-21,268,679,352,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-247,-169,1350,700",
-  "unitDisplaySummonPosition_KC3Jk8Br": "-21,268,679,352,0",
-  "unitDisplayHpPosition_3BpHN6VD": "-2,23",
-  "unitDisplayCursorPosition": "0,16",
-  "sellPrice": "15000",
-  "sellCaution": false,
-  "effectFrames": "6:11590:1,1:100310:1,10:1146:1,12:100082:1,32:121:1,38:1130:1,70:100311:1,68:1732:1,70:100231:1,74:1103:1,88:100231:1"
+  "evomats8": "60224"
 }

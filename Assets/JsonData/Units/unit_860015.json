@@ -1,62 +1,67 @@
 {
   "id": "860015",
-  "unitName": "Sir Sancus Xenon",
-  "no": "8020",
-  "element": "Dark",
-  "rarity": "★★★★★",
-  "cost": "15",
-  "maxlv": "80",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "144",
-  "animation_idle": "40",
-  "animation_move": "14",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "25, 27, 35, 38, 76, 82, 84, 86",
-  "normal_distribute": "15, 15, 15, 15, 15, 10, 5, 10",
-  "normal_totaldistr": "100",
-  "bb_frames": "16, 24, 40, 44, 74, 98, 99, 100",
-  "bb_distribute": "20, 10, 10, 20, 10, 10, 10, 10",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "description": "It is speculated that when the gods began their attack, King Radmuhl of Elysia was torn between putting up a fight or abandoning his kingdom. As the La Veda Republic fell to the power of the gods, unwilling to leave his throne, the king ordered his finest knight to take his daughter to safety, which Xenon dutifully did. However, neither of them expected that destiny had something else in store...",
-  "summon": "I'll fight alongside you<br>if you promise to protect<br>Princess Estia, too.",
-  "fusion": "I have failed...<br>But I can't let that get me down!<br>As long as I exist, I'll only get stronger.",
-  "evolution": "In times of peril,<br>the strength of one's soul<br>can do much more than his sword.",
-  "hp_base": "3390",
-  "atk_base": "1350",
-  "def_base": "1095",
-  "rec_base": "1037",
-  "hp_lord": "5244",
-  "atk_lord": "1610",
-  "def_lord": "1432",
-  "rec_lord": "1310",
-  "hp_anima": "5837",
-  "rec_anima": "1152",
-  "atk_breaker": "1768",
-  "def_breaker": "1274",
-  "atk_guardian": "1452",
-  "def_guardian": "1590",
-  "rec_guardian": "1231",
-  "def_oracle": "1353",
-  "hp_oracle": "5007",
-  "rec_oracle": "1547",
-  "hp_bonus": "750",
-  "atk_bonus": "240",
-  "def_bonus": "240",
-  "rec_bonus": "420",
-  "lordonly": "",
-  "combo_hits": "8",
-  "normaldc": "16",
-  "ls": "Sancus Salvation",
-  "lsdescription": "30% boost to Atk of Dark and Light Units",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 1350,
+      "def": 1095,
+      "hp": 3390,
+      "rec": 1037
+    },
+    "_lord": {
+      "atk": 1610,
+      "def": 1432,
+      "hp": 5244,
+      "rec": 1310
+    },
+    "anima": {
+      "atk": 1610,
+      "def": 1432,
+      "hp max": 6034,
+      "hp min": 5639,
+      "rec max": 1231,
+      "rec min": 1073
+    },
+    "breaker": {
+      "atk max": 1847,
+      "atk min": 1689,
+      "def max": 1353,
+      "def min": 1195,
+      "hp": 5244,
+      "rec": 1310
+    },
+    "guardian": {
+      "atk": 1610,
+      "def max": 1669,
+      "def min": 1511,
+      "hp": 5244,
+      "rec max": 1310,
+      "rec min": 1152
+    },
+    "oracle": {
+      "atk": 1610,
+      "def max": 1432,
+      "def min": 1274,
+      "hp": 5244,
+      "rec max": 1626,
+      "rec min": 1468
+    }
+  },
+  "leader_skill": {
+    "desc": "30% boost to Atk of Dark and Light Units",
+    "effects": [
+      {
+        "atk% buff": 30,
+        "elements buffed": [
+          "light",
+          "dark"
+        ],
+        "passive id": "2"
+      }
+    ],
+    "id": "800102",
+    "name": "Sancus Salvation"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -311,98 +316,97 @@
     ],
     "name": "Soul Execution"
   },
-  "bbdescription": "8 combo Dark elemental attack on single enemy & boosts all allies' Atk for 3 turns",
-  "bbnote": "15% boost",
-  "bbtype": "Support/Offense",
-  "bbhits": "8",
-  "bbaoe": "1",
-  "bbgauge": "24",
-  "bbdc": "8",
-  "bbmultiplier": "149",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "860014",
-  "evointo": "",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 1350,
-      "def": 1095,
-      "hp": 3390,
-      "rec": 1037
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1610,
-      "def": 1432,
-      "hp": 5244,
-      "rec": 1310
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1610,
-      "def": 1432,
-      "hp max": 6034,
-      "hp min": 5639,
-      "rec max": 1231,
-      "rec min": 1073
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 144
     },
-    "breaker": {
-      "atk max": 1847,
-      "atk min": 1689,
-      "def max": 1353,
-      "def min": 1195,
-      "hp": 5244,
-      "rec": 1310
+    "idle": {
+      "total number of frames": 40
     },
-    "guardian": {
-      "atk": 1610,
-      "def max": 1669,
-      "def min": 1511,
-      "hp": 5244,
-      "rec max": 1310,
-      "rec min": 1152
-    },
-    "oracle": {
-      "atk": 1610,
-      "def max": 1432,
-      "def min": 1274,
-      "hp": 5244,
-      "rec max": 1626,
-      "rec min": 1468
+    "move": {
+      "total number of frames": 14
     }
   },
-  "leader_skill": {
-    "desc": "30% boost to Atk of Dark and Light Units",
-    "effects": [
-      {
-        "atk% buff": 30,
-        "elements buffed": [
-          "light",
-          "dark"
-        ],
-        "passive id": "2"
-      }
+  "category": 860010,
+  "cost": "15",
+  "damage frames": {
+    "frame times": [
+      25,
+      27,
+      35,
+      38,
+      76,
+      82,
+      84,
+      86
     ],
-    "id": "800102",
-    "name": "Sancus Salvation"
+    "hit dmg% distribution": [
+      15,
+      15,
+      15,
+      15,
+      15,
+      10,
+      5,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 8
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "dark",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "farmable",
+  "guide_id": 8020,
+  "imp": {
+    "max atk": "240",
+    "max def": "240",
+    "max hp": "750",
+    "max rec": "420"
+  },
+  "kind": "normal",
+  "lord damage range": "1499~1674",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Sir Sancus Xenon",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Sir Sancus Xenon",
+  "maxlv": "80",
+  "no": "8020",
   "unitDisplayHomePosition_1W9CxaFK": "507,304,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-280,-254,1476,1070",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "-28,132,691,500,0",
@@ -412,5 +416,84 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "12:126:1,12:600460:1,44:600351:1,48:125:1"
+  "effectFrames": "12:126:1,12:600460:1,44:600351:1,48:125:1",
+  "evofrom": "860014",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "21",
+  "animation_attack": "144",
+  "animation_idle": "40",
+  "animation_move": "14",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "25, 27, 35, 38, 76, 82, 84, 86",
+  "normal_distribute": "15, 15, 15, 15, 15, 10, 5, 10",
+  "normal_totaldistr": "100",
+  "bb_frames": "16, 24, 40, 44, 74, 98, 99, 100",
+  "bb_distribute": "20, 10, 10, 20, 10, 10, 10, 10",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "description": "It is speculated that when the gods began their attack, King Radmuhl of Elysia was torn between putting up a fight or abandoning his kingdom. As the La Veda Republic fell to the power of the gods, unwilling to leave his throne, the king ordered his finest knight to take his daughter to safety, which Xenon dutifully did. However, neither of them expected that destiny had something else in store...",
+  "summon": "I'll fight alongside you<br>if you promise to protect<br>Princess Estia, too.",
+  "fusion": "I have failed...<br>But I can't let that get me down!<br>As long as I exist, I'll only get stronger.",
+  "evolution": "In times of peril,<br>the strength of one's soul<br>can do much more than his sword.",
+  "hp_base": "3390",
+  "atk_base": "1350",
+  "def_base": "1095",
+  "rec_base": "1037",
+  "hp_lord": "5244",
+  "atk_lord": "1610",
+  "def_lord": "1432",
+  "rec_lord": "1310",
+  "hp_anima": "5837",
+  "rec_anima": "1152",
+  "atk_breaker": "1768",
+  "def_breaker": "1274",
+  "atk_guardian": "1452",
+  "def_guardian": "1590",
+  "rec_guardian": "1231",
+  "def_oracle": "1353",
+  "hp_oracle": "5007",
+  "rec_oracle": "1547",
+  "hp_bonus": "750",
+  "atk_bonus": "240",
+  "def_bonus": "240",
+  "rec_bonus": "420",
+  "lordonly": "",
+  "combo_hits": "8",
+  "normaldc": "16",
+  "ls": "Sancus Salvation",
+  "lsdescription": "30% boost to Atk of Dark and Light Units",
+  "lstype": "Attack",
+  "bbdescription": "8 combo Dark elemental attack on single enemy & boosts all allies' Atk for 3 turns",
+  "bbnote": "15% boost",
+  "bbtype": "Support/Offense",
+  "bbhits": "8",
+  "bbaoe": "1",
+  "bbgauge": "24",
+  "bbdc": "8",
+  "bbmultiplier": "149",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "",
+  "evomats2": "",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": ""
 }

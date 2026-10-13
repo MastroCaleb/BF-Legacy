@@ -1,61 +1,63 @@
 {
   "id": "30031",
-  "unitName": "King Mossy",
-  "no": "48",
-  "element": "Earth",
-  "rarity": "★★",
-  "cost": "3",
-  "maxlv": "30",
-  "basexp": "10",
-  "gender": "N",
-  "ai": "2",
-  "animation_attack": "72",
-  "animation_idle": "39",
-  "animation_move": "43",
-  "movespeed_attack": "0.0041",
-  "movespeed_skill": "0.0041",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "42",
-  "normal_distribute": "100",
-  "normal_totaldistr": "100",
-  "bb_frames": "42, 50",
-  "bb_distribute": "50, 50",
-  "bb_totaldistr": "100",
-  "description": "After Mossy's bottomless stomach is full, it's said to evolve into King Mossy. Due to its huge body, its appetite grows even larger. It often goes to human settlements looking for food. Adults avoid it because it's though of as a harmful beast, but it's somehow popular with children. It sneaks onto farms shaped as an overgrown bush to steal crops, causing trouble for farmers.",
-  "summon": "Nom! Can I eat delicious <br>foods if I go with you, nom?<br>Nom, a gourmet adventure!",
-  "fusion": "This is delicious too, nom.<br>It's not just volume, but quality is important too, nom.",
-  "evolution": "Om, nom!? Since evolving,<br>I've gotten even hungrier!",
-  "hp_base": "1300",
-  "atk_base": "300",
-  "def_base": "450",
-  "rec_base": "260",
-  "hp_lord": "2425",
-  "atk_lord": "598",
-  "def_lord": "787",
-  "rec_lord": "551",
-  "hp_anima": "2643",
-  "rec_anima": "493",
-  "atk_breaker": "656",
-  "def_breaker": "729",
-  "atk_guardian": "540",
-  "def_guardian": "845",
-  "rec_guardian": "522",
-  "def_oracle": "758",
-  "hp_oracle": "2338",
-  "rec_oracle": "638",
-  "hp_bonus": "300",
-  "atk_bonus": "120",
-  "def_bonus": "120",
-  "rec_bonus": "120",
-  "lordonly": "",
-  "combo_hits": "1",
-  "normaldc": "2",
-  "ls": "Earth's Protection",
-  "lsdescription": "10% reduction in damage from Earth Types",
-  "lstype": "Defense",
+  "stats": {
+    "_base": {
+      "atk": 300,
+      "def": 450,
+      "hp": 1300,
+      "rec": 260
+    },
+    "_lord": {
+      "atk": 598,
+      "def": 787,
+      "hp": 2425,
+      "rec": 551
+    },
+    "anima": {
+      "atk": 598,
+      "def": 787,
+      "hp max": 2715,
+      "hp min": 2570,
+      "rec max": 522,
+      "rec min": 464
+    },
+    "breaker": {
+      "atk max": 685,
+      "atk min": 627,
+      "def max": 758,
+      "def min": 700,
+      "hp": 2425,
+      "rec": 551
+    },
+    "guardian": {
+      "atk": 598,
+      "def max": 874,
+      "def min": 816,
+      "hp": 2425,
+      "rec max": 551,
+      "rec min": 493
+    },
+    "oracle": {
+      "atk": 598,
+      "def max": 787,
+      "def min": 729,
+      "hp": 2425,
+      "rec max": 667,
+      "rec min": 609
+    }
+  },
+  "leader_skill": {
+    "desc": "10% reduction in damage from Earth Types",
+    "effects": [
+      {
+        "earth resist%": 10,
+        "passive id": "5"
+      }
+    ],
+    "id": "504",
+    "name": "Earth's Protection"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -210,94 +212,83 @@
     ],
     "name": "Wood Munch"
   },
-  "bbdescription": "2 combo Earth elemental power attack on single Enemy",
-  "bbtype": "Offense",
-  "bbhits": "2",
-  "bbaoe": "1",
-  "bbgauge": "12",
-  "bbdc": "10",
-  "bbmultiplier": "120",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "30030",
-  "evointo": "30032",
-  "evomats1": "30131",
-  "evomats2": "30130",
-  "evomats3": "60142",
-  "evomats4": "",
-  "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "50000",
-  "stats": {
-    "_base": {
-      "atk": 300,
-      "def": 450,
-      "hp": 1300,
-      "rec": 260
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 598,
-      "def": 787,
-      "hp": 2425,
-      "rec": 551
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 598,
-      "def": 787,
-      "hp max": 2715,
-      "hp min": 2570,
-      "rec max": 522,
-      "rec min": 464
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 72
     },
-    "breaker": {
-      "atk max": 685,
-      "atk min": 627,
-      "def max": 758,
-      "def min": 700,
-      "hp": 2425,
-      "rec": 551
+    "idle": {
+      "total number of frames": 39
     },
-    "guardian": {
-      "atk": 598,
-      "def max": 874,
-      "def min": 816,
-      "hp": 2425,
-      "rec max": 551,
-      "rec min": 493
-    },
-    "oracle": {
-      "atk": 598,
-      "def max": 787,
-      "def min": 729,
-      "hp": 2425,
-      "rec max": 667,
-      "rec min": 609
+    "move": {
+      "total number of frames": 43
     }
   },
-  "leader_skill": {
-    "desc": "10% reduction in damage from Earth Types",
-    "effects": [
-      {
-        "earth resist%": 10,
-        "passive id": "5"
-      }
+  "category": 30030,
+  "cost": "3",
+  "damage frames": {
+    "frame times": [
+      42
     ],
-    "id": "504",
-    "name": "Earth's Protection"
+    "hit dmg% distribution": [
+      100
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 1
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "earth",
+  "exp_pattern": 10,
+  "gender": "other",
+  "getting type": "not eligible for achievement",
+  "guide_id": 48,
+  "imp": {
+    "max atk": "120",
+    "max def": "120",
+    "max hp": "300",
+    "max rec": "120"
+  },
+  "kind": "normal",
+  "lord damage range": "556~621",
+  "movement": {
+    "attack": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    }
+  },
+  "name": "King Mossy",
+  "rarity": "2",
+  "sell caution": false,
+  "unitName": "King Mossy",
+  "maxlv": "30",
+  "no": "48",
   "unitDisplayHomePosition_1W9CxaFK": "110,-66,200,544",
   "unitDisplayDetailPosition_6z54rgb3": "127,158,700,613",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "189,384,276,242,0",
@@ -307,5 +298,99 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "300",
   "sellCaution": false,
-  "effectFrames": "36:123:1"
+  "effectFrames": "36:123:1",
+  "evofrom": "30030",
+  "evointo": "30032",
+  "evozelcost": "50000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "30131",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "30130",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60142",
+      "count": 1
+    }
+  ],
+  "basexp": "10",
+  "animation_attack": "72",
+  "animation_idle": "39",
+  "animation_move": "43",
+  "movespeed_attack": "0.0041",
+  "movespeed_skill": "0.0041",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "42",
+  "normal_distribute": "100",
+  "normal_totaldistr": "100",
+  "bb_frames": "42, 50",
+  "bb_distribute": "50, 50",
+  "bb_totaldistr": "100",
+  "description": "After Mossy's bottomless stomach is full, it's said to evolve into King Mossy. Due to its huge body, its appetite grows even larger. It often goes to human settlements looking for food. Adults avoid it because it's though of as a harmful beast, but it's somehow popular with children. It sneaks onto farms shaped as an overgrown bush to steal crops, causing trouble for farmers.",
+  "summon": "Nom! Can I eat delicious <br>foods if I go with you, nom?<br>Nom, a gourmet adventure!",
+  "fusion": "This is delicious too, nom.<br>It's not just volume, but quality is important too, nom.",
+  "evolution": "Om, nom!? Since evolving,<br>I've gotten even hungrier!",
+  "hp_base": "1300",
+  "atk_base": "300",
+  "def_base": "450",
+  "rec_base": "260",
+  "hp_lord": "2425",
+  "atk_lord": "598",
+  "def_lord": "787",
+  "rec_lord": "551",
+  "hp_anima": "2643",
+  "rec_anima": "493",
+  "atk_breaker": "656",
+  "def_breaker": "729",
+  "atk_guardian": "540",
+  "def_guardian": "845",
+  "rec_guardian": "522",
+  "def_oracle": "758",
+  "hp_oracle": "2338",
+  "rec_oracle": "638",
+  "hp_bonus": "300",
+  "atk_bonus": "120",
+  "def_bonus": "120",
+  "rec_bonus": "120",
+  "lordonly": "",
+  "combo_hits": "1",
+  "normaldc": "2",
+  "ls": "Earth's Protection",
+  "lsdescription": "10% reduction in damage from Earth Types",
+  "lstype": "Defense",
+  "bbdescription": "2 combo Earth elemental power attack on single Enemy",
+  "bbtype": "Offense",
+  "bbhits": "2",
+  "bbaoe": "1",
+  "bbgauge": "12",
+  "bbdc": "10",
+  "bbmultiplier": "120",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "30131",
+  "evomats2": "30130",
+  "evomats3": "60142",
+  "evomats4": "",
+  "evomats5": "",
+  "evoitem": ""
 }

@@ -1,61 +1,53 @@
 {
   "id": "50030",
-  "unitName": "Glowy",
-  "no": "51",
-  "element": "Light",
-  "rarity": "★",
-  "cost": "1",
-  "maxlv": "10",
-  "basexp": "10",
-  "gender": "N",
-  "ai": "2",
-  "animation_attack": "64",
-  "animation_idle": "46",
-  "animation_move": "35",
-  "movespeed_attack": "0.0041",
-  "movespeed_skill": "0.0041",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "30",
-  "normal_distribute": "100",
-  "normal_totaldistr": "100",
-  "bb_frames": "30",
-  "bb_distribute": "100",
-  "bb_totaldistr": "100",
-  "description": "A type of slime with a sparkling body. They are a very common creature, although their origin is unknown. Some think they were made at the time of creation, and have since increased in number. Most are basically kind. When they find a person walking at night, they offer themselves as lamps. However, since there are so many, some have become violent and will attack humans.",
-  "summon": "I'll light up your way,<br>so please, take me with you...",
-  "fusion": "What's this? I've gotten brighter.<br>Mind if I shine my light on you?",
-  "evolution": "",
-  "hp_base": "830",
-  "atk_base": "300",
-  "def_base": "400",
-  "rec_base": "300",
-  "hp_lord": "1587",
-  "atk_lord": "393",
-  "def_lord": "580",
-  "rec_lord": "390",
-  "hp_anima": "1655",
-  "rec_anima": "372",
-  "atk_breaker": "411",
-  "def_breaker": "562",
-  "atk_guardian": "375",
-  "def_guardian": "598",
-  "rec_guardian": "381",
-  "def_oracle": "571",
-  "hp_oracle": "1560",
-  "rec_oracle": "417",
-  "hp_bonus": "200",
-  "atk_bonus": "80",
-  "def_bonus": "80",
-  "rec_bonus": "80",
-  "lordonly": "",
-  "combo_hits": "1",
-  "normaldc": "2",
-  "ls": "",
-  "lsdescription": "",
-  "lstype": "",
+  "stats": {
+    "_base": {
+      "atk": 300,
+      "def": 400,
+      "hp": 830,
+      "rec": 300
+    },
+    "_lord": {
+      "atk": 393,
+      "def": 580,
+      "hp": 1587,
+      "rec": 390
+    },
+    "anima": {
+      "atk": 393,
+      "def": 580,
+      "hp max": 1677,
+      "hp min": 1632,
+      "rec max": 381,
+      "rec min": 363
+    },
+    "breaker": {
+      "atk max": 420,
+      "atk min": 402,
+      "def max": 571,
+      "def min": 553,
+      "hp": 1587,
+      "rec": 390
+    },
+    "guardian": {
+      "atk": 393,
+      "def max": 607,
+      "def min": 589,
+      "hp": 1587,
+      "rec max": 390,
+      "rec min": 372
+    },
+    "oracle": {
+      "atk": 393,
+      "def max": 580,
+      "def min": 562,
+      "hp": 1587,
+      "rec max": 426,
+      "rec min": 408
+    }
+  },
+  "leader_skill": {},
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -208,83 +200,83 @@
     ],
     "name": "Gnawing Photon"
   },
-  "bbdescription": "Light elemental attack on single Enemy",
-  "bbtype": "Offense",
-  "bbhits": "1",
-  "bbaoe": "1",
-  "bbgauge": "12",
-  "bbdc": "5",
-  "bbmultiplier": "100",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "50031",
-  "evomats1": "50120",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evozelcost": "1000",
-  "stats": {
-    "_base": {
-      "atk": 300,
-      "def": 400,
-      "hp": 830,
-      "rec": 300
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 393,
-      "def": 580,
-      "hp": 1587,
-      "rec": 390
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 393,
-      "def": 580,
-      "hp max": 1677,
-      "hp min": 1632,
-      "rec max": 381,
-      "rec min": 363
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 64
     },
-    "breaker": {
-      "atk max": 420,
-      "atk min": 402,
-      "def max": 571,
-      "def min": 553,
-      "hp": 1587,
-      "rec": 390
+    "idle": {
+      "total number of frames": 46
     },
-    "guardian": {
-      "atk": 393,
-      "def max": 607,
-      "def min": 589,
-      "hp": 1587,
-      "rec max": 390,
-      "rec min": 372
-    },
-    "oracle": {
-      "atk": 393,
-      "def max": 580,
-      "def min": 562,
-      "hp": 1587,
-      "rec max": 426,
-      "rec min": 408
+    "move": {
+      "total number of frames": 35
     }
   },
-  "leader_skill": {},
-  "extra_skill": {},
+  "category": 50030,
+  "cost": "1",
+  "damage frames": {
+    "frame times": [
+      30
+    ],
+    "hit dmg% distribution": [
+      100
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 1
+  },
+  "drop check count": 2,
+  "element": "light",
+  "exp_pattern": 10,
+  "gender": "other",
+  "getting type": "not eligible for achievement",
+  "guide_id": 51,
+  "imp": {
+    "max atk": "80",
+    "max def": "80",
+    "max hp": "200",
+    "max rec": "80"
+  },
+  "kind": "normal",
+  "lord damage range": "365~408",
+  "movement": {
+    "attack": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    }
+  },
+  "name": "Glowy",
+  "rarity": "1",
+  "sell caution": false,
+  "unitName": "Glowy",
+  "maxlv": "10",
+  "no": "51",
   "unitDisplayHomePosition_1W9CxaFK": "38,-139,140,382",
   "unitDisplayDetailPosition_6z54rgb3": "205,256,550,440",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "255,494,150,120,0",
@@ -294,5 +286,88 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "100",
   "sellCaution": false,
-  "effectFrames": "24:125:1"
+  "effectFrames": "24:125:1",
+  "evofrom": "",
+  "evointo": "50031",
+  "evozelcost": "1000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50120",
+      "count": 1
+    }
+  ],
+  "basexp": "10",
+  "animation_attack": "64",
+  "animation_idle": "46",
+  "animation_move": "35",
+  "movespeed_attack": "0.0041",
+  "movespeed_skill": "0.0041",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "30",
+  "normal_distribute": "100",
+  "normal_totaldistr": "100",
+  "bb_frames": "30",
+  "bb_distribute": "100",
+  "bb_totaldistr": "100",
+  "description": "A type of slime with a sparkling body. They are a very common creature, although their origin is unknown. Some think they were made at the time of creation, and have since increased in number. Most are basically kind. When they find a person walking at night, they offer themselves as lamps. However, since there are so many, some have become violent and will attack humans.",
+  "summon": "I'll light up your way,<br>so please, take me with you...",
+  "fusion": "What's this? I've gotten brighter.<br>Mind if I shine my light on you?",
+  "evolution": "",
+  "hp_base": "830",
+  "atk_base": "300",
+  "def_base": "400",
+  "rec_base": "300",
+  "hp_lord": "1587",
+  "atk_lord": "393",
+  "def_lord": "580",
+  "rec_lord": "390",
+  "hp_anima": "1655",
+  "rec_anima": "372",
+  "atk_breaker": "411",
+  "def_breaker": "562",
+  "atk_guardian": "375",
+  "def_guardian": "598",
+  "rec_guardian": "381",
+  "def_oracle": "571",
+  "hp_oracle": "1560",
+  "rec_oracle": "417",
+  "hp_bonus": "200",
+  "atk_bonus": "80",
+  "def_bonus": "80",
+  "rec_bonus": "80",
+  "lordonly": "",
+  "combo_hits": "1",
+  "normaldc": "2",
+  "ls": "",
+  "lsdescription": "",
+  "lstype": "",
+  "bbdescription": "Light elemental attack on single Enemy",
+  "bbtype": "Offense",
+  "bbhits": "1",
+  "bbaoe": "1",
+  "bbgauge": "12",
+  "bbdc": "5",
+  "bbmultiplier": "100",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50120",
+  "evomats2": "",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": ""
 }

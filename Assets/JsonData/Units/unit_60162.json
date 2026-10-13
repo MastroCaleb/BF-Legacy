@@ -1,64 +1,63 @@
 {
   "id": "60162",
-  "unitName": "Lemia",
-  "freetext": ":''For other uses, see Lemia (disambiguation)''",
-  "no": "236",
-  "element": "Dark",
-  "rarity": "★★★",
-  "cost": "5",
-  "maxlv": "40",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "3",
-  "animation_attack": "193",
-  "animation_idle": "48",
-  "animation_move": "48",
-  "movespeed_attack": "2",
-  "movespeed_skill": "2",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "90, 95, 100",
-  "normal_distribute": "35, 35, 30",
-  "normal_totaldistr": "100",
-  "bb_frames": "40, 50, 60, 70, 80",
-  "bb_distribute": "20, 20, 20, 20, 20",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "40",
-  "description": "A sorceress specializing in necromancy. Originally considered to have a bright future as State Sorceress of the Bariura Empire, a failed magic experiment ended up taking the life of her lover. In a desperate bid to revive him, Lemia turned her attention to the outlawed practice of necromancy, a move which swiftly ostracized her from her sorcerer peers. However, far from deterred, she secretly continued her necromancy studies.",
-  "summon": "I have my own hopes and dreams.<br>Will you be the one to turn<br>them into reality?",
-  "fusion": "I thank you.<br>You have helped me move<br>forward in my quest...",
-  "evolution": "",
-  "hp_base": "2000",
-  "atk_base": "600",
-  "def_base": "600",
-  "rec_base": "600",
-  "hp_lord": "3100",
-  "atk_lord": "840",
-  "def_lord": "840",
-  "rec_lord": "1080",
-  "hp_anima": "3393",
-  "rec_anima": "1002",
-  "atk_breaker": "918",
-  "def_breaker": "762",
-  "atk_guardian": "762",
-  "def_guardian": "918",
-  "rec_guardian": "1041",
-  "def_oracle": "801",
-  "hp_oracle": "2983",
-  "rec_oracle": "1197",
-  "hp_bonus": "300",
-  "atk_bonus": "120",
-  "def_bonus": "120",
-  "rec_bonus": "120",
-  "lordonly": "",
-  "combo_hits": "3",
-  "normaldc": "9",
-  "ls": "Soul Light",
-  "lsdescription": "Small boost in Karma produced during Spark",
-  "lsnote": "30% boost",
-  "lstype": "Karma",
+  "stats": {
+    "_base": {
+      "atk": 600,
+      "def": 600,
+      "hp": 2000,
+      "rec": 600
+    },
+    "_lord": {
+      "atk": 840,
+      "def": 840,
+      "hp": 3100,
+      "rec": 1080
+    },
+    "anima": {
+      "atk": 840,
+      "def": 840,
+      "hp max": 3490,
+      "hp min": 3295,
+      "rec max": 1041,
+      "rec min": 963
+    },
+    "breaker": {
+      "atk max": 957,
+      "atk min": 879,
+      "def max": 801,
+      "def min": 723,
+      "hp": 3100,
+      "rec": 1080
+    },
+    "guardian": {
+      "atk": 840,
+      "def max": 957,
+      "def min": 879,
+      "hp": 3100,
+      "rec max": 1080,
+      "rec min": 1002
+    },
+    "oracle": {
+      "atk": 840,
+      "def max": 840,
+      "def min": 762,
+      "hp": 3100,
+      "rec max": 1236,
+      "rec min": 1158
+    }
+  },
+  "leader_skill": {
+    "desc": "Small boost in Karma produced during Spark",
+    "effects": [
+      {
+        "karma drop% for spark": 30,
+        "passive id": "31"
+      }
+    ],
+    "id": "1700",
+    "name": "Soul Light"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -301,94 +300,93 @@
     ],
     "name": "Gravity Bomb"
   },
-  "bbdescription": "5 Combo Dark Elemental Attack on All enemies & Probable Poison Effect",
-  "bbnote": "45% chance",
-  "bbtype": "Offense",
-  "bbhits": "5",
-  "bbaoe": "A",
-  "bbgauge": "25",
-  "bbdc": "5",
-  "bbmultiplier": "150",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "60163",
-  "evomats1": "60122",
-  "evomats2": "60121",
-  "evomats3": "60121",
-  "evomats4": "60142",
-  "evomats5": "",
-  "evozelcost": "100000",
-  "stats": {
-    "_base": {
-      "atk": 600,
-      "def": 600,
-      "hp": 2000,
-      "rec": 600
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 840,
-      "def": 840,
-      "hp": 3100,
-      "rec": 1080
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 840,
-      "def": 840,
-      "hp max": 3490,
-      "hp min": 3295,
-      "rec max": 1041,
-      "rec min": 963
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 957,
-      "atk min": 879,
-      "def max": 801,
-      "def min": 723,
-      "hp": 3100,
-      "rec": 1080
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 193
     },
-    "guardian": {
-      "atk": 840,
-      "def max": 957,
-      "def min": 879,
-      "hp": 3100,
-      "rec max": 1080,
-      "rec min": 1002
+    "idle": {
+      "total number of frames": 48
     },
-    "oracle": {
-      "atk": 840,
-      "def max": 840,
-      "def min": 762,
-      "hp": 3100,
-      "rec max": 1236,
-      "rec min": 1158
+    "move": {
+      "total number of frames": 48
     }
   },
-  "leader_skill": {
-    "desc": "Small boost in Karma produced during Spark",
-    "effects": [
-      {
-        "karma drop% for spark": 30,
-        "passive id": "31"
-      }
+  "category": 60160,
+  "cost": "5",
+  "damage frames": {
+    "frame times": [
+      90,
+      95,
+      100
     ],
-    "id": "1700",
-    "name": "Soul Light"
+    "hit dmg% distribution": [
+      35,
+      35,
+      30
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 3
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "dark",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 236,
+  "imp": {
+    "max atk": "120",
+    "max def": "120",
+    "max hp": "300",
+    "max rec": "120"
+  },
+  "kind": "normal",
+  "lord damage range": "782~873",
+  "movement": {
+    "attack": {
+      "move speed": 2,
+      "move speed type": "4",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 2,
+      "move speed type": "4",
+      "move type": "3"
+    }
+  },
+  "name": "Lemia",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "Lemia",
+  "maxlv": "40",
+  "no": "236",
   "unitDisplayHomePosition_1W9CxaFK": "350,180,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "0,-20,800,838",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "105,332,480,302,0",
@@ -398,5 +396,102 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "1000",
   "sellCaution": false,
-  "effectFrames": "80:360:1,85:126:1,90:126:1"
+  "effectFrames": "80:360:1,85:126:1,90:126:1",
+  "evofrom": "",
+  "evointo": "60163",
+  "evozelcost": "100000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "60122",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60121",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60142",
+      "count": 1
+    }
+  ],
+  "freetext": ":''For other uses, see Lemia (disambiguation)''",
+  "basexp": "21",
+  "animation_attack": "193",
+  "animation_idle": "48",
+  "animation_move": "48",
+  "movespeed_attack": "2",
+  "movespeed_skill": "2",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "90, 95, 100",
+  "normal_distribute": "35, 35, 30",
+  "normal_totaldistr": "100",
+  "bb_frames": "40, 50, 60, 70, 80",
+  "bb_distribute": "20, 20, 20, 20, 20",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "40",
+  "description": "A sorceress specializing in necromancy. Originally considered to have a bright future as State Sorceress of the Bariura Empire, a failed magic experiment ended up taking the life of her lover. In a desperate bid to revive him, Lemia turned her attention to the outlawed practice of necromancy, a move which swiftly ostracized her from her sorcerer peers. However, far from deterred, she secretly continued her necromancy studies.",
+  "summon": "I have my own hopes and dreams.<br>Will you be the one to turn<br>them into reality?",
+  "fusion": "I thank you.<br>You have helped me move<br>forward in my quest...",
+  "evolution": "",
+  "hp_base": "2000",
+  "atk_base": "600",
+  "def_base": "600",
+  "rec_base": "600",
+  "hp_lord": "3100",
+  "atk_lord": "840",
+  "def_lord": "840",
+  "rec_lord": "1080",
+  "hp_anima": "3393",
+  "rec_anima": "1002",
+  "atk_breaker": "918",
+  "def_breaker": "762",
+  "atk_guardian": "762",
+  "def_guardian": "918",
+  "rec_guardian": "1041",
+  "def_oracle": "801",
+  "hp_oracle": "2983",
+  "rec_oracle": "1197",
+  "hp_bonus": "300",
+  "atk_bonus": "120",
+  "def_bonus": "120",
+  "rec_bonus": "120",
+  "lordonly": "",
+  "combo_hits": "3",
+  "normaldc": "9",
+  "ls": "Soul Light",
+  "lsdescription": "Small boost in Karma produced during Spark",
+  "lsnote": "30% boost",
+  "lstype": "Karma",
+  "bbdescription": "5 Combo Dark Elemental Attack on All enemies & Probable Poison Effect",
+  "bbnote": "45% chance",
+  "bbtype": "Offense",
+  "bbhits": "5",
+  "bbaoe": "A",
+  "bbgauge": "25",
+  "bbdc": "5",
+  "bbmultiplier": "150",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "60122",
+  "evomats2": "60121",
+  "evomats3": "60121",
+  "evomats4": "60142",
+  "evomats5": ""
 }

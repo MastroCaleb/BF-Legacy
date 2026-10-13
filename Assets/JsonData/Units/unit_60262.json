@@ -1,62 +1,63 @@
 {
   "id": "60262",
-  "unitName": "Arachna",
-  "no": "640",
-  "element": "Dark",
-  "rarity": "★★★",
-  "cost": "6",
-  "maxlv": "40",
-  "basexp": "10",
-  "gender": "N",
-  "ai": "3",
-  "animation_attack": "93",
-  "animation_idle": "94",
-  "animation_move": "11",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "38, 44, 49, 55, 61, 66",
-  "normal_distribute": "15, 13, 21, 17, 17, 17",
-  "normal_totaldistr": "100",
-  "bb_frames": "38, 42, 46, 49, 55, 61, 66",
-  "bb_distribute": "15, 10, 10, 20, 15, 15, 15",
-  "bb_totaldistr": "100",
-  "description": "The queen of gigantic arachnid demons. It is believed that she is the one to give birth to all the spider demons found living around. However, common spiders do not grow into this queen, so it is still unclear as to how this queen comes to be born. She can understand human speech, so it is possible that she can come to an understanding with people. However, she only thinks about digesting humans as food, so the mutual understanding may not happen at all. There are also rumors which state that she kidnaps young girls, but the reason behind this is unknown.",
-  "summon": "Welcome, Summoner.<br>I'll teach you lots of things.<br>Why don't you come closer?",
-  "fusion": "Ooh!<br>It gives me shivers...<br>This feels nice.",
-  "evolution": "Ahh...<br>It's like I'm finally free.<br>It feels good.",
-  "hp_base": "1741",
-  "atk_base": "899",
-  "def_base": "442",
-  "rec_base": "441",
-  "hp_lord": "3032",
-  "atk_lord": "1189",
-  "def_lord": "571",
-  "rec_lord": "617",
-  "hp_anima": "3325",
-  "rec_anima": "539",
-  "atk_breaker": "1267",
-  "def_breaker": "493",
-  "atk_guardian": "1111",
-  "def_guardian": "649",
-  "rec_guardian": "578",
-  "def_oracle": "532",
-  "hp_oracle": "2915",
-  "rec_oracle": "734",
-  "hp_bonus": "300",
-  "atk_bonus": "120",
-  "def_bonus": "120",
-  "rec_bonus": "120",
-  "lordonly": "",
-  "combo_hits": "6",
-  "normaldc": "12",
-  "ls": "Soul Light",
-  "lsdescription": "Small boost in Karma produced during Spark",
-  "lsnote": "30% boost",
-  "lstype": "Karma",
+  "stats": {
+    "_base": {
+      "atk": 899,
+      "def": 442,
+      "hp": 1741,
+      "rec": 441
+    },
+    "_lord": {
+      "atk": 1189,
+      "def": 571,
+      "hp": 3032,
+      "rec": 617
+    },
+    "anima": {
+      "atk": 1189,
+      "def": 571,
+      "hp max": 3422,
+      "hp min": 3227,
+      "rec max": 578,
+      "rec min": 500
+    },
+    "breaker": {
+      "atk max": 1306,
+      "atk min": 1228,
+      "def max": 532,
+      "def min": 454,
+      "hp": 3032,
+      "rec": 617
+    },
+    "guardian": {
+      "atk": 1189,
+      "def max": 688,
+      "def min": 610,
+      "hp": 3032,
+      "rec max": 617,
+      "rec min": 539
+    },
+    "oracle": {
+      "atk": 1189,
+      "def max": 571,
+      "def min": 493,
+      "hp": 3032,
+      "rec max": 773,
+      "rec min": 695
+    }
+  },
+  "leader_skill": {
+    "desc": "Small boost in Karma produced during Spark",
+    "effects": [
+      {
+        "karma drop% for spark": 30,
+        "passive id": "31"
+      }
+    ],
+    "id": "1700",
+    "name": "Soul Light"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -303,94 +304,99 @@
     ],
     "name": "Dementia Fall"
   },
-  "bbdescription": "7 combo Dark elemental attack on all enemies & probable Poison effect",
-  "bbnote": "80% chance to inflict",
-  "bbtype": "Offense",
-  "bbhits": "7",
-  "bbaoe": "A",
-  "bbgauge": "15",
-  "bbdc": "21",
-  "bbmultiplier": "100",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "60261",
-  "evointo": "",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 899,
-      "def": 442,
-      "hp": 1741,
-      "rec": 441
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1189,
-      "def": 571,
-      "hp": 3032,
-      "rec": 617
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1189,
-      "def": 571,
-      "hp max": 3422,
-      "hp min": 3227,
-      "rec max": 578,
-      "rec min": 500
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 1306,
-      "atk min": 1228,
-      "def max": 532,
-      "def min": 454,
-      "hp": 3032,
-      "rec": 617
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 93
     },
-    "guardian": {
-      "atk": 1189,
-      "def max": 688,
-      "def min": 610,
-      "hp": 3032,
-      "rec max": 617,
-      "rec min": 539
+    "idle": {
+      "total number of frames": 94
     },
-    "oracle": {
-      "atk": 1189,
-      "def max": 571,
-      "def min": 493,
-      "hp": 3032,
-      "rec max": 773,
-      "rec min": 695
+    "move": {
+      "total number of frames": 11
     }
   },
-  "leader_skill": {
-    "desc": "Small boost in Karma produced during Spark",
-    "effects": [
-      {
-        "karma drop% for spark": 30,
-        "passive id": "31"
-      }
+  "category": 60260,
+  "cost": "6",
+  "damage frames": {
+    "frame times": [
+      38,
+      44,
+      49,
+      55,
+      61,
+      66
     ],
-    "id": "1700",
-    "name": "Soul Light"
+    "hit dmg% distribution": [
+      15,
+      13,
+      21,
+      17,
+      17,
+      17
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 6
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "dark",
+  "exp_pattern": 10,
+  "gender": "other",
+  "getting type": "farmable",
+  "guide_id": 640,
+  "imp": {
+    "max atk": "120",
+    "max def": "120",
+    "max hp": "300",
+    "max rec": "120"
+  },
+  "kind": "normal",
+  "lord damage range": "1107~1236",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Arachna",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "Arachna",
+  "maxlv": "40",
+  "no": "640",
   "unitDisplayHomePosition_1W9CxaFK": "169,-25,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "158,266,586,531",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "157,355,319,277,0",
@@ -400,5 +406,84 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "1000",
   "sellCaution": false,
-  "effectFrames": "38:600222:1,38:136:1,44:600222:1,44:136:1,49:600211:1,49:600321:1,55:136:1,61:136:1,66:136:1"
+  "effectFrames": "38:600222:1,38:136:1,44:600222:1,44:136:1,49:600211:1,49:600321:1,55:136:1,61:136:1,66:136:1",
+  "evofrom": "60261",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "10",
+  "animation_attack": "93",
+  "animation_idle": "94",
+  "animation_move": "11",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "38, 44, 49, 55, 61, 66",
+  "normal_distribute": "15, 13, 21, 17, 17, 17",
+  "normal_totaldistr": "100",
+  "bb_frames": "38, 42, 46, 49, 55, 61, 66",
+  "bb_distribute": "15, 10, 10, 20, 15, 15, 15",
+  "bb_totaldistr": "100",
+  "description": "The queen of gigantic arachnid demons. It is believed that she is the one to give birth to all the spider demons found living around. However, common spiders do not grow into this queen, so it is still unclear as to how this queen comes to be born. She can understand human speech, so it is possible that she can come to an understanding with people. However, she only thinks about digesting humans as food, so the mutual understanding may not happen at all. There are also rumors which state that she kidnaps young girls, but the reason behind this is unknown.",
+  "summon": "Welcome, Summoner.<br>I'll teach you lots of things.<br>Why don't you come closer?",
+  "fusion": "Ooh!<br>It gives me shivers...<br>This feels nice.",
+  "evolution": "Ahh...<br>It's like I'm finally free.<br>It feels good.",
+  "hp_base": "1741",
+  "atk_base": "899",
+  "def_base": "442",
+  "rec_base": "441",
+  "hp_lord": "3032",
+  "atk_lord": "1189",
+  "def_lord": "571",
+  "rec_lord": "617",
+  "hp_anima": "3325",
+  "rec_anima": "539",
+  "atk_breaker": "1267",
+  "def_breaker": "493",
+  "atk_guardian": "1111",
+  "def_guardian": "649",
+  "rec_guardian": "578",
+  "def_oracle": "532",
+  "hp_oracle": "2915",
+  "rec_oracle": "734",
+  "hp_bonus": "300",
+  "atk_bonus": "120",
+  "def_bonus": "120",
+  "rec_bonus": "120",
+  "lordonly": "",
+  "combo_hits": "6",
+  "normaldc": "12",
+  "ls": "Soul Light",
+  "lsdescription": "Small boost in Karma produced during Spark",
+  "lsnote": "30% boost",
+  "lstype": "Karma",
+  "bbdescription": "7 combo Dark elemental attack on all enemies & probable Poison effect",
+  "bbnote": "80% chance to inflict",
+  "bbtype": "Offense",
+  "bbhits": "7",
+  "bbaoe": "A",
+  "bbgauge": "15",
+  "bbdc": "21",
+  "bbmultiplier": "100",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "",
+  "evomats2": "",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": ""
 }

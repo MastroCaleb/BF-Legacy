@@ -1,61 +1,63 @@
 {
   "id": "10042",
-  "unitName": "Pyromancer Liza",
-  "no": "281",
-  "element": "Fire",
-  "rarity": "★★★",
-  "cost": "6",
-  "maxlv": "40",
-  "basexp": "10",
-  "gender": "F",
-  "ai": "5",
-  "animation_attack": "91",
-  "animation_idle": "52",
-  "animation_move": "52",
-  "movespeed_attack": "8",
-  "movespeed_skill": "8",
-  "speedtype_attack": "1",
-  "speedtype_skill": "1",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "56, 60, 64, 68, 72",
-  "normal_distribute": "20, 20, 20, 20, 20",
-  "normal_totaldistr": "100",
-  "bb_frames": "56, 62, 68, 74, 80, 86, 92",
-  "bb_distribute": "14, 14, 14, 14, 14, 15, 15",
-  "bb_totaldistr": "100",
-  "description": "A magician from the ruined Agni Empire. Worried she had reached the limits of self-study, she begged magicians all over the empire to teach her, but no one was willing to. However, everything changed when one day a book of magic was delivered to her. In it was recorded various secret fire spells which she used to improve herself even further as a magician. She however remains curious as to who sent it to her.",
-  "summon": "Wanna take a peak?<br>I guess I can show you...<br>Look, the magical abyss!",
-  "fusion": "This new flame around<br>me is still not enough!<br>Heat me up more!",
-  "evolution": "I'm burning up!<br>A flame is burning inside me!<br>A new me is born!",
-  "hp_base": "2217",
-  "atk_base": "534",
-  "def_base": "696",
-  "rec_base": "730",
-  "hp_lord": "3788",
-  "atk_lord": "683",
-  "def_lord": "994",
-  "rec_lord": "1161",
-  "hp_anima": "4081",
-  "rec_anima": "1083",
-  "atk_breaker": "761",
-  "def_breaker": "916",
-  "atk_guardian": "605",
-  "def_guardian": "1072",
-  "rec_guardian": "1122",
-  "def_oracle": "955",
-  "hp_oracle": "3671",
-  "rec_oracle": "1278",
-  "hp_bonus": "300",
-  "atk_bonus": "160",
-  "def_bonus": "80",
-  "rec_bonus": "120",
-  "lordonly": "",
-  "combo_hits": "5",
-  "normaldc": "10",
-  "ls": "Fire's Protection",
-  "lsdescription": "10% reduction in damage from Fire Types",
-  "lstype": "Defense",
+  "stats": {
+    "_base": {
+      "atk": 534,
+      "def": 696,
+      "hp": 2217,
+      "rec": 730
+    },
+    "_lord": {
+      "atk": 683,
+      "def": 994,
+      "hp": 3788,
+      "rec": 1161
+    },
+    "anima": {
+      "atk": 683,
+      "def": 994,
+      "hp max": 4178,
+      "hp min": 3983,
+      "rec max": 1122,
+      "rec min": 1044
+    },
+    "breaker": {
+      "atk max": 800,
+      "atk min": 722,
+      "def max": 955,
+      "def min": 877,
+      "hp": 3788,
+      "rec": 1161
+    },
+    "guardian": {
+      "atk": 683,
+      "def max": 1111,
+      "def min": 1033,
+      "hp": 3788,
+      "rec max": 1161,
+      "rec min": 1083
+    },
+    "oracle": {
+      "atk": 683,
+      "def max": 994,
+      "def min": 916,
+      "hp": 3788,
+      "rec max": 1317,
+      "rec min": 1239
+    }
+  },
+  "leader_skill": {
+    "desc": "10% reduction in damage from Fire Types",
+    "effects": [
+      {
+        "fire resist%": 10,
+        "passive id": "5"
+      }
+    ],
+    "id": "500",
+    "name": "Fire's Protection"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -210,94 +212,91 @@
     ],
     "name": "Meteor Storm"
   },
-  "bbdescription": "7 combo Fire attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "7",
-  "bbaoe": "A",
-  "bbgauge": "15",
-  "bbdc": "7",
-  "bbmultiplier": "105",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "10041",
-  "evointo": "",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 534,
-      "def": 696,
-      "hp": 2217,
-      "rec": 730
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 100.0,
+      "target conditions": "hp_75pr_under",
+      "target type": "party"
     },
-    "_lord": {
-      "atk": 683,
-      "def": 994,
-      "hp": 3788,
-      "rec": 1161
+    {
+      "action": "attack",
+      "chance%": 50.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 683,
-      "def": 994,
-      "hp max": 4178,
-      "hp min": 3983,
-      "rec max": 1122,
-      "rec min": 1044
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 91
     },
-    "breaker": {
-      "atk max": 800,
-      "atk min": 722,
-      "def max": 955,
-      "def min": 877,
-      "hp": 3788,
-      "rec": 1161
+    "idle": {
+      "total number of frames": 52
     },
-    "guardian": {
-      "atk": 683,
-      "def max": 1111,
-      "def min": 1033,
-      "hp": 3788,
-      "rec max": 1161,
-      "rec min": 1083
-    },
-    "oracle": {
-      "atk": 683,
-      "def max": 994,
-      "def min": 916,
-      "hp": 3788,
-      "rec max": 1317,
-      "rec min": 1239
+    "move": {
+      "total number of frames": 52
     }
   },
-  "leader_skill": {
-    "desc": "10% reduction in damage from Fire Types",
-    "effects": [
-      {
-        "fire resist%": 10,
-        "passive id": "5"
-      }
+  "category": 10040,
+  "cost": "6",
+  "damage frames": {
+    "frame times": [
+      56,
+      60,
+      64,
+      68,
+      72
     ],
-    "id": "500",
-    "name": "Fire's Protection"
+    "hit dmg% distribution": [
+      20,
+      20,
+      20,
+      20,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 5
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "fire",
+  "exp_pattern": 10,
+  "gender": "female",
+  "getting type": "farmable",
+  "guide_id": 281,
+  "imp": {
+    "max atk": "160",
+    "max def": "80",
+    "max hp": "300",
+    "max rec": "120"
+  },
+  "kind": "normal",
+  "lord damage range": "635~710",
+  "movement": {
+    "attack": {
+      "move speed": 8,
+      "move speed type": "1",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 8,
+      "move speed type": "1",
+      "move type": "3"
+    }
+  },
+  "name": "Pyromancer Liza",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "Pyromancer Liza",
+  "maxlv": "40",
+  "no": "281",
   "unitDisplayHomePosition_1W9CxaFK": "399,92,174,473",
   "unitDisplayDetailPosition_6z54rgb3": "-66,76,884,646",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "73,312,394,294,1",
@@ -307,5 +306,83 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "1000",
   "sellCaution": false,
-  "effectFrames": "55:150:1,63:140:1"
+  "effectFrames": "55:150:1,63:140:1",
+  "evofrom": "10041",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "10",
+  "animation_attack": "91",
+  "animation_idle": "52",
+  "animation_move": "52",
+  "movespeed_attack": "8",
+  "movespeed_skill": "8",
+  "speedtype_attack": "1",
+  "speedtype_skill": "1",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "56, 60, 64, 68, 72",
+  "normal_distribute": "20, 20, 20, 20, 20",
+  "normal_totaldistr": "100",
+  "bb_frames": "56, 62, 68, 74, 80, 86, 92",
+  "bb_distribute": "14, 14, 14, 14, 14, 15, 15",
+  "bb_totaldistr": "100",
+  "description": "A magician from the ruined Agni Empire. Worried she had reached the limits of self-study, she begged magicians all over the empire to teach her, but no one was willing to. However, everything changed when one day a book of magic was delivered to her. In it was recorded various secret fire spells which she used to improve herself even further as a magician. She however remains curious as to who sent it to her.",
+  "summon": "Wanna take a peak?<br>I guess I can show you...<br>Look, the magical abyss!",
+  "fusion": "This new flame around<br>me is still not enough!<br>Heat me up more!",
+  "evolution": "I'm burning up!<br>A flame is burning inside me!<br>A new me is born!",
+  "hp_base": "2217",
+  "atk_base": "534",
+  "def_base": "696",
+  "rec_base": "730",
+  "hp_lord": "3788",
+  "atk_lord": "683",
+  "def_lord": "994",
+  "rec_lord": "1161",
+  "hp_anima": "4081",
+  "rec_anima": "1083",
+  "atk_breaker": "761",
+  "def_breaker": "916",
+  "atk_guardian": "605",
+  "def_guardian": "1072",
+  "rec_guardian": "1122",
+  "def_oracle": "955",
+  "hp_oracle": "3671",
+  "rec_oracle": "1278",
+  "hp_bonus": "300",
+  "atk_bonus": "160",
+  "def_bonus": "80",
+  "rec_bonus": "120",
+  "lordonly": "",
+  "combo_hits": "5",
+  "normaldc": "10",
+  "ls": "Fire's Protection",
+  "lsdescription": "10% reduction in damage from Fire Types",
+  "lstype": "Defense",
+  "bbdescription": "7 combo Fire attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "7",
+  "bbaoe": "A",
+  "bbgauge": "15",
+  "bbdc": "7",
+  "bbmultiplier": "105",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "",
+  "evomats2": "",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": "",
+  "evoitem": ""
 }

@@ -1,68 +1,94 @@
 {
   "id": "20856",
-  "unitName": "Decay Demon Melord",
-  "no": "1407",
-  "element": "Water",
-  "rarity": "★★★★★★★",
-  "cost": "45",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "172",
-  "animation_idle": "54",
-  "animation_move": "6",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "74, 77, 80, 83, 86, 89, 92, 95",
-  "normal_distribute": "11, 12, 13, 14, 11, 12, 13, 14",
-  "normal_totaldistr": "100",
-  "bb_frames": "74, 77, 80, 83, 86, 89, 92, 95, 98, 101, 104, 107, 110",
-  "bb_distribute": "7, 8, 7, 9, 7, 8, 7, 9, 7, 8, 7, 9, 7",
-  "bb_totaldistr": "100",
-  "sbb_frames": "74, 77, 80, 83, 86, 89, 92, 95, 98, 101, 104, 107, 110, 113, 116, 119, 122",
-  "sbb_distribute": "6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5, 5",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "74, 77, 80, 83, 86, 89, 92, 95, 98, 101, 104, 107, 110, 113, 116, 119, 122, 125, 128, 131, 134, 137",
-  "ubb_distribute": "4, 5, 4, 5, 4, 5, 4, 5, 4, 5, 4, 5, 4, 5, 4, 5, 4, 5, 4, 5, 5, 5",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "4",
-  "sbb_effectdelay": "3",
-  "ubb_effectdelay": "4",
-  "description": "A mock Unit modeled after Melord, the Sealed God Lucius's disciple. As Lucius's confidant and loyal subject, Melord is said to have been successful in fulfilling many of his master's missions and plans. Following the war against the gods Melord found himself in Ishgria, eventually becoming the ruler of the Wulgee region where the miasma produced by its native flowers transformed him into a terrible demon. However, legend has it that he remained loyal to his master until the very end, even in his monstrous new form.",
-  "summon": "I am Melord...<br>The manifestor of the great [[Sealed God Lucius]]'s will...",
-  "fusion": "Lowly Summoner...<br>Why grant power to me,<br>the usurper of humanity's hope?",
-  "evolution": "",
-  "hp_base": "4867",
-  "atk_base": "2011",
-  "def_base": "2232",
-  "rec_base": "1992",
-  "hp_lord": "7033",
-  "atk_lord": "2577",
-  "def_lord": "2698",
-  "rec_lord": "2538",
-  "hp_anima": "7925",
-  "rec_anima": "2300",
-  "atk_breaker": "2815",
-  "def_breaker": "2460",
-  "def_guardian": "2936",
-  "rec_guardian": "2419",
-  "def_oracle": "2579",
-  "rec_oracle": "2895",
-  "hp_bonus": "1100",
-  "atk_bonus": "440",
-  "def_bonus": "440",
-  "rec_bonus": "440",
-  "lordonly": "",
-  "combo_hits": "8",
-  "normaldc": "32",
-  "ls": "Divine Cerulean Strategy",
-  "lsdescription": "35% boost to all parameters, slightly boosts Atk, Def relative to remaining HP & boosts BC efficacy",
-  "lsnote": "+0.2% boost to Atk, Def per 1% HP remaining, 20% boost max., 30% boost in BC efficacy",
+  "stats": {
+    "_base": {
+      "atk": 2011,
+      "def": 2232,
+      "hp": 4867,
+      "rec": 1992
+    },
+    "_lord": {
+      "atk": 2577,
+      "def": 2698,
+      "hp": 7033,
+      "rec": 2538
+    },
+    "anima": {
+      "atk": 2577,
+      "def": 2698,
+      "hp max": 8223,
+      "hp min": 7628,
+      "rec max": 2419,
+      "rec min": 2181
+    },
+    "breaker": {
+      "atk max": 2934,
+      "atk min": 2696,
+      "def max": 2579,
+      "def min": 2341,
+      "hp": 7033,
+      "rec": 2538
+    },
+    "guardian": {
+      "atk": 2577,
+      "def max": 3055,
+      "def min": 2817,
+      "hp": 7033,
+      "rec max": 2538,
+      "rec min": 2300
+    },
+    "oracle": {
+      "atk": 2577,
+      "def max": 2698,
+      "def min": 2460,
+      "hp": 7033,
+      "rec max": 3014,
+      "rec min": 2776
+    }
+  },
+  "leader_skill": {
+    "desc": "35% boost to all parameters, slightly boosts Atk, Def relative to remaining HP & boosts BC efficacy",
+    "effects": [
+      {
+        "atk% buff": 35,
+        "def% buff": 35,
+        "hp% buff": 35,
+        "passive id": "1",
+        "rec% buff": 35
+      },
+      {
+        "atk% base buff": 0,
+        "atk% extra buff based on hp": 20,
+        "buff proportional to hp": "remaining",
+        "def% base buff": 0,
+        "def% extra buff based on hp": 20,
+        "passive id": "46"
+      },
+      {
+        "bb gauge fill rate%": 30,
+        "passive id": "32"
+      }
+    ],
+    "id": "10118",
+    "name": "Divine Cerulean Strategy"
+  },
+  "extra_skill": {
+    "desc": "Slightly boosts Atk, Def when BB gauge is over 50%",
+    "effects": [
+      {
+        "atk% buff": 30,
+        "bb gauge above % buff requirement": 50,
+        "conditions": [],
+        "def% buff": 30,
+        "passive id": "30",
+        "passive target": "self"
+      }
+    ],
+    "id": "19400",
+    "name": "Noble Loyalty",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -627,18 +653,6 @@
     ],
     "name": "Exegesis"
   },
-  "bbdescription": "13 combo Water attack on all foes, considerably boosts BB gauge, considerably boosts Def relative to Atk for 3 turns, considerably boosts OD gauge fill rate for 3 turns & damage taken boosts BB gauge for 3 turns",
-  "bbnote": "6 BC fill on instant, 50% boost to Def, 3~5 BC fill when damage taken, 20% boost to OD gauge fill rate",
-  "bbtype": "Offense",
-  "bbhits": "13",
-  "bbaoe": "A",
-  "bbgauge": "23",
-  "bbdc": "13",
-  "bbmultiplier": "350",
-  "bbhits2": "",
-  "bbaoe2": "",
-  "bbdc2": "",
-  "bbmultiplier2": "",
   "sbb": {
     "damage frames": [
       {
@@ -1119,18 +1133,6 @@
     ],
     "name": "Venerate"
   },
-  "sbbdescription": "17 combo powerful Water attack on all foes, considerably boosts Atk relative to Def for 3 turns & enormously boosts critical hit rate and boosts critical damage for 3 turns",
-  "sbbnote": "50% boost to Atk, 60% boost to critical hit rate, 50% boost to critical damage",
-  "sbbtype": "Offense",
-  "sbbhits": "17",
-  "sbbaoe": "A",
-  "sbbgauge": "7",
-  "sbbdc": "17",
-  "sbbmultiplier": "560",
-  "sbbhits2": "",
-  "sbbaoe2": "",
-  "sbbdc2": "",
-  "sbbmultiplier2": "",
   "ubb": {
     "damage frames": [
       {
@@ -1300,6 +1302,220 @@
     ],
     "name": "Dogma Cross"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 172
+    },
+    "idle": {
+      "total number of frames": 54
+    },
+    "move": {
+      "total number of frames": 6
+    }
+  },
+  "category": 20850,
+  "cost": "44",
+  "damage frames": {
+    "frame times": [
+      74,
+      77,
+      80,
+      83,
+      86,
+      89,
+      92,
+      95
+    ],
+    "hit dmg% distribution": [
+      11,
+      12,
+      13,
+      14,
+      11,
+      12,
+      13,
+      14
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 8
+  },
+  "drop check count": 4,
+  "element": "water",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 1407,
+  "imp": {
+    "max atk": "440",
+    "max def": "440",
+    "max hp": "1100",
+    "max rec": "440"
+  },
+  "kind": "normal",
+  "lord damage range": "2399~2680",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Decay Demon Melord",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Decay Demon Melord",
+  "maxlv": "120",
+  "no": "1407",
+  "unitDisplayHomePosition_1W9CxaFK": "466,292,205,560",
+  "unitDisplayDetailPosition_6z54rgb3": "-70,-36,1000,823",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "78,208,500,411,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "25,-262,900,741",
+  "unitDisplaySummonPosition_KC3Jk8Br": "78,208,500,411,0",
+  "unitDisplayHpPosition_3BpHN6VD": "0,31",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "15000",
+  "sellCaution": false,
+  "effectFrames": "70:501110:1,74:200893:1,76:201190:1,80:200893:1,95:201190:1",
+  "evofrom": "",
+  "evointo": "20857",
+  "evozelcost": "3000000",
+  "evokarmacost": "1000000",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "20344",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 2
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "172",
+  "animation_idle": "54",
+  "animation_move": "6",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "74, 77, 80, 83, 86, 89, 92, 95",
+  "normal_distribute": "11, 12, 13, 14, 11, 12, 13, 14",
+  "normal_totaldistr": "100",
+  "bb_frames": "74, 77, 80, 83, 86, 89, 92, 95, 98, 101, 104, 107, 110",
+  "bb_distribute": "7, 8, 7, 9, 7, 8, 7, 9, 7, 8, 7, 9, 7",
+  "bb_totaldistr": "100",
+  "sbb_frames": "74, 77, 80, 83, 86, 89, 92, 95, 98, 101, 104, 107, 110, 113, 116, 119, 122",
+  "sbb_distribute": "6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5, 5",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "74, 77, 80, 83, 86, 89, 92, 95, 98, 101, 104, 107, 110, 113, 116, 119, 122, 125, 128, 131, 134, 137",
+  "ubb_distribute": "4, 5, 4, 5, 4, 5, 4, 5, 4, 5, 4, 5, 4, 5, 4, 5, 4, 5, 4, 5, 5, 5",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "4",
+  "sbb_effectdelay": "3",
+  "ubb_effectdelay": "4",
+  "description": "A mock Unit modeled after Melord, the Sealed God Lucius's disciple. As Lucius's confidant and loyal subject, Melord is said to have been successful in fulfilling many of his master's missions and plans. Following the war against the gods Melord found himself in Ishgria, eventually becoming the ruler of the Wulgee region where the miasma produced by its native flowers transformed him into a terrible demon. However, legend has it that he remained loyal to his master until the very end, even in his monstrous new form.",
+  "summon": "I am Melord...<br>The manifestor of the great [[Sealed God Lucius]]'s will...",
+  "fusion": "Lowly Summoner...<br>Why grant power to me,<br>the usurper of humanity's hope?",
+  "evolution": "",
+  "hp_base": "4867",
+  "atk_base": "2011",
+  "def_base": "2232",
+  "rec_base": "1992",
+  "hp_lord": "7033",
+  "atk_lord": "2577",
+  "def_lord": "2698",
+  "rec_lord": "2538",
+  "hp_anima": "7925",
+  "rec_anima": "2300",
+  "atk_breaker": "2815",
+  "def_breaker": "2460",
+  "def_guardian": "2936",
+  "rec_guardian": "2419",
+  "def_oracle": "2579",
+  "rec_oracle": "2895",
+  "hp_bonus": "1100",
+  "atk_bonus": "440",
+  "def_bonus": "440",
+  "rec_bonus": "440",
+  "lordonly": "",
+  "combo_hits": "8",
+  "normaldc": "32",
+  "ls": "Divine Cerulean Strategy",
+  "lsdescription": "35% boost to all parameters, slightly boosts Atk, Def relative to remaining HP & boosts BC efficacy",
+  "lsnote": "+0.2% boost to Atk, Def per 1% HP remaining, 20% boost max., 30% boost in BC efficacy",
+  "bbdescription": "13 combo Water attack on all foes, considerably boosts BB gauge, considerably boosts Def relative to Atk for 3 turns, considerably boosts OD gauge fill rate for 3 turns & damage taken boosts BB gauge for 3 turns",
+  "bbnote": "6 BC fill on instant, 50% boost to Def, 3~5 BC fill when damage taken, 20% boost to OD gauge fill rate",
+  "bbtype": "Offense",
+  "bbhits": "13",
+  "bbaoe": "A",
+  "bbgauge": "23",
+  "bbdc": "13",
+  "bbmultiplier": "350",
+  "bbhits2": "",
+  "bbaoe2": "",
+  "bbdc2": "",
+  "bbmultiplier2": "",
+  "sbbdescription": "17 combo powerful Water attack on all foes, considerably boosts Atk relative to Def for 3 turns & enormously boosts critical hit rate and boosts critical damage for 3 turns",
+  "sbbnote": "50% boost to Atk, 60% boost to critical hit rate, 50% boost to critical damage",
+  "sbbtype": "Offense",
+  "sbbhits": "17",
+  "sbbaoe": "A",
+  "sbbgauge": "7",
+  "sbbdc": "17",
+  "sbbmultiplier": "560",
+  "sbbhits2": "",
+  "sbbaoe2": "",
+  "sbbdc2": "",
+  "sbbmultiplier2": "",
   "ubbdescription": "22 combo massive Water attack on all foes, enormous 3 turn Atk, Def reduction, enormously boosts Atk, Def and Spark damage for 3 turns & damage taken enormously restores HP for 3 turns",
   "ubbnote": "80% Atk/Def reduction, 250% boost to Atk/Def, 250% boost to Spark damage, 100% HP healed from damage taken",
   "ubbtype": "Offense",
@@ -1316,8 +1532,6 @@
   "esitem": "",
   "esdescription": "Slightly boosts Atk, Def when BB gauge is over 50%",
   "esnote": "30% boost",
-  "evofrom": "",
-  "evointo": "20857",
   "evomats1": "Water Mecha God",
   "evomats2": "Water Mecha God",
   "evomats3": "Miracle Totem",
@@ -1328,105 +1542,5 @@
   "evomats8": "Metal Mimic",
   "evomats9": "",
   "evoitem": "",
-  "evoitem2": "",
-  "evozelcost": "3000000",
-  "stats": {
-    "_base": {
-      "atk": 2011,
-      "def": 2232,
-      "hp": 4867,
-      "rec": 1992
-    },
-    "_lord": {
-      "atk": 2577,
-      "def": 2698,
-      "hp": 7033,
-      "rec": 2538
-    },
-    "anima": {
-      "atk": 2577,
-      "def": 2698,
-      "hp max": 8223,
-      "hp min": 7628,
-      "rec max": 2419,
-      "rec min": 2181
-    },
-    "breaker": {
-      "atk max": 2934,
-      "atk min": 2696,
-      "def max": 2579,
-      "def min": 2341,
-      "hp": 7033,
-      "rec": 2538
-    },
-    "guardian": {
-      "atk": 2577,
-      "def max": 3055,
-      "def min": 2817,
-      "hp": 7033,
-      "rec max": 2538,
-      "rec min": 2300
-    },
-    "oracle": {
-      "atk": 2577,
-      "def max": 2698,
-      "def min": 2460,
-      "hp": 7033,
-      "rec max": 3014,
-      "rec min": 2776
-    }
-  },
-  "leader_skill": {
-    "desc": "35% boost to all parameters, slightly boosts Atk, Def relative to remaining HP & boosts BC efficacy",
-    "effects": [
-      {
-        "atk% buff": 35,
-        "def% buff": 35,
-        "hp% buff": 35,
-        "passive id": "1",
-        "rec% buff": 35
-      },
-      {
-        "atk% base buff": 0,
-        "atk% extra buff based on hp": 20,
-        "buff proportional to hp": "remaining",
-        "def% base buff": 0,
-        "def% extra buff based on hp": 20,
-        "passive id": "46"
-      },
-      {
-        "bb gauge fill rate%": 30,
-        "passive id": "32"
-      }
-    ],
-    "id": "10118",
-    "name": "Divine Cerulean Strategy"
-  },
-  "extra_skill": {
-    "desc": "Slightly boosts Atk, Def when BB gauge is over 50%",
-    "effects": [
-      {
-        "atk% buff": 30,
-        "bb gauge above % buff requirement": 50,
-        "conditions": [],
-        "def% buff": 30,
-        "passive id": "30",
-        "passive target": "self"
-      }
-    ],
-    "id": "19400",
-    "name": "Noble Loyalty",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "466,292,205,560",
-  "unitDisplayDetailPosition_6z54rgb3": "-70,-36,1000,823",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "78,208,500,411,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "25,-262,900,741",
-  "unitDisplaySummonPosition_KC3Jk8Br": "78,208,500,411,0",
-  "unitDisplayHpPosition_3BpHN6VD": "0,31",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "15000",
-  "sellCaution": false,
-  "effectFrames": "70:501110:1,74:200893:1,76:201190:1,80:200893:1,95:201190:1"
+  "evoitem2": ""
 }

@@ -1,62 +1,63 @@
 {
   "id": "30083",
-  "unitName": "Xipe Totec",
-  "no": "360",
-  "element": "Earth",
-  "rarity": "★★★★",
-  "cost": "8",
-  "maxlv": "60",
-  "basexp": "15",
-  "gender": "N",
-  "ai": "2",
-  "animation_attack": "144",
-  "animation_idle": "52",
-  "animation_move": "52",
-  "movespeed_attack": "8",
-  "movespeed_skill": "8",
-  "speedtype_attack": "1",
-  "speedtype_skill": "1",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "normal_frames": "58, 63, 68, 73, 78, 90",
-  "normal_distribute": "20, 20, 20, 10, 10, 20",
-  "normal_totaldistr": "100",
-  "bb_frames": "58, 66, 72, 80, 88, 94, 102",
-  "bb_distribute": "20, 20, 20, 10, 10, 10, 10",
-  "bb_totaldistr": "100",
-  "description": "A tree monster that's over 1000 years old. It's said that a Xipe Totec is the evolved form of an Ent that, longing for so long to become stronger, sprouted a Dryad-like decoy from its trunk in hopes of using it to get more nourishment. They're greatly feared by humans whom it would lure in with its decoy and devour them when they got close, and since it's now known that this helps the tree renew itself it is sometimes also referred to as the \"Tree of Rebirth.\"",
-  "summon": "Get over here...<br>Hmph, what kind of <br>Summoner are you?",
-  "fusion": "I accept this power from you.<br>I will make good use of it.",
-  "evolution": "Still not enough.<br>More, I need more!",
-  "hp_base": "1917",
-  "atk_base": "557",
-  "def_base": "816",
-  "rec_base": "920",
-  "hp_lord": "3256",
-  "atk_lord": "856",
-  "def_lord": "1124",
-  "rec_lord": "1105",
-  "hp_anima": "3699",
-  "rec_anima": "987",
-  "atk_breaker": "974",
-  "def_breaker": "1006",
-  "atk_guardian": "738",
-  "def_guardian": "1242",
-  "rec_guardian": "1046",
-  "def_oracle": "1065",
-  "hp_oracle": "3079",
-  "rec_oracle": "1282",
-  "hp_bonus": "400",
-  "atk_bonus": "120",
-  "def_bonus": "200",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "6",
-  "normaldc": "12",
-  "ls": "Soul Flash",
-  "lsdescription": "Boost in Karma produced during Spark",
-  "lsnote": "50% boost",
-  "lstype": "Karma",
+  "stats": {
+    "_base": {
+      "atk": 557,
+      "def": 816,
+      "hp": 1917,
+      "rec": 920
+    },
+    "_lord": {
+      "atk": 856,
+      "def": 1124,
+      "hp": 3256,
+      "rec": 1105
+    },
+    "anima": {
+      "atk": 856,
+      "def": 1124,
+      "hp max": 3846,
+      "hp min": 3551,
+      "rec max": 1046,
+      "rec min": 928
+    },
+    "breaker": {
+      "atk max": 1033,
+      "atk min": 915,
+      "def max": 1065,
+      "def min": 947,
+      "hp": 3256,
+      "rec": 1105
+    },
+    "guardian": {
+      "atk": 856,
+      "def max": 1301,
+      "def min": 1183,
+      "hp": 3256,
+      "rec max": 1105,
+      "rec min": 987
+    },
+    "oracle": {
+      "atk": 856,
+      "def max": 1124,
+      "def min": 1006,
+      "hp": 3256,
+      "rec max": 1341,
+      "rec min": 1223
+    }
+  },
+  "leader_skill": {
+    "desc": "Boost in Karma produced during Spark",
+    "effects": [
+      {
+        "karma drop% for spark": 50,
+        "passive id": "31"
+      }
+    ],
+    "id": "1701",
+    "name": "Soul Flash"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -211,91 +212,93 @@
     ],
     "name": "Ethereal Bomb"
   },
-  "bbdescription": "7 combo powerful Earth attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "7",
-  "bbaoe": "A",
-  "bbgauge": "20",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "30082",
-  "evointo": "",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 557,
-      "def": 816,
-      "hp": 1917,
-      "rec": 920
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 856,
-      "def": 1124,
-      "hp": 3256,
-      "rec": 1105
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 856,
-      "def": 1124,
-      "hp max": 3846,
-      "hp min": 3551,
-      "rec max": 1046,
-      "rec min": 928
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 144
     },
-    "breaker": {
-      "atk max": 1033,
-      "atk min": 915,
-      "def max": 1065,
-      "def min": 947,
-      "hp": 3256,
-      "rec": 1105
+    "idle": {
+      "total number of frames": 52
     },
-    "guardian": {
-      "atk": 856,
-      "def max": 1301,
-      "def min": 1183,
-      "hp": 3256,
-      "rec max": 1105,
-      "rec min": 987
-    },
-    "oracle": {
-      "atk": 856,
-      "def max": 1124,
-      "def min": 1006,
-      "hp": 3256,
-      "rec max": 1341,
-      "rec min": 1223
+    "move": {
+      "total number of frames": 52
     }
   },
-  "leader_skill": {
-    "desc": "Boost in Karma produced during Spark",
-    "effects": [
-      {
-        "karma drop% for spark": 50,
-        "passive id": "31"
-      }
+  "category": 30080,
+  "cost": "8",
+  "damage frames": {
+    "frame times": [
+      58,
+      63,
+      68,
+      73,
+      78,
+      90
     ],
-    "id": "1701",
-    "name": "Soul Flash"
+    "hit dmg% distribution": [
+      20,
+      20,
+      20,
+      10,
+      10,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 6
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "earth",
+  "exp_pattern": 15,
+  "gender": "other",
+  "getting type": "farmable",
+  "guide_id": 360,
+  "imp": {
+    "max atk": "120",
+    "max def": "200",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "796~890",
+  "movement": {
+    "attack": {
+      "move speed": 8,
+      "move speed type": "1",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 8,
+      "move speed type": "1",
+      "move type": "3"
+    }
+  },
+  "name": "Xipe Totec",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Xipe Totec",
+  "maxlv": "60",
+  "no": "360",
   "unitDisplayHomePosition_1W9CxaFK": "324,151,200,544",
   "unitDisplayDetailPosition_6z54rgb3": "-11,90,877,738",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "73,260,450,373,0",
@@ -305,5 +308,81 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "57:240:1,57:600220:1,80:690:1,80:680:1"
+  "effectFrames": "57:240:1,57:600220:1,80:690:1,80:680:1",
+  "evofrom": "30082",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "15",
+  "animation_attack": "144",
+  "animation_idle": "52",
+  "animation_move": "52",
+  "movespeed_attack": "8",
+  "movespeed_skill": "8",
+  "speedtype_attack": "1",
+  "speedtype_skill": "1",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "58, 63, 68, 73, 78, 90",
+  "normal_distribute": "20, 20, 20, 10, 10, 20",
+  "normal_totaldistr": "100",
+  "bb_frames": "58, 66, 72, 80, 88, 94, 102",
+  "bb_distribute": "20, 20, 20, 10, 10, 10, 10",
+  "bb_totaldistr": "100",
+  "description": "A tree monster that's over 1000 years old. It's said that a Xipe Totec is the evolved form of an Ent that, longing for so long to become stronger, sprouted a Dryad-like decoy from its trunk in hopes of using it to get more nourishment. They're greatly feared by humans whom it would lure in with its decoy and devour them when they got close, and since it's now known that this helps the tree renew itself it is sometimes also referred to as the \"Tree of Rebirth.\"",
+  "summon": "Get over here...<br>Hmph, what kind of <br>Summoner are you?",
+  "fusion": "I accept this power from you.<br>I will make good use of it.",
+  "evolution": "Still not enough.<br>More, I need more!",
+  "hp_base": "1917",
+  "atk_base": "557",
+  "def_base": "816",
+  "rec_base": "920",
+  "hp_lord": "3256",
+  "atk_lord": "856",
+  "def_lord": "1124",
+  "rec_lord": "1105",
+  "hp_anima": "3699",
+  "rec_anima": "987",
+  "atk_breaker": "974",
+  "def_breaker": "1006",
+  "atk_guardian": "738",
+  "def_guardian": "1242",
+  "rec_guardian": "1046",
+  "def_oracle": "1065",
+  "hp_oracle": "3079",
+  "rec_oracle": "1282",
+  "hp_bonus": "400",
+  "atk_bonus": "120",
+  "def_bonus": "200",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "6",
+  "normaldc": "12",
+  "ls": "Soul Flash",
+  "lsdescription": "Boost in Karma produced during Spark",
+  "lsnote": "50% boost",
+  "lstype": "Karma",
+  "bbdescription": "7 combo powerful Earth attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "7",
+  "bbaoe": "A",
+  "bbgauge": "20",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "",
+  "evomats2": "",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": ""
 }

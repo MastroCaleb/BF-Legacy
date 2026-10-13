@@ -1,58 +1,63 @@
 {
   "id": "40523",
-  "unitName": "Dragoon Elder Bargus",
-  "no": "824",
-  "element": "Thunder",
-  "rarity": "★★★★",
-  "cost": "13",
-  "maxlv": "60",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "133",
-  "animation_idle": "52",
-  "animation_move": "5",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "13, 45, 49, 84, 88",
-  "normal_distribute": "20, 35, 15, 20, 10",
-  "normal_totaldistr": "100",
-  "description": "A dragoon from the Sama Kingdom that lived when the nation was just emerging. Bargus was still very young when he joined the Sama Army, but he became known for his great efforts to better himself. He is best known for his involvement in the establishment of a flying dragon squad, where he came to be highly respected. Amongst the Sama Dragoons Bargus was the only one capable of riding a water dragon, a special skill that legend has it was only possible through his ability of understanding the mind and heart of dragons.",
-  "summon": "I'm Bargus, the Dragoon Elder.<br>I leave my soul in your hands.<br>Don't use it in vain.",
-  "fusion": "Well done.<br>Train with me next time as well.",
-  "evolution": "",
-  "hp_base": "3132",
-  "atk_base": "1052",
-  "def_base": "1142",
-  "rec_base": "843",
-  "hp_lord": "4475",
-  "atk_lord": "1403",
-  "def_lord": "1523",
-  "rec_lord": "1124",
-  "hp_anima": "4917",
-  "rec_anima": "1006",
-  "atk_breaker": "1521",
-  "def_breaker": "1405",
-  "atk_guardian": "1285",
-  "def_guardian": "1641",
-  "rec_guardian": "1065",
-  "def_oracle": "1464",
-  "hp_oracle": "4298",
-  "rec_oracle": "1301",
-  "hp_bonus": "400",
-  "atk_bonus": "120",
-  "def_bonus": "200",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "5",
-  "normaldc": "10",
-  "ls": "Monarch's Protection",
-  "lsdescription": "15% boost to Def for all Units",
-  "lstype": "Defense",
+  "stats": {
+    "_base": {
+      "atk": 1052,
+      "def": 1142,
+      "hp": 3132,
+      "rec": 843
+    },
+    "_lord": {
+      "atk": 1403,
+      "def": 1523,
+      "hp": 4475,
+      "rec": 1124
+    },
+    "anima": {
+      "atk": 1403,
+      "def": 1523,
+      "hp max": 5065,
+      "hp min": 4770,
+      "rec max": 1065,
+      "rec min": 947
+    },
+    "breaker": {
+      "atk max": 1580,
+      "atk min": 1462,
+      "def max": 1464,
+      "def min": 1346,
+      "hp": 4475,
+      "rec": 1124
+    },
+    "guardian": {
+      "atk": 1403,
+      "def max": 1700,
+      "def min": 1582,
+      "hp": 4475,
+      "rec max": 1124,
+      "rec min": 1006
+    },
+    "oracle": {
+      "atk": 1403,
+      "def max": 1523,
+      "def min": 1405,
+      "hp": 4475,
+      "rec max": 1360,
+      "rec min": 1242
+    }
+  },
+  "leader_skill": {
+    "desc": "15% boost to Def for all Units",
+    "effects": [
+      {
+        "def% buff": 15,
+        "passive id": "1"
+      }
+    ],
+    "id": "8101",
+    "name": "Monarch's Protection"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -307,92 +312,91 @@
     ],
     "name": "Roaring Voltage"
   },
-  "bbdescription": "Reduces damage taken for 1 turn & greatly boosts Def for 3 turns",
-  "bbnote": "25% damage reduction, 100% boost to Def",
-  "bbtype": "Support",
-  "bbhits": "0",
-  "bbaoe": "0",
-  "bbgauge": "17",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "40524",
-  "evomats1": "40133",
-  "evomats2": "40191",
-  "evomats3": "40191",
-  "evomats4": "40132",
-  "evomats5": "60144",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 1052,
-      "def": 1142,
-      "hp": 3132,
-      "rec": 843
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1403,
-      "def": 1523,
-      "hp": 4475,
-      "rec": 1124
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1403,
-      "def": 1523,
-      "hp max": 5065,
-      "hp min": 4770,
-      "rec max": 1065,
-      "rec min": 947
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 133
     },
-    "breaker": {
-      "atk max": 1580,
-      "atk min": 1462,
-      "def max": 1464,
-      "def min": 1346,
-      "hp": 4475,
-      "rec": 1124
+    "idle": {
+      "total number of frames": 52
     },
-    "guardian": {
-      "atk": 1403,
-      "def max": 1700,
-      "def min": 1582,
-      "hp": 4475,
-      "rec max": 1124,
-      "rec min": 1006
-    },
-    "oracle": {
-      "atk": 1403,
-      "def max": 1523,
-      "def min": 1405,
-      "hp": 4475,
-      "rec max": 1360,
-      "rec min": 1242
+    "move": {
+      "total number of frames": 5
     }
   },
-  "leader_skill": {
-    "desc": "15% boost to Def for all Units",
-    "effects": [
-      {
-        "def% buff": 15,
-        "passive id": "1"
-      }
+  "category": 40520,
+  "cost": "13",
+  "damage frames": {
+    "frame times": [
+      13,
+      45,
+      49,
+      84,
+      88
     ],
-    "id": "8101",
-    "name": "Monarch's Protection"
+    "hit dmg% distribution": [
+      20,
+      35,
+      15,
+      20,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 5
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "thunder",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 824,
+  "imp": {
+    "max atk": "120",
+    "max def": "200",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "1305~1459",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Dragoon Elder Bargus",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Dragoon Elder Bargus",
+  "maxlv": "60",
+  "no": "824",
   "unitDisplayHomePosition_1W9CxaFK": "540,220,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-230,-40,1187,833",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "157,355,319,277,0",
@@ -402,5 +406,99 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "7:130:1,39:124:1,43:124:1,78:400231:1,82:400231:1,84:400061:1,13:400132:1,13:400120:1"
+  "effectFrames": "7:130:1,39:124:1,43:124:1,78:400231:1,82:400231:1,84:400061:1,13:400132:1,13:400120:1",
+  "evofrom": "",
+  "evointo": "40524",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "40133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "40191",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "40132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "133",
+  "animation_idle": "52",
+  "animation_move": "5",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "13, 45, 49, 84, 88",
+  "normal_distribute": "20, 35, 15, 20, 10",
+  "normal_totaldistr": "100",
+  "description": "A dragoon from the Sama Kingdom that lived when the nation was just emerging. Bargus was still very young when he joined the Sama Army, but he became known for his great efforts to better himself. He is best known for his involvement in the establishment of a flying dragon squad, where he came to be highly respected. Amongst the Sama Dragoons Bargus was the only one capable of riding a water dragon, a special skill that legend has it was only possible through his ability of understanding the mind and heart of dragons.",
+  "summon": "I'm Bargus, the Dragoon Elder.<br>I leave my soul in your hands.<br>Don't use it in vain.",
+  "fusion": "Well done.<br>Train with me next time as well.",
+  "evolution": "",
+  "hp_base": "3132",
+  "atk_base": "1052",
+  "def_base": "1142",
+  "rec_base": "843",
+  "hp_lord": "4475",
+  "atk_lord": "1403",
+  "def_lord": "1523",
+  "rec_lord": "1124",
+  "hp_anima": "4917",
+  "rec_anima": "1006",
+  "atk_breaker": "1521",
+  "def_breaker": "1405",
+  "atk_guardian": "1285",
+  "def_guardian": "1641",
+  "rec_guardian": "1065",
+  "def_oracle": "1464",
+  "hp_oracle": "4298",
+  "rec_oracle": "1301",
+  "hp_bonus": "400",
+  "atk_bonus": "120",
+  "def_bonus": "200",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "5",
+  "normaldc": "10",
+  "ls": "Monarch's Protection",
+  "lsdescription": "15% boost to Def for all Units",
+  "lstype": "Defense",
+  "bbdescription": "Reduces damage taken for 1 turn & greatly boosts Def for 3 turns",
+  "bbnote": "25% damage reduction, 100% boost to Def",
+  "bbtype": "Support",
+  "bbhits": "0",
+  "bbaoe": "0",
+  "bbgauge": "17",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "40133",
+  "evomats2": "40191",
+  "evomats3": "40191",
+  "evomats4": "40132",
+  "evomats5": "60144"
 }

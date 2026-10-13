@@ -1,68 +1,107 @@
 {
   "id": "51187",
-  "unitName": "Graceful Angel Linasera",
-  "no": "1618",
-  "element": "Light",
-  "rarity": "Omni",
-  "cost": "50",
-  "maxlv": "150",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "285",
-  "animation_idle": "82",
-  "animation_move": "15",
-  "movespeed_attack": "0.0041",
-  "movespeed_skill": "0.0041",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "89, 97, 106, 114, 150, 154, 158, 162, 166, 170",
-  "normal_distribute": "4, 3, 3, 3, 36, 13, 11, 10, 9, 8",
-  "normal_totaldistr": "100",
-  "bb_frames": "89, 98, 107, 116, 125, 150, 153, 157, 162, 167, 172, 177, 182, 187, 192",
-  "bb_distribute": "4, 3, 3, 3, 3, 26, 13, 10, 9, 7, 5, 4, 4, 3, 3",
-  "bb_totaldistr": "100",
-  "sbb_frames": "89, 94, 99, 104, 109, 114, 119, 124, 150, 153, 156, 159, 163, 167, 171, 175, 179, 183, 187, 191",
-  "sbb_distribute": "4, 3, 3, 3, 3, 3, 3, 3, 19, 11, 9, 7, 6, 4, 4, 3, 3, 3, 3, 3",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "89, 94, 99, 104, 109, 114, 119, 124, 150, 153, 156, 159, 162, 165, 168, 171, 174, 177, 180, 183, 186, 189, 192",
-  "ubb_distribute": "4, 3, 3, 3, 3, 3, 3, 3, 16, 9, 7, 6, 5, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "1",
-  "ubb_effectdelay": "1",
-  "description": "Many contend that Linasera was absent from the battle between the brother gods due to orders from her master. Given her pure, unwavering devotion to her master, he may well have known that she would unfailingly work toward his resurrection. However, it is also undeniable that Linasera could have been of great aid to the younger god had she participated in the battle. Indeed, the battle between the brothers could have split Grand Gaia in two and raged on until the present day had she taken part.",
-  "summon": "I serve a magnificent, worthy master, and know when my power will be needed. I cannot ask for anything more.",
-  "fusion": "If you say you will work with me, am I correct in assuming that it means you have realized his grandeur, as well?",
-  "evolution": "I am completely devoted to my master. I do not care if it costs me my life, so long as my master lives!",
-  "hp_base": "6367",
-  "atk_base": "2202",
-  "def_base": "2480",
-  "rec_base": "2644",
-  "hp_lord": "8305",
-  "atk_lord": "2758",
-  "def_lord": "3106",
-  "rec_lord": "3331",
-  "hp_anima": "9422",
-  "rec_anima": "3033",
-  "atk_breaker": "3056",
-  "def_breaker": "2808",
-  "def_guardian": "3404",
-  "rec_guardian": "3182",
-  "def_oracle": "2957",
-  "rec_oracle": "3778",
-  "hp_bonus": "1250",
-  "atk_bonus": "460",
-  "def_bonus": "460",
-  "rec_bonus": "820",
-  "lordonly": "",
-  "combo_hits": "10",
-  "normaldc": "50",
-  "ls": "Wings of Resurrection",
-  "lsdescription": "60% boost to Def, Rec, max HP, considerably restores HP each turn, Spark damage reduction & damage taken may restore HP",
-  "lsnote": "Heals 1000-1200 + 10% Rec, 25% reduction & 25% chance to heal 25% DMG",
+  "stats": {
+    "_base": {
+      "atk": 2202,
+      "def": 2480,
+      "hp": 6367,
+      "rec": 2644
+    },
+    "_lord": {
+      "atk": 2758,
+      "def": 3106,
+      "hp": 8305,
+      "rec": 3331
+    },
+    "anima": {
+      "atk": 2758,
+      "def": 3106,
+      "hp max": 9795,
+      "hp min": 9050,
+      "rec max": 3182,
+      "rec min": 2884
+    },
+    "breaker": {
+      "atk max": 3205,
+      "atk min": 2907,
+      "def max": 2957,
+      "def min": 2659,
+      "hp": 8305,
+      "rec": 3331
+    },
+    "guardian": {
+      "atk": 2758,
+      "def max": 3553,
+      "def min": 3255,
+      "hp": 8305,
+      "rec max": 3331,
+      "rec min": 3033
+    },
+    "oracle": {
+      "atk": 2758,
+      "def max": 3106,
+      "def min": 2808,
+      "hp": 8305,
+      "rec max": 3927,
+      "rec min": 3629
+    }
+  },
+  "leader_skill": {
+    "desc": "60% boost to Def, Rec, max HP, considerably restores HP each turn, Spark damage reduction & damage taken may restore HP",
+    "effects": [
+      {
+        "def% buff": 60,
+        "hp% buff": 60,
+        "passive id": "1",
+        "rec% buff": 60
+      },
+      {
+        "dmg% to hp% when attacked chance%": 25,
+        "dmg% to hp% when attacked high": 25,
+        "dmg% to hp% when attacked low": 25,
+        "passive id": "24"
+      },
+      {
+        "passive id": "33",
+        "rec% added (turn heal)": 10.0,
+        "turn heal high": 1200,
+        "turn heal low": 1000
+      },
+      {
+        "base spark dmg% resist": 25,
+        "buff spark dmg% resist": 25,
+        "passive id": "77"
+      }
+    ],
+    "id": "12513",
+    "name": "Wings of Resurrection"
+  },
+  "extra_skill": {
+    "desc": "Probable resistance against 1 KO attack & damage taken may restore HP",
+    "effects": [
+      {
+        "angel idol chance% condition": 0,
+        "angel idol recover chance% high": 60,
+        "angel idol recover chance% low": 60,
+        "angel idol recover counts": 1,
+        "conditions": [],
+        "passive id": "69",
+        "passive target": "self"
+      },
+      {
+        "conditions": [],
+        "dmg% to hp% when attacked chance%": 25,
+        "dmg% to hp% when attacked high": 25,
+        "dmg% to hp% when attacked low": 20,
+        "passive id": "24",
+        "passive target": "self"
+      }
+    ],
+    "id": "34800",
+    "name": "Eternal Loyalty",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -671,14 +710,6 @@
     ],
     "name": "Rainbow of Blessings"
   },
-  "bbdescription": "15 combo powerful Light attack on all foes, adds low probability of resistance against 1 KO attack, greatly restores HP & damage taken may slightly restore HP and considerably boost BB gauge for 3 turns",
-  "bbnote": "10% chance to survive 1 KO attack, heals 4000-4500 + 40% of own Rec, 20% chance to heal 20-25% damage & fills 4-7 BC",
-  "bbtype": "Heal/Offense",
-  "bbhits": "15",
-  "bbaoe": "A",
-  "bbgauge": "30",
-  "bbdc": "15",
-  "bbmultiplier": "420",
   "sbb": {
     "damage frames": [
       {
@@ -1307,14 +1338,6 @@
     ],
     "name": "Glorious Vitae"
   },
-  "sbbdescription": "20 combo powerful Light attack on all foes, adds low probability of resistance against 1 KO attack, greatly restores HP, greatly restores HP for 3 turns & negates critical and elemental damage for 2 turns",
-  "sbbnote": "10% chance to survive 1 KO attack, heals 4000-4500 + 40% of own Rec instantly & heals 3000-3500 + 15% Rec per turn",
-  "sbbtype": "Heal/Offense",
-  "sbbhits": "20",
-  "sbbaoe": "A",
-  "sbbgauge": "29",
-  "sbbdc": "20",
-  "sbbmultiplier": "620",
   "ubb": {
     "damage frames": [
       {
@@ -1485,6 +1508,190 @@
     ],
     "name": "Meir of Devotion"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 285
+    },
+    "idle": {
+      "total number of frames": 82
+    },
+    "move": {
+      "total number of frames": 15
+    }
+  },
+  "category": 51180,
+  "cost": "50",
+  "damage frames": {
+    "frame times": [
+      89,
+      97,
+      106,
+      114,
+      150,
+      154,
+      158,
+      162,
+      166,
+      170
+    ],
+    "hit dmg% distribution": [
+      4,
+      3,
+      3,
+      3,
+      36,
+      13,
+      11,
+      10,
+      9,
+      8
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 10
+  },
+  "drop check count": 5,
+  "element": "light",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 1618,
+  "imp": {
+    "max atk": "460",
+    "max def": "460",
+    "max hp": "1250",
+    "max rec": "820"
+  },
+  "kind": "normal",
+  "lord damage range": "2568~2868",
+  "movement": {
+    "attack": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    }
+  },
+  "name": "Graceful Angel Linasera",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "8",
+  "sell caution": false,
+  "unitName": "Graceful Angel Linasera",
+  "maxlv": "150",
+  "no": "1618",
+  "unitDisplayHomePosition_1W9CxaFK": "613,415,174,475",
+  "unitDisplayDetailPosition_6z54rgb3": "-264,-236,1456,1300",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "-36,37,750,670,1",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-265,-483,1456,1300",
+  "unitDisplaySummonPosition_KC3Jk8Br": "-36,37,750,670,1",
+  "unitDisplayHpPosition_3BpHN6VD": "1,85",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "50000",
+  "sellCaution": false,
+  "effectFrames": "89:501332:1,148:201620:1,168:500795:1,169:500795:1,163:201308:1,163:201308:1,168:400963:1",
+  "evofrom": "51186",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "21",
+  "animation_attack": "285",
+  "animation_idle": "82",
+  "animation_move": "15",
+  "movespeed_attack": "0.0041",
+  "movespeed_skill": "0.0041",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "89, 97, 106, 114, 150, 154, 158, 162, 166, 170",
+  "normal_distribute": "4, 3, 3, 3, 36, 13, 11, 10, 9, 8",
+  "normal_totaldistr": "100",
+  "bb_frames": "89, 98, 107, 116, 125, 150, 153, 157, 162, 167, 172, 177, 182, 187, 192",
+  "bb_distribute": "4, 3, 3, 3, 3, 26, 13, 10, 9, 7, 5, 4, 4, 3, 3",
+  "bb_totaldistr": "100",
+  "sbb_frames": "89, 94, 99, 104, 109, 114, 119, 124, 150, 153, 156, 159, 163, 167, 171, 175, 179, 183, 187, 191",
+  "sbb_distribute": "4, 3, 3, 3, 3, 3, 3, 3, 19, 11, 9, 7, 6, 4, 4, 3, 3, 3, 3, 3",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "89, 94, 99, 104, 109, 114, 119, 124, 150, 153, 156, 159, 162, 165, 168, 171, 174, 177, 180, 183, 186, 189, 192",
+  "ubb_distribute": "4, 3, 3, 3, 3, 3, 3, 3, 16, 9, 7, 6, 5, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "1",
+  "ubb_effectdelay": "1",
+  "description": "Many contend that Linasera was absent from the battle between the brother gods due to orders from her master. Given her pure, unwavering devotion to her master, he may well have known that she would unfailingly work toward his resurrection. However, it is also undeniable that Linasera could have been of great aid to the younger god had she participated in the battle. Indeed, the battle between the brothers could have split Grand Gaia in two and raged on until the present day had she taken part.",
+  "summon": "I serve a magnificent, worthy master, and know when my power will be needed. I cannot ask for anything more.",
+  "fusion": "If you say you will work with me, am I correct in assuming that it means you have realized his grandeur, as well?",
+  "evolution": "I am completely devoted to my master. I do not care if it costs me my life, so long as my master lives!",
+  "hp_base": "6367",
+  "atk_base": "2202",
+  "def_base": "2480",
+  "rec_base": "2644",
+  "hp_lord": "8305",
+  "atk_lord": "2758",
+  "def_lord": "3106",
+  "rec_lord": "3331",
+  "hp_anima": "9422",
+  "rec_anima": "3033",
+  "atk_breaker": "3056",
+  "def_breaker": "2808",
+  "def_guardian": "3404",
+  "rec_guardian": "3182",
+  "def_oracle": "2957",
+  "rec_oracle": "3778",
+  "hp_bonus": "1250",
+  "atk_bonus": "460",
+  "def_bonus": "460",
+  "rec_bonus": "820",
+  "lordonly": "",
+  "combo_hits": "10",
+  "normaldc": "50",
+  "ls": "Wings of Resurrection",
+  "lsdescription": "60% boost to Def, Rec, max HP, considerably restores HP each turn, Spark damage reduction & damage taken may restore HP",
+  "lsnote": "Heals 1000-1200 + 10% Rec, 25% reduction & 25% chance to heal 25% DMG",
+  "bbdescription": "15 combo powerful Light attack on all foes, adds low probability of resistance against 1 KO attack, greatly restores HP & damage taken may slightly restore HP and considerably boost BB gauge for 3 turns",
+  "bbnote": "10% chance to survive 1 KO attack, heals 4000-4500 + 40% of own Rec, 20% chance to heal 20-25% damage & fills 4-7 BC",
+  "bbtype": "Heal/Offense",
+  "bbhits": "15",
+  "bbaoe": "A",
+  "bbgauge": "30",
+  "bbdc": "15",
+  "bbmultiplier": "420",
+  "sbbdescription": "20 combo powerful Light attack on all foes, adds low probability of resistance against 1 KO attack, greatly restores HP, greatly restores HP for 3 turns & negates critical and elemental damage for 2 turns",
+  "sbbnote": "10% chance to survive 1 KO attack, heals 4000-4500 + 40% of own Rec instantly & heals 3000-3500 + 15% Rec per turn",
+  "sbbtype": "Heal/Offense",
+  "sbbhits": "20",
+  "sbbaoe": "A",
+  "sbbgauge": "29",
+  "sbbdc": "20",
+  "sbbmultiplier": "620",
   "ubbdescription": "23 combo massive Light attack on all foes, probable restoration of allies from KO status, damage taken enormously restores HP for 3 turns, negates critical and elemental damage for 3 turns & enormous damage reduction from all types for 2 turns",
   "ubbnote": "50% chance to revive with 50% HP, restores 100% damage taken & 100% all element mitigation",
   "ubbtype": "Heal/Offense",
@@ -1497,8 +1704,6 @@
   "esitem": "",
   "esdescription": "Probable resistance against 1 KO attack & damage taken may restore HP",
   "esnote": "60% chance to survive 1 KO attack & 25% chance to heal 20-25% DMG",
-  "evofrom": "51186",
-  "evointo": "",
   "evomats1": "",
   "evomats2": "",
   "evomats3": "",
@@ -1507,118 +1712,5 @@
   "evomats6": "",
   "evomats7": "",
   "evomats8": "",
-  "evoitem": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 2202,
-      "def": 2480,
-      "hp": 6367,
-      "rec": 2644
-    },
-    "_lord": {
-      "atk": 2758,
-      "def": 3106,
-      "hp": 8305,
-      "rec": 3331
-    },
-    "anima": {
-      "atk": 2758,
-      "def": 3106,
-      "hp max": 9795,
-      "hp min": 9050,
-      "rec max": 3182,
-      "rec min": 2884
-    },
-    "breaker": {
-      "atk max": 3205,
-      "atk min": 2907,
-      "def max": 2957,
-      "def min": 2659,
-      "hp": 8305,
-      "rec": 3331
-    },
-    "guardian": {
-      "atk": 2758,
-      "def max": 3553,
-      "def min": 3255,
-      "hp": 8305,
-      "rec max": 3331,
-      "rec min": 3033
-    },
-    "oracle": {
-      "atk": 2758,
-      "def max": 3106,
-      "def min": 2808,
-      "hp": 8305,
-      "rec max": 3927,
-      "rec min": 3629
-    }
-  },
-  "leader_skill": {
-    "desc": "60% boost to Def, Rec, max HP, considerably restores HP each turn, Spark damage reduction & damage taken may restore HP",
-    "effects": [
-      {
-        "def% buff": 60,
-        "hp% buff": 60,
-        "passive id": "1",
-        "rec% buff": 60
-      },
-      {
-        "dmg% to hp% when attacked chance%": 25,
-        "dmg% to hp% when attacked high": 25,
-        "dmg% to hp% when attacked low": 25,
-        "passive id": "24"
-      },
-      {
-        "passive id": "33",
-        "rec% added (turn heal)": 10.0,
-        "turn heal high": 1200,
-        "turn heal low": 1000
-      },
-      {
-        "base spark dmg% resist": 25,
-        "buff spark dmg% resist": 25,
-        "passive id": "77"
-      }
-    ],
-    "id": "12513",
-    "name": "Wings of Resurrection"
-  },
-  "extra_skill": {
-    "desc": "Probable resistance against 1 KO attack & damage taken may restore HP",
-    "effects": [
-      {
-        "angel idol chance% condition": 0,
-        "angel idol recover chance% high": 60,
-        "angel idol recover chance% low": 60,
-        "angel idol recover counts": 1,
-        "conditions": [],
-        "passive id": "69",
-        "passive target": "self"
-      },
-      {
-        "conditions": [],
-        "dmg% to hp% when attacked chance%": 25,
-        "dmg% to hp% when attacked high": 25,
-        "dmg% to hp% when attacked low": 20,
-        "passive id": "24",
-        "passive target": "self"
-      }
-    ],
-    "id": "34800",
-    "name": "Eternal Loyalty",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "613,415,174,475",
-  "unitDisplayDetailPosition_6z54rgb3": "-264,-236,1456,1300",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "-36,37,750,670,1",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-265,-483,1456,1300",
-  "unitDisplaySummonPosition_KC3Jk8Br": "-36,37,750,670,1",
-  "unitDisplayHpPosition_3BpHN6VD": "1,85",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "50000",
-  "sellCaution": false,
-  "effectFrames": "89:501332:1,148:201620:1,168:500795:1,169:500795:1,163:201308:1,163:201308:1,168:400963:1"
+  "evoitem": ""
 }

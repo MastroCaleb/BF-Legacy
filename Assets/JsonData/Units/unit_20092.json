@@ -1,59 +1,63 @@
 {
   "id": "20092",
-  "unitName": "Undine",
-  "freetext": ":''For other uses, see Undine (disambiguation).''",
-  "no": "113",
-  "element": "Water",
-  "rarity": "★★★",
-  "cost": "5",
-  "maxlv": "40",
-  "basexp": "15",
-  "ai": "2",
-  "animation_attack": "189",
-  "animation_idle": "36",
-  "animation_move": "36",
-  "movespeed_attack": "8",
-  "movespeed_skill": "8",
-  "speedtype_attack": "1",
-  "speedtype_skill": "1",
-  "movetype_attack": "3",
-  "movetype_skill": "3",
-  "gender": "N",
-  "normal_frames": "56, 63, 70",
-  "normal_distribute": "33, 33, 34",
-  "normal_totaldistr": "100",
-  "description": "A beautiful, high-ranked water spirit that lives in lakes. A spirit born to defend her own lake, she won't move from the lake she's born in. However, if she falls in love, she may leave her lake and pledge to go with her lover. She has a fiery and loving personality, but since her appearance suddenly changes when betrayed, men fear meeting with her.",
-  "summon": "I am Undine.<br>Let's go together.<br>Leave the water magic to me!",
-  "fusion": "My power is increasing...<br>This feeling, it's got to be...",
-  "evolution": "",
-  "hp_base": "2030",
-  "atk_base": "490",
-  "def_base": "730",
-  "rec_base": "320",
-  "hp_lord": "3345",
-  "atk_lord": "642",
-  "def_lord": "964",
-  "rec_lord": "480",
-  "hp_anima": "3638",
-  "rec_anima": "402",
-  "atk_breaker": "720",
-  "def_breaker": "886",
-  "atk_guardian": "564",
-  "def_guardian": "1042",
-  "rec_guardian": "441",
-  "def_oracle": "925",
-  "hp_oracle": "3228",
-  "rec_oracle": "597",
-  "hp_bonus": "150",
-  "atk_bonus": "60",
-  "def_bonus": "60",
-  "rec_bonus": "300",
-  "lordonly": "",
-  "combo_hits": "3",
-  "normaldc": "6",
-  "ls": "Water's Protection",
-  "lsdescription": "10% reduction in damage from Water Types",
-  "lstype": "Defense",
+  "stats": {
+    "_base": {
+      "atk": 490,
+      "def": 730,
+      "hp": 2030,
+      "rec": 320
+    },
+    "_lord": {
+      "atk": 642,
+      "def": 964,
+      "hp": 3345,
+      "rec": 480
+    },
+    "anima": {
+      "atk": 642,
+      "def": 964,
+      "hp max": 3735,
+      "hp min": 3540,
+      "rec max": 441,
+      "rec min": 363
+    },
+    "breaker": {
+      "atk max": 759,
+      "atk min": 681,
+      "def max": 925,
+      "def min": 847,
+      "hp": 3345,
+      "rec": 480
+    },
+    "guardian": {
+      "atk": 642,
+      "def max": 1081,
+      "def min": 1003,
+      "hp": 3345,
+      "rec max": 480,
+      "rec min": 402
+    },
+    "oracle": {
+      "atk": 642,
+      "def max": 964,
+      "def min": 886,
+      "hp": 3345,
+      "rec max": 636,
+      "rec min": 558
+    }
+  },
+  "leader_skill": {
+    "desc": "10% reduction in damage from Water Types",
+    "effects": [
+      {
+        "passive id": "5",
+        "water resist%": 10
+      }
+    ],
+    "id": "502",
+    "name": "Water's Protection"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -226,93 +230,87 @@
     ],
     "name": "Prism Shower"
   },
-  "bbdescription": "Boost to all allies' DEF & Critical rate for 3 turns",
-  "bbnote": "35% boost to Def, 14% boost to critical hit rate",
-  "bbtype": "Support",
-  "bbhits": "0",
-  "bbaoe": "0",
-  "bbgauge": "17",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "20093",
-  "evomats1": "60143",
-  "evomats2": "20131",
-  "evomats3": "20131",
-  "evomats4": "20131",
-  "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "100000",
-  "stats": {
-    "_base": {
-      "atk": 490,
-      "def": 730,
-      "hp": 2030,
-      "rec": 320
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 642,
-      "def": 964,
-      "hp": 3345,
-      "rec": 480
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 642,
-      "def": 964,
-      "hp max": 3735,
-      "hp min": 3540,
-      "rec max": 441,
-      "rec min": 363
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 189
     },
-    "breaker": {
-      "atk max": 759,
-      "atk min": 681,
-      "def max": 925,
-      "def min": 847,
-      "hp": 3345,
-      "rec": 480
+    "idle": {
+      "total number of frames": 36
     },
-    "guardian": {
-      "atk": 642,
-      "def max": 1081,
-      "def min": 1003,
-      "hp": 3345,
-      "rec max": 480,
-      "rec min": 402
-    },
-    "oracle": {
-      "atk": 642,
-      "def max": 964,
-      "def min": 886,
-      "hp": 3345,
-      "rec max": 636,
-      "rec min": 558
+    "move": {
+      "total number of frames": 36
     }
   },
-  "leader_skill": {
-    "desc": "10% reduction in damage from Water Types",
-    "effects": [
-      {
-        "passive id": "5",
-        "water resist%": 10
-      }
+  "category": 20090,
+  "cost": "5",
+  "damage frames": {
+    "frame times": [
+      56,
+      63,
+      70
     ],
-    "id": "502",
-    "name": "Water's Protection"
+    "hit dmg% distribution": [
+      33,
+      33,
+      34
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 3
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "water",
+  "exp_pattern": 15,
+  "gender": "other",
+  "getting type": "rare summon",
+  "guide_id": 113,
+  "imp": {
+    "max atk": "60",
+    "max def": "60",
+    "max hp": "150",
+    "max rec": "300"
+  },
+  "kind": "normal",
+  "lord damage range": "597~667",
+  "movement": {
+    "attack": {
+      "move speed": 8,
+      "move speed type": "1",
+      "move type": "3"
+    },
+    "skill": {
+      "move speed": 8,
+      "move speed type": "1",
+      "move type": "3"
+    }
+  },
+  "name": "Undine",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "Undine",
+  "maxlv": "40",
+  "no": "113",
   "unitDisplayHomePosition_1W9CxaFK": "217,-57,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "157,231,666,482",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "163,392,333,241,0",
@@ -322,5 +320,91 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "1000",
   "sellCaution": false,
-  "effectFrames": "55:180:1"
+  "effectFrames": "55:180:1",
+  "evofrom": "",
+  "evointo": "20093",
+  "evozelcost": "100000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20131",
+      "count": 3
+    }
+  ],
+  "freetext": ":''For other uses, see Undine (disambiguation).''",
+  "basexp": "15",
+  "animation_attack": "189",
+  "animation_idle": "36",
+  "animation_move": "36",
+  "movespeed_attack": "8",
+  "movespeed_skill": "8",
+  "speedtype_attack": "1",
+  "speedtype_skill": "1",
+  "movetype_attack": "3",
+  "movetype_skill": "3",
+  "normal_frames": "56, 63, 70",
+  "normal_distribute": "33, 33, 34",
+  "normal_totaldistr": "100",
+  "description": "A beautiful, high-ranked water spirit that lives in lakes. A spirit born to defend her own lake, she won't move from the lake she's born in. However, if she falls in love, she may leave her lake and pledge to go with her lover. She has a fiery and loving personality, but since her appearance suddenly changes when betrayed, men fear meeting with her.",
+  "summon": "I am Undine.<br>Let's go together.<br>Leave the water magic to me!",
+  "fusion": "My power is increasing...<br>This feeling, it's got to be...",
+  "evolution": "",
+  "hp_base": "2030",
+  "atk_base": "490",
+  "def_base": "730",
+  "rec_base": "320",
+  "hp_lord": "3345",
+  "atk_lord": "642",
+  "def_lord": "964",
+  "rec_lord": "480",
+  "hp_anima": "3638",
+  "rec_anima": "402",
+  "atk_breaker": "720",
+  "def_breaker": "886",
+  "atk_guardian": "564",
+  "def_guardian": "1042",
+  "rec_guardian": "441",
+  "def_oracle": "925",
+  "hp_oracle": "3228",
+  "rec_oracle": "597",
+  "hp_bonus": "150",
+  "atk_bonus": "60",
+  "def_bonus": "60",
+  "rec_bonus": "300",
+  "lordonly": "",
+  "combo_hits": "3",
+  "normaldc": "6",
+  "ls": "Water's Protection",
+  "lsdescription": "10% reduction in damage from Water Types",
+  "lstype": "Defense",
+  "bbdescription": "Boost to all allies' DEF & Critical rate for 3 turns",
+  "bbnote": "35% boost to Def, 14% boost to critical hit rate",
+  "bbtype": "Support",
+  "bbhits": "0",
+  "bbaoe": "0",
+  "bbgauge": "17",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "60143",
+  "evomats2": "20131",
+  "evomats3": "20131",
+  "evomats4": "20131",
+  "evomats5": "",
+  "evoitem": ""
 }

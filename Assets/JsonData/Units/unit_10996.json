@@ -1,68 +1,99 @@
 {
   "id": "10996",
-  "unitName": "Crimson Fist Glenn",
-  "no": "1505",
-  "element": "Fire",
-  "rarity": "★★★★★★★",
-  "cost": "44",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "8",
-  "animation_attack": "207",
-  "animation_idle": "47",
-  "animation_move": "6",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "31, 47, 50, 81, 108, 114, 120, 126, 132",
-  "normal_distribute": "6, 8, 5, 8, 18, 16, 14, 13, 12",
-  "normal_totaldistr": "100",
-  "bb_frames": "31, 34, 47, 50, 53, 81, 84, 108, 112, 116, 120, 124, 128, 132",
-  "bb_distribute": "4, 3, 6, 5, 4, 5, 4, 15, 13, 11, 9, 8, 7, 6",
-  "bb_totaldistr": "100",
-  "sbb_frames": "31, 34, 37, 47, 50, 53, 56, 81, 84, 87, 108, 111, 114, 117, 120, 123, 126, 129",
-  "sbb_distribute": "3, 2, 2, 5, 4, 3, 3, 4, 3, 2, 13, 11, 10, 9, 8, 7, 6, 5",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "31, 34, 37, 47, 50, 53, 56, 81, 84, 87, 108, 111, 114, 117, 120, 123, 126, 129, 132, 135, 138",
-  "ubb_distribute": "3, 2, 2, 5, 4, 3, 3, 4, 3, 2, 11, 10, 9, 8, 7, 6, 5, 4, 3, 3, 3",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "1",
-  "ubb_effectdelay": "1",
-  "description": "An incredibly popular martial artist from Agni who fought in the Grand Gaia Arena in the land of Atharva long, long before the great war between gods and humanity. Known for fighting so ferociously he was said to light fires in viewers' hearts, he also led the strongest team in the Arena's history - the \"Zektasa.\" In the end, the Zektasa were defeated in an upset by a mysterious swordsman of unknown origins. Even then, his fans are said to have continued cheering him on as he fought alone and covered in injuries.",
-  "summon": "You need my fists?<br>If I get to fight someone tough, you can take me wherever you want!",
-  "fusion": "Your support gives me strength.<br>You can see the fire in my heart, can't you? That fire is your passion!",
-  "evolution": "",
-  "hp_base": "5068",
-  "atk_base": "2303",
-  "def_base": "1619",
-  "rec_base": "1676",
-  "hp_lord": "7241",
-  "atk_lord": "3116",
-  "def_lord": "2202",
-  "rec_lord": "2260",
-  "hp_anima": "8133",
-  "rec_anima": "2022",
-  "atk_breaker": "3354",
-  "def_breaker": "1964",
-  "def_guardian": "2440",
-  "rec_guardian": "2141",
-  "def_oracle": "2083",
-  "rec_oracle": "2617",
-  "hp_bonus": "1000",
-  "atk_bonus": "600",
-  "def_bonus": "300",
-  "rec_bonus": "400",
-  "lordonly": "",
-  "combo_hits": "9",
-  "normaldc": "36",
-  "ls": "Battle Roar",
-  "lsdescription": "30% boost to max HP, 120% boost to Atk, Def for first 3 turns & probable normal attack on all foes",
-  "lsnote": "25% chance for normal attack to hit all foes with -50% damage",
+  "stats": {
+    "_base": {
+      "atk": 2303,
+      "def": 1619,
+      "hp": 5068,
+      "rec": 1676
+    },
+    "_lord": {
+      "atk": 3116,
+      "def": 2202,
+      "hp": 7241,
+      "rec": 2260
+    },
+    "anima": {
+      "atk": 3116,
+      "def": 2202,
+      "hp max": 8431,
+      "hp min": 7836,
+      "rec max": 2141,
+      "rec min": 1903
+    },
+    "breaker": {
+      "atk max": 3473,
+      "atk min": 3235,
+      "def max": 2083,
+      "def min": 1845,
+      "hp": 7241,
+      "rec": 2260
+    },
+    "guardian": {
+      "atk": 3116,
+      "def max": 2559,
+      "def min": 2321,
+      "hp": 7241,
+      "rec max": 2260,
+      "rec min": 2022
+    },
+    "oracle": {
+      "atk": 3116,
+      "def max": 2202,
+      "def min": 1964,
+      "hp": 7241,
+      "rec max": 2736,
+      "rec min": 2498
+    }
+  },
+  "leader_skill": {
+    "desc": "30% boost to max HP, 120% boost to Atk, Def for first 3 turns & probable normal attack on all foes",
+    "effects": [
+      {
+        "first x turns": 3,
+        "first x turns atk% (1)": 120,
+        "first x turns def% (3)": 120,
+        "passive id": "21"
+      },
+      {
+        "hp% buff": 30,
+        "passive id": "1"
+      },
+      {
+        "aoe atk inc%": -50,
+        "chance to aoe": 25,
+        "passive id": "96"
+      }
+    ],
+    "id": "2515",
+    "name": "Battle Roar"
+  },
+  "extra_skill": {
+    "desc": "10% boost to all parameters & slightly boosts Atk relative to remaining HP",
+    "effects": [
+      {
+        "atk% buff": 10,
+        "conditions": [],
+        "def% buff": 10,
+        "hp% buff": 10,
+        "passive id": "1",
+        "passive target": "party",
+        "rec% buff": 10
+      },
+      {
+        "atk% base buff": 0,
+        "atk% extra buff based on hp": 30,
+        "buff proportional to hp": "remaining",
+        "conditions": [],
+        "passive id": "46",
+        "passive target": "self"
+      }
+    ],
+    "id": "26100",
+    "name": "Rousing Fighter",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -465,18 +496,6 @@
     ],
     "name": "Flame Stance"
   },
-  "bbdescription": "14 combo Fire attack on all foes, additional powerful damage at turn's end for 3 turns & enormously boosts critical hit rate for 3 turns",
-  "bbnote": "400% multiplier on turn's end damage, 60% boost to critical rate",
-  "bbtype": "Offense",
-  "bbhits": "14",
-  "bbaoe": "A",
-  "bbgauge": "18",
-  "bbdc": "14",
-  "bbmultiplier": "350",
-  "bbhits2": "",
-  "bbaoe2": "",
-  "bbdc2": "",
-  "bbmultiplier2": "",
   "sbb": {
     "damage frames": [
       {
@@ -999,19 +1018,6 @@
     ],
     "name": "Sanguine Fist"
   },
-  "sbbdescription": "18 combo powerful Fire attack on all foes (damage relative to remaining HP), additional powerful attack at turn's end for 3 turns, enormously boosts critical hit rate for 3 turns & boosts critical damage for 3 turns",
-  "sbbnote": "200% + 520% x current HP / max base HP, 60% boost to critical rate, 400% multiplier on turn's end damage, 50% boost to critical damage",
-  "sbbtype": "Offense",
-  "sbbhits": "18",
-  "sbbaoe": "A",
-  "sbbgauge": "29",
-  "sbbdc": "18",
-  "sbbmultiplier": "200",
-  "sbb_hpscale": "true",
-  "sbbhits2": "",
-  "sbbaoe2": "",
-  "sbbdc2": "",
-  "sbbmultiplier2": "",
   "ubb": {
     "damage frames": [
       {
@@ -1173,6 +1179,209 @@
     ],
     "name": "Victory Dance"
   },
+  "ai": "8",
+  "animations": {
+    "attack": {
+      "total number of frames": 207
+    },
+    "idle": {
+      "total number of frames": 47
+    },
+    "move": {
+      "total number of frames": 6
+    }
+  },
+  "category": 10990,
+  "cost": "44",
+  "damage frames": {
+    "frame times": [
+      31,
+      47,
+      50,
+      81,
+      108,
+      114,
+      120,
+      126,
+      132
+    ],
+    "hit dmg% distribution": [
+      6,
+      8,
+      5,
+      8,
+      18,
+      16,
+      14,
+      13,
+      12
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 9
+  },
+  "drop check count": 4,
+  "element": "fire",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 1505,
+  "imp": {
+    "max atk": "600",
+    "max def": "300",
+    "max hp": "1000",
+    "max rec": "400"
+  },
+  "kind": "normal",
+  "lord damage range": "2901~3240",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Crimson Fist Glenn",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Crimson Fist Glenn",
+  "maxlv": "120",
+  "no": "1505",
+  "unitDisplayHomePosition_1W9CxaFK": "489,303,174,475",
+  "unitDisplayDetailPosition_6z54rgb3": "-105,-73,970,889",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "25,141,528,484,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-77,-310,920,843",
+  "unitDisplaySummonPosition_KC3Jk8Br": "25,141,528,484,0",
+  "unitDisplayHpPosition_3BpHN6VD": "1,40",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "15000",
+  "sellCaution": false,
+  "effectFrames": "31:131:1,47:131:1,50:130:1,81:131:1,108:131:1,114:130:1,120:130:1,126:130:1,132:130:1,31:11254:1,47:11254:1,81:11254:1,107:11081:1,107:11032:1,110:11032:1,113:11032:1",
+  "evofrom": "",
+  "evointo": "10997",
+  "evozelcost": "3000000",
+  "evokarmacost": "1000000",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "10354",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10191",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "10132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "207",
+  "animation_idle": "47",
+  "animation_move": "6",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "31, 47, 50, 81, 108, 114, 120, 126, 132",
+  "normal_distribute": "6, 8, 5, 8, 18, 16, 14, 13, 12",
+  "normal_totaldistr": "100",
+  "bb_frames": "31, 34, 47, 50, 53, 81, 84, 108, 112, 116, 120, 124, 128, 132",
+  "bb_distribute": "4, 3, 6, 5, 4, 5, 4, 15, 13, 11, 9, 8, 7, 6",
+  "bb_totaldistr": "100",
+  "sbb_frames": "31, 34, 37, 47, 50, 53, 56, 81, 84, 87, 108, 111, 114, 117, 120, 123, 126, 129",
+  "sbb_distribute": "3, 2, 2, 5, 4, 3, 3, 4, 3, 2, 13, 11, 10, 9, 8, 7, 6, 5",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "31, 34, 37, 47, 50, 53, 56, 81, 84, 87, 108, 111, 114, 117, 120, 123, 126, 129, 132, 135, 138",
+  "ubb_distribute": "3, 2, 2, 5, 4, 3, 3, 4, 3, 2, 11, 10, 9, 8, 7, 6, 5, 4, 3, 3, 3",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "1",
+  "ubb_effectdelay": "1",
+  "description": "An incredibly popular martial artist from Agni who fought in the Grand Gaia Arena in the land of Atharva long, long before the great war between gods and humanity. Known for fighting so ferociously he was said to light fires in viewers' hearts, he also led the strongest team in the Arena's history - the \"Zektasa.\" In the end, the Zektasa were defeated in an upset by a mysterious swordsman of unknown origins. Even then, his fans are said to have continued cheering him on as he fought alone and covered in injuries.",
+  "summon": "You need my fists?<br>If I get to fight someone tough, you can take me wherever you want!",
+  "fusion": "Your support gives me strength.<br>You can see the fire in my heart, can't you? That fire is your passion!",
+  "evolution": "",
+  "hp_base": "5068",
+  "atk_base": "2303",
+  "def_base": "1619",
+  "rec_base": "1676",
+  "hp_lord": "7241",
+  "atk_lord": "3116",
+  "def_lord": "2202",
+  "rec_lord": "2260",
+  "hp_anima": "8133",
+  "rec_anima": "2022",
+  "atk_breaker": "3354",
+  "def_breaker": "1964",
+  "def_guardian": "2440",
+  "rec_guardian": "2141",
+  "def_oracle": "2083",
+  "rec_oracle": "2617",
+  "hp_bonus": "1000",
+  "atk_bonus": "600",
+  "def_bonus": "300",
+  "rec_bonus": "400",
+  "lordonly": "",
+  "combo_hits": "9",
+  "normaldc": "36",
+  "ls": "Battle Roar",
+  "lsdescription": "30% boost to max HP, 120% boost to Atk, Def for first 3 turns & probable normal attack on all foes",
+  "lsnote": "25% chance for normal attack to hit all foes with -50% damage",
+  "bbdescription": "14 combo Fire attack on all foes, additional powerful damage at turn's end for 3 turns & enormously boosts critical hit rate for 3 turns",
+  "bbnote": "400% multiplier on turn's end damage, 60% boost to critical rate",
+  "bbtype": "Offense",
+  "bbhits": "14",
+  "bbaoe": "A",
+  "bbgauge": "18",
+  "bbdc": "14",
+  "bbmultiplier": "350",
+  "bbhits2": "",
+  "bbaoe2": "",
+  "bbdc2": "",
+  "bbmultiplier2": "",
+  "sbbdescription": "18 combo powerful Fire attack on all foes (damage relative to remaining HP), additional powerful attack at turn's end for 3 turns, enormously boosts critical hit rate for 3 turns & boosts critical damage for 3 turns",
+  "sbbnote": "200% + 520% x current HP / max base HP, 60% boost to critical rate, 400% multiplier on turn's end damage, 50% boost to critical damage",
+  "sbbtype": "Offense",
+  "sbbhits": "18",
+  "sbbaoe": "A",
+  "sbbgauge": "29",
+  "sbbdc": "18",
+  "sbbmultiplier": "200",
+  "sbb_hpscale": "true",
+  "sbbhits2": "",
+  "sbbaoe2": "",
+  "sbbdc2": "",
+  "sbbmultiplier2": "",
   "ubbdescription": "21 combo massive Fire attack on all foes (damage relative to remaining HP), additional massive attack at turn's end for 3 turns, fills allies' BB gauge to max, enormously boosts Atk for 3 turns & enormously boosts Fire elemental damage for 3 turns",
   "ubbnote": "1200% + 800% x current HP / max base HP, 300% boost to Atk, 400% boost to Fire's elemental weakness damage, 1000% multiplier on turn's end damage",
   "ubbtype": "Offense",
@@ -1190,8 +1399,6 @@
   "esitem": "",
   "esdescription": "10% boost to all parameters & slightly boosts Atk relative to remaining HP",
   "esnote": "+0.3% boost to Atk per 1% HP remaining - 30% boost at max HP (parameter boost applies to all units in party)",
-  "evofrom": "",
-  "evointo": "10997",
   "evomats1": "Fire Mecha God",
   "evomats2": "Fire Mecha God",
   "evomats3": "Miracle Totem",
@@ -1202,110 +1409,5 @@
   "evomats8": "Metal Mimic",
   "evomats9": "",
   "evoitem": "",
-  "evoitem2": "",
-  "evozelcost": "3000000",
-  "stats": {
-    "_base": {
-      "atk": 2303,
-      "def": 1619,
-      "hp": 5068,
-      "rec": 1676
-    },
-    "_lord": {
-      "atk": 3116,
-      "def": 2202,
-      "hp": 7241,
-      "rec": 2260
-    },
-    "anima": {
-      "atk": 3116,
-      "def": 2202,
-      "hp max": 8431,
-      "hp min": 7836,
-      "rec max": 2141,
-      "rec min": 1903
-    },
-    "breaker": {
-      "atk max": 3473,
-      "atk min": 3235,
-      "def max": 2083,
-      "def min": 1845,
-      "hp": 7241,
-      "rec": 2260
-    },
-    "guardian": {
-      "atk": 3116,
-      "def max": 2559,
-      "def min": 2321,
-      "hp": 7241,
-      "rec max": 2260,
-      "rec min": 2022
-    },
-    "oracle": {
-      "atk": 3116,
-      "def max": 2202,
-      "def min": 1964,
-      "hp": 7241,
-      "rec max": 2736,
-      "rec min": 2498
-    }
-  },
-  "leader_skill": {
-    "desc": "30% boost to max HP, 120% boost to Atk, Def for first 3 turns & probable normal attack on all foes",
-    "effects": [
-      {
-        "first x turns": 3,
-        "first x turns atk% (1)": 120,
-        "first x turns def% (3)": 120,
-        "passive id": "21"
-      },
-      {
-        "hp% buff": 30,
-        "passive id": "1"
-      },
-      {
-        "aoe atk inc%": -50,
-        "chance to aoe": 25,
-        "passive id": "96"
-      }
-    ],
-    "id": "2515",
-    "name": "Battle Roar"
-  },
-  "extra_skill": {
-    "desc": "10% boost to all parameters & slightly boosts Atk relative to remaining HP",
-    "effects": [
-      {
-        "atk% buff": 10,
-        "conditions": [],
-        "def% buff": 10,
-        "hp% buff": 10,
-        "passive id": "1",
-        "passive target": "party",
-        "rec% buff": 10
-      },
-      {
-        "atk% base buff": 0,
-        "atk% extra buff based on hp": 30,
-        "buff proportional to hp": "remaining",
-        "conditions": [],
-        "passive id": "46",
-        "passive target": "self"
-      }
-    ],
-    "id": "26100",
-    "name": "Rousing Fighter",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "489,303,174,475",
-  "unitDisplayDetailPosition_6z54rgb3": "-105,-73,970,889",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "25,141,528,484,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-77,-310,920,843",
-  "unitDisplaySummonPosition_KC3Jk8Br": "25,141,528,484,0",
-  "unitDisplayHpPosition_3BpHN6VD": "1,40",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "15000",
-  "sellCaution": false,
-  "effectFrames": "31:131:1,47:131:1,50:130:1,81:131:1,108:131:1,114:130:1,120:130:1,126:130:1,132:130:1,31:11254:1,47:11254:1,81:11254:1,107:11081:1,107:11032:1,110:11032:1,113:11032:1"
+  "evoitem2": ""
 }

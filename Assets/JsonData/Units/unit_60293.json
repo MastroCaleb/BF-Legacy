@@ -1,61 +1,64 @@
 {
   "id": "60293",
-  "unitName": "Dual Blade Eru",
-  "no": "653",
-  "element": "Dark",
-  "rarity": "★★★★",
-  "cost": "12",
-  "maxlv": "60",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "3",
-  "animation_attack": "154",
-  "animation_idle": "76",
-  "animation_move": "52",
-  "movespeed_attack": "4",
-  "movespeed_skill": "4",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "2",
-  "movetype_skill": "2",
-  "normal_frames": "42, 46, 66, 70, 103, 107",
-  "normal_distribute": "20, 10, 20, 10, 30, 10",
-  "normal_totaldistr": "100",
-  "bb_frames": "42, 46, 66, 70, 103, 108, 113, 118",
-  "bb_distribute": "20, 8, 20, 8, 20, 8, 8, 8",
-  "bb_totaldistr": "100",
-  "description": "A soldier who led the civilians from the Bariura Empire during the last stages of the war with the gods in hopes of finding a new land. Known by everyone in the Bariura Empire, he sought to implement the same migratory movement of the neighboring countries within the empire. However, the nobility of the empire dismissed his idea, and branding him a coward, stripped him of his knighthood. Disappointed in his motherland, he led only a part of the empire in search of a new land with his beloved twin blades in hand.",
-  "summon": "Are you the one<br>who will bring peace to the people?<br>If so, I'll devote my dual blades to you!",
-  "fusion": "You're gonna make me stronger?<br>If it's for my people,<br>I'll gladly accept.",
-  "evolution": "",
-  "hp_base": "2859",
-  "atk_base": "1148",
-  "def_base": "900",
-  "rec_base": "900",
-  "hp_lord": "4112",
-  "atk_lord": "1531",
-  "def_lord": "1200",
-  "rec_lord": "1200",
-  "hp_anima": "4555",
-  "rec_anima": "1082",
-  "atk_breaker": "1649",
-  "def_breaker": "1082",
-  "atk_guardian": "1413",
-  "def_guardian": "1318",
-  "rec_guardian": "1141",
-  "def_oracle": "1141",
-  "hp_oracle": "3935",
-  "rec_oracle": "1377",
-  "hp_bonus": "400",
-  "atk_bonus": "160",
-  "def_bonus": "160",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "6",
-  "normaldc": "12",
-  "ls": "Power of Six",
-  "lsdescription": "50% boost to Atk power when 6 elements or more are present",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 1148,
+      "def": 900,
+      "hp": 2859,
+      "rec": 900
+    },
+    "_lord": {
+      "atk": 1531,
+      "def": 1200,
+      "hp": 4112,
+      "rec": 1200
+    },
+    "anima": {
+      "atk": 1531,
+      "def": 1200,
+      "hp max": 4702,
+      "hp min": 4407,
+      "rec max": 1141,
+      "rec min": 1023
+    },
+    "breaker": {
+      "atk max": 1708,
+      "atk min": 1590,
+      "def max": 1141,
+      "def min": 1023,
+      "hp": 4112,
+      "rec": 1200
+    },
+    "guardian": {
+      "atk": 1531,
+      "def max": 1377,
+      "def min": 1259,
+      "hp": 4112,
+      "rec max": 1200,
+      "rec min": 1082
+    },
+    "oracle": {
+      "atk": 1531,
+      "def max": 1200,
+      "def min": 1082,
+      "hp": 4112,
+      "rec max": 1436,
+      "rec min": 1318
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to Atk power when 6 elements or more are present",
+    "effects": [
+      {
+        "atk% buff": 50,
+        "passive id": "41",
+        "unique elements required": 6
+      }
+    ],
+    "id": "6000",
+    "name": "Power of Six"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -314,95 +317,99 @@
     ],
     "name": "Bloody Cross"
   },
-  "bbdescription": "8 combo Dark elemental attack on all enemies & boost to BC drop rate for 3 turns",
-  "bbnote": "15% boost",
-  "bbtype": "Support/Offense",
-  "bbhits": "8",
-  "bbaoe": "A",
-  "bbgauge": "26",
-  "bbdc": "8",
-  "bbmultiplier": "170",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "60294",
-  "evomats1": "60123",
-  "evomats2": "60201",
-  "evomats3": "60201",
-  "evomats4": "60122",
-  "evomats5": "60144",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 1148,
-      "def": 900,
-      "hp": 2859,
-      "rec": 900
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1531,
-      "def": 1200,
-      "hp": 4112,
-      "rec": 1200
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1531,
-      "def": 1200,
-      "hp max": 4702,
-      "hp min": 4407,
-      "rec max": 1141,
-      "rec min": 1023
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 1708,
-      "atk min": 1590,
-      "def max": 1141,
-      "def min": 1023,
-      "hp": 4112,
-      "rec": 1200
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 154
     },
-    "guardian": {
-      "atk": 1531,
-      "def max": 1377,
-      "def min": 1259,
-      "hp": 4112,
-      "rec max": 1200,
-      "rec min": 1082
+    "idle": {
+      "total number of frames": 76
     },
-    "oracle": {
-      "atk": 1531,
-      "def max": 1200,
-      "def min": 1082,
-      "hp": 4112,
-      "rec max": 1436,
-      "rec min": 1318
+    "move": {
+      "total number of frames": 52
     }
   },
-  "leader_skill": {
-    "desc": "50% boost to Atk power when 6 elements or more are present",
-    "effects": [
-      {
-        "atk% buff": 50,
-        "passive id": "41",
-        "unique elements required": 6
-      }
+  "category": 60290,
+  "cost": "12",
+  "damage frames": {
+    "frame times": [
+      42,
+      46,
+      66,
+      70,
+      103,
+      107
     ],
-    "id": "6000",
-    "name": "Power of Six"
+    "hit dmg% distribution": [
+      20,
+      10,
+      20,
+      10,
+      30,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 6
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "dark",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "farmable",
+  "guide_id": 653,
+  "imp": {
+    "max atk": "160",
+    "max def": "160",
+    "max hp": "400",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "1424~1592",
+  "movement": {
+    "attack": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "2"
+    },
+    "skill": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "2"
+    }
+  },
+  "name": "Dual Blade Eru",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Dual Blade Eru",
+  "maxlv": "60",
+  "no": "653",
   "unitDisplayHomePosition_1W9CxaFK": "200,-36,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "100,257,760,523",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "157,355,319,277,0",
@@ -412,5 +419,104 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "36:126:1,40:126:1,60:126:1,64:126:1,97:126:1,107:600211:1,101:126:1,42:100010:1,66:100010:1,103:100010:1"
+  "effectFrames": "36:126:1,40:126:1,60:126:1,64:126:1,97:126:1,107:600211:1,101:126:1,42:100010:1,66:100010:1,103:100010:1",
+  "evofrom": "",
+  "evointo": "60294",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "60123",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60201",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60122",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "154",
+  "animation_idle": "76",
+  "animation_move": "52",
+  "movespeed_attack": "4",
+  "movespeed_skill": "4",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "2",
+  "movetype_skill": "2",
+  "normal_frames": "42, 46, 66, 70, 103, 107",
+  "normal_distribute": "20, 10, 20, 10, 30, 10",
+  "normal_totaldistr": "100",
+  "bb_frames": "42, 46, 66, 70, 103, 108, 113, 118",
+  "bb_distribute": "20, 8, 20, 8, 20, 8, 8, 8",
+  "bb_totaldistr": "100",
+  "description": "A soldier who led the civilians from the Bariura Empire during the last stages of the war with the gods in hopes of finding a new land. Known by everyone in the Bariura Empire, he sought to implement the same migratory movement of the neighboring countries within the empire. However, the nobility of the empire dismissed his idea, and branding him a coward, stripped him of his knighthood. Disappointed in his motherland, he led only a part of the empire in search of a new land with his beloved twin blades in hand.",
+  "summon": "Are you the one<br>who will bring peace to the people?<br>If so, I'll devote my dual blades to you!",
+  "fusion": "You're gonna make me stronger?<br>If it's for my people,<br>I'll gladly accept.",
+  "evolution": "",
+  "hp_base": "2859",
+  "atk_base": "1148",
+  "def_base": "900",
+  "rec_base": "900",
+  "hp_lord": "4112",
+  "atk_lord": "1531",
+  "def_lord": "1200",
+  "rec_lord": "1200",
+  "hp_anima": "4555",
+  "rec_anima": "1082",
+  "atk_breaker": "1649",
+  "def_breaker": "1082",
+  "atk_guardian": "1413",
+  "def_guardian": "1318",
+  "rec_guardian": "1141",
+  "def_oracle": "1141",
+  "hp_oracle": "3935",
+  "rec_oracle": "1377",
+  "hp_bonus": "400",
+  "atk_bonus": "160",
+  "def_bonus": "160",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "6",
+  "normaldc": "12",
+  "ls": "Power of Six",
+  "lsdescription": "50% boost to Atk power when 6 elements or more are present",
+  "lstype": "Attack",
+  "bbdescription": "8 combo Dark elemental attack on all enemies & boost to BC drop rate for 3 turns",
+  "bbnote": "15% boost",
+  "bbtype": "Support/Offense",
+  "bbhits": "8",
+  "bbaoe": "A",
+  "bbgauge": "26",
+  "bbdc": "8",
+  "bbmultiplier": "170",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "60123",
+  "evomats2": "60201",
+  "evomats3": "60201",
+  "evomats4": "60122",
+  "evomats5": "60144"
 }

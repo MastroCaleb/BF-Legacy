@@ -1,63 +1,63 @@
 {
   "id": "60021",
-  "unitName": "Mifune",
-  "freetext": ":''For other uses, see Mifune (disambiguation)''",
-  "no": "40",
-  "element": "Dark",
-  "rarity": "★★",
-  "cost": "3",
-  "maxlv": "30",
-  "basexp": "15",
-  "gender": "M",
-  "ai": "3",
-  "animation_attack": "79",
-  "animation_idle": "52",
-  "animation_move": "31",
-  "movespeed_attack": "0.0015",
-  "movespeed_skill": "0.0015",
-  "speedtype_attack": "5",
-  "speedtype_skill": "5",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "25, 30",
-  "normal_distribute": "50, 50",
-  "normal_totaldistr": "100",
-  "bb_frames": "25, 30",
-  "bb_distribute": "50, 50",
-  "bb_totaldistr": "100",
-  "description": "An other-worldly samurai that appeared in the ruined Bariura Empire. Mifune's katana is different from other swords in Grand Gaia thanks to its superior slashing ability. It cuts amazingly well, and it's said that those cut by it die without feeling pain. There's a famous tale of him refusing an invitation from the emperor by saying, \"A fool will never be my master.\"",
-  "summon": "I admire your will.<br>I am Mifune.<br>I entrust my katana to you.",
-  "fusion": "I am in debt to you.<br>I will not allow my inexperience<br>to hinder you.",
-  "evolution": "",
-  "hp_base": "1000",
-  "atk_base": "650",
-  "def_base": "210",
-  "rec_base": "250",
-  "hp_lord": "1850",
-  "atk_lord": "1008",
-  "def_lord": "305",
-  "rec_lord": "400",
-  "hp_anima": "2068",
-  "rec_anima": "342",
-  "atk_breaker": "1066",
-  "def_breaker": "247",
-  "atk_guardian": "950",
-  "def_guardian": "363",
-  "rec_guardian": "371",
-  "def_oracle": "276",
-  "hp_oracle": "1763",
-  "rec_oracle": "487",
-  "hp_bonus": "100",
-  "atk_bonus": "280",
-  "def_bonus": "40",
-  "rec_bonus": "40",
-  "lordonly": "",
-  "combo_hits": "2",
-  "normaldc": "6",
-  "ls": "Intense Light",
-  "lsdescription": "Small boost in damage dealt during Spark",
-  "lsnote": "15% boost",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 650,
+      "def": 210,
+      "hp": 1000,
+      "rec": 250
+    },
+    "_lord": {
+      "atk": 1008,
+      "def": 305,
+      "hp": 1850,
+      "rec": 400
+    },
+    "anima": {
+      "atk": 1008,
+      "def": 305,
+      "hp max": 2140,
+      "hp min": 1995,
+      "rec max": 371,
+      "rec min": 313
+    },
+    "breaker": {
+      "atk max": 1095,
+      "atk min": 1037,
+      "def max": 276,
+      "def min": 218,
+      "hp": 1850,
+      "rec": 400
+    },
+    "guardian": {
+      "atk": 1008,
+      "def max": 392,
+      "def min": 334,
+      "hp": 1850,
+      "rec max": 400,
+      "rec min": 342
+    },
+    "oracle": {
+      "atk": 1008,
+      "def max": 305,
+      "def min": 247,
+      "hp": 1850,
+      "rec max": 516,
+      "rec min": 458
+    }
+  },
+  "leader_skill": {
+    "desc": "Small boost in damage dealt during Spark",
+    "effects": [
+      {
+        "damage% for spark": 15,
+        "passive id": "31"
+      }
+    ],
+    "id": "1300",
+    "name": "Intense Light"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -212,93 +212,91 @@
     ],
     "name": "Moonbeam"
   },
-  "bbdescription": "2 combo Dark elemental attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "2",
-  "bbaoe": "A",
-  "bbgauge": "15",
-  "bbdc": "2",
-  "bbmultiplier": "140",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "60022",
-  "evomats1": "60120",
-  "evomats2": "60120",
-  "evomats3": "60121",
-  "evomats4": "",
-  "evomats5": "",
-  "evozelcost": "50000",
-  "stats": {
-    "_base": {
-      "atk": 650,
-      "def": 210,
-      "hp": 1000,
-      "rec": 250
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1008,
-      "def": 305,
-      "hp": 1850,
-      "rec": 400
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1008,
-      "def": 305,
-      "hp max": 2140,
-      "hp min": 1995,
-      "rec max": 371,
-      "rec min": 313
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 1095,
-      "atk min": 1037,
-      "def max": 276,
-      "def min": 218,
-      "hp": 1850,
-      "rec": 400
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 79
     },
-    "guardian": {
-      "atk": 1008,
-      "def max": 392,
-      "def min": 334,
-      "hp": 1850,
-      "rec max": 400,
-      "rec min": 342
+    "idle": {
+      "total number of frames": 52
     },
-    "oracle": {
-      "atk": 1008,
-      "def max": 305,
-      "def min": 247,
-      "hp": 1850,
-      "rec max": 516,
-      "rec min": 458
+    "move": {
+      "total number of frames": 31
     }
   },
-  "leader_skill": {
-    "desc": "Small boost in damage dealt during Spark",
-    "effects": [
-      {
-        "damage% for spark": 15,
-        "passive id": "31"
-      }
+  "category": 60020,
+  "cost": "3",
+  "damage frames": {
+    "frame times": [
+      25,
+      30
     ],
-    "id": "1300",
-    "name": "Intense Light"
+    "hit dmg% distribution": [
+      50,
+      50
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 2
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "dark",
+  "exp_pattern": 15,
+  "gender": "male",
+  "getting type": "not eligible for achievement",
+  "guide_id": 40,
+  "imp": {
+    "max atk": "280",
+    "max def": "40",
+    "max hp": "100",
+    "max rec": "40"
+  },
+  "kind": "normal",
+  "lord damage range": "938~1048",
+  "movement": {
+    "attack": {
+      "move speed": 0.0015,
+      "move speed type": "5",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0015,
+      "move speed type": "5",
+      "move type": "1"
+    }
+  },
+  "name": "Mifune",
+  "rarity": "2",
+  "sell caution": false,
+  "unitName": "Mifune",
+  "maxlv": "30",
+  "no": "40",
   "unitDisplayHomePosition_1W9CxaFK": "107,-17,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "218,186,600,602",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "215,347,268,269,0",
@@ -308,5 +306,95 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "300",
   "sellCaution": false,
-  "effectFrames": "19:126:1,24:126:1"
+  "effectFrames": "19:126:1,24:126:1",
+  "evofrom": "",
+  "evointo": "60022",
+  "evozelcost": "50000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "60120",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60121",
+      "count": 1
+    }
+  ],
+  "freetext": ":''For other uses, see Mifune (disambiguation)''",
+  "basexp": "15",
+  "animation_attack": "79",
+  "animation_idle": "52",
+  "animation_move": "31",
+  "movespeed_attack": "0.0015",
+  "movespeed_skill": "0.0015",
+  "speedtype_attack": "5",
+  "speedtype_skill": "5",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "25, 30",
+  "normal_distribute": "50, 50",
+  "normal_totaldistr": "100",
+  "bb_frames": "25, 30",
+  "bb_distribute": "50, 50",
+  "bb_totaldistr": "100",
+  "description": "An other-worldly samurai that appeared in the ruined Bariura Empire. Mifune's katana is different from other swords in Grand Gaia thanks to its superior slashing ability. It cuts amazingly well, and it's said that those cut by it die without feeling pain. There's a famous tale of him refusing an invitation from the emperor by saying, \"A fool will never be my master.\"",
+  "summon": "I admire your will.<br>I am Mifune.<br>I entrust my katana to you.",
+  "fusion": "I am in debt to you.<br>I will not allow my inexperience<br>to hinder you.",
+  "evolution": "",
+  "hp_base": "1000",
+  "atk_base": "650",
+  "def_base": "210",
+  "rec_base": "250",
+  "hp_lord": "1850",
+  "atk_lord": "1008",
+  "def_lord": "305",
+  "rec_lord": "400",
+  "hp_anima": "2068",
+  "rec_anima": "342",
+  "atk_breaker": "1066",
+  "def_breaker": "247",
+  "atk_guardian": "950",
+  "def_guardian": "363",
+  "rec_guardian": "371",
+  "def_oracle": "276",
+  "hp_oracle": "1763",
+  "rec_oracle": "487",
+  "hp_bonus": "100",
+  "atk_bonus": "280",
+  "def_bonus": "40",
+  "rec_bonus": "40",
+  "lordonly": "",
+  "combo_hits": "2",
+  "normaldc": "6",
+  "ls": "Intense Light",
+  "lsdescription": "Small boost in damage dealt during Spark",
+  "lsnote": "15% boost",
+  "lstype": "Attack",
+  "bbdescription": "2 combo Dark elemental attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "2",
+  "bbaoe": "A",
+  "bbgauge": "15",
+  "bbdc": "2",
+  "bbmultiplier": "140",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "60120",
+  "evomats2": "60120",
+  "evomats3": "60121",
+  "evomats4": "",
+  "evomats5": ""
 }

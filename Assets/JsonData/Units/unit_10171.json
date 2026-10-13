@@ -1,61 +1,53 @@
 {
   "id": "10171",
-  "unitName": "Orc",
-  "no": "269",
-  "element": "Fire",
-  "rarity": "★★",
-  "cost": "3",
-  "maxlv": "30",
-  "basexp": "10",
-  "gender": "N",
-  "ai": "4",
-  "animation_attack": "82",
-  "animation_idle": "64",
-  "animation_move": "44",
-  "movespeed_attack": "0.005",
-  "movespeed_skill": "0.005",
-  "speedtype_attack": "1",
-  "speedtype_skill": "1",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "46",
-  "normal_distribute": "100",
-  "normal_totaldistr": "100",
-  "bb_frames": "46",
-  "bb_distribute": "100",
-  "bb_totaldistr": "100",
-  "description": "An upright-walking monster with a pig's head that inhabits areas where the fire element is strong. They're very skillful despite their appearance, and they have the ability to use the heat from the volcano to cast iron and make the metal clubs they carry. However, this ability seems limited, and it's said that no one has ever seen them make anything besides metal clubs. No one knows why they only make metal clubs, with the most plausible theory being that there was once a blacksmith who taught them how to make them and nothing else.",
-  "summon": "Hmph, you Summon person,<br>my power... different?",
-  "fusion": "Ho ho ho!!<br>Fusion, bwo ho ho!!",
-  "evolution": "",
-  "hp_base": "1300",
-  "atk_base": "550",
-  "def_base": "350",
-  "rec_base": "200",
-  "hp_lord": "2210",
-  "atk_lord": "770",
-  "def_lord": "455",
-  "rec_lord": "322",
-  "hp_anima": "2428",
-  "rec_anima": "264",
-  "atk_breaker": "828",
-  "def_breaker": "397",
-  "atk_guardian": "712",
-  "def_guardian": "513",
-  "rec_guardian": "293",
-  "def_oracle": "426",
-  "hp_oracle": "2123",
-  "rec_oracle": "409",
-  "hp_bonus": "250",
-  "atk_bonus": "100",
-  "def_bonus": "100",
-  "rec_bonus": "100",
-  "lordonly": "",
-  "combo_hits": "1",
-  "normaldc": "2",
-  "ls": "",
-  "lsdescription": "",
-  "lstype": "",
+  "stats": {
+    "_base": {
+      "atk": 550,
+      "def": 350,
+      "hp": 1300,
+      "rec": 200
+    },
+    "_lord": {
+      "atk": 770,
+      "def": 455,
+      "hp": 2210,
+      "rec": 322
+    },
+    "anima": {
+      "atk": 770,
+      "def": 455,
+      "hp max": 2500,
+      "hp min": 2355,
+      "rec max": 293,
+      "rec min": 235
+    },
+    "breaker": {
+      "atk max": 857,
+      "atk min": 799,
+      "def max": 426,
+      "def min": 368,
+      "hp": 2210,
+      "rec": 322
+    },
+    "guardian": {
+      "atk": 770,
+      "def max": 542,
+      "def min": 484,
+      "hp": 2210,
+      "rec max": 322,
+      "rec min": 264
+    },
+    "oracle": {
+      "atk": 770,
+      "def max": 455,
+      "def min": 397,
+      "hp": 2210,
+      "rec max": 438,
+      "rec min": 380
+    }
+  },
+  "leader_skill": {},
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -280,85 +272,95 @@
     ],
     "name": "Power Smash"
   },
-  "bbdescription": "Powerful Fire attack on single enemy & probable Injury effect",
-  "bbnote": "80% chance",
-  "bbtype": "Offense",
-  "bbhits": "1",
-  "bbaoe": "1",
-  "bbgauge": "12",
-  "bbdc": "3",
-  "bbmultiplier": "250",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "10172",
-  "evomats1": "10131",
-  "evomats2": "60142",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "50000",
-  "stats": {
-    "_base": {
-      "atk": 550,
-      "def": 350,
-      "hp": 1300,
-      "rec": 200
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_under",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 770,
-      "def": 455,
-      "hp": 2210,
-      "rec": 322
+    {
+      "action": "skill",
+      "chance%": 30.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 770,
-      "def": 455,
-      "hp max": 2500,
-      "hp min": 2355,
-      "rec max": 293,
-      "rec min": 235
+    {
+      "action": "attack",
+      "chance%": 70.0,
+      "target conditions": "hp_max",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 857,
-      "atk min": 799,
-      "def max": 426,
-      "def min": 368,
-      "hp": 2210,
-      "rec": 322
+    {
+      "action": "attack",
+      "chance%": 50.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "guardian": {
-      "atk": 770,
-      "def max": 542,
-      "def min": 484,
-      "hp": 2210,
-      "rec max": 322,
-      "rec min": 264
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 82
     },
-    "oracle": {
-      "atk": 770,
-      "def max": 455,
-      "def min": 397,
-      "hp": 2210,
-      "rec max": 438,
-      "rec min": 380
+    "idle": {
+      "total number of frames": 64
+    },
+    "move": {
+      "total number of frames": 44
     }
   },
-  "leader_skill": {},
-  "extra_skill": {},
+  "category": 10170,
+  "cost": "3",
+  "damage frames": {
+    "frame times": [
+      46
+    ],
+    "hit dmg% distribution": [
+      100
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 1
+  },
+  "drop check count": 2,
+  "element": "fire",
+  "exp_pattern": 10,
+  "gender": "other",
+  "getting type": "not eligible for achievement",
+  "guide_id": 269,
+  "imp": {
+    "max atk": "100",
+    "max def": "100",
+    "max hp": "250",
+    "max rec": "100"
+  },
+  "kind": "normal",
+  "lord damage range": "717~800",
+  "movement": {
+    "attack": {
+      "move speed": 0.005,
+      "move speed type": "1",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.005,
+      "move speed type": "1",
+      "move type": "1"
+    }
+  },
+  "name": "Orc",
+  "rarity": "2",
+  "sell caution": false,
+  "unitName": "Orc",
+  "maxlv": "30",
+  "no": "269",
   "unitDisplayHomePosition_1W9CxaFK": "255,-16,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "76,190,639,550",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "130,408,303,232,0",
@@ -368,5 +370,95 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "300",
   "sellCaution": false,
-  "effectFrames": "40:131:1"
+  "effectFrames": "40:131:1",
+  "evofrom": "",
+  "evointo": "10172",
+  "evozelcost": "50000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "10131",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60142",
+      "count": 1
+    }
+  ],
+  "basexp": "10",
+  "animation_attack": "82",
+  "animation_idle": "64",
+  "animation_move": "44",
+  "movespeed_attack": "0.005",
+  "movespeed_skill": "0.005",
+  "speedtype_attack": "1",
+  "speedtype_skill": "1",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "46",
+  "normal_distribute": "100",
+  "normal_totaldistr": "100",
+  "bb_frames": "46",
+  "bb_distribute": "100",
+  "bb_totaldistr": "100",
+  "description": "An upright-walking monster with a pig's head that inhabits areas where the fire element is strong. They're very skillful despite their appearance, and they have the ability to use the heat from the volcano to cast iron and make the metal clubs they carry. However, this ability seems limited, and it's said that no one has ever seen them make anything besides metal clubs. No one knows why they only make metal clubs, with the most plausible theory being that there was once a blacksmith who taught them how to make them and nothing else.",
+  "summon": "Hmph, you Summon person,<br>my power... different?",
+  "fusion": "Ho ho ho!!<br>Fusion, bwo ho ho!!",
+  "evolution": "",
+  "hp_base": "1300",
+  "atk_base": "550",
+  "def_base": "350",
+  "rec_base": "200",
+  "hp_lord": "2210",
+  "atk_lord": "770",
+  "def_lord": "455",
+  "rec_lord": "322",
+  "hp_anima": "2428",
+  "rec_anima": "264",
+  "atk_breaker": "828",
+  "def_breaker": "397",
+  "atk_guardian": "712",
+  "def_guardian": "513",
+  "rec_guardian": "293",
+  "def_oracle": "426",
+  "hp_oracle": "2123",
+  "rec_oracle": "409",
+  "hp_bonus": "250",
+  "atk_bonus": "100",
+  "def_bonus": "100",
+  "rec_bonus": "100",
+  "lordonly": "",
+  "combo_hits": "1",
+  "normaldc": "2",
+  "ls": "",
+  "lsdescription": "",
+  "lstype": "",
+  "bbdescription": "Powerful Fire attack on single enemy & probable Injury effect",
+  "bbnote": "80% chance",
+  "bbtype": "Offense",
+  "bbhits": "1",
+  "bbaoe": "1",
+  "bbgauge": "12",
+  "bbdc": "3",
+  "bbmultiplier": "250",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "10131",
+  "evomats2": "60142",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": "",
+  "evoitem": ""
 }

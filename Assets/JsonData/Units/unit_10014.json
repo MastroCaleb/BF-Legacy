@@ -1,61 +1,66 @@
 {
   "id": "10014",
-  "unitName": "Fire God Vargas",
-  "no": "4",
-  "element": "Fire",
-  "rarity": "★★★★★",
-  "cost": "10",
-  "maxlv": "80",
-  "basexp": "10",
-  "gender": "M",
-  "ai": "4",
-  "animation_attack": "128",
-  "animation_idle": "52",
-  "animation_move": "13",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "14, 36, 54, 72, 76, 80",
-  "normal_distribute": "10, 40, 20, 15, 10, 5",
-  "normal_totaldistr": "100",
-  "bb_frames": "26, 47, 68, 90, 100, 110",
-  "bb_distribute": "13, 14, 15, 18, 19, 21",
-  "bb_totaldistr": "100",
-  "description": "A swordsman from the ruined Agni Empire. As the battle with the gods began, he was at the front, cutting them down. His presence encouraged those terrified by the gods' strength, giving the humans a chance to counterattack. Continuing to lead the attack, Vargas, the savior of many, was counted as one of the Six Heroes and was feared by even the gods.",
-  "summon": "You have summoned me.<br>Now show me what kind of <br>summoner you are!",
-  "fusion": "More! Give me strength!<br>With this power we can take<br>on the gods!",
-  "evolution": "The gods are not to be feared!<br>Stick close to me!",
-  "hp_base": "2466",
-  "atk_base": "946",
-  "def_base": "841",
-  "rec_base": "718",
-  "hp_lord": "3917",
-  "atk_lord": "1364",
-  "def_lord": "1230",
-  "rec_lord": "1082",
-  "hp_anima": "4510",
-  "rec_anima": "924",
-  "atk_breaker": "1522",
-  "def_breaker": "1072",
-  "atk_guardian": "1206",
-  "def_guardian": "1388",
-  "rec_guardian": "1003",
-  "def_oracle": "1151",
-  "hp_oracle": "3680",
-  "rec_oracle": "1319",
-  "hp_bonus": "900",
-  "atk_bonus": "360",
-  "def_bonus": "200",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "6",
-  "normaldc": "18",
-  "ls": "Fire God's Power",
-  "lsdescription": "50% boost to Atk Power of Fire Types",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 946,
+      "def": 841,
+      "hp": 2466,
+      "rec": 718
+    },
+    "_lord": {
+      "atk": 1364,
+      "def": 1230,
+      "hp": 3917,
+      "rec": 1082
+    },
+    "anima": {
+      "atk": 1364,
+      "def": 1230,
+      "hp max": 4707,
+      "hp min": 4312,
+      "rec max": 1003,
+      "rec min": 845
+    },
+    "breaker": {
+      "atk max": 1601,
+      "atk min": 1443,
+      "def max": 1151,
+      "def min": 993,
+      "hp": 3917,
+      "rec": 1082
+    },
+    "guardian": {
+      "atk": 1364,
+      "def max": 1467,
+      "def min": 1309,
+      "hp": 3917,
+      "rec max": 1082,
+      "rec min": 924
+    },
+    "oracle": {
+      "atk": 1364,
+      "def max": 1230,
+      "def min": 1072,
+      "hp": 3917,
+      "rec max": 1398,
+      "rec min": 1240
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to Atk Power of Fire Types",
+    "effects": [
+      {
+        "atk% buff": 50,
+        "elements buffed": [
+          "fire"
+        ],
+        "passive id": "2"
+      }
+    ],
+    "id": "101",
+    "name": "Fire God's Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -218,97 +223,105 @@
     ],
     "name": "Infinity Nova"
   },
-  "bbdescription": "6 combo Fire elemental power attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "6",
-  "bbaoe": "A",
-  "bbgauge": "25",
-  "bbdc": "6",
-  "bbmultiplier": "160",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "10013",
-  "evointo": "10015",
-  "evomats1": "50354",
-  "evomats2": "10133",
-  "evomats3": "10132",
-  "evomats4": "10131",
-  "evomats5": "10130",
-  "evoitem": "",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 946,
-      "def": 841,
-      "hp": 2466,
-      "rec": 718
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_under",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1364,
-      "def": 1230,
-      "hp": 3917,
-      "rec": 1082
+    {
+      "action": "skill",
+      "chance%": 30.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1364,
-      "def": 1230,
-      "hp max": 4707,
-      "hp min": 4312,
-      "rec max": 1003,
-      "rec min": 845
+    {
+      "action": "attack",
+      "chance%": 70.0,
+      "target conditions": "hp_max",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 1601,
-      "atk min": 1443,
-      "def max": 1151,
-      "def min": 993,
-      "hp": 3917,
-      "rec": 1082
+    {
+      "action": "attack",
+      "chance%": 50.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "guardian": {
-      "atk": 1364,
-      "def max": 1467,
-      "def min": 1309,
-      "hp": 3917,
-      "rec max": 1082,
-      "rec min": 924
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 128
     },
-    "oracle": {
-      "atk": 1364,
-      "def max": 1230,
-      "def min": 1072,
-      "hp": 3917,
-      "rec max": 1398,
-      "rec min": 1240
+    "idle": {
+      "total number of frames": 52
+    },
+    "move": {
+      "total number of frames": 13
     }
   },
-  "leader_skill": {
-    "desc": "50% boost to Atk Power of Fire Types",
-    "effects": [
-      {
-        "atk% buff": 50,
-        "elements buffed": [
-          "fire"
-        ],
-        "passive id": "2"
-      }
+  "category": 10010,
+  "cost": "10",
+  "damage frames": {
+    "frame times": [
+      14,
+      36,
+      54,
+      72,
+      76,
+      80
     ],
-    "id": "101",
-    "name": "Fire God's Power"
+    "hit dmg% distribution": [
+      10,
+      40,
+      20,
+      15,
+      10,
+      5
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 6
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "fire",
+  "exp_pattern": 10,
+  "gender": "male",
+  "getting type": "farmable",
+  "guide_id": 4,
+  "imp": {
+    "max atk": "360",
+    "max def": "200",
+    "max hp": "900",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "1269~1418",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Fire God Vargas",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Fire God Vargas",
+  "maxlv": "80",
+  "no": "4",
   "unitDisplayHomePosition_1W9CxaFK": "506,130,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-263,-63,1100,838",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "32,268,458,349,0",
@@ -318,5 +331,109 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "8:121:1,8:140:1,30:121:1,36:140:1,48:121:1,54:140:1,66:121:1,70:121:1,75:140:1"
+  "effectFrames": "8:121:1,8:140:1,30:121:1,36:140:1,48:121:1,54:140:1,66:121:1,70:121:1,75:140:1",
+  "evofrom": "10013",
+  "evointo": "10015",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10131",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10130",
+      "count": 1
+    }
+  ],
+  "basexp": "10",
+  "animation_attack": "128",
+  "animation_idle": "52",
+  "animation_move": "13",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "14, 36, 54, 72, 76, 80",
+  "normal_distribute": "10, 40, 20, 15, 10, 5",
+  "normal_totaldistr": "100",
+  "bb_frames": "26, 47, 68, 90, 100, 110",
+  "bb_distribute": "13, 14, 15, 18, 19, 21",
+  "bb_totaldistr": "100",
+  "description": "A swordsman from the ruined Agni Empire. As the battle with the gods began, he was at the front, cutting them down. His presence encouraged those terrified by the gods' strength, giving the humans a chance to counterattack. Continuing to lead the attack, Vargas, the savior of many, was counted as one of the Six Heroes and was feared by even the gods.",
+  "summon": "You have summoned me.<br>Now show me what kind of <br>summoner you are!",
+  "fusion": "More! Give me strength!<br>With this power we can take<br>on the gods!",
+  "evolution": "The gods are not to be feared!<br>Stick close to me!",
+  "hp_base": "2466",
+  "atk_base": "946",
+  "def_base": "841",
+  "rec_base": "718",
+  "hp_lord": "3917",
+  "atk_lord": "1364",
+  "def_lord": "1230",
+  "rec_lord": "1082",
+  "hp_anima": "4510",
+  "rec_anima": "924",
+  "atk_breaker": "1522",
+  "def_breaker": "1072",
+  "atk_guardian": "1206",
+  "def_guardian": "1388",
+  "rec_guardian": "1003",
+  "def_oracle": "1151",
+  "hp_oracle": "3680",
+  "rec_oracle": "1319",
+  "hp_bonus": "900",
+  "atk_bonus": "360",
+  "def_bonus": "200",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "6",
+  "normaldc": "18",
+  "ls": "Fire God's Power",
+  "lsdescription": "50% boost to Atk Power of Fire Types",
+  "lstype": "Attack",
+  "bbdescription": "6 combo Fire elemental power attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "6",
+  "bbaoe": "A",
+  "bbgauge": "25",
+  "bbdc": "6",
+  "bbmultiplier": "160",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "10133",
+  "evomats3": "10132",
+  "evomats4": "10131",
+  "evomats5": "10130",
+  "evoitem": ""
 }

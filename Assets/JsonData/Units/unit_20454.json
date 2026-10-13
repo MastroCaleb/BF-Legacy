@@ -1,63 +1,63 @@
 {
   "id": "20454",
-  "unitName": "Axe King Mariudeth",
-  "no": "614",
-  "element": "Water",
-  "rarity": "★★★★★",
-  "cost": "17",
-  "maxlv": "80",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "101",
-  "animation_idle": "84",
-  "animation_move": "7",
-  "movespeed_attack": "0.0041",
-  "movespeed_skill": "0.0041",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "50, 52, 54",
-  "normal_distribute": "60, 20, 20",
-  "normal_totaldistr": "100",
-  "bb_frames": "50, 53, 56",
-  "bb_distribute": "80, 10, 10",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "description": "Long before the battle between the humans and the gods, a supreme ruler was able to build his own vast territory in the historical Agni Empire. He was known by his comrades as a sociable man, sometimes even found drinking with his soldiers while camping out. However, he had absolutely no mercy for his enemies, ransacking cities which had already surrendered, going on massive killing sprees, and thoughtlessly murdering soldiers who did not wish to fight in order to boost his army's morale. It is said that for this reason, he was feared not only by enemy countries, but by his allies as well.",
-  "summon": "You who summoned me without fear.<br>If you have so much courage,<br>I will acknowledge you as my equal.",
-  "fusion": "You must know your enemies<br>from your friends.<br>Will you offer me a token of your understanding?",
-  "evolution": "Subjugating my enemies<br>is what I enjoy about military rule!<br>Now, off to a new battlefield!",
-  "hp_base": "3494",
-  "atk_base": "1373",
-  "def_base": "1125",
-  "rec_base": "980",
-  "hp_lord": "5069",
-  "atk_lord": "1871",
-  "def_lord": "1497",
-  "rec_lord": "1304",
-  "hp_anima": "5662",
-  "rec_anima": "1146",
-  "atk_breaker": "2029",
-  "def_breaker": "1339",
-  "atk_guardian": "1713",
-  "def_guardian": "1655",
-  "rec_guardian": "1225",
-  "def_oracle": "1418",
-  "hp_oracle": "4832",
-  "rec_oracle": "1541",
-  "hp_bonus": "500",
-  "atk_bonus": "160",
-  "def_bonus": "160",
-  "rec_bonus": "280",
-  "lordonly": "",
-  "combo_hits": "3",
-  "normaldc": "15",
-  "ls": "Flashing Edge",
-  "lsdescription": "Boost in critical hit damage",
-  "lsnote": "100% boost",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 1373,
+      "def": 1125,
+      "hp": 3494,
+      "rec": 980
+    },
+    "_lord": {
+      "atk": 1871,
+      "def": 1497,
+      "hp": 5069,
+      "rec": 1304
+    },
+    "anima": {
+      "atk": 1871,
+      "def": 1497,
+      "hp max": 5859,
+      "hp min": 5464,
+      "rec max": 1225,
+      "rec min": 1067
+    },
+    "breaker": {
+      "atk max": 2108,
+      "atk min": 1950,
+      "def max": 1418,
+      "def min": 1260,
+      "hp": 5069,
+      "rec": 1304
+    },
+    "guardian": {
+      "atk": 1871,
+      "def max": 1734,
+      "def min": 1576,
+      "hp": 5069,
+      "rec max": 1304,
+      "rec min": 1146
+    },
+    "oracle": {
+      "atk": 1871,
+      "def max": 1497,
+      "def min": 1339,
+      "hp": 5069,
+      "rec max": 1620,
+      "rec min": 1462
+    }
+  },
+  "leader_skill": {
+    "desc": "Boost in critical hit damage",
+    "effects": [
+      {
+        "crit multiplier%": 100.0,
+        "passive id": "34"
+      }
+    ],
+    "id": "2302",
+    "name": "Flashing Edge"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -316,95 +316,87 @@
     ],
     "name": "Dark Strike"
   },
-  "bbdescription": "3 combo powerful Water attack on single enemy & boosts critical hit rate for 3 turns",
-  "bbnote": "30% boost",
-  "bbtype": "Offense/Support",
-  "bbhits": "3",
-  "bbaoe": "1",
-  "bbgauge": "22",
-  "bbdc": "18",
-  "bbmultiplier": "420",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "20453",
-  "evointo": "20455",
-  "evomats1": "50354",
-  "evomats2": "20133",
-  "evomats3": "60144",
-  "evomats4": "60144",
-  "evomats5": "60224",
-  "evoitem": "",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 1373,
-      "def": 1125,
-      "hp": 3494,
-      "rec": 980
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1871,
-      "def": 1497,
-      "hp": 5069,
-      "rec": 1304
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1871,
-      "def": 1497,
-      "hp max": 5859,
-      "hp min": 5464,
-      "rec max": 1225,
-      "rec min": 1067
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 101
     },
-    "breaker": {
-      "atk max": 2108,
-      "atk min": 1950,
-      "def max": 1418,
-      "def min": 1260,
-      "hp": 5069,
-      "rec": 1304
+    "idle": {
+      "total number of frames": 84
     },
-    "guardian": {
-      "atk": 1871,
-      "def max": 1734,
-      "def min": 1576,
-      "hp": 5069,
-      "rec max": 1304,
-      "rec min": 1146
-    },
-    "oracle": {
-      "atk": 1871,
-      "def max": 1497,
-      "def min": 1339,
-      "hp": 5069,
-      "rec max": 1620,
-      "rec min": 1462
+    "move": {
+      "total number of frames": 7
     }
   },
-  "leader_skill": {
-    "desc": "Boost in critical hit damage",
-    "effects": [
-      {
-        "crit multiplier%": 100.0,
-        "passive id": "34"
-      }
+  "category": 20450,
+  "cost": "17",
+  "damage frames": {
+    "frame times": [
+      50,
+      52,
+      54
     ],
-    "id": "2302",
-    "name": "Flashing Edge"
+    "hit dmg% distribution": [
+      60,
+      20,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 3
   },
-  "extra_skill": {},
+  "drop check count": 5,
+  "element": "water",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 614,
+  "imp": {
+    "max atk": "160",
+    "max def": "160",
+    "max hp": "500",
+    "max rec": "280"
+  },
+  "kind": "normal",
+  "lord damage range": "1741~1945",
+  "movement": {
+    "attack": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    }
+  },
+  "name": "Axe King Mariudeth",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Axe King Mariudeth",
+  "maxlv": "80",
+  "no": "614",
   "unitDisplayHomePosition_1W9CxaFK": "474,472,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-140,-237,1165,1042",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "129,353,394,260,0",
@@ -414,5 +406,107 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "47:300183:1,47:600220:1,49:122:1,49:200140:1,51:126:1,51:600220:1,53:200140:1,53:200030:1,53:200310:1"
+  "effectFrames": "47:300183:1,47:600220:1,49:122:1,49:200140:1,51:126:1,51:600220:1,53:200140:1,53:200030:1,53:200310:1",
+  "evofrom": "20453",
+  "evointo": "20455",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20133",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "101",
+  "animation_idle": "84",
+  "animation_move": "7",
+  "movespeed_attack": "0.0041",
+  "movespeed_skill": "0.0041",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "50, 52, 54",
+  "normal_distribute": "60, 20, 20",
+  "normal_totaldistr": "100",
+  "bb_frames": "50, 53, 56",
+  "bb_distribute": "80, 10, 10",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "description": "Long before the battle between the humans and the gods, a supreme ruler was able to build his own vast territory in the historical Agni Empire. He was known by his comrades as a sociable man, sometimes even found drinking with his soldiers while camping out. However, he had absolutely no mercy for his enemies, ransacking cities which had already surrendered, going on massive killing sprees, and thoughtlessly murdering soldiers who did not wish to fight in order to boost his army's morale. It is said that for this reason, he was feared not only by enemy countries, but by his allies as well.",
+  "summon": "You who summoned me without fear.<br>If you have so much courage,<br>I will acknowledge you as my equal.",
+  "fusion": "You must know your enemies<br>from your friends.<br>Will you offer me a token of your understanding?",
+  "evolution": "Subjugating my enemies<br>is what I enjoy about military rule!<br>Now, off to a new battlefield!",
+  "hp_base": "3494",
+  "atk_base": "1373",
+  "def_base": "1125",
+  "rec_base": "980",
+  "hp_lord": "5069",
+  "atk_lord": "1871",
+  "def_lord": "1497",
+  "rec_lord": "1304",
+  "hp_anima": "5662",
+  "rec_anima": "1146",
+  "atk_breaker": "2029",
+  "def_breaker": "1339",
+  "atk_guardian": "1713",
+  "def_guardian": "1655",
+  "rec_guardian": "1225",
+  "def_oracle": "1418",
+  "hp_oracle": "4832",
+  "rec_oracle": "1541",
+  "hp_bonus": "500",
+  "atk_bonus": "160",
+  "def_bonus": "160",
+  "rec_bonus": "280",
+  "lordonly": "",
+  "combo_hits": "3",
+  "normaldc": "15",
+  "ls": "Flashing Edge",
+  "lsdescription": "Boost in critical hit damage",
+  "lsnote": "100% boost",
+  "lstype": "Attack",
+  "bbdescription": "3 combo powerful Water attack on single enemy & boosts critical hit rate for 3 turns",
+  "bbnote": "30% boost",
+  "bbtype": "Offense/Support",
+  "bbhits": "3",
+  "bbaoe": "1",
+  "bbgauge": "22",
+  "bbdc": "18",
+  "bbmultiplier": "420",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "20133",
+  "evomats3": "60144",
+  "evomats4": "60144",
+  "evomats5": "60224",
+  "evoitem": ""
 }

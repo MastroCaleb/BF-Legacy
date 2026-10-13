@@ -1,62 +1,63 @@
 {
   "id": "10142",
-  "unitName": "Bruiser Galant",
-  "no": "204",
-  "element": "Fire",
-  "rarity": "★★★",
-  "cost": "6",
-  "maxlv": "40",
-  "basexp": "15",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "94",
-  "animation_idle": "52",
-  "animation_move": "13",
-  "movespeed_attack": "0.005",
-  "movespeed_skill": "0.005",
-  "speedtype_attack": "1",
-  "speedtype_skill": "1",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "36",
-  "normal_distribute": "100",
-  "normal_totaldistr": "100",
-  "bb_frames": "36, 40, 44, 48, 52",
-  "bb_distribute": "20, 20, 20, 20, 20",
-  "bb_totaldistr": "100",
-  "description": "A former blacksmith from the ruined Agni Empire, though once caught up in a life of mischief, upon the death of his beloved grandfather he decided he would continue his path towards becoming a professional blacksmith. As he honed his skills, he came to repeat his grandfather's words, \"A Blacksmith's only job isn't to strengthen weapons and armor, but also to enhance the will and motivation of those that wield them.\"",
-  "summon": "Me, help you?<br>Who knows, maybe you and<br>I could get some work done.",
-  "fusion": "I now see the difference<br>in your training methods.<br>Who dare stands against me?",
-  "evolution": "I aim to be the greatest <br>blacksmith who ever lived!<br>You better not hold me back!",
-  "hp_base": "1584",
-  "atk_base": "781",
-  "def_base": "781",
-  "rec_base": "337",
-  "hp_lord": "2550",
-  "atk_lord": "1064",
-  "def_lord": "1064",
-  "rec_lord": "585",
-  "hp_anima": "2843",
-  "rec_anima": "507",
-  "atk_breaker": "1142",
-  "def_breaker": "986",
-  "atk_guardian": "986",
-  "def_guardian": "1142",
-  "rec_guardian": "546",
-  "def_oracle": "1025",
-  "hp_oracle": "2433",
-  "rec_oracle": "702",
-  "hp_bonus": "300",
-  "atk_bonus": "100",
-  "def_bonus": "100",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "1",
-  "normaldc": "8",
-  "ls": "Intense Flash",
-  "lsdescription": "Boost in damage dealt during Spark",
-  "lsnote": "30% boost",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 781,
+      "def": 781,
+      "hp": 1584,
+      "rec": 337
+    },
+    "_lord": {
+      "atk": 1064,
+      "def": 1064,
+      "hp": 2550,
+      "rec": 585
+    },
+    "anima": {
+      "atk": 1064,
+      "def": 1064,
+      "hp max": 2940,
+      "hp min": 2745,
+      "rec max": 546,
+      "rec min": 468
+    },
+    "breaker": {
+      "atk max": 1181,
+      "atk min": 1103,
+      "def max": 1025,
+      "def min": 947,
+      "hp": 2550,
+      "rec": 585
+    },
+    "guardian": {
+      "atk": 1064,
+      "def max": 1181,
+      "def min": 1103,
+      "hp": 2550,
+      "rec max": 585,
+      "rec min": 507
+    },
+    "oracle": {
+      "atk": 1064,
+      "def max": 1064,
+      "def min": 986,
+      "hp": 2550,
+      "rec max": 741,
+      "rec min": 663
+    }
+  },
+  "leader_skill": {
+    "desc": "Boost in damage dealt during Spark",
+    "effects": [
+      {
+        "damage% for spark": 30,
+        "passive id": "31"
+      }
+    ],
+    "id": "1301",
+    "name": "Intense Flash"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -289,95 +290,83 @@
     ],
     "name": "Grenade Buster"
   },
-  "bbdescription": "5 combo Fire elemental attack on all enemies & probable Weakness effect",
-  "bbnote": "45% chance",
-  "bbtype": "Offense",
-  "bbhits": "5",
-  "bbaoe": "A",
-  "bbgauge": "20",
-  "bbdc": "5",
-  "bbmultiplier": "95",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "10141",
-  "evointo": "10143",
-  "evomats1": "10132",
-  "evomats2": "60143",
-  "evomats3": "10131",
-  "evomats4": "10130",
-  "evomats5": "10130",
-  "evoitem": "",
-  "evozelcost": "100000",
-  "stats": {
-    "_base": {
-      "atk": 781,
-      "def": 781,
-      "hp": 1584,
-      "rec": 337
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1064,
-      "def": 1064,
-      "hp": 2550,
-      "rec": 585
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1064,
-      "def": 1064,
-      "hp max": 2940,
-      "hp min": 2745,
-      "rec max": 546,
-      "rec min": 468
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 94
     },
-    "breaker": {
-      "atk max": 1181,
-      "atk min": 1103,
-      "def max": 1025,
-      "def min": 947,
-      "hp": 2550,
-      "rec": 585
+    "idle": {
+      "total number of frames": 52
     },
-    "guardian": {
-      "atk": 1064,
-      "def max": 1181,
-      "def min": 1103,
-      "hp": 2550,
-      "rec max": 585,
-      "rec min": 507
-    },
-    "oracle": {
-      "atk": 1064,
-      "def max": 1064,
-      "def min": 986,
-      "hp": 2550,
-      "rec max": 741,
-      "rec min": 663
+    "move": {
+      "total number of frames": 13
     }
   },
-  "leader_skill": {
-    "desc": "Boost in damage dealt during Spark",
-    "effects": [
-      {
-        "damage% for spark": 30,
-        "passive id": "31"
-      }
+  "category": 10140,
+  "cost": "6",
+  "damage frames": {
+    "frame times": [
+      36
     ],
-    "id": "1301",
-    "name": "Intense Flash"
+    "hit dmg% distribution": [
+      100
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 1
   },
-  "extra_skill": {},
+  "drop check count": 8,
+  "element": "fire",
+  "exp_pattern": 15,
+  "gender": "male",
+  "getting type": "farmable",
+  "guide_id": 204,
+  "imp": {
+    "max atk": "100",
+    "max def": "100",
+    "max hp": "300",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "990~1106",
+  "movement": {
+    "attack": {
+      "move speed": 0.005,
+      "move speed type": "1",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.005,
+      "move speed type": "1",
+      "move type": "1"
+    }
+  },
+  "name": "Bruiser Galant",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "Bruiser Galant",
+  "maxlv": "40",
+  "no": "204",
   "unitDisplayHomePosition_1W9CxaFK": "276,46,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "100,130,806,640",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "215,387,216,240,0",
@@ -387,5 +376,106 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "1000",
   "sellCaution": false,
-  "effectFrames": "30:131:1,28:150:1"
+  "effectFrames": "30:131:1,28:150:1",
+  "evofrom": "10141",
+  "evointo": "10143",
+  "evozelcost": "100000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "10132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10131",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10130",
+      "count": 2
+    }
+  ],
+  "basexp": "15",
+  "animation_attack": "94",
+  "animation_idle": "52",
+  "animation_move": "13",
+  "movespeed_attack": "0.005",
+  "movespeed_skill": "0.005",
+  "speedtype_attack": "1",
+  "speedtype_skill": "1",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "36",
+  "normal_distribute": "100",
+  "normal_totaldistr": "100",
+  "bb_frames": "36, 40, 44, 48, 52",
+  "bb_distribute": "20, 20, 20, 20, 20",
+  "bb_totaldistr": "100",
+  "description": "A former blacksmith from the ruined Agni Empire, though once caught up in a life of mischief, upon the death of his beloved grandfather he decided he would continue his path towards becoming a professional blacksmith. As he honed his skills, he came to repeat his grandfather's words, \"A Blacksmith's only job isn't to strengthen weapons and armor, but also to enhance the will and motivation of those that wield them.\"",
+  "summon": "Me, help you?<br>Who knows, maybe you and<br>I could get some work done.",
+  "fusion": "I now see the difference<br>in your training methods.<br>Who dare stands against me?",
+  "evolution": "I aim to be the greatest <br>blacksmith who ever lived!<br>You better not hold me back!",
+  "hp_base": "1584",
+  "atk_base": "781",
+  "def_base": "781",
+  "rec_base": "337",
+  "hp_lord": "2550",
+  "atk_lord": "1064",
+  "def_lord": "1064",
+  "rec_lord": "585",
+  "hp_anima": "2843",
+  "rec_anima": "507",
+  "atk_breaker": "1142",
+  "def_breaker": "986",
+  "atk_guardian": "986",
+  "def_guardian": "1142",
+  "rec_guardian": "546",
+  "def_oracle": "1025",
+  "hp_oracle": "2433",
+  "rec_oracle": "702",
+  "hp_bonus": "300",
+  "atk_bonus": "100",
+  "def_bonus": "100",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "1",
+  "normaldc": "8",
+  "ls": "Intense Flash",
+  "lsdescription": "Boost in damage dealt during Spark",
+  "lsnote": "30% boost",
+  "lstype": "Attack",
+  "bbdescription": "5 combo Fire elemental attack on all enemies & probable Weakness effect",
+  "bbnote": "45% chance",
+  "bbtype": "Offense",
+  "bbhits": "5",
+  "bbaoe": "A",
+  "bbgauge": "20",
+  "bbdc": "5",
+  "bbmultiplier": "95",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "10132",
+  "evomats2": "60143",
+  "evomats3": "10131",
+  "evomats4": "10130",
+  "evomats5": "10130",
+  "evoitem": ""
 }

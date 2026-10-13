@@ -1,62 +1,63 @@
 {
   "id": "20262",
-  "unitName": "Ghoul Fish Pilaf",
-  "no": "632",
-  "element": "Water",
-  "rarity": "★★★",
-  "cost": "6",
-  "maxlv": "40",
-  "basexp": "10",
-  "gender": "N",
-  "ai": "4",
-  "animation_attack": "102",
-  "animation_idle": "76",
-  "animation_move": "60",
-  "movespeed_attack": "0.0024",
-  "movespeed_skill": "0.0024",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "35, 41, 47",
-  "normal_distribute": "33, 33, 34",
-  "normal_totaldistr": "100",
-  "bb_frames": "35, 41, 47, 53, 59",
-  "bb_distribute": "20, 20, 20, 20, 20",
-  "bb_totaldistr": "100",
-  "description": "A ferocious demon fish that inhabits the many rivers of Grand Gaia. Deenan, which adapted the ability to move on land in its evolved form, is believed to have transfigured its fins into arms. Since there might be those which have no problem moving on land, there are accounts left behind of people being attacked by this creature in places with no trace of water. There have also been rumors of people who have seen this creature use its arms to swing from tree to tree, creating mass panic in towns and villages located near rivers.",
-  "summon": "Grr! Chomp! Chomp!<br>Grr! Grrrr! Grrrrrrr!",
-  "fusion": "Grr! Chomp!<br>Chomp! Grr! Grr!",
-  "evolution": "Grrrrr?!<br>Grr! Chomp! Chomp! Chomp!",
-  "hp_base": "1842",
-  "atk_base": "671",
-  "def_base": "651",
-  "rec_base": "611",
-  "hp_lord": "3045",
-  "atk_lord": "909",
-  "def_lord": "863",
-  "rec_lord": "804",
-  "hp_anima": "3338",
-  "rec_anima": "726",
-  "atk_breaker": "987",
-  "def_breaker": "785",
-  "atk_guardian": "831",
-  "def_guardian": "941",
-  "rec_guardian": "765",
-  "def_oracle": "824",
-  "hp_oracle": "2928",
-  "rec_oracle": "921",
-  "hp_bonus": "300",
-  "atk_bonus": "120",
-  "def_bonus": "120",
-  "rec_bonus": "120",
-  "lordonly": "",
-  "combo_hits": "3",
-  "normaldc": "6",
-  "ls": "Fighting Light",
-  "lsdescription": "Small boost in Battle Crystals produced during Spark",
-  "lsnote": "30% boost",
-  "lstype": "Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 671,
+      "def": 651,
+      "hp": 1842,
+      "rec": 611
+    },
+    "_lord": {
+      "atk": 909,
+      "def": 863,
+      "hp": 3045,
+      "rec": 804
+    },
+    "anima": {
+      "atk": 909,
+      "def": 863,
+      "hp max": 3435,
+      "hp min": 3240,
+      "rec max": 765,
+      "rec min": 687
+    },
+    "breaker": {
+      "atk max": 1026,
+      "atk min": 948,
+      "def max": 824,
+      "def min": 746,
+      "hp": 3045,
+      "rec": 804
+    },
+    "guardian": {
+      "atk": 909,
+      "def max": 980,
+      "def min": 902,
+      "hp": 3045,
+      "rec max": 804,
+      "rec min": 726
+    },
+    "oracle": {
+      "atk": 909,
+      "def max": 863,
+      "def min": 785,
+      "hp": 3045,
+      "rec max": 960,
+      "rec min": 882
+    }
+  },
+  "leader_skill": {
+    "desc": "Small boost in Battle Crystals produced during Spark",
+    "effects": [
+      {
+        "bc drop% for spark": 30,
+        "passive id": "31"
+      }
+    ],
+    "id": "1400",
+    "name": "Fighting Light"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -299,95 +300,99 @@
     ],
     "name": "Evil Splash"
   },
-  "bbdescription": "5 combo Water elemental attack on single enemy & probable Sickness effect",
-  "bbnote": "80% chance to inflict",
-  "bbtype": "Offense",
-  "bbhits": "5",
-  "bbaoe": "1",
-  "bbgauge": "15",
-  "bbdc": "15",
-  "bbmultiplier": "320",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "20261",
-  "evointo": "",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 671,
-      "def": 651,
-      "hp": 1842,
-      "rec": 611
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_under",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 909,
-      "def": 863,
-      "hp": 3045,
-      "rec": 804
+    {
+      "action": "skill",
+      "chance%": 30.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 909,
-      "def": 863,
-      "hp max": 3435,
-      "hp min": 3240,
-      "rec max": 765,
-      "rec min": 687
+    {
+      "action": "attack",
+      "chance%": 70.0,
+      "target conditions": "hp_max",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 1026,
-      "atk min": 948,
-      "def max": 824,
-      "def min": 746,
-      "hp": 3045,
-      "rec": 804
+    {
+      "action": "attack",
+      "chance%": 50.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "guardian": {
-      "atk": 909,
-      "def max": 980,
-      "def min": 902,
-      "hp": 3045,
-      "rec max": 804,
-      "rec min": 726
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 102
     },
-    "oracle": {
-      "atk": 909,
-      "def max": 863,
-      "def min": 785,
-      "hp": 3045,
-      "rec max": 960,
-      "rec min": 882
+    "idle": {
+      "total number of frames": 76
+    },
+    "move": {
+      "total number of frames": 60
     }
   },
-  "leader_skill": {
-    "desc": "Small boost in Battle Crystals produced during Spark",
-    "effects": [
-      {
-        "bc drop% for spark": 30,
-        "passive id": "31"
-      }
+  "category": 20260,
+  "cost": "6",
+  "damage frames": {
+    "frame times": [
+      35,
+      41,
+      47
     ],
-    "id": "1400",
-    "name": "Fighting Light"
+    "hit dmg% distribution": [
+      33,
+      33,
+      34
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 3
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "water",
+  "exp_pattern": 10,
+  "gender": "other",
+  "getting type": "farmable",
+  "guide_id": 632,
+  "imp": {
+    "max atk": "120",
+    "max def": "120",
+    "max hp": "300",
+    "max rec": "120"
+  },
+  "kind": "normal",
+  "lord damage range": "846~945",
+  "movement": {
+    "attack": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    }
+  },
+  "name": "Ghoul Fish Pilaf",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "Ghoul Fish Pilaf",
+  "maxlv": "40",
+  "no": "632",
   "unitDisplayHomePosition_1W9CxaFK": "30,-95,320,874",
   "unitDisplayDetailPosition_6z54rgb3": "182,209,700,529",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "157,355,319,277,0",
@@ -397,5 +402,85 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "1000",
   "sellCaution": false,
-  "effectFrames": "29:122:1,35:180:1,35:122:1,41:122:1"
+  "effectFrames": "29:122:1,35:180:1,35:122:1,41:122:1",
+  "evofrom": "20261",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "10",
+  "animation_attack": "102",
+  "animation_idle": "76",
+  "animation_move": "60",
+  "movespeed_attack": "0.0024",
+  "movespeed_skill": "0.0024",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "35, 41, 47",
+  "normal_distribute": "33, 33, 34",
+  "normal_totaldistr": "100",
+  "bb_frames": "35, 41, 47, 53, 59",
+  "bb_distribute": "20, 20, 20, 20, 20",
+  "bb_totaldistr": "100",
+  "description": "A ferocious demon fish that inhabits the many rivers of Grand Gaia. Deenan, which adapted the ability to move on land in its evolved form, is believed to have transfigured its fins into arms. Since there might be those which have no problem moving on land, there are accounts left behind of people being attacked by this creature in places with no trace of water. There have also been rumors of people who have seen this creature use its arms to swing from tree to tree, creating mass panic in towns and villages located near rivers.",
+  "summon": "Grr! Chomp! Chomp!<br>Grr! Grrrr! Grrrrrrr!",
+  "fusion": "Grr! Chomp!<br>Chomp! Grr! Grr!",
+  "evolution": "Grrrrr?!<br>Grr! Chomp! Chomp! Chomp!",
+  "hp_base": "1842",
+  "atk_base": "671",
+  "def_base": "651",
+  "rec_base": "611",
+  "hp_lord": "3045",
+  "atk_lord": "909",
+  "def_lord": "863",
+  "rec_lord": "804",
+  "hp_anima": "3338",
+  "rec_anima": "726",
+  "atk_breaker": "987",
+  "def_breaker": "785",
+  "atk_guardian": "831",
+  "def_guardian": "941",
+  "rec_guardian": "765",
+  "def_oracle": "824",
+  "hp_oracle": "2928",
+  "rec_oracle": "921",
+  "hp_bonus": "300",
+  "atk_bonus": "120",
+  "def_bonus": "120",
+  "rec_bonus": "120",
+  "lordonly": "",
+  "combo_hits": "3",
+  "normaldc": "6",
+  "ls": "Fighting Light",
+  "lsdescription": "Small boost in Battle Crystals produced during Spark",
+  "lsnote": "30% boost",
+  "lstype": "Brave Burst",
+  "bbdescription": "5 combo Water elemental attack on single enemy & probable Sickness effect",
+  "bbnote": "80% chance to inflict",
+  "bbtype": "Offense",
+  "bbhits": "5",
+  "bbaoe": "1",
+  "bbgauge": "15",
+  "bbdc": "15",
+  "bbmultiplier": "320",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "",
+  "evomats2": "",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": "",
+  "evoitem": ""
 }

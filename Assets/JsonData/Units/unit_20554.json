@@ -1,58 +1,68 @@
 {
   "id": "20554",
-  "unitName": "Synthesizer Rigness",
-  "no": "819",
-  "element": "Water",
-  "rarity": "★★★★★",
-  "cost": "18",
-  "maxlv": "80",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "170",
-  "animation_idle": "80",
-  "animation_move": "11",
-  "movespeed_attack": "0.0041",
-  "movespeed_skill": "0.0041",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "98, 102, 106, 110, 114",
-  "normal_distribute": "20, 20, 20, 20, 20",
-  "normal_totaldistr": "100",
-  "description": "The most historically renowned alchemist. Not the typical alchemist who trapped himself in his laboratory, Rigness often set off in many adventures to collect rare materials for his research. Most of the rare materials used to create various items today were named by Rigness himself. Not only that, but he is also said to have gathered lots of information about unknown monsters dwelling in the depths of unexplored regions, recently gaining him fame as a magic wielding adventurer as well. To him, even a monster was a treasure trove of valuable materials.",
-  "summon": "Hmm? These materials you have...<br>Could you please show them to me?<br>Just for a moment?",
-  "fusion": "I see now.<br>You add this to this...<br>Then that to that...<br>Oh, your assistance isn't needed.",
-  "evolution": "The use of this type of magic<br>is very interesting indeed...<br>When you double that,<br>this happens...",
-  "hp_base": "3606",
-  "atk_base": "1267",
-  "def_base": "1261",
-  "rec_base": "1261",
-  "hp_lord": "5134",
-  "atk_lord": "1668",
-  "def_lord": "1658",
-  "rec_lord": "1654",
-  "hp_anima": "5726",
-  "rec_anima": "1496",
-  "atk_breaker": "1826",
-  "def_breaker": "1500",
-  "atk_guardian": "1510",
-  "def_guardian": "1816",
-  "rec_guardian": "1575",
-  "def_oracle": "1579",
-  "hp_oracle": "4897",
-  "rec_oracle": "1891",
-  "hp_bonus": "500",
-  "atk_bonus": "200",
-  "def_bonus": "200",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "5",
-  "normaldc": "15",
-  "ls": "Divine Gale",
-  "lsdescription": "Nullifies all status ailments",
-  "lstype": "Defense",
+  "stats": {
+    "_base": {
+      "atk": 1267,
+      "def": 1261,
+      "hp": 3606,
+      "rec": 1261
+    },
+    "_lord": {
+      "atk": 1668,
+      "def": 1658,
+      "hp": 5134,
+      "rec": 1654
+    },
+    "anima": {
+      "atk": 1668,
+      "def": 1658,
+      "hp max": 5924,
+      "hp min": 5529,
+      "rec max": 1575,
+      "rec min": 1417
+    },
+    "breaker": {
+      "atk max": 1905,
+      "atk min": 1747,
+      "def max": 1579,
+      "def min": 1421,
+      "hp": 5134,
+      "rec": 1654
+    },
+    "guardian": {
+      "atk": 1668,
+      "def max": 1895,
+      "def min": 1737,
+      "hp": 5134,
+      "rec max": 1654,
+      "rec min": 1496
+    },
+    "oracle": {
+      "atk": 1668,
+      "def max": 1658,
+      "def min": 1500,
+      "hp": 5134,
+      "rec max": 1970,
+      "rec min": 1812
+    }
+  },
+  "leader_skill": {
+    "desc": "Nullifies all status ailments",
+    "effects": [
+      {
+        "curse resist%": 100,
+        "injury resist%": 100,
+        "paralysis resist%": 100,
+        "passive id": "4",
+        "poison resist%": 100,
+        "sick resist%": 100,
+        "weaken resist%": 100
+      }
+    ],
+    "id": "2102",
+    "name": "Divine Gale"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -539,97 +549,91 @@
     ],
     "name": "Mist Elexia"
   },
-  "bbdescription": "Recovers HP for all allies & removes all status ailments and negates them for 3 turns",
-  "bbnote": "Heals (1560~1860 + 22.5% of healer Rec) HP",
-  "bbtype": "Heal/Support",
-  "bbhits": "0",
-  "bbaoe": "0",
-  "bbgauge": "25",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "20553",
-  "evointo": "20555",
-  "evomats1": "50354",
-  "evomats2": "20133",
-  "evomats3": "20133",
-  "evomats4": "20191",
-  "evomats5": "60224",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 1267,
-      "def": 1261,
-      "hp": 3606,
-      "rec": 1261
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1668,
-      "def": 1658,
-      "hp": 5134,
-      "rec": 1654
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1668,
-      "def": 1658,
-      "hp max": 5924,
-      "hp min": 5529,
-      "rec max": 1575,
-      "rec min": 1417
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 170
     },
-    "breaker": {
-      "atk max": 1905,
-      "atk min": 1747,
-      "def max": 1579,
-      "def min": 1421,
-      "hp": 5134,
-      "rec": 1654
+    "idle": {
+      "total number of frames": 80
     },
-    "guardian": {
-      "atk": 1668,
-      "def max": 1895,
-      "def min": 1737,
-      "hp": 5134,
-      "rec max": 1654,
-      "rec min": 1496
-    },
-    "oracle": {
-      "atk": 1668,
-      "def max": 1658,
-      "def min": 1500,
-      "hp": 5134,
-      "rec max": 1970,
-      "rec min": 1812
+    "move": {
+      "total number of frames": 11
     }
   },
-  "leader_skill": {
-    "desc": "Nullifies all status ailments",
-    "effects": [
-      {
-        "curse resist%": 100,
-        "injury resist%": 100,
-        "paralysis resist%": 100,
-        "passive id": "4",
-        "poison resist%": 100,
-        "sick resist%": 100,
-        "weaken resist%": 100
-      }
+  "category": 20550,
+  "cost": "18",
+  "damage frames": {
+    "frame times": [
+      98,
+      102,
+      106,
+      110,
+      114
     ],
-    "id": "2102",
-    "name": "Divine Gale"
+    "hit dmg% distribution": [
+      20,
+      20,
+      20,
+      20,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 5
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "water",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 819,
+  "imp": {
+    "max atk": "200",
+    "max def": "200",
+    "max hp": "500",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "1553~1734",
+  "movement": {
+    "attack": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    }
+  },
+  "name": "Synthesizer Rigness",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Synthesizer Rigness",
+  "maxlv": "80",
+  "no": "819",
   "unitDisplayHomePosition_1W9CxaFK": "420,295,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-49,-70,1250,915",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "157,355,319,277,0",
@@ -639,5 +643,99 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "92:122:1,96:122:1,100:122:1,104:122:1,108:122:1,98:661:1,114:200310:1,98:182:1,106:182:1"
+  "effectFrames": "92:122:1,96:122:1,100:122:1,104:122:1,108:122:1,98:661:1,114:200310:1,98:182:1,106:182:1",
+  "evofrom": "20553",
+  "evointo": "20555",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20133",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "20191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "170",
+  "animation_idle": "80",
+  "animation_move": "11",
+  "movespeed_attack": "0.0041",
+  "movespeed_skill": "0.0041",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "98, 102, 106, 110, 114",
+  "normal_distribute": "20, 20, 20, 20, 20",
+  "normal_totaldistr": "100",
+  "description": "The most historically renowned alchemist. Not the typical alchemist who trapped himself in his laboratory, Rigness often set off in many adventures to collect rare materials for his research. Most of the rare materials used to create various items today were named by Rigness himself. Not only that, but he is also said to have gathered lots of information about unknown monsters dwelling in the depths of unexplored regions, recently gaining him fame as a magic wielding adventurer as well. To him, even a monster was a treasure trove of valuable materials.",
+  "summon": "Hmm? These materials you have...<br>Could you please show them to me?<br>Just for a moment?",
+  "fusion": "I see now.<br>You add this to this...<br>Then that to that...<br>Oh, your assistance isn't needed.",
+  "evolution": "The use of this type of magic<br>is very interesting indeed...<br>When you double that,<br>this happens...",
+  "hp_base": "3606",
+  "atk_base": "1267",
+  "def_base": "1261",
+  "rec_base": "1261",
+  "hp_lord": "5134",
+  "atk_lord": "1668",
+  "def_lord": "1658",
+  "rec_lord": "1654",
+  "hp_anima": "5726",
+  "rec_anima": "1496",
+  "atk_breaker": "1826",
+  "def_breaker": "1500",
+  "atk_guardian": "1510",
+  "def_guardian": "1816",
+  "rec_guardian": "1575",
+  "def_oracle": "1579",
+  "hp_oracle": "4897",
+  "rec_oracle": "1891",
+  "hp_bonus": "500",
+  "atk_bonus": "200",
+  "def_bonus": "200",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "5",
+  "normaldc": "15",
+  "ls": "Divine Gale",
+  "lsdescription": "Nullifies all status ailments",
+  "lstype": "Defense",
+  "bbdescription": "Recovers HP for all allies & removes all status ailments and negates them for 3 turns",
+  "bbnote": "Heals (1560~1860 + 22.5% of healer Rec) HP",
+  "bbtype": "Heal/Support",
+  "bbhits": "0",
+  "bbaoe": "0",
+  "bbgauge": "25",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "20133",
+  "evomats3": "20133",
+  "evomats4": "20191",
+  "evomats5": "60224"
 }

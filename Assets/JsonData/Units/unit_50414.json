@@ -1,58 +1,64 @@
 {
   "id": "50414",
-  "unitName": "Unflinching Themis",
-  "no": "543",
-  "element": "Light",
-  "rarity": "★★★★★",
-  "cost": "16",
-  "maxlv": "80",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "3",
-  "animation_attack": "124",
-  "animation_idle": "104",
-  "animation_move": "16",
-  "movespeed_attack": "4",
-  "movespeed_skill": "4",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "2",
-  "movetype_skill": "2",
-  "normal_frames": "35, 40, 45, 50, 55, 60, 65",
-  "normal_distribute": "20, 10, 10, 10, 10, 20, 20",
-  "normal_totaldistr": "100",
-  "description": "A genius sorceress from the La Veda Republic, known to have invaded the Bariura Empire by herself to prove her talents. There she was captured by the knight Magress and threatened repeatedly, though eventually expelled from the empire in one piece. While she was scared to tears on the inside, she is said to have been kicking and screaming the entire way to the border. Some even say that Magress was so impressed with her bravado that he personally shielded her from his empire's dark magicians.",
-  "summon": "I wish someone powerful<br>would summon me.<br>Get what I mean?",
-  "fusion": "I'm not done yet!<br>Bring me more!<br>More power!",
-  "evolution": "Make me strong enough<br>to beat him... Then<br>I'll do anything you want!",
-  "hp_base": "3451",
-  "atk_base": "1100",
-  "def_base": "1049",
-  "rec_base": "1307",
-  "hp_lord": "4985",
-  "atk_lord": "1472",
-  "def_lord": "1394",
-  "rec_lord": "1727",
-  "hp_anima": "5578",
-  "rec_anima": "1569",
-  "atk_breaker": "1630",
-  "def_breaker": "1236",
-  "atk_guardian": "1314",
-  "def_guardian": "1552",
-  "rec_guardian": "1648",
-  "def_oracle": "1315",
-  "hp_oracle": "4748",
-  "rec_oracle": "1964",
-  "hp_bonus": "500",
-  "atk_bonus": "200",
-  "def_bonus": "200",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "7",
-  "normaldc": "14",
-  "ls": "Five Light's Force",
-  "lsdescription": "50% boost to Atk power of all Units when 5 elements or more are present",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 1100,
+      "def": 1049,
+      "hp": 3451,
+      "rec": 1307
+    },
+    "_lord": {
+      "atk": 1472,
+      "def": 1394,
+      "hp": 4985,
+      "rec": 1727
+    },
+    "anima": {
+      "atk": 1472,
+      "def": 1394,
+      "hp max": 5775,
+      "hp min": 5380,
+      "rec max": 1648,
+      "rec min": 1490
+    },
+    "breaker": {
+      "atk max": 1709,
+      "atk min": 1551,
+      "def max": 1315,
+      "def min": 1157,
+      "hp": 4985,
+      "rec": 1727
+    },
+    "guardian": {
+      "atk": 1472,
+      "def max": 1631,
+      "def min": 1473,
+      "hp": 4985,
+      "rec max": 1727,
+      "rec min": 1569
+    },
+    "oracle": {
+      "atk": 1472,
+      "def max": 1394,
+      "def min": 1236,
+      "hp": 4985,
+      "rec max": 2043,
+      "rec min": 1885
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to Atk power of all Units when 5 elements or more are present",
+    "effects": [
+      {
+        "atk% buff": 50,
+        "passive id": "41",
+        "unique elements required": 5
+      }
+    ],
+    "id": "2201",
+    "name": "Five Light's Force"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -327,93 +333,101 @@
     ],
     "name": "Demented Cure"
   },
-  "bbdescription": "Greatly recovers HP for all allies & adds Dark element to attack for 3 turns",
-  "bbnote": "Heals (1760~2060 + 27% of healer Rec) HP",
-  "bbtype": "Heal/Support",
-  "bbhits": "0",
-  "bbaoe": "0",
-  "bbgauge": "20",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "50413",
-  "evointo": "50415",
-  "evomats1": "50354",
-  "evomats2": "50123",
-  "evomats3": "50191",
-  "evomats4": "50191",
-  "evomats5": "60224",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 1100,
-      "def": 1049,
-      "hp": 3451,
-      "rec": 1307
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1472,
-      "def": 1394,
-      "hp": 4985,
-      "rec": 1727
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "atk_max",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1472,
-      "def": 1394,
-      "hp max": 5775,
-      "hp min": 5380,
-      "rec max": 1648,
-      "rec min": 1490
+    {
+      "action": "attack",
+      "chance%": 30.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 1709,
-      "atk min": 1551,
-      "def max": 1315,
-      "def min": 1157,
-      "hp": 4985,
-      "rec": 1727
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 124
     },
-    "guardian": {
-      "atk": 1472,
-      "def max": 1631,
-      "def min": 1473,
-      "hp": 4985,
-      "rec max": 1727,
-      "rec min": 1569
+    "idle": {
+      "total number of frames": 104
     },
-    "oracle": {
-      "atk": 1472,
-      "def max": 1394,
-      "def min": 1236,
-      "hp": 4985,
-      "rec max": 2043,
-      "rec min": 1885
+    "move": {
+      "total number of frames": 16
     }
   },
-  "leader_skill": {
-    "desc": "50% boost to Atk power of all Units when 5 elements or more are present",
-    "effects": [
-      {
-        "atk% buff": 50,
-        "passive id": "41",
-        "unique elements required": 5
-      }
+  "category": 50410,
+  "cost": "16",
+  "damage frames": {
+    "frame times": [
+      35,
+      40,
+      45,
+      50,
+      55,
+      60,
+      65
     ],
-    "id": "2201",
-    "name": "Five Light's Force"
+    "hit dmg% distribution": [
+      20,
+      10,
+      10,
+      10,
+      10,
+      20,
+      20
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 7
   },
-  "extra_skill": {},
+  "drop check count": 2,
+  "element": "light",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 543,
+  "imp": {
+    "max atk": "200",
+    "max def": "200",
+    "max hp": "500",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "1370~1530",
+  "movement": {
+    "attack": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "2"
+    },
+    "skill": {
+      "move speed": 4,
+      "move speed type": "3",
+      "move type": "2"
+    }
+  },
+  "name": "Unflinching Themis",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Unflinching Themis",
+  "maxlv": "80",
+  "no": "543",
   "unitDisplayHomePosition_1W9CxaFK": "451,9,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-139,182,884,597",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "196,295,294,326,0",
@@ -423,5 +437,99 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "35:100091:1,65:200084:1,65:1103:1"
+  "effectFrames": "35:100091:1,65:200084:1,65:1103:1",
+  "evofrom": "50413",
+  "evointo": "50415",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50123",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50191",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "124",
+  "animation_idle": "104",
+  "animation_move": "16",
+  "movespeed_attack": "4",
+  "movespeed_skill": "4",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "2",
+  "movetype_skill": "2",
+  "normal_frames": "35, 40, 45, 50, 55, 60, 65",
+  "normal_distribute": "20, 10, 10, 10, 10, 20, 20",
+  "normal_totaldistr": "100",
+  "description": "A genius sorceress from the La Veda Republic, known to have invaded the Bariura Empire by herself to prove her talents. There she was captured by the knight Magress and threatened repeatedly, though eventually expelled from the empire in one piece. While she was scared to tears on the inside, she is said to have been kicking and screaming the entire way to the border. Some even say that Magress was so impressed with her bravado that he personally shielded her from his empire's dark magicians.",
+  "summon": "I wish someone powerful<br>would summon me.<br>Get what I mean?",
+  "fusion": "I'm not done yet!<br>Bring me more!<br>More power!",
+  "evolution": "Make me strong enough<br>to beat him... Then<br>I'll do anything you want!",
+  "hp_base": "3451",
+  "atk_base": "1100",
+  "def_base": "1049",
+  "rec_base": "1307",
+  "hp_lord": "4985",
+  "atk_lord": "1472",
+  "def_lord": "1394",
+  "rec_lord": "1727",
+  "hp_anima": "5578",
+  "rec_anima": "1569",
+  "atk_breaker": "1630",
+  "def_breaker": "1236",
+  "atk_guardian": "1314",
+  "def_guardian": "1552",
+  "rec_guardian": "1648",
+  "def_oracle": "1315",
+  "hp_oracle": "4748",
+  "rec_oracle": "1964",
+  "hp_bonus": "500",
+  "atk_bonus": "200",
+  "def_bonus": "200",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "7",
+  "normaldc": "14",
+  "ls": "Five Light's Force",
+  "lsdescription": "50% boost to Atk power of all Units when 5 elements or more are present",
+  "lstype": "Attack",
+  "bbdescription": "Greatly recovers HP for all allies & adds Dark element to attack for 3 turns",
+  "bbnote": "Heals (1760~2060 + 27% of healer Rec) HP",
+  "bbtype": "Heal/Support",
+  "bbhits": "0",
+  "bbaoe": "0",
+  "bbgauge": "20",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "50123",
+  "evomats3": "50191",
+  "evomats4": "50191",
+  "evomats5": "60224"
 }

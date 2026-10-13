@@ -1,62 +1,65 @@
 {
   "id": "20592",
-  "unitName": "Lionel",
-  "freetext": ":''For other uses, see Lionel (disambiguation)''",
-  "no": "1025",
-  "element": "Water",
-  "rarity": "★★★",
-  "cost": "6",
-  "maxlv": "40",
-  "basexp": "15",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "93",
-  "animation_idle": "68",
-  "animation_move": "6",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "17, 45, 49",
-  "normal_distribute": "35, 50, 15",
-  "normal_totaldistr": "100",
-  "bb_frames": "17, 22, 45, 49, 53, 57, 61",
-  "bb_distribute": "20, 10, 30, 16, 12, 7, 5",
-  "bb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "description": "A knight who swore allegiance to the third prince of the Sama Kingdom, Arius. Lionel grew up beside the prince, and the two bonded through the sword training they would occasionally do together. Arius placed a great deal of trust in Lionel, and tasked him with such errands as delivering his letters to Selena. As the great war against the gods drew closer, Lionel was ready to fight for Arius when he suddenly disappeared. The loss of Lionel is said to have left Arius devastated, but might have also helped him grow more independent.",
-  "summon": "Did you summon me here?<br>I like your style.<br>Let's fight together!<br>For Prince Arius!",
-  "fusion": "I need to grow stronger in order to<br>fight by Prince Arius's side...<br>Please, help me reach my goal!",
-  "evolution": "",
-  "hp_base": "2148",
-  "atk_base": "797",
-  "def_base": "883",
-  "rec_base": "750",
-  "hp_lord": "3164",
-  "atk_lord": "1063",
-  "def_lord": "1177",
-  "rec_lord": "1000",
-  "hp_anima": "3456",
-  "rec_anima": "922",
-  "atk_breaker": "1141",
-  "def_breaker": "1099",
-  "def_guardian": "1255",
-  "rec_guardian": "961",
-  "def_oracle": "1138",
-  "rec_oracle": "1117",
-  "hp_bonus": "300",
-  "atk_bonus": "80",
-  "def_bonus": "160",
-  "rec_bonus": "120",
-  "lordonly": "",
-  "combo_hits": "3",
-  "normaldc": "6",
-  "ls": "Swordsman's Will",
-  "lsdescription": "Boosts Atk relative to how low remaining HP is",
-  "lsnote": "0.5% boost per 1% HP lost",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 797,
+      "def": 883,
+      "hp": 2148,
+      "rec": 750
+    },
+    "_lord": {
+      "atk": 1063,
+      "def": 1177,
+      "hp": 3164,
+      "rec": 1000
+    },
+    "anima": {
+      "atk": 1063,
+      "def": 1177,
+      "hp max": 3554,
+      "hp min": 3359,
+      "rec max": 961,
+      "rec min": 883
+    },
+    "breaker": {
+      "atk max": 1180,
+      "atk min": 1102,
+      "def max": 1138,
+      "def min": 1060,
+      "hp": 3164,
+      "rec": 1000
+    },
+    "guardian": {
+      "atk": 1063,
+      "def max": 1294,
+      "def min": 1216,
+      "hp": 3164,
+      "rec max": 1000,
+      "rec min": 922
+    },
+    "oracle": {
+      "atk": 1063,
+      "def max": 1177,
+      "def min": 1099,
+      "hp": 3164,
+      "rec max": 1156,
+      "rec min": 1078
+    }
+  },
+  "leader_skill": {
+    "desc": "Boosts Atk relative to how low remaining HP is",
+    "effects": [
+      {
+        "atk% base buff": 0,
+        "atk% extra buff based on hp": 50,
+        "buff proportional to hp": "lost",
+        "passive id": "46"
+      }
+    ],
+    "id": "9320",
+    "name": "Swordsman's Will"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -323,6 +326,177 @@
     ],
     "name": "Azure Cross"
   },
+  "sbb": {},
+  "ubb": {},
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 93
+    },
+    "idle": {
+      "total number of frames": 68
+    },
+    "move": {
+      "total number of frames": 6
+    }
+  },
+  "category": 20590,
+  "cost": "6",
+  "damage frames": {
+    "frame times": [
+      17,
+      45,
+      49
+    ],
+    "hit dmg% distribution": [
+      35,
+      50,
+      15
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 3
+  },
+  "drop check count": 2,
+  "element": "water",
+  "exp_pattern": 15,
+  "gender": "male",
+  "getting type": "farmable",
+  "guide_id": 1025,
+  "imp": {
+    "max atk": "80",
+    "max def": "160",
+    "max hp": "300",
+    "max rec": "120"
+  },
+  "kind": "normal",
+  "lord damage range": "989~1105",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Lionel",
+  "rarity": "3",
+  "sell caution": false,
+  "unitName": "Lionel",
+  "maxlv": "40",
+  "no": "1025",
+  "unitDisplayHomePosition_1W9CxaFK": "438,-53,210,573",
+  "unitDisplayDetailPosition_6z54rgb3": "-128,235,890,573",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "160,336,297,293,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-65,-5,890,573",
+  "unitDisplaySummonPosition_KC3Jk8Br": "30,342,430,277,0",
+  "unitDisplayHpPosition_3BpHN6VD": "-7,2",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "1000",
+  "sellCaution": false,
+  "effectFrames": "17:122:1,18:200030:1,39:122:1,46:200311:1,49:182:1,50:200141:1",
+  "evofrom": "",
+  "evointo": "20593",
+  "evozelcost": "100000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "20191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20132",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "20131",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60142",
+      "count": 1
+    }
+  ],
+  "freetext": ":''For other uses, see Lionel (disambiguation)''",
+  "basexp": "15",
+  "animation_attack": "93",
+  "animation_idle": "68",
+  "animation_move": "6",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "17, 45, 49",
+  "normal_distribute": "35, 50, 15",
+  "normal_totaldistr": "100",
+  "bb_frames": "17, 22, 45, 49, 53, 57, 61",
+  "bb_distribute": "20, 10, 30, 16, 12, 7, 5",
+  "bb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "description": "A knight who swore allegiance to the third prince of the Sama Kingdom, Arius. Lionel grew up beside the prince, and the two bonded through the sword training they would occasionally do together. Arius placed a great deal of trust in Lionel, and tasked him with such errands as delivering his letters to Selena. As the great war against the gods drew closer, Lionel was ready to fight for Arius when he suddenly disappeared. The loss of Lionel is said to have left Arius devastated, but might have also helped him grow more independent.",
+  "summon": "Did you summon me here?<br>I like your style.<br>Let's fight together!<br>For Prince Arius!",
+  "fusion": "I need to grow stronger in order to<br>fight by Prince Arius's side...<br>Please, help me reach my goal!",
+  "evolution": "",
+  "hp_base": "2148",
+  "atk_base": "797",
+  "def_base": "883",
+  "rec_base": "750",
+  "hp_lord": "3164",
+  "atk_lord": "1063",
+  "def_lord": "1177",
+  "rec_lord": "1000",
+  "hp_anima": "3456",
+  "rec_anima": "922",
+  "atk_breaker": "1141",
+  "def_breaker": "1099",
+  "def_guardian": "1255",
+  "rec_guardian": "961",
+  "def_oracle": "1138",
+  "rec_oracle": "1117",
+  "hp_bonus": "300",
+  "atk_bonus": "80",
+  "def_bonus": "160",
+  "rec_bonus": "120",
+  "lordonly": "",
+  "combo_hits": "3",
+  "normaldc": "6",
+  "ls": "Swordsman's Will",
+  "lsdescription": "Boosts Atk relative to how low remaining HP is",
+  "lsnote": "0.5% boost per 1% HP lost",
+  "lstype": "Attack",
   "bbdescription": "7 combo Water attack on single foe & boosts Atk relative to Def for 3 turns",
   "bbnote": "20% Def to Atk",
   "bbtype": "Support/Offense",
@@ -331,7 +505,6 @@
   "bbgauge": "16",
   "bbdc": "14",
   "bbmultiplier": "300",
-  "sbb": {},
   "sbbdescription": "",
   "sbbtype": "",
   "sbbhits": "",
@@ -339,7 +512,6 @@
   "sbbgauge": "",
   "sbbdc": "",
   "sbbmultiplier": "",
-  "ubb": {},
   "ubbdescription": "",
   "ubbtype": "",
   "ubbhits": "",
@@ -350,83 +522,10 @@
   "es": "",
   "esitem": "",
   "esdescription": "",
-  "evofrom": "",
-  "evointo": "20593",
   "evomats1": "20191",
   "evomats2": "20131",
   "evomats3": "20130",
   "evomats4": "60143",
   "evomats5": "60142",
-  "evoitem": "",
-  "evozelcost": "100000",
-  "stats": {
-    "_base": {
-      "atk": 797,
-      "def": 883,
-      "hp": 2148,
-      "rec": 750
-    },
-    "_lord": {
-      "atk": 1063,
-      "def": 1177,
-      "hp": 3164,
-      "rec": 1000
-    },
-    "anima": {
-      "atk": 1063,
-      "def": 1177,
-      "hp max": 3554,
-      "hp min": 3359,
-      "rec max": 961,
-      "rec min": 883
-    },
-    "breaker": {
-      "atk max": 1180,
-      "atk min": 1102,
-      "def max": 1138,
-      "def min": 1060,
-      "hp": 3164,
-      "rec": 1000
-    },
-    "guardian": {
-      "atk": 1063,
-      "def max": 1294,
-      "def min": 1216,
-      "hp": 3164,
-      "rec max": 1000,
-      "rec min": 922
-    },
-    "oracle": {
-      "atk": 1063,
-      "def max": 1177,
-      "def min": 1099,
-      "hp": 3164,
-      "rec max": 1156,
-      "rec min": 1078
-    }
-  },
-  "leader_skill": {
-    "desc": "Boosts Atk relative to how low remaining HP is",
-    "effects": [
-      {
-        "atk% base buff": 0,
-        "atk% extra buff based on hp": 50,
-        "buff proportional to hp": "lost",
-        "passive id": "46"
-      }
-    ],
-    "id": "9320",
-    "name": "Swordsman's Will"
-  },
-  "extra_skill": {},
-  "unitDisplayHomePosition_1W9CxaFK": "438,-53,210,573",
-  "unitDisplayDetailPosition_6z54rgb3": "-128,235,890,573",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "160,336,297,293,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-65,-5,890,573",
-  "unitDisplaySummonPosition_KC3Jk8Br": "30,342,430,277,0",
-  "unitDisplayHpPosition_3BpHN6VD": "-7,2",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "1000",
-  "sellCaution": false,
-  "effectFrames": "17:122:1,18:200030:1,39:122:1,46:200311:1,49:182:1,50:200141:1"
+  "evoitem": ""
 }

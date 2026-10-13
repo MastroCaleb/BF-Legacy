@@ -1,68 +1,104 @@
 {
   "id": "61047",
-  "unitName": "Imperial Chain Johan",
-  "no": "1498",
-  "element": "Dark",
-  "rarity": "Omni",
-  "cost": "48",
-  "maxlv": "150",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "116",
-  "animation_idle": "52",
-  "animation_move": "3",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "11, 16, 27, 32, 43, 48, 71, 74, 77, 80, 73",
-  "normal_distribute": "8, 4, 7, 4, 8, 4, 15, 14, 13, 12, 11",
-  "normal_totaldistr": "100",
-  "bb_frames": "11, 14, 17, 27, 33, 43, 46, 49, 71, 75, 79, 83, 87, 91, 95, 99",
-  "bb_distribute": "4, 3, 2, 4, 3, 4, 3, 2, 15, 13, 11, 10, 8, 7, 6, 5",
-  "bb_totaldistr": "100",
-  "sbb_frames": "11, 14, 17, 27, 30, 33, 43, 46, 49, 52, 71, 75, 79, 83, 87, 91, 95, 99, 103, 107",
-  "sbb_distribute": "4, 3, 2, 4, 3, 2, 4, 3, 2, 2, 12, 10, 9, 7, 7, 6, 6, 5, 5, 4",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "11, 14, 17, 20, 27, 30, 33, 36, 43, 46, 49, 52, 71, 75, 79, 83, 87, 91, 95, 99, 103, 107",
-  "ubb_distribute": "4, 3, 2, 2, 4, 3, 2, 2, 4, 3, 2, 2, 11, 9, 9, 8, 7, 6, 5, 4, 4, 4",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "1",
-  "ubb_effectdelay": "1",
-  "description": "Skilled in combat despite being a civil official, he took up arms and fought in the war for unification. As a result, the commander of the imperial guard was never hostile even when needing to rein him in, and he made substantial improvements to the nation's power. Opinions on his policies are divided, but his passionate dedication to the empire was indisputable. A true, complete unification of Elgaia might have been possible had he lived to see his ideal nation made a reality.",
-  "summon": "Cringing at mere criticism is despicable. Scum who lose themselves over others' views cannot rule a nation!",
-  "fusion": "Heh, it seems like you get it.<br>This thriving empire is proof that I was correct!",
-  "evolution": "My dream is eternal prosperity for the empire... I will share the glory of the emperor with all of Elgaia!",
-  "hp_base": "6318",
-  "atk_base": "2359",
-  "def_base": "2413",
-  "rec_base": "1936",
-  "hp_lord": "8243",
-  "atk_lord": "2955",
-  "def_lord": "3023",
-  "rec_lord": "2439",
-  "hp_anima": "9360",
-  "rec_anima": "2141",
-  "atk_breaker": "3253",
-  "def_breaker": "2725",
-  "def_guardian": "3321",
-  "rec_guardian": "2290",
-  "def_oracle": "2874",
-  "rec_oracle": "2886",
-  "hp_bonus": "1250",
-  "atk_bonus": "400",
-  "def_bonus": "800",
-  "rec_bonus": "500",
-  "lordonly": "",
-  "combo_hits": "11",
-  "normaldc": "44",
-  "ls": "Divine Law",
-  "lsdescription": "50% boost to Def, max HP, considerably boosts OD gauge fill rate, damage taken hugely boosts BB gauge and may restore HP",
-  "lsnote": "Fills 4-7 BC, 25% chance to heal 25% damage & 20% OD fill rate",
+  "stats": {
+    "_base": {
+      "atk": 2359,
+      "def": 2413,
+      "hp": 6318,
+      "rec": 1936
+    },
+    "_lord": {
+      "atk": 2955,
+      "def": 3023,
+      "hp": 8243,
+      "rec": 2439
+    },
+    "anima": {
+      "atk": 2955,
+      "def": 3023,
+      "hp max": 9733,
+      "hp min": 8988,
+      "rec max": 2290,
+      "rec min": 1992
+    },
+    "breaker": {
+      "atk max": 3402,
+      "atk min": 3104,
+      "def max": 2874,
+      "def min": 2576,
+      "hp": 8243,
+      "rec": 2439
+    },
+    "guardian": {
+      "atk": 2955,
+      "def max": 3470,
+      "def min": 3172,
+      "hp": 8243,
+      "rec max": 2439,
+      "rec min": 2141
+    },
+    "oracle": {
+      "atk": 2955,
+      "def max": 3023,
+      "def min": 2725,
+      "hp": 8243,
+      "rec max": 3035,
+      "rec min": 2737
+    }
+  },
+  "leader_skill": {
+    "desc": "50% boost to Def, max HP, considerably boosts OD gauge fill rate, damage taken hugely boosts BB gauge and may restore HP",
+    "effects": [
+      {
+        "def% buff": 50,
+        "hp% buff": 50,
+        "passive id": "1"
+      },
+      {
+        "bc fill when attacked high": 7,
+        "bc fill when attacked low": 4,
+        "bc fill when attacked%": 100,
+        "passive id": "25"
+      },
+      {
+        "dmg% to hp% when attacked chance%": 25,
+        "dmg% to hp% when attacked high": 25,
+        "dmg% to hp% when attacked low": 25,
+        "passive id": "24"
+      },
+      {
+        "od fill rate%": 20,
+        "passive id": "70"
+      }
+    ],
+    "id": "4354",
+    "name": "Divine Law"
+  },
+  "extra_skill": {
+    "desc": "Negates Def ignoring effect & damage reduction for 2 turns when damage taken has exceeded certain amount",
+    "effects": [
+      {
+        "conditions": [],
+        "ignore def resist chance%": 100,
+        "passive id": "92",
+        "passive target": "self"
+      },
+      {
+        "buff": {
+          "buff turns (36)": "1",
+          "dmg reduction% buff": 25
+        },
+        "conditions": [],
+        "damage threshold buff activation": 5000,
+        "passive id": "78",
+        "passive target": "self"
+      }
+    ],
+    "id": "26000",
+    "name": "Perfectionism",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -541,14 +577,6 @@
     ],
     "name": "Void Serpent Formation"
   },
-  "bbdescription": "16 combo Dark attack on all foes, considerably boosts OD gauge fill rate for 3 turns, damage taken considerably boosts BB gauge for 3 turns & 50% damage reduction for 1 turn",
-  "bbnote": "Fills 4-7 BC, 20% OD fill rate",
-  "bbtype": "Offense",
-  "bbhits": "16",
-  "bbaoe": "A",
-  "bbgauge": "26",
-  "bbdc": "16",
-  "bbmultiplier": "340",
   "sbb": {
     "damage frames": [
       {
@@ -1127,14 +1155,6 @@
     ],
     "name": "Conqueror's Decree"
   },
-  "sbbdescription": "20 combo powerful Dark attack on all foes, considerably boosts OD gauge fill rate for 3 turns, hugely boosts BC efficacy for 3 turns, damage taken considerably boosts BB gauge for 3 turns & 50% damage reduction for 1 turn",
-  "sbbnote": "Fills 4-7 BC, 20% OD fill rate & 50% efficacy",
-  "sbbtype": "Offense",
-  "sbbhits": "20",
-  "sbbaoe": "A",
-  "sbbgauge": "28",
-  "sbbdc": "20",
-  "sbbmultiplier": "500",
   "ubb": {
     "damage frames": [
       {
@@ -1274,6 +1294,192 @@
     ],
     "name": "Eternity's Fate"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 116
+    },
+    "idle": {
+      "total number of frames": 52
+    },
+    "move": {
+      "total number of frames": 3
+    }
+  },
+  "category": 61040,
+  "cost": "48",
+  "damage frames": {
+    "frame times": [
+      11,
+      16,
+      27,
+      32,
+      43,
+      48,
+      71,
+      74,
+      77,
+      80,
+      73
+    ],
+    "hit dmg% distribution": [
+      8,
+      4,
+      7,
+      4,
+      8,
+      4,
+      15,
+      14,
+      13,
+      12,
+      11
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 11
+  },
+  "drop check count": 4,
+  "element": "dark",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 1498,
+  "imp": {
+    "max atk": "400",
+    "max def": "800",
+    "max hp": "1250",
+    "max rec": "500"
+  },
+  "kind": "normal",
+  "lord damage range": "2751~3073",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Imperial Chain Johan",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "8",
+  "sell caution": false,
+  "unitName": "Imperial Chain Johan",
+  "maxlv": "150",
+  "no": "1498",
+  "unitDisplayHomePosition_1W9CxaFK": "560,340,165,450",
+  "unitDisplayDetailPosition_6z54rgb3": "-202,-135,1220,1050",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "1,127,640,551,0",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-124,-341,1130,973",
+  "unitDisplaySummonPosition_KC3Jk8Br": "1,127,640,551,0",
+  "unitDisplayHpPosition_3BpHN6VD": "2,47",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "50000",
+  "sellCaution": false,
+  "effectFrames": "5:120:1,10:120:1,21:120:1,26:120:1,37:120:1,42:120:1,65:120:1,69:120:1,73:120:1,77:120:1,81:120:1,7:200777:1,3:601712:1,75:400548:1,11:600210:1,27:600210:1,43:600210:1,71:400364:1,80:600210:1",
+  "evofrom": "61046",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "21",
+  "animation_attack": "116",
+  "animation_idle": "52",
+  "animation_move": "3",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "11, 16, 27, 32, 43, 48, 71, 74, 77, 80, 73",
+  "normal_distribute": "8, 4, 7, 4, 8, 4, 15, 14, 13, 12, 11",
+  "normal_totaldistr": "100",
+  "bb_frames": "11, 14, 17, 27, 33, 43, 46, 49, 71, 75, 79, 83, 87, 91, 95, 99",
+  "bb_distribute": "4, 3, 2, 4, 3, 4, 3, 2, 15, 13, 11, 10, 8, 7, 6, 5",
+  "bb_totaldistr": "100",
+  "sbb_frames": "11, 14, 17, 27, 30, 33, 43, 46, 49, 52, 71, 75, 79, 83, 87, 91, 95, 99, 103, 107",
+  "sbb_distribute": "4, 3, 2, 4, 3, 2, 4, 3, 2, 2, 12, 10, 9, 7, 7, 6, 6, 5, 5, 4",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "11, 14, 17, 20, 27, 30, 33, 36, 43, 46, 49, 52, 71, 75, 79, 83, 87, 91, 95, 99, 103, 107",
+  "ubb_distribute": "4, 3, 2, 2, 4, 3, 2, 2, 4, 3, 2, 2, 11, 9, 9, 8, 7, 6, 5, 4, 4, 4",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "1",
+  "ubb_effectdelay": "1",
+  "description": "Skilled in combat despite being a civil official, he took up arms and fought in the war for unification. As a result, the commander of the imperial guard was never hostile even when needing to rein him in, and he made substantial improvements to the nation's power. Opinions on his policies are divided, but his passionate dedication to the empire was indisputable. A true, complete unification of Elgaia might have been possible had he lived to see his ideal nation made a reality.",
+  "summon": "Cringing at mere criticism is despicable. Scum who lose themselves over others' views cannot rule a nation!",
+  "fusion": "Heh, it seems like you get it.<br>This thriving empire is proof that I was correct!",
+  "evolution": "My dream is eternal prosperity for the empire... I will share the glory of the emperor with all of Elgaia!",
+  "hp_base": "6318",
+  "atk_base": "2359",
+  "def_base": "2413",
+  "rec_base": "1936",
+  "hp_lord": "8243",
+  "atk_lord": "2955",
+  "def_lord": "3023",
+  "rec_lord": "2439",
+  "hp_anima": "9360",
+  "rec_anima": "2141",
+  "atk_breaker": "3253",
+  "def_breaker": "2725",
+  "def_guardian": "3321",
+  "rec_guardian": "2290",
+  "def_oracle": "2874",
+  "rec_oracle": "2886",
+  "hp_bonus": "1250",
+  "atk_bonus": "400",
+  "def_bonus": "800",
+  "rec_bonus": "500",
+  "lordonly": "",
+  "combo_hits": "11",
+  "normaldc": "44",
+  "ls": "Divine Law",
+  "lsdescription": "50% boost to Def, max HP, considerably boosts OD gauge fill rate, damage taken hugely boosts BB gauge and may restore HP",
+  "lsnote": "Fills 4-7 BC, 25% chance to heal 25% damage & 20% OD fill rate",
+  "bbdescription": "16 combo Dark attack on all foes, considerably boosts OD gauge fill rate for 3 turns, damage taken considerably boosts BB gauge for 3 turns & 50% damage reduction for 1 turn",
+  "bbnote": "Fills 4-7 BC, 20% OD fill rate",
+  "bbtype": "Offense",
+  "bbhits": "16",
+  "bbaoe": "A",
+  "bbgauge": "26",
+  "bbdc": "16",
+  "bbmultiplier": "340",
+  "sbbdescription": "20 combo powerful Dark attack on all foes, considerably boosts OD gauge fill rate for 3 turns, hugely boosts BC efficacy for 3 turns, damage taken considerably boosts BB gauge for 3 turns & 50% damage reduction for 1 turn",
+  "sbbnote": "Fills 4-7 BC, 20% OD fill rate & 50% efficacy",
+  "sbbtype": "Offense",
+  "sbbhits": "20",
+  "sbbaoe": "A",
+  "sbbgauge": "28",
+  "sbbdc": "20",
+  "sbbmultiplier": "500",
   "ubbdescription": "22 combo massive Dark attack on all foes, enormously boosts OD gauge fill rate for 2 turns, 75% damage reduction for 3 turns & damage taken enormously boosts BB gauge for 3 turns",
   "ubbnote": "Fills 50 BC & 300% OD fill rate",
   "ubbtype": "Offense",
@@ -1286,7 +1492,6 @@
   "esitem": "",
   "esdescription": "Negates Def ignoring effect & damage reduction for 2 turns when damage taken has exceeded certain amount",
   "esnote": "25% reduction after 5000 damage",
-  "evofrom": "61046",
   "howtoget": "",
   "omniskill1_cat": "Parameter Boost",
   "omniskill1_1_sp": "20",
@@ -1322,114 +1527,5 @@
   "notes": "",
   "addcat": "Champions of Randall",
   "addcatname": "Johan2",
-  "bottomtext": "",
-  "stats": {
-    "_base": {
-      "atk": 2359,
-      "def": 2413,
-      "hp": 6318,
-      "rec": 1936
-    },
-    "_lord": {
-      "atk": 2955,
-      "def": 3023,
-      "hp": 8243,
-      "rec": 2439
-    },
-    "anima": {
-      "atk": 2955,
-      "def": 3023,
-      "hp max": 9733,
-      "hp min": 8988,
-      "rec max": 2290,
-      "rec min": 1992
-    },
-    "breaker": {
-      "atk max": 3402,
-      "atk min": 3104,
-      "def max": 2874,
-      "def min": 2576,
-      "hp": 8243,
-      "rec": 2439
-    },
-    "guardian": {
-      "atk": 2955,
-      "def max": 3470,
-      "def min": 3172,
-      "hp": 8243,
-      "rec max": 2439,
-      "rec min": 2141
-    },
-    "oracle": {
-      "atk": 2955,
-      "def max": 3023,
-      "def min": 2725,
-      "hp": 8243,
-      "rec max": 3035,
-      "rec min": 2737
-    }
-  },
-  "leader_skill": {
-    "desc": "50% boost to Def, max HP, considerably boosts OD gauge fill rate, damage taken hugely boosts BB gauge and may restore HP",
-    "effects": [
-      {
-        "def% buff": 50,
-        "hp% buff": 50,
-        "passive id": "1"
-      },
-      {
-        "bc fill when attacked high": 7,
-        "bc fill when attacked low": 4,
-        "bc fill when attacked%": 100,
-        "passive id": "25"
-      },
-      {
-        "dmg% to hp% when attacked chance%": 25,
-        "dmg% to hp% when attacked high": 25,
-        "dmg% to hp% when attacked low": 25,
-        "passive id": "24"
-      },
-      {
-        "od fill rate%": 20,
-        "passive id": "70"
-      }
-    ],
-    "id": "4354",
-    "name": "Divine Law"
-  },
-  "extra_skill": {
-    "desc": "Negates Def ignoring effect & damage reduction for 2 turns when damage taken has exceeded certain amount",
-    "effects": [
-      {
-        "conditions": [],
-        "ignore def resist chance%": 100,
-        "passive id": "92",
-        "passive target": "self"
-      },
-      {
-        "buff": {
-          "buff turns (36)": "1",
-          "dmg reduction% buff": 25
-        },
-        "conditions": [],
-        "damage threshold buff activation": 5000,
-        "passive id": "78",
-        "passive target": "self"
-      }
-    ],
-    "id": "26000",
-    "name": "Perfectionism",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "560,340,165,450",
-  "unitDisplayDetailPosition_6z54rgb3": "-202,-135,1220,1050",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "1,127,640,551,0",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-124,-341,1130,973",
-  "unitDisplaySummonPosition_KC3Jk8Br": "1,127,640,551,0",
-  "unitDisplayHpPosition_3BpHN6VD": "2,47",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "50000",
-  "sellCaution": false,
-  "effectFrames": "5:120:1,10:120:1,21:120:1,26:120:1,37:120:1,42:120:1,65:120:1,69:120:1,73:120:1,77:120:1,81:120:1,7:200777:1,3:601712:1,75:400548:1,11:600210:1,27:600210:1,43:600210:1,71:400364:1,80:600210:1"
+  "bottomtext": ""
 }

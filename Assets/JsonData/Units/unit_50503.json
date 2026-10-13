@@ -1,62 +1,63 @@
 {
   "id": "50503",
-  "unitName": "Brave Legend Hogar",
-  "no": "667",
-  "element": "Light",
-  "rarity": "★★★★",
-  "cost": "13",
-  "maxlv": "60",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "4",
-  "animation_attack": "186",
-  "animation_idle": "52",
-  "animation_move": "6",
-  "movespeed_attack": "0.0041",
-  "movespeed_skill": "0.0041",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "84, 88, 134",
-  "normal_distribute": "25, 15, 60",
-  "normal_totaldistr": "100",
-  "bb_frames": "84, 88, 92, 134",
-  "bb_distribute": "20, 10, 10, 60",
-  "bb_totaldistr": "100",
-  "description": "A famous adventurer and world traveler, and father to Alma. Known for his great strength, he left his footmarks around the globe while he explored with his beloved axe in hand, defeating even the most atrocious beasts with one blow. However, due to his ridiculous strength, his axe broke after continuous use. He is also famous for sharing his stories with the local children of the towns he visited. His daughter Alma was also included among them, listening to her father's exploits over and over again.",
-  "summon": "Is this the setting<br>for a new adventure?<br>I can't wait!<br>My power will come in handy!",
-  "fusion": "Waaahhh!!<br>I'm overflowing with power!<br>I have to show this to my daughter.",
-  "evolution": "",
-  "hp_base": "3007",
-  "atk_base": "1213",
-  "def_base": "994",
-  "rec_base": "758",
-  "hp_lord": "4309",
-  "atk_lord": "1618",
-  "def_lord": "1325",
-  "rec_lord": "1011",
-  "hp_anima": "4752",
-  "rec_anima": "893",
-  "atk_breaker": "1736",
-  "def_breaker": "1207",
-  "atk_guardian": "1500",
-  "def_guardian": "1443",
-  "rec_guardian": "952",
-  "def_oracle": "1266",
-  "hp_oracle": "4132",
-  "rec_oracle": "1188",
-  "hp_bonus": "600",
-  "atk_bonus": "120",
-  "def_bonus": "120",
-  "rec_bonus": "120",
-  "lordonly": "",
-  "combo_hits": "3",
-  "normaldc": "12",
-  "ls": "Intense Flash",
-  "lsdescription": "Boost in damage dealt during Spark",
-  "lsnote": "30% boost to Spark damage",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 1213,
+      "def": 994,
+      "hp": 3007,
+      "rec": 758
+    },
+    "_lord": {
+      "atk": 1618,
+      "def": 1325,
+      "hp": 4309,
+      "rec": 1011
+    },
+    "anima": {
+      "atk": 1618,
+      "def": 1325,
+      "hp max": 4899,
+      "hp min": 4604,
+      "rec max": 952,
+      "rec min": 834
+    },
+    "breaker": {
+      "atk max": 1795,
+      "atk min": 1677,
+      "def max": 1266,
+      "def min": 1148,
+      "hp": 4309,
+      "rec": 1011
+    },
+    "guardian": {
+      "atk": 1618,
+      "def max": 1502,
+      "def min": 1384,
+      "hp": 4309,
+      "rec max": 1011,
+      "rec min": 893
+    },
+    "oracle": {
+      "atk": 1618,
+      "def max": 1325,
+      "def min": 1207,
+      "hp": 4309,
+      "rec max": 1247,
+      "rec min": 1129
+    }
+  },
+  "leader_skill": {
+    "desc": "Boost in damage dealt during Spark",
+    "effects": [
+      {
+        "damage% for spark": 30,
+        "passive id": "31"
+      }
+    ],
+    "id": "1301",
+    "name": "Intense Flash"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -215,93 +216,99 @@
     ],
     "name": "Grand Attack"
   },
-  "bbdescription": "4 combo Light elemental attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "4",
-  "bbaoe": "A",
-  "bbgauge": "15",
-  "bbdc": "8",
-  "bbmultiplier": "140",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "50504",
-  "evomats1": "50123",
-  "evomats2": "50191",
-  "evomats3": "50122",
-  "evomats4": "60144",
-  "evomats5": "60143",
-  "evozelcost": "200000",
-  "stats": {
-    "_base": {
-      "atk": 1213,
-      "def": 994,
-      "hp": 3007,
-      "rec": 758
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_under",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1618,
-      "def": 1325,
-      "hp": 4309,
-      "rec": 1011
+    {
+      "action": "skill",
+      "chance%": 30.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1618,
-      "def": 1325,
-      "hp max": 4899,
-      "hp min": 4604,
-      "rec max": 952,
-      "rec min": 834
+    {
+      "action": "attack",
+      "chance%": 70.0,
+      "target conditions": "hp_max",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 1795,
-      "atk min": 1677,
-      "def max": 1266,
-      "def min": 1148,
-      "hp": 4309,
-      "rec": 1011
+    {
+      "action": "attack",
+      "chance%": 50.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "guardian": {
-      "atk": 1618,
-      "def max": 1502,
-      "def min": 1384,
-      "hp": 4309,
-      "rec max": 1011,
-      "rec min": 893
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 186
     },
-    "oracle": {
-      "atk": 1618,
-      "def max": 1325,
-      "def min": 1207,
-      "hp": 4309,
-      "rec max": 1247,
-      "rec min": 1129
+    "idle": {
+      "total number of frames": 52
+    },
+    "move": {
+      "total number of frames": 6
     }
   },
-  "leader_skill": {
-    "desc": "Boost in damage dealt during Spark",
-    "effects": [
-      {
-        "damage% for spark": 30,
-        "passive id": "31"
-      }
+  "category": 50500,
+  "cost": "13",
+  "damage frames": {
+    "frame times": [
+      84,
+      88,
+      134
     ],
-    "id": "1301",
-    "name": "Intense Flash"
+    "hit dmg% distribution": [
+      25,
+      15,
+      60
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 3
   },
-  "extra_skill": {},
+  "drop check count": 4,
+  "element": "light",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 667,
+  "imp": {
+    "max atk": "120",
+    "max def": "120",
+    "max hp": "600",
+    "max rec": "120"
+  },
+  "kind": "normal",
+  "lord damage range": "1506~1682",
+  "movement": {
+    "attack": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    }
+  },
+  "name": "Brave Legend Hogar",
+  "rarity": "4",
+  "sell caution": false,
+  "unitName": "Brave Legend Hogar",
+  "maxlv": "60",
+  "no": "667",
   "unitDisplayHomePosition_1W9CxaFK": "330,440,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "-31,-239,881,1060",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "88,348,380,284,0",
@@ -311,5 +318,109 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "2500",
   "sellCaution": false,
-  "effectFrames": "78:125:1,82:125:1,128:125:1,134:500225:1,84:500173:1,92:500173:1,84:300183:1"
+  "effectFrames": "78:125:1,82:125:1,128:125:1,134:500225:1,84:500173:1,92:500173:1,84:300183:1",
+  "evofrom": "",
+  "evointo": "50504",
+  "evozelcost": "200000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50123",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50191",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "50122",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60143",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "186",
+  "animation_idle": "52",
+  "animation_move": "6",
+  "movespeed_attack": "0.0041",
+  "movespeed_skill": "0.0041",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "84, 88, 134",
+  "normal_distribute": "25, 15, 60",
+  "normal_totaldistr": "100",
+  "bb_frames": "84, 88, 92, 134",
+  "bb_distribute": "20, 10, 10, 60",
+  "bb_totaldistr": "100",
+  "description": "A famous adventurer and world traveler, and father to Alma. Known for his great strength, he left his footmarks around the globe while he explored with his beloved axe in hand, defeating even the most atrocious beasts with one blow. However, due to his ridiculous strength, his axe broke after continuous use. He is also famous for sharing his stories with the local children of the towns he visited. His daughter Alma was also included among them, listening to her father's exploits over and over again.",
+  "summon": "Is this the setting<br>for a new adventure?<br>I can't wait!<br>My power will come in handy!",
+  "fusion": "Waaahhh!!<br>I'm overflowing with power!<br>I have to show this to my daughter.",
+  "evolution": "",
+  "hp_base": "3007",
+  "atk_base": "1213",
+  "def_base": "994",
+  "rec_base": "758",
+  "hp_lord": "4309",
+  "atk_lord": "1618",
+  "def_lord": "1325",
+  "rec_lord": "1011",
+  "hp_anima": "4752",
+  "rec_anima": "893",
+  "atk_breaker": "1736",
+  "def_breaker": "1207",
+  "atk_guardian": "1500",
+  "def_guardian": "1443",
+  "rec_guardian": "952",
+  "def_oracle": "1266",
+  "hp_oracle": "4132",
+  "rec_oracle": "1188",
+  "hp_bonus": "600",
+  "atk_bonus": "120",
+  "def_bonus": "120",
+  "rec_bonus": "120",
+  "lordonly": "",
+  "combo_hits": "3",
+  "normaldc": "12",
+  "ls": "Intense Flash",
+  "lsdescription": "Boost in damage dealt during Spark",
+  "lsnote": "30% boost to Spark damage",
+  "lstype": "Attack",
+  "bbdescription": "4 combo Light elemental attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "4",
+  "bbaoe": "A",
+  "bbgauge": "15",
+  "bbdc": "8",
+  "bbmultiplier": "140",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50123",
+  "evomats2": "50191",
+  "evomats3": "50122",
+  "evomats4": "60144",
+  "evomats5": "60143"
 }

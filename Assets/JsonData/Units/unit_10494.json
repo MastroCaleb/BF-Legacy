@@ -1,62 +1,65 @@
 {
   "id": "10494",
-  "unitName": "Divine Emperor Orwen",
-  "no": "656",
-  "element": "Fire",
-  "rarity": "★★★★★",
-  "cost": "17",
-  "maxlv": "80",
-  "basexp": "21",
-  "gender": "M",
-  "ai": "2",
-  "animation_attack": "92",
-  "animation_idle": "60",
-  "animation_move": "12",
-  "movespeed_attack": "0.0041",
-  "movespeed_skill": "0.0041",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "40, 44, 48, 52",
-  "normal_distribute": "40, 25, 20, 15",
-  "normal_totaldistr": "100",
-  "bb_frames": "40, 46, 52, 58, 64, 70, 76",
-  "bb_distribute": "30, 20, 15, 10, 10, 10, 5",
-  "bb_totaldistr": "100",
-  "description": "During the war with the gods, the Agni Empire had incredible power that was controlled by the emperor. With the ambitious goal of making the Agni Region the strongest of them all, he trained elite swordsmen such as Fire Knight Lava, and carried out his own secret projects. At the time, he was often compared to his little brother, the general of the Agni army, whom he actually didn't care much for. He just took the popularity that came with it and used it to reign more efficiently.",
-  "summon": "Making you happy is easy.<br>Just do as I say.<br>There's no need to think.",
-  "fusion": "Continue fueling my power.<br>You have no other purpose<br>than to do as I command.",
-  "evolution": "Evolution? How useless.<br>As useless as that proud face of yours.",
-  "hp_base": "4353",
-  "atk_base": "1343",
-  "def_base": "1224",
-  "rec_base": "1073",
-  "hp_lord": "5022",
-  "atk_lord": "1776",
-  "def_lord": "1619",
-  "rec_lord": "1419",
-  "hp_anima": "5615",
-  "rec_anima": "1261",
-  "atk_breaker": "1934",
-  "def_breaker": "1461",
-  "atk_guardian": "1618",
-  "def_guardian": "1777",
-  "rec_guardian": "1340",
-  "def_oracle": "1540",
-  "hp_oracle": "4785",
-  "rec_oracle": "1656",
-  "hp_bonus": "500",
-  "atk_bonus": "260",
-  "def_bonus": "140",
-  "rec_bonus": "200",
-  "lordonly": "",
-  "combo_hits": "4",
-  "normaldc": "12",
-  "ls": "God Emperor's Command",
-  "lsdescription": "Chance of BB gauge greatly filling when attacking",
-  "lsnote": "50% chance to fill 5 BC",
-  "lstype": "Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 1343,
+      "def": 1224,
+      "hp": 4353,
+      "rec": 1073
+    },
+    "_lord": {
+      "atk": 1776,
+      "def": 1619,
+      "hp": 5022,
+      "rec": 1419
+    },
+    "anima": {
+      "atk": 1776,
+      "def": 1619,
+      "hp max": 5812,
+      "hp min": 5417,
+      "rec max": 1340,
+      "rec min": 1182
+    },
+    "breaker": {
+      "atk max": 2013,
+      "atk min": 1855,
+      "def max": 1540,
+      "def min": 1382,
+      "hp": 5022,
+      "rec": 1419
+    },
+    "guardian": {
+      "atk": 1776,
+      "def max": 1856,
+      "def min": 1698,
+      "hp": 5022,
+      "rec max": 1419,
+      "rec min": 1261
+    },
+    "oracle": {
+      "atk": 1776,
+      "def max": 1619,
+      "def min": 1461,
+      "hp": 5022,
+      "rec max": 1735,
+      "rec min": 1577
+    }
+  },
+  "leader_skill": {
+    "desc": "Chance of BB gauge greatly filling when attacking",
+    "effects": [
+      {
+        "bc fill when attacking high": 5,
+        "bc fill when attacking low": 5,
+        "bc fill when attacking%": 50,
+        "passive id": "35"
+      }
+    ],
+    "id": "6301",
+    "name": "God Emperor's Command"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -313,97 +316,89 @@
     ],
     "name": "Flame Dragon Gleam"
   },
-  "bbdescription": "7 combo powerful Fire attack on all enemies & probable Poison and Sickness effect",
-  "bbnote": "45% chance to inflict",
-  "bbtype": "Offense",
-  "bbhits": "7",
-  "bbaoe": "A",
-  "bbgauge": "28",
-  "bbdc": "7",
-  "bbmultiplier": "240",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "10493",
-  "evointo": "10495",
-  "evomats1": "50354",
-  "evomats2": "10133",
-  "evomats3": "10133",
-  "evomats4": "60144",
-  "evomats5": "60224",
-  "evoitem": "",
-  "evozelcost": "500000",
-  "stats": {
-    "_base": {
-      "atk": 1343,
-      "def": 1224,
-      "hp": 4353,
-      "rec": 1073
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 1776,
-      "def": 1619,
-      "hp": 5022,
-      "rec": 1419
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 1776,
-      "def": 1619,
-      "hp max": 5812,
-      "hp min": 5417,
-      "rec max": 1340,
-      "rec min": 1182
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 92
     },
-    "breaker": {
-      "atk max": 2013,
-      "atk min": 1855,
-      "def max": 1540,
-      "def min": 1382,
-      "hp": 5022,
-      "rec": 1419
+    "idle": {
+      "total number of frames": 60
     },
-    "guardian": {
-      "atk": 1776,
-      "def max": 1856,
-      "def min": 1698,
-      "hp": 5022,
-      "rec max": 1419,
-      "rec min": 1261
-    },
-    "oracle": {
-      "atk": 1776,
-      "def max": 1619,
-      "def min": 1461,
-      "hp": 5022,
-      "rec max": 1735,
-      "rec min": 1577
+    "move": {
+      "total number of frames": 12
     }
   },
-  "leader_skill": {
-    "desc": "Chance of BB gauge greatly filling when attacking",
-    "effects": [
-      {
-        "bc fill when attacking high": 5,
-        "bc fill when attacking low": 5,
-        "bc fill when attacking%": 50,
-        "passive id": "35"
-      }
+  "category": 10490,
+  "cost": "17",
+  "damage frames": {
+    "frame times": [
+      40,
+      44,
+      48,
+      52
     ],
-    "id": "6301",
-    "name": "God Emperor's Command"
+    "hit dmg% distribution": [
+      40,
+      25,
+      20,
+      15
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 4
   },
-  "extra_skill": {},
+  "drop check count": 3,
+  "element": "fire",
+  "exp_pattern": 20,
+  "gender": "male",
+  "getting type": "rare summon",
+  "guide_id": 656,
+  "imp": {
+    "max atk": "260",
+    "max def": "140",
+    "max hp": "500",
+    "max rec": "200"
+  },
+  "kind": "normal",
+  "lord damage range": "1653~1847",
+  "movement": {
+    "attack": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    }
+  },
+  "name": "Divine Emperor Orwen",
+  "rarity": "5",
+  "sell caution": false,
+  "unitName": "Divine Emperor Orwen",
+  "maxlv": "80",
+  "no": "656",
   "unitDisplayHomePosition_1W9CxaFK": "307,435,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "0,-266,1185,1071",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "214,352,244,267,0",
@@ -413,5 +408,106 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "5000",
   "sellCaution": false,
-  "effectFrames": "34:127:1,38:121:1,42:121:1,46:121:1,40:1141:1,44:100010:1,48:100010:1,40:100192:1,52:150:1"
+  "effectFrames": "34:127:1,38:121:1,42:121:1,46:121:1,40:1141:1,44:100010:1,48:100010:1,40:100192:1,52:150:1",
+  "evofrom": "10493",
+  "evointo": "10495",
+  "evozelcost": "500000",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "50354",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "10133",
+      "count": 2
+    },
+    {
+      "type": "1",
+      "id": "60144",
+      "count": 1
+    },
+    {
+      "type": "1",
+      "id": "60224",
+      "count": 1
+    }
+  ],
+  "basexp": "21",
+  "animation_attack": "92",
+  "animation_idle": "60",
+  "animation_move": "12",
+  "movespeed_attack": "0.0041",
+  "movespeed_skill": "0.0041",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "40, 44, 48, 52",
+  "normal_distribute": "40, 25, 20, 15",
+  "normal_totaldistr": "100",
+  "bb_frames": "40, 46, 52, 58, 64, 70, 76",
+  "bb_distribute": "30, 20, 15, 10, 10, 10, 5",
+  "bb_totaldistr": "100",
+  "description": "During the war with the gods, the Agni Empire had incredible power that was controlled by the emperor. With the ambitious goal of making the Agni Region the strongest of them all, he trained elite swordsmen such as Fire Knight Lava, and carried out his own secret projects. At the time, he was often compared to his little brother, the general of the Agni army, whom he actually didn't care much for. He just took the popularity that came with it and used it to reign more efficiently.",
+  "summon": "Making you happy is easy.<br>Just do as I say.<br>There's no need to think.",
+  "fusion": "Continue fueling my power.<br>You have no other purpose<br>than to do as I command.",
+  "evolution": "Evolution? How useless.<br>As useless as that proud face of yours.",
+  "hp_base": "4353",
+  "atk_base": "1343",
+  "def_base": "1224",
+  "rec_base": "1073",
+  "hp_lord": "5022",
+  "atk_lord": "1776",
+  "def_lord": "1619",
+  "rec_lord": "1419",
+  "hp_anima": "5615",
+  "rec_anima": "1261",
+  "atk_breaker": "1934",
+  "def_breaker": "1461",
+  "atk_guardian": "1618",
+  "def_guardian": "1777",
+  "rec_guardian": "1340",
+  "def_oracle": "1540",
+  "hp_oracle": "4785",
+  "rec_oracle": "1656",
+  "hp_bonus": "500",
+  "atk_bonus": "260",
+  "def_bonus": "140",
+  "rec_bonus": "200",
+  "lordonly": "",
+  "combo_hits": "4",
+  "normaldc": "12",
+  "ls": "God Emperor's Command",
+  "lsdescription": "Chance of BB gauge greatly filling when attacking",
+  "lsnote": "50% chance to fill 5 BC",
+  "lstype": "Brave Burst",
+  "bbdescription": "7 combo powerful Fire attack on all enemies & probable Poison and Sickness effect",
+  "bbnote": "45% chance to inflict",
+  "bbtype": "Offense",
+  "bbhits": "7",
+  "bbaoe": "A",
+  "bbgauge": "28",
+  "bbdc": "7",
+  "bbmultiplier": "240",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "50354",
+  "evomats2": "10133",
+  "evomats3": "10133",
+  "evomats4": "60144",
+  "evomats5": "60224",
+  "evoitem": ""
 }

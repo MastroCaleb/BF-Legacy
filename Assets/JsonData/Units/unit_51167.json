@@ -1,68 +1,101 @@
 {
   "id": "51167",
-  "unitName": "Glorious Shine Mora",
-  "no": "1606",
-  "element": "Light",
-  "rarity": "Omni",
-  "cost": "50",
-  "maxlv": "150",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "113",
-  "animation_idle": "78",
-  "animation_move": "6",
-  "movespeed_attack": "0.0041",
-  "movespeed_skill": "0.0041",
-  "speedtype_attack": "2",
-  "speedtype_skill": "2",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "41, 44, 47, 50, 53, 56, 59, 62, 65, 68",
-  "normal_distribute": "18, 15, 12, 10, 9, 8, 8, 7, 7, 6",
-  "normal_totaldistr": "100",
-  "bb_frames": "41, 44, 47, 50, 53, 56, 59, 62, 65, 68, 71, 74, 77, 80, 83, 86",
-  "bb_distribute": "11, 10, 9, 8, 8, 7, 7, 6, 6, 5, 5, 4, 4, 4, 3, 3",
-  "bb_totaldistr": "100",
-  "sbb_frames": "41, 44, 47, 50, 53, 56, 59, 62, 65, 68, 71, 74, 77, 80, 83, 86, 89, 92, 95",
-  "sbb_distribute": "10, 9, 8, 7, 7, 6, 6, 5, 5, 5, 4, 4, 4, 3, 4, 3, 4, 3, 3",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "41, 44, 47, 50, 53, 56, 59, 62, 65, 68, 71, 74, 77, 80, 83, 86, 89, 92, 95, 98, 101, 104, 107",
-  "ubb_distribute": "10, 8, 7, 6, 6, 5, 5, 5, 4, 4, 3, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "1",
-  "sbb_effectdelay": "1",
-  "ubb_effectdelay": "1",
-  "description": "One theory holds that Mora is a direct descendant of the demons that sought to bring peaceful rule to Ishgria. Given that, some also speculate that her parents' failure may have influenced Mora's relentless scheming to seize power. Had Mora held more closely to her parents' ideals instead of focusing exclusively on power alone, she might have adopted more cautious and realistic methods in her quest. In doing so, she also might have succeeded in spreading the ideal of peaceful coexistence throughout Ishgria and in changing the nature of that land.",
-  "summon": "A world where only the strong survive... I'm completely sick of the idea of worthless worlds like that.",
-  "fusion": "What is your aim in granting me power? Never mind, I need to stop second-guessing. I'm just happy you like me.",
-  "evolution": "Their ideals weren't misguided.<br>Only their methods were wrong.<br>I will make their dream come true, no matter what.",
-  "hp_base": "6244",
-  "atk_base": "2641",
-  "def_base": "2431",
-  "rec_base": "2378",
-  "hp_lord": "8151",
-  "atk_lord": "3308",
-  "def_lord": "3045",
-  "rec_lord": "2996",
-  "hp_anima": "9268",
-  "rec_anima": "2698",
-  "atk_breaker": "3606",
-  "def_breaker": "2747",
-  "def_guardian": "3343",
-  "rec_guardian": "2847",
-  "def_oracle": "2896",
-  "rec_oracle": "3443",
-  "hp_bonus": "1500",
-  "atk_bonus": "600",
-  "def_bonus": "600",
-  "rec_bonus": "600",
-  "lordonly": "",
-  "combo_hits": "10",
-  "normaldc": "50",
-  "ls": "Seductive Request",
-  "lsdescription": "60% boost to Atk, Max HP, Spark damage boosts BB gauge, 130% boost to Spark damage & probable Spark critical",
-  "lsnote": "Fills 2-3 BC & 10% chance Sparks deal 50% extra damage",
+  "stats": {
+    "_base": {
+      "atk": 2641,
+      "def": 2431,
+      "hp": 6244,
+      "rec": 2378
+    },
+    "_lord": {
+      "atk": 3308,
+      "def": 3045,
+      "hp": 8151,
+      "rec": 2996
+    },
+    "anima": {
+      "atk": 3308,
+      "def": 3045,
+      "hp max": 9641,
+      "hp min": 8896,
+      "rec max": 2847,
+      "rec min": 2549
+    },
+    "breaker": {
+      "atk max": 3755,
+      "atk min": 3457,
+      "def max": 2896,
+      "def min": 2598,
+      "hp": 8151,
+      "rec": 2996
+    },
+    "guardian": {
+      "atk": 3308,
+      "def max": 3492,
+      "def min": 3194,
+      "hp": 8151,
+      "rec max": 2996,
+      "rec min": 2698
+    },
+    "oracle": {
+      "atk": 3308,
+      "def max": 3045,
+      "def min": 2747,
+      "hp": 8151,
+      "rec max": 3592,
+      "rec min": 3294
+    }
+  },
+  "leader_skill": {
+    "desc": "60% boost to Atk, Max HP, Spark damage boosts BB gauge, 130% boost to Spark damage & probable Spark critical",
+    "effects": [
+      {
+        "atk% buff": 60,
+        "hp% buff": 60,
+        "passive id": "1"
+      },
+      {
+        "damage% for spark": 130,
+        "passive id": "31"
+      },
+      {
+        "bc fill on spark high": 3,
+        "bc fill on spark low": 2,
+        "bc fill on spark%": 100,
+        "passive id": "47"
+      },
+      {
+        "passive id": "100",
+        "spark crit chance%": 10,
+        "spark crit dmg%": 50
+      }
+    ],
+    "id": "7507",
+    "name": "Seductive Request"
+  },
+  "extra_skill": {
+    "desc": "Boosts Atk, Def when BB gauge is over 50% & 50% boost to Spark damage",
+    "effects": [
+      {
+        "atk% buff": 50,
+        "bb gauge above % buff requirement": 50,
+        "conditions": [],
+        "def% buff": 50,
+        "passive id": "30",
+        "passive target": "self"
+      },
+      {
+        "conditions": [],
+        "damage% for spark": 50,
+        "passive id": "31",
+        "passive target": "self"
+      }
+    ],
+    "id": "33600",
+    "name": "Wisdom-Tempered Ideals",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -643,14 +676,6 @@
     ],
     "name": "Dazzling Luster"
   },
-  "bbdescription": "16 combo powerful Light attack on all foes, enormously boosts Spark damage for 3 turns, considerably boosts BC, HC drop rates for 3 turns, greatly restores HP for 3 turns & hugely boosts BB gauge for 3 turns",
-  "bbnote": "130% Spark, 35% drop rate, heals 3500-4000 + 15% Rec & fills 7 BC",
-  "bbtype": "Heal/Offense",
-  "bbhits": "16",
-  "bbaoe": "A",
-  "bbgauge": "28",
-  "bbdc": "16",
-  "bbmultiplier": "420",
   "sbb": {
     "damage frames": [
       {
@@ -1287,14 +1312,6 @@
     ],
     "name": "Dignity Regina"
   },
-  "sbbdescription": "19 combo powerful Light attack on all foes, adds probable 1 turn Atk, Def reduction to attack for 3 turns, Spark damage boosts BB gauge for 3 turns, enormously boosts Spark damage for 3 turns & Spark damage considerably restores HP for 3 turns",
-  "sbbnote": "130% Spark, heals 400-500 HP, fills 2-3 BC & 20% chance to reduce enemy Atk, Def by 20%",
-  "sbbtype": "Heal/Offense",
-  "sbbhits": "19",
-  "sbbaoe": "A",
-  "sbbgauge": "29",
-  "sbbdc": "19",
-  "sbbmultiplier": "620",
   "ubb": {
     "damage frames": [
       {
@@ -1466,6 +1483,190 @@
     ],
     "name": "Arianrhod's Crown"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 113
+    },
+    "idle": {
+      "total number of frames": 78
+    },
+    "move": {
+      "total number of frames": 6
+    }
+  },
+  "category": 51160,
+  "cost": "50",
+  "damage frames": {
+    "frame times": [
+      41,
+      44,
+      47,
+      50,
+      53,
+      56,
+      59,
+      62,
+      65,
+      68
+    ],
+    "hit dmg% distribution": [
+      18,
+      15,
+      12,
+      10,
+      9,
+      8,
+      8,
+      7,
+      7,
+      6
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 10
+  },
+  "drop check count": 5,
+  "element": "light",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 1606,
+  "imp": {
+    "max atk": "600",
+    "max def": "600",
+    "max hp": "1500",
+    "max rec": "600"
+  },
+  "kind": "normal",
+  "lord damage range": "3080~3440",
+  "movement": {
+    "attack": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0041,
+      "move speed type": "2",
+      "move type": "1"
+    }
+  },
+  "name": "Glorious Shine Mora",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "8",
+  "sell caution": false,
+  "unitName": "Glorious Shine Mora",
+  "maxlv": "150",
+  "no": "1606",
+  "unitDisplayHomePosition_1W9CxaFK": "645,471,160,437",
+  "unitDisplayDetailPosition_6z54rgb3": "-355,-313,1550,1280",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "-46,86,722,596,1",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-332,-507,1444,1192",
+  "unitDisplaySummonPosition_KC3Jk8Br": "-46,86,722,596,1",
+  "unitDisplayHpPosition_3BpHN6VD": "0,57",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "50000",
+  "sellCaution": false,
+  "effectFrames": "39:400602:1,63:400600:1,68:500718:1,41:1955:1,53:200783:1,50:400525:1,60:200718:1,58:601960:1",
+  "evofrom": "51166",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "21",
+  "animation_attack": "113",
+  "animation_idle": "78",
+  "animation_move": "6",
+  "movespeed_attack": "0.0041",
+  "movespeed_skill": "0.0041",
+  "speedtype_attack": "2",
+  "speedtype_skill": "2",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "41, 44, 47, 50, 53, 56, 59, 62, 65, 68",
+  "normal_distribute": "18, 15, 12, 10, 9, 8, 8, 7, 7, 6",
+  "normal_totaldistr": "100",
+  "bb_frames": "41, 44, 47, 50, 53, 56, 59, 62, 65, 68, 71, 74, 77, 80, 83, 86",
+  "bb_distribute": "11, 10, 9, 8, 8, 7, 7, 6, 6, 5, 5, 4, 4, 4, 3, 3",
+  "bb_totaldistr": "100",
+  "sbb_frames": "41, 44, 47, 50, 53, 56, 59, 62, 65, 68, 71, 74, 77, 80, 83, 86, 89, 92, 95",
+  "sbb_distribute": "10, 9, 8, 7, 7, 6, 6, 5, 5, 5, 4, 4, 4, 3, 4, 3, 4, 3, 3",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "41, 44, 47, 50, 53, 56, 59, 62, 65, 68, 71, 74, 77, 80, 83, 86, 89, 92, 95, 98, 101, 104, 107",
+  "ubb_distribute": "10, 8, 7, 6, 6, 5, 5, 5, 4, 4, 3, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "1",
+  "sbb_effectdelay": "1",
+  "ubb_effectdelay": "1",
+  "description": "One theory holds that Mora is a direct descendant of the demons that sought to bring peaceful rule to Ishgria. Given that, some also speculate that her parents' failure may have influenced Mora's relentless scheming to seize power. Had Mora held more closely to her parents' ideals instead of focusing exclusively on power alone, she might have adopted more cautious and realistic methods in her quest. In doing so, she also might have succeeded in spreading the ideal of peaceful coexistence throughout Ishgria and in changing the nature of that land.",
+  "summon": "A world where only the strong survive... I'm completely sick of the idea of worthless worlds like that.",
+  "fusion": "What is your aim in granting me power? Never mind, I need to stop second-guessing. I'm just happy you like me.",
+  "evolution": "Their ideals weren't misguided.<br>Only their methods were wrong.<br>I will make their dream come true, no matter what.",
+  "hp_base": "6244",
+  "atk_base": "2641",
+  "def_base": "2431",
+  "rec_base": "2378",
+  "hp_lord": "8151",
+  "atk_lord": "3308",
+  "def_lord": "3045",
+  "rec_lord": "2996",
+  "hp_anima": "9268",
+  "rec_anima": "2698",
+  "atk_breaker": "3606",
+  "def_breaker": "2747",
+  "def_guardian": "3343",
+  "rec_guardian": "2847",
+  "def_oracle": "2896",
+  "rec_oracle": "3443",
+  "hp_bonus": "1500",
+  "atk_bonus": "600",
+  "def_bonus": "600",
+  "rec_bonus": "600",
+  "lordonly": "",
+  "combo_hits": "10",
+  "normaldc": "50",
+  "ls": "Seductive Request",
+  "lsdescription": "60% boost to Atk, Max HP, Spark damage boosts BB gauge, 130% boost to Spark damage & probable Spark critical",
+  "lsnote": "Fills 2-3 BC & 10% chance Sparks deal 50% extra damage",
+  "bbdescription": "16 combo powerful Light attack on all foes, enormously boosts Spark damage for 3 turns, considerably boosts BC, HC drop rates for 3 turns, greatly restores HP for 3 turns & hugely boosts BB gauge for 3 turns",
+  "bbnote": "130% Spark, 35% drop rate, heals 3500-4000 + 15% Rec & fills 7 BC",
+  "bbtype": "Heal/Offense",
+  "bbhits": "16",
+  "bbaoe": "A",
+  "bbgauge": "28",
+  "bbdc": "16",
+  "bbmultiplier": "420",
+  "sbbdescription": "19 combo powerful Light attack on all foes, adds probable 1 turn Atk, Def reduction to attack for 3 turns, Spark damage boosts BB gauge for 3 turns, enormously boosts Spark damage for 3 turns & Spark damage considerably restores HP for 3 turns",
+  "sbbnote": "130% Spark, heals 400-500 HP, fills 2-3 BC & 20% chance to reduce enemy Atk, Def by 20%",
+  "sbbtype": "Heal/Offense",
+  "sbbhits": "19",
+  "sbbaoe": "A",
+  "sbbgauge": "29",
+  "sbbdc": "19",
+  "sbbmultiplier": "620",
   "ubbdescription": "23 combo massive Light attack on all foes, enormous 2 turn Atk, Def reduction, Spark damage enormously boosts BB gauge for 3 turns, enormously boosts Spark damage for 3 turns & enormously restores HP for 3 turns",
   "ubbnote": "80% reduction, 350% Spark, fills 5-8 BC & heals 800-1000 HP",
   "ubbtype": "Heal/Offense",
@@ -1478,8 +1679,6 @@
   "esitem": "",
   "esdescription": "Boosts Atk, Def when BB gauge is over 50% & 50% boost to Spark damage",
   "esnote": "50% boost",
-  "evofrom": "51166",
-  "evointo": "",
   "evomats1": "",
   "evomats2": "",
   "evomats3": "",
@@ -1488,112 +1687,5 @@
   "evomats6": "",
   "evomats7": "",
   "evomats8": "",
-  "evoitem": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 2641,
-      "def": 2431,
-      "hp": 6244,
-      "rec": 2378
-    },
-    "_lord": {
-      "atk": 3308,
-      "def": 3045,
-      "hp": 8151,
-      "rec": 2996
-    },
-    "anima": {
-      "atk": 3308,
-      "def": 3045,
-      "hp max": 9641,
-      "hp min": 8896,
-      "rec max": 2847,
-      "rec min": 2549
-    },
-    "breaker": {
-      "atk max": 3755,
-      "atk min": 3457,
-      "def max": 2896,
-      "def min": 2598,
-      "hp": 8151,
-      "rec": 2996
-    },
-    "guardian": {
-      "atk": 3308,
-      "def max": 3492,
-      "def min": 3194,
-      "hp": 8151,
-      "rec max": 2996,
-      "rec min": 2698
-    },
-    "oracle": {
-      "atk": 3308,
-      "def max": 3045,
-      "def min": 2747,
-      "hp": 8151,
-      "rec max": 3592,
-      "rec min": 3294
-    }
-  },
-  "leader_skill": {
-    "desc": "60% boost to Atk, Max HP, Spark damage boosts BB gauge, 130% boost to Spark damage & probable Spark critical",
-    "effects": [
-      {
-        "atk% buff": 60,
-        "hp% buff": 60,
-        "passive id": "1"
-      },
-      {
-        "damage% for spark": 130,
-        "passive id": "31"
-      },
-      {
-        "bc fill on spark high": 3,
-        "bc fill on spark low": 2,
-        "bc fill on spark%": 100,
-        "passive id": "47"
-      },
-      {
-        "passive id": "100",
-        "spark crit chance%": 10,
-        "spark crit dmg%": 50
-      }
-    ],
-    "id": "7507",
-    "name": "Seductive Request"
-  },
-  "extra_skill": {
-    "desc": "Boosts Atk, Def when BB gauge is over 50% & 50% boost to Spark damage",
-    "effects": [
-      {
-        "atk% buff": 50,
-        "bb gauge above % buff requirement": 50,
-        "conditions": [],
-        "def% buff": 50,
-        "passive id": "30",
-        "passive target": "self"
-      },
-      {
-        "conditions": [],
-        "damage% for spark": 50,
-        "passive id": "31",
-        "passive target": "self"
-      }
-    ],
-    "id": "33600",
-    "name": "Wisdom-Tempered Ideals",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "645,471,160,437",
-  "unitDisplayDetailPosition_6z54rgb3": "-355,-313,1550,1280",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "-46,86,722,596,1",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-332,-507,1444,1192",
-  "unitDisplaySummonPosition_KC3Jk8Br": "-46,86,722,596,1",
-  "unitDisplayHpPosition_3BpHN6VD": "0,57",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "50000",
-  "sellCaution": false,
-  "effectFrames": "39:400602:1,63:400600:1,68:500718:1,41:1955:1,53:200783:1,50:400525:1,60:200718:1,58:601960:1"
+  "evoitem": ""
 }

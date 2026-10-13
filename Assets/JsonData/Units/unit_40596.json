@@ -1,71 +1,84 @@
 {
   "id": "40596",
-  "unitName": "Dragon Scroll Kagura",
-  "no": "989",
-  "element": "Thunder",
-  "rarity": "★★★★★★★",
-  "cost": "40",
-  "maxlv": "120",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "188",
-  "animation_idle": "52",
-  "animation_move": "5",
-  "movespeed_attack": "0.0024",
-  "movespeed_skill": "0.0024",
-  "speedtype_attack": "4",
-  "speedtype_skill": "4",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "39, 42, 45, 74, 94, 110",
-  "normal_distribute": "16, 16, 17, 17, 17, 17",
-  "normal_totaldistr": "100",
-  "bb_frames": "41, 44, 47, 50, 74, 77, 80, 83, 94, 97, 100, 103, 114, 117, 120, 123, 126",
-  "bb_distribute": "5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6",
-  "bb_totaldistr": "100",
-  "sbb_frames": "41, 44, 47, 50, 74, 77, 80, 83, 94, 97, 100, 103, 114, 117, 120, 123, 126",
-  "sbb_distribute": "5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6",
-  "sbb_totaldistr": "100",
-  "ubb_frames": "41, 44, 47, 50, 53, 74, 78, 82, 86, 90, 94, 98, 102, 106, 110, 114, 118, 122, 126, 130",
-  "ubb_distribute": "5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5",
-  "ubb_totaldistr": "100",
-  "bb_effectdelay": "2",
-  "sbb_effectdelay": "2",
-  "ubb_effectdelay": "1",
-  "description": "A kunoichi from another world. Though she defeated many a demon in Ishgria, Kagura was unable to find the girl she was hunting down. But one day, she sensed a disturbance caused by an opening void, and thus headed towards it. The void had already disappeared by the time she had arrived, but in its stead she found pieces of a blood-stained kimono and some scraps of armor, as well as an ancient scroll from her village. Assuming her target had already been eliminated, she reclaimed the scroll and vowed to reach an even higher level of power.",
-  "summon": "I don't think real freedom exists. Someone's always going to selfishly ask me to do their bidding.",
-  "fusion": "Becoming stronger is a pain. Everyone expects so much from you... But I haven't changed my mind.",
-  "evolution": "Now I understand what he meant... The secrets behind the elegant art of illusion lie within me!",
-  "hp_base": "4958",
-  "atk_base": "2015",
-  "def_base": "1902",
-  "rec_base": "1738",
-  "hp_lord": "6527",
-  "atk_lord": "2504",
-  "def_lord": "2380",
-  "rec_lord": "2151",
-  "hp_anima": "7419",
-  "rec_anima": "1913",
-  "atk_breaker": "2742",
-  "def_breaker": "2142",
-  "atk_guardian": "2266",
-  "def_guardian": "2618",
-  "rec_guardian": "2032",
-  "def_oracle": "2261",
-  "hp_oracle": "6170",
-  "rec_oracle": "2508",
-  "hp_bonus": "1100",
-  "atk_bonus": "440",
-  "def_bonus": "440",
-  "rec_bonus": "440",
-  "lordonly": "",
-  "combo_hits": "6",
-  "normaldc": "30",
-  "ls": "Divine Deity's Shining Blade",
-  "lsdescription": "Enormously boosts Spark damage & hugely boosts Thunder and Water types' element based damage",
-  "lsnote": "100% Spark & 125% elemental damage",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 2015,
+      "def": 1902,
+      "hp": 4958,
+      "rec": 1738
+    },
+    "_lord": {
+      "atk": 2504,
+      "def": 2380,
+      "hp": 6527,
+      "rec": 2151
+    },
+    "anima": {
+      "atk": 2504,
+      "def": 2380,
+      "hp max": 7717,
+      "hp min": 7122,
+      "rec max": 2032,
+      "rec min": 1794
+    },
+    "breaker": {
+      "atk max": 2861,
+      "atk min": 2623,
+      "def max": 2261,
+      "def min": 2023,
+      "hp": 6527,
+      "rec": 2151
+    },
+    "guardian": {
+      "atk": 2504,
+      "def max": 2737,
+      "def min": 2499,
+      "hp": 6527,
+      "rec max": 2151,
+      "rec min": 1913
+    },
+    "oracle": {
+      "atk": 2504,
+      "def max": 2380,
+      "def min": 2142,
+      "hp": 6527,
+      "rec max": 2627,
+      "rec min": 2389
+    }
+  },
+  "leader_skill": {
+    "desc": "Enormously boosts Spark damage & hugely boosts Thunder and Water types' element based damage",
+    "effects": [
+      {
+        "damage% for spark": 100,
+        "passive id": "31"
+      },
+      {
+        "elemental weakness multiplier%": 125.0,
+        "passive id": "50",
+        "thunder units do extra elemental weakness dmg": true,
+        "water units do extra elemental weakness dmg": true
+      }
+    ],
+    "id": "1322",
+    "name": "Divine Deity's Shining Blade"
+  },
+  "extra_skill": {
+    "desc": "Negates enemies' element based damage",
+    "effects": [
+      {
+        "conditions": [],
+        "passive id": "53",
+        "passive target": "self",
+        "strong base element damage resist%": 100,
+        "strong buffed element damage resist%": 100
+      }
+    ],
+    "id": "4100",
+    "name": "Inherited Secret Arts",
+    "rarity": "1",
+    "target": "self"
+  },
   "bb": {
     "damage frames": [
       {
@@ -494,14 +507,6 @@
     ],
     "name": "Zenith Scroll: Shen"
   },
-  "bbdescription": "17 combo powerful Thunder attack on all foes, probable huge 1 turn Atk reduction & boosts Water, Thunder elemental damage for 3 turns",
-  "bbnote": "30% chance to reduce enemy Atk by 50% & 75% boost",
-  "bbtype": "Support/Offense",
-  "bbhits": "17",
-  "bbaoe": "A",
-  "bbgauge": "26",
-  "bbdc": "17",
-  "bbmultiplier": "280",
   "sbb": {
     "damage frames": [
       {
@@ -910,14 +915,6 @@
     ],
     "name": "Nine Dragons Mirage"
   },
-  "sbbdescription": "17 combo powerful Thunder attack on all foes, adds 1 turn Atk reduction to attack for 2 turns & boosts Water, Thunder elemental damage for 3 turns",
-  "sbbnote": "10% chance to reduce enemy Atk by 20% & 75% boost",
-  "sbbtype": "Support/Offense",
-  "sbbhits": "17",
-  "sbbaoe": "A",
-  "sbbgauge": "20",
-  "sbbdc": "17",
-  "sbbmultiplier": "500",
   "ubb": {
     "damage frames": [
       {
@@ -1034,6 +1031,185 @@
     ],
     "name": "Secret Art: Golden Dragon"
   },
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
+    },
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    },
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 188
+    },
+    "idle": {
+      "total number of frames": 52
+    },
+    "move": {
+      "total number of frames": 5
+    }
+  },
+  "category": 40590,
+  "cost": "40",
+  "damage frames": {
+    "frame times": [
+      39,
+      42,
+      45,
+      74,
+      94,
+      110
+    ],
+    "hit dmg% distribution": [
+      16,
+      16,
+      17,
+      17,
+      17,
+      17
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 6
+  },
+  "drop check count": 5,
+  "element": "thunder",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 989,
+  "imp": {
+    "max atk": "440",
+    "max def": "440",
+    "max hp": "1100",
+    "max rec": "440"
+  },
+  "kind": "normal",
+  "lord damage range": "2331~2604",
+  "movement": {
+    "attack": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0024,
+      "move speed type": "4",
+      "move type": "1"
+    }
+  },
+  "name": "Dragon Scroll Kagura",
+  "overdrive stats": {
+    "atk%": 100,
+    "def%": 100,
+    "rec%": 100
+  },
+  "rarity": "7",
+  "sell caution": false,
+  "unitName": "Dragon Scroll Kagura",
+  "maxlv": "120",
+  "no": "989",
+  "unitDisplayHomePosition_1W9CxaFK": "457,402,190,519",
+  "unitDisplayDetailPosition_6z54rgb3": "-94,-177,1050,1105",
+  "unitDisplayConfirmImagePosition_MYK1fq6c": "19,83,570,600,1",
+  "unitDisplayCutInImagePosition_7hLR6pDN": "-92,-456,1050,1105",
+  "unitDisplaySummonPosition_KC3Jk8Br": "19,83,570,600,1",
+  "unitDisplayHpPosition_3BpHN6VD": "-1,46",
+  "unitDisplayCursorPosition": "0,0",
+  "sellPrice": "15000",
+  "sellCaution": false,
+  "effectFrames": "41:400157:1,42:400075:1,40:400181:1,68:127:1,74:400155:1,73:600273:1,75:600404:1,88:127:1,94:400155:1,93:600273:1,95:600404:1,104:127:1,110:400155:1,115:400181:1,124:600210:1,129:600210:1",
+  "evofrom": "40595",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "21",
+  "animation_attack": "188",
+  "animation_idle": "52",
+  "animation_move": "5",
+  "movespeed_attack": "0.0024",
+  "movespeed_skill": "0.0024",
+  "speedtype_attack": "4",
+  "speedtype_skill": "4",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "39, 42, 45, 74, 94, 110",
+  "normal_distribute": "16, 16, 17, 17, 17, 17",
+  "normal_totaldistr": "100",
+  "bb_frames": "41, 44, 47, 50, 74, 77, 80, 83, 94, 97, 100, 103, 114, 117, 120, 123, 126",
+  "bb_distribute": "5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6",
+  "bb_totaldistr": "100",
+  "sbb_frames": "41, 44, 47, 50, 74, 77, 80, 83, 94, 97, 100, 103, 114, 117, 120, 123, 126",
+  "sbb_distribute": "5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6",
+  "sbb_totaldistr": "100",
+  "ubb_frames": "41, 44, 47, 50, 53, 74, 78, 82, 86, 90, 94, 98, 102, 106, 110, 114, 118, 122, 126, 130",
+  "ubb_distribute": "5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5",
+  "ubb_totaldistr": "100",
+  "bb_effectdelay": "2",
+  "sbb_effectdelay": "2",
+  "ubb_effectdelay": "1",
+  "description": "A kunoichi from another world. Though she defeated many a demon in Ishgria, Kagura was unable to find the girl she was hunting down. But one day, she sensed a disturbance caused by an opening void, and thus headed towards it. The void had already disappeared by the time she had arrived, but in its stead she found pieces of a blood-stained kimono and some scraps of armor, as well as an ancient scroll from her village. Assuming her target had already been eliminated, she reclaimed the scroll and vowed to reach an even higher level of power.",
+  "summon": "I don't think real freedom exists. Someone's always going to selfishly ask me to do their bidding.",
+  "fusion": "Becoming stronger is a pain. Everyone expects so much from you... But I haven't changed my mind.",
+  "evolution": "Now I understand what he meant... The secrets behind the elegant art of illusion lie within me!",
+  "hp_base": "4958",
+  "atk_base": "2015",
+  "def_base": "1902",
+  "rec_base": "1738",
+  "hp_lord": "6527",
+  "atk_lord": "2504",
+  "def_lord": "2380",
+  "rec_lord": "2151",
+  "hp_anima": "7419",
+  "rec_anima": "1913",
+  "atk_breaker": "2742",
+  "def_breaker": "2142",
+  "atk_guardian": "2266",
+  "def_guardian": "2618",
+  "rec_guardian": "2032",
+  "def_oracle": "2261",
+  "hp_oracle": "6170",
+  "rec_oracle": "2508",
+  "hp_bonus": "1100",
+  "atk_bonus": "440",
+  "def_bonus": "440",
+  "rec_bonus": "440",
+  "lordonly": "",
+  "combo_hits": "6",
+  "normaldc": "30",
+  "ls": "Divine Deity's Shining Blade",
+  "lsdescription": "Enormously boosts Spark damage & hugely boosts Thunder and Water types' element based damage",
+  "lsnote": "100% Spark & 125% elemental damage",
+  "lstype": "Attack",
+  "bbdescription": "17 combo powerful Thunder attack on all foes, probable huge 1 turn Atk reduction & boosts Water, Thunder elemental damage for 3 turns",
+  "bbnote": "30% chance to reduce enemy Atk by 50% & 75% boost",
+  "bbtype": "Support/Offense",
+  "bbhits": "17",
+  "bbaoe": "A",
+  "bbgauge": "26",
+  "bbdc": "17",
+  "bbmultiplier": "280",
+  "sbbdescription": "17 combo powerful Thunder attack on all foes, adds 1 turn Atk reduction to attack for 2 turns & boosts Water, Thunder elemental damage for 3 turns",
+  "sbbnote": "10% chance to reduce enemy Atk by 20% & 75% boost",
+  "sbbtype": "Support/Offense",
+  "sbbhits": "17",
+  "sbbaoe": "A",
+  "sbbgauge": "20",
+  "sbbdc": "17",
+  "sbbmultiplier": "500",
   "ubbdescription": "20 combo massive Thunder attack on all foes, adds 1 turn Atk reduction to attack for 3 turns & raises normal hit amount for 2 turns",
   "ubbnote": "50% chance to reduce enemy Atk by 60% & adds +2 hits to each hit count (extra hits +100% damage)",
   "ubbtype": "Support/Offense",
@@ -1045,102 +1221,10 @@
   "es": "Inherited Secret Arts",
   "esitem": "",
   "esdescription": "Negates enemies' element based damage",
-  "evofrom": "40595",
-  "evointo": "",
   "evomats1": "",
   "evomats2": "",
   "evomats3": "",
   "evomats4": "",
   "evomats5": "",
-  "evoitem": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 2015,
-      "def": 1902,
-      "hp": 4958,
-      "rec": 1738
-    },
-    "_lord": {
-      "atk": 2504,
-      "def": 2380,
-      "hp": 6527,
-      "rec": 2151
-    },
-    "anima": {
-      "atk": 2504,
-      "def": 2380,
-      "hp max": 7717,
-      "hp min": 7122,
-      "rec max": 2032,
-      "rec min": 1794
-    },
-    "breaker": {
-      "atk max": 2861,
-      "atk min": 2623,
-      "def max": 2261,
-      "def min": 2023,
-      "hp": 6527,
-      "rec": 2151
-    },
-    "guardian": {
-      "atk": 2504,
-      "def max": 2737,
-      "def min": 2499,
-      "hp": 6527,
-      "rec max": 2151,
-      "rec min": 1913
-    },
-    "oracle": {
-      "atk": 2504,
-      "def max": 2380,
-      "def min": 2142,
-      "hp": 6527,
-      "rec max": 2627,
-      "rec min": 2389
-    }
-  },
-  "leader_skill": {
-    "desc": "Enormously boosts Spark damage & hugely boosts Thunder and Water types' element based damage",
-    "effects": [
-      {
-        "damage% for spark": 100,
-        "passive id": "31"
-      },
-      {
-        "elemental weakness multiplier%": 125.0,
-        "passive id": "50",
-        "thunder units do extra elemental weakness dmg": true,
-        "water units do extra elemental weakness dmg": true
-      }
-    ],
-    "id": "1322",
-    "name": "Divine Deity's Shining Blade"
-  },
-  "extra_skill": {
-    "desc": "Negates enemies' element based damage",
-    "effects": [
-      {
-        "conditions": [],
-        "passive id": "53",
-        "passive target": "self",
-        "strong base element damage resist%": 100,
-        "strong buffed element damage resist%": 100
-      }
-    ],
-    "id": "4100",
-    "name": "Inherited Secret Arts",
-    "rarity": "1",
-    "target": "self"
-  },
-  "unitDisplayHomePosition_1W9CxaFK": "457,402,190,519",
-  "unitDisplayDetailPosition_6z54rgb3": "-94,-177,1050,1105",
-  "unitDisplayConfirmImagePosition_MYK1fq6c": "19,83,570,600,1",
-  "unitDisplayCutInImagePosition_7hLR6pDN": "-92,-456,1050,1105",
-  "unitDisplaySummonPosition_KC3Jk8Br": "19,83,570,600,1",
-  "unitDisplayHpPosition_3BpHN6VD": "-1,46",
-  "unitDisplayCursorPosition": "0,0",
-  "sellPrice": "15000",
-  "sellCaution": false,
-  "effectFrames": "41:400157:1,42:400075:1,40:400181:1,68:127:1,74:400155:1,73:600273:1,75:600404:1,88:127:1,94:400155:1,93:600273:1,95:600404:1,104:127:1,110:400155:1,115:400181:1,124:600210:1,129:600210:1"
+  "evoitem": ""
 }

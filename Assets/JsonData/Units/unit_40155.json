@@ -1,52 +1,69 @@
 {
   "id": "40155",
-  "unitName": "Tesla Club Elulu",
-  "no": "474",
-  "element": "Thunder",
-  "rarity": "★★★★★★",
-  "cost": "22",
-  "maxlv": "100",
-  "basexp": "21",
-  "gender": "F",
-  "ai": "2",
-  "animation_attack": "98",
-  "animation_idle": "44",
-  "animation_move": "11",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "description": "A young girl with the ability to control lightning. It's said that as she carried out experiments with the mechanical hammer she had created, small explosions could be heard coming from her studio. It has also been recorded that when the gods appeared she released an even greater explosion that leveled many of the gods' soldiers. There are rumors that this explosion was strategic, as afterwards Elulu appeared from it when a new hammer with which she laid waste to the army of the gods.",
-  "summon": "There's nothing impossible<br>in a world with thunder.<br>Let's go!",
-  "fusion": "Charge complete!<br>I'll show you how hard <br>my new hammer hits!",
-  "evolution": "Now it's my hammer's turn!<br>I'll paralyze all your enemies<br>with fear!",
-  "hp_base": "3376",
-  "atk_base": "1434",
-  "def_base": "866",
-  "rec_base": "1764",
-  "hp_lord": "5111",
-  "atk_lord": "2082",
-  "def_lord": "1207",
-  "rec_lord": "2203",
-  "hp_anima": "5853",
-  "rec_anima": "2005",
-  "atk_breaker": "2280",
-  "def_breaker": "1009",
-  "atk_guardian": "1884",
-  "def_guardian": "1405",
-  "hp_oracle": "4368",
-  "rec_oracle": "2401",
-  "hp_bonus": "750",
-  "atk_bonus": "300",
-  "def_bonus": "300",
-  "rec_bonus": "300",
-  "lordonly": "",
-  "combo_hits": "4",
-  "ls": "Barrage Order",
-  "lsdescription": "Huge increase in damage dealt during Spark & rarely fills BB gauge when attacking",
-  "lstype": "Attack/Brave Burst",
+  "stats": {
+    "_base": {
+      "atk": 1434,
+      "def": 866,
+      "hp": 3376,
+      "rec": 1764
+    },
+    "_lord": {
+      "atk": 2082,
+      "def": 1207,
+      "hp": 5111,
+      "rec": 2203
+    },
+    "anima": {
+      "atk": 2082,
+      "def": 1207,
+      "hp max": 6101,
+      "hp min": 5606,
+      "rec max": 2104,
+      "rec min": 1906
+    },
+    "breaker": {
+      "atk max": 2379,
+      "atk min": 2181,
+      "def max": 1108,
+      "def min": 910,
+      "hp": 5111,
+      "rec": 2203
+    },
+    "guardian": {
+      "atk": 2082,
+      "def max": 1504,
+      "def min": 1306,
+      "hp": 5111,
+      "rec max": 2203,
+      "rec min": 2005
+    },
+    "oracle": {
+      "atk": 2082,
+      "def max": 1207,
+      "def min": 1009,
+      "hp": 5111,
+      "rec max": 2599,
+      "rec min": 2401
+    }
+  },
+  "leader_skill": {
+    "desc": "Huge increase in damage dealt during Spark & rarely fills BB gauge when attacking",
+    "effects": [
+      {
+        "damage% for spark": 50,
+        "passive id": "31"
+      },
+      {
+        "bc fill when attacking high": 3,
+        "bc fill when attacking low": 3,
+        "bc fill when attacking%": 40,
+        "passive id": "35"
+      }
+    ],
+    "id": "1310",
+    "name": "Barrage Order"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -291,11 +308,6 @@
     ],
     "name": "Electric Shock"
   },
-  "bbdescription": "6 combo Thunder elemental attack on all enemies & probable Injury effect",
-  "bbtype": "Offense",
-  "bbhits": "6",
-  "bbaoe": "A",
-  "bbgauge": "28",
   "sbb": {
     "damage frames": [
       {
@@ -656,91 +668,88 @@
     ],
     "name": "Master of Invention"
   },
-  "sbbdescription": "8 combo Thunder elemental attack on all enemies, probable Injury effect, and slightly increases BB gauge for 3 turns",
-  "sbbtype": "Support/Offense",
-  "sbbhits": "8",
-  "sbbaoe": "A",
-  "sbbgauge": "20",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "40154",
-  "evointo": "",
-  "evomats1": "",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evozelcost": "",
-  "stats": {
-    "_base": {
-      "atk": 1434,
-      "def": 866,
-      "hp": 3376,
-      "rec": 1764
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_over",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 2082,
-      "def": 1207,
-      "hp": 5111,
-      "rec": 2203
+    {
+      "action": "skill",
+      "chance%": 20.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 2082,
-      "def": 1207,
-      "hp max": 6101,
-      "hp min": 5606,
-      "rec max": 2104,
-      "rec min": 1906
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 98
     },
-    "breaker": {
-      "atk max": 2379,
-      "atk min": 2181,
-      "def max": 1108,
-      "def min": 910,
-      "hp": 5111,
-      "rec": 2203
+    "idle": {
+      "total number of frames": 44
     },
-    "guardian": {
-      "atk": 2082,
-      "def max": 1504,
-      "def min": 1306,
-      "hp": 5111,
-      "rec max": 2203,
-      "rec min": 2005
-    },
-    "oracle": {
-      "atk": 2082,
-      "def max": 1207,
-      "def min": 1009,
-      "hp": 5111,
-      "rec max": 2599,
-      "rec min": 2401
+    "move": {
+      "total number of frames": 11
     }
   },
-  "leader_skill": {
-    "desc": "Huge increase in damage dealt during Spark & rarely fills BB gauge when attacking",
-    "effects": [
-      {
-        "damage% for spark": 50,
-        "passive id": "31"
-      },
-      {
-        "bc fill when attacking high": 3,
-        "bc fill when attacking low": 3,
-        "bc fill when attacking%": 40,
-        "passive id": "35"
-      }
+  "category": 40150,
+  "cost": "22",
+  "damage frames": {
+    "frame times": [
+      52,
+      55,
+      60,
+      65
     ],
-    "id": "1310",
-    "name": "Barrage Order"
+    "hit dmg% distribution": [
+      70,
+      10,
+      10,
+      10
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 4
   },
-  "extra_skill": {},
+  "drop check count": 6,
+  "element": "thunder",
+  "exp_pattern": 20,
+  "gender": "female",
+  "getting type": "rare summon",
+  "guide_id": 474,
+  "imp": {
+    "max atk": "300",
+    "max def": "300",
+    "max hp": "750",
+    "max rec": "300"
+  },
+  "kind": "normal",
+  "lord damage range": "1938~2165",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Tesla Club Elulu",
+  "rarity": "6",
+  "sell caution": false,
+  "unitName": "Tesla Club Elulu",
+  "maxlv": "100",
+  "no": "474",
   "unitDisplayHomePosition_1W9CxaFK": "206,407,179,483",
   "unitDisplayDetailPosition_6z54rgb3": "75,-143,781,927",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "96,234,495,397,0",
@@ -750,5 +759,90 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "8000",
   "sellCaution": false,
-  "effectFrames": "46:134:1,52:400182:1,49:400231:1,54:400231:1,59:400231:1,64:400231:1,68:200081:1"
+  "effectFrames": "46:134:1,52:400182:1,49:400231:1,54:400231:1,59:400231:1,64:400231:1,68:200081:1",
+  "evofrom": "40154",
+  "evointo": "",
+  "evozelcost": "",
+  "evokarmacost": "",
+  "evoMaterials": [],
+  "basexp": "21",
+  "animation_attack": "98",
+  "animation_idle": "44",
+  "animation_move": "11",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "52, 55, 60, 65",
+  "normal_distribute": "70, 10, 10, 10",
+  "normal_totaldistr": "100",
+  "bb_frames": "52, 55, 60, 65, 70, 75",
+  "bb_distribute": "50, 10, 10, 10, 10, 10",
+  "bb_totaldistr": "100",
+  "sbb_frames": "52, 60, 68, 76, 84, 92, 100, 108",
+  "sbb_distribute": "30, 10, 10, 10, 10, 10, 10, 10",
+  "sbb_totaldistr": "100",
+  "description": "A young girl with the ability to control lightning. It's said that as she carried out experiments with the mechanical hammer she had created, small explosions could be heard coming from her studio. It has also been recorded that when the gods appeared she released an even greater explosion that leveled many of the gods' soldiers. There are rumors that this explosion was strategic, as afterwards Elulu appeared from it when a new hammer with which she laid waste to the army of the gods.",
+  "summon": "There's nothing impossible<br>in a world with thunder.<br>Let's go!",
+  "fusion": "Charge complete!<br>I'll show you how hard <br>my new hammer hits!",
+  "evolution": "Now it's my hammer's turn!<br>I'll paralyze all your enemies<br>with fear!",
+  "hp_base": "3376",
+  "atk_base": "1434",
+  "def_base": "866",
+  "rec_base": "1764",
+  "hp_lord": "5111",
+  "atk_lord": "2082",
+  "def_lord": "1207",
+  "rec_lord": "2203",
+  "hp_anima": "5854",
+  "rec_anima": "2005",
+  "atk_breaker": "2280",
+  "def_breaker": "1009",
+  "atk_guardian": "1884",
+  "def_guardian": "1405",
+  "rec_guardian": "2104",
+  "def_oracle": "1108",
+  "hp_oracle": "4814",
+  "rec_oracle": "2500",
+  "hp_bonus": "750",
+  "atk_bonus": "300",
+  "def_bonus": "300",
+  "rec_bonus": "300",
+  "lordonly": "",
+  "combo_hits": "4",
+  "normaldc": "24",
+  "ls": "Barrage Order",
+  "lsdescription": "Huge increase in damage dealt during Spark & rarely fills BB gauge when attacking",
+  "lsnote": "50% boost to Spark damage, 40% chance to fill 3 BC when attacking",
+  "lstype": "Attack/Brave Burst",
+  "bbdescription": "6 combo Thunder elemental attack on all enemies & probable Injury effect",
+  "bbnote": "45% chance to inflict",
+  "bbtype": "Offense",
+  "bbhits": "6",
+  "bbaoe": "A",
+  "bbgauge": "25",
+  "bbdc": "6",
+  "bbmultiplier": "210",
+  "sbbdescription": "8 combo Thunder elemental attack on all enemies, probable Injury effect, and slightly increases BB gauge for 3 turns",
+  "sbbnote": "60% chance to inflict Injury, 4 BC fill per turn",
+  "sbbtype": "Support/Offense",
+  "sbbhits": "8",
+  "sbbaoe": "A",
+  "sbbgauge": "20",
+  "sbbdc": "16",
+  "sbbmultiplier": "450",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "",
+  "evomats2": "",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": ""
 }

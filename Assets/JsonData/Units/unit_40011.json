@@ -1,59 +1,66 @@
 {
   "id": "40011",
-  "unitName": "Warrior Eze",
-  "no": "13",
-  "element": "Thunder",
-  "rarity": "★★",
-  "cost": "2",
-  "maxlv": "12",
-  "basexp": "10",
-  "gender": "M",
-  "ai": "4",
-  "animation_attack": "99",
-  "animation_idle": "56",
-  "animation_move": "14",
-  "movespeed_attack": "0.0033",
-  "movespeed_skill": "0.0033",
-  "speedtype_attack": "3",
-  "speedtype_skill": "3",
-  "movetype_attack": "1",
-  "movetype_skill": "1",
-  "normal_frames": "30",
-  "normal_distribute": "100",
-  "normal_totaldistr": "100",
-  "bb_frames": "30, 40",
-  "bb_distribute": "50, 50",
-  "bb_totaldistr": "100",
-  "description": "A warrior from the ruined Atharva Republic, he later became one of the Six Heroes. Raised in an old mine, he worked from the time he was a child. At one point he grew tired and left to become a demon bounty hunter. His swordsmanship was tempered through his mine work, and he could obliterate a normal demon in one blow. He spoke rough, but was polite to women.",
-  "summon": "Hey! Get out of my way!<br>Friend or foe, no one stands<br>in front of me!",
-  "fusion": "Wow!<br>Can you feel that<br>energy flowing!?",
-  "evolution": "",
-  "hp_base": "1180",
-  "atk_base": "580",
-  "def_base": "320",
-  "rec_base": "120",
-  "hp_lord": "2070",
-  "atk_lord": "812",
-  "def_lord": "420",
-  "rec_lord": "210",
-  "hp_anima": "2153",
-  "rec_anima": "188",
-  "atk_breaker": "834",
-  "def_breaker": "398",
-  "def_guardian": "442",
-  "rec_guardian": "188",
-  "def_oracle": "398",
-  "rec_oracle": "243",
-  "hp_bonus": "200",
-  "atk_bonus": "160",
-  "def_bonus": "80",
-  "rec_bonus": "160",
-  "lordonly": "",
-  "combo_hits": "1",
-  "normaldc": "8",
-  "ls": "Thunder Spirit's Power",
-  "lsdescription": "25% boost to Atk Power of Thunder Types",
-  "lstype": "Attack",
+  "stats": {
+    "_base": {
+      "atk": 580,
+      "def": 320,
+      "hp": 1180,
+      "rec": 120
+    },
+    "_lord": {
+      "atk": 812,
+      "def": 420,
+      "hp": 2070,
+      "rec": 210
+    },
+    "anima": {
+      "atk": 812,
+      "def": 420,
+      "hp max": 2180,
+      "hp min": 2125,
+      "rec max": 199,
+      "rec min": 177
+    },
+    "breaker": {
+      "atk max": 845,
+      "atk min": 823,
+      "def max": 409,
+      "def min": 387,
+      "hp": 2070,
+      "rec": 210
+    },
+    "guardian": {
+      "atk": 812,
+      "def max": 453,
+      "def min": 431,
+      "hp": 2070,
+      "rec max": 210,
+      "rec min": 188
+    },
+    "oracle": {
+      "atk": 812,
+      "def max": 420,
+      "def min": 398,
+      "hp": 2070,
+      "rec max": 254,
+      "rec min": 232
+    }
+  },
+  "leader_skill": {
+    "desc": "25% boost to Atk Power of Thunder Types",
+    "effects": [
+      {
+        "atk% buff": 25,
+        "elements buffed": [
+          "thunder"
+        ],
+        "passive id": "2"
+      }
+    ],
+    "id": "130",
+    "name": "Thunder Spirit's Power"
+  },
+  "extra_skill": {},
   "bb": {
     "damage frames": [
       {
@@ -198,96 +205,95 @@
     ],
     "name": "Thunder Expulsion"
   },
-  "bbdescription": "2 combo Thunder elemental attack on all enemies",
-  "bbtype": "Offense",
-  "bbhits": "2",
-  "bbaoe": "A",
-  "bbgauge": "15",
-  "bbdc": "2",
-  "bbmultiplier": "75",
   "sbb": {},
-  "sbbdescription": "",
-  "sbbtype": "",
-  "sbbhits": "",
-  "sbbaoe": "",
-  "sbbgauge": "",
   "ubb": {},
-  "ubbdescription": "",
-  "ubbtype": "",
-  "ubbhits": "",
-  "ubbaoe": "",
-  "ubbgauge": "",
-  "esitem": "",
-  "esdescription": "",
-  "evofrom": "",
-  "evointo": "40012",
-  "evomats1": "40130",
-  "evomats2": "",
-  "evomats3": "",
-  "evomats4": "",
-  "evomats5": "",
-  "evozelcost": "2500",
-  "stats": {
-    "_base": {
-      "atk": 580,
-      "def": 320,
-      "hp": 1180,
-      "rec": 120
+  "ai": [
+    {
+      "action": "skill",
+      "chance%": 60.0,
+      "target conditions": "hp_50pr_under",
+      "target type": "enemy"
     },
-    "_lord": {
-      "atk": 812,
-      "def": 420,
-      "hp": 2070,
-      "rec": 210
+    {
+      "action": "skill",
+      "chance%": 30.0,
+      "target conditions": "random",
+      "target type": "enemy"
     },
-    "anima": {
-      "atk": 812,
-      "def": 420,
-      "hp max": 2180,
-      "hp min": 2125,
-      "rec max": 199,
-      "rec min": 177
+    {
+      "action": "attack",
+      "chance%": 70.0,
+      "target conditions": "hp_max",
+      "target type": "enemy"
     },
-    "breaker": {
-      "atk max": 845,
-      "atk min": 823,
-      "def max": 409,
-      "def min": 387,
-      "hp": 2070,
-      "rec": 210
+    {
+      "action": "attack",
+      "chance%": 50.0,
+      "target conditions": "hp_min",
+      "target type": "enemy"
     },
-    "guardian": {
-      "atk": 812,
-      "def max": 453,
-      "def min": 431,
-      "hp": 2070,
-      "rec max": 210,
-      "rec min": 188
+    {
+      "action": "attack",
+      "chance%": 100.0,
+      "target conditions": "random",
+      "target type": "enemy"
+    }
+  ],
+  "animations": {
+    "attack": {
+      "total number of frames": 99
     },
-    "oracle": {
-      "atk": 812,
-      "def max": 420,
-      "def min": 398,
-      "hp": 2070,
-      "rec max": 254,
-      "rec min": 232
+    "idle": {
+      "total number of frames": 56
+    },
+    "move": {
+      "total number of frames": 14
     }
   },
-  "leader_skill": {
-    "desc": "25% boost to Atk Power of Thunder Types",
-    "effects": [
-      {
-        "atk% buff": 25,
-        "elements buffed": [
-          "thunder"
-        ],
-        "passive id": "2"
-      }
+  "category": 40010,
+  "cost": "2",
+  "damage frames": {
+    "frame times": [
+      30
     ],
-    "id": "130",
-    "name": "Thunder Spirit's Power"
+    "hit dmg% distribution": [
+      100
+    ],
+    "hit dmg% distribution (total)": 100,
+    "hits": 1
   },
-  "extra_skill": {},
+  "drop check count": 8,
+  "element": "thunder",
+  "exp_pattern": 10,
+  "gender": "male",
+  "getting type": "not eligible for achievement",
+  "guide_id": 13,
+  "imp": {
+    "max atk": "160",
+    "max def": "80",
+    "max hp": "200",
+    "max rec": "160"
+  },
+  "kind": "normal",
+  "lord damage range": "755~844",
+  "movement": {
+    "attack": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    },
+    "skill": {
+      "move speed": 0.0033,
+      "move speed type": "3",
+      "move type": "1"
+    }
+  },
+  "name": "Warrior Eze",
+  "rarity": "2",
+  "sell caution": false,
+  "unitName": "Warrior Eze",
+  "maxlv": "12",
+  "no": "13",
   "unitDisplayHomePosition_1W9CxaFK": "314,-36,174,475",
   "unitDisplayDetailPosition_6z54rgb3": "3,208,770,536",
   "unitDisplayConfirmImagePosition_MYK1fq6c": "115,375,351,245,0",
@@ -297,5 +303,86 @@
   "unitDisplayCursorPosition": "0,0",
   "sellPrice": "300",
   "sellCaution": false,
-  "effectFrames": "24:124:1"
+  "effectFrames": "24:124:1",
+  "evofrom": "",
+  "evointo": "40012",
+  "evozelcost": "2500",
+  "evokarmacost": "0",
+  "evoMaterials": [
+    {
+      "type": "1",
+      "id": "40130",
+      "count": 1
+    }
+  ],
+  "basexp": "10",
+  "animation_attack": "99",
+  "animation_idle": "56",
+  "animation_move": "14",
+  "movespeed_attack": "0.0033",
+  "movespeed_skill": "0.0033",
+  "speedtype_attack": "3",
+  "speedtype_skill": "3",
+  "movetype_attack": "1",
+  "movetype_skill": "1",
+  "normal_frames": "30",
+  "normal_distribute": "100",
+  "normal_totaldistr": "100",
+  "bb_frames": "30, 40",
+  "bb_distribute": "50, 50",
+  "bb_totaldistr": "100",
+  "description": "A warrior from the ruined Atharva Republic, he later became one of the Six Heroes. Raised in an old mine, he worked from the time he was a child. At one point he grew tired and left to become a demon bounty hunter. His swordsmanship was tempered through his mine work, and he could obliterate a normal demon in one blow. He spoke rough, but was polite to women.",
+  "summon": "Hey! Get out of my way!<br>Friend or foe, no one stands<br>in front of me!",
+  "fusion": "Wow!<br>Can you feel that<br>energy flowing!?",
+  "evolution": "",
+  "hp_base": "1180",
+  "atk_base": "580",
+  "def_base": "320",
+  "rec_base": "120",
+  "hp_lord": "2070",
+  "atk_lord": "812",
+  "def_lord": "420",
+  "rec_lord": "210",
+  "hp_anima": "2153",
+  "rec_anima": "188",
+  "atk_breaker": "834",
+  "def_breaker": "398",
+  "def_guardian": "442",
+  "rec_guardian": "188",
+  "def_oracle": "398",
+  "rec_oracle": "243",
+  "hp_bonus": "200",
+  "atk_bonus": "160",
+  "def_bonus": "80",
+  "rec_bonus": "160",
+  "lordonly": "",
+  "combo_hits": "1",
+  "normaldc": "8",
+  "ls": "Thunder Spirit's Power",
+  "lsdescription": "25% boost to Atk Power of Thunder Types",
+  "lstype": "Attack",
+  "bbdescription": "2 combo Thunder elemental attack on all enemies",
+  "bbtype": "Offense",
+  "bbhits": "2",
+  "bbaoe": "A",
+  "bbgauge": "15",
+  "bbdc": "2",
+  "bbmultiplier": "75",
+  "sbbdescription": "",
+  "sbbtype": "",
+  "sbbhits": "",
+  "sbbaoe": "",
+  "sbbgauge": "",
+  "ubbdescription": "",
+  "ubbtype": "",
+  "ubbhits": "",
+  "ubbaoe": "",
+  "ubbgauge": "",
+  "esitem": "",
+  "esdescription": "",
+  "evomats1": "40130",
+  "evomats2": "",
+  "evomats3": "",
+  "evomats4": "",
+  "evomats5": ""
 }

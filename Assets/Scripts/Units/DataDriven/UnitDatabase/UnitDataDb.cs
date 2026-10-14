@@ -18,6 +18,7 @@ using Newtonsoft.Json;
 using SQLite;
 using UnityEngine;
 using UnityEngine.Networking;
+using System.Linq;
 
 public static class UnitDataDb
 {
@@ -127,6 +128,28 @@ public static class UnitDataDb
         catch (Exception e)
         {
             Debug.LogError($"[UnitDataDb] Failed to copy '{source}' → '{dest}': {e.Message}");
+        }
+    }
+
+    public static UnitDbRow GetRandomUnitRow()
+    {
+        EnsureOpen();
+        if (s_conn == null) return null;
+        try
+        {
+            int count = s_conn.Table<UnitDbRow>().Count();
+            if (count == 0) return null;
+            var row = s_conn.Query<UnitDbRow>(
+                "SELECT * FROM units ORDER BY rowid LIMIT 1 OFFSET ?",
+                UnityEngine.Random.Range(0, count)).FirstOrDefault();
+
+            // overlay wins: se la mod ridefinisce questa unità, usa la sua versione
+            return row == null ? null : (s_modConn?.Find<UnitDbRow>(row.UnitId) ?? row);
+        }
+        catch (Exception e)
+        {
+            Debug.LogError($"[UnitDataDb] GetRandomUnitRow failed: {e.Message}");
+            return null;
         }
     }
 

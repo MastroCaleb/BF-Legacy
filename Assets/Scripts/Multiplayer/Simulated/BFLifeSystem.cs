@@ -6,9 +6,6 @@ public class BFLifeSystem
 {
     static readonly Random rng = new Random();
 
-    // Temporary unit pool until real selection logic exists
-    static readonly string[] UnitPool = { "10011", "20011", "30011", "40011", "50011" };
-
     public static BotData GenerateBot(int minLevel = 1, int maxLevel = 200, int unitCount = 5)
     {
         string id = Guid.NewGuid().ToString("N").Substring(0, 8);
@@ -50,7 +47,7 @@ public class BFLifeSystem
 
     static string PickRandomUnitId()
     {
-        return UnitPool[rng.Next(UnitPool.Length)];
+        return UnitDataDb.GetRandomUnitRow()?.UnitId ?? "10011"; // fallback to a default unit ID if none found
     }
 }
 

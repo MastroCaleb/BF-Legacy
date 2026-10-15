@@ -46,7 +46,7 @@ public class BeginQuestMenu : MonoBehaviour
             friendSkillDescriptionText.color = Color.gray;
         }
 
-        var friendSkill = UnitRegistry.GetUnitById(BattleManager.selectedAllyBot.units[0].unitId).leaderAbility;
+        var friendSkill = UnitRegistry.GetUnitById(BattleManager.selectedAllyBot.party.units[BattleManager.selectedAllyBot.party.mainUnitIndex].unitId).leaderAbility;
 
         if (friendSkill != null)
         {
@@ -94,10 +94,10 @@ public class BeginQuestMenu : MonoBehaviour
             if(BattleManager.selectedAllyBot != null)
             {
                 partyIconView.partyIcons[5].gameObject.SetActive(true);
-                partyIconView.partyIcons[5].sprite = UnitRegistry.GetUnitById(BattleManager.selectedAllyBot.units[0].unitId).unitSlotIcon;
-                int friendCurrentLevel = BattleManager.selectedAllyBot.units[0].unitLevel;
-                partyIconView.partyLevels[5].text = friendCurrentLevel == UnitRegistry.GetUnitById(BattleManager.selectedAllyBot.units[0].unitId).maxLevel ? "Lv. MAX" : $"Lv. {friendCurrentLevel}";
-                partyIconView.partyLevels[5].color = friendCurrentLevel == UnitRegistry.GetUnitById(BattleManager.selectedAllyBot.units[0].unitId).maxLevel ? Color.yellow : Color.white;
+                partyIconView.partyIcons[5].sprite = UnitRegistry.GetUnitById(BattleManager.selectedAllyBot.party.units[BattleManager.selectedAllyBot.party.mainUnitIndex].unitId).unitSlotIcon;
+                int friendCurrentLevel = BattleManager.selectedAllyBot.party.units[BattleManager.selectedAllyBot.party.mainUnitIndex].unitLevel;
+                partyIconView.partyLevels[5].text = friendCurrentLevel == UnitRegistry.GetUnitById(BattleManager.selectedAllyBot.party.units[BattleManager.selectedAllyBot.party.mainUnitIndex].unitId).maxLevel ? "Lv. MAX" : $"Lv. {friendCurrentLevel}";
+                partyIconView.partyLevels[5].color = friendCurrentLevel == UnitRegistry.GetUnitById(BattleManager.selectedAllyBot.party.units[BattleManager.selectedAllyBot.party.mainUnitIndex].unitId).maxLevel ? Color.yellow : Color.white;
             }
             else
             {

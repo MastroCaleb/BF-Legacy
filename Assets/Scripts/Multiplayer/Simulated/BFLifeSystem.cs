@@ -15,24 +15,28 @@ public class BFLifeSystem
             botId = id,
             botName = BotNameSystem.GetRandomBotName(),
             botLevel = rng.Next(minLevel, maxLevel + 1),
-            units = new List<BotUnitData>()
+            party = new BotPartyData
+            {
+                mainUnitIndex = 0,
+                units = new List<BotUnitData>()
+            }
         };
 
         for (int i = 0; i < unitCount; i++)
         {
-            bot.units.Add(GenerateBotUnit(i == 0, minLevel, bot.botLevel));
+            bot.party.units.Add(GenerateBotUnit());
         }
 
         return bot;
     }
 
-    public static BotUnitData GenerateBotUnit(bool isMainUnit, int minLevel, int maxLevel)
+    public static BotUnitData GenerateBotUnit()
     {
+        string unitId = PickRandomUnitId();
         return new BotUnitData
         {
-            isMainUnit = isMainUnit,
-            unitId = PickRandomUnitId(),
-            unitLevel = rng.Next(minLevel, maxLevel + 1),
+            unitId = unitId,
+            unitLevel = rng.Next(1, UnitRegistry.GetUnitById(unitId).maxLevel),
             itemId = ""
         };
     }
@@ -50,19 +54,27 @@ public class BFLifeSystem
         return UnitDataDb.GetRandomUnitRow()?.UnitId ?? "10011"; // fallback to a default unit ID if none found
     }
 }
-
+[Serializable]
 public class BotData
 {
     public string botId;
     public string botName;
     public int botLevel;
-    public List<BotUnitData> units;
+    public BotPartyData party;
 }
-
+[Serializable]
 public class BotUnitData
 {
-    public bool isMainUnit;
     public string unitId;
     public int unitLevel;
+    public int bbLevel;
+    public int sbbLevel;
     public string itemId;
+    public string itemId2;
+}
+[Serializable]
+public class BotPartyData
+{
+    public int mainUnitIndex;
+    public List<BotUnitData> units;
 }

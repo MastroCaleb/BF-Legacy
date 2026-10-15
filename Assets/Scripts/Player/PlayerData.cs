@@ -23,6 +23,7 @@ public static class PlayerData
     public static List<string> completedMissionDex = new();
     public static List<string> presentReceivedDex = new();  // ids of present boxes received (obtained, may be unopened)
     public static List<string> presentCollectedDex = new(); // ids of present boxes opened/collected by the player
+    public static List<BotData> friends = new();
 
     public static void LoadLevelTable()
     {
@@ -85,6 +86,7 @@ public static class PlayerData
             completedMissionDex = data.completedMissionDex ?? new List<string>();
             presentReceivedDex = data.presentReceivedDex ?? new List<string>();
             presentCollectedDex = data.presentCollectedDex ?? new List<string>();
+            friends = data.friends ?? new List<BotData>();
 
             ApplyLevelData(level);
             PlayerUnitInventoryDatabase.LoadFromJson();
@@ -166,22 +168,80 @@ public static class PlayerData
         }
     }
 
+    public static bool IsFriend(string botId)
+    {
+        return friends.Exists(f => f.botId == botId);
+    }
+
+    public static bool AddFriend(BotData friend)
+    {
+        if (friend == null || string.IsNullOrEmpty(friend.botId)) return false;
+        if (friend.botId == playerId) return false;      // can't friend yourself
+        if (IsFriend(friend.botId)) return false;        // no duplicates
+        if (friendCapacity > 0 && friends.Count >= friendCapacity) return false;
+
+        friends.Add(friend);
+        SaveDataToJson();
+        return true;
+    }
+
+    public static bool AddFriendFromCode(string friendCode)
+    {
+        BotData friend = FriendCodeManager.ImportFromFriendCode(friendCode);
+        return AddFriend(friend);
+    }
+
+    public static bool RemoveFriend(string botId)
+    {
+        int removed = friends.RemoveAll(f => f.botId == botId);
+        if (removed == 0) return false;
+
+        SaveDataToJson();
+        return true;
+    }
+
     public static string GetShareableFriendCode()
     {
-        FriendData friendData = new FriendData
+        PartyData party = PartyDatabase.GetParty(PartyDatabase.currentPartyKey);
+        if (party == null) return string.Empty;
+
+        var units = new List<BotUnitData>();
+        int mainIndex = 0;
+
+        for (int slot = 0; slot < PartyDatabase.MaxPartySize; slot++)
         {
-            playerId = playerId,
-            playerName = playerName,
-            playerLevel = level,
-            unitId = PartyDatabase.GetLeaderInCurrentParty()?.unit.unitId ?? "",
-            level = PartyDatabase.GetLeaderInCurrentParty()?.currentLevel ?? 0,
-            bbLevel = PartyDatabase.GetLeaderInCurrentParty()?.currentBBLevel ?? 0,
-            sbbLevel = PartyDatabase.GetLeaderInCurrentParty()?.currentSBBLevel ?? 0,
-            itemId = PlayerItemInventoryDatabase.GetStack(PartyDatabase.GetLeaderInCurrentParty()?.sphereKey ?? 0)?.itemId ?? "",
-            itemId2 = PlayerItemInventoryDatabase.GetStack(PartyDatabase.GetLeaderInCurrentParty()?.sphereKey2 ?? 0)?.itemId ?? ""
+            UnitInventoryData u = PlayerUnitInventoryDatabase.GetUnitByKey(party.GetUnitAt(slot));
+            if (u == null) continue; // empty slot
+
+            // Leader's position in the exported list, since empty slots are skipped
+            if (slot == party.leaderUnitIndex) mainIndex = units.Count;
+
+            units.Add(new BotUnitData
+            {
+                unitId = u.unit.unitId,
+                unitLevel = u.currentLevel,
+                bbLevel = u.currentBBLevel,
+                sbbLevel = u.currentSBBLevel,
+                itemId = PlayerItemInventoryDatabase.GetStack(u.sphereKey)?.itemId ?? "",
+                itemId2 = PlayerItemInventoryDatabase.GetStack(u.sphereKey2)?.itemId ?? ""
+            });
+        }
+
+        if (units.Count == 0) return string.Empty;
+
+        BotData me = new BotData
+        {
+            botId = playerId,
+            botName = playerName,
+            botLevel = level,
+            party = new BotPartyData
+            {
+                mainUnitIndex = mainIndex,
+                units = units
+            }
         };
 
-        return FriendCodeManager.ExportToFriendCode(friendData);
+        return FriendCodeManager.ExportToFriendCode(me);
     }
 }
 
@@ -218,4 +278,5 @@ internal class PlayerDataSerializable
     public List<string> completedMissionDex { get; set; }
     public List<string> presentReceivedDex { get; set; }
     public List<string> presentCollectedDex { get; set; }
+    public List<BotData> friends { get; set; }
 }

@@ -6,22 +6,10 @@ using Newtonsoft.Json;
 using UnityEngine;
 
 // Data structure representing the friend's profile
-[System.Serializable]
-public class FriendData
-{
-    public string playerId;
-    public string playerName;
-    public int playerLevel;
-    public string unitId;
-    public int level;
-    public int bbLevel;
-    public int sbbLevel;
-    public string itemId;
-    public string itemId2;
-}
+
 public static class FriendCodeManager
 {
-    public static string ExportToFriendCode(FriendData data)
+    public static string ExportToFriendCode(BotData data)
     {
         try
         {
@@ -39,12 +27,12 @@ public static class FriendCodeManager
         }
         catch (Exception e)
         {
-            Debug.LogError($"Error exporting FriendData to code: {e.Message}");
+            Debug.LogError($"Error exporting Player Data to code: {e.Message}");
             return string.Empty;
         }
     }
 
-    public static FriendData ImportFromFriendCode(string friendCode)
+    public static BotData ImportFromFriendCode(string friendCode)
     {
         try
         {
@@ -58,7 +46,7 @@ public static class FriendCodeManager
                         gZipStream.CopyTo(outputStream);
                         string rawJson = Encoding.UTF8.GetString(outputStream.ToArray());
                         
-                        return JsonConvert.DeserializeObject<FriendData>(rawJson);
+                        return JsonConvert.DeserializeObject<BotData>(rawJson);
                     }
                 }
             }

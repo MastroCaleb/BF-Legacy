@@ -223,12 +223,12 @@ public class BattleManager : MonoBehaviour
     void SummonFriendUnit()
     {
         int i = PartyDatabase.MaxPartySize;
-        string unitId = selectedAllyBot.units[0].unitId;
+        string unitId = selectedAllyBot.party.units[selectedAllyBot.party.mainUnitIndex].unitId;
 
         UnitInventoryData inventoryData = new UnitInventoryData
         {
             unitId = unitId,
-            currentLevel = selectedAllyBot.units[0].unitLevel,
+            currentLevel = selectedAllyBot.party.units[selectedAllyBot.party.mainUnitIndex].unitLevel,
             unit = UnitRegistry.GetUnitById(unitId),
             currentBBLevel = 1,
             currentSBBLevel = 1

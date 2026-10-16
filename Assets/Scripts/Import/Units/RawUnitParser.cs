@@ -248,23 +248,34 @@ public sealed class RawUnitParser
 
     private AbilityData BuildNormalAbility(JObject data, string unitId, string unitName)
     {
-        // Normal attacks have no real skill id, so they can't go through the
-        // SKILL_MST chain that BB/SBB/UBB use — their effectFrames live on the
-        // unit's own F_UNIT_MST entry as a flat "frame:particleId:placement"
-        // list. Keyed "normal_{unitId}" so they can never collide with real
-        // skill ids (unit ids and bbIds have been observed to overlap).
+        List<HitFrame> hitFrames;
+        if (data["damage frames"] is JObject df)
+        {
+            hitFrames = ParseHitFramesFromArrays(
+                df["frame times"] as JArray,
+                df["hit dmg% distribution"] as JArray);
+        }
+        else
+        {
+            hitFrames = ParseHitFramesFromString(
+                data["damage frames"]?.ToString(),
+                data["hit dmg% distribution"]?.ToString());
+        }
+
+        int dc = data["drop check count"] != null
+            ? ParseInt(data["drop check count"])
+            : ParseInt(data["normaldc"]);
+
         var a = new AbilityData
         {
             abilityId        = $"normal_{unitId}",
             abilityName      = $"{unitName} Normal Attack",
             targetType       = TargetType.SingleEnemy,
             targetArea       = TargetArea.Single,
-            dropChecksPerHit = ParseInt(data["normaldc"]),
-            hitFrames        = ParseHitFramesFromString(
-                                 data["normal_frames"]?.ToString(),
-                                 data["normal_distribute"]?.ToString()),
+            dropChecksPerHit = dc,
+            hitFrames        = hitFrames,
             effectFrames     = EffectFrameResolver.ResolveNormalFrames(
-                                 data["effectFrames"]?.ToString(), ResolveAudioAddress),
+                                data["effectFrames"]?.ToString(), ResolveAudioAddress),
             levels = new List<AbilityLevel>
             {
                 new AbilityLevel { bcCost = 0, damageRate = 100, effects = new List<Effect>() }

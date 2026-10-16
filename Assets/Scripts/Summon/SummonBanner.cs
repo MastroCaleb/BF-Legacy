@@ -38,5 +38,6 @@ public enum CostType
 {
     Gems,
     Zel,
-    Karma
+    Karma,
+    HonorPoints
 }

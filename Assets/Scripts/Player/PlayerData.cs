@@ -11,6 +11,7 @@ public static class PlayerData
     public static int zel = 0;
     public static int gems = 0;
     public static int karma = 0;
+    public static int honorPoints = 0;
 
     // Stats derived from current level data
     public static int energy = 0;
@@ -81,6 +82,7 @@ public static class PlayerData
             zel = data.zel < 0 ? data.zel * -1 : data.zel;
             gems = data.gems;
             karma = data.karma;
+            honorPoints = data.honorPoints;
 
             unitDex = data.unitDex ?? new List<string>();
             completedMissionDex = data.completedMissionDex ?? new List<string>();
@@ -116,11 +118,13 @@ public static class PlayerData
             zel = zel,
             gems = gems,
             karma = karma,
+            honorPoints = honorPoints,
 
             unitDex = unitDex,
             completedMissionDex = completedMissionDex,
             presentReceivedDex = presentReceivedDex,
-            presentCollectedDex = presentCollectedDex
+            presentCollectedDex = presentCollectedDex,
+            friends = friends
         };
 
         string json = JsonConvert.SerializeObject(data, Formatting.Indented);
@@ -273,6 +277,7 @@ internal class PlayerDataSerializable
     public int zel { get; set; }
     public int gems { get; set; }
     public int karma { get; set; }
+    public int honorPoints { get; set; }
 
     public List<string> unitDex { get; set; }
     public List<string> completedMissionDex { get; set; }

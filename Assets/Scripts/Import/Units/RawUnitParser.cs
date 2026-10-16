@@ -235,8 +235,8 @@ public sealed class RawUnitParser
         unit.bbAbilityId     = EmitAbility(BuildLeveledAbility(data["bb"]  as JObject, data, "bbmultiplier",  "bbdc",  $"unknown_{unitId}_bb"));
         unit.sbbAbilityId    = EmitAbility(BuildLeveledAbility(data["sbb"] as JObject, data, "sbbmultiplier", "sbbdc", $"unknown_{unitId}_sbb"));
         unit.ubbAbilityId    = EmitAbility(BuildLeveledAbility(data["ubb"] as JObject, data, "ubbmultiplier", "ubbdc", $"unknown_{unitId}_ubb"));
-        unit.leaderAbilityId = EmitAbility(BuildFlatAbility(data["leader_skill"] as JObject, $"unknown_{unitId}_leader"));
-        unit.extraAbilityId  = EmitAbility(BuildFlatAbility(data["extra_skill"]  as JObject, $"unknown_{unitId}_extra"));
+        unit.leaderAbilityId = EmitAbility(BuildFlatAbility(data["leader_skill"] as JObject, $"unknown_{unitId}_leader", "leader"));
+        unit.extraAbilityId  = EmitAbility(BuildFlatAbility(data["extra_skill"]  as JObject, $"unknown_{unitId}_extra", "extra"));
 
         _emittedUnitIds.Add(unitId);
         return unit;
@@ -337,14 +337,14 @@ public sealed class RawUnitParser
         return a;
     }
 
-    private AbilityData BuildFlatAbility(JObject skillObj, string fallbackId)
+    private AbilityData BuildFlatAbility(JObject skillObj, string fallbackId, string abilityType)
     {
         if (skillObj == null) return null;
 
         string name = skillObj["name"]?.ToString();
         if (string.IsNullOrWhiteSpace(name)) return null;
 
-        string abilityId = skillObj["id"]?.ToString();
+        string abilityId = abilityType + "_" + skillObj["id"]?.ToString();
         if (string.IsNullOrWhiteSpace(abilityId)) abilityId = fallbackId;
 
         return new AbilityData

@@ -55,6 +55,9 @@ public class StartSummonButton : MonoBehaviour
             case CostType.Karma:
                 PlayerData.karma -= summonGate.summonBanner.cost;
                 break;
+            case CostType.HonorPoints:
+                PlayerData.honorPoints -= summonGate.summonBanner.cost;
+                break;
         }
 
         MainUI.header.GetComponent<HeaderPlayerData>().UpdateHeader();

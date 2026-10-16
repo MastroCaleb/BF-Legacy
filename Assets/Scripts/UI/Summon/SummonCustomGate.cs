@@ -50,6 +50,9 @@ public class SummonCustomGate : MonoBehaviour
                 case CostType.Karma:
                     bannerCostDescText.text =  $"\nSummon once for <color=#03a1fc>{summonBanner.cost} {summonBanner.costType}</color>" + $"\nAvailable: <color=#03a1fc>{PlayerData.karma} Karma</color>" + $"\nYou can summon {PlayerData.karma / summonBanner.cost} time(s)";
                     break;
+                case CostType.HonorPoints:
+                    bannerCostDescText.text =  $"\nSummon once for <color=#ffeeab>{summonBanner.cost} {summonBanner.costType}</color>" + $"\nAvailable: <color=#ffeeab>{PlayerData.honorPoints} Honor Points</color>" + $"\nYou can summon {PlayerData.honorPoints / summonBanner.cost} time(s)";
+                    break;
             }
         }
     }

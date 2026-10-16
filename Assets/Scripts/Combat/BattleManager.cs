@@ -222,6 +222,8 @@ public class BattleManager : MonoBehaviour
 
     void SummonFriendUnit()
     {
+        if(selectedAllyBot == null) return;
+
         int i = PartyDatabase.MaxPartySize;
         string unitId = selectedAllyBot.party.units[selectedAllyBot.party.mainUnitIndex].unitId;
 

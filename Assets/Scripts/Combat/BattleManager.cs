@@ -69,7 +69,7 @@ public class BattleManager : MonoBehaviour
     public static bool obtainedGemsForMission;
 
     //Ally Bot
-    public static BotData selectedAllyBot;
+    public static BotData selectedAllyBot = null;
 
     //Mimics
     public static bool mimicRoundQueued = false;

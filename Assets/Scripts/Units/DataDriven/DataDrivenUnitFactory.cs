@@ -23,7 +23,7 @@ public static class DataDrivenUnitFactory
             return null;
         }
 
-        Unit unit = Build(data);
+        var unit = new Unit(data);
         s_units[unitId] = unit;
         return unit;
     }

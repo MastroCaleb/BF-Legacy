@@ -1,90 +1,119 @@
+// Unit.cs — classe normale, stessa superficie pubblica del vecchio SO
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Unit", menuName = "Units/Unit")]
-public class Unit : ScriptableObject
+public class Unit
 {
-    [Header("Unit Details")]
-    //Unit Info
-    public string unitName;
-    public string unitId;
-    public string unitNumber;
-    public string description;
-    public string summonDesc;
-    public string fusionDesc;
-    public string evoDesc;
-    public ElementalType element;
-    public UnitRarity rarity;
+    readonly UnitData d;
+    public Unit(UnitData data) { d = data; }
 
-    [Header("Unit Visuals")]
-    //Unit Visuals
-    public Sprite unitSlotIcon;
-    public Sprite unitIcon;
-    public Sprite unitFullArt;
-    public AnimationType animationType;
+    public string name => $"unit_{d.unitId}";
 
-    //CGG AND CGS
-    public Texture2D[] spriteSheets;
-    public TextAsset cggFile;
-    public TextAsset idleCgsFile;
-    public TextAsset moveCgsFile;
-    public TextAsset attackCgsFile;
+    // ── Dati leggeri: letti direttamente dal DTO ──
+    public string unitId => d.unitId;
+    public string unitName => d.unitName;
+    public string unitNumber => d.unitNumber;
+    public string description => d.description;
+    public string summonDesc => d.summonDesc;
+    public string fusionDesc => d.fusionDesc;
+    public string evoDesc => d.evoDesc;
+    public ElementalType element => d.element;
+    public UnitRarity rarity => d.rarity;
+    public AnimationType animationType => d.animationType;
 
-    //Unit Display Values
-    public UnitDisplay unitDisplayHomePosition;
-    public UnitDisplay unitDisplayDetailPosition;
-    public UnitDisplay unitDisplayConfirmImagePosition;
-    public UnitDisplay unitDisplayCutInImagePosition;
-    public UnitDisplay unitDisplaySummonPosition;
-    public Vector2 unitDisplayHpPosition;
-    public Vector2 unitDisplayCursorPosition;
+    public UnitDisplay unitDisplayHomePosition => d.unitDisplayHomePosition;
+    public UnitDisplay unitDisplayDetailPosition => d.unitDisplayDetailPosition;
+    public UnitDisplay unitDisplayConfirmImagePosition => d.unitDisplayConfirmImagePosition;
+    public UnitDisplay unitDisplayCutInImagePosition => d.unitDisplayCutInImagePosition;
+    public UnitDisplay unitDisplaySummonPosition => d.unitDisplaySummonPosition;
+    public Vector2 unitDisplayHpPosition => d.unitDisplayHpPosition;
+    public Vector2 unitDisplayCursorPosition => d.unitDisplayCursorPosition;
 
-    //SAM
-    public TextAsset samFile;
+    public int aiLevel => d.aiLevel;
+    public int maxLevel => d.maxLevel;
+    public int maxHealth => d.maxHealth;
+    public int atk => d.atk;
+    public int def => d.def;
+    public int rec => d.rec;
+    public int summonCost => d.summonCost;
+    public int baseExp => d.baseExp;
+    public UnitStats statsBase => d.statsBase;
+    public UnitStats statsLord => d.statsLord;
+    public string bbType => d.bbType;
 
-    [Header("Unit Statistics")]
-    //Unit Statistics
-    public int aiLevel;
-    public int maxLevel;
-    public int maxHealth;
-    public int atk;
-    public int def;
-    public int rec;
-    public int summonCost;
-    public int baseExp; // 10, 15, or 21
+    public float moveSpeedAttack => d.moveSpeedAttack;
+    public float moveSpeedSkill => d.moveSpeedSkill;
+    public int speedTypeAttack => d.speedTypeAttack;
+    public int speedTypeSkill => d.speedTypeSkill;
+    public int moveTypeAttack => d.moveTypeAttack;
+    public int moveTypeSkill => d.moveTypeSkill;
 
-    [Header("Type Statistics")]
-    public UnitStats statsBase;
-    public UnitStats statsLord;    
+    public string evoFrom => d.evoFrom;
+    public string evoInto => d.evoInto;
+    public List<string> evoMats => d.evoMats;
+    public string evoItem => d.evoItem;
+    public int evoZelCost => d.evoZelCost;
+    public int sellPrice => d.sellPrice;
+    public bool sellCaution => d.sellCaution;
 
-    [Header("Unit Abilities")]
-    //Unit Abilities
-    public Ability basicAbility;
-    public Ability bbAbility;
-    public Ability sbbAbility;
-    public Ability ubbAbility;
-    public Ability leaderAbility;
-    public Ability extraAbility;
-    public string bbType;
+    // ── Ability: costruite al primo accesso ──
+    Ability _basic, _bb, _sbb, _ubb, _leader, _extra;
+    bool _basicD, _bbD, _sbbD, _ubbD, _leaderD, _extraD;
+    public Ability basicAbility  => Lazy(ref _basic,  ref _basicD,  d.basicAbilityId);
+    public Ability bbAbility     => Lazy(ref _bb,     ref _bbD,     d.bbAbilityId);
+    public Ability sbbAbility    => Lazy(ref _sbb,    ref _sbbD,    d.sbbAbilityId);
+    public Ability ubbAbility    => Lazy(ref _ubb,    ref _ubbD,    d.ubbAbilityId);
+    public Ability leaderAbility => Lazy(ref _leader, ref _leaderD, d.leaderAbilityId);
+    public Ability extraAbility  => Lazy(ref _extra,  ref _extraD,  d.extraAbilityId);
 
-    [Header("Movement")]
-    public float moveSpeedAttack;
-    public float moveSpeedSkill;
-    public int   speedTypeAttack;
-    public int   speedTypeSkill;
-    public int   moveTypeAttack;
-    public int   moveTypeSkill;
+    static Ability Lazy(ref Ability cache, ref bool done, string id)
+    {
+        if (!done) { cache = AbilityRegistry.GetAbilityById(id); done = true; }
+        return cache;
+    }
 
-    [Header("Evolution")]
-    public string       evoFrom;
-    public string       evoInto;      // ADD this — was missing
-    public List<string> evoMats;
-    public string       evoItem;
-    public int          evoZelCost;
+    // ── Asset: stesse chiamate AssetResolver di prima, ma su richiesta ──
+    Sprite _slotIcon, _icon, _fullArt;
+    Texture2D[] _sheets; bool _sheetsD;
+    TextAsset _cgg, _idle, _move, _attack, _sam;
 
-    [Header("Sell")]
-    public int sellPrice;
-    public bool sellCaution;
+    public Sprite unitSlotIcon => _slotIcon ??= AssetResolver.LoadSprite(d.slotIconPath);
+    public Sprite unitIcon     => _icon     ??= AssetResolver.LoadSprite(d.iconPath);
+    public Sprite unitFullArt  => _fullArt  ??= AssetResolver.LoadSprite(d.fullArtPath);
+
+    public Texture2D[] spriteSheets
+    {
+        get
+        {
+            if (!_sheetsD) { _sheets = LoadTextures(d.spriteSheetPaths); _sheetsD = true; }
+            return _sheets;
+        }
+    }
+    public TextAsset cggFile       => _cgg    ??= AssetResolver.LoadText(d.cggPath);
+    public TextAsset idleCgsFile   => _idle   ??= AssetResolver.LoadText(d.idleCgsPath);
+    public TextAsset moveCgsFile   => _move   ??= AssetResolver.LoadText(d.moveCgsPath);
+    public TextAsset attackCgsFile => _attack ??= AssetResolver.LoadText(d.attackCgsPath);
+    public TextAsset samFile       => _sam    ??= AssetResolver.LoadText(d.samPath);
+
+    /// Scarta i riferimenti agli asset; si ricaricano da soli al prossimo accesso.
+    public void ReleaseAssets()
+    {
+        _slotIcon = _icon = _fullArt = null;
+        _sheets = null; _sheetsD = false;
+        _cgg = _idle = _move = _attack = _sam = null;
+    }
+
+    static Texture2D[] LoadTextures(List<string> addresses)
+    {
+        if (addresses == null || addresses.Count == 0) return null;
+        var sheets = new List<Texture2D>(addresses.Count);
+        foreach (string a in addresses)
+        {
+            Texture2D t = AssetResolver.LoadTexture(a);
+            if (t != null) sheets.Add(t);
+        }
+        return sheets.Count > 0 ? sheets.ToArray() : null;
+    }
 }
 public class ImpBonuses
 {

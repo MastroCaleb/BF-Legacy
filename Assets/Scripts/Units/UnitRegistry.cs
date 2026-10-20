@@ -13,7 +13,7 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 public static class UnitRegistry
 {
     static readonly Dictionary<string, Unit> s_units = new Dictionary<string, Unit>();
-    static readonly Dictionary<string, AsyncOperationHandle<Unit>> s_handles = new Dictionary<string, AsyncOperationHandle<Unit>>();
+    static readonly Dictionary<string, Unit> s_handles = new();
 
     /// <summary>
     /// Migration toggle: when true, units load from the data-driven JSON

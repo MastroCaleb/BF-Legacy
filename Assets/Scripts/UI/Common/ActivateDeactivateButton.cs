@@ -9,6 +9,8 @@ public class ActivateDeactivateButton : MonoBehaviour
     public GameObject objectToDeactivate;
     public List<GameObject> objectsToDeactivate;
 
+    public float delay = 0f;
+
     void Start()
     {
         var button = GetComponent<Button>();
@@ -19,6 +21,18 @@ public class ActivateDeactivateButton : MonoBehaviour
     }
 
     public void OnButtonPressed()
+    {
+        if (delay > 0f)
+        {
+            Invoke(nameof(ActivateDeactivateObjects), delay);
+        }
+        else
+        {
+            ActivateDeactivateObjects();
+        }
+    }
+
+    private void ActivateDeactivateObjects()
     {
         if (objectToActivate != null)
         {

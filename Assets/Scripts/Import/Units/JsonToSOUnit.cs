@@ -1,4 +1,8 @@
 // JsonToSOUnit.cs
+/*
+
+Not used anymore as now we use the data-driven path (Unit is a normal class, not a ScriptableObject).
+
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -1354,3 +1358,4 @@ public class JsonToSOUnit : EditorWindow
     };
 }
 #endif
+*/

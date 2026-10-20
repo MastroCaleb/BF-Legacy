@@ -48,6 +48,10 @@ public static class DataDrivenUnitFactory
         }
     }
 
+    /* 
+
+    Not used anymore
+
     static Unit Build(UnitData d)
     {
         Unit u = ScriptableObject.CreateInstance<Unit>();
@@ -128,6 +132,7 @@ public static class DataDrivenUnitFactory
 
         return u;
     }
+    */
 
     static Texture2D[] LoadTextures(List<string> addresses)
     {

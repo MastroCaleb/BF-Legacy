@@ -61,6 +61,18 @@ public class BotData
     public string botName;
     public int botLevel;
     public BotPartyData party;
+
+    public static BotData NULL => new BotData
+    {
+        botId = "",
+        botName = "",
+        botLevel = 0,
+        party = new BotPartyData
+        {
+            mainUnitIndex = 0,
+            units = new List<BotUnitData>()
+        }
+    };
 }
 [Serializable]
 public class BotUnitData

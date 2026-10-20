@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class SetAllyButton : MonoBehaviour
 {
-    public BotData botData = null;
+    public BotData botData = BotData.NULL;
     Button button;
 
     void Start()
@@ -17,7 +17,7 @@ public class SetAllyButton : MonoBehaviour
     {
         BattleManager.selectedAllyBot = botData;
 
-        if(botData == null)
+        if(botData == BotData.NULL)
         {
             Debug.Log("Selected ally bot: None");
             return;

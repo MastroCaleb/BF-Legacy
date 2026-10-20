@@ -46,7 +46,7 @@ public class BeginQuestMenu : MonoBehaviour
             friendSkillDescriptionText.color = Color.gray;
         }
 
-        if(BattleManager.selectedAllyBot == null || string.IsNullOrEmpty(BattleManager.selectedAllyBot.botName))
+        if(BattleManager.selectedAllyBot == BotData.NULL)
         {
             noFriendSkillText.SetActive(true);
             friendSkillNameText.color = Color.gray;
@@ -100,7 +100,7 @@ public class BeginQuestMenu : MonoBehaviour
                 }
             }
 
-            if(BattleManager.selectedAllyBot != null || !string.IsNullOrEmpty(BattleManager.selectedAllyBot.botName))
+            if(BattleManager.selectedAllyBot != BotData.NULL)
             {
                 partyIconView.partyIcons[5].gameObject.SetActive(true);
                 partyIconView.partyIcons[5].sprite = UnitRegistry.GetUnitById(BattleManager.selectedAllyBot.party.units[BattleManager.selectedAllyBot.party.mainUnitIndex].unitId).unitSlotIcon;

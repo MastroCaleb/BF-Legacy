@@ -31,9 +31,10 @@ Brave Frontier: Legacy is meant to be a community-friendly remake rather than an
 
 1. Clone the repository.
 2. Open the project in Unity.
-3. Open the main scenes under `Assets/Scenes`.
-4. Explore the `Assets/Scripts` folder to understand game logic.
-5. Modify assets, add new units, or extend systems to personalize the experience.
+3. Generate the DB in `Tools`
+4. Open the main scenes under `Assets/Scenes`.
+5. Explore the `Assets/Scripts` folder to understand game logic.
+6. Modify assets, add new units, or extend systems to personalize the experience.
 
 ## Contributing
 
@@ -55,7 +56,7 @@ Feel free to fork the repository or submit a pull request with your changes.
 - Caleb, main developer
 - Oman, researcher, progression system creator and mission creator
 - Mugen, researcher, progression system creator and mission creator
-- Fae, external mission tool developer, reverse engineer helper
+- Fae, helper dev (Data-Driven units, addressables and general help with bug fixing), external mission tool developer, reverse engineer helper
 
 A thank you to Dreamoe and all members of his Brave Frontier: Genesis discord server, for supporting me when i was just starting out with this project, giving me the strength to continue.
 

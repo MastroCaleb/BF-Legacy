@@ -180,8 +180,16 @@ public static class PlayerData
     public static bool AddFriend(BotData friend)
     {
         if (friend == null || string.IsNullOrEmpty(friend.botId)) return false;
-        if (friend.botId == playerId) return false;      // can't friend yourself
-        if (IsFriend(friend.botId)) return false;        // no duplicates
+        if (friend.botId == playerId) return false;// can't friend yourself
+
+        int index = friends.FindIndex(f => f.botId == friend.botId);
+        if (index >= 0)
+        {
+            friends[index] = friend; // overwrite existing friend data (update)
+            SaveDataToJson();
+            return true;
+        }
+
         if (friendCapacity > 0 && friends.Count >= friendCapacity) return false;
 
         friends.Add(friend);
@@ -192,7 +200,7 @@ public static class PlayerData
     public static bool AddFriendFromCode(string friendCode)
     {
         BotData friend = FriendCodeManager.ImportFromFriendCode(friendCode);
-        return AddFriend(friend);
+        return friend.IsNull ? false : AddFriend(friend);
     }
 
     public static bool RemoveFriend(string botId)

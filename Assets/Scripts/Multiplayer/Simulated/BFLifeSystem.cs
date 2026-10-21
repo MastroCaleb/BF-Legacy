@@ -2,6 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
+/*
+ * BFLifeSystem.cs
+ * 
+ * This class is work in progress, right now it can only generate random bot data, in future versions this code will also be
+ * responsible for simulating bot progress, team building, and other bot-related features.
+ */
 public class BFLifeSystem
 {
     static readonly Random rng = new Random();

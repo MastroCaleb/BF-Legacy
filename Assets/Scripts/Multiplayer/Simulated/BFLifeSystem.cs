@@ -51,7 +51,7 @@ public class BFLifeSystem
 
     static string PickRandomUnitId()
     {
-        return UnitDataDb.GetRandomUnitRow()?.UnitId ?? "10011"; // fallback to a default unit ID if none found
+        return UnitDataDb.GetRandomUnitRow()?.UnitId ?? "10011" ; // fallback to a default unit ID if none found
     }
 }
 [Serializable]
@@ -62,17 +62,7 @@ public class BotData
     public int botLevel;
     public BotPartyData party;
 
-    public static BotData NULL => new BotData
-    {
-        botId = "",
-        botName = "",
-        botLevel = 0,
-        party = new BotPartyData
-        {
-            mainUnitIndex = 0,
-            units = new List<BotUnitData>()
-        }
-    };
+    public bool IsNull => string.IsNullOrEmpty(botId);
 }
 [Serializable]
 public class BotUnitData

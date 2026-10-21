@@ -137,14 +137,19 @@ public static class UnitDataDb
         if (s_conn == null) return null;
         try
         {
-            int count = s_conn.Table<UnitDbRow>().Count();
-            if (count == 0) return null;
-            var row = s_conn.Query<UnitDbRow>(
-                "SELECT * FROM units ORDER BY rowid LIMIT 1 OFFSET ?",
-                UnityEngine.Random.Range(0, count)).FirstOrDefault();
+            const string filter = "icon_path IS NOT NULL AND icon_path <> ''";
 
-            // overlay wins: se la mod ridefinisce questa unità, usa la sua versione
-            return row == null ? null : (s_modConn?.Find<UnitDbRow>(row.UnitId) ?? row);
+            int count = s_conn.ExecuteScalar<int>($"SELECT COUNT(*) FROM units WHERE {filter}");
+            if (count == 0) return null;
+
+            var row = s_conn.Query<UnitDbRow>(
+                $"SELECT * FROM units WHERE {filter} ORDER BY rowid LIMIT 1 OFFSET ?",
+                UnityEngine.Random.Range(0, count)).FirstOrDefault();
+            if (row == null) return null;
+
+            // overlay wins, unless its version has no icon
+            var mod = s_modConn?.Find<UnitDbRow>(row.UnitId);
+            return (mod != null && !string.IsNullOrEmpty(mod.IconPath)) ? mod : row;
         }
         catch (Exception e)
         {

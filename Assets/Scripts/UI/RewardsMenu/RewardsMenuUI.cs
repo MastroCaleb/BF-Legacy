@@ -56,6 +56,26 @@ public class RewardsMenuUI : MonoBehaviour
 
     //Page 4 - extra rewards
     public GameObject page4;
+
+    //Page 5 - ally
+    public GameObject page5;
+    public Image playerUnitIcon;
+    public TextMeshProUGUI playerLevelText;
+    public TextMeshProUGUI playerNameText;
+    public TextMeshProUGUI playerUnitNameText;
+    public Image playerUnitElement;
+    public TextMeshProUGUI playerUnitLevelText;
+    public TextMeshProUGUI playerUnitHpText;
+    public TextMeshProUGUI playerUnitAtkText;
+    public TextMeshProUGUI playerUnitDefText;
+    public TextMeshProUGUI playerUnitRecText;
+    public TextMeshProUGUI playerDescText; //unused for now
+    public TextMeshProUGUI playerClassText; //unused for now
+    public List<Sprite> elementIcons;
+
+    public Button addFriendButton;
+    public Button cancelButton;
+    
     public Button button;
     int clicks = 0;
 
@@ -133,12 +153,16 @@ public class RewardsMenuUI : MonoBehaviour
             }
             else
             {
-                ShowPage4OrFinish();
+                ShowPage4OrNext();
             }
         }
         else if (clicks == 4)
         {
-            ShowPage4OrFinish();
+            ShowPage4OrNext();
+        }
+        else if(clicks == 5)
+        {
+            ShowPage5OrFinish();
         }
         else
         {
@@ -158,11 +182,11 @@ public class RewardsMenuUI : MonoBehaviour
         }
         else
         {
-            ShowPage4OrFinish();
+            ShowPage4OrNext();
         }
     }
 
-    private void ShowPage4OrFinish()
+    private void ShowPage4OrNext()
     {
         if (ShouldShowPage4())
         {
@@ -174,8 +198,71 @@ public class RewardsMenuUI : MonoBehaviour
         }
         else
         {
+            ShowPage5OrFinish();
+        }
+    }
+
+    private void ShowPage5OrFinish()
+    {
+        if (!BattleManager.selectedAllyBot.IsNull &&
+            !string.IsNullOrEmpty(BattleManager.selectedAllyBot.botId))
+        {
+            page1.SetActive(false);
+            page2.SetActive(false);
+            page3.SetActive(false);
+            page4.SetActive(false);
+            page5.SetActive(true);
+            button.gameObject.SetActive(false);
+
+            areaName.gameObject.SetActive(false);
+            missionName.gameObject.SetActive(false);
+
+            if (cancelButton != null)
+                cancelButton.onClick.AddListener(OnButtonClick);
+
+            if (addFriendButton != null){
+                addFriendButton.onClick.AddListener(AddFriend);
+                addFriendButton.onClick.AddListener(OnButtonClick);
+            }
+
+            Unit mainUnit = UnitRegistry.GetUnitById(BattleManager.selectedAllyBot.party.units[BattleManager.selectedAllyBot.party.mainUnitIndex].unitId);
+
+            string unitId = BattleManager.selectedAllyBot.party.units[BattleManager.selectedAllyBot.party.mainUnitIndex].unitId;
+
+            UnitInventoryData inventoryData = new UnitInventoryData
+            {
+                unitId = unitId,
+                currentLevel = BattleManager.selectedAllyBot.party.units[BattleManager.selectedAllyBot.party.mainUnitIndex].unitLevel,
+                unit = UnitRegistry.GetUnitById(unitId),
+                currentBBLevel = BattleManager.selectedAllyBot.party.units[BattleManager.selectedAllyBot.party.mainUnitIndex].bbLevel,
+                currentSBBLevel = BattleManager.selectedAllyBot.party.units[BattleManager.selectedAllyBot.party.mainUnitIndex].sbbLevel
+            };
+
+            BFLifeSystem.ModifyStats(inventoryData, BattleManager.selectedAllyBot.party.units[BattleManager.selectedAllyBot.party.mainUnitIndex].unitLevel);
+
+            playerUnitIcon.sprite = mainUnit.unitSlotIcon;
+            playerNameText.text = BattleManager.selectedAllyBot.botName;
+            playerLevelText.text = BattleManager.selectedAllyBot.botLevel + "";
+            playerUnitNameText.text = mainUnit.unitName;
+            playerUnitLevelText.text = BattleManager.selectedAllyBot.party.units[BattleManager.selectedAllyBot.party.mainUnitIndex].unitLevel + "";
+            playerUnitHpText.text = mainUnit.maxHealth + inventoryData.hpLevelUpBonus + inventoryData.hpImpBonus + "";
+            playerUnitAtkText.text = mainUnit.atk + inventoryData.atkLevelUpBonus + inventoryData.atkImpBonus + "";
+            playerUnitDefText.text = mainUnit.def + inventoryData.defLevelUpBonus + inventoryData.defImpBonus + "";
+            playerUnitRecText.text = mainUnit.rec + inventoryData.recLevelUpBonus + inventoryData.recImpBonus + "";
+
+            playerUnitElement.sprite = elementIcons[(int)mainUnit.element];
+
+            clicks = 6;
+        }
+        else
+        {
             FinishRewards();
         }
+    }
+
+    public void AddFriend()
+    {
+        PlayerData.AddFriend(BattleManager.selectedAllyBot);
     }
 
     private void FinishRewards()

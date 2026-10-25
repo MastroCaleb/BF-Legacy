@@ -25,7 +25,6 @@ public class MenuSectionButton : MonoBehaviour, IPointerDownHandler, IPointerUpH
     private Image buttonImage;
     private RectTransform rectTransform;
 
-    [System.Obsolete]
     void Start()
     {
         buttonImage = GetComponent<Image>();
@@ -60,7 +59,6 @@ public class MenuSectionButton : MonoBehaviour, IPointerDownHandler, IPointerUpH
             rectTransform.rotation = originalRotation;
     }
 
-    [System.Obsolete]
     public void OnButtonPressed()
     {
         if (resetNavigationInMenu) ResetNavigation();

@@ -219,6 +219,7 @@ public class CocosParticleEffect : MaskableGraphic
     private void ApplyBlendMode()
     {
         if (material == null) return;
+        
         // Requires the UI/CocosParticleBlend shader (exposes _SrcBlend/_DstBlend).
         if (material.HasProperty("_SrcBlend"))
             material.SetFloat("_SrcBlend", (float)GLToUnityBlend(data.blendFuncSource));
@@ -255,8 +256,13 @@ public class CocosParticleEffect : MaskableGraphic
             {
                 gzip.CopyTo(output);
                 var tex = new Texture2D(2, 2, TextureFormat.RGBA32, false);
-                tex.LoadImage(output.ToArray());
-                tex.filterMode = FilterMode.Bilinear;
+                if (!tex.LoadImage(output.ToArray()))
+                {
+                    Debug.LogWarning("CocosParticleEffect: embedded texture is not PNG/JPG (TIFF?). Use overrideTexture.");
+                    Destroy(tex);
+                    return null;
+                }
+                tex.wrapMode = TextureWrapMode.Clamp;
                 return tex;
             }
         }
@@ -332,6 +338,7 @@ public class CocosParticleEffect : MaskableGraphic
         float eg = Mathf.Clamp01(data.finishColorGreen + data.finishColorVarianceGreen * RandM11());
         float eb = Mathf.Clamp01(data.finishColorBlue + data.finishColorVarianceBlue * RandM11());
         float ea = Mathf.Clamp01(data.finishColorAlpha + data.finishColorVarianceAlpha * RandM11());
+        
         p.color = new Color(sr, sg, sb, sa);
         p.deltaColor = p.timeToLive > 0f
             ? new Color((er - sr) / p.timeToLive, (eg - sg) / p.timeToLive, (eb - sb) / p.timeToLive, (ea - sa) / p.timeToLive)
@@ -443,6 +450,14 @@ public class CocosParticleEffect : MaskableGraphic
             vh.AddTriangle(baseIdx, baseIdx + 1, baseIdx + 2);
             vh.AddTriangle(baseIdx, baseIdx + 2, baseIdx + 3);
         }
+    }
+
+    public float GetTotalLifetime()
+    {
+        if (data == null) return 2f;
+        // duration -1 = infinite emitter; cap it, since nothing stops it otherwise.
+        float emit = data.duration < 0f ? 2f : data.duration;
+        return emit + data.particleLifespan + data.particleLifespanVariance + 0.1f;
     }
 
     private static Vector2 Rotate(Vector2 v, float cos, float sin)

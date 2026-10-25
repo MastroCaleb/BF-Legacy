@@ -232,9 +232,11 @@ public class BattleManager : MonoBehaviour
             unitId = unitId,
             currentLevel = selectedAllyBot.party.units[selectedAllyBot.party.mainUnitIndex].unitLevel,
             unit = UnitRegistry.GetUnitById(unitId),
-            currentBBLevel = 1,
-            currentSBBLevel = 1
+            currentBBLevel = selectedAllyBot.party.units[selectedAllyBot.party.mainUnitIndex].bbLevel,
+            currentSBBLevel = selectedAllyBot.party.units[selectedAllyBot.party.mainUnitIndex].sbbLevel
         };
+
+        BFLifeSystem.ModifyStats(inventoryData, selectedAllyBot.party.units[selectedAllyBot.party.mainUnitIndex].unitLevel);
 
         UnitBehaviour u = Instantiate(unitPrefab, playerUnitPositions[i].position, Quaternion.identity)
                                 .GetComponent<UnitBehaviour>();

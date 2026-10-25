@@ -112,6 +112,8 @@ public class Effect
     public AilmentInflictEffect  ailmentInflict;
     public AilmentResistEffect   ailmentResist;
     public ExtraActionEffect     extraAction;
+    public ConversionEffect      conversion;     // proc 24 / 89 (and the conversion passive)
+    public DropRateEffect        dropRate;       // proc 6, spark drop boosts, drop-rate passives
 }
 
 // ─────────────────────────────────────────
@@ -409,6 +411,37 @@ public class ExtraActionEffect
     public float chance;
     public int   maxExtraActions;
     public int   buffTurns;
+}
+
+// Proc 24 / 89: adds X% of one attribute (convertedAttribute) to ATK / DEF / REC.
+// e.g. convertedAttribute = "def", atkConvertPercent = 30 -> +30% of the unit's DEF added to its ATK.
+[System.Serializable]
+public class ConversionEffect
+{
+    public string convertedAttribute;   // source stat, lower case: "atk" | "def" | "rec" | "hp" ("" when unset)
+    public int    atkConvertPercent;
+    public int    defConvertPercent;
+    public int    recConvertPercent;
+    public int    buffTurns;
+}
+
+// Drop-rate boosts, all in percentage points added to the base chance.
+// Per-hit extras on damage procs live in AttackEffect.bbBCPercent / bbHCPercent.
+[System.Serializable]
+public class DropRateEffect
+{
+    public int bcDropRate;
+    public int hcDropRate;
+    public int itemDropRate;
+    public int zelDropRate;
+    public int karmaDropRate;
+    // Only counted when the hit sparks
+    public int sparkBcDropRate;
+    public int sparkHcDropRate;
+    public int sparkItemDropRate;
+    public int sparkZelDropRate;
+    public int sparkKarmaDropRate;
+    public int buffTurns;
 }
 
 // ─────────────────────────────────────────

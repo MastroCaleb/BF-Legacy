@@ -2,11 +2,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-
 public class FriendListMenuUI : MonoBehaviour
 {
-    public GameObject friendSlotPrefab;
-    public RectTransform friendListContent;
+    public RectTransform content;
 
     void OnEnable()
     {
@@ -16,7 +14,7 @@ public class FriendListMenuUI : MonoBehaviour
     private void PopulateFriendList()
     {
         // Clear existing friend slots
-        foreach (RectTransform child in friendListContent)
+        foreach (RectTransform child in content)
         {
             Destroy(child.gameObject);
         }
@@ -24,7 +22,11 @@ public class FriendListMenuUI : MonoBehaviour
         // Populate with current friends
         foreach (var friend in PlayerData.friends)
         {
-            GameObject slot = Instantiate(friendSlotPrefab, friendListContent);
+            GameObject slot = Instantiate(PrefabCache.Get("FriendSlot"));
+
+            RectTransform slotRect = slot.GetComponent<RectTransform>();
+            slotRect.SetParent(content, false);
+            slotRect.localScale = Vector3.one;
             FriendSlotUI slotUI = slot.GetComponent<FriendSlotUI>();
             if (slotUI != null)
             {

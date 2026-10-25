@@ -1,17 +1,3 @@
-// RawUnitParser.cs
-// Shared raw-data → DTO parser for the data-driven units pipeline. Ports
-// JsonToSOUnit's resolution logic into a reusable form consumed by both
-// emitters:
-//   JsonToUnitData      — writes the DTOs as typed JSON + Addressables entries
-//   UnitDatabaseBuilder — packs the DTOs straight into units.db
-// Input: raw unit JSON (default JsonData/Units/*.json) plus the raw asset
-// folders (cgg/cgs/sprites/sam/sound) and the SKILL_MST / EFFECT_GROUP_MST
-// editor tables. Output: one UnitData per file plus deduplicated AbilityData
-// per skill (EmittedAbilities). UUID keys from the source JSON are consumed as
-// the source of truth for display positions, but the output contains typed
-// fields only. Every referenced asset (sprites with __v2..__v9 fallback,
-// cgg/cgs/sam, audio, ParticleEffect ids) is verified to exist; missing refs
-// are counted and logged.
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -551,7 +537,9 @@ public sealed class RawUnitParser
             conditionalBuff = ParseConditionalBuff(obj, isPassive ? obj["passive id"]?.ToString() : obj["proc id"]?.ToString()),
             ailmentInflict  = ParseAilmentInflict(obj),
             ailmentResist   = ParseAilmentResist(obj),
-            extraAction     = ParseExtraAction(obj)
+            extraAction     = ParseExtraAction(obj),
+            conversion      = ParseConversion(obj),
+            dropRate        = ParseDropRate(obj)
         };
     }
 
@@ -886,6 +874,58 @@ public sealed class RawUnitParser
         buffTurns       = ParseInt(o["extra action buff turns (123)"])
     };
 
+    // Proc 24 / 89 — convert X% of one attribute into ATK / DEF / REC.
+    // Key names are bfdb's proc 24 names. Proc 89 isn't in the bfdb revision I could read, so it is
+    // also tried with the unnumbered 'atk% buff' form. A 24/89 effect that parses to nothing logs its
+    // raw keys so the names can be corrected here.
+    private static ConversionEffect ParseConversion(JObject o)
+    {
+        var c = new ConversionEffect
+        {
+            convertedAttribute = (o["converted attribute"]?.ToString() ?? "").Trim().ToLowerInvariant(),
+            atkConvertPercent  = ParseInt(o["atk% buff (46)"]),
+            defConvertPercent  = ParseInt(o["def% buff (47)"]),
+            recConvertPercent  = ParseInt(o["rec% buff (48)"]),
+            buffTurns          = ParseInt(o["% converted turns"])
+        };
+
+        string procId = o["proc id"]?.ToString();
+        bool empty = c.atkConvertPercent == 0 && c.defConvertPercent == 0 && c.recConvertPercent == 0;
+
+        if (procId == "89" && empty)
+        {
+            c.atkConvertPercent = ParseInt(o["atk% buff"]);
+            c.defConvertPercent = ParseInt(o["def% buff"]);
+            c.recConvertPercent = ParseInt(o["rec% buff"]);
+            if (c.buffTurns == 0) c.buffTurns = ParseInt(o["buff turns"]);
+            empty = c.atkConvertPercent == 0 && c.defConvertPercent == 0 && c.recConvertPercent == 0;
+        }
+
+        if ((procId == "24" || procId == "89") && empty)
+            Debug.LogWarning($"[RawUnitParser] proc {procId} conversion parsed with no percentages. Keys present: " +
+                             string.Join(", ", o.Properties().Select(p => p.Name)));
+
+        return c;
+    }
+
+    // Drop-rate boosts. Proc 6 names are bfdb's ('bc drop rate% buff (10)', 'hc drop rate% buff (9)',
+    // 'item drop rate% buff (11)', 'drop rate buff turns'). The zel / karma / spark names below are
+    // NOT in the bfdb revision I could read, they are guesses — fix them to match your JSON.
+    private static DropRateEffect ParseDropRate(JObject o) => new()
+    {
+        bcDropRate         = ParseIntAny(o, "bc drop rate% buff (10)",   "bc drop rate% buff"),
+        hcDropRate         = ParseIntAny(o, "hc drop rate% buff (9)",    "hc drop rate% buff"),
+        itemDropRate       = ParseIntAny(o, "item drop rate% buff (11)", "item drop rate% buff"),
+        zelDropRate        = ParseIntAny(o, "zel drop rate% buff"),
+        karmaDropRate      = ParseIntAny(o, "karma drop rate% buff"),
+        sparkBcDropRate    = ParseIntAny(o, "spark bc drop rate% buff"),
+        sparkHcDropRate    = ParseIntAny(o, "spark hc drop rate% buff"),
+        sparkItemDropRate  = ParseIntAny(o, "spark item drop rate% buff"),
+        sparkZelDropRate   = ParseIntAny(o, "spark zel drop rate% buff"),
+        sparkKarmaDropRate = ParseIntAny(o, "spark karma drop rate% buff"),
+        buffTurns          = ParseIntAny(o, "drop rate buff turns", "buff turns")
+    };
+
     private static List<EffectCondition> ParseConditions(JArray arr)
     {
         List<EffectCondition> list = new();
@@ -1014,6 +1054,14 @@ public sealed class RawUnitParser
         string s = t.ToString().Trim();
         if (int.TryParse(s, out int i))     return i;
         if (float.TryParse(s, out float f)) return Mathf.RoundToInt(f);
+        return 0;
+    }
+
+    /// <summary>Value of the first of the given keys that is present, 0 when none is.</summary>
+    private static int ParseIntAny(JObject o, params string[] keys)
+    {
+        foreach (string k in keys)
+            if (o[k] != null) return ParseInt(o[k]);
         return 0;
     }
 

@@ -26,7 +26,7 @@ public class FriendSlotUI : MonoBehaviour
         if (friendData == null) return;
 
         playerNameText.text = friendData.botName;
-        playerLevelText.text = $"Level {friendData.botLevel}";
+        playerLevelText.text = $"{friendData.botLevel}";
         playerDescriptionText.text = "Hello! I'm a bot!";
 
         Unit unit = UnitRegistry.GetUnitById(friendData.party.units[friendData.party.mainUnitIndex].unitId);
@@ -42,9 +42,10 @@ public class FriendSlotUI : MonoBehaviour
             unitSlotIcon.enabled = false; // Hide the icon if not found
         }
 
-        int currentLevel = PartyDatabase.GetPartyUnits(PartyDatabase.currentPartyKey)[friendData.party.mainUnitIndex].currentLevel;
-        unitLevelText.text = currentLevel == PartyDatabase.GetPartyUnits(PartyDatabase.currentPartyKey)[friendData.party.mainUnitIndex].unit.maxLevel ? "Lv. MAX" : $"Lv. {currentLevel}";
-        unitLevelText.color = currentLevel == PartyDatabase.GetPartyUnits(PartyDatabase.currentPartyKey)[friendData.party.mainUnitIndex].unit.maxLevel ? Color.yellow : Color.white;
+        int currentLevel = data.party.units[data.party.mainUnitIndex].unitLevel;
+
+        unitLevelText.text = currentLevel == unit.maxLevel ? "Lv. MAX" : $"Lv. {currentLevel}";
+        unitLevelText.color = currentLevel == unit.maxLevel ? Color.yellow : Color.white;
     }
 
 }

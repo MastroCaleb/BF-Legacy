@@ -9,6 +9,12 @@ public class AddFriendMenuUI : MonoBehaviour
     public Button addFriendButton;
     public TextMeshProUGUI feedbackText;
 
+    void Start()
+    {
+        if(addFriendButton != null)
+            addFriendButton.onClick.AddListener(OnAddFriendButtonClicked);
+    }
+
     public void OnAddFriendButtonClicked()
     {
         string friendCode = codeTextField.text;

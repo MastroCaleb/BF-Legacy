@@ -84,18 +84,30 @@ public class ThemeManager : MonoBehaviour
         Vector3 target = startPosition + theme.offset;
         characterFrameImage.GetComponent<RectTransform>().anchoredPosition = target;
         wallpaperImage.sprite = theme.wallpaper;
+
+        homeButton.GetComponent<Image>().sprite = theme.homeButtonOff;
         homeButton.activeSprite = theme.homeButtonOn;
         homeButton.inactiveSprite = theme.homeButtonOff;
+
         unitButton.activeSprite = theme.unitButtonOn;
         unitButton.inactiveSprite = theme.unitButtonOff;
+        unitButton.GetComponent<Image>().sprite = theme.unitButtonOff;
+
         townButton.activeSprite = theme.townButtonOn;
         townButton.inactiveSprite = theme.townButtonOff;
+        townButton.GetComponent<Image>().sprite = theme.townButtonOff;
+
         summonButton.activeSprite = theme.summonButtonOn;
         summonButton.inactiveSprite = theme.summonButtonOff;
+        summonButton.GetComponent<Image>().sprite = theme.summonButtonOff;
+
         shopButton.activeSprite = theme.shopButtonOn;
         shopButton.inactiveSprite = theme.shopButtonOff;
+        shopButton.GetComponent<Image>().sprite = theme.shopButtonOff;
+
         socialButton.activeSprite = theme.socialButtonOn;
         socialButton.inactiveSprite = theme.socialButtonOff;
+        socialButton.GetComponent<Image>().sprite = theme.socialButtonOff;
     }
 }
 [Serializable]

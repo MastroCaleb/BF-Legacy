@@ -44,13 +44,13 @@ public class UnitBehaviour : MonoBehaviour
 
     // Spark
     public int sparkCount = 0;
+    public bool lastHitSparked = false; // set by TakeDamage, read by the attacker's drop rolls
     public static int sparkInstances = 0;
     private const int MAX_SPARK_SAMS = 25;
 
-    // Effects and Status Conditions
-    // activeEffects is kept for external readers (buff rate methods).
-    public List<Effect> activeEffects = new List<Effect>();
-    private List<Effect> renderedEffects = new List<Effect>();
+    public UnitBuffs buffs = new UnitBuffs();
+    public List<Effect> activeEffects => buffs.Effects();   // read-only view for existing readers
+    private BuffSource castSource = BuffSource.None;
     
     [Header("Particle Effects")]
     [Tooltip("Parent for spawned battle particle effects. Falls back to BattleUI.dropsLayer if unassigned.")]
@@ -113,6 +113,7 @@ public class UnitBehaviour : MonoBehaviour
     // ─────────────────────────────────────────────────────────────
     void Start()
     {
+        if (GetComponent<BuffIconDisplay>() == null) gameObject.AddComponent<BuffIconDisplay>().Init(this);
         if (unitData != null)
         {
             currentHealth = isEnemyUnit ? enemyData.health == 0 ? unitData.maxHealth : enemyData.health : unitData.maxHealth + inventoryData.hpLevelUpBonus + inventoryData.hpImpBonus;
@@ -292,6 +293,8 @@ public class UnitBehaviour : MonoBehaviour
 
         StartCoroutine(PlayAbilityEffectFrames(ability, targets));
 
+        castSource = BuffCalc.SourceFor(this, ability, permanent);
+
         if(ability.abilityName.Contains("Normal Attack"))
         {
             foreach (var t in targets) StartCoroutine(AttackAtHitFrames(ability, t));
@@ -365,9 +368,7 @@ public class UnitBehaviour : MonoBehaviour
                         foreach (var t in targets)
                         {
                             if (!t.CanGainBC()) continue; // Curse blocks BC fill
-                            t.bcCount += effect.bcFill.bbBCFill;
-                            if (effect.bcFill.bbBCFillPercent > 0)
-                                t.bcCount += Mathf.CeilToInt(effect.bcFill.bbBCFillPercent);
+                            t.bcCount += BuffCalc.BcFillAmount(t, effect.bcFill);
                             t.bcCount = Mathf.Max(t.bcCount, 0);
                             Debug.Log($"[BC Fill] {t.unitData.unitName} BC → {t.bcCount}");
                         }
@@ -391,8 +392,11 @@ public class UnitBehaviour : MonoBehaviour
                 // ═══════════════════════════════════════════════════════════
                 case "6_A":
                 case "19_P":
-                    if (effect.bcFill != null) //This is wrong
-                        foreach (var t in targets) AddTimedEffect(t, effect, permanent ? -1 : 3);
+                    if (effect.dropRate != null)
+                    {
+                        int turns = permanent ? -1 : Mathf.Max(effect.dropRate.buffTurns, 1);
+                        foreach (var t in targets) AddTimedEffect(t, effect, turns);
+                    }
                     break;
 
                 // ═══════════════════════════════════════════════════════════
@@ -491,7 +495,7 @@ public class UnitBehaviour : MonoBehaviour
                     if (effect.ailmentInflict != null)
                     {
                         int turns = permanent ? -1 : 3;
-                        foreach (var t in targets) TryInflictAilments(t, effect.ailmentInflict, turns);
+                        //foreach (var t in targets) InflictAilment(t, effect.ailmentInflict, turns);
                     }
                     break;
                 case "11_P":
@@ -620,7 +624,7 @@ public class UnitBehaviour : MonoBehaviour
                 // ═══════════════════════════════════════════════════════════
                 //  PROC 23: Spark Boost (Active only)
                 // ═══════════════════════════════════════════════════════════
-                case "23_A": //needs to add drops
+                case "23_A": // spark drop boosts travel in effect.dropRate, summed by BuffCalc.DropBonus
                 case "31_P":
                     if (effect.damageBuff != null)
                     {
@@ -630,17 +634,14 @@ public class UnitBehaviour : MonoBehaviour
                     break;
 
                 // ═══════════════════════════════════════════════════════════
-                //  PROC 24: Parameter Conversion (e.g. REC → ATK). No dedicated
-                //  struct exists for "convert stat X into stat Y" — reusing
-                //  statBuff here (atkBuff carries the resulting ATK gain) since
-                //  that's the only field this could plausibly map onto. If you
-                //  intended a distinct conversion ratio, this needs a new struct.
+                //  PROC 24: Parameter Conversion — X% of one attribute added to
+                //  ATK / DEF / REC (effect.conversion, read by BuffCalc.ConversionBonus).
                 // ═══════════════════════════════════════════════════════════
                 case "24_A":
-                case "40_P": //missing conversion fields
-                    if (effect.statBuff != null)
+                case "40_P":
+                    if (effect.conversion != null)
                     {
-                        int turns = permanent ? -1 : Mathf.Max(effect.statBuff.buffTurns, 1);
+                        int turns = permanent ? -1 : Mathf.Max(effect.conversion.buffTurns, 1);
                         foreach (var t in targets) AddTimedEffect(t, effect, turns);
                     }
                     break;
@@ -1186,12 +1187,12 @@ public class UnitBehaviour : MonoBehaviour
                     break;
 
                 // ═══════════════════════════════════════════════════════════
-                //  PROC 89: Self Parameter Conversion (same caveat as proc 24)
+                //  PROC 89: Self Parameter Conversion (effect.conversion, same as proc 24)
                 // ═══════════════════════════════════════════════════════════
                 case "89_A":
                 case "89_P":
-                    if (effect.statBuff != null)
-                        foreach (var t in targets) AddTimedEffect(t, effect, permanent ? -1 : Mathf.Max(effect.statBuff.buffTurns, 1));
+                    if (effect.conversion != null)
+                        foreach (var t in targets) AddTimedEffect(t, effect, permanent ? -1 : Mathf.Max(effect.conversion.buffTurns, 1));
                     break;
 
                 // ═══════════════════════════════════════════════════════════
@@ -1247,22 +1248,7 @@ public class UnitBehaviour : MonoBehaviour
 
     /// Adds a timed effect to the target, refreshing if one with the same procId already exists.
     private void AddTimedEffect(UnitBehaviour target, Effect effect, int turns)
-    {
-        string effectId = effect.isPassive ? effect.passiveId : effect.procId;
-        var existing = target.timedEffects.Find(e => GetEffectId(e.effect) == effectId);
-        if (existing != null)
-        {
-            existing.remainingTurns = turns;
-            Debug.Log($"[Effect] {effectId} refreshed on {target.unitData.unitName} ({(turns == -1 ? "perm" : turns + "t")})");
-            return;
-        }
-
-        target.timedEffects.Add(new ActiveEffectEntry(effect, turns));
-        if (!target.activeEffects.Contains(effect))
-            target.activeEffects.Add(effect);
-
-        Debug.Log($"[Effect] {effectId} → {target.unitData.unitName} ({(turns == -1 ? "perm" : turns + "t")})");
-    }
+    => target.buffs.Add(effect, castSource, turns);
 
     /// Helper to get the correct ID for an effect based on isPassive flag
     private string GetEffectId(Effect effect) => effect.isPassive ? effect.passiveId : effect.procId;
@@ -1270,8 +1256,7 @@ public class UnitBehaviour : MonoBehaviour
     /// Removes ALL timed effects and stat/damage buffs (proc 33).
     private void RemoveAllBuffs()
     {
-        timedEffects.RemoveAll(e => !IsAilmentProc(GetEffectId(e.effect)));
-        activeEffects.RemoveAll(e => !IsAilmentProc(GetEffectId(e)));
+        buffs.RemoveWhere(b => !IsAilmentProc(b.Id) && !b.IsPassive);
         Debug.Log($"[Buff Removal] {unitData.unitName} lost all active buffs");
     }
 
@@ -1280,47 +1265,35 @@ public class UnitBehaviour : MonoBehaviour
     {
         if (status.removeAll)
         {
-            timedEffects.RemoveAll(e => IsAilmentProc(GetEffectId(e.effect)));
-            activeEffects.RemoveAll(e => IsAilmentProc(GetEffectId(e)));
+            buffs.RemoveWhere(b => IsAilmentProc(b.Id));
             activeAilments.Clear();
             ailmentTurns.Clear();
-            Debug.Log($"[Cure] {unitData.unitName} all ailments cleared");
             return;
         }
         if (status.ailmentsCured == null) return;
         foreach (var id in status.ailmentsCured)
         {
-            timedEffects.RemoveAll(e => GetEffectId(e.effect) == id);
-            activeEffects.RemoveAll(e => GetEffectId(e) == id);
+            buffs.RemoveWhere(b => b.Id == id);
             activeAilments.Remove(id);
             ailmentTurns.Remove(id);
         }
-        Debug.Log($"[Cure] {unitData.unitName} specific ailments cleared: {string.Join(", ", status.ailmentsCured)}");
     }
 
     private static bool IsAilmentProc(string id) => id == "11" || id == "40";
-
-    /// Rolls each ailment chance on ailmentInflict against the target's resistances (proc 4/17/73) and applies successes.
-    private void TryInflictAilments(UnitBehaviour target, AilmentInflictEffect a, int turns)
+    
+    private void InflictAilment(string ailment)
     {
-        TryInflictOne(target, "Poison",    a.poisonChance, turns);
-        TryInflictOne(target, "Weaken",    a.weakenChance, turns);
-        TryInflictOne(target, "Sick",      a.sickChance, turns);
-        TryInflictOne(target, "Injury",    a.injuryChance, turns);
-        TryInflictOne(target, "Curse",     a.curseChance, turns);
-        TryInflictOne(target, "Paralysis", a.paralysisChance, turns);
+        if (activeAilments.Contains(ailment)) return;
+        activeAilments.Add(ailment);
+        ailmentTurns[ailment] = BuffCalc.StatusTurns(this, ailment);
     }
 
     private void TryInflictOne(UnitBehaviour target, string ailment, int chance, int turns)
     {
         if (chance <= 0) return;
-        if (Random.Range(0f, 100f) <= target.GetAilmentResist(ailment))
-        {
-            Debug.Log($"[Ailment] {target.unitData.unitName} resisted {ailment}");
-            return;
-        }
-        if (Random.Range(0f, 100f) <= chance)
-            target.InflictAilment(ailment, turns);
+        float finalChance = chance * (1f - target.GetAilmentResist(ailment) / 100f);
+        if (Random.Range(0f, 100f) >= finalChance) return;
+        target.InflictAilment(ailment);
     }
 
     private void InflictAilment(string ailment, int turns)
@@ -1330,21 +1303,21 @@ public class UnitBehaviour : MonoBehaviour
         Debug.Log($"[Ailment] {unitData.unitName} afflicted with {ailment} ({turns}t)");
     }
 
-    /// Sums resistance percent (0-100) for the given ailment from active effects (procs 4/17/73).
     public int GetAilmentResist(string ailment)
     {
         int resist = 0;
-        foreach (var e in activeEffects)
+        foreach (var b in buffs.active)
         {
-            if (e.ailmentResist == null) continue;
+            var r = b.effect.ailmentResist;
+            if (r == null) continue;
             switch (ailment)
             {
-                case "Poison":    resist += e.ailmentResist.poisonResist; break;
-                case "Weaken":    resist += e.ailmentResist.weakenResist; break;
-                case "Sick":      resist += e.ailmentResist.sickResist; break;
-                case "Injury":    resist += e.ailmentResist.injuryResist; break;
-                case "Curse":     resist += e.ailmentResist.curseResist; break;
-                case "Paralysis": resist += e.ailmentResist.paralysisResist; break;
+                case "Poison":    resist += r.poisonResist; break;
+                case "Weaken":    resist += r.weakenResist; break;
+                case "Sick":      resist += r.sickResist; break;
+                case "Injury":    resist += r.injuryResist; break;
+                case "Curse":     resist += r.curseResist; break;
+                case "Paralysis": resist += r.paralysisResist; break;
             }
         }
         return Mathf.Clamp(resist, 0, 100);
@@ -1373,58 +1346,47 @@ public class UnitBehaviour : MonoBehaviour
 
     public void TickEffects()
     {
-        var toRemove = new List<ActiveEffectEntry>();
-
-        foreach (var entry in timedEffects)
+        // ailments: poison first
+        if (activeAilments.Contains("Poison"))
         {
-            if (entry.remainingTurns < 0) continue; // permanent — never expires
+            int maxHp = BuffCalc.BaseStat(this, "hp");
+            int dmg = Mathf.CeilToInt(maxHp * PercentageToNumber(BuffCalc.PoisonPercent));
+            TakeDamage(dmg, false, 0);
+        }
 
-            string effectId = GetEffectId(entry.effect);
+        foreach (var b in buffs.active.ToList())
+        {
+            if (b.turnsLeft < 0) continue; // passive
 
-            // ── proc 44: Damage-over-time tick ────────────────────
-            if (effectId == "44" && entry.effect.dot != null)
+            if (b.Id == "44" && b.effect.dot != null)
             {
-                var dot = entry.effect.dot;
-                int dmg = dot.flatAtk + Mathf.CeilToInt((isEnemyUnit ? enemyData.atk : unitData.atk) * PercentageToNumber(dot.atkPercent));
+                var dot = b.effect.dot;
+                int dmg = dot.flatAtk + Mathf.CeilToInt(BuffCalc.BaseStat(this, "atk") * PercentageToNumber(dot.atkPercent));
                 TakeDamage(dmg, false, 0);
-                Debug.Log($"[DOT] {unitData.unitName} took {dmg} dmg from DOT");
             }
-
-            // ── proc 3: Gradual heal tick ─────────────────────────
-            if (effectId == "3" && entry.effect.gradualHeal != null)
-            {
-                var gh      = entry.effect.gradualHeal;
-                int baseAmt = Random.Range(gh.healLow, gh.healHigh + 1);
-                int recAmt  = Mathf.CeilToInt(unitData.rec * PercentageToNumber(gh.recAddedPercent));
-                int total   = baseAmt + recAmt;
-                Debug.Log($"[HoT] {unitData.unitName} +{total} HP. HP: {currentHealth}");
-                Heal(total);
-            }
-
-            entry.remainingTurns--;
-            if (entry.remainingTurns <= 0)
-                toRemove.Add(entry);
         }
-
-        foreach (var e in toRemove)
+        foreach (var b in buffs.active.ToList())
         {
-            timedEffects.Remove(e);
-            activeEffects.Remove(e.effect);
-            Debug.Log($"[Effect] {e.effect.procId} expired on {unitData.unitName}");
+            if (b.turnsLeft < 0) continue;
+            if (b.Id == "3" && b.effect.gradualHeal != null)
+            {
+                var gh = b.effect.gradualHeal;
+                int baseAmt = Random.Range(gh.healLow, gh.healHigh + 1);
+                int recAmt = Mathf.CeilToInt(BuffCalc.GetStat(this, "rec") * PercentageToNumber(gh.recAddedPercent));
+                Heal(baseAmt + recAmt);
+            }
         }
 
-        // ── Ailment ticks ──────────────────────────────────────────
+        foreach (var expired in buffs.Decrement())
+        {
+            if (expired.Id == BuffIds.Overdrive) isInOverdrive = false;
+            Debug.Log($"[Effect] {expired.Id} expired on {unitData.unitName}");
+        }
+
+        // ailment timers
         var expiredAilments = new List<string>();
         foreach (var ailment in activeAilments)
         {
-            if (ailment == "Poison")
-            {
-                int maxHp = isEnemyUnit ? enemyData.health : unitData.maxHealth + inventoryData.hpLevelUpBonus + inventoryData.hpImpBonus;
-                int dmg = Mathf.CeilToInt(maxHp * PercentageToNumber(POISON_DAMAGE_PERCENT));
-                TakeDamage(dmg, false, 0);
-                Debug.Log($"[Poison] {unitData.unitName} took {dmg} poison dmg");
-            }
-
             if (ailmentTurns.TryGetValue(ailment, out int remaining))
             {
                 remaining--;
@@ -1432,12 +1394,7 @@ public class UnitBehaviour : MonoBehaviour
                 if (remaining <= 0) expiredAilments.Add(ailment);
             }
         }
-        foreach (var a in expiredAilments)
-        {
-            activeAilments.Remove(a);
-            ailmentTurns.Remove(a);
-            Debug.Log($"[Ailment] {a} expired on {unitData.unitName}");
-        }
+        foreach (var a in expiredAilments) { activeAilments.Remove(a); ailmentTurns.Remove(a); }
 
         if (!isEnemyUnit) unitSlotUI?.UpdateUI();
     }
@@ -1484,47 +1441,34 @@ public class UnitBehaviour : MonoBehaviour
     {
         if (target == null) return;
 
-        float damage   = GetDamage(ability, target) * damageRate;
-        float critMult = GetCritMultiplier();
-        damage        *= critMult;
+        var cast = BuffCalc.SourceFor(this, ability, false);
+        int lvl = isEnemyUnit ? 0 : Mathf.Clamp(inventoryData.currentBBLevel - 1, 0, ability.levels.Count - 1);
+        int abilityMod = ability.levels[ability.levels.Count > 1 ? lvl : 0].damageRate;
+        bool isCritical = BuffCalc.RollCrit(this, BuffCalc.FindAttackEffect(ability, lvl)?.bbCritPercent ?? 0);
 
-        if(isGuarding) damage = damage / 2;
+        // guard halving / proc 68 now applied on the TARGET inside HitDamage
+        float damage = BuffCalc.HitDamage(this, target, damageRate, abilityMod, cast, isCritical);
 
-        if(ability.levels.Count > 1){
-            foreach (var e in ability.levels[isEnemyUnit ? 0 : inventoryData.currentBBLevel-1].effects)
-            {
-                if (GetEffectId(e) == "13_A")
-                {
-                    damage /= e.attack.hitCount;
-                }
-            }
-        }
-
-        // Proc 68: extra guard mitigation on top of the base guard halving above
-        if (target.isGuarding)
+        if (ability.levels.Count > 1)
         {
-            foreach (var e in target.activeEffects)
-            {
-                if (GetEffectId(e) == "68" && e.damageBuff != null)
-                    damage *= 1f - PercentageToNumber(e.damageBuff.dmgMitigationPercent);
-            }
+            foreach (var e in ability.levels[lvl].effects)
+                if (GetEffectId(e) == "13_A") damage /= e.attack.hitCount;
         }
 
-        bool isCritical = critMult > 1.0f;
         if (isCritical) Debug.Log($"{unitData.unitName} CRITICAL HIT!");
 
-        // HP drain defined on AttackEffect (attack.hpDrainHigh / hpDrainLow)
         TryHPDrainOnHit(ability, damage);
-
-        DropsOnDamage(target, ability);
         target.TakeDamage(Mathf.CeilToInt(damage), isCritical, hitNum, this);
+        DropsOnDamage(target, ability); // after the hit: spark and overkill are only known now
     }
 
     public void DropsOnDamage(UnitBehaviour target, Ability ability)
     {
-        target.DropBattleCrystals(this, ability);
-        target.DropHeartCrystals(this, ability);
-        target.DropItemsOnHit();
+        // 'this' is the attacker: its buffs decide the drop rates, the victim only supplies position / overkill
+        bool sparked = target.lastHitSparked;
+        target.DropBattleCrystals(this, ability, sparked);
+        target.DropHeartCrystals(this, ability, sparked);
+        target.DropItemsOnHit(this, sparked);
     }
 
     private void TryHPDrainOnHit(Ability ability, float rawDamage)
@@ -1562,15 +1506,6 @@ public class UnitBehaviour : MonoBehaviour
         return ignoreDef ? atk * abilMod : (atk * abilMod) - target.GetDefense();
     }
 
-    public float GetCritMultiplier()
-    {
-        int roll = Random.Range(1, 101);
-        return roll <= GetCritBuffRate() ? 2f : Random.Range(0.9f, 1.0f);
-    }
-
-    public float GetDefense()
-        => ((isEnemyUnit ? enemyData.def : unitData.def + inventoryData.defImpBonus + inventoryData.defLevelUpBonus) / 2f) * PercentageToNumber(GetDefenseBuffRate());
-
     // ─────────────────────────────────────────────────────────────
     //  Plays an ability's effectFrames (sounds/particles) on their
     //  own timeline, independent of hitFrames. Runs exactly once per
@@ -1582,36 +1517,49 @@ public class UnitBehaviour : MonoBehaviour
     {
         if (ability?.effectFrames == null || ability.effectFrames.Count == 0) yield break;
 
-        UnitBehaviour primaryTarget = targets != null && targets.Count > 0 ? targets[0] : null;
-
-        // Defensive sort — imported JSON order isn't guaranteed, don't mutate the
-        // shared Ability asset itself.
+        // Snapshot: the caller's list may be mutated/reused while we wait between frames.
+        var snapshot = targets != null ? new List<UnitBehaviour>(targets) : new List<UnitBehaviour>();
         var frames = ability.effectFrames.OrderBy(ef => ef.frame).ToList();
 
         int lastFrame = 0;
         foreach (var ef in frames)
         {
-            float seconds = (ef.frame - lastFrame) / 60f; // effectFrame.frame is a 60fps tick
+            float seconds = (ef.frame - lastFrame) / 60f;
             if (seconds > 0) yield return new WaitForSeconds(seconds);
             lastFrame = ef.frame;
 
-            PlayEffectFrame(ef, primaryTarget);
+            PlayEffectFrame(ef, snapshot);
         }
     }
-    
-    /// <summary>
-    /// Spawns and plays whatever particle an EffectFrame references, at a
-    /// computed position. See ComputeEffectPosition for the placement logic —
-    /// it's a best-effort read of the group data, not verified against footage.
-    /// </summary>
-    private void PlayEffectFrame(EffectFrame ef, UnitBehaviour target)
+
+    private void PlayEffectFrame(EffectFrame ef, List<UnitBehaviour> targets)
     {
         if (ef.audioClip != null)
-            SoundManager.Instance.PlaySound(ef.audioClip);
+            SoundManager.Instance.PlaySound(ef.audioClip); // once per frame, not per target
 
-        if (!Options.Instance.GetVfxEnabled()|| ef.particleEffect == null) return;
+        if (!Options.Instance.GetVfxEnabled() || ef.particleEffect == null) return;
 
-        RectTransform layer = BattleUI.uiEffectLayer != null ? BattleUI.uiEffectLayer.GetComponent<RectTransform>() : BattleUI.dropsLayer;
+        bool fixedPos  = ef.xAnchor == 5 && ef.yAnchor == 5;
+        bool perTarget = ef.placementType != 2 && !fixedPos;
+
+        // Drop dead targets so AoE effects don't play on corpses (remove if you want them).
+        var alive = targets.FindAll(t => t != null && t.currentState != UnitState.Dead);
+
+        if (!perTarget || alive.Count == 0)
+        {
+            SpawnEffect(ef, alive.Count > 0 ? alive[0] : (targets.Count > 0 ? targets[0] : this));
+            return;
+        }
+
+        foreach (var t in alive) SpawnEffect(ef, t);
+    }
+
+    private void SpawnEffect(EffectFrame ef, UnitBehaviour target)
+    {
+        RectTransform layer = BattleUI.uiEffectLayer != null
+            ? BattleUI.uiEffectLayer.GetComponent<RectTransform>()
+            : BattleUI.dropsLayer;
+
         GameObject go = new GameObject($"FX_{ef.particleEffect.effectId}", typeof(RectTransform));
         go.transform.SetParent(layer, false);
 
@@ -1625,9 +1573,10 @@ public class UnitBehaviour : MonoBehaviour
             case ParticleType.PLIST:
             {
                 var fx = go.AddComponent<CocosParticleEffect>();
+                fx.raycastTarget = false; // otherwise the particle quad eats clicks
                 if (ef.particleEffect.plistJson != null)
                     fx.LoadFromJson(ef.particleEffect.plistJson.text);
-                lifetime = 2f; // give fading particles a couple seconds of buffer
+                lifetime = fx.GetTotalLifetime();
                 break;
             }
             case ParticleType.CGG:
@@ -1646,7 +1595,7 @@ public class UnitBehaviour : MonoBehaviour
                 fx.playOnStart   = true;
                 fx.initOnStart   = false;
                 fx.InitializeAnimator();
-                lifetime = Mathf.Max(fx.GetTotalDurationFrames("Attack"), 1f);
+                lifetime = Mathf.Max(fx.GetTotalDurationFrames("Attack") / 60f, 0.1f);
                 break;
             }
             case ParticleType.SAM:
@@ -1658,7 +1607,7 @@ public class UnitBehaviour : MonoBehaviour
                 fx.playOnStart = false;
                 fx.SetAnimation("start", false);
                 fx.InitializeAnimator();
-                lifetime = Mathf.Max(fx.GetTotalDurationFrames("start"), 1f);
+                lifetime = Mathf.Max(fx.GetTotalDurationFrames("start") / 60f, 0.1f);
                 break;
             }
         }
@@ -1705,130 +1654,31 @@ public class UnitBehaviour : MonoBehaviour
     //  Buff rate calculators — field names match Ability.cs structs
     // ─────────────────────────────────────────────────────────────
     
-    /// Returns ATK modifier as a percentage (100 = no buff).
-    public int GetAttackBuffRate()
-    {
-        int bonus = 100;
-        foreach (var e in activeEffects)
-        {
-            string effectId = GetEffectId(e);
+    public float GetDefense()          => BuffCalc.GetStat(this, "def");
+    public int   GetAttackBuffRate()   => BuffCalc.StatRate(this, "atk");
+    public int   GetDefenseBuffRate()  => BuffCalc.StatRate(this, "def");
+    public int   GetRecoveryBuffRate() => BuffCalc.StatRate(this, "rec");
+    public int   GetCritBuffRate()     => Mathf.RoundToInt(BuffCalc.CritRate(this, 0));
 
-            // proc 1 (passive) / proc 5 (any) → StatBuffEffect.atkBuff
-            if ((effectId == "1" || effectId == "5") && e.statBuff != null)
-                bonus += e.statBuff.atkBuff;
-            // proc 64 (active) → BBAtkBuffEffect.bbAtkBuff
-            if (effectId == "64" && e.bbAtkBuff != null)
-                bonus += e.bbAtkBuff.bbAtkBuff;
-        }
-        if (activeAilments.Contains("Weaken")) bonus -= AILMENT_STAT_DEBUFF_PERCENT;
-        return Mathf.Max(bonus, 1);
-    }
-
-    /// Returns crit chance as a straight percentage (0–100+).
-    public int GetCritBuffRate()
-    {
-        int bonus = 10;
-        foreach (var e in activeEffects)
-        {
-            string effectId = GetEffectId(e);
-
-            // proc 1 (passive) / proc 5 (any) → StatBuffEffect.critBuff
-            if ((effectId == "1" || effectId == "5") && e.statBuff != null)
-                bonus += e.statBuff.critBuff;
-            // proc 54 (active) → DamageBuffEffect.critMultiplier
-            if (effectId == "54" && e.damageBuff != null)
-                bonus += e.damageBuff.critMultiplier;
-        }
-        return Mathf.Max(bonus, 0);
-    }
-
-    /// Returns DEF modifier as a percentage (100 = no buff).
-    public int GetDefenseBuffRate()
-    {
-        int bonus = 100;
-        foreach (var e in activeEffects)
-        {
-            string effectId = GetEffectId(e);
-
-            // proc 5 → StatBuffEffect.defBuff
-            if (effectId == "5" && e.statBuff != null)
-                bonus += e.statBuff.defBuff;
-            // proc 16 / 18 / 39 (active) → DamageBuffEffect.dmgMitigationPercent
-            if ((effectId == "16" || effectId == "18" || effectId == "39") && e.damageBuff != null)
-                bonus += e.damageBuff.dmgMitigationPercent;
-            // proc 8 (passive) → DamageBuffEffect.dmgMitigationPercent
-            if (effectId == "8" && e.damageBuff != null)
-                bonus += e.damageBuff.dmgMitigationPercent;
-            // proc 93 → generic damage resistance
-            if (effectId == "93" && e.damageBuff != null)
-                bonus += e.damageBuff.dmgMitigationPercent;
-        }
-        if (activeAilments.Contains("Injury")) bonus -= AILMENT_STAT_DEBUFF_PERCENT;
-        return Mathf.Max(bonus, 1);
-    }
-
-    /// Returns REC modifier as a percentage (100 = no buff).
-    public int GetRecoveryBuffRate()
-    {
-        int bonus = 100;
-        foreach (var e in activeEffects)
-        {
-            string effectId = GetEffectId(e);
-
-            // proc 5 → StatBuffEffect.recBuff
-            if (effectId == "5" && e.statBuff != null)
-                bonus += e.statBuff.recBuff;
-        }
-        if (activeAilments.Contains("Sick")) bonus -= AILMENT_STAT_DEBUFF_PERCENT;
-        return Mathf.Max(bonus, 1);
-    }
-
-    /// Returns BC drop rate modifier as a percentage (100 = no buff).
-    public int GetBattleCrystalBuffRate()
-    {
-        int bonus = 100;
-        foreach (var e in activeEffects)
-        {
-            string effectId = GetEffectId(e);
-
-            // proc 5: REC also boosts BC drops (Brave Frontier mechanic)
-            if (effectId == "5" && e.statBuff != null)
-                bonus += e.statBuff.recBuff;
-            // proc 6 (active) → BCFillEffect.bbBCFillPercent (stored as 0–100)
-            if (effectId == "6" && e.bcFill != null)
-                bonus += Mathf.CeilToInt(e.bcFill.bbBCFillPercent);
-        }
-        return Mathf.Max(bonus, 1);
-    }
-
-    public int GetHeartCrystalBuffRate()
-    {
-        int bonus = 100;
-        foreach (var e in activeEffects)
-        {
-            string effectId = GetEffectId(e);
-
-            // proc 5: REC also boosts BC drops (Brave Frontier mechanic)
-            if (effectId == "5" && e.statBuff != null)
-                bonus += e.statBuff.recBuff;
-            // proc 6 (active) → BCFillEffect.bbBCFillPercent (stored as 0–100)
-            if (effectId == "6" && e.bcFill != null)
-                bonus += Mathf.CeilToInt(e.bcFill.bbBCFillPercent);
-        }
-        return Mathf.Max(bonus, 1);
-    }
+    /// BC / HC drop rate as a percentage of the base chance (100 = no buff).
+    /// The real roll is BuffCalc.CrystalDropChance, these are kept for callers that still read a rate.
+    public int GetBattleCrystalBuffRate() => 100 + Mathf.RoundToInt(BuffCalc.DropBonus(this, BuffCalc.DropType.Crystal, false));
+    public int GetHeartCrystalBuffRate()  => 100 + Mathf.RoundToInt(BuffCalc.DropBonus(this, BuffCalc.DropType.Heart, false));
 
     // ─────────────────────────────────────────────────────────────
     //  Damage / Heal / Death
     // ─────────────────────────────────────────────────────────────
 
-    public void DropBattleCrystals(UnitBehaviour target, Ability ability)
+    // Called on the VICTIM with the attacker, so the attacker's buffs are what boost the drop.
+    public void DropBattleCrystals(UnitBehaviour attacker, Ability ability, bool sparked = false)
     {
-        if (target.isEnemyUnit) return;
+        if (attacker.isEnemyUnit) return;
+
+        int procBonus = BuffCalc.FindAttackEffect(ability, attacker.inventoryData.currentBBLevel - 1)?.bbBCPercent ?? 0;
+        float dropChance = BuffCalc.CrystalDropChance(attacker, this, BuffCalc.DropType.Crystal, procBonus, sparked) / 100f;
 
         for (int i = 0; i < ability.dropChecksPerHit / ability.hitFrames.Count; i++)
         {
-            float dropChance = 0.35f * PercentageToNumber(GetBattleCrystalBuffRate());
             if (Random.Range(0f, 1f) <= dropChance)
             {
                 GameObject bc = Instantiate(PrefabCache.Get("BattleCrystal"), transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
@@ -1839,13 +1689,15 @@ public class UnitBehaviour : MonoBehaviour
         }
     }
 
-    public void DropHeartCrystals(UnitBehaviour target, Ability ability)
+    public void DropHeartCrystals(UnitBehaviour attacker, Ability ability, bool sparked = false)
     {
-        if (target.isEnemyUnit) return;
+        if (attacker.isEnemyUnit) return;
+
+        int procBonus = BuffCalc.FindAttackEffect(ability, attacker.inventoryData.currentBBLevel - 1)?.bbHCPercent ?? 0;
+        float dropChance = BuffCalc.CrystalDropChance(attacker, this, BuffCalc.DropType.Heart, procBonus, sparked) / 100f;
 
         for (int i = 0; i < ability.dropChecksPerHit / ability.hitFrames.Count; i++)
         {
-            float dropChance = 0.1f * PercentageToNumber(GetHeartCrystalBuffRate());
             if (Random.Range(0f, 1f) <= dropChance)
             {
                 GameObject hc = Instantiate(PrefabCache.Get("HeartCrystal"), transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
@@ -1856,21 +1708,22 @@ public class UnitBehaviour : MonoBehaviour
         }
     }
 
+    public int GetMaxBC()
+    {
+        if (isInOverdrive && unitData.ubbAbility != null) return Mathf.Max(unitData.ubbAbility.levels[0].bcCost, 1);
+        int max = 0;
+        if (unitData.bbAbility != null && unitData.bbAbility.abilityName != "Unnamed")
+            max += unitData.bbAbility.levels[inventoryData.currentBBLevel - 1].bcCost;
+        if (unitData.sbbAbility != null && unitData.sbbAbility.abilityName != "Unnamed")
+            max += unitData.sbbAbility.levels[inventoryData.currentSBBLevel - 1].bcCost;
+        return Mathf.Max(max, 1);
+    }
+
    UnitBehaviour GetBattleCrystalTarget()
     {
-        int GetMaxBC(UnitBehaviour u)
-        {
-            int max = 0;
-            int level = u.inventoryData.currentBBLevel-1;
-            if (u.unitData.bbAbility != null && u.unitData.bbAbility.abilityName != "Unnamed")
-                max += u.unitData.bbAbility.levels[level].bcCost;
-            if (u.unitData.sbbAbility != null && u.unitData.sbbAbility.abilityName != "Unnamed")
-                max += u.unitData.sbbAbility.levels[level].bcCost;
-            return Mathf.Max(max, 1);
-        }
 
         var notFull = BattleManager.playerTeam.units.FindAll(u =>
-            u.currentState != UnitState.Dead && u.bcCount < GetMaxBC(u));
+            u.currentState != UnitState.Dead && u.bcCount < u.GetMaxBC());
 
         if (notFull.Count > 0)
             return notFull[Random.Range(0, notFull.Count)];
@@ -1940,13 +1793,15 @@ public class UnitBehaviour : MonoBehaviour
         }
     }
 
-    public void DropItemsOnHit()
+    public void DropItemsOnHit(UnitBehaviour attacker = null, bool sparked = false)
     {
         if (!isEnemyUnit) return;
 
+        float itemBonus = attacker != null ? BuffCalc.DropBonus(attacker, BuffCalc.DropType.Item, sparked) : 0f;
+
         foreach(ItemDrop drop in enemyData.itemDrops){
 
-            if(Random.Range(0f, 100f) > drop.dropChance) return;
+            if(Random.Range(0f, 100f) > drop.dropChance + itemBonus) return;
             
             int count = (int)drop.dropRest;
 
@@ -2093,7 +1948,8 @@ public class UnitBehaviour : MonoBehaviour
             if (isEnemyUnit) BattleManager.totalCriticalHits++;
         } 
         
-        float sparkBonus = (sparkCount >= 2 && effectiveDamage > 0) ? 1.5f : 1f;
+        float sparkBonus = (sparkCount >= 2 && effectiveDamage > 0) ? BuffCalc.SparkMultiplier(attacker) : 1f;
+        lastHitSparked = sparkBonus > 1f;
         if (sparkBonus > 1f) {
             SoundManager.Instance.PlaySound(sparkSound);
             PopUpText("SparkPopUp");
@@ -2138,7 +1994,7 @@ public class UnitBehaviour : MonoBehaviour
 
             // Proc 53: inflict an ailment back on the attacker
             if (id == "53" && e.ailmentInflict != null && attacker != null)
-                TryInflictAilments(attacker, e.ailmentInflict, 3);
+                //TryInflictAilments(attacker, e.ailmentInflict, 3);
 
             // Proc 67: BC fill on landing/receiving a spark
             if (id == "67" && wasSpark && e.bcFill != null && CanGainBC())
@@ -2178,20 +2034,15 @@ public class UnitBehaviour : MonoBehaviour
         }
     }
 
-    /// Checks for a proc 7 (Angel Idol) entry and absorbs a fatal hit.
     private bool TryAngelIdol()
     {
-        for (int i = timedEffects.Count - 1; i >= 0; i--)
+        for (int i = buffs.active.Count - 1; i >= 0; i--)
         {
-            var entry  = timedEffects[i];
-            if (entry.effect.procId != "7") continue;
-            if (entry.effect.damageBuff?.angelIdolSubBuff == null) continue;
-            if (entry.remainingTurns == 0) continue;
-
-            float pct     = entry.effect.damageBuff.angelIdolSubBuff.recoverHpPercent;
-            currentHealth = Mathf.Max(Mathf.CeilToInt(isEnemyUnit ? enemyData.health : unitData.maxHealth + inventoryData.hpLevelUpBonus + inventoryData.hpImpBonus * PercentageToNumber(pct)), 1);
-            timedEffects.RemoveAt(i);
-            activeEffects.Remove(entry.effect);
+            var b = buffs.active[i];
+            if (b.Id != "7" || b.effect.damageBuff?.angelIdolSubBuff == null) continue;
+            float pct = b.effect.damageBuff.angelIdolSubBuff.recoverHpPercent;
+            currentHealth = Mathf.Max(Mathf.CeilToInt(BuffCalc.BaseStat(this, "hp") * PercentageToNumber(pct)), 1);
+            buffs.active.RemoveAt(i);
             Debug.Log($"[Angel Idol] {unitData.unitName} survived! HP: {currentHealth}");
             return true;
         }
@@ -2208,12 +2059,7 @@ public class UnitBehaviour : MonoBehaviour
         {
             // proc 2 → HealEffect
             if (effect.procId == "2" && effect.heal != null)
-            {
-                float baseHeal    = Random.Range(effect.heal.healLow, effect.heal.healHigh + 1);
-                float recBonus    = (unitData.rec + inventoryData.recImpBonus + inventoryData.recLevelUpBonus + healer.unitData.rec + healer.inventoryData.recImpBonus + healer.inventoryData.recLevelUpBonus) * PercentageToNumber(GetRecoveryBuffRate());
-                float recAddedPct = effect.heal.recAddedPercent * PercentageToNumber(100);
-                total            += baseHeal + recBonus + recAddedPct;
-            }
+                total += BuffCalc.BurstHealAmount(healer, this, effect.heal);
         }
 
         int healAmount = Mathf.CeilToInt(total);
@@ -2289,20 +2135,16 @@ public class UnitBehaviour : MonoBehaviour
 
     public void Overdrive()
     {
-        if(currentState == UnitState.Dead) return;
-        
+        if (currentState == UnitState.Dead) return;
         isInOverdrive = true;
-        //Play sound or some shit
-        //Play overdrive animation
+        buffs.Add(BuffCalc.MakeOverdriveEffect(), BuffSource.OD, 4);
     }
 
     public void StopOverdrive()
     {
-        if(currentState == UnitState.Dead) return;
-        
+        if (currentState == UnitState.Dead) return;
         isInOverdrive = false;
-        //Play sound or some shit
-        //Play overdrive animation
+        buffs.RemoveWhere(b => b.source == BuffSource.OD);
     }
 
     void DropsOnLastHit()

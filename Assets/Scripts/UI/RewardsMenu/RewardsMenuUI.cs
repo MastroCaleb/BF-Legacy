@@ -205,7 +205,7 @@ public class RewardsMenuUI : MonoBehaviour
     private void ShowPage5OrFinish()
     {
         if (!BattleManager.selectedAllyBot.IsNull &&
-            !string.IsNullOrEmpty(BattleManager.selectedAllyBot.botId))
+            !string.IsNullOrEmpty(BattleManager.selectedAllyBot.botId) && !PlayerData.IsFriend(BattleManager.selectedAllyBot.botId))
         {
             page1.SetActive(false);
             page2.SetActive(false);

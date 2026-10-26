@@ -312,7 +312,6 @@ public class BattleManager : MonoBehaviour
     IEnumerator BattleLoop()
     {
         nextRoundTransition.Initialize(dungeonLevelData.levelName, missionData.missionName, missionData.rounds.Count);
-        yield return new WaitForSeconds(2f);
 
         // Leader ability fires once at battle start (permanent)
         if(playerTeam.leaderUnit.unitData.leaderAbility != null){
@@ -321,11 +320,15 @@ public class BattleManager : MonoBehaviour
             );
         }
 
-        if(playerTeam.friendUnit.unitData.leaderAbility != null){
-            playerTeam.ActivateFriendAbility(
-                GetTargets(enemyTeam.units, playerTeam.friendUnit, playerTeam.friendUnit.unitData.leaderAbility)
-            );
+        if(PlayerData.IsFriend(selectedAllyBot.botId)){
+            if(playerTeam.friendUnit.unitData.leaderAbility != null){
+                playerTeam.ActivateFriendAbility(
+                    GetTargets(enemyTeam.units, playerTeam.friendUnit, playerTeam.friendUnit.unitData.leaderAbility)
+                );
+            }
         }
+
+        yield return new WaitForSeconds(2f);
 
         for (int round = 1; round <= missionData.rounds.Count; round++)
         {

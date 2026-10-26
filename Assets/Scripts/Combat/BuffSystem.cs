@@ -488,6 +488,16 @@ public static class BuffCalc
     }
 
     // ── healing / bc ──
+    /// Heart crystal efficacy multiplier: 1 + sum of passive 10 (HC efficacy, stored in statBuff.recBuff) / 100.
+    /// Godot: get_efficacy(unit, "hc"). isPassive is required because active proc 10 is status cleanse.
+    public static float HcEfficacy(UnitBehaviour u)
+    {
+        float sum = 0f;
+        foreach (var b in u.buffs.active)
+            if (b.effect.isPassive && b.Id == "10" && b.effect.statBuff != null) sum += b.effect.statBuff.recBuff;
+        return 1f + sum / 100f;
+    }
+
     /// RandomBetween(low, high) + target REC + healer REC * addedPercent/100
     public static int BurstHealAmount(UnitBehaviour healer, UnitBehaviour target, HealEffect h)
     {

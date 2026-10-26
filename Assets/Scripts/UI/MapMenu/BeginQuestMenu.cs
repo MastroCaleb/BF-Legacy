@@ -31,9 +31,7 @@ public class BeginQuestMenu : MonoBehaviour
             leaderSkillDescriptionText.SetText(leaderSkill.abilityDesc);
         }
 
-        bool isFriend = false;
-
-        if (isFriend)
+        if (PlayerData.IsFriend(BattleManager.selectedAllyBot.botId))
         {
             noFriendSkillText.SetActive(false);
             friendSkillNameText.color = Color.white;

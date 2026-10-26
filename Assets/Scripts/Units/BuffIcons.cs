@@ -434,8 +434,44 @@ public static class BuffIconTable
     /// Returns the BuffMst indices to display for an active effect (empty = no icon).
     public static void IconsFor(Effect e, List<int> outIcons)
     {
-        string id = e.isPassive ? e.passiveId : e.procId;
+        if (e == null) return;
+        if (e.isPassive) { PassiveIcons(e, outIcons); return; }   // passive ids are a different id space than ACTIVE_PROCS
+        string id = e.procId;
         if (id == null || !procIcons.TryGetValue(id, out var all)) return;
+        int before = outIcons.Count;
+        Filtered(e, id, all, outIcons);
+        if (outIcons.Count == before) outIcons.Add(all[0]);   // a filter found no matching param: still show the proc's main icon
+    }
+
+    /// Passives (leader / extra skills...) have no entry in ACTIVE_PROCS, so icons come from which params the effect carries.
+    /// (Godot shows no icons for passives; this is deliberately an addition.)
+    static void PassiveIcons(Effect e, List<int> o)
+    {
+        int[] stat   = procIcons["5"];
+        Filtered(e, "5",  stat,               o);   // atk / def / rec / crit (elemental variants too)
+        if (e.statBuff != null && e.statBuff.hpBuff > 0) o.Add((int)BuffMst.DESC_BUFF_HPBOOST);
+        Filtered(e, "6",  procIcons["6"],     o);   // bc / hc / item drop
+        Filtered(e, "24", procIcons["24"],    o);   // parameter conversion
+        Filtered(e, "16", procIcons["16"],     o);   // elemental mitigation
+        Filtered(e, "55", procIcons["55"],    o);   // elemental damage up
+        Filtered(e, "17", procIcons["17"],    o);   // ailment resist
+        var d = e.damageBuff;
+        if (d != null)
+        {
+            if (d.dmgMitigationPercent > 0 && !(d.mitigateFire || d.mitigateWater || d.mitigateEarth || d.mitigateThunder || d.mitigateLight || d.mitigateDark))
+                o.Add((int)BuffMst.DESC_BUFF_DAMAGECUT);
+            if (d.sparkDmgBuff > 0)          o.Add((int)BuffMst.DESC_BUFF_SPARKUP);
+            if (d.critMultiplier > 0)        o.Add((int)BuffMst.DESC_BUFF_CRTUP);
+            if (d.defenseIgnorePercent > 0)  o.Add((int)BuffMst.DESC_BUFF_IGNOREDEF);
+        }
+        var f = e.bcFill;
+        if (f != null && (f.bcFillPerTurn > 0 || f.bbBCFill > 0 || f.bbBCFillPercent > 0f || f.bcFillOnSparkHigh > 0 || f.bcFillWhenAttackedHigh > 0))
+            o.Add((int)BuffMst.DESC_BUFF_BBFILL);
+        if (e.gradualHeal != null && e.gradualHeal.healHigh > 0) o.Add((int)BuffMst.DESC_BUFF_HPREC);
+    }
+
+    static void Filtered(Effect e, string id, int[] all, List<int> outIcons)
+    {
 
         switch (id)
         {
@@ -517,8 +553,11 @@ public static class BuffIconTable
             }
             case "17":
             {
-                var s = e.status; if (s == null) break;
-                int[] r = { s.poisonResist, s.weakenResist, s.sickResist, s.injuryResist, s.curseResist, s.paralysisResist };
+                var s = e.ailmentResist; var st = e.status;
+                if (s == null && st == null) break;
+                int[] r = s != null
+                    ? new[] { s.poisonResist, s.weakenResist, s.sickResist, s.injuryResist, s.curseResist, s.paralysisResist }
+                    : new[] { st.poisonResist, st.weakenResist, st.sickResist, st.injuryResist, st.curseResist, st.paralysisResist };
                 bool any = false;
                 for (int i = 0; i < 6; i++) if (r[i] > 0) { outIcons.Add(all[i]); any = true; }
                 if (any) return;
@@ -531,8 +570,6 @@ public static class BuffIconTable
                 break;
             }
         }
-        // Everything else (or no filter data): the first icon in the list.
-        outIcons.Add(all[0]);
     }
 }
 
@@ -544,7 +581,7 @@ public static class BuffIconTable
 public class BuffIconDisplay : MonoBehaviour
 {
     public float cycleSeconds = 1f;
-    public Vector3 worldOffset = new Vector3(0f, 3.5f, 0f);
+    public Vector3 worldOffset = new Vector3(0f, 3.25f, 0f);
     public float iconScale = 1f;
 
     struct Entry { public bool debuff; public int index; public bool ubb; }
@@ -606,7 +643,7 @@ public class BuffIconDisplay : MonoBehaviour
         var seen = new HashSet<long>();
         foreach (var b in unit.buffs.active)
         {
-            if (b.effect == null) continue;   // passives never show icons b.IsPassive || 
+            if (b.effect == null) continue;   // passives show icons too (derived from their params, see PassiveIcons)
             scratch.Clear();
             BuffIconTable.IconsFor(b.effect, scratch);
             foreach (int idx in scratch)
@@ -631,13 +668,22 @@ public class BuffIconDisplay : MonoBehaviour
     void Show(int i)
     {
         if (entries.Count == 0) { if (root) root.gameObject.SetActive(false); current = -1; return; }
-        current = ((i % entries.Count) + entries.Count) % entries.Count;
-        var e = entries[current];
-        var sp = e.debuff ? BuffIconSheets.Debuff(e.index) : BuffIconSheets.Buff(e.index);
-        if (sp == null) { root.gameObject.SetActive(false); return; }   // "no icon defined" → skip
-        icon.sprite = sp;
-        ubbMod.enabled = e.ubb && ubbMod.sprite != null;
-        root.gameObject.SetActive(visible);
+        for (int tries = 0; tries < entries.Count; tries++)
+        {
+            current = (((i + tries) % entries.Count) + entries.Count) % entries.Count;
+            var e = entries[current];
+            var sp = e.debuff ? BuffIconSheets.Debuff(e.index) : BuffIconSheets.Buff(e.index);
+            if (sp == null)
+            {
+                Debug.LogWarning($"[BuffIcons] no sprite for {(e.debuff ? "debuff" : "buff")} index {e.index} (sheet missing/not in Resources, or cell outside the texture)");
+                continue;   // "no icon defined" → try the next entry
+            }
+            icon.sprite = sp;
+            ubbMod.enabled = e.ubb && ubbMod.sprite != null;
+            root.gameObject.SetActive(visible);
+            return;
+        }
+        root.gameObject.SetActive(false);
     }
 
     public void SetVisible(bool v)   // hide_all_buffs / show_all_buffs
@@ -655,7 +701,7 @@ public class BuffIconDisplay : MonoBehaviour
             wasDead = true;
             return;
         }
-        if (root == null) Build();
+        if (root == null) { Build(); signature = null; }   // root can be destroyed with popupLayer's children: rebuild AND re-show
         if (wasDead) { wasDead = false; signature = null; }   // revived: force a rebuild
 
         string sig = Signature();

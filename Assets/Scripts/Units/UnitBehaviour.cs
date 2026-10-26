@@ -1747,11 +1747,12 @@ public class UnitBehaviour : MonoBehaviour
         return alive.Count > 0 ? alive[Random.Range(0, alive.Count)] : null;
     }
 
-    public void DropZelCoinsOnDeath()
+    public void DropZelCoinsOnDeath(UnitBehaviour attacker = null)
     {
         if (!isEnemyUnit) return;
 
         int total = (int)enemyData.zelMaxDrop;
+        if (attacker != null) total = Mathf.RoundToInt(total * (1f + BuffCalc.DropBonus(attacker, BuffCalc.DropType.Zell, lastHitSparked) / 100f));
         int count = (int)enemyData.zelDropCount;
 
         if(count == 0) return;
@@ -1770,11 +1771,12 @@ public class UnitBehaviour : MonoBehaviour
         }
     }
 
-    public void DropKarmaOrbsOnDeath()
+    public void DropKarmaOrbsOnDeath(UnitBehaviour attacker = null)
     {
         if (!isEnemyUnit) return;
 
         int total = (int)enemyData.karmaMaxDrop;
+        if (attacker != null) total = Mathf.RoundToInt(total * (1f + BuffCalc.DropBonus(attacker, BuffCalc.DropType.Karma, lastHitSparked) / 100f));
         int count = (int)enemyData.karmaDropCount;
 
         if(count == 0) return;
@@ -1968,7 +1970,7 @@ public class UnitBehaviour : MonoBehaviour
         if (currentHealth <= 0 && !TryAngelIdol())
         {
             Die();
-            DropsOnLastHit();
+            DropsOnLastHit(attacker);
         }
             
 
@@ -2147,11 +2149,11 @@ public class UnitBehaviour : MonoBehaviour
         buffs.RemoveWhere(b => b.source == BuffSource.OD);
     }
 
-    void DropsOnLastHit()
+    void DropsOnLastHit(UnitBehaviour attacker = null)
     {
         if(deathHitCount != 0) return;
-        DropZelCoinsOnDeath();
-        DropKarmaOrbsOnDeath();
+        DropZelCoinsOnDeath(attacker);
+        DropKarmaOrbsOnDeath(attacker);
         DropGemCrystalsOnDeath();
     }
 
@@ -2290,8 +2292,9 @@ public class UnitBehaviour : MonoBehaviour
     public void HealByCrystal()
     {
         float amountHealed = 0;
+        float hcEffectivenessMultiplier = BuffCalc.HcEfficacy(this) - 1f; // 0.5 = +50%
 
-        amountHealed = (unitData.rec + inventoryData.recLevelUpBonus + inventoryData.recImpBonus) * (1 + 0);
+        amountHealed = (unitData.rec + inventoryData.recLevelUpBonus + inventoryData.recImpBonus) * (1 + hcEffectivenessMultiplier);
         amountHealed = amountHealed / Random.Range(3.0f, 4.2f);
 
         int healAmount = Mathf.CeilToInt(amountHealed);
